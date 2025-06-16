@@ -1235,11 +1235,7 @@ _T14f:
 	__asm        jmp    _T189;
 // LINE 397:
 _T168:
-	__asm        push   0x18D;
-	__asm        push   0x5B52CC;
-	__asm        push   0x5B52F0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x18d, 0x5b52cc, 0x5b52f0);
 	__asm        jmp    _T189;
 
 	__asm        jmp    _T189;
@@ -1286,11 +1282,7 @@ _T3e:
 	__asm        cmp    curAutos, eax;
 	__asm        jg     _T31;
 
-	__asm        push   0x1C3;
-	__asm        push   0x5B52F8;
-	__asm        push   0x5B531C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x1c3, 0x5b52f8, 0x5b531c);
 	__asm        jmp    _T36;
 _T31:
 	__asm        jmp    _T36;
@@ -1360,11 +1352,7 @@ _T65:
 	__asm        jmp    _T8c;
 // LINE 494:
 _T8c:
-	__asm        push   0x1EE;
-	__asm        push   0x5B5330;
-	__asm        push   0x5B5354;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x1ee, 0x5b5330, 0x5b5354);
 	__asm        jmp    _Tad;
 
 	__asm        jmp    _Tad;
@@ -1427,11 +1415,7 @@ void AutomobileClass::Itterate() {
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T35;
 
-	__asm        push   0x259;
-	__asm        push   0x5B535C;
-	__asm        push   0x5B5380;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x259, 0x5b535c, 0x5b5380);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;
@@ -1484,8 +1468,7 @@ _Tc5:
 	__asm        test   eax, eax;
 	__asm        je     _Tec;
 // LINE 619:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 620:
 	return;
 // LINE 623:
@@ -1549,8 +1532,7 @@ _T1ae:
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        jne    _T1d0;
 // LINE 631:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOut;
+	this->AutomobileClass::PullOut();
 // LINE 632:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1567,8 +1549,7 @@ _T1d0:
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        jg     _T200;
 // LINE 636:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOut;
+	this->AutomobileClass::PullOut();
 // LINE 637:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1749,8 +1730,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        test   byte ptr [eax+9], 1;
 	__asm        je     _T2b;
 // LINE 798:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::RunFireState;
+	this->AutomobileClass::RunFireState();
 // LINE 799:
 	return;
 // LINE 801:
@@ -1760,8 +1740,7 @@ _T2b:
 	__asm        test   byte ptr [eax+9], 2;
 	__asm        je     _T4a;
 // LINE 803:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::RunJamState;
+	this->AutomobileClass::RunJamState();
 // LINE 804:
 	return;
 // LINE 806:
@@ -1790,16 +1769,12 @@ _T4a:
 // LINE 816:
 	mp.flags = 0x0;
 // LINE 818:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 820:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFCFFF;
 // LINE 821:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOut;
+	this->AutomobileClass::PullOut();
 // LINE 826:
 // Block end:
 _Tae:
@@ -1807,8 +1782,7 @@ _Tae:
 	__asm        cmp    dword ptr [eax+0x9E], 0x50000;
 	__asm        jle    _Tc9;
 // LINE 828:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::HonkHorn;
+	this->AutomobileClass::HonkHorn();
 // LINE 831:
 _Tc9:
 	__asm        mov    eax, this;
@@ -1977,8 +1951,7 @@ _T2fd:
 	__asm        test   eax, eax;
 	__asm        je     _T31a;
 // LINE 880:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::DoAUTurn;
+	this->AutomobileClass::DoAUTurn();
 // LINE 881:
 	__asm        jmp    _T59f;
 // LINE 885:
@@ -2058,8 +2031,7 @@ _T416:
 	__asm        test   eax, eax;
 	__asm        je     _T433;
 // LINE 906:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::DoAUTurn;
+	this->AutomobileClass::DoAUTurn();
 // LINE 907:
 	__asm        jmp    _T59f;
 // LINE 911:
@@ -2139,8 +2111,7 @@ _T52f:
 	__asm        test   eax, eax;
 	__asm        je     _T54c;
 // LINE 933:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::DoAUTurn;
+	this->AutomobileClass::DoAUTurn();
 // LINE 934:
 	__asm        jmp    _T59f;
 // LINE 938:
@@ -2221,11 +2192,7 @@ _T59f:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _T68b;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T690;
 _T68b:
 	__asm        jmp    _T690;
@@ -2236,14 +2203,7 @@ _T695:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 960:
-	__asm        push   6;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x112];
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x6, loc.x, this->cptr);
 // LINE 963:
 // Block end:
 _T6b9:
@@ -2251,8 +2211,7 @@ _T6b9:
 	__asm        test   byte ptr [eax+9], 0x10;
 	__asm        je     _T6ce;
 // LINE 964:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOverCiviliansInWay;
+	this->AutomobileClass::PullOverCiviliansInWay();
 // LINE 968:
 _T6ce:
 	this->stalledTimer = 0x0;
@@ -2261,8 +2220,7 @@ _T6ce:
 	__asm        test   byte ptr [eax+9], 8;
 	__asm        je     _T75d;
 // LINE 973:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::MoveForwardOnHiway;
+	this->AutomobileClass::MoveForwardOnHiway();
 // LINE 976:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xEA], 0;
@@ -2291,8 +2249,7 @@ _T6ce:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::MakeAHiwayTurn;
 // LINE 989:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::AdjustNextHiwayPosition;
+	this->AutomobileClass::AdjustNextHiwayPosition();
 // LINE 991:
 _T758:
 	return;
@@ -2316,8 +2273,7 @@ _T776:
 // LINE 1012:
 	this->currDist = 0x0;
 // LINE 1014:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::TransitionBetweenGoals;
+	this->AutomobileClass::TransitionBetweenGoals();
 // LINE 1020:
 	__asm        jmp    _T776;
 // LINE 1032:
@@ -2352,11 +2308,7 @@ void AutomobileClass::UnlinkFromCell(const /*packed*/ struct _GridCoordinates& p
 	__asm        cmp    pCell, 0;
 	__asm        jne    _T4e;
 
-	__asm        push   0x41F;
-	__asm        push   0x5B539C;
-	__asm        push   0x5B53C0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x41f, 0x5b539c, 0x5b53c0);
 	__asm        jmp    _T53;
 _T4e:
 	__asm        jmp    _T53;
@@ -2394,11 +2346,7 @@ _Ta0:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _Tc8;
 
-	__asm        push   0x431;
-	__asm        push   0x5B53C8;
-	__asm        push   0x5B53EC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x431, 0x5b53c8, 0x5b53ec);
 	__asm        jmp    _Tcd;
 _Tc8:
 	__asm        jmp    _Tcd;
@@ -2426,11 +2374,7 @@ void AutomobileClass::LinkToCell(const /*packed*/ struct _GridCoordinates& point
 	__asm        cmp    pCell, 0;
 	__asm        jne    _T4e;
 
-	__asm        push   0x43F;
-	__asm        push   0x5B53F8;
-	__asm        push   0x5B541C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x43f, 0x5b53f8, 0x5b541c);
 	__asm        jmp    _T53;
 _T4e:
 	__asm        jmp    _T53;
@@ -2686,11 +2630,7 @@ _T212:
 	__asm        jmp    _T270;
 // LINE 1190:
 _T217:
-	__asm        push   0x4A6;
-	__asm        push   0x5B5424;
-	__asm        push   0x5B5448;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x4a6, 0x5b5424, 0x5b5448);
 	__asm        jmp    _T238;
 
 	__asm        jmp    _T238;
@@ -3006,11 +2946,7 @@ _T1ac:
 	__asm        cmp    dword ptr [ebp-0xEC], 0;
 	__asm        jne    _T238;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T23d;
 _T238:
 	__asm        jmp    _T23d;
@@ -3172,11 +3108,7 @@ _T3f8:
 	__asm        cmp    dword ptr [ebp-0xCC], 0;
 	__asm        jne    _T47a;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T47f;
 _T47a:
 	__asm        jmp    _T47f;
@@ -3230,11 +3162,7 @@ _T50b:
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T537;
 
-	__asm        push   0x5CB;
-	__asm        push   0x5B5450;
-	__asm        push   0x5B5474;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x5cb, 0x5b5450, 0x5b5474);
 	__asm        jmp    _T53c;
 _T537:
 	__asm        jmp    _T53c;
@@ -3319,11 +3247,9 @@ _T68a:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::SetHiwayDirection;
 // LINE 1506:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::AdjustCurrentHiwayPosition;
+	this->AutomobileClass::AdjustCurrentHiwayPosition();
 // LINE 1507:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::AdjustNextHiwayPosition;
+	this->AutomobileClass::AdjustNextHiwayPosition();
 // LINE 1508:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3361,11 +3287,7 @@ _T6f9:
 	__asm        cmp    ecx, eax;
 	__asm        je     _T745;
 _T729:
-	__asm        push   0x5EB;
-	__asm        push   0x5B5490;
-	__asm        push   0x5B54B4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x5eb, 0x5b5490, 0x5b54b4);
 	__asm        jmp    _T74a;
 _T745:
 	__asm        jmp    _T74a;
@@ -3623,11 +3545,7 @@ _Ta6c:
 	__asm        cmp    i, 4;
 	__asm        jl     _Ta95;
 
-	__asm        push   0x62D;
-	__asm        push   0x5B54F0;
-	__asm        push   0x5B5514;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x62d, 0x5b54f0, 0x5b5514);
 	__asm        jmp    _Ta9a;
 _Ta95:
 	__asm        jmp    _Ta9a;
@@ -3695,11 +3613,7 @@ _Tb35:
 	__asm        cmp    dword ptr [eax+0x96], 2;
 	__asm        jle    _Tbee;
 _Tbd2:
-	__asm        push   0x63D;
-	__asm        push   0x5B5518;
-	__asm        push   0x5B553C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x63d, 0x5b5518, 0x5b553c);
 	__asm        jmp    _Tbf3;
 _Tbee:
 	__asm        jmp    _Tbf3;
@@ -3772,11 +3686,7 @@ _Tc8f:
 	__asm        cmp    dword ptr [ebp-0xD8], 0;
 	__asm        jne    _Tcd2;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _Tcd7;
 _Tcd2:
 	__asm        jmp    _Tcd7;
@@ -3812,8 +3722,7 @@ _Td28:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::MoveAuto;
 // LINE 1635:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::DoDiagonalRoadFixup;
+	this->AutomobileClass::DoDiagonalRoadFixup();
 // LINE 1638:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3894,8 +3803,7 @@ _T1e:
 	__asm        test   byte ptr [eax+9], 1;
 	__asm        je     _T82;
 // LINE 1695:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 1697:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFEFF;
@@ -3914,10 +3822,7 @@ _T1e:
 // LINE 1704:
 	mp.flags = 0x0;
 // LINE 1705:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 1707:
 	__asm        jmp    _Td3;
 _T82:
@@ -3938,10 +3843,7 @@ _T82:
 // LINE 1716:
 	mp.flags = 0x0;
 // LINE 1717:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 1722:
 _Td3:
 	S3DSPlay(0x0, (this + 0x24), 0xf);
@@ -3999,10 +3901,7 @@ _T67:
 // LINE 1755:
 	mp.flags = 0x0;
 // LINE 1756:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 1762:
 	S3DSPlay(0x0, (this + 0x24), 0x8);
 // LINE 1764:
@@ -4042,8 +3941,7 @@ _T72:
 // FUNCTION: COPTER_D 0x00504116
 void AutomobileClass::Reset() {
 // LINE 1791:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 1792:
 	this->flags = 0x1;
 // LINE 1794:
@@ -4100,11 +3998,7 @@ _T21:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T75;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T7a;
 _T75:
 	__asm        jmp    _T7a;
@@ -4234,11 +4128,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        cmp    object, 0;
 	__asm        jne    _T4e;
 
-	__asm        push   0x75C;
-	__asm        push   0x5B5560;
-	__asm        push   0x5B5584;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x75c, 0x5b5560, 0x5b5584);
 	__asm        jmp    _T53;
 _T4e:
 	__asm        jmp    _T53;
@@ -4268,11 +4158,7 @@ _T6b:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    _Taf;
 
-	__asm        push   0x771;
-	__asm        push   0x5B558C;
-	__asm        push   0x5B55B0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x771, 0x5b558c, 0x5b55b0);
 	__asm        jmp    _Tb4;
 _Taf:
 	__asm        jmp    _Tb4;
@@ -4291,11 +4177,7 @@ _Tb4:
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jne    _Tf3;
 
-	__asm        push   0x775;
-	__asm        push   0x5B55C0;
-	__asm        push   0x5B55E4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x775, 0x5b55c0, 0x5b55e4);
 	__asm        jmp    _Tf8;
 _Tf3:
 	__asm        jmp    _Tf8;
@@ -4367,8 +4249,7 @@ _T1ad:
 	__asm        jmp    _T1f8;
 // LINE 1940:
 _T1bf:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ChangeAutoColor;
+	this->AutomobileClass::ChangeAutoColor();
 // LINE 1941:
 	this->beamDelay = 0xa0000;
 // LINE 1942:
@@ -4416,7 +4297,7 @@ short GetMaximumNumberOfAutomobiles() {
 // FUNCTION: COPTER_D 0x0050458c
 void ItterateAllAutomobiles() {
 // LINE 2024:
-	__asm        call   AutomobileClass::ItterateAll;
+	AutomobileClass::ItterateAll();
 // LINE 2025:
 	return;
 }
@@ -4424,7 +4305,7 @@ void ItterateAllAutomobiles() {
 // FUNCTION: COPTER_D 0x005045a1
 void ResetAllAutomobiles() {
 // LINE 2046:
-	__asm        call   AutomobileClass::ResetAll;
+	AutomobileClass::ResetAll();
 // LINE 2047:
 	return;
 }
@@ -4629,11 +4510,7 @@ _T234:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T28e;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T293;
 _T28e:
 	__asm        jmp    _T293;
@@ -4796,11 +4673,7 @@ int32_t AutomobileClass::CanIPullOut() {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T66;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T6b;
 _T66:
 	__asm        jmp    _T6b;
@@ -5045,11 +4918,7 @@ _T1f6:
 	__asm        jne    _T238;
 // LINE 2256:
 _T200:
-	__asm        push   0x8D0;
-	__asm        push   0x5B55F8;
-	__asm        push   0x5B561C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x8d0, 0x5b55f8, 0x5b561c);
 	__asm        jmp    _T221;
 
 	__asm        jmp    _T221;
@@ -5220,11 +5089,7 @@ _T3e0:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    _T4ac;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T4b1;
 _T4ac:
 	__asm        jmp    _T4b1;
@@ -5235,19 +5100,11 @@ _T4b6:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 2332:
-	__asm        push   6;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x112];
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x6, loc.x, this->cptr);
 // LINE 2338:
 // Block end:
 _T4da:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::DoDiagonalRoadFixup;
+	this->AutomobileClass::DoDiagonalRoadFixup();
 // LINE 2344:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5427,11 +5284,7 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T66;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T6b;
 _T66:
 	__asm        jmp    _T6b;
@@ -6077,11 +5930,7 @@ _T3c:
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        jne    _T163;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T168;
 _T163:
 	__asm        jmp    _T168;
@@ -6182,11 +6031,7 @@ _T275:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T2a0;
 // LINE 2667:
-	__asm        push   0xA6B;
-	__asm        push   0x5B5624;
-	__asm        push   0x5B5648;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa6b, 0x5b5624, 0x5b5648);
 	__asm        jmp    _T2a0;
 
 	__asm        jmp    _T2a0;
@@ -6290,11 +6135,7 @@ _T396:
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    _T3d3;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T3d8;
 _T3d3:
 	__asm        jmp    _T3d8;
@@ -6573,11 +6414,7 @@ _T6f6:
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        jne    _T733;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T738;
 _T733:
 	__asm        jmp    _T738;
@@ -6590,11 +6427,7 @@ _T73d:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T76e;
 // LINE 2842:
-	__asm        push   0xB1A;
-	__asm        push   0x5B5650;
-	__asm        push   0x5B5674;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xb1a, 0x5b5650, 0x5b5674);
 	__asm        jmp    _T76e;
 
 	__asm        jmp    _T76e;
@@ -7218,10 +7051,7 @@ _T4c:
 // LINE 3228:
 	mp.flags = 0x0;
 // LINE 3229:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 3233:
 _T142:
 	return;
@@ -7292,10 +7122,7 @@ _T4c:
 // LINE 3276:
 	mp.flags = 0x0;
 // LINE 3277:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 3281:
 _T10c:
 	return;
@@ -7327,17 +7154,7 @@ void AutomobileClass::RunFireState() {
 // LINE 3304:
 	this->fireTime = 0x3333;
 // LINE 3305:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x10A;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x112];
-	__asm        push   eax;
-	__asm        call   S3MissileDebrisFire;
-	__asm        add    esp, 0xC;
+	S3MissileDebrisFire((this + 0x10a), (this + 0x24), this->cptr);
 // LINE 3309:
 _T71:
 	__asm        mov    eax, this;
@@ -7437,14 +7254,10 @@ _T71:
 // LINE 3344:
 	mp.flags = 0x0;
 // LINE 3345:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 3348:
 _T1f6:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 3349:
 	return;
 // LINE 3354:
@@ -7461,10 +7274,7 @@ _T203:
 // LINE 3359:
 	mp.maploc.y = ((0x20000000 - this->autoDynomitor.loc.z) >> 0x16);
 // LINE 3360:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 3362:
 _T254:
 	return;
@@ -7475,8 +7285,7 @@ void AutomobileClass::RunJamState() {
 	/*bp-0x18*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 3375:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::HonkHorn;
+	this->AutomobileClass::HonkHorn();
 // LINE 3378:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, LoopTime;
@@ -7501,10 +7310,7 @@ _T37:
 // LINE 3394:
 	mp.maploc.y = ((0x20000000 - this->autoDynomitor.loc.z) >> 0x16);
 // LINE 3395:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 3397:
 _T88:
 	return;
@@ -7513,10 +7319,7 @@ _T88:
 // FUNCTION: COPTER_D 0x00506c61
 void AutoMissionCancel(long mission_id) {
 // LINE 3409:
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        call   AutomobileClass::MissionCancel;
-	__asm        add    esp, 4;
+	AutomobileClass::MissionCancel(mission_id);
 // LINE 3410:
 	return;
 }
@@ -7594,10 +7397,7 @@ _T77:
 // FUNCTION: COPTER_D 0x00506d4e
 void AutoSetAllHeadlights(int32_t lights_on) {
 // LINE 3494:
-	__asm        mov    eax, lights_on;
-	__asm        push   eax;
-	__asm        call   AutomobileClass::SetAllHeadlights;
-	__asm        add    esp, 4;
+	AutomobileClass::SetAllHeadlights(lights_on);
 // LINE 3495:
 	return;
 }
@@ -7627,14 +7427,12 @@ _T18:
 	__asm        cmp    lights_on, 1;
 	__asm        jne    _T53;
 // LINE 3517:
-	__asm        mov    ecx, targcar;
-	__asm        call   AutomobileClass::TurnOnHeadlight;
+	targcar->AutomobileClass::TurnOnHeadlight();
 // LINE 3518:
 	__asm        jmp    _T5b;
 // LINE 3519:
 _T53:
-	__asm        mov    ecx, targcar;
-	__asm        call   AutomobileClass::TurnOffHeadlight;
+	targcar->AutomobileClass::TurnOffHeadlight();
 // LINE 3521:
 _T5b:
 	__asm        jmp    _T15;
@@ -8469,11 +8267,7 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T6c;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T71;
 _T6c:
 	__asm        jmp    _T71;
@@ -8486,11 +8280,7 @@ _T76:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _Ta2;
 
-	__asm        push   0xEE7;
-	__asm        push   0x5B567C;
-	__asm        push   0x5B56A0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xee7, 0x5b567c, 0x5b56a0);
 	__asm        jmp    _Ta7;
 _Ta2:
 	__asm        jmp    _Ta7;
@@ -8588,11 +8378,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T6c;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T71;
 _T6c:
 	__asm        jmp    _T71;
@@ -8803,11 +8589,7 @@ _T327:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T34d;
 
-	__asm        push   0xF2A;
-	__asm        push   0x5B56AC;
-	__asm        push   0x5B56D0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xf2a, 0x5b56ac, 0x5b56d0);
 	__asm        jmp    _T352;
 _T34d:
 	__asm        jmp    _T352;
@@ -9226,14 +9008,7 @@ _T7fb:
 // LINE 4005:
 	this->currDist = MTNormalize((this + 0xa2));
 // LINE 4010:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA2;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x30;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((this + 0xa2), (this + 0x30));
 // LINE 4011:
 	return;
 }
@@ -10038,26 +9813,22 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 	__asm        jmp    _T18e;
 // LINE 4241:
 _T17:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 4242:
 	__asm        jmp    _T1e3;
 // LINE 4246:
 _T24:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::GoStraight;
+	this->AutomobileClass::GoStraight();
 // LINE 4248:
 	__asm        jmp    _T1e3;
 // LINE 4252:
 _T31:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::TurnLeft;
+	this->AutomobileClass::TurnLeft();
 // LINE 4254:
 	__asm        jmp    _T1e3;
 // LINE 4258:
 _T3e:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::TurnRight;
+	this->AutomobileClass::TurnRight();
 // LINE 4260:
 	__asm        jmp    _T1e3;
 // LINE 4264:
@@ -10067,14 +9838,12 @@ _T4b:
 	__asm        test   al, 1;
 	__asm        je     _T68;
 // LINE 4266:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::TurnLeft;
+	this->AutomobileClass::TurnLeft();
 // LINE 4268:
 	__asm        jmp    _T70;
 // LINE 4270:
 _T68:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::GoStraight;
+	this->AutomobileClass::GoStraight();
 // LINE 4273:
 _T70:
 	__asm        jmp    _T1e3;
@@ -10085,14 +9854,12 @@ _T75:
 	__asm        test   al, 1;
 	__asm        je     _T92;
 // LINE 4279:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::TurnLeft;
+	this->AutomobileClass::TurnLeft();
 // LINE 4281:
 	__asm        jmp    _T9a;
 // LINE 4283:
 _T92:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::TurnRight;
+	this->AutomobileClass::TurnRight();
 // LINE 4286:
 _T9a:
 	__asm        jmp    _T1e3;
@@ -10103,14 +9870,12 @@ _T9f:
 	__asm        test   al, 1;
 	__asm        je     _Tbc;
 // LINE 4292:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::TurnRight;
+	this->AutomobileClass::TurnRight();
 // LINE 4294:
 	__asm        jmp    _Tc4;
 // LINE 4296:
 _Tbc:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::GoStraight;
+	this->AutomobileClass::GoStraight();
 // LINE 4299:
 _Tc4:
 	__asm        jmp    _T1e3;
@@ -10125,26 +9890,19 @@ _Tc9:
 	__asm        jmp    _T133;
 // LINE 4305:
 _Te1:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::GoStraight;
+	this->AutomobileClass::GoStraight();
 	__asm        jmp    _T156;
 // LINE 4306:
 _Tee:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::TurnLeft;
+	this->AutomobileClass::TurnLeft();
 	__asm        jmp    _T156;
 // LINE 4307:
 _Tfb:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::TurnRight;
+	this->AutomobileClass::TurnRight();
 	__asm        jmp    _T156;
 // LINE 4308:
 _T108:
-	__asm        push   0x10D4;
-	__asm        push   0x5B56DC;
-	__asm        push   0x5B5700;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x10d4, 0x5b56dc, 0x5b5700);
 	__asm        jmp    _T129;
 
 	__asm        jmp    _T129;
@@ -10168,17 +9926,12 @@ _T156:
 	__asm        jmp    _T1e3;
 // LINE 4315:
 _T15b:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 4316:
 	__asm        jmp    _T1e3;
 // LINE 4322:
 _T168:
-	__asm        push   0x10E2;
-	__asm        push   0x5B5708;
-	__asm        push   0x5B572C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x10e2, 0x5b5708, 0x5b572c);
 	__asm        jmp    _T189;
 
 	__asm        jmp    _T189;
@@ -10247,11 +10000,7 @@ _T87:
 	__asm        jmp    _Td1;
 // LINE 4369:
 _Tb0:
-	__asm        push   0x1111;
-	__asm        push   0x5B5734;
-	__asm        push   0x5B5758;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x1111, 0x5b5734, 0x5b5758);
 	__asm        jmp    _Td1;
 
 	__asm        jmp    _Td1;
@@ -10296,11 +10045,7 @@ _T87:
 	__asm        jmp    _Td1;
 // LINE 4415:
 _Tb0:
-	__asm        push   0x113F;
-	__asm        push   0x5B5760;
-	__asm        push   0x5B5784;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x113f, 0x5b5760, 0x5b5784);
 	__asm        jmp    _Td1;
 
 	__asm        jmp    _Td1;
@@ -10345,11 +10090,7 @@ _T87:
 	__asm        jmp    _Td1;
 // LINE 4466:
 _Tb0:
-	__asm        push   0x1172;
-	__asm        push   0x5B578C;
-	__asm        push   0x5B57B0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x1172, 0x5b578c, 0x5b57b0);
 	__asm        jmp    _Td1;
 
 	__asm        jmp    _Td1;
@@ -10801,11 +10542,7 @@ _T1d:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T370;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T375;
 _T370:
 	__asm        jmp    _T375;
@@ -10844,11 +10581,7 @@ _T39c:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    _T3f6;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T3fb;
 _T3f6:
 	__asm        jmp    _T3fb;
@@ -10978,11 +10711,7 @@ _T61:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4807:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0x12;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x12);
 // LINE 4809:
 	__asm        jmp    _Tb6;
 // LINE 4811:
@@ -10993,9 +10722,7 @@ _T99:
 	__asm        cmp    eax, 1;
 	__asm        jne    _Tb6;
 // LINE 4813:
-	__asm        push   0x12;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x12);
 // LINE 4818:
 _Tb6:
 	dist = AutomobileClass::policeSirenDist;
@@ -11036,11 +10763,7 @@ _T10e:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4831:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0x13;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x13);
 // LINE 4833:
 	__asm        jmp    _T163;
 // LINE 4835:
@@ -11051,9 +10774,7 @@ _T146:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T163;
 // LINE 4837:
-	__asm        push   0x13;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x13);
 // LINE 4842:
 _T163:
 	dist = AutomobileClass::ambSirenDist;
@@ -11094,11 +10815,7 @@ _T1bb:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4855:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0x11;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x11);
 // LINE 4857:
 	__asm        jmp    _T210;
 // LINE 4859:
@@ -11109,9 +10826,7 @@ _T1f3:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T210;
 // LINE 4861:
-	__asm        push   0x11;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x11);
 // LINE 4866:
 _T210:
 	dist = AutomobileClass::fireHoseDist;
@@ -11152,11 +10867,7 @@ _T268:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4879:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0x14;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x14);
 // LINE 4881:
 	__asm        jmp    _T2bd;
 // LINE 4883:
@@ -11167,9 +10878,7 @@ _T2a0:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T2bd;
 // LINE 4885:
-	__asm        push   0x14;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x14);
 // LINE 4890:
 _T2bd:
 	dist = AutomobileClass::fireHoseDist;
@@ -11210,11 +10919,7 @@ _T315:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4903:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0x14;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x14);
 // LINE 4905:
 	__asm        jmp    _T36a;
 // LINE 4907:
@@ -11225,9 +10930,7 @@ _T34d:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T36a;
 // LINE 4909:
-	__asm        push   0x14;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x14);
 // LINE 4912:
 _T36a:
 	return;
@@ -11318,13 +11021,7 @@ _Tcc:
 	__asm        cmp    base, 0x80;
 	__asm        jne    _Tec;
 // LINE 4959:
-	__asm        mov    eax, newbase;
-	__asm        add    eax, index;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   VRFaceSetColor;
-	__asm        add    esp, 8;
+	VRFaceSetColor((newbase + index), face);
 // LINE 4960:
 _Tec:
 	__asm        jmp    _T29d;
@@ -11333,13 +11030,7 @@ _Tf1:
 	__asm        cmp    base, 0x80;
 	__asm        jne    _T111;
 // LINE 4963:
-	__asm        mov    eax, newbase;
-	__asm        add    eax, index;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   VRFaceSetColor;
-	__asm        add    esp, 8;
+	VRFaceSetColor((newbase + index), face);
 // LINE 4964:
 _T111:
 	__asm        jmp    _T29d;
@@ -11348,13 +11039,7 @@ _T116:
 	__asm        cmp    base, 0x50;
 	__asm        jne    _T133;
 // LINE 4967:
-	__asm        mov    eax, newbase;
-	__asm        add    eax, index;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   VRFaceSetColor;
-	__asm        add    esp, 8;
+	VRFaceSetColor((newbase + index), face);
 // LINE 4968:
 _T133:
 	__asm        jmp    _T29d;
@@ -11363,13 +11048,7 @@ _T138:
 	__asm        cmp    base, 0x50;
 	__asm        jne    _T155;
 // LINE 4971:
-	__asm        mov    eax, newbase;
-	__asm        add    eax, index;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   VRFaceSetColor;
-	__asm        add    esp, 8;
+	VRFaceSetColor((newbase + index), face);
 // LINE 4972:
 _T155:
 	__asm        jmp    _T29d;
@@ -11378,13 +11057,7 @@ _T15a:
 	__asm        cmp    base, 0xA0;
 	__asm        jne    _T17a;
 // LINE 4975:
-	__asm        mov    eax, newbase;
-	__asm        add    eax, index;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   VRFaceSetColor;
-	__asm        add    esp, 8;
+	VRFaceSetColor((newbase + index), face);
 // LINE 4976:
 _T17a:
 	__asm        jmp    _T29d;
@@ -11393,13 +11066,7 @@ _T17f:
 	__asm        cmp    base, 0x30;
 	__asm        jne    _T19c;
 // LINE 4979:
-	__asm        mov    eax, newbase;
-	__asm        add    eax, index;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   VRFaceSetColor;
-	__asm        add    esp, 8;
+	VRFaceSetColor((newbase + index), face);
 // LINE 4980:
 _T19c:
 	__asm        jmp    _T29d;

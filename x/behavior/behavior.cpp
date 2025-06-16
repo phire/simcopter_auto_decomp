@@ -311,10 +311,7 @@ void Behavior::StdTreeSwizzle(/*unpacked*/ struct Behavior::Tree *tree, long siz
 	/*bp-0x4*/   short count;
 
 // LINE 49:
-	__asm        mov    eax, tree;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2(tree);
 // LINE 50:
 	count = 0x0;
 	__asm        jmp    _T24;
@@ -471,12 +468,7 @@ _T13a:
 	__asm        cmp    tree, 0;
 	__asm        jne    _T15d;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE510;
-	__asm        push   0x51;
-	__asm        push   0x5BE528;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be510, 0x51, 0x5be528);
 // LINE 82:
 _T15d:
 	__asm        mov    eax, tree;
@@ -485,12 +477,7 @@ _T15d:
 	__asm        cmp    eax, ecx;
 	__asm        jg     _T188;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE554;
-	__asm        push   0x52;
-	__asm        push   0x5BE574;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be554, 0x52, 0x5be574);
 // LINE 84:
 _T188:
 	__asm        movsx  eax, nodeNum;
@@ -604,12 +591,7 @@ _T71:
 	__asm        cmp    tree, 0;
 	__asm        jne    _Tb5;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE5A0;
-	__asm        push   0xA4;
-	__asm        push   0x5BE5CC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be5a0, 0xa4, 0x5be5cc);
 // LINE 168:
 // Block start:
 	/*bp-0x108*/ unsigned char resName[256]; // 0x100 bytes
@@ -623,13 +605,7 @@ _Tb5:
 // LINE 169:
 	name[0] = 0x0;
 // LINE 172:
-	__asm        push   0x100;
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        lea    eax, resName[0];
-	__asm        push   eax;
-	__asm        call   ConcatPStr;
-	__asm        add    esp, 0xC;
+	ConcatPStr(0x100, name, resName[0]);
 // LINE 174:
 // Block end:
 	return;
@@ -853,18 +829,9 @@ _T56:
 //   _T39
 // LINE 258:
 _T7a:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        call   EmptyPStr;
-	__asm        add    esp, 4;
+	EmptyPStr(name);
 // LINE 259:
-	__asm        push   0x100;
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    eax, str;
-	__asm        push   eax;
-	__asm        call   ConcatCPStr;
-	__asm        add    esp, 0xC;
+	ConcatCPStr(0x100, name, str);
 // LINE 260:
 	return;
 }

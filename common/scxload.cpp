@@ -644,12 +644,7 @@ void SCXReadGraphData(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 // FUNCTION: COPTER_D 0x004cbc9e
 void SCXReadPlayer(/*packed*/ class cGZXBitstream *AStream, unsigned char * data) {
 // LINE 197:
-	__asm        mov    eax, scxbuf;
-	__asm        push   eax;
-	__asm        mov    eax, AStream;
-	__asm        push   eax;
-	__asm        call   SCXReadBudget;
-	__asm        add    esp, 8;
+	SCXReadBudget(scxbuf, AStream);
 // LINE 198:
 	__asm        push   0x108;
 	__asm        mov    eax, data;
@@ -699,12 +694,7 @@ void SCXReadPlayer(/*packed*/ class cGZXBitstream *AStream, unsigned char * data
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 204:
-	__asm        mov    eax, scxbuf;
-	__asm        push   eax;
-	__asm        mov    eax, AStream;
-	__asm        push   eax;
-	__asm        call   SCXReadGraphData;
-	__asm        add    esp, 8;
+	SCXReadGraphData(scxbuf, AStream);
 // LINE 205:
 	return;
 }
@@ -995,14 +985,13 @@ int32_t ReadSCXFile(char * filePath) {
 	/*bp-0x57c*/ long scxInd[11]; // 0x2c bytes
 
 // LINE 296:
-	__asm        call   S2CityFree;
+	S2CityFree();
 // LINE 297:
 	S2CityAlloc();
 // LINE 299:
 	scxbuf = operator new(0xffff);
 // LINE 301:
-	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
-	__asm        call   cLZAPFileBitStream::cLZAPFileBitStream;
+	fileStream<cLZAPFileBitStream+0x00>->cLZAPFileBitStream::cLZAPFileBitStream();
 // LINE 302:
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
@@ -1124,28 +1113,13 @@ _T1bd:
 	__asm        cmp    loop, eax;
 	__asm        jge    _T1e3;
 // LINE 319:
-	__asm        mov    eax, scxbuf;
-	__asm        push   eax;
-	__asm        lea    eax, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        push   eax;
-	__asm        call   SCXReadPlayer;
-	__asm        add    esp, 8;
+	SCXReadPlayer(scxbuf, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>);
 	__asm        jmp    _T1ba;
 // LINE 322:
 _T1e3:
-	__asm        mov    eax, budgetList;
-	__asm        push   eax;
-	__asm        lea    eax, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        push   eax;
-	__asm        call   SCXReadBudget;
-	__asm        add    esp, 8;
+	SCXReadBudget(budgetList, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>);
 // LINE 325:
-	__asm        mov    eax, scxbuf;
-	__asm        push   eax;
-	__asm        lea    eax, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-	__asm        push   eax;
-	__asm        call   SCXReadNeighbors;
-	__asm        add    esp, 8;
+	SCXReadNeighbors(scxbuf, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>);
 // LINE 328:
 	__asm        mov    eax, scxbuf;
 	__asm        push   eax;

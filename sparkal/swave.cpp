@@ -206,13 +206,7 @@ _T132:
 	__asm        jmp    ERROR_READING_WAVE;
 // LINE 110:
 _T15c:
-	__asm        push   0x10;
-	__asm        lea    eax, pcmWaveFormat.wf.wFormatTag;
-	__asm        push   eax;
-	__asm        mov    eax, pwfxInfo;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(0x10, pcmWaveFormat.wf.wFormatTag, pwfxInfo);
 // LINE 111:
 	pwfxInfo->cbSize = cbExtraAlloc;
 // LINE 126:

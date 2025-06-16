@@ -131,8 +131,8 @@ private:
 // SYNTHETIC: COPTER_D 0x004471b0
 static void $E4() {
 
-	__asm        call   $E1;
-	__asm        call   $E3;
+	$E1();
+	$E3();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -168,7 +168,7 @@ _T0b:
 // SYNTHETIC: COPTER_D 0x00447211
 static void $E7() {
 
-	__asm        call   $E6;
+	$E6();
 	__asm        jmp    __RETURN;
 __RETURN:
 }

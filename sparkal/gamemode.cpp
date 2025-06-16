@@ -537,10 +537,8 @@ _T47:
 // FUNCTION: COPTER_D 0x004bd7c8
 void GameModeMainMenuData::GameModeMainMenuData() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCoreData::GameModeCoreData;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923C4;
+	this->GameModeCoreData::GameModeCoreData();
+	this-><GameModeMainMenuData+0x00> = 0x5923c4;
 // LINE 157:
 	this->pColorTable = 0x0;
 // LINE 158:
@@ -811,8 +809,7 @@ _T271:
 	__asm        mov    ecx, myUserMenuWindow;
 	__asm        call   dword ptr [eax+4];
 // LINE 221:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeMainMenuData::CreatePalette;
+	this->GameModeMainMenuData::CreatePalette();
 // LINE 222:
 	__asm        mov    dword ptr [ebp-0x88], 1;
 	__asm        jmp    _T296;
@@ -890,8 +887,7 @@ _T4d:
 // FUNCTION: COPTER_D 0x004bdccb
 void GameModePickCareerCityData::GameModePickCareerCityData() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCoreData::GameModeCoreData;
+	this->GameModeCoreData::GameModeCoreData();
 	__asm        jmp    _T19;
 _T19:
 	__asm        jmp    _T1e;
@@ -1084,8 +1080,7 @@ _Tea:
 	__asm        mov    ecx, myCareerWindow;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 316:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePickCareerCityData::CreatePalette;
+	this->GameModePickCareerCityData::CreatePalette();
 // LINE 317:
 	return 0x1;
 // LINE 318:
@@ -1124,13 +1119,9 @@ _T4d:
 // FUNCTION: COPTER_D 0x004be005
 void GameModePlayData::GameModePlayData() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCoreData::GameModeCoreData;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   CommandSystem::CommandSystem;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923CC;
+	this->GameModeCoreData::GameModeCoreData();
+	(this + 0x70)->CommandSystem::CommandSystem();
+	this-><GameModePlayData+0x00> = 0x5923cc;
 // LINE 343:
 	this->nExceptionState = 0x0;
 // LINE 344:
@@ -1194,11 +1185,9 @@ void GameModePlayData::GameModePlayData() {
 // FUNCTION: COPTER_D 0x004be148
 void GameModePlayData::Initialize() {
 // LINE 390:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::SetNonUserConfigurableCommandsToDefaults;
+	this->GameModePlayData::SetNonUserConfigurableCommandsToDefaults();
 // LINE 391:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::ReadUserConfigurableCommands;
+	this->GameModePlayData::ReadUserConfigurableCommands();
 // LINE 392:
 	return;
 }
@@ -1614,8 +1603,7 @@ void GameModePlayData::Awake() {
 	__asm        mov    ecx, [eax+0x58];
 	__asm        call   dword ptr [edx+8];
 // LINE 504:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::MakeSureHeliHasProperFlaps;
+	this->GameModePlayData::MakeSureHeliHasProperFlaps();
 // LINE 505:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x5C], 0;
@@ -1793,8 +1781,7 @@ _T291:
 	__asm        jmp    _T2b6;
 // LINE 534:
 _T2b6:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::UsePalette;
+	this->GameModePlayData::UsePalette();
 // LINE 536:
 _T2be:
 	return;
@@ -1807,8 +1794,7 @@ int32_t GameModePlayData::CreateAllSurfaces() {
 // LINE 544:
 	this->GameModePlayData::CreatePanels();
 // LINE 545:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::CreatePalette;
+	this->GameModePlayData::CreatePalette();
 // LINE 546:
 	return 0x1;
 // LINE 547:
@@ -2173,8 +2159,7 @@ _T4cf:
 	__asm        mov    ecx, [eax+0x58];
 	__asm        call   dword ptr [edx+4];
 // LINE 602:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::MakeSureHeliHasProperFlaps;
+	this->GameModePlayData::MakeSureHeliHasProperFlaps();
 // LINE 604:
 	__asm        push   0xAC;
 	__asm        call   operator new;
@@ -2877,8 +2862,7 @@ _Tad:
 // FUNCTION: COPTER_D 0x004bf681
 void GameModePlayData::DestroyAllSurfaces() {
 // LINE 753:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::DestroyIndependentSurfaces;
+	this->GameModePlayData::DestroyIndependentSurfaces();
 // LINE 754:
 	this->GameModePlayData::DestroyPanels();
 // LINE 755:
@@ -3523,16 +3507,14 @@ void GameModePlayData::TogglePanelDisplay() {
 // LINE 974:
 	this->bPanelsVisibleWhenInCopter = 0x0;
 // LINE 975:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::HidePanels;
+	this->GameModePlayData::HidePanels();
 // LINE 977:
 	__asm        jmp    _T42;
 // LINE 979:
 _T30:
 	this->bPanelsVisibleWhenInCopter = 0x1;
 // LINE 980:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::ShowPanels;
+	this->GameModePlayData::ShowPanels();
 // LINE 982:
 _T42:
 	return;
@@ -3545,14 +3527,12 @@ void GameModePlayData::ToggleEquipmentDisplay() {
 	__asm        cmp    dword ptr [eax+0x30], 0;
 	__asm        je     _T26;
 // LINE 992:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::HideEquipment;
+	this->GameModePlayData::HideEquipment();
 // LINE 993:
 	__asm        jmp    _T2e;
 // LINE 994:
 _T26:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::ShowEquipment;
+	this->GameModePlayData::ShowEquipment();
 // LINE 995:
 _T2e:
 	return;
@@ -3561,8 +3541,7 @@ _T2e:
 // FUNCTION: COPTER_D 0x004bfeba
 void GameModePlayData::Shutdown() {
 // LINE 1003:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::DestroyAllSurfaces;
+	this->GameModePlayData::DestroyAllSurfaces();
 // LINE 1004:
 	return;
 }
@@ -3615,15 +3594,13 @@ _T86:
 // FUNCTION: COPTER_D 0x004bff6b
 long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
 // LINE 1046:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::MakeSureHeliHasProperFlaps;
+	this->GameModePlayData::MakeSureHeliHasProperFlaps();
 // LINE 1047:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28], 0;
 	__asm        je     _T29;
 // LINE 1048:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::ShowPanels;
+	this->GameModePlayData::ShowPanels();
 // LINE 1049:
 _T29:
 	return 0x1;
@@ -3633,8 +3610,7 @@ _T29:
 // FUNCTION: COPTER_D 0x004bffa3
 long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
 // LINE 1060:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::HidePanels;
+	this->GameModePlayData::HidePanels();
 // LINE 1065:
 	__asm        cmp    gGraduationState.nGraduationState, 1;
 	__asm        jne    _T2b;
@@ -3780,13 +3756,10 @@ void GameModePlayData::ReadUserConfigurableCommands() {
 	__asm        test   eax, eax;
 	__asm        jne    _T2d;
 // LINE 1135:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::SetUserConfigurableCommandsToDefaults;
+	this->GameModePlayData::SetUserConfigurableCommandsToDefaults();
 // LINE 1136:
 _T2d:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
+	(this + 0x70)->CommandSystem::SetUpCommandArraysFromShortcuts();
 // LINE 1137:
 	return;
 }
@@ -3913,11 +3886,7 @@ _T13d:
 // FUNCTION: COPTER_D 0x004c02ff
 void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 // LINE 1164:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x148;
-	__asm        push   eax;
-	__asm        call   MakeDefaultConfigurableShortcuts;
-	__asm        add    esp, 4;
+	MakeDefaultConfigurableShortcuts((this + 0x148));
 // LINE 1165:
 	return;
 }
@@ -4975,13 +4944,9 @@ _Tf78:
 // FUNCTION: COPTER_D 0x004c12a8
 void GameModeHangarData::GameModeHangarData() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCoreData::GameModeCoreData;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x18;
-	__asm        call   CommandSystem::CommandSystem;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923D0;
+	this->GameModeCoreData::GameModeCoreData();
+	(this + 0x18)->CommandSystem::CommandSystem();
+	this-><GameModeHangarData+0x00> = 0x5923d0;
 // LINE 1427:
 	this->lPauseCount = 0x0;
 // LINE 1428:
@@ -4993,8 +4958,7 @@ void GameModeHangarData::GameModeHangarData() {
 // LINE 1431:
 	this->pColorTable = 0x0;
 // LINE 1432:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeHangarData::SetCommandsToDefaults;
+	this->GameModeHangarData::SetCommandsToDefaults();
 // LINE 1433:
 	return;
 
@@ -5046,8 +5010,7 @@ _T7a:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 // LINE 1445:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeHangarData::CreatePalette;
+	this->GameModeHangarData::CreatePalette();
 // LINE 1446:
 	return 0x1;
 // LINE 1447:
@@ -5210,8 +5173,7 @@ void GameModeHangarData::UsePalette() {
 // FUNCTION: COPTER_D 0x004c1595
 void GameModeHangarData::Shutdown() {
 // LINE 1510:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeHangarData::DestroyAllSurfaces;
+	this->GameModeHangarData::DestroyAllSurfaces();
 // LINE 1511:
 	return;
 }
@@ -5624,9 +5586,7 @@ _T576:
 	__asm        jmp    _T57b;
 // LINE 1568:
 _T57b:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x18;
-	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
+	(this + 0x18)->CommandSystem::SetUpCommandArraysFromShortcuts();
 // LINE 1569:
 	return;
 }
@@ -5634,18 +5594,13 @@ _T57b:
 // FUNCTION: COPTER_D 0x004c1b46
 void GameModeCatalogData::GameModeCatalogData() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCoreData::GameModeCoreData;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x18;
-	__asm        call   CommandSystem::CommandSystem;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923D4;
+	this->GameModeCoreData::GameModeCoreData();
+	(this + 0x18)->CommandSystem::CommandSystem();
+	this-><GameModeCatalogData+0x00> = 0x5923d4;
 // LINE 1586:
 	this->pCatalogWindow = 0x0;
 // LINE 1587:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCatalogData::SetCommandsToDefaults;
+	this->GameModeCatalogData::SetCommandsToDefaults();
 // LINE 1588:
 	return;
 
@@ -5697,8 +5652,7 @@ _T7a:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 // LINE 1599:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCatalogData::CreatePalette;
+	this->GameModeCatalogData::CreatePalette();
 // LINE 1600:
 	return 0x1;
 // LINE 1601:
@@ -5861,8 +5815,7 @@ void GameModeCatalogData::UsePalette() {
 // FUNCTION: COPTER_D 0x004c1e0b
 void GameModeCatalogData::Shutdown() {
 // LINE 1664:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCatalogData::DestroyAllSurfaces;
+	this->GameModeCatalogData::DestroyAllSurfaces();
 // LINE 1665:
 	return;
 }
@@ -6324,9 +6277,7 @@ _T688:
 	__asm        jmp    _T68d;
 // LINE 1694:
 _T68d:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x18;
-	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
+	(this + 0x18)->CommandSystem::SetUpCommandArraysFromShortcuts();
 // LINE 1695:
 	return;
 }
@@ -6334,18 +6285,13 @@ _T68d:
 // FUNCTION: COPTER_D 0x004c24ce
 void GameModeMissionLogData::GameModeMissionLogData() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCoreData::GameModeCoreData;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x18;
-	__asm        call   CommandSystem::CommandSystem;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923D8;
+	this->GameModeCoreData::GameModeCoreData();
+	(this + 0x18)->CommandSystem::CommandSystem();
+	this-><GameModeMissionLogData+0x00> = 0x5923d8;
 // LINE 1711:
 	this->pMissionLogWindow = 0x0;
 // LINE 1712:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeMissionLogData::SetCommandsToDefaults;
+	this->GameModeMissionLogData::SetCommandsToDefaults();
 // LINE 1713:
 	return;
 
@@ -6397,8 +6343,7 @@ _T7a:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 // LINE 1724:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeMissionLogData::CreatePalette;
+	this->GameModeMissionLogData::CreatePalette();
 // LINE 1725:
 	return 0x1;
 // LINE 1726:
@@ -6561,8 +6506,7 @@ void GameModeMissionLogData::UsePalette() {
 // FUNCTION: COPTER_D 0x004c2793
 void GameModeMissionLogData::Shutdown() {
 // LINE 1789:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeMissionLogData::DestroyAllSurfaces;
+	this->GameModeMissionLogData::DestroyAllSurfaces();
 // LINE 1790:
 	return;
 }
@@ -7024,9 +6968,7 @@ _T688:
 	__asm        jmp    _T68d;
 // LINE 1819:
 _T68d:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x18;
-	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
+	(this + 0x18)->CommandSystem::SetUpCommandArraysFromShortcuts();
 // LINE 1820:
 	return;
 }
@@ -7034,18 +6976,13 @@ _T68d:
 // FUNCTION: COPTER_D 0x004c2e56
 void GameModeInventoryData::GameModeInventoryData() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GameModeCoreData::GameModeCoreData;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x18;
-	__asm        call   CommandSystem::CommandSystem;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923DC;
+	this->GameModeCoreData::GameModeCoreData();
+	(this + 0x18)->CommandSystem::CommandSystem();
+	this-><GameModeInventoryData+0x00> = 0x5923dc;
 // LINE 1833:
 	this->pInventoryWindow = 0x0;
 // LINE 1834:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeInventoryData::SetCommandsToDefaults;
+	this->GameModeInventoryData::SetCommandsToDefaults();
 // LINE 1835:
 	return;
 
@@ -7097,8 +7034,7 @@ _T7a:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 // LINE 1846:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeInventoryData::CreatePalette;
+	this->GameModeInventoryData::CreatePalette();
 // LINE 1847:
 	return 0x1;
 // LINE 1848:
@@ -7261,8 +7197,7 @@ void GameModeInventoryData::UsePalette() {
 // FUNCTION: COPTER_D 0x004c311b
 void GameModeInventoryData::Shutdown() {
 // LINE 1911:
-	__asm        mov    ecx, this;
-	__asm        call   GameModeInventoryData::DestroyAllSurfaces;
+	this->GameModeInventoryData::DestroyAllSurfaces();
 // LINE 1912:
 	return;
 }
@@ -7724,9 +7659,7 @@ _T688:
 	__asm        jmp    _T68d;
 // LINE 1940:
 _T68d:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x18;
-	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
+	(this + 0x18)->CommandSystem::SetUpCommandArraysFromShortcuts();
 // LINE 1941:
 	return;
 }

@@ -118,11 +118,7 @@ unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDest, lon
 	__asm        cmp    pDest, 0;
 	__asm        jne    _T2f;
 
-	__asm        push   0x27;
-	__asm        push   0x599DA8;
-	__asm        push   0x599DD0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x27, 0x599da8, 0x599dd0);
 	__asm        jmp    _T34;
 _T2f:
 	__asm        jmp    _T34;
@@ -142,11 +138,7 @@ _T34:
 	__asm        cmp    DestHeight, eax;
 	__asm        jge    _T6d;
 
-	__asm        push   0x2E;
-	__asm        push   0x599DD8;
-	__asm        push   0x599E00;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x2e, 0x599dd8, 0x599e00);
 	__asm        jmp    _T72;
 _T6d:
 	__asm        jmp    _T72;
@@ -156,11 +148,7 @@ _T72:
 	__asm        cmp    DestWidth, eax;
 	__asm        jge    _T97;
 
-	__asm        push   0x2F;
-	__asm        push   0x599E1C;
-	__asm        push   0x599E44;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x2f, 0x599e1c, 0x599e44);
 	__asm        jmp    _T9c;
 _T97:
 	__asm        jmp    _T9c;
@@ -339,11 +327,7 @@ unsigned long IFlatImage::Compose(/*packed*/ class IFlatImage *pDest, long DestL
 	__asm        cmp    pDest, 0;
 	__asm        jne    _T32;
 
-	__asm        push   0x86;
-	__asm        push   0x599E60;
-	__asm        push   0x599E88;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x86, 0x599e60, 0x599e88);
 	__asm        jmp    _T37;
 _T32:
 	__asm        jmp    _T37;
@@ -454,14 +438,7 @@ _T15a:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T195;
 // LINE 179:
-	__asm        mov    eax, Width;
-	__asm        push   eax;
-	__asm        mov    eax, pSource;
-	__asm        push   eax;
-	__asm        mov    eax, pDestBits;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(Width, pSource, pDestBits);
 // LINE 180:
 	pDestBits += DestStride;
 // LINE 181:
@@ -564,14 +541,7 @@ _Te5:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     _T11a;
 // LINE 232:
-	__asm        mov    eax, Width;
-	__asm        push   eax;
-	__asm        mov    eax, nPaletteIndex;
-	__asm        push   eax;
-	__asm        mov    eax, pBits;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(Width, nPaletteIndex, pBits);
 // LINE 233:
 	pBits += this->mStride;
 // LINE 234:
@@ -590,10 +560,8 @@ _T11a:
 // FUNCTION: COPTER_D 0x0048f69e
 void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor) {
 
-	__asm        mov    ecx, this;
-	__asm        call   IFlatImage::IFlatImage;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591070;
+	this->IFlatImage::IFlatImage();
+	this-><CFlatImage+0x00> = 0x591070;
 // LINE 254:
 	this-><CFlatImage+0x08> = Width;
 // LINE 255:
@@ -621,11 +589,7 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    _T93;
 _T77:
-	__asm        push   0x12A;
-	__asm        push   0x597444;
-	__asm        push   0x59A090;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x12a, 0x597444, 0x59a090);
 	__asm        jmp    _T98;
 _T93:
 	__asm        jmp    _T98;
@@ -661,11 +625,7 @@ _Tc2:
 	__asm        add    eax, 0x10;
 	__asm        jne    _T110;
 _Tf4:
-	__asm        push   0x147;
-	__asm        push   0x597444;
-	__asm        push   0x59A068;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x147, 0x597444, 0x59a068);
 	__asm        jmp    _T115;
 _T110:
 	__asm        jmp    _T115;
@@ -709,11 +669,7 @@ _T13d:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T1a2;
 
-	__asm        push   0x151;
-	__asm        push   0x597444;
-	__asm        push   0x59A080;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x151, 0x597444, 0x59a080);
 	__asm        jmp    _T1a7;
 _T1a2:
 	__asm        jmp    _T1a7;
@@ -735,19 +691,13 @@ _T1c0:
 // FUNCTION: COPTER_D 0x0048f86d
 void CFlatImage::CFlatImage(/*packed*/ class IFlatImage *pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 
-	__asm        mov    ecx, this;
-	__asm        call   IFlatImage::IFlatImage;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591070;
+	this->IFlatImage::IFlatImage();
+	this-><CFlatImage+0x00> = 0x591070;
 // LINE 279:
 	__asm        cmp    pImage, 0;
 	__asm        jne    _T43;
 
-	__asm        push   0x117;
-	__asm        push   0x599E90;
-	__asm        push   0x599EB8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x117, 0x599e90, 0x599eb8);
 	__asm        jmp    _T48;
 _T43:
 	__asm        jmp    _T48;
@@ -757,11 +707,7 @@ _T48:
 	__asm        cmp    SrcRight, eax;
 	__asm        jg     _T70;
 
-	__asm        push   0x118;
-	__asm        push   0x599EC0;
-	__asm        push   0x599EE8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x118, 0x599ec0, 0x599ee8);
 	__asm        jmp    _T75;
 _T70:
 	__asm        jmp    _T75;
@@ -771,11 +717,7 @@ _T75:
 	__asm        cmp    SrcBottom, eax;
 	__asm        jg     _T9d;
 
-	__asm        push   0x119;
-	__asm        push   0x599EFC;
-	__asm        push   0x599F24;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x119, 0x599efc, 0x599f24);
 	__asm        jmp    _Ta2;
 _T9d:
 	__asm        jmp    _Ta2;
@@ -793,11 +735,7 @@ _Tbf:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jle    _Ted;
 
-	__asm        push   0x11D;
-	__asm        push   0x599F38;
-	__asm        push   0x599F60;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x11d, 0x599f38, 0x599f60);
 	__asm        jmp    _Tf2;
 _Ted:
 	__asm        jmp    _Tf2;
@@ -811,11 +749,7 @@ _Tf7:
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        jge    _T125;
 
-	__asm        push   0x11E;
-	__asm        push   0x599F80;
-	__asm        push   0x599FA8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x11e, 0x599f80, 0x599fa8);
 	__asm        jmp    _T12a;
 _T125:
 	__asm        jmp    _T12a;
@@ -841,11 +775,7 @@ _T12a:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        jne    _T184;
 _T168:
-	__asm        push   0x12A;
-	__asm        push   0x597444;
-	__asm        push   0x59A090;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x12a, 0x597444, 0x59a090);
 	__asm        jmp    _T189;
 _T184:
 	__asm        jmp    _T189;
@@ -881,11 +811,7 @@ _T1b3:
 	__asm        add    eax, 0x10;
 	__asm        jne    _T201;
 _T1e5:
-	__asm        push   0x147;
-	__asm        push   0x597444;
-	__asm        push   0x59A068;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x147, 0x597444, 0x59a068);
 	__asm        jmp    _T206;
 _T201:
 	__asm        jmp    _T206;
@@ -944,15 +870,7 @@ _T28c:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T2ca;
 // LINE 306:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, pSource;
-	__asm        push   eax;
-	__asm        mov    eax, pBits;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(this-><CFlatImage+0x08>, pSource, pBits);
 // LINE 307:
 	pBits += this-><CFlatImage+0x14>;
 // LINE 308:
@@ -973,11 +891,7 @@ _T2cf:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T304;
 
-	__asm        push   0x151;
-	__asm        push   0x597444;
-	__asm        push   0x59A080;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x151, 0x597444, 0x59a080);
 	__asm        jmp    _T309;
 _T304:
 	__asm        jmp    _T309;
@@ -1000,11 +914,7 @@ _T31d:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T352;
 
-	__asm        push   0x134;
-	__asm        push   0x597444;
-	__asm        push   0x59A080;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x134, 0x597444, 0x59a080);
 	__asm        jmp    _T357;
 _T352:
 	__asm        jmp    _T357;
@@ -1044,11 +954,7 @@ void CFlatImage::~CFlatImage() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T3e;
 
-	__asm        push   0x151;
-	__asm        push   0x599FC8;
-	__asm        push   0x599FF0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x151, 0x599fc8, 0x599ff0);
 	__asm        jmp    _T43;
 _T3e:
 	__asm        jmp    _T43;
@@ -1065,11 +971,7 @@ _T43:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T85;
 
-	__asm        push   0x134;
-	__asm        push   0x597444;
-	__asm        push   0x59A080;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x134, 0x597444, 0x59a080);
 	__asm        jmp    _T8a;
 _T85:
 	__asm        jmp    _T8a;
@@ -1102,11 +1004,7 @@ unsigned long CFlatImage::Lock() {
 	__asm        add    eax, 0x10;
 	__asm        jne    _T5a;
 _T3e:
-	__asm        push   0x147;
-	__asm        push   0x597444;
-	__asm        push   0x59A068;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x147, 0x597444, 0x59a068);
 	__asm        jmp    _T5f;
 _T5a:
 	__asm        jmp    _T5f;
@@ -1148,11 +1046,7 @@ unsigned long CFlatImage::Unlock() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        ja     _T35;
 
-	__asm        push   0x16C;
-	__asm        push   0x59A000;
-	__asm        push   0x59A028;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x16c, 0x59a000, 0x59a028);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;
@@ -1162,11 +1056,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T63;
 
-	__asm        push   0x16D;
-	__asm        push   0x59A038;
-	__asm        push   0x59A060;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x16d, 0x59a038, 0x59a060);
 	__asm        jmp    _T68;
 _T63:
 	__asm        jmp    _T68;
@@ -1196,11 +1086,7 @@ _T68:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _Td7;
 
-	__asm        push   0x151;
-	__asm        push   0x597444;
-	__asm        push   0x59A080;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x151, 0x597444, 0x59a080);
 	__asm        jmp    _Tdc;
 _Td7:
 	__asm        jmp    _Tdc;

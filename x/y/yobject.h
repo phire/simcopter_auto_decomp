@@ -18,24 +18,14 @@ _T1f:
 	__asm        jl     _T54;
 // LINE 516:
 _T38:
-	__asm        push   0x8C085;
-	__asm        push   0x5BB9F4;
-	__asm        push   0x204;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
 // LINE 517:
 _T54:
 	__asm        movsx  eax, id;
 	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T82;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BB9D0;
-	__asm        push   0x205;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
 // LINE 519:
 _T82:
 	__asm        movsx  eax, id;
@@ -53,12 +43,7 @@ void cYObject::SetAnim(unsigned long name) {
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T38;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBB9C;
-	__asm        push   0x2F8;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
 // LINE 761:
 _T38:
 	__asm        mov    eax, this;
@@ -84,12 +69,7 @@ _T5d:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Ta4;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBB74;
-	__asm        push   0x2FB;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
 // LINE 765:
 _Ta4:
 	return;
@@ -104,12 +84,7 @@ _Ta4:
 	__asm        cmp    thing, 0;
 	__asm        jne    _T32;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBE90;
-	__asm        push   0x3FF;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbe90, 0x3ff, 0x5bba14);
 // LINE 1024:
 _T32:
 	obj = this->cYObject::GetToted();
@@ -124,12 +99,7 @@ _T32:
 	__asm        cmp    eax, 6;
 	__asm        je     _T76;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBE70;
-	__asm        push   0x402;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbe70, 0x402, 0x5bba14);
 // LINE 1027:
 _T76:
 	__asm        jmp    _T7b;
@@ -140,23 +110,13 @@ _T7b:
 	__asm        cmp    [eax+0x130], ecx;
 	__asm        je     _Tac;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBE44;
-	__asm        push   0x403;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbe44, 0x403, 0x5bba14);
 // LINE 1029:
 _Tac:
 	__asm        cmp    thing, 0;
 	__asm        jne    _Td2;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBEBC;
-	__asm        push   0x3E6;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbebc, 0x3e6, 0x5bba14);
 _Td2:
 	__asm        jmp    _Td7;
 _Td7:
@@ -194,12 +154,7 @@ _T125:
 	__asm        test   dword ptr [ebp-0x10], 0xFFFF;
 	__asm        jne    _T158;
 _T13c:
-	__asm        push   0x8C085;
-	__asm        push   0x5BBE24;
-	__asm        push   0x405;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbe24, 0x405, 0x5bba14);
 // LINE 1030:
 _T158:
 	__asm        mov    eax, thing;
@@ -211,12 +166,7 @@ _T158:
 	__asm        test   reinterpret_cast<uint32_t>(yes), 0xFFFF;
 	__asm        jne    _T191;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBDE4;
-	__asm        push   0x407;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbde4, 0x407, 0x5bba14);
 // LINE 1032:
 _T191:
 	__asm        mov    eax, obj;
@@ -224,12 +174,7 @@ _T191:
 	__asm        test   eax, eax;
 	__asm        je     _T1bf;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBDC8;
-	__asm        push   0x408;
-	__asm        push   0x5BBA14;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbdc8, 0x408, 0x5bba14);
 // LINE 1033:
 _T1bf:
 	return obj;

@@ -68,7 +68,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        cmp    b_FirstTime, 0;
 	__asm        je     _T38;
 // LINE 136:
-	__asm        call   InitGridPool;
+	InitGridPool();
 // LINE 137:
 	__asm        cmp    S_gridmempool, 0;
 	__asm        jge    _T38;
@@ -122,7 +122,7 @@ _T6a:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    goff, eax;
 // LINE 200:
-	__asm        call   VRFreeGridObj;
+	VRFreeGridObj();
 // LINE 201:
 	GridRotate = S2AllocMem1(0x0, (GridNVerts << 0x4), 0x59d2dc, S_gridmempool);
 // LINE 202:
@@ -443,10 +443,7 @@ _T68a:
 // FUNCTION: COPTER_D 0x004d71d7
 void VRFreeGridObj() {
 // LINE 364:
-	__asm        mov    eax, S_gridmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(S_gridmempool);
 // LINE 365:
 }
 

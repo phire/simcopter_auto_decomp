@@ -37,12 +37,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 // LINE 40:
 	gszCommandLine[0] = 0x0;
 // LINE 41:
-	__asm        push   0x80;
-	__asm        mov    eax, CommandLine;
-	__asm        push   eax;
-	__asm        push   0x5C2848;
-	__asm        call   strncpy;
-	__asm        add    esp, 0xC;
+	strncpy(0x80, CommandLine, 0x5c2848);
 // LINE 43:
 	__asm        lea    eax, TimerFrequency<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;
@@ -121,7 +116,7 @@ _T100:
 	__asm        jmp    _T114;
 // LINE 63:
 _T114:
-	__asm        call   ClearWindowsSystemPalette;
+	ClearWindowsSystemPalette();
 // LINE 64:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    eax, [eax];

@@ -215,15 +215,9 @@ _T37:
 // LINE 122:
 	heliPassengerData->lPassengerCount++;
 // LINE 125:
-	__asm        mov    eax, heliPassengerData;
-	__asm        push   eax;
-	__asm        call   HeliPassengerFitToSeats;
-	__asm        add    esp, 4;
+	HeliPassengerFitToSeats(heliPassengerData);
 // LINE 126:
-	__asm        mov    eax, heliPassengerData;
-	__asm        push   eax;
-	__asm        call   HeliPassengerSetChanged;
-	__asm        add    esp, 4;
+	HeliPassengerSetChanged(heliPassengerData);
 // LINE 130:
 	return 0x1;
 // LINE 132:
@@ -334,15 +328,9 @@ int32_t HeliPassengerRemove(/*packed*/ struct tagHeliPassengerData *heliPassenge
 // LINE 183:
 	heliPassengerData->lPassengerCount--;
 // LINE 186:
-	__asm        mov    eax, heliPassengerData;
-	__asm        push   eax;
-	__asm        call   HeliPassengerFitToSeats;
-	__asm        add    esp, 4;
+	HeliPassengerFitToSeats(heliPassengerData);
 // LINE 187:
-	__asm        mov    eax, heliPassengerData;
-	__asm        push   eax;
-	__asm        call   HeliPassengerSetChanged;
-	__asm        add    esp, 4;
+	HeliPassengerSetChanged(heliPassengerData);
 // LINE 188:
 	return 0x1;
 // LINE 192:

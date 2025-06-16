@@ -103,10 +103,8 @@ _T39:
 // FUNCTION: COPTER_D 0x0049adc3
 void CDefaultCommander::CDefaultCommander() {
 
-	__asm        mov    ecx, this;
-	__asm        call   ICommander::ICommander;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5912D0;
+	this->ICommander::ICommander();
+	this-><CDefaultCommander+0x00> = 0x5912d0;
 // LINE 45:
 	return;
 
@@ -120,8 +118,7 @@ void CDefaultCommander::~CDefaultCommander() {
 // LINE 49:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   ICommander::~ICommander;
+	this->ICommander::~ICommander();
 }
 
 // FUNCTION: COPTER_D 0x0049ae14
@@ -166,11 +163,7 @@ unsigned long CDefaultCommander::OnWindowActivate() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T32;
 
-	__asm        push   0x51;
-	__asm        push   0x59A29C;
-	__asm        push   0x59A2C4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x51, 0x59a29c, 0x59a2c4);
 	__asm        jmp    _T37;
 _T32:
 	__asm        jmp    _T37;

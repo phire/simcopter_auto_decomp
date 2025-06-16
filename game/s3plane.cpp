@@ -424,8 +424,8 @@ struct VRFaceInfo{ // packed(0x20 bytes) TI: 0x30c0
 // SYNTHETIC: COPTER_D 0x0052b0c0
 static void $E8() {
 
-	__asm        call   $E4;
-	__asm        call   $E7;
+	$E4();
+	$E7();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -877,8 +877,7 @@ _Tdc:
 // LINE 661:
 // Block end:
 _T129:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::PlaneSoundDriver;
+	this->PlaneClass::PlaneSoundDriver();
 // LINE 663:
 	__asm        jmp    _T16b;
 // LINE 667:
@@ -890,11 +889,7 @@ _T13b:
 	__asm        test   eax, eax;
 	__asm        jne    _T166;
 
-	__asm        push   0x29B;
-	__asm        push   0x5B76A0;
-	__asm        push   0x5B76C4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x29b, 0x5b76a0, 0x5b76c4);
 	__asm        jmp    _T16b;
 _T166:
 	__asm        jmp    _T16b;
@@ -906,8 +901,7 @@ _T16b:
 // FUNCTION: COPTER_D 0x0052b64a
 void PlaneClass::Reset() {
 // LINE 689:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::UnPlacePlane;
+	this->PlaneClass::UnPlacePlane();
 // LINE 691:
 	this->flags[2] = 0x0;
 // LINE 692:
@@ -968,9 +962,7 @@ _T3a:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T66;
 // LINE 757:
-	__asm        push   0x1C;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x1c);
 // LINE 759:
 _T66:
 	__asm        push   0x1B;
@@ -979,9 +971,7 @@ _T66:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T83;
 // LINE 761:
-	__asm        push   0x1B;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x1b);
 // LINE 763:
 _T83:
 	return;
@@ -1019,11 +1009,7 @@ _Tf3:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 783:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0x1C;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x1c);
 // LINE 785:
 	__asm        jmp    _T12b;
 _T12b:
@@ -1041,11 +1027,7 @@ _T12b:
 	S3DSPlay(0x1, (this + 0x70), 0x1b);
 // LINE 791:
 _T15f:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0x1B;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x1b);
 // LINE 793:
 	__asm        jmp    _T18f;
 // LINE 795:
@@ -1056,9 +1038,7 @@ _T172:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T18f;
 // LINE 797:
-	__asm        push   0x1B;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x1b);
 // LINE 801:
 _T18f:
 	__asm        jmp    _T1ce;
@@ -1070,9 +1050,7 @@ _T194:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T1b1;
 // LINE 805:
-	__asm        push   0x1C;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x1c);
 // LINE 807:
 _T1b1:
 	__asm        push   0x1B;
@@ -1081,9 +1059,7 @@ _T1b1:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T1ce;
 // LINE 809:
-	__asm        push   0x1B;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x1b);
 // LINE 813:
 _T1ce:
 	__asm        jmp    _T2c9;
@@ -1102,9 +1078,7 @@ _T1d8:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T204;
 // LINE 820:
-	__asm        push   0x29;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x29);
 // LINE 822:
 _T204:
 	return;
@@ -1142,11 +1116,7 @@ _T274:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 842:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0x29;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x29);
 // LINE 844:
 	__asm        jmp    _T2c9;
 // LINE 846:
@@ -1157,9 +1127,7 @@ _T2ac:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T2c9;
 // LINE 848:
-	__asm        push   0x29;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x29);
 // LINE 852:
 _T2c9:
 	return;
@@ -1180,8 +1148,7 @@ _T21:
 	__asm        test   eax, eax;
 	__asm        jne    _T3d;
 // LINE 875:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::UnPlacePlane;
+	this->PlaneClass::UnPlacePlane();
 // LINE 876:
 	return;
 // LINE 880:
@@ -1200,8 +1167,7 @@ _T57:
 	__asm        je     _T6e;
 // LINE 882:
 _T66:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::HandleUFOStuff;
+	this->PlaneClass::HandleUFOStuff();
 // LINE 885:
 _T6e:
 	__asm        jmp    _T73;
@@ -1211,8 +1177,7 @@ _T73:
 	__asm        test   eax, eax;
 	__asm        je     _T8a;
 // LINE 887:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::SetCrashWhenReady;
+	this->PlaneClass::SetCrashWhenReady();
 // LINE 892:
 _T8a:
 	__asm        jmp    _T8f;
@@ -1222,8 +1187,7 @@ _T8f:
 	__asm        test   eax, eax;
 	__asm        je     _Tab;
 // LINE 894:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::MoveForward;
+	this->PlaneClass::MoveForward();
 // LINE 895:
 	return;
 // LINE 898:
@@ -1236,8 +1200,7 @@ _Tab:
 	__asm        jmp    _T139;
 // LINE 904:
 _Tbe:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::MoveForward;
+	this->PlaneClass::MoveForward();
 // LINE 907:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::HaveIReachedNextLoc;
@@ -1260,8 +1223,7 @@ _Tbe:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::LinkToCell;
 // LINE 914:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::AdjustNextAltitude;
+	this->PlaneClass::AdjustNextAltitude();
 // LINE 920:
 _T124:
 	__asm        mov    eax, this;
@@ -1348,10 +1310,7 @@ _T35:
 // LINE 1191:
 	mp.i2num = 0x1;
 // LINE 1192:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 1196:
 _T5d:
 	__asm        mov    eax, this;
@@ -1424,11 +1383,7 @@ _Tc6:
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    _T15c;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T161;
 _T15c:
 	__asm        jmp    _T161;
@@ -1469,14 +1424,7 @@ _T166:
 	__asm        test   al, 1;
 	__asm        je     _T1e8;
 // LINE 1238:
-	__asm        mov    eax, this;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((this + 0x8), (this + 0x7c));
 // LINE 1241:
 _T1e8:
 	this->flags[2] = 0x0;
@@ -1721,11 +1669,7 @@ _Ta0:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T160;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T165;
 _T160:
 	__asm        jmp    _T165;
@@ -1745,11 +1689,7 @@ _T16a:
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T1b4;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T1b9;
 _T1b4:
 	__asm        jmp    _T1b9;
@@ -1769,13 +1709,7 @@ _T1be:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jge    _T1fd;
 // LINE 1429:
-	__asm        push   1;
-	__asm        lea    eax, newloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, newloc.x, cptr);
 // LINE 1430:
 	this->smokeTime = 0x3333;
 // LINE 1434:
@@ -2006,25 +1940,11 @@ _T147:
 	__asm        neg    eax;
 	__asm        sub    loc.z, eax;
 // LINE 1540:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        mov    eax, loc.z;
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionStart;
-	__asm        add    esp, 0x18;
+	S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
 // LINE 1542:
 	S3DSPlay(0x0, sloc.x, 0x1a);
 // LINE 1545:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::UnPlacePlane;
+	this->PlaneClass::UnPlacePlane();
 // LINE 1546:
 	this->flags[3] = 0x0;
 // LINE 1549:
@@ -2065,10 +1985,7 @@ _T2e4:
 // LINE 1570:
 	mp.id = this->missionId;
 // LINE 1571:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 1572:
 	this->missionId = new_mission_id;
 // LINE 1574:
@@ -2225,10 +2142,7 @@ _T55b:
 // LINE 1623:
 	mp.id = this->missionId;
 // LINE 1624:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 1626:
 	mp.op = 0x0;
 // LINE 1627:
@@ -2240,10 +2154,7 @@ _T55b:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 1629:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 1635:
 _T5cc:
 	return 0x1;
@@ -2319,25 +2230,11 @@ _T5e3:
 	__asm        neg    eax;
 	__asm        sub    loc.z, eax;
 // LINE 1662:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        mov    eax, loc.z;
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionStart;
-	__asm        add    esp, 0x18;
+	S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
 // LINE 1664:
 	S3DSPlay(0x0, sloc.x, 0x1a);
 // LINE 1667:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::UnPlacePlane;
+	this->PlaneClass::UnPlacePlane();
 // LINE 1668:
 	this->flags[3] = 0x0;
 // LINE 1710:
@@ -2419,10 +2316,7 @@ _T83c:
 // LINE 1735:
 	mp.id = this->missionId;
 // LINE 1736:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 1740:
 	return 0x1;
 // LINE 1743:
@@ -2492,11 +2386,7 @@ void PlaneClass::UnlinkFromCell(const /*packed*/ struct Point2d& point) {
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T55;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -2509,11 +2399,7 @@ _T5f:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
 
-	__asm        push   0x728;
-	__asm        push   0x5B76DC;
-	__asm        push   0x5B7700;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x728, 0x5b76dc, 0x5b7700);
 	__asm        jmp    _T90;
 _T8b:
 	__asm        jmp    _T90;
@@ -2551,11 +2437,7 @@ _Tdd:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T105;
 
-	__asm        push   0x73E;
-	__asm        push   0x5B770C;
-	__asm        push   0x5B7730;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x73e, 0x5b770c, 0x5b7730);
 	__asm        jmp    _T10a;
 _T105:
 	__asm        jmp    _T10a;
@@ -2582,11 +2464,7 @@ void PlaneClass::LinkToCell(const /*packed*/ struct Point2d& point) {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T55;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -2602,11 +2480,7 @@ _T5f:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    _T93;
 
-	__asm        push   0x758;
-	__asm        push   0x5B773C;
-	__asm        push   0x5B7760;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x758, 0x5b773c, 0x5b7760);
 	__asm        jmp    _T98;
 _T93:
 	__asm        jmp    _T98;
@@ -2637,11 +2511,7 @@ void PlaneClass::AdjustCurrentPosition() {
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T56;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T5b;
 _T56:
 	__asm        jmp    _T5b;
@@ -2654,11 +2524,7 @@ _T60:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8c;
 
-	__asm        push   0x773;
-	__asm        push   0x5B7780;
-	__asm        push   0x5B77A4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x773, 0x5b7780, 0x5b77a4);
 	__asm        jmp    _T91;
 _T8c:
 	__asm        jmp    _T91;
@@ -2715,11 +2581,7 @@ void PlaneClass::AdjustNextPosition() {
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        jne    _T55;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -2732,11 +2594,7 @@ _T5f:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
 
-	__asm        push   0x79C;
-	__asm        push   0x5B77B0;
-	__asm        push   0x5B77D4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x79c, 0x5b77b0, 0x5b77d4);
 	__asm        jmp    _T90;
 _T8b:
 	__asm        jmp    _T90;
@@ -2795,14 +2653,7 @@ _T90:
 	__asm        test   al, 1;
 	__asm        je     _T13a;
 // LINE 1965:
-	__asm        mov    eax, this;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((this + 0x8), (this + 0x7c));
 // LINE 1967:
 _T13a:
 	return;
@@ -2900,11 +2751,7 @@ _Tb2:
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        jne    _T138;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T13d;
 _T138:
 	__asm        jmp    _T13d;
@@ -3214,14 +3061,11 @@ _T31d:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::LinkToCell;
 // LINE 2203:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::AdjustCurrentPosition;
+	this->PlaneClass::AdjustCurrentPosition();
 // LINE 2204:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::AdjustNextPosition;
+	this->PlaneClass::AdjustNextPosition();
 // LINE 2205:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::AdjustNextAltitude;
+	this->PlaneClass::AdjustNextAltitude();
 // LINE 2208:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
@@ -3287,11 +3131,7 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        cmp    object, 0;
 	__asm        jne    _T5a;
 // LINE 2300:
-	__asm        push   0x8FC;
-	__asm        push   0x5B77E0;
-	__asm        push   0x5B7804;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x8fc, 0x5b77e0, 0x5b7804);
 	__asm        jmp    _T53;
 
 	__asm        jmp    _T53;
@@ -3379,14 +3219,11 @@ _T144:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::LinkToCell;
 // LINE 2423:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::AdjustCurrentPosition;
+	this->PlaneClass::AdjustCurrentPosition();
 // LINE 2424:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::AdjustNextPosition;
+	this->PlaneClass::AdjustNextPosition();
 // LINE 2425:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::AdjustNextAltitude;
+	this->PlaneClass::AdjustNextAltitude();
 // LINE 2429:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3426,8 +3263,7 @@ void PlaneClass::HandleUFOStuff() {
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    _T34;
 // LINE 2482:
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::TurnOffShields;
+	this->PlaneClass::TurnOffShields();
 // LINE 2487:
 _T34:
 	__asm        xor    eax, eax;
@@ -3471,7 +3307,7 @@ int32_t S3PlaneCrashWhenReady(long mission_id) {
 // FUNCTION: COPTER_D 0x0052d6f5
 void ResetAllPlanes() {
 // LINE 2597:
-	__asm        call   PlaneClass::ResetAll;
+	PlaneClass::ResetAll();
 // LINE 2598:
 	return;
 }
@@ -3479,7 +3315,7 @@ void ResetAllPlanes() {
 // FUNCTION: COPTER_D 0x0052d70a
 void ItterateAllPlanes() {
 // LINE 2620:
-	__asm        call   PlaneClass::ItterateAll;
+	PlaneClass::ItterateAll();
 // LINE 2621:
 	return;
 }
@@ -3685,18 +3521,7 @@ _T24c:
 // FUNCTION: COPTER_D 0x0052d975
 void PlaneHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, /*packed*/ struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
 // LINE 2708:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   PlaneClass::HitDispatch;
-	__asm        add    esp, 0x14;
+	PlaneClass::HitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 2709:
 	return;
 }

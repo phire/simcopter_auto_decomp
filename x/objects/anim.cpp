@@ -94,34 +94,17 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        cmp    cCopterAnim::fsList, 0;
 	__asm        jne    _T47;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF6D8;
-	__asm        push   0x26;
-	__asm        push   0x5BF6E0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf6d8, 0x26, 0x5bf6e0);
 // LINE 39:
 _T47:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jne    _T6d;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF704;
-	__asm        push   0x27;
-	__asm        push   0x5BF728;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf704, 0x27, 0x5bf728);
 // LINE 43:
 _T6d:
-	__asm        push   0x10;
-	__asm        lea    eax, tmp[0];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xC;
-	__asm        push   eax;
-	__asm        call   Memory::BlockMove;
-	__asm        add    esp, 0xC;
+	Memory::BlockMove(0x10, tmp[0], (this + 0xc));
 // LINE 44:
 	__asm        mov    tmp[4], 0x69;
 	__asm        mov    ax, expectondisk;
@@ -160,12 +143,7 @@ _Tef:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        jne    _T115;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BEB8C;
-	__asm        push   0x11E;
-	__asm        push   0x5BE4F0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5beb8c, 0x11e, 0x5be4f0);
 _T115:
 	__asm        jmp    _T11a;
 _T11a:
@@ -177,36 +155,21 @@ _T11a:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T153;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BEB58;
-	__asm        push   0x131;
-	__asm        push   0x5BE4F0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5beb58, 0x131, 0x5be4f0);
 _T153:
 	__asm        jmp    _T17e;
 _T158:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     _T17e;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BEB1C;
-	__asm        push   0x132;
-	__asm        push   0x5BE4F0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5beb1c, 0x132, 0x5be4f0);
 _T17e:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T26c;
 
 	__asm        jmp    _T1a9;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BEAF0;
-	__asm        push   0x134;
-	__asm        push   0x5BE4F0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5beaf0, 0x134, 0x5be4f0);
 _T1a9:
 	__asm        push   0x50;
 	__asm        call   operator new;
@@ -230,7 +193,7 @@ _T1a9:
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     _T206;
 
-	__asm        call   _cArray::MakeTable;
+	_cArray::MakeTable();
 _T206:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
@@ -273,12 +236,7 @@ _T26c:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T292;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BEAD4;
-	__asm        push   0x137;
-	__asm        push   0x5BE4F0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bead4, 0x137, 0x5be4f0);
 _T292:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, this;

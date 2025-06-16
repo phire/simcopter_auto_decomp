@@ -1070,12 +1070,9 @@ struct bidirectional_iterator<basic_string<char>,int>{ // packed(0x1 bytes) TI: 
 // FUNCTION: COPTER_D 0x004aca90
 void BoxWindow::BoxWindow() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
+	this->GraphicWindow::GraphicWindow();
+	this->bDrawOutline = 0x1;
+	this->bDrawFill = 0x0;
 	__asm        jmp    _T2d;
 _T2d:
 	this->nPaletteIndexFill = GraphicWindow::colorConstants.nPaletteIndexWhite;
@@ -1182,15 +1179,11 @@ void BoxWindow::SetOutlineAndFillDrawing(int32_t bNewDrawOutline, int32_t bNewDr
 // FUNCTION: COPTER_D 0x004acc43
 void TextWindow::TextWindow() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
+	this->GraphicWindow::GraphicWindow();
 	__asm        jmp    _T19;
 _T19:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x84;
-	__asm        call   MFont::MFont;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591A90;
+	(this + 0x84)->MFont::MFont();
+	this-><TextWindow+0x00> = 0x591a90;
 // LINE 96:
 	this->bDrawOpaqueBackground = 0x0;
 // LINE 99:
@@ -1232,14 +1225,9 @@ void TextWindow::TextWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewI
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        jmp    _T2d;
 _T2d:
-	__asm        mov    eax, nNewWindowTitleTextID;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x84;
-	__asm        call   MFont::MFont;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591A90;
+	this->nWindowTitleTextID = nNewWindowTitleTextID;
+	(this + 0x84)->MFont::MFont();
+	this-><TextWindow+0x00> = 0x591a90;
 // LINE 114:
 	this->bDrawOpaqueBackground = 0x0;
 // LINE 117:
@@ -1257,8 +1245,7 @@ _T2d:
 	__asm        add    ecx, 0x84;
 	__asm        call   dword ptr [eax];
 // LINE 121:
-	__asm        mov    ecx, this;
-	__asm        call   TextWindow::LoadStrings;
+	this->TextWindow::LoadStrings();
 // LINE 122:
 	return;
 
@@ -1282,11 +1269,8 @@ void TextWindow::TextWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewI
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        jmp    _T2d;
 _T2d:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x84;
-	__asm        call   MFont::MFont;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591A90;
+	(this + 0x84)->MFont::MFont();
+	this-><TextWindow+0x00> = 0x591a90;
 // LINE 132:
 	this->bDrawOpaqueBackground = 0x0;
 // LINE 135:
@@ -1515,9 +1499,7 @@ _T8f:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tda;
 _Tda:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Te9;
 _Te9:
 	__asm        jmp    _Tee;
@@ -1636,9 +1618,7 @@ _T266:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2ac;
 _T2ac:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2bb;
 _T2bb:
 	__asm        jmp    _T2c0;
@@ -1788,9 +1768,7 @@ _T498:
 	__asm        add    esp, 4;
 	__asm        jmp    _T4e3;
 _T4e3:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4f2;
 _T4f2:
 	__asm        jmp    _T4f7;
@@ -1831,9 +1809,7 @@ _T534:
 	__asm        add    esp, 4;
 	__asm        jmp    _T587;
 _T587:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T596;
 _T596:
 	__asm        mov    eax, [ebp-0x106C];
@@ -2568,14 +2544,10 @@ _T7e:
 // FUNCTION: COPTER_D 0x004ade3d
 void ButtonWindow::ButtonWindow() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
+	this->GraphicWindow::GraphicWindow();
+	this->nButtonState = 0x1;
+	this->bEnabled = 0x1;
+	this->nButtonTextHeight = 0x0;
 	__asm        jmp    _T37;
 _T37:
 	this->sizeTextOffset.cx = 0x2;
@@ -2618,9 +2590,7 @@ _Tbf:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tfb;
 _Tfb:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T10a;
 _T10a:
 	__asm        jmp    _T10f;
@@ -2783,9 +2753,7 @@ _Td5:
 	__asm        add    esp, 4;
 	__asm        jmp    _T111;
 _T111:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T120;
 _T120:
 	__asm        jmp    _T125;
@@ -2885,9 +2853,7 @@ _T200:
 	__asm        add    esp, 4;
 	__asm        jmp    _T23c;
 _T23c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T24b;
 _T24b:
 	__asm        jmp    _T250;
@@ -3826,9 +3792,7 @@ _T2a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T66;
 _T66:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T75;
 _T75:
 	__asm        jmp    _T7a;
@@ -3869,9 +3833,7 @@ _Tab:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tef;
 _Tef:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tfe;
 _Tfe:
 	__asm        mov    eax, [ebp-0x30];
@@ -4052,9 +4014,7 @@ _T44:
 	__asm        add    esp, 4;
 	__asm        jmp    _T80;
 _T80:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T8f;
 _T8f:
 	__asm        jmp    _T94;
@@ -4095,9 +4055,7 @@ _Tc5:
 	__asm        add    esp, 4;
 	__asm        jmp    _T109;
 _T109:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T118;
 _T118:
 	__asm        mov    eax, [ebp-0x30];
@@ -4255,9 +4213,7 @@ _T2a1:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2dd;
 _T2dd:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2ec;
 _T2ec:
 	__asm        jmp    _T2f1;
@@ -4298,9 +4254,7 @@ _T322:
 	__asm        add    esp, 4;
 	__asm        jmp    _T366;
 _T366:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T375;
 _T375:
 	__asm        mov    eax, [ebp-0x60];
@@ -4682,9 +4636,7 @@ _T50:
 	__asm        add    esp, 4;
 	__asm        jmp    _T8c;
 _T8c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T9b;
 _T9b:
 	__asm        jmp    _Ta0;
@@ -4725,9 +4677,7 @@ _Td1:
 	__asm        add    esp, 4;
 	__asm        jmp    _T115;
 _T115:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T124;
 _T124:
 	__asm        mov    eax, [ebp-0x30];
@@ -4885,9 +4835,7 @@ _T2ad:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2e9;
 _T2e9:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2f8;
 _T2f8:
 	__asm        jmp    _T2fd;
@@ -4928,9 +4876,7 @@ _T32e:
 	__asm        add    esp, 4;
 	__asm        jmp    _T372;
 _T372:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T381;
 _T381:
 	__asm        mov    eax, [ebp-0x60];
@@ -5077,8 +5023,7 @@ void RadioButtonWindow::~RadioButtonWindow() {
 _T1a:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x004afd2a
@@ -5401,9 +5346,7 @@ _T50:
 	__asm        add    esp, 4;
 	__asm        jmp    _Ta5;
 _Ta5:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Taf:
 	__asm        jmp    _Tb4;
 _Tb4:
@@ -5462,9 +5405,7 @@ _T109:
 	__asm        add    esp, 4;
 	__asm        jmp    _T15d;
 _T15d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T167:
 	__asm        jmp    _T16c;
 _T16c:
@@ -5615,9 +5556,7 @@ _T8a:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tdf;
 _Tdf:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Te9:
 	__asm        jmp    _Tee;
 _Tee:
@@ -5676,9 +5615,7 @@ _T143:
 	__asm        add    esp, 4;
 	__asm        jmp    _T197;
 _T197:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T1a1:
 	__asm        jmp    _T1a6;
 _T1a6:
@@ -5828,9 +5765,7 @@ _T6b:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tc0;
 _Tc0:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Tca:
 	__asm        jmp    _Tcf;
 _Tcf:
@@ -5889,9 +5824,7 @@ _T124:
 	__asm        add    esp, 4;
 	__asm        jmp    _T178;
 _T178:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T182:
 	__asm        jmp    _T187;
 _T187:
@@ -6810,24 +6743,15 @@ _Tbf:
 // FUNCTION: COPTER_D 0x004b1134
 void SliderWindow::SliderWindow() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 8;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x8C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 8;
+	this->GraphicWindow::GraphicWindow();
+	this->nSliderWindowDirection = 0x0;
+	this->lSliderMinimumValue = 0x0;
+	this->lSliderMaximumValue = 0x8;
+	this->lSliderCurrentValue = 0x0;
+	this->lMinimumThumbPosition = 0x0;
+	this->lCurrentThumbPosition = 0x0;
+	this->lMaximumThumbPosition = 0x0;
+	this->lThumbLimitIndentation = 0x8;
 	__asm        jmp    _T78;
 _T78:
 	__asm        jmp    _T7d;
@@ -6989,9 +6913,7 @@ _T176:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1b2;
 _T1b2:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1c1;
 _T1c1:
 	__asm        jmp    _T1c6;
@@ -7091,9 +7013,7 @@ _T2a1:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2dd;
 _T2dd:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2ec;
 _T2ec:
 	__asm        jmp    _T2f1;
@@ -7191,9 +7111,7 @@ _T3c9:
 	__asm        add    esp, 4;
 	__asm        jmp    _T405;
 _T405:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T414;
 _T414:
 	__asm        jmp    _T419;
@@ -7297,9 +7215,7 @@ _T513:
 	__asm        add    esp, 4;
 	__asm        jmp    _T54f;
 _T54f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T55e;
 _T55e:
 	__asm        jmp    _T563;
@@ -7399,9 +7315,7 @@ _T650:
 	__asm        add    esp, 4;
 	__asm        jmp    _T68c;
 _T68c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T69b;
 _T69b:
 	__asm        jmp    _T6a0;
@@ -7486,8 +7400,7 @@ void SliderWindow::~SliderWindow() {
 
 	this-><SliderWindow+0x00> = 0x591ee8;
 // LINE 1159:
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::DestroyImage;
+	this->SliderWindow::DestroyImage();
 // LINE 1160:
 	__asm        jmp    _T22;
 _T22:
@@ -7555,8 +7468,7 @@ _Tbc:
 _Tea:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x004b1adc
@@ -7870,8 +7782,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004b1e64
 void SliderWindow::DestroyImage() {
 // LINE 1208:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 1209:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
@@ -8805,9 +8716,7 @@ _Tc8:
 	__asm        add    esp, 4;
 	__asm        jmp    _T104;
 _T104:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T113;
 _T113:
 	__asm        jmp    _T118;
@@ -8848,9 +8757,7 @@ _T149:
 	__asm        add    esp, 4;
 	__asm        jmp    _T18d;
 _T18d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T19c;
 _T19c:
 	__asm        mov    eax, [ebp-0x30];
@@ -9066,9 +8973,7 @@ _Tf7:
 	__asm        add    esp, 4;
 	__asm        jmp    _T133;
 _T133:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T142;
 _T142:
 	__asm        jmp    _T147;
@@ -9195,9 +9100,7 @@ _T271:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2ad;
 _T2ad:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2bc;
 _T2bc:
 	__asm        jmp    _T2c1;
@@ -10788,9 +10691,7 @@ _T50:
 	__asm        add    esp, 4;
 	__asm        jmp    _Ta5;
 _Ta5:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Taf:
 	__asm        jmp    _Tb4;
 _Tb4:
@@ -10848,9 +10749,7 @@ _T109:
 	__asm        add    esp, 4;
 	__asm        jmp    _T15a;
 _T15a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T164:
 	__asm        jmp    _T169;
 _T169:
@@ -10933,11 +10832,8 @@ _T257:
 _T25c:
 	__asm        jmp    _T261;
 _T261:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   MFont::MFont;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5920C8;
+	(this + 0x8c)->MFont::MFont();
+	this-><ListBoxWindow+0x00> = 0x5920c8;
 // LINE 2079:
 	this->colorFont.Blue = 0x0;
 	this->colorFont.Green = this->colorFont.Blue;
@@ -10975,8 +10871,7 @@ _T261:
 	__asm        add    ecx, 0x8C;
 	__asm        call   dword ptr [eax];
 // LINE 2095:
-	__asm        mov    ecx, this;
-	__asm        call   ListBoxWindow::CalculateAllMetrics;
+	this->ListBoxWindow::CalculateAllMetrics();
 // LINE 2096:
 	return;
 
@@ -11037,9 +10932,7 @@ _T64:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tb9;
 _Tb9:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Tc3:
 	__asm        jmp    _Tc8;
 _Tc8:
@@ -11097,9 +10990,7 @@ _T11d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T16e;
 _T16e:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T178:
 	__asm        jmp    _T17d;
 _T17d:
@@ -11182,11 +11073,8 @@ _T26b:
 _T270:
 	__asm        jmp    _T275;
 _T275:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   MFont::MFont;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5920C8;
+	(this + 0x8c)->MFont::MFont();
+	this-><ListBoxWindow+0x00> = 0x5920c8;
 // LINE 2108:
 	this->colorFont.Blue = 0x0;
 	this->colorFont.Green = this->colorFont.Blue;
@@ -11224,8 +11112,7 @@ _T275:
 	__asm        add    ecx, 0x8C;
 	__asm        call   dword ptr [eax];
 // LINE 2124:
-	__asm        mov    ecx, this;
-	__asm        call   ListBoxWindow::CalculateAllMetrics;
+	this->ListBoxWindow::CalculateAllMetrics();
 // LINE 2125:
 	return;
 
@@ -12431,9 +12318,7 @@ _Te9:
 	__asm        add    esp, 4;
 	__asm        jmp    _T134;
 _T134:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T143;
 _T143:
 	__asm        jmp    _T148;
@@ -12525,9 +12410,7 @@ _T24c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T28c;
 _T28c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T29b;
 _T29b:
 	__asm        jmp    _T2a0;
@@ -12630,9 +12513,7 @@ _T3ac:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3f7;
 _T3f7:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T406;
 _T406:
 	__asm        jmp    _T40b;
@@ -13941,9 +13822,7 @@ _T2f8:
 	__asm        add    esp, 4;
 	__asm        jmp    _T35e;
 _T35e:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T368:
 	__asm        jmp    _T36d;
 _T36d:

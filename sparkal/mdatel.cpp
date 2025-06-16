@@ -611,12 +611,9 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0041fe57
 void MDateLocalized::MDateLocalized() {
 
-	__asm        mov    ecx, this;
-	__asm        call   MDate::MDate;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3D0;
+	this->MDate::MDate();
+	this->nLanguage = 0x0;
+	this-><MDateLocalized+0x00> = 0x58f3d0;
 // LINE 122:
 	return;
 

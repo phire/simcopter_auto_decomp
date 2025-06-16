@@ -276,13 +276,7 @@ void MIFF::MIFF(char * szFileOrPath) {
 	__asm        cmp    szFileOrPath, 0;
 	__asm        je     _T5b;
 
-	__asm        mov    eax, szFileOrPath;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFileOrPath, (this + 0x4));
 	__asm        jmp    _T62;
 _T5b:
 	this->szFilePath[0] = 0x0;

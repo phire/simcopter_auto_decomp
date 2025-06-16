@@ -467,11 +467,7 @@ _T19f:
 	__asm        cmp    dword ptr [ebp-0x108], 0;
 	__asm        jne    _T1ea;
 _T1ce:
-	__asm        push   0x12A;
-	__asm        push   0x597444;
-	__asm        push   0x59A090;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x12a, 0x597444, 0x59a090);
 	__asm        jmp    _T1ef;
 _T1ea:
 	__asm        jmp    _T1ef;
@@ -508,11 +504,7 @@ _T223:
 
 	__asm        jmp    _T281;
 _T265:
-	__asm        push   0x147;
-	__asm        push   0x597444;
-	__asm        push   0x59A068;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x147, 0x597444, 0x59a068);
 	__asm        jmp    _T286;
 _T281:
 	__asm        jmp    _T286;
@@ -545,11 +537,7 @@ _T2df:
 	__asm        cmp    InputFile.x_gcount, eax;
 	__asm        je     _T30a;
 
-	__asm        push   0x54;
-	__asm        push   0x59A9E4;
-	__asm        push   0x59AA0C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x54, 0x59a9e4, 0x59aa0c);
 	__asm        jmp    _T30f;
 _T30a:
 	__asm        jmp    _T30f;
@@ -567,11 +555,7 @@ _T30f:
 	__asm        cmp    dword ptr [ebp-0xF8], 0;
 	__asm        jne    _T35e;
 
-	__asm        push   0x151;
-	__asm        push   0x597444;
-	__asm        push   0x59A080;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x151, 0x597444, 0x59a080);
 	__asm        jmp    _T363;
 _T35e:
 	__asm        jmp    _T363;
@@ -586,16 +570,12 @@ _T363:
 _T375:
 	__asm        jmp    _T37a;
 _T37a:
-	__asm        lea    ecx, InputFile<ifstream+0x0c>;
-	__asm        call   ifstream::~ifstream;
-	__asm        lea    ecx, InputFile<ifstream+0x0c>;
-	__asm        call   ios::~ios;
+	InputFile<ifstream+0x0c>->ifstream::~ifstream();
+	InputFile<ifstream+0x0c>->ios::~ios();
 	__asm        jmp    _T395;
 _T395:
-	__asm        lea    ecx, NameOut<ostrstream+0x08>;
-	__asm        call   ostrstream::~ostrstream;
-	__asm        lea    ecx, NameOut<ostrstream+0x08>;
-	__asm        call   ios::~ios;
+	NameOut<ostrstream+0x08>->ostrstream::~ostrstream();
+	NameOut<ostrstream+0x08>->ios::~ios();
 	__asm        jmp    __RETURN;
 __RETURN:
 	__asm        mov    eax, this;
@@ -619,11 +599,7 @@ void CRLECompressedImage::~CRLECompressedImage() {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _T32;
 
-	__asm        push   0x6F;
-	__asm        push   0x59AA38;
-	__asm        push   0x59AA60;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x6f, 0x59aa38, 0x59aa60);
 	__asm        jmp    _T37;
 _T32:
 	__asm        jmp    _T37;
@@ -640,11 +616,7 @@ _T37:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T77;
 
-	__asm        push   0x134;
-	__asm        push   0x597444;
-	__asm        push   0x59A080;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x134, 0x597444, 0x59a080);
 	__asm        jmp    _T7c;
 _T77:
 	__asm        jmp    _T7c;
@@ -681,11 +653,7 @@ unsigned long CRLECompressedImage::Lock() {
 	__asm        add    eax, 4;
 	__asm        jne    _T65;
 _T49:
-	__asm        push   0x147;
-	__asm        push   0x597444;
-	__asm        push   0x59A068;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x147, 0x597444, 0x59a068);
 	__asm        jmp    _T6a;
 _T65:
 	__asm        jmp    _T6a;
@@ -728,11 +696,7 @@ unsigned long CRLECompressedImage::Unlock() {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        ja     _T35;
 
-	__asm        push   0x88;
-	__asm        push   0x59AA70;
-	__asm        push   0x59AA98;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x88, 0x59aa70, 0x59aa98);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;
@@ -754,11 +718,7 @@ _T3a:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T87;
 
-	__asm        push   0x151;
-	__asm        push   0x597444;
-	__asm        push   0x59A080;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x151, 0x597444, 0x59a080);
 	__asm        jmp    _T8c;
 _T87:
 	__asm        jmp    _T8c;
@@ -792,11 +752,7 @@ unsigned long CRLECompressedImage::Compose(/*packed*/ class IFlatImage *pDest, l
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        ja     _T35;
 
-	__asm        push   0x9D;
-	__asm        push   0x59AAA8;
-	__asm        push   0x59AAD0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x9d, 0x59aaa8, 0x59aad0);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;
@@ -805,11 +761,7 @@ _T3a:
 	__asm        cmp    pDest, 0;
 	__asm        jne    _T60;
 
-	__asm        push   0x9E;
-	__asm        push   0x59AAE0;
-	__asm        push   0x59AB08;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x9e, 0x59aae0, 0x59ab08);
 	__asm        jmp    _T65;
 _T60:
 	__asm        jmp    _T65;
@@ -915,11 +867,7 @@ _T12d:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T173;
 
-	__asm        push   0xC7;
-	__asm        push   0x59AB10;
-	__asm        push   0x59AB38;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xc7, 0x59ab10, 0x59ab38);
 	__asm        jmp    _T178;
 _T173:
 	__asm        jmp    _T178;
@@ -932,11 +880,7 @@ _T178:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T1a9;
 
-	__asm        push   0xC8;
-	__asm        push   0x59AB58;
-	__asm        push   0x59AB80;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xc8, 0x59ab58, 0x59ab80);
 	__asm        jmp    _T1ae;
 _T1a9:
 	__asm        jmp    _T1ae;
@@ -974,38 +918,12 @@ _T1ec:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T22f;
 // LINE 213:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(TransparentColor);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(Height);
-	__asm        push   eax;
-	__asm        mov    eax, pCompressedBits;
-	__asm        push   eax;
-	__asm        mov    eax, DestStride;
-	__asm        push   eax;
-	__asm        mov    eax, pBits;
-	__asm        push   eax;
-	__asm        call   RLEDecompressUnclippedX;
-	__asm        add    esp, 0x14;
+	RLEDecompressUnclippedX(reinterpret_cast<uint32_t>(TransparentColor), reinterpret_cast<uint32_t>(Height), pCompressedBits, DestStride, pBits);
 // LINE 214:
 	__asm        jmp    _T253;
 // LINE 217:
 _T22f:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(TransparentColor);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(Height);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(Width);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(LeftClipAmount);
-	__asm        push   eax;
-	__asm        mov    eax, pCompressedBits;
-	__asm        push   eax;
-	__asm        mov    eax, DestStride;
-	__asm        push   eax;
-	__asm        mov    eax, pBits;
-	__asm        push   eax;
-	__asm        call   RLEDecompressClippedX;
-	__asm        add    esp, 0x1C;
+	RLEDecompressClippedX(reinterpret_cast<uint32_t>(TransparentColor), reinterpret_cast<uint32_t>(Height), reinterpret_cast<uint32_t>(Width), reinterpret_cast<uint32_t>(LeftClipAmount), pCompressedBits, DestStride, pBits);
 // LINE 223:
 // Block end:
 // Block end:
@@ -1087,14 +1005,7 @@ _T89:
 	__asm        inc    eax;
 	__asm        mov    counter, eax;
 // LINE 361:
-	__asm        mov    eax, counter;
-	__asm        push   eax;
-	__asm        mov    eax, pSource;
-	__asm        push   eax;
-	__asm        mov    eax, pDest;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(counter, pSource, pDest);
 // LINE 362:
 	pSource += counter;
 // LINE 363:

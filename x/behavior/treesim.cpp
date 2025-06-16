@@ -269,12 +269,7 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, /*unpacked*/ class 
 	__asm        test   eax, eax;
 	__asm        jg     _T51;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BDE9C;
-	__asm        push   0xD;
-	__asm        push   0x5BDEA8;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bde9c, 0xd, 0x5bdea8);
 // LINE 14:
 _T51:
 	__asm        mov    eax, this;
@@ -313,12 +308,7 @@ void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 	__asm        test   eax, eax;
 	__asm        jg     _T51;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BDED0;
-	__asm        push   0x1A;
-	__asm        push   0x5BDEDC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bded0, 0x1a, 0x5bdedc);
 // LINE 27:
 _T51:
 	__asm        mov    eax, this;
@@ -343,11 +333,7 @@ void TreeSim::~TreeSim() {
 
 	this-><vftable> = 0x593630;
 // LINE 36:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   operator delete;
-	__asm        add    esp, 4;
+	operator delete(this->fStack);
 // LINE 37:
 	return;
 }
@@ -366,12 +352,7 @@ void TreeSim::Reset(/*unpacked*/ class Behavior *startBehavior, short startTreeI
 	__asm        test   eax, eax;
 	__asm        jg     _T41;
 _T28:
-	__asm        push   0x8C085;
-	__asm        push   0x5BDF04;
-	__asm        push   0x2C;
-	__asm        push   0x5BDF10;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bdf04, 0x2c, 0x5bdf10);
 // LINE 45:
 _T41:
 	this->fStackSize = 0x1;
@@ -779,12 +760,7 @@ _T1b2:
 _T1bd:
 	done = 0x1;
 // LINE 168:
-	__asm        push   0x8C085;
-	__asm        push   0x5BDF38;
-	__asm        push   0xA8;
-	__asm        push   0x5BDF48;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bdf38, 0xa8, 0x5bdf48);
 // LINE 169:
 	__asm        jmp    _T214;
 // LINE 170:
@@ -959,12 +935,7 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 	__asm        test   eax, eax;
 	__asm        jg     _T37;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BDF70;
-	__asm        push   0xF0;
-	__asm        push   0x5BDF7C;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bdf70, 0xf0, 0x5bdf7c);
 // LINE 241:
 _T37:
 	__asm        mov    eax, this;
@@ -974,12 +945,7 @@ _T37:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T69;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BDFA4;
-	__asm        push   0xF1;
-	__asm        push   0x5BDFB4;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bdfa4, 0xf1, 0x5bdfb4);
 // LINE 243:
 _T69:
 	__asm        mov    eax, this;

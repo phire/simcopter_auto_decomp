@@ -43,7 +43,7 @@ protected:
 // SYNTHETIC: COPTER_D 0x00490f90
 static void $E2() {
 
-	__asm        call   $E1;
+	$E1();
 	__asm        jmp    __RETURN;
 __RETURN:
 }

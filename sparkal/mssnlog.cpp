@@ -518,9 +518,7 @@ _Ta8:
 	__asm        add    esp, 4;
 	__asm        jmp    _Te4;
 _Te4:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tf3;
 _Tf3:
 	__asm        jmp    _Tf8;
@@ -561,9 +559,7 @@ _T129:
 	__asm        add    esp, 4;
 	__asm        jmp    _T16d;
 _T16d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T17c;
 _T17c:
 	__asm        mov    eax, [ebp-0x40];
@@ -712,13 +708,11 @@ void MissionLogWindow::~MissionLogWindow() {
 
 	this-><MissionLogWindow+0x00> = 0x590708;
 // LINE 59:
-	__asm        mov    ecx, this;
-	__asm        call   MissionLogWindow::DestroyImage;
+	this->MissionLogWindow::DestroyImage();
 // LINE 60:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0046bfe3
@@ -865,9 +859,7 @@ _T1bb:
 	__asm        add    esp, 4;
 	__asm        jmp    _T206;
 _T206:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T215;
 _T215:
 	__asm        jmp    _T21a;
@@ -1168,9 +1160,7 @@ _T5d1:
 	__asm        add    esp, 4;
 	__asm        jmp    _T61c;
 _T61c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T62b;
 _T62b:
 	__asm        jmp    _T630;
@@ -1354,8 +1344,7 @@ _T820:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+0x12C];
 // LINE 108:
-	__asm        mov    ecx, this;
-	__asm        call   MissionLogWindow::SortByTimeDate;
+	this->MissionLogWindow::SortByTimeDate();
 // LINE 110:
 	__asm        mov    dword ptr [ebp-0x68], 1;
 	__asm        mov    eax, sText.reference;
@@ -1572,8 +1561,7 @@ _T50:
 	this->myBackgroundBuffer = 0x0;
 // LINE 147:
 _T5a:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 148:
 	return;
 }
@@ -1614,8 +1602,7 @@ _T58:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        je     _T70;
 // LINE 168:
-	__asm        mov    ecx, this;
-	__asm        call   MissionLogWindow::DrawBackground;
+	this->MissionLogWindow::DrawBackground();
 // LINE 169:
 _T70:
 	__asm        mov    eax, this;
@@ -1718,8 +1705,7 @@ int32_t MissionLogWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, 
 	__asm        cmp    dword ptr [eax+0x7C], 0;
 	__asm        je     _T2b;
 // LINE 208:
-	__asm        mov    ecx, this;
-	__asm        call   MissionLogWindow::SortByTimeDate;
+	this->MissionLogWindow::SortByTimeDate();
 // LINE 210:
 _T2b:
 	__asm        jmp    _T7f;
@@ -1731,8 +1717,7 @@ _T30:
 	__asm        cmp    dword ptr [eax+0x7C], 1;
 	__asm        je     _T4f;
 // LINE 212:
-	__asm        mov    ecx, this;
-	__asm        call   MissionLogWindow::SortByType;
+	this->MissionLogWindow::SortByType();
 // LINE 214:
 _T4f:
 	__asm        jmp    _T7f;
@@ -1860,14 +1845,7 @@ _T109:
 _T118:
 	__asm        jmp    _T11d;
 _T11d:
-	__asm        push   1;
-	__asm        lea    eax, sCurrentText.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   LogManager::MakeStringFromLogData;
-	__asm        add    esp, 0xC;
+	LogManager::MakeStringFromLogData(0x1, sCurrentText.c_str_ptr, iterator.node->data);
 // LINE 233:
 	__asm        push   0xFFFFFFFF;
 	__asm        lea    eax, sCurrentText.c_str_ptr;
@@ -2207,14 +2185,7 @@ _T2e2:
 _T2ee:
 	__asm        jmp    _T2f3;
 _T2f3:
-	__asm        push   1;
-	__asm        lea    eax, sCurrentText.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   LogManager::MakeStringFromLogData;
-	__asm        add    esp, 0xC;
+	LogManager::MakeStringFromLogData(0x1, sCurrentText.c_str_ptr, iterator.node->data);
 // LINE 259:
 	__asm        push   0xFFFFFFFF;
 	__asm        lea    eax, sCurrentText.c_str_ptr;
@@ -2342,21 +2313,13 @@ _T2a:
 _T91:
 	__asm        jmp    _T96;
 _T96:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x24;
-	__asm        call   MFont::MFont;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x40], 0x14;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x44], 0x1388;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x48], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x50], 0xFF;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x51], 0xFF;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x52], 0xFF;
+	(this + 0x24)->MFont::MFont();
+	this->lVerticalSpaceBetweenMessages = 0x14;
+	this->lDisplayTime = 0x1388;
+	this->lCurrentDisplayedMessageCount = 0x0;
+	this->colorMessage.Blue = 0xff;
+	this->colorMessage.Green = 0xff;
+	this->colorMessage.Red = 0xff;
 	__asm        jmp    _Td9;
 _Td9:
 	this-><vftable> = 0x5907d0;
@@ -2501,9 +2464,7 @@ _T158:
 _T162:
 	__asm        jmp    _T167;
 _T167:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x24;
-	__asm        call   MFont::~MFont;
+	(this + 0x24)->MFont::~MFont();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -3227,9 +3188,7 @@ _T18f:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1cb;
 _T1cb:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1da;
 _T1da:
 	__asm        jmp    _T1df;
@@ -3385,9 +3344,7 @@ _T38a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3c6;
 _T3c6:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T3d5;
 _T3d5:
 	__asm        jmp    _T3da;
@@ -3548,9 +3505,7 @@ _T59d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T5d9;
 _T5d9:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T5e8;
 _T5e8:
 	__asm        jmp    _T5ed;

@@ -685,8 +685,8 @@ struct bidirectional_iterator<tagLogBase *,int>{ // packed(0x1 bytes) TI: 0x126f
 // SYNTHETIC: COPTER_D 0x004ebbc0
 static void $E57() {
 
-	__asm        call   $E54;
-	__asm        call   $E56;
+	$E54();
+	$E56();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -695,8 +695,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004ebbda
 static void $E54() {
 
-	__asm        mov    ecx, 0x606E78;
-	__asm        call   LogManager::LogManager;
+	0x606e78->LogManager::LogManager();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -714,8 +713,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004ebc11
 static void $E55() {
 
-	__asm        mov    ecx, 0x606E78;
-	__asm        call   LogManager::~LogManager;
+	0x606e78->LogManager::~LogManager();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -786,9 +784,7 @@ _T73:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tc8;
 _Tc8:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Td2:
 	__asm        jmp    _Td7;
 _Td7:
@@ -847,9 +843,7 @@ _T12c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T180;
 _T180:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T18a:
 	__asm        jmp    _T18f;
 _T18f:
@@ -1337,16 +1331,7 @@ _Td5:
 	lStringLength = 0x100;
 // LINE 137:
 _T13a:
-	__asm        mov    eax, lStringLength;
-	__asm        push   eax;
-	__asm        mov    eax, tempLogStringSource;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        mov    eax, tempLogStringDestination;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   strncpy;
-	__asm        add    esp, 0xC;
+	strncpy(lStringLength, tempLogStringSource->szLogString, (tempLogStringDestination + 0x10));
 // LINE 140:
 	__asm        mov    eax, lStringLength;
 	__asm        add    eax, 0x10;
@@ -1999,13 +1984,7 @@ _T4a8:
 	__asm        jmp    _T4b4;
 // LINE 253:
 _T4b4:
-	__asm        push   0;
-	__asm        lea    eax, sCurrentText.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    eax, logData;
-	__asm        push   eax;
-	__asm        call   LogManager::MakeStringFromLogData;
-	__asm        add    esp, 0xC;
+	LogManager::MakeStringFromLogData(0x0, sCurrentText.c_str_ptr, logData);
 // LINE 254:
 	__asm        lea    eax, sCurrentText.c_str_ptr;
 	__asm        push   eax;
@@ -3391,9 +3370,7 @@ _Tfb:
 	__asm        add    esp, 4;
 	__asm        jmp    _T134;
 _T134:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T143;
 _T143:
 	__asm        jmp    _T148;

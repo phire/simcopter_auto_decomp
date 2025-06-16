@@ -41,11 +41,7 @@ void DirectDrawError::DisplayError(char * szErrorDescription) {
 	__asm        mov    ecx, this;
 	__asm        call   DirectDrawError::MakeErrorString;
 // LINE 18:
-	__asm        lea    eax, szFullErrorDescription[0];
-	__asm        push   eax;
-	__asm        push   0x5976A8;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 8;
+	DebugOutput(szFullErrorDescription[0], 0x5976a8);
 // LINE 22:
 	return;
 }
@@ -59,452 +55,252 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        jmp    _T46a;
 // LINE 31:
 _T19:
-	__asm        push   0x5976AC;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5976ac, szFullErrorDescription);
 // LINE 32:
 	__asm        jmp    _T7db;
 // LINE 34:
 _T2f:
-	__asm        push   0x5976D0;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5976d0, szFullErrorDescription);
 // LINE 35:
 	__asm        jmp    _T7db;
 // LINE 37:
 _T45:
-	__asm        push   0x5976F4;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5976f4, szFullErrorDescription);
 // LINE 38:
 	__asm        jmp    _T7db;
 // LINE 40:
 _T5b:
-	__asm        push   0x59770C;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x59770c, szFullErrorDescription);
 // LINE 41:
 	__asm        jmp    _T7db;
 // LINE 43:
 _T71:
-	__asm        push   0x597728;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597728, szFullErrorDescription);
 // LINE 44:
 	__asm        jmp    _T7db;
 // LINE 46:
 _T87:
-	__asm        push   0x597744;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597744, szFullErrorDescription);
 // LINE 47:
 	__asm        jmp    _T7db;
 // LINE 49:
 _T9d:
-	__asm        push   0x597764;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597764, szFullErrorDescription);
 // LINE 50:
 	__asm        jmp    _T7db;
 // LINE 52:
 _Tb3:
-	__asm        push   0x597780;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597780, szFullErrorDescription);
 // LINE 53:
 	__asm        jmp    _T7db;
 // LINE 55:
 _Tc9:
-	__asm        push   0x5977A0;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5977a0, szFullErrorDescription);
 // LINE 56:
 	__asm        jmp    _T7db;
 // LINE 58:
 _Tdf:
-	__asm        push   0x5977C4;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5977c4, szFullErrorDescription);
 // LINE 59:
 	__asm        jmp    _T7db;
 // LINE 61:
 _Tf5:
-	__asm        push   0x5977E0;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5977e0, szFullErrorDescription);
 // LINE 62:
 	__asm        jmp    _T7db;
 // LINE 64:
 _T10b:
-	__asm        push   0x5977F8;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5977f8, szFullErrorDescription);
 // LINE 65:
 	__asm        jmp    _T7db;
 // LINE 67:
 _T121:
-	__asm        push   0x597814;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597814, szFullErrorDescription);
 // LINE 68:
 	__asm        jmp    _T7db;
 // LINE 70:
 _T137:
-	__asm        push   0x597830;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597830, szFullErrorDescription);
 // LINE 71:
 	__asm        jmp    _T7db;
 // LINE 73:
 _T14d:
-	__asm        push   0x597850;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597850, szFullErrorDescription);
 // LINE 74:
 	__asm        jmp    _T7db;
 // LINE 76:
 _T163:
-	__asm        push   0x597870;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597870, szFullErrorDescription);
 // LINE 77:
 	__asm        jmp    _T7db;
 // LINE 79:
 _T179:
-	__asm        push   0x59788C;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x59788c, szFullErrorDescription);
 // LINE 80:
 	__asm        jmp    _T7db;
 // LINE 82:
 _T18f:
-	__asm        push   0x5978A4;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5978a4, szFullErrorDescription);
 // LINE 83:
 	__asm        jmp    _T7db;
 // LINE 85:
 _T1a5:
-	__asm        push   0x5978C0;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5978c0, szFullErrorDescription);
 // LINE 86:
 	__asm        jmp    _T7db;
 // LINE 88:
 _T1bb:
-	__asm        push   0x5978DC;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5978dc, szFullErrorDescription);
 // LINE 89:
 	__asm        jmp    _T7db;
 // LINE 91:
 _T1d1:
-	__asm        push   0x5978F8;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5978f8, szFullErrorDescription);
 // LINE 92:
 	__asm        jmp    _T7db;
 // LINE 94:
 _T1e7:
-	__asm        push   0x597918;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597918, szFullErrorDescription);
 // LINE 95:
 	__asm        jmp    _T7db;
 // LINE 97:
 _T1fd:
-	__asm        push   0x597934;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597934, szFullErrorDescription);
 // LINE 98:
 	__asm        jmp    _T7db;
 // LINE 100:
 _T213:
-	__asm        push   0x597954;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597954, szFullErrorDescription);
 // LINE 101:
 	__asm        jmp    _T7db;
 // LINE 103:
 _T229:
-	__asm        push   0x597978;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597978, szFullErrorDescription);
 // LINE 104:
 	__asm        jmp    _T7db;
 // LINE 106:
 _T23f:
-	__asm        push   0x597998;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597998, szFullErrorDescription);
 // LINE 107:
 	__asm        jmp    _T7db;
 // LINE 109:
 _T255:
-	__asm        push   0x5979B4;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5979b4, szFullErrorDescription);
 // LINE 110:
 	__asm        jmp    _T7db;
 // LINE 112:
 _T26b:
-	__asm        push   0x5979D0;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5979d0, szFullErrorDescription);
 // LINE 113:
 	__asm        jmp    _T7db;
 // LINE 115:
 _T281:
-	__asm        push   0x5979EC;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x5979ec, szFullErrorDescription);
 // LINE 116:
 	__asm        jmp    _T7db;
 // LINE 118:
 _T297:
-	__asm        push   0x597A08;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597a08, szFullErrorDescription);
 // LINE 119:
 	__asm        jmp    _T7db;
 // LINE 121:
 _T2ad:
-	__asm        push   0x597A24;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597a24, szFullErrorDescription);
 // LINE 122:
 	__asm        jmp    _T7db;
 // LINE 124:
 _T2c3:
-	__asm        push   0x597A48;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597a48, szFullErrorDescription);
 // LINE 125:
 	__asm        jmp    _T7db;
 // LINE 127:
 _T2d9:
-	__asm        push   0x597A68;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597a68, szFullErrorDescription);
 // LINE 128:
 	__asm        jmp    _T7db;
 // LINE 130:
 _T2ef:
-	__asm        push   0x597A84;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597a84, szFullErrorDescription);
 // LINE 131:
 	__asm        jmp    _T7db;
 // LINE 133:
 _T305:
-	__asm        push   0x597AAC;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597aac, szFullErrorDescription);
 // LINE 134:
 	__asm        jmp    _T7db;
 // LINE 136:
 _T31b:
-	__asm        push   0x597AD4;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597ad4, szFullErrorDescription);
 // LINE 137:
 	__asm        jmp    _T7db;
 // LINE 139:
 _T331:
-	__asm        push   0x597AF0;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597af0, szFullErrorDescription);
 // LINE 140:
 	__asm        jmp    _T7db;
 // LINE 142:
 _T347:
-	__asm        push   0x597B14;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597b14, szFullErrorDescription);
 // LINE 143:
 	__asm        jmp    _T7db;
 // LINE 145:
 _T35d:
-	__asm        push   0x597B30;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597b30, szFullErrorDescription);
 // LINE 146:
 	__asm        jmp    _T7db;
 // LINE 148:
 _T373:
-	__asm        push   0x597B54;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597b54, szFullErrorDescription);
 // LINE 149:
 	__asm        jmp    _T7db;
 // LINE 151:
 _T389:
-	__asm        push   0x597B74;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597b74, szFullErrorDescription);
 // LINE 152:
 	__asm        jmp    _T7db;
 // LINE 154:
 _T39f:
-	__asm        push   0x597B90;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597b90, szFullErrorDescription);
 // LINE 155:
 	__asm        jmp    _T7db;
 // LINE 157:
 _T3b5:
-	__asm        push   0x597BAC;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597bac, szFullErrorDescription);
 // LINE 158:
 	__asm        jmp    _T7db;
 // LINE 160:
 _T3cb:
-	__asm        push   0x597BC8;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597bc8, szFullErrorDescription);
 // LINE 161:
 	__asm        jmp    _T7db;
 // LINE 163:
 _T3e1:
-	__asm        push   0x597BEC;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597bec, szFullErrorDescription);
 // LINE 164:
 	__asm        jmp    _T7db;
 // LINE 166:
 _T3f7:
-	__asm        push   0x597C0C;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597c0c, szFullErrorDescription);
 // LINE 167:
 	__asm        jmp    _T7db;
 // LINE 169:
 _T40d:
-	__asm        push   0x597C34;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597c34, szFullErrorDescription);
 // LINE 170:
 	__asm        jmp    _T7db;
 // LINE 172:
 _T423:
-	__asm        push   0x597C54;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597c54, szFullErrorDescription);
 // LINE 173:
 	__asm        jmp    _T7db;
 // LINE 175:
 _T439:
-	__asm        push   0x597C6C;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597c6c, szFullErrorDescription);
 // LINE 176:
 	__asm        jmp    _T7db;
 // LINE 178:
 _T44f:
-	__asm        push   0x597C7C;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597c7c, szFullErrorDescription);
 // LINE 179:
 	__asm        jmp    _T7db;
 // LINE 180:
@@ -751,12 +547,7 @@ _T7db:
 	__asm        cmp    szErrorDescription, 0;
 	__asm        je     _T7f5;
 // LINE 182:
-	__asm        mov    eax, szErrorDescription;
-	__asm        push   eax;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szErrorDescription, szFullErrorDescription);
 // LINE 183:
 _T7f5:
 	return;
@@ -774,11 +565,7 @@ void DirectSoundError::DisplayError(char * szErrorDescription) {
 	__asm        mov    ecx, this;
 	__asm        call   DirectSoundError::MakeErrorString;
 // LINE 198:
-	__asm        lea    eax, szFullErrorDescription[0];
-	__asm        push   eax;
-	__asm        push   0x597C90;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 8;
+	DebugOutput(szFullErrorDescription[0], 0x597c90);
 // LINE 202:
 	return;
 }
@@ -792,146 +579,82 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        jmp    _T17e;
 // LINE 212:
 _T19:
-	__asm        push   0x597C94;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597c94, szFullErrorDescription);
 // LINE 213:
 	__asm        jmp    _T285;
 // LINE 215:
 _T2f:
-	__asm        push   0x597CB0;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597cb0, szFullErrorDescription);
 // LINE 216:
 	__asm        jmp    _T285;
 // LINE 218:
 _T45:
-	__asm        push   0x597CD0;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597cd0, szFullErrorDescription);
 // LINE 219:
 	__asm        jmp    _T285;
 // LINE 221:
 _T5b:
-	__asm        push   0x597CF0;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597cf0, szFullErrorDescription);
 // LINE 222:
 	__asm        jmp    _T285;
 // LINE 224:
 _T71:
-	__asm        push   0x597D0C;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597d0c, szFullErrorDescription);
 // LINE 225:
 	__asm        jmp    _T285;
 // LINE 227:
 _T87:
-	__asm        push   0x597D24;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597d24, szFullErrorDescription);
 // LINE 228:
 	__asm        jmp    _T285;
 // LINE 230:
 _T9d:
-	__asm        push   0x597D44;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597d44, szFullErrorDescription);
 // LINE 231:
 	__asm        jmp    _T285;
 // LINE 233:
 _Tb3:
-	__asm        push   0x597D60;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597d60, szFullErrorDescription);
 // LINE 234:
 	__asm        jmp    _T285;
 // LINE 236:
 _Tc9:
-	__asm        push   0x597D7C;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597d7c, szFullErrorDescription);
 // LINE 237:
 	__asm        jmp    _T285;
 // LINE 239:
 _Tdf:
-	__asm        push   0x597D98;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597d98, szFullErrorDescription);
 // LINE 240:
 	__asm        jmp    _T285;
 // LINE 242:
 _Tf5:
-	__asm        push   0x597DB4;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597db4, szFullErrorDescription);
 // LINE 243:
 	__asm        jmp    _T285;
 // LINE 245:
 _T10b:
-	__asm        push   0x597DD8;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597dd8, szFullErrorDescription);
 // LINE 246:
 	__asm        jmp    _T285;
 // LINE 248:
 _T121:
-	__asm        push   0x597DF8;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597df8, szFullErrorDescription);
 // LINE 249:
 	__asm        jmp    _T285;
 // LINE 251:
 _T137:
-	__asm        push   0x597E14;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597e14, szFullErrorDescription);
 // LINE 252:
 	__asm        jmp    _T285;
 // LINE 254:
 _T14d:
-	__asm        push   0x597E34;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597e34, szFullErrorDescription);
 // LINE 255:
 	__asm        jmp    _T285;
 // LINE 257:
 _T163:
-	__asm        push   0x597E44;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597e44, szFullErrorDescription);
 // LINE 258:
 	__asm        jmp    _T285;
 // LINE 259:
@@ -1012,12 +735,7 @@ _T285:
 	__asm        cmp    szErrorDescription, 0;
 	__asm        je     _T29f;
 // LINE 261:
-	__asm        mov    eax, szErrorDescription;
-	__asm        push   eax;
-	__asm        mov    eax, szFullErrorDescription;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szErrorDescription, szFullErrorDescription);
 // LINE 262:
 _T29f:
 	return;

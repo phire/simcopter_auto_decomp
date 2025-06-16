@@ -2,12 +2,7 @@
 // FUNCTION: COPTER_D 0x0055f5b0
 void cCopterAnim::Destroy() {
 // LINE 224:
-	__asm        push   0x8C085;
-	__asm        push   0x5BE3FC;
-	__asm        push   0xE0;
-	__asm        push   0x5BE3D8;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be3fc, 0xe0, 0x5be3d8);
 // LINE 225:
 	return;
 }
@@ -82,12 +77,7 @@ __RETURN:
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     _T46;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE4B8;
-	__asm        push   0x1A4;
-	__asm        push   0x5BE4F0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be4b8, 0x1a4, 0x5be4f0);
 _T46:
 	__asm        mov    eax, [ebp-4];
 	__asm        movsx  ecx, framenum;
@@ -107,12 +97,7 @@ _T46:
 	__asm        test   eax, eax;
 	__asm        jge    _T9a;
 _T7e:
-	__asm        push   0x8C085;
-	__asm        push   0x5BE49C;
-	__asm        push   0x1A6;
-	__asm        push   0x5BE4F0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be49c, 0x1a6, 0x5be4f0);
 _T9a:
 	__asm        jmp    _T9f;
 _T9f:
@@ -140,12 +125,7 @@ __RETURN:
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     _T46;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE4B8;
-	__asm        push   0x1A4;
-	__asm        push   0x5BE4F0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be4b8, 0x1a4, 0x5be4f0);
 _T46:
 	__asm        mov    eax, [ebp-4];
 	__asm        movsx  ecx, framenum;
@@ -162,12 +142,7 @@ _T46:
 
 	__asm        jmp    _T90;
 _T74:
-	__asm        push   0x8C085;
-	__asm        push   0x5BE49C;
-	__asm        push   0x1A6;
-	__asm        push   0x5BE4F0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be49c, 0x1a6, 0x5be4f0);
 _T90:
 	__asm        jmp    _T95;
 _T95:

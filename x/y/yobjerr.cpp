@@ -1046,52 +1046,27 @@ void cYObject::Error(short errNum) {
 	__asm        jmp    _Tb3;
 // LINE 16:
 _T18:
-	__asm        push   0x8C085;
-	__asm        push   0x5BEBAC;
-	__asm        push   0x10;
-	__asm        push   0x5BEBC4;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bebac, 0x10, 0x5bebc4);
 // LINE 17:
 	__asm        jmp    _Tff;
 // LINE 20:
 _T36:
-	__asm        push   0x8C085;
-	__asm        push   0x5BEBE8;
-	__asm        push   0x14;
-	__asm        push   0x5BEBFC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bebe8, 0x14, 0x5bebfc);
 // LINE 21:
 	__asm        jmp    _Tff;
 // LINE 24:
 _T54:
-	__asm        push   0x8C085;
-	__asm        push   0x5BEC20;
-	__asm        push   0x18;
-	__asm        push   0x5BEC34;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bec20, 0x18, 0x5bec34);
 // LINE 25:
 	__asm        jmp    _Tff;
 // LINE 28:
 _T72:
-	__asm        push   0x8C085;
-	__asm        push   0x5BEC58;
-	__asm        push   0x1C;
-	__asm        push   0x5BEC74;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bec58, 0x1c, 0x5bec74);
 // LINE 29:
 	__asm        jmp    _Tff;
 // LINE 32:
 _T90:
-	__asm        push   0x8C085;
-	__asm        push   0x5BEC98;
-	__asm        push   0x20;
-	__asm        push   0x5BECB4;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bec98, 0x20, 0x5becb4);
 // LINE 33:
 	__asm        jmp    _Tff;
 // LINE 34:

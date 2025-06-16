@@ -933,12 +933,7 @@ _T31d:
 _T341:
 	__asm        jmp    _T346;
 _T346:
-	__asm        mov    eax, stringLanguage.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    eax, szLanguageName;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(stringLanguage.c_str_ptr, szLanguageName);
 // LINE 108:
 	__asm        mov    dword ptr [ebp-0x14], 1;
 	__asm        mov    eax, stringLanguage.reference;
@@ -1478,9 +1473,7 @@ _Te3:
 	__asm        add    esp, 4;
 	__asm        jmp    _T12e;
 _T12e:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T13d;
 _T13d:
 	__asm        jmp    _T142;
@@ -1572,9 +1565,7 @@ _T246:
 	__asm        add    esp, 4;
 	__asm        jmp    _T286;
 _T286:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T295;
 _T295:
 	__asm        jmp    _T29a;
@@ -1677,9 +1668,7 @@ _T3a6:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3f1;
 _T3f1:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T400;
 _T400:
 	__asm        jmp    _T405;
@@ -2119,9 +2108,7 @@ _Td3:
 	__asm        add    esp, 4;
 	__asm        jmp    _T116;
 _T116:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T125;
 _T125:
 	__asm        jmp    _T12a;
@@ -2236,9 +2223,7 @@ _T25e:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2a9;
 _T2a9:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2b8;
 _T2b8:
 	__asm        jmp    _T2bd;
@@ -2366,9 +2351,7 @@ _T439:
 	__asm        add    esp, 4;
 	__asm        jmp    _T473;
 _T473:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T482;
 _T482:
 	__asm        jmp    _T487;
@@ -2629,9 +2612,7 @@ _Td3:
 	__asm        add    esp, 4;
 	__asm        jmp    _T116;
 _T116:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T125;
 _T125:
 	__asm        jmp    _T12a;
@@ -2746,9 +2727,7 @@ _T25e:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2a9;
 _T2a9:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2b8;
 _T2b8:
 	__asm        jmp    _T2bd;
@@ -2876,9 +2855,7 @@ _T439:
 	__asm        add    esp, 4;
 	__asm        jmp    _T473;
 _T473:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T482;
 _T482:
 	__asm        jmp    _T487;
@@ -3139,9 +3116,7 @@ _Td3:
 	__asm        add    esp, 4;
 	__asm        jmp    _T116;
 _T116:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T125;
 _T125:
 	__asm        jmp    _T12a;
@@ -3256,9 +3231,7 @@ _T25e:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2a9;
 _T2a9:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2b8;
 _T2b8:
 	__asm        jmp    _T2bd;
@@ -3386,9 +3359,7 @@ _T439:
 	__asm        add    esp, 4;
 	__asm        jmp    _T473;
 _T473:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T482;
 _T482:
 	__asm        jmp    _T487;
@@ -3590,11 +3561,7 @@ _T18:
 	__asm        test   eax, eax;
 	__asm        je     _T4c;
 // LINE 400:
-	__asm        push   0x597674;
-	__asm        mov    eax, szFaceName;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x597674, szFaceName);
 // LINE 401:
 	return 0x1;
 // LINE 403:
@@ -3611,11 +3578,7 @@ _T4c:
 	__asm        jne    _T85;
 // LINE 407:
 _T6a:
-	__asm        push   0x59767C;
-	__asm        mov    eax, szFaceName;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x59767c, szFaceName);
 // LINE 408:
 	return 0x1;
 // LINE 412:

@@ -677,9 +677,7 @@ _T85:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tc1;
 _Tc1:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Td0;
 _Td0:
 	__asm        jmp    _Td5;
@@ -720,9 +718,7 @@ _T106:
 	__asm        add    esp, 4;
 	__asm        jmp    _T14a;
 _T14a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T159;
 _T159:
 	__asm        mov    eax, [ebp-0x30];
@@ -869,8 +865,7 @@ _T2d0:
 // FUNCTION: COPTER_D 0x00420d37
 void DigitalSoundQueueItem::DigitalSoundQueueItem(const /*packed*/ class basic_string<char>& sNewDigitalSoundFile, long lNewTimeToWaitBeforePlaying) {
 
-	__asm        mov    ecx, this;
-	__asm        call   SoundQueueItem::SoundQueueItem;
+	this->SoundQueueItem::SoundQueueItem();
 // LINE 90:
 	__asm        push   0x7A;
 	__asm        call   operator new;
@@ -1074,8 +1069,7 @@ _T1df:
 // FUNCTION: COPTER_D 0x00420fba
 void DigitalSoundQueueItem::DigitalSoundQueueItem(long lNewDigitalSoundResourceID, long lNewTimeToWaitBeforePlaying) {
 
-	__asm        mov    ecx, this;
-	__asm        call   SoundQueueItem::SoundQueueItem;
+	this->SoundQueueItem::SoundQueueItem();
 // LINE 117:
 	__asm        push   0x7A;
 	__asm        call   operator new;
@@ -1148,9 +1142,7 @@ _T48:
 	__asm        add    esp, 4;
 	__asm        jmp    _T9d;
 _T9d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Ta7:
 	__asm        jmp    _Tac;
 _Tac:
@@ -1209,9 +1201,7 @@ _T101:
 	__asm        add    esp, 4;
 	__asm        jmp    _T155;
 _T155:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T15f:
 	__asm        jmp    _T164;
 _T164:
@@ -1865,9 +1855,7 @@ _T74:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tc9;
 _Tc9:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Td3:
 	__asm        jmp    _Td8;
 _Td8:
@@ -1926,9 +1914,7 @@ _T12d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T181;
 _T181:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T18b:
 	__asm        jmp    _T190;
 _T190:
@@ -2398,10 +2384,7 @@ _T1d7:
 // FUNCTION: COPTER_D 0x00421f05
 void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
 // LINE 356:
-	__asm        mov    eax, dwUser;
-	__asm        push   eax;
-	__asm        call   SoundQueue::StaticSoundQueueCompletionCallback;
-	__asm        add    esp, 4;
+	SoundQueue::StaticSoundQueueCompletionCallback(dwUser);
 // LINE 357:
 	return;
 }
@@ -2409,10 +2392,7 @@ void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, ui
 // FUNCTION: COPTER_D 0x00421f23
 void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
 // LINE 368:
-	__asm        mov    eax, dwUser;
-	__asm        push   eax;
-	__asm        call   SoundQueue::StaticSoundQueueWaitTimeCallback;
-	__asm        add    esp, 4;
+	SoundQueue::StaticSoundQueueWaitTimeCallback(dwUser);
 // LINE 369:
 	return;
 }

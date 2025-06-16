@@ -177,12 +177,7 @@ _T39:
 // LINE 114:
 	__asm        jne    _T66;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BDFE0;
-	__asm        push   0x72;
-	__asm        push   0x5BDFEC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bdfe0, 0x72, 0x5bdfec);
 // LINE 115:
 _T66:
 	return temp;

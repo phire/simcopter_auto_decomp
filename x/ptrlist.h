@@ -38,12 +38,7 @@ _T12:
 	__asm        test   eax, eax;
 	__asm        jge    _T8a;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x32;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x32, 0x59a254);
 // LINE 51:
 _T8a:
 	return;
@@ -105,12 +100,7 @@ _T0c:
 	__asm        test   eax, eax;
 	__asm        jge    _T74;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x26;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 _T74:
 	__asm        jmp    _T0c;
 _T79:
@@ -119,12 +109,7 @@ _T79:
 	__asm        test   eax, eax;
 	__asm        je     _Ta1;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x28;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x28, 0x59a254);
 _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 23:
@@ -134,12 +119,7 @@ _Ta6:
 	__asm        test   eax, eax;
 	__asm        je     _Tce;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A274;
-	__asm        push   0x17;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a274, 0x17, 0x59a254);
 // LINE 24:
 _Tce:
 	return;
@@ -177,12 +157,7 @@ _T0c:
 	__asm        test   eax, eax;
 	__asm        jge    _T74;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x26;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 _T74:
 	__asm        jmp    _T0c;
 _T79:
@@ -191,12 +166,7 @@ _T79:
 	__asm        test   eax, eax;
 	__asm        je     _Ta1;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x28;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x28, 0x59a254);
 _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 23:
@@ -206,12 +176,7 @@ _Ta6:
 	__asm        test   eax, eax;
 	__asm        je     _Tce;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A274;
-	__asm        push   0x17;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a274, 0x17, 0x59a254);
 // LINE 24:
 _Tce:
 	return;
@@ -265,12 +230,7 @@ _T0c:
 	__asm        test   eax, eax;
 	__asm        jge    _T74;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x26;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 _T74:
 	__asm        jmp    _T0c;
 _T79:
@@ -279,12 +239,7 @@ _T79:
 	__asm        test   eax, eax;
 	__asm        je     _Ta1;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x28;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x28, 0x59a254);
 _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 23:
@@ -294,12 +249,7 @@ _Ta6:
 	__asm        test   eax, eax;
 	__asm        je     _Tce;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A274;
-	__asm        push   0x17;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a274, 0x17, 0x59a254);
 // LINE 24:
 _Tce:
 	return;

@@ -54,18 +54,7 @@ _T46:
 	__asm        jmp    _T43;
 // LINE 52:
 _T79:
-	__asm        mov    eax, pszSection;
-	__asm        push   eax;
-	__asm        mov    eax, g_nNextTWKQueueSlot;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 8;
-	__asm        sub    eax, ecx;
-	__asm        sub    eax, ecx;
-	__asm        add    eax, 0x63A860;
-	__asm        add    eax, 0xCC;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(pszSection, (((((g_nNextTWKQueueSlot << 0x8) - g_nNextTWKQueueSlot) - g_nNextTWKQueueSlot) + 0x63a860) + 0xcc));
 // LINE 53:
 	__asm        mov    eax, nNumValues;
 	__asm        mov    ecx, g_nNextTWKQueueSlot;
@@ -168,14 +157,7 @@ _T128:
 	__asm        cmp    g_nNextTWKQueueSlot, eax;
 	__asm        je     _T173;
 // LINE 93:
-	__asm        mov    eax, nCt;
-	__asm        push   eax;
-	__asm        lea    eax, szSection[0];
-	__asm        push   eax;
-	__asm        lea    eax, szTemp[0];
-	__asm        push   eax;
-	__asm        call   TWKReadSection;
-	__asm        add    esp, 0xC;
+	TWKReadSection(nCt, szSection[0], szTemp[0]);
 // LINE 95:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -188,10 +170,7 @@ _T173:
 	__asm        jmp    _T184;
 // LINE 99:
 _T178:
-	__asm        mov    eax, pszTWKFile;
-	__asm        push   eax;
-	__asm        call   TWKReadAllFiles;
-	__asm        add    esp, 4;
+	TWKReadAllFiles(pszTWKFile);
 // LINE 104:
 _T184:
 	return g_nNextTWKErrorSlot;
@@ -265,14 +244,7 @@ _Tbd:
 	pszFile = pszTWKFile;
 // LINE 184:
 _Tc3:
-	__asm        mov    eax, nCt;
-	__asm        push   eax;
-	__asm        mov    eax, pszSection;
-	__asm        push   eax;
-	__asm        mov    eax, pszFile;
-	__asm        push   eax;
-	__asm        call   TWKReadSection;
-	__asm        add    esp, 0xC;
+	TWKReadSection(nCt, pszSection, pszFile);
 // LINE 185:
 	__asm        jmp    _T32;
 // LINE 191:

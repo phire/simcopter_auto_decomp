@@ -476,7 +476,7 @@ private:
 // SYNTHETIC: COPTER_D 0x0043c710
 static void $E14() {
 
-	__asm        call   $E13;
+	$E13();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -485,7 +485,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0043c725
 static void $E13() {
 
-	__asm        call   _tzset;
+	_tzset();
 	__asm        jmp    _T10;
 _T10:
 	return;
@@ -531,7 +531,7 @@ _T65:
 // SYNTHETIC: COPTER_D 0x0043c7b3
 static void $E17() {
 
-	__asm        call   $E16;
+	$E16();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -552,7 +552,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0043c7e6
 static void $E20() {
 
-	__asm        call   $E19;
+	$E19();
 	__asm        jmp    __RETURN;
 __RETURN:
 }

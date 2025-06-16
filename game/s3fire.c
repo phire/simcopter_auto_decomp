@@ -465,24 +465,7 @@ _T170:
 // LINE 263:
 	cfd->fire_count++;
 // LINE 270:
-	__asm        mov    eax, z;
-	__asm        mov    ecx, fd;
-	__asm        sub    eax, [ecx+0x18];
-	__asm        push   eax;
-	__asm        mov    eax, y;
-	__asm        mov    ecx, fd;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        mov    ecx, fd;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   VR3dObjLocate;
-	__asm        add    esp, 0x10;
+	VR3dObjLocate((z - fd->loc.z), (y - fd->loc.y), (x - fd->loc.x), fd->stptr->mesh);
 // LINE 272:
 	fd->loc.x = x;
 // LINE 273:
@@ -525,10 +508,7 @@ _T170:
 // LINE 291:
 	mp.flags = flags;
 // LINE 292:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 294:
 	S_fire_count++;
 // LINE 295:
@@ -570,9 +550,7 @@ void S3FireDriver() {
 	__asm        cmp    fireloopsound, 1;
 	__asm        jne    _T3e;
 // LINE 332:
-	__asm        push   0xD;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0xd);
 // LINE 335:
 _T3e:
 	return;
@@ -749,24 +727,7 @@ _T2a7:
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+4], eax;
 // LINE 443:
-	__asm        mov    eax, loc.z;
-	__asm        mov    ecx, fd;
-	__asm        sub    eax, [ecx+0x18];
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        mov    ecx, fd;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        mov    ecx, fd;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   VR3dObjLocate;
-	__asm        add    esp, 0x10;
+	VR3dObjLocate((loc.z - fd->loc.z), (loc.y - fd->loc.y), (loc.x - fd->loc.x), fd->stptr->mesh);
 // LINE 445:
 	__asm        lea    eax, loc.x;
 	__asm        mov    ecx, fd;
@@ -834,10 +795,7 @@ _T3bf:
 // LINE 475:
 	mp.flags = 0x0;
 // LINE 476:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 480:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
@@ -858,10 +816,7 @@ _T3bf:
 // LINE 488:
 	mp.flags = 0x0;
 // LINE 489:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 491:
 	missloc = S3MissionGetMapLoc(fd->mission_id);
 // LINE 492:
@@ -900,26 +855,16 @@ _T4c8:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 505:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 509:
 _T4fc:
-	__asm        mov    eax, fd;
-	__asm        push   eax;
-	__asm        call   S3FireDestroyCell;
-	__asm        add    esp, 4;
+	S3FireDestroyCell(fd);
 // LINE 513:
 _T508:
 	__asm        jmp    _T5d;
 // LINE 517:
 _T50d:
-	__asm        push   6;
-	__asm        mov    eax, fd;
-	__asm        push   eax;
-	__asm        call   S3FireDyObjCollisionCheck;
-	__asm        add    esp, 8;
+	S3FireDyObjCollisionCheck(0x6, fd);
 // LINE 520:
 	S_spread_time += G_AvLoopTime;
 // LINE 521:
@@ -945,10 +890,7 @@ _T50d:
 	__asm        test   edx, edx;
 	__asm        jne    _T580;
 // LINE 525:
-	__asm        mov    eax, fd;
-	__asm        push   eax;
-	__asm        call   S3FireSpread;
-	__asm        add    esp, 4;
+	S3FireSpread(fd);
 // LINE 529:
 _T580:
 	__asm        jmp    _T5d;
@@ -960,18 +902,12 @@ _T585:
 	__asm        cmp    mindist, 0x32;
 	__asm        jl     _T5a8;
 // LINE 541:
-	__asm        push   0xD;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0xd);
 // LINE 543:
 	__asm        jmp    _T5b6;
 // LINE 547:
 _T5a8:
-	__asm        lea    eax, minloc.x;
-	__asm        push   eax;
-	__asm        push   0xD;
-	__asm        call   S3SoundSetPosition;
-	__asm        add    esp, 8;
+	S3SoundSetPosition(minloc.x, 0xd);
 // LINE 551:
 _T5b6:
 	__asm        jmp    _T5d5;
@@ -1303,10 +1239,7 @@ _T1f2:
 // LINE 734:
 	mp.flags = 0x0;
 // LINE 735:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 739:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
@@ -1327,10 +1260,7 @@ _T1f2:
 // LINE 747:
 	mp.flags = 0x0;
 // LINE 748:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 750:
 	missloc = S3MissionGetMapLoc(fd->mission_id);
 // LINE 751:
@@ -1369,10 +1299,7 @@ _T2f5:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 763:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 768:
 _T329:
 	S_fire_count--;
@@ -1434,10 +1361,7 @@ _T354:
 	__asm        test   ah, 4;
 	__asm        je     _T3e1;
 // LINE 806:
-	__asm        mov    eax, dyobj;
-	__asm        push   eax;
-	__asm        call   S3MissileDebrisDouse;
-	__asm        add    esp, 4;
+	S3MissileDebrisDouse(dyobj);
 // LINE 808:
 	__asm        jmp    _T3e1;
 // LINE 813:
@@ -2490,10 +2414,7 @@ _Ta18:
 // LINE 902:
 	mp.flags = flags;
 // LINE 903:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 907:
 	__asm        test   reinterpret_cast<uint8_t>(flags), 1;
 	__asm        je     _Taac;
@@ -2510,10 +2431,7 @@ _Ta18:
 // LINE 912:
 	mp.flags = flags;
 // LINE 913:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 915:
 	mp.op = 0x22;
 // LINE 916:
@@ -2527,10 +2445,7 @@ _Ta18:
 // LINE 918:
 	mp.flags = flags;
 // LINE 919:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 926:
 _Taac:
 	__asm        mov    eax, cellx;
@@ -3145,15 +3060,7 @@ _T21a:
 	__asm        jmp    _T1f0;
 // LINE 1288:
 _T227:
-	__asm        push   1;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x98];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, loc.x, fd->cfd->cptr);
 // LINE 1290:
 	return;
 // LINE 1297:
@@ -3257,11 +3164,7 @@ _T37e:
 	__asm        jmp    _T267;
 // LINE 1340:
 _T38b:
-	__asm        push   0x10;
-	__asm        mov    eax, fd;
-	__asm        push   eax;
-	__asm        call   S3FireDyObjCollisionCheck;
-	__asm        add    esp, 8;
+	S3FireDyObjCollisionCheck(0x10, fd);
 // LINE 1342:
 	fd->cfd->cptr->stptr = stobj;
 // LINE 1344:
@@ -3282,19 +3185,7 @@ _T38b:
 	__asm        shl    ecx, 8;
 	__asm        mov    G_texmap[0][eax+ecx], 0xA;
 // LINE 1346:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        push   0;
-	__asm        push   0x200000;
-	__asm        push   0;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x98];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   S3ExplosionStart;
-	__asm        add    esp, 0x18;
+	S3ExplosionStart(fd->mission_id, 0x4, 0x0, 0x200000, 0x0, fd->cfd->cptr);
 // LINE 1348:
 	loc.y += 0x300000;
 // LINE 1351:
@@ -3627,19 +3518,7 @@ _T60:
 	__asm        cmp    eax, [ecx+0x1C];
 	__asm        jle    _Tc5;
 // LINE 1534:
-	__asm        push   0;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        push   eax;
-	__asm        mov    eax, dyobj;
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, hit_type;
-	__asm        push   eax;
-	__asm        call   S3ObjHitDispatch;
-	__asm        add    esp, 0x14;
+	S3ObjHitDispatch(0x0, fd->mission_id, dyobj, (fd + 0x24), hit_type);
 // LINE 1540:
 _Tc5:
 	__asm        jmp    next_dyobj;
@@ -3732,19 +3611,7 @@ _T11a:
 	__asm        cmp    eax, ecx;
 	__asm        jge    next_dyobj;
 // LINE 1574:
-	__asm        push   0;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        push   eax;
-	__asm        mov    eax, dyobj;
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, hit_type;
-	__asm        push   eax;
-	__asm        call   S3ObjHitDispatch;
-	__asm        add    esp, 0x14;
+	S3ObjHitDispatch(0x0, fd->mission_id, dyobj, (fd + 0x24), hit_type);
 // LINE 1590:
 next_dyobj:
 	__asm        mov    eax, dyobj;
@@ -3939,27 +3806,7 @@ _T22d:
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx], ax;
 // LINE 1707:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x44];
-	__asm        mov    ecx, fd;
-	__asm        sub    eax, [ecx+0x18];
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x40];
-	__asm        mov    ecx, fd;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    ecx, fd;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   VR3dObjLocate;
-	__asm        add    esp, 0x10;
+	VR3dObjLocate((fd->dyfire.loc.z - fd->loc.z), (fd->dyfire.loc.y - fd->loc.y), (fd->dyfire.loc.x - fd->loc.x), fd->stptr->mesh);
 // LINE 1709:
 	__asm        mov    eax, fd;
 	__asm        add    eax, 0x3C;

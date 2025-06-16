@@ -568,12 +568,7 @@ _T152:
 	__asm        test   eax, eax;
 	__asm        jge    _T1d0;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x26;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 _T1d0:
 	__asm        jmp    _T152;
 _T1d5:
@@ -582,12 +577,7 @@ _T1d5:
 	__asm        test   eax, eax;
 	__asm        je     _T200;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x28;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x28, 0x59a254);
 _T200:
 	__asm        jmp    _T205;
 _T205:
@@ -596,19 +586,13 @@ _T205:
 	__asm        test   eax, eax;
 	__asm        je     _T230;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A274;
-	__asm        push   0x17;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a274, 0x17, 0x59a254);
 _T230:
 	__asm        jmp    _T235;
 _T235:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   FlatResFile::~FlatResFile;
+	this->FlatResFile::~FlatResFile();
 }
 
 

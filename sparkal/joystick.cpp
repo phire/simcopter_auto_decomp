@@ -145,7 +145,7 @@ struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
 // SYNTHETIC: COPTER_D 0x0049a480
 static void $E2() {
 
-	__asm        call   $E1;
+	$E1();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -154,8 +154,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0049a495
 static void $E1() {
 
-	__asm        mov    ecx, 0x604C78;
-	__asm        call   JoystickManager::JoystickManager;
+	0x604c78->JoystickManager::JoystickManager();
 	__asm        jmp    __RETURN;
 __RETURN:
 }

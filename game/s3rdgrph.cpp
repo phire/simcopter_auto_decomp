@@ -175,8 +175,7 @@ struct Goal{ // packed(0x2a bytes) TI: 0x12ce
 // FUNCTION: COPTER_D 0x0053bd40
 void S3RoadGraphInit() {
 // LINE 69:
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::Init;
+	0x5c3828->RoadGraph::Init();
 // LINE 70:
 	return;
 }
@@ -586,8 +585,7 @@ _T478:
 	__asm        jmp    _T1fa;
 // LINE 150:
 _T47d:
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindDeadEnds;
+	this->RoadGraph::FindDeadEnds();
 // LINE 156:
 	x = 0x0;
 	__asm        jmp    _T494;
@@ -895,11 +893,7 @@ IntersectionKludge:
 	__asm        cmp    ecx, edx;
 	__asm        je     _T1d8;
 
-	__asm        push   0x11C;
-	__asm        push   0x5B80F0;
-	__asm        push   0x5B8114;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x11c, 0x5b80f0, 0x5b8114);
 	__asm        jmp    _T1dd;
 _T1d8:
 	__asm        jmp    _T1dd;
@@ -914,11 +908,7 @@ _T1dd:
 	__asm        cmp    ecx, edx;
 	__asm        je     _T211;
 
-	__asm        push   0x11D;
-	__asm        push   0x5B8130;
-	__asm        push   0x5B8154;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x11d, 0x5b8130, 0x5b8154);
 	__asm        jmp    _T216;
 _T211:
 	__asm        jmp    _T216;
@@ -1085,11 +1075,7 @@ _T44:
 	__asm        cmp    dword ptr [ebp-0x24], 0x10;
 	__asm        jle    _T92;
 // LINE 354:
-	__asm        push   0x162;
-	__asm        push   0x5B8170;
-	__asm        push   0x5B8194;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x162, 0x5b8170, 0x5b8194);
 	__asm        jmp    _T92;
 
 	__asm        jmp    _T92;
@@ -2098,11 +2084,7 @@ _T69:
 	__asm        cmp    edx, eax;
 	__asm        jg     _Ta1;
 
-	__asm        push   0x25B;
-	__asm        push   0x5B819C;
-	__asm        push   0x5B81C0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x25b, 0x5b819c, 0x5b81c0);
 	__asm        jmp    _Ta6;
 _Ta1:
 	__asm        jmp    _Ta6;
@@ -3994,11 +3976,7 @@ _T46f:
 	__asm        cmp    ecx, 0x7D00;
 	__asm        jl     _T4b3;
 
-	__asm        push   0x3CA;
-	__asm        push   0x5B81D8;
-	__asm        push   0x5B81FC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x3ca, 0x5b81d8, 0x5b81fc);
 	__asm        jmp    _T4b8;
 _T4b3:
 	__asm        jmp    _T4b8;
@@ -6312,11 +6290,7 @@ _T1519:
 	__asm        jmp    _T15ab;
 // LINE 1190:
 _T151e:
-	__asm        push   0x4A6;
-	__asm        push   0x5B8210;
-	__asm        push   0x5B8234;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x4a6, 0x5b8210, 0x5b8234);
 	__asm        jmp    _T153f;
 
 	__asm        jmp    _T153f;
@@ -7589,11 +7563,7 @@ _Td8:
 	__asm        jne    _T11f;
 // LINE 1431:
 _Tfe:
-	__asm        push   0x597;
-	__asm        push   0x5B823C;
-	__asm        push   0x5B8260;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x597, 0x5b823c, 0x5b8260);
 	__asm        jmp    _T11f;
 
 	__asm        jmp    _T11f;

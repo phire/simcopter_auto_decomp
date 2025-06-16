@@ -38,10 +38,7 @@ struct Chunk{ // packed(0x8 bytes) TI: 0x2ee9
 // FUNCTION: COPTER_D 0x004d52c0
 void InitResource() {
 // LINE 93:
-	__asm        push   0x59C230;
-	__asm        push   0x6663F0;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x59c230, 0x6663f0);
 // LINE 94:
 	ResourceFilePtr = 0x0;
 // LINE 95:
@@ -76,11 +73,7 @@ _T21:
 	return;
 // LINE 121:
 _T33:
-	__asm        mov    eax, geo;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(geo->barrymempool);
 // LINE 122:
 }
 
@@ -512,26 +505,17 @@ int32_t VRUnLoadResource(/*packed*/ struct VRResource *res) {
 _T17:
 	geo = res;
 // LINE 309:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   UnRegisterResource;
-	__asm        add    esp, 4;
+	UnRegisterResource(res);
 // LINE 317:
 	__asm        jmp    _T89;
 // LINE 320:
 _T2e:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   UnRegisterResource;
-	__asm        add    esp, 4;
+	UnRegisterResource(res);
 // LINE 321:
 	__asm        jmp    _T89;
 // LINE 324:
 _T3f:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   UnRegisterResource;
-	__asm        add    esp, 4;
+	UnRegisterResource(res);
 // LINE 325:
 	__asm        jmp    _T89;
 // LINE 328:
@@ -558,11 +542,7 @@ _T89:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jl     _Ta5;
 // LINE 335:
-	__asm        mov    eax, res;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(res->mempoolid);
 // LINE 337:
 _Ta5:
 	return 0x1;
@@ -998,7 +978,7 @@ _T12a:
 // FUNCTION: COPTER_D 0x004d5e81
 int32_t OpenResourceFile(char * name) {
 // LINE 872:
-	__asm        call   VRCloseResourceFile;
+	VRCloseResourceFile();
 // LINE 873:
 	__asm        push   0x8000;
 	__asm        mov    eax, name;
@@ -1028,11 +1008,7 @@ _T3f:
 	return 0x0;
 // LINE 884:
 _T7d:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        push   0x6663F0;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(name, 0x6663f0);
 // LINE 885:
 	return 0x1;
 // LINE 887:
@@ -1073,13 +1049,10 @@ _T21:
 	__asm        cmp    ResFileMemPool, 0;
 	__asm        jl     _T3c;
 // LINE 1096:
-	__asm        mov    eax, ResFileMemPool;
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(ResFileMemPool);
 // LINE 1099:
 _T3c:
-	__asm        call   InitResource;
+	InitResource();
 // LINE 1100:
 }
 

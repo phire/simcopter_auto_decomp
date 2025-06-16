@@ -734,9 +734,7 @@ _T2c:
 	__asm        cmp    num, 1;
 	__asm        jne    _T1c3;
 // LINE 32:
-	__asm        push   0x5973A4;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(0x5973a4);
 // LINE 33:
 	__asm        jmp    _T69;
 _T69:
@@ -857,9 +855,7 @@ _T19e:
 	__asm        jmp    _T7a;
 // LINE 37:
 _T1b1:
-	__asm        push   0x5973B8;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(0x5973b8);
 // LINE 39:
 	__asm        jmp    _T58f;
 // LINE 41:
@@ -1382,9 +1378,7 @@ _T1f2:
 	__asm        add    esp, 4;
 	__asm        jmp    _T22e;
 _T22e:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T23d;
 _T23d:
 	__asm        jmp    _T242;
@@ -1474,9 +1468,7 @@ _T314:
 	__asm        add    esp, 4;
 	__asm        jmp    _T350;
 _T350:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T35f;
 _T35f:
 	__asm        jmp    _T364;
@@ -2409,8 +2401,7 @@ void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3828];
 // LINE 183:
-	__asm        mov    ecx, this;
-	__asm        call   CDebugWindow::RecalcScrollRange;
+	this->CDebugWindow::RecalcScrollRange();
 // LINE 184:
 	__asm        push   1;
 	__asm        push   0;
@@ -2893,9 +2884,7 @@ _T7a:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tb6;
 _Tb6:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tc5;
 _Tc5:
 	__asm        jmp    _Tca;
@@ -3007,8 +2996,7 @@ _T201:
 	__asm        cmp    [ebp-0xA8], eax;
 	__asm        jne    _T21e;
 _T213:
-	__asm        mov    ecx, this;
-	__asm        call   deque<basic_string<char>>::allocate_at_end;
+	this->deque<basic_string<char>>::allocate_at_end();
 _T21e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -3189,8 +3177,7 @@ _T483:
 	__asm        jmp    _T285;
 // LINE 255:
 _T488:
-	__asm        mov    ecx, this;
-	__asm        call   CDebugWindow::RecalcScrollRange;
+	this->CDebugWindow::RecalcScrollRange();
 // LINE 256:
 	__asm        push   1;
 	__asm        push   0;
@@ -3628,8 +3615,7 @@ _T36c:
 _T387:
 	__asm        jmp    _T24e;
 _T38c:
-	__asm        mov    ecx, this;
-	__asm        call   CDebugWindow::RecalcScrollRange;
+	this->CDebugWindow::RecalcScrollRange();
 // LINE 324:
 	__asm        mov    eax, command_vector.finish;
 	__asm        mov    [ebp-0x254], eax;
@@ -3807,8 +3793,7 @@ _T38:
 	__asm        cmp    eax, 0x300;
 	__asm        jne    _T59;
 // LINE 345:
-	__asm        mov    ecx, this;
-	__asm        call   CDebugWindow::OnEditChange;
+	this->CDebugWindow::OnEditChange();
 // LINE 346:
 _T59:
 	__asm        jmp    _T10d;
@@ -3828,8 +3813,7 @@ _T5e:
 	__asm        jmp    _T10d;
 // LINE 351:
 _T83:
-	__asm        mov    ecx, this;
-	__asm        call   CDebugWindow::OnPaint;
+	this->CDebugWindow::OnPaint();
 // LINE 352:
 	__asm        jmp    _T10d;
 // LINE 354:
@@ -4466,10 +4450,8 @@ _T11:
 	__asm        jmp    __RETURN;
 // LINE 434:
 _T35:
-	__asm        lea    ecx, subString.c_str_ptr;
-	__asm        call   basic_string<char>::basic_string<char>;
-	__asm        lea    ecx, parseStr.c_str_ptr;
-	__asm        call   basic_string<char>::basic_string<char>;
+	subString.c_str_ptr->basic_string<char>::basic_string<char>();
+	parseStr.c_str_ptr->basic_string<char>::basic_string<char>();
 // LINE 437:
 	__asm        jmp    _T4a;
 _T4a:
@@ -4622,9 +4604,7 @@ _T1e6:
 	__asm        add    esp, 4;
 	__asm        jmp    _T21e;
 _T21e:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T22d;
 _T22d:
 	__asm        jmp    _T232;
@@ -4690,8 +4670,7 @@ _T2f5:
 	__asm        cmp    [ebp-0xB0], eax;
 	__asm        je     _T38d;
 
-	__asm        lea    ecx, parseStr.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	parseStr.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T311;
 _T311:
 	__asm        mov    eax, [ebp-0xB0];
@@ -4818,9 +4797,7 @@ _T473:
 	__asm        add    esp, 4;
 	__asm        jmp    _T4a9;
 _T4a9:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4b8;
 _T4b8:
 	__asm        jmp    _T4bd;

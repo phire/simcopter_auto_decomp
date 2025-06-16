@@ -203,13 +203,7 @@ _T46:
 	__asm        test   eax, eax;
 	__asm        je     _T76;
 // LINE 45:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(name, (this + 0x4));
 // LINE 46:
 	__asm        jmp    _T7d;
 // LINE 47:
@@ -385,13 +379,7 @@ _T3c:
 	__asm        test   eax, eax;
 	__asm        je     _T6c;
 // LINE 119:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(name, (this + 0x4));
 // LINE 120:
 	__asm        jmp    _T73;
 // LINE 121:
@@ -494,13 +482,7 @@ _T35:
 	return 0x0;
 // LINE 164:
 _T3c:
-	__asm        mov    eax, szPath;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szPath, (this + 0x4));
 // LINE 165:
 	return 0x1;
 // LINE 166:
@@ -530,12 +512,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        cmp    name, 0;
 	__asm        je     _T5e;
 
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        lea    eax, tempPFile.szFilePath[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(name, tempPFile.szFilePath[0]);
 	__asm        jmp    _T65;
 _T5e:
 	tempPFile.szFilePath[0] = 0x0;

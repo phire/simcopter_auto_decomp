@@ -2091,11 +2091,7 @@ void Station::DecrementQuantityOfVehicleDispatched(int32_t stationID) {
 	__asm        cmp    dword ptr [eax+ecx+0x5C], 0;
 	__asm        jne    _T41;
 
-	__asm        push   0x1A7;
-	__asm        push   0x5B8078;
-	__asm        push   0x5B809C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x1a7, 0x5b8078, 0x5b809c);
 	__asm        jmp    _T46;
 _T41:
 	__asm        jmp    _T46;
@@ -3129,8 +3125,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0053b99b
 static void $E36() {
 
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::~DigitalSound;
+	0x6351d0->DigitalSound::~DigitalSound();
 	__asm        jmp    __RETURN;
 __RETURN:
 }

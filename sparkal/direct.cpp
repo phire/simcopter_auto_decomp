@@ -687,9 +687,7 @@ _T19:
 	__asm        add    esp, 4;
 	__asm        jmp    _T4c;
 _T4c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T5b;
 _T5b:
 	__asm        jmp    _T60;
@@ -964,9 +962,7 @@ _T189:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1bf;
 _T1bf:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1ce;
 _T1ce:
 	__asm        jmp    _T1d3;
@@ -1073,9 +1069,7 @@ _T2e5:
 	__asm        add    esp, 4;
 	__asm        jmp    _T312;
 _T312:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T321;
 _T321:
 	__asm        jmp    _T326;
@@ -1175,9 +1169,7 @@ _T40c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T43f;
 _T43f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T44e;
 _T44e:
 	__asm        jmp    _T453;
@@ -1473,9 +1465,7 @@ _T189:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1bc;
 _T1bc:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1cb;
 _T1cb:
 	__asm        jmp    _T1d0;
@@ -1845,9 +1835,7 @@ _T148:
 	__asm        add    esp, 4;
 	__asm        jmp    _T17b;
 _T17b:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T18a;
 _T18a:
 	__asm        jmp    _T18f;
@@ -2047,9 +2035,7 @@ _T395:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3cf;
 _T3cf:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T3de;
 _T3de:
 	__asm        jmp    _T3e3;
@@ -2647,9 +2633,7 @@ _T48:
 	__asm        add    esp, 4;
 	__asm        jmp    _T9d;
 _T9d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Ta7:
 	__asm        jmp    _Tac;
 _Tac:
@@ -2708,9 +2692,7 @@ _T101:
 	__asm        add    esp, 4;
 	__asm        jmp    _T155;
 _T155:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T15f:
 	__asm        jmp    _T164;
 _T164:
@@ -2807,9 +2789,7 @@ _T255:
 	__asm        add    esp, 4;
 	__asm        jmp    _T288;
 _T288:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T297;
 _T297:
 	__asm        jmp    _T29c;
@@ -3001,8 +2981,7 @@ _T4d1:
 	this-><Directory+0x18:4> = bNewAllowParentDirectoryAsEntry;
 	this-><Directory+0x1c:4> = bNewAllowCurrentDirectoryAsEntry;
 // LINE 199:
-	__asm        mov    ecx, this;
-	__asm        call   Directory::MakeSurePathEndsWithSeparator;
+	this->Directory::MakeSurePathEndsWithSeparator();
 // LINE 200:
 	__asm        cmp    bReadNow, 0;
 	__asm        je     _T4fd;
@@ -3065,8 +3044,7 @@ _T84:
 	__asm        jmp    _T89;
 // LINE 225:
 _T89:
-	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
-	__asm        call   DirectoryEntry::DirectoryEntry;
+	directoryEntryCurrent.directoryParent->DirectoryEntry::DirectoryEntry();
 // LINE 227:
 	bParentDirectoryEnumerated = 0x0;
 // LINE 228:
@@ -3928,8 +3906,7 @@ _Td93:
 	__asm        cmp    eax, ecx;
 	__asm        je     _Te50;
 
-	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	directoryEntryCurrent.sName.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _Tdd1;
 _Tdd1:
 	__asm        mov    eax, sParentDirectory.reference;
@@ -4203,8 +4180,7 @@ int32_t Directory::ReadDirectorySpecificEntriesIntoStringList(/*packed*/ class l
 	__asm        lea    ecx, [ebp-0x170];
 	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 352:
-	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
-	__asm        call   DirectoryEntry::DirectoryEntry;
+	directoryEntryCurrent.directoryParent->DirectoryEntry::DirectoryEntry();
 // LINE 354:
 	bParentDirectoryEnumerated = 0x0;
 // LINE 355:
@@ -5092,8 +5068,7 @@ int32_t Directory::DoesAnyEntryExistThatMatchesPattern(const /*packed*/ class ba
 	/*bp-0x154*/ void * __ptr32 hFind;
 
 // LINE 435:
-	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
-	__asm        call   DirectoryEntry::DirectoryEntry;
+	directoryEntryCurrent.directoryParent->DirectoryEntry::DirectoryEntry();
 // LINE 437:
 	__asm        mov    eax, sPathPattern;
 	__asm        cmp    dword ptr [eax], 0;
@@ -5564,8 +5539,7 @@ _T1ce:
 	__asm        jmp    _T1d3;
 // LINE 475:
 _T1d3:
-	__asm        mov    ecx, this;
-	__asm        call   Directory::MakeSurePathEndsWithSeparator;
+	this->Directory::MakeSurePathEndsWithSeparator();
 // LINE 476:
 	__asm        cmp    bReadNow, 0;
 	__asm        je     _T1ed;
@@ -5902,9 +5876,7 @@ _T1f5:
 	__asm        add    esp, 4;
 	__asm        jmp    _T231;
 _T231:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T240;
 _T240:
 	__asm        jmp    _T245;
@@ -5945,9 +5917,7 @@ _T276:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2ba;
 _T2ba:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2c9;
 _T2c9:
 	__asm        mov    eax, [ebp-0x30];
@@ -6127,9 +6097,7 @@ _T31:
 	__asm        add    esp, 4;
 	__asm        jmp    _T67;
 _T67:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T76;
 _T76:
 	__asm        jmp    _T7b;
@@ -6317,9 +6285,7 @@ _T26c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T29f;
 _T29f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2ae;
 _T2ae:
 	__asm        jmp    _T2b3;
@@ -6572,9 +6538,7 @@ _T95:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tc8;
 _Tc8:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Td7;
 _Td7:
 	__asm        jmp    _Tdc;
@@ -6687,9 +6651,7 @@ _T1e8:
 	__asm        add    esp, 4;
 	__asm        jmp    _T21e;
 _T21e:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T22d;
 _T22d:
 	__asm        jmp    _T232;
@@ -6845,9 +6807,7 @@ _T3b9:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3ec;
 _T3ec:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T3fb;
 _T3fb:
 	__asm        jmp    _T400;
@@ -6886,15 +6846,9 @@ _T44c:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T47e;
 
-	__asm        mov    ecx, sFirstPart;
-	__asm        call   basic_string<char>::delete_ref;
-	__asm        mov    eax, sPath;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, sFirstPart;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, sFirstPart;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    dword ptr [eax+0xC];
+	sFirstPart->basic_string<char>::delete_ref();
+	sFirstPart.reference = sPath.reference;
+	sFirstPart.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T4c4;
 _T47e:
 	__asm        jmp    _T483;

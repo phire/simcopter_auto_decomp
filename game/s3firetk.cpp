@@ -537,10 +537,8 @@ _T26:
 // FUNCTION: COPTER_D 0x00536130
 void FireEngineClass::FireEngineClass() {
 
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::EmergencyVehicleClass;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5932A8;
+	this->EmergencyVehicleClass::EmergencyVehicleClass();
+	this-><FireEngineClass+0x00> = 0x5932a8;
 // LINE 83:
 	this->carModel = 0x11c;
 // LINE 84:
@@ -555,8 +553,7 @@ void FireEngineClass::~FireEngineClass() {
 	this-><FireEngineClass+0x00> = 0x5932a8;
 	__asm        jmp    __RETURN;
 __RETURN:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
+	this->EmergencyVehicleClass::~EmergencyVehicleClass();
 }
 
 // FUNCTION: COPTER_D 0x0053618b
@@ -640,11 +637,7 @@ _Td6:
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        jne    _T102;
 
-	__asm        push   0x91;
-	__asm        push   0x5B7DCC;
-	__asm        push   0x5B7DF0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x91, 0x5b7dcc, 0x5b7df0);
 	__asm        jmp    _T107;
 _T102:
 	__asm        jmp    _T107;
@@ -659,11 +652,7 @@ _T113:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    _T139;
 
-	__asm        push   0x99;
-	__asm        push   0x5B7E18;
-	__asm        push   0x5B7E3C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x99, 0x5b7e18, 0x5b7e3c);
 	__asm        jmp    _T13e;
 _T139:
 	__asm        jmp    _T13e;
@@ -844,8 +833,7 @@ _T1d:
 	__asm        mov    ecx, gFireStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 261:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 264:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
@@ -854,14 +842,12 @@ _T1d:
 	__asm        add    esp, 4;
 // LINE 268:
 _T80:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 269:
 	__asm        jmp    _T2e0;
 // LINE 273:
 _T8d:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::PositionIcon;
+	this->EmergencyVehicleClass::PositionIcon();
 // LINE 274:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -887,8 +873,7 @@ _T8d:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::UnLinkIconFromCell;
 // LINE 277:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
+	this->EmergencyVehicleClass::TurnOffStrobe();
 // LINE 278:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];
@@ -900,8 +885,7 @@ _T8d:
 // LINE 281:
 	this->emergencyState = 0x5;
 // LINE 282:
-	__asm        mov    ecx, this;
-	__asm        call   FireEngineClass::PointStreamAtFire;
+	this->FireEngineClass::PointStreamAtFire();
 // LINE 283:
 	__asm        push   9;
 	__asm        push   0xD;
@@ -922,8 +906,7 @@ _T149:
 // LINE 292:
 	this->emergencyType = 0x0;
 // LINE 296:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 297:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
@@ -950,8 +933,7 @@ _T1a8:
 	__asm        jmp    _T21e;
 // LINE 310:
 _T1b2:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::PositionIcon;
+	this->EmergencyVehicleClass::PositionIcon();
 // LINE 313:
 	vec.x = (ViewState.world_pos.x - this->autoDynomitor.loc.x);
 // LINE 314:
@@ -968,11 +950,9 @@ _T1b2:
 	AutomobileClass::fireSirenDist = dist;
 // LINE 320:
 _T209:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOverCiviliansInWay;
+	this->AutomobileClass::PullOverCiviliansInWay();
 // LINE 321:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 322:
 	__asm        jmp    _T2e0;
 // LINE 326:
@@ -986,8 +966,7 @@ _T21e:
 // LINE 329:
 	this->emergencyType = 0x0;
 // LINE 332:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 334:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
@@ -1012,11 +991,7 @@ _T28d:
 	__asm        jmp    _T2e0;
 // LINE 345:
 _T292:
-	__asm        push   0x159;
-	__asm        push   0x5B7E4C;
-	__asm        push   0x5B7E70;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x159, 0x5b7e4c, 0x5b7e70);
 	__asm        jmp    _T2b3;
 
 	__asm        jmp    _T2b3;
@@ -1076,8 +1051,7 @@ int32_t FireEngineClass::AtScene() {
 	__asm        test   eax, eax;
 	__asm        je     _T78;
 // LINE 365:
-	__asm        mov    ecx, this;
-	__asm        call   FireEngineClass::PointStreamAtFire;
+	this->FireEngineClass::PointStreamAtFire();
 // LINE 367:
 	__asm        jmp    _T7f;
 // LINE 370:
@@ -1116,8 +1090,7 @@ _T84:
 	__asm        test   eax, eax;
 	__asm        je     _Tf0;
 // LINE 381:
-	__asm        mov    ecx, this;
-	__asm        call   FireEngineClass::PointStreamAtFire;
+	this->FireEngineClass::PointStreamAtFire();
 // LINE 383:
 	__asm        jmp    _Tf7;
 // LINE 386:
@@ -1191,11 +1164,7 @@ _T3f:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _Ta7;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _Tac;
 _Ta7:
 	__asm        jmp    _Tac;
@@ -1364,11 +1333,7 @@ _Ta8:
 	__asm        cmp    dword ptr [eax+0x2A8], 0;
 	__asm        jne    _Td4;
 
-	__asm        push   0x212;
-	__asm        push   0x5B7E78;
-	__asm        push   0x5B7E9C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x212, 0x5b7e78, 0x5b7e9c);
 	__asm        jmp    _Td9;
 _Td4:
 	__asm        jmp    _Td9;
@@ -1508,8 +1473,7 @@ _T75:
 	__asm        test   eax, eax;
 	__asm        je     _Tef;
 // LINE 603:
-	__asm        mov    ecx, this;
-	__asm        call   FireEngineClass::PointStreamAtFire;
+	this->FireEngineClass::PointStreamAtFire();
 // LINE 606:
 _Tef:
 	return;

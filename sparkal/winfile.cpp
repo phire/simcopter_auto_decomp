@@ -286,9 +286,7 @@ _T37:
 	__asm        add    esp, 4;
 	__asm        jmp    _T6c;
 _T6c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T7b;
 _T7b:
 	__asm        jmp    _T80;
@@ -405,9 +403,7 @@ _T195:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1ca;
 _T1ca:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1d9;
 _T1d9:
 	__asm        jmp    _T1de;
@@ -521,9 +517,7 @@ _T2e6:
 	__asm        add    esp, 4;
 	__asm        jmp    _T31c;
 _T31c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T32b;
 _T32b:
 	__asm        jmp    _T330;
@@ -638,9 +632,7 @@ _T440:
 	__asm        add    esp, 4;
 	__asm        jmp    _T476;
 _T476:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T485;
 _T485:
 	__asm        jmp    _T48a;
@@ -1051,11 +1043,7 @@ _T416:
 	__asm        jmp    __RETURN;
 // LINE 70:
 _T41e:
-	__asm        push   0x3F;
-	__asm        lea    eax, sFilter.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   FixResourceFilterString;
-	__asm        add    esp, 8;
+	FixResourceFilterString(0x3f, sFilter.c_str_ptr);
 // LINE 72:
 	__asm        mov    eax, pInitialDirectory;
 	__asm        push   eax;
@@ -1509,11 +1497,7 @@ _T416:
 	__asm        jmp    __RETURN;
 // LINE 128:
 _T41e:
-	__asm        push   0x3F;
-	__asm        lea    eax, sFilter.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   FixResourceFilterString;
-	__asm        add    esp, 8;
+	FixResourceFilterString(0x3f, sFilter.c_str_ptr);
 // LINE 130:
 	__asm        mov    eax, pInitialDirectory;
 	__asm        push   eax;

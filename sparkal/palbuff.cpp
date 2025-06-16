@@ -264,8 +264,7 @@ _Tdf:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::SetFont;
 // LINE 41:
-	__asm        mov    ecx, this;
-	__asm        call   PaletteBuffer::DrawPalette;
+	this->PaletteBuffer::DrawPalette();
 // LINE 42:
 	return;
 
@@ -351,8 +350,7 @@ _Tf3:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::SetFont;
 // LINE 60:
-	__asm        mov    ecx, this;
-	__asm        call   PaletteBuffer::DrawPalette;
+	this->PaletteBuffer::DrawPalette();
 // LINE 61:
 	return;
 
@@ -381,8 +379,7 @@ void PaletteBuffer::~PaletteBuffer() {
 _T43:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::~CBackBuffer;
+	this->CBackBuffer::~CBackBuffer();
 }
 
 // FUNCTION: COPTER_D 0x004474ab

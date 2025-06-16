@@ -155,13 +155,7 @@ _T172:
 	__asm        cmp    G_camera_mode, 2;
 	__asm        jne    _T1f2;
 // LINE 158:
-	__asm        mov    eax, G_uheli;
-	__asm        add    eax, 0x100;
-	__asm        push   eax;
-	__asm        lea    eax, mat[0][0];
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((G_uheli + 0x100), mat[0][0]);
 // LINE 161:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -257,10 +251,7 @@ _T2d2:
 // LINE 243:
 	Velocity = MTNormalize(CameraVector.x);
 // LINE 244:
-	__asm        lea    eax, CameraVector.x;
-	__asm        push   eax;
-	__asm        call   NormalizeXZVector;
-	__asm        add    esp, 4;
+	NormalizeXZVector(CameraVector.x);
 // LINE 246:
 	__asm        cmp    Velocity, 0x50000;
 	__asm        jle    _T3b4;
@@ -374,21 +365,12 @@ void SetIdealCameraPos() {
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T43;
 // LINE 320:
-	__asm        call   GetAvatarDYOBJ;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   NormalizeGridPoint;
-	__asm        add    esp, 4;
+	NormalizeGridPoint((GetAvatarDYOBJ() + 0x18));
 // LINE 321:
 	return;
 // LINE 325:
 _T43:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   NormalizeGridPoint;
-	__asm        add    esp, 4;
+	NormalizeGridPoint((G_uheli->dyheli + 0x18));
 // LINE 328:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T6c;
@@ -1035,10 +1017,7 @@ void S3CameraRotate() {
 // LINE 615:
 	cameraDelta.y = (dyobj->loc.y - Viewer.pos.y);
 // LINE 634:
-	__asm        lea    eax, cameraDelta.x;
-	__asm        push   eax;
-	__asm        call   CalcCameraAngles;
-	__asm        add    esp, 4;
+	CalcCameraAngles(cameraDelta.x);
 // LINE 636:
 // Block end:
 	return;
@@ -1061,10 +1040,7 @@ _T8b:
 // LINE 642:
 	cameraDelta.y = (alt - Viewer.pos.y);
 // LINE 654:
-	__asm        lea    eax, cameraDelta.x;
-	__asm        push   eax;
-	__asm        call   CalcCameraAngles;
-	__asm        add    esp, 4;
+	CalcCameraAngles(cameraDelta.x);
 // LINE 656:
 	return;
 _Td6:
@@ -1081,10 +1057,7 @@ _Td6:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 671:
-	__asm        lea    eax, cameraDelta.x;
-	__asm        push   eax;
-	__asm        call   CalcCameraAngles;
-	__asm        add    esp, 4;
+	CalcCameraAngles(cameraDelta.x);
 // LINE 673:
 	return;
 // LINE 676:
@@ -1113,10 +1086,7 @@ _T139:
 // LINE 680:
 	cameraDelta.z = (G_uheli->dyheli->loc.z - Viewer.pos.z);
 // LINE 693:
-	__asm        lea    eax, cameraDelta.x;
-	__asm        push   eax;
-	__asm        call   CalcCameraAngles;
-	__asm        add    esp, 4;
+	CalcCameraAngles(cameraDelta.x);
 // LINE 699:
 }
 

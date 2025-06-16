@@ -298,12 +298,7 @@ _T56:
 	__asm        cmp    power, 0xA;
 	__asm        jle    _T8c;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF570;
-	__asm        push   0x7A;
-	__asm        push   0x5BF584;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf570, 0x7a, 0x5bf584);
 // LINE 124:
 _T8c:
 	__asm        mov    eax, power;
@@ -511,12 +506,7 @@ _T33:
 	__asm        cmp    power, 7;
 	__asm        jle    _T6c;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF5A4;
-	__asm        push   0xBE;
-	__asm        push   0x5BF5B4;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf5a4, 0xbe, 0x5bf5b4);
 // LINE 191:
 _T6c:
 	__asm        mov    eax, power;
@@ -626,22 +616,14 @@ _T24:
 	__asm        cmp    ecx, 4;
 	__asm        jge    _T50;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF5D4;
-	__asm        push   0xE3;
-	__asm        push   0x5BF614;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf5d4, 0xe3, 0x5bf614);
 // LINE 228:
 _T50:
 	__asm        mov    eax, name;
 	__asm        mov    eax, [eax+1];
 	__asm        mov    name4, eax;
 // LINE 229:
-	__asm        lea    eax, name4;
-	__asm        push   eax;
-	__asm        call   Swizzle4;
-	__asm        add    esp, 4;
+	Swizzle4(name4);
 // LINE 230:
 	return name4;
 // LINE 232:
@@ -829,27 +811,11 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 	/*bp-0x100*/ unsigned char buff[256]; // 0x100 bytes
 
 // LINE 456:
-	__asm        push   0x100;
-	__asm        lea    eax, buff[0];
-	__asm        push   eax;
-	__asm        mov    eax, src;
-	__asm        push   eax;
-	__asm        call   Memory::BlockMove;
-	__asm        add    esp, 0xC;
+	Memory::BlockMove(0x100, buff[0], src);
 // LINE 457:
-	__asm        lea    eax, buff[0];
-	__asm        push   eax;
-	__asm        call   CtoPstr;
-	__asm        add    esp, 4;
+	CtoPstr(buff[0]);
 // LINE 459:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destSize);
-	__asm        push   eax;
-	__asm        mov    eax, dest;
-	__asm        push   eax;
-	__asm        lea    eax, buff[0];
-	__asm        push   eax;
-	__asm        call   ConcatPStr;
-	__asm        add    esp, 0xC;
+	ConcatPStr(reinterpret_cast<uint32_t>(destSize), dest, buff[0]);
 // LINE 460:
 	return;
 }
@@ -859,21 +825,9 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 	/*bp-0x100*/ unsigned char numStr[256]; // 0x100 bytes
 
 // LINE 467:
-	__asm        lea    eax, numStr[0];
-	__asm        push   eax;
-	__asm        mov    eax, number;
-	__asm        push   eax;
-	__asm        call   Num2Str;
-	__asm        add    esp, 8;
+	Num2Str(numStr[0], number);
 // LINE 468:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destSize);
-	__asm        push   eax;
-	__asm        mov    eax, str;
-	__asm        push   eax;
-	__asm        lea    eax, numStr[0];
-	__asm        push   eax;
-	__asm        call   ConcatPStr;
-	__asm        add    esp, 0xC;
+	ConcatPStr(reinterpret_cast<uint32_t>(destSize), str, numStr[0]);
 // LINE 469:
 	return;
 }

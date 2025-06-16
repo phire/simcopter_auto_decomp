@@ -478,8 +478,8 @@ public:
 // SYNTHETIC: COPTER_D 0x004715e0
 static void $E65() {
 
-	__asm        call   $E61;
-	__asm        call   $E64;
+	$E61();
+	$E64();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -488,8 +488,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004715fa
 static void $E61() {
 
-	__asm        mov    ecx, 0x6042C8;
-	__asm        call   DigitalSound::DigitalSound;
+	0x6042c8->DigitalSound::DigitalSound();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -526,8 +525,8 @@ _T2d:
 // SYNTHETIC: COPTER_D 0x00471668
 static void $E70() {
 
-	__asm        call   $E67;
-	__asm        call   $E69;
+	$E67();
+	$E69();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -536,8 +535,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00471682
 static void $E67() {
 
-	__asm        mov    ecx, 0x6043C8;
-	__asm        call   DigitalSound::DigitalSound;
+	0x6043c8->DigitalSound::DigitalSound();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -574,8 +572,8 @@ _T2d:
 // SYNTHETIC: COPTER_D 0x004716f0
 static void $E75() {
 
-	__asm        call   $E72;
-	__asm        call   $E74;
+	$E72();
+	$E74();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -584,8 +582,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0047170a
 static void $E72() {
 
-	__asm        mov    ecx, 0x604348;
-	__asm        call   DigitalSound::DigitalSound;
+	0x604348->DigitalSound::DigitalSound();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -622,8 +619,8 @@ _T2d:
 // SYNTHETIC: COPTER_D 0x00471778
 static void $E80() {
 
-	__asm        call   $E77;
-	__asm        call   $E79;
+	$E77();
+	$E79();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -632,8 +629,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00471792
 static void $E77() {
 
-	__asm        mov    ecx, 0x604248;
-	__asm        call   DigitalSound::DigitalSound;
+	0x604248->DigitalSound::DigitalSound();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -669,10 +665,8 @@ _T2d:
 // FUNCTION: COPTER_D 0x00471800
 void SoundButtonWindow::SoundButtonWindow() {
 
-	__asm        mov    ecx, this;
-	__asm        call   ButtonWindow::ButtonWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590870;
+	this->ButtonWindow::ButtonWindow();
+	this-><SoundButtonWindow+0x00> = 0x590870;
 // LINE 30:
 	__asm        cmp    SoundButtonWindow::lButtonSoundReferenceCount, 0;
 	__asm        jne    _T34;
@@ -729,16 +723,14 @@ void SoundButtonWindow::~SoundButtonWindow() {
 // LINE 57:
 	__asm        jne    _T2b;
 // LINE 58:
-	__asm        mov    ecx, 0x6042C8;
-	__asm        call   DigitalSound::Unload;
+	0x6042c8->DigitalSound::Unload();
 // LINE 59:
 _T2b:
 	__asm        jmp    _T30;
 _T30:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x004718ea
@@ -815,14 +807,12 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 // LINE 93:
 	__asm        jne    _T2b;
 // LINE 94:
-	__asm        mov    ecx, 0x6043C8;
-	__asm        call   DigitalSound::Unload;
+	0x6043c8->DigitalSound::Unload();
 // LINE 95:
 _T2b:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   RadioButtonWindow::~RadioButtonWindow;
+	this->RadioButtonWindow::~RadioButtonWindow();
 }
 
 // FUNCTION: COPTER_D 0x004719e7
@@ -859,10 +849,8 @@ _T46:
 // FUNCTION: COPTER_D 0x00471a45
 void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 
-	__asm        mov    ecx, this;
-	__asm        call   CheckBoxWindow::CheckBoxWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590A38;
+	this->CheckBoxWindow::CheckBoxWindow();
+	this-><SoundCheckBoxWindow+0x00> = 0x590a38;
 // LINE 113:
 	__asm        cmp    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount, 0;
 	__asm        jne    _T34;
@@ -919,8 +907,7 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 // LINE 137:
 	__asm        jne    _T2b;
 // LINE 138:
-	__asm        mov    ecx, 0x604348;
-	__asm        call   DigitalSound::Unload;
+	0x604348->DigitalSound::Unload();
 // LINE 139:
 _T2b:
 	__asm        jmp    _T30;
@@ -929,8 +916,7 @@ _T30:
 _T35:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x00471b34
@@ -963,10 +949,8 @@ _T39:
 // FUNCTION: COPTER_D 0x00471b85
 void SoundScrollBarWindow::SoundScrollBarWindow() {
 
-	__asm        mov    ecx, this;
-	__asm        call   ScrollBarWindow::ScrollBarWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590B18;
+	this->ScrollBarWindow::ScrollBarWindow();
+	this-><SoundScrollBarWindow+0x00> = 0x590b18;
 // LINE 157:
 	__asm        cmp    SoundScrollBarWindow::lScrollBarSoundReferenceCount, 0;
 	__asm        jne    _T34;
@@ -1025,8 +1009,7 @@ void SoundScrollBarWindow::~SoundScrollBarWindow() {
 // LINE 181:
 	__asm        jne    _T2b;
 // LINE 182:
-	__asm        mov    ecx, 0x604248;
-	__asm        call   DigitalSound::Unload;
+	0x604248->DigitalSound::Unload();
 // LINE 183:
 _T2b:
 	__asm        jmp    _T30;
@@ -1035,8 +1018,7 @@ _T30:
 _T35:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::~SliderWindow;
+	this->SliderWindow::~SliderWindow();
 }
 
 // FUNCTION: COPTER_D 0x00471c78
@@ -1059,8 +1041,7 @@ void SoundScrollBarWindow::MoveLinePrevious() {
 	__asm        call   DigitalSound::Play;
 // LINE 195:
 _T3f:
-	__asm        mov    ecx, this;
-	__asm        call   ScrollBarWindow::MoveLinePrevious;
+	this->ScrollBarWindow::MoveLinePrevious();
 // LINE 196:
 	return;
 }
@@ -1085,8 +1066,7 @@ void SoundScrollBarWindow::MoveLineNext() {
 	__asm        call   DigitalSound::Play;
 // LINE 209:
 _T3f:
-	__asm        mov    ecx, this;
-	__asm        call   ScrollBarWindow::MoveLineNext;
+	this->ScrollBarWindow::MoveLineNext();
 // LINE 210:
 	return;
 }

@@ -447,10 +447,8 @@ int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 // FUNCTION: COPTER_D 0x00534a18
 void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::AutomobileClass;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593258;
+	this->AutomobileClass::AutomobileClass();
+	this-><CriminalEvaderCarClass+0x00> = 0x593258;
 // LINE 98:
 	this->carModel = 0x11e;
 // LINE 99:
@@ -465,8 +463,7 @@ void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 	this-><CriminalEvaderCarClass+0x00> = 0x593258;
 	__asm        jmp    __RETURN;
 __RETURN:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::~AutomobileClass;
+	this->AutomobileClass::~AutomobileClass();
 }
 
 // FUNCTION: COPTER_D 0x00534a73
@@ -576,10 +573,7 @@ _T24:
 	__asm        mov    cl, [eax+0x7D];
 	__asm        mov    mp.maploc.y, ecx;
 // LINE 182:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 185:
 	__asm        movsx  eax, mID;
 	__asm        mov    ecx, i;
@@ -631,8 +625,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        jmp    _T4b7;
 // LINE 212:
 _T1d:
-	__asm        mov    ecx, this;
-	__asm        call   CriminalEvaderCarClass::ShowWhereWeAre;
+	this->CriminalEvaderCarClass::ShowWhereWeAre();
 // LINE 214:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x116], 0;
@@ -680,11 +673,7 @@ _T1d:
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        jne    _T10e;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T113;
 _T10e:
 	__asm        jmp    _T113;
@@ -695,14 +684,7 @@ _T118:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 228:
-	__asm        push   6;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x112];
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x6, loc.x, this->cptr);
 // LINE 230:
 // Block end:
 _T13c:
@@ -734,14 +716,12 @@ _T182:
 	__asm        sub    [ecx+0x122], eax;
 // LINE 243:
 _T195:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 244:
 	__asm        jmp    _T4df;
 // LINE 247:
 _T1a2:
-	__asm        mov    ecx, this;
-	__asm        call   CriminalEvaderCarClass::ShowWhereWeAre;
+	this->CriminalEvaderCarClass::ShowWhereWeAre();
 // LINE 249:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x116], 0;
@@ -795,11 +775,7 @@ _T20b:
 // Block start:
 	/*bp-0x3c*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 _T258:
-	__asm        push   0x10D;
-	__asm        push   0x5B7CC0;
-	__asm        push   0x5B7CE4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x10d, 0x5b7cc0, 0x5b7ce4);
 	__asm        jmp    _T279;
 
 	__asm        jmp    _T279;
@@ -818,8 +794,7 @@ _T2a0:
 	return;
 // LINE 280:
 _T2a5:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 281:
 	__asm        jmp    _T4df;
 // LINE 289:
@@ -863,8 +838,7 @@ _T321:
 	__asm        test   eax, eax;
 	__asm        je     _T346;
 // LINE 306:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOut;
+	this->AutomobileClass::PullOut();
 // LINE 310:
 _T346:
 	__asm        mov    eax, this;
@@ -874,18 +848,15 @@ _T346:
 	this->missionState = 0x0;
 // LINE 316:
 _T360:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 319:
 _T368:
 	__asm        jmp    _T4df;
 // LINE 322:
 _T36d:
-	__asm        mov    ecx, this;
-	__asm        call   CriminalEvaderCarClass::ShowWhereWeAre;
+	this->CriminalEvaderCarClass::ShowWhereWeAre();
 // LINE 323:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOverCiviliansInWay;
+	this->AutomobileClass::PullOverCiviliansInWay();
 // LINE 326:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
@@ -913,11 +884,7 @@ _T36d:
 // Block start:
 	/*bp-0x54*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 _T3da:
-	__asm        push   0x152;
-	__asm        push   0x5B7CEC;
-	__asm        push   0x5B7D10;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x152, 0x5b7cec, 0x5b7d10);
 	__asm        jmp    _T3fb;
 
 	__asm        jmp    _T3fb;
@@ -962,8 +929,7 @@ _T47a:
 	__asm        sub    [ecx+0x126], eax;
 // LINE 362:
 _T48d:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 363:
 	__asm        jmp    _T4df;
 // LINE 367:
@@ -973,8 +939,7 @@ _T49a:
 	__asm        test   eax, eax;
 	__asm        je     _T4b2;
 // LINE 369:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 371:
 _T4b2:
 	__asm        jmp    _T4df;
@@ -1039,8 +1004,7 @@ _T79:
 // FUNCTION: COPTER_D 0x005351b3
 void CriminalEvaderCarClass::AdjustSpeed() {
 // LINE 418:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::AdjustSpeed;
+	this->AutomobileClass::AdjustSpeed();
 // LINE 420:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11A], 2;
@@ -1353,10 +1317,7 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 	__asm        mov    cl, [eax+0x7D];
 	__asm        mov    mp.maploc.y, ecx;
 // LINE 656:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 657:
 	return;
 }

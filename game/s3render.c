@@ -97,27 +97,25 @@ int32_t VRAppInit() {
 // LINE 175:
 	G_InitializationProgress = 0x1;
 // LINE 179:
-	__asm        call   S3HeliTweakInit;
+	S3HeliTweakInit();
 // LINE 180:
-	__asm        call   S3FireTweakInit;
+	S3FireTweakInit();
 // LINE 181:
-	__asm        call   S3CameraTweakInit;
+	S3CameraTweakInit();
 // LINE 182:
-	__asm        call   S3PersonTweakInit;
+	S3PersonTweakInit();
 // LINE 183:
-	__asm        call   S3MissionTweakInit;
+	S3MissionTweakInit();
 // LINE 184:
-	__asm        call   CareerCityTweakInit;
+	CareerCityTweakInit();
 // LINE 185:
-	__asm        push   0x5B4798;
-	__asm        call   TWKReadAllFiles;
-	__asm        add    esp, 4;
+	TWKReadAllFiles(0x5b4798);
 // LINE 186:
-	__asm        call   UpdateFigureVals;
+	UpdateFigureVals();
 // LINE 188:
 	__asm        or     G_InitializationProgress, 2;
 // LINE 189:
-	__asm        call   VREngineInit;
+	VREngineInit();
 // LINE 190:
 	__asm        cmp    G_run_old, 0;
 	__asm        jne    _T64;
@@ -144,7 +142,7 @@ _T64:
 	__asm        call   0x004D6610;
 	__asm        add    esp, 4;
 // LINE 248:
-	__asm        call   VRFrustSetNormals;
+	VRFrustSetNormals();
 // LINE 271:
 	__asm        or     G_InitializationProgress, 4;
 // LINE 276:
@@ -177,9 +175,7 @@ _T64:
 	__asm        jne    _T1ca;
 // LINE 306:
 _T1bd:
-	__asm        push   0x5B47F0;
-	__asm        call   ERexit;
-	__asm        add    esp, 4;
+	ERexit(0x5b47f0);
 // LINE 311:
 _T1ca:
 	GetPathForFile(szFilePath[0], 0x5b480c, 0x0, 0x6);
@@ -195,9 +191,7 @@ _T1ca:
 	__asm        cmp    eax, 1;
 	__asm        je     _T214;
 // LINE 313:
-	__asm        push   0x5B4818;
-	__asm        call   ERexit;
-	__asm        add    esp, 4;
+	ERexit(0x5b4818);
 // LINE 319:
 _T214:
 	VRSetBmpToTiled(0x0, 0x2, 0x1f1f, G_restex);
@@ -218,9 +212,7 @@ _T214:
 	__asm        test   eax, eax;
 	__asm        je     _T29c;
 // LINE 327:
-	__asm        push   0x5B4834;
-	__asm        call   ERexit;
-	__asm        add    esp, 4;
+	ERexit(0x5b4834);
 // LINE 337:
 _T29c:
 	mem2d = 0x0;
@@ -359,39 +351,22 @@ _T4f5:
 	__asm        cmp    G_main_mp, 0;
 	__asm        jne    _T531;
 // LINE 376:
-	__asm        push   0x5B485C;
-	__asm        call   ERexit;
-	__asm        add    esp, 4;
+	ERexit(0x5b485c);
 // LINE 379:
 _T531:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, G_resgeo1;
-	__asm        push   eax;
-	__asm        call   VRAssignMemPoolToRes;
-	__asm        add    esp, 8;
+	VRAssignMemPoolToRes(G_main_mp, G_resgeo1);
 // LINE 380:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, G_resgeo2;
-	__asm        push   eax;
-	__asm        call   VRAssignMemPoolToRes;
-	__asm        add    esp, 8;
+	VRAssignMemPoolToRes(G_main_mp, G_resgeo2);
 // LINE 381:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, G_resgeo3;
-	__asm        push   eax;
-	__asm        call   VRAssignMemPoolToRes;
-	__asm        add    esp, 8;
+	VRAssignMemPoolToRes(G_main_mp, G_resgeo3);
 // LINE 383:
 	__asm        or     G_InitializationProgress, 0x10;
 // LINE 384:
-	__asm        call   S3TerrainInit;
+	S3TerrainInit();
 // LINE 386:
 	__asm        or     G_InitializationProgress, 0x20;
 // LINE 387:
-	__asm        call   S3ObjInit;
+	S3ObjInit();
 // LINE 393:
 	VRAssignTextureResToGroup(G_restex, G_resgeo1);
 // LINE 394:
@@ -399,26 +374,17 @@ _T531:
 // LINE 395:
 	VRAssignTextureResToGroup(G_restex, G_resgeo3);
 // LINE 398:
-	__asm        mov    eax, G_resgeo1;
-	__asm        push   eax;
-	__asm        call   VRResFreeBarrys;
-	__asm        add    esp, 4;
+	VRResFreeBarrys(G_resgeo1);
 // LINE 399:
-	__asm        mov    eax, G_resgeo2;
-	__asm        push   eax;
-	__asm        call   VRResFreeBarrys;
-	__asm        add    esp, 4;
+	VRResFreeBarrys(G_resgeo2);
 // LINE 400:
-	__asm        mov    eax, G_resgeo3;
-	__asm        push   eax;
-	__asm        call   VRResFreeBarrys;
-	__asm        add    esp, 4;
+	VRResFreeBarrys(G_resgeo3);
 // LINE 403:
 	__asm        or     G_InitializationProgress, 0x40;
 // LINE 404:
-	__asm        call   S3MapInit;
+	S3MapInit();
 // LINE 408:
-	__asm        call   S3ObjLinkLowRes;
+	S3ObjLinkLowRes();
 // LINE 413:
 	G_dyobjmempool = S2AllocPool(0x10000);
 // LINE 416:
@@ -442,57 +408,23 @@ _T531:
 // LINE 425:
 	G_helidata[8].type = 0x8;
 // LINE 426:
-	__asm        push   0x6BF1D0;
-	__asm        call   S3HeliInitInstance;
-	__asm        add    esp, 4;
+	S3HeliInitInstance(0x6bf1d0);
 // LINE 427:
-	__asm        mov    eax, 0x6BF1D0;
-	__asm        add    eax, 0x32C;
-	__asm        push   eax;
-	__asm        call   S3HeliInitInstance;
-	__asm        add    esp, 4;
+	S3HeliInitInstance((0x6bf1d0 + 0x32c));
 // LINE 428:
-	__asm        mov    eax, 0x6BF1D0;
-	__asm        add    eax, 0x658;
-	__asm        push   eax;
-	__asm        call   S3HeliInitInstance;
-	__asm        add    esp, 4;
+	S3HeliInitInstance((0x6bf1d0 + 0x658));
 // LINE 429:
-	__asm        mov    eax, 0x6BF1D0;
-	__asm        add    eax, 0x984;
-	__asm        push   eax;
-	__asm        call   S3HeliInitInstance;
-	__asm        add    esp, 4;
+	S3HeliInitInstance((0x6bf1d0 + 0x984));
 // LINE 430:
-	__asm        mov    eax, 0x6BF1D0;
-	__asm        add    eax, 0xCB0;
-	__asm        push   eax;
-	__asm        call   S3HeliInitInstance;
-	__asm        add    esp, 4;
+	S3HeliInitInstance((0x6bf1d0 + 0xcb0));
 // LINE 431:
-	__asm        mov    eax, 0x6BF1D0;
-	__asm        add    eax, 0xFDC;
-	__asm        push   eax;
-	__asm        call   S3HeliInitInstance;
-	__asm        add    esp, 4;
+	S3HeliInitInstance((0x6bf1d0 + 0xfdc));
 // LINE 432:
-	__asm        mov    eax, 0x6BF1D0;
-	__asm        add    eax, 0x1308;
-	__asm        push   eax;
-	__asm        call   S3HeliInitInstance;
-	__asm        add    esp, 4;
+	S3HeliInitInstance((0x6bf1d0 + 0x1308));
 // LINE 433:
-	__asm        mov    eax, 0x6BF1D0;
-	__asm        add    eax, 0x1634;
-	__asm        push   eax;
-	__asm        call   S3HeliInitInstance;
-	__asm        add    esp, 4;
+	S3HeliInitInstance((0x6bf1d0 + 0x1634));
 // LINE 434:
-	__asm        mov    eax, 0x6BF1D0;
-	__asm        add    eax, 0x1960;
-	__asm        push   eax;
-	__asm        call   S3HeliInitInstance;
-	__asm        add    esp, 4;
+	S3HeliInitInstance((0x6bf1d0 + 0x1960));
 // LINE 436:
 	__asm        or     G_InitializationProgress, 0x100;
 // LINE 439:
@@ -632,10 +564,7 @@ _T8ed:
 	__asm        cmp    i, 2;
 	__asm        jge    _T90e;
 // LINE 495:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   CreatePlaneInstance;
-	__asm        add    esp, 4;
+	CreatePlaneInstance(i);
 // LINE 496:
 	__asm        jmp    _T8e7;
 // LINE 499:
@@ -655,15 +584,15 @@ _T923:
 _T944:
 	__asm        or     G_InitializationProgress, 0x400;
 // LINE 511:
-	__asm        call   S3FireInit;
+	S3FireInit();
 // LINE 514:
-	__asm        call   S3ExplosionInit;
+	S3ExplosionInit();
 // LINE 517:
-	__asm        call   S3MissileInit;
+	S3MissileInit();
 // LINE 520:
 	__asm        or     G_InitializationProgress, 0x800;
 // LINE 521:
-	__asm        call   S3PersonInit;
+	S3PersonInit();
 // LINE 527:
 	G_VRAppInitCalled = 0x1;
 // LINE 529:
@@ -691,60 +620,53 @@ _T1d:
 	__asm        cmp    reload, 1;
 	__asm        jne    _T7b;
 // LINE 564:
-	__asm        call   S3HeliReset;
+	S3HeliReset();
 // LINE 565:
-	__asm        call   S3FireReset;
+	S3FireReset();
 // LINE 566:
-	__asm        call   S3ExplosionReset;
+	S3ExplosionReset();
 // LINE 567:
-	__asm        call   S3MissileReset;
+	S3MissileReset();
 // LINE 568:
-	__asm        call   S3PersonReset;
+	S3PersonReset();
 // LINE 569:
-	__asm        call   S3StationReset;
+	S3StationReset();
 // LINE 570:
-	__asm        call   ResetAllAutomobiles;
+	ResetAllAutomobiles();
 // LINE 571:
-	__asm        call   ResetAllTrains;
+	ResetAllTrains();
 // LINE 572:
-	__asm        call   ResetAllPlanes;
+	ResetAllPlanes();
 // LINE 573:
-	__asm        call   ResetAllBoats;
+	ResetAllBoats();
 // LINE 574:
-	__asm        mov    eax, G_citymempool;
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(G_citymempool);
 // LINE 576:
 _T7b:
-	__asm        call   S3MissionReset;
+	S3MissionReset();
 // LINE 579:
 	S3CityInit();
 // LINE 581:
 	__asm        or     G_InitializationProgress, 0x2000;
 // LINE 583:
-	__asm        call   S3RoadGraphInit;
+	S3RoadGraphInit();
 // LINE 586:
-	__asm        call   S3StationInit;
+	S3StationInit();
 // LINE 589:
-	__asm        call   S3RoadDataInit;
+	S3RoadDataInit();
 // LINE 597:
 	__asm        cmp    G_daynight, 1;
 	__asm        jne    _Tba;
 // LINE 599:
-	__asm        push   1;
-	__asm        call   AutoSetAllHeadlights;
-	__asm        add    esp, 4;
+	AutoSetAllHeadlights(0x1);
 // LINE 601:
 	__asm        jmp    _Tc4;
 // LINE 603:
 _Tba:
-	__asm        push   0;
-	__asm        call   AutoSetAllHeadlights;
-	__asm        add    esp, 4;
+	AutoSetAllHeadlights(0x0);
 // LINE 606:
 _Tc4:
-	__asm        call   S3ObjSetFlatShading;
+	S3ObjSetFlatShading();
 // LINE 609:
 	G_uheli = 0x6bf1d0;
 // LINE 613:
@@ -773,30 +695,16 @@ _Tc4:
 _T12b:
 	__asm        or     G_InitializationProgress, 0x4000;
 // LINE 629:
-	__asm        call   S3ViewerInit;
+	S3ViewerInit();
 // LINE 632:
-	__asm        push   0x140000;
-	__asm        push   0x140000;
-	__asm        mov    eax, G_helibase.pad1.y;
-	__asm        push   eax;
-	__asm        mov    eax, G_helibase.pad1.x;
-	__asm        push   eax;
-	__asm        call   S3PersonUserStart;
-	__asm        add    esp, 0x10;
+	S3PersonUserStart(0x140000, 0x140000, G_helibase.pad1.y, G_helibase.pad1.x);
 // LINE 633:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T194;
 // LINE 635:
 	G_uheli->flags = 0x0;
 // LINE 638:
-	__asm        push   0x140000;
-	__asm        push   0x140000;
-	__asm        mov    eax, G_helibase.pad1.y;
-	__asm        push   eax;
-	__asm        mov    eax, G_helibase.pad1.x;
-	__asm        push   eax;
-	__asm        call   S3PersonUserAppear;
-	__asm        add    esp, 0x10;
+	S3PersonUserAppear(0x140000, 0x140000, G_helibase.pad1.y, G_helibase.pad1.x);
 // LINE 640:
 	__asm        jmp    _T1a0;
 // LINE 643:
@@ -919,10 +827,7 @@ int32_t VRAppGameInit(void * __ptr32 miffReader) {
 	__asm        jmp    _T75;
 // LINE 724:
 _T75:
-	__asm        mov    eax, G_daynight;
-	__asm        push   eax;
-	__asm        call   S3SetDayNight;
-	__asm        add    esp, 4;
+	S3SetDayNight(G_daynight);
 // LINE 725:
 	return 0x1;
 // LINE 726:
@@ -954,17 +859,11 @@ int32_t VRAppGameSave(void * __ptr32 miffWriter) {
 // FUNCTION: COPTER_D 0x004eb97e
 void VRAppDeInit() {
 // LINE 770:
-	__asm        call   S3PersonDelete;
+	S3PersonDelete();
 // LINE 771:
-	__asm        mov    eax, G_citymempool;
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(G_citymempool);
 // LINE 772:
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(G_dyobjmempool);
 // LINE 773:
 }
 
@@ -986,28 +885,14 @@ void VRAppNextFrame() {
 	__asm        cmp    G_mapmode, 1;
 	__asm        jne    _T79;
 // LINE 809:
-	__asm        call   S3CityDrawOverHeadGrid;
+	S3CityDrawOverHeadGrid();
 // LINE 810:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        call   S3MapDrawPosLines;
-	__asm        add    esp, 8;
+	S3MapDrawPosLines(G_uheli->currpos.y, G_uheli->currpos.x);
 // LINE 812:
 	__asm        jmp    _T93;
 // LINE 813:
 _T79:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        call   S3MapRender;
-	__asm        add    esp, 8;
+	S3MapRender(G_uheli->currpos.y, G_uheli->currpos.x);
 // LINE 815:
 _T93:
 	__asm        jmp    _Tb4;
@@ -1028,49 +913,43 @@ _Tb4:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _Td9;
 // LINE 838:
-	__asm        mov    eax, G_uheli;
-	__asm        push   eax;
-	__asm        call   S3HeliNextFrame;
-	__asm        add    esp, 4;
+	S3HeliNextFrame(G_uheli);
 // LINE 839:
-	__asm        call   S3PersonUserNextFrame;
+	S3PersonUserNextFrame();
 // LINE 841:
 	__asm        jmp    _Tde;
 // LINE 842:
 _Td9:
-	__asm        call   S3PersonUserNextFrame;
+	S3PersonUserNextFrame();
 // LINE 845:
 _Tde:
-	__asm        call   S3MissionGenerator;
+	S3MissionGenerator();
 // LINE 851:
-	__asm        call   S3FireDriver;
+	S3FireDriver();
 // LINE 855:
-	__asm        call   S3AutoSoundDistReset;
+	S3AutoSoundDistReset();
 // LINE 856:
-	__asm        call   ItterateAllAutomobiles;
+	ItterateAllAutomobiles();
 // LINE 857:
-	__asm        call   S3AutoSoundDriver;
+	S3AutoSoundDriver();
 // LINE 862:
-	__asm        call   ItterateAllTrains;
+	ItterateAllTrains();
 // LINE 865:
-	__asm        call   ItterateAllPlanes;
+	ItterateAllPlanes();
 // LINE 868:
-	__asm        call   ItterateAllBoats;
+	ItterateAllBoats();
 // LINE 872:
-	__asm        mov    eax, G_testheli;
-	__asm        push   eax;
-	__asm        call   S3HeliTestCopter;
-	__asm        add    esp, 4;
+	S3HeliTestCopter(G_testheli);
 // LINE 875:
-	__asm        call   S3HeliNextFrameDriver;
+	S3HeliNextFrameDriver();
 // LINE 877:
-	__asm        call   S3MissileDriver;
+	S3MissileDriver();
 // LINE 879:
-	__asm        call   S3PersonNextFrame;
+	S3PersonNextFrame();
 // LINE 882:
-	__asm        call   S3ExplosionDriver;
+	S3ExplosionDriver();
 // LINE 884:
-	__asm        call   S3CityGrid;
+	S3CityGrid();
 // LINE 905:
 	return;
 // LINE 906:

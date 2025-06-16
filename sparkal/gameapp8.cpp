@@ -366,10 +366,7 @@ unsigned long CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 	return 0x80000000;
 // LINE 90:
 _T3e:
-	__asm        mov    eax, szLoadGamePath;
-	__asm        push   eax;
-	__asm        call   SetUpNewUserCity;
-	__asm        add    esp, 4;
+	SetUpNewUserCity(szLoadGamePath);
 // LINE 91:
 	return 0x0;
 // LINE 93:
@@ -393,10 +390,7 @@ _T80:
 	__asm        cmp    lFileType, 5;
 	__asm        jne    _T9d;
 // LINE 97:
-	__asm        mov    eax, szLoadGamePath;
-	__asm        push   eax;
-	__asm        call   SetUpNewUserCity;
-	__asm        add    esp, 4;
+	SetUpNewUserCity(szLoadGamePath);
 // LINE 98:
 	return 0x0;
 // LINE 101:
@@ -604,39 +598,13 @@ _T2dc:
 	return 0x2;
 // LINE 173:
 _T301:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        mov    eax, szGamePath;
-	__asm        push   eax;
-	__asm        call   _splitpath;
-	__asm        add    esp, 0x14;
+	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szGamePath);
 // LINE 174:
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        lea    eax, szCityPath[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szSplitPathDrive[0], szCityPath[0]);
 // LINE 175:
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szCityPath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathDirectory[0], szCityPath[0]);
 // LINE 176:
-	__asm        lea    eax, szCityFile[0];
-	__asm        push   eax;
-	__asm        lea    eax, szCityPath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szCityFile[0], szCityPath[0]);
 // LINE 177:
 	__asm        lea    eax, szCityPath[0];
 	__asm        push   eax;
@@ -697,11 +665,7 @@ _T3e2:
 	G_daynight = savedCitySettings.lDaytime;
 // LINE 196:
 _T455:
-	__asm        lea    eax, szCityPath[0];
-	__asm        push   eax;
-	__asm        push   0x5C2918;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szCityPath[0], 0x5c2918);
 // LINE 199:
 	lSavedCityFileChecksum = 0x0;
 // LINE 200:
@@ -784,7 +748,7 @@ unsigned long CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPat
 	__asm        add    ecx, 0x4174;
 	__asm        call   PFile::SetPath;
 // LINE 234:
-	__asm        call   SetUserHasSavedCurrentCity;
+	SetUserHasSavedCurrentCity();
 // LINE 236:
 	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T63;
@@ -814,32 +778,11 @@ _T7a:
 	return 0x7;
 // LINE 244:
 _Tb8:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        mov    eax, szCityPath;
-	__asm        push   eax;
-	__asm        call   _splitpath;
-	__asm        add    esp, 0x14;
+	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szCityPath);
 // LINE 245:
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szCityFile[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szSplitPathFilename[0], szCityFile[0]);
 // LINE 246:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szCityFile[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathExtension[0], szCityFile[0]);
 // LINE 247:
 	__asm        lea    eax, szCityFile[0];
 	__asm        push   eax;
@@ -988,17 +931,9 @@ _T31e:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 288:
-	__asm        mov    eax, szGamePath;
-	__asm        push   eax;
-	__asm        push   0x5C33E8;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szGamePath, 0x5c33e8);
 // LINE 289:
-	__asm        mov    eax, szCityPath;
-	__asm        push   eax;
-	__asm        push   0x5C2918;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szCityPath, 0x5c2918);
 // LINE 291:
 	return 0x0;
 // LINE 292:
@@ -1021,17 +956,7 @@ unsigned long CGameApp::DoSaveGameAs() {
 	/*bp-0x720*/ unsigned long nResult;
 
 // LINE 326:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        push   0x5C2918;
-	__asm        call   _splitpath;
-	__asm        add    esp, 0x14;
+	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], 0x5c2918);
 // LINE 328:
 	__asm        push   0x7EEEEEE;
 	__asm        mov    eax, gPreferenceManager;
@@ -1197,29 +1122,14 @@ _T2c2:
 	__asm        cmp    dword ptr [ebp-0x774], 0;
 	__asm        je     _T30c;
 // LINE 331:
-	__asm        mov    eax, chPrefData;
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(chPrefData, szGameFileSavePath[0]);
 // LINE 332:
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathFilename[0], szGameFileSavePath[0]);
 // LINE 334:
 	__asm        jmp    _T80a;
 // LINE 340:
 _T30c:
-	__asm        mov    eax, gszAppDirectory;
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(gszAppDirectory, szGameFileSavePath[0]);
 // LINE 341:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x32);
 // LINE 342:
@@ -1257,12 +1167,7 @@ _T3ac:
 	__asm        jmp    _T3b1;
 // LINE 343:
 _T3b1:
-	__asm        lea    eax, szNewDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szNewDirectory[0], szGameFileSavePath[0]);
 // LINE 344:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1522,12 +1427,7 @@ _T7ef:
 	__asm        jmp    _T7f4;
 // LINE 346:
 _T7f4:
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathFilename[0], szGameFileSavePath[0]);
 // LINE 354:
 _T80a:
 	__asm        cmp    gCurrentCityType, 2;
@@ -1557,39 +1457,13 @@ _T844:
 	return 0x9;
 // LINE 373:
 _T8ae:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   _splitpath;
-	__asm        add    esp, 0x14;
+	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szGameFileSavePath[0]);
 // LINE 376:
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szSplitPathDrive[0], szGameFileSavePath[0]);
 // LINE 377:
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathDirectory[0], szGameFileSavePath[0]);
 // LINE 378:
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathFilename[0], szGameFileSavePath[0]);
 // LINE 380:
 	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T99a;
@@ -1607,27 +1481,12 @@ _T8ae:
 	__asm        test   eax, eax;
 	__asm        je     _T96a;
 // LINE 382:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathExtension[0], szGameFileSavePath[0]);
 // LINE 383:
 _T96a:
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        lea    eax, szCityFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szGameFileSavePath[0], szCityFileSavePath[0]);
 // LINE 384:
-	__asm        mov    eax, SZ_CAREER_DATA_FILE_SUFFIX;
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(SZ_CAREER_DATA_FILE_SUFFIX, szGameFileSavePath[0]);
 // LINE 386:
 	__asm        jmp    _Ta07;
 // LINE 387:
@@ -1645,35 +1504,15 @@ _T99a:
 	__asm        test   eax, eax;
 	__asm        je     _T9dc;
 // LINE 388:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathExtension[0], szGameFileSavePath[0]);
 // LINE 389:
 _T9dc:
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        lea    eax, szCityFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szGameFileSavePath[0], szCityFileSavePath[0]);
 // LINE 390:
-	__asm        mov    eax, SZ_USER_DATA_FILE_SUFFIX;
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(SZ_USER_DATA_FILE_SUFFIX, szGameFileSavePath[0]);
 // LINE 394:
 _Ta07:
-	__asm        mov    eax, SZ_CITY_DATA_FILE_SUFFIX;
-	__asm        push   eax;
-	__asm        lea    eax, szCityFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(SZ_CITY_DATA_FILE_SUFFIX, szCityFileSavePath[0]);
 // LINE 396:
 	__asm        lea    eax, szCityFileSavePath[0];
 	__asm        push   eax;
@@ -1686,32 +1525,11 @@ _Ta07:
 	__asm        cmp    nResult, 0;
 	__asm        jne    _Tacc;
 // LINE 399:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   _splitpath;
-	__asm        add    esp, 0x14;
+	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szGameFileSavePath[0]);
 // LINE 400:
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFullDirectory[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szSplitPathDrive[0], szSplitPathFullDirectory[0]);
 // LINE 401:
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFullDirectory[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathDirectory[0], szSplitPathFullDirectory[0]);
 // LINE 402:
 	__asm        lea    eax, szSplitPathFullDirectory[0];
 	__asm        push   eax;

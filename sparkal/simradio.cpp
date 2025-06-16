@@ -1447,9 +1447,7 @@ _T3fe:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T4b0;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x38;
-	__asm        call   basic_string<char>::delete_ref;
+	(this + 0x38)->basic_string<char>::delete_ref();
 	__asm        jmp    _T43a;
 _T43a:
 	__asm        mov    eax, copyRadioStation;
@@ -1496,9 +1494,7 @@ _T4b5:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T54f;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x40;
-	__asm        call   basic_string<char>::delete_ref;
+	(this + 0x40)->basic_string<char>::delete_ref();
 	__asm        jmp    _T4d9;
 _T4d9:
 	__asm        mov    eax, copyRadioStation;
@@ -1801,9 +1797,7 @@ _T255:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T2ef;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x48;
-	__asm        call   basic_string<char>::delete_ref;
+	(this + 0x48)->basic_string<char>::delete_ref();
 	__asm        jmp    _T279;
 _T279:
 	__asm        mov    eax, copyRadioStation;
@@ -1859,9 +1853,7 @@ _T2f4:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T3ac;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x5C;
-	__asm        call   basic_string<char>::delete_ref;
+	(this + 0x5c)->basic_string<char>::delete_ref();
 	__asm        jmp    _T336;
 _T336:
 	__asm        mov    eax, copyRadioStation;
@@ -1917,9 +1909,7 @@ _T3b1:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T469;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   basic_string<char>::delete_ref;
+	(this + 0x70)->basic_string<char>::delete_ref();
 	__asm        jmp    _T3f3;
 _T3f3:
 	__asm        mov    eax, copyRadioStation;
@@ -1975,9 +1965,7 @@ _T46e:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T54b;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x84;
-	__asm        call   basic_string<char>::delete_ref;
+	(this + 0x84)->basic_string<char>::delete_ref();
 	__asm        jmp    _T4be;
 _T4be:
 	__asm        mov    eax, copyRadioStation;
@@ -2076,9 +2064,7 @@ _T8d:
 	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _Ta7;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   list<basic_string<char>>::deallocate_buffers;
+	(this + 0x8c)->list<basic_string<char>>::deallocate_buffers();
 _Ta7:
 	__asm        jmp    _Tac;
 _Tac:
@@ -2155,9 +2141,7 @@ _T188:
 	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _T19f;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x78;
-	__asm        call   list<basic_string<char>>::deallocate_buffers;
+	(this + 0x78)->list<basic_string<char>>::deallocate_buffers();
 _T19f:
 	__asm        jmp    _T1a4;
 _T1a4:
@@ -2756,8 +2740,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 	/*bp-0x8*/   /*packed*/ class basic_string<char> sFullSelectionPath; // 0x8 bytes
 
 // LINE 272:
-	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
-	__asm        call   basic_string<char>::basic_string<char>;
+	sFullSelectionPath.c_str_ptr->basic_string<char>::basic_string<char>();
 // LINE 274:
 	__asm        cmp    radioStationCycleType, 0;
 	__asm        jne    _Te3;
@@ -3122,8 +3105,7 @@ _T4f5:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T577;
 
-	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	sFullSelectionPath.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T510;
 _T510:
 	__asm        mov    eax, [ebp-0x40];
@@ -3323,8 +3305,7 @@ _T7bc:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T83e;
 
-	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	sFullSelectionPath.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T7d7;
 _T7d7:
 	__asm        mov    eax, [ebp-0x54];
@@ -4029,8 +4010,7 @@ _T160:
 	__asm        cmp    [ebp-0x130], eax;
 	__asm        je     _T207;
 
-	__asm        lea    ecx, sCurrentLastItem.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	sCurrentLastItem.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T18b;
 _T18b:
 	__asm        mov    eax, [ebp-0x130];
@@ -4137,8 +4117,7 @@ _T2d7:
 	__asm        cmp    [ebp-0x138], eax;
 	__asm        je     _T37e;
 
-	__asm        lea    ecx, sTempItem.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	sTempItem.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T302;
 _T302:
 	__asm        mov    eax, [ebp-0x138];
@@ -4374,8 +4353,7 @@ _T633:
 	__asm        cmp    [ebp-0x154], eax;
 	__asm        je     _T6da;
 
-	__asm        lea    ecx, sCurrentLastItem.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	sCurrentLastItem.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T65e;
 _T65e:
 	__asm        mov    eax, [ebp-0x154];
@@ -4482,8 +4460,7 @@ _T7aa:
 	__asm        cmp    [ebp-0x15C], eax;
 	__asm        je     _T851;
 
-	__asm        lea    ecx, sTempItem.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	sTempItem.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T7d5;
 _T7d5:
 	__asm        mov    eax, [ebp-0x15C];
@@ -6353,15 +6330,7 @@ _Tfc:
 	__asm        jmp    _T108;
 // LINE 569:
 _T108:
-	__asm        lea    eax, sStationDirectoryName.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sStationDirectoryParent.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x40;
-	__asm        push   eax;
-	__asm        call   Directory::SplitDirectoryPath;
-	__asm        add    esp, 0xC;
+	Directory::SplitDirectoryPath(sStationDirectoryName.c_str_ptr, sStationDirectoryParent.c_str_ptr, (this + 0x40));
 // LINE 570:
 	i = 0x0;
 	__asm        jmp    _T131;
@@ -6633,29 +6602,17 @@ void Radio::Radio() {
 	this-><Radio+0x0c:4> = 0x0;
 	__asm        jmp    _T2f;
 _T2f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0x2710;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 1;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x34;
-	__asm        call   DigitalSound::DigitalSound;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F560;
+	this-><Radio+0x10:4> = 0x2710;
+	this-><Radio+0x14:4> = 0x0;
+	this-><Radio+0x18:4> = 0x1;
+	this-><Radio+0x1c:4> = 0x0;
+	this-><Radio+0x20:4> = 0x0;
+	this-><Radio+0x24:4> = 0x1;
+	this-><Radio+0x28:4> = 0x1;
+	this-><Radio+0x2c:4> = 0x1;
+	this-><Radio+0x30:4> = 0x1;
+	(this + 0x34)->DigitalSound::DigitalSound();
+	this-><Radio+0x00:4> = 0x58f560;
 // LINE 604:
 	return;
 
@@ -7462,9 +7419,7 @@ _T5c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T8f;
 _T8f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T9e;
 _T9e:
 	__asm        mov    eax, [ebp-0x20];
@@ -7589,29 +7544,22 @@ int32_t Radio::SetupStations() {
 	/*bp-0xf0*/  /*packed*/ class basic_string<char> sStationDirectory; // 0x8 bytes
 
 // LINE 915:
-	__asm        lea    ecx, sRadioDirectory.c_str_ptr;
-	__asm        call   basic_string<char>::basic_string<char>;
+	sRadioDirectory.c_str_ptr->basic_string<char>::basic_string<char>();
 // LINE 916:
-	__asm        lea    ecx, sStationDirectory.c_str_ptr;
-	__asm        call   basic_string<char>::basic_string<char>;
+	sStationDirectory.c_str_ptr->basic_string<char>::basic_string<char>();
 // LINE 917:
-	__asm        lea    ecx, sCommercialDirectory.c_str_ptr;
-	__asm        call   basic_string<char>::basic_string<char>;
+	sCommercialDirectory.c_str_ptr->basic_string<char>::basic_string<char>();
 // LINE 918:
-	__asm        lea    ecx, sScratch.c_str_ptr;
-	__asm        call   basic_string<char>::basic_string<char>;
+	sScratch.c_str_ptr->basic_string<char>::basic_string<char>();
 // LINE 919:
-	__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
-	__asm        call   basic_string<char>::basic_string<char>;
+	sCurrentLanguage.c_str_ptr->basic_string<char>::basic_string<char>();
 // LINE 920:
-	__asm        lea    ecx, radioStationStringList.node;
-	__asm        call   list<basic_string<char>>::list<basic_string<char>>;
+	radioStationStringList.node->list<basic_string<char>>::list<basic_string<char>>();
 // LINE 921:
 	__asm        jmp    _T56;
 // LINE 922:
 _T56:
-	__asm        lea    ecx, tempRadioStation<vftable>;
-	__asm        call   RadioStation::RadioStation;
+	tempRadioStation<vftable>->RadioStation::RadioStation();
 // LINE 923:
 	__asm        push   0;
 	__asm        push   1;
@@ -7965,8 +7913,7 @@ _T532:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T5c3;
 
-	__asm        lea    ecx, tempRadioStation.sCommercialDirectory.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	tempRadioStation.sCommercialDirectory.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T550;
 _T550:
 	__asm        mov    eax, [ebp-0x13C];
@@ -8096,8 +8043,7 @@ _T716:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T7b9;
 
-	__asm        lea    ecx, sScratch.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	sScratch.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T73a;
 _T73a:
 	__asm        mov    eax, [ebp-0x144];
@@ -8261,8 +8207,7 @@ _T978:
 	__asm        cmp    eax, ecx;
 	__asm        je     _Ta09;
 
-	__asm        lea    ecx, tempRadioStation.sJingleDirectory.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	tempRadioStation.sJingleDirectory.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _T996;
 _T996:
 	__asm        mov    eax, [ebp-0x14C];
@@ -8392,8 +8337,7 @@ _Tb5c:
 	__asm        cmp    eax, ecx;
 	__asm        je     _Tbff;
 
-	__asm        lea    ecx, sScratch.c_str_ptr;
-	__asm        call   basic_string<char>::delete_ref;
+	sScratch.c_str_ptr->basic_string<char>::delete_ref();
 	__asm        jmp    _Tb80;
 _Tb80:
 	__asm        mov    eax, [ebp-0x154];
@@ -8499,15 +8443,8 @@ _Tcdd:
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     _Td26;
 
-	__asm        lea    eax, tempRadioStation<vftable>;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   construct;
-	__asm        add    esp, 8;
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+8], 0x98;
+	construct(tempRadioStation<vftable>, this-><Radio+0x08:4>);
+	this-><Radio+0x08:4> += 0x98;
 	__asm        jmp    _Td4a;
 _Td26:
 	__asm        jmp    _Td2b;
@@ -8601,8 +8538,7 @@ _Te6f:
 	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _Te86;
 
-	__asm        lea    ecx, radioStationStringList.node;
-	__asm        call   list<basic_string<char>>::deallocate_buffers;
+	radioStationStringList.node->list<basic_string<char>>::deallocate_buffers();
 _Te86:
 	__asm        jmp    _Te8b;
 _Te8b:
@@ -8744,9 +8680,7 @@ _T63:
 	__asm        add    esp, 4;
 	__asm        jmp    _Ta3;
 _Ta3:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tb2;
 _Tb2:
 	__asm        push   0x10;

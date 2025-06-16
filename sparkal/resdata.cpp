@@ -101,16 +101,7 @@ void ResourceRCData::ResourceRCData(/*packed*/ class ResourceRCData& resData) {
 // LINE 61:
 	this->chData = operator new(nAllocationSize);
 // LINE 62:
-	__asm        mov    eax, nAllocationSize;
-	__asm        push   eax;
-	__asm        mov    eax, resData;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(nAllocationSize, resData.chData, this->chData);
 // LINE 63:
 	this->bWeOwnTheData = 0x1;
 // LINE 65:
@@ -126,8 +117,7 @@ void ResourceRCData::~ResourceRCData() {
 
 	this-><vftable> = 0x58f648;
 // LINE 73:
-	__asm        mov    ecx, this;
-	__asm        call   ResourceRCData::Reset;
+	this->ResourceRCData::Reset();
 // LINE 74:
 	return;
 }
@@ -160,16 +150,7 @@ _T20:
 // LINE 91:
 	this->chData = operator new(nAllocationSize);
 // LINE 92:
-	__asm        mov    eax, nAllocationSize;
-	__asm        push   eax;
-	__asm        mov    eax, resData;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(nAllocationSize, resData.chData, this->chData);
 // LINE 93:
 	this->bWeOwnTheData = 0x1;
 // LINE 96:

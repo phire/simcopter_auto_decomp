@@ -656,9 +656,7 @@ _T173:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1c8;
 _T1c8:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T1d2:
 	__asm        jmp    _T1d7;
 _T1d7:
@@ -719,9 +717,7 @@ _T22c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T284;
 _T284:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T28e:
 	__asm        jmp    _T293;
 _T293:
@@ -822,8 +818,7 @@ _T3fd:
 	this->bDaytime = 0x0;
 // LINE 55:
 _T40a:
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::LoadHotSpots;
+	this->HangarWindow::LoadHotSpots();
 // LINE 56:
 	__asm        push   1;
 	__asm        mov    ecx, this;
@@ -843,8 +838,7 @@ void HangarWindow::~HangarWindow() {
 
 	this-><HangarWindow+0x00> = 0x590c20;
 // LINE 66:
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::DestroyImage;
+	this->HangarWindow::DestroyImage();
 // LINE 67:
 	__asm        jmp    _T22;
 _T22:
@@ -1029,11 +1023,8 @@ _T240:
 _T245:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x78;
-	__asm        call   DigitalSound::~DigitalSound;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	(this + 0x78)->DigitalSound::~DigitalSound();
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x00472611
@@ -1374,9 +1365,7 @@ _T46b:
 	__asm        add    esp, 4;
 	__asm        jmp    _T4b6;
 _T4b6:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4c5;
 _T4c5:
 	__asm        jmp    _T4ca;
@@ -2435,8 +2424,7 @@ _T12b:
 	__asm        jmp    _T130;
 // LINE 269:
 _T130:
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::HideHelp;
+	this->HangarWindow::HideHelp();
 // LINE 270:
 	this->ptSavedCursorPosition.x = nCursorX;
 // LINE 271:
@@ -2475,9 +2463,7 @@ _T29:
 	__asm        add    esp, 4;
 	__asm        jmp    _T65;
 _T65:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T74;
 _T74:
 	__asm        jmp    _T79;
@@ -2604,9 +2590,7 @@ _T1a3:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1df;
 _T1df:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1ee;
 _T1ee:
 	__asm        jmp    _T1f3;
@@ -2914,8 +2898,7 @@ _T15c:
 	__asm        jmp    _T161;
 // LINE 324:
 _T161:
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::HideHelp;
+	this->HangarWindow::HideHelp();
 // LINE 325:
 	return;
 }

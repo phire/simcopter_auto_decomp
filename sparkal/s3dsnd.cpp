@@ -212,7 +212,7 @@ public:
 // SYNTHETIC: COPTER_D 0x00441e30
 static void $E55() {
 
-	__asm        call   $E54;
+	$E54();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -230,7 +230,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00441e5f
 static void $E58() {
 
-	__asm        call   $E57;
+	$E57();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -4921,8 +4921,7 @@ void S3DSStopPlay(int32_t nSoundIndex) {
 // FUNCTION: COPTER_D 0x00446e22
 void S3DSStopAllSounds() {
 // LINE 569:
-	__asm        mov    ecx, 0x604600;
-	__asm        call   SoundManager::StopAllSounds;
+	0x604600->SoundManager::StopAllSounds();
 // LINE 570:
 	return;
 }

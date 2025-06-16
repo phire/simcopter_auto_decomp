@@ -64,12 +64,7 @@ _T61:
 	__asm        cmp    eax, [ebp-0x18];
 	__asm        je     _T8a;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x3D;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x3d, 0x59a254);
 _T8a:
 	__asm        jmp    _T8f;
 _T8f:
@@ -78,12 +73,7 @@ _T8f:
 	__asm        test   eax, eax;
 	__asm        je     _Tb7;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE27C;
-	__asm        push   0x2D;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be27c, 0x2d, 0x5be1ec);
 // LINE 46:
 _Tb7:
 	__asm        jmp    _Tbc;
@@ -130,12 +120,7 @@ _T11:
 	__asm        cmp    dword ptr [ebp-0x10], 0x20;
 	__asm        jb     _T4e;
 _T35:
-	__asm        push   0x8C085;
-	__asm        push   0x5BBD7C;
-	__asm        push   0x6D;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbd7c, 0x6d, 0x5be1ec);
 _T4e:
 	__asm        cmp    this, 0;
 	__asm        je     _T66;
@@ -243,12 +228,7 @@ _T178:
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     _T19b;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE2A0;
-	__asm        push   0x77;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be2a0, 0x77, 0x5be1ec);
 // LINE 120:
 _T19b:
 	__asm        cmp    thing, 0;
@@ -321,12 +301,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _T53;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE188;
-	__asm        push   0xB5;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be188, 0xb5, 0x5be1ec);
 // LINE 182:
 _T53:
 	fileOpened = OpenFile(this-><cBList<cCopterAnim>+0x0c:4>);
@@ -338,24 +313,14 @@ _T53:
 	__asm        test   eax, eax;
 	__asm        jne    _T9e;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE1A8;
-	__asm        push   0xB7;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be1a8, 0xb7, 0x5be1ec);
 // LINE 184:
 _T9e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _Tca;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE168;
-	__asm        push   0xB8;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be168, 0xb8, 0x5be1ec);
 _Tca:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -405,12 +370,7 @@ _T123:
 	__asm        cmp    h, 0;
 	__asm        jne    _T17d;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE148;
-	__asm        push   0xC1;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be148, 0xc1, 0x5be1ec);
 _T17d:
 	__asm        mov    eax, h;
 	__asm        mov    [ebp-0x148], eax;
@@ -458,12 +418,7 @@ _T1ee:
 	__asm        test   eax, eax;
 	__asm        jne    _T22a;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE320;
-	__asm        push   0xAA;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be320, 0xaa, 0x5be258);
 _T22a:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
@@ -472,12 +427,7 @@ _T22a:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _T25b;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE310;
-	__asm        push   0xAB;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be310, 0xab, 0x5be258);
 _T25b:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
@@ -522,12 +472,7 @@ _T25b:
 	__asm        cmp    ebx, eax;
 	__asm        je     _T2fb;
 _T2df:
-	__asm        push   0x8C085;
-	__asm        push   0x5BE2FC;
-	__asm        push   0xB1;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be2fc, 0xb1, 0x5be258);
 _T2fb:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        add    eax, 0x20;
@@ -586,12 +531,7 @@ _T35e:
 	__asm        test   ecx, ecx;
 	__asm        jne    _T3c4;
 _T3a8:
-	__asm        push   0x8C085;
-	__asm        push   0x5BE2D4;
-	__asm        push   0xBC;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be2d4, 0xbc, 0x5be258);
 _T3c4:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+4];
@@ -710,12 +650,7 @@ _T61:
 	__asm        cmp    eax, [ebp-0x18];
 	__asm        je     _T8a;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x3D;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x3d, 0x59a254);
 _T8a:
 	__asm        jmp    _T8f;
 _T8f:
@@ -724,12 +659,7 @@ _T8f:
 	__asm        test   eax, eax;
 	__asm        je     _Tb7;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE27C;
-	__asm        push   0x2D;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be27c, 0x2d, 0x5be1ec);
 // LINE 46:
 _Tb7:
 	__asm        jmp    _Tbc;
@@ -776,12 +706,7 @@ _T11:
 	__asm        cmp    dword ptr [ebp-0x10], 0x20;
 	__asm        jb     _T4e;
 _T35:
-	__asm        push   0x8C085;
-	__asm        push   0x5BBD7C;
-	__asm        push   0x6D;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbd7c, 0x6d, 0x5be1ec);
 _T4e:
 	__asm        cmp    this, 0;
 	__asm        je     _T66;
@@ -889,12 +814,7 @@ _T178:
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        je     _T19b;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE2A0;
-	__asm        push   0x77;
-	__asm        push   0x5BE1EC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be2a0, 0x77, 0x5be1ec);
 // LINE 120:
 _T19b:
 	__asm        cmp    thing, 0;

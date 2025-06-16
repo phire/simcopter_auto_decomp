@@ -1809,7 +1809,7 @@ struct bidirectional_iterator<KeyColors,int>{ // packed(0x1 bytes) TI: 0x2877
 // SYNTHETIC: COPTER_D 0x00401280
 static void $E97() {
 
-	__asm        call   $E96;
+	$E96();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1830,7 +1830,7 @@ _T20:
 // SYNTHETIC: COPTER_D 0x004012bf
 static void $E100() {
 
-	__asm        call   $E99;
+	$E99();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1944,9 +1944,7 @@ _Te7:
 	__asm        add    esp, 4;
 	__asm        jmp    _T13f;
 _T13f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T149:
 	__asm        jmp    _T14e;
 _T14e:
@@ -2393,8 +2391,7 @@ _T6e:
 	this->mFontToUse = 0x0;
 // LINE 81:
 _T7e:
-	__asm        mov    ecx, this;
-	__asm        call   KeyboardWindow::DestroyImage;
+	this->KeyboardWindow::DestroyImage();
 // LINE 82:
 	__asm        jmp    _T8e;
 _T8e:
@@ -2477,9 +2474,7 @@ _T17b:
 	__asm        dec    list<KeyColors>::number_of_lists;
 	__asm        jne    _T198;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x90;
-	__asm        call   list<KeyColors>::deallocate_buffers;
+	(this + 0x90)->list<KeyColors>::deallocate_buffers();
 _T198:
 	__asm        jmp    _T19d;
 _T19d:
@@ -2665,9 +2660,7 @@ _T3ea:
 	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T404;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x7C;
-	__asm        call   list<HotSpot>::deallocate_buffers;
+	(this + 0x7c)->list<HotSpot>::deallocate_buffers();
 _T404:
 	__asm        jmp    _T409;
 _T409:
@@ -2744,14 +2737,11 @@ _T512:
 	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T52c;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x74;
-	__asm        call   list<HotSpot>::deallocate_buffers;
+	(this + 0x74)->list<HotSpot>::deallocate_buffers();
 _T52c:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0040200d
@@ -3210,8 +3200,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00402659
 void KeyboardWindow::DestroyImage() {
 // LINE 139:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 141:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -3319,9 +3308,7 @@ _T8d:
 	__asm        add    esp, 4;
 	__asm        jmp    _Td8;
 _Td8:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Te7;
 _Te7:
 	__asm        jmp    _Tec;
@@ -3440,9 +3427,7 @@ _T24c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T28f;
 _T28f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T29e;
 _T29e:
 	__asm        jmp    _T2a3;
@@ -3593,9 +3578,7 @@ _T457:
 	__asm        add    esp, 4;
 	__asm        jmp    _T4a2;
 _T4a2:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4b1;
 _T4b1:
 	__asm        jmp    _T4b6;
@@ -3636,9 +3619,7 @@ _T4ed:
 	__asm        add    esp, 4;
 	__asm        jmp    _T540;
 _T540:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T54f;
 _T54f:
 	__asm        mov    eax, [ebp-0x106C];
@@ -5944,13 +5925,11 @@ void JoystickWindow::~JoystickWindow() {
 
 	this-><JoystickWindow+0x00> = 0x58f140;
 // LINE 647:
-	__asm        mov    ecx, this;
-	__asm        call   JoystickWindow::DestroyImage;
+	this->JoystickWindow::DestroyImage();
 // LINE 648:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x00404c0d
@@ -6517,8 +6496,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00405383
 void JoystickWindow::DestroyImage() {
 // LINE 699:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 701:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1CE], 0;
@@ -7720,9 +7698,7 @@ _T135:
 	__asm        add    esp, 4;
 	__asm        jmp    _T189;
 _T189:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T193:
 	__asm        jmp    _T198;
 _T198:
@@ -8493,9 +8469,7 @@ _T516:
 	__asm        add    esp, 4;
 	__asm        jmp    _T561;
 _T561:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T570;
 _T570:
 	__asm        jmp    _T575;
@@ -8761,9 +8735,7 @@ _T903:
 	__asm        add    esp, 4;
 	__asm        jmp    _T94e;
 _T94e:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T95d;
 _T95d:
 	__asm        jmp    _T962;
@@ -8975,9 +8947,7 @@ _Tc0c:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tc57;
 _Tc57:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tc66;
 _Tc66:
 	__asm        jmp    _Tc6b;
@@ -9189,9 +9159,7 @@ _Tf15:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tf60;
 _Tf60:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tf6f;
 _Tf6f:
 	__asm        jmp    _Tf74;
@@ -9671,11 +9639,7 @@ _T197:
 	__asm        jmp    _T19c;
 // LINE 1213:
 _T19c:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA0;
-	__asm        push   eax;
-	__asm        call   MakeDefaultConfigurableShortcuts;
-	__asm        add    esp, 4;
+	MakeDefaultConfigurableShortcuts((this + 0xa0));
 // LINE 1214:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1215:
@@ -9945,9 +9909,7 @@ _T11b:
 	__asm        add    esp, 4;
 	__asm        jmp    _T170;
 _T170:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T17a:
 	__asm        jmp    _T17f;
 _T17f:
@@ -10005,9 +9967,7 @@ _T1d4:
 	__asm        add    esp, 4;
 	__asm        jmp    _T231;
 _T231:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T23b:
 	__asm        jmp    _T240;
 _T240:
@@ -10237,9 +10197,7 @@ _T4ee:
 	__asm        add    esp, 4;
 	__asm        jmp    _T54f;
 _T54f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T559:
 	__asm        jmp    _T55e;
 _T55e:
@@ -10297,9 +10255,7 @@ _T5dd:
 	__asm        add    esp, 4;
 	__asm        jmp    _T643;
 _T643:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T64d:
 	__asm        jmp    _T652;
 _T652:
@@ -10520,9 +10476,7 @@ _Ta6:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tfb;
 _Tfb:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T105:
 	__asm        jmp    _T10a;
 _T10a:
@@ -10580,9 +10534,7 @@ _T15f:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1b0;
 _T1b0:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T1ba:
 	__asm        jmp    _T1bf;
 _T1bf:
@@ -10818,9 +10770,7 @@ _T10a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T15f;
 _T15f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T169:
 	__asm        jmp    _T16e;
 _T16e:
@@ -10878,9 +10828,7 @@ _T1c3:
 	__asm        add    esp, 4;
 	__asm        jmp    _T226;
 _T226:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T230:
 	__asm        jmp    _T235;
 _T235:
@@ -11655,8 +11603,7 @@ _T4c:
 	__asm        cmp    bRedrawBackground, 0;
 	__asm        je     _T6b;
 // LINE 1603:
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::ClearDeviceArea;
+	this->UserInputWindow::ClearDeviceArea();
 // LINE 1604:
 _T6b:
 	__asm        mov    eax, this;
@@ -11812,10 +11759,7 @@ _T291:
 	__asm        jmp    _T296;
 // LINE 1616:
 _T296:
-	__asm        lea    eax, lReservedKeys[0];
-	__asm        push   eax;
-	__asm        call   GetReservedKeyArray;
-	__asm        add    esp, 4;
+	GetReservedKeyArray(lReservedKeys[0]);
 // LINE 1617:
 	i = 0x0;
 // LINE 1618:
@@ -12218,8 +12162,7 @@ _T898:
 	__asm        cmp    bRedrawBackground, 0;
 	__asm        je     _T8c1;
 // LINE 1651:
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::ClearDeviceArea;
+	this->UserInputWindow::ClearDeviceArea();
 // LINE 1652:
 _T8c1:
 	__asm        mov    eax, this;
@@ -12554,8 +12497,7 @@ _T65:
 	__asm        lea    ecx, tempImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 1725:
-	__asm        lea    ecx, tempImage<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::~CBackBuffer;
+	tempImage<CBackBuffer+0x00:None>->CBackBuffer::~CBackBuffer();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -13078,9 +13020,7 @@ _T188:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1b8;
 _T1b8:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1c7;
 _T1c7:
 	__asm        jmp    _T1cc;
@@ -13880,9 +13820,7 @@ _T160:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1ab;
 _T1ab:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1ba;
 _T1ba:
 	__asm        jmp    _T1bf;
@@ -14098,9 +14036,7 @@ _T448:
 	__asm        add    esp, 4;
 	__asm        jmp    _T493;
 _T493:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4a2;
 _T4a2:
 	__asm        jmp    _T4a7;
@@ -14306,9 +14242,7 @@ _T712:
 	__asm        add    esp, 4;
 	__asm        jmp    _T75d;
 _T75d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T76c;
 _T76c:
 	__asm        jmp    _T771;
@@ -15459,8 +15393,7 @@ _T583:
 _T588:
 	__asm        jmp    _T58d;
 _T58d:
-	__asm        lea    ecx, tempLongSet.t.header;
-	__asm        call   rb_tree<long,long,ident<long,long>,less<long>>::~rb_tree<long,long,ident<long,long>,less<long>>;
+	tempLongSet.t.header->rb_tree<long,long,ident<long,long>,less<long>>::~rb_tree<long,long,ident<long,long>,less<long>>();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -15516,9 +15449,7 @@ _T8b:
 	__asm        add    esp, 4;
 	__asm        jmp    _Td6;
 _Td6:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Te5;
 _Te5:
 	__asm        jmp    _Tea;
@@ -15637,9 +15568,7 @@ _T24a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T28d;
 _T28d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T29c;
 _T29c:
 	__asm        jmp    _T2a1;
@@ -15789,9 +15718,7 @@ _T44f:
 	__asm        add    esp, 4;
 	__asm        jmp    _T49a;
 _T49a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4a9;
 _T4a9:
 	__asm        jmp    _T4ae;
@@ -15832,9 +15759,7 @@ _T4e5:
 	__asm        add    esp, 4;
 	__asm        jmp    _T538;
 _T538:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T547;
 _T547:
 	__asm        mov    eax, [ebp-0x106C];

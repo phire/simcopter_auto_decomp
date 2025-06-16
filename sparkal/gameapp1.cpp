@@ -788,8 +788,8 @@ public:
 // SYNTHETIC: COPTER_D 0x00487830
 static void $E118() {
 
-	__asm        call   $E115;
-	__asm        call   $E117;
+	$E115();
+	$E117();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -798,8 +798,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0048784a
 static void $E115() {
 
-	__asm        mov    ecx, 0x604808;
-	__asm        call   CopterSparkalPalette::CopterSparkalPalette;
+	0x604808->CopterSparkalPalette::CopterSparkalPalette();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -819,8 +818,7 @@ static void $E116() {
 
 	__asm        jmp    _T0b;
 _T0b:
-	__asm        mov    ecx, 0x604808;
-	__asm        call   SparkalPalette::~SparkalPalette;
+	0x604808->SparkalPalette::~SparkalPalette();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -829,8 +827,8 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004878a0
 static void $E123() {
 
-	__asm        call   $E120;
-	__asm        call   $E122;
+	$E120();
+	$E122();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -839,8 +837,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004878ba
 static void $E120() {
 
-	__asm        mov    ecx, 0x604588;
-	__asm        call   SoundSystem::SoundSystem;
+	0x604588->SoundSystem::SoundSystem();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -858,8 +855,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004878f1
 static void $E121() {
 
-	__asm        mov    ecx, 0x604588;
-	__asm        call   SoundSystem::~SoundSystem;
+	0x604588->SoundSystem::~SoundSystem();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -868,8 +864,8 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0048790b
 static void $E128() {
 
-	__asm        call   $E125;
-	__asm        call   $E127;
+	$E125();
+	$E127();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -878,8 +874,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00487925
 static void $E125() {
 
-	__asm        mov    ecx, 0x604600;
-	__asm        call   SoundManager::SoundManager;
+	0x604600->SoundManager::SoundManager();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -897,8 +892,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0048795c
 static void $E126() {
 
-	__asm        mov    ecx, 0x604600;
-	__asm        call   SoundManager::~SoundManager;
+	0x604600->SoundManager::~SoundManager();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -907,8 +901,8 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00487976
 static void $E133() {
 
-	__asm        call   $E130;
-	__asm        call   $E132;
+	$E130();
+	$E132();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -917,8 +911,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00487990
 static void $E130() {
 
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::Radio;
+	0x604480->Radio::Radio();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -936,8 +929,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004879c7
 static void $E131() {
 
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::~Radio;
+	0x604480->Radio::~Radio();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -946,8 +938,8 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004879e1
 static void $E138() {
 
-	__asm        call   $E135;
-	__asm        call   $E137;
+	$E135();
+	$E137();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1009,8 +1001,8 @@ _T42:
 // SYNTHETIC: COPTER_D 0x00487aa4
 static void $E143() {
 
-	__asm        call   $E140;
-	__asm        call   $E142;
+	$E140();
+	$E142();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1019,8 +1011,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00487abe
 static void $E140() {
 
-	__asm        mov    ecx, 0x604530;
-	__asm        call   MessageDisplayManager::MessageDisplayManager;
+	0x604530->MessageDisplayManager::MessageDisplayManager();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1038,8 +1029,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00487af5
 static void $E141() {
 
-	__asm        mov    ecx, 0x604530;
-	__asm        call   MessageDisplayManager::~MessageDisplayManager;
+	0x604530->MessageDisplayManager::~MessageDisplayManager();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1077,10 +1067,8 @@ void RenderPreferences::RenderPreferences() {
 // FUNCTION: COPTER_D 0x00487bb7
 void CGameApp::CGameApp() {
 
-	__asm        mov    ecx, this;
-	__asm        call   CSparkalApp::CSparkalApp;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0x590F2C;
+	this->CSparkalApp::CSparkalApp();
+	this-><CGameApp+0x14:4> = 0x590f2c;
 	__asm        jmp    _T23;
 _T23:
 	__asm        push   0;
@@ -1183,9 +1171,7 @@ _T16d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1c2;
 _T1c2:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T1cc:
 	__asm        jmp    _T1d1;
 _T1d1:
@@ -1244,9 +1230,7 @@ _T226:
 	__asm        add    esp, 4;
 	__asm        jmp    _T27a;
 _T27a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T284:
 	__asm        jmp    _T289;
 _T289:
@@ -1329,8 +1313,7 @@ _T389:
 	this-><CGameApp+0x00:4> = 0x590f38;
 	this-><CGameApp+0x14:4> = 0x590f30;
 // LINE 120:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::InitializeMemberVariables;
+	this->CGameApp::InitializeMemberVariables();
 // LINE 123:
 	__asm        push   0;
 	__asm        mov    ecx, this;
@@ -1509,30 +1492,20 @@ _T219:
 	__asm        cmp    G_VRAppInitCalled, 0;
 	__asm        je     _T266;
 // LINE 178:
-	__asm        call   VRAppDeInit;
+	VRAppDeInit();
 // LINE 181:
-	__asm        call   VRCloseResourceFile;
+	VRCloseResourceFile();
 // LINE 182:
 	VRUnLoadAllResources();
 // LINE 183:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        call   VRFreeMemPool;
-	__asm        add    esp, 4;
+	VRFreeMemPool(G_main_mp);
 // LINE 190:
 _T266:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(ScratchPoolIndex);
 // LINE 191:
-	__asm        mov    eax, MainPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(MainPoolIndex);
 // LINE 194:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::SavePreferences;
+	this->CGameApp::SavePreferences();
 // LINE 195:
 	__asm        jmp    _T292;
 _T292:
@@ -1575,15 +1548,11 @@ _T311:
 	__asm        dec    list<CopterGameMode>::number_of_lists;
 	__asm        jne    _T32e;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x4338;
-	__asm        call   list<CopterGameMode>::deallocate_buffers;
+	(this + 0x4338)->list<CopterGameMode>::deallocate_buffers();
 _T32e:
 	__asm        jmp    _T333;
 _T333:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x4174;
-	__asm        call   MIFF::~MIFF;
+	(this + 0x4174)->MIFF::~MIFF();
 	__asm        jmp    _T349;
 _T349:
 	__asm        jmp    _T34e;
@@ -1627,41 +1596,25 @@ _T3cd:
 	__asm        dec    list<Shortcut>::number_of_lists;
 	__asm        jne    _T3ea;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x3794;
-	__asm        call   list<Shortcut>::deallocate_buffers;
+	(this + 0x3794)->list<Shortcut>::deallocate_buffers();
 _T3ea:
 	__asm        jmp    _T3ef;
 _T3ef:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x3784;
-	__asm        call   CharList::~CharList;
+	(this + 0x3784)->CharList::~CharList();
 	__asm        jmp    _T405;
 _T405:
 	__asm        jmp    _T40a;
 _T40a:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2CE8;
-	__asm        call   list<Shortcut>::~list<Shortcut>;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2CD8;
-	__asm        call   CharList::~CharList;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2BF8;
-	__asm        call   GameModeCoreData::~GameModeCoreData;
+	(this + 0x2ce8)->list<Shortcut>::~list<Shortcut>();
+	(this + 0x2cd8)->CharList::~CharList();
+	(this + 0x2bf8)->GameModeCoreData::~GameModeCoreData();
 	__asm        jmp    _T442;
 _T442:
 	__asm        jmp    _T447;
 _T447:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2228;
-	__asm        call   list<Shortcut>::~list<Shortcut>;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2218;
-	__asm        call   CharList::~CharList;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2138;
-	__asm        call   GameModeCoreData::~GameModeCoreData;
+	(this + 0x2228)->list<Shortcut>::~list<Shortcut>();
+	(this + 0x2218)->CharList::~CharList();
+	(this + 0x2138)->GameModeCoreData::~GameModeCoreData();
 	__asm        jmp    _T47f;
 _T47f:
 	__asm        jmp    _T484;
@@ -1700,31 +1653,19 @@ _T4f6:
 	__asm        dec    list<Shortcut>::number_of_lists;
 	__asm        jne    _T513;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1768;
-	__asm        call   list<Shortcut>::deallocate_buffers;
+	(this + 0x1768)->list<Shortcut>::deallocate_buffers();
 _T513:
 	__asm        jmp    _T518;
 _T518:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1758;
-	__asm        call   CharList::~CharList;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1678;
-	__asm        call   GameModeCoreData::~GameModeCoreData;
+	(this + 0x1758)->CharList::~CharList();
+	(this + 0x1678)->GameModeCoreData::~GameModeCoreData();
 	__asm        jmp    _T53f;
 _T53f:
 	__asm        jmp    _T544;
 _T544:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xCA8;
-	__asm        call   list<Shortcut>::~list<Shortcut>;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xC98;
-	__asm        call   CharList::~CharList;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeCoreData::~GameModeCoreData;
+	(this + 0xca8)->list<Shortcut>::~list<Shortcut>();
+	(this + 0xc98)->CharList::~CharList();
+	(this + 0xbb8)->GameModeCoreData::~GameModeCoreData();
 	__asm        jmp    _T57c;
 _T57c:
 	__asm        jmp    _T581;
@@ -1763,33 +1704,20 @@ _T5f3:
 	__asm        dec    list<Shortcut>::number_of_lists;
 	__asm        jne    _T610;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1E8;
-	__asm        call   list<Shortcut>::deallocate_buffers;
+	(this + 0x1e8)->list<Shortcut>::deallocate_buffers();
 _T610:
 	__asm        jmp    _T615;
 _T615:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1D8;
-	__asm        call   CharList::~CharList;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModeCoreData::~GameModeCoreData;
+	(this + 0x1d8)->CharList::~CharList();
+	(this + 0xa0)->GameModeCoreData::~GameModeCoreData();
 	__asm        jmp    _T63c;
 _T63c:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   GameModeCoreData::~GameModeCoreData;
+	(this + 0x70)->GameModeCoreData::~GameModeCoreData();
 	__asm        jmp    __RETURN;
 __RETURN:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x58;
-	__asm        call   GameModeCoreData::~GameModeCoreData;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x3C;
-	__asm        call   GraphicWindowManager::~GraphicWindowManager;
-	__asm        mov    ecx, this;
-	__asm        call   CSparkalApp::~CSparkalApp;
+	(this + 0x58)->GameModeCoreData::~GameModeCoreData();
+	(this + 0x3c)->GraphicWindowManager::~GraphicWindowManager();
+	this->CSparkalApp::~CSparkalApp();
 }
 
 // FUNCTION: COPTER_D 0x004885ed
@@ -1851,12 +1779,7 @@ void CGameApp::InitializeMemberVariables() {
 // LINE 233:
 	this-><CGameApp+0x42e8:4> = 0x8;
 // LINE 235:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x42EC;
-	__asm        push   eax;
-	__asm        call   GetCurrentScreenMode;
-	__asm        add    esp, 8;
+	GetCurrentScreenMode(0x0, (this + 0x42ec));
 // LINE 237:
 	gameResolution = 0x1;
 // LINE 246:
@@ -2454,13 +2377,9 @@ _T7f6:
 	__asm        jmp    _T915;
 // LINE 320:
 _T823:
-	__asm        push   0x599C4C;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(0x599c4c);
 // LINE 321:
-	__asm        push   0x599C68;
-	__asm        call   SaveDebugWindow;
-	__asm        add    esp, 4;
+	SaveDebugWindow(0x599c68);
 // LINE 322:
 	__asm        mov    dword ptr [ebp-0x138], 0x80000000;
 	__asm        lea    ecx, sErrorTitle.c_str_ptr;
@@ -3062,9 +2981,7 @@ _T15c:
 	__asm        mov    ecx, gDebugWindow;
 	__asm        call   CDebugWindow::Create;
 // LINE 421:
-	__asm        push   0x599C98;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(0x599c98);
 // LINE 430:
 	this-><CGameApp+0x4324:4> = LanguageManager::GetCurrentSystemLocale();
 // LINE 431:
@@ -3078,8 +2995,7 @@ _T15c:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 433:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DisplayDebugSystemInformation;
+	this->CGameApp::DisplayDebugSystemInformation();
 // LINE 434:
 	__asm        push   0;
 	__asm        mov    ecx, this;
@@ -3103,16 +3019,14 @@ _T15c:
 	__asm        cmp    dword ptr [eax+0x4310], 0;
 	__asm        je     _T21d;
 // LINE 440:
-	__asm        mov    ecx, gDebugWindow;
-	__asm        call   CDebugWindow::ShowWindow;
+	gDebugWindow->CDebugWindow::ShowWindow();
 // LINE 441:
 	__asm        jmp    _T235;
 _T21d:
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T235;
 // LINE 442:
-	__asm        mov    ecx, gDebugWindow;
-	__asm        call   CDebugWindow::HideWindow;
+	gDebugWindow->CDebugWindow::HideWindow();
 // LINE 445:
 _T235:
 	this-><CGameApp+0x30:4> = this-><CGameApp+0x4318:4>;
@@ -3178,15 +3092,13 @@ _T320:
 // LINE 462:
 	G_texterr = this-><CGameApp+0x432c:4>;
 // LINE 464:
-	__asm        call   InitializeAllUserInfo;
+	InitializeAllUserInfo();
 // LINE 465:
-	__asm        call   InitializeAllCareerCitiesInfo;
+	InitializeAllCareerCitiesInfo();
 // LINE 466:
 	0x604480->Radio::Initialize();
 // LINE 470:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::Initialize;
+	(this + 0xa0)->GameModePlayData::Initialize();
 // LINE 477:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3197,7 +3109,7 @@ _T320:
 // LINE 481:
 	ScratchPoolIndex = S2AllocPool(0x10000);
 // LINE 484:
-	__asm        call   TWKGameInit;
+	TWKGameInit();
 // LINE 487:
 	0x604530->MessageDisplayManager::Initialize();
 // LINE 488:
@@ -3407,8 +3319,7 @@ _T182:
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T1c1;
 // LINE 538:
-	__asm        mov    ecx, gDebugWindow;
-	__asm        call   CDebugWindow::ShowWindow;
+	gDebugWindow->CDebugWindow::ShowWindow();
 // LINE 545:
 _T1c1:
 	__asm        lea    eax, szCommandValue[0];
@@ -3682,8 +3593,7 @@ void CGameApp::DisplayDebugSystemInformation() {
 	/*bp-0x150*/ char * szVersionInformation;
 
 // LINE 662:
-	__asm        lea    ecx, tempVersion<vftable>;
-	__asm        call   Version::Version;
+	tempVersion<vftable>->Version::Version();
 // LINE 667:
 	__asm        lea    eax, szVersionInformation;
 	__asm        push   eax;
@@ -3694,10 +3604,7 @@ void CGameApp::DisplayDebugSystemInformation() {
 // LINE 668:
 	sprintf(szVersionInformation, 0x599cb0, szFormattedVersionInformation[0]);
 // LINE 669:
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 672:
 _T5b:
 	__asm        lea    eax, szVersionInformation;
@@ -3709,10 +3616,7 @@ _T5b:
 // LINE 673:
 	sprintf(szVersionInformation, 0x599cb4, szFormattedVersionInformation[0]);
 // LINE 674:
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 677:
 _T9c:
 	__asm        lea    eax, szVersionInformation;
@@ -3724,10 +3628,7 @@ _T9c:
 // LINE 678:
 	sprintf(szVersionInformation, 0x599cc4, szFormattedVersionInformation[0]);
 // LINE 679:
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 682:
 _Tdd:
 	__asm        lea    eax, szUnformattedVersionInformation[0];
@@ -3739,39 +3640,18 @@ _Tdd:
 // LINE 683:
 	sprintf(szUnformattedVersionInformation[0], 0x599cd8, szFormattedVersionInformation[0]);
 // LINE 684:
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 687:
 _T11e:
-	__asm        push   0x599D78;
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x599d78, szUnformattedVersionInformation[0]);
 	__asm        jmp    _T137;
 // LINE 688:
 _T137:
 	sprintf(szUnformattedVersionInformation[0], 0x599ce8, szFormattedVersionInformation[0]);
 // LINE 689:
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 692:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x42F4];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x42F0];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x42EC];
-	__asm        push   eax;
-	__asm        push   0x599D00;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 0x10;
+	DebugOutput(this-><CGameApp+0x42f4:4>, this-><CGameApp+0x42f0:4>, this-><CGameApp+0x42ec:4>, 0x599d00);
 // LINE 697:
 	tempMemoryStatus.dwLength = 0x20;
 // LINE 698:
@@ -3797,8 +3677,7 @@ _T137:
 	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 704:
-	__asm        lea    ecx, tempVersion<vftable>;
-	__asm        call   Version::~Version;
+	tempVersion<vftable>->Version::~Version();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -4228,9 +4107,7 @@ _T51a:
 	__asm        jmp    _T51f;
 // LINE 784:
 _T51f:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x36BC;
-	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
+	(this + 0x36bc)->CommandSystem::SetUpCommandArraysFromShortcuts();
 // LINE 785:
 	return;
 }

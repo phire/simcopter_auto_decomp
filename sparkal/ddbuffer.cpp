@@ -551,10 +551,8 @@ protected:
 // FUNCTION: COPTER_D 0x0046e690
 void CBackBuffer::CBackBuffer() {
 
-	__asm        mov    ecx, this;
-	__asm        call   IFlatImage::IFlatImage;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5907E0;
+	this->IFlatImage::IFlatImage();
+	this-><CBackBuffer+0x00> = 0x5907e0;
 	__asm        jmp    _T22;
 _T22:
 	__asm        jmp    _T27;
@@ -565,8 +563,7 @@ _T2c:
 _T31:
 	this-><CBackBuffer+0x00> = 0x590808;
 // LINE 45:
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::InitializeMemberVariables;
+	this->CBackBuffer::InitializeMemberVariables();
 // LINE 46:
 	return;
 
@@ -582,10 +579,8 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	/*bp-0x44*/  int32_t nFileNameLength;
 
 
-	__asm        mov    ecx, this;
-	__asm        call   IFlatImage::IFlatImage;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5907E0;
+	this->IFlatImage::IFlatImage();
+	this-><CBackBuffer+0x00> = 0x5907e0;
 	__asm        jmp    _T22;
 _T22:
 	__asm        jmp    _T27;
@@ -596,19 +591,14 @@ _T2c:
 _T31:
 	this-><CBackBuffer+0x00> = 0x590808;
 // LINE 68:
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::InitializeMemberVariables;
+	this->CBackBuffer::InitializeMemberVariables();
 // LINE 69:
 	this->bSurfacePrimary = 0x0;
 // LINE 70:
 	__asm        cmp    imageFileName, 0;
 	__asm        jne    _T6f;
 
-	__asm        push   0x46;
-	__asm        push   0x599498;
-	__asm        push   0x5994C0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x46, 0x599498, 0x5994c0);
 	__asm        jmp    _T74;
 _T6f:
 	__asm        jmp    _T74;
@@ -628,13 +618,7 @@ _T74:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 73:
-	__asm        mov    eax, imageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(imageFileName, this->szFilePath);
 // LINE 77:
 	__asm        push   0x110;
 	__asm        call   operator new;
@@ -755,13 +739,7 @@ _T1f0:
 	__asm        jmp    _T25d;
 // LINE 99:
 _T25d:
-	__asm        push   0x6C;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x6c, 0x0, (this + 0x58));
 // LINE 100:
 	this->mDDdesc.dwSize = 0x6c;
 // LINE 102:
@@ -817,10 +795,8 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const /*packed*/ struct S
 	/*bp-0x4*/   long ddrval;
 
 
-	__asm        mov    ecx, this;
-	__asm        call   IFlatImage::IFlatImage;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5907E0;
+	this->IFlatImage::IFlatImage();
+	this-><CBackBuffer+0x00> = 0x5907e0;
 	__asm        jmp    _T22;
 _T22:
 	__asm        jmp    _T27;
@@ -831,16 +807,9 @@ _T2c:
 _T31:
 	this-><CBackBuffer+0x00> = 0x590808;
 // LINE 161:
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::InitializeMemberVariables;
+	this->CBackBuffer::InitializeMemberVariables();
 // LINE 165:
-	__asm        push   0x6C;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x6c, 0x0, (this + 0x58));
 // LINE 166:
 	this->mDDdesc.dwSize = 0x6c;
 // LINE 167:
@@ -942,21 +911,9 @@ void CBackBuffer::InitializeMemberVariables() {
 // LINE 237:
 	this->rectDirectDrawBuffer.bottom = 0x0;
 // LINE 238:
-	__asm        push   0x6C;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x6c, 0x0, (this + 0x58));
 // LINE 239:
-	__asm        push   0x64;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xC4;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x64, 0x0, (this + 0xc4));
 // LINE 240:
 	this->hPen = 0x0;
 // LINE 241:
@@ -1833,10 +1790,7 @@ _Tc1:
 	__asm        cmp    dword ptr [eax+0x128], 0;
 	__asm        jne    _T146;
 // LINE 564:
-	__asm        push   0x5995B8;
-	__asm        push   0x5995F0;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 8;
+	DebugOutput(0x5995b8, 0x5995f0);
 // LINE 565:
 	return 0x80000000;
 // LINE 570:
@@ -3384,15 +3338,7 @@ _T82:
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     _Tba;
 // LINE 1480:
-	__asm        mov    eax, length;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, address;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(length, this->nColorIndexCurrent, address);
 // LINE 1481:
 	address += this->mStride;
 // LINE 1482:
@@ -3428,15 +3374,7 @@ _T109:
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        je     _T141;
 // LINE 1496:
-	__asm        mov    eax, nThickness;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, address;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(nThickness, this->nColorIndexCurrent, address);
 // LINE 1497:
 	address += this->mStride;
 // LINE 1498:
@@ -3619,15 +3557,7 @@ _T319:
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        je     _T36d;
 // LINE 1589:
-	__asm        mov    eax, nThickness;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, address;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(nThickness, this->nColorIndexCurrent, address);
 // LINE 1590:
 	__asm        cmp    yinc2, 0xFFFFFFFF;
 	__asm        jne    _T35f;
@@ -3974,15 +3904,7 @@ _T3db:
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        je     _T419;
 // LINE 1653:
-	__asm        mov    eax, length;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, address;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(length, this->nColorIndexCurrent, address);
 // LINE 1654:
 	address += this->mStride;
 // LINE 1655:
@@ -4018,15 +3940,7 @@ _T46e:
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
 	__asm        je     _T4ac;
 // LINE 1669:
-	__asm        mov    eax, nThickness;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, address;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(nThickness, this->nColorIndexCurrent, address);
 // LINE 1670:
 	address += this->mStride;
 // LINE 1671:
@@ -4237,15 +4151,7 @@ _T6d8:
 	__asm        cmp    dword ptr [ebp-0x70], 0;
 	__asm        je     _T735;
 // LINE 1779:
-	__asm        mov    eax, nThickness;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, address;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(nThickness, this->nColorIndexCurrent, address);
 // LINE 1780:
 	__asm        cmp    yinc2, 0xFFFFFFFF;
 	__asm        jne    _T724;
@@ -4371,15 +4277,7 @@ _T853:
 	__asm        mov    nPixels, eax;
 // LINE 1828:
 _T85a:
-	__asm        mov    eax, nPixels;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, address;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(nPixels, this->nColorIndexCurrent, address);
 // LINE 1830:
 	__asm        jmp    _T8b6;
 // LINE 1832:
@@ -4395,15 +4293,7 @@ _T896:
 	nPixels = nThickness;
 // LINE 1833:
 _T89c:
-	__asm        mov    eax, nPixels;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, address;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(nPixels, this->nColorIndexCurrent, address);
 // LINE 1837:
 // Block end:
 _T8b6:

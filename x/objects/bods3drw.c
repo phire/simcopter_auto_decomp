@@ -670,29 +670,11 @@ _T6a1:
 	__asm        dec    eax;
 	__asm        mov    lineY, eax;
 // LINE 318:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(color);
-	__asm        push   eax;
-	__asm        mov    eax, lineY;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawHorzLine;
-	__asm        add    esp, 0x10;
+	DrawHorzLine(reinterpret_cast<uint32_t>(color), lineY, endX, startX);
 // LINE 320:
 	lineY = (centerPt.y - (radius - i));
 // LINE 321:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(color);
-	__asm        push   eax;
-	__asm        mov    eax, lineY;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawHorzLine;
-	__asm        add    esp, 0x10;
+	DrawHorzLine(reinterpret_cast<uint32_t>(color), lineY, endX, startX);
 // LINE 322:
 	__asm        jmp    _T69b;
 // LINE 324:
@@ -700,18 +682,7 @@ _T76c:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
 	__asm        je     __RETURN;
 // LINE 325:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(color);
-	__asm        push   eax;
-	__asm        mov    eax, centerPt.y;
-	__asm        push   eax;
-	__asm        mov    eax, centerPt.x;
-	__asm        add    eax, radius;
-	__asm        push   eax;
-	__asm        mov    eax, centerPt.x;
-	__asm        sub    eax, radius;
-	__asm        push   eax;
-	__asm        call   DrawHorzLine;
-	__asm        add    esp, 0x10;
+	DrawHorzLine(reinterpret_cast<uint32_t>(color), centerPt.y, (centerPt.x + radius), (centerPt.x - radius));
 // LINE 328:
 __RETURN:
 }
@@ -745,12 +716,7 @@ _T1f:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T48;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BEF68;
-	__asm        push   0x1A9;
-	__asm        push   0x5BEF90;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bef68, 0x1a9, 0x5bef90);
 // LINE 431:
 _T48:
 	bhdr = VRInt2BmpHdr(reinterpret_cast<int16_t>(facenum), G_restex);
@@ -758,26 +724,14 @@ _T48:
 	__asm        cmp    bhdr, 0;
 	__asm        jne    _T84;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BEFB8;
-	__asm        push   0x1B0;
-	__asm        push   0x5BEFDC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5befb8, 0x1b0, 0x5befdc);
 // LINE 434:
 _T84:
 	pixPtr = bhdr;
 // LINE 435:
 	pixPtr += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 440:
-	__asm        lea    eax, faceCenter.x;
-	__asm        push   eax;
-	__asm        mov    eax, psi;
-	__asm        push   eax;
-	__asm        mov    eax, bhdr;
-	__asm        push   eax;
-	__asm        call   FindFaceQuadrant2;
-	__asm        add    esp, 0xC;
+	FindFaceQuadrant2(faceCenter.x, psi, bhdr);
 // LINE 444:
 	faceCenter.y = 0xc;
 // LINE 447:
@@ -844,83 +798,20 @@ _T10d:
 // LINE 469:
 	pixLine.ptr = (((faceCenter.y - yScanLine) * pixLine.width) + pixPtr);
 // LINE 470:
-	__asm        lea    eax, pixLine.width;
-	__asm        push   eax;
-	__asm        mov    eax, faceCenter.z;
-	__asm        push   eax;
-	__asm        mov    eax, faceCenter.y;
-	__asm        push   eax;
-	__asm        mov    eax, faceCenter.x;
-	__asm        push   eax;
-	__asm        mov    eax, offset.z;
-	__asm        push   eax;
-	__asm        mov    eax, offset.y;
-	__asm        push   eax;
-	__asm        mov    eax, offset.x;
-	__asm        push   eax;
-	__asm        mov    eax, yLine;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawLineOnFace;
-	__asm        add    esp, 0x28;
+	DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, yLine, endX, startX);
 // LINE 473:
 	yLine = (centerPt.y - offset.y);
 // LINE 474:
 	pixLine.ptr = (((faceCenter.y + yScanLine) * pixLine.width) + pixPtr);
 // LINE 475:
-	__asm        lea    eax, pixLine.width;
-	__asm        push   eax;
-	__asm        mov    eax, faceCenter.z;
-	__asm        push   eax;
-	__asm        mov    eax, faceCenter.y;
-	__asm        push   eax;
-	__asm        mov    eax, faceCenter.x;
-	__asm        push   eax;
-	__asm        mov    eax, offset.z;
-	__asm        push   eax;
-	__asm        mov    eax, offset.y;
-	__asm        push   eax;
-	__asm        mov    eax, offset.x;
-	__asm        push   eax;
-	__asm        mov    eax, yLine;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawLineOnFace;
-	__asm        add    esp, 0x28;
+	DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, yLine, endX, startX);
 // LINE 476:
 	__asm        jmp    _T10a;
 // LINE 478:
 _T20f:
 	pixLine.ptr = ((faceCenter.y * pixLine.width) + pixPtr);
 // LINE 479:
-	__asm        lea    eax, pixLine.width;
-	__asm        push   eax;
-	__asm        mov    eax, faceCenter.z;
-	__asm        push   eax;
-	__asm        mov    eax, faceCenter.y;
-	__asm        push   eax;
-	__asm        mov    eax, faceCenter.x;
-	__asm        push   eax;
-	__asm        mov    eax, offset.z;
-	__asm        push   eax;
-	__asm        mov    eax, offset.y;
-	__asm        push   eax;
-	__asm        mov    eax, offset.x;
-	__asm        push   eax;
-	__asm        mov    eax, centerPt.y;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawLineOnFace;
-	__asm        add    esp, 0x28;
+	DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, centerPt.y, endX, startX);
 // LINE 482:
 }
 
@@ -963,22 +854,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, /*unpacked*/ struct Poin
 // LINE 543:
 	ptr = ((faceCenter.x - scaledOffset.x) + pixLine->ptr);
 // LINE 544:
-	__asm        mov    eax, pixLine;
-	__asm        mov    ecx, [eax+0xC];
-	__asm        push   ecx;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, ptr;
-	__asm        push   eax;
-	__asm        mov    eax, yLine;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawHorzLinePat;
-	__asm        add    esp, 0x1C;
+	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, endX, startX);
 // LINE 546:
 	return;
 _T83:
@@ -1012,22 +888,7 @@ _Ta5:
 	__asm        add    ecx, eax;
 	__asm        mov    end, ecx;
 // LINE 556:
-	__asm        mov    eax, pixLine;
-	__asm        mov    ecx, [eax+0xC];
-	__asm        push   ecx;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, ptr;
-	__asm        push   eax;
-	__asm        mov    eax, yLine;
-	__asm        push   eax;
-	__asm        mov    eax, end;
-	__asm        push   eax;
-	__asm        mov    eax, begin;
-	__asm        push   eax;
-	__asm        call   DrawHorzLinePat;
-	__asm        add    esp, 0x1C;
+	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, end, begin);
 // LINE 558:
 	ptr = pixLine->ptr;
 // LINE 559:
@@ -1035,22 +896,7 @@ _Ta5:
 // LINE 560:
 	end = endX;
 // LINE 561:
-	__asm        mov    eax, pixLine;
-	__asm        mov    ecx, [eax+0xC];
-	__asm        push   ecx;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, ptr;
-	__asm        push   eax;
-	__asm        mov    eax, yLine;
-	__asm        push   eax;
-	__asm        mov    eax, end;
-	__asm        push   eax;
-	__asm        mov    eax, begin;
-	__asm        push   eax;
-	__asm        call   DrawHorzLinePat;
-	__asm        add    esp, 0x1C;
+	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, end, begin);
 // LINE 563:
 	return;
 // LINE 565:
@@ -1071,22 +917,7 @@ _T14b:
 	__asm        add    ecx, eax;
 	__asm        mov    end, ecx;
 // LINE 568:
-	__asm        mov    eax, pixLine;
-	__asm        mov    ecx, [eax+0xC];
-	__asm        push   ecx;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, ptr;
-	__asm        push   eax;
-	__asm        mov    eax, yLine;
-	__asm        push   eax;
-	__asm        mov    eax, end;
-	__asm        push   eax;
-	__asm        mov    eax, begin;
-	__asm        push   eax;
-	__asm        call   DrawHorzLinePat;
-	__asm        add    esp, 0x1C;
+	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, end, begin);
 // LINE 570:
 	ptr = pixLine->ptr;
 // LINE 571:
@@ -1094,22 +925,7 @@ _T14b:
 // LINE 572:
 	end = endX;
 // LINE 573:
-	__asm        mov    eax, pixLine;
-	__asm        mov    ecx, [eax+0xC];
-	__asm        push   ecx;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, ptr;
-	__asm        push   eax;
-	__asm        mov    eax, yLine;
-	__asm        push   eax;
-	__asm        mov    eax, end;
-	__asm        push   eax;
-	__asm        mov    eax, begin;
-	__asm        push   eax;
-	__asm        call   DrawHorzLinePat;
-	__asm        add    esp, 0x1C;
+	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, end, begin);
 // LINE 576:
 }
 
@@ -1165,12 +981,7 @@ void FindFaceQuadrant2(/*unpacked*/ struct VRBmpHdr *bhdr, float psi, /*unpacked
 	__asm        test   ah, 0x40;
 	__asm        jne    _T4a;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF004;
-	__asm        push   0x25D;
-	__asm        push   0x5BF014;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf004, 0x25d, 0x5bf014);
 // LINE 610:
 _T4a:
 	__asm        fld    psi;
@@ -1185,12 +996,7 @@ _T4a:
 	__asm        test   ah, 1;
 	__asm        jne    _T8e;
 _T72:
-	__asm        push   0x8C085;
-	__asm        push   0x5BF03C;
-	__asm        push   0x262;
-	__asm        push   0x5BF050;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf03c, 0x262, 0x5bf050);
 // LINE 611:
 _T8e:
 	__asm        fld    psi;
@@ -1243,24 +1049,14 @@ _T10a:
 	__asm        cmp    dword ptr [eax], 0x34;
 	__asm        jl     _T14b;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF078;
-	__asm        push   0x273;
-	__asm        push   0x5BF0A8;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf078, 0x273, 0x5bf0a8);
 // LINE 628:
 _T14b:
 	__asm        mov    eax, faceCenter;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jge    _T173;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF0D0;
-	__asm        push   0x274;
-	__asm        push   0x5BF100;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf0d0, 0x274, 0x5bf100);
 // LINE 630:
 _T173:
 	return;
@@ -1339,12 +1135,7 @@ _T70:
 	__asm        cmp    i, 0x1A;
 	__asm        jl     _Tb1;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF128;
-	__asm        push   0x2A8;
-	__asm        push   0x5BF174;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf128, 0x2a8, 0x5bf174);
 // LINE 681:
 _Tb1:
 	__asm        mov    eax, i;
@@ -1777,12 +1568,7 @@ _T4d:
 	__asm        cmp    i, 0x1A;
 	__asm        jl     _T8e;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF1C4;
-	__asm        push   0x35A;
-	__asm        push   0x5BF1E0;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf1c4, 0x35a, 0x5bf1e0);
 // LINE 859:
 _T8e:
 	__asm        mov    eax, i;
@@ -2005,12 +1791,7 @@ _T2a5:
 // LINE 932:
 	return;
 // LINE 933:
-	__asm        push   0x8C085;
-	__asm        push   0x5BF208;
-	__asm        push   0x3A5;
-	__asm        push   0x5BF234;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf208, 0x3a5, 0x5bf234);
 // LINE 935:
 _T2fb:
 	__asm        cmp    fourByteWrites, 0;
@@ -2018,12 +1799,7 @@ _T2fb:
 // LINE 936:
 	return;
 // LINE 937:
-	__asm        push   0x8C085;
-	__asm        push   0x5BF25C;
-	__asm        push   0x3A9;
-	__asm        push   0x5BF288;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf25c, 0x3a9, 0x5bf288);
 // LINE 940:
 _T326:
 	__asm        mov    eax, oneByteWrites;
@@ -2203,12 +1979,7 @@ _Ta6:
 // LINE 1019:
 	return;
 // LINE 1020:
-	__asm        push   0x8C085;
-	__asm        push   0x5BF2C8;
-	__asm        push   0x3FC;
-	__asm        push   0x5BF2FC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf2c8, 0x3fc, 0x5bf2fc);
 // LINE 1022:
 _T103:
 	__asm        cmp    fourByteWrites, 0;
@@ -2216,12 +1987,7 @@ _T103:
 // LINE 1023:
 	return;
 // LINE 1024:
-	__asm        push   0x8C085;
-	__asm        push   0x5BF324;
-	__asm        push   0x400;
-	__asm        push   0x5BF35C;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf324, 0x400, 0x5bf35c);
 // LINE 1027:
 _T12e:
 	__asm        mov    eax, oneByteWrites;
@@ -2413,12 +2179,7 @@ _T65:
 // LINE 1100:
 	return;
 // LINE 1101:
-	__asm        push   0x8C085;
-	__asm        push   0x5BF3A4;
-	__asm        push   0x44D;
-	__asm        push   0x5BF3D4;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf3a4, 0x44d, 0x5bf3d4);
 // LINE 1103:
 _Te8:
 	__asm        cmp    fourByteWrites, 0;
@@ -2426,12 +2187,7 @@ _Te8:
 // LINE 1104:
 	return;
 // LINE 1105:
-	__asm        push   0x8C085;
-	__asm        push   0x5BF3FC;
-	__asm        push   0x451;
-	__asm        push   0x5BF430;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf3fc, 0x451, 0x5bf430);
 // LINE 1108:
 _T113:
 	__asm        mov    eax, oneByteWrites;

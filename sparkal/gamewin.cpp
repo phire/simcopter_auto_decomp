@@ -265,8 +265,7 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 	/*bp-0x28*/  /*packed*/ struct tagWNDCLASSA ClassInfo; // 0x28 bytes
 
 
-	__asm        mov    ecx, this;
-	__asm        call   CSparkalWindow::CSparkalWindow;
+	this->CSparkalWindow::CSparkalWindow();
 	__asm        jmp    _T19;
 _T19:
 	__asm        jmp    _T1e;
@@ -302,25 +301,14 @@ _T32:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x98], eax;
 // LINE 46:
-	__asm        mov    eax, Caption;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x98];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(Caption, this->szCaption);
 // LINE 48:
 	__asm        jmp    _Td1;
 // LINE 49:
 _Ta7:
 	this->szCaption = operator new(0x4);
 // LINE 50:
-	__asm        push   0x599314;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x98];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x599314, this->szCaption);
 // LINE 53:
 _Td1:
 	__asm        lea    eax, ClassInfo.style;
@@ -558,8 +546,7 @@ void GameWindow::~GameWindow() {
 // LINE 151:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   CSparkalWindow::~CSparkalWindow;
+	this->CSparkalWindow::~CSparkalWindow();
 }
 
 // FUNCTION: COPTER_D 0x00467310
@@ -1304,11 +1291,9 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 	__asm        cmp    g_uTWKMessageNum, eax;
 	__asm        jne    _T31;
 // LINE 497:
-	__asm        push   0x599348;
-	__asm        call   TWKReadAllFiles;
-	__asm        add    esp, 4;
+	TWKReadAllFiles(0x599348);
 // LINE 498:
-	__asm        call   TWKUpdate;
+	TWKUpdate();
 // LINE 499:
 	return 0x0;
 // LINE 502:

@@ -231,12 +231,7 @@ void FlatResFile::LoadResMap(void * __ptr32 *newMap, short * numTypes, long * da
 	__asm        test   eax, eax;
 	__asm        jne    _T48;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBEE0;
-	__asm        push   0x6B;
-	__asm        push   0x5BBEEC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbee0, 0x6b, 0x5bbeec);
 // LINE 108:
 _T48:
 	__asm        push   0;
@@ -267,12 +262,7 @@ _T8c:
 	__asm        cmp    res1Off, 0x100;
 	__asm        je     _Tb2;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBF14;
-	__asm        push   0x6F;
-	__asm        push   0x5BBF30;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbf14, 0x6f, 0x5bbf30);
 // LINE 113:
 _Tb2:
 	__asm        lea    eax, mapLoc;
@@ -295,12 +285,7 @@ _Td5:
 	__asm        cmp    mapLoc, 0x600000;
 	__asm        jl     _T107;
 _Tee:
-	__asm        push   0x8C085;
-	__asm        push   0x5BBF58;
-	__asm        push   0x72;
-	__asm        push   0x5BBF68;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbf58, 0x72, 0x5bbf68);
 // LINE 116:
 _T107:
 	__asm        lea    eax, mapLocLess;
@@ -322,12 +307,7 @@ _T12a:
 	__asm        cmp    mapLocLess, 0;
 	__asm        jne    _T156;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BBF90;
-	__asm        push   0x75;
-	__asm        push   0x5BBFAC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbf90, 0x75, 0x5bbfac);
 // LINE 119:
 _T156:
 	__asm        lea    eax, mapSize;
@@ -349,12 +329,7 @@ _T179:
 	__asm        cmp    mapSize, 0x600000;
 	__asm        jl     _T1a9;
 _T190:
-	__asm        push   0x8C085;
-	__asm        push   0x5BBFD4;
-	__asm        push   0x78;
-	__asm        push   0x5BBFE8;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bbfd4, 0x78, 0x5bbfe8);
 // LINE 122:
 _T1a9:
 	__asm        mov    eax, mapLoc;
@@ -445,11 +420,7 @@ _T288:
 	__asm        jmp    error;
 // LINE 141:
 _T2af:
-	__asm        mov    eax, newMap;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   Memory::HUnlock;
-	__asm        add    esp, 4;
+	Memory::HUnlock(newMap->);
 // LINE 143:
 // Block end:
 	this->fError = 0x0;
@@ -461,11 +432,7 @@ error:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T2f2;
 // LINE 149:
-	__asm        mov    eax, newMap;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   Memory::HFree;
-	__asm        add    esp, 4;
+	Memory::HFree(newMap->);
 // LINE 150:
 	newMap-> = 0x0;
 // LINE 152:
@@ -578,9 +545,7 @@ long FlatResFile::Close() {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T4b;
 
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::Release;
+	this->fMap->ResMap::Release();
 // LINE 211:
 _T4b:
 	this->fMap = 0x0;
@@ -1175,12 +1140,7 @@ _T85:
 	__asm        cmp    returnType, 0;
 	__asm        jne    _Tc0;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BC010;
-	__asm        push   0x1C9;
-	__asm        push   0x5BC028;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bc010, 0x1c9, 0x5bc028);
 // LINE 458:
 _Tc0:
 	__asm        cmp    returnType, 0;
@@ -1472,10 +1432,7 @@ _T6f:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _Ta5;
 // LINE 693:
-	__asm        mov    eax, typeList;
-	__asm        push   eax;
-	__asm        call   ResMap::SwapTypeHead;
-	__asm        add    esp, 4;
+	ResMap::SwapTypeHead(typeList);
 // LINE 694:
 	__asm        mov    eax, typeList;
 	__asm        movsx  eax, word ptr [eax+4];
@@ -1502,10 +1459,7 @@ _Td3:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _Tfe;
 // LINE 703:
-	__asm        mov    eax, resList;
-	__asm        push   eax;
-	__asm        call   ResMap::SwapResEntry;
-	__asm        add    esp, 4;
+	ResMap::SwapResEntry(resList);
 // LINE 704:
 	__asm        mov    eax, resList;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1574,17 +1528,9 @@ _T8a:
 	__asm        jmp    _T2a;
 // LINE 745:
 _T93:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::HUnlock;
-	__asm        add    esp, 4;
+	Memory::HUnlock(this-><ResMap+0x08:4>);
 // LINE 746:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::HFree;
-	__asm        add    esp, 4;
+	Memory::HFree(this-><ResMap+0x08:4>);
 // LINE 747:
 	return;
 }
@@ -1710,12 +1656,7 @@ void ResMap::Release() {
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jg     _T35;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BC050;
-	__asm        push   0x312;
-	__asm        push   0x5BC06C;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bc050, 0x312, 0x5bc06c);
 // LINE 787:
 _T35:
 	this-><ResMap+0x1c:4>--;
@@ -1847,12 +1788,7 @@ _T6f:
 	__asm        cmp    size, 0x7A1200;
 	__asm        jl     _Ta8;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BC094;
-	__asm        push   0x33C;
-	__asm        push   0x5BC0C8;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bc094, 0x33c, 0x5bc0c8);
 // LINE 829:
 _Ta8:
 	__asm        mov    ecx, file;
@@ -1869,12 +1805,7 @@ _Tc7:
 	__asm        cmp    size, 0;
 	__asm        jge    _Ted;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BC0F0;
-	__asm        push   0x341;
-	__asm        push   0x5BC108;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bc0f0, 0x341, 0x5bc108);
 // LINE 835:
 _Ted:
 	__asm        mov    eax, entry;
@@ -2512,22 +2443,11 @@ _T54:
 // FUNCTION: COPTER_D 0x00554651
 void ResMap::SwapTypeHead(/*unpacked*/ struct ResMap::TypeHead *typeHead) {
 // LINE 1058:
-	__asm        mov    eax, typeHead;
-	__asm        push   eax;
-	__asm        call   Swizzle4;
-	__asm        add    esp, 4;
+	Swizzle4(typeHead);
 // LINE 1059:
-	__asm        mov    eax, typeHead;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2((typeHead + 0x4));
 // LINE 1060:
-	__asm        mov    eax, typeHead;
-	__asm        add    eax, 6;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2((typeHead + 0x6));
 // LINE 1062:
 	return;
 }
@@ -2541,16 +2461,9 @@ void ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
 	/*bp-0x14*/  unsigned long dataLoc;
 
 // LINE 1081:
-	__asm        mov    eax, resEntry;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2(resEntry);
 // LINE 1082:
-	__asm        mov    eax, resEntry;
-	__asm        add    eax, 2;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2((resEntry + 0x2));
 // LINE 1085:
 	__asm        mov    eax, resEntry;
 	__asm        mov    eax, [eax+4];

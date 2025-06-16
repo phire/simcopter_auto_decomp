@@ -490,10 +490,7 @@ void YObjLang::SwizzleTreeParam(short id, /*unpacked*/ struct Behavior::NodePara
 	__asm        jmp    _T8f;
 // LINE 56:
 _T15:
-	__asm        mov    eax, param;
-	__asm        push   eax;
-	__asm        call   Swizzle4;
-	__asm        add    esp, 4;
+	Swizzle4(param);
 // LINE 57:
 	__asm        jmp    _Tb2;
 // LINE 59:
@@ -502,43 +499,21 @@ _T15:
 _T26:
 	par = param;
 // LINE 60:
-	__asm        mov    eax, par;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2(par);
 // LINE 61:
-	__asm        mov    eax, par;
-	__asm        add    eax, 2;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2((par + 0x2));
 // LINE 62:
 	__asm        jmp    _Tb2;
 // LINE 65:
 // Block end:
 _T4c:
-	__asm        mov    eax, param;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2(param);
 // LINE 66:
-	__asm        mov    eax, param;
-	__asm        add    eax, 2;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2((param + 0x2));
 // LINE 67:
-	__asm        mov    eax, param;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2((param + 0x4));
 // LINE 68:
-	__asm        mov    eax, param;
-	__asm        add    eax, 6;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2((param + 0x6));
 // LINE 69:
 	__asm        jmp    _Tb2;
 // LINE 71:
@@ -566,13 +541,7 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 // LINE 76:
 	tree = treevoid;
 // LINE 77:
-	__asm        push   0x560A02;
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, tree;
-	__asm        push   eax;
-	__asm        call   Behavior::StdTreeSwizzle;
-	__asm        add    esp, 0xC;
+	Behavior::StdTreeSwizzle(0x560a02, size, tree);
 // LINE 79:
 	return;
 }

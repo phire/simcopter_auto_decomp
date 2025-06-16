@@ -402,15 +402,7 @@ _Tf6:
 	__asm        cmp    [eax+0x138], ecx;
 	__asm        jle    _T156;
 // LINE 120:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x134];
-	__asm        push   eax;
-	__asm        mov    eax, pSourceImage;
-	__asm        push   eax;
-	__asm        mov    eax, pDestinationImage;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(this->nBitmapWidth, pSourceImage, pDestinationImage);
 // LINE 121:
 	__asm        jmp    _T133;
 _T133:
@@ -447,13 +439,7 @@ _T173:
 // LINE 143:
 	pSourceImage += 0x40c;
 // LINE 146:
-	__asm        push   0x10000;
-	__asm        mov    eax, pSourceImage;
-	__asm        push   eax;
-	__asm        mov    eax, pDestinationImage;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(0x10000, pSourceImage, pDestinationImage);
 // LINE 149:
 	bmpHeader = VRInt2BmpHdr(0x27, G_restex);
 // LINE 150:
@@ -467,13 +453,7 @@ _T173:
 // LINE 156:
 	pSourceImage += 0x40c;
 // LINE 159:
-	__asm        push   0x10000;
-	__asm        mov    eax, pSourceImage;
-	__asm        push   eax;
-	__asm        mov    eax, pDestinationImage;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(0x10000, pSourceImage, pDestinationImage);
 // LINE 162:
 	bmpHeader = VRInt2BmpHdr(0x28, G_restex);
 // LINE 163:
@@ -487,13 +467,7 @@ _T173:
 // LINE 169:
 	pSourceImage += 0x40c;
 // LINE 172:
-	__asm        push   0x10000;
-	__asm        mov    eax, pSourceImage;
-	__asm        push   eax;
-	__asm        mov    eax, pDestinationImage;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(0x10000, pSourceImage, pDestinationImage);
 // LINE 176:
 	bmpHeader = VRInt2BmpHdr(0x14, G_restex);
 // LINE 177:
@@ -505,13 +479,7 @@ _T173:
 // LINE 182:
 	pSourceImage += 0x40c;
 // LINE 185:
-	__asm        push   0x10000;
-	__asm        mov    eax, pSourceImage;
-	__asm        push   eax;
-	__asm        mov    eax, pDestinationImage;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(0x10000, pSourceImage, pDestinationImage);
 // LINE 188:
 	bmpHeader = VRInt2BmpHdr(0xd, G_restex);
 // LINE 189:
@@ -525,13 +493,7 @@ _T173:
 // LINE 195:
 	pSourceImage += 0x40c;
 // LINE 198:
-	__asm        push   0x10000;
-	__asm        mov    eax, pSourceImage;
-	__asm        push   eax;
-	__asm        mov    eax, pDestinationImage;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(0x10000, pSourceImage, pDestinationImage);
 // LINE 203:
 _T354:
 	VRUnLoadResource(vrResource);

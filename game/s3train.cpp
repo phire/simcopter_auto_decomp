@@ -556,8 +556,8 @@ struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
 // SYNTHETIC: COPTER_D 0x0052dda0
 static void $E7() {
 
-	__asm        call   $E3;
-	__asm        call   $E6;
+	$E3();
+	$E6();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -678,11 +678,7 @@ _T3e:
 	__asm        jmp    _T15b;
 // LINE 221:
 _T13a:
-	__asm        push   0xDD;
-	__asm        push   0x5B783C;
-	__asm        push   0x5B7860;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xdd, 0x5b783c, 0x5b7860);
 	__asm        jmp    _T15b;
 
 	__asm        jmp    _T15b;
@@ -708,8 +704,7 @@ _T15b:
 // FUNCTION: COPTER_D 0x0052dfcd
 void TrainClass::Reset() {
 // LINE 248:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnPlaceTrain;
+	this->TrainClass::UnPlaceTrain();
 // LINE 250:
 	this->flags[2] = 0x0;
 // LINE 251:
@@ -1140,8 +1135,7 @@ _T94:
 // LINE 751:
 // Block end:
 _T175:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TrainSoundDriver;
+	this->TrainClass::TrainSoundDriver();
 // LINE 753:
 	__asm        jmp    _T1b7;
 // LINE 757:
@@ -1153,11 +1147,7 @@ _T187:
 	__asm        test   eax, eax;
 	__asm        jne    _T1b2;
 
-	__asm        push   0x2F5;
-	__asm        push   0x5B7868;
-	__asm        push   0x5B788C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x2f5, 0x5b7868, 0x5b788c);
 	__asm        jmp    _T1b7;
 _T1b2:
 	__asm        jmp    _T1b7;
@@ -1200,9 +1190,7 @@ _T46:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T63;
 // LINE 787:
-	__asm        push   0x19;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x19);
 // LINE 789:
 _T63:
 	return;
@@ -1240,11 +1228,7 @@ _Tde:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 809:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0x19;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x19);
 // LINE 812:
 	__asm        jmp    _T133;
 // LINE 814:
@@ -1255,9 +1239,7 @@ _T116:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T133;
 // LINE 816:
-	__asm        push   0x19;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x19);
 // LINE 819:
 _T133:
 	return;
@@ -1316,8 +1298,7 @@ _T95:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb1;
 // LINE 858:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnPlaceTrain;
+	this->TrainClass::UnPlaceTrain();
 // LINE 859:
 	return;
 // LINE 863:
@@ -1329,8 +1310,7 @@ _Tb6:
 	__asm        test   eax, eax;
 	__asm        je     _Tcd;
 // LINE 865:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::SetCrashWhenReady;
+	this->TrainClass::SetCrashWhenReady();
 // LINE 868:
 _Tcd:
 	__asm        jmp    _Td2;
@@ -1340,8 +1320,7 @@ _Td2:
 	__asm        test   eax, eax;
 	__asm        je     _Tee;
 // LINE 870:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TrainCrashMovement;
+	this->TrainClass::TrainCrashMovement();
 // LINE 871:
 	return;
 // LINE 874:
@@ -1358,8 +1337,7 @@ _Tf3:
 	__asm        test   eax, eax;
 	__asm        jne    _T11f;
 // LINE 878:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustTrailingCars;
+	this->TrainClass::AdjustTrailingCars();
 // LINE 879:
 	return;
 // LINE 882:
@@ -1382,8 +1360,7 @@ _T13f:
 	__asm        test   eax, eax;
 	__asm        jne    _T156;
 // LINE 890:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustNextPosition;
+	this->TrainClass::AdjustNextPosition();
 // LINE 894:
 _T156:
 	__asm        mov    eax, this;
@@ -1394,11 +1371,9 @@ _T156:
 	__asm        jmp    _T27c;
 // LINE 900:
 _T169:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::MoveForward;
+	this->TrainClass::MoveForward();
 // LINE 901:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustTrailingCars;
+	this->TrainClass::AdjustTrailingCars();
 // LINE 945:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::HaveIReachedNextLoc;
@@ -1449,10 +1424,7 @@ _T1d6:
 // LINE 960:
 	mp.maploc.y = this->currentLocation1.y;
 // LINE 961:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 964:
 _T213:
 	__asm        mov    eax, this;
@@ -1473,11 +1445,9 @@ _T233:
 	__asm        test   eax, eax;
 	__asm        jne    _T252;
 // LINE 972:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustNextPosition;
+	this->TrainClass::AdjustNextPosition();
 // LINE 973:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustTrailingCars;
+	this->TrainClass::AdjustTrailingCars();
 // LINE 981:
 // Block end:
 _T252:
@@ -1489,14 +1459,12 @@ _T252:
 	__asm        jmp    _T295;
 // LINE 993:
 _T262:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::Stop;
+	this->TrainClass::Stop();
 // LINE 995:
 	__asm        jmp    _T295;
 // LINE 1001:
 _T26f:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::Stop;
+	this->TrainClass::Stop();
 // LINE 1003:
 	__asm        jmp    _T295;
 _T27c:
@@ -1599,11 +1567,7 @@ void TrainClass::TrainCrashMovement() {
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        jne    _T86;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T8b;
 _T86:
 	__asm        jmp    _T8b;
@@ -1701,41 +1665,17 @@ _T90:
 	__asm        jmp    _T293;
 // LINE 1128:
 _T220:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, (this->leadcar + 0x18), cptr);
 // LINE 1129:
 	__asm        jmp    _T2bf;
 // LINE 1131:
 _T243:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, (this->midcar + 0x18), cptr);
 // LINE 1132:
 	__asm        jmp    _T2bf;
 // LINE 1134:
 _T266:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, (this->endcar + 0x18), cptr);
 // LINE 1135:
 	__asm        jmp    _T2bf;
 // LINE 1137:
@@ -1785,20 +1725,7 @@ _T2c4:
 	__asm        sub    eax, ecx;
 	__asm        mov    loc.z, eax;
 // LINE 1147:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x69];
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        mov    eax, loc.z;
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionStart;
-	__asm        add    esp, 0x18;
+	S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
 // LINE 1149:
 	S3DSPlay(0x0, (this->leadcar + 0x18), 0x1a);
 // LINE 1192:
@@ -1894,20 +1821,7 @@ _T456:
 	__asm        sub    eax, ecx;
 	__asm        mov    loc.z, eax;
 // LINE 1217:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x69];
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        mov    eax, loc.z;
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionStart;
-	__asm        add    esp, 0x18;
+	S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
 // LINE 1226:
 	num_debris = 0x3;
 // LINE 1227:
@@ -2001,20 +1915,7 @@ _T5cc:
 	__asm        sub    eax, ecx;
 	__asm        mov    loc.z, eax;
 // LINE 1251:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x69];
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        mov    eax, loc.z;
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionStart;
-	__asm        add    esp, 0x18;
+	S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
 // LINE 1260:
 	num_debris = 0x3;
 // LINE 1261:
@@ -2085,14 +1986,9 @@ _T742:
 // LINE 1282:
 	this->flags[8] = 0x0;
 // LINE 1285:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x69];
-	__asm        push   eax;
-	__asm        call   KillMissionPeople;
-	__asm        add    esp, 4;
+	KillMissionPeople(this->missionId);
 // LINE 1287:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnPlaceTrain;
+	this->TrainClass::UnPlaceTrain();
 // LINE 1290:
 	mp.op = 0x1d;
 // LINE 1291:
@@ -2102,10 +1998,7 @@ _T742:
 // LINE 1293:
 	mp.flags = 0x0;
 // LINE 1294:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 1298:
 _T7a0:
 	return;
@@ -2290,11 +2183,7 @@ _T1f2:
 	__asm        jmp    _T23c;
 // LINE 1365:
 _T21b:
-	__asm        push   0x555;
-	__asm        push   0x5B78A4;
-	__asm        push   0x5B78C8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x555, 0x5b78a4, 0x5b78c8);
 	__asm        jmp    _T23c;
 
 	__asm        jmp    _T23c;
@@ -2510,11 +2399,7 @@ _Td6:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T120;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T125;
 _T120:
 	__asm        jmp    _T125;
@@ -2668,11 +2553,7 @@ _T2ae:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T2f8;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T2fd;
 _T2f8:
 	__asm        jmp    _T2fd;
@@ -3610,11 +3491,7 @@ _T82e:
 	__asm        jmp    _T93e;
 // LINE 2175:
 _T833:
-	__asm        push   0x87F;
-	__asm        push   0x5B78D0;
-	__asm        push   0x5B78F4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x87f, 0x5b78d0, 0x5b78f4);
 	__asm        jmp    _T854;
 
 	__asm        jmp    _T854;
@@ -4475,11 +4352,7 @@ _T1261:
 	__asm        jmp    _T1371;
 // LINE 2633:
 _T1266:
-	__asm        push   0xA49;
-	__asm        push   0x5B78FC;
-	__asm        push   0x5B7920;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa49, 0x5b78fc, 0x5b7920);
 	__asm        jmp    _T1287;
 
 	__asm        jmp    _T1287;
@@ -4875,11 +4748,7 @@ void TrainClass::UnlinkFromCell(const /*packed*/ struct Point2d& point, /*packed
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T55;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -4892,11 +4761,7 @@ _T5f:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
 
-	__asm        push   0xB03;
-	__asm        push   0x5B7928;
-	__asm        push   0x5B794C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xb03, 0x5b7928, 0x5b794c);
 	__asm        jmp    _T90;
 _T8b:
 	__asm        jmp    _T90;
@@ -4933,11 +4798,7 @@ _Td9:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T101;
 
-	__asm        push   0xB19;
-	__asm        push   0x5B7958;
-	__asm        push   0x5B797C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xb19, 0x5b7958, 0x5b797c);
 	__asm        jmp    _T106;
 _T101:
 	__asm        jmp    _T106;
@@ -4964,11 +4825,7 @@ void TrainClass::LinkToCell(const /*packed*/ struct Point2d& point, /*packed*/ s
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T55;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -4983,11 +4840,7 @@ _T5f:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    _T90;
 
-	__asm        push   0xB33;
-	__asm        push   0x5B7988;
-	__asm        push   0x5B79AC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xb33, 0x5b7988, 0x5b79ac);
 	__asm        jmp    _T95;
 _T90:
 	__asm        jmp    _T95;
@@ -5860,11 +5713,7 @@ _T9d1:
 	__asm        jmp    _T9fe;
 // LINE 3073:
 _T9d6:
-	__asm        push   0xC01;
-	__asm        push   0x5B79C8;
-	__asm        push   0x5B79EC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xc01, 0x5b79c8, 0x5b79ec);
 	__asm        jmp    _T9f7;
 
 	__asm        jmp    _T9f7;
@@ -6001,26 +5850,22 @@ void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes intersectionType) 
 	__asm        jmp    _T181;
 // LINE 3143:
 _T17:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::MakeUturn;
+	this->TrainClass::MakeUturn();
 // LINE 3145:
 	__asm        jmp    _T1b5;
 // LINE 3155:
 _T24:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::GoStraight;
+	this->TrainClass::GoStraight();
 // LINE 3157:
 	__asm        jmp    _T1b5;
 // LINE 3161:
 _T31:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TurnLeft;
+	this->TrainClass::TurnLeft();
 // LINE 3163:
 	__asm        jmp    _T1b5;
 // LINE 3167:
 _T3e:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TurnRight;
+	this->TrainClass::TurnRight();
 // LINE 3169:
 	__asm        jmp    _T1b5;
 // LINE 3173:
@@ -6030,14 +5875,12 @@ _T4b:
 	__asm        test   al, 1;
 	__asm        je     _T68;
 // LINE 3175:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TurnLeft;
+	this->TrainClass::TurnLeft();
 // LINE 3177:
 	__asm        jmp    _T70;
 // LINE 3179:
 _T68:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::GoStraight;
+	this->TrainClass::GoStraight();
 // LINE 3182:
 _T70:
 	__asm        jmp    _T1b5;
@@ -6048,14 +5891,12 @@ _T75:
 	__asm        test   al, 1;
 	__asm        je     _T92;
 // LINE 3188:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TurnLeft;
+	this->TrainClass::TurnLeft();
 // LINE 3190:
 	__asm        jmp    _T9a;
 // LINE 3192:
 _T92:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TurnRight;
+	this->TrainClass::TurnRight();
 // LINE 3195:
 _T9a:
 	__asm        jmp    _T1b5;
@@ -6066,14 +5907,12 @@ _T9f:
 	__asm        test   al, 1;
 	__asm        je     _Tbc;
 // LINE 3201:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TurnRight;
+	this->TrainClass::TurnRight();
 // LINE 3203:
 	__asm        jmp    _Tc4;
 // LINE 3205:
 _Tbc:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::GoStraight;
+	this->TrainClass::GoStraight();
 // LINE 3208:
 _Tc4:
 	__asm        jmp    _T1b5;
@@ -6088,26 +5927,19 @@ _Tc9:
 	__asm        jmp    _T133;
 // LINE 3214:
 _Te1:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::GoStraight;
+	this->TrainClass::GoStraight();
 	__asm        jmp    _T156;
 // LINE 3215:
 _Tee:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TurnLeft;
+	this->TrainClass::TurnLeft();
 	__asm        jmp    _T156;
 // LINE 3216:
 _Tfb:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::TurnRight;
+	this->TrainClass::TurnRight();
 	__asm        jmp    _T156;
 // LINE 3217:
 _T108:
-	__asm        push   0xC91;
-	__asm        push   0x5B79F4;
-	__asm        push   0x5B7A18;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xc91, 0x5b79f4, 0x5b7a18);
 	__asm        jmp    _T129;
 
 	__asm        jmp    _T129;
@@ -6131,11 +5963,7 @@ _T156:
 	__asm        jmp    _T1b5;
 // LINE 3226:
 _T15b:
-	__asm        push   0xC9A;
-	__asm        push   0x5B7A20;
-	__asm        push   0x5B7A44;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xc9a, 0x5b7a20, 0x5b7a44);
 	__asm        jmp    _T17c;
 
 	__asm        jmp    _T17c;
@@ -6537,14 +6365,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        mov    eax, [eax+0x1D1];
 	__asm        mov    [eax+0x20], ebx;
 // LINE 3352:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4(vec.x, (this->midcar + 0x24));
 // LINE 3357:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D1];
@@ -6720,14 +6541,7 @@ _T385:
 	__asm        call   TrainClass::LinkToCell;
 // LINE 3394:
 _T3c8:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4(vec.x, (this->endcar + 0x24));
 // LINE 3395:
 	return;
 }
@@ -6749,11 +6563,7 @@ void TrainClass::AdjustCurrentPosition() {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T56;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T5b;
 _T56:
 	__asm        jmp    _T5b;
@@ -6766,11 +6576,7 @@ _T60:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8c;
 
-	__asm        push   0xD5A;
-	__asm        push   0x5B7A4C;
-	__asm        push   0x5B7A70;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd5a, 0x5b7a4c, 0x5b7a70);
 	__asm        jmp    _T91;
 _T8c:
 	__asm        jmp    _T91;
@@ -6881,11 +6687,7 @@ void TrainClass::AdjustNextPosition() {
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T56;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T5b;
 _T56:
 	__asm        jmp    _T5b;
@@ -6980,11 +6782,7 @@ _T178:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T19e;
 
-	__asm        push   0xD94;
-	__asm        push   0x5B7A7C;
-	__asm        push   0x5B7AA0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd94, 0x5b7a7c, 0x5b7aa0);
 	__asm        jmp    _T1a3;
 _T19e:
 	__asm        jmp    _T1a3;
@@ -7338,15 +7136,7 @@ _T56a:
 	__asm        test   al, 1;
 	__asm        je     _T5ef;
 // LINE 3634:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x15;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((this + 0x15), (this->leadcar + 0x24));
 // LINE 3637:
 // Block end:
 _T5ef:
@@ -7447,11 +7237,7 @@ _Tc8:
 	__asm        jmp    _T120;
 // LINE 3685:
 _Tff:
-	__asm        push   0xE65;
-	__asm        push   0x5B7AAC;
-	__asm        push   0x5B7AD0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xe65, 0x5b7aac, 0x5b7ad0);
 	__asm        jmp    _T120;
 
 	__asm        jmp    _T120;
@@ -7554,11 +7340,7 @@ _Tca:
 	__asm        jmp    _T120;
 // LINE 3735:
 _Tff:
-	__asm        push   0xE97;
-	__asm        push   0x5B7AD8;
-	__asm        push   0x5B7AFC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xe97, 0x5b7ad8, 0x5b7afc);
 	__asm        jmp    _T120;
 
 	__asm        jmp    _T120;
@@ -7661,11 +7443,7 @@ _Tca:
 	__asm        jmp    _T120;
 // LINE 3790:
 _Tff:
-	__asm        push   0xECE;
-	__asm        push   0x5B7B04;
-	__asm        push   0x5B7B28;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xece, 0x5b7b04, 0x5b7b28);
 	__asm        jmp    _T120;
 
 	__asm        jmp    _T120;
@@ -7988,11 +7766,7 @@ _T38d:
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        jne    _T3dd;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T3e2;
 _T3dd:
 	__asm        jmp    _T3e2;
@@ -8120,14 +7894,11 @@ _T551:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::SetTrainDirection;
 // LINE 3964:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustCurrentPosition;
+	this->TrainClass::AdjustCurrentPosition();
 // LINE 3965:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustNextPosition;
+	this->TrainClass::AdjustNextPosition();
 // LINE 3966:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::SetTrailingCars;
+	this->TrainClass::SetTrailingCars();
 // LINE 3967:
 	this->beamTimer = 0x0;
 // LINE 3969:
@@ -8399,11 +8170,7 @@ _T231:
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    _T281;
 
-	__asm        push   0xD0;
-	__asm        push   0x5B780C;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xd0, 0x5b780c, 0x5b57b8);
 	__asm        jmp    _T286;
 _T281:
 	__asm        jmp    _T286;
@@ -8531,14 +8298,11 @@ _T3f7:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::SetTrainDirection;
 // LINE 4129:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustCurrentPosition;
+	this->TrainClass::AdjustCurrentPosition();
 // LINE 4130:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustNextPosition;
+	this->TrainClass::AdjustNextPosition();
 // LINE 4131:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::SetTrailingCars;
+	this->TrainClass::SetTrailingCars();
 // LINE 4132:
 	this->beamTimer = 0x0;
 // LINE 4134:
@@ -8596,11 +8360,7 @@ _T90:
 	__asm        cmp    object1, 0;
 	__asm        jne    _Tb6;
 
-	__asm        push   0x114B;
-	__asm        push   0x5B7B30;
-	__asm        push   0x5B7B54;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x114b, 0x5b7b30, 0x5b7b54);
 	__asm        jmp    _Tbb;
 _Tb6:
 	__asm        jmp    _Tbb;
@@ -8609,11 +8369,7 @@ _Tbb:
 	__asm        cmp    object2, 0;
 	__asm        jne    _Te1;
 
-	__asm        push   0x114C;
-	__asm        push   0x5B7B5C;
-	__asm        push   0x5B7B80;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x114c, 0x5b7b5c, 0x5b7b80);
 	__asm        jmp    _Te6;
 _Te1:
 	__asm        jmp    _Te6;
@@ -8622,11 +8378,7 @@ _Te6:
 	__asm        cmp    object3, 0;
 	__asm        jne    _T10c;
 
-	__asm        push   0x114D;
-	__asm        push   0x5B7B88;
-	__asm        push   0x5B7BAC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x114d, 0x5b7b88, 0x5b7bac);
 	__asm        jmp    _T111;
 _T10c:
 	__asm        jmp    _T111;
@@ -8820,14 +8572,11 @@ _T3fe:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::SetTrainDirection;
 // LINE 4547:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustCurrentPosition;
+	this->TrainClass::AdjustCurrentPosition();
 // LINE 4548:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::AdjustNextPosition;
+	this->TrainClass::AdjustNextPosition();
 // LINE 4549:
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::SetTrailingCars;
+	this->TrainClass::SetTrailingCars();
 // LINE 4553:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -8871,7 +8620,7 @@ _T26:
 // FUNCTION: COPTER_D 0x0053431f
 void ResetAllTrains() {
 // LINE 4645:
-	__asm        call   TrainClass::ResetAll;
+	TrainClass::ResetAll();
 // LINE 4646:
 	return;
 }
@@ -8879,7 +8628,7 @@ void ResetAllTrains() {
 // FUNCTION: COPTER_D 0x00534334
 void ItterateAllTrains() {
 // LINE 4668:
-	__asm        call   TrainClass::ItterateAll;
+	TrainClass::ItterateAll();
 // LINE 4669:
 	return;
 }
@@ -9053,10 +8802,7 @@ _T179:
 // LINE 4798:
 	mp.maploc.y = t->currentLocation1.y;
 // LINE 4799:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 4801:
 	mp.op = 0xe;
 // LINE 4802:
@@ -9064,10 +8810,7 @@ _T179:
 // LINE 4803:
 	mp.flags = 0x1;
 // LINE 4804:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 4806:
 	__asm        jmp    _T1d1;
 // LINE 4808:

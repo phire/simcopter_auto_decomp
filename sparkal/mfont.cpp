@@ -239,9 +239,7 @@ _T86:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tc2;
 _Tc2:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Td1;
 _Td1:
 	__asm        jmp    _Td6;
@@ -282,9 +280,7 @@ _T107:
 	__asm        add    esp, 4;
 	__asm        jmp    _T14b;
 _T14b:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T15a;
 _T15a:
 	__asm        mov    eax, [ebp-0x30];
@@ -441,8 +437,7 @@ void MFont::~MFont() {
 
 	this-><vftable> = 0x591640;
 // LINE 73:
-	__asm        mov    ecx, this;
-	__asm        call   MFont::DestroyFont;
+	this->MFont::DestroyFont();
 // LINE 74:
 	__asm        jmp    _T22;
 _T22:

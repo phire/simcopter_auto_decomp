@@ -39,15 +39,9 @@ void Swizzle16(void * __ptr32 val) {
 	__asm        mov    al, [eax+8];
 	__asm        mov    hiWord[0], al;
 // LINE 14:
-	__asm        lea    eax, loWord[0];
-	__asm        push   eax;
-	__asm        call   Swizzle8;
-	__asm        add    esp, 4;
+	Swizzle8(loWord[0]);
 // LINE 15:
-	__asm        lea    eax, hiWord[0];
-	__asm        push   eax;
-	__asm        call   Swizzle8;
-	__asm        add    esp, 4;
+	Swizzle8(hiWord[0]);
 // LINE 16:
 	__asm        mov    al, hiWord[0];
 	__asm        mov    ecx, val;
@@ -74,15 +68,9 @@ void Swizzle8(void * __ptr32 val) {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    hiWord, eax;
 // LINE 26:
-	__asm        lea    eax, loWord;
-	__asm        push   eax;
-	__asm        call   Swizzle4;
-	__asm        add    esp, 4;
+	Swizzle4(loWord);
 // LINE 27:
-	__asm        lea    eax, hiWord;
-	__asm        push   eax;
-	__asm        call   Swizzle4;
-	__asm        add    esp, 4;
+	Swizzle4(hiWord);
 // LINE 28:
 	__asm        mov    eax, hiWord;
 	__asm        mov    ecx, val;
@@ -98,10 +86,7 @@ void Swizzle8(void * __ptr32 val) {
 // FUNCTION: COPTER_D 0x005668ea
 void SwizzleFloat(void * __ptr32 val) {
 // LINE 35:
-	__asm        mov    eax, val;
-	__asm        push   eax;
-	__asm        call   Swizzle4;
-	__asm        add    esp, 4;
+	Swizzle4(val);
 // LINE 36:
 	return;
 }
@@ -120,15 +105,9 @@ void Swizzle4(void * __ptr32 val) {
 	__asm        mov    ax, [eax+2];
 	__asm        mov    hiWord, ax;
 // LINE 43:
-	__asm        lea    eax, loWord;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2(loWord);
 // LINE 44:
-	__asm        lea    eax, hiWord;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2(hiWord);
 // LINE 45:
 	__asm        mov    ax, hiWord;
 	__asm        mov    ecx, val;

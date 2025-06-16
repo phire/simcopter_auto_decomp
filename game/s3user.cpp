@@ -81,8 +81,8 @@ struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
 // SYNTHETIC: COPTER_D 0x00428e80
 static void $E48() {
 
-	__asm        call   $E45;
-	__asm        call   $E47;
+	$E45();
+	$E47();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -278,11 +278,7 @@ char * GetCurrentCityPath() {
 // FUNCTION: COPTER_D 0x004290e8
 void SetCurrentCityPath(char * szNewCurrentCityPath) {
 // LINE 178:
-	__asm        mov    eax, szNewCurrentCityPath;
-	__asm        push   eax;
-	__asm        push   0x5C2918;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szNewCurrentCityPath, 0x5c2918);
 // LINE 179:
 	return;
 }
@@ -323,46 +319,26 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00429170
 void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * szCityFileName) {
 // LINE 215:
-	__asm        mov    eax, szCityFileNameBase;
-	__asm        push   eax;
-	__asm        mov    eax, szCityFileName;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szCityFileNameBase, szCityFileName);
 // LINE 217:
 	__asm        cmp    nCityFileType, 1;
 	__asm        jne    _T37;
 // LINE 218:
-	__asm        mov    eax, SZ_CITY_DATA_SUFFIX;
-	__asm        push   eax;
-	__asm        mov    eax, szCityFileName;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(SZ_CITY_DATA_SUFFIX, szCityFileName);
 // LINE 219:
 	__asm        jmp    _T74;
 _T37:
 	__asm        cmp    nCityFileType, 2;
 	__asm        jne    _T58;
 // LINE 220:
-	__asm        mov    eax, SZ_CITY_SMALL_VIDEO_SUFFIX;
-	__asm        push   eax;
-	__asm        mov    eax, szCityFileName;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(SZ_CITY_SMALL_VIDEO_SUFFIX, szCityFileName);
 // LINE 221:
 	__asm        jmp    _T74;
 _T58:
 	__asm        cmp    nCityFileType, 3;
 	__asm        jne    _T74;
 // LINE 222:
-	__asm        mov    eax, SZ_CITY_BIG_VIDEO_SUFFIX;
-	__asm        push   eax;
-	__asm        mov    eax, szCityFileName;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(SZ_CITY_BIG_VIDEO_SUFFIX, szCityFileName);
 // LINE 223:
 _T74:
 	return;
@@ -601,11 +577,7 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	/*bp-0x4*/   char * chPrefData;
 
 // LINE 348:
-	__asm        mov    eax, szUserCityPath;
-	__asm        push   eax;
-	__asm        push   0x5C2918;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szUserCityPath, 0x5c2918);
 // LINE 349:
 	__asm        mov    edi, 0x5C2A20;
 	__asm        lea    esi, gAllCareerCities[0].citySettings.lDifficulty;
@@ -822,9 +794,7 @@ _T15e:
 	__asm        jmp    _T163;
 // LINE 407:
 _T163:
-	__asm        push   0;
-	__asm        call   SetUserPoints;
-	__asm        add    esp, 4;
+	SetUserPoints(0x0);
 // LINE 408:
 	return;
 }

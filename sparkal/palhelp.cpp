@@ -1293,17 +1293,7 @@ _T487:
 // FUNCTION: COPTER_D 0x004972e7
 void SparkalPalette::FadeToPalette(/*packed*/ struct SparkalColor colorStart, long lFadeTime, long lSteps) {
 // LINE 361:
-	__asm        mov    eax, lSteps;
-	__asm        push   eax;
-	__asm        mov    eax, lFadeTime;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(colorStart.Blue);
-	__asm        push   eax;
-	__asm        call   SparkalPalette::FadeToPalette;
-	__asm        add    esp, 0x10;
+	SparkalPalette::FadeToPalette(lSteps, lFadeTime, this->pColors, reinterpret_cast<uint32_t>(colorStart.Blue));
 // LINE 362:
 	return;
 }
@@ -1912,10 +1902,8 @@ _Tda:
 // SYNTHETIC: COPTER_D 0x004979cf
 void CopterSparkalPalette::CopterSparkalPalette() {
 
-	__asm        mov    ecx, this;
-	__asm        call   SparkalPalette::SparkalPalette;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591118;
+	this->SparkalPalette::SparkalPalette();
+	this-><CopterSparkalPalette+0x00> = 0x591118;
 // LINE 535:
 	return;
 

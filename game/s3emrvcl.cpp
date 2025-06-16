@@ -609,16 +609,11 @@ __RETURN:
 // FUNCTION: COPTER_D 0x005415d5
 void EmergencyVehicleClass::EmergencyVehicleClass() {
 
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::AutomobileClass;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11E], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x122], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5934C0;
+	this->AutomobileClass::AutomobileClass();
+	this->emergencyType = 0x0;
+	this->timeOfArrival = 0x0;
+	this->emergencyState = 0x1;
+	this-><EmergencyVehicleClass+0x00> = 0x5934c0;
 // LINE 103:
 	this->emergencyLocation.x = 0x0;
 // LINE 104:
@@ -635,8 +630,7 @@ void EmergencyVehicleClass::~EmergencyVehicleClass() {
 	this-><EmergencyVehicleClass+0x00> = 0x5934c0;
 	__asm        jmp    __RETURN;
 __RETURN:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::~AutomobileClass;
+	this->AutomobileClass::~AutomobileClass();
 }
 
 // FUNCTION: COPTER_D 0x00541661
@@ -839,11 +833,7 @@ _T20e:
 	__asm        cmp    startGoal2.pRGV, 0;
 	__asm        jne    _T23e;
 
-	__asm        push   0x145;
-	__asm        push   0x5B8268;
-	__asm        push   0x5B828C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x145, 0x5b8268, 0x5b828c);
 	__asm        jmp    _T243;
 _T23e:
 	__asm        jmp    _T243;
@@ -876,11 +866,7 @@ _T269:
 	__asm        jmp    _T2b0;
 // LINE 336:
 _T28f:
-	__asm        push   0x150;
-	__asm        push   0x5B82B0;
-	__asm        push   0x5B82D4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x150, 0x5b82b0, 0x5b82d4);
 	__asm        jmp    _T2b0;
 
 	__asm        jmp    _T2b0;
@@ -989,11 +975,7 @@ _Ta8:
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _Tf0;
 
-	__asm        push   0x189;
-	__asm        push   0x5B82DC;
-	__asm        push   0x5B8300;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x189, 0x5b82dc, 0x5b8300);
 	__asm        jmp    _Tf5;
 _Tf0:
 	__asm        jmp    _Tf5;
@@ -1003,11 +985,7 @@ _Tf5:
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T11e;
 
-	__asm        push   0x18A;
-	__asm        push   0x5B8318;
-	__asm        push   0x5B833C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x18a, 0x5b8318, 0x5b833c);
 	__asm        jmp    _T123;
 _T11e:
 	__asm        jmp    _T123;
@@ -1016,11 +994,7 @@ _T123:
 	__asm        cmp    destGoal1.pRGV, 0;
 	__asm        jne    _T149;
 
-	__asm        push   0x18B;
-	__asm        push   0x5B8358;
-	__asm        push   0x5B837C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x18b, 0x5b8358, 0x5b837c);
 	__asm        jmp    _T14e;
 _T149:
 	__asm        jmp    _T14e;
@@ -1029,11 +1003,7 @@ _T14e:
 	__asm        cmp    stationGoal1.pRGV, 0;
 	__asm        jne    _T174;
 
-	__asm        push   0x18C;
-	__asm        push   0x5B838C;
-	__asm        push   0x5B83B0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x18c, 0x5b838c, 0x5b83b0);
 	__asm        jmp    _T179;
 _T174:
 	__asm        jmp    _T179;
@@ -1195,11 +1165,7 @@ _T2ff:
 	__asm        cmp    stationGoal2.pRGV, 0;
 	__asm        jne    _T32f;
 
-	__asm        push   0x1C3;
-	__asm        push   0x5B83C4;
-	__asm        push   0x5B83E8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x1c3, 0x5b83c4, 0x5b83e8);
 	__asm        jmp    _T334;
 _T32f:
 	__asm        jmp    _T334;
@@ -1256,11 +1222,7 @@ _T39c:
 	__asm        jmp    _T3e3;
 // LINE 471:
 _T3c2:
-	__asm        push   0x1D7;
-	__asm        push   0x5B8410;
-	__asm        push   0x5B8434;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x1d7, 0x5b8410, 0x5b8434);
 	__asm        jmp    _T3e3;
 
 	__asm        jmp    _T3e3;
@@ -1330,11 +1292,7 @@ _T4b0:
 	__asm        jmp    _T50e;
 // LINE 500:
 _T4bc:
-	__asm        push   0x1F4;
-	__asm        push   0x5B843C;
-	__asm        push   0x5B8460;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x1f4, 0x5b843c, 0x5b8460);
 	__asm        jmp    _T4dd;
 
 	__asm        jmp    _T4dd;
@@ -1388,11 +1346,7 @@ _T50e:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T594;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T599;
 _T594:
 	__asm        jmp    _T599;
@@ -1438,8 +1392,7 @@ _T59e:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::LinkIconToCell;
 // LINE 516:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::TurnOnStrobe;
+	this->EmergencyVehicleClass::TurnOnStrobe();
 // LINE 518:
 	return;
 }
@@ -1533,11 +1486,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        cmp    pathFound, 0;
 	__asm        jne    _T133;
 
-	__asm        push   0x226;
-	__asm        push   0x5B8468;
-	__asm        push   0x5B848C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x226, 0x5b8468, 0x5b848c);
 	__asm        jmp    _T138;
 _T133:
 	__asm        jmp    _T138;
@@ -1622,8 +1571,7 @@ _T21:
 // FUNCTION: COPTER_D 0x0054222e
 void EmergencyVehicleClass::AdjustSpeed() {
 // LINE 624:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::AdjustSpeed;
+	this->AutomobileClass::AdjustSpeed();
 // LINE 626:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -1748,11 +1696,7 @@ _T2d:
 	__asm        cmp    ecx, 0x100;
 	__asm        jl     _T60;
 
-	__asm        push   0x2A8;
-	__asm        push   0x5B8498;
-	__asm        push   0x5B84BC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x2a8, 0x5b8498, 0x5b84bc);
 	__asm        jmp    _T65;
 _T60:
 	__asm        jmp    _T65;
@@ -1808,11 +1752,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(/*packed*/ struct _GridCoordinate
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T49;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T4e;
 _T49:
 	__asm        jmp    _T4e;
@@ -1825,11 +1765,7 @@ _T53:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T7f;
 
-	__asm        push   0x3B2;
-	__asm        push   0x5B84E0;
-	__asm        push   0x5B8504;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x3b2, 0x5b84e0, 0x5b8504);
 	__asm        jmp    _T84;
 _T7f:
 	__asm        jmp    _T84;
@@ -1867,11 +1803,7 @@ _Td6:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _Tfe;
 
-	__asm        push   0x3C3;
-	__asm        push   0x5B8510;
-	__asm        push   0x5B8534;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x3c3, 0x5b8510, 0x5b8534);
 	__asm        jmp    _T103;
 _Tfe:
 	__asm        jmp    _T103;
@@ -1896,11 +1828,7 @@ void EmergencyVehicleClass::LinkIconToCell(/*packed*/ struct _GridCoordinates po
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T49;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T4e;
 _T49:
 	__asm        jmp    _T4e;
@@ -1913,11 +1841,7 @@ _T53:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T7f;
 
-	__asm        push   0x3DB;
-	__asm        push   0x5B8540;
-	__asm        push   0x5B8564;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x3db, 0x5b8540, 0x5b8564);
 	__asm        jmp    _T84;
 _T7f:
 	__asm        jmp    _T84;
@@ -1958,8 +1882,7 @@ void EmergencyVehicleClass::Reset() {
 // LINE 1324:
 	this->timeToEmergency = 0x0;
 // LINE 1327:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::Reset;
+	this->AutomobileClass::Reset();
 // LINE 1330:
 	return;
 }
@@ -1995,11 +1918,7 @@ _T3c:
 	__asm        jmp    _T118;
 // LINE 1363:
 _T53:
-	__asm        push   0x553;
-	__asm        push   0x5B8570;
-	__asm        push   0x5B8594;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x553, 0x5b8570, 0x5b8594);
 	__asm        jmp    _T74;
 
 	__asm        jmp    _T74;
@@ -2028,11 +1947,7 @@ _Td0:
 	__asm        jmp    _T140;
 // LINE 1391:
 _Ted:
-	__asm        push   0x56F;
-	__asm        push   0x5B859C;
-	__asm        push   0x5B85C0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x56f, 0x5b859c, 0x5b85c0);
 	__asm        jmp    _T10e;
 
 	__asm        jmp    _T10e;
@@ -2111,11 +2026,7 @@ _T42:
 	__asm        cmp    eax, 0xFF;
 	__asm        jne    _Tb1;
 _T95:
-	__asm        push   0x589;
-	__asm        push   0x5B85C8;
-	__asm        push   0x5B85EC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x589, 0x5b85c8, 0x5b85ec);
 	__asm        jmp    _Tb6;
 _Tb1:
 	__asm        jmp    _Tb6;
@@ -2429,11 +2340,7 @@ _T15a:
 	__asm        jmp    _T1b8;
 // LINE 1583:
 _T166:
-	__asm        push   0x62F;
-	__asm        push   0x5B8618;
-	__asm        push   0x5B863C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x62f, 0x5b8618, 0x5b863c);
 	__asm        jmp    _T187;
 
 	__asm        jmp    _T187;

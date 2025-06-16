@@ -175,8 +175,7 @@ _T37:
 _T51:
 	this-><CGameApp+0x2c:4> = 0x1;
 // LINE 69:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::PaletteUninitialize;
+	this->CGameApp::PaletteUninitialize();
 // LINE 70:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -273,8 +272,7 @@ _Tf8:
 	__asm        mov    ecx, [eax+0x50];
 	__asm        call   dword ptr [edx+0x50];
 // LINE 96:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::PaletteInitialize;
+	this->CGameApp::PaletteInitialize();
 // LINE 98:
 	this-><CGameApp+0x2c:4> = 0x0;
 // LINE 99:
@@ -313,8 +311,7 @@ _T37:
 _T51:
 	this-><CGameApp+0x2c:4> = 0x1;
 // LINE 124:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::PaletteUninitialize;
+	this->CGameApp::PaletteUninitialize();
 // LINE 125:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -411,8 +408,7 @@ _Tf8:
 	__asm        mov    ecx, [eax+0x50];
 	__asm        call   dword ptr [edx+0x58];
 // LINE 152:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::PaletteInitialize;
+	this->CGameApp::PaletteInitialize();
 // LINE 154:
 	this-><CGameApp+0x2c:4> = 0x0;
 // LINE 155:
@@ -642,8 +638,7 @@ _T1c2:
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax];
 // LINE 236:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateDebugBuffer;
+	this->CGameApp::CreateDebugBuffer();
 // LINE 238:
 	return 0x1;
 // LINE 239:
@@ -652,8 +647,7 @@ _T1c2:
 // FUNCTION: COPTER_D 0x00432aee
 int32_t CGameApp::DestroyDisplaySurfaces() {
 // LINE 247:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DestroyDebugBuffer;
+	this->CGameApp::DestroyDebugBuffer();
 // LINE 248:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -674,11 +668,7 @@ _T41:
 	__asm        cmp    GraphicWindow::listValidWindows.length, 0;
 	__asm        je     _T6a;
 
-	__asm        push   0xFC;
-	__asm        push   0x598434;
-	__asm        push   0x59845C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xfc, 0x598434, 0x59845c);
 	__asm        jmp    _T6f;
 _T6a:
 	__asm        jmp    _T6f;
@@ -733,12 +723,10 @@ int32_t CGameApp::CreateModeSurfaces() {
 	__asm        cmp    dword ptr [eax+0x430C], 0;
 	__asm        je     _T24;
 // LINE 283:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreatePaletteBuffer;
+	this->CGameApp::CreatePaletteBuffer();
 // LINE 284:
 _T24:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateDebugBuffer;
+	this->CGameApp::CreateDebugBuffer();
 // LINE 289:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -855,8 +843,7 @@ _T56:
 	this-><CGameApp+0x42bc:4> = 0x0;
 // LINE 327:
 _T63:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DestroyDebugBuffer;
+	this->CGameApp::DestroyDebugBuffer();
 // LINE 332:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -910,9 +897,7 @@ _Te8:
 	__asm        jmp    _T114;
 // LINE 338:
 _Tfc:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::DestroyIndependentSurfaces;
+	(this + 0xa0)->GameModePlayData::DestroyIndependentSurfaces();
 // LINE 339:
 	__asm        jmp    _T123;
 // LINE 340:
@@ -968,13 +953,9 @@ _T40:
 	__asm        cmp    dword ptr [eax+8], 4;
 	__asm        jne    _T68;
 // LINE 361:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x58;
-	__asm        call   GameModeMainMenuData::CreatePalette;
+	(this + 0x58)->GameModeMainMenuData::CreatePalette();
 // LINE 362:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x58;
-	__asm        call   GameModeMainMenuData::UsePalette;
+	(this + 0x58)->GameModeMainMenuData::UsePalette();
 // LINE 364:
 	__asm        jmp    _T2a9;
 _T68:
@@ -1000,13 +981,9 @@ _T9c:
 	__asm        cmp    dword ptr [eax+8], 5;
 	__asm        jne    _Tc4;
 // LINE 365:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   GameModePickCareerCityData::CreatePalette;
+	(this + 0x70)->GameModePickCareerCityData::CreatePalette();
 // LINE 366:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   GameModePickCareerCityData::UsePalette;
+	(this + 0x70)->GameModePickCareerCityData::UsePalette();
 // LINE 368:
 	__asm        jmp    _T2a9;
 _Tc4:
@@ -1032,13 +1009,9 @@ _Tf8:
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jne    _T126;
 // LINE 369:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::CreatePalette;
+	(this + 0xa0)->GameModePlayData::CreatePalette();
 // LINE 370:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::UsePalette;
+	(this + 0xa0)->GameModePlayData::UsePalette();
 // LINE 372:
 	__asm        jmp    _T2a9;
 _T126:
@@ -1064,13 +1037,9 @@ _T15a:
 	__asm        cmp    dword ptr [eax+8], 7;
 	__asm        jne    _T188;
 // LINE 373:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::CreatePalette;
+	(this + 0xbb8)->GameModeHangarData::CreatePalette();
 // LINE 374:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::UsePalette;
+	(this + 0xbb8)->GameModeHangarData::UsePalette();
 // LINE 376:
 	__asm        jmp    _T2a9;
 _T188:
@@ -1096,13 +1065,9 @@ _T1bc:
 	__asm        cmp    dword ptr [eax+8], 8;
 	__asm        jne    _T1ea;
 // LINE 377:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1678;
-	__asm        call   GameModeCatalogData::CreatePalette;
+	(this + 0x1678)->GameModeCatalogData::CreatePalette();
 // LINE 378:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1678;
-	__asm        call   GameModeCatalogData::UsePalette;
+	(this + 0x1678)->GameModeCatalogData::UsePalette();
 // LINE 380:
 	__asm        jmp    _T2a9;
 _T1ea:
@@ -1128,13 +1093,9 @@ _T21e:
 	__asm        cmp    dword ptr [eax+8], 9;
 	__asm        jne    _T24c;
 // LINE 381:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2138;
-	__asm        call   GameModeMissionLogData::CreatePalette;
+	(this + 0x2138)->GameModeMissionLogData::CreatePalette();
 // LINE 382:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2138;
-	__asm        call   GameModeMissionLogData::UsePalette;
+	(this + 0x2138)->GameModeMissionLogData::UsePalette();
 // LINE 384:
 	__asm        jmp    _T2a9;
 _T24c:
@@ -1160,13 +1121,9 @@ _T280:
 	__asm        cmp    dword ptr [eax+8], 0xB;
 	__asm        jne    _T2a9;
 // LINE 385:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2BF8;
-	__asm        call   GameModeInventoryData::CreatePalette;
+	(this + 0x2bf8)->GameModeInventoryData::CreatePalette();
 // LINE 386:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2BF8;
-	__asm        call   GameModeInventoryData::UsePalette;
+	(this + 0x2bf8)->GameModeInventoryData::UsePalette();
 // LINE 388:
 _T2a9:
 	return;

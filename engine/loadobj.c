@@ -310,16 +310,10 @@ _T134:
 	__asm        cmp    FaceArray, 0;
 	__asm        je     _T181;
 // LINE 190:
-	__asm        mov    eax, FaceArray;
-	__asm        push   eax;
-	__asm        call   free;
-	__asm        add    esp, 4;
+	free(FaceArray);
 // LINE 191:
 _T181:
-	__asm        mov    eax, G_currmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(G_currmempool);
 // LINE 192:
 	return 0x0;
 // LINE 194:
@@ -330,10 +324,7 @@ _T19b:
 	__asm        cmp    ObjDataSize, 0;
 	__asm        jge    _T1c7;
 // LINE 198:
-	__asm        mov    eax, G_currmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(G_currmempool);
 // LINE 199:
 	GlobalError = 0xa;
 // LINE 200:
@@ -551,10 +542,7 @@ _T193:
 	__asm        test   eax, eax;
 	__asm        jne    _T1da;
 // LINE 466:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 467:
 	return 0x0;
 // LINE 505:
@@ -570,10 +558,7 @@ _T1da:
 // LINE 506:
 	GlobalError = 0x6;
 // LINE 507:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 508:
 	return 0x0;
 // LINE 512:
@@ -666,10 +651,7 @@ _T339:
 	__asm        test   eax, eax;
 	__asm        jne    _T385;
 // LINE 583:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 584:
 	return 0x0;
 // LINE 586:
@@ -678,17 +660,7 @@ _T385:
 // LINE 608:
 	faceptr->Barrys = S2Alloc((reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3), barrymempool);
 // LINE 609:
-	__asm        movsx  eax, filefacehdr.NVerts;
-	__asm        shl    eax, 3;
-	__asm        push   eax;
-	__asm        mov    eax, faceptr;
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        mov    eax, faceptr;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy((reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3), faceptr->MapVerts, faceptr->Barrys);
 // LINE 617:
 	faceptr->Normal = dataptr;
 // LINE 618:
@@ -716,17 +688,7 @@ _T385:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vlst, eax;
 // LINE 622:
-	__asm        mov    eax, faceptr;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, vlst;
-	__asm        push   eax;
-	__asm        mov    eax, v1;
-	__asm        push   eax;
-	__asm        mov    eax, v0;
-	__asm        push   eax;
-	__asm        call   FaceCalcNormal;
-	__asm        add    esp, 0x10;
+	FaceCalcNormal(faceptr->Normal, vlst, v1, v0);
 // LINE 627:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
@@ -849,10 +811,7 @@ _T5bf:
 	__asm        test   eax, eax;
 	__asm        jne    _T602;
 // LINE 664:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 665:
 	return 0x0;
 // LINE 687:
@@ -868,10 +827,7 @@ _T62f:
 	ObjectPtr->bsptree = 0x0;
 // LINE 693:
 _T639:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 694:
 	FaceArray = 0x0;
 // LINE 700:
@@ -890,19 +846,13 @@ _T639:
 	__asm        test   byte ptr [eax], 2;
 	__asm        je     _T698;
 
-	__asm        mov    eax, ObjectPtr;
-	__asm        push   eax;
-	__asm        call   NormalizeObj;
-	__asm        add    esp, 4;
+	NormalizeObj(ObjectPtr);
 // LINE 706:
 _T698:
 	__asm        cmp    uses_gouraud, 1;
 	__asm        jne    _T6ae;
 // LINE 707:
-	__asm        mov    eax, ObjectPtr;
-	__asm        push   eax;
-	__asm        call   ObjCalcVnormsAndShade;
-	__asm        add    esp, 4;
+	ObjCalcVnormsAndShade(ObjectPtr);
 // LINE 709:
 _T6ae:
 	return 0x1;
@@ -3134,10 +3084,7 @@ void VRFreeMemPool(/*packed*/ struct VRMemPool *mp) {
 	__asm        call   0x004D84B9;
 	__asm        add    esp, 4;
 // LINE 2011:
-	__asm        mov    eax, mp;
-	__asm        push   eax;
-	__asm        call   free;
-	__asm        add    esp, 4;
+	free(mp);
 // LINE 2012:
 }
 
@@ -3496,17 +3443,9 @@ _T23a:
 	__asm        jmp    _T7b;
 // LINE 2185:
 _T23f:
-	__asm        mov    eax, vnorms;
-	__asm        push   eax;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   VRObjSetGouraudShade;
-	__asm        add    esp, 8;
+	VRObjSetGouraudShade(vnorms, obj);
 // LINE 2189:
-	__asm        mov    eax, vnorms;
-	__asm        push   eax;
-	__asm        call   free;
-	__asm        add    esp, 4;
+	free(vnorms);
 // LINE 2190:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, obj;
@@ -3592,13 +3531,7 @@ _T5f:
 	return 0x0;
 // LINE 2254:
 _T84:
-	__asm        mov    eax, ObjDataSize;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, dataptr;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(ObjDataSize, 0x0, dataptr);
 // LINE 2256:
 	ptr = dataptr;
 // LINE 2259:
@@ -3763,13 +3696,7 @@ _T5d:
 	return 0x0;
 // LINE 2359:
 _T82:
-	__asm        mov    eax, ObjDataSize;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, dataptr;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(ObjDataSize, 0x0, dataptr);
 // LINE 2361:
 	ptr = dataptr;
 // LINE 2364:
@@ -3924,13 +3851,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	return 0x0;
 // LINE 2468:
 _T40:
-	__asm        push   0x90;
-	__asm        mov    eax, oh;
-	__asm        push   eax;
-	__asm        mov    eax, to;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(0x90, oh, to);
 // LINE 2469:
 	to += 0x90;
 // LINE 2471:
@@ -3969,45 +3890,19 @@ _Tb5:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jle    _T159;
 // LINE 2485:
-	__asm        push   0x30;
-	__asm        mov    eax, fh;
-	__asm        push   eax;
-	__asm        mov    eax, to;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(0x30, fh, to);
 // LINE 2486:
 	fh2 = to;
 // LINE 2487:
 	to += 0x30;
 // LINE 2490:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        push   eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        mov    eax, to;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy((fh->Nverts << 0x2), fh->PlyVerts, to);
 // LINE 2491:
 	fh2->PlyVerts = to;
 // LINE 2492:
 	to += (fh->Nverts << 0x2);
 // LINE 2495:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 3;
-	__asm        push   eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        mov    eax, to;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy((fh->Nverts << 0x3), fh->MapVerts, to);
 // LINE 2496:
 	fh2->MapVerts = to;
 // LINE 2497:

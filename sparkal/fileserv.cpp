@@ -506,8 +506,8 @@ struct bidirectional_iterator<basic_string<char>,int>{ // packed(0x1 bytes) TI: 
 // SYNTHETIC: COPTER_D 0x00491180
 static void $E32() {
 
-	__asm        call   $E29;
-	__asm        call   $E31;
+	$E29();
+	$E31();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -706,9 +706,7 @@ _T287:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2c4;
 _T2c4:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2d3;
 _T2d3:
 	__asm        jmp    _T2d8;
@@ -1044,9 +1042,7 @@ _T112:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T1d6;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xC;
-	__asm        call   basic_string<char>::delete_ref;
+	(this + 0xc)->basic_string<char>::delete_ref();
 	__asm        jmp    _T13f;
 _T13f:
 	__asm        mov    eax, this;
@@ -1494,9 +1490,7 @@ _Te3:
 	__asm        add    esp, 4;
 	__asm        jmp    _T122;
 _T122:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T131;
 _T131:
 	__asm        jmp    _T136;
@@ -1537,9 +1531,7 @@ _T16d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1b1;
 _T1b1:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1c0;
 _T1c0:
 	__asm        mov    eax, [ebp-0x50];
@@ -1699,9 +1691,7 @@ _T36c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3ac;
 _T3ac:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T3bb;
 _T3bb:
 	__asm        jmp    _T3c0;
@@ -1966,9 +1956,7 @@ _T17:
 	__asm        add    esp, 4;
 	__asm        jmp    _T53;
 _T53:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T62;
 _T62:
 	__asm        jmp    _T67;
@@ -2372,8 +2360,7 @@ void FileServices::RefreshLocalPathCache(/*packed*/ class basic_string<char>& sD
 	__asm        jmp    _T52;
 // LINE 167:
 _T52:
-	__asm        lea    ecx, tempStringListFiles.node;
-	__asm        call   list<basic_string<char>>::list<basic_string<char>>;
+	tempStringListFiles.node->list<basic_string<char>>::list<basic_string<char>>();
 // LINE 168:
 	__asm        jmp    _T5f;
 // LINE 169:
@@ -2644,8 +2631,7 @@ _T39e:
 	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _T3b2;
 
-	__asm        lea    ecx, tempStringListFiles.node;
-	__asm        call   list<basic_string<char>>::deallocate_buffers;
+	tempStringListFiles.node->list<basic_string<char>>::deallocate_buffers();
 _T3b2:
 	__asm        jmp    _T3b7;
 _T3b7:
@@ -2684,8 +2670,7 @@ _T433:
 	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _T447;
 
-	__asm        lea    ecx, tempStringListDirectories.node;
-	__asm        call   list<basic_string<char>>::deallocate_buffers;
+	tempStringListDirectories.node->list<basic_string<char>>::deallocate_buffers();
 _T447:
 	__asm        jmp    _T44c;
 _T44c:
@@ -2807,13 +2792,7 @@ _Te1:
 _T106:
 	lTotalStringLength = (this->sDirs[2].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 226:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 227:
 	__asm        mov    dword ptr [ebp-0xDC], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0xD8], 0;
@@ -2926,13 +2905,7 @@ _T28d:
 _T2b2:
 	lTotalStringLength = (this->sDirs[2].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 232:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 234:
 _T2d7:
 	return 0x1;
@@ -3013,13 +2986,7 @@ _T3a3:
 _T3c8:
 	lTotalStringLength = (this->sDirs[10].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 241:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 242:
 	__asm        mov    dword ptr [ebp-0x1F4], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x1F0], 0;
@@ -3132,13 +3099,7 @@ _T54f:
 _T574:
 	lTotalStringLength = (this->sDirs[10].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 247:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 249:
 _T599:
 	return 0x1;
@@ -3219,13 +3180,7 @@ _T665:
 _T68a:
 	lTotalStringLength = (this->sDirs[4].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 256:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 257:
 	__asm        mov    dword ptr [ebp-0x30C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x308], 0;
@@ -3338,13 +3293,7 @@ _T811:
 _T836:
 	lTotalStringLength = (this->sDirs[4].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 262:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 264:
 _T85b:
 	return 0x1;
@@ -3425,13 +3374,7 @@ _T927:
 _T94c:
 	lTotalStringLength = (this->sDirs[5].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 271:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 272:
 	__asm        mov    dword ptr [ebp-0x424], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x420], 0;
@@ -3544,13 +3487,7 @@ _Tad3:
 _Taf8:
 	lTotalStringLength = (this->sDirs[5].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 277:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 279:
 _Tb1d:
 	return 0x1;
@@ -3631,13 +3568,7 @@ _Tbe9:
 _Tc0e:
 	lTotalStringLength = (this->sDirs[6].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 286:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 287:
 	__asm        mov    dword ptr [ebp-0x53C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x538], 0;
@@ -3750,13 +3681,7 @@ _Td95:
 _Tdba:
 	lTotalStringLength = (this->sDirs[6].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 292:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 294:
 _Tddf:
 	return 0x1;
@@ -3837,13 +3762,7 @@ _Teab:
 _Ted0:
 	lTotalStringLength = (this->sDirs[7].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 301:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 302:
 	__asm        mov    dword ptr [ebp-0x654], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x650], 0;
@@ -3956,13 +3875,7 @@ _T1057:
 _T107c:
 	lTotalStringLength = (this->sDirs[7].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 307:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 309:
 _T10a1:
 	return 0x1;
@@ -4043,13 +3956,7 @@ _T116d:
 _T1192:
 	lTotalStringLength = (this->sDirs[8].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 316:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 317:
 	__asm        mov    dword ptr [ebp-0x76C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x768], 0;
@@ -4162,13 +4069,7 @@ _T1319:
 _T133e:
 	lTotalStringLength = (this->sDirs[8].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 322:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 324:
 _T1363:
 	return 0x1;
@@ -4249,13 +4150,7 @@ _T143e:
 _T1466:
 	lTotalStringLength = (this->sDirs[1].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 331:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 332:
 	__asm        mov    dword ptr [ebp-0x884], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x880], 0;
@@ -4368,13 +4263,7 @@ _T15fc:
 _T1624:
 	lTotalStringLength = (this->sDirs[1].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 337:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 339:
 _T1649:
 	return 0x1;
@@ -4455,13 +4344,7 @@ _T1724:
 _T174c:
 	lTotalStringLength = (this->sDirs[11].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 346:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 347:
 	__asm        mov    dword ptr [ebp-0x99C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x998], 0;
@@ -4574,13 +4457,7 @@ _T18e2:
 _T190a:
 	lTotalStringLength = (this->sDirs[11].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 352:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, lTotalStringLength;
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (lTotalStringLength + szPath));
 // LINE 354:
 _T192f:
 	return 0x1;
@@ -4609,9 +4486,7 @@ _T194d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1989;
 _T1989:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1998;
 _T1998:
 	__asm        jmp    _T199d;
@@ -4770,9 +4645,7 @@ _T1bae:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1bee;
 _T1bee:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1bfd;
 _T1bfd:
 	__asm        jmp    _T1c02;
@@ -5114,15 +4987,7 @@ _T2049:
 // LINE 375:
 	__asm        jmp    _T206e;
 _T206e:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (this->sLocalDirectoryBase.reference-><basic_string_ref<char>+0x04:4> + szPath));
 // LINE 376:
 	return 0x1;
 // LINE 378:
@@ -5162,15 +5027,7 @@ _T20e0:
 // LINE 380:
 	__asm        jmp    _T2105;
 _T2105:
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, szPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szFile, (this->sLocalDirectoryBase.reference-><basic_string_ref<char>+0x04:4> + szPath));
 // LINE 381:
 	return 0x1;
 // LINE 383:
@@ -5310,9 +5167,7 @@ _T17a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1c5;
 _T1c5:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1d4;
 _T1d4:
 	__asm        jmp    _T1d9;
@@ -5353,9 +5208,7 @@ _T210:
 	__asm        add    esp, 4;
 	__asm        jmp    _T263;
 _T263:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T272;
 _T272:
 	__asm        mov    eax, [ebp-0x13C];

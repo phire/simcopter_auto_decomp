@@ -3345,9 +3345,7 @@ _T131:
 	__asm        add    esp, 4;
 	__asm        jmp    _T192;
 _T192:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T19c:
 	__asm        jmp    _T1a1;
 _T1a1:
@@ -3408,9 +3406,7 @@ _T220:
 	__asm        add    esp, 4;
 	__asm        jmp    _T28d;
 _T28d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T297:
 	__asm        jmp    _T29c;
 _T29c:

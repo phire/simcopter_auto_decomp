@@ -822,9 +822,7 @@ _T15d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T190;
 _T190:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T19f;
 _T19f:
 	__asm        jmp    _T1a4;
@@ -1020,13 +1018,9 @@ _T406:
 	this->myTextWindowPtrArray.end_of_storage = 0x0;
 	__asm        jmp    _T432;
 _T432:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD4], 0;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xD8;
-	__asm        call   DigitalSound::DigitalSound;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5912F8;
+	this->nCurrentSelection = 0x0;
+	(this + 0xd8)->DigitalSound::DigitalSound();
+	this-><UserMenuWindow+0x00> = 0x5912f8;
 // LINE 56:
 	GraphicWindow::MakeModal(this);
 // LINE 57:
@@ -1086,8 +1080,7 @@ _T98:
 	__asm        jmp    _T48;
 // LINE 73:
 _T9d:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 74:
 	__asm        jmp    _Taa;
 _Taa:
@@ -1189,8 +1182,7 @@ _T1a6:
 _T1ce:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0049b858
@@ -2178,9 +2170,7 @@ _T6a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T9d;
 _T9d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tac;
 _Tac:
 	__asm        jmp    _Tb1;
@@ -2675,13 +2665,11 @@ void CopterMainMenu::~CopterMainMenu() {
 	__asm        mov    ecx, [eax+0x156];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 403:
-	__asm        mov    ecx, this;
-	__asm        call   CopterMainMenu::DestroyImage;
+	this->CopterMainMenu::DestroyImage();
 // LINE 404:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   UserMenuWindow::~UserMenuWindow;
+	this->UserMenuWindow::~UserMenuWindow();
 }
 
 // FUNCTION: COPTER_D 0x0049cd72
@@ -3270,8 +3258,7 @@ _Tad:
 	this->myLightImage = 0x0;
 // LINE 455:
 _Tba:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 456:
 	return;
 }
@@ -3281,8 +3268,7 @@ int32_t CopterMainMenu::DrawSelf() {
 // LINE 462:
 	this->UserMenuWindow::DrawSelf();
 // LINE 463:
-	__asm        mov    ecx, this;
-	__asm        call   CopterMainMenu::DrawRatchetAndLights;
+	this->CopterMainMenu::DrawRatchetAndLights();
 // LINE 465:
 	return 0x1;
 // LINE 466:
@@ -3647,13 +3633,11 @@ void CopterPlayMenu::~CopterPlayMenu() {
 
 	this-><CopterPlayMenu+0x00> = 0x5914c8;
 // LINE 613:
-	__asm        mov    ecx, this;
-	__asm        call   CopterPlayMenu::DestroyImage;
+	this->CopterPlayMenu::DestroyImage();
 // LINE 614:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   UserMenuWindow::~UserMenuWindow;
+	this->UserMenuWindow::~UserMenuWindow();
 }
 
 // FUNCTION: COPTER_D 0x0049da9d
@@ -4179,8 +4163,7 @@ _Tad:
 	this->myBackgroundImage = 0x0;
 // LINE 661:
 _Tba:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 662:
 	return;
 }
@@ -4190,8 +4173,7 @@ int32_t CopterPlayMenu::DrawSelf() {
 // LINE 668:
 	this->UserMenuWindow::DrawSelf();
 // LINE 669:
-	__asm        mov    ecx, this;
-	__asm        call   CopterPlayMenu::DrawRatchet;
+	this->CopterPlayMenu::DrawRatchet();
 // LINE 670:
 	return 0x1;
 // LINE 671:

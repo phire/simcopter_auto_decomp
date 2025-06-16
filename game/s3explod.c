@@ -666,16 +666,7 @@ _T61:
 // LINE 271:
 	ed->scale = scale;
 // LINE 274:
-	__asm        mov    eax, dim;
-	__asm        push   eax;
-	__asm        mov    eax, dim;
-	__asm        push   eax;
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   VRObjResize2dFace;
-	__asm        add    esp, 0xC;
+	VRObjResize2dFace(dim, dim, ed->dy2d->mesh);
 // LINE 283:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];

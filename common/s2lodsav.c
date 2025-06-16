@@ -342,10 +342,7 @@ _T198:
 	return 0x0;
 // LINE 229:
 _T1a0:
-	__asm        mov    eax, cityName;
-	__asm        push   eax;
-	__asm        call   PStringToCString;
-	__asm        add    esp, 4;
+	PStringToCString(cityName);
 // LINE 230:
 	return 0x1;
 // LINE 231:
@@ -379,11 +376,7 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 // LINE 273:
 	fp = fopen(0x59b000, szFilePath);
 // LINE 275:
-	__asm        push   0x59B004;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(0x59b004, buf[0]);
 // LINE 276:
 	__asm        cmp    fp, 0;
 	__asm        je     _T5c;
@@ -434,10 +427,7 @@ short S2CityLoad(char * filePath) {
 	__asm        jmp    __RETURN;
 // LINE 308:
 _T31:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 310:
 	__asm        push   0x59B010;
 	__asm        mov    eax, filePath;
@@ -550,12 +540,7 @@ _T176:
 	__asm        jmp    badread;
 // LINE 338:
 _T1b8:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, AltMap[0];
-	__asm        push   eax;
-	__asm        call   swizzle_shorts;
-	__asm        add    esp, 8;
+	swizzle_shorts(size, AltMap[0]);
 // LINE 340:
 	__asm        jmp    _T7ca;
 _T1cf:
@@ -727,11 +712,7 @@ _T3a0:
 	__asm        jmp    badread;
 // LINE 370:
 _T3e7:
-	__asm        push   0x4B0;
-	__asm        mov    eax, MicroRecord;
-	__asm        push   eax;
-	__asm        call   swizzle_Micro;
-	__asm        add    esp, 8;
+	swizzle_Micro(0x4b0, MicroRecord);
 // LINE 372:
 	__asm        jmp    _T7ca;
 _T3ff:
@@ -997,11 +978,7 @@ _T6f7:
 	__asm        jmp    badread;
 // LINE 417:
 _T73e:
-	__asm        push   0xD00;
-	__asm        mov    eax, GraphData[0];
-	__asm        push   eax;
-	__asm        call   swizzle_buffer;
-	__asm        add    esp, 8;
+	swizzle_buffer(0xd00, GraphData[0]);
 // LINE 419:
 	__asm        jmp    _T7ca;
 _T756:
@@ -1062,52 +1039,34 @@ _T7f6:
 	__asm        test   eax, eax;
 	__asm        jne    _T82c;
 // LINE 436:
-	__asm        mov    eax, CityNameString;
-	__asm        push   eax;
-	__asm        mov    eax, filePath;
-	__asm        push   eax;
-	__asm        call   S2CityMakeCityNameFromFilePath;
-	__asm        add    esp, 8;
+	S2CityMakeCityNameFromFilePath(CityNameString, filePath);
 // LINE 437:
 	__asm        jmp    _T84f;
 // LINE 438:
 _T82c:
-	__asm        lea    eax, tempCityName[0];
-	__asm        push   eax;
-	__asm        mov    eax, CityNameString;
-	__asm        push   eax;
-	__asm        call   CopyPString;
-	__asm        add    esp, 8;
+	CopyPString(tempCityName[0], CityNameString);
 // LINE 439:
-	__asm        mov    eax, CityNameString;
-	__asm        push   eax;
-	__asm        call   PStringToCString;
-	__asm        add    esp, 4;
+	PStringToCString(CityNameString);
 // LINE 442:
 _T84f:
 	__asm        jmp    _T866;
 // LINE 443:
 _T854:
-	__asm        mov    eax, CityNameString;
-	__asm        push   eax;
-	__asm        mov    eax, filePath;
-	__asm        push   eax;
-	__asm        call   S2CityMakeCityNameFromFilePath;
-	__asm        add    esp, 8;
+	S2CityMakeCityNameFromFilePath(CityNameString, filePath);
 // LINE 446:
 _T866:
-	__asm        call   graph_kludge;
+	graph_kludge();
 // LINE 447:
 	__asm        movsx  eax, got_label;
 	__asm        test   eax, eax;
 	__asm        je     _T884;
 // LINE 448:
-	__asm        call   label_kludge;
+	label_kludge();
 // LINE 449:
 	__asm        jmp    _T889;
 // LINE 450:
 _T884:
-	__asm        call   clear_label;
+	clear_label();
 // LINE 453:
 _T889:
 	fclose(filNum);
@@ -1292,18 +1251,7 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 	/*bp-0x308*/ char szSplitPathFilename[256]; // 0x100 bytes
 
 // LINE 549:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        mov    eax, filePath;
-	__asm        push   eax;
-	__asm        call   _splitpath;
-	__asm        add    esp, 0x14;
+	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], filePath);
 // LINE 551:
 	__asm        lea    eax, szSplitPathFilename[0];
 	__asm        push   eax;
@@ -1317,24 +1265,14 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 	stringLength = 0x1f;
 // LINE 554:
 _T60:
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        mov    eax, cityName;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szSplitPathFilename[0], cityName);
 // LINE 555:
 }
 
 // FUNCTION: COPTER_D 0x004c55d7
 void S2CityMakeFileNameFromCityName(char * cityName, char * fileName) {
 // LINE 569:
-	__asm        mov    eax, cityName;
-	__asm        push   eax;
-	__asm        mov    eax, fileName;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(cityName, fileName);
 // LINE 570:
 }
 
@@ -1437,12 +1375,7 @@ static unsigned short S2CityMiscRead(/*packed*/ struct _iobuf *filNum, long size
 	return 0x0;
 // LINE 637:
 _T37:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, MiscInfo;
-	__asm        push   eax;
-	__asm        call   swizzle_buffer;
-	__asm        add    esp, 8;
+	swizzle_buffer(size, MiscInfo);
 // LINE 639:
 	__asm        mov    ecx, MiscInfo;
 	__asm        cmp    dword ptr [ecx], 0x122;
@@ -2401,18 +2334,12 @@ _T35:
 	__asm        test   eax, eax;
 	__asm        jne    _T6f;
 // LINE 892:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 893:
 	return 0x0;
 // LINE 896:
 _T6f:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 897:
 	return 0x1;
 // LINE 898:
@@ -2456,10 +2383,7 @@ _T35:
 	__asm        test   eax, eax;
 	__asm        jne    _T6f;
 // LINE 925:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 926:
 	return 0x0;
 // LINE 930:
@@ -2538,10 +2462,7 @@ _T135:
 	__asm        jmp    _T88;
 // LINE 947:
 _T13a:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 949:
 	__asm        mov    ecx, tp;
 	__asm        cmp    size, ecx;
@@ -2586,18 +2507,9 @@ _T2f:
 _T4d:
 	WriteLength = 0x4;
 // LINE 989:
-	__asm        push   0x20;
-	__asm        mov    eax, CityNameString;
-	__asm        push   eax;
-	__asm        lea    eax, tempCityNameString[0];
-	__asm        push   eax;
-	__asm        call   strncpy;
-	__asm        add    esp, 0xC;
+	strncpy(0x20, CityNameString, tempCityNameString[0]);
 // LINE 990:
-	__asm        lea    eax, tempCityNameString[0];
-	__asm        push   eax;
-	__asm        call   CStringToPString;
-	__asm        add    esp, 4;
+	CStringToPString(tempCityNameString[0]);
 // LINE 991:
 	__asm        lea    eax, tempCityNameString[0];
 	__asm        push   eax;
@@ -3099,12 +3011,7 @@ _T45:
 _T87:
 	size = swizzle_long(size);
 // LINE 1126:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_shorts;
-	__asm        add    esp, 8;
+	swizzle_shorts(size, data);
 // LINE 1129:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3118,22 +3025,12 @@ _T87:
 	__asm        test   eax, eax;
 	__asm        jne    _Tdc;
 // LINE 1130:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_shorts;
-	__asm        add    esp, 8;
+	swizzle_shorts(size, data);
 // LINE 1131:
 	return 0x0;
 // LINE 1134:
 _Tdc:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_shorts;
-	__asm        add    esp, 8;
+	swizzle_shorts(size, data);
 // LINE 1136:
 	WriteLength += (size + 0x8);
 // LINE 1137:
@@ -3264,12 +3161,7 @@ _T3e:
 	__asm        jne    _T7f;
 // LINE 1207:
 _T6a:
-	__asm        mov    eax, count;
-	__asm        push   eax;
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_buffer;
-	__asm        add    esp, 8;
+	swizzle_buffer(count, data);
 // LINE 1209:
 	__asm        jmp    _Ta5;
 _T7f:
@@ -3279,12 +3171,7 @@ _T7f:
 	__asm        cmp    eax, head;
 	__asm        jne    _Ta5;
 // LINE 1210:
-	__asm        mov    eax, count;
-	__asm        push   eax;
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_Micro;
-	__asm        add    esp, 8;
+	swizzle_Micro(count, data);
 // LINE 1214:
 _Ta5:
 	dp = 0x0;
@@ -3435,12 +3322,7 @@ _T215:
 	__asm        cmp    eax, head;
 	__asm        jne    _T240;
 // LINE 1250:
-	__asm        mov    eax, count;
-	__asm        push   eax;
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_Micro;
-	__asm        add    esp, 8;
+	swizzle_Micro(count, data);
 // LINE 1252:
 	__asm        jmp    _T266;
 _T240:
@@ -3450,12 +3332,7 @@ _T240:
 	__asm        cmp    eax, head;
 	__asm        jne    _T266;
 // LINE 1253:
-	__asm        mov    eax, count;
-	__asm        push   eax;
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_buffer;
-	__asm        add    esp, 8;
+	swizzle_buffer(count, data);
 // LINE 1257:
 _T266:
 	WriteLength += (tp + 0x8);
@@ -3515,18 +3392,12 @@ _T2e4:
 	__asm        jmp    BadCompWrite;
 // LINE 1278:
 _T316:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 1279:
 	return 0x1;
 // LINE 1282:
 BadCompWrite:
-	__asm        mov    eax, ScratchPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocReset;
-	__asm        add    esp, 4;
+	S2AllocReset(ScratchPoolIndex);
 // LINE 1283:
 	return 0x0;
 // LINE 1284:
@@ -5520,10 +5391,7 @@ _Tdf5:
 	return 0x0;
 // LINE 1950:
 alloc_failure:
-	__asm        mov    eax, G_citymempool;
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(G_citymempool);
 // LINE 1952:
 	return 0x1;
 // LINE 1953:
@@ -5532,10 +5400,7 @@ alloc_failure:
 // FUNCTION: COPTER_D 0x004c920e
 void S2CityFree() {
 // LINE 1969:
-	__asm        mov    eax, G_citymempool;
-	__asm        push   eax;
-	__asm        call   S2AllocFreePool;
-	__asm        add    esp, 4;
+	S2AllocFreePool(G_citymempool);
 // LINE 1970:
 }
 
@@ -5698,12 +5563,7 @@ short check_root(char * pathname) {
 	return 0xffff;
 // LINE 2075:
 _T31:
-	__asm        lea    eax, pathonly[0];
-	__asm        push   eax;
-	__asm        mov    eax, pathname;
-	__asm        push   eax;
-	__asm        call   get_path_at_start;
-	__asm        add    esp, 8;
+	get_path_at_start(pathonly[0], pathname);
 // LINE 2078:
 	__asm        lea    eax, pathonly[0];
 	__asm        push   eax;
@@ -5842,12 +5702,7 @@ _T86:
 	__asm        sub    eax, ref;
 	__asm        mov    off, ax;
 // LINE 2143:
-	__asm        mov    eax, ref;
-	__asm        push   eax;
-	__asm        mov    eax, ret;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(ref, ret);
 // LINE 2144:
 	__asm        movsx  eax, off;
 	__asm        mov    ecx, ret;
@@ -5876,12 +5731,7 @@ void do_uppercase(char * ref, char * res) {
 	return;
 // LINE 2170:
 _T30:
-	__asm        mov    eax, ref;
-	__asm        push   eax;
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(ref, res);
 // LINE 2171:
 	s = res;
 // LINE 2173:
@@ -5987,12 +5837,7 @@ _T89:
 	return;
 // LINE 2217:
 _T9c:
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        mov    eax, ret;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(s, ret);
 // LINE 2218:
 }
 
@@ -6051,12 +5896,7 @@ void check_extension(char * pathname, char * ext) {
 // LINE 2271:
 	nameonly[0] = 0x0;
 // LINE 2272:
-	__asm        lea    eax, nameonly[0];
-	__asm        push   eax;
-	__asm        mov    eax, pathname;
-	__asm        push   eax;
-	__asm        call   get_name_at_end;
-	__asm        add    esp, 8;
+	get_name_at_end(nameonly[0], pathname);
 // LINE 2274:
 	__asm        lea    eax, nameonly[0];
 	__asm        push   eax;
@@ -6067,18 +5907,9 @@ void check_extension(char * pathname, char * ext) {
 	__asm        test   eax, eax;
 	__asm        jne    _T5f;
 // LINE 2275:
-	__asm        push   0x59B394;
-	__asm        mov    eax, pathname;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(0x59b394, pathname);
 // LINE 2276:
-	__asm        mov    eax, ext;
-	__asm        push   eax;
-	__asm        mov    eax, pathname;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(ext, pathname);
 // LINE 2277:
 	return;
 // LINE 2280:
@@ -6148,30 +5979,16 @@ _Tdb:
 _Tf2:
 	s[1] = 0x0;
 // LINE 2296:
-	__asm        mov    eax, ext;
-	__asm        push   eax;
-	__asm        mov    eax, pathname;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(ext, pathname);
 // LINE 2297:
 	return;
 // LINE 2299:
 	return;
 // LINE 2300:
 _T113:
-	__asm        push   0x59B3A0;
-	__asm        mov    eax, pathname;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(0x59b3a0, pathname);
 // LINE 2301:
-	__asm        mov    eax, ext;
-	__asm        push   eax;
-	__asm        mov    eax, pathname;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(ext, pathname);
 // LINE 2303:
 }
 
@@ -6335,12 +6152,7 @@ _T186:
 _T192:
 	r[0] = 0x0;
 // LINE 2370:
-	__asm        lea    eax, temp[0];
-	__asm        push   eax;
-	__asm        mov    eax, ref;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(temp[0], ref);
 // LINE 2371:
 }
 
@@ -6395,12 +6207,7 @@ _T78:
 _T84:
 	r[0] = 0x0;
 // LINE 2404:
-	__asm        lea    eax, temp[0];
-	__asm        push   eax;
-	__asm        mov    eax, ref;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(temp[0], ref);
 // LINE 2405:
 }
 

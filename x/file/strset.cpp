@@ -156,12 +156,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID, short n
 	__asm        cmp    eax, ecx;
 	__asm        je     _T4e;
 // LINE 26:
-	__asm        push   0x8C085;
-	__asm        push   0x5BF478;
-	__asm        push   0x1A;
-	__asm        push   0x5BF498;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf478, 0x1a, 0x5bf498);
 // LINE 28:
 _T4e:
 	return;
@@ -179,12 +174,7 @@ void StringSet::LoadStrings(short resID) {
 	__asm        test   eax, eax;
 	__asm        jne    _T3a;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF4BC;
-	__asm        push   0x21;
-	__asm        push   0x5BF4CC;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf4bc, 0x21, 0x5bf4cc);
 // LINE 34:
 _T3a:
 	__asm        push   0x565BA0;
@@ -207,12 +197,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _Ta0;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF4F0;
-	__asm        push   0x27;
-	__asm        push   0x5BF510;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf4f0, 0x27, 0x5bf510);
 // LINE 42:
 _Ta0:
 	__asm        mov    eax, this;
@@ -235,10 +220,7 @@ _Tc8:
 // FUNCTION: COPTER_D 0x00565ba0
 void StringSet::Swizzle(void * __ptr32 data, long size) {
 // LINE 53:
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+	Swizzle2(data);
 // LINE 54:
 	return;
 }
@@ -250,11 +232,7 @@ void StringSet::~StringSet() {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _T39;
 // LINE 59:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::HUnlock;
-	__asm        add    esp, 4;
+	Memory::HUnlock(this->fStringHandle);
 // LINE 60:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -283,12 +261,7 @@ unsigned char * StringSet::GetString(short which) {
 	__asm        jge    _T49;
 // LINE 67:
 _T29:
-	__asm        push   0x8C085;
-	__asm        push   0x5BF534;
-	__asm        push   0x43;
-	__asm        push   0x5BF54C;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf534, 0x43, 0x5bf54c);
 // LINE 68:
 	return 0x0;
 // LINE 74:

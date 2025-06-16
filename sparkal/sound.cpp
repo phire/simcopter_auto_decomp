@@ -450,13 +450,7 @@ _T30:
 // LINE 96:
 	this->bSoundEnabled = 0x0;
 // LINE 99:
-	__asm        push   0x60;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x14;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x60, 0x0, (this + 0x14));
 // LINE 100:
 	this->dsCapabilities.dwSize = 0x60;
 // LINE 104:
@@ -470,8 +464,7 @@ void SoundSystem::~SoundSystem() {
 
 	this-><vftable> = 0x58f440;
 // LINE 108:
-	__asm        mov    ecx, this;
-	__asm        call   SoundSystem::DeInitialize;
+	this->SoundSystem::DeInitialize();
 // LINE 109:
 	return;
 }
@@ -806,8 +799,7 @@ void SoundManager::~SoundManager() {
 
 	this-><vftable> = 0x58f448;
 // LINE 291:
-	__asm        mov    ecx, this;
-	__asm        call   SoundManager::DeleteAllSounds;
+	this->SoundManager::DeleteAllSounds();
 // LINE 292:
 	return;
 }
@@ -1450,9 +1442,7 @@ _Tad:
 	__asm        add    esp, 4;
 	__asm        jmp    _Te0;
 _Te0:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tef;
 _Tef:
 	__asm        mov    eax, [ebp-0x20];
@@ -1747,10 +1737,8 @@ void DigitalSound::DigitalSound() {
 	/*bp-0x4*/   int32_t i;
 
 
-	__asm        mov    ecx, this;
-	__asm        call   Sound::Sound;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F488;
+	this->Sound::Sound();
+	this-><DigitalSound+0x00> = 0x58f488;
 // LINE 539:
 	this->nStreamingType = 0x0;
 // LINE 544:
@@ -1786,13 +1774,9 @@ void DigitalSound::DigitalSound(const /*packed*/ class basic_string<char>& sNewS
 	/*bp-0x4*/   int32_t i;
 
 
-	__asm        mov    ecx, this;
-	__asm        call   Sound::Sound;
-	__asm        mov    eax, nNewStreamingType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x34], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F488;
+	this->Sound::Sound();
+	this->nStreamingType = nNewStreamingType;
+	this-><DigitalSound+0x00> = 0x58f488;
 // LINE 570:
 	this->cbSize = 0x0;
 // LINE 572:
@@ -1987,10 +1971,8 @@ _T278:
 // FUNCTION: COPTER_D 0x0042f296
 void DigitalSound::DigitalSound(long lNewResID) {
 
-	__asm        mov    ecx, this;
-	__asm        call   Sound::Sound;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F488;
+	this->Sound::Sound();
+	this-><DigitalSound+0x00> = 0x58f488;
 // LINE 596:
 	this->nStreamingType = 0x0;
 // LINE 599:
@@ -2010,13 +1992,11 @@ void DigitalSound::~DigitalSound() {
 
 	this-><DigitalSound+0x00> = 0x58f488;
 // LINE 616:
-	__asm        mov    ecx, this;
-	__asm        call   DigitalSound::Unload;
+	this->DigitalSound::Unload();
 // LINE 624:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   Sound::~Sound;
+	this->Sound::~Sound();
 }
 
 // FUNCTION: COPTER_D 0x0042f318
@@ -2615,12 +2595,7 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 	/*bp-0x14*/  /*packed*/ struct _DSBUFFERDESC dsBufferDescription; // 0x14 bytes
 
 // LINE 843:
-	__asm        push   0x14;
-	__asm        push   0;
-	__asm        lea    eax, dsBufferDescription.dwSize;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x14, 0x0, dsBufferDescription.dwSize);
 // LINE 844:
 	dsBufferDescription.dwSize = 0x14;
 // LINE 845:
@@ -4011,12 +3986,7 @@ _T2a6:
 	__asm        mov    ecx, [ecx+0x72];
 	__asm        mov    [ecx+0x2C], eax;
 // LINE 1550:
-	__asm        push   0x14;
-	__asm        push   0;
-	__asm        lea    eax, dsBufferDescription.dwSize;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x14, 0x0, dsBufferDescription.dwSize);
 // LINE 1551:
 	dsBufferDescription.dwSize = 0x14;
 // LINE 1552:
@@ -4990,15 +4960,7 @@ _T51b:
 	__asm        cmp    ecx, 8;
 	__asm        jne    _T566;
 // LINE 1979:
-	__asm        mov    eax, dwLength2;
-	__asm        sub    eax, nActualBytesRead;
-	__asm        push   eax;
-	__asm        push   0x80;
-	__asm        mov    eax, nActualBytesRead;
-	__asm        add    eax, lpWrite2;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset((dwLength2 - nActualBytesRead), 0x80, (nActualBytesRead + lpWrite2));
 // LINE 1980:
 	__asm        jmp    _T590;
 _T566:
@@ -5008,15 +4970,7 @@ _T566:
 	__asm        cmp    ecx, 0x10;
 	__asm        jne    _T590;
 // LINE 1981:
-	__asm        mov    eax, dwLength2;
-	__asm        sub    eax, nActualBytesRead;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, nActualBytesRead;
-	__asm        add    eax, lpWrite2;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset((dwLength2 - nActualBytesRead), 0x0, (nActualBytesRead + lpWrite2));
 // LINE 1985:
 _T590:
 	this->lpStreamBufferInfo->bFoundEnd = 0x1;

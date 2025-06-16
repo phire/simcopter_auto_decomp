@@ -24,10 +24,7 @@ void S3ViewerInit() {
 	/*bp-0x4c*/  /*packed*/ struct Point3d IdealCameraLoc; // 0xc bytes
 
 // LINE 109:
-	__asm        lea    eax, IdealCameraLoc.x;
-	__asm        push   eax;
-	__asm        call   GetIdealCameraPos;
-	__asm        add    esp, 4;
+	GetIdealCameraPos(IdealCameraLoc.x);
 // LINE 110:
 	__asm        lea    eax, IdealCameraLoc.x;
 	__asm        mov    ecx, 0x6C12A0;
@@ -75,12 +72,7 @@ void S3ViewerInit() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 136:
-	__asm        push   0x59B508;
-	__asm        push   0xCE40000;
-	__asm        lea    eax, rotmat[0][0];
-	__asm        push   eax;
-	__asm        call   MTArbRotMat;
-	__asm        add    esp, 0xC;
+	MTArbRotMat(0x59b508, 0xce40000, rotmat[0][0]);
 // LINE 137:
 	__asm        lea    eax, rotmat[0][0];
 	__asm        push   eax;
@@ -93,12 +85,7 @@ void S3ViewerInit() {
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 138:
-	__asm        push   0x59B508;
-	__asm        push   0x12C0000;
-	__asm        lea    eax, rotmat[0][0];
-	__asm        push   eax;
-	__asm        call   MTArbRotMat;
-	__asm        add    esp, 0xC;
+	MTArbRotMat(0x59b508, 0x12c0000, rotmat[0][0]);
 // LINE 139:
 	__asm        lea    eax, rotmat[0][0];
 	__asm        push   eax;
@@ -139,7 +126,7 @@ void S3ViewerInit() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 155:
-	__asm        call   S3CameraRotate;
+	S3CameraRotate();
 // LINE 157:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x5C;
@@ -305,25 +292,14 @@ _T194:
 	__asm        je     _T1b8;
 // LINE 213:
 _T1a8:
-	__asm        mov    eax, roty;
-	__asm        push   eax;
-	__asm        mov    eax, rotx;
-	__asm        push   eax;
-	__asm        call   S3HeliRotateSpotLite;
-	__asm        add    esp, 8;
+	S3HeliRotateSpotLite(roty, rotx);
 // LINE 223:
 _T1b8:
-	__asm        lea    eax, IdealCameraPos.x;
-	__asm        push   eax;
-	__asm        call   GetIdealCameraPos;
-	__asm        add    esp, 4;
+	GetIdealCameraPos(IdealCameraPos.x);
 // LINE 225:
-	__asm        lea    eax, IdealCameraPos.x;
-	__asm        push   eax;
-	__asm        call   S3CameraMove;
-	__asm        add    esp, 4;
+	S3CameraMove(IdealCameraPos.x);
 // LINE 227:
-	__asm        call   S3CameraRotate;
+	S3CameraRotate();
 // LINE 230:
 	__asm        push   0x6C1370;
 	__asm        mov    eax, 0x6C12A0;
@@ -392,12 +368,7 @@ _T1b8:
 // LINE 247:
 	MTNormalize((0x6c1210 + 0x14));
 // LINE 248:
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x14;
-	__asm        push   eax;
-	__asm        push   0x6C1330;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((0x6c1210 + 0x14), 0x6c1330);
 // LINE 251:
 	vec.x = (ViewState.world_pos.x - S_last_viewpos.x);
 // LINE 252:
@@ -446,7 +417,7 @@ _T1b8:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 265:
-	__asm        call   S3ViewerSetView;
+	S3ViewerSetView();
 // LINE 267:
 	__asm        push   0x2C;
 	__asm        call   IsEventSet;
@@ -751,10 +722,7 @@ void S3ViewerCommand(int32_t nCommand) {
 	__asm        cmp    nCommand, 0x20;
 	__asm        jg     _T2b;
 // LINE 447:
-	__asm        mov    eax, nCommand;
-	__asm        push   eax;
-	__asm        call   S3CameraChaseAdjust;
-	__asm        add    esp, 4;
+	S3CameraChaseAdjust(nCommand);
 // LINE 449:
 	return;
 _T2b:
@@ -778,7 +746,7 @@ _T57:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        jne    _T73;
 // LINE 456:
-	__asm        call   S3CameraCycleChase;
+	S3CameraCycleChase();
 // LINE 458:
 _T73:
 	return;
@@ -786,7 +754,7 @@ _T78:
 	__asm        cmp    nCommand, 4;
 	__asm        jne    _T8c;
 // LINE 459:
-	__asm        call   S3MissionSetCurrNext;
+	S3MissionSetCurrNext();
 // LINE 460:
 	return;
 _T8c:
@@ -866,21 +834,17 @@ void S3SetDayNight(int32_t nDayOrNight) {
 	__asm        cmp    G_VRAppInitCalled, 0;
 	__asm        je     __RETURN;
 // LINE 492:
-	__asm        call   S3ObjSetFlatShading;
+	S3ObjSetFlatShading();
 // LINE 493:
 	__asm        cmp    G_daynight, 1;
 	__asm        jne    _T3c;
 // LINE 494:
-	__asm        push   1;
-	__asm        call   AutoSetAllHeadlights;
-	__asm        add    esp, 4;
+	AutoSetAllHeadlights(0x1);
 // LINE 495:
 	__asm        jmp    _T46;
 // LINE 496:
 _T3c:
-	__asm        push   0;
-	__asm        call   AutoSetAllHeadlights;
-	__asm        add    esp, 4;
+	AutoSetAllHeadlights(0x0);
 // LINE 497:
 _T46:
 	__asm        mov    eax, G_ViewSize;
@@ -893,7 +857,7 @@ _T46:
 	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 498:
-	__asm        call   S3SwitchToProperSkyType;
+	S3SwitchToProperSkyType();
 // LINE 500:
 __RETURN:
 }

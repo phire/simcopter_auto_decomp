@@ -147,8 +147,7 @@ void ScreenBuffer::ScreenBuffer() {
 	/*bp-0x10*/  /*packed*/ struct SparkalRect rectWindowTemp; // 0x10 bytes
 
 
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::CBackBuffer;
+	this->CBackBuffer::CBackBuffer();
 	__asm        jmp    _T19;
 _T19:
 	this-><ScreenBuffer+0x00> = 0x5915b0;
@@ -201,8 +200,7 @@ void ScreenBuffer::ScreenBuffer(/*unpacked*/ class CSparkalWindow *pNewWindow, l
 	/*bp-0x10*/  /*packed*/ struct SparkalRect rectWindowTemp; // 0x10 bytes
 
 
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::CBackBuffer;
+	this->CBackBuffer::CBackBuffer();
 	__asm        jmp    _T19;
 _T19:
 	this-><ScreenBuffer+0x00> = 0x5915b0;
@@ -279,13 +277,11 @@ void ScreenBuffer::~ScreenBuffer() {
 // LINE 112:
 	this->ScreenBuffer::DeleteSurfaces();
 // LINE 114:
-	__asm        mov    ecx, this;
-	__asm        call   ScreenBuffer::FreePalette;
+	this->ScreenBuffer::FreePalette();
 // LINE 115:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::~CBackBuffer;
+	this->CBackBuffer::~CBackBuffer();
 }
 
 // FUNCTION: COPTER_D 0x0049e69e
@@ -307,13 +303,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 // LINE 136:
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _DDSCAPS ddsBackBufferCaps;
-	__asm        push   0x6C;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x6c, 0x0, (this + 0x58));
 // LINE 137:
 	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 138:
@@ -398,13 +388,7 @@ _T14b:
 	__asm        jmp    _T39b;
 // LINE 169:
 _T150:
-	__asm        push   0x6C;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x6c, 0x0, (this + 0x58));
 // LINE 170:
 	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 171:
@@ -444,13 +428,7 @@ _T1d3:
 	return 0x0;
 // LINE 182:
 _T1e7:
-	__asm        push   0x6C;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x6c, 0x0, (this + 0x58));
 // LINE 183:
 	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 184:

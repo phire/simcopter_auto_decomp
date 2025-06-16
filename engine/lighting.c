@@ -175,11 +175,7 @@ _Tc7:
 // LINE 153:
 	tptr += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 154:
-	__asm        push   0x400;
-	__asm        push   0;
-	__asm        push   0x606A78;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x400, 0x0, 0x606a78);
 // LINE 156:
 	j = 0x0;
 	__asm        jmp    _Tff;
@@ -298,11 +294,7 @@ _T7b:
 	__asm        mov    eax, tptr;
 	__asm        mov    ltptr, eax;
 // LINE 228:
-	__asm        push   0x400;
-	__asm        push   0;
-	__asm        push   0x606A78;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
+	memset(0x400, 0x0, 0x606a78);
 // LINE 231:
 	j = 0x0;
 	__asm        jmp    _Tbd;
@@ -1030,10 +1022,7 @@ _Ta4:
 // LINE 597:
 	fh->Plotter = 0x12;
 // LINE 598:
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   VRFaceSetTexColor;
-	__asm        add    esp, 4;
+	VRFaceSetTexColor(face);
 // LINE 599:
 	fh->Bitmap = VRInt2BmpHdr(fh->Bitmap, res);
 // LINE 600:

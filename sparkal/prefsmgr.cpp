@@ -376,17 +376,7 @@ void PreferenceItem::PreferenceItem(const /*packed*/ class PreferenceItem& P1) {
 	this->lPreferenceType = this->lPreferenceDataLength;
 // LINE 41:
 _T66:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, P1;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(this->lPreferenceDataLength, P1.chPreferenceData, this->chPreferenceData);
 // LINE 43:
 	__asm        jmp    _T92;
 // LINE 44:
@@ -441,17 +431,7 @@ _T34:
 	this->lPreferenceType = this->lPreferenceDataLength;
 // LINE 73:
 _T66:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, P2;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(this->lPreferenceDataLength, P2.chPreferenceData, this->chPreferenceData);
 // LINE 75:
 	__asm        jmp    _T92;
 // LINE 76:
@@ -529,17 +509,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _Ta1;
 // LINE 139:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, prefItemReturn;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(this->lPreferenceDataLength, this->chPreferenceData, prefItemReturn->chPreferenceData);
 // LINE 141:
 	__asm        jmp    _Tdc;
 // LINE 142:
@@ -617,9 +587,7 @@ _T48:
 	__asm        add    esp, 4;
 	__asm        jmp    _T9d;
 _T9d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Ta7:
 	__asm        jmp    _Tac;
 _Tac:
@@ -678,9 +646,7 @@ _T101:
 	__asm        add    esp, 4;
 	__asm        jmp    _T155;
 _T155:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T15f:
 	__asm        jmp    _T164;
 _T164:
@@ -1258,8 +1224,7 @@ long PreferenceManager::LoadAllPrefs() {
 	/*bp-0x18*/  int32_t bStillMoreRecords;
 
 // LINE 274:
-	__asm        lea    ecx, tempPrefItem.lPreferenceType;
-	__asm        call   PreferenceItem::PreferenceItem;
+	tempPrefItem.lPreferenceType->PreferenceItem::PreferenceItem();
 // LINE 276:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
@@ -1814,16 +1779,7 @@ char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
 // LINE 428:
 	chDataCopy = operator new(prefItemTemp->lPreferenceDataLength);
 // LINE 430:
-	__asm        mov    eax, prefItemTemp;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, prefItemTemp;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, chDataCopy;
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(prefItemTemp->lPreferenceDataLength, prefItemTemp->chPreferenceData, chDataCopy);
 // LINE 433:
 	return chDataCopy;
 // LINE 435:
@@ -1911,15 +1867,7 @@ _Ta9:
 	return 0x0;
 // LINE 484:
 _Tb0:
-	__asm        mov    eax, lSizeofPref;
-	__asm        push   eax;
-	__asm        mov    eax, chPref;
-	__asm        push   eax;
-	__asm        mov    eax, prefItemToSet;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   memcpy;
-	__asm        add    esp, 0xC;
+	memcpy(lSizeofPref, chPref, prefItemToSet->chPreferenceData);
 // LINE 488:
 	__asm        mov    eax, lPrefType;
 	__asm        push   eax;
@@ -2115,9 +2063,7 @@ _T68:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tbd;
 _Tbd:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Tc7:
 	__asm        jmp    _Tcc;
 _Tcc:
@@ -2176,9 +2122,7 @@ _T121:
 	__asm        add    esp, 4;
 	__asm        jmp    _T175;
 _T175:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T17f:
 	__asm        jmp    _T184;
 _T184:
@@ -2356,9 +2300,7 @@ _T60:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tb5;
 _Tb5:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Tbf:
 	__asm        jmp    _Tc4;
 _Tc4:
@@ -2416,9 +2358,7 @@ _T119:
 	__asm        add    esp, 4;
 	__asm        jmp    _T16a;
 _T16a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T174:
 	__asm        jmp    _T179;
 _T179:
@@ -2577,9 +2517,7 @@ _T57:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tac;
 _Tac:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Tb6:
 	__asm        jmp    _Tbb;
 _Tbb:
@@ -2637,9 +2575,7 @@ _T110:
 	__asm        add    esp, 4;
 	__asm        jmp    _T161;
 _T161:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T16b:
 	__asm        jmp    _T170;
 _T170:

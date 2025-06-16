@@ -1672,8 +1672,7 @@ void CatalogWindow::~CatalogWindow() {
 
 	this-><CatalogWindow+0x00> = 0x590ce8;
 // LINE 123:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 124:
 	GraphicWindow::RemoveFocus(this);
 // LINE 125:
@@ -2027,11 +2026,8 @@ _T553:
 _T5a4:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xD4;
-	__asm        call   DigitalSound::~DigitalSound;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	(this + 0xd4)->DigitalSound::~DigitalSound();
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x00476517
@@ -2295,9 +2291,7 @@ _T37d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3c8;
 _T3c8:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T3d7;
 _T3d7:
 	__asm        jmp    _T3dc;
@@ -2502,8 +2496,7 @@ _T678:
 	__asm        mov    ecx, [eax+0x1CA];
 	__asm        call   dword ptr [edx+4];
 // LINE 159:
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SetButtonStates;
+	this->CatalogWindow::SetButtonStates();
 // LINE 160:
 	__asm        mov    dword ptr [ebp-0x4C], 1;
 	__asm        mov    eax, sText.reference;
@@ -3245,9 +3238,7 @@ _Ta20:
 	__asm        add    esp, 4;
 	__asm        jmp    _Ta6b;
 _Ta6b:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Ta7a;
 _Ta7a:
 	__asm        jmp    _Ta7f;
@@ -3398,9 +3389,7 @@ _Tc8d:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tcd8;
 _Tcd8:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tce7;
 _Tce7:
 	__asm        jmp    _Tcec;
@@ -3551,9 +3540,7 @@ _Tefa:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tf45;
 _Tf45:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tf54;
 _Tf54:
 	__asm        jmp    _Tf59;
@@ -4263,14 +4250,11 @@ _T1952:
 	__asm        mov    ecx, [eax+0x1CA];
 	__asm        call   dword ptr [edx+0x34];
 // LINE 266:
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SetButtonStates;
+	this->CatalogWindow::SetButtonStates();
 // LINE 268:
 _T1a28:
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::~CBackBuffer;
-	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::~CBackBuffer;
+	tempTabBuffer<CBackBuffer+0x00:None>->CBackBuffer::~CBackBuffer();
+	tempHelicopterBuffer<CBackBuffer+0x00:None>->CBackBuffer::~CBackBuffer();
 // LINE 269:
 // Block end:
 	__asm        jmp    _T2b1e;
@@ -4787,9 +4771,7 @@ _T2231:
 	__asm        add    esp, 4;
 	__asm        jmp    _T227c;
 _T227c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T228b;
 _T228b:
 	__asm        jmp    _T2290;
@@ -5317,12 +5299,10 @@ _T2a3d:
 	__asm        mov    ecx, [eax+0x1CA];
 	__asm        call   dword ptr [edx+0x34];
 // LINE 360:
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SetButtonStates;
+	this->CatalogWindow::SetButtonStates();
 // LINE 362:
 _T2b13:
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::~CBackBuffer;
+	tempTabBuffer<CBackBuffer+0x00:None>->CBackBuffer::~CBackBuffer();
 // LINE 365:
 // Block end:
 _T2b1e:
@@ -5392,8 +5372,7 @@ _T2c1c:
 	__asm        jmp    _T2b8b;
 // LINE 375:
 _T2c21:
-	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::~CBackBuffer;
+	tempStainImage<CBackBuffer+0x00:None>->CBackBuffer::~CBackBuffer();
 // LINE 376:
 // Block end:
 _T2c2c:
@@ -5463,8 +5442,7 @@ _T2d2a:
 	__asm        jmp    _T2c99;
 // LINE 386:
 _T2d2f:
-	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::~CBackBuffer;
+	tempPaperClipImage<CBackBuffer+0x00:None>->CBackBuffer::~CBackBuffer();
 // LINE 387:
 // Block end:
 _T2d3a:
@@ -6130,8 +6108,7 @@ _T216:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 463:
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SetButtonStates;
+	this->CatalogWindow::SetButtonStates();
 // LINE 464:
 	__asm        push   1;
 	__asm        push   1;
@@ -6254,9 +6231,7 @@ _Ta8:
 	__asm        add    esp, 4;
 	__asm        jmp    _Te4;
 _Te4:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tf3;
 _Tf3:
 	__asm        jmp    _Tf8;
@@ -6297,9 +6272,7 @@ _T129:
 	__asm        add    esp, 4;
 	__asm        jmp    _T16d;
 _T16d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T17c;
 _T17c:
 	__asm        mov    eax, [ebp-0x78];
@@ -6456,9 +6429,7 @@ _T30e:
 	__asm        add    esp, 4;
 	__asm        jmp    _T359;
 _T359:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T368;
 _T368:
 	__asm        jmp    _T36d;
@@ -6499,9 +6470,7 @@ _T3a4:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3f7;
 _T3f7:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T406;
 _T406:
 	__asm        mov    eax, [ebp-0xAC];
@@ -6776,8 +6745,7 @@ int32_t CatalogWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x14E], 8;
 	__asm        jne    _T2c;
 // LINE 548:
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::DrawCurrentEquipmentSelection;
+	this->CatalogWindow::DrawCurrentEquipmentSelection();
 // LINE 549:
 _T2c:
 	return 0x1;
@@ -6969,11 +6937,7 @@ long CatalogWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        cmp    lKey, 0x39;
 	__asm        jg     _T2f;
 // LINE 601:
-	__asm        mov    eax, lKey;
-	__asm        sub    eax, 0x31;
-	__asm        push   eax;
-	__asm        call   S3HeliMakeHelicopter;
-	__asm        add    esp, 4;
+	S3HeliMakeHelicopter((lKey - 0x31));
 // LINE 608:
 _T2f:
 	return 0x1;
@@ -7519,10 +7483,7 @@ _T90:
 // LINE 820:
 	lCurrentValue = S3HeliGetNewValue(lCurrentHelicopter);
 // LINE 821:
-	__asm        mov    eax, lCurrentHelicopter;
-	__asm        push   eax;
-	__asm        call   S3HeliMakeHelicopter;
-	__asm        add    esp, 4;
+	S3HeliMakeHelicopter(lCurrentHelicopter);
 // LINE 822:
 	__asm        mov    eax, 1;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(lCurrentHelicopter);
@@ -7606,10 +7567,7 @@ _T92:
 // LINE 854:
 	lCurrentValue = S3HeliGetCurrentValue(lCurrentHelicopter);
 // LINE 855:
-	__asm        mov    eax, lCurrentHelicopter;
-	__asm        push   eax;
-	__asm        call   S3HeliRemoveHelicopter;
-	__asm        add    esp, 4;
+	S3HeliRemoveHelicopter(lCurrentHelicopter);
 // LINE 856:
 	__asm        mov    eax, 1;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(lCurrentHelicopter);
@@ -7619,10 +7577,7 @@ _T92:
 	__asm        and    [ecx+0x44], eax;
 // LINE 858:
 _Td4:
-	__asm        mov    eax, lCurrentValue;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney(lCurrentValue);
 // LINE 859:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14E];

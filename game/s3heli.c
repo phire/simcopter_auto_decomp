@@ -1198,9 +1198,7 @@ _T9c4:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Tcb1;
 // LINE 762:
-	__asm        push   0x5B4CA8;
-	__asm        call   ERexit;
-	__asm        add    esp, 4;
+	ERexit(0x5b4ca8);
 // LINE 764:
 _Tcb1:
 	__asm        push   2;
@@ -1276,14 +1274,7 @@ _Tcb1:
 // LINE 801:
 	htd->num_initialized++;
 // LINE 804:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x1C4;
-	__asm        push   eax;
-	__asm        call   HeliPassengerInit;
-	__asm        add    esp, 8;
+	HeliPassengerInit(hd->type, (hd + 0x1c4));
 // LINE 805:
 }
 
@@ -1427,15 +1418,7 @@ _T61:
 // LINE 874:
 	MTNormalize((hd + 0x184));
 // LINE 875:
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x184;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xBC];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4Y;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4Y((hd + 0x184), (hd->dybucket + 0x24));
 // LINE 880:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -1729,7 +1712,7 @@ _T803:
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        je     __RETURN;
 // LINE 997:
-	__asm        call   SetIdealCameraPos;
+	SetIdealCameraPos();
 // LINE 998:
 __RETURN:
 }
@@ -1950,27 +1933,18 @@ _T1f4:
 // LINE 1089:
 	freepad = S3HeliGetFreePad();
 // LINE 1090:
-	__asm        push   0x50000;
-	__asm        push   0x50000;
-	__asm        mov    eax, freepad;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, freepad;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   S3PersonUserAppear;
-	__asm        add    esp, 0x10;
+	S3PersonUserAppear(0x50000, 0x50000, freepad->y, freepad->x);
 // LINE 1091:
 	G_camera_mode = 0x3;
 // LINE 1092:
-	__asm        call   S3PersonUserNextFrame;
+	S3PersonUserNextFrame();
 // LINE 1094:
 	__asm        jmp    _T2a7;
 // LINE 1096:
 _T29d:
-	__asm        call   SetIdealCameraPos;
+	SetIdealCameraPos();
 // LINE 1097:
-	__asm        call   S3ViewerControl;
+	S3ViewerControl();
 // LINE 1099:
 _T2a7:
 	return;
@@ -2027,15 +2001,12 @@ _T33a:
 	__asm        mov    eax, hd;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFE;
 // LINE 1129:
-	__asm        call   S3PersonUserNextFrame;
+	S3PersonUserNextFrame();
 // LINE 1130:
 	return;
 // LINE 1132:
 _T3a4:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliTurbulence;
-	__asm        add    esp, 4;
+	S3HeliTurbulence(hd);
 // LINE 1134:
 	__asm        jmp    _T4b1;
 // LINE 1139:
@@ -2124,32 +2095,23 @@ _T4ac:
 	return;
 // LINE 1165:
 _T4b1:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliYawPitchRollSlide;
-	__asm        add    esp, 4;
+	S3HeliYawPitchRollSlide(hd);
 // LINE 1166:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliMoveXZ;
-	__asm        add    esp, 4;
+	S3HeliMoveXZ(hd);
 // LINE 1167:
 	hd->currpos.x = ((hd->dyheli->loc.x + 0x20000000) >> 0x16);
 // LINE 1168:
 	hd->currpos.y = ((0x20000000 - hd->dyheli->loc.z) >> 0x16);
 // LINE 1169:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliMoveY;
-	__asm        add    esp, 4;
+	S3HeliMoveY(hd);
 // LINE 1173:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        je     _T520;
 // LINE 1175:
-	__asm        call   SetIdealCameraPos;
+	SetIdealCameraPos();
 // LINE 1176:
-	__asm        call   S3ViewerControl;
+	S3ViewerControl();
 // LINE 1183:
 _T520:
 	__asm        mov    eax, hd;
@@ -2185,12 +2147,7 @@ _T56b:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    lcptr, eax;
 // LINE 1191:
-	__asm        mov    eax, lcptr;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliUnlink;
-	__asm        add    esp, 8;
+	S3HeliUnlink(lcptr, hd);
 // LINE 1193:
 	hd->dyheli->next->next->next->next->next->next->next->next->next->next = cptr->dyptr;
 // LINE 1194:
@@ -2298,17 +2255,9 @@ _T5f3:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 1216:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliMainRotor;
-	__asm        add    esp, 4;
+	S3HeliMainRotor(hd);
 // LINE 1217:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliRopeAndBucket;
-	__asm        add    esp, 8;
+	S3HeliRopeAndBucket(cptr, hd);
 // LINE 1229:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -2337,55 +2286,13 @@ _T5f3:
 	__asm        sub    eax, ecx;
 	__asm        mov    normy, eax;
 // LINE 1233:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x154];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliDropWater;
-	__asm        add    esp, 0xC;
+	S3HeliDropWater(cptr, hd->buildalt, hd);
 // LINE 1234:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x154];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliSimDust;
-	__asm        add    esp, 8;
+	S3HeliSimDust(hd->buildalt, hd);
 // LINE 1235:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x164];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x154];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x154];
-	__asm        mov    ecx, hd;
-	__asm        sub    eax, [ecx+0x150];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliSetShadow;
-	__asm        add    esp, 0x10;
+	S3HeliSetShadow(hd->shad_color, hd->buildalt, (hd->buildalt - hd->terralt), hd);
 // LINE 1236:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x164];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x154];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x154];
-	__asm        mov    ecx, hd;
-	__asm        sub    eax, [ecx+0x150];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliSetSpotlite;
-	__asm        add    esp, 0x10;
+	S3HeliSetSpotlite(hd->shad_color, hd->buildalt, (hd->buildalt - hd->terralt), hd);
 // LINE 1239:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
@@ -2475,15 +2382,7 @@ _T8d0:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1279:
 _T976:
-	__asm        push   9;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x9, (hd->dyheli + 0x18), cptr);
 // LINE 1281:
 	__asm        push   0xF;
 	__asm        call   S3SoundIsPlaying;
@@ -2555,15 +2454,7 @@ _Ta22:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1299:
 _Taa1:
-	__asm        push   1;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, (hd->dyheli + 0x18), cptr);
 // LINE 1301:
 	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x1);
 // LINE 1303:
@@ -2640,13 +2531,7 @@ _Tbae:
 	hd->dyheli->loc.y = hd->terralt;
 // LINE 1324:
 _Tbde:
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x100;
-	__asm        push   eax;
-	__asm        lea    eax, tmpmatrix[0][0];
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((hd + 0x100), tmpmatrix[0][0]);
 // LINE 1325:
 	__asm        lea    eax, matrix[0][0];
 	__asm        push   eax;
@@ -2777,18 +2662,7 @@ _Td62:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1369:
 _Tdb6:
-	__asm        push   0xFFFFFFFF;
-	__asm        push   1;
-	__asm        mov    eax, normz;
-	__asm        push   eax;
-	__asm        mov    eax, normy;
-	__asm        push   eax;
-	__asm        mov    eax, normx;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionStart;
-	__asm        add    esp, 0x18;
+	S3ExplosionStart(-0x1, 0x1, normz, normy, normx, cptr);
 // LINE 1371:
 	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x1);
 // LINE 1373:
@@ -2821,10 +2695,7 @@ _Tdb6:
 	__asm        mov    [eax+0x118], ebx;
 // LINE 1379:
 _Te52:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliSmokeTrail;
-	__asm        add    esp, 4;
+	S3HeliSmokeTrail(hd);
 // LINE 1381:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x14C], 0;
@@ -3366,15 +3237,7 @@ _T68:
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1640:
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x100;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA8];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((hd + 0x100), (hd->dyshadow + 0x24));
 // LINE 1641:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xB4];
@@ -3498,10 +3361,7 @@ int32_t S3HeliControlInputs(/*packed*/ struct _HELI_DATA *hd) {
 	__asm        cmp    G_testmode, 1;
 	__asm        jne    _T43;
 // LINE 1701:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliTestCopter;
-	__asm        add    esp, 4;
+	S3HeliTestCopter(hd);
 // LINE 1702:
 	return 0x1;
 // LINE 1706:
@@ -4445,19 +4305,7 @@ _T11e:
 // LINE 1967:
 	hd->slide = 0x0;
 // LINE 1968:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x114];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x11C];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x10C];
-	__asm        push   eax;
-	__asm        lea    eax, matrix[0][0];
-	__asm        push   eax;
-	__asm        call   S3AngleRotMat;
-	__asm        add    esp, 0x10;
+	S3AngleRotMat(hd->roll, hd->pitch, hd->yaw, matrix[0][0]);
 // LINE 1969:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -4750,19 +4598,7 @@ _T54d:
 	hd->roll = hd->slide;
 // LINE 2077:
 _T56b:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x114];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x11C];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x10C];
-	__asm        push   eax;
-	__asm        lea    eax, matrix[0][0];
-	__asm        push   eax;
-	__asm        call   S3AngleRotMat;
-	__asm        add    esp, 0x10;
+	S3AngleRotMat(hd->roll, hd->pitch, hd->yaw, matrix[0][0]);
 // LINE 2078:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -4832,11 +4668,7 @@ _Tc6:
 // LINE 2111:
 	hd->vector.y = 0x0;
 // LINE 2112:
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x100;
-	__asm        push   eax;
-	__asm        call   NormalizeXZVector;
-	__asm        add    esp, 4;
+	NormalizeXZVector((hd + 0x100));
 // LINE 2116:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -4958,10 +4790,7 @@ _T2c4:
 	__asm        mov    velocity, eax;
 // LINE 2152:
 _T2d8:
-	__asm        mov    eax, velocity;
-	__asm        push   eax;
-	__asm        call   AdjustPersonBeamingSlices;
-	__asm        add    esp, 4;
+	AdjustPersonBeamingSlices(velocity);
 // LINE 2154:
 	__asm        mov    eax, velocity;
 	__asm        push   eax;
@@ -5556,7 +5385,7 @@ _T6d2:
 // LINE 2351:
 	hd->state = 0x0;
 // LINE 2352:
-	__asm        call   PersonHeliHasLanded;
+	PersonHeliHasLanded();
 // LINE 2355:
 	hd->damage = htd->max_damage;
 // LINE 2359:
@@ -5648,7 +5477,7 @@ _T847:
 // LINE 2377:
 	hd->dyheli->loc.y = (hd->buildalt + 0x13333);
 // LINE 2378:
-	__asm        call   PersonHeliHasLanded;
+	PersonHeliHasLanded();
 // LINE 2381:
 	hd->damage = htd->max_damage;
 // LINE 2385:
@@ -6216,10 +6045,7 @@ _T124:
 	S3DSPlay(0x1, (hd->dyheli + 0x18), 0x15);
 // LINE 2581:
 _T16c:
-	__asm        push   0xA0;
-	__asm        push   0x15;
-	__asm        call   S3SoundAdjFreq;
-	__asm        add    esp, 8;
+	S3SoundAdjFreq(0xa0, 0x15);
 // LINE 2584:
 _T17b:
 	hd->rinfo.bucketdown++;
@@ -6268,9 +6094,7 @@ _T1f6:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T220;
 // LINE 2607:
-	__asm        push   0x15;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x15);
 // LINE 2612:
 _T220:
 	__asm        mov    eax, hd;
@@ -6348,14 +6172,7 @@ _T2c8:
 // LINE 2633:
 	galt = S3TerrPrecisionAlt(0x0, pos.loc.z, pos.loc.x);
 // LINE 2634:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        mov    eax, galt;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliRopeNextFrame;
-	__asm        add    esp, 0xC;
+	S3HeliRopeNextFrame(cptr, galt, hd);
 // LINE 2636:
 	hd->rinfo.lastbuckloc.x = hd->dybucket->loc.x;
 // LINE 2637:
@@ -6419,15 +6236,7 @@ _T495:
 // LINE 2660:
 	hd->winfo.load = htd->max_load;
 // LINE 2661:
-	__asm        push   3;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xBC];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x3, (hd->dybucket + 0x18), cptr);
 // LINE 2663:
 	__asm        jmp    _T548;
 // LINE 2666:
@@ -6441,25 +6250,9 @@ _T4e7:
 	S3DSPlay(0x0, (hd->dybucket + 0x18), 0xa);
 // LINE 2669:
 _T512:
-	__asm        push   8;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xBC];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x8, (hd->dybucket + 0x18), cptr);
 // LINE 2670:
-	__asm        push   3;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xBC];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x3, (hd->dybucket + 0x18), cptr);
 // LINE 2675:
 _T548:
 	__asm        mov    eax, hd;
@@ -6492,15 +6285,7 @@ _T548:
 _T613:
 	hd->rinfo.throwfactor = (hd->rinfo.throwfactor * S_htwk_water_throwfact);
 // LINE 2687:
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x184;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xBC];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4Y;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4Y((hd + 0x184), (hd->dybucket + 0x24));
 // LINE 2688:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xBC];
@@ -6755,13 +6540,7 @@ _T8a:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 2783:
-	__asm        push   8;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x8, loc.x, cptr);
 // LINE 2800:
 _T173:
 	return;
@@ -8063,7 +7842,7 @@ _T5f:
 	__asm        jmp    _T15;
 // LINE 3815:
 _T64:
-	__asm        call   S3HeliSoundDriver;
+	S3HeliSoundDriver();
 // LINE 3817:
 }
 
@@ -8147,9 +7926,7 @@ _T10f:
 	__asm        cmp    closehd, 0;
 	__asm        jne    _T12d;
 // LINE 3884:
-	__asm        push   0;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x0);
 // LINE 3885:
 	return;
 // LINE 3887:
@@ -8183,9 +7960,7 @@ _T133:
 	__asm        jg     _T1cd;
 // LINE 3903:
 _T1be:
-	__asm        push   0;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x0);
 // LINE 3904:
 	return;
 // LINE 3909:
@@ -8199,13 +7974,7 @@ _T1cd:
 	S3DSPlay(0x1, (hd->dyheli + 0x18), 0x0);
 // LINE 3914:
 _T1f8:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xDC];
-	__asm        sar    eax, 0xC;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   S3SoundAdjFreq;
-	__asm        add    esp, 8;
+	S3SoundAdjFreq((hd->heli_p.Vmag >> 0xc), 0x0);
 // LINE 3919:
 	__asm        push   0xF0600000;
 	__asm        push   0x7800000;
@@ -8219,11 +7988,7 @@ _T1f8:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 3921:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x0);
 // LINE 3924:
 	__asm        jmp    _T2f3;
 // LINE 3927:
@@ -8232,9 +7997,7 @@ _T247:
 	__asm        cmp    dword ptr [eax+0x148], 0xFA;
 	__asm        jge    _T269;
 // LINE 3929:
-	__asm        push   0;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x0);
 // LINE 3930:
 	return;
 // LINE 3935:
@@ -8275,11 +8038,7 @@ _T2ae:
 	__asm        sar    eax, 2;
 	__asm        mov    vol_adj, eax;
 // LINE 3947:
-	__asm        mov    eax, vol_adj;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   S3SoundAdjVol;
-	__asm        add    esp, 8;
+	S3SoundAdjVol(vol_adj, 0x0);
 // LINE 3952:
 _T2f3:
 	return;
@@ -8320,15 +8079,7 @@ _T1e:
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 3988:
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x100;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xC0];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((hd + 0x100), (hd->dyspot + 0x24));
 // LINE 3989:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xC0];
@@ -8618,16 +8369,7 @@ _T3e6:
 // LINE 4106:
 	S_spotloc.y = ((0x20000000 - hd->dyspot->loc.z) >> 0x16);
 // LINE 4109:
-	__asm        mov    eax, spotlevel;
-	__asm        push   eax;
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xC0];
-	__asm        push   eax;
-	__asm        push   0x6BF1B8;
-	__asm        push   1;
-	__asm        call   S3HeliHitSpiral;
-	__asm        add    esp, 0x14;
+	S3HeliHitSpiral(spotlevel, -0x1, hd->dyspot, 0x6bf1b8, 0x1);
 // LINE 4112:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    __RETURN;
@@ -9159,15 +8901,7 @@ _T81:
 	__asm        cmp    dword ptr [eax+0x16C], 0x10000;
 	__asm        jle    _Tb4;
 // LINE 4430:
-	__asm        push   5;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x5, (hd->dyheli + 0x18), cptr);
 // LINE 4431:
 	__asm        jmp    _T148;
 _Tb4:
@@ -9175,15 +8909,7 @@ _Tb4:
 	__asm        cmp    dword ptr [eax+0x16C], 0xE666;
 	__asm        jle    _Te7;
 // LINE 4432:
-	__asm        push   4;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x4, (hd->dyheli + 0x18), cptr);
 // LINE 4433:
 	__asm        jmp    _T148;
 _Te7:
@@ -9191,15 +8917,7 @@ _Te7:
 	__asm        cmp    dword ptr [eax+0x16C], 0x1999;
 	__asm        jge    _T11a;
 // LINE 4434:
-	__asm        push   2;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x2, (hd->dyheli + 0x18), cptr);
 // LINE 4435:
 	__asm        jmp    _T148;
 _T11a:
@@ -9207,15 +8925,7 @@ _T11a:
 	__asm        cmp    dword ptr [eax+0x16C], 0x3333;
 	__asm        jge    _T148;
 // LINE 4436:
-	__asm        push   1;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, (hd->dyheli + 0x18), cptr);
 // LINE 4439:
 _T148:
 	__asm        mov    eax, hd;
@@ -9452,15 +9162,7 @@ _T437:
 	return;
 // LINE 4530:
 _T43c:
-	__asm        push   1;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, (hd->dyheli + 0x18), cptr);
 // LINE 4532:
 }
 
@@ -10016,7 +9718,7 @@ void S3HeliCommand(int32_t nCommand) {
 // LINE 4893:
 	S3DSPlay(0x0, (G_uheli->dyheli + 0x18), 0x2b);
 // LINE 4894:
-	__asm        call   S3HeliUserExit;
+	S3HeliUserExit();
 // LINE 4895:
 	G_uheli->flags = 0x0;
 // LINE 4896:
@@ -10056,88 +9758,28 @@ _Tc5:
 	__asm        cmp    nCommand, 0x15;
 	__asm        jne    _T10f;
 // LINE 4906:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, G_uheli;
-	__asm        mov    ecx, [ecx+0xC0];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xC0];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        push   1;
-	__asm        call   DispatchEmergencyVehicle;
-	__asm        add    esp, 0x10;
+	DispatchEmergencyVehicle(((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16), ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), 0x4, 0x1);
 // LINE 4908:
 	return;
 _T10f:
 	__asm        cmp    nCommand, 0x16;
 	__asm        jne    _T159;
 // LINE 4910:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, G_uheli;
-	__asm        mov    ecx, [ecx+0xC0];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xC0];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        push   2;
-	__asm        call   DispatchEmergencyVehicle;
-	__asm        add    esp, 0x10;
+	DispatchEmergencyVehicle(((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16), ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), 0x4, 0x2);
 // LINE 4912:
 	return;
 _T159:
 	__asm        cmp    nCommand, 0x17;
 	__asm        jne    _T1a3;
 // LINE 4914:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, G_uheli;
-	__asm        mov    ecx, [ecx+0xC0];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xC0];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        push   4;
-	__asm        call   DispatchEmergencyVehicle;
-	__asm        add    esp, 0x10;
+	DispatchEmergencyVehicle(((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16), ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), 0x4, 0x4);
 // LINE 4916:
 	return;
 _T1a3:
 	__asm        cmp    nCommand, 0x18;
 	__asm        jne    __RETURN;
 // LINE 4918:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, G_uheli;
-	__asm        mov    ecx, [ecx+0xC0];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xC0];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        push   eax;
-	__asm        push   3;
-	__asm        push   3;
-	__asm        call   DispatchEmergencyVehicle;
-	__asm        add    esp, 0x10;
+	DispatchEmergencyVehicle(((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16), ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), 0x3, 0x3);
 // LINE 4928:
 __RETURN:
 }
@@ -10195,18 +9837,7 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 // LINE 4939:
 	S3DSPlay(0x0, (G_uheli->dyheli + 0x18), 0xc);
 // LINE 4943:
-	__asm        mov    eax, nMessageType;
-	__asm        push   eax;
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        push   2;
-	__asm        call   S3HeliHitSpiral;
-	__asm        add    esp, 0x14;
+	S3HeliHitSpiral(nMessageType, -0x1, G_uheli->dyheli, (G_uheli + 0x18), 0x2);
 // LINE 4944:
 }
 
@@ -10273,27 +9904,14 @@ _T9f:
 	__asm        jmp    _T4b8;
 // LINE 4984:
 _Tb0:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliUnlink;
-	__asm        add    esp, 8;
+	S3HeliUnlink(cptr, hd);
 // LINE 4985:
 	hd->crash_seq++;
 // LINE 4986:
 	__asm        jmp    _T4e0;
 // LINE 4989:
 _Tce:
-	__asm        push   1;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, (hd->dyheli + 0x18), cptr);
 // LINE 4991:
 	i = 0x0;
 	__asm        jmp    _Tf8;
@@ -10433,10 +10051,7 @@ _T299:
 	__asm        neg    ebx;
 	__asm        sub    S_sound_loc.x, ebx;
 // LINE 5046:
-	__asm        push   0x607258;
-	__asm        push   0x26;
-	__asm        call   S3SoundSetPosition;
-	__asm        add    esp, 8;
+	S3SoundSetPosition(0x607258, 0x26);
 // LINE 5049:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, G_AvLoopTime;
@@ -10448,24 +10063,12 @@ _T299:
 	__asm        cmp    dword ptr [eax+0x16C], 0x10000;
 	__asm        jle    _T304;
 // LINE 5052:
-	__asm        push   1;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x1, loc.x, cptr);
 // LINE 5054:
 	__asm        jmp    _T316;
 // LINE 5056:
 _T304:
-	__asm        push   4;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x4, loc.x, cptr);
 // LINE 5059:
 _T316:
 	__asm        mov    eax, hd;
@@ -10490,10 +10093,7 @@ _T341:
 	__asm        neg    ebx;
 	__asm        sub    S_sound_loc.x, ebx;
 // LINE 5068:
-	__asm        push   0x607258;
-	__asm        push   0x26;
-	__asm        call   S3SoundSetPosition;
-	__asm        add    esp, 8;
+	S3SoundSetPosition(0x607258, 0x26);
 // LINE 5071:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, G_AvLoopTime;
@@ -10549,9 +10149,7 @@ _T3f1:
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        je     _T4a4;
 // LINE 5095:
-	__asm        push   0x26;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+	S3DSStopPlay(0x26);
 // LINE 5098:
 	freepad = S3HeliGetFreePad();
 // LINE 5102:
@@ -10719,16 +10317,7 @@ _T86:
 	__asm        cmp    eax, loc.z;
 	__asm        jge    next_dyobj;
 // LINE 5170:
-	__asm        push   0;
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, dyobj;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        push   eax;
-	__asm        push   0xC;
-	__asm        call   S3ObjHitDispatch;
-	__asm        add    esp, 0x14;
+	S3ObjHitDispatch(0x0, -0x1, dyobj, hd->dyheli, 0xc);
 // LINE 5177:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -10931,18 +10520,7 @@ _T1a9:
 	__asm        jmp    next_dyobj;
 // LINE 5315:
 _T1bd:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyobj;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hit_type;
-	__asm        push   eax;
-	__asm        call   S3ObjHitDispatch;
-	__asm        add    esp, 0x14;
+	S3ObjHitDispatch(xtra_msg, mission_id, dyobj, dyhitter, hit_type);
 // LINE 5319:
 next_dyobj:
 	__asm        mov    eax, dyobj;
@@ -11279,16 +10857,7 @@ _T6a:
 	__asm        mov    ecx, up;
 	__asm        or     [ecx+0x44], eax;
 // LINE 5546:
-	__asm        mov    eax, freepad;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, freepad;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGenInit;
-	__asm        add    esp, 0xC;
+	S3HeliGenInit(freepad->y, freepad->x, hd);
 // LINE 5547:
 }
 
@@ -11333,12 +10902,7 @@ _T3e:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 5574:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliUnlink;
-	__asm        add    esp, 8;
+	S3HeliUnlink(cptr, hd);
 // LINE 5575:
 	__asm        mov    eax, i;
 	__asm        mov    G_helis[0][eax*4], 0;
@@ -11763,13 +11327,7 @@ _T63:
 	__asm        cmp    eax, personLoc.y;
 	__asm        jl     _T115;
 // LINE 5784:
-	__asm        mov    eax, G_uheli;
-	__asm        add    eax, 0x100;
-	__asm        push   eax;
-	__asm        lea    eax, personLoc.x;
-	__asm        push   eax;
-	__asm        call   S3PersonUserAppearNew;
-	__asm        add    esp, 8;
+	S3PersonUserAppearNew((G_uheli + 0x100), personLoc.x);
 // LINE 5785:
 	return;
 // LINE 5788:

@@ -569,10 +569,8 @@ _T26:
 // FUNCTION: COPTER_D 0x00536e30
 void PoliceCarClass::PoliceCarClass() {
 
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::EmergencyVehicleClass;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593310;
+	this->EmergencyVehicleClass::EmergencyVehicleClass();
+	this-><PoliceCarClass+0x00> = 0x593310;
 // LINE 96:
 	this->carModel = 0x11d;
 // LINE 97:
@@ -589,8 +587,7 @@ void PoliceCarClass::~PoliceCarClass() {
 	this-><PoliceCarClass+0x00> = 0x593310;
 	__asm        jmp    __RETURN;
 __RETURN:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
+	this->EmergencyVehicleClass::~EmergencyVehicleClass();
 }
 
 // FUNCTION: COPTER_D 0x00536e98
@@ -674,11 +671,7 @@ _Td6:
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        jne    _T102;
 
-	__asm        push   0x99;
-	__asm        push   0x5B7EB4;
-	__asm        push   0x5B7ED8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x99, 0x5b7eb4, 0x5b7ed8);
 	__asm        jmp    _T107;
 _T102:
 	__asm        jmp    _T107;
@@ -693,11 +686,7 @@ _T113:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    _T139;
 
-	__asm        push   0xA1;
-	__asm        push   0x5B7F00;
-	__asm        push   0x5B7F24;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa1, 0x5b7f00, 0x5b7f24);
 	__asm        jmp    _T13e;
 _T139:
 	__asm        jmp    _T13e;
@@ -815,8 +804,7 @@ _T4d:
 	__asm        test   eax, eax;
 	__asm        je     _Td4;
 // LINE 261:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 262:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
@@ -830,8 +818,7 @@ _T4d:
 	__asm        mov    ecx, gPoliceStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 267:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOut;
+	this->AutomobileClass::PullOut();
 // LINE 268:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -842,8 +829,7 @@ _T4d:
 // LINE 270:
 	this->emergencyType = 0x3;
 // LINE 271:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 273:
 	__asm        jmp    _T96f;
 // LINE 276:
@@ -867,8 +853,7 @@ _Td4:
 	__asm        test   al, 0x10;
 	__asm        je     _T18f;
 // LINE 281:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::TurnOnStrobe;
+	this->EmergencyVehicleClass::TurnOnStrobe();
 // LINE 282:
 	this->emergencyState = 0x6;
 // LINE 283:
@@ -894,17 +879,13 @@ _Td4:
 	__asm        mov    cl, [eax+0x7D];
 	__asm        mov    mp.maploc.y, ecx;
 // LINE 290:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 292:
 _T18f:
 	__asm        jmp    _T96f;
 // LINE 295:
 _T194:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
+	this->EmergencyVehicleClass::TurnOffStrobe();
 // LINE 298:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -930,8 +911,7 @@ _T194:
 	__asm        mov    ecx, gPoliceStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 302:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 303:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
@@ -942,8 +922,7 @@ _T194:
 	return;
 // LINE 308:
 _T204:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 309:
 	__asm        jmp    _T96f;
 // LINE 312:
@@ -952,14 +931,12 @@ _T211:
 	__asm        test   byte ptr [eax+8], 0x10;
 	__asm        je     _T22b;
 // LINE 314:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 315:
 	__asm        jmp    _T96f;
 // LINE 318:
 _T22b:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::PositionIcon;
+	this->EmergencyVehicleClass::PositionIcon();
 // LINE 320:
 	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 321:
@@ -1015,8 +992,7 @@ _T2a0:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::UnLinkIconFromCell;
 // LINE 333:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
+	this->EmergencyVehicleClass::TurnOffStrobe();
 // LINE 336:
 	__asm        push   8;
 	__asm        push   0xE;
@@ -1036,18 +1012,13 @@ _T2a0:
 	__asm        jmp    _T379;
 // LINE 346:
 _T33b:
-	__asm        push   0x15A;
-	__asm        push   0x5B7F34;
-	__asm        push   0x5B7F58;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x15a, 0x5b7f34, 0x5b7f58);
 	__asm        jmp    _T35c;
 
 	__asm        jmp    _T35c;
 // LINE 348:
 _T35c:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 349:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
@@ -1092,8 +1063,7 @@ _T3cd:
 	AutomobileClass::policeSirenDist = dist;
 // LINE 376:
 _T41d:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOverCiviliansInWay;
+	this->AutomobileClass::PullOverCiviliansInWay();
 // LINE 380:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(oldemergencyloc.x);
 	__asm        push   eax;
@@ -1118,11 +1088,7 @@ _T41d:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _T491;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T496;
 _T491:
 	__asm        jmp    _T496;
@@ -1177,15 +1143,13 @@ _T49b:
 	__asm        je     _T538;
 // LINE 389:
 _T530:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 392:
 _T538:
 	__asm        jmp    _T96f;
 // LINE 396:
 _T53d:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::PositionIcon;
+	this->EmergencyVehicleClass::PositionIcon();
 // LINE 399:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -1244,8 +1208,7 @@ _T5cb:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::UnLinkIconFromCell;
 // LINE 413:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
+	this->EmergencyVehicleClass::TurnOffStrobe();
 // LINE 414:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFB;
@@ -1287,8 +1250,7 @@ _T684:
 	__asm        jmp    _T6b8;
 // LINE 439:
 _T689:
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
+	this->EmergencyVehicleClass::TurnOffStrobe();
 // LINE 440:
 	this->emergencyState = 0x1;
 // LINE 441:
@@ -1300,8 +1262,7 @@ _T6b8:
 	return;
 // LINE 448:
 _T6bd:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 450:
 	__asm        jmp    _T72a;
 // LINE 453:
@@ -1321,11 +1282,9 @@ _T6ca:
 	AutomobileClass::policeSirenDist = dist;
 // LINE 460:
 _T71a:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOverCiviliansInWay;
+	this->AutomobileClass::PullOverCiviliansInWay();
 // LINE 461:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 463:
 _T72a:
 	__asm        jmp    _T96f;
@@ -1335,8 +1294,7 @@ _T72f:
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        jne    _T749;
 // LINE 469:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 470:
 	__asm        jmp    _T96f;
 // LINE 473:
@@ -1370,11 +1328,9 @@ _T78c:
 	__asm        jg     _T847;
 // LINE 481:
 _T7ac:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOut;
+	this->AutomobileClass::PullOut();
 // LINE 485:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnPlaceCar;
+	this->AutomobileClass::UnPlaceCar();
 // LINE 486:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x1A];
@@ -1456,11 +1412,9 @@ _T859:
 	AutomobileClass::policeSirenDist = dist;
 // LINE 521:
 _T8ee:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOverCiviliansInWay;
+	this->AutomobileClass::PullOverCiviliansInWay();
 // LINE 522:
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::ItterateFSM;
+	this->AutomobileClass::ItterateFSM();
 // LINE 524:
 	__asm        jmp    _T910;
 // LINE 527:
@@ -1471,11 +1425,7 @@ _T910:
 	__asm        jmp    _T96f;
 // LINE 532:
 _T915:
-	__asm        push   0x214;
-	__asm        push   0x5B7F60;
-	__asm        push   0x5B7F84;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x214, 0x5b7f60, 0x5b7f84);
 	__asm        jmp    _T936;
 
 	__asm        jmp    _T936;
@@ -1558,11 +1508,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(/*packed*/ struct Goal *pGoal) {
 	__asm        cmp    dword ptr [eax+0x2CA], 0;
 	__asm        jne    _Tc8;
 
-	__asm        push   0x234;
-	__asm        push   0x5B7F8C;
-	__asm        push   0x5B7FB0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x234, 0x5b7f8c, 0x5b7fb0);
 	__asm        jmp    _Tcd;
 _Tc8:
 	__asm        jmp    _Tcd;
@@ -1586,11 +1532,7 @@ _Ted:
 	__asm        cmp    dword ptr [eax+0x2F4], 0;
 	__asm        jne    _T129;
 
-	__asm        push   0x239;
-	__asm        push   0x5B7FC0;
-	__asm        push   0x5B7FE4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x239, 0x5b7fc0, 0x5b7fe4);
 	__asm        jmp    _T12e;
 _T129:
 	__asm        jmp    _T12e;
@@ -1712,11 +1654,7 @@ _T28d:
 	__asm        cmp    dword ptr [eax+0x2F4], 0;
 	__asm        jne    _T2ce;
 
-	__asm        push   0x251;
-	__asm        push   0x5B7FF4;
-	__asm        push   0x5B8018;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x251, 0x5b7ff4, 0x5b8018);
 	__asm        jmp    _T2ce;
 
 	__asm        jmp    _T2ce;
@@ -1940,11 +1878,7 @@ int32_t PoliceCarClass::AtScene() {
 	__asm        jmp    _T61;
 // LINE 675:
 _T22:
-	__asm        push   0x2A3;
-	__asm        push   0x5B8020;
-	__asm        push   0x5B8044;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x2a3, 0x5b8020, 0x5b8044);
 	__asm        jmp    _T43;
 
 	__asm        jmp    _T43;
@@ -1996,11 +1930,7 @@ _T16:
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T6f;
 
-	__asm        push   0xA0;
-	__asm        push   0x5B57C4;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xa0, 0x5b57c4, 0x5b57b8);
 	__asm        jmp    _T74;
 _T6f:
 	__asm        jmp    _T74;

@@ -105,9 +105,7 @@ static /*packed*/ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 _T39:
 	fprintf(0x59b53c, (0x5c0bf8 + 0x40));
 // LINE 244:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 // LINE 246:
 _T59:
 	hdr->block = block;
@@ -386,16 +384,9 @@ _T2e:
 // LINE 504:
 	G_alloc_free += 0x10;
 // LINE 505:
-	__asm        mov    eax, hdr;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   free;
-	__asm        add    esp, 4;
+	free(hdr->block);
 // LINE 506:
-	__asm        mov    eax, hdr;
-	__asm        push   eax;
-	__asm        call   free;
-	__asm        add    esp, 4;
+	free(hdr);
 // LINE 507:
 	hdr = next_hdr;
 // LINE 508:

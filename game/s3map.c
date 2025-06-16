@@ -142,9 +142,7 @@ void S3MapInit() {
 	__asm        cmp    S_borderbuf, 0;
 	__asm        jne    _Tf9;
 // LINE 217:
-	__asm        push   0x5B52A4;
-	__asm        call   ERexit;
-	__asm        add    esp, 4;
+	ERexit(0x5b52a4);
 // LINE 219:
 _Tf9:
 	__asm        mov    eax, S_borderdimx;
@@ -2222,21 +2220,11 @@ _T176a:
 //   _Te6f
 // LINE 949:
 _T178e:
-	__asm        mov    eax, posy;
-	__asm        push   eax;
-	__asm        mov    eax, posx;
-	__asm        push   eax;
-	__asm        call   S3MapDrawPosLines;
-	__asm        add    esp, 8;
+	S3MapDrawPosLines(posy, posx);
 // LINE 950:
-	__asm        mov    eax, posy;
-	__asm        push   eax;
-	__asm        mov    eax, posx;
-	__asm        push   eax;
-	__asm        call   S3MapDrawMissionIcons;
-	__asm        add    esp, 8;
+	S3MapDrawMissionIcons(posy, posx);
 // LINE 951:
-	__asm        call   S3MapDrawCarIcons;
+	S3MapDrawCarIcons();
 // LINE 952:
 }
 
@@ -2271,22 +2259,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        cmp    maploc, 0;
 	__asm        je     _Te6;
 // LINE 990:
-	__asm        lea    eax, dfy;
-	__asm        push   eax;
-	__asm        lea    eax, dfx;
-	__asm        push   eax;
-	__asm        mov    eax, maploc;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, maploc;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, posy;
-	__asm        push   eax;
-	__asm        mov    eax, posx;
-	__asm        push   eax;
-	__asm        call   S3MapGetDxDy;
-	__asm        add    esp, 0x18;
+	S3MapGetDxDy(dfy, dfx, maploc->y, maploc->x, posy, posx);
 // LINE 993:
 	__asm        mov    eax, dfx;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
@@ -2324,16 +2297,7 @@ _Tb1:
 	__asm        sub    ecx, eax;
 	__asm        mov    i, ecx;
 // LINE 999:
-	__asm        mov    eax, desticon;
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        mov    eax, dfy;
-	__asm        push   eax;
-	__asm        mov    eax, dfx;
-	__asm        push   eax;
-	__asm        call   S3MapDrawLine;
-	__asm        add    esp, 0x10;
+	S3MapDrawLine(desticon, i, dfy, dfx);
 // LINE 1001:
 	__asm        jmp    _T19a;
 // LINE 1003:
@@ -2343,22 +2307,7 @@ _Te6:
 	__asm        cmp    maploc, 0;
 	__asm        je     _T19a;
 // LINE 1006:
-	__asm        lea    eax, dfy;
-	__asm        push   eax;
-	__asm        lea    eax, dfx;
-	__asm        push   eax;
-	__asm        mov    eax, maploc;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, maploc;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, posy;
-	__asm        push   eax;
-	__asm        mov    eax, posx;
-	__asm        push   eax;
-	__asm        call   S3MapGetDxDy;
-	__asm        add    esp, 0x18;
+	S3MapGetDxDy(dfy, dfx, maploc->y, maploc->x, posy, posx);
 // LINE 1009:
 	__asm        mov    eax, dfx;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
@@ -2396,16 +2345,7 @@ _T16a:
 	__asm        sub    ecx, eax;
 	__asm        mov    i, ecx;
 // LINE 1015:
-	__asm        mov    eax, desticon;
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        mov    eax, dfy;
-	__asm        push   eax;
-	__asm        mov    eax, dfx;
-	__asm        push   eax;
-	__asm        call   S3MapDrawLine;
-	__asm        add    esp, 0x10;
+	S3MapDrawLine(desticon, i, dfy, dfx);
 // LINE 1019:
 _T19a:
 	maploc = S3MissionGetCurrPickupLoc();
@@ -2413,22 +2353,7 @@ _T19a:
 	__asm        cmp    maploc, 0;
 	__asm        je     _T24e;
 // LINE 1022:
-	__asm        lea    eax, dfy;
-	__asm        push   eax;
-	__asm        lea    eax, dfx;
-	__asm        push   eax;
-	__asm        mov    eax, maploc;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, maploc;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, posy;
-	__asm        push   eax;
-	__asm        mov    eax, posx;
-	__asm        push   eax;
-	__asm        call   S3MapGetDxDy;
-	__asm        add    esp, 0x18;
+	S3MapGetDxDy(dfy, dfx, maploc->y, maploc->x, posy, posx);
 // LINE 1025:
 	__asm        mov    eax, dfx;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
@@ -2466,16 +2391,7 @@ _T21e:
 	__asm        sub    ecx, eax;
 	__asm        mov    i, ecx;
 // LINE 1031:
-	__asm        mov    eax, desticon;
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        mov    eax, dfy;
-	__asm        push   eax;
-	__asm        mov    eax, dfx;
-	__asm        push   eax;
-	__asm        call   S3MapDrawLine;
-	__asm        add    esp, 0x10;
+	S3MapDrawLine(desticon, i, dfy, dfx);
 // LINE 1037:
 _T24e:
 	__asm        cmp    G_camera_mode, 3;
@@ -2706,14 +2622,7 @@ _T1cc:
 	__asm        jmp    _T144;
 // LINE 1146:
 _T1d1:
-	__asm        mov    eax, ypos;
-	__asm        push   eax;
-	__asm        mov    eax, xpos;
-	__asm        push   eax;
-	__asm        mov    eax, icon_id;
-	__asm        push   eax;
-	__asm        call   S3MapBlitIcon;
-	__asm        add    esp, 0xC;
+	S3MapBlitIcon(ypos, xpos, icon_id);
 // LINE 1148:
 }
 
@@ -2987,14 +2896,14 @@ __RETURN:
 // FUNCTION: COPTER_D 0x005009dc
 void S3MapCommandPreviousMission() {
 // LINE 1342:
-	__asm        call   S3MissionSetCurrPrev;
+	S3MissionSetCurrPrev();
 // LINE 1343:
 }
 
 // FUNCTION: COPTER_D 0x005009ec
 void S3MapCommandNextMission() {
 // LINE 1351:
-	__asm        call   S3MissionSetCurrNext;
+	S3MissionSetCurrNext();
 // LINE 1352:
 }
 
@@ -3336,37 +3245,13 @@ _T69:
 	__asm        jmp    _T1d;
 // LINE 1521:
 _T6e:
-	__asm        lea    eax, pickicon;
-	__asm        push   eax;
-	__asm        lea    eax, desticon;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x50];
-	__asm        push   eax;
-	__asm        call   S3MapGetMissionIcons;
-	__asm        add    esp, 0xC;
+	S3MapGetMissionIcons(pickicon, desticon, md->type);
 // LINE 1523:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x30], 0xFFFFFFFF;
 	__asm        je     _Tc9;
 // LINE 1528:
-	__asm        mov    eax, desticon;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x34];
-	__asm        sub    eax, posy;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x30];
-	__asm        sub    eax, posx;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        push   eax;
-	__asm        call   S3MapDrawLine;
-	__asm        add    esp, 0x10;
+	S3MapDrawLine(desticon, 0x0, ((md->destmaploc.y - posy) << reinterpret_cast<uint8_t>(S_mapzoom)), ((md->destmaploc.x - posx) << reinterpret_cast<uint8_t>(S_mapzoom)));
 // LINE 1530:
 	__asm        jmp    _T108;
 // LINE 1532:
@@ -3375,46 +3260,14 @@ _Tc9:
 	__asm        cmp    dword ptr [eax+0x28], 0xFFFFFFFF;
 	__asm        je     _T108;
 // LINE 1537:
-	__asm        mov    eax, desticon;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        sub    eax, posy;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        sub    eax, posx;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        push   eax;
-	__asm        call   S3MapDrawLine;
-	__asm        add    esp, 0x10;
+	S3MapDrawLine(desticon, 0x0, ((md->maploc.y - posy) << reinterpret_cast<uint8_t>(S_mapzoom)), ((md->maploc.x - posx) << reinterpret_cast<uint8_t>(S_mapzoom)));
 // LINE 1541:
 _T108:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x38], 0xFFFFFFFF;
 	__asm        je     _T147;
 // LINE 1546:
-	__asm        mov    eax, pickicon;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        sub    eax, posy;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x38];
-	__asm        sub    eax, posx;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        push   eax;
-	__asm        call   S3MapDrawLine;
-	__asm        add    esp, 0x10;
+	S3MapDrawLine(pickicon, 0x0, ((md->pickuploc.y - posy) << reinterpret_cast<uint8_t>(S_mapzoom)), ((md->pickuploc.x - posx) << reinterpret_cast<uint8_t>(S_mapzoom)));
 // LINE 1548:
 _T147:
 	__asm        jmp    _T1d;
@@ -3661,32 +3514,9 @@ _T19c:
 	__asm        jmp    _T18b;
 // LINE 1680:
 _T1bf:
-	__asm        mov    eax, color;
-	__asm        push   eax;
-	__asm        mov    eax, dy;
-	__asm        push   eax;
-	__asm        mov    eax, dx;
-	__asm        push   eax;
-	__asm        mov    eax, ci;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        mov    eax, ci;
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        call   S3MapDrawDispatchLine;
-	__asm        add    esp, 0x14;
+	S3MapDrawDispatchLine(color, dy, dx, ci->top, ci->left);
 // LINE 1682:
-	__asm        mov    eax, ci;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        mov    eax, ci;
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        mov    eax, ci;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   S3MapBlitDIcon;
-	__asm        add    esp, 0xC;
+	S3MapBlitDIcon(ci->top, ci->left, ci->car_type);
 // LINE 1683:
 	__asm        jmp    _T15;
 // LINE 1684:

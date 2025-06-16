@@ -353,9 +353,7 @@ _T4f:
 	__asm        jge    _T157;
 // LINE 164:
 _Tbb:
-	__asm        push   0x59726C;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 4;
+	DebugOutput(0x59726c);
 // LINE 166:
 	i = 0x0;
 	__asm        jmp    _Td7;

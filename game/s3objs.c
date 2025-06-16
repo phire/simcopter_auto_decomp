@@ -145,10 +145,7 @@ _T12f:
 // LINE 423:
 	sprintf(i, 0x5b72a4, msg[0]);
 // LINE 424:
-	__asm        lea    eax, msg[0];
-	__asm        push   eax;
-	__asm        call   ERexit;
-	__asm        add    esp, 4;
+	ERexit(msg[0]);
 // LINE 428:
 _T17b:
 	__asm        lea    eax, oinfo.Faces;
@@ -345,10 +342,7 @@ _T5a5:
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 670:
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   VRFaceSetTexColor;
-	__asm        add    esp, 4;
+	VRFaceSetTexColor(face);
 // LINE 673:
 	__asm        mov    eax, face;
 	__asm        push   eax;
@@ -359,10 +353,7 @@ _T5a5:
 	__asm        jmp    _T342;
 // LINE 677:
 _T5d5:
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   VRObjSetShading;
-	__asm        add    esp, 4;
+	VRObjSetShading(obj);
 // LINE 679:
 	__asm        jmp    _T12c;
 // LINE 680:
@@ -6383,18 +6374,7 @@ _T1d:
 	__asm        test   al, 4;
 	__asm        je     _T52;
 // LINE 3713:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   S3HeliHitDispatch;
-	__asm        add    esp, 0x14;
+	S3HeliHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3714:
 	return;
 // LINE 3716:
@@ -6405,18 +6385,7 @@ _T52:
 	__asm        test   al, 8;
 	__asm        je     _T87;
 // LINE 3718:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   PersonHitDispatch;
-	__asm        add    esp, 0x14;
+	PersonHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3719:
 	return;
 // LINE 3721:
@@ -6427,18 +6396,7 @@ _T87:
 	__asm        test   al, 0x10;
 	__asm        je     _Tbc;
 // LINE 3723:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3724:
 	return;
 // LINE 3726:
@@ -6458,18 +6416,7 @@ _Td7:
 	__asm        test   ah, 1;
 	__asm        je     _T10d;
 // LINE 3730:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   PlaneHitDispatch;
-	__asm        add    esp, 0x14;
+	PlaneHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3731:
 	return;
 // LINE 3733:
@@ -6519,18 +6466,7 @@ _T16f:
 	__asm        jmp    _T1f3;
 // LINE 3756:
 _T174:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3757:
 	__asm        jmp    _T1f3;
 // LINE 3759:
@@ -6585,18 +6521,7 @@ _T212:
 	__asm        jmp    _T296;
 // LINE 3779:
 _T217:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3780:
 	__asm        jmp    _T296;
 // LINE 3782:
@@ -6651,18 +6576,7 @@ _T2b5:
 	__asm        jmp    _T339;
 // LINE 3802:
 _T2ba:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3803:
 	__asm        jmp    _T339;
 // LINE 3805:
@@ -6717,18 +6631,7 @@ _T358:
 	__asm        jmp    _T3dc;
 // LINE 3825:
 _T35d:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3826:
 	__asm        jmp    _T3dc;
 // LINE 3828:
@@ -6776,10 +6679,7 @@ _T3ec:
 	__asm        test   ah, 0x10;
 	__asm        je     _T408;
 // LINE 3841:
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        call   S3MissileDebrisDouse;
-	__asm        add    esp, 4;
+	S3MissileDebrisDouse(dyhittee);
 // LINE 3842:
 _T408:
 	__asm        jmp    _T49b;
@@ -6794,18 +6694,7 @@ _T417:
 	__asm        jmp    _T49b;
 // LINE 3850:
 _T41c:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3851:
 	__asm        jmp    _T49b;
 // LINE 3853:
@@ -6860,18 +6749,7 @@ _T4ba:
 	__asm        jmp    _T53e;
 // LINE 3873:
 _T4bf:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3874:
 	__asm        jmp    _T53e;
 // LINE 3876:
@@ -6926,18 +6804,7 @@ _T55d:
 	__asm        jmp    _T5e1;
 // LINE 3896:
 _T562:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3897:
 	__asm        jmp    _T5e1;
 // LINE 3899:
@@ -6992,18 +6859,7 @@ _T600:
 	__asm        jmp    _T684;
 // LINE 3919:
 _T605:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3920:
 	__asm        jmp    _T684;
 // LINE 3922:
@@ -7058,18 +6914,7 @@ _T6a3:
 	__asm        jmp    _T727;
 // LINE 3942:
 _T6a8:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3943:
 	__asm        jmp    _T727;
 // LINE 3945:
@@ -7124,18 +6969,7 @@ _T746:
 	__asm        jmp    _T7ca;
 // LINE 3965:
 _T74b:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3966:
 	__asm        jmp    _T7ca;
 // LINE 3968:
@@ -7190,18 +7024,7 @@ _T7e9:
 	__asm        jmp    _T86d;
 // LINE 3988:
 _T7ee:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 3989:
 	__asm        jmp    _T86d;
 // LINE 3991:
@@ -7256,18 +7079,7 @@ _T88c:
 	__asm        jmp    _T910;
 // LINE 4011:
 _T891:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 4012:
 	__asm        jmp    _T910;
 // LINE 4014:
@@ -7322,18 +7134,7 @@ _T92f:
 	__asm        jmp    _T9b3;
 // LINE 4034:
 _T934:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 4035:
 	__asm        jmp    _T9b3;
 // LINE 4037:
@@ -7388,18 +7189,7 @@ _T9d2:
 	__asm        jmp    _Ta56;
 // LINE 4057:
 _T9d7:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 4058:
 	__asm        jmp    _Ta56;
 // LINE 4060:
@@ -7454,18 +7244,7 @@ _Ta75:
 	__asm        jmp    _Taf9;
 // LINE 4080:
 _Ta7a:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 4081:
 	__asm        jmp    _Taf9;
 // LINE 4083:
@@ -7520,18 +7299,7 @@ _Tb18:
 	__asm        jmp    _Tb9c;
 // LINE 4103:
 _Tb1d:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, dyhittee;
-	__asm        push   eax;
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    eax, hitter_type;
-	__asm        push   eax;
-	__asm        call   AutoHitDispatch;
-	__asm        add    esp, 0x14;
+	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
 // LINE 4104:
 	__asm        jmp    _Tb9c;
 // LINE 4106:
@@ -7608,22 +7376,12 @@ void S3ObjSetFlatShading() {
 	__asm        cmp    G_daynight, 0;
 	__asm        jne    _T37;
 // LINE 4152:
-	__asm        push   0xCCCC;
-	__asm        push   0x4CCC;
-	__asm        push   0x6666;
-	__asm        push   0x1999;
-	__asm        call   VRSetIntensities;
-	__asm        add    esp, 0x10;
+	VRSetIntensities(0xcccc, 0x4ccc, 0x6666, 0x1999);
 // LINE 4154:
 	__asm        jmp    _T53;
 // LINE 4156:
 _T37:
-	__asm        push   0x4CCC;
-	__asm        push   0x1999;
-	__asm        push   0x3333;
-	__asm        push   0x1999;
-	__asm        call   VRSetIntensities;
-	__asm        add    esp, 0x10;
+	VRSetIntensities(0x4ccc, 0x1999, 0x3333, 0x1999);
 // LINE 4160:
 _T53:
 	objcount = VRGetResObjectCnt(G_resgeo1);
@@ -7651,10 +7409,7 @@ _T95:
 	__asm        jne    _Tba;
 // LINE 4177:
 _Tba:
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   VRObjSetShading;
-	__asm        add    esp, 4;
+	VRObjSetShading(obj);
 // LINE 4178:
 	__asm        jmp    _T92;
 // LINE 4179:

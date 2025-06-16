@@ -730,8 +730,7 @@ void CGameApp::ShowVersion() {
 	/*bp-0x28c*/ long lCPUVersion;
 
 // LINE 106:
-	__asm        lea    ecx, tempVersion<vftable>;
-	__asm        call   Version::Version;
+	tempVersion<vftable>->Version::Version();
 // LINE 107:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -900,18 +899,9 @@ _T251:
 _T275:
 	__asm        jmp    _T27a;
 _T27a:
-	__asm        mov    eax, sMessage.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(sMessage.c_str_ptr, szFormattedVersionInformation[0]);
 // LINE 121:
-	__asm        push   0x598828;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(0x598828, szFormattedVersionInformation[0]);
 // LINE 124:
 	__asm        lea    eax, szVersionInformation;
 	__asm        push   eax;
@@ -990,12 +980,7 @@ _T3a0:
 _T3a5:
 	sprintf(szVersionInformation, sMessage.c_str_ptr->basic_string<char>::c_str(szVersionInformation), szUnformattedVersionInformation[0]);
 // LINE 128:
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
 // LINE 131:
 _T3da:
 	__asm        lea    eax, szVersionInformation;
@@ -1075,12 +1060,7 @@ _T4d9:
 _T4de:
 	sprintf(szVersionInformation, sMessage.c_str_ptr->basic_string<char>::c_str(szVersionInformation), szUnformattedVersionInformation[0]);
 // LINE 135:
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
 // LINE 140:
 _T513:
 	lSystemType = Version::GetSystemType();
@@ -1155,18 +1135,9 @@ _T607:
 _T60c:
 	sprintf(Version::GetSystemVersion(0x1), 0x0, Version::GetSystemVersion(Version::GetSystemVersion(0x1), 0x0), sMessage.c_str_ptr->basic_string<char>::c_str(Version::GetSystemVersion(0x1), 0x0, Version::GetSystemVersion(Version::GetSystemVersion(0x1), 0x0)), szUnformattedVersionInformation[0]);
 // LINE 145:
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
 // LINE 146:
-	__asm        push   0x59882C;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(0x59882c, szFormattedVersionInformation[0]);
 // LINE 149:
 	lPhysicalMemory = 0x0;
 // LINE 152:
@@ -1252,12 +1223,7 @@ _T779:
 _T77e:
 	sprintf(lPhysicalMemory, sMessage.c_str_ptr->basic_string<char>::c_str(lPhysicalMemory), szUnformattedVersionInformation[0]);
 // LINE 159:
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
 // LINE 162:
 	lCPUVersion = Version::GetCPUVersion();
 // LINE 163:
@@ -1329,13 +1295,7 @@ _T8ad:
 	__asm        jmp    _T8b2;
 // LINE 165:
 _T8b2:
-	__asm        lea    ecx, sMessage.c_str_ptr;
-	__asm        call   basic_string<char>::c_str;
-	__asm        push   eax;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(sMessage.c_str_ptr->basic_string<char>::c_str(), szFormattedVersionInformation[0]);
 // LINE 168:
 	lCPUSpeed = Version::GetCPUSpeed();
 // LINE 169:
@@ -1412,12 +1372,7 @@ _T9ca:
 _T9cf:
 	sprintf(lCPUSpeed, sMessage.c_str_ptr->basic_string<char>::c_str(lCPUSpeed), szUnformattedVersionInformation[0]);
 // LINE 173:
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
 // LINE 178:
 _Ta04:
 	__asm        push   0x10;
@@ -1478,8 +1433,7 @@ _Tab4:
 _Taea:
 	__asm        jmp    _Taef;
 _Taef:
-	__asm        lea    ecx, tempVersion<vftable>;
-	__asm        call   Version::~Version;
+	tempVersion<vftable>->Version::~Version();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1990,9 +1944,7 @@ _Te9:
 	__asm        add    esp, 4;
 	__asm        jmp    _T134;
 _T134:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T143;
 _T143:
 	__asm        jmp    _T148;
@@ -2084,9 +2036,7 @@ _T24c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T28c;
 _T28c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T29b;
 _T29b:
 	__asm        jmp    _T2a0;
@@ -2189,9 +2139,7 @@ _T3ac:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3f7;
 _T3f7:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T406;
 _T406:
 	__asm        jmp    _T40b;
@@ -2605,8 +2553,7 @@ _T29b:
 // FUNCTION: COPTER_D 0x0043fbaf
 void CGameApp::DestroyCheatCodeEntryMessageBox() {
 // LINE 340:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DestroyMessageBox;
+	this->CGameApp::DestroyMessageBox();
 // LINE 341:
 	return;
 }
@@ -2813,16 +2760,7 @@ _T250:
 	/*bp-0x18*/  /*packed*/ struct Point2d *position2d;
 	position2d = S3HeliGetFreePad();
 // LINE 399:
-	__asm        push   0x50000;
-	__asm        push   0x50000;
-	__asm        mov    eax, position2d;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, position2d;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   S3PersonUserAppear;
-	__asm        add    esp, 0x10;
+	S3PersonUserAppear(0x50000, 0x50000, position2d->y, position2d->x);
 // LINE 400:
 	szCheatSoundFileName = szCheatOn;
 // LINE 401:
@@ -2850,16 +2788,7 @@ _T2c6:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T32a;
 // LINE 406:
-	__asm        push   0x50000;
-	__asm        push   0x50000;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        call   S3PersonUserAppear;
-	__asm        add    esp, 0x10;
+	S3PersonUserAppear(0x50000, 0x50000, G_uheli->currpos.y, G_uheli->currpos.x);
 // LINE 407:
 	szCheatSoundFileName = szCheatOn;
 // LINE 408:
@@ -2983,9 +2912,7 @@ _T4e1:
 	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T515;
 // LINE 413:
-	__asm        push   0x3E9;
-	__asm        call   SetUserPoints;
-	__asm        add    esp, 4;
+	SetUserPoints(0x3e9);
 // LINE 414:
 	szCheatSoundFileName = szCheatOn;
 // LINE 415:
@@ -3505,10 +3432,7 @@ _Tc48:
 	__asm        jge    _Tc80;
 // LINE 467:
 _Tc6e:
-	__asm        mov    eax, nNewBucks;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney(nNewBucks);
 // LINE 468:
 	szCheatSoundFileName = szCheatOn;
 // LINE 482:
@@ -4037,8 +3961,7 @@ void CGameApp::TogglePaletteBufferDisplay() {
 	__asm        cmp    dword ptr [eax+0x42BC], 0;
 	__asm        jne    _T34;
 // LINE 568:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreatePaletteBuffer;
+	this->CGameApp::CreatePaletteBuffer();
 // LINE 569:
 _T34:
 	this-><CGameApp+0x430c:4> = 0x1;
@@ -4062,8 +3985,7 @@ void CGameApp::ToggleDebugWindowDisplay() {
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T34;
 // LINE 584:
-	__asm        mov    ecx, gDebugWindow;
-	__asm        call   CDebugWindow::ShowWindow;
+	gDebugWindow->CDebugWindow::ShowWindow();
 // LINE 585:
 _T34:
 	this-><CGameApp+0x4310:4> = 0x1;
@@ -4074,8 +3996,7 @@ _T46:
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T5e;
 // LINE 589:
-	__asm        mov    ecx, gDebugWindow;
-	__asm        call   CDebugWindow::HideWindow;
+	gDebugWindow->CDebugWindow::HideWindow();
 // LINE 590:
 _T5e:
 	this-><CGameApp+0x4310:4> = 0x0;
@@ -4485,13 +4406,9 @@ _T6b:
 	__asm        mov    ecx, windowToDestroy;
 	__asm        call   dword ptr [eax+0xD0];
 // LINE 658:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::RemoveUserConfigurableCommands;
+	(this + 0xa0)->GameModePlayData::RemoveUserConfigurableCommands();
 // LINE 659:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::ReadUserConfigurableCommands;
+	(this + 0xa0)->GameModePlayData::ReadUserConfigurableCommands();
 // LINE 661:
 _Ta5:
 	__asm        mov    eax, windowToDestroy;
@@ -4678,10 +4595,7 @@ _T5c:
 // LINE 712:
 	this-><CGameApp+0x4308:4> = lQuadPixelType;
 // LINE 717:
-	__asm        mov    eax, lFogCloseness;
-	__asm        push   eax;
-	__asm        call   S3SetBackPlaneBasedOnValue;
-	__asm        add    esp, 4;
+	S3SetBackPlaneBasedOnValue(lFogCloseness);
 // LINE 720:
 _Td2:
 	__asm        mov    eax, windowToDestroy;
@@ -4906,14 +4820,12 @@ _T5c:
 	__asm        cmp    tempRadioPreferences.bPreferToBeOn, 0;
 	__asm        je     _Tb2;
 // LINE 795:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::EnableSoundTrack;
+	this->CGameApp::EnableSoundTrack();
 // LINE 796:
 	__asm        jmp    _Tba;
 // LINE 797:
 _Tb2:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DisableSoundTrack;
+	this->CGameApp::DisableSoundTrack();
 // LINE 799:
 _Tba:
 	__asm        mov    eax, windowToDestroy;
@@ -5192,12 +5104,7 @@ void CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDest
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 879:
-	__asm        mov    eax, lSettings[0];
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        push   eax;
-	__asm        call   S3HeliPurchaseRepairs;
-	__asm        add    esp, 8;
+	S3HeliPurchaseRepairs(lSettings[0], G_uheli);
 // LINE 881:
 	__asm        mov    eax, lSettings[1];
 	__asm        neg    eax;
@@ -5205,12 +5112,7 @@ void CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDest
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 882:
-	__asm        mov    eax, lSettings[1];
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        push   eax;
-	__asm        call   S3HeliPurchaseFuel;
-	__asm        add    esp, 8;
+	S3HeliPurchaseFuel(lSettings[1], G_uheli);
 // LINE 884:
 	__asm        mov    eax, lSettings[2];
 	__asm        neg    eax;
@@ -5218,10 +5120,7 @@ void CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDest
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 885:
-	__asm        mov    eax, lSettings[2];
-	__asm        push   eax;
-	__asm        call   S3HeliPurchaseTeargasCanisters;
-	__asm        add    esp, 4;
+	S3HeliPurchaseTeargasCanisters(lSettings[2]);
 // LINE 888:
 _T85:
 	__asm        mov    eax, windowToDestroy;

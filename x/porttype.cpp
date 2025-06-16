@@ -344,7 +344,7 @@ unsigned short SectRect(/*unpacked*/ struct Rect *rect1, /*unpacked*/ struct Rec
 // FUNCTION: COPTER_D 0x00566ca8
 void SetPortDC(void * __ptr32 dc) {
 // LINE 104:
-	__asm        call   CleanUpPort;
+	CleanUpPort();
 // LINE 105:
 	gPort.dc = dc;
 // LINE 106:
@@ -362,12 +362,7 @@ static void CleanUpPort() {
 	__asm        cmp    gPort.dc, 0;
 	__asm        jne    _T39;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF640;
-	__asm        push   0x57;
-	__asm        push   0x5BF664;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf640, 0x57, 0x5bf664);
 // LINE 88:
 _T39:
 	__asm        mov    eax, gPort.dc;
@@ -387,7 +382,7 @@ _T4b:
 // FUNCTION: COPTER_D 0x00566d38
 void SetPort(void * __ptr32 newHWND) {
 // LINE 112:
-	__asm        call   CleanUpPort;
+	CleanUpPort();
 // LINE 113:
 	gPort.window = newHWND;
 // LINE 114:
@@ -402,15 +397,12 @@ void SetPort(void * __ptr32 newHWND) {
 // FUNCTION: COPTER_D 0x00566d66
 void SetPort(/*unpacked*/ struct GrafPtr newPort) {
 // LINE 120:
-	__asm        call   CleanUpPort;
+	CleanUpPort();
 // LINE 121:
 	__asm        cmp    newPort.window, 0;
 	__asm        je     _T26;
 
-	__asm        mov    eax, newPort.window;
-	__asm        push   eax;
-	__asm        call   SetPort;
-	__asm        add    esp, 4;
+	SetPort(newPort.window);
 // LINE 122:
 	__asm        jmp    _T37;
 // LINE 123:
@@ -446,12 +438,7 @@ void EraseRect(/*unpacked*/ struct tagRECT *rect) {
 	__asm        cmp    gPort.dc, 0;
 	__asm        jne    _T32;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF684;
-	__asm        push   0x88;
-	__asm        push   0x5BF68C;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf684, 0x88, 0x5bf68c);
 // LINE 138:
 _T32:
 	__asm        mov    eax, rect;
@@ -510,10 +497,7 @@ void EraseRect(/*unpacked*/ struct Rect *r) {
 	__asm        movsx  eax, word ptr [eax+6];
 	__asm        mov    lRect.right, eax;
 // LINE 149:
-	__asm        lea    eax, lRect.left;
-	__asm        push   eax;
-	__asm        call   EraseRect;
-	__asm        add    esp, 4;
+	EraseRect(lRect.left);
 // LINE 150:
 	return;
 }
@@ -528,12 +512,7 @@ void FrameRect(/*unpacked*/ struct Rect *rect) {
 	__asm        cmp    gPort.dc, 0;
 	__asm        jne    _T32;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BF6AC;
-	__asm        push   0x9A;
-	__asm        push   0x5BF6B4;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5bf6ac, 0x9a, 0x5bf6b4);
 // LINE 156:
 _T32:
 	__asm        mov    eax, rect;

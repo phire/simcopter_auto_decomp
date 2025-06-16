@@ -19,11 +19,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 	__asm        cmp    Error, 0;
 	__asm        jne    _T2f;
 
-	__asm        push   0x16;
-	__asm        push   0x5990E4;
-	__asm        push   0x59910C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x16, 0x5990e4, 0x59910c);
 	__asm        jmp    _T34;
 _T2f:
 	__asm        jmp    _T34;
@@ -86,18 +82,14 @@ _Tc5:
 	__asm        call   dword ptr ds:[0x6C3870];
 // LINE 40:
 _Te0:
-	__asm        lea    eax, ErrorText[0];
-	__asm        push   eax;
-	__asm        push   0x599138;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 8;
+	DebugOutput(ErrorText[0], 0x599138);
 // LINE 42:
 	__asm        xor    eax, eax;
 	__asm        mov    al, Terminate;
 	__asm        test   eax, eax;
 	__asm        je     _T106;
 // LINE 43:
-	__asm        call   abort;
+	abort();
 // LINE 45:
 // Block end:
 _T106:

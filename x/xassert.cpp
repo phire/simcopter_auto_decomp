@@ -22,13 +22,7 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	/*bp-0x204*/ char descBuff[256]; // 0x100 bytes
 
 // LINE 46:
-	__asm        push   0xAF;
-	__asm        mov    eax, failureDescription;
-	__asm        push   eax;
-	__asm        lea    eax, descBuff[0];
-	__asm        push   eax;
-	__asm        call   strncpy;
-	__asm        add    esp, 0xC;
+	strncpy(0xaf, failureDescription, descBuff[0]);
 // LINE 47:
 	descBuff[175] = 0x0;
 // LINE 50:
@@ -55,7 +49,7 @@ _T7a:
 	__asm        cmp    answer, 3;
 	__asm        jne    _Tb1;
 _Tac:
-	__asm        call   abort;
+	abort();
 // LINE 70:
 _Tb1:
 	return;

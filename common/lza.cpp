@@ -280,15 +280,9 @@ static short Encode(/*packed*/ struct tACompModel *model, /*packed*/ struct tLZS
 // LINE 533:
 	state->textsize = 0x0;
 // LINE 534:
-	__asm        mov    eax, model;
-	__asm        push   eax;
-	__asm        call   StartModel;
-	__asm        add    esp, 4;
+	StartModel(model);
 // LINE 535:
-	__asm        mov    eax, forest;
-	__asm        push   eax;
-	__asm        call   InitTree;
-	__asm        add    esp, 4;
+	InitTree(forest);
 // LINE 536:
 	s = 0x0;
 	r = 0xfc4;
@@ -351,22 +345,11 @@ _Tdb:
 	__asm        cmp    i, 0x3C;
 	__asm        jg     _Tfd;
 
-	__asm        mov    eax, forest;
-	__asm        push   eax;
-	__asm        mov    eax, r;
-	__asm        sub    eax, i;
-	__asm        push   eax;
-	__asm        call   InsertNode;
-	__asm        add    esp, 8;
+	InsertNode(forest, (r - i));
 	__asm        jmp    _Td8;
 // LINE 544:
 _Tfd:
-	__asm        mov    eax, forest;
-	__asm        push   eax;
-	__asm        mov    eax, r;
-	__asm        push   eax;
-	__asm        call   InsertNode;
-	__asm        add    esp, 8;
+	InsertNode(forest, r);
 // LINE 546:
 _T10d:
 	__asm        mov    eax, forest;
@@ -465,12 +448,7 @@ _T1fa:
 	__asm        mov    al, tempByte;
 	__asm        mov    c, eax;
 // LINE 563:
-	__asm        mov    eax, forest;
-	__asm        push   eax;
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        call   DeleteNode;
-	__asm        add    esp, 8;
+	DeleteNode(forest, s);
 // LINE 564:
 	__asm        mov    al, reinterpret_cast<uint8_t>(c);
 	__asm        mov    ecx, s;
@@ -496,12 +474,7 @@ _T262:
 	__asm        and    eax, 0xFFF;
 	__asm        mov    r, eax;
 // LINE 568:
-	__asm        mov    eax, forest;
-	__asm        push   eax;
-	__asm        mov    eax, r;
-	__asm        push   eax;
-	__asm        call   InsertNode;
-	__asm        add    esp, 8;
+	InsertNode(forest, r);
 // LINE 569:
 	__asm        jmp    _T1f7;
 // LINE 570:
@@ -516,12 +489,7 @@ _T298:
 	__asm        cmp    last_match_length, eax;
 	__asm        jle    _T2f3;
 // LINE 572:
-	__asm        mov    eax, forest;
-	__asm        push   eax;
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        call   DeleteNode;
-	__asm        add    esp, 8;
+	DeleteNode(forest, s);
 // LINE 573:
 	__asm        mov    eax, s;
 	__asm        inc    eax;
@@ -536,12 +504,7 @@ _T298:
 	__asm        dec    len;
 	__asm        je     _T2ee;
 
-	__asm        mov    eax, forest;
-	__asm        push   eax;
-	__asm        mov    eax, r;
-	__asm        push   eax;
-	__asm        call   InsertNode;
-	__asm        add    esp, 8;
+	InsertNode(forest, r);
 // LINE 576:
 _T2ee:
 	__asm        jmp    _T298;
@@ -1149,12 +1112,7 @@ _T138:
 	__asm        jmp    _T6e;
 // LINE 380:
 _T153:
-	__asm        mov    eax, model;
-	__asm        push   eax;
-	__asm        mov    eax, sym;
-	__asm        push   eax;
-	__asm        call   UpdateModel;
-	__asm        add    esp, 8;
+	UpdateModel(model, sym);
 // LINE 382:
 	return 0x0;
 // LINE 383:
@@ -1690,17 +1648,9 @@ _T34:
 	return 0x0;
 // LINE 601:
 _T49:
-	__asm        mov    eax, state;
-	__asm        push   eax;
-	__asm        mov    eax, model;
-	__asm        push   eax;
-	__asm        call   StartDecode;
-	__asm        add    esp, 8;
+	StartDecode(state, model);
 // LINE 602:
-	__asm        mov    eax, model;
-	__asm        push   eax;
-	__asm        call   StartModel;
-	__asm        add    esp, 4;
+	StartModel(model);
 // LINE 603:
 	i = 0x0;
 	__asm        jmp    _T74;
@@ -2018,12 +1968,7 @@ _T14a:
 	__asm        mov    eax, [ecx+eax*4+0x4F8];
 	__asm        mov    ch, eax;
 // LINE 489:
-	__asm        mov    eax, model;
-	__asm        push   eax;
-	__asm        mov    eax, sym;
-	__asm        push   eax;
-	__asm        call   UpdateModel;
-	__asm        add    esp, 8;
+	UpdateModel(model, sym);
 // LINE 490:
 	return ch;
 // LINE 491:

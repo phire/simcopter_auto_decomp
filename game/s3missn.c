@@ -345,12 +345,7 @@ void S3MissionGenerator() {
 // LINE 243:
 	currentCitySettings = GetCurrentCitySettings();
 // LINE 244:
-	__asm        lea    eax, currentCitySettingPercentages.lDifficulty;
-	__asm        push   eax;
-	__asm        mov    eax, currentCitySettings;
-	__asm        push   eax;
-	__asm        call   ConvertCitySettingsToSteppedPercentages;
-	__asm        add    esp, 8;
+	ConvertCitySettingsToSteppedPercentages(currentCitySettingPercentages.lDifficulty, currentCitySettings);
 // LINE 248:
 	S_max_missions = (S_max_missions_easy * G_diff_level);
 // LINE 249:
@@ -410,16 +405,12 @@ _Ta0:
 	__asm        jmp    _T138;
 // LINE 284:
 _Te4:
-	__asm        push   0x100;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x100);
 // LINE 285:
 	__asm        jmp    _T15b;
 // LINE 291:
 _Tf6:
-	__asm        push   4;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x4);
 // LINE 292:
 	__asm        jmp    _T15b;
 // LINE 294:
@@ -428,16 +419,12 @@ _T105:
 	__asm        test   eax, eax;
 	__asm        jne    _T121;
 // LINE 295:
-	__asm        push   1;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x1);
 // LINE 296:
 	__asm        jmp    _T12e;
 // LINE 297:
 _T121:
-	__asm        push   0x408;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x408);
 // LINE 298:
 _T12e:
 	__asm        jmp    _T15b;
@@ -474,30 +461,22 @@ _T160:
 	__asm        jmp    _T1d5;
 // LINE 308:
 _T188:
-	__asm        push   0x4000;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x4000);
 // LINE 309:
 	__asm        jmp    _T1f8;
 // LINE 311:
 _T19a:
-	__asm        push   0x2000;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x2000);
 // LINE 312:
 	__asm        jmp    _T1f8;
 // LINE 314:
 _T1ac:
-	__asm        push   0x20000;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x20000);
 // LINE 315:
 	__asm        jmp    _T1f8;
 // LINE 317:
 _T1be:
-	__asm        push   0x200;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x200);
 // LINE 318:
 	__asm        jmp    _T1f8;
 // LINE 319:
@@ -530,16 +509,12 @@ _T1fd:
 	__asm        jmp    _T24a;
 // LINE 328:
 _T221:
-	__asm        push   0x90;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x90);
 // LINE 329:
 	__asm        jmp    _T259;
 // LINE 331:
 _T233:
-	__asm        push   0x110;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x110);
 // LINE 332:
 	__asm        jmp    _T259;
 // LINE 333:
@@ -569,16 +544,12 @@ _T25e:
 	__asm        jmp    _T2af;
 // LINE 342:
 _T286:
-	__asm        push   0x1000;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x1000);
 // LINE 343:
 	__asm        jmp    _T2be;
 // LINE 345:
 _T298:
-	__asm        push   0x1000;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x1000);
 // LINE 346:
 	__asm        jmp    _T2be;
 // LINE 347:
@@ -608,16 +579,12 @@ _T2c3:
 	__asm        jmp    _T314;
 // LINE 363:
 _T2eb:
-	__asm        push   0x800;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x800);
 // LINE 364:
 	__asm        jmp    _T32d;
 // LINE 366:
 _T2fd:
-	__asm        push   0x408;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x408);
 // LINE 367:
 	__asm        jmp    _T32d;
 // LINE 368:
@@ -647,9 +614,7 @@ _T332:
 	__asm        jmp    _T36a;
 // LINE 383:
 _T356:
-	__asm        push   0x20;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x20);
 // LINE 384:
 	__asm        jmp    _T36f;
 // LINE 385:
@@ -676,16 +641,12 @@ _T374:
 	__asm        jmp    _T3bf;
 // LINE 394:
 _T39c:
-	__asm        push   0x40;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x40);
 // LINE 395:
 	__asm        jmp    _T3ce;
 // LINE 397:
 _T3ab:
-	__asm        push   0x40;
-	__asm        call   S3MissionGenerate;
-	__asm        add    esp, 4;
+	S3MissionGenerate(0x40);
 // LINE 398:
 	__asm        jmp    _T3ce;
 // LINE 399:
@@ -703,7 +664,7 @@ _T3d3:
 	return;
 // LINE 408:
 _T3d8:
-	__asm        call   S3MissionDriver;
+	S3MissionDriver();
 // LINE 410:
 }
 
@@ -762,10 +723,7 @@ _T4f:
 	__asm        test   byte ptr [eax+0x51], 8;
 	__asm        je     _T90;
 // LINE 455:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   S3MissionCancel;
-	__asm        add    esp, 4;
+	S3MissionCancel(i);
 // LINE 457:
 _T90:
 	__asm        jmp    _T15;
@@ -775,10 +733,7 @@ _T95:
 	__asm        cmp    dword ptr [eax+0x54], 4;
 	__asm        jne    _Tb3;
 // LINE 463:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   S3MissionCancel;
-	__asm        add    esp, 4;
+	S3MissionCancel(i);
 // LINE 464:
 	__asm        jmp    _T15;
 // LINE 468:
@@ -787,10 +742,7 @@ _Tb3:
 	__asm        cmp    dword ptr [eax+0x54], 8;
 	__asm        jne    _Td1;
 // LINE 470:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   S3MissionEnd;
-	__asm        add    esp, 4;
+	S3MissionEnd(i);
 // LINE 471:
 	__asm        jmp    _T15;
 // LINE 480:
@@ -1125,10 +1077,7 @@ _T4cc:
 	__asm        cmp    speeder_done, 1;
 	__asm        jne    _T546;
 // LINE 638:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   S3MissionEnd;
-	__asm        add    esp, 4;
+	S3MissionEnd(i);
 // LINE 640:
 _T546:
 	__asm        jmp    _T15;
@@ -1334,16 +1283,7 @@ _T214:
 	md->type_ctr = S_mstatics.riot_ctr;
 	S_mstatics.riot_ctr++;
 // LINE 731:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 734:
 	__asm        jmp    _Te60;
 // LINE 739:
@@ -1412,16 +1352,7 @@ _T361:
 	md->type_ctr = S_mstatics.rescue_ctr;
 	S_mstatics.rescue_ctr++;
 // LINE 767:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 770:
 	__asm        jmp    _T3d1;
 // LINE 772:
@@ -1464,16 +1395,7 @@ _T416:
 	md->type_ctr = S_mstatics.rescue_ctr;
 	S_mstatics.rescue_ctr++;
 // LINE 789:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 791:
 	__asm        jmp    _Te60;
 // LINE 796:
@@ -1506,16 +1428,7 @@ _T4ae:
 	md->type_ctr = S_mstatics.rescue_ctr;
 	S_mstatics.rescue_ctr++;
 // LINE 806:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 808:
 	__asm        jmp    _Te60;
 // LINE 811:
@@ -1590,16 +1503,7 @@ _T5d9:
 	md->type_ctr = S_mstatics.medevac_ctr;
 	S_mstatics.medevac_ctr++;
 // LINE 847:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 849:
 	__asm        jmp    _Te60;
 // LINE 853:
@@ -1671,16 +1575,7 @@ _T6bd:
 	md->type_ctr = S_mstatics.transport_ctr;
 	S_mstatics.transport_ctr++;
 // LINE 879:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->pickuploc.y, md->pickuploc.x);
 // LINE 882:
 	__asm        jmp    _T743;
 // LINE 884:
@@ -1756,16 +1651,7 @@ _T7a7:
 	__asm        jmp    __RETURN;
 // LINE 902:
 _T811:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 904:
 	__asm        jmp    _Te60;
 // LINE 906:
@@ -1860,16 +1746,7 @@ _T916:
 _T97e:
 	md->mdata.total_person_crime = 0x1;
 // LINE 931:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 932:
 	__asm        jmp    _Te60;
 // LINE 935:
@@ -1922,16 +1799,7 @@ _Ta34:
 	md->type_ctr = S_mstatics.crime_ctr;
 	S_mstatics.crime_ctr++;
 // LINE 956:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 958:
 	__asm        jmp    _Te60;
 // LINE 961:
@@ -1984,16 +1852,7 @@ _Tb12:
 	md->type_ctr = S_mstatics.crime_ctr;
 	S_mstatics.crime_ctr++;
 // LINE 982:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 984:
 	__asm        jmp    _Te60;
 // LINE 987:
@@ -2046,16 +1905,7 @@ _Tbf0:
 	md->type_ctr = S_mstatics.crime_ctr;
 	S_mstatics.crime_ctr++;
 // LINE 1008:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 1010:
 	__asm        jmp    _Te60;
 // LINE 1012:
@@ -2086,16 +1936,7 @@ _Tc81:
 	md->type_ctr = S_mstatics.traffic_ctr;
 	S_mstatics.traffic_ctr++;
 // LINE 1021:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(type, md->maploc.y, md->maploc.x);
 // LINE 1023:
 	__asm        jmp    _Te60;
 // LINE 1026:
@@ -2236,10 +2077,7 @@ _Te60:
 // LINE 1047:
 	S_log.nMissionID = md->key;
 // LINE 1048:
-	__asm        push   1;
-	__asm        push   0x5B4EB8;
-	__asm        call   S3AddLogEntry;
-	__asm        add    esp, 8;
+	S3AddLogEntry(0x1, 0x5b4eb8);
 // LINE 1050:
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _Ted1;
@@ -2424,12 +2262,7 @@ void S3MissionUpdate(/*packed*/ struct _MISSION_PARMS *mp) {
 	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1220:
-	__asm        lea    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    eax, mp;
-	__asm        push   eax;
-	__asm        call   S3MissionScoreUpdate;
-	__asm        add    esp, 8;
+	S3MissionScoreUpdate(mission_id, mp);
 // LINE 1223:
 	__asm        cmp    mission_id, 0xFFFFFFFF;
 	__asm        jne    _T28;
@@ -2671,17 +2504,7 @@ _T2fe:
 // LINE 1347:
 	md->state = 0x0;
 // LINE 1349:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x50];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(md->type, md->maploc.y, md->maploc.x);
 // LINE 1351:
 	S_mstatics.num_delayed_missions--;
 // LINE 1352:
@@ -2723,17 +2546,7 @@ _T3af:
 	__asm        test   dword ptr [eax+0x50], 0x104;
 	__asm        je     _T3f6;
 // LINE 1374:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x50];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        call   S3MissionDispatch;
-	__asm        add    esp, 0xC;
+	S3MissionDispatch(md->type, md->maploc.y, md->maploc.x);
 // LINE 1377:
 _T3f6:
 	S_mstatics.num_delayed_missions--;
@@ -2813,10 +2626,7 @@ void S3MissionEnd(long mission_id) {
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1402:
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   S3MissionScoreEnd;
-	__asm        add    esp, 4;
+	S3MissionScoreEnd(md);
 // LINE 1405:
 	md->flags = (md->flags & -0x2);
 // LINE 1407:
@@ -3710,11 +3520,7 @@ _T36:
 	__asm        jmp    _T80;
 // LINE 1854:
 _T44:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x24];
-	__asm        push   eax;
-	__asm        call   AutoMissionCancel;
-	__asm        add    esp, 4;
+	AutoMissionCancel(md->key);
 // LINE 1855:
 	md->flags = (md->flags & -0x2);
 // LINE 1856:
@@ -3749,10 +3555,7 @@ _Tb0:
 // LINE 1873:
 	sprintf(md, 0x5b5054, S_log.szLogString);
 // LINE 1875:
-	__asm        push   1;
-	__asm        push   0x5B4EB8;
-	__asm        call   S3AddLogEntry;
-	__asm        add    esp, 8;
+	S3AddLogEntry(0x1, 0x5b4eb8);
 // LINE 1877:
 }
 
@@ -4068,10 +3871,7 @@ _T3ad:
 // LINE 1981:
 	S_log.nMissionID = md->key;
 // LINE 1982:
-	__asm        push   1;
-	__asm        push   0x5B4EB8;
-	__asm        call   S3AddLogEntry;
-	__asm        add    esp, 8;
+	S3AddLogEntry(0x1, 0x5b4eb8);
 // LINE 1984:
 	return md->key;
 // LINE 1985:
@@ -4160,12 +3960,7 @@ _Ta9:
 _Tdf:
 	money = (mp->i2num * S_money_flame);
 // LINE 2051:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_flame;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_flame));
 // LINE 2052:
 	reason = 0x5b50b4;
 // LINE 2054:
@@ -4201,12 +3996,7 @@ _T161:
 _T166:
 	money = (mp->i2num * S_money_saved_building);
 // LINE 2068:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_saved_building;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_saved_building));
 // LINE 2069:
 	reason = 0x5b50d4;
 // LINE 2071:
@@ -4236,12 +4026,7 @@ _T1ad:
 _T1e3:
 	money = (mp->i2num * S_money_debris_doused);
 // LINE 2081:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_debris_doused;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_debris_doused));
 // LINE 2082:
 	reason = 0x5b50f4;
 // LINE 2084:
@@ -4270,12 +4055,7 @@ _T243:
 _T248:
 	money = (mp->i2num * S_money_person_rescued);
 // LINE 2101:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_person_rescued;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_person_rescued));
 // LINE 2102:
 	reason = 0x5b5104;
 // LINE 2104:
@@ -4286,12 +4066,7 @@ _T248:
 _T28f:
 	money = (mp->i2num * S_money_person_transport);
 // LINE 2109:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_person_transport;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_person_transport));
 // LINE 2110:
 	reason = 0x5b5114;
 // LINE 2112:
@@ -4302,12 +4077,7 @@ _T28f:
 _T2d6:
 	money = (mp->i2num * S_money_person_medevaced);
 // LINE 2117:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_person_medevaced;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_person_medevaced));
 // LINE 2118:
 	reason = 0x5b5128;
 // LINE 2120:
@@ -4318,12 +4088,7 @@ _T2d6:
 _T31d:
 	money = (mp->i2num * S_money_person_pickup);
 // LINE 2125:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_person_pickup;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_person_pickup));
 // LINE 2126:
 	reason = 0x5b5138;
 // LINE 2128:
@@ -4352,12 +4117,7 @@ _T37d:
 _T382:
 	money = (mp->i2num * S_money_vehicle_doused);
 // LINE 2145:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_vehicle_doused;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_vehicle_doused));
 // LINE 2146:
 	reason = 0x5b5148;
 // LINE 2148:
@@ -4368,12 +4128,7 @@ _T382:
 _T3c9:
 	money = (mp->i2num * S_money_vehicle_unjammed);
 // LINE 2153:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_vehicle_unjammed;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_vehicle_unjammed));
 // LINE 2154:
 	reason = 0x5b5154;
 // LINE 2156:
@@ -4403,21 +4158,11 @@ _T410:
 _T446:
 	points = (mp->i2num * S_pts_mission_speeder);
 // LINE 2166:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_mission_speeder;
-	__asm        push   eax;
-	__asm        call   ChangeUserPoints;
-	__asm        add    esp, 4;
+	ChangeUserPoints((mp->i2num * S_pts_mission_speeder));
 // LINE 2167:
 	money = (mp->i2num * S_money_mission_speeder);
 // LINE 2168:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_mission_speeder;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_mission_speeder));
 // LINE 2169:
 	reason = 0x5b516c;
 // LINE 2171:
@@ -4428,21 +4173,11 @@ _T446:
 _T4b3:
 	points = (mp->i2num * S_pts_mission_ufo);
 // LINE 2176:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_mission_ufo;
-	__asm        push   eax;
-	__asm        call   ChangeUserPoints;
-	__asm        add    esp, 4;
+	ChangeUserPoints((mp->i2num * S_pts_mission_ufo));
 // LINE 2177:
 	money = (mp->i2num * S_money_mission_ufo);
 // LINE 2178:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_mission_ufo;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney((mp->i2num * S_money_mission_ufo));
 // LINE 2179:
 	reason = 0x5b517c;
 // LINE 2181:
@@ -4512,10 +4247,7 @@ _T5f2:
 // LINE 2200:
 	sprintf(money, reason, mname, 0x5b518c, S_log.szLogString);
 // LINE 2202:
-	__asm        push   1;
-	__asm        push   0x5B4EB8;
-	__asm        call   S3AddLogEntry;
-	__asm        add    esp, 8;
+	S3AddLogEntry(0x1, 0x5b4eb8);
 // LINE 2204:
 _T632:
 	__asm        cmp    points, 0;
@@ -4523,10 +4255,7 @@ _T632:
 // LINE 2210:
 	sprintf(points, reason, mname, 0x5b51ac, S_log.szLogString);
 // LINE 2212:
-	__asm        push   1;
-	__asm        push   0x5B4EB8;
-	__asm        call   S3AddLogEntry;
-	__asm        add    esp, 8;
+	S3AddLogEntry(0x1, 0x5b4eb8);
 // LINE 2214:
 __RETURN:
 }
@@ -4830,20 +4559,11 @@ _T477:
 // LINE 2394:
 	sprintf(total_money, total_pts, md, 0x5b51cc, S_log.szLogString);
 // LINE 2396:
-	__asm        push   1;
-	__asm        push   0x5B4EB8;
-	__asm        call   S3AddLogEntry;
-	__asm        add    esp, 8;
+	S3AddLogEntry(0x1, 0x5b4eb8);
 // LINE 2399:
-	__asm        mov    eax, total_pts;
-	__asm        push   eax;
-	__asm        call   ChangeUserPoints;
-	__asm        add    esp, 4;
+	ChangeUserPoints(total_pts);
 // LINE 2400:
-	__asm        mov    eax, total_money;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney(total_money);
 // LINE 2403:
 }
 
@@ -5696,43 +5416,24 @@ _T779:
 	__asm        jmp    _T7a5;
 // LINE 2765:
 _T7a5:
-	__asm        push   0x96;
-	__asm        push   0x32;
-	__asm        push   0;
-	__asm        call   S3SoundAddToQueue;
-	__asm        add    esp, 0xC;
+	S3SoundAddToQueue(0x96, 0x32, 0x0);
 // LINE 2767:
 	__asm        cmp    sid1, 0xFFFFFFFF;
 	__asm        je     _T7d0;
 // LINE 2768:
-	__asm        push   0x32;
-	__asm        mov    eax, sid1;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   S3SoundAddToQueue;
-	__asm        add    esp, 0xC;
+	S3SoundAddToQueue(0x32, sid1, 0x0);
 // LINE 2769:
 _T7d0:
 	__asm        cmp    sid2, 0xFFFFFFFF;
 	__asm        je     _T7ea;
 // LINE 2770:
-	__asm        push   0x32;
-	__asm        mov    eax, sid2;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   S3SoundAddToQueue;
-	__asm        add    esp, 0xC;
+	S3SoundAddToQueue(0x32, sid2, 0x0);
 // LINE 2771:
 _T7ea:
 	__asm        cmp    sid3, 0xFFFFFFFF;
 	__asm        je     __RETURN;
 // LINE 2772:
-	__asm        push   0x32;
-	__asm        mov    eax, sid3;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   S3SoundAddToQueue;
-	__asm        add    esp, 0xC;
+	S3SoundAddToQueue(0x32, sid3, 0x0);
 // LINE 2774:
 __RETURN:
 }

@@ -10,18 +10,10 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 	__asm        cmp    eax, size;
 	__asm        jle    _T38;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE230;
-	__asm        push   0xE4;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be230, 0xe4, 0x5be258);
 // LINE 230:
 _T38:
-	__asm        mov    eax, val;
-	__asm        push   eax;
-	__asm        call   Swizzle4;
-	__asm        add    esp, 4;
+	Swizzle4(val);
 // LINE 231:
 	return;
 }
@@ -69,12 +61,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0055f280
 void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE37C;
-	__asm        push   0x1C;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be37c, 0x1c, 0x5be258);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -89,17 +76,9 @@ void cBBase::~cBBase() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T40;
 // LINE 46:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   Memory::HUnlock;
-	__asm        add    esp, 4;
+	Memory::HUnlock(this->fDataHandle);
 // LINE 47:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   Memory::HFree;
-	__asm        add    esp, 4;
+	Memory::HFree(this->fDataHandle);
 // LINE 53:
 _T40:
 	return;
@@ -159,12 +138,7 @@ _T27:
 	__asm        cmp    h, 0;
 	__asm        jne    _Ta4;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE3AC;
-	__asm        push   0x3E;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be3ac, 0x3e, 0x5be258);
 _Ta4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -236,12 +210,7 @@ _T100:
 	__asm        test   eax, eax;
 	__asm        jge    _T178;
 
-	__asm        push   0x8C085;
-	__asm        push   0x59A24C;
-	__asm        push   0x32;
-	__asm        push   0x59A254;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x59a24c, 0x32, 0x59a254);
 _T178:
 	__asm        jmp    _T192;
 _T17d:

@@ -211,7 +211,7 @@ _T11:
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 99:
-	__asm        call   VRFrustSetNormals;
+	VRFrustSetNormals();
 // LINE 100:
 	G_video_mode = 0x20;
 // LINE 101:
@@ -242,7 +242,7 @@ _T6d:
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 109:
-	__asm        call   VRFrustSetNormals;
+	VRFrustSetNormals();
 // LINE 110:
 	G_video_mode = 0x10;
 // LINE 111:
@@ -269,7 +269,7 @@ _Tff:
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 118:
-	__asm        call   VRFrustSetNormals;
+	VRFrustSetNormals();
 // LINE 119:
 	G_video_mode = 0x20;
 // LINE 120:
@@ -287,7 +287,7 @@ _T138:
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 128:
-	__asm        call   VRFrustSetNormals;
+	VRFrustSetNormals();
 // LINE 129:
 	G_video_mode = 0x10;
 // LINE 130:
@@ -305,7 +305,7 @@ _T171:
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 136:
-	__asm        call   VRFrustSetNormals;
+	VRFrustSetNormals();
 // LINE 137:
 	G_video_mode = 0x10;
 // LINE 138:
@@ -440,11 +440,7 @@ void CGameApp::S3PostRender() {
 	__asm        mov    ecx, [eax+0xD8];
 	__asm        call   dword ptr [edx+4];
 // LINE 202:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xD8];
-	__asm        push   eax;
-	__asm        call   BodyDrawDebugInfo;
-	__asm        add    esp, 4;
+	BodyDrawDebugInfo(this-><CGameApp+0xd8:4>);
 // LINE 206:
 	__asm        mov    eax, qwindow.WindowHigh;
 	__asm        push   eax;
@@ -490,11 +486,7 @@ _T94:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+4];
 // LINE 213:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        call   BodyDrawDebugInfo;
-	__asm        add    esp, 4;
+	BodyDrawDebugInfo(this-><CGameApp+0x34:4>);
 // LINE 216:
 _Tc3:
 	return;
@@ -740,12 +732,7 @@ _T112:
 	__asm        cmp    md, 0;
 	__asm        je     _T292;
 // LINE 321:
-	__asm        lea    eax, szBuffer1[0];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   S3MissionDebugString;
-	__asm        add    esp, 8;
+	S3MissionDebugString(szBuffer1[0], md);
 // LINE 322:
 	nTextTop += 0xc;
 // LINE 323:

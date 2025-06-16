@@ -188,9 +188,7 @@ short S3TerrainInitMap() {
 	__asm        cmp    G_tmap, 0;
 	__asm        jne    _T7c;
 // LINE 178:
-	__asm        push   0x5B5D70;
-	__asm        call   ERexit;
-	__asm        add    esp, 4;
+	ERexit(0x5b5d70);
 // LINE 181:
 _T7c:
 	__asm        mov    edx, G_tdim;
@@ -918,17 +916,9 @@ _Ta23:
 	__asm        jmp    _T9c5;
 // LINE 343:
 _Ta28:
-	__asm        call   clock;
-	__asm        push   eax;
-	__asm        call   srand;
-	__asm        add    esp, 4;
+	srand(clock());
 // LINE 344:
-	__asm        mov    eax, G_tdim;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        call   do_map_square;
-	__asm        add    esp, 0xC;
+	do_map_square(G_tdim, 0x0, 0x0);
 // LINE 349:
 	__asm        cmp    G_fract_blurr, 1;
 	__asm        jne    _Tbc2;
@@ -1046,7 +1036,7 @@ _Tbbd:
 	__asm        jmp    _Ta76;
 // LINE 375:
 _Tbc2:
-	__asm        call   AdjustTerrainMap;
+	AdjustTerrainMap();
 // LINE 383:
 	x = 0x0;
 	__asm        jmp    _Tbd6;
@@ -5047,57 +5037,13 @@ _Ta75:
 	__asm        mov    [edx+ecx], ax;
 // LINE 1095:
 _Tb01:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(midp);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-	__asm        push   eax;
-	__asm        call   do_map_square;
-	__asm        add    esp, 0xC;
+	do_map_square(reinterpret_cast<uint32_t>(midp), reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x));
 // LINE 1096:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(midp);
-	__asm        push   eax;
-	__asm        movsx  eax, midp;
-	__asm        movsx  ecx, is_odd;
-	__asm        add    eax, ecx;
-	__asm        movsx  ecx, y;
-	__asm        add    eax, ecx;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-	__asm        push   eax;
-	__asm        call   do_map_square;
-	__asm        add    esp, 0xC;
+	do_map_square(reinterpret_cast<uint32_t>(midp), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), reinterpret_cast<uint32_t>(x));
 // LINE 1097:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(midp);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-	__asm        push   eax;
-	__asm        movsx  eax, midp;
-	__asm        movsx  ecx, is_odd;
-	__asm        add    eax, ecx;
-	__asm        movsx  ecx, x;
-	__asm        add    eax, ecx;
-	__asm        push   eax;
-	__asm        call   do_map_square;
-	__asm        add    esp, 0xC;
+	do_map_square(reinterpret_cast<uint32_t>(midp), reinterpret_cast<uint32_t>(y), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)));
 // LINE 1098:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(midp);
-	__asm        push   eax;
-	__asm        movsx  eax, midp;
-	__asm        movsx  ecx, is_odd;
-	__asm        add    eax, ecx;
-	__asm        movsx  ecx, y;
-	__asm        add    eax, ecx;
-	__asm        push   eax;
-	__asm        movsx  eax, midp;
-	__asm        movsx  ecx, is_odd;
-	__asm        add    eax, ecx;
-	__asm        movsx  ecx, x;
-	__asm        add    eax, ecx;
-	__asm        push   eax;
-	__asm        call   do_map_square;
-	__asm        add    esp, 0xC;
+	do_map_square(reinterpret_cast<uint32_t>(midp), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)));
 // LINE 1100:
 }
 
@@ -5190,11 +5136,7 @@ _T5c:
 	__asm        cmp    GridVerts, eax;
 	__asm        jbe    _T99;
 
-	__asm        push   0x482;
-	__asm        push   0x5B5D90;
-	__asm        push   0x5B5DB0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x482, 0x5b5d90, 0x5b5db0);
 	__asm        jmp    _T9e;
 _T99:
 	__asm        jmp    _T9e;
@@ -5204,11 +5146,7 @@ _T9e:
 	__asm        cmp    GridVertsEnd, eax;
 	__asm        ja     _Tc9;
 
-	__asm        push   0x483;
-	__asm        push   0x5B5DD0;
-	__asm        push   0x5B5DF0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x483, 0x5b5dd0, 0x5b5df0);
 	__asm        jmp    _Tce;
 _Tc9:
 	__asm        jmp    _Tce;
@@ -5524,11 +5462,7 @@ _T3dd:
 	__asm        cmp    v, eax;
 	__asm        jae    _T429;
 
-	__asm        push   0x4ED;
-	__asm        push   0x5B5E14;
-	__asm        push   0x5B5E34;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x4ed, 0x5b5e14, 0x5b5e34);
 	__asm        jmp    _T42e;
 _T429:
 	__asm        jmp    _T42e;
@@ -5538,11 +5472,7 @@ _T42e:
 	__asm        cmp    v, eax;
 	__asm        jb     _T458;
 
-	__asm        push   0x4EE;
-	__asm        push   0x5B5E44;
-	__asm        push   0x5B5E64;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x4ee, 0x5b5e44, 0x5b5e64);
 	__asm        jmp    _T45d;
 _T458:
 	__asm        jmp    _T45d;

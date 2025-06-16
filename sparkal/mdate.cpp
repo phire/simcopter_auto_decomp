@@ -1194,20 +1194,14 @@ _T36:
 	__asm        je     _T228;
 // LINE 582:
 _T45:
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        call   SkipDelim;
-	__asm        add    esp, 4;
+	SkipDelim(s);
 // LINE 583:
 	__asm        lea    eax, m;
 	__asm        push   eax;
 	__asm        mov    ecx, s;
 	__asm        call   istream::operator>>;
 // LINE 584:
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        call   SkipDelim;
-	__asm        add    esp, 4;
+	SkipDelim(s);
 // LINE 585:
 	__asm        jmp    _T6e;
 _T6e:
@@ -1271,10 +1265,7 @@ _T108:
 _T10d:
 	m = MDate::IndexOfMonth(ParseMonth(s));
 // LINE 590:
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        call   SkipDelim;
-	__asm        add    esp, 4;
+	SkipDelim(s);
 // LINE 591:
 	__asm        lea    eax, d;
 	__asm        push   eax;
@@ -1354,10 +1345,7 @@ _T1f8:
 	m = MDate::IndexOfMonth(ParseMonth(s));
 // LINE 602:
 _T210:
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        call   SkipDelim;
-	__asm        add    esp, 4;
+	SkipDelim(s);
 // LINE 603:
 	__asm        lea    eax, y;
 	__asm        push   eax;
@@ -1537,10 +1525,7 @@ static char * ParseMonth(/*unpacked*/ class istream& s) {
 // LINE 549:
 	p = 0x6069a8;
 // LINE 551:
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        call   SkipDelim;
-	__asm        add    esp, 4;
+	SkipDelim(s);
 // LINE 552:
 	__asm        lea    eax, c;
 	__asm        push   eax;

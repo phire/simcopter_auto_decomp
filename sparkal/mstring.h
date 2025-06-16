@@ -51,9 +51,7 @@ _T6f:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tba;
 _Tba:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tc9;
 _Tc9:
 	__asm        jmp    _Tce;
@@ -180,9 +178,7 @@ _T245:
 	__asm        add    esp, 4;
 	__asm        jmp    _T288;
 _T288:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T297;
 _T297:
 	__asm        jmp    _T29c;
@@ -334,9 +330,7 @@ _T450:
 	__asm        add    esp, 4;
 	__asm        jmp    _T49b;
 _T49b:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4aa;
 _T4aa:
 	__asm        jmp    _T4af;
@@ -377,9 +371,7 @@ _T4e6:
 	__asm        add    esp, 4;
 	__asm        jmp    _T539;
 _T539:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T548;
 _T548:
 	__asm        mov    eax, [ebp-0x1070];

@@ -823,8 +823,7 @@ void RadioCompassWindow::~RadioCompassWindow() {
 
 	this-><RadioCompassWindow+0x00> = 0x58f650;
 // LINE 83:
-	__asm        mov    ecx, this;
-	__asm        call   RadioCompassWindow::DestroyImage;
+	this->RadioCompassWindow::DestroyImage();
 // LINE 84:
 	__asm        jmp    _T22;
 _T22:
@@ -892,8 +891,7 @@ _Tbc:
 _Tea:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0044853b
@@ -956,8 +954,7 @@ void RadioCompassWindow::InitializeCachedSettings() {
 // FUNCTION: COPTER_D 0x0044860d
 void RadioCompassWindow::DestroyImage() {
 // LINE 126:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 128:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
@@ -1235,8 +1232,7 @@ _T20:
 	__asm        cmp    al, 7;
 	__asm        jne    _T3e;
 // LINE 174:
-	__asm        mov    ecx, this;
-	__asm        call   RadioCompassWindow::CheckForRadioChange;
+	this->RadioCompassWindow::CheckForRadioChange();
 // LINE 175:
 _T3e:
 	__asm        mov    eax, this;
@@ -2485,13 +2481,11 @@ void DialWindow::~DialWindow() {
 
 	this-><DialWindow+0x00> = 0x58f738;
 // LINE 408:
-	__asm        mov    ecx, this;
-	__asm        call   DialWindow::DestroyImage;
+	this->DialWindow::DestroyImage();
 // LINE 409:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x00449a83
@@ -2725,8 +2719,7 @@ _T305:
 // FUNCTION: COPTER_D 0x00449dca
 void DialWindow::DestroyImage() {
 // LINE 463:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 465:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7C], 0;
@@ -3740,18 +3733,13 @@ _T3d:
 	__asm        cmp    [eax+0xD0], ecx;
 	__asm        je     _T8f;
 
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xD0];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x98], eax;
-	__asm        mov    ecx, this;
-	__asm        call   DialWindow::DrawCurrentDamage;
+	this->nCurrentDamage = G_uheli->damage;
+	this->DialWindow::DrawCurrentDamage();
 _T8f:
 	__asm        jmp    _T94;
 // LINE 712:
 _T94:
-	__asm        mov    ecx, this;
-	__asm        call   DialWindow::SetNewDialPositions;
+	this->DialWindow::SetNewDialPositions();
 // LINE 715:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
@@ -5090,8 +5078,7 @@ void PassengerWindow::~PassengerWindow() {
 
 	this-><PassengerWindow+0x00> = 0x58f800;
 // LINE 920:
-	__asm        mov    ecx, this;
-	__asm        call   PassengerWindow::DestroyImage;
+	this->PassengerWindow::DestroyImage();
 // LINE 921:
 	__asm        jmp    _T22;
 _T22:
@@ -5161,8 +5148,7 @@ _Tea:
 _Tef:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0044c133
@@ -5186,11 +5172,7 @@ void PassengerWindow::InitializeCachedSettings() {
 	__asm        cmp    G_uheli, 0;
 	__asm        je     _T2c;
 // LINE 942:
-	__asm        mov    eax, G_uheli;
-	__asm        add    eax, 0x1C4;
-	__asm        push   eax;
-	__asm        call   HeliPassengerSetChanged;
-	__asm        add    esp, 4;
+	HeliPassengerSetChanged((G_uheli + 0x1c4));
 // LINE 943:
 _T2c:
 	return;
@@ -5458,8 +5440,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0044c48e
 void PassengerWindow::DestroyImage() {
 // LINE 975:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 976:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA0], 0;
@@ -5716,8 +5697,7 @@ _T227:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1031:
-	__asm        mov    ecx, this;
-	__asm        call   PassengerWindow::DrawPassengers;
+	this->PassengerWindow::DrawPassengers();
 // LINE 1033:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x94], 0xFFFFFFFF;
@@ -6115,10 +6095,7 @@ _T29d:
 	__asm        jmp    _T1d2;
 // LINE 1109:
 _T2a2:
-	__asm        mov    eax, tempHeliPassengerData;
-	__asm        push   eax;
-	__asm        call   HeliPassengerClearChanged;
-	__asm        add    esp, 4;
+	HeliPassengerClearChanged(tempHeliPassengerData);
 // LINE 1110:
 	return;
 }
@@ -6752,16 +6729,12 @@ void MapWindow::~MapWindow() {
 
 	this-><MapWindow+0x00> = 0x58f8d8;
 // LINE 1326:
-	__asm        mov    ecx, this;
-	__asm        call   MapWindow::DestroyImage;
+	this->MapWindow::DestroyImage();
 // LINE 1327:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   MFont::~MFont;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	(this + 0x8c)->MFont::~MFont();
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0044d587
@@ -6893,8 +6866,7 @@ _T50:
 	this->myButtonImage = 0x0;
 // LINE 1386:
 _T5a:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 1387:
 	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
@@ -7361,11 +7333,7 @@ _T13d:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 1499:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        push   eax;
-	__asm        call   S3MapCommandCurrentMissionVehicleFilter;
-	__asm        add    esp, 4;
+	S3MapCommandCurrentMissionVehicleFilter(this->bCurrentMissionFilter);
 // LINE 1501:
 	__asm        jmp    _T2f1;
 _T168:
@@ -7418,11 +7386,7 @@ _T1ef:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 1504:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        push   eax;
-	__asm        call   S3MapCommandOtherMissionVehicleFilter;
-	__asm        add    esp, 4;
+	S3MapCommandOtherMissionVehicleFilter(this->bOtherMissionFilter);
 // LINE 1506:
 	__asm        jmp    _T2f1;
 // LINE 1507:
@@ -7566,7 +7530,7 @@ _Tc7:
 	__asm        je     _Te0;
 // LINE 1532:
 _Td6:
-	__asm        call   S3MapCommandZoomOut;
+	S3MapCommandZoomOut();
 // LINE 1533:
 	__asm        jmp    _T24c;
 _Te0:
@@ -7604,7 +7568,7 @@ _T142:
 	__asm        je     _T15b;
 // LINE 1534:
 _T151:
-	__asm        call   S3MapCommandZoomIn;
+	S3MapCommandZoomIn();
 // LINE 1535:
 	__asm        jmp    _T24c;
 _T15b:
@@ -7642,7 +7606,7 @@ _T1bd:
 	__asm        je     _T1d6;
 // LINE 1536:
 _T1cc:
-	__asm        call   S3MapCommandPreviousMission;
+	S3MapCommandPreviousMission();
 // LINE 1537:
 	__asm        jmp    _T24c;
 _T1d6:
@@ -7680,7 +7644,7 @@ _T238:
 	__asm        je     _T24c;
 // LINE 1538:
 _T247:
-	__asm        call   S3MapCommandNextMission;
+	S3MapCommandNextMission();
 // LINE 1539:
 _T24c:
 	__asm        push   0;
@@ -8040,13 +8004,11 @@ void EquipmentPanelWindow::~EquipmentPanelWindow() {
 
 	this-><EquipmentPanelWindow+0x00> = 0x58f9b0;
 // LINE 1691:
-	__asm        mov    ecx, this;
-	__asm        call   EquipmentPanelWindow::DestroyImage;
+	this->EquipmentPanelWindow::DestroyImage();
 // LINE 1692:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0044e720
@@ -8227,8 +8189,7 @@ _Tad:
 	this->myButtonImage = 0x0;
 // LINE 1754:
 _Tba:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 1755:
 	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
@@ -8264,8 +8225,7 @@ int32_t EquipmentPanelWindow::DrawSelf() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T26;
 // LINE 1767:
-	__asm        mov    ecx, this;
-	__asm        call   EquipmentPanelWindow::DrawBucketWaterGuage;
+	this->EquipmentPanelWindow::DrawBucketWaterGuage();
 // LINE 1768:
 	__asm        jmp    _T3b;
 _T26:
@@ -8273,8 +8233,7 @@ _T26:
 	__asm        cmp    dword ptr [eax+4], 3;
 	__asm        jne    _T3b;
 // LINE 1769:
-	__asm        mov    ecx, this;
-	__asm        call   EquipmentPanelWindow::DrawTeargasUsage;
+	this->EquipmentPanelWindow::DrawTeargasUsage();
 // LINE 1770:
 _T3b:
 	return 0x1;
@@ -9209,8 +9168,7 @@ _T3fa:
 	__asm        cmp    dword ptr [eax+0xB4], 5;
 	__asm        je     _T43e;
 // LINE 1971:
-	__asm        mov    ecx, this;
-	__asm        call   EquipmentPanelWindow::DoCurrentControlStart;
+	this->EquipmentPanelWindow::DoCurrentControlStart();
 // LINE 1972:
 _T43e:
 	return 0x1;
@@ -9295,16 +9253,14 @@ _Td5:
 _Te4:
 	this->lCurrentSelectedControl = 0x5;
 // LINE 1990:
-	__asm        mov    ecx, this;
-	__asm        call   EquipmentPanelWindow::DoCurrentControlStart;
+	this->EquipmentPanelWindow::DoCurrentControlStart();
 // LINE 1991:
 	this->lCurrentSelectedControl = 0x0;
 // LINE 1993:
 	__asm        jmp    _T113;
 // LINE 1994:
 _T10b:
-	__asm        mov    ecx, this;
-	__asm        call   EquipmentPanelWindow::DoCurrentControlEnd;
+	this->EquipmentPanelWindow::DoCurrentControlEnd();
 // LINE 1995:
 _T113:
 	this->lCurrentSelectedControl = 0x0;
@@ -9462,8 +9418,7 @@ _T1a7:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 2026:
-	__asm        mov    ecx, this;
-	__asm        call   EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow;
+	this->EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow();
 // LINE 2028:
 _T1d1:
 	return;

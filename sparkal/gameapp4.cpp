@@ -235,8 +235,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 // FUNCTION: COPTER_D 0x004bba30
 unsigned long CGameApp::FinishGame() {
 // LINE 50:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::PaletteUninitialize;
+	this->CGameApp::PaletteUninitialize();
 // LINE 51:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -311,7 +310,7 @@ _Ta7:
 // LINE 67:
 	this-><CGameApp+0x04:4> = 0x0;
 // LINE 70:
-	__asm        call   DDDisable;
+	DDDisable();
 // LINE 73:
 	return 0x0;
 // LINE 74:
@@ -351,8 +350,7 @@ _T3d:
 	__asm        jmp    _T42;
 // LINE 99:
 _T42:
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
-	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
+	tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>->SmackerBackBuffer::SmackerBackBuffer();
 // LINE 102:
 	lCurrentInitializationFlag = 0x1;
 // LINE 103:
@@ -443,8 +441,7 @@ _T193:
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFile;
 // LINE 111:
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
-	__asm        call   SmackerBackBuffer::SetDirectBlit;
+	tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>->SmackerBackBuffer::SetDirectBlit();
 // LINE 112:
 	__asm        mov    dword ptr [ebp-0x274], 1;
 // LINE 113:
@@ -619,9 +616,7 @@ _T40f:
 	__asm        add    esp, 4;
 	__asm        jmp    _T45a;
 _T45a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T469;
 _T469:
 	__asm        jmp    _T46e;
@@ -775,8 +770,7 @@ _T661:
 	__asm        jmp    _T2c5;
 // LINE 142:
 _T685:
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
-	__asm        call   SmackerBuffer::Close;
+	tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>->SmackerBuffer::Close();
 // LINE 144:
 	__asm        cmp    tempVRAppInitThreadStruct.nReturnValue, 0;
 	__asm        jge    _T7ae;

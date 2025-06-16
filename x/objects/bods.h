@@ -51,12 +51,7 @@ _T92:
 	__asm        test   eax, eax;
 	__asm        jne    _Tce;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE320;
-	__asm        push   0xAA;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be320, 0xaa, 0x5be258);
 _Tce:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
@@ -65,12 +60,7 @@ _Tce:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _Tff;
 
-	__asm        push   0x8C085;
-	__asm        push   0x5BE310;
-	__asm        push   0xAB;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be310, 0xab, 0x5be258);
 _Tff:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
@@ -115,12 +105,7 @@ _Tff:
 	__asm        cmp    ebx, eax;
 	__asm        je     _T19c;
 _T180:
-	__asm        push   0x8C085;
-	__asm        push   0x5BE2FC;
-	__asm        push   0xB1;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be2fc, 0xb1, 0x5be258);
 _T19c:
 	__asm        mov    eax, thing;
 	__asm        add    eax, 0x20;
@@ -179,12 +164,7 @@ _T1ff:
 	__asm        test   ecx, ecx;
 	__asm        jne    _T265;
 _T249:
-	__asm        push   0x8C085;
-	__asm        push   0x5BE2D4;
-	__asm        push   0xBC;
-	__asm        push   0x5BE258;
-	__asm        call   doAssert;
-	__asm        add    esp, 0x10;
+	doAssert(0x8c085, 0x5be2d4, 0xbc, 0x5be258);
 _T265:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax+4];

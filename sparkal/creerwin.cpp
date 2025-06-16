@@ -371,7 +371,7 @@ struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 // SYNTHETIC: COPTER_D 0x0047de80
 static void $E64() {
 
-	__asm        call   $E63;
+	$E63();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -392,7 +392,7 @@ _T20:
 // SYNTHETIC: COPTER_D 0x0047debf
 static void $E67() {
 
-	__asm        call   $E66;
+	$E66();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -532,8 +532,7 @@ void CareerWindow::~CareerWindow() {
 
 	this-><CareerWindow+0x00> = 0x590e30;
 // LINE 94:
-	__asm        mov    ecx, this;
-	__asm        call   CareerWindow::DestroyImage;
+	this->CareerWindow::DestroyImage();
 // LINE 95:
 	__asm        jmp    _T22;
 _T22:
@@ -559,8 +558,7 @@ _T46:
 _T63:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0047e19e
@@ -716,9 +714,7 @@ _T201:
 	__asm        add    esp, 4;
 	__asm        jmp    _T24c;
 _T24c:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T25b;
 _T25b:
 	__asm        jmp    _T260;
@@ -931,9 +927,7 @@ _T526:
 	__asm        add    esp, 4;
 	__asm        jmp    _T571;
 _T571:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T580;
 _T580:
 	__asm        jmp    _T585;
@@ -1152,9 +1146,7 @@ _T850:
 	__asm        add    esp, 4;
 	__asm        jmp    _T89b;
 _T89b:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T8aa;
 _T8aa:
 	__asm        jmp    _T8af;
@@ -1320,9 +1312,7 @@ _Tab6:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tb01;
 _Tb01:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tb10;
 _Tb10:
 	__asm        jmp    _Tb15;
@@ -2104,8 +2094,7 @@ _T56:
 	this->mySelectionImage = 0x0;
 // LINE 224:
 _T63:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 225:
 	return;
 }
@@ -2693,8 +2682,7 @@ _T85:
 	__asm        mov    ecx, [eax+0x838];
 	__asm        call   dword ptr [edx+0xC8];
 // LINE 367:
-	__asm        mov    ecx, this;
-	__asm        call   CareerWindow::DrawCitySelection;
+	this->CareerWindow::DrawCitySelection();
 // LINE 368:
 	__asm        push   1;
 	__asm        push   1;

@@ -659,9 +659,7 @@ _T11:
 	__asm        add    esp, 4;
 	__asm        jmp    _T44;
 _T44:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T53;
 _T53:
 	__asm        jmp    _T58;
@@ -963,8 +961,7 @@ void BitmappedFont::~BitmappedFont() {
 
 	this-><vftable> = 0x5904d0;
 // LINE 58:
-	__asm        mov    ecx, this;
-	__asm        call   BitmappedFont::DestroyImage;
+	this->BitmappedFont::DestroyImage();
 // LINE 59:
 	__asm        jmp    _T22;
 _T22:
@@ -4328,39 +4325,13 @@ int32_t BitmappedFont::GetPathForBitmapFile(char * chFontInfoPath, char * chBitm
 	/*bp-0x304*/ char szFileExtension[256]; // 0x100 bytes
 
 // LINE 684:
-	__asm        lea    eax, szFileExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFileName[0];
-	__asm        push   eax;
-	__asm        lea    eax, szDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szDrive[0];
-	__asm        push   eax;
-	__asm        mov    eax, chFontInfoPath;
-	__asm        push   eax;
-	__asm        call   _splitpath;
-	__asm        add    esp, 0x14;
+	_splitpath(szFileExtension[0], szFileName[0], szDirectory[0], szDrive[0], chFontInfoPath);
 // LINE 685:
-	__asm        lea    eax, szDrive[0];
-	__asm        push   eax;
-	__asm        mov    eax, chBitmapPath;
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szDrive[0], chBitmapPath);
 // LINE 686:
-	__asm        lea    eax, szDirectory[0];
-	__asm        push   eax;
-	__asm        mov    eax, chBitmapPath;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szDirectory[0], chBitmapPath);
 // LINE 687:
-	__asm        mov    eax, chBitmapFile;
-	__asm        push   eax;
-	__asm        mov    eax, chBitmapPath;
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(chBitmapFile, chBitmapPath);
 // LINE 689:
 	return 0x1;
 // LINE 690:

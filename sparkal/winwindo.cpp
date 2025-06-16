@@ -748,11 +748,7 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 	__asm        cmp    pHeight, 0;
 	__asm        jne    _T3c;
 _T20:
-	__asm        push   0x115;
-	__asm        push   0x599AF0;
-	__asm        push   0x599B18;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x115, 0x599af0, 0x599b18);
 	__asm        jmp    _T41;
 _T3c:
 	__asm        jmp    _T41;
@@ -912,11 +908,7 @@ unsigned long CSparkalWindow::DrawBufferText(const const char *pText, unsigned l
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        jne    _T35;
 
-	__asm        push   0x175;
-	__asm        push   0x599B2C;
-	__asm        push   0x599B54;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x175, 0x599b2c, 0x599b54);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;
@@ -1098,11 +1090,7 @@ unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        jne    _T35;
 
-	__asm        push   0x1CF;
-	__asm        push   0x599B5C;
-	__asm        push   0x599B84;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x1cf, 0x599b5c, 0x599b84);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;

@@ -86,12 +86,7 @@ void S3PrintScreen() {
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 58:
-	__asm        mov    eax, chPalette;
-	__asm        push   eax;
-	__asm        lea    eax, fname[0];
-	__asm        push   eax;
-	__asm        call   S3BufferPrint;
-	__asm        add    esp, 8;
+	S3BufferPrint(chPalette, fname[0]);
 // LINE 59:
 }
 

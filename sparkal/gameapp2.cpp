@@ -501,9 +501,7 @@ void S3SwitchToProperSkyType() {
 	__asm        cmp    dword ptr [eax+0xDC], 0;
 	__asm        je     _T35;
 // LINE 92:
-	__asm        mov    eax, gGameApp;
-	__asm        mov    ecx, [eax+0xDC];
-	__asm        call   SkyImage::SwitchToProperSkyType;
+	gGameApp-><CGameApp+0xdc:4>->SkyImage::SwitchToProperSkyType();
 // LINE 93:
 _T35:
 	return;
@@ -514,8 +512,7 @@ int32_t IsActualTimeDaytime() {
 	/*bp-0x8*/   /*unpacked*/ class MTime tempTime;
 
 // LINE 99:
-	__asm        lea    ecx, tempTime<MTime+0x00:None>;
-	__asm        call   MTime::MTime;
+	tempTime<MTime+0x00:None>->MTime::MTime();
 // LINE 101:
 	__asm        lea    ecx, tempTime<MTime+0x00:None>;
 	__asm        call   MTime::Hour;
@@ -644,10 +641,7 @@ _T164:
 	__asm        cmp    eax, 0x24;
 	__asm        jne    _T1b9;
 // LINE 133:
-	__asm        mov    eax, chPrefData;
-	__asm        push   eax;
-	__asm        call   S3CameraSetChaseInfo;
-	__asm        add    esp, 4;
+	S3CameraSetChaseInfo(chPrefData);
 // LINE 136:
 _T1b9:
 	return;
@@ -1039,11 +1033,7 @@ _T24e:
 	__asm        cmp    IFlatImage::lTotalLockCount, 0;
 	__asm        je     _T26e;
 // LINE 253:
-	__asm        mov    eax, IFlatImage::lTotalLockCount;
-	__asm        push   eax;
-	__asm        push   0x5992D8;
-	__asm        call   DebugOutput;
-	__asm        add    esp, 8;
+	DebugOutput(IFlatImage::lTotalLockCount, 0x5992d8);
 // LINE 256:
 _T26e:
 	return 0x0;
@@ -1248,8 +1238,7 @@ _T305:
 	__asm        cmp    dword ptr [eax+0x88], 1;
 	__asm        jne    _T328;
 // LINE 306:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::ComposeCareerCityVideoFrame;
+	this->CGameApp::ComposeCareerCityVideoFrame();
 // LINE 307:
 	__asm        jmp    _T33d;
 // LINE 308:
@@ -1264,13 +1253,10 @@ _T33d:
 	__asm        jmp    _T582;
 // LINE 312:
 _T342:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::ComposeMainMenuVideoFrame;
+	this->CGameApp::ComposeMainMenuVideoFrame();
 // LINE 318:
 _T34d:
-	__asm        push   0x1E;
-	__asm        call   SparkalDelay;
-	__asm        add    esp, 4;
+	SparkalDelay(0x1e);
 // LINE 320:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -1278,9 +1264,7 @@ _T34d:
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x24];
 // LINE 322:
-	__asm        push   0x1E;
-	__asm        call   SparkalDelay;
-	__asm        add    esp, 4;
+	SparkalDelay(0x1e);
 // LINE 324:
 	__asm        jmp    _T582;
 // LINE 327:
@@ -1438,8 +1422,7 @@ _T582:
 	__asm        cmp    dword ptr [eax+0x42C8], 0;
 	__asm        je     _T5a0;
 // LINE 386:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::S3ShowInfo;
+	this->CGameApp::S3ShowInfo();
 // LINE 389:
 _T5a0:
 	__asm        mov    eax, this;
@@ -1496,9 +1479,7 @@ void CGameApp::ComposePlayFrame() {
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        jne    _T547;
 // LINE 409:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x110;
-	__asm        call   CommandSystem::PollJoysticksForCommands;
+	(this + 0x110)->CommandSystem::PollJoysticksForCommands();
 // LINE 410:
 	__asm        call   dword ptr ds:[0x6C3614];
 	__asm        mov    lThisLoopTickCount, eax;
@@ -1525,7 +1506,7 @@ _T7b:
 	LoopTime = 0x8000;
 // LINE 418:
 _T95:
-	__asm        call   VRAppNextFrame;
+	VRAppNextFrame();
 // LINE 419:
 	lLastLoopTickCount = lThisLoopTickCount;
 // LINE 420:
@@ -1821,8 +1802,7 @@ _T450:
 	__asm        test   eax, eax;
 	__asm        je     _T480;
 // LINE 448:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateCheckupWindow;
+	this->CGameApp::CreateCheckupWindow();
 // LINE 450:
 _T480:
 	__asm        jmp    _T542;
@@ -1883,9 +1863,7 @@ _T542:
 	__asm        jmp    _T551;
 // LINE 457:
 _T547:
-	__asm        push   0x14;
-	__asm        call   SparkalDelay;
-	__asm        add    esp, 4;
+	SparkalDelay(0x14);
 // LINE 461:
 _T551:
 	__asm        mov    eax, this;
@@ -1900,10 +1878,9 @@ _T551:
 _T570:
 	this->CGameApp::S3PreRender();
 // LINE 463:
-	__asm        call   S3CityDrawGrid;
+	S3CityDrawGrid();
 // LINE 464:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::S3PostRender;
+	this->CGameApp::S3PostRender();
 // LINE 465:
 	__asm        cmp    G_CheatCodes[5], 0;
 	__asm        je     _T5f0;
@@ -1954,9 +1931,7 @@ _T601:
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        je     _T61b;
 // LINE 475:
-	__asm        push   0x14;
-	__asm        call   SparkalDelay;
-	__asm        add    esp, 4;
+	SparkalDelay(0x14);
 // LINE 478:
 _T61b:
 	return;
@@ -1970,8 +1945,7 @@ void CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
 	__asm        cmp    lMilliSecondsSinceLastCall, 0x2EE;
 	__asm        jle    _T21;
 // LINE 488:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::PlayNextSoundTrackIfNeeded;
+	this->CGameApp::PlayNextSoundTrackIfNeeded();
 // LINE 490:
 _T21:
 	__asm        mov    eax, this;
@@ -2382,9 +2356,7 @@ _T52e:
 // LINE 528:
 	(this + 0x58)->GameModeMainMenuData::CreateAllSurfaces();
 // LINE 529:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x58;
-	__asm        call   GameModeMainMenuData::UsePalette;
+	(this + 0x58)->GameModeMainMenuData::UsePalette();
 // LINE 530:
 	this->CGameApp::StartVideoForMainMenu();
 // LINE 531:
@@ -2473,15 +2445,11 @@ _T6c9:
 // LINE 539:
 	this-><CGameApp+0x80:4> = this-><CGameApp+0x38:4>;
 // LINE 540:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   GameModePickCareerCityData::Initialize;
+	(this + 0x70)->GameModePickCareerCityData::Initialize();
 // LINE 541:
 	(this + 0x70)->GameModePickCareerCityData::CreateAllSurfaces();
 // LINE 542:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   GameModePickCareerCityData::UsePalette;
+	(this + 0x70)->GameModePickCareerCityData::UsePalette();
 // LINE 543:
 	this-><CGameApp+0x1c:4> = 0x1;
 // LINE 544:
@@ -2589,13 +2557,9 @@ _T89c:
 // LINE 559:
 	(this + 0xa0)->GameModePlayData::CreateAllSurfaces();
 // LINE 560:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::UsePalette;
+	(this + 0xa0)->GameModePlayData::UsePalette();
 // LINE 561:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::SetUpRenderWindowSizes;
+	(this + 0xa0)->GameModePlayData::SetUpRenderWindowSizes();
 // LINE 565:
 	__asm        cmp    G_VRAppInitCalled, 0;
 	__asm        je     _T912;
@@ -2777,9 +2741,7 @@ _Tbb3:
 // LINE 615:
 	(this + 0xbb8)->GameModeHangarData::CreateAllSurfaces();
 // LINE 616:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::UsePalette;
+	(this + 0xbb8)->GameModeHangarData::UsePalette();
 // LINE 617:
 	this-><CGameApp+0x1c:4> = 0x1;
 // LINE 618:
@@ -2868,9 +2830,7 @@ _Td4f:
 // LINE 627:
 	(this + 0x1678)->GameModeCatalogData::CreateAllSurfaces();
 // LINE 628:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1678;
-	__asm        call   GameModeCatalogData::UsePalette;
+	(this + 0x1678)->GameModeCatalogData::UsePalette();
 // LINE 629:
 	return 0x1;
 // LINE 631:
@@ -2948,9 +2908,7 @@ _Teba:
 // LINE 637:
 	(this + 0x2138)->GameModeMissionLogData::CreateAllSurfaces();
 // LINE 638:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2138;
-	__asm        call   GameModeMissionLogData::UsePalette;
+	(this + 0x2138)->GameModeMissionLogData::UsePalette();
 // LINE 639:
 	return 0x1;
 // LINE 641:
@@ -3028,9 +2986,7 @@ _T1025:
 // LINE 647:
 	(this + 0x2bf8)->GameModeInventoryData::CreateAllSurfaces();
 // LINE 648:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2BF8;
-	__asm        call   GameModeInventoryData::UsePalette;
+	(this + 0x2bf8)->GameModeInventoryData::UsePalette();
 // LINE 649:
 	return 0x1;
 // LINE 651:
@@ -3192,8 +3148,7 @@ _T1b5:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x70];
 // LINE 690:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::EndVideoForMainMenu;
+	this->CGameApp::EndVideoForMainMenu();
 // LINE 691:
 	(this + 0x58)->GameModeMainMenuData::DestroyAllSurfaces();
 // LINE 692:
@@ -3286,7 +3241,7 @@ _T2eb:
 	__asm        cmp    nMode, 6;
 	__asm        jne    _T3cc;
 // LINE 706:
-	__asm        call   S3CityDeInit;
+	S3CityDeInit();
 // LINE 707:
 	__asm        jmp    _T2ff;
 _T2ff:
@@ -3298,7 +3253,7 @@ _T2ff:
 	__asm        call   Radio::SetOn;
 // LINE 709:
 _T318:
-	__asm        call   S3DSStopAllSounds;
+	S3DSStopAllSounds();
 // LINE 710:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -3308,9 +3263,7 @@ _T318:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x70];
 // LINE 711:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::DestroyAllSurfaces;
+	(this + 0xa0)->GameModePlayData::DestroyAllSurfaces();
 // LINE 712:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3362,9 +3315,7 @@ _T3cc:
 	__asm        cmp    nMode, 7;
 	__asm        jne    _T434;
 // LINE 717:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::DestroyAllSurfaces;
+	(this + 0xbb8)->GameModeHangarData::DestroyAllSurfaces();
 // LINE 718:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3395,9 +3346,7 @@ _T434:
 	__asm        cmp    nMode, 8;
 	__asm        jne    _T4da;
 // LINE 723:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1678;
-	__asm        call   GameModeCatalogData::DestroyAllSurfaces;
+	(this + 0x1678)->GameModeCatalogData::DestroyAllSurfaces();
 // LINE 724:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3449,9 +3398,7 @@ _T4da:
 	__asm        cmp    nMode, 9;
 	__asm        jne    _T542;
 // LINE 729:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2138;
-	__asm        call   GameModeMissionLogData::DestroyAllSurfaces;
+	(this + 0x2138)->GameModeMissionLogData::DestroyAllSurfaces();
 // LINE 730:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3482,9 +3429,7 @@ _T542:
 	__asm        cmp    nMode, 0xB;
 	__asm        jne    _T5e3;
 // LINE 735:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2BF8;
-	__asm        call   GameModeInventoryData::DestroyAllSurfaces;
+	(this + 0x2bf8)->GameModeInventoryData::DestroyAllSurfaces();
 // LINE 736:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3627,37 +3572,27 @@ _T104:
 	__asm        jmp    _T1a5;
 // LINE 766:
 _T109:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::Shutdown;
+	(this + 0xa0)->GameModePlayData::Shutdown();
 // LINE 767:
 	__asm        jmp    _T1a5;
 // LINE 769:
 _T11c:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::Shutdown;
+	(this + 0xbb8)->GameModeHangarData::Shutdown();
 // LINE 770:
 	__asm        jmp    _T1a5;
 // LINE 772:
 _T12f:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1678;
-	__asm        call   GameModeCatalogData::Shutdown;
+	(this + 0x1678)->GameModeCatalogData::Shutdown();
 // LINE 773:
 	__asm        jmp    _T1a5;
 // LINE 775:
 _T142:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2138;
-	__asm        call   GameModeMissionLogData::Shutdown;
+	(this + 0x2138)->GameModeMissionLogData::Shutdown();
 // LINE 776:
 	__asm        jmp    _T1a5;
 // LINE 778:
 _T155:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2BF8;
-	__asm        call   GameModeInventoryData::Shutdown;
+	(this + 0x2bf8)->GameModeInventoryData::Shutdown();
 // LINE 779:
 	__asm        jmp    _T1a5;
 // LINE 780:
@@ -3716,8 +3651,7 @@ _T2b:
 	__asm        cmp    nCommand, 0xC9;
 	__asm        jne    _T4a;
 // LINE 796:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::TogglePaletteBufferDisplay;
+	this->CGameApp::TogglePaletteBufferDisplay();
 // LINE 797:
 	return;
 // LINE 799:
@@ -3726,8 +3660,7 @@ _T4a:
 	__asm        cmp    nCommand, 0xCA;
 	__asm        jne    _T69;
 // LINE 800:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::ToggleDebugWindowDisplay;
+	this->CGameApp::ToggleDebugWindowDisplay();
 // LINE 801:
 	return;
 // LINE 803:
@@ -3775,8 +3708,7 @@ _Tf0:
 	__asm        cmp    dword ptr [eax+8], 4;
 	__asm        jl     _T105;
 // LINE 809:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::ShowVersion;
+	this->CGameApp::ShowVersion();
 // LINE 810:
 _T105:
 	return;
@@ -3833,20 +3765,16 @@ _T176:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 822:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::Awake;
+	(this + 0xa0)->GameModePlayData::Awake();
 // LINE 823:
-	__asm        call   RemoveAvatarFromBuilding;
+	RemoveAvatarFromBuilding();
 // LINE 825:
 	__asm        jmp    _T23a;
 _T1b2:
 	__asm        cmp    nCommand, 2;
 	__asm        jne    _T1e1;
 // LINE 828:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::Sleep;
+	(this + 0xbb8)->GameModeHangarData::Sleep();
 // LINE 829:
 	__asm        push   8;
 	__asm        mov    eax, this;
@@ -3861,9 +3789,7 @@ _T1e1:
 	__asm        cmp    nCommand, 3;
 	__asm        jne    _T210;
 // LINE 833:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::Sleep;
+	(this + 0xbb8)->GameModeHangarData::Sleep();
 // LINE 834:
 	__asm        push   9;
 	__asm        mov    eax, this;
@@ -3878,9 +3804,7 @@ _T210:
 	__asm        cmp    nCommand, 4;
 	__asm        jne    _T23a;
 // LINE 838:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::Sleep;
+	(this + 0xbb8)->GameModeHangarData::Sleep();
 // LINE 839:
 	__asm        push   0xB;
 	__asm        mov    eax, this;
@@ -3922,9 +3846,7 @@ _T26e:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 847:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::Awake;
+	(this + 0xbb8)->GameModeHangarData::Awake();
 // LINE 851:
 _T2a0:
 	__asm        mov    eax, this;
@@ -3958,9 +3880,7 @@ _T2d4:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 854:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::Awake;
+	(this + 0xbb8)->GameModeHangarData::Awake();
 // LINE 858:
 _T306:
 	__asm        mov    eax, this;
@@ -3994,9 +3914,7 @@ _T33a:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 861:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::Awake;
+	(this + 0xbb8)->GameModeHangarData::Awake();
 // LINE 865:
 _T36c:
 	__asm        jmp    _T676;
@@ -4026,8 +3944,7 @@ _T3a5:
 	__asm        cmp    nCommand, 0x30;
 	__asm        jne    _T3ce;
 // LINE 867:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::ToggleMusicSoundTrack;
+	this->CGameApp::ToggleMusicSoundTrack();
 // LINE 868:
 	return;
 // LINE 870:
@@ -4050,10 +3967,7 @@ _T3fc:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T415;
 // LINE 877:
-	__asm        mov    eax, nCommand;
-	__asm        push   eax;
-	__asm        call   S3HeliCommand;
-	__asm        add    esp, 4;
+	S3HeliCommand(nCommand);
 // LINE 878:
 _T415:
 	return;
@@ -4086,10 +4000,7 @@ _T41f:
 	__asm        jg     _T4ba;
 // LINE 891:
 _T46f:
-	__asm        mov    eax, nCommand;
-	__asm        push   eax;
-	__asm        call   S3ViewerCommand;
-	__asm        add    esp, 4;
+	S3ViewerCommand(nCommand);
 // LINE 894:
 	__asm        cmp    nCommand, 0x2D;
 	__asm        jne    _T498;
@@ -4122,11 +4033,7 @@ _T4ba:
 	__asm        test   byte ptr [eax+0x48], 2;
 	__asm        je     _T4f9;
 // LINE 904:
-	__asm        mov    eax, nCommand;
-	__asm        sub    eax, 0x22;
-	__asm        push   eax;
-	__asm        call   S3PlayMegaphoneMessage;
-	__asm        add    esp, 4;
+	S3PlayMegaphoneMessage((nCommand - 0x22));
 // LINE 905:
 _T4f9:
 	return;
@@ -4136,8 +4043,7 @@ _T503:
 	__asm        cmp    nCommand, 0x35;
 	__asm        jne    _T51f;
 // LINE 909:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateControlDisplayWindow;
+	this->CGameApp::CreateControlDisplayWindow();
 // LINE 910:
 	return;
 // LINE 913:
@@ -4164,9 +4070,7 @@ _T55e:
 	__asm        cmp    nCommand, 0x32;
 	__asm        jne    _T580;
 // LINE 918:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::TogglePanelDisplay;
+	(this + 0xa0)->GameModePlayData::TogglePanelDisplay();
 // LINE 919:
 	return;
 // LINE 921:
@@ -4175,9 +4079,7 @@ _T580:
 	__asm        cmp    nCommand, 0x34;
 	__asm        jne    _T5a2;
 // LINE 922:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::ToggleEquipmentDisplay;
+	(this + 0xa0)->GameModePlayData::ToggleEquipmentDisplay();
 // LINE 923:
 	return;
 // LINE 925:
@@ -4216,9 +4118,7 @@ _T606:
 	__asm        je     _T630;
 // LINE 933:
 _T615:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::Sleep;
+	(this + 0xa0)->GameModePlayData::Sleep();
 // LINE 934:
 	__asm        push   7;
 	__asm        mov    eax, this;
@@ -4245,8 +4145,7 @@ _T656:
 // LINE 944:
 	this-><CGameApp+0xa4:4>++;
 // LINE 945:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreatePlayMenu;
+	this->CGameApp::CreatePlayMenu();
 // LINE 946:
 	return;
 // LINE 956:
@@ -4929,9 +4828,7 @@ _T40:
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jne    _T60;
 // LINE 1111:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x110;
-	__asm        call   CommandSystem::ClearAllCommands;
+	(this + 0x110)->CommandSystem::ClearAllCommands();
 // LINE 1112:
 	__asm        jmp    _T1ab;
 _T60:
@@ -4957,9 +4854,7 @@ _T94:
 	__asm        cmp    dword ptr [eax+8], 7;
 	__asm        jne    _Tb4;
 // LINE 1113:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBD0;
-	__asm        call   CommandSystem::ClearAllCommands;
+	(this + 0xbd0)->CommandSystem::ClearAllCommands();
 // LINE 1114:
 	__asm        jmp    _T1ab;
 _Tb4:
@@ -4985,9 +4880,7 @@ _Te8:
 	__asm        cmp    dword ptr [eax+8], 8;
 	__asm        jne    _T108;
 // LINE 1115:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1690;
-	__asm        call   CommandSystem::ClearAllCommands;
+	(this + 0x1690)->CommandSystem::ClearAllCommands();
 // LINE 1116:
 	__asm        jmp    _T1ab;
 _T108:
@@ -5013,9 +4906,7 @@ _T13c:
 	__asm        cmp    dword ptr [eax+8], 9;
 	__asm        jne    _T15c;
 // LINE 1117:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2150;
-	__asm        call   CommandSystem::ClearAllCommands;
+	(this + 0x2150)->CommandSystem::ClearAllCommands();
 // LINE 1118:
 	__asm        jmp    _T1ab;
 _T15c:
@@ -5041,9 +4932,7 @@ _T190:
 	__asm        cmp    dword ptr [eax+8], 0xB;
 	__asm        jne    _T1ab;
 // LINE 1119:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2C10;
-	__asm        call   CommandSystem::ClearAllCommands;
+	(this + 0x2c10)->CommandSystem::ClearAllCommands();
 // LINE 1120:
 _T1ab:
 	return;
@@ -5174,10 +5063,7 @@ _T6f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 1169:
-	__asm        mov    eax, nNewLevel;
-	__asm        push   eax;
-	__asm        call   MoveToNextCareerCity;
-	__asm        add    esp, 4;
+	MoveToNextCareerCity(nNewLevel);
 // LINE 1170:
 	this-><CGameApp+0x20:4> = 0x0;
 // LINE 1171:
@@ -5637,9 +5523,7 @@ _T40:
 	__asm        jne    _Teb;
 // LINE 1246:
 _T63:
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DestroyMessageBox;
+	(this - 0x14)->CGameApp::DestroyMessageBox();
 // LINE 1247:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
@@ -5688,9 +5572,7 @@ _Teb:
 	__asm        cmp    lWindowID, 0x7DF;
 	__asm        jne    _T250;
 // LINE 1259:
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DestroyMessageBox;
+	(this - 0x14)->CGameApp::DestroyMessageBox();
 // LINE 1260:
 	__asm        cmp    lMessage, 1;
 	__asm        jne    _T24b;
@@ -5808,9 +5690,7 @@ _T250:
 	__asm        cmp    lWindowID, 0x7E0;
 	__asm        jne    _T294;
 // LINE 1267:
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DestroyMessageBox;
+	(this - 0x14)->CGameApp::DestroyMessageBox();
 // LINE 1268:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -5914,18 +5794,12 @@ _T377:
 	__asm        cmp    dword ptr [eax+0x88], 0;
 	__asm        je     _T398;
 // LINE 1290:
-	__asm        mov    eax, lCurrentCitySelection;
-	__asm        push   eax;
-	__asm        call   SetUpNewCareerCity;
-	__asm        add    esp, 4;
+	SetUpNewCareerCity(lCurrentCitySelection);
 // LINE 1291:
 	__asm        jmp    _T3a4;
 // LINE 1292:
 _T398:
-	__asm        mov    eax, lCurrentCitySelection;
-	__asm        push   eax;
-	__asm        call   MoveToNextCareerCity;
-	__asm        add    esp, 4;
+	MoveToNextCareerCity(lCurrentCitySelection);
 // LINE 1298:
 _T3a4:
 	__asm        mov    eax, lCurrentCitySelection;
@@ -5959,9 +5833,7 @@ _T3ec:
 	__asm        cmp    lWindowID, 0x7DE;
 	__asm        jne    _T486;
 // LINE 1307:
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DestroyMessageBox;
+	(this - 0x14)->CGameApp::DestroyMessageBox();
 // LINE 1308:
 	__asm        cmp    lMessage, 2;
 	__asm        jne    _T46d;
@@ -6196,9 +6068,7 @@ _T6cf:
 	__asm        cmp    lMessage, 0x3E9;
 	__asm        jne    _T6f9;
 // LINE 1363:
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DestroyControlDisplayWindow;
+	(this - 0x14)->CGameApp::DestroyControlDisplayWindow();
 // LINE 1365:
 	__asm        jmp    _Ta29;
 _T6f9:
@@ -6212,9 +6082,7 @@ _T6f9:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T740;
 // LINE 1368:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBA4;
-	__asm        call   GameModeHangarData::Sleep;
+	(this + 0xba4)->GameModeHangarData::Sleep();
 // LINE 1369:
 	__asm        push   8;
 	__asm        mov    ecx, this;
@@ -6229,9 +6097,7 @@ _T740:
 	__asm        cmp    dword ptr [eax], 1;
 	__asm        jne    _T770;
 // LINE 1372:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBA4;
-	__asm        call   GameModeHangarData::Sleep;
+	(this + 0xba4)->GameModeHangarData::Sleep();
 // LINE 1373:
 	__asm        push   9;
 	__asm        mov    ecx, this;
@@ -6246,9 +6112,7 @@ _T770:
 	__asm        cmp    dword ptr [eax], 2;
 	__asm        jne    _T7a0;
 // LINE 1376:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBA4;
-	__asm        call   GameModeHangarData::Sleep;
+	(this + 0xba4)->GameModeHangarData::Sleep();
 // LINE 1377:
 	__asm        push   0xB;
 	__asm        mov    ecx, this;
@@ -6355,9 +6219,7 @@ _T8a4:
 // LINE 1407:
 	this-><CGameApp+0x04:4> = 0x0;
 // LINE 1408:
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DestroyMessageBox;
+	(this - 0x14)->CGameApp::DestroyMessageBox();
 // LINE 1409:
 	__asm        cmp    lMessage, 2;
 	__asm        jne    _T9b1;
@@ -6521,10 +6383,7 @@ _T58:
 	/*bp-0x510*/ char szFilePath[260]; // 0x104 bytes
 	GetPathForFile(szFilePath[0], 0x5992f0, 0x0, 0x4);
 // LINE 1476:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        call   SetUpNewUserCity;
-	__asm        add    esp, 4;
+	SetUpNewUserCity(szFilePath[0]);
 // LINE 1477:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax];
@@ -6652,32 +6511,11 @@ _T1f1:
 	return 0x0;
 // LINE 1530:
 _T278:
-	__asm        lea    eax, szSplitPathExtension[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFilename[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFileLoadPath[0];
-	__asm        push   eax;
-	__asm        call   _splitpath;
-	__asm        add    esp, 0x14;
+	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szFileLoadPath[0]);
 // LINE 1531:
-	__asm        lea    eax, szSplitPathDrive[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFullDirectory[0];
-	__asm        push   eax;
-	__asm        call   strcpy;
-	__asm        add    esp, 8;
+	strcpy(szSplitPathDrive[0], szSplitPathFullDirectory[0]);
 // LINE 1532:
-	__asm        lea    eax, szSplitPathDirectory[0];
-	__asm        push   eax;
-	__asm        lea    eax, szSplitPathFullDirectory[0];
-	__asm        push   eax;
-	__asm        call   strcat;
-	__asm        add    esp, 8;
+	strcat(szSplitPathDirectory[0], szSplitPathFullDirectory[0]);
 // LINE 1533:
 	__asm        lea    eax, szSplitPathFullDirectory[0];
 	__asm        push   eax;
@@ -6840,8 +6678,7 @@ _T79:
 	__asm        jmp    _Ta7;
 // LINE 1589:
 _Ta7:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateCitySettingsWindow;
+	this->CGameApp::CreateCitySettingsWindow();
 // LINE 1590:
 	return 0x1;
 // LINE 1592:
@@ -6853,8 +6690,7 @@ _Tb9:
 	__asm        jmp    _Td2;
 // LINE 1594:
 _Td2:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateRenderSettingsWindow;
+	this->CGameApp::CreateRenderSettingsWindow();
 // LINE 1595:
 	return 0x1;
 // LINE 1597:
@@ -6867,8 +6703,7 @@ _Te9:
 	__asm        jmp    _T102;
 // LINE 1599:
 _T102:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateSoundSettingsWindow;
+	this->CGameApp::CreateSoundSettingsWindow();
 // LINE 1600:
 	return 0x1;
 // LINE 1602:
@@ -6881,8 +6716,7 @@ _T119:
 	__asm        jmp    _T132;
 // LINE 1604:
 _T132:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateUserInputWindow;
+	this->CGameApp::CreateUserInputWindow();
 // LINE 1605:
 	return 0x1;
 // LINE 1607:
@@ -7373,9 +7207,7 @@ void CGameApp::EndVideoForMainMenu() {
 	__asm        cmp    dword ptr [eax+0x6C], 0;
 	__asm        je     _T58;
 // LINE 1739:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x6C];
-	__asm        call   SmackerBuffer::Reset;
+	this-><CGameApp+0x6c:4>->SmackerBuffer::Reset();
 // LINE 1740:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x6C];
@@ -7439,8 +7271,7 @@ _T23:
 	__asm        cmp    nErrorCode, 0;
 	__asm        je     _T7c;
 // LINE 1758:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::EndVideoForMainMenu;
+	this->CGameApp::EndVideoForMainMenu();
 // LINE 1761:
 _T7c:
 	return;

@@ -499,8 +499,8 @@ struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
 // SYNTHETIC: COPTER_D 0x00527470
 static void $E7() {
 
-	__asm        call   $E3;
-	__asm        call   $E6;
+	$E3();
+	$E6();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -612,11 +612,7 @@ _Te9:
 	__asm        jmp    _T10f;
 // LINE 189:
 _Tee:
-	__asm        push   0xBD;
-	__asm        push   0x5B73F4;
-	__asm        push   0x5B7418;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xbd, 0x5b73f4, 0x5b7418);
 	__asm        jmp    _T10f;
 
 	__asm        jmp    _T10f;
@@ -902,11 +898,7 @@ _Tef:
 	__asm        test   eax, eax;
 	__asm        jne    _T11a;
 
-	__asm        push   0x25D;
-	__asm        push   0x5B7420;
-	__asm        push   0x5B7444;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x25d, 0x5b7420, 0x5b7444);
 	__asm        jmp    _T11f;
 _T11a:
 	__asm        jmp    _T11f;
@@ -918,8 +910,7 @@ _T11f:
 // FUNCTION: COPTER_D 0x00527954
 void BoatClass::Reset() {
 // LINE 629:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::UnPlaceBoat;
+	this->BoatClass::UnPlaceBoat();
 // LINE 631:
 	this->flags[2] = 0x0;
 // LINE 632:
@@ -964,8 +955,7 @@ void BoatClass::ItterateFSM() {
 	__asm        cmp    dword ptr [eax+0x7B], 0x163;
 	__asm        je     _T39;
 // LINE 690:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::UnPlaceBoat;
+	this->BoatClass::UnPlaceBoat();
 // LINE 691:
 	return;
 // LINE 698:
@@ -1000,11 +990,7 @@ _T39:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    _Td7;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _Tdc;
 _Td7:
 	__asm        jmp    _Tdc;
@@ -1014,34 +1000,15 @@ _Te1:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    cptr, eax;
 // LINE 709:
-	__asm        push   9;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x97;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x9, (this + 0x97), cptr);
 // LINE 710:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x97;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3ExplosionSmokeStart;
-	__asm        add    esp, 0xC;
+	S3ExplosionSmokeStart(0x0, (this + 0x97), cptr);
 // LINE 711:
 	S3DSPlay(0x0, (this + 0x97), 0xf);
 // LINE 714:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x53];
-	__asm        push   eax;
-	__asm        call   KillMissionPeople;
-	__asm        add    esp, 4;
+	KillMissionPeople(this->missionId);
 // LINE 715:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::UnPlaceBoat;
+	this->BoatClass::UnPlaceBoat();
 // LINE 717:
 // Block end:
 _T141:
@@ -1056,8 +1023,7 @@ _T146:
 	__asm        jmp    _T268;
 // LINE 726:
 _T159:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::MoveForward;
+	this->BoatClass::MoveForward();
 // LINE 729:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, LoopTime;
@@ -1129,8 +1095,7 @@ _T1d7:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::MakeATurn;
 // LINE 808:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::AdjustNextPosition;
+	this->BoatClass::AdjustNextPosition();
 // LINE 815:
 _T23e:
 	__asm        mov    eax, this;
@@ -1141,14 +1106,12 @@ _T23e:
 	__asm        jmp    _T281;
 // LINE 827:
 _T24e:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::Stop;
+	this->BoatClass::Stop();
 // LINE 829:
 	__asm        jmp    _T281;
 // LINE 835:
 _T25b:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::Stop;
+	this->BoatClass::Stop();
 // LINE 837:
 	__asm        jmp    _T281;
 _T268:
@@ -1281,11 +1244,7 @@ _T48:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T92;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T97;
 _T92:
 	__asm        jmp    _T97;
@@ -1417,11 +1376,7 @@ _T1d5:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T21f;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T224;
 _T21f:
 	__asm        jmp    _T224;
@@ -2074,11 +2029,7 @@ void BoatClass::UnlinkFromCell(const /*packed*/ struct Point2d& point) {
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T55;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -2091,11 +2042,7 @@ _T5f:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
 
-	__asm        push   0x55F;
-	__asm        push   0x5B7458;
-	__asm        push   0x5B747C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x55f, 0x5b7458, 0x5b747c);
 	__asm        jmp    _T90;
 _T8b:
 	__asm        jmp    _T90;
@@ -2133,11 +2080,7 @@ _Tdd:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T105;
 
-	__asm        push   0x575;
-	__asm        push   0x5B7488;
-	__asm        push   0x5B74AC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x575, 0x5b7488, 0x5b74ac);
 	__asm        jmp    _T10a;
 _T105:
 	__asm        jmp    _T10a;
@@ -2164,11 +2107,7 @@ void BoatClass::LinkToCell(const /*packed*/ struct Point2d& point) {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T55;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -2184,11 +2123,7 @@ _T5f:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    _T93;
 
-	__asm        push   0x58F;
-	__asm        push   0x5B74B8;
-	__asm        push   0x5B74DC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x58f, 0x5b74b8, 0x5b74dc);
 	__asm        jmp    _T98;
 _T93:
 	__asm        jmp    _T98;
@@ -2259,11 +2194,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const /*packed*/ 
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        jne    _Tb6;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _Tbb;
 _Tb6:
 	__asm        jmp    _Tbb;
@@ -2285,11 +2216,7 @@ _Tc0:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        jne    _T110;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T115;
 _T110:
 	__asm        jmp    _T115;
@@ -2311,11 +2238,7 @@ _T11a:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        jne    _T16a;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T16f;
 _T16a:
 	__asm        jmp    _T16f;
@@ -2337,11 +2260,7 @@ _T174:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _T1c4;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T1c9;
 _T1c4:
 	__asm        jmp    _T1c9;
@@ -3013,26 +2932,22 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 	__asm        jmp    _T181;
 // LINE 1679:
 _T17:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::UnPlaceBoat;
+	this->BoatClass::UnPlaceBoat();
 // LINE 1681:
 	__asm        jmp    _T1b5;
 // LINE 1691:
 _T24:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::GoStraight;
+	this->BoatClass::GoStraight();
 // LINE 1693:
 	__asm        jmp    _T1b5;
 // LINE 1697:
 _T31:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::TurnLeft;
+	this->BoatClass::TurnLeft();
 // LINE 1699:
 	__asm        jmp    _T1b5;
 // LINE 1703:
 _T3e:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::TurnRight;
+	this->BoatClass::TurnRight();
 // LINE 1705:
 	__asm        jmp    _T1b5;
 // LINE 1709:
@@ -3042,14 +2957,12 @@ _T4b:
 	__asm        test   al, 1;
 	__asm        je     _T68;
 // LINE 1711:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::TurnLeft;
+	this->BoatClass::TurnLeft();
 // LINE 1713:
 	__asm        jmp    _T70;
 // LINE 1715:
 _T68:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::GoStraight;
+	this->BoatClass::GoStraight();
 // LINE 1718:
 _T70:
 	__asm        jmp    _T1b5;
@@ -3060,14 +2973,12 @@ _T75:
 	__asm        test   al, 1;
 	__asm        je     _T92;
 // LINE 1724:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::TurnLeft;
+	this->BoatClass::TurnLeft();
 // LINE 1726:
 	__asm        jmp    _T9a;
 // LINE 1728:
 _T92:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::TurnRight;
+	this->BoatClass::TurnRight();
 // LINE 1731:
 _T9a:
 	__asm        jmp    _T1b5;
@@ -3078,14 +2989,12 @@ _T9f:
 	__asm        test   al, 1;
 	__asm        je     _Tbc;
 // LINE 1737:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::TurnRight;
+	this->BoatClass::TurnRight();
 // LINE 1739:
 	__asm        jmp    _Tc4;
 // LINE 1741:
 _Tbc:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::GoStraight;
+	this->BoatClass::GoStraight();
 // LINE 1744:
 _Tc4:
 	__asm        jmp    _T1b5;
@@ -3100,26 +3009,19 @@ _Tc9:
 	__asm        jmp    _T133;
 // LINE 1750:
 _Te1:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::GoStraight;
+	this->BoatClass::GoStraight();
 	__asm        jmp    _T156;
 // LINE 1751:
 _Tee:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::TurnLeft;
+	this->BoatClass::TurnLeft();
 	__asm        jmp    _T156;
 // LINE 1752:
 _Tfb:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::TurnRight;
+	this->BoatClass::TurnRight();
 	__asm        jmp    _T156;
 // LINE 1753:
 _T108:
-	__asm        push   0x6D9;
-	__asm        push   0x5B74FC;
-	__asm        push   0x5B7520;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x6d9, 0x5b74fc, 0x5b7520);
 	__asm        jmp    _T129;
 
 	__asm        jmp    _T129;
@@ -3143,11 +3045,7 @@ _T156:
 	__asm        jmp    _T1b5;
 // LINE 1762:
 _T15b:
-	__asm        push   0x6E2;
-	__asm        push   0x5B7528;
-	__asm        push   0x5B754C;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x6e2, 0x5b7528, 0x5b754c);
 	__asm        jmp    _T17c;
 
 	__asm        jmp    _T17c;
@@ -3353,14 +3251,7 @@ _T79:
 	__asm        test   al, 1;
 	__asm        je     _T112;
 // LINE 1871:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x13;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA3;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((this + 0x13), (this + 0xa3));
 // LINE 1873:
 _T112:
 	return;
@@ -3460,11 +3351,7 @@ _Tc6:
 	__asm        jmp    _T11f;
 // LINE 1921:
 _Tfe:
-	__asm        push   0x781;
-	__asm        push   0x5B7554;
-	__asm        push   0x5B7578;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x781, 0x5b7554, 0x5b7578);
 	__asm        jmp    _T11f;
 
 	__asm        jmp    _T11f;
@@ -3567,11 +3454,7 @@ _Tc6:
 	__asm        jmp    _T11f;
 // LINE 1971:
 _Tfe:
-	__asm        push   0x7B3;
-	__asm        push   0x5B7580;
-	__asm        push   0x5B75A4;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x7b3, 0x5b7580, 0x5b75a4);
 	__asm        jmp    _T11f;
 
 	__asm        jmp    _T11f;
@@ -3674,11 +3557,7 @@ _Tc6:
 	__asm        jmp    _T11f;
 // LINE 2026:
 _Tfe:
-	__asm        push   0x7EA;
-	__asm        push   0x5B75AC;
-	__asm        push   0x5B75D0;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x7ea, 0x5b75ac, 0x5b75d0);
 	__asm        jmp    _T11f;
 
 	__asm        jmp    _T11f;
@@ -3706,11 +3585,9 @@ _T16:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::SetBoatDirection;
 // LINE 2052:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::AdjustCurrentPosition;
+	this->BoatClass::AdjustCurrentPosition();
 // LINE 2053:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::AdjustNextPosition;
+	this->BoatClass::AdjustNextPosition();
 // LINE 2136:
 	return;
 }
@@ -4001,11 +3878,7 @@ _T312:
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        jne    _T362;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T367;
 _T362:
 	__asm        jmp    _T367;
@@ -4104,11 +3977,9 @@ _T44a:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::SetBoatDirection;
 // LINE 2344:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::AdjustCurrentPosition;
+	this->BoatClass::AdjustCurrentPosition();
 // LINE 2345:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::AdjustNextPosition;
+	this->BoatClass::AdjustNextPosition();
 // LINE 2347:
 	return;
 _T48b:
@@ -4677,11 +4548,7 @@ _T62b:
 	__asm        cmp    dword ptr [ebp-0x90], 0;
 	__asm        jne    _T681;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T686;
 _T681:
 	__asm        jmp    _T686;
@@ -4745,11 +4612,7 @@ _T70c:
 	__asm        cmp    dword ptr [ebp-0x94], 0;
 	__asm        jne    _T762;
 
-	__asm        push   0xBA;
-	__asm        push   0x5B7668;
-	__asm        push   0x5B57B8;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xba, 0x5b7668, 0x5b57b8);
 	__asm        jmp    _T767;
 _T762:
 	__asm        jmp    _T767;
@@ -4863,11 +4726,9 @@ _T890:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::SetBoatDirection;
 // LINE 2531:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::AdjustCurrentPosition;
+	this->BoatClass::AdjustCurrentPosition();
 // LINE 2532:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::AdjustNextPosition;
+	this->BoatClass::AdjustNextPosition();
 // LINE 2534:
 	return 0x1;
 // LINE 2536:
@@ -4893,11 +4754,7 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 	__asm        cmp    object, 0;
 	__asm        jne    _T5d;
 // LINE 2842:
-	__asm        push   0xB1A;
-	__asm        push   0x5B75D8;
-	__asm        push   0x5B75FC;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xb1a, 0x5b75d8, 0x5b75fc);
 	__asm        jmp    _T56;
 
 	__asm        jmp    _T56;
@@ -4958,11 +4815,7 @@ _Te6:
 	__asm        cmp    dword ptr [eax+0x87], 0;
 	__asm        jne    _T112;
 
-	__asm        push   0xB39;
-	__asm        push   0x5B7604;
-	__asm        push   0x5B7628;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xb39, 0x5b7604, 0x5b7628);
 	__asm        jmp    _T117;
 _T112:
 	__asm        jmp    _T117;
@@ -4977,11 +4830,7 @@ _T123:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    _T149;
 
-	__asm        push   0xB40;
-	__asm        push   0x5B7634;
-	__asm        push   0x5B7658;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0xb40, 0x5b7634, 0x5b7658);
 	__asm        jmp    _T14e;
 _T149:
 	__asm        jmp    _T14e;
@@ -5091,11 +4940,9 @@ _T289:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::SetBoatDirection;
 // LINE 2925:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::AdjustCurrentPosition;
+	this->BoatClass::AdjustCurrentPosition();
 // LINE 2926:
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::AdjustNextPosition;
+	this->BoatClass::AdjustNextPosition();
 // LINE 2930:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5132,7 +4979,7 @@ _T26:
 // FUNCTION: COPTER_D 0x0052ab54
 void ItterateAllBoats() {
 // LINE 3024:
-	__asm        call   BoatClass::ItterateAll;
+	BoatClass::ItterateAll();
 // LINE 3025:
 	return;
 }
@@ -5140,7 +4987,7 @@ void ItterateAllBoats() {
 // FUNCTION: COPTER_D 0x0052ab69
 void ResetAllBoats() {
 // LINE 3047:
-	__asm        call   BoatClass::ResetAll;
+	BoatClass::ResetAll();
 // LINE 3048:
 	return;
 }
@@ -5254,8 +5101,7 @@ _T106:
 	__asm        cmp    totalpersons, 0;
 	__asm        jne    _T11f;
 // LINE 3099:
-	__asm        mov    ecx, capboat;
-	__asm        call   BoatClass::UnPlaceBoat;
+	capboat->BoatClass::UnPlaceBoat();
 // LINE 3100:
 	return 0x0;
 // LINE 3104:
@@ -5268,10 +5114,7 @@ _T11f:
 // LINE 3107:
 	mp.maploc.y = capboat->currentLocation.y;
 // LINE 3108:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 3110:
 	mp.op = 0xe;
 // LINE 3111:
@@ -5279,10 +5122,7 @@ _T11f:
 // LINE 3112:
 	mp.flags = 0x1;
 // LINE 3113:
-	__asm        lea    eax, mp.op;
-	__asm        push   eax;
-	__asm        call   S3MissionUpdate;
-	__asm        add    esp, 4;
+	S3MissionUpdate(mp.op);
 // LINE 3115:
 	return (capboat + 0x7f);
 // LINE 3116:

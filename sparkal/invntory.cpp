@@ -398,9 +398,7 @@ _Tbf:
 	__asm        add    esp, 4;
 	__asm        jmp    _T120;
 _T120:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T12a:
 	__asm        jmp    _T12f;
 _T12f:
@@ -461,9 +459,7 @@ _T187:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1f1;
 _T1f1:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T1fb:
 	__asm        jmp    _T200;
 _T200:
@@ -783,8 +779,7 @@ _T679:
 	__asm        jmp    _T69d;
 // LINE 55:
 _T69d:
-	__asm        mov    ecx, this;
-	__asm        call   InventoryWindow::LoadHotSpots;
+	this->InventoryWindow::LoadHotSpots();
 // LINE 56:
 	__asm        push   1;
 	__asm        mov    ecx, this;
@@ -806,8 +801,7 @@ void InventoryWindow::~InventoryWindow() {
 
 	this-><InventoryWindow+0x00> = 0x591888;
 // LINE 67:
-	__asm        mov    ecx, this;
-	__asm        call   InventoryWindow::DestroyImage;
+	this->InventoryWindow::DestroyImage();
 // LINE 68:
 	GraphicWindow::RemoveFocus(this);
 // LINE 69:
@@ -1113,14 +1107,11 @@ _T3ee:
 	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T405;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x74;
-	__asm        call   list<HotSpot>::deallocate_buffers;
+	(this + 0x74)->list<HotSpot>::deallocate_buffers();
 _T405:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x004a8e67
@@ -1216,9 +1207,7 @@ _T11f:
 	__asm        add    esp, 4;
 	__asm        jmp    _T16a;
 _T16a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T179;
 _T179:
 	__asm        jmp    _T17e;
@@ -1378,9 +1367,7 @@ _T393:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3de;
 _T3de:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T3ed;
 _T3ed:
 	__asm        jmp    _T3f2;
@@ -1602,9 +1589,7 @@ _T6f2:
 	__asm        add    esp, 4;
 	__asm        jmp    _T73d;
 _T73d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T74c;
 _T74c:
 	__asm        jmp    _T751;
@@ -2266,11 +2251,9 @@ _T92:
 	__asm        jmp    _Ta9;
 // LINE 165:
 _Ta9:
-	__asm        mov    ecx, this;
-	__asm        call   InventoryWindow::DrawTitleText;
+	this->InventoryWindow::DrawTitleText();
 // LINE 166:
-	__asm        mov    ecx, this;
-	__asm        call   InventoryWindow::DrawInventory;
+	this->InventoryWindow::DrawInventory();
 // LINE 167:
 	return 0x1;
 // LINE 168:

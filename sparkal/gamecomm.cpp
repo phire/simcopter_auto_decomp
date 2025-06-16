@@ -455,9 +455,7 @@ _T59:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tae;
 _Tae:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _Tb8:
 	__asm        jmp    _Tbd;
 _Tbd:
@@ -515,9 +513,7 @@ _T112:
 	__asm        add    esp, 4;
 	__asm        jmp    _T163;
 _T163:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T16d:
 	__asm        jmp    _T172;
 _T172:
@@ -597,8 +593,7 @@ _T235:
 	__asm        jmp    _T26f;
 // LINE 32:
 _T26f:
-	__asm        mov    ecx, this;
-	__asm        call   CommandSystem::Initialize;
+	this->CommandSystem::Initialize();
 // LINE 33:
 	return;
 
@@ -712,9 +707,7 @@ _T34:
 	__asm        jmp    _T18;
 // LINE 76:
 _T39:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xC8;
-	__asm        call   CharList::DeleteAllItems;
+	(this + 0xc8)->CharList::DeleteAllItems();
 // LINE 77:
 	return;
 }
@@ -749,9 +742,7 @@ _T4c:
 	__asm        jmp    _T18;
 // LINE 91:
 _T51:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xC8;
-	__asm        call   CharList::DeleteAllItems;
+	(this + 0xc8)->CharList::DeleteAllItems();
 // LINE 92:
 	return;
 }
@@ -777,8 +768,7 @@ _T25:
 	__asm        jmp    _T2a;
 // LINE 133:
 _T2a:
-	__asm        mov    ecx, this;
-	__asm        call   CommandSystem::Initialize;
+	this->CommandSystem::Initialize();
 // LINE 134:
 	__asm        push   0;
 	__asm        mov    ecx, this;
@@ -1192,10 +1182,8 @@ _T1d5:
 // FUNCTION: COPTER_D 0x0048bb88
 void CGameCommander::CGameCommander() {
 
-	__asm        mov    ecx, this;
-	__asm        call   CDefaultCommander::CDefaultCommander;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590FF8;
+	this->CDefaultCommander::CDefaultCommander();
+	this-><CGameCommander+0x00> = 0x590ff8;
 // LINE 249:
 	this->myGameApp = 0x0;
 // LINE 252:
@@ -1211,8 +1199,7 @@ void CGameCommander::~CGameCommander() {
 // LINE 256:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   CDefaultCommander::~CDefaultCommander;
+	this->CDefaultCommander::~CDefaultCommander();
 }
 
 // FUNCTION: COPTER_D 0x0048bbe3
@@ -1351,8 +1338,7 @@ _T27:
 // FUNCTION: COPTER_D 0x0048bd77
 void CGameCommander::ProcessSetFocus() {
 // LINE 354:
-	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   Keyboard::ClearSettings;
+	0x5c34f0->Keyboard::ClearSettings();
 // LINE 355:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1473,9 +1459,7 @@ _T70:
 	__asm        jmp    _T40;
 // LINE 432:
 _T7e:
-	__asm        mov    ecx, commandSystem;
-	__asm        add    ecx, 0xC8;
-	__asm        call   CharList::DeleteAllItems;
+	(commandSystem + 0xc8)->CharList::DeleteAllItems();
 // LINE 434:
 	currentCharData = gKeyboard.myCharDownList.firstCharData;
 // LINE 435:
@@ -1643,9 +1627,7 @@ _T5e:
 	__asm        jmp    _T2e;
 // LINE 494:
 _T6c:
-	__asm        mov    ecx, commandSystem;
-	__asm        add    ecx, 0xC8;
-	__asm        call   CharList::DeleteAllItems;
+	(commandSystem + 0xc8)->CharList::DeleteAllItems();
 // LINE 496:
 	currentCharData = gKeyboard.myCharDownList.firstCharData;
 // LINE 497:
@@ -1756,9 +1738,7 @@ _T1a3:
 // FUNCTION: COPTER_D 0x0048c213
 void CGameCommander::ProcessSystemCloseRequest() {
 // LINE 528:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+8];
-	__asm        call   CGameApp::ProcessSystemCloseRequest;
+	this->myGameApp->CGameApp::ProcessSystemCloseRequest();
 // LINE 529:
 	return;
 }
@@ -1869,9 +1849,7 @@ _T13e:
 	__asm        add    esp, 4;
 	__asm        jmp    _T19f;
 _T19f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T1a9:
 	__asm        jmp    _T1ae;
 _T1ae:
@@ -1929,9 +1907,7 @@ _T22d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T293;
 _T293:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 _T29d:
 	__asm        jmp    _T2a2;
 _T2a2:

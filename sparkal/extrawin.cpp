@@ -1105,7 +1105,7 @@ protected:
 // SYNTHETIC: COPTER_D 0x00450050
 static void $E66() {
 
-	__asm        call   $E65;
+	$E65();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1126,7 +1126,7 @@ _T20:
 // SYNTHETIC: COPTER_D 0x0045008f
 static void $E69() {
 
-	__asm        call   $E68;
+	$E68();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1319,9 +1319,7 @@ _T231:
 	__asm        add    esp, 4;
 	__asm        jmp    _T26d;
 _T26d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T27c;
 _T27c:
 	__asm        jmp    _T281;
@@ -1419,9 +1417,7 @@ _T36b:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3a7;
 _T3a7:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T3b6;
 _T3b6:
 	__asm        jmp    _T3bb;
@@ -1573,9 +1569,7 @@ _Ta2:
 	__asm        add    esp, 4;
 	__asm        jmp    _Td5;
 _Td5:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Te4;
 _Te4:
 	__asm        jmp    _Te9;
@@ -1783,9 +1777,7 @@ _T376:
 	__asm        add    esp, 4;
 	__asm        jmp    _T3b2;
 _T3b2:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T3c1;
 _T3c1:
 	__asm        jmp    _T3c6;
@@ -1883,9 +1875,7 @@ _T4b0:
 	__asm        add    esp, 4;
 	__asm        jmp    _T4ec;
 _T4ec:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4fb;
 _T4fb:
 	__asm        jmp    _T500;
@@ -2311,9 +2301,7 @@ _T49a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T4e5;
 _T4e5:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4f4;
 _T4f4:
 	__asm        jmp    _T4f9;
@@ -2689,8 +2677,7 @@ _Ta08:
 	__asm        jmp    _Ta1a;
 // LINE 144:
 _Ta1a:
-	__asm        mov    ecx, tempAnimationWindow;
-	__asm        call   AnimationWindow::Start;
+	tempAnimationWindow->AnimationWindow::Start();
 // LINE 147:
 // Block end:
 _Ta22:
@@ -2988,9 +2975,7 @@ _T111:
 	__asm        add    esp, 4;
 	__asm        jmp    _T157;
 _T157:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T166;
 _T166:
 	__asm        jmp    _T16b;
@@ -3104,9 +3089,7 @@ _T2b9:
 	__asm        add    esp, 4;
 	__asm        jmp    _T304;
 _T304:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T313;
 _T313:
 	__asm        jmp    _T318;
@@ -3393,10 +3376,8 @@ _T3c:
 // FUNCTION: COPTER_D 0x00451f21
 void AnimationWindow::AnimationWindow() {
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58FB58;
+	this->GraphicWindow::GraphicWindow();
+	this-><AnimationWindow+0x00> = 0x58fb58;
 // LINE 283:
 	this->bRunning = 0x0;
 // LINE 284:
@@ -3583,16 +3564,14 @@ _T100:
 	__asm        cmp    lFramesToShift, 0;
 	__asm        je     _T117;
 // LINE 366:
-	__asm        mov    ecx, this;
-	__asm        call   AnimationWindow::GotoNextFrame;
+	this->AnimationWindow::GotoNextFrame();
 	__asm        jmp    _T100;
 // LINE 368:
 _T117:
 	__asm        jmp    _T124;
 // LINE 369:
 _T11c:
-	__asm        mov    ecx, this;
-	__asm        call   AnimationWindow::GotoNextFrame;
+	this->AnimationWindow::GotoNextFrame();
 // LINE 372:
 _T124:
 	this->lMillisecondsOfLastFrame = lMillisecondsCurrent;
@@ -3651,8 +3630,7 @@ _Tb4:
 	__asm        cmp    dword ptr [eax+0x9C], 1;
 	__asm        jle    _Tcc;
 // LINE 394:
-	__asm        mov    ecx, this;
-	__asm        call   AnimationWindow::GotoNextFrame;
+	this->AnimationWindow::GotoNextFrame();
 // LINE 396:
 _Tcc:
 	__asm        mov    eax, this;
@@ -3856,15 +3834,13 @@ void RenderSettingsWindow::~RenderSettingsWindow() {
 
 	this-><RenderSettingsWindow+0x00> = 0x58fc20;
 // LINE 512:
-	__asm        mov    ecx, this;
-	__asm        call   RenderSettingsWindow::DestroyImage;
+	this->RenderSettingsWindow::DestroyImage();
 // LINE 513:
 	__asm        jmp    _T22;
 _T22:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x00452637
@@ -4817,9 +4793,7 @@ _Tdba:
 	__asm        add    esp, 4;
 	__asm        jmp    _Te05;
 _Te05:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Te14;
 _Te14:
 	__asm        jmp    _Te19;
@@ -4929,9 +4903,7 @@ _Tf61:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tfa1;
 _Tfa1:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tfb0;
 _Tfb0:
 	__asm        jmp    _Tfb5;
@@ -5067,9 +5039,7 @@ _T1139:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1184;
 _T1184:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1193;
 _T1193:
 	__asm        jmp    _T1198;
@@ -5255,9 +5225,7 @@ _T13ef:
 	__asm        add    esp, 4;
 	__asm        jmp    _T143a;
 _T143a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1449;
 _T1449:
 	__asm        jmp    _T144e;
@@ -5367,9 +5335,7 @@ _T1596:
 	__asm        add    esp, 4;
 	__asm        jmp    _T15d6;
 _T15d6:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T15e5;
 _T15e5:
 	__asm        jmp    _T15ea;
@@ -5487,9 +5453,7 @@ _T172a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1775;
 _T1775:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1784;
 _T1784:
 	__asm        jmp    _T1789;
@@ -5757,8 +5721,7 @@ int32_t RenderSettingsWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        call   dword ptr [edx+8];
 // LINE 665:
 _T3f:
-	__asm        mov    ecx, this;
-	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
+	this->RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings();
 // LINE 666:
 	return this-><RenderSettingsWindow+0x40>;
 // LINE 667:
@@ -5767,8 +5730,7 @@ _T3f:
 // FUNCTION: COPTER_D 0x004541bc
 void RenderSettingsWindow::DestroyImage() {
 // LINE 676:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 678:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x9C], 0;
@@ -6060,11 +6022,9 @@ int32_t RenderSettingsWindow::SetCurrentSettings(long bNewShowBuildingTextures, 
 // LINE 742:
 	this->lFogCloseness = lNewFogCloseness;
 // LINE 743:
-	__asm        mov    ecx, this;
-	__asm        call   RenderSettingsWindow::SetControlsBasedOnCurrentSettings;
+	this->RenderSettingsWindow::SetControlsBasedOnCurrentSettings();
 // LINE 744:
-	__asm        mov    ecx, this;
-	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
+	this->RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings();
 // LINE 746:
 	return 0x1;
 // LINE 747:
@@ -6960,9 +6920,7 @@ _T1b8:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1f2;
 _T1f2:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T201;
 _T201:
 	__asm        jmp    _T206;
@@ -7086,9 +7044,7 @@ _T32c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T366;
 _T366:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T375;
 _T375:
 	__asm        jmp    _T37a;
@@ -7211,9 +7167,7 @@ _T495:
 	__asm        add    esp, 4;
 	__asm        jmp    _T4cf;
 _T4cf:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T4de;
 _T4de:
 	__asm        jmp    _T4e3;
@@ -7337,9 +7291,7 @@ _T609:
 	__asm        add    esp, 4;
 	__asm        jmp    _T643;
 _T643:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T652;
 _T652:
 	__asm        jmp    _T657;
@@ -7462,9 +7414,7 @@ _T77b:
 	__asm        add    esp, 4;
 	__asm        jmp    _T7be;
 _T7be:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T7cd;
 _T7cd:
 	__asm        jmp    _T7d2;
@@ -7633,8 +7583,7 @@ _T89:
 // LINE 903:
 	this->lQuadPixelType = this->myDisplayResolutionButtonGroup->ButtonGroup::GetSelectionIndex();
 // LINE 904:
-	__asm        mov    ecx, this;
-	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
+	this->RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings();
 // LINE 906:
 _Tb5:
 	return 0x1;
@@ -7653,8 +7602,7 @@ _Te7:
 	this->bShowBuildingTextures = 0x0;
 // LINE 911:
 _Tf1:
-	__asm        mov    ecx, this;
-	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
+	this->RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings();
 // LINE 913:
 _Tf9:
 	return 0x1;
@@ -7673,8 +7621,7 @@ _T12b:
 	this->bShowGroundTextures = 0x0;
 // LINE 918:
 _T135:
-	__asm        mov    ecx, this;
-	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
+	this->RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings();
 // LINE 920:
 _T13d:
 	return 0x1;
@@ -7693,8 +7640,7 @@ _T16f:
 	this->bShowSkyAndClouds = 0x0;
 // LINE 925:
 _T179:
-	__asm        mov    ecx, this;
-	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
+	this->RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings();
 // LINE 927:
 _T181:
 	return 0x1;
@@ -8336,9 +8282,7 @@ _T807:
 	__asm        add    esp, 4;
 	__asm        jmp    _T852;
 _T852:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T861;
 _T861:
 	__asm        jmp    _T866;
@@ -8430,9 +8374,7 @@ _T96a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T9aa;
 _T9aa:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T9b9;
 _T9b9:
 	__asm        jmp    _T9be;
@@ -8535,9 +8477,7 @@ _Taca:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tb15;
 _Tb15:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tb24;
 _Tb24:
 	__asm        jmp    _Tb29;
@@ -8723,9 +8663,7 @@ _Td83:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tdce;
 _Tdce:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tddd;
 _Tddd:
 	__asm        jmp    _Tde2;
@@ -8817,9 +8755,7 @@ _Tee6:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tf26;
 _Tf26:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tf35;
 _Tf35:
 	__asm        jmp    _Tf3a;
@@ -8922,9 +8858,7 @@ _T1046:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1091;
 _T1091:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T10a0;
 _T10a0:
 	__asm        jmp    _T10a5;
@@ -10387,9 +10321,7 @@ _Te12:
 	__asm        add    esp, 4;
 	__asm        jmp    _Te5d;
 _Te5d:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Te6c;
 _Te6c:
 	__asm        jmp    _Te71;
@@ -10428,9 +10360,7 @@ _Tea2:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tef5;
 _Tef5:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tf04;
 _Tf04:
 	__asm        mov    eax, [ebp-0x11C8];
@@ -10562,9 +10492,7 @@ _T10af:
 	__asm        add    esp, 4;
 	__asm        jmp    _T10ef;
 _T10ef:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T10fe;
 _T10fe:
 	__asm        jmp    _T1103;
@@ -10700,9 +10628,7 @@ _T1287:
 	__asm        add    esp, 4;
 	__asm        jmp    _T12d2;
 _T12d2:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T12e1;
 _T12e1:
 	__asm        jmp    _T12e6;
@@ -10741,9 +10667,7 @@ _T1317:
 	__asm        add    esp, 4;
 	__asm        jmp    _T136a;
 _T136a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1379;
 _T1379:
 	__asm        mov    eax, [ebp-0x1218];
@@ -10969,9 +10893,7 @@ _T1682:
 	__asm        add    esp, 4;
 	__asm        jmp    _T16cd;
 _T16cd:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T16dc;
 _T16dc:
 	__asm        jmp    _T16e1;
@@ -11088,9 +11010,7 @@ _T1840:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1880;
 _T1880:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T188f;
 _T188f:
 	__asm        jmp    _T1894;
@@ -11233,9 +11153,7 @@ _T1a2f:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1a7a;
 _T1a7a:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1a89;
 _T1a89:
 	__asm        jmp    _T1a8e;
@@ -11274,9 +11192,7 @@ _T1abf:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1b12;
 _T1b12:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1b21;
 _T1b21:
 	__asm        mov    eax, [ebp-0x2288];
@@ -11749,9 +11665,7 @@ _Td4:
 	__asm        add    esp, 4;
 	__asm        jmp    _T110;
 _T110:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T11f;
 _T11f:
 	__asm        jmp    _T124;
@@ -11878,9 +11792,7 @@ _T266:
 	__asm        add    esp, 4;
 	__asm        jmp    _T2a2;
 _T2a2:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2b1;
 _T2b1:
 	__asm        jmp    _T2b6;
@@ -11992,8 +11904,7 @@ void PopupMenuExtra::~PopupMenuExtra() {
 
 	this-><PopupMenuExtra+0x00> = 0x58fe98;
 // LINE 1563:
-	__asm        mov    ecx, this;
-	__asm        call   PopupMenuExtra::DestroyImage;
+	this->PopupMenuExtra::DestroyImage();
 // LINE 1564:
 	__asm        jmp    _T22;
 _T22:
@@ -12183,8 +12094,7 @@ _T243:
 _T266:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x00459ad1
@@ -13281,8 +13191,7 @@ _T56:
 	this->myBackgroundImage = 0x0;
 // LINE 1712:
 _T63:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 1713:
 	return;
 }
@@ -13360,8 +13269,7 @@ _T43:
 	__asm        jmp    _T48;
 // LINE 1745:
 _T48:
-	__asm        mov    ecx, this;
-	__asm        call   PopupMenuWindow::ResizeWindowToFitMenuItems;
+	this->PopupMenuWindow::ResizeWindowToFitMenuItems();
 // LINE 1750:
 	__asm        jmp    _T55;
 _T55:
@@ -13506,9 +13414,7 @@ _Tc6:
 	__asm        add    esp, 4;
 	__asm        jmp    _T102;
 _T102:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T111;
 _T111:
 	__asm        jmp    _T116;
@@ -13635,9 +13541,7 @@ _T258:
 	__asm        add    esp, 4;
 	__asm        jmp    _T294;
 _T294:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T2a3;
 _T2a3:
 	__asm        jmp    _T2a8;
@@ -13825,9 +13729,7 @@ _Td6:
 	__asm        add    esp, 4;
 	__asm        jmp    _T112;
 _T112:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T121;
 _T121:
 	__asm        jmp    _T126;
@@ -13947,9 +13849,7 @@ _T254:
 	__asm        add    esp, 4;
 	__asm        jmp    _T290;
 _T290:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T29f;
 _T29f:
 	__asm        jmp    _T2a4;
@@ -14054,8 +13954,7 @@ void TooltipWindow::~TooltipWindow() {
 
 	this-><TooltipWindow+0x00> = 0x58fff8;
 // LINE 1828:
-	__asm        mov    ecx, this;
-	__asm        call   TooltipWindow::DestroyImage;
+	this->TooltipWindow::DestroyImage();
 // LINE 1829:
 	__asm        jmp    _T22;
 _T22:
@@ -14125,11 +14024,8 @@ _Tea:
 _Tef:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x84;
-	__asm        call   MFont::~MFont;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	(this + 0x84)->MFont::~MFont();
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0045b379
@@ -14704,8 +14600,7 @@ _T56:
 	this->myBackgroundImage = 0x0;
 // LINE 1918:
 _T63:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DestroyImage;
+	this->GraphicWindow::DestroyImage();
 // LINE 1919:
 	return;
 }
@@ -14879,9 +14774,7 @@ _Tec:
 	__asm        add    esp, 4;
 	__asm        jmp    _T128;
 _T128:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T137;
 _T137:
 	__asm        jmp    _T13c;
@@ -14922,9 +14815,7 @@ _T16d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1b1;
 _T1b1:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1c0;
 _T1c0:
 	__asm        mov    eax, [ebp-0x30];
@@ -15132,9 +15023,7 @@ _Tdc:
 	__asm        add    esp, 4;
 	__asm        jmp    _T10f;
 _T10f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T11e;
 _T11e:
 	__asm        jmp    _T123;
@@ -15345,9 +15234,7 @@ _T34a:
 	__asm        add    esp, 4;
 	__asm        jmp    _T386;
 _T386:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T395;
 _T395:
 	__asm        jmp    _T39a;
@@ -15459,8 +15346,7 @@ void BoneheadTextEditWindow::~BoneheadTextEditWindow() {
 
 	this-><BoneheadTextEditWindow+0x00> = 0x5900f0;
 // LINE 2010:
-	__asm        mov    ecx, this;
-	__asm        call   BoneheadTextEditWindow::DestroyImage;
+	this->BoneheadTextEditWindow::DestroyImage();
 // LINE 2011:
 	__asm        jmp    _T22;
 _T22:
@@ -15468,11 +15354,8 @@ _T22:
 _T27:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x84;
-	__asm        call   MFont::~MFont;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	(this + 0x84)->MFont::~MFont();
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0045c39e
@@ -15994,9 +15877,7 @@ _T94:
 	__asm        add    esp, 4;
 	__asm        jmp    _Tc7;
 _Tc7:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Td6;
 _Td6:
 	__asm        jmp    _Tdb;
@@ -16511,9 +16392,7 @@ _T109:
 	__asm        add    esp, 4;
 	__asm        jmp    _T13e;
 _T13e:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T14d;
 _T14d:
 	__asm        jmp    _T152;
@@ -16993,9 +16872,7 @@ _T1ea:
 	__asm        add    esp, 4;
 	__asm        jmp    _T21f;
 _T21f:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T22e;
 _T22e:
 	__asm        jmp    _T233;
@@ -17651,8 +17528,7 @@ _T113:
 _T118:
 	return;
 
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::~GraphicWindow;
+	this->GraphicWindow::~GraphicWindow();
 }
 
 // FUNCTION: COPTER_D 0x0045de71
@@ -17852,7 +17728,7 @@ int32_t ScrollingCreditWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSou
 // SYNTHETIC: COPTER_D 0x0045e126
 static void $E72() {
 
-	__asm        call   $E71;
+	$E71();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -17873,7 +17749,7 @@ _T20:
 // SYNTHETIC: COPTER_D 0x0045e165
 static void $E75() {
 
-	__asm        call   $E74;
+	$E74();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -18817,9 +18693,7 @@ _Tcec:
 	__asm        add    esp, 4;
 	__asm        jmp    _Td37;
 _Td37:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Td46;
 _Td46:
 	__asm        jmp    _Td4b;
@@ -18936,9 +18810,7 @@ _Teaa:
 	__asm        add    esp, 4;
 	__asm        jmp    _Teea;
 _Teea:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _Tef9;
 _Tef9:
 	__asm        jmp    _Tefe;
@@ -19074,9 +18946,7 @@ _T1082:
 	__asm        add    esp, 4;
 	__asm        jmp    _T10cd;
 _T10cd:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T10dc;
 _T10dc:
 	__asm        jmp    _T10e1;
@@ -19115,9 +18985,7 @@ _T1112:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1165;
 _T1165:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1174;
 _T1174:
 	__asm        mov    eax, [ebp-0x11E4];
@@ -19343,9 +19211,7 @@ _T147d:
 	__asm        add    esp, 4;
 	__asm        jmp    _T14c8;
 _T14c8:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T14d7;
 _T14d7:
 	__asm        jmp    _T14dc;
@@ -19455,9 +19321,7 @@ _T1624:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1664;
 _T1664:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1673;
 _T1673:
 	__asm        jmp    _T1678;
@@ -19593,9 +19457,7 @@ _T17fc:
 	__asm        add    esp, 4;
 	__asm        jmp    _T1847;
 _T1847:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T1856;
 _T1856:
 	__asm        jmp    _T185b;
@@ -19634,9 +19496,7 @@ _T188c:
 	__asm        add    esp, 4;
 	__asm        jmp    _T18df;
 _T18df:
-	__asm        push   1;
-	__asm        call   exit;
-	__asm        add    esp, 4;
+	exit(0x1);
 	__asm        jmp    _T18ee;
 _T18ee:
 	__asm        mov    eax, [ebp-0x224C];
@@ -19766,8 +19626,7 @@ _T1a81:
 	__asm        mov    ecx, tempButtonWindow;
 	__asm        call   dword ptr [eax+4];
 // LINE 2533:
-	__asm        mov    ecx, this;
-	__asm        call   CheckupWindow::SetAllControlValuesToDefaults;
+	this->CheckupWindow::SetAllControlValuesToDefaults();
 // LINE 2535:
 	GraphicWindow::MakeModal(this);
 // LINE 2536:
@@ -19863,8 +19722,7 @@ void CheckupWindow::SetCurrentSettings(long * lNewSettings) {
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   SliderWindow::SetValue;
 // LINE 2554:
-	__asm        mov    ecx, this;
-	__asm        call   CheckupWindow::SetTextControlsBasedOnCurrentSliderValues;
+	this->CheckupWindow::SetTextControlsBasedOnCurrentSliderValues();
 // LINE 2555:
 	return;
 }
@@ -19958,8 +19816,7 @@ _Tcb:
 	__asm        call   SliderWindow::SetValue;
 // LINE 2597:
 _Te5:
-	__asm        mov    ecx, this;
-	__asm        call   CheckupWindow::SetTextControlsBasedOnCurrentSliderValues;
+	this->CheckupWindow::SetTextControlsBasedOnCurrentSliderValues();
 // LINE 2598:
 	return;
 }
@@ -20584,8 +20441,7 @@ _T17:
 	__asm        cmp    lMessage, 0x10001;
 	__asm        jne    _T2c;
 // LINE 2685:
-	__asm        mov    ecx, this;
-	__asm        call   CheckupWindow::SetTextControlsBasedOnCurrentSliderValues;
+	this->CheckupWindow::SetTextControlsBasedOnCurrentSliderValues();
 // LINE 2686:
 _T2c:
 	return 0x1;

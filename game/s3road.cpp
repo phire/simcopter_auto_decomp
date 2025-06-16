@@ -183,10 +183,7 @@ _T19a:
 // LINE 88:
 	MTNormalize(0x62bb00);
 // LINE 89:
-	__asm        push   0x62BB00;
-	__asm        push   0x62BA00;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4(0x62bb00, 0x62ba00);
 // LINE 91:
 	DiagVector[1].x = 0xffffffff;
 // LINE 92:
@@ -196,14 +193,7 @@ _T19a:
 // LINE 94:
 	MTNormalize((0x62bb00 + 0xc));
 // LINE 95:
-	__asm        mov    eax, 0x62BB00;
-	__asm        add    eax, 0xC;
-	__asm        push   eax;
-	__asm        mov    eax, 0x62BA00;
-	__asm        add    eax, 0x40;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((0x62bb00 + 0xc), (0x62ba00 + 0x40));
 // LINE 97:
 	DiagVector[2].x = 0xffffffff;
 // LINE 98:
@@ -213,14 +203,7 @@ _T19a:
 // LINE 100:
 	MTNormalize((0x62bb00 + 0x18));
 // LINE 101:
-	__asm        mov    eax, 0x62BB00;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, 0x62BA00;
-	__asm        add    eax, 0x80;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((0x62bb00 + 0x18), (0x62ba00 + 0x80));
 // LINE 103:
 	DiagVector[3].x = 0x1;
 // LINE 104:
@@ -230,14 +213,7 @@ _T19a:
 // LINE 106:
 	MTNormalize((0x62bb00 + 0x24));
 // LINE 107:
-	__asm        mov    eax, 0x62BB00;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, 0x62BA00;
-	__asm        add    eax, 0xC0;
-	__asm        push   eax;
-	__asm        call   MTCreateDOF4x4;
-	__asm        add    esp, 8;
+	MTCreateDOF4x4((0x62bb00 + 0x24), (0x62ba00 + 0xc0));
 // LINE 111:
 	__asm        fld    qword ptr ds:[0x593408];
 	__asm        call   0x0056EC1A;
@@ -1572,11 +1548,7 @@ _T2a3:
 	return (TestDir & 0x8);
 // LINE 526:
 _T2ae:
-	__asm        push   0x20E;
-	__asm        push   0x5B804C;
-	__asm        push   0x5B8070;
-	__asm        call   _assert;
-	__asm        add    esp, 0xC;
+	_assert(0x20e, 0x5b804c, 0x5b8070);
 	__asm        jmp    _T2cf;
 
 	__asm        jmp    _T2cf;

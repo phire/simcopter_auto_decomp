@@ -90,8 +90,8 @@ public:
 // SYNTHETIC: COPTER_D 0x00431c50
 static void $E4() {
 
-	__asm        call   $E1;
-	__asm        call   $E3;
+	$E1();
+	$E3();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -100,8 +100,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00431c6a
 static void $E1() {
 
-	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   Keyboard::Keyboard;
+	0x5c34f0->Keyboard::Keyboard();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -121,8 +120,7 @@ static void $E2() {
 
 	__asm        jmp    _T0b;
 _T0b:
-	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   CharList::~CharList;
+	0x5c34f0->CharList::~CharList();
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -144,11 +142,9 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00431ce4
 void Keyboard::Keyboard() {
 
-	__asm        mov    ecx, this;
-	__asm        call   CharList::CharList;
+	this->CharList::CharList();
 // LINE 32:
-	__asm        mov    ecx, this;
-	__asm        call   Keyboard::ClearSettings;
+	this->Keyboard::ClearSettings();
 // LINE 33:
 	return;
 
@@ -267,8 +263,7 @@ _T1b:
 	__asm        jmp    _T18;
 // LINE 100:
 _T38:
-	__asm        mov    ecx, this;
-	__asm        call   CharList::DeleteAllItems;
+	this->CharList::DeleteAllItems();
 // LINE 101:
 	return;
 }
