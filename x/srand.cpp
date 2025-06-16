@@ -133,9 +133,7 @@ unsigned short RRand(unsigned short lim) {
 // LINE 91:
 	myRandom0 = 0x0;
 // LINE 92:
-	__asm        mov    eax, rrandSeed<__unnamed+0x00:4>;
-	__asm        shr    eax, 0x10;
-	__asm        mov    myRandom0, eax;
+	myRandom0 = (rrandSeed<__unnamed+0x00:4> >> 0x10);
 // LINE 94:
 	__asm        and    myRandom0, 0x7FFF;
 // LINE 96:

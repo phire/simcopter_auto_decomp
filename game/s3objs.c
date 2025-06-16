@@ -93,51 +93,31 @@ void S3ObjInit() {
 // LINE 391:
 	G_blueshad = bhdr;
 // LINE 392:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    G_blueshad, eax;
+	G_blueshad += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 394:
 	bhdr = VRInt2BmpHdr(0x34, G_restex);
 // LINE 395:
 	G_fireshad = bhdr;
 // LINE 396:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    G_fireshad, eax;
+	G_fireshad += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 398:
 	bhdr = VRInt2BmpHdr(0x32, G_restex);
 // LINE 399:
 	G_smokshad = bhdr;
 // LINE 400:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    G_smokshad, eax;
+	G_smokshad += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 402:
 	bhdr = VRInt2BmpHdr(0x1, G_restex);
 // LINE 403:
 	G_lightshad = bhdr;
 // LINE 404:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    G_lightshad, eax;
+	G_lightshad += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 406:
 	bhdr = VRInt2BmpHdr(0x29, G_restex);
 // LINE 407:
 	G_darkshad = bhdr;
 // LINE 408:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    G_darkshad, eax;
+	G_darkshad += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 411:
 	objcount = VRGetResObjectCnt(G_resgeo1);
 // LINE 412:
@@ -959,23 +939,11 @@ _T117:
 	__asm        mov    winheight, eax;
 // LINE 913:
 _T131:
-	__asm        mov    eax, blit;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax];
-	__asm        sar    eax, 0xC;
-	__asm        mov    x, eax;
+	x = (blit->verts->x >> 0xc);
 // LINE 914:
-	__asm        mov    eax, blit;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sar    eax, 0xC;
-	__asm        mov    y, eax;
+	y = (blit->verts->y >> 0xc);
 // LINE 916:
-	__asm        mov    eax, bufwidth;
-	__asm        imul   eax, y;
-	__asm        add    eax, x;
-	__asm        add    eax, buffer1;
-	__asm        mov    ptr, eax;
+	ptr = (((bufwidth * y) + x) + buffer1);
 // LINE 918:
 	__asm        jmp    _T16b;
 
@@ -1088,17 +1056,9 @@ _T4a:
 	__asm        mov    winheight, eax;
 // LINE 996:
 _T64:
-	__asm        mov    eax, blit;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax];
-	__asm        sar    eax, 0xC;
-	__asm        mov    x, eax;
+	x = (blit->verts->x >> 0xc);
 // LINE 997:
-	__asm        mov    eax, blit;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sar    eax, 0xC;
-	__asm        mov    y, eax;
+	y = (blit->verts->y >> 0xc);
 // LINE 1001:
 	table = G_blueshad;
 // LINE 1002:
@@ -1127,10 +1087,7 @@ _Tba:
 	__asm        jmp    _T258;
 // LINE 1016:
 _Tdc:
-	__asm        mov    eax, scale;
-	__asm        shl    eax, 3;
-	__asm        sar    eax, 0x10;
-	__asm        mov    minval, eax;
+	minval = ((scale << 0x3) >> 0x10);
 // LINE 1017:
 	__asm        mov    eax, scale;
 	__asm        lea    eax, [eax+eax*8];
@@ -1182,17 +1139,9 @@ _T120:
 	__asm        jmp    _T29c;
 // LINE 1031:
 _T166:
-	__asm        mov    eax, scale;
-	__asm        add    eax, eax;
-	__asm        sar    eax, 0x10;
-	__asm        mov    minval, eax;
+	minval = ((scale + scale) >> 0x10);
 // LINE 1032:
-	__asm        mov    eax, scale;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 3;
-	__asm        sub    eax, ecx;
-	__asm        sar    eax, 0x10;
-	__asm        mov    maxval, eax;
+	maxval = (((scale << 0x3) - scale) >> 0x10);
 // LINE 1033:
 	__asm        mov    eax, scale;
 	__asm        lea    eax, [eax+eax*2];
@@ -1209,9 +1158,7 @@ _T166:
 	__asm        jmp    _T29c;
 // LINE 1037:
 _T1a4:
-	__asm        mov    eax, scale;
-	__asm        sar    eax, 0x10;
-	__asm        mov    minval, eax;
+	minval = (scale >> 0x10);
 // LINE 1038:
 	__asm        mov    eax, scale;
 	__asm        lea    eax, [eax+eax*2];
@@ -1233,10 +1180,7 @@ _T1a4:
 	__asm        jmp    _T29c;
 // LINE 1045:
 _T1dc:
-	__asm        mov    eax, scale;
-	__asm        add    eax, eax;
-	__asm        sar    eax, 0x10;
-	__asm        mov    minval, eax;
+	minval = ((scale + scale) >> 0x10);
 // LINE 1046:
 	__asm        mov    eax, scale;
 	__asm        lea    eax, [eax+eax*4];
@@ -1258,10 +1202,7 @@ _T1dc:
 	__asm        jmp    _T29c;
 // LINE 1051:
 _T214:
-	__asm        mov    eax, scale;
-	__asm        add    eax, eax;
-	__asm        sar    eax, 0x10;
-	__asm        mov    minval, eax;
+	minval = ((scale + scale) >> 0x10);
 // LINE 1052:
 	__asm        mov    eax, scale;
 	__asm        lea    eax, [eax+eax*2];
@@ -1488,11 +1429,7 @@ _T4b0:
 	return;
 // LINE 1247:
 _T4c4:
-	__asm        mov    eax, bufwidth;
-	__asm        imul   eax, ploty;
-	__asm        add    eax, plotx;
-	__asm        add    eax, buffer1;
-	__asm        mov    ptr, eax;
+	ptr = (((bufwidth * ploty) + plotx) + buffer1);
 // LINE 1251:
 	__asm        mov    eax, dim;
 	__asm        mov    [ebp-0x60], eax;
@@ -4375,11 +4312,7 @@ _T2373:
 	return;
 // LINE 2436:
 _T238b:
-	__asm        mov    eax, bufwidth;
-	__asm        imul   eax, ploty;
-	__asm        add    eax, plotx;
-	__asm        add    eax, buffer1;
-	__asm        mov    ptr, eax;
+	ptr = (((bufwidth * ploty) + plotx) + buffer1);
 // LINE 2440:
 	__asm        mov    eax, dim;
 	__asm        mov    [ebp-0x64], eax;

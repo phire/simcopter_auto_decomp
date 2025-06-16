@@ -3076,15 +3076,7 @@ int32_t DigitalSound::SetPosition(long lX, long lY, long lZ) {
 	/*bp-0x8*/   long lNewVolume;
 
 // LINE 1171:
-	__asm        mov    eax, lZ;
-	__asm        imul   eax, lZ;
-	__asm        mov    ecx, lY;
-	__asm        imul   ecx, lY;
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, lX;
-	__asm        imul   ecx, lX;
-	__asm        add    eax, ecx;
-	__asm        mov    lDistance, eax;
+	lDistance = (((lZ * lZ) + (lY * lY)) + (lX * lX));
 // LINE 1172:
 	__asm        cmp    lDistance, 0x2FFFE4;
 	__asm        jl     _T47;

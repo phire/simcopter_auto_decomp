@@ -1051,12 +1051,7 @@ _T1a:
 _T1f:
 	__asm        jmp    _T24;
 _T24:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xCC];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xC8];
-	__asm        sar    eax, 2;
-	__asm        mov    iEnd, eax;
+	iEnd = ((this->myTextWindowPtrArray.finish - this->myTextWindowPtrArray.start) >> 0x2);
 // LINE 70:
 	i = 0x0;
 	__asm        jmp    _T4b;
@@ -1455,12 +1450,7 @@ _T429:
 _T458:
 	rectTextWindow.right = ((this-><UserMenuWindow+0x18> - this-><UserMenuWindow+0x10>) - rectTextWindow.left);
 // LINE 128:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB0];
-	__asm        imul   eax, i;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xA8];
-	__asm        mov    rectTextWindow.top, eax;
+	rectTextWindow.top = ((this->myUserMenuWindowDescription.nLineHeight * i) + this->myUserMenuWindowDescription.ptPositionFirstItem.y);
 // LINE 129:
 	__asm        jmp    _T4a0;
 _T4a0:
@@ -1893,12 +1883,7 @@ _T11:
 _T16:
 	__asm        jmp    _T1b;
 _T1b:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xCC];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xC8];
-	__asm        sar    eax, 2;
-	__asm        mov    iEnd, eax;
+	iEnd = ((this->myTextWindowPtrArray.finish - this->myTextWindowPtrArray.start) >> 0x2);
 // LINE 171:
 	i = 0x0;
 	__asm        jmp    _T42;
@@ -2139,13 +2124,7 @@ int32_t UserMenuWindow::GetPositionOfNthItem(int32_t nIndex, /*packed*/ class MP
 // LINE 249:
 	ptPosition.x = this->myUserMenuWindowDescription.ptPositionFirstItem.x;
 // LINE 251:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB0];
-	__asm        imul   eax, nIndex;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xA8];
-	__asm        mov    ecx, ptPosition;
-	__asm        mov    [ecx+4], eax;
+	ptPosition.y = ((this->myUserMenuWindowDescription.nLineHeight * nIndex) + this->myUserMenuWindowDescription.ptPositionFirstItem.y);
 // LINE 252:
 	return 0x1;
 // LINE 253:
@@ -2165,12 +2144,7 @@ _T18:
 _T1d:
 	__asm        jmp    _T22;
 _T22:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xCC];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xC8];
-	__asm        sar    eax, 2;
-	__asm        mov    iEnd, eax;
+	iEnd = ((this->myTextWindowPtrArray.finish - this->myTextWindowPtrArray.start) >> 0x2);
 // LINE 267:
 _T3a:
 	__asm        mov    eax, i;
@@ -4361,14 +4335,8 @@ _T11:
 _T16:
 	__asm        jmp    _T1b;
 _T1b:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xCC];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xC8];
-	__asm        sar    eax, 2;
-	__asm        jmp    __RETURN;
+	return ((this->myTextWindowPtrArray.finish - this->myTextWindowPtrArray.start) >> 0x2);
 // LINE 220:
-__RETURN:
 }
 
 

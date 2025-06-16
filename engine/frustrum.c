@@ -25,21 +25,13 @@ void VRFrustSetNormals() {
 	/*bp-0x1c*/  int32_t swide;
 
 // LINE 74:
-	__asm        mov    eax, HALF_WIDTH;
-	__asm        shl    eax, 4;
-	__asm        mov    distx, eax;
+	distx = (HALF_WIDTH << 0x4);
 // LINE 75:
-	__asm        mov    eax, HALF_ASPECT;
-	__asm        shl    eax, 4;
-	__asm        mov    disty, eax;
+	disty = (HALF_ASPECT << 0x4);
 // LINE 76:
-	__asm        mov    eax, CLIP_RITE;
-	__asm        shl    eax, 4;
-	__asm        mov    swide, eax;
+	swide = (CLIP_RITE << 0x4);
 // LINE 77:
-	__asm        mov    eax, CLIP_BOTM;
-	__asm        shl    eax, 4;
-	__asm        mov    shigh, eax;
+	shigh = (CLIP_BOTM << 0x4);
 // LINE 81:
 	__asm        mov    eax, distx;
 	__asm        add    eax, eax;

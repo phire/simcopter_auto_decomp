@@ -1348,10 +1348,7 @@ _T224:
 	__asm        add    esp, 0x10;
 // LINE 2219:
 _T240:
-	__asm        movsx  eax, count;
-	__asm        shl    eax, 3;
-	__asm        add    eax, privpartinfos;
-	__asm        mov    partinfo, eax;
+	partinfo = ((reinterpret_cast<int16_t>(count) << 0x3) + privpartinfos);
 // LINE 2222:
 	__asm        mov    eax, partinfo;
 	__asm        mov    eax, [eax];

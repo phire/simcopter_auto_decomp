@@ -215,9 +215,7 @@ _T1b4:
 // LINE 228:
 	hdr = res;
 // LINE 230:
-	__asm        mov    eax, i;
-	__asm        sar    eax, 0x10;
-	__asm        mov    j, eax;
+	j = (i >> 0x10);
 // LINE 232:
 	__asm        cmp    j, 0;
 	__asm        je     _T48;
@@ -370,21 +368,9 @@ _T131:
 // LINE 349:
 	col = (colmask & i);
 // LINE 350:
-	__asm        mov    eax, i;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(rowshift);
-	__asm        sar    eax, cl;
-	__asm        mov    row, eax;
+	row = (i >> reinterpret_cast<uint8_t>(rowshift));
 // LINE 353:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax];
-	__asm        imul   eax, row;
-	__asm        shl    eax, 8;
-	__asm        mov    ecx, bhdr;
-	__asm        mov    ecx, [ecx];
-	__asm        imul   ecx, col;
-	__asm        add    eax, ecx;
-	__asm        add    eax, baseptr;
-	__asm        mov    tptr, eax;
+	tptr = ((((bhdr->info.width * row) << 0x8) + (bhdr->info.width * col)) + baseptr);
 // LINE 354:
 	__asm        mov    eax, tptr;
 	__asm        mov    ecx, i;

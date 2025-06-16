@@ -137,16 +137,7 @@ void S3MapInit() {
 // LINE 213:
 	S_borderdimy = (S_bordermax.y - S_bordermin.y);
 // LINE 215:
-	__asm        mov    eax, S_borderdimy;
-	__asm        imul   eax, S_borderdimx;
-	__asm        add    eax, 0x200;
-	__asm        push   eax;
-	__asm        push   0x5B529C;
-	__asm        mov    eax, MainPoolIndex;
-	__asm        push   eax;
-	__asm        call   S2AllocMem;
-	__asm        add    esp, 0xC;
-	__asm        mov    S_borderbuf, eax;
+	S_borderbuf = S2AllocMem(((S_borderdimy * S_borderdimx) + 0x200), 0x5b529c, MainPoolIndex);
 // LINE 216:
 	__asm        cmp    S_borderbuf, 0;
 	__asm        jne    _Tf9;
@@ -186,11 +177,7 @@ _Tf9:
 // LINE 229:
 	ptr = bhdr;
 // LINE 230:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    ptr, eax;
+	ptr += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 234:
 	S_icon_dim = bhdr->info.height;
 // LINE 235:
@@ -217,11 +204,7 @@ _T1d4:
 // LINE 246:
 	ptr = bhdr;
 // LINE 247:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    ptr, eax;
+	ptr += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 251:
 	S_dicon_dim = bhdr->info.height;
 // LINE 252:
@@ -317,17 +300,9 @@ _T30:
 	__asm        jmp    _T176a;
 // LINE 322:
 _T82:
-	__asm        mov    eax, posx;
-	__asm        mov    ecx, S_mapdimx;
-	__asm        sar    ecx, 1;
-	__asm        sub    eax, ecx;
-	__asm        mov    S_ulc.x, eax;
+	S_ulc.x = (posx - (S_mapdimx >> 0x1));
 // LINE 323:
-	__asm        mov    eax, posy;
-	__asm        mov    ecx, S_mapdimy;
-	__asm        sar    ecx, 1;
-	__asm        sub    eax, ecx;
-	__asm        mov    S_ulc.y, eax;
+	S_ulc.y = (posy - (S_mapdimy >> 0x1));
 // LINE 324:
 	__asm        mov    eax, S_ulc.x;
 	__asm        add    eax, S_mapdimx;
@@ -616,17 +591,9 @@ _T417:
 	__asm        jmp    _T178e;
 // LINE 432:
 _T41c:
-	__asm        mov    eax, posx;
-	__asm        mov    ecx, S_mapdimx;
-	__asm        sar    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        mov    S_ulc.x, eax;
+	S_ulc.x = (posx - (S_mapdimx >> 0x2));
 // LINE 433:
-	__asm        mov    eax, posy;
-	__asm        mov    ecx, S_mapdimy;
-	__asm        sar    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        mov    S_ulc.y, eax;
+	S_ulc.y = (posy - (S_mapdimy >> 0x2));
 // LINE 434:
 	__asm        mov    eax, S_ulc.x;
 	__asm        mov    ecx, S_mapdimx;
@@ -986,17 +953,9 @@ _T87d:
 	__asm        jmp    _T178e;
 // LINE 555:
 _T882:
-	__asm        mov    eax, posx;
-	__asm        mov    ecx, S_mapdimx;
-	__asm        sar    ecx, 3;
-	__asm        sub    eax, ecx;
-	__asm        mov    S_ulc.x, eax;
+	S_ulc.x = (posx - (S_mapdimx >> 0x3));
 // LINE 556:
-	__asm        mov    eax, posy;
-	__asm        mov    ecx, S_mapdimy;
-	__asm        sar    ecx, 3;
-	__asm        sub    eax, ecx;
-	__asm        mov    S_ulc.y, eax;
+	S_ulc.y = (posy - (S_mapdimy >> 0x3));
 // LINE 557:
 	__asm        mov    eax, S_mapdimx;
 	__asm        sar    eax, 2;
@@ -1489,17 +1448,9 @@ _Te6a:
 	__asm        jmp    _T178e;
 // LINE 715:
 _Te6f:
-	__asm        mov    eax, posx;
-	__asm        mov    ecx, S_mapdimx;
-	__asm        sar    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    S_ulc.x, eax;
+	S_ulc.x = (posx - (S_mapdimx >> 0x4));
 // LINE 716:
-	__asm        mov    eax, posy;
-	__asm        mov    ecx, S_mapdimy;
-	__asm        sar    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    S_ulc.y, eax;
+	S_ulc.y = (posy - (S_mapdimy >> 0x4));
 // LINE 717:
 	__asm        mov    eax, S_mapdimx;
 	__asm        sar    eax, 3;
@@ -2562,23 +2513,15 @@ _T2b1:
 	__asm        cmp    S_dirlen, eax;
 	__asm        jle    __RETURN;
 // LINE 1052:
-	__asm        mov    eax, dfx;
-	__asm        sar    eax, 0x10;
-	__asm        mov    x, eax;
+	x = (dfx >> 0x10);
 // LINE 1053:
-	__asm        mov    eax, dfy;
-	__asm        sar    eax, 0x10;
-	__asm        mov    y, eax;
+	y = (dfy >> 0x10);
 // LINE 1054:
 	dfx += fx;
 // LINE 1055:
 	dfy += fy;
 // LINE 1056:
-	__asm        mov    eax, y;
-	__asm        imul   eax, S_borderdimx;
-	__asm        add    eax, x;
-	__asm        add    eax, S_mapbufctr;
-	__asm        mov    ptr, eax;
+	ptr = (((y * S_borderdimx) + x) + S_mapbufctr);
 // LINE 1057:
 	ptr[0] = 0x70;
 // LINE 1058:
@@ -2601,13 +2544,9 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 // LINE 1076:
 	error = 0x0;
 // LINE 1080:
-	__asm        mov    eax, S_borderdimx;
-	__asm        sar    eax, 1;
-	__asm        mov    xpos, eax;
+	xpos = (S_borderdimx >> 0x1);
 // LINE 1081:
-	__asm        mov    eax, S_borderdimy;
-	__asm        sar    eax, 1;
-	__asm        mov    ypos, eax;
+	ypos = (S_borderdimy >> 0x1);
 // LINE 1084:
 	writeBuffer = S_mapbufctr;
 // LINE 1086:
@@ -2789,10 +2728,7 @@ void S3MapBlit(char * destbuf, long destpitch) {
 // LINE 1163:
 	cptr = destbuf;
 // LINE 1169:
-	__asm        mov    eax, S_bordermin.y;
-	__asm        imul   eax, destpitch;
-	__asm        add    eax, S_bordermin.x;
-	__asm        add    cptr, eax;
+	cptr += ((S_bordermin.y * destpitch) + S_bordermin.x);
 // LINE 1170:
 	mptr = S_borderbuf;
 // LINE 1172:
@@ -2842,10 +2778,7 @@ void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long y
 // LINE 1191:
 	cptr = destbuf;
 // LINE 1193:
-	__asm        mov    eax, destpitch;
-	__asm        imul   eax, yDestination;
-	__asm        add    eax, xDestination;
-	__asm        add    cptr, eax;
+	cptr += ((destpitch * yDestination) + xDestination);
 // LINE 1194:
 	mptr = S_borderbuf;
 // LINE 1196:
@@ -3089,17 +3022,9 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	return;
 // LINE 1393:
 _T18:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, S_icon_dim;
-	__asm        sar    ecx, 1;
-	__asm        sub    eax, ecx;
-	__asm        mov    mapx, eax;
+	mapx = (x - (S_icon_dim >> 0x1));
 // LINE 1394:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, S_icon_dim;
-	__asm        sar    ecx, 1;
-	__asm        sub    eax, ecx;
-	__asm        mov    mapy, eax;
+	mapy = (y - (S_icon_dim >> 0x1));
 // LINE 1395:
 	__asm        cmp    mapx, 0;
 	__asm        jge    _T4b;
@@ -3129,11 +3054,7 @@ _T7f:
 	mapy = (S_borderdimy - S_icon_dim);
 // LINE 1400:
 _Ta2:
-	__asm        mov    eax, mapy;
-	__asm        imul   eax, S_borderdimx;
-	__asm        add    eax, mapx;
-	__asm        add    eax, S_borderbuf;
-	__asm        mov    bufptr, eax;
+	bufptr = (((mapy * S_borderdimx) + mapx) + S_borderbuf);
 // LINE 1401:
 	__asm        mov    eax, icon_id;
 	__asm        mov    eax, S_icons[eax*4];
@@ -3790,11 +3711,7 @@ _T18:
 // LINE 1708:
 	mapy = y;
 // LINE 1710:
-	__asm        mov    eax, mapy;
-	__asm        imul   eax, S_borderdimx;
-	__asm        add    eax, mapx;
-	__asm        add    eax, S_borderbuf;
-	__asm        mov    bufptr, eax;
+	bufptr = (((mapy * S_borderdimx) + mapx) + S_borderbuf);
 // LINE 1711:
 	__asm        mov    eax, icon_id;
 	__asm        mov    eax, S_dicons[eax*4];
@@ -3859,11 +3776,7 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 // LINE 1746:
 	error = 0x0;
 // LINE 1749:
-	__asm        mov    eax, S_borderdimx;
-	__asm        imul   eax, ypos;
-	__asm        add    eax, xpos;
-	__asm        add    eax, S_borderbuf;
-	__asm        mov    writeBuffer, eax;
+	writeBuffer = (((S_borderdimx * ypos) + xpos) + S_borderbuf);
 // LINE 1751:
 	__asm        cmp    dx, 0;
 	__asm        jl     _T3b;
@@ -4037,19 +3950,9 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	__asm        cmp    y1, 0x80;
 	__asm        jge    _T4e;
 // LINE 1834:
-	__asm        mov    eax, x2;
-	__asm        sub    eax, x1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dx;
-	__asm        mov    [ecx], eax;
+	dx[0] = ((x2 - x1) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1835:
-	__asm        mov    eax, y2;
-	__asm        sub    eax, y1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dy;
-	__asm        mov    [ecx], eax;
+	dy[0] = ((y2 - y1) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1836:
 	return;
 // LINE 1840:
@@ -4082,36 +3985,16 @@ _T9b:
 	__asm        cmp    dist2, eax;
 	__asm        jge    _Te5;
 // LINE 1859:
-	__asm        mov    eax, x2;
-	__asm        sub    eax, from.x;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dx;
-	__asm        mov    [ecx], eax;
+	dx[0] = ((x2 - from.x) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1860:
-	__asm        mov    eax, y2;
-	__asm        sub    eax, from.y;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dy;
-	__asm        mov    [ecx], eax;
+	dy[0] = ((y2 - from.y) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1862:
 	return;
 // LINE 1864:
 _Te5:
-	__asm        mov    eax, x2;
-	__asm        sub    eax, x1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dx;
-	__asm        mov    [ecx], eax;
+	dx[0] = ((x2 - x1) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1865:
-	__asm        mov    eax, y2;
-	__asm        sub    eax, y1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dy;
-	__asm        mov    [ecx], eax;
+	dy[0] = ((y2 - y1) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1867:
 }
 

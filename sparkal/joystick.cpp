@@ -445,12 +445,7 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 	__asm        call   JoystickManager::GetPositionQuantitative;
 	__asm        mov    nValue, eax;
 // LINE 192:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x58];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x54];
-	__asm        sar    eax, 2;
-	__asm        mov    nOneQuarterOfTheRange, eax;
+	nOneQuarterOfTheRange = ((this->lNormalizedMaximum - this->lNormalizedMinimum) >> 0x2);
 // LINE 193:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x5C];

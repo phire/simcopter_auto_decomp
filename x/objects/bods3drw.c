@@ -110,11 +110,7 @@ _T40:
 	return;
 // LINE 151:
 _T45:
-	__asm        mov    eax, y;
-	__asm        imul   eax, Pbufwidth;
-	__asm        add    eax, x;
-	__asm        add    eax, buffer1;
-	__asm        mov    ptr, eax;
+	ptr = (((y * Pbufwidth) + x) + buffer1);
 // LINE 152:
 	__asm        push   0x5BEF48;
 	__asm        push   1;
@@ -246,9 +242,7 @@ _T7c:
 	__asm        sar    eax, 1;
 	__asm        mov    radius, eax;
 // LINE 205:
-	__asm        mov    eax, radius;
-	__asm        imul   eax, radius;
-	__asm        mov    radiusSquared, eax;
+	radiusSquared = (radius * radius);
 // LINE 207:
 	__asm        cmp    shadeFlag, 1;
 	__asm        jne    _T12a;
@@ -774,11 +768,7 @@ _T48:
 _T84:
 	pixPtr = bhdr;
 // LINE 435:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    pixPtr, eax;
+	pixPtr += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 440:
 	__asm        lea    eax, faceCenter.x;
 	__asm        push   eax;
@@ -852,11 +842,7 @@ _T10d:
 // LINE 467:
 	yLine = (centerPt.y + offset.y);
 // LINE 469:
-	__asm        mov    eax, faceCenter.y;
-	__asm        sub    eax, yScanLine;
-	__asm        imul   eax, pixLine.width;
-	__asm        add    eax, pixPtr;
-	__asm        mov    pixLine.ptr, eax;
+	pixLine.ptr = (((faceCenter.y - yScanLine) * pixLine.width) + pixPtr);
 // LINE 470:
 	__asm        lea    eax, pixLine.width;
 	__asm        push   eax;
@@ -883,11 +869,7 @@ _T10d:
 // LINE 473:
 	yLine = (centerPt.y - offset.y);
 // LINE 474:
-	__asm        mov    eax, faceCenter.y;
-	__asm        add    eax, yScanLine;
-	__asm        imul   eax, pixLine.width;
-	__asm        add    eax, pixPtr;
-	__asm        mov    pixLine.ptr, eax;
+	pixLine.ptr = (((faceCenter.y + yScanLine) * pixLine.width) + pixPtr);
 // LINE 475:
 	__asm        lea    eax, pixLine.width;
 	__asm        push   eax;
@@ -915,10 +897,7 @@ _T10d:
 	__asm        jmp    _T10a;
 // LINE 478:
 _T20f:
-	__asm        mov    eax, faceCenter.y;
-	__asm        imul   eax, pixLine.width;
-	__asm        add    eax, pixPtr;
-	__asm        mov    pixLine.ptr, eax;
+	pixLine.ptr = ((faceCenter.y * pixLine.width) + pixPtr);
 // LINE 479:
 	__asm        lea    eax, pixLine.width;
 	__asm        push   eax;
@@ -1522,9 +1501,7 @@ _T224:
 // LINE 735:
 	endWidth = (width - startWidth);
 // LINE 736:
-	__asm        mov    eax, startWidth;
-	__asm        imul   eax, Pbufwidth;
-	__asm        add    writeBufferTmp, eax;
+	writeBufferTmp += (startWidth * Pbufwidth);
 // LINE 738:
 	j = startWidth;
 	__asm        jmp    _T264;
@@ -1637,9 +1614,7 @@ _T338:
 // LINE 786:
 	oneByteWrites = (tapWidth & 0x3);
 // LINE 787:
-	__asm        mov    eax, tapWidth;
-	__asm        sar    eax, 2;
-	__asm        mov    fourByteWrites, eax;
+	fourByteWrites = (tapWidth >> 0x2);
 // LINE 790:
 	__asm        cmp    oneByteWrites, 0;
 	__asm        jge    _T393;
@@ -2023,9 +1998,7 @@ _T2a5:
 // LINE 929:
 	oneByteWrites = (width & 0x3);
 // LINE 930:
-	__asm        mov    eax, width;
-	__asm        sar    eax, 2;
-	__asm        mov    fourByteWrites, eax;
+	fourByteWrites = (width >> 0x2);
 // LINE 931:
 	__asm        cmp    oneByteWrites, 0;
 	__asm        jge    _T2fb;
@@ -2214,11 +2187,7 @@ _T92:
 	return;
 // LINE 1006:
 _Ta6:
-	__asm        mov    eax, yPos;
-	__asm        imul   eax, Pbufwidth;
-	__asm        add    eax, startX;
-	__asm        add    eax, buffer1;
-	__asm        mov    writeBuffer, eax;
+	writeBuffer = (((yPos * Pbufwidth) + startX) + buffer1);
 // LINE 1008:
 	__asm        mov    eax, endX;
 	__asm        sub    eax, startX;
@@ -2227,9 +2196,7 @@ _Ta6:
 // LINE 1015:
 	oneByteWrites = (dx & 0x3);
 // LINE 1016:
-	__asm        mov    eax, dx;
-	__asm        sar    eax, 2;
-	__asm        mov    fourByteWrites, eax;
+	fourByteWrites = (dx >> 0x2);
 // LINE 1018:
 	__asm        cmp    oneByteWrites, 0;
 	__asm        jge    _T103;
@@ -2414,11 +2381,7 @@ _T52:
 	return;
 // LINE 1084:
 _T65:
-	__asm        mov    eax, yPos;
-	__asm        imul   eax, Pbufwidth;
-	__asm        add    eax, startX;
-	__asm        add    eax, buffer1;
-	__asm        mov    writeBuffer, eax;
+	writeBuffer = (((yPos * Pbufwidth) + startX) + buffer1);
 // LINE 1086:
 	__asm        mov    eax, endX;
 	__asm        sub    eax, startX;
@@ -2443,9 +2406,7 @@ _T65:
 // LINE 1097:
 	oneByteWrites = (dx & 0x3);
 // LINE 1098:
-	__asm        mov    eax, dx;
-	__asm        sar    eax, 2;
-	__asm        mov    fourByteWrites, eax;
+	fourByteWrites = (dx >> 0x2);
 // LINE 1099:
 	__asm        cmp    oneByteWrites, 0;
 	__asm        jge    _Te8;

@@ -2344,16 +2344,10 @@ _T242:
 	__asm        cmp    it.current, eax;
 	__asm        jne    _T2c1;
 
-	__asm        add    it.node, 4;
-	__asm        mov    eax, it.node;
-	__asm        mov    eax, [eax];
-	__asm        mov    it.first, eax;
-	__asm        mov    eax, it.first;
-	__asm        mov    it.current, eax;
-	__asm        mov    eax, deque<basic_string<char>>::buffer_size;
-	__asm        shl    eax, 3;
-	__asm        add    eax, it.first;
-	__asm        mov    it.last, eax;
+	it.node += 0x4;
+	it.first = it.node->;
+	it.current = it.first;
+	it.last = ((deque<basic_string<char>>::buffer_size << 0x3) + it.first);
 _T2c1:
 	__asm        jmp    _T2c6;
 _T2c6:
@@ -2510,16 +2504,10 @@ _Td4:
 	__asm        cmp    it.last, eax;
 	__asm        jne    _T144;
 
-	__asm        add    it.node, 4;
-	__asm        mov    eax, it.node;
-	__asm        mov    eax, [eax];
-	__asm        mov    it.first, eax;
-	__asm        mov    eax, it.first;
-	__asm        mov    it.current, eax;
-	__asm        mov    eax, deque<basic_string<char>>::buffer_size;
-	__asm        shl    eax, 3;
-	__asm        add    eax, it.first;
-	__asm        mov    it.last, eax;
+	it.node += 0x4;
+	it.first = it.node->;
+	it.current = it.first;
+	it.last = ((deque<basic_string<char>>::buffer_size << 0x3) + it.first);
 _T144:
 	__asm        jmp    _T149;
 _T149:

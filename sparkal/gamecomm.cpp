@@ -1543,11 +1543,7 @@ _T136:
 _T13b:
 	chTempModifierState = 0x5c34f0->Keyboard::GetCurrentModifierState();
 // LINE 449:
-	__asm        movsx  eax, chTempModifierState;
-	__asm        and    eax, 7;
-	__asm        shl    eax, 8;
-	__asm        add    eax, lKey;
-	__asm        mov    nTempIndex, eax;
+	nTempIndex = (((reinterpret_cast<int16_t>(chTempModifierState) & 0x7) << 0x8) + lKey);
 	__asm        jmp    _T15d;
 // LINE 450:
 _T15d:
@@ -1717,11 +1713,7 @@ _T124:
 _T129:
 	chTempModifierState = 0x5c34f0->Keyboard::GetCurrentModifierState();
 // LINE 513:
-	__asm        movsx  eax, chTempModifierState;
-	__asm        and    eax, 7;
-	__asm        shl    eax, 8;
-	__asm        add    eax, lKey;
-	__asm        mov    nTempIndex, eax;
+	nTempIndex = (((reinterpret_cast<int16_t>(chTempModifierState) & 0x7) << 0x8) + lKey);
 	__asm        jmp    _T14b;
 // LINE 514:
 _T14b:

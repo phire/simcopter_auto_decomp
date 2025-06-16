@@ -236,14 +236,7 @@ _T38:
 	__asm        cmp    g_nNextTWKQueueSlot, eax;
 	__asm        jle    __RETURN;
 // LINE 172:
-	__asm        mov    eax, nCt;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 8;
-	__asm        sub    eax, ecx;
-	__asm        sub    eax, ecx;
-	__asm        add    eax, 0x63A860;
-	__asm        add    eax, 0xCC;
-	__asm        mov    pszSection, eax;
+	pszSection = (((((nCt << 0x8) - nCt) - nCt) + 0x63a860) + 0xcc);
 // LINE 175:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;

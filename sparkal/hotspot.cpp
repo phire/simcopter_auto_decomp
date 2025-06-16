@@ -673,16 +673,7 @@ _T3bf:
 _T3c4:
 	__asm        jmp    _T3c9;
 _T3c9:
-	__asm        mov    eax, newHotSpot;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, newHotSpot;
-	__asm        sub    eax, [ecx+8];
-	__asm        sar    eax, 3;
-	__asm        shl    eax, 3;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->pointArray.finish = ((((newHotSpot.pointArray.finish - newHotSpot.pointArray.start) >> 0x3) << 0x3) + this->pointArray.start);
 	__asm        jmp    _T3ec;
 // LINE 38:
 _T3ec:
@@ -2481,16 +2472,7 @@ _T3b0:
 _T3b5:
 	__asm        jmp    _T3ba;
 _T3ba:
-	__asm        mov    eax, newHotSpot;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, newHotSpot;
-	__asm        sub    eax, [ecx+8];
-	__asm        sar    eax, 3;
-	__asm        shl    eax, 3;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->pointArray.finish = ((((newHotSpot.pointArray.finish - newHotSpot.pointArray.start) >> 0x3) << 0x3) + this->pointArray.start);
 	__asm        jmp    _T3dd;
 // LINE 108:
 _T3dd:
@@ -2768,34 +2750,7 @@ _T52:
 _T57:
 	__asm        jmp    _T5c;
 _T5c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        sub    eax, [ecx+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        sub    ecx, [edx+0xC];
-	__asm        imul   eax, ecx;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    ecx, [ecx];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        sub    ecx, [edx+8];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        mov    edx, [edx];
-	__asm        mov    ebx, this;
-	__asm        mov    ebx, [ebx+8];
-	__asm        sub    edx, [ebx+8];
-	__asm        imul   ecx, edx;
-	__asm        add    eax, ecx;
-	__asm        mov    nRadiusOfCircle, eax;
+	nRadiusOfCircle = (((this->pointArray.start->y - this->pointArray.start-><MPoint+0x0c>) * (this->pointArray.start->y - this->pointArray.start-><MPoint+0x0c>)) + ((this->pointArray.start->x - this->pointArray.start-><MPoint+0x08>) * (this->pointArray.start->x - this->pointArray.start-><MPoint+0x08>)));
 // LINE 165:
 	__asm        jmp    _Tb2;
 _Tb2:
@@ -2813,26 +2768,7 @@ _Tcb:
 _Td0:
 	__asm        jmp    _Td5;
 _Td5:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, lXPosition;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    ecx, [ecx];
-	__asm        sub    ecx, lXPosition;
-	__asm        imul   eax, ecx;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    ecx, [ecx+4];
-	__asm        sub    ecx, lYPosition;
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        mov    edx, [edx+4];
-	__asm        sub    edx, lYPosition;
-	__asm        imul   ecx, edx;
-	__asm        add    eax, ecx;
-	__asm        mov    nDistanceToPosition, eax;
+	nDistanceToPosition = (((this->pointArray.start->x - lXPosition) * (this->pointArray.start->x - lXPosition)) + ((this->pointArray.start->y - lYPosition) * (this->pointArray.start->y - lYPosition)));
 // LINE 167:
 _T124:
 _T126:
@@ -2854,12 +2790,7 @@ _T11:
 _T16:
 	__asm        jmp    _T1b;
 _T1b:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+8];
-	__asm        sar    eax, 3;
-	__asm        mov    nVertices, eax;
+	nVertices = ((this->pointArray.finish - this->pointArray.start) >> 0x3);
 // LINE 186:
 	__asm        mov    i, 0;
 	__asm        mov    c, 0;
@@ -3142,12 +3073,7 @@ _T1cb:
 _T1d0:
 	__asm        jmp    _T1d5;
 _T1d5:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+8];
-	__asm        sar    eax, 3;
-	__asm        mov    nPointCount, eax;
+	nPointCount = ((this->pointArray.finish - this->pointArray.start) >> 0x3);
 // LINE 235:
 	__asm        cmp    nPointCount, 0;
 	__asm        jg     _T228;
@@ -3624,12 +3550,7 @@ _T474:
 	__asm        jmp    _T479;
 // LINE 291:
 _T479:
-	__asm        mov    eax, currentHotspotRecord;
-	__asm        mov    eax, [eax+0xC];
-	__asm        shl    eax, 3;
-	__asm        add    eax, nCurrentRecordStart;
-	__asm        add    eax, 0x10;
-	__asm        mov    nCurrentRecordStart, eax;
+	nCurrentRecordStart = (((currentHotspotRecord->lCount << 0x3) + nCurrentRecordStart) + 0x10);
 // LINE 292:
 	__asm        jmp    _Tb7;
 // LINE 293:

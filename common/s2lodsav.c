@@ -4365,9 +4365,7 @@ void swizzle_Micro(char * data, long count) {
 	/*bp-0x8*/   /*packed*/ struct Micro *mptr;
 
 // LINE 1529:
-	__asm        mov    eax, count;
-	__asm        shr    eax, 3;
-	__asm        mov    count, eax;
+	count = (count >> 0x3);
 // LINE 1530:
 	mptr = data;
 // LINE 1532:

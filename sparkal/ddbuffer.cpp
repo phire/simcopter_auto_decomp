@@ -803,11 +803,7 @@ _T2eb:
 	return;
 // LINE 139:
 _T2fd:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0xC];
-	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
+	IFlatImage::lTotalMemoryUsage += (this->mWidth * this->mHeight);
 // LINE 142:
 	this->CBackBuffer::Load();
 // LINE 145:
@@ -896,11 +892,7 @@ _T10e:
 	return;
 // LINE 191:
 _T120:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0xC];
-	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
+	IFlatImage::lTotalMemoryUsage += (this->mWidth * this->mHeight);
 // LINE 204:
 	this->CBackBuffer::Lock();
 // LINE 205:
@@ -1202,10 +1194,7 @@ _T1bd:
 	__asm        cmp    biHeader.biClrUsed, 0;
 	__asm        jne    _T1fd;
 // LINE 336:
-	__asm        mov    eax, 1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(biHeader.biBitCount);
-	__asm        shl    eax, cl;
-	__asm        mov    biHeader.biClrUsed, eax;
+	biHeader.biClrUsed = (0x1 << reinterpret_cast<uint8_t>(biHeader.biBitCount));
 // LINE 338:
 _T1fd:
 	__asm        mov    eax, biHeader.biClrUsed;
@@ -3110,10 +3099,7 @@ _T13f:
 	__asm        cmp    biHeader.biClrUsed, 0;
 	__asm        jne    _T156;
 // LINE 1279:
-	__asm        mov    eax, 1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(biHeader.biBitCount);
-	__asm        shl    eax, cl;
-	__asm        mov    biHeader.biClrUsed, eax;
+	biHeader.biClrUsed = (0x1 << reinterpret_cast<uint8_t>(biHeader.biBitCount));
 // LINE 1280:
 _T156:
 	__asm        cmp    biHeader.biClrUsed, 0x100;
@@ -3387,13 +3373,7 @@ _T5c:
 	__asm        inc    eax;
 	__asm        mov    length, eax;
 // LINE 1476:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, nStartY;
-	__asm        add    eax, nStartX;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    address, eax;
+	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1477:
 	i = nThickness;
 // LINE 1478:
@@ -3434,13 +3414,7 @@ _Tbf:
 	nEndY = temp;
 // LINE 1492:
 _Te9:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, nStartY;
-	__asm        add    eax, nStartX;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    address, eax;
+	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1493:
 	__asm        mov    eax, nEndY;
 	__asm        sub    eax, nStartY;
@@ -3633,13 +3607,7 @@ _T2c8:
 	__asm        jmp    _T313;
 // LINE 1584:
 _T2fd:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, y;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        add    eax, x;
-	__asm        mov    address, eax;
+	address = (((this->mStride * y) + this->mpBits) + x);
 // LINE 1586:
 _T313:
 	j = nThickness;
@@ -3995,13 +3963,7 @@ _T3af:
 	__asm        inc    eax;
 	__asm        mov    length, eax;
 // LINE 1649:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, nStartY;
-	__asm        add    eax, nStartX;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    address, eax;
+	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1650:
 	i = nThickness;
 // LINE 1651:
@@ -4042,13 +4004,7 @@ _T41e:
 	nEndY = temp;
 // LINE 1665:
 _T448:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, nStartY;
-	__asm        add    eax, nStartX;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    address, eax;
+	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1666:
 	__asm        mov    eax, nEndY;
 	__asm        sub    eax, nStartY;
@@ -4269,13 +4225,7 @@ _T64d:
 	__asm        jmp    _T6d2;
 // LINE 1774:
 _T6b6:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, y;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        add    eax, x;
-	__asm        mov    address, eax;
+	address = (((this->mStride * y) + this->mpBits) + x);
 // LINE 1776:
 _T6d2:
 	j = nThickness;
@@ -4383,12 +4333,7 @@ _T7d3:
 	__asm        mov    address, eax;
 // LINE 1814:
 _T7e1:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, bufferHeight;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    bufferEnd, eax;
+	bufferEnd = ((this->mStride * bufferHeight) + this->mpBits);
 // LINE 1816:
 	j = nThickness;
 // LINE 1818:

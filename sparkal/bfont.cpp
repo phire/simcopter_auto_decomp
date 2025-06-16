@@ -1880,12 +1880,7 @@ _Ta1c:
 _Ta21:
 	__asm        jmp    _Ta26;
 _Ta26:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x30];
-	__asm        sar    eax, 4;
-	__asm        mov    iEnd, eax;
+	iEnd = ((this->rectCharacterCells.finish - this->rectCharacterCells.start) >> 0x4);
 	__asm        jmp    _Ta4c;
 _Ta46:
 	i++;

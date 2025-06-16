@@ -352,9 +352,7 @@ void S3MissionGenerator() {
 	__asm        call   ConvertCitySettingsToSteppedPercentages;
 	__asm        add    esp, 8;
 // LINE 248:
-	__asm        mov    eax, S_max_missions_easy;
-	__asm        imul   eax, G_diff_level;
-	__asm        mov    S_max_missions, eax;
+	S_max_missions = (S_max_missions_easy * G_diff_level);
 // LINE 249:
 	__asm        mov    eax, S_mission_interval_easy;
 	__asm        cdq;
@@ -4160,10 +4158,7 @@ _Ta9:
 	__asm        jmp    _T5f2;
 // LINE 2050:
 _Tdf:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_flame;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_flame);
 // LINE 2051:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4204,10 +4199,7 @@ _T161:
 	__asm        jmp    _T5f2;
 // LINE 2067:
 _T166:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_saved_building;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_saved_building);
 // LINE 2068:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4242,10 +4234,7 @@ _T1ad:
 	__asm        jmp    _T5f2;
 // LINE 2080:
 _T1e3:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_debris_doused;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_debris_doused);
 // LINE 2081:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4279,10 +4268,7 @@ _T243:
 	__asm        jmp    _T5f2;
 // LINE 2100:
 _T248:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_person_rescued;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_person_rescued);
 // LINE 2101:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4298,10 +4284,7 @@ _T248:
 	__asm        jmp    _T5f2;
 // LINE 2108:
 _T28f:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_person_transport;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_person_transport);
 // LINE 2109:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4317,10 +4300,7 @@ _T28f:
 	__asm        jmp    _T5f2;
 // LINE 2116:
 _T2d6:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_person_medevaced;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_person_medevaced);
 // LINE 2117:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4336,10 +4316,7 @@ _T2d6:
 	__asm        jmp    _T5f2;
 // LINE 2124:
 _T31d:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_person_pickup;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_person_pickup);
 // LINE 2125:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4373,10 +4350,7 @@ _T37d:
 	__asm        jmp    _T5f2;
 // LINE 2144:
 _T382:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_vehicle_doused;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_vehicle_doused);
 // LINE 2145:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4392,10 +4366,7 @@ _T382:
 	__asm        jmp    _T5f2;
 // LINE 2152:
 _T3c9:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_vehicle_unjammed;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_vehicle_unjammed);
 // LINE 2153:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4430,10 +4401,7 @@ _T410:
 	__asm        jmp    _T5f2;
 // LINE 2165:
 _T446:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_mission_speeder;
-	__asm        mov    points, eax;
+	points = (mp->i2num * S_pts_mission_speeder);
 // LINE 2166:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4442,10 +4410,7 @@ _T446:
 	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2167:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_mission_speeder;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_mission_speeder);
 // LINE 2168:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4461,10 +4426,7 @@ _T446:
 	__asm        jmp    _T5f2;
 // LINE 2175:
 _T4b3:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_mission_ufo;
-	__asm        mov    points, eax;
+	points = (mp->i2num * S_pts_mission_ufo);
 // LINE 2176:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4473,10 +4435,7 @@ _T4b3:
 	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2177:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_money_mission_ufo;
-	__asm        mov    money, eax;
+	money = (mp->i2num * S_money_mission_ufo);
 // LINE 2178:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
@@ -4595,10 +4554,7 @@ void S3MissionScoreEnd(/*packed*/ struct MISSION_DATA *md) {
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
 // LINE 2240:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x74];
-	__asm        imul   eax, S_pts_mission_debris;
-	__asm        add    total_pts, eax;
+	total_pts += (md->mdata.doused_debris * S_pts_mission_debris);
 // LINE 2241:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
@@ -4608,29 +4564,16 @@ void S3MissionScoreEnd(/*packed*/ struct MISSION_DATA *md) {
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
 // LINE 2242:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x74];
-	__asm        imul   eax, S_money_mission_debris;
-	__asm        add    total_money, eax;
+	total_money += (md->mdata.doused_debris * S_money_mission_debris);
 // LINE 2245:
 _T70:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x50], 1;
 	__asm        je     _Tfd;
 // LINE 2251:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x6C];
-	__asm        and    eax, 1;
-	__asm        mov    ecx, md;
-	__asm        imul   eax, [ecx+0x48];
-	__asm        add    total_pts, eax;
+	total_pts += ((md->mdata.saved_cels & 0x1) * md->points_bonus);
 // LINE 2252:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x6C];
-	__asm        and    eax, 1;
-	__asm        mov    ecx, md;
-	__asm        imul   eax, [ecx+0x44];
-	__asm        add    total_money, eax;
+	total_money += ((md->mdata.saved_cels & 0x1) * md->money_bonus);
 // LINE 2253:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
@@ -4671,15 +4614,9 @@ _Tfd:
 	__asm        test   byte ptr [eax+0x50], 0x20;
 	__asm        je     _T18e;
 // LINE 2263:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xA0];
-	__asm        imul   eax, S_pts_mission_medevac;
-	__asm        add    total_pts, eax;
+	total_pts += (md->mdata.person_medevaced * S_pts_mission_medevac);
 // LINE 2264:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xA0];
-	__asm        imul   eax, S_money_mission_medevac;
-	__asm        add    total_money, eax;
+	total_money += (md->mdata.person_medevaced * S_money_mission_medevac);
 // LINE 2265:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
@@ -4697,32 +4634,18 @@ _Tfd:
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
 // LINE 2267:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        sar    eax, 2;
-	__asm        imul   eax, S_pts_mission_medevac;
-	__asm        add    total_pts, eax;
+	total_pts += ((md->mdata.person_pickedup >> 0x2) * S_pts_mission_medevac);
 // LINE 2268:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        sar    eax, 2;
-	__asm        imul   eax, S_money_mission_medevac;
-	__asm        add    total_money, eax;
+	total_money += ((md->mdata.person_pickedup >> 0x2) * S_money_mission_medevac);
 // LINE 2272:
 _T18e:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x50], 0x10;
 	__asm        je     _T21f;
 // LINE 2275:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x98];
-	__asm        imul   eax, S_pts_mission_rescue;
-	__asm        add    total_pts, eax;
+	total_pts += (md->mdata.person_rescued * S_pts_mission_rescue);
 // LINE 2276:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x98];
-	__asm        imul   eax, S_money_mission_rescue;
-	__asm        add    total_money, eax;
+	total_money += (md->mdata.person_rescued * S_money_mission_rescue);
 // LINE 2277:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
@@ -4740,32 +4663,18 @@ _T18e:
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
 // LINE 2279:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        sar    eax, 2;
-	__asm        imul   eax, S_pts_mission_rescue;
-	__asm        add    total_pts, eax;
+	total_pts += ((md->mdata.person_pickedup >> 0x2) * S_pts_mission_rescue);
 // LINE 2280:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        sar    eax, 2;
-	__asm        imul   eax, S_money_mission_rescue;
-	__asm        add    total_money, eax;
+	total_money += ((md->mdata.person_pickedup >> 0x2) * S_money_mission_rescue);
 // LINE 2283:
 _T21f:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x50], 0x40;
 	__asm        je     _T2b0;
 // LINE 2287:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        imul   eax, S_pts_mission_transport;
-	__asm        add    total_pts, eax;
+	total_pts += (md->mdata.person_transported * S_pts_mission_transport);
 // LINE 2288:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        imul   eax, S_money_mission_transport;
-	__asm        add    total_money, eax;
+	total_money += (md->mdata.person_transported * S_money_mission_transport);
 // LINE 2289:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
@@ -4783,17 +4692,9 @@ _T21f:
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
 // LINE 2291:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        sar    eax, 2;
-	__asm        imul   eax, S_pts_mission_transport;
-	__asm        add    total_pts, eax;
+	total_pts += ((md->mdata.person_pickedup >> 0x2) * S_pts_mission_transport);
 // LINE 2292:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        sar    eax, 2;
-	__asm        imul   eax, S_money_mission_transport;
-	__asm        add    total_money, eax;
+	total_money += ((md->mdata.person_pickedup >> 0x2) * S_money_mission_transport);
 // LINE 2295:
 _T2b0:
 	__asm        mov    eax, md;
@@ -4845,10 +4746,7 @@ _T325:
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
 // LINE 2323:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xC8];
-	__asm        imul   eax, S_pts_mission_vehiclefire;
-	__asm        add    total_pts, eax;
+	total_pts += (md->mdata.vehicles_doused * S_pts_mission_vehiclefire);
 // LINE 2324:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
@@ -4858,10 +4756,7 @@ _T325:
 	__asm        neg    eax;
 	__asm        sub    total_money, eax;
 // LINE 2325:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0xC8];
-	__asm        imul   eax, S_money_mission_vehiclefire;
-	__asm        add    total_money, eax;
+	total_money += (md->mdata.vehicles_doused * S_money_mission_vehiclefire);
 // LINE 2328:
 _T38a:
 	__asm        mov    eax, md;

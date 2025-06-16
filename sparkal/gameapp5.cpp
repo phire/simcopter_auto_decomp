@@ -529,20 +529,11 @@ _T35:
 _T43:
 	nSurfaceStride = bufferToDrawTo->mStride;
 // LINE 241:
-	__asm        mov    eax, swindow.WindowWide;
-	__asm        sar    eax, 1;
-	__asm        mov    nMidXPosition, eax;
+	nMidXPosition = (swindow.WindowWide >> 0x1);
 // LINE 242:
-	__asm        mov    eax, swindow.WindowHigh;
-	__asm        sar    eax, 1;
-	__asm        mov    nMidYPosition, eax;
+	nMidYPosition = (swindow.WindowHigh >> 0x1);
 // LINE 243:
-	__asm        mov    eax, nMidYPosition;
-	__asm        sub    eax, 0xD;
-	__asm        imul   eax, nSurfaceStride;
-	__asm        add    eax, nMidXPosition;
-	__asm        add    eax, pBufferStart;
-	__asm        mov    pBufferCurrentPosition, eax;
+	pBufferCurrentPosition = ((((nMidYPosition - 0xd) * nSurfaceStride) + nMidXPosition) + pBufferStart);
 // LINE 244:
 	i = 0x0;
 	__asm        jmp    _T84;
@@ -561,12 +552,7 @@ _T84:
 	__asm        jmp    _T81;
 // LINE 249:
 _Ta6:
-	__asm        mov    eax, nMidYPosition;
-	__asm        imul   eax, nSurfaceStride;
-	__asm        add    eax, nMidXPosition;
-	__asm        add    eax, pBufferStart;
-	__asm        sub    eax, 0xD;
-	__asm        mov    pBufferCurrentPosition, eax;
+	pBufferCurrentPosition = ((((nMidYPosition * nSurfaceStride) + nMidXPosition) + pBufferStart) - 0xd);
 // LINE 250:
 	i = 0x0;
 	__asm        jmp    _Tc8;
@@ -726,26 +712,7 @@ _T112:
 	__asm        mov    ecx, [eax+0x54];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 314:
-	__asm        mov    eax, IFlatImage::lTotalMemoryUsage;
-	__asm        shr    eax, 0xA;
-	__asm        push   eax;
-	__asm        call   Sound::GetTotalMemoryUsage;
-	__asm        shr    eax, 0xA;
-	__asm        push   eax;
-	__asm        mov    eax, G_alloc_max;
-	__asm        shr    eax, 0xA;
-	__asm        push   eax;
-	__asm        mov    eax, G_alloc_used;
-	__asm        shr    eax, 0xA;
-	__asm        push   eax;
-	__asm        mov    eax, G_alloc_curr;
-	__asm        shr    eax, 0xA;
-	__asm        push   eax;
-	__asm        push   0x59A19C;
-	__asm        lea    eax, szBuffer1[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x1C;
+	sprintf((IFlatImage::lTotalMemoryUsage >> 0xa), (Sound::GetTotalMemoryUsage((IFlatImage::lTotalMemoryUsage >> 0xa)) >> 0xa), (G_alloc_max >> 0xa), (G_alloc_used >> 0xa), (G_alloc_curr >> 0xa), 0x59a19c, szBuffer1[0]);
 // LINE 315:
 	nTextTop += 0xc;
 // LINE 316:

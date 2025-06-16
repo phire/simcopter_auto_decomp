@@ -5083,15 +5083,9 @@ _Ta25:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 383:
-	__asm        mov    eax, pos.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    offcellx, eax;
+	offcellx = ((pos.x + 0x20000000) >> 0x16);
 // LINE 384:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, pos.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    offcelly, eax;
+	offcelly = ((0x20000000 - pos.z) >> 0x16);
 // LINE 386:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(centcellx);
 	__asm        cmp    eax, 0x7F;
@@ -6315,10 +6309,7 @@ _T366:
 	__asm        cmp    joystickValue, 0;
 	__asm        je     _T393;
 // LINE 609:
-	__asm        mov    eax, joystickValue;
-	__asm        shl    eax, 0x10;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x178], eax;
+	this->fUserControl.rotateRate = (joystickValue << 0x10);
 // LINE 610:
 	__asm        jmp    _T3bf;
 // LINE 612:
@@ -6413,17 +6404,9 @@ _T7e:
 	/*bp-0x14*/  /*unpacked*/ struct _CELL_INFO *cptr;
 
 // LINE 654:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = ((loc->x + 0x20000000) >> 0x16);
 // LINE 655:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, loc;
-	__asm        sub    eax, [ecx+8];
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = ((0x20000000 - loc->z) >> 0x16);
 // LINE 657:
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -10092,16 +10075,9 @@ _T62:
 // LINE 1301:
 	vec.x = vec.y;
 // LINE 1303:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        imul   eax, vec.x;
-	__asm        mov    vec.x, eax;
+	vec.x = ((G_ViewSize >> 0x1) * vec.x);
 // LINE 1304:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 1305:
 	__asm        jmp    _T156;
 // LINE 1308:
@@ -10114,16 +10090,9 @@ _T9c:
 // LINE 1310:
 	vec.x = vec.y;
 // LINE 1312:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        imul   eax, vec.x;
-	__asm        mov    vec.x, eax;
+	vec.x = ((G_ViewSize >> 0x1) * vec.x);
 // LINE 1313:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 1314:
 	__asm        jmp    _T156;
 // LINE 1317:
@@ -10136,15 +10105,9 @@ _Td6:
 	__asm        neg    eax;
 	__asm        mov    vec.z, eax;
 // LINE 1320:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 2;
-	__asm        imul   eax, vec.x;
-	__asm        mov    vec.x, eax;
+	vec.x = ((G_ViewSize >> 0x2) * vec.x);
 // LINE 1321:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 2;
-	__asm        imul   eax, vec.z;
-	__asm        mov    vec.z, eax;
+	vec.z = ((G_ViewSize >> 0x2) * vec.z);
 // LINE 1322:
 	__asm        jmp    _T156;
 // LINE 1326:
@@ -10181,18 +10144,9 @@ _T156:
 // LINE 1332:
 	__asm        shl    vec.z, 6;
 // LINE 1334:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        add    eax, vec.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = (((ViewState.world_pos.x + vec.x) + 0x20000000) >> 0x16);
 // LINE 1335:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, ViewState.world_pos.z;
-	__asm        add    ecx, vec.z;
-	__asm        sub    eax, ecx;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = ((0x20000000 - (ViewState.world_pos.z + vec.z)) >> 0x16);
 // LINE 1342:
 _T187:
 	curr_dir++;
@@ -10563,11 +10517,8 @@ _T273:
 	__asm        mov    deltaX, ax;
 // LINE 1453:
 _T28a:
-	__asm        mov    eax, G_ViewSize;
-	__asm        mov    debug1, eax;
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 2;
-	__asm        mov    debug2, eax;
+	debug1 = G_ViewSize;
+	debug2 = (G_ViewSize >> 0x2);
 // LINE 1454:
 	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
@@ -11935,17 +11886,9 @@ _Ta55:
 	__asm        add    esp, 0x10;
 // LINE 1753:
 _Ta71:
-	__asm        mov    eax, onTopOf;
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    mycellx, eax;
+	mycellx = ((onTopOf->loc.x + 0x20000000) >> 0x16);
 // LINE 1754:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, onTopOf;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    mycelly, eax;
+	mycelly = ((0x20000000 - onTopOf->loc.z) >> 0x16);
 // LINE 1755:
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, mycellx;
@@ -14314,15 +14257,9 @@ unsigned short cYObject::AdjoinsRoad(/*unpacked*/ struct Point3d pos) {
 	/*bp-0x8*/   int32_t celly;
 
 // LINE 2222:
-	__asm        mov    eax, pos.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    cellx, eax;
+	cellx = ((pos.x + 0x20000000) >> 0x16);
 // LINE 2223:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, pos.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celly, eax;
+	celly = ((0x20000000 - pos.z) >> 0x16);
 // LINE 2230:
 	__asm        mov    eax, cellx;
 	__asm        dec    eax;
@@ -19364,23 +19301,11 @@ _Taa:
 	return;
 // LINE 2985:
 _Tc2:
-	__asm        mov    eax, blit;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax];
-	__asm        sar    eax, 0xC;
-	__asm        mov    screenPt.x, eax;
+	screenPt.x = (blit->verts->x >> 0xc);
 // LINE 2986:
-	__asm        mov    eax, blit;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sar    eax, 0xC;
-	__asm        mov    screenPt.y, eax;
+	screenPt.y = (blit->verts->y >> 0xc);
 // LINE 2987:
-	__asm        mov    eax, blit;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+8];
-	__asm        sar    eax, 0x10;
-	__asm        mov    screenPt.z, eax;
+	screenPt.z = (blit->verts->z >> 0x10);
 // LINE 2988:
 	__asm        fld    qword ptr ds:[0x593568];
 	__asm        mov    eax, screenPt.z;

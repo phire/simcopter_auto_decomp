@@ -965,10 +965,7 @@ _T1cb:
 	__asm        jmp    _T1ec;
 // LINE 209:
 _T1ec:
-	__asm        mov    eax, Top;
-	__asm        imul   eax, DestStride;
-	__asm        add    eax, Left;
-	__asm        add    pBits, eax;
+	pBits += ((Top * DestStride) + Left);
 // LINE 211:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];

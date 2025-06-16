@@ -137,10 +137,7 @@ long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long l
 	__asm        neg    eax;
 	__asm        sub    lPositionSource, eax;
 // LINE 75:
-	__asm        mov    eax, lMaxDestination;
-	__asm        sub    eax, lMinDestination;
-	__asm        imul   eax, lPositionSource;
-	__asm        mov    lPositionSource, eax;
+	lPositionSource = ((lMaxDestination - lMinDestination) * lPositionSource);
 // LINE 76:
 	__asm        mov    ecx, lMaxSource;
 	__asm        sub    ecx, lMinSource;

@@ -971,12 +971,7 @@ void VRAppDeInit() {
 // FUNCTION: COPTER_D 0x004eb9aa
 void VRAppNextFrame() {
 // LINE 791:
-	__asm        mov    eax, G_AvLoopTime;
-	__asm        shl    eax, 3;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        add    eax, LoopTime;
-	__asm        sar    eax, 3;
-	__asm        mov    G_AvLoopTime, eax;
+	G_AvLoopTime = ((((G_AvLoopTime << 0x3) - G_AvLoopTime) + LoopTime) >> 0x3);
 // LINE 792:
 	G_framectr++;
 // LINE 805:
@@ -1101,25 +1096,13 @@ void SetUserVars(int32_t * user) {
 // LINE 947:
 	tVmax = user[20];
 // LINE 949:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x38];
-	__asm        sar    eax, 0x10;
-	__asm        mov    keyRotateXp, eax;
+	keyRotateXp = (user[56] >> 0x10);
 // LINE 950:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        sar    eax, 0x10;
-	__asm        mov    keyRotateXm, eax;
+	keyRotateXm = (user[60] >> 0x10);
 // LINE 951:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x48];
-	__asm        sar    eax, 0x10;
-	__asm        mov    keyRotateZp, eax;
+	keyRotateZp = (user[72] >> 0x10);
 // LINE 952:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        sar    eax, 0x10;
-	__asm        mov    keyRotateZm, eax;
+	keyRotateZm = (user[76] >> 0x10);
 // LINE 954:
 	thetaspeed = user[40];
 // LINE 955:

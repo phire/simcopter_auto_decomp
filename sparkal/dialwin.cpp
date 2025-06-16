@@ -6132,12 +6132,7 @@ void PassengerWindow::GetRectOfPassengerGraphic(int32_t face, int32_t nPassenger
 	__asm        mov    ecx, rectPosition;
 	__asm        mov    [ecx], eax;
 // LINE 1130:
-	__asm        mov    eax, nPassengerExpression;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 5;
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, rectPosition;
-	__asm        mov    [ecx+4], eax;
+	rectPosition.top = ((nPassengerExpression << 0x5) + nPassengerExpression);
 // LINE 1131:
 	rectPosition.right = (rectPosition.left + 0x1b);
 // LINE 1132:

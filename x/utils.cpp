@@ -364,11 +364,7 @@ _Te9:
 	__asm        mov    edx, str;
 	__asm        mov    [ecx+edx], al;
 // LINE 147:
-	__asm        mov    eax, num;
-	__asm        mov    ecx, tenPower;
-	__asm        imul   ecx, digit;
-	__asm        sub    eax, ecx;
-	__asm        mov    num, eax;
+	num = (num - (tenPower * digit));
 // LINE 148:
 	power++;
 // LINE 149:

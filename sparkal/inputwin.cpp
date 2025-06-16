@@ -7038,9 +7038,7 @@ _Te5:
 	__asm        call   dword ptr [eax+0xC8];
 	__asm        mov    nHandleImageToUse, eax;
 // LINE 854:
-	__asm        mov    eax, nHandleImageToUse;
-	__asm        imul   eax, nImageWidth;
-	__asm        mov    x1, eax;
+	x1 = (nHandleImageToUse * nImageWidth);
 // LINE 855:
 	x2 = (nImageWidth + x1);
 // LINE 859:

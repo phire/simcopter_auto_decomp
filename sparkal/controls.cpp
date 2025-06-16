@@ -2539,9 +2539,7 @@ _T3e:
 	__asm        idiv   lLineHeight;
 	__asm        mov    lVisibleLines, eax;
 // LINE 259:
-	__asm        mov    eax, lLineHeight;
-	__asm        imul   eax, lVisibleLines;
-	__asm        mov    lFixedHeight, eax;
+	lFixedHeight = (lLineHeight * lVisibleLines);
 // LINE 260:
 	__asm        mov    eax, lOriginalHeight;
 	__asm        cmp    lFixedHeight, eax;
@@ -3588,10 +3586,7 @@ _T62:
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        je     _T81;
 // LINE 450:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x74];
-	__asm        imul   eax, nWindowWidth;
-	__asm        mov    nStartXPosition, eax;
+	nStartXPosition = (this->nButtonState * nWindowWidth);
 // LINE 451:
 	__asm        jmp    _T88;
 // LINE 452:
@@ -11355,10 +11350,7 @@ _T11:
 	__asm        idiv   dword ptr [ecx+0xB8];
 	__asm        mov    lNewVisibleLines, eax;
 // LINE 2195:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        imul   eax, lNewVisibleLines;
-	__asm        mov    lFixedHeight, eax;
+	lFixedHeight = (this->lLineHeight * lNewVisibleLines);
 // LINE 2196:
 	__asm        mov    eax, lOriginalHeight;
 	__asm        cmp    lFixedHeight, eax;
@@ -11524,12 +11516,7 @@ _T9c:
 // LINE 2273:
 	rectHighlighted.right = this-><ListBoxWindow+0x28>;
 // LINE 2274:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        imul   eax, lRelativeCurrentSelection;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        mov    rectHighlighted.top, eax;
+	rectHighlighted.top = ((this->lLineHeight * lRelativeCurrentSelection) + this-><ListBoxWindow+0x24>);
 // LINE 2275:
 	rectHighlighted.bottom = (this->lLineHeight + rectHighlighted.top);
 // LINE 2276:
@@ -11679,12 +11666,7 @@ _T2d2:
 	__asm        cmp    [eax+0xAC], ecx;
 	__asm        jne    _T524;
 // LINE 2298:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        imul   eax, j;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        mov    rectCurrentText.top, eax;
+	rectCurrentText.top = ((this->lLineHeight * j) + this-><ListBoxWindow+0x24>);
 // LINE 2299:
 	rectCurrentText.bottom = (this->lLineHeight + rectCurrentText.top);
 // LINE 2300:
@@ -11840,12 +11822,7 @@ _T51f:
 	__asm        jmp    _T71c;
 // LINE 2309:
 _T524:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        imul   eax, j;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        mov    rectCurrentText.top, eax;
+	rectCurrentText.top = ((this->lLineHeight * j) + this-><ListBoxWindow+0x24>);
 // LINE 2310:
 	rectCurrentText.bottom = (this->lLineHeight + rectCurrentText.top);
 // LINE 2311:
@@ -16014,12 +15991,7 @@ _T22c:
 // LINE 3187:
 	__asm        jmp    _T23d;
 _T23d:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0xB8];
-	__asm        add    eax, rectNewWindow.top;
-	__asm        mov    rectNewWindow.bottom, eax;
+	rectNewWindow.bottom = ((this->myStringList.length * this->lLineHeight) + rectNewWindow.top);
 // LINE 3188:
 	__asm        lea    eax, rectNewWindow.left;
 	__asm        push   eax;

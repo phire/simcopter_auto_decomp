@@ -184,17 +184,9 @@ _Tc4:
 	__asm        jmp    _Tdb;
 // LINE 57:
 _Tdb:
-	__asm        mov    eax, SourceTop;
-	__asm        imul   eax, SourceStride;
-	__asm        add    eax, SourceLeft;
-	__asm        add    eax, pSourceBits;
-	__asm        mov    pSourceLeft, eax;
+	pSourceLeft = (((SourceTop * SourceStride) + SourceLeft) + pSourceBits);
 // LINE 58:
-	__asm        mov    eax, DestStride;
-	__asm        imul   eax, DestTop;
-	__asm        add    eax, DestLeft;
-	__asm        add    eax, pDestBits;
-	__asm        mov    pDestLeft, eax;
+	pDestLeft = (((DestStride * DestTop) + DestLeft) + pDestBits);
 // LINE 61:
 	__asm        mov    eax, DestHeight;
 	__asm        neg    eax;
@@ -379,12 +371,7 @@ _T37:
 	__asm        cmp    ClipTop, eax;
 	__asm        jle    _Ta0;
 // LINE 150:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, ClipTop;
-	__asm        sub    ecx, DestTop;
-	__asm        imul   eax, ecx;
-	__asm        add    pSource, eax;
+	pSource += (this->mStride * (ClipTop - DestTop));
 // LINE 151:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ClipTop;
@@ -458,10 +445,7 @@ _T118:
 	__asm        cmp    DestStride, 0;
 	__asm        je     _T195;
 // LINE 175:
-	__asm        mov    eax, DestStride;
-	__asm        imul   eax, DestTop;
-	__asm        add    eax, DestLeft;
-	__asm        add    pDestBits, eax;
+	pDestBits += ((DestStride * DestTop) + DestLeft);
 // LINE 176:
 _T15a:
 	__asm        mov    eax, Height;
@@ -564,13 +548,7 @@ _Ta9:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax];
 // LINE 226:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, Top;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        add    eax, Left;
-	__asm        mov    pBits, eax;
+	pBits = (((this->mStride * Top) + this->mpBits) + Left);
 // LINE 227:
 	Height = (Bottom - Top);
 // LINE 228:

@@ -504,12 +504,7 @@ _T29e:
 	return 0x0;
 // LINE 200:
 _T2b2:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0xC];
-	__asm        add    eax, eax;
-	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
+	IFlatImage::lTotalMemoryUsage += ((this-><ScreenBuffer+0x08> * this-><ScreenBuffer+0x0c>) + (this-><ScreenBuffer+0x08> * this-><ScreenBuffer+0x0c>));
 // LINE 207:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 1;

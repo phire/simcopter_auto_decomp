@@ -1734,15 +1734,9 @@ _T2b3:
 // LINE 174:
 	founddyobj = 0x0;
 // LINE 181:
-	__asm        mov    eax, location.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.x, eax;
+	celloc.x = ((location.x + 0x20000000) >> 0x16);
 // LINE 182:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, location.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.y, eax;
+	celloc.y = ((0x20000000 - location.z) >> 0x16);
 // LINE 185:
 	__asm        mov    eax, celloc.y;
 	__asm        and    eax, 0xFF;
@@ -1995,15 +1989,9 @@ _T2e8:
 	/*bp-0x24*/  int32_t normy;
 
 // LINE 276:
-	__asm        mov    eax, location.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.x, eax;
+	celloc.x = ((location.x + 0x20000000) >> 0x16);
 // LINE 277:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, location.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.y, eax;
+	celloc.y = ((0x20000000 - location.z) >> 0x16);
 // LINE 280:
 	__asm        mov    eax, celloc.y;
 	__asm        and    eax, 0xFF;
@@ -2459,19 +2447,7 @@ _T1ab:
 // LINE 436:
 // Block start:
 	/*bp-0x44*/  /*unpacked*/ struct _STOBJ_INST *st;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        sar    eax, 1;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.z;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.y;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.x;
-	__asm        push   eax;
-	__asm        call   cYObject::GetStaticObj;
-	__asm        add    esp, 0x10;
-	__asm        mov    st, eax;
+	st = cYObject::GetStaticObj((this->fDyn.radius >> 0x1), newloc.z, newloc.y, newloc.x);
 // LINE 437:
 	moveinfo->stBlock = st;
 // LINE 439:
@@ -6035,17 +6011,9 @@ _T483:
 	__asm        cmp    destobj, 0;
 	__asm        je     _T4b9;
 // LINE 1228:
-	__asm        mov    eax, destobj;
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    destloc.x, eax;
+	destloc.x = ((destobj->loc.x + 0x20000000) >> 0x16);
 // LINE 1229:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, destobj;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    destloc.y, eax;
+	destloc.y = ((0x20000000 - destobj->loc.z) >> 0x16);
 // LINE 1232:
 _T4b9:
 	__asm        jmp    _T4be;
@@ -6163,7 +6131,20 @@ _T52:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T89:
-	this->fDyn.loc.y = (S3PUtilsGetAlt(this->fDyn.loc.z, this->fDyn.loc.y, this->fDyn.loc.x) + 0x30000);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x44];
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        push   eax;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x3C];
+	__asm        push   eax;
+	__asm        call   S3PUtilsGetAlt;
+	__asm        add    esp, 0xC;
+	__asm        lea    eax, [eax+0x30000];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x40], eax;
 	__asm        jmp    _Tb7;
 _Tb7:
 	__asm        jmp    _Td8;

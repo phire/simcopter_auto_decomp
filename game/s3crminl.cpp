@@ -648,32 +648,11 @@ _T1d:
 // LINE 222:
 // Block start:
 	/*bp-0x24*/  /*packed*/ struct Point3d loc; // 0xc bytes
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xF2];
-	__asm        mov    ecx, [ecx];
-	__asm        shl    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    loc.x, eax;
+	loc.x = (this->autoDynomitor.loc.x - (this->pDirVector->x << 0x4));
 // LINE 223:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xF2];
-	__asm        mov    ecx, [ecx+4];
-	__asm        shl    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    loc.y, eax;
+	loc.y = (this->autoDynomitor.loc.y - (this->pDirVector->y << 0x4));
 // LINE 224:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xF2];
-	__asm        mov    ecx, [ecx+8];
-	__asm        shl    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    loc.z, eax;
+	loc.z = (this->autoDynomitor.loc.z - (this->pDirVector->z << 0x4));
 // LINE 226:
 	__asm        push   0;
 	__asm        mov    eax, this;

@@ -1309,18 +1309,12 @@ _Tf8:
 	__asm        cmp    deltay, eax;
 	__asm        jge    _T12e;
 // LINE 155:
-	__asm        mov    eax, deltay;
-	__asm        sar    eax, 1;
-	__asm        add    eax, deltax;
-	__asm        mov    station.cost, eax;
+	station.cost = ((deltay >> 0x1) + deltax);
 // LINE 157:
 	__asm        jmp    _T13a;
 // LINE 159:
 _T12e:
-	__asm        mov    eax, deltax;
-	__asm        sar    eax, 1;
-	__asm        add    eax, deltay;
-	__asm        mov    station.cost, eax;
+	station.cost = ((deltax >> 0x1) + deltay);
 // LINE 162:
 _T13a:
 	station.stationID = i;
@@ -1445,18 +1439,12 @@ _Tf6:
 	__asm        cmp    deltay, eax;
 	__asm        jge    _T113;
 // LINE 208:
-	__asm        mov    eax, deltay;
-	__asm        sar    eax, 1;
-	__asm        add    eax, deltax;
-	__asm        mov    vehicle.cost, eax;
+	vehicle.cost = ((deltay >> 0x1) + deltax);
 // LINE 210:
 	__asm        jmp    _T11f;
 // LINE 212:
 _T113:
-	__asm        mov    eax, deltax;
-	__asm        sar    eax, 1;
-	__asm        add    eax, deltay;
-	__asm        mov    vehicle.cost, eax;
+	vehicle.cost = ((deltax >> 0x1) + deltay);
 // LINE 215:
 _T11f:
 	vehicle.pVehicle = vehicleList->;
@@ -3408,16 +3396,7 @@ _T2c7:
 	__asm        jmp    _T1db;
 // LINE 683:
 _T2cc:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 3;
-	__asm        push   eax;
-	__asm        mov    eax, G_citymempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->stationHeap = S2Alloc((this->quantityOfStations << 0x3), G_citymempool);
 // LINE 686:
 	__asm        xor    eax, eax;
 	__asm        mov    al, stationScurkID;

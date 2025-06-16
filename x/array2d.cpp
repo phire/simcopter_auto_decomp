@@ -603,10 +603,7 @@ _T30a:
 _T353:
 	data = this->fData->;
 // LINE 98:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        imul   eax, ycount;
-	__asm        add    data, eax;
+	data += (this->fEntrySize * ycount);
 // LINE 99:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -1087,12 +1084,7 @@ _T2b:
 _T71:
 	end = (this->fDataHandleSize + this->fDataPtr);
 // LINE 340:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        shl    eax, 2;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+4];
-	__asm        mov    fillPtr, eax;
+	fillPtr = ((this->fxSize << 0x2) + this->fData);
 // LINE 341:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -1108,13 +1100,7 @@ _T71:
 	__asm        add    esp, 0x10;
 // LINE 342:
 _Tbf:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x18];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x10];
-	__asm        mov    numBytes, eax;
+	numBytes = ((this->fxSize * this->fEntrySize) * this->fySize);
 // LINE 343:
 	__asm        cmp    numBytes, 0;
 	__asm        jle    _Ted;
@@ -1389,16 +1375,7 @@ _Tfb:
 // LINE 401:
 	__asm        jmp    _T11c;
 _T11c:
-	__asm        movsx  eax, xcount;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x18];
-	__asm        movsx  edx, ycount;
-	__asm        imul   ecx, edx;
-	__asm        add    eax, ecx;
-	__asm        mov    moveto, eax;
+	moveto = (this->fData-> + (this->fEntrySize * reinterpret_cast<int16_t>(ycount)));
 // LINE 402:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -1632,16 +1609,7 @@ _Tac:
 // LINE 444:
 	__asm        jmp    _Td2;
 _Td2:
-	__asm        movsx  eax, xcount;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x18];
-	__asm        movsx  edx, ycount;
-	__asm        imul   ecx, edx;
-	__asm        add    eax, ecx;
-	__asm        mov    thisone, eax;
+	thisone = (this->fData-> + (this->fEntrySize * reinterpret_cast<int16_t>(ycount)));
 // LINE 445:
 	__asm        jmp    _Tf6;
 _Tf6:
@@ -1694,16 +1662,7 @@ _T146:
 // LINE 452:
 	__asm        jmp    _T169;
 _T169:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        sub    eax, 2;
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x18];
-	__asm        movsx  ecx, xcount;
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+4];
-	__asm        add    eax, [edx+ecx*4];
-	__asm        mov    nextToLast, eax;
+	nextToLast = (((this->fySize - 0x2) * this->fEntrySize) + this->fData->);
 // LINE 453:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -1884,24 +1843,9 @@ _T105:
 	__asm        cmp    temp.fySize, eax;
 	__asm        jle    _T17c;
 // LINE 481:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, xcnt;
-	__asm        mov    eax, [eax+ecx*4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x18];
-	__asm        imul   ecx, ycnt;
-	__asm        add    eax, ecx;
-	__asm        mov    dest, eax;
+	dest = (this->fData-> + (this->fEntrySize * ycnt));
 // LINE 482:
-	__asm        mov    eax, temp.fData;
-	__asm        mov    ecx, xcnt;
-	__asm        mov    eax, [eax+ecx*4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x18];
-	__asm        imul   ecx, ycnt;
-	__asm        add    eax, ecx;
-	__asm        mov    src, eax;
+	src = (temp.fData-> + (this->fEntrySize * ycnt));
 // LINE 483:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -2056,14 +2000,7 @@ void _cArray::SetXPointers() {
 	return;
 // LINE 521:
 _T2d:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        shl    eax, 2;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    [ecx], eax;
+	this->fData-> = ((this->fxSize << 0x2) + this->fData);
 // LINE 523:
 	count = 0x1;
 	__asm        jmp    _T53;
@@ -2174,13 +2111,7 @@ _T84:
 	__asm        add    esp, 0x10;
 // LINE 553:
 _Ta0:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x18];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x10];
-	__asm        mov    howmuch, eax;
+	howmuch = ((this->fxSize * this->fEntrySize) * this->fySize);
 // LINE 554:
 	__asm        cmp    howmuch, 0;
 	__asm        jl     _Tce;
@@ -2266,13 +2197,7 @@ _T84:
 	__asm        add    esp, 0x10;
 // LINE 573:
 _Ta0:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x10];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x18];
-	__asm        mov    howmuch, eax;
+	howmuch = ((this->fxSize * this->fySize) * this->fEntrySize);
 // LINE 574:
 	__asm        cmp    howmuch, 0;
 	__asm        jl     _Tce;

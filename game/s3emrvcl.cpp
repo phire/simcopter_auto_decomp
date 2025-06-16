@@ -2274,9 +2274,7 @@ _T40:
 	__asm        cmp    finfo.Plotter, 0x19;
 	__asm        jne    _T81;
 // LINE 1491:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        or     eax, 0x80000000;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute | 0x80000000);
 // LINE 1492:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;

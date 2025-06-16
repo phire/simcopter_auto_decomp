@@ -1353,12 +1353,7 @@ _T59:
 	lSteps = 0xc8;
 // LINE 391:
 _T6d:
-	__asm        mov    eax, lSteps;
-	__asm        shl    eax, 0xA;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    paletteArray, eax;
+	paletteArray = operator new((lSteps << 0xa));
 // LINE 392:
 	__asm        mov    eax, lSteps;
 	__asm        dec    eax;

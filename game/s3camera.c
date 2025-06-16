@@ -125,13 +125,7 @@ _T9c:
 	altdiff = 0x0;
 // LINE 144:
 _Td7:
-	__asm        mov    eax, S_altdiff;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 3;
-	__asm        sub    eax, ecx;
-	__asm        add    eax, altdiff;
-	__asm        sar    eax, 3;
-	__asm        mov    S_altdiff, eax;
+	S_altdiff = ((((S_altdiff << 0x3) - S_altdiff) + altdiff) >> 0x3);
 // LINE 145:
 	Viewer.pos.y += S_altdiff;
 // LINE 148:
@@ -322,13 +316,7 @@ _T3b4:
 	altdiff = 0x0;
 // LINE 274:
 _T452:
-	__asm        mov    eax, S_altdiff;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 3;
-	__asm        sub    eax, ecx;
-	__asm        add    eax, altdiff;
-	__asm        sar    eax, 3;
-	__asm        mov    S_altdiff, eax;
+	S_altdiff = ((((S_altdiff << 0x3) - S_altdiff) + altdiff) >> 0x3);
 // LINE 275:
 	Viewer.pos.y += S_altdiff;
 // LINE 276:
@@ -499,11 +487,7 @@ _T118:
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
 	__asm        jne    _T19f;
 // LINE 370:
-	__asm        mov    eax, 0x11;
-	__asm        mov    ecx, G_uheli;
-	__asm        sub    eax, [ecx+0x1AC];
-	__asm        shl    eax, 2;
-	__asm        mov    temp, eax;
+	temp = ((0x11 - G_uheli->rinfo.bucketdown) << 0x2);
 // LINE 372:
 _T19f:
 	__asm        cmp    temp, 0;
@@ -512,13 +496,7 @@ _T19f:
 	temp = 0x0;
 // LINE 373:
 _T1b0:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, temp;
-	__asm        shl    ecx, 0x10;
-	__asm        add    eax, ecx;
-	__asm        mov    CameraIdeal.y, eax;
+	CameraIdeal.y = (G_uheli->dyheli->loc.y + (temp << 0x10));
 // LINE 375:
 	__asm        mov    eax, G_uheli;
 	__asm        cmp    dword ptr [eax+0x1B0], 1;
@@ -1293,17 +1271,9 @@ int32_t S3CameraGetBldAlt(/*packed*/ struct Point3d *loc) {
 	/*bp-0x28*/  int32_t normy;
 
 // LINE 825:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = ((loc->x + 0x20000000) >> 0x16);
 // LINE 826:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, loc;
-	__asm        sub    eax, [ecx+8];
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = ((0x20000000 - loc->z) >> 0x16);
 // LINE 828:
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;

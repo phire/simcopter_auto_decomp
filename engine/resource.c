@@ -968,14 +968,7 @@ _Tac:
 	return 0x0;
 // LINE 815:
 _Tca:
-	__asm        mov    eax, ResourceDirHdr.Count;
-	__asm        shl    eax, 3;
-	__asm        push   eax;
-	__asm        mov    eax, ResFileMemPool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ResourceDir, eax;
+	ResourceDir = S2Alloc((ResourceDirHdr.Count << 0x3), ResFileMemPool);
 // LINE 816:
 	__asm        cmp    ResourceDir, 0;
 	__asm        jne    _T104;

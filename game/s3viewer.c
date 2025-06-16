@@ -343,15 +343,9 @@ _T1b8:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 237:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    CameraCell.x, eax;
+	CameraCell.x = ((ViewState.world_pos.x + 0x20000000) >> 0x16);
 // LINE 238:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, ViewState.world_pos.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    CameraCell.y, eax;
+	CameraCell.y = ((0x20000000 - ViewState.world_pos.z) >> 0x16);
 // LINE 242:
 	__asm        push   0x6C1370;
 	__asm        mov    eax, 0x6C12A0;
@@ -650,9 +644,7 @@ long ConvertGUIBackPlaneValueToRender(long lValue) {
 // LINE 361:
 	lHalfOfGOBJRange = 0x18;
 // LINE 364:
-	__asm        mov    eax, lHalfOfGOBJRange;
-	__asm        imul   eax, lValue;
-	__asm        mov    lValue, eax;
+	lValue = (lHalfOfGOBJRange * lValue);
 // LINE 365:
 	__asm        mov    ecx, 0x64;
 	__asm        mov    eax, lValue;

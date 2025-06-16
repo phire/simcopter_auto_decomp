@@ -378,10 +378,7 @@ _T8f:
 // LINE 231:
 	fd->mission_id = mission_id;
 // LINE 234:
-	__asm        mov    eax, side_flag;
-	__asm        or     eax, 1;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx], eax;
+	fd->flags = (side_flag | 0x1);
 // LINE 238:
 	maxradius = 0x0;
 // LINE 239:
@@ -2705,17 +2702,9 @@ int32_t S3FireTruckDouse(/*packed*/ struct _FIRE_DATA *fd, int32_t dist, /*packe
 // LINE 1037:
 	loc.y += 0x1e0000;
 // LINE 1039:
-	__asm        mov    eax, dytruck;
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    currpos.x, eax;
+	currpos.x = ((dytruck->loc.x + 0x20000000) >> 0x16);
 // LINE 1040:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, dytruck;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    currpos.y, eax;
+	currpos.y = ((0x20000000 - dytruck->loc.z) >> 0x16);
 // LINE 1044:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 1;
@@ -2812,17 +2801,9 @@ int32_t S3FireTruckDouseDyObj(/*packed*/ struct _DYOBJ_INST *dyobj, int32_t dist
 // LINE 1118:
 	loc.y += 0x1e0000;
 // LINE 1120:
-	__asm        mov    eax, dytruck;
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    currpos.x, eax;
+	currpos.x = ((dytruck->loc.x + 0x20000000) >> 0x16);
 // LINE 1121:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, dytruck;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    currpos.y, eax;
+	currpos.y = ((0x20000000 - dytruck->loc.z) >> 0x16);
 // LINE 1125:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -4063,10 +4044,7 @@ _T18:
 	__asm        add    esp, 4;
 	__asm        mov    lsfire.building, eax;
 // LINE 1742:
-	__asm        mov    eax, lsfire.cfd;
-	__asm        sub    eax, 0x66BE90;
-	__asm        sar    eax, 3;
-	__asm        mov    lsfire.cfd, eax;
+	lsfire.cfd = ((lsfire.cfd - 0x66be90) >> 0x3);
 // LINE 1743:
 	__asm        mov    eax, 0x62B550;
 	__asm        add    eax, 0x10;

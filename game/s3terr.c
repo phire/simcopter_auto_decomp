@@ -183,16 +183,7 @@ short S3TerrainInitMap() {
 // LINE 173:
 	G_tshift = 0x8;
 // LINE 176:
-	__asm        mov    eax, G_tdim;
-	__asm        imul   eax, G_tdim;
-	__asm        add    eax, eax;
-	__asm        push   eax;
-	__asm        push   0x5B5D68;
-	__asm        mov    eax, G_citymempool;
-	__asm        push   eax;
-	__asm        call   S2AllocMem;
-	__asm        add    esp, 0xC;
-	__asm        mov    G_tmap, eax;
+	G_tmap = S2AllocMem(((G_tdim * G_tdim) + (G_tdim * G_tdim)), 0x5b5d68, G_citymempool);
 // LINE 177:
 	__asm        cmp    G_tmap, 0;
 	__asm        jne    _T7c;
@@ -5789,9 +5780,7 @@ void AdjustTerrainMap() {
 	/*bp-0x28*/  int32_t start;
 
 // LINE 1544:
-	__asm        mov    eax, G_tdim;
-	__asm        sar    eax, 1;
-	__asm        mov    citysize, eax;
+	citysize = (G_tdim >> 0x1);
 // LINE 1545:
 	start = 0x0;
 // LINE 1546:
@@ -6135,27 +6124,13 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 	landable[0] = 0x0;
 // LINE 1617:
 _T1c:
-	__asm        mov    eax, worldx;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    cell.x, eax;
+	cell.x = ((worldx + 0x20000000) >> 0x16);
 // LINE 1618:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, worldz;
-	__asm        sar    eax, 0x16;
-	__asm        mov    cell.y, eax;
+	cell.y = ((0x20000000 - worldz) >> 0x16);
 // LINE 1621:
-	__asm        mov    eax, cell.x;
-	__asm        shl    eax, 6;
-	__asm        sub    eax, 0x1FE0;
-	__asm        mov    x, eax;
+	x = ((cell.x << 0x6) - 0x1fe0);
 // LINE 1622:
-	__asm        mov    eax, 0x2000;
-	__asm        mov    ecx, cell.y;
-	__asm        shl    ecx, 6;
-	__asm        sub    eax, ecx;
-	__asm        sub    eax, 0x20;
-	__asm        mov    z, eax;
+	z = ((0x2000 - (cell.y << 0x6)) - 0x20);
 // LINE 1625:
 	__asm        mov    eax, cell.y;
 	__asm        and    eax, G_tmask;

@@ -5208,10 +5208,7 @@ _T2d4:
 _T2d9:
 	__asm        jmp    _T2de;
 _T2de:
-	__asm        mov    eax, stringArray.finish;
-	__asm        sub    eax, stringArray.start;
-	__asm        sar    eax, 3;
-	__asm        mov    iEnd, eax;
+	iEnd = ((stringArray.finish - stringArray.start) >> 0x3);
 	__asm        jmp    _T2f2;
 _T2ef:
 	i++;

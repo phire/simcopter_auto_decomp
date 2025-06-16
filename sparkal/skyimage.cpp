@@ -379,11 +379,7 @@ _T8c:
 // LINE 113:
 	pSourceImage = bmpHeader;
 // LINE 114:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    pSourceImage, eax;
+	pSourceImage += ((bmpHeader->info.height << 0x2) + 0xc);
 // LINE 117:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];

@@ -1202,30 +1202,15 @@ _T4f:
 _T78:
 	nSizeOfHeader = 0xc;
 // LINE 546:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        shl    eax, 2;
-	__asm        add    nSizeOfHeader, eax;
+	nSizeOfHeader += (this->nBufferHeight << 0x2);
 // LINE 547:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x20];
-	__asm        add    nSizeOfHeader, eax;
+	nSizeOfHeader += (this->nBufferWidth * this->nBufferHeight);
 // LINE 549:
 	this->chVRBmpHeader = operator new(nSizeOfHeader);
 // LINE 550:
 	this->bmpHeader = this->chVRBmpHeader;
 // LINE 551:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x158];
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x158];
-	__asm        add    eax, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x15C], eax;
+	this->bmpDataStart = (((this->bmpHeader->info.height << 0x2) + this->bmpHeader) + 0xc);
 // LINE 553:
 	this->bmpHeader->info.width = this->nBufferWidth;
 // LINE 554:
@@ -2041,11 +2026,7 @@ _T127:
 	return 0x0;
 // LINE 977:
 _T13b:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x148];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x14C];
-	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
+	IFlatImage::lTotalMemoryUsage += (this-><SmackerBackBuffer+0x148> * this-><SmackerBackBuffer+0x14c>);
 // LINE 981:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -2802,10 +2783,7 @@ _T2d:
 _T3b:
 	nDestImageStride = pDestImage->mStride;
 // LINE 1236:
-	__asm        mov    eax, DestTop;
-	__asm        imul   eax, nDestImageStride;
-	__asm        add    eax, DestLeft;
-	__asm        add    pOriginalDestImageBits, eax;
+	pOriginalDestImageBits += ((DestTop * nDestImageStride) + DestLeft);
 // LINE 1237:
 	pOriginalSourceImageBits = this->smkbuf->Buffer;
 // LINE 1238:
@@ -2911,17 +2889,9 @@ _T1aa:
 	nLastRecth = (SrcBottom - nLastRecty);
 // LINE 1286:
 _T1b3:
-	__asm        mov    eax, nLastRecty;
-	__asm        imul   eax, nDestImageStride;
-	__asm        add    eax, nLastRectx;
-	__asm        add    eax, pOriginalDestImageBits;
-	__asm        mov    pDestImageBits, eax;
+	pDestImageBits = (((nLastRecty * nDestImageStride) + nLastRectx) + pOriginalDestImageBits);
 // LINE 1288:
-	__asm        mov    eax, nLastRecty;
-	__asm        imul   eax, nSourceImageStride;
-	__asm        add    eax, nLastRectx;
-	__asm        add    eax, pOriginalSourceImageBits;
-	__asm        mov    pSourceImageBits, eax;
+	pSourceImageBits = (((nLastRecty * nSourceImageStride) + nLastRectx) + pOriginalSourceImageBits);
 // LINE 1290:
 	i = 0x0;
 // LINE 1291:
@@ -2990,10 +2960,7 @@ _T34:
 _T42:
 	nDestImageStride = pDestImage->mStride;
 // LINE 1348:
-	__asm        mov    eax, DestTop;
-	__asm        imul   eax, nDestImageStride;
-	__asm        add    eax, DestLeft;
-	__asm        add    pDestImageBits, eax;
+	pDestImageBits += ((DestTop * nDestImageStride) + DestLeft);
 // LINE 1349:
 	pSourceImageBits = this->smkbuf->Buffer;
 // LINE 1350:

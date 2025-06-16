@@ -364,19 +364,9 @@ _T23f:
 	Height = ScreenHeight;
 // LINE 147:
 _T251:
-	__asm        mov    eax, ScreenWidth;
-	__asm        shr    eax, 1;
-	__asm        mov    ecx, Width;
-	__asm        shr    ecx, 1;
-	__asm        sub    eax, ecx;
-	__asm        mov    Left, eax;
+	Left = ((ScreenWidth >> 0x1) - (Width >> 0x1));
 // LINE 148:
-	__asm        mov    eax, ScreenHeight;
-	__asm        shr    eax, 1;
-	__asm        mov    ecx, Height;
-	__asm        shr    ecx, 1;
-	__asm        sub    eax, ecx;
-	__asm        mov    Top, eax;
+	Top = ((ScreenHeight >> 0x1) - (Height >> 0x1));
 // LINE 152:
 	__asm        push   0;
 	__asm        mov    eax, _ghWindowsInstance;

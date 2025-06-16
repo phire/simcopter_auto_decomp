@@ -105,14 +105,9 @@ _T6a:
 // LINE 166:
 	G_ViewSize = ViewSize;
 // LINE 171:
-	__asm        mov    eax, G_VertDim;
-	__asm        imul   eax, G_VertDim;
-	__asm        mov    GridNVerts, eax;
+	GridNVerts = (G_VertDim * G_VertDim);
 // LINE 172:
-	__asm        mov    eax, G_ViewSize;
-	__asm        imul   eax, G_ViewSize;
-	__asm        add    eax, eax;
-	__asm        mov    GridNFaces, eax;
+	GridNFaces = ((G_ViewSize * G_ViewSize) + (G_ViewSize * G_ViewSize));
 // LINE 177:
 	GridFaceSize = 0x3c;
 // LINE 193:
@@ -129,21 +124,9 @@ _T6a:
 // LINE 200:
 	__asm        call   VRFreeGridObj;
 // LINE 201:
-	__asm        push   0;
-	__asm        mov    eax, GridNVerts;
-	__asm        shl    eax, 4;
-	__asm        push   eax;
-	__asm        push   0x59D2DC;
-	__asm        mov    eax, S_gridmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocMem1;
-	__asm        add    esp, 0x10;
-	__asm        mov    GridRotate, eax;
+	GridRotate = S2AllocMem1(0x0, (GridNVerts << 0x4), 0x59d2dc, S_gridmempool);
 // LINE 202:
-	__asm        mov    eax, GridNVerts;
-	__asm        shl    eax, 4;
-	__asm        add    eax, GridRotate;
-	__asm        mov    GridRotateEnd, eax;
+	GridRotateEnd = ((GridNVerts << 0x4) + GridRotate);
 // LINE 203:
 	GridProject = S2AllocMem1(0x0, goff, 0x59d2e4, S_gridmempool);
 // LINE 204:
@@ -167,97 +150,29 @@ _T6a:
 	__asm        add    eax, GridVerts;
 	__asm        mov    GridVertsEnd, eax;
 // LINE 208:
-	__asm        push   0;
-	__asm        mov    eax, GridNFaces;
-	__asm        shl    eax, 2;
-	__asm        push   eax;
-	__asm        push   0x59D2FC;
-	__asm        mov    eax, S_gridmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocMem1;
-	__asm        add    esp, 0x10;
-	__asm        mov    GridSortFaces, eax;
+	GridSortFaces = S2AllocMem1(0x0, (GridNFaces << 0x2), 0x59d2fc, S_gridmempool);
 // LINE 209:
-	__asm        mov    eax, GridNFaces;
-	__asm        shl    eax, 2;
-	__asm        add    eax, GridSortFaces;
-	__asm        mov    GridSortFacesEnd, eax;
+	GridSortFacesEnd = ((GridNFaces << 0x2) + GridSortFaces);
 // LINE 210:
-	__asm        push   0;
-	__asm        mov    eax, GridFaceSize;
-	__asm        imul   eax, GridNFaces;
-	__asm        push   eax;
-	__asm        push   0x59D308;
-	__asm        mov    eax, S_gridmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocMem1;
-	__asm        add    esp, 0x10;
-	__asm        mov    GridFaces, eax;
+	GridFaces = S2AllocMem1(0x0, (GridFaceSize * GridNFaces), 0x59d308, S_gridmempool);
 // LINE 211:
-	__asm        mov    eax, GridFaceSize;
-	__asm        imul   eax, GridNFaces;
-	__asm        add    eax, GridFaces;
-	__asm        mov    GridFacesEnd, eax;
+	GridFacesEnd = ((GridFaceSize * GridNFaces) + GridFaces);
 // LINE 213:
-	__asm        push   0;
-	__asm        mov    eax, GridNVerts;
-	__asm        shl    eax, 2;
-	__asm        push   eax;
-	__asm        push   0x59D314;
-	__asm        mov    eax, S_gridmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocMem1;
-	__asm        add    esp, 0x10;
-	__asm        mov    WhereIsIt, eax;
+	WhereIsIt = S2AllocMem1(0x0, (GridNVerts << 0x2), 0x59d314, S_gridmempool);
 // LINE 214:
-	__asm        mov    eax, GridNVerts;
-	__asm        shl    eax, 2;
-	__asm        add    eax, WhereIsIt;
-	__asm        mov    WhereIsItEnd, eax;
+	WhereIsItEnd = ((GridNVerts << 0x2) + WhereIsIt);
 // LINE 215:
 	IsRotated = S2AllocMem1(0x0, GridNVerts, 0x59d320, S_gridmempool);
 // LINE 216:
 	IsRotatedEnd = (GridNVerts + IsRotated);
 // LINE 218:
-	__asm        push   0;
-	__asm        mov    eax, G_ViewSize;
-	__asm        imul   eax, G_ViewSize;
-	__asm        shl    eax, 2;
-	__asm        shr    eax, 1;
-	__asm        push   eax;
-	__asm        push   0x59D32C;
-	__asm        mov    eax, S_gridmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocMem1;
-	__asm        add    esp, 0x10;
-	__asm        mov    GridSortCells, eax;
+	GridSortCells = S2AllocMem1(0x0, (((G_ViewSize * G_ViewSize) << 0x2) >> 0x1), 0x59d32c, S_gridmempool);
 // LINE 219:
-	__asm        mov    eax, G_ViewSize;
-	__asm        imul   eax, G_ViewSize;
-	__asm        shl    eax, 2;
-	__asm        shr    eax, 1;
-	__asm        add    eax, GridSortCells;
-	__asm        mov    GridSortCellsEnd, eax;
+	GridSortCellsEnd = ((((G_ViewSize * G_ViewSize) << 0x2) >> 0x1) + GridSortCells);
 // LINE 220:
-	__asm        push   0;
-	__asm        mov    eax, G_ViewSize;
-	__asm        imul   eax, G_ViewSize;
-	__asm        shl    eax, 2;
-	__asm        shr    eax, 1;
-	__asm        push   eax;
-	__asm        push   0x59D338;
-	__asm        mov    eax, S_gridmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocMem1;
-	__asm        add    esp, 0x10;
-	__asm        mov    GridCellAddrs, eax;
+	GridCellAddrs = S2AllocMem1(0x0, (((G_ViewSize * G_ViewSize) << 0x2) >> 0x1), 0x59d338, S_gridmempool);
 // LINE 221:
-	__asm        mov    eax, G_ViewSize;
-	__asm        imul   eax, G_ViewSize;
-	__asm        shl    eax, 2;
-	__asm        shr    eax, 1;
-	__asm        add    eax, GridCellAddrs;
-	__asm        mov    GridCellAddrsEnd, eax;
+	GridCellAddrsEnd = ((((G_ViewSize * G_ViewSize) << 0x2) >> 0x1) + GridCellAddrs);
 // LINE 225:
 	goff = GridFaces;
 // LINE 226:
@@ -404,10 +319,7 @@ _T4b5:
 	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T63f;
 // LINE 281:
-	__asm        mov    eax, G_VertDim;
-	__asm        imul   eax, y;
-	__asm        add    eax, x;
-	__asm        mov    ul, eax;
+	ul = ((G_VertDim * y) + x);
 // LINE 303:
 	i = 0x0;
 	__asm        jmp    _T4e2;
@@ -557,14 +469,9 @@ void InitGridPool() {
 // LINE 378:
 	G_FaceDim = (G_ViewSize + G_ViewSize);
 // LINE 383:
-	__asm        mov    eax, G_VertDim;
-	__asm        imul   eax, G_VertDim;
-	__asm        mov    GridNVerts, eax;
+	GridNVerts = (G_VertDim * G_VertDim);
 // LINE 384:
-	__asm        mov    eax, G_ViewSize;
-	__asm        imul   eax, G_ViewSize;
-	__asm        add    eax, eax;
-	__asm        mov    GridNFaces, eax;
+	GridNFaces = ((G_ViewSize * G_ViewSize) + (G_ViewSize * G_ViewSize));
 // LINE 390:
 	GridFaceSize = 0x3c;
 // LINE 398:
@@ -579,9 +486,7 @@ void InitGridPool() {
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    goff, eax;
 // LINE 403:
-	__asm        mov    eax, GridNVerts;
-	__asm        shl    eax, 4;
-	__asm        mov    GridPoolSize, eax;
+	GridPoolSize = (GridNVerts << 0x4);
 // LINE 404:
 	GridPoolSize += goff;
 // LINE 405:
@@ -591,27 +496,15 @@ void InitGridPool() {
 	__asm        add    eax, GridPoolSize;
 	__asm        mov    GridPoolSize, eax;
 // LINE 406:
-	__asm        mov    eax, GridNFaces;
-	__asm        shl    eax, 2;
-	__asm        add    eax, GridPoolSize;
-	__asm        mov    GridPoolSize, eax;
+	GridPoolSize = ((GridNFaces << 0x2) + GridPoolSize);
 // LINE 407:
-	__asm        mov    eax, GridFaceSize;
-	__asm        imul   eax, GridNFaces;
-	__asm        add    GridPoolSize, eax;
+	GridPoolSize += (GridFaceSize * GridNFaces);
 // LINE 408:
-	__asm        mov    eax, GridNVerts;
-	__asm        shl    eax, 2;
-	__asm        add    eax, GridPoolSize;
-	__asm        mov    GridPoolSize, eax;
+	GridPoolSize = ((GridNVerts << 0x2) + GridPoolSize);
 // LINE 409:
 	GridPoolSize += GridNVerts;
 // LINE 410:
-	__asm        mov    eax, G_ViewSize;
-	__asm        imul   eax, G_ViewSize;
-	__asm        shl    eax, 2;
-	__asm        add    eax, GridPoolSize;
-	__asm        mov    GridPoolSize, eax;
+	GridPoolSize = (((G_ViewSize * G_ViewSize) << 0x2) + GridPoolSize);
 // LINE 412:
 	S_gridmempool = S2AllocPool(GridPoolSize);
 // LINE 413:

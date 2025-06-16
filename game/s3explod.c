@@ -635,10 +635,7 @@ _T52:
 	return;
 // LINE 258:
 _T61:
-	__asm        mov    eax, 4;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(scale);
-	__asm        shl    eax, cl;
-	__asm        mov    dim, eax;
+	dim = (0x4 << reinterpret_cast<uint8_t>(scale));
 // LINE 261:
 	__asm        mov    eax, ed;
 	__asm        or     dword ptr [eax], 1;
@@ -713,11 +710,7 @@ _T61:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 290:
-	__asm        mov    eax, dim;
-	__asm        shl    eax, 0x10;
-	__asm        mov    ecx, ed;
-	__asm        mov    ecx, [ecx+0x20];
-	__asm        mov    [ecx+0x10], eax;
+	ed->dy2d->radius = (dim << 0x10);
 // LINE 294:
 	ed->dy2d->loc.y -= 0x200000;
 // LINE 297:
@@ -929,17 +922,9 @@ _T57:
 	__asm        cmp    dword ptr [eax+0x18], 1;
 	__asm        jne    _Tff;
 // LINE 422:
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0xC];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.x, eax;
+	celloc.x = ((ed->loc.x + 0x20000000) >> 0x16);
 // LINE 423:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, ed;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.y, eax;
+	celloc.y = ((0x20000000 - ed->loc.z) >> 0x16);
 // LINE 424:
 	j = 0x0;
 	__asm        jmp    _Ta7;

@@ -1250,19 +1250,9 @@ _Tbe:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::UnlinkFromCell;
 // LINE 911:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x20], eax;
+	this->currentLocation.x = ((this->dyObj.loc.x + 0x20000000) >> 0x16);
 // LINE 912:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->currentLocation.y = ((0x20000000 - this->dyObj.loc.z) >> 0x16);
 // LINE 913:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x20;
@@ -1418,17 +1408,9 @@ _Tc6:
 	__asm        add    eax, [ecx+0x78];
 	__asm        mov    z, eax;
 // LINE 1214:
-	__asm        mov    eax, x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x40], eax;
+	this->crashLocation.x = ((x + 0x20000000) >> 0x16);
 // LINE 1215:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x44], eax;
+	this->crashLocation.y = ((0x20000000 - z) >> 0x16);
 // LINE 1227:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x44];
@@ -1723,15 +1705,9 @@ _Ta0:
 	__asm        add    ecx, eax;
 	__asm        mov    newloc.z, ecx;
 // LINE 1417:
-	__asm        mov    eax, newloc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.x, eax;
+	newpos.x = ((newloc.x + 0x20000000) >> 0x16);
 // LINE 1418:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, newloc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.y, eax;
+	newpos.y = ((0x20000000 - newloc.z) >> 0x16);
 // LINE 1420:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
@@ -1918,15 +1894,9 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, /*packed*/ struct _CELL_IN
 	__asm        shl    eax, 0x10;
 	__asm        mov    cloc.z, eax;
 // LINE 1493:
-	__asm        mov    eax, cloc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.x, eax;
+	celloc.x = ((cloc.x + 0x20000000) >> 0x16);
 // LINE 1494:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, cloc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.y, eax;
+	celloc.y = ((0x20000000 - cloc.z) >> 0x16);
 // LINE 1497:
 	stobj = cptr->stptr;
 // LINE 1498:
@@ -2481,19 +2451,9 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0052ca5d
 int32_t PlaneClass::AmIInANewCell() {
 // LINE 1797:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x28], eax;
+	this->currentCell.x = ((this->dyObj.loc.x + 0x20000000) >> 0x16);
 // LINE 1798:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x2C], eax;
+	this->currentCell.y = ((0x20000000 - this->dyObj.loc.z) >> 0x16);
 // LINE 1802:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -2922,30 +2882,13 @@ _T35:
 	__asm        mov    [ecx+8], eax;
 // LINE 2008:
 _Tb2:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        shl    ecx, 5;
-	__asm        add    eax, ecx;
-	__asm        mov    loc.x, eax;
+	loc.x = (this->dyObj.loc.x + (this->directionVector.x << 0x5));
 // LINE 2009:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        shl    eax, 5;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x78];
-	__asm        mov    loc.z, eax;
+	loc.z = ((this->directionVector.z << 0x5) + this->dyObj.loc.z);
 // LINE 2011:
-	__asm        mov    eax, loc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    nextcell.x, eax;
+	nextcell.x = ((loc.x + 0x20000000) >> 0x16);
 // LINE 2012:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, loc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    nextcell.y, eax;
+	nextcell.y = ((0x20000000 - loc.z) >> 0x16);
 // LINE 2014:
 	__asm        mov    eax, nextcell.y;
 	__asm        and    eax, 0xFF;
@@ -2988,10 +2931,7 @@ _T16b:
 	__asm        sub    eax, [ecx+0x74];
 	__asm        mov    altdiff, eax;
 // LINE 2024:
-	__asm        mov    eax, altdiff;
-	__asm        sar    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x38], eax;
+	this->altAdjustment = (altdiff >> 0x4);
 // LINE 2029:
 	this->remainingDist = 0x200000;
 // LINE 2034:
@@ -3057,17 +2997,9 @@ _T70:
 // LINE 2081:
 	vec.x = vec.y;
 // LINE 2083:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 2084:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 2085:
 	__asm        jmp    _T170;
 // LINE 2088:
@@ -3080,17 +3012,9 @@ _Tad:
 // LINE 2090:
 	vec.x = vec.y;
 // LINE 2092:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 2093:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 2094:
 	__asm        jmp    _T170;
 // LINE 2097:
@@ -3103,17 +3027,9 @@ _Tea:
 	__asm        neg    eax;
 	__asm        mov    vec.z, eax;
 // LINE 2100:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 2101:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 2102:
 	__asm        jmp    _T170;
 // LINE 2106:
@@ -3150,18 +3066,9 @@ _T170:
 // LINE 2112:
 	__asm        shl    vec.z, 6;
 // LINE 2114:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        add    eax, vec.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = (((ViewState.world_pos.x + vec.x) + 0x20000000) >> 0x16);
 // LINE 2115:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, ViewState.world_pos.z;
-	__asm        add    ecx, vec.z;
-	__asm        sub    eax, ecx;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = ((0x20000000 - (ViewState.world_pos.z + vec.z)) >> 0x16);
 // LINE 2118:
 	__asm        cmp    x, 3;
 	__asm        jl     _T1c9;
@@ -3900,9 +3807,7 @@ _T40:
 	__asm        cmp    finfo.Plotter, 0xB;
 	__asm        jne    _T81;
 // LINE 2757:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        or     eax, 0x80000000;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute | 0x80000000);
 // LINE 2758:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;

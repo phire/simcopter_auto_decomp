@@ -137,10 +137,7 @@ void GetCurrentScreenMode(/*packed*/ struct tagMode *modeCurrent, int32_t __form
 	__asm        mov    ecx, modeCurrent;
 	__asm        mov    [ecx+4], eax;
 // LINE 91:
-	__asm        mov    eax, nPlanes;
-	__asm        imul   eax, nBitsPerPixel;
-	__asm        mov    ecx, modeCurrent;
-	__asm        mov    [ecx+8], eax;
+	modeCurrent->lBPP = (nPlanes * nBitsPerPixel);
 // LINE 93:
 	return;
 }

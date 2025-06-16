@@ -1227,17 +1227,9 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 	__asm        add    ecx, eax;
 	__asm        mov    boatHeading.z, ecx;
 // LINE 897:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x97];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    boatLocation.x, eax;
+	boatLocation.x = ((this->dyObj.loc.x + 0x20000000) >> 0x16);
 // LINE 898:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x9F];
-	__asm        sar    eax, 0x16;
-	__asm        mov    boatLocation.y, eax;
+	boatLocation.y = ((0x20000000 - this->dyObj.loc.z) >> 0x16);
 // LINE 900:
 	__asm        lea    eax, boatHeading.x;
 	__asm        push   eax;
@@ -2005,19 +1997,9 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0052865c
 int32_t BoatClass::AmIInANewCell() {
 // LINE 1338:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x97];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3B], eax;
+	this->currentCell.x = ((this->dyObj.loc.x + 0x20000000) >> 0x16);
 // LINE 1339:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x9F];
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3F], eax;
+	this->currentCell.y = ((0x20000000 - this->dyObj.loc.z) >> 0x16);
 // LINE 1343:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -3800,17 +3782,9 @@ _T70:
 // LINE 2212:
 	vec.x = vec.y;
 // LINE 2214:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 2215:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 2216:
 	__asm        jmp    _T170;
 // LINE 2219:
@@ -3823,17 +3797,9 @@ _Tad:
 // LINE 2221:
 	vec.x = vec.y;
 // LINE 2223:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 2224:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 2225:
 	__asm        jmp    _T170;
 // LINE 2228:
@@ -3846,17 +3812,9 @@ _Tea:
 	__asm        neg    eax;
 	__asm        mov    vec.z, eax;
 // LINE 2231:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 2232:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 2233:
 	__asm        jmp    _T170;
 // LINE 2237:
@@ -3893,18 +3851,9 @@ _T170:
 // LINE 2243:
 	__asm        shl    vec.z, 6;
 // LINE 2245:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        add    eax, vec.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = (((ViewState.world_pos.x + vec.x) + 0x20000000) >> 0x16);
 // LINE 2246:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, ViewState.world_pos.z;
-	__asm        add    ecx, vec.z;
-	__asm        sub    eax, ecx;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = ((0x20000000 - (ViewState.world_pos.z + vec.z)) >> 0x16);
 // LINE 2249:
 	__asm        cmp    x, 0;
 	__asm        jl     _T1c9;

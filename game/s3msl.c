@@ -1286,9 +1286,7 @@ _T6b0:
 	__asm        cmp    scale, 0;
 	__asm        jne    _T6ff;
 // LINE 651:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        or     eax, 0x80000000;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute | 0x80000000);
 // LINE 653:
 	__asm        jmp    _T762;
 _T6ff:
@@ -1298,9 +1296,7 @@ _T6ff:
 	__asm        cmp    scale, 1;
 	__asm        jg     _T723;
 // LINE 656:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        or     eax, 0x80000000;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute | 0x80000000);
 // LINE 657:
 	__asm        jmp    _T72e;
 // LINE 658:
@@ -1316,9 +1312,7 @@ _T733:
 	__asm        cmp    scale, 3;
 	__asm        jg     _T757;
 // LINE 663:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        or     eax, 0x80000000;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute | 0x80000000);
 // LINE 664:
 	__asm        jmp    _T762;
 // LINE 665:
@@ -1461,11 +1455,7 @@ _T90d:
 	__asm        call   0x004D8859;
 	__asm        add    esp, 8;
 // LINE 725:
-	__asm        mov    eax, oinfo.Radius;
-	__asm        imul   eax, scale;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x28];
-	__asm        mov    [ecx+0x10], eax;
+	md->dymissile->radius = (oinfo.Radius * scale);
 // LINE 727:
 	S_num_active_debris++;
 // LINE 730:
@@ -1537,11 +1527,7 @@ _Ta01:
 	__asm        call   0x004D8859;
 	__asm        add    esp, 8;
 // LINE 758:
-	__asm        mov    eax, oinfo.Radius;
-	__asm        imul   eax, scale;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x28];
-	__asm        mov    [ecx+0x10], eax;
+	md->dymissile->radius = (oinfo.Radius * scale);
 // LINE 760:
 	S_num_active_debris++;
 // LINE 770:
@@ -1746,26 +1732,11 @@ _Tc83:
 	__asm        neg    eax;
 	__asm        mov    rdist, eax;
 // LINE 836:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, rdist;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x28];
-	__asm        add    [ecx+0x18], eax;
+	md->dymissile->loc.x += (md->vector.x * rdist);
 // LINE 837:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, rdist;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x28];
-	__asm        add    [ecx+0x1C], eax;
+	md->dymissile->loc.y += (md->vector.y * rdist);
 // LINE 838:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x18];
-	__asm        imul   eax, rdist;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x28];
-	__asm        add    [ecx+0x20], eax;
+	md->dymissile->loc.z += (md->vector.z * rdist);
 // LINE 839:
 	md->timetolive = 0x50000;
 // LINE 841:
@@ -1860,26 +1831,11 @@ _Tdfc:
 	__asm        neg    eax;
 	__asm        mov    rdist, eax;
 // LINE 867:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, rdist;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x28];
-	__asm        add    [ecx+0x18], eax;
+	md->dymissile->loc.x += (md->vector.x * rdist);
 // LINE 868:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, rdist;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x28];
-	__asm        add    [ecx+0x1C], eax;
+	md->dymissile->loc.y += (md->vector.y * rdist);
 // LINE 869:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x18];
-	__asm        imul   eax, rdist;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x28];
-	__asm        add    [ecx+0x20], eax;
+	md->dymissile->loc.z += (md->vector.z * rdist);
 // LINE 876:
 _Te79:
 	__asm        mov    eax, md;
@@ -1937,14 +1893,9 @@ _Tee5:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 898:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x44];
-	__asm        shl    eax, 0x10;
-	__asm        mov    pos.scale.z, eax;
-	__asm        mov    eax, pos.scale.z;
-	__asm        mov    pos.scale.y, eax;
-	__asm        mov    eax, pos.scale.y;
-	__asm        mov    pos.scale.x, eax;
+	pos.scale.z = (md->scale << 0x10);
+	pos.scale.y = pos.scale.z;
+	pos.scale.x = pos.scale.y;
 // LINE 899:
 	__asm        mov    eax, md;
 	__asm        mov    esi, [eax+0x28];
@@ -2449,15 +2400,9 @@ _T4c1:
 	__asm        add    ecx, eax;
 	__asm        mov    newloc.z, ecx;
 // LINE 1081:
-	__asm        mov    eax, newloc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.x, eax;
+	newpos.x = ((newloc.x + 0x20000000) >> 0x16);
 // LINE 1082:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, newloc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.y, eax;
+	newpos.y = ((0x20000000 - newloc.z) >> 0x16);
 // LINE 1083:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x30];
@@ -2679,14 +2624,9 @@ _T90b:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1162:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x44];
-	__asm        shl    eax, 0x10;
-	__asm        mov    pos.scale.z, eax;
-	__asm        mov    eax, pos.scale.z;
-	__asm        mov    pos.scale.y, eax;
-	__asm        mov    eax, pos.scale.y;
-	__asm        mov    pos.scale.x, eax;
+	pos.scale.z = (md->scale << 0x10);
+	pos.scale.y = pos.scale.z;
+	pos.scale.x = pos.scale.y;
 // LINE 1163:
 	__asm        mov    eax, md;
 	__asm        mov    esi, [eax+0x28];
@@ -2942,15 +2882,9 @@ _Tb7f:
 	__asm        add    ecx, eax;
 	__asm        mov    newloc.z, ecx;
 // LINE 1250:
-	__asm        mov    eax, newloc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.x, eax;
+	newpos.x = ((newloc.x + 0x20000000) >> 0x16);
 // LINE 1251:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, newloc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.y, eax;
+	newpos.y = ((0x20000000 - newloc.z) >> 0x16);
 // LINE 1252:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x30];
@@ -3389,15 +3323,9 @@ _T1225:
 	__asm        add    ecx, eax;
 	__asm        mov    newloc.z, ecx;
 // LINE 1402:
-	__asm        mov    eax, newloc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.x, eax;
+	newpos.x = ((newloc.x + 0x20000000) >> 0x16);
 // LINE 1403:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, newloc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.y, eax;
+	newpos.y = ((0x20000000 - newloc.z) >> 0x16);
 // LINE 1404:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x30];
@@ -3688,15 +3616,9 @@ _T1620:
 	__asm        add    ecx, eax;
 	__asm        mov    newloc.z, ecx;
 // LINE 1511:
-	__asm        mov    eax, newloc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.x, eax;
+	newpos.x = ((newloc.x + 0x20000000) >> 0x16);
 // LINE 1512:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, newloc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.y, eax;
+	newpos.y = ((0x20000000 - newloc.z) >> 0x16);
 // LINE 1513:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x30];
@@ -4109,15 +4031,9 @@ _T1bd9:
 	__asm        add    ecx, eax;
 	__asm        mov    newloc.z, ecx;
 // LINE 1650:
-	__asm        mov    eax, newloc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.x, eax;
+	newpos.x = ((newloc.x + 0x20000000) >> 0x16);
 // LINE 1651:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, newloc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.y, eax;
+	newpos.y = ((0x20000000 - newloc.z) >> 0x16);
 // LINE 1652:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x30];
@@ -4408,15 +4324,9 @@ _T1f1d:
 	__asm        add    ecx, eax;
 	__asm        mov    newloc.z, ecx;
 // LINE 1742:
-	__asm        mov    eax, newloc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.x, eax;
+	newpos.x = ((newloc.x + 0x20000000) >> 0x16);
 // LINE 1743:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, newloc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    newpos.y, eax;
+	newpos.y = ((0x20000000 - newloc.z) >> 0x16);
 // LINE 1744:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x30];
@@ -4566,15 +4476,9 @@ int32_t S3MissileCollisionCheck(/*packed*/ struct _MISSILE_DATA *md, int32_t dis
 	__asm        shl    eax, 0x10;
 	__asm        mov    cloc.z, eax;
 // LINE 1810:
-	__asm        mov    eax, cloc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.x, eax;
+	celloc.x = ((cloc.x + 0x20000000) >> 0x16);
 // LINE 1811:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, cloc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.y, eax;
+	celloc.y = ((0x20000000 - cloc.z) >> 0x16);
 // LINE 1814:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+1], 9;
@@ -5623,14 +5527,11 @@ _T5f:
 	__asm        cmp    eax, alt2;
 	__asm        jg     _Te8;
 // LINE 2285:
-	__asm        mov    eax, dist;
-	__asm        sar    eax, 1;
-	__asm        jmp    __RETURN;
+	return (dist >> 0x1);
 // LINE 2289:
 _Te8:
 	return 0xffffffff;
 // LINE 2290:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00522eb3
@@ -5913,23 +5814,11 @@ _T4a:
 	__asm        mov    winheight, eax;
 // LINE 2644:
 _T64:
-	__asm        mov    eax, blit;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax];
-	__asm        sar    eax, 0xC;
-	__asm        mov    x, eax;
+	x = (blit->verts->x >> 0xc);
 // LINE 2645:
-	__asm        mov    eax, blit;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sar    eax, 0xC;
-	__asm        mov    y, eax;
+	y = (blit->verts->y >> 0xc);
 // LINE 2647:
-	__asm        mov    eax, bufwidth;
-	__asm        imul   eax, y;
-	__asm        add    eax, x;
-	__asm        add    eax, buffer1;
-	__asm        mov    ptr, eax;
+	ptr = (((bufwidth * y) + x) + buffer1);
 // LINE 2649:
 	__asm        jmp    _T9e;
 

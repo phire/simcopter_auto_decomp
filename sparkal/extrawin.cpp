@@ -3519,11 +3519,7 @@ _T26:
 	return 0x0;
 // LINE 350:
 _T2d:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x90];
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x98];
-	__asm        mov    lSourceLeft, eax;
+	lSourceLeft = (this->lCurrentFrame * this->lWidthOfSingleFrame);
 // LINE 351:
 	lSourceRight = (this->lWidthOfSingleFrame + lSourceLeft);
 // LINE 353:
@@ -12705,12 +12701,7 @@ _T670:
 	__asm        cmp    [eax+0xAC], ecx;
 	__asm        jne    _T8ce;
 // LINE 1660:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        imul   eax, j;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        mov    rectCurrentText.top, eax;
+	rectCurrentText.top = ((this->lLineHeight * j) + this-><PopupMenuExtra+0x24>);
 // LINE 1661:
 	rectCurrentText.bottom = (rectCurrentText.top + this->lLineHeight);
 // LINE 1662:
@@ -12866,12 +12857,7 @@ _T8c9:
 	__asm        jmp    _Tac6;
 // LINE 1671:
 _T8ce:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        imul   eax, j;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        mov    rectCurrentText.top, eax;
+	rectCurrentText.top = ((this->lLineHeight * j) + this-><PopupMenuExtra+0x24>);
 // LINE 1672:
 	rectCurrentText.bottom = (rectCurrentText.top + this->lLineHeight);
 // LINE 1673:
@@ -13400,9 +13386,7 @@ _T71:
 	__asm        idiv   lTileWidth;
 	__asm        mov    lCurrentWidth, eax;
 // LINE 1754:
-	__asm        mov    eax, lCurrentWidth;
-	__asm        imul   eax, lTileWidth;
-	__asm        mov    lCurrentWidth, eax;
+	lCurrentWidth = (lCurrentWidth * lTileWidth);
 // LINE 1755:
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, lCurrentWidth;

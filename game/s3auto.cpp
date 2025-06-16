@@ -804,18 +804,12 @@ _T73:
 	__asm        cmp    deltay, eax;
 	__asm        jge    _T92;
 // LINE 121:
-	__asm        mov    eax, deltay;
-	__asm        sar    eax, 1;
-	__asm        add    eax, deltax;
-	__asm        jmp    __RETURN;
+	return ((deltay >> 0x1) + deltax);
 // LINE 123:
 	__asm        jmp    __RETURN;
 // LINE 125:
 _T92:
-	__asm        mov    eax, deltax;
-	__asm        sar    eax, 1;
-	__asm        add    eax, deltay;
-	__asm        jmp    __RETURN;
+	return ((deltax >> 0x1) + deltay);
 // LINE 127:
 __RETURN:
 }
@@ -2195,32 +2189,11 @@ _T59f:
 // LINE 955:
 // Block start:
 	/*bp-0x34*/  /*packed*/ struct Point3d loc; // 0xc bytes
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xF2];
-	__asm        mov    ecx, [ecx];
-	__asm        shl    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    loc.x, eax;
+	loc.x = (this->autoDynomitor.loc.x - (this->pDirVector->x << 0x4));
 // LINE 956:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xF2];
-	__asm        mov    ecx, [ecx+4];
-	__asm        shl    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    loc.y, eax;
+	loc.y = (this->autoDynomitor.loc.y - (this->pDirVector->y << 0x4));
 // LINE 957:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xF2];
-	__asm        mov    ecx, [ecx+8];
-	__asm        shl    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    loc.z, eax;
+	loc.z = (this->autoDynomitor.loc.z - (this->pDirVector->z << 0x4));
 // LINE 958:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -2783,17 +2756,9 @@ _T50:
 // LINE 1220:
 	vec.x = vec.y;
 // LINE 1222:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 1223:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 1224:
 	__asm        jmp    _T150;
 // LINE 1227:
@@ -2806,17 +2771,9 @@ _T8d:
 // LINE 1229:
 	vec.x = vec.y;
 // LINE 1231:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 1232:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 1233:
 	__asm        jmp    _T150;
 // LINE 1236:
@@ -2829,17 +2786,9 @@ _Tca:
 	__asm        neg    eax;
 	__asm        mov    vec.z, eax;
 // LINE 1239:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 1240:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 1241:
 	__asm        jmp    _T150;
 // LINE 1245:
@@ -4579,21 +4528,9 @@ _T106:
 	return 0x0;
 // LINE 2112:
 _T11d:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xF2];
-	__asm        mov    eax, [eax];
-	__asm        shl    eax, 5;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        mov    nextpoint.x, eax;
+	nextpoint.x = ((this->pDirVector->x << 0x5) + this->autoDynomitor.loc.x);
 // LINE 2113:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xF2];
-	__asm        mov    eax, [eax+8];
-	__asm        shl    eax, 5;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x2C];
-	__asm        mov    nextpoint.z, eax;
+	nextpoint.z = ((this->pDirVector->z << 0x5) + this->autoDynomitor.loc.z);
 // LINE 2114:
 	__asm        mov    eax, nextpoint.x;
 	__asm        add    eax, 0x20000000;
@@ -5251,32 +5188,11 @@ _T3e0:
 // LINE 2327:
 // Block start:
 	/*bp-0x10*/  /*packed*/ struct Point3d loc; // 0xc bytes
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xF2];
-	__asm        mov    ecx, [ecx];
-	__asm        shl    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    loc.x, eax;
+	loc.x = (this->autoDynomitor.loc.x - (this->pDirVector->x << 0x4));
 // LINE 2328:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xF2];
-	__asm        mov    ecx, [ecx+4];
-	__asm        shl    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    loc.y, eax;
+	loc.y = (this->autoDynomitor.loc.y - (this->pDirVector->y << 0x4));
 // LINE 2329:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xF2];
-	__asm        mov    ecx, [ecx+8];
-	__asm        shl    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        mov    loc.z, eax;
+	loc.z = (this->autoDynomitor.loc.z - (this->pDirVector->z << 0x4));
 // LINE 2330:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -5649,10 +5565,7 @@ _T1bb:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xF2], eax;
 // LINE 2459:
-	__asm        mov    eax, diagRoad;
-	__asm        shl    eax, 6;
-	__asm        add    eax, 0x62BA00;
-	__asm        mov    pRotMatrix, eax;
+	pRotMatrix = ((diagRoad << 0x6) + 0x62ba00);
 // LINE 2461:
 	__asm        jmp    _T3df;
 _T216:
@@ -6140,19 +6053,9 @@ _T3c:
 	__asm        sar    eax, 0x16;
 	__asm        mov    currentLocation.y, al;
 // LINE 2640:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xF2];
-	__asm        mov    eax, [eax];
-	__asm        shl    eax, 3;
-	__asm        add    eax, collisionPoint.x;
-	__asm        mov    xdiff, eax;
+	xdiff = ((this->pDirVector->x << 0x3) + collisionPoint.x);
 // LINE 2641:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xF2];
-	__asm        mov    eax, [eax+8];
-	__asm        shl    eax, 3;
-	__asm        add    eax, collisionPoint.z;
-	__asm        mov    zdiff, eax;
+	zdiff = ((this->pDirVector->z << 0x3) + collisionPoint.z);
 // LINE 2643:
 	__asm        mov    eax, xdiff;
 	__asm        add    eax, 0x20000000;
@@ -7172,19 +7075,9 @@ _T64:
 	__asm        mov    ecx, targcar;
 	__asm        call   AutomobileClass::StartFire;
 // LINE 3141:
-	__asm        mov    eax, targcar;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, celloc;
-	__asm        mov    [ecx], eax;
+	celloc->x = ((targcar->autoDynomitor.loc.x + 0x20000000) >> 0x16);
 // LINE 3142:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, targcar;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, celloc;
-	__asm        mov    [ecx+4], eax;
+	celloc->y = ((0x20000000 - targcar->autoDynomitor.loc.z) >> 0x16);
 // LINE 3144:
 	return 0x1;
 // LINE 3145:
@@ -7233,19 +7126,9 @@ _T64:
 	__asm        mov    ecx, targcar;
 	__asm        call   AutomobileClass::StartJam;
 // LINE 3174:
-	__asm        mov    eax, targcar;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, celloc;
-	__asm        mov    [ecx], eax;
+	celloc->x = ((targcar->autoDynomitor.loc.x + 0x20000000) >> 0x16);
 // LINE 3175:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, targcar;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, celloc;
-	__asm        mov    [ecx+4], eax;
+	celloc->y = ((0x20000000 - targcar->autoDynomitor.loc.z) >> 0x16);
 // LINE 3177:
 	return 0x1;
 // LINE 3178:
@@ -7310,17 +7193,9 @@ _T4c:
 // LINE 3215:
 	this->missionId = mission_id;
 // LINE 3218:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.x, eax;
+	celloc.x = ((this->autoDynomitor.loc.x + 0x20000000) >> 0x16);
 // LINE 3219:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.y, eax;
+	celloc.y = ((0x20000000 - this->autoDynomitor.loc.z) >> 0x16);
 // LINE 3220:
 	__asm        mov    eax, celloc.y;
 	__asm        and    eax, 0xFF;
@@ -7392,17 +7267,9 @@ _T4c:
 // LINE 3263:
 	this->missionId = mission_id;
 // LINE 3266:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.x, eax;
+	celloc.x = ((this->autoDynomitor.loc.x + 0x20000000) >> 0x16);
 // LINE 3267:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        sar    eax, 0x16;
-	__asm        mov    celloc.y, eax;
+	celloc.y = ((0x20000000 - this->autoDynomitor.loc.z) >> 0x16);
 // LINE 3268:
 	__asm        mov    eax, celloc.y;
 	__asm        and    eax, 0xFF;
@@ -7477,17 +7344,9 @@ _T71:
 	__asm        cmp    dword ptr [eax+0x102], 0;
 	__asm        jge    _T203;
 // LINE 3311:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    currpos.x, eax;
+	currpos.x = ((this->autoDynomitor.loc.x + 0x20000000) >> 0x16);
 // LINE 3312:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        sar    eax, 0x16;
-	__asm        mov    currpos.y, eax;
+	currpos.y = ((0x20000000 - this->autoDynomitor.loc.z) >> 0x16);
 // LINE 3314:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -7598,17 +7457,9 @@ _T203:
 // LINE 3357:
 	mp.id = this->missionId;
 // LINE 3358:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    mp.maploc.x, eax;
+	mp.maploc.x = ((this->autoDynomitor.loc.x + 0x20000000) >> 0x16);
 // LINE 3359:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        sar    eax, 0x16;
-	__asm        mov    mp.maploc.y, eax;
+	mp.maploc.y = ((0x20000000 - this->autoDynomitor.loc.z) >> 0x16);
 // LINE 3360:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -7646,17 +7497,9 @@ _T37:
 // LINE 3392:
 	mp.id = this->missionId;
 // LINE 3393:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    mp.maploc.x, eax;
+	mp.maploc.x = ((this->autoDynomitor.loc.x + 0x20000000) >> 0x16);
 // LINE 3394:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        sar    eax, 0x16;
-	__asm        mov    mp.maploc.y, eax;
+	mp.maploc.y = ((0x20000000 - this->autoDynomitor.loc.z) >> 0x16);
 // LINE 3395:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -7906,9 +7749,7 @@ _T40:
 	__asm        cmp    finfo.Plotter, 0xB;
 	__asm        jne    _T81;
 // LINE 3574:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        or     eax, 0x80000000;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute | 0x80000000);
 // LINE 3575:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;

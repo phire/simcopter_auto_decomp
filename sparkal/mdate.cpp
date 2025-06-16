@@ -839,9 +839,7 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 	__asm        sub    eax, ecx;
 	__asm        mov    j, eax;
 // LINE 373:
-	__asm        mov    eax, j;
-	__asm        shr    eax, 2;
-	__asm        mov    d, eax;
+	d = (j >> 0x2);
 // LINE 374:
 	__asm        mov    eax, d;
 	__asm        mov    ecx, 0x5B5;
@@ -862,10 +860,7 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 	__asm        sub    eax, ecx;
 	__asm        mov    d, eax;
 // LINE 376:
-	__asm        mov    eax, d;
-	__asm        add    eax, 4;
-	__asm        shr    eax, 2;
-	__asm        mov    d, eax;
+	d = ((d + 0x4) >> 0x2);
 // LINE 377:
 	__asm        mov    eax, d;
 	__asm        mov    ecx, 0x99;

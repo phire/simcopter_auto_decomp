@@ -2411,19 +2411,9 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 	__asm        add    ecx, eax;
 	__asm        mov    trainHeading.z, ecx;
 // LINE 1460:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    trainLocation.x, eax;
+	trainLocation.x = ((this->leadcar->loc.x + 0x20000000) >> 0x16);
 // LINE 1461:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1CD];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    trainLocation.y, eax;
+	trainLocation.y = ((0x20000000 - this->leadcar->loc.z) >> 0x16);
 // LINE 1463:
 	__asm        lea    eax, trainHeading.x;
 	__asm        push   eax;
@@ -4751,21 +4741,9 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00531081
 int32_t TrainClass::AmIInANewCell() {
 // LINE 2782:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x4D], eax;
+	this->currentCell.x = ((this->leadcar->loc.x + 0x20000000) >> 0x16);
 // LINE 2783:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1CD];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x51], eax;
+	this->currentCell.y = ((0x20000000 - this->leadcar->loc.z) >> 0x16);
 // LINE 2787:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -6410,37 +6388,13 @@ void TrainClass::SetTrailingCars() {
 	__asm        mov    eax, [eax+0x1D5];
 	__asm        mov    [eax+0x20], ebx;
 // LINE 3299:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3D], eax;
+	this->currentLocation2.x = ((this->midcar->loc.x + 0x20000000) >> 0x16);
 // LINE 3300:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D1];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x41], eax;
+	this->currentLocation2.y = ((0x20000000 - this->midcar->loc.z) >> 0x16);
 // LINE 3301:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x45], eax;
+	this->currentLocation3.x = ((this->endcar->loc.x + 0x20000000) >> 0x16);
 // LINE 3302:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D5];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x49], eax;
+	this->currentLocation3.y = ((0x20000000 - this->endcar->loc.z) >> 0x16);
 // LINE 3304:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D1];
@@ -6684,19 +6638,9 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        mov    eax, [eax+0x1D5];
 	__asm        mov    [eax+0x20], ebx;
 // LINE 3375:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    currloc.x, eax;
+	currloc.x = ((this->midcar->loc.x + 0x20000000) >> 0x16);
 // LINE 3376:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D1];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    currloc.y, eax;
+	currloc.y = ((0x20000000 - this->midcar->loc.z) >> 0x16);
 // LINE 3377:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, currloc.x;
@@ -6735,19 +6679,9 @@ _T2f6:
 	__asm        call   TrainClass::LinkToCell;
 // LINE 3384:
 _T339:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    currloc.x, eax;
+	currloc.x = ((this->endcar->loc.x + 0x20000000) >> 0x16);
 // LINE 3385:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D5];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sar    eax, 0x16;
-	__asm        mov    currloc.y, eax;
+	currloc.y = ((0x20000000 - this->endcar->loc.z) >> 0x16);
 // LINE 3386:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, currloc.x;
@@ -7797,17 +7731,9 @@ _T66:
 // LINE 3834:
 	vec.x = vec.y;
 // LINE 3836:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 3837:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 3838:
 	__asm        jmp    _T166;
 // LINE 3841:
@@ -7820,17 +7746,9 @@ _Ta3:
 // LINE 3843:
 	vec.x = vec.y;
 // LINE 3845:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 3846:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 3847:
 	__asm        jmp    _T166;
 // LINE 3850:
@@ -7843,17 +7761,9 @@ _Te0:
 	__asm        neg    eax;
 	__asm        mov    vec.z, eax;
 // LINE 3853:
-	__asm        mov    eax, vec.x;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.x, eax;
+	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 3854:
-	__asm        mov    eax, vec.z;
-	__asm        mov    ecx, G_ViewSize;
-	__asm        sar    ecx, 1;
-	__asm        imul   eax, ecx;
-	__asm        mov    vec.z, eax;
+	vec.z = (vec.z * (G_ViewSize >> 0x1));
 // LINE 3855:
 	__asm        jmp    _T166;
 // LINE 3859:
@@ -7890,18 +7800,9 @@ _T166:
 // LINE 3865:
 	__asm        shl    vec.z, 6;
 // LINE 3867:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        add    eax, vec.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = (((ViewState.world_pos.x + vec.x) + 0x20000000) >> 0x16);
 // LINE 3868:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, ViewState.world_pos.z;
-	__asm        add    ecx, vec.z;
-	__asm        sub    eax, ecx;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = ((0x20000000 - (ViewState.world_pos.z + vec.z)) >> 0x16);
 // LINE 3875:
 _T197:
 	curr_dir++;

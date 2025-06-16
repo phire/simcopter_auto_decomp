@@ -125,17 +125,7 @@ int32_t VRCreateTexColors(/*packed*/ struct VRResource *res, int32_t create_new)
 	__asm        cmp    create_new, 1;
 	__asm        jne    _T40;
 // LINE 129:
-	__asm        mov    eax, hdr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        shl    eax, 2;
-	__asm        push   eax;
-	__asm        mov    eax, res;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hdr;
-	__asm        mov    [ecx+0x14], eax;
+	hdr->bmpcolors = S2Alloc((hdr->count << 0x2), res->mempoolid);
 // LINE 132:
 _T40:
 	__asm        mov    eax, hdr;
@@ -183,11 +173,7 @@ _T70:
 _Tc7:
 	tptr = bhdr;
 // LINE 153:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    tptr, eax;
+	tptr += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 154:
 	__asm        push   0x400;
 	__asm        push   0;
@@ -274,22 +260,12 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, /*packed*/ struct VRBmpHdr *bh
 	__asm        idiv   dword ptr [ecx];
 	__asm        mov    notiles, eax;
 // LINE 202:
-	__asm        mov    eax, notiles;
-	__asm        imul   eax, notiles;
-	__asm        mov    notiles, eax;
+	notiles = (notiles * notiles);
 // LINE 205:
 	__asm        cmp    create_new, 1;
 	__asm        jne    _T64;
 // LINE 207:
-	__asm        mov    eax, notiles;
-	__asm        shl    eax, 2;
-	__asm        push   eax;
-	__asm        mov    eax, res;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    bmpcolors, eax;
+	bmpcolors = S2Alloc((notiles << 0x2), res->mempoolid);
 // LINE 208:
 	tabentry[0] = bmpcolors;
 // LINE 209:
@@ -433,10 +409,7 @@ _T50:
 	return;
 // LINE 288:
 _T55:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x24];
-	__asm        sar    eax, 0x10;
-	__asm        mov    hiword, eax;
+	hiword = (fh->Bitmap >> 0x10);
 // LINE 289:
 	loword = (fh->Bitmap & 0xffff);
 // LINE 291:
@@ -474,9 +447,7 @@ int32_t VRGetTexColor(int32_t bitmap) {
 	/*bp-0x10*/  int32_t hiword;
 
 // LINE 322:
-	__asm        mov    eax, bitmap;
-	__asm        sar    eax, 0x10;
-	__asm        mov    hiword, eax;
+	hiword = (bitmap >> 0x10);
 // LINE 323:
 	loword = (bitmap & 0xffff);
 // LINE 325:
@@ -1122,11 +1093,7 @@ _T7b:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jle    next_face;
 // LINE 641:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, faceverts;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        shr    eax, 4;
-	__asm        mov    vertidx, eax;
+	vertidx = (faceverts[j] >> 0x4);
 // LINE 642:
 	__asm        mov    eax, vertidx;
 	__asm        lea    eax, [eax+eax*2];

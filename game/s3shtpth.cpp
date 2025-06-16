@@ -143,18 +143,12 @@ int32_t ShortestPath::FindDistanceFromDestination(/*packed*/ struct _GridCoordin
 	__asm        cmp    y, eax;
 	__asm        jge    _T5f;
 // LINE 24:
-	__asm        mov    eax, y;
-	__asm        sar    eax, 1;
-	__asm        add    eax, x;
-	__asm        jmp    __RETURN;
+	return ((y >> 0x1) + x);
 // LINE 26:
 	__asm        jmp    __RETURN;
 // LINE 28:
 _T5f:
-	__asm        mov    eax, x;
-	__asm        sar    eax, 1;
-	__asm        add    eax, y;
-	__asm        jmp    __RETURN;
+	return ((x >> 0x1) + y);
 // LINE 30:
 __RETURN:
 }

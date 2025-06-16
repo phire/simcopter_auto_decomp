@@ -228,9 +228,7 @@ _T1be:
 // LINE 254:
 	S_XposZpos[1] = 0x0;
 // LINE 255:
-	__asm        mov    eax, GridFaceSize;
-	__asm        shl    eax, 2;
-	__asm        mov    S_XposZpos[2], eax;
+	S_XposZpos[2] = (GridFaceSize << 0x2);
 // LINE 256:
 	__asm        mov    eax, GridFaceSize;
 	__asm        lea    eax, [eax+eax*2];
@@ -246,13 +244,9 @@ _T1be:
 	__asm        add    eax, eax;
 	__asm        mov    S_XnegZpos[2], eax;
 // LINE 261:
-	__asm        mov    eax, GridFaceSize;
-	__asm        shl    eax, 2;
-	__asm        mov    S_XnegZpos[3], eax;
+	S_XnegZpos[3] = (GridFaceSize << 0x2);
 // LINE 263:
-	__asm        mov    eax, GridFaceSize;
-	__asm        shl    eax, 2;
-	__asm        mov    S_XposZneg[0], eax;
+	S_XposZneg[0] = (GridFaceSize << 0x2);
 // LINE 264:
 	__asm        mov    eax, GridFaceSize;
 	__asm        lea    eax, [eax+eax*2];
@@ -268,9 +262,7 @@ _T1be:
 	__asm        add    eax, eax;
 	__asm        mov    S_XnegZneg[0], eax;
 // LINE 269:
-	__asm        mov    eax, GridFaceSize;
-	__asm        shl    eax, 2;
-	__asm        mov    S_XnegZneg[1], eax;
+	S_XnegZneg[1] = (GridFaceSize << 0x2);
 // LINE 270:
 	S_XnegZneg[2] = 0x0;
 // LINE 271:
@@ -432,11 +424,7 @@ void VRSetBackPlane(int32_t farZ) {
 // LINE 370:
 	G_smokey = bhdr;
 // LINE 371:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    G_smokey, eax;
+	G_smokey += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 373:
 	__asm        mov    eax, farZ;
 	__asm        push   eax;
@@ -495,11 +483,7 @@ _Te0:
 // LINE 410:
 	G_fogbase = bhdr;
 // LINE 411:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 2;
-	__asm        add    eax, 0xC;
-	__asm        add    G_fogbase, eax;
+	G_fogbase += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 412:
 	G_fog = G_fogbase;
 // LINE 414:
@@ -5877,10 +5861,7 @@ void S3CityGrid() {
 // LINE 2466:
 	S_used_spiralscan = 0x1;
 // LINE 2467:
-	__asm        mov    eax, G_alt;
-	__asm        sar    eax, 5;
-	__asm        add    eax, 5;
-	__asm        mov    spiral_dist, eax;
+	spiral_dist = ((G_alt >> 0x5) + 0x5);
 // LINE 2468:
 	__asm        mov    eax, spiral_dist;
 	__asm        push   eax;
@@ -5901,10 +5882,7 @@ _Tb2:
 // LINE 2483:
 	S_local_lstart.x = 0xffc00000;
 // LINE 2484:
-	__asm        mov    eax, G_alt;
-	__asm        shl    eax, 0x10;
-	__asm        sar    eax, 8;
-	__asm        mov    tmpfix, eax;
+	tmpfix = ((G_alt << 0x10) >> 0x8);
 // LINE 2485:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, tmpfix;
@@ -5957,15 +5935,9 @@ _Tb2:
 // LINE 2590:
 	S_world_rstart.z += S_world_eye.z;
 // LINE 2694:
-	__asm        mov    eax, S_world_eye.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    S_pos.x, eax;
+	S_pos.x = ((S_world_eye.x + 0x20000000) >> 0x16);
 // LINE 2695:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, S_world_eye.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    S_pos.y, eax;
+	S_pos.y = ((0x20000000 - S_world_eye.z) >> 0x16);
 // LINE 2698:
 	__asm        cmp    ViewState.view_vect.x, 0;
 	__asm        jle    _T203;
@@ -6448,11 +6420,7 @@ void S3CityGetCells(/*packed*/ struct Point3d *vec, /*packed*/ struct Point2d *c
 	__asm        inc    eax;
 	__asm        mov    x_bound, eax;
 // LINE 2955:
-	__asm        mov    eax, x_bound;
-	__asm        shl    eax, 6;
-	__asm        sub    eax, 0x2000;
-	__asm        shl    eax, 0x10;
-	__asm        mov    x_bound, eax;
+	x_bound = (((x_bound << 0x6) - 0x2000) << 0x10);
 // LINE 2956:
 	x_cell_adj = 0xffffffff;
 // LINE 2958:
@@ -6463,24 +6431,14 @@ _T7d:
 // LINE 2962:
 	x_delta = 0xffc00000;
 // LINE 2963:
-	__asm        mov    eax, x_pos;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x_bound, eax;
+	x_bound = ((x_pos + 0x20000000) >> 0x16);
 // LINE 2964:
-	__asm        mov    eax, x_bound;
-	__asm        shl    eax, 6;
-	__asm        sub    eax, 0x2000;
-	__asm        shl    eax, 0x10;
-	__asm        mov    x_bound, eax;
+	x_bound = (((x_bound << 0x6) - 0x2000) << 0x10);
 // LINE 2965:
 	x_cell_adj = 0x0;
 // LINE 2970:
 _Tb1:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, y_pos;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y_coord, eax;
+	y_coord = ((0x20000000 - y_pos) >> 0x16);
 // LINE 2973:
 	curr_cell = cell_array;
 // LINE 2974:
@@ -6556,12 +6514,7 @@ _T151:
 	__asm        inc    eax;
 	__asm        mov    y_bound, eax;
 // LINE 3003:
-	__asm        mov    eax, 0x2000;
-	__asm        mov    ecx, y_bound;
-	__asm        shl    ecx, 6;
-	__asm        sub    eax, ecx;
-	__asm        shl    eax, 0x10;
-	__asm        mov    y_bound, eax;
+	y_bound = ((0x2000 - (y_bound << 0x6)) << 0x10);
 // LINE 3004:
 	y_cell_adj = 0x0;
 // LINE 3007:
@@ -6572,25 +6525,14 @@ _T1b2:
 // LINE 3011:
 	y_delta = 0xffc00000;
 // LINE 3012:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, y_pos;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y_bound, eax;
+	y_bound = ((0x20000000 - y_pos) >> 0x16);
 // LINE 3013:
-	__asm        mov    eax, 0x2000;
-	__asm        mov    ecx, y_bound;
-	__asm        shl    ecx, 6;
-	__asm        sub    eax, ecx;
-	__asm        shl    eax, 0x10;
-	__asm        mov    y_bound, eax;
+	y_bound = ((0x2000 - (y_bound << 0x6)) << 0x10);
 // LINE 3014:
 	y_cell_adj = 0x0;
 // LINE 3019:
 _T1e8:
-	__asm        mov    eax, x_pos;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x_coord, eax;
+	x_coord = ((x_pos + 0x20000000) >> 0x16);
 // LINE 3022:
 	curr_cell = cell_array;
 // LINE 3023:
@@ -6674,12 +6616,7 @@ _T28a:
 	__asm        inc    eax;
 	__asm        mov    y_bound, eax;
 // LINE 3063:
-	__asm        mov    eax, 0x2000;
-	__asm        mov    ecx, y_bound;
-	__asm        shl    ecx, 6;
-	__asm        sub    eax, ecx;
-	__asm        shl    eax, 0x10;
-	__asm        mov    y_bound, eax;
+	y_bound = ((0x2000 - (y_bound << 0x6)) << 0x10);
 // LINE 3064:
 	y_delta = 0xffc00000;
 // LINE 3065:
@@ -6688,17 +6625,9 @@ _T28a:
 	__asm        jmp    _T32b;
 // LINE 3073:
 _T2fc:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, y_pos;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y_bound, eax;
+	y_bound = ((0x20000000 - y_pos) >> 0x16);
 // LINE 3074:
-	__asm        mov    eax, 0x2000;
-	__asm        mov    ecx, y_bound;
-	__asm        shl    ecx, 6;
-	__asm        sub    eax, ecx;
-	__asm        shl    eax, 0x10;
-	__asm        mov    y_bound, eax;
+	y_bound = ((0x2000 - (y_bound << 0x6)) << 0x10);
 // LINE 3075:
 	y_delta = 0x400000;
 // LINE 3076:
@@ -6720,16 +6649,9 @@ _T32b:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jge    _T384;
 // LINE 3092:
-	__asm        mov    eax, x_pos;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x_bound, eax;
+	x_bound = ((x_pos + 0x20000000) >> 0x16);
 // LINE 3093:
-	__asm        mov    eax, x_bound;
-	__asm        shl    eax, 6;
-	__asm        sub    eax, 0x2000;
-	__asm        shl    eax, 0x10;
-	__asm        mov    x_bound, eax;
+	x_bound = (((x_bound << 0x6) - 0x2000) << 0x10);
 // LINE 3094:
 	x_delta = 0xffc00000;
 // LINE 3095:
@@ -6744,11 +6666,7 @@ _T384:
 	__asm        inc    eax;
 	__asm        mov    x_bound, eax;
 // LINE 3103:
-	__asm        mov    eax, x_bound;
-	__asm        shl    eax, 6;
-	__asm        sub    eax, 0x2000;
-	__asm        shl    eax, 0x10;
-	__asm        mov    x_bound, eax;
+	x_bound = (((x_bound << 0x6) - 0x2000) << 0x10);
 // LINE 3104:
 	x_delta = 0x400000;
 // LINE 3105:
@@ -7071,15 +6989,9 @@ void city_fovscan_horizedge() {
 	/*bp-0x34*/  /*packed*/ struct Point2d *fovcell;
 
 // LINE 3219:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x_pos, eax;
+	x_pos = ((ViewState.world_pos.x + 0x20000000) >> 0x16);
 // LINE 3221:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, S_world_eye.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y_pos, eax;
+	y_pos = ((0x20000000 - S_world_eye.z) >> 0x16);
 // LINE 3223:
 	y_start = S_llast->y;
 // LINE 3226:
@@ -7475,15 +7387,9 @@ void city_fovscan_vertedge() {
 	/*bp-0x34*/  /*packed*/ struct Point2d *fovcell;
 
 // LINE 3369:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, ViewState.world_pos.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y_pos, eax;
+	y_pos = ((0x20000000 - ViewState.world_pos.z) >> 0x16);
 // LINE 3371:
-	__asm        mov    eax, S_world_eye.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x_pos, eax;
+	x_pos = ((S_world_eye.x + 0x20000000) >> 0x16);
 // LINE 3373:
 	x_start = S_llast->x;
 // LINE 3376:
@@ -9091,19 +8997,9 @@ _T119:
 _T144:
 	rad = dyobj->radius;
 // LINE 4057:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+0x18];
-	__asm        sub    eax, rad;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = (((dyobj->loc.x - rad) + 0x20000000) >> 0x16);
 // LINE 4058:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, dyobj;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sub    eax, rad;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = (((0x20000000 - dyobj->loc.z) - rad) >> 0x16);
 // LINE 4059:
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -9116,19 +9012,9 @@ _T144:
 // LINE 4060:
 	cptr1 = cadd1->;
 // LINE 4061:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, rad;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = (((dyobj->loc.x + rad) + 0x20000000) >> 0x16);
 // LINE 4062:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, dyobj;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        sub    eax, rad;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = (((0x20000000 - dyobj->loc.z) - rad) >> 0x16);
 // LINE 4063:
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -9141,19 +9027,9 @@ _T144:
 // LINE 4064:
 	cptr2 = cadd2->;
 // LINE 4065:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+0x18];
-	__asm        sub    eax, rad;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = (((dyobj->loc.x - rad) + 0x20000000) >> 0x16);
 // LINE 4066:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, dyobj;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        add    eax, rad;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = (((0x20000000 - dyobj->loc.z) + rad) >> 0x16);
 // LINE 4067:
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -9166,19 +9042,9 @@ _T144:
 // LINE 4068:
 	cptr3 = cadd3->;
 // LINE 4069:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, rad;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = (((dyobj->loc.x + rad) + 0x20000000) >> 0x16);
 // LINE 4070:
-	__asm        mov    eax, 0x20000000;
-	__asm        mov    ecx, dyobj;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        add    eax, rad;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = (((0x20000000 - dyobj->loc.z) + rad) >> 0x16);
 // LINE 4071:
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -10161,18 +10027,11 @@ _T0f:
 // LINE 4329:
 	caddrtest->->ctr--;
 // LINE 4330:
-	__asm        mov    eax, caddr;
-	__asm        sub    eax, GridCellAddrs;
-	__asm        sar    eax, 2;
-	__asm        mov    i, eax;
+	i = ((caddr - GridCellAddrs) >> 0x2);
 // LINE 4331:
 	GridSortCells-> = cptrreplace->;
 // LINE 4332:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        add    eax, GridSortCells;
-	__asm        mov    ecx, caddr;
-	__asm        mov    [ecx], eax;
+	caddr-> = ((i << 0x2) + GridSortCells);
 // LINE 4334:
 _Ta1:
 	return 0x1;
@@ -10195,15 +10054,9 @@ void S3CityCheckGridPos() {
 	/*bp-0x10*/  long altdiff;
 
 // LINE 4360:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    S_curr_pos.x, eax;
+	S_curr_pos.x = ((ViewState.world_pos.x + 0x20000000) >> 0x16);
 // LINE 4361:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, ViewState.world_pos.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    S_curr_pos.y, eax;
+	S_curr_pos.y = ((0x20000000 - ViewState.world_pos.z) >> 0x16);
 // LINE 4364:
 	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        sar    eax, 0x10;
@@ -10356,9 +10209,7 @@ _T1bd:
 // LINE 4425:
 	G_last_grid_size = gsize;
 // LINE 4427:
-	__asm        mov    eax, xdiff;
-	__asm        shl    eax, 0x16;
-	__asm        add    GridPos.loc.x, eax;
+	GridPos.loc.x += (xdiff << 0x16);
 // LINE 4428:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ydiff;
@@ -10390,9 +10241,7 @@ _T28e:
 // LINE 4435:
 	__asm        call   S3TerrSetGridObj;
 // LINE 4437:
-	__asm        mov    eax, xdiff;
-	__asm        shl    eax, 0x16;
-	__asm        add    GridPos.loc.x, eax;
+	GridPos.loc.x += (xdiff << 0x16);
 // LINE 4438:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ydiff;
@@ -10855,15 +10704,9 @@ void S3CityDrawOverHeadGrid() {
 // LINE 4911:
 	__asm        call   S3ViewerSetView;
 // LINE 4913:
-	__asm        mov    eax, Viewer.pos.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    x, eax;
+	x = ((Viewer.pos.x + 0x20000000) >> 0x16);
 // LINE 4914:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, Viewer.pos.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    y, eax;
+	y = ((0x20000000 - Viewer.pos.z) >> 0x16);
 // LINE 4917:
 	__asm        push   5;
 	__asm        mov    eax, y;
