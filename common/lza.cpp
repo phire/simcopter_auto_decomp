@@ -2007,7 +2007,15 @@ _T114:
 // LINE 485:
 	model->high += model->high;
 // LINE 486:
-	model->value = BinaryOp(add, GetBit(src), BinaryOp(mul, model->value, Const(2)));
+	__asm        mov    eax, src;
+	__asm        push   eax;
+	__asm        call   GetBit;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, model;
+	__asm        mov    ecx, [ecx+8];
+	__asm        lea    eax, [eax+ecx*2];
+	__asm        mov    ecx, model;
+	__asm        mov    [ecx+8], eax;
 // LINE 487:
 	__asm        jmp    _T8d;
 // LINE 488:
@@ -2160,7 +2168,15 @@ _T114:
 // LINE 516:
 	model->high += model->high;
 // LINE 517:
-	model->value = BinaryOp(add, GetBit(src), BinaryOp(mul, model->value, Const(2)));
+	__asm        mov    eax, src;
+	__asm        push   eax;
+	__asm        call   GetBit;
+	__asm        add    esp, 4;
+	__asm        mov    ecx, model;
+	__asm        mov    ecx, [ecx+8];
+	__asm        lea    eax, [eax+ecx*2];
+	__asm        mov    ecx, model;
+	__asm        mov    [ecx+8], eax;
 // LINE 518:
 	__asm        jmp    _T8d;
 // LINE 519:

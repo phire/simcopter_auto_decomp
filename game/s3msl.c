@@ -1918,11 +1918,23 @@ _Te94:
 	__asm        cmp    msl_type, 7;
 	__asm        je     _Tee5;
 // LINE 883:
-	sloc.x += (BinaryOp(add, md->vector.x, BinaryOp(mul, md->vector.x, Const(4))) + BinaryOp(add, md->vector.x, BinaryOp(mul, md->vector.x, Const(4))));
+	__asm        mov    eax, md;
+	__asm        mov    eax, [eax+0x10];
+	__asm        lea    eax, [eax+eax*4];
+	__asm        add    eax, eax;
+	__asm        add    sloc.x, eax;
 // LINE 884:
-	sloc.y += (BinaryOp(add, md->vector.y, BinaryOp(mul, md->vector.y, Const(4))) + BinaryOp(add, md->vector.y, BinaryOp(mul, md->vector.y, Const(4))));
+	__asm        mov    eax, md;
+	__asm        mov    eax, [eax+0x14];
+	__asm        lea    eax, [eax+eax*4];
+	__asm        add    eax, eax;
+	__asm        add    sloc.y, eax;
 // LINE 885:
-	sloc.z += (BinaryOp(add, md->vector.z, BinaryOp(mul, md->vector.z, Const(4))) + BinaryOp(add, md->vector.z, BinaryOp(mul, md->vector.z, Const(4))));
+	__asm        mov    eax, md;
+	__asm        mov    eax, [eax+0x18];
+	__asm        lea    eax, [eax+eax*4];
+	__asm        add    eax, eax;
+	__asm        add    sloc.z, eax;
 // LINE 886:
 	__asm        mov    eax, smoke_size;
 	__asm        push   eax;

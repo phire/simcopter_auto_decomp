@@ -5674,7 +5674,11 @@ _T1bb:
 	__asm        mov    eax, DiagOffset[0][0].z[ecx+eax*4];
 	__asm        mov    zOffset, eax;
 // LINE 2458:
-	this->pDirVector = BinaryOp(add, BinaryOp(mul, BinaryOp(add, diagRoad, BinaryOp(mul, diagRoad, Const(2))), Const(4)), Const(6470400));
+	__asm        mov    eax, diagRoad;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        lea    eax, DiagVector[0].x[eax*4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xF2], eax;
 // LINE 2459:
 	__asm        mov    eax, diagRoad;
 	__asm        shl    eax, 6;

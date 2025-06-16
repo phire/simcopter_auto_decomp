@@ -355,7 +355,12 @@ _T1f8:
 	__asm        jmp    _T1f5;
 // LINE 115:
 _T223:
-	pEdge = (((BinaryOp(add, i, BinaryOp(mul, i, Const(4))) + BinaryOp(add, i, BinaryOp(mul, i, Const(4)))) + pRGV) + 0x4);
+	__asm        mov    eax, i;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        add    eax, eax;
+	__asm        add    eax, pRGV;
+	__asm        add    eax, 4;
+	__asm        mov    pEdge, eax;
 // LINE 116:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -630,7 +635,12 @@ _T247:
 	__asm        jmp    _T244;
 // LINE 226:
 _T272:
-	pEdge = (((BinaryOp(add, i, BinaryOp(mul, i, Const(4))) + BinaryOp(add, i, BinaryOp(mul, i, Const(4)))) + pRGV) + 0x4);
+	__asm        mov    eax, i;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        add    eax, eax;
+	__asm        add    eax, pRGV;
+	__asm        add    eax, 4;
+	__asm        mov    pEdge, eax;
 // LINE 227:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;

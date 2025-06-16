@@ -726,7 +726,13 @@ void RoadGraph::GetNextGoal(/*packed*/ struct Goal *pGoal) {
 // LINE 199:
 	pRGV = pGoal->pRGV;
 // LINE 200:
-	pEdge = (((BinaryOp(add, pGoal->edgeIndex, BinaryOp(mul, pGoal->edgeIndex, Const(4))) + BinaryOp(add, pGoal->edgeIndex, BinaryOp(mul, pGoal->edgeIndex, Const(4)))) + pRGV) + 0x4);
+	__asm        mov    eax, pGoal;
+	__asm        mov    eax, [eax+0xE];
+	__asm        lea    eax, [eax+eax*4];
+	__asm        add    eax, eax;
+	__asm        add    eax, pRGV;
+	__asm        add    eax, 4;
+	__asm        mov    pEdge, eax;
 // LINE 205:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -1105,7 +1111,13 @@ _T92:
 	__asm        cmp    validTurn, 0;
 	__asm        je     _T44;
 // LINE 361:
-	pEdge = (((BinaryOp(add, pGoal->edgeIndex, BinaryOp(mul, pGoal->edgeIndex, Const(4))) + BinaryOp(add, pGoal->edgeIndex, BinaryOp(mul, pGoal->edgeIndex, Const(4)))) + pRGV) + 0x4);
+	__asm        mov    eax, pGoal;
+	__asm        mov    eax, [eax+0xE];
+	__asm        lea    eax, [eax+eax*4];
+	__asm        add    eax, eax;
+	__asm        add    eax, pRGV;
+	__asm        add    eax, 4;
+	__asm        mov    pEdge, eax;
 // LINE 363:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -6562,7 +6574,12 @@ _T5e:
 // LINE 1271:
 	startLoc.y = y;
 // LINE 1275:
-	pEdge = (((BinaryOp(add, currentDir, BinaryOp(mul, currentDir, Const(4))) + BinaryOp(add, currentDir, BinaryOp(mul, currentDir, Const(4)))) + pRGV) + 0x4);
+	__asm        mov    eax, currentDir;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        add    eax, eax;
+	__asm        add    eax, pRGV;
+	__asm        add    eax, 4;
+	__asm        mov    pEdge, eax;
 // LINE 1276:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -6876,7 +6893,11 @@ _T3fb:
 	__asm        dec    ecx;
 	__asm        mov    element, ecx;
 // LINE 1326:
-	pRoad = BinaryOp(add, pEdge->roadArray, BinaryOp(mul, element, Const(2)));
+	__asm        mov    eax, pEdge;
+	__asm        mov    eax, [eax+6];
+	__asm        mov    ecx, element;
+	__asm        lea    eax, [eax+ecx*2];
+	__asm        mov    pRoad, eax;
 // LINE 1327:
 	__asm        mov    eax, pRoad;
 	__asm        mov    byte ptr [eax+1], 0;
@@ -7204,7 +7225,11 @@ _T7bf:
 // LINE 1378:
 	element--;
 // LINE 1379:
-	pRoad = BinaryOp(add, pEdge->roadArray, BinaryOp(mul, element, Const(2)));
+	__asm        mov    eax, pEdge;
+	__asm        mov    eax, [eax+6];
+	__asm        mov    ecx, element;
+	__asm        lea    eax, [eax+ecx*2];
+	__asm        mov    pRoad, eax;
 // LINE 1381:
 	__asm        cmp    decrementFlag, 0;
 	__asm        je     _T7f4;

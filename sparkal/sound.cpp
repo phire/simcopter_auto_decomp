@@ -4045,7 +4045,14 @@ _T2a6:
 	__asm        mov    ecx, [ecx+0x72];
 	__asm        mov    [ecx+0x30], eax;
 // LINE 1547:
-	this->lpStreamBufferInfo->dwBufferSize = (BinaryOp(add, this->lpStreamBufferInfo->dwBufferSegSize, BinaryOp(mul, this->lpStreamBufferInfo->dwBufferSegSize, Const(2))) + BinaryOp(add, this->lpStreamBufferInfo->dwBufferSegSize, BinaryOp(mul, this->lpStreamBufferInfo->dwBufferSegSize, Const(2))));
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x72];
+	__asm        mov    eax, [eax+0x30];
+	__asm        lea    eax, [eax+eax*2];
+	__asm        add    eax, eax;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x72];
+	__asm        mov    [ecx+0x2C], eax;
 // LINE 1550:
 	__asm        push   0x14;
 	__asm        push   0;

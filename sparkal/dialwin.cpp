@@ -6254,7 +6254,11 @@ _T2a2:
 // FUNCTION: COPTER_D 0x0044cc1f
 void PassengerWindow::GetRectOfPassengerGraphic(int32_t face, int32_t nPassengerExpression, /*packed*/ class MRect& rectPosition) {
 // LINE 1129:
-	rectPosition.left = BinaryOp(add, BinaryOp(add, BinaryOp(add, face, BinaryOp(mul, face, Const(2))), Const(3)), BinaryOp(mul, BinaryOp(add, BinaryOp(add, face, BinaryOp(mul, face, Const(2))), Const(3)), Const(8)));
+	__asm        mov    eax, face;
+	__asm        lea    eax, [eax+eax*2+3];
+	__asm        lea    eax, [eax+eax*8];
+	__asm        mov    ecx, rectPosition;
+	__asm        mov    [ecx], eax;
 // LINE 1130:
 	__asm        mov    eax, nPassengerExpression;
 	__asm        mov    ecx, eax;

@@ -883,7 +883,17 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 	__asm        mov    ecx, m;
 	__asm        mov    [ecx], eax;
 // LINE 378:
-	d = ((BinaryOp(add, d, BinaryOp(mul, d, Const(4))) - 0x3) - BinaryOp(add, m., BinaryOp(mul, BinaryOp(add, m., BinaryOp(mul, BinaryOp(add, m., BinaryOp(mul, m., Const(8))), Const(2))), Const(8))));
+	__asm        mov    eax, d;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        sub    eax, 3;
+	__asm        mov    ecx, m;
+	__asm        mov    ecx, [ecx];
+	__asm        mov    edx, ecx;
+	__asm        lea    ecx, [ecx+ecx*8];
+	__asm        lea    ecx, [edx+ecx*2];
+	__asm        lea    ecx, [edx+ecx*8];
+	__asm        sub    eax, ecx;
+	__asm        mov    d, eax;
 // LINE 379:
 	__asm        mov    eax, d;
 	__asm        mov    ecx, 5;

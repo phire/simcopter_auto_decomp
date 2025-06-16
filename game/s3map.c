@@ -156,7 +156,11 @@ void S3MapInit() {
 	__asm        add    esp, 4;
 // LINE 219:
 _Tf9:
-	S_mapbuf = ((BinaryOp(add, S_borderdimx, BinaryOp(mul, S_borderdimx, Const(8))) + S_borderbuf) + 0xa);
+	__asm        mov    eax, S_borderdimx;
+	__asm        lea    eax, [eax+eax*8];
+	__asm        add    eax, S_borderbuf;
+	__asm        add    eax, 0xA;
+	__asm        mov    S_mapbuf, eax;
 // LINE 221:
 	__asm        mov    eax, S_borderdimy;
 	__asm        cdq;
@@ -3135,7 +3139,10 @@ _T1f:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T94;
 // LINE 1292:
-	ci = BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), Const(8)), Const(7073088));
+	__asm        mov    eax, i;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        lea    eax, S_carinfo[0].flags[eax*8];
+	__asm        mov    ci, eax;
 // LINE 1293:
 	__asm        mov    eax, ci;
 	__asm        test   byte ptr [eax], 3;
@@ -3670,7 +3677,10 @@ _T18:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T48;
 // LINE 1569:
-	ci = BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), Const(8)), Const(7073088));
+	__asm        mov    eax, i;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        lea    eax, S_carinfo[0].flags[eax*8];
+	__asm        mov    ci, eax;
 // LINE 1570:
 	__asm        mov    eax, ci;
 	__asm        test   byte ptr [eax], 1;
@@ -3751,7 +3761,10 @@ _T18:
 	__asm        cmp    i, 0x14;
 	__asm        jge    __RETURN;
 // LINE 1633:
-	ci = BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), Const(8)), Const(7073088));
+	__asm        mov    eax, i;
+	__asm        lea    eax, [eax+eax*4];
+	__asm        lea    eax, S_carinfo[0].flags[eax*8];
+	__asm        mov    ci, eax;
 // LINE 1634:
 	__asm        mov    eax, ci;
 	__asm        test   byte ptr [eax], 1;

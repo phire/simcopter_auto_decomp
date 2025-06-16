@@ -18810,7 +18810,9 @@ _T8c:
 // LINE 2834:
 // Block start:
 	/*bp-0x14*/  /*unpacked*/ class cYObject **newObj;
-	newObj = BinaryOp(add, BinaryOp(mul, reinterpret_cast<int16_t>(id), Const(4)), Const(6516032));
+	__asm        movsx  eax, id;
+	__asm        lea    eax, cYObject::sObjects[0][eax*4];
+	__asm        mov    newObj, eax;
 // LINE 2835:
 	__asm        push   0x168;
 	__asm        call   operator new;

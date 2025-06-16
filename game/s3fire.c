@@ -4006,7 +4006,11 @@ _T20f:
 _T22d:
 	S_fire_count++;
 // LINE 1695:
-	fd->cfd = BinaryOp(add, BinaryOp(mul, fd->cfd, Const(8)), Const(6733456));
+	__asm        mov    eax, fd;
+	__asm        mov    eax, [eax+0x98];
+	__asm        lea    eax, S_cfdata[0].cptr[eax*8];
+	__asm        mov    ecx, fd;
+	__asm        mov    [ecx+0x98], eax;
 // LINE 1697:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x94];
@@ -4168,7 +4172,17 @@ _T92:
 	return 0x0;
 // LINE 1757:
 _Tc2:
-	ret = WriteMIFFChunk(0x8, BinaryOp(add, BinaryOp(mul, i, Const(8)), Const(6733456)), CfdMIFFID, miffWriter);
+	__asm        push   8;
+	__asm        mov    eax, i;
+	__asm        lea    eax, S_cfdata[0].cptr[eax*8];
+	__asm        push   eax;
+	__asm        mov    eax, CfdMIFFID;
+	__asm        push   eax;
+	__asm        mov    eax, miffWriter;
+	__asm        push   eax;
+	__asm        call   WriteMIFFChunk;
+	__asm        add    esp, 0x10;
+	__asm        mov    ret, eax;
 // LINE 1758:
 	__asm        cmp    ret, 0;
 	__asm        jne    _Tf5;

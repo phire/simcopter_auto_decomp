@@ -238,13 +238,19 @@ _T1be:
 	__asm        shl    eax, 2;
 	__asm        mov    S_XposZpos[2], eax;
 // LINE 256:
-	S_XposZpos[3] = (BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))) + BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))));
+	__asm        mov    eax, GridFaceSize;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        add    eax, eax;
+	__asm        mov    S_XposZpos[3], eax;
 // LINE 258:
 	S_XnegZpos[0] = 0x0;
 // LINE 259:
 	S_XnegZpos[1] = (GridFaceSize + GridFaceSize);
 // LINE 260:
-	S_XnegZpos[2] = (BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))) + BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))));
+	__asm        mov    eax, GridFaceSize;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        add    eax, eax;
+	__asm        mov    S_XnegZpos[2], eax;
 // LINE 261:
 	__asm        mov    eax, GridFaceSize;
 	__asm        shl    eax, 2;
@@ -254,13 +260,19 @@ _T1be:
 	__asm        shl    eax, 2;
 	__asm        mov    S_XposZneg[0], eax;
 // LINE 264:
-	S_XposZneg[1] = (BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))) + BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))));
+	__asm        mov    eax, GridFaceSize;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        add    eax, eax;
+	__asm        mov    S_XposZneg[1], eax;
 // LINE 265:
 	S_XposZneg[2] = (GridFaceSize + GridFaceSize);
 // LINE 266:
 	S_XposZneg[3] = 0x0;
 // LINE 268:
-	S_XnegZneg[0] = (BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))) + BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))));
+	__asm        mov    eax, GridFaceSize;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        add    eax, eax;
+	__asm        mov    S_XnegZneg[0], eax;
 // LINE 269:
 	__asm        mov    eax, GridFaceSize;
 	__asm        shl    eax, 2;

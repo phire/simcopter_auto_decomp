@@ -3465,7 +3465,17 @@ _T329:
 	__asm        jmp    _T355;
 // LINE 693:
 _T355:
-	this->vehicleHeap = S2Alloc((BinaryOp(add, this->maxVehicles, BinaryOp(mul, this->maxVehicles, Const(4))) + BinaryOp(add, this->maxVehicles, BinaryOp(mul, this->maxVehicles, Const(4)))), G_citymempool);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x18];
+	__asm        lea    eax, [eax+eax*4];
+	__asm        add    eax, eax;
+	__asm        push   eax;
+	__asm        mov    eax, G_citymempool;
+	__asm        push   eax;
+	__asm        call   S2Alloc;
+	__asm        add    esp, 8;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x10], eax;
 // LINE 694:
 	return;
 

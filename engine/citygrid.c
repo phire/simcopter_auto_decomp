@@ -118,7 +118,9 @@ _T6a:
 // LINE 193:
 	goff = GridNFaces;
 // LINE 194:
-	goff = BinaryOp(add, goff, BinaryOp(mul, goff, Const(2)));
+	__asm        mov    eax, goff;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        mov    goff, eax;
 // LINE 195:
 	__asm        mov    eax, goff;
 	__asm        shl    eax, 2;
@@ -582,7 +584,9 @@ void InitGridPool() {
 // LINE 398:
 	goff = GridNFaces;
 // LINE 399:
-	goff = BinaryOp(add, goff, BinaryOp(mul, goff, Const(2)));
+	__asm        mov    eax, goff;
+	__asm        lea    eax, [eax+eax*2];
+	__asm        mov    goff, eax;
 // LINE 400:
 	__asm        mov    eax, goff;
 	__asm        shl    eax, 2;
