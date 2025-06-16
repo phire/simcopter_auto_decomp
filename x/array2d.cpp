@@ -554,13 +554,7 @@ _T353:
 // LINE 98:
 	data += (this->fEntrySize * ycount);
 // LINE 99:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   Swizzler;
-	__asm        add    esp, 8;
+	Swizzler(this->fEntrySize, data);
 // LINE 100:
 	__asm        jmp    _T304;
 // LINE 101:
