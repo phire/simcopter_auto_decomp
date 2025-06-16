@@ -401,7 +401,7 @@ int32_t PaletteBuffer::SetPalette(const /*packed*/ struct SparkalColor *pColors)
 	/*bp-0x4*/   int32_t i;
 
 // LINE 81:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -451,7 +451,7 @@ _T2d:
 	__asm        call   dword ptr [eax+0x10];
 	__asm        mov    hResult, eax;
 // LINE 104:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T5c;
 _T59:
 	i++;
@@ -525,7 +525,7 @@ _T17:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 138:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T66;
 _T63:
 	i++;

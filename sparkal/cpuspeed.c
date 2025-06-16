@@ -348,7 +348,7 @@ _T2fb:
 // LINE 313:
 	lowest = 0xffffffff;
 // LINE 325:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T329;
 _T326:
 	i++;

@@ -719,7 +719,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long *lCoordin
 	__asm        jmp    _T55;
 // LINE 50:
 _T55:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T64;
 _T61:
 	i++;
@@ -770,8 +770,7 @@ _Tce:
 _Teb:
 	__asm        jmp    _Tf0;
 _Tf0:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0xC], 8;
+	this->pointArray.finish += 0x8;
 	__asm        jmp    _T4cd;
 _Tff:
 	__asm        jmp    _T104;
@@ -1116,7 +1115,7 @@ _T3e:
 // LINE 68:
 	lCount = hotSpotResourceRecord->lCount;
 // LINE 70:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T73;
 _T70:
 	i++;
@@ -1167,8 +1166,7 @@ _Tde:
 _Tfb:
 	__asm        jmp    _T100;
 _T100:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0xC], 8;
+	this->pointArray.finish += 0x8;
 	__asm        jmp    _T4e6;
 _T10f:
 	__asm        jmp    _T114;
@@ -1548,8 +1546,7 @@ _Tac:
 _Tc9:
 	__asm        jmp    _Tce;
 _Tce:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0xC], 8;
+	this->pointArray.finish += 0x8;
 	__asm        jmp    _T4c3;
 _Tdd:
 	__asm        jmp    _Te2;
@@ -1904,8 +1901,7 @@ _T528:
 _T54b:
 	__asm        jmp    _T550;
 _T550:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0xC], 8;
+	this->pointArray.finish += 0x8;
 	__asm        jmp    _T903;
 _T55f:
 	__asm        jmp    _T564;
@@ -3007,7 +3003,7 @@ _T118:
 	__asm        cmp    c, 0;
 	__asm        jne    _T18d;
 
-	__asm        mov    c, 1;
+	c = 0x1;
 	__asm        jmp    _T194;
 _T18d:
 	c = 0x0;
@@ -3223,7 +3219,7 @@ _T24d:
 	__asm        mov    eax, nMaxY;
 	__asm        mov    nMinY, eax;
 // LINE 242:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T26e;
 _T26b:
 	i++;
@@ -3411,7 +3407,7 @@ _T9b:
 // LINE 287:
 	nCurrentRecordStart = 0x10;
 // LINE 288:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tba;
 _Tb7:
 	i++;

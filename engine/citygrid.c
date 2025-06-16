@@ -261,7 +261,7 @@ _T6a:
 // LINE 225:
 	goff = GridFaces;
 // LINE 226:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T2ff;
 _T2fc:
 	y++;
@@ -270,7 +270,7 @@ _T2ff:
 	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T35d;
 // LINE 228:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T31d;
 _T31a:
 	x++;
@@ -345,7 +345,7 @@ _T35d:
 // LINE 257:
 	v = GridVerts;
 // LINE 258:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T41c;
 _T418:
 	i++;
@@ -356,7 +356,7 @@ _T41c:
 // LINE 260:
 	x_val = x_start;
 // LINE 261:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T441;
 _T43d:
 	j++;
@@ -386,7 +386,7 @@ _T471:
 _T480:
 	dataptr = GridFaces;
 // LINE 276:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T497;
 _T494:
 	y++;
@@ -395,7 +395,7 @@ _T497:
 	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T644;
 // LINE 278:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T4b5;
 _T4b2:
 	x++;
@@ -409,7 +409,7 @@ _T4b5:
 	__asm        add    eax, x;
 	__asm        mov    ul, eax;
 // LINE 303:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4e2;
 _T4de:
 	i++;

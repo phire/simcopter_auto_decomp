@@ -173,7 +173,7 @@ void JoystickManager::JoystickManager() {
 // LINE 32:
 	this->lJoystickThreshold = 0x0;
 // LINE 33:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T43;
 _T40:
 	i++;
@@ -209,7 +209,7 @@ int32_t JoystickManager::Initialize() {
 // LINE 60:
 	this->nJoystickCount = 0x0;
 // LINE 61:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2d;
 _T2a:
 	i++;
@@ -237,7 +237,7 @@ _T55:
 	nMaxJoysticks = 0x10;
 // LINE 70:
 _T6f:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T7e;
 _T7b:
 	i++;
@@ -297,7 +297,7 @@ int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 93:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -372,7 +372,7 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 	/*bp-0x4*/   int32_t i;
 
 // LINE 127:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;

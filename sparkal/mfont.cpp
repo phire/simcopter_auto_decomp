@@ -126,8 +126,7 @@ _Tb6:
 _Tc4:
 	this->sName.reference = 0x0;
 _Tce:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->sName.c_str_ptr = 0x0;
 	__asm        jmp    _Tdd;
 _Tdd:
 	__asm        mov    eax, this;
@@ -175,8 +174,7 @@ _T51:
 _T5f:
 	this->sName.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->sName.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 _T78:
 	this-><vftable> = 0x591640;
@@ -220,8 +218,7 @@ _T51:
 _T5f:
 	this->sName.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->sName.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 _T78:
 	this-><vftable> = 0x591640;

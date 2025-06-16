@@ -947,8 +947,7 @@ _T144:
 	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        jmp    _T15b;
 _T15b:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xC];
+	this->myPreferences.length--;
 	__asm        jmp    _T166;
 _T166:
 	__asm        jmp    _T99;
@@ -1519,8 +1518,7 @@ _Tf7:
 	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        jmp    _T10e;
 _T10e:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xC];
+	this->myPreferences.length--;
 	__asm        jmp    _T119;
 _T119:
 	__asm        jmp    _T4c;
@@ -1645,8 +1643,7 @@ _T10f:
 	__asm        mov    list<PreferenceItem>::free_list, eax;
 	__asm        jmp    _T126;
 _T126:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xC];
+	this->myPreferences.length--;
 	__asm        jmp    _T131;
 // LINE 332:
 _T131:
@@ -2873,8 +2870,7 @@ _T10b:
 	__asm        mov    list<NotificationItem>::free_list, eax;
 	__asm        jmp    _T122;
 _T122:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x2C];
+	this->myNotifications.length--;
 	__asm        jmp    _T12d;
 // LINE 580:
 _T12d:

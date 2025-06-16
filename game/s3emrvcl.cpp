@@ -632,8 +632,7 @@ void EmergencyVehicleClass::EmergencyVehicleClass() {
 // FUNCTION: COPTER_D 0x0054163a
 void EmergencyVehicleClass::~EmergencyVehicleClass() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5934C0;
+	this-><EmergencyVehicleClass+0x00> = 0x5934c0;
 	__asm        jmp    __RETURN;
 __RETURN:
 	__asm        mov    ecx, this;
@@ -2228,7 +2227,7 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1463:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T40;
 _T3d:
 	count++;
@@ -2292,7 +2291,7 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1486:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T40;
 _T3d:
 	count++;

@@ -383,7 +383,7 @@ _Tbb:
 _Tcc:
 	sCurrentInitializer.reference = 0x0;
 _Td6:
-	__asm        mov    sCurrentInitializer.c_str_ptr, 0;
+	sCurrentInitializer.c_str_ptr = 0x0;
 	__asm        jmp    _Te5;
 // LINE 107:
 _Te5:
@@ -927,9 +927,7 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 // LINE 165:
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 167:
-	__asm        call   VRAppInit;
-	__asm        mov    ecx, tempVRAppInitThreadStruct;
-	__asm        mov    [ecx], eax;
+	tempVRAppInitThreadStruct->nReturnValue = VRAppInit();
 	__asm        jmp    _L44245;
 // LINE 171:
 _L48858:

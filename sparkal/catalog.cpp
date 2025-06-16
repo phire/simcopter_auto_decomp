@@ -649,8 +649,7 @@ _T18d:
 _T1fc:
 	this->sCurrentFunds.reference = 0x0;
 _T20c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0;
+	this->sCurrentFunds.c_str_ptr = 0x0;
 	__asm        jmp    _T221;
 _T221:
 	__asm        push   0x10;
@@ -669,8 +668,7 @@ _T221:
 _T25f:
 	this->sItemCost.reference = 0x0;
 _T26f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15E], 0;
+	this->sItemCost.c_str_ptr = 0x0;
 	__asm        jmp    _T284;
 _T284:
 	__asm        push   1;
@@ -814,8 +812,7 @@ _T587:
 _T59e:
 	this->sHelicopterHistoryTitle.reference = 0x0;
 _T5ae:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x21E], 0;
+	this->sHelicopterHistoryTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T5c3;
 _T5c3:
 	__asm        push   0x10;
@@ -844,8 +841,7 @@ _T61d:
 _T634:
 	this->sHelicopterHistory.reference = 0x0;
 _T644:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x226], 0;
+	this->sHelicopterHistory.c_str_ptr = 0x0;
 	__asm        jmp    _T659;
 _T659:
 	__asm        push   0x10;
@@ -874,8 +870,7 @@ _T6b3:
 _T6ca:
 	this->sHelicopterSpecialtiesTitle.reference = 0x0;
 _T6da:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x22E], 0;
+	this->sHelicopterSpecialtiesTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T6ef;
 _T6ef:
 	__asm        push   0x10;
@@ -904,8 +899,7 @@ _T749:
 _T760:
 	this->sHelicopterSpecialties.reference = 0x0;
 _T770:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x236], 0;
+	this->sHelicopterSpecialties.c_str_ptr = 0x0;
 	__asm        jmp    _T785;
 _T785:
 	__asm        push   0x10;
@@ -934,8 +928,7 @@ _T7df:
 _T7f6:
 	this->sHelicopterDescriptionTitle.reference = 0x0;
 _T806:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x23E], 0;
+	this->sHelicopterDescriptionTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T81b;
 _T81b:
 	__asm        push   0x10;
@@ -964,8 +957,7 @@ _T875:
 _T88c:
 	this->sHelicopterDescription.reference = 0x0;
 _T89c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x246], 0;
+	this->sHelicopterDescription.c_str_ptr = 0x0;
 	__asm        jmp    _T8b1;
 _T8b1:
 	__asm        push   0x10;
@@ -994,8 +986,7 @@ _T90b:
 _T922:
 	this->sHelicopterCurrentFundsTitle.reference = 0x0;
 _T932:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24E], 0;
+	this->sHelicopterCurrentFundsTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T947;
 _T947:
 	__asm        push   0x10;
@@ -1024,8 +1015,7 @@ _T9a1:
 _T9b8:
 	this->sHelicopterItemCostTitle.reference = 0x0;
 _T9c8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x256], 0;
+	this->sHelicopterItemCostTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T9dd;
 _T9dd:
 	__asm        jmp    _T9e2;
@@ -1062,8 +1052,7 @@ _Ta4b:
 _Ta62:
 	this->sEquipmentTab.reference = 0x0;
 _Ta72:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x27E], 0;
+	this->sEquipmentTab.c_str_ptr = 0x0;
 	__asm        jmp    _Ta87;
 _Ta87:
 	__asm        push   0x10;
@@ -1092,8 +1081,7 @@ _Tae1:
 _Taf8:
 	this->sEquipmentDescriptionTitle.reference = 0x0;
 _Tb08:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x286], 0;
+	this->sEquipmentDescriptionTitle.c_str_ptr = 0x0;
 	__asm        jmp    _Tb1d;
 _Tb1d:
 	__asm        push   0x10;
@@ -1122,8 +1110,7 @@ _Tb77:
 _Tb8e:
 	this->sEquipmentCurrentFundsTitle.reference = 0x0;
 _Tb9e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28E], 0;
+	this->sEquipmentCurrentFundsTitle.c_str_ptr = 0x0;
 	__asm        jmp    _Tbb3;
 _Tbb3:
 	__asm        push   0x10;
@@ -1152,8 +1139,7 @@ _Tc0d:
 _Tc24:
 	this->sEquipmentItemCostTitle.reference = 0x0;
 _Tc34:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x296], 0;
+	this->sEquipmentItemCostTitle.c_str_ptr = 0x0;
 	__asm        jmp    _Tc49;
 _Tc49:
 	__asm        push   0x10;
@@ -1182,8 +1168,7 @@ _Tca3:
 _Tcba:
 	this->sEquipmentTitle.reference = 0x0;
 _Tcca:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x29E], 0;
+	this->sEquipmentTitle.c_str_ptr = 0x0;
 	__asm        jmp    _Tcdf;
 _Tcdf:
 	__asm        push   0x10;
@@ -1212,8 +1197,7 @@ _Td39:
 _Td50:
 	this->sEquipmentAddress1.reference = 0x0;
 _Td60:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2A6], 0;
+	this->sEquipmentAddress1.c_str_ptr = 0x0;
 	__asm        jmp    _Td75;
 _Td75:
 	__asm        push   0x10;
@@ -1242,8 +1226,7 @@ _Tdcf:
 _Tde6:
 	this->sEquipmentAddress2.reference = 0x0;
 _Tdf6:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2AE], 0;
+	this->sEquipmentAddress2.c_str_ptr = 0x0;
 	__asm        jmp    _Te0b;
 _Te0b:
 	__asm        mov    eax, this;
@@ -1326,7 +1309,7 @@ _Tf1d:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 77:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tf42;
 _Tf3f:
 	i++;
@@ -1360,7 +1343,7 @@ _Tf42:
 	__asm        jmp    _Tf3f;
 // LINE 82:
 _Tfb4:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tfc3;
 _Tfc0:
 	i++;
@@ -2184,7 +2167,7 @@ _T5b:
 _T66:
 	sText.reference = 0x0;
 _T6d:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T79;
 // LINE 136:
 _T79:
@@ -2714,7 +2697,7 @@ _T70:
 _T81:
 	sTempMainGraphicFilePath.reference = 0x0;
 _T8b:
-	__asm        mov    sTempMainGraphicFilePath.c_str_ptr, 0;
+	sTempMainGraphicFilePath.c_str_ptr = 0x0;
 	__asm        jmp    _T9a;
 // LINE 169:
 _T9a:
@@ -2743,7 +2726,7 @@ _Tf4:
 _T105:
 	sTempTabFilePath.reference = 0x0;
 _T10f:
-	__asm        mov    sTempTabFilePath.c_str_ptr, 0;
+	sTempTabFilePath.c_str_ptr = 0x0;
 	__asm        jmp    _T11e;
 // LINE 170:
 _T11e:
@@ -2772,7 +2755,7 @@ _T178:
 _T189:
 	sTempMainGraphicFileName.reference = 0x0;
 _T193:
-	__asm        mov    sTempMainGraphicFileName.c_str_ptr, 0;
+	sTempMainGraphicFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T1a2;
 // LINE 171:
 _T1a2:
@@ -2801,7 +2784,7 @@ _T1fc:
 _T20d:
 	sTempTabFileName.reference = 0x0;
 _T217:
-	__asm        mov    sTempTabFileName.c_str_ptr, 0;
+	sTempTabFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T226;
 _T226:
 	__asm        mov    dword ptr [ebp-0x8C8], 5;
@@ -4742,7 +4725,7 @@ _T1f58:
 	__asm        jmp    _T1f85;
 // LINE 290:
 _T1f85:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1f9a;
 _T1f94:
 	i++;
@@ -4829,7 +4812,7 @@ _T20fa:
 	__asm        jmp    _T2127;
 // LINE 300:
 _T2127:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T213c;
 _T2136:
 	i++;
@@ -5492,7 +5475,7 @@ _T2b1e:
 	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::SetTransparentColor;
 // LINE 369:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2b91;
 _T2b8b:
 	i++;
@@ -5570,7 +5553,7 @@ _T2c2c:
 	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::SetTransparentColor;
 // LINE 380:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2c9f;
 _T2c99:
 	i++;
@@ -6299,7 +6282,7 @@ int32_t CatalogWindow::DoesTabHaveAnyStains(long lTab) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 477:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -6328,7 +6311,7 @@ int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 491:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -6990,7 +6973,7 @@ _Tca:
 	return 0x0;
 // LINE 566:
 _Te1:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tf0;
 _Ted:
 	i++;
@@ -7373,7 +7356,7 @@ _T20:
 	__asm        cmp    dword ptr [eax+0x14E], 7;
 	__asm        jle    _T3c;
 
-	__asm        mov    lMyMessage[0], 1;
+	lMyMessage[0] = 0x1;
 	__asm        jmp    _T43;
 _T3c:
 	lMyMessage[0] = 0x0;

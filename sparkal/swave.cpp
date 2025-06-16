@@ -352,7 +352,7 @@ _T48:
 	__asm        mov    ecx, pckIn;
 	__asm        sub    [ecx+4], eax;
 // LINE 208:
-	__asm        mov    cT, 0;
+	cT = 0x0;
 	__asm        jmp    _T64;
 _T61:
 	cT++;

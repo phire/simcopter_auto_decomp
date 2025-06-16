@@ -2855,7 +2855,7 @@ _T57:
 _T62:
 	sKeyLightPath.reference = 0x0;
 _T69:
-	__asm        mov    sKeyLightPath.c_str_ptr, 0;
+	sKeyLightPath.c_str_ptr = 0x0;
 	__asm        jmp    _T75;
 // LINE 113:
 _T75:
@@ -2884,7 +2884,7 @@ _Tcf:
 _Tdd:
 	sNonTextKeyPath.reference = 0x0;
 _Te4:
-	__asm        mov    sNonTextKeyPath.c_str_ptr, 0;
+	sNonTextKeyPath.c_str_ptr = 0x0;
 	__asm        jmp    _Tf0;
 // LINE 116:
 _Tf0:
@@ -4866,7 +4866,7 @@ _T80:
 _T8e:
 	sKey.reference = 0x0;
 _T95:
-	__asm        mov    sKey.c_str_ptr, 0;
+	sKey.c_str_ptr = 0x0;
 	__asm        jmp    _Ta1;
 // LINE 391:
 _Ta1:
@@ -5882,7 +5882,7 @@ _Td7:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F140;
 // LINE 615:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T123;
 _T120:
 	i++;
@@ -6150,7 +6150,7 @@ _T6c:
 _T7a:
 	sPath.reference = 0x0;
 _T81:
-	__asm        mov    sPath.c_str_ptr, 0;
+	sPath.c_str_ptr = 0x0;
 	__asm        jmp    _T8d;
 // LINE 667:
 _T8d:
@@ -6823,7 +6823,7 @@ _T57:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 744:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T78;
 _T75:
 	i++;
@@ -6838,7 +6838,7 @@ _T78:
 	__asm        cmp    [ecx+eax*4+0x78], edx;
 	__asm        je     _Tdb;
 // LINE 746:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _Ta8;
 _Ta5:
 	j++;
@@ -6904,7 +6904,7 @@ _T16:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 768:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T63;
 _T60:
 	i++;
@@ -6921,7 +6921,7 @@ _T63:
 	__asm        jmp    _T60;
 // LINE 772:
 _T84:
-	__asm        mov    i, 2;
+	i = 0x2;
 	__asm        jmp    _T93;
 _T90:
 	i++;
@@ -7125,7 +7125,7 @@ _T38:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xE4];
 // LINE 843:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T59;
 _T56:
 	i++;
@@ -7419,7 +7419,7 @@ void JoystickWindow::GetNewJoystickControlStates(long * lNewJoystickControlState
 	/*bp-0x4*/   int32_t i;
 
 // LINE 928:
-	__asm        mov    i, 6;
+	i = 0x6;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -7451,7 +7451,7 @@ _T65:
 	__asm        jmp    _T18;
 // LINE 933:
 _T6a:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T79;
 _T76:
 	i++;
@@ -7701,7 +7701,7 @@ _T1a3:
 	return 0x1;
 // LINE 1015:
 _T1b6:
-	__asm        mov    i, 2;
+	i = 0x2;
 	__asm        jmp    _T1c5;
 _T1c2:
 	i++;
@@ -7759,7 +7759,7 @@ _T26a:
 	__asm        jmp    _T1c2;
 // LINE 1023:
 _T26f:
-	__asm        mov    i, 6;
+	i = 0x6;
 	__asm        jmp    _T27e;
 _T27b:
 	i++;
@@ -8372,7 +8372,7 @@ _T70:
 _T7e:
 	sText.reference = 0x0;
 _T85:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 1092:
 _T91:
@@ -9880,8 +9880,7 @@ _T16d:
 	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    _T184;
 _T184:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this->myShortcutListConfigurable.length--;
 	__asm        jmp    _T192;
 _T192:
 	__asm        jmp    _Te6;
@@ -10003,8 +10002,7 @@ _T2a2:
 	__asm        mov    ecx, tempControlDisplayWindow;
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 1235:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this-><UserInputWindow+0x54> = 0x0;
 	__asm        jmp    _T2fb;
 // LINE 1236:
 _T2fb:
@@ -10014,8 +10012,7 @@ _T305:
 	__asm        cmp    lMessage, 0x3E9;
 	__asm        jne    _T321;
 // LINE 1239:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 1;
+	this-><UserInputWindow+0x54> = 0x1;
 	__asm        jmp    _T321;
 // LINE 1240:
 _T321:
@@ -11645,8 +11642,7 @@ _T11b:
 	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    _T132;
 _T132:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0xA4], 0xFFFFFFFF;
+	this->myShortcutListConfigurable.length += -0x1;
 	__asm        jmp    _T141;
 // LINE 1503:
 _T141:
@@ -12512,7 +12508,7 @@ _T953:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+0xC4];
 // LINE 1663:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T99c;
 _T999:
 	i++;
@@ -12829,7 +12825,7 @@ _T70:
 _T7e:
 	sDeviceName.reference = 0x0;
 _T85:
-	__asm        mov    sDeviceName.c_str_ptr, 0;
+	sDeviceName.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 1741:
 _T91:
@@ -12917,8 +12913,7 @@ _T1b6:
 	__asm        mov    list<StringIDAssociation>::free_list, eax;
 	__asm        jmp    _T1d3;
 _T1d3:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x8C];
+	this->myInputDeviceStringIDAssociationList.length--;
 	__asm        jmp    _T1e4;
 _T1e4:
 	__asm        jmp    _Tef;
@@ -13052,12 +13047,11 @@ _T384:
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   dword ptr [edx+0xD4];
 // LINE 1751:
-	__asm        mov    eax, gJoystickManager.nJoystickCount;
-	__asm        mov    nJoystickCount, eax;
+	nJoystickCount = gJoystickManager.nJoystickCount;
 	__asm        jmp    _T3b1;
 // LINE 1752:
 _T3b1:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3c0;
 _T3bd:
 	i++;
@@ -13219,11 +13213,11 @@ _T5b:
 _T66:
 	sCommandName.reference = 0x0;
 _T6d:
-	__asm        mov    sCommandName.c_str_ptr, 0;
+	sCommandName.c_str_ptr = 0x0;
 	__asm        jmp    _T79;
 // LINE 1772:
 _T79:
-	__asm        mov    i, 2;
+	i = 0x2;
 	__asm        jmp    _T88;
 _T85:
 	i++;
@@ -14043,7 +14037,7 @@ _T70:
 _T7e:
 	sText.reference = 0x0;
 _T85:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 1868:
 _T91:
@@ -15308,7 +15302,7 @@ _T9c:
 _Taa:
 	sCurrentCommand.reference = 0x0;
 _Tb1:
-	__asm        mov    sCurrentCommand.c_str_ptr, 0;
+	sCurrentCommand.c_str_ptr = 0x0;
 	__asm        jmp    _Tbd;
 // LINE 1989:
 _Tbd:
@@ -15337,7 +15331,7 @@ _T117:
 _T125:
 	sCurrentKeys.reference = 0x0;
 _T12c:
-	__asm        mov    sCurrentKeys.c_str_ptr, 0;
+	sCurrentKeys.c_str_ptr = 0x0;
 	__asm        jmp    _T138;
 // LINE 1993:
 _T138:
@@ -16225,7 +16219,7 @@ void ControlDisplayWindow::AppendKeysString(/*packed*/ class basic_string<char>&
 _T3d:
 	sSeparator.reference = 0x0;
 _T44:
-	__asm        mov    sSeparator.c_str_ptr, 0;
+	sSeparator.c_str_ptr = 0x0;
 	__asm        jmp    _T50;
 // LINE 2056:
 _T50:
@@ -16243,7 +16237,7 @@ _T50:
 _T77:
 	sModifier.reference = 0x0;
 _T7e:
-	__asm        mov    sModifier.c_str_ptr, 0;
+	sModifier.c_str_ptr = 0x0;
 	__asm        jmp    _T8a;
 // LINE 2057:
 _T8a:
@@ -16261,7 +16255,7 @@ _T8a:
 _Tb1:
 	sKey.reference = 0x0;
 _Tb8:
-	__asm        mov    sKey.c_str_ptr, 0;
+	sKey.c_str_ptr = 0x0;
 	__asm        jmp    _Tc4;
 // LINE 2061:
 _Tc4:

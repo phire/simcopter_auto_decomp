@@ -541,7 +541,7 @@ _T4e:
 _T5b:
 	gFileServices.sLocalDirectoryBase.reference = 0x0;
 _T65:
-	__asm        mov    gFileServices.sLocalDirectoryBase.c_str_ptr, 0;
+	gFileServices.sLocalDirectoryBase.c_str_ptr = 0x0;
 	__asm        jmp    _T74;
 _T74:
 	__asm        push   0x10;
@@ -569,7 +569,7 @@ _Tb9:
 _Tc6:
 	gFileServices.sRemoteDirectoryBase.reference = 0x0;
 _Td0:
-	__asm        mov    gFileServices.sRemoteDirectoryBase.c_str_ptr, 0;
+	gFileServices.sRemoteDirectoryBase.c_str_ptr = 0x0;
 	__asm        jmp    _Tdf;
 _Tdf:
 	__asm        mov    dword ptr [ebp-0x18], 0xC;
@@ -587,7 +587,7 @@ _Tf1:
 _T10b:
 	__asm        jmp    _T110;
 _T110:
-	__asm        mov    gFileServices.myAppBaseType, 0;
+	gFileServices.myAppBaseType = 0x0;
 	__asm        jmp    _T11f;
 _T11f:
 	__asm        push   0x59A118;
@@ -987,7 +987,7 @@ _T5b:
 _T66:
 	sErrorText.reference = 0x0;
 _T6d:
-	__asm        mov    sErrorText.c_str_ptr, 0;
+	sErrorText.c_str_ptr = 0x0;
 	__asm        jmp    _T79;
 // LINE 43:
 _T79:
@@ -1016,7 +1016,7 @@ _Tbe:
 _Tc9:
 	sErrorTitle.reference = 0x0;
 _Td0:
-	__asm        mov    sErrorTitle.c_str_ptr, 0;
+	sErrorTitle.c_str_ptr = 0x0;
 	__asm        jmp    _Tdc;
 // LINE 45:
 _Tdc:
@@ -1925,7 +1925,7 @@ _T650:
 	__asm        test   eax, eax;
 	__asm        je     _T676;
 // LINE 114:
-	__asm        inc    i;
+	i++;
 	__asm        jmp    _T650;
 // LINE 115:
 _T676:
@@ -2037,7 +2037,7 @@ _Tec:
 _T12f:
 	sTempValidationFilePath.reference = 0x0;
 _T136:
-	__asm        mov    sTempValidationFilePath.c_str_ptr, 0;
+	sTempValidationFilePath.c_str_ptr = 0x0;
 	__asm        jmp    _T142;
 // LINE 140:
 _T142:
@@ -2419,7 +2419,7 @@ _T5f:
 _T8f:
 	sTempDirectory.reference = 0x0;
 _T96:
-	__asm        mov    sTempDirectory.c_str_ptr, 0;
+	sTempDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _Ta2;
 // LINE 171:
 _Ta2:
@@ -4754,7 +4754,7 @@ _T1b2f:
 _T1b3d:
 	sTemp.reference = 0x0;
 _T1b44:
-	__asm        mov    sTemp.c_str_ptr, 0;
+	sTemp.c_str_ptr = 0x0;
 	__asm        jmp    _T1b50;
 // LINE 361:
 _T1b50:

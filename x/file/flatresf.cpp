@@ -657,8 +657,7 @@ short FlatResFile::CountTypes() {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -685,8 +684,7 @@ unsigned long FlatResFile::GetIndType(short index) {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -722,8 +720,7 @@ short FlatResFile::Count(unsigned long type) {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -754,8 +751,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzle
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -849,8 +845,7 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -956,8 +951,7 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*S
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -1053,8 +1047,7 @@ void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T34;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T41;
 _T34:
 	this->fError = 0xffffffcf;
@@ -1076,8 +1069,7 @@ _T56:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T87;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFF9E;
+	this->fError = 0xffffff9e;
 	__asm        jmp    __RETURN;
 // LINE 428:
 _T87:
@@ -1104,8 +1096,7 @@ void FlatResFile::GetID(void * __ptr32 res, short * id) {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T36;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T43;
 _T36:
 	this->fError = 0xffffffcf;
@@ -1127,8 +1118,7 @@ _T58:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T89;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFF9D;
+	this->fError = 0xffffff9d;
 	__asm        jmp    __RETURN;
 // LINE 445:
 _T89:
@@ -1148,8 +1138,7 @@ unsigned long FlatResFile::GetResType(void * __ptr32 res) {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -1215,8 +1204,7 @@ void FlatResFile::Release(void * __ptr32 res) {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -1266,8 +1254,7 @@ void FlatResFile::Detach(void * __ptr32 res) {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -1289,8 +1276,7 @@ _T50:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T81;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFF9D;
+	this->fError = 0xffffff9d;
 	__asm        jmp    __RETURN;
 // LINE 503:
 _T81:
@@ -1312,8 +1298,7 @@ void FlatResFile::Load(void * __ptr32 res) {
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 	__asm        jmp    _T3b;
 _T2e:
 	this->fError = 0xffffffcf;
@@ -1335,8 +1320,7 @@ _T50:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T81;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFF9D;
+	this->fError = 0xffffff9d;
 	__asm        jmp    __RETURN;
 // LINE 529:
 _T81:
@@ -1508,7 +1492,7 @@ _Ta5:
 // LINE 700:
 	resList = (this-><ResMap+0x10:4> + mapStart);
 // LINE 701:
-	__asm        mov    resCnt, 0;
+	resCnt = 0x0;
 	__asm        jmp    _Td3;
 _Tcb:
 	__asm        inc    resCnt;
@@ -1616,8 +1600,7 @@ long ResMap::Get(/*unpacked*/ class FlatResFile *fromFile) {
 
 	// Function registers exception cleanup function at 0x00553db3
 // LINE 755:
-	__asm        mov    eax, ResMap::sMaps;
-	__asm        mov    srch, eax;
+	srch = ResMap::sMaps;
 	__asm        jmp    _T33;
 _T2b:
 	srch = srch-><ResMap+0x00:4>;
@@ -1744,7 +1727,7 @@ _T35:
 // LINE 791:
 // Block start:
 	/*bp-0x4*/   /*unpacked*/ class ResMap **rmv;
-	__asm        mov    rmv, 0x5BBEDC;
+	rmv = 0x5bbedc;
 	__asm        jmp    _T5c;
 _T54:
 	rmv = rmv->;
@@ -1758,11 +1741,7 @@ _T5c:
 	__asm        cmp    [eax], ecx;
 	__asm        jne    _T87;
 
-	__asm        mov    eax, rmv;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, rmv;
-	__asm        mov    [ecx], eax;
+	rmv-> = rmv->-><ResMap+0x00:4>;
 	__asm        jmp    _T8c;
 // LINE 794:
 _T87:
@@ -1798,8 +1777,7 @@ short ResMap::CheckForLeaks() {
 // LINE 803:
 	total = 0x0;
 // LINE 804:
-	__asm        mov    eax, ResMap::sMaps;
-	__asm        mov    srch, eax;
+	srch = ResMap::sMaps;
 	__asm        jmp    _T24;
 _T1c:
 	srch = srch-><ResMap+0x00:4>;
@@ -1807,7 +1785,7 @@ _T24:
 	__asm        cmp    srch, 0;
 	__asm        je     _T37;
 // LINE 805:
-	__asm        inc    total;
+	total++;
 	__asm        jmp    _T1c;
 // LINE 806:
 _T37:
@@ -2017,8 +1995,7 @@ _T1f8:
 	__asm        cmp    block, 0;
 	__asm        jne    _T226;
 
-	__asm        call   Memory::Error;
-	__asm        mov    err, eax;
+	err = Memory::Error();
 	__asm        jmp    _T2a4;
 
 	__asm        jmp    done;
@@ -2242,8 +2219,7 @@ _T31:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _T57;
 
-	__asm        mov    eax, srch;
-	__asm        mov    found, eax;
+	found = srch;
 	__asm        jmp    _T60;
 // LINE 941:
 _T57:
@@ -2318,8 +2294,7 @@ _T7e:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _Ta7;
 
-	__asm        mov    eax, entryList;
-	__asm        mov    found, eax;
+	found = entryList;
 	__asm        jmp    _Tb4;
 // LINE 966:
 _Ta7:
@@ -2413,8 +2388,7 @@ _T8d:
 	__asm        test   eax, eax;
 	__asm        jne    _Tdd;
 
-	__asm        mov    eax, entryList;
-	__asm        mov    found, eax;
+	found = entryList;
 	__asm        jmp    _Tea;
 // LINE 998:
 _Tdd:

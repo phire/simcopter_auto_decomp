@@ -327,8 +327,7 @@ _T51:
 _T5f:
 	this->sSoundFile.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sSoundFile.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 // LINE 22:
 _T78:
@@ -366,8 +365,7 @@ _T51:
 _T5f:
 	this->sSoundFile.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sSoundFile.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 // LINE 30:
 _T78:
@@ -413,8 +411,7 @@ _T51:
 _T5f:
 	this->sSoundFile.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sSoundFile.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 // LINE 42:
 _T78:
@@ -460,8 +457,7 @@ _T51:
 _T5f:
 	this->sSoundFile.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sSoundFile.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 // LINE 54:
 _T78:
@@ -660,8 +656,7 @@ _T51:
 _T5f:
 	this->sSoundFile.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sSoundFile.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 // LINE 68:
 _T78:
@@ -1406,8 +1401,7 @@ _Teb:
 	__asm        mov    list<SoundQueueItem *>::free_list, eax;
 	__asm        jmp    _T102;
 _T102:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+8];
+	this->mySoundQueueItemList.length--;
 	__asm        jmp    _T10d;
 _T10d:
 	__asm        jmp    _T64;
@@ -1757,8 +1751,7 @@ _T27d:
 	__asm        mov    list<SoundQueueItem *>::free_list, eax;
 	__asm        jmp    _T294;
 _T294:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+8], 0xFFFFFFFF;
+	this->mySoundQueueItemList.length += -0x1;
 	__asm        jmp    _T2a0;
 // LINE 215:
 _T2a0:
@@ -2398,8 +2391,7 @@ _T1b5:
 	__asm        mov    list<SoundQueueItem *>::free_list, eax;
 	__asm        jmp    _T1cc;
 _T1cc:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+8];
+	this->mySoundQueueItemList.length--;
 	__asm        jmp    _T1d7;
 // LINE 344:
 _T1d7:

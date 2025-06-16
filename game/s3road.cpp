@@ -67,7 +67,7 @@ void S3RoadDataInit() {
 	__asm        mov    reinterpret_cast<uint32_t>(straightLegSize), 0x9999999A;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&straightLegSize) + 4), 0x40199999;
 // LINE 54:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T29;
 _T26:
 	leg++;
@@ -94,7 +94,7 @@ _T29:
 	__asm        jmp    _T26;
 // LINE 59:
 _T7a:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T89;
 _T86:
 	leg++;
@@ -121,7 +121,7 @@ _T89:
 	__asm        jmp    _T86;
 // LINE 64:
 _Tda:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _Te9;
 _Te6:
 	leg++;
@@ -148,7 +148,7 @@ _Te9:
 	__asm        jmp    _Te6;
 // LINE 69:
 _T13a:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T149;
 _T146:
 	leg++;
@@ -339,7 +339,7 @@ _T19a:
 	__asm        mov    reinterpret_cast<uint32_t>(turnAngle), 0x769A7903;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4), 0x3FC41B2F;
 // LINE 153:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T433;
 _T430:
 	leg++;
@@ -374,7 +374,7 @@ _T433:
 	__asm        jmp    _T430;
 // LINE 158:
 _T4a0:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T4af;
 _T4ac:
 	leg++;
@@ -409,7 +409,7 @@ _T4af:
 	__asm        jmp    _T4ac;
 // LINE 163:
 _T51c:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T52b;
 _T528:
 	leg++;
@@ -444,7 +444,7 @@ _T52b:
 	__asm        jmp    _T528;
 // LINE 168:
 _T598:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T5a7;
 _T5a4:
 	leg++;
@@ -486,7 +486,7 @@ _T614:
 	__asm        mov    reinterpret_cast<uint32_t>(turnAngle), 0x769A7903;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4), 0x3FC41B2F;
 // LINE 178:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T640;
 _T63d:
 	leg++;
@@ -521,7 +521,7 @@ _T640:
 	__asm        jmp    _T63d;
 // LINE 183:
 _T6ad:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T6bc;
 _T6b9:
 	leg++;
@@ -556,7 +556,7 @@ _T6bc:
 	__asm        jmp    _T6b9;
 // LINE 188:
 _T729:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T738;
 _T735:
 	leg++;
@@ -591,7 +591,7 @@ _T738:
 	__asm        jmp    _T735;
 // LINE 193:
 _T7a5:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _T7b4;
 _T7b1:
 	leg++;
@@ -642,7 +642,7 @@ _T82d:
 	__asm        call   0x0056EBE8;
 	__asm        mov    OTT[3][0][0].z, eax;
 // LINE 206:
-	__asm        mov    leg, 1;
+	leg = 0x1;
 	__asm        jmp    _T884;
 _T881:
 	leg++;
@@ -691,7 +691,7 @@ _T8f3:
 	__asm        call   0x0056EBE8;
 	__asm        mov    OTT[3][1][0].z, eax;
 // LINE 216:
-	__asm        mov    leg, 1;
+	leg = 0x1;
 	__asm        jmp    _T942;
 _T93f:
 	leg++;
@@ -741,7 +741,7 @@ _T9b3:
 	__asm        call   0x0056EBE8;
 	__asm        mov    OTT[3][2][0].z, eax;
 // LINE 226:
-	__asm        mov    leg, 1;
+	leg = 0x1;
 	__asm        jmp    _Ta02;
 _T9ff:
 	leg++;
@@ -792,7 +792,7 @@ _Ta75:
 	__asm        call   0x0056EBE8;
 	__asm        mov    OTT[3][3][0].z, eax;
 // LINE 236:
-	__asm        mov    leg, 1;
+	leg = 0x1;
 	__asm        jmp    _Tac4;
 _Tac1:
 	leg++;
@@ -834,7 +834,7 @@ _Tb35:
 // LINE 245:
 	incline = 0x0;
 // LINE 249:
-	__asm        mov    incline, 0;
+	incline = 0x0;
 	__asm        jmp    _Tb5f;
 _Tb5c:
 	incline++;
@@ -844,7 +844,7 @@ _Tb5f:
 // LINE 250:
 // Block start:
 	/*bp-0x38*/  int32_t tType;
-	__asm        mov    tType, 0;
+	tType = 0x0;
 	__asm        jmp    _Tb78;
 _Tb75:
 	tType++;
@@ -852,7 +852,7 @@ _Tb78:
 	__asm        cmp    tType, 4;
 	__asm        jge    _Tde1;
 // LINE 252:
-	__asm        mov    dir, 0;
+	dir = 0x0;
 	__asm        jmp    _Tb91;
 _Tb8e:
 	dir++;
@@ -860,7 +860,7 @@ _Tb91:
 	__asm        cmp    dir, 4;
 	__asm        jge    _Tddc;
 // LINE 254:
-	__asm        mov    leg, 0;
+	leg = 0x0;
 	__asm        jmp    _Tbaa;
 _Tba7:
 	leg++;
@@ -1081,7 +1081,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 	__asm        cmp    y, 0x80;
 	__asm        jl     _T42;
 _T37:
-	__asm        mov    t, 0;
+	t = 0x0;
 	__asm        jmp    _T7a;
 _T42:
 	__asm        mov    eax, x;
@@ -1167,7 +1167,7 @@ _Te7:
 	__asm        cmp    y, 0x80;
 	__asm        jl     _T149;
 _T13e:
-	__asm        mov    t2, 0;
+	t2 = 0x0;
 	__asm        jmp    _T181;
 _T149:
 	__asm        mov    eax, x;
@@ -1220,7 +1220,7 @@ _T1b1:
 	__asm        cmp    y, 0x80;
 	__asm        jl     _T1fa;
 _T1ef:
-	__asm        mov    t2, 0;
+	t2 = 0x0;
 	__asm        jmp    _T232;
 _T1fa:
 	__asm        mov    eax, x;
@@ -1285,7 +1285,7 @@ _T267:
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T2c9;
 _T2be:
-	__asm        mov    t2, 0;
+	t2 = 0x0;
 	__asm        jmp    _T303;
 _T2c9:
 	__asm        mov    eax, x;
@@ -1338,7 +1338,7 @@ _T32f:
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T378;
 _T36d:
-	__asm        mov    t2, 0;
+	t2 = 0x0;
 	__asm        jmp    _T3b2;
 _T378:
 	__asm        mov    eax, x;
@@ -1735,7 +1735,7 @@ _T46c:
 	__asm        cmp    eax, [ebp-0x1C];
 	__asm        jae    _T497;
 _T48b:
-	__asm        mov    fromConnections, 0;
+	fromConnections = 0x0;
 	__asm        jmp    _T4a0;
 _T497:
 	__asm        add    dword ptr [ebp-0x1C], 8;
@@ -1764,7 +1764,7 @@ _T4c9:
 	__asm        cmp    eax, [ebp-0x20];
 	__asm        jae    _T4f4;
 _T4e8:
-	__asm        mov    toConnections, 0;
+	toConnections = 0x0;
 	__asm        jmp    _T4fd;
 _T4f4:
 	__asm        add    dword ptr [ebp-0x20], 8;

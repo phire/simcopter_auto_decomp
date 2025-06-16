@@ -1367,7 +1367,7 @@ long MIFF::GoToNthRecord(long lRecordToGoTo) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 541:
-	__asm        mov    lTempPresentRecord, 0;
+	lTempPresentRecord = 0x0;
 	__asm        jmp    _T26;
 _T23:
 	lTempPresentRecord++;
@@ -1754,12 +1754,7 @@ long MIFF::WriteEnd() {
 	/*bp-0x8*/   long lPresentPosition;
 
 // LINE 739:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _tell;
-	__asm        add    esp, 4;
-	__asm        mov    lPresentPosition, eax;
+	lPresentPosition = _tell(this->Handle);
 	__asm        jmp    _T26;
 // LINE 741:
 _T26:

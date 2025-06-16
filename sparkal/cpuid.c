@@ -172,7 +172,7 @@ unsigned short wincpuidext() {
 // LINE 180:
 	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 183:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T78;
 _T75:
 	i++;
@@ -270,7 +270,7 @@ unsigned long wincpufeatures() {
 // LINE 270:
 	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 273:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T73;
 _T70:
 	i++;
@@ -578,7 +578,7 @@ static unsigned short check_IDProc() {
 // LINE 578:
 	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 581:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T6a;
 _T67:
 	i++;

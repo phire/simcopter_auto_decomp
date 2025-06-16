@@ -1303,7 +1303,7 @@ void S3HeliGenInit(/*packed*/ struct _HELI_DATA *hd, long mapx, long mapy) {
 	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
 	__asm        mov    htd, eax;
 // LINE 832:
-	__asm        mov    heliidx, 0;
+	heliidx = 0x0;
 	__asm        jmp    _T2f;
 _T2c:
 	heliidx++;
@@ -3661,7 +3661,7 @@ _Td5:
 	__asm        test   eax, eax;
 	__asm        je     _T114;
 _T108:
-	__asm        mov    bSlideEventIsSet, 1;
+	bSlideEventIsSet = 0x1;
 	__asm        jmp    _T11b;
 _T114:
 	bSlideEventIsSet = 0x0;
@@ -6057,7 +6057,7 @@ _T294:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2470:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T2f7;
 _T2f4:
 	count++;
@@ -6114,7 +6114,7 @@ _T34c:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2483:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T38c;
 _T389:
 	count++;
@@ -6182,7 +6182,7 @@ _T3ee:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2500:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T451;
 _T44e:
 	count++;
@@ -6237,7 +6237,7 @@ _T4a2:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2514:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T4e2;
 _T4df:
 	count++;
@@ -8154,7 +8154,7 @@ int32_t S3HeliGetDeflection(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct 
 // LINE 3675:
 	lcptr = 0x0;
 // LINE 3680:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T6c;
 _T5d:
 	__asm        inc    i;
@@ -8303,7 +8303,7 @@ void S3HeliSwitchType(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x4*/   long heliidx;
 
 // LINE 3775:
-	__asm        mov    heliidx, 0;
+	heliidx = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	heliidx++;
@@ -8339,7 +8339,7 @@ void S3HeliNextFrameDriver() {
 	/*bp-0x4*/   long heliidx;
 
 // LINE 3800:
-	__asm        mov    heliidx, 0;
+	heliidx = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	heliidx++;
@@ -8410,7 +8410,7 @@ _T4f:
 // LINE 3860:
 	closehd = 0x0;
 // LINE 3862:
-	__asm        mov    heliidx, 0;
+	heliidx = 0x0;
 	__asm        jmp    _T6c;
 _T69:
 	heliidx++;
@@ -8687,7 +8687,7 @@ _T1e:
 // LINE 3998:
 	totdist = 0x0;
 // LINE 4002:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Td4;
 _Td1:
 	i++;
@@ -8822,7 +8822,7 @@ _T254:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 4073:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2ac;
 _T2a9:
 	i++;
@@ -9432,7 +9432,7 @@ _T30f:
 	__asm        mov    eax, pitch;
 	__asm        mov    slide, eax;
 // LINE 4386:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T352;
 _T34f:
 	i++;
@@ -10784,7 +10784,7 @@ _Tce:
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 4991:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tf8;
 _Tf5:
 	i++;
@@ -11029,7 +11029,7 @@ _T3a8:
 	__asm        jmp    _T4e0;
 // LINE 5080:
 _T3ad:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3bc;
 _T3b9:
 	i++;
@@ -11393,7 +11393,7 @@ _T10e:
 	stop_now = 0x1;
 // LINE 5281:
 _T124:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T133;
 _T130:
 	i++;
@@ -11566,7 +11566,7 @@ _Ta8:
 	/*bp-0x4*/   int32_t i;
 
 // LINE 5405:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;
@@ -11834,7 +11834,7 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 _T27:
 	up = GetCurrentUserPersonalInfo();
 // LINE 5569:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3e;
 _T3b:
 	i++;
@@ -12110,7 +12110,7 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 	return 0x0;
 // LINE 5707:
 _T39:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T48;
 _T45:
 	i++;
@@ -12165,7 +12165,7 @@ int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   long i;
 
 // LINE 5737:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;
@@ -12227,7 +12227,7 @@ void S3HeliUserExit() {
 // LINE 5762:
 	maxRadius = 0x200000;
 // LINE 5768:
-	__asm        mov    radius, 0x80000;
+	radius = 0x80000;
 	__asm        jmp    _T44;
 _T3d:
 	radius += 0x80000;
@@ -12236,7 +12236,7 @@ _T44:
 	__asm        cmp    radius, eax;
 	__asm        jge    __RETURN;
 // LINE 5770:
-	__asm        mov    angle, 0;
+	angle = 0x0;
 	__asm        jmp    _T63;
 _T5c:
 	angle += 0x640000;

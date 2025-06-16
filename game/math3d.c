@@ -632,8 +632,7 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 	__asm        cmp    nv, 0;
 	__asm        jle    _T5a;
 
-	__asm        mov    eax, Vmax;
-	__asm        mov    nv, eax;
+	nv = Vmax;
 	__asm        jmp    _T62;
 _T5a:
 	__asm        mov    eax, Vmax;
@@ -711,14 +710,14 @@ _T06:
 	__asm        cmp    a, 0;
 	__asm        jge    _T1c;
 
-	__asm        add    a, 0xE100000;
+	a += 0xe100000;
 	__asm        jmp    _T06;
 // LINE 360:
 _T1c:
 	__asm        cmp    a, 0xE100000;
 	__asm        jle    _T35;
 
-	__asm        sub    a, 0xE100000;
+	a -= 0xe100000;
 	__asm        jmp    _T1c;
 // LINE 361:
 _T35:

@@ -374,7 +374,7 @@ _T51:
 _T5c:
 	sLocale.reference = 0x0;
 _T63:
-	__asm        mov    sLocale.c_str_ptr, 0;
+	sLocale.c_str_ptr = 0x0;
 	__asm        jmp    _T6f;
 // LINE 67:
 _T6f:
@@ -726,7 +726,7 @@ _T55:
 _T60:
 	stringLanguage.reference = 0x0;
 _T67:
-	__asm        mov    stringLanguage.c_str_ptr, 0;
+	stringLanguage.c_str_ptr = 0x0;
 	__asm        jmp    _T73;
 // LINE 99:
 _T73:
@@ -1085,7 +1085,7 @@ _T4e:
 _T59:
 	stringLanguageCompare.reference = 0x0;
 _T60:
-	__asm        mov    stringLanguageCompare.c_str_ptr, 0;
+	stringLanguageCompare.c_str_ptr = 0x0;
 	__asm        jmp    _T6c;
 // LINE 130:
 _T6c:
@@ -1150,11 +1150,11 @@ _T10e:
 _T119:
 	stringLanguageName.reference = 0x0;
 _T120:
-	__asm        mov    stringLanguageName.c_str_ptr, 0;
+	stringLanguageName.c_str_ptr = 0x0;
 	__asm        jmp    _T12c;
 // LINE 134:
 _T12c:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T13b;
 _T138:
 	i++;
@@ -1446,7 +1446,7 @@ _T55:
 _T60:
 	sMessage.reference = 0x0;
 _T67:
-	__asm        mov    sMessage.c_str_ptr, 0;
+	sMessage.c_str_ptr = 0x0;
 	__asm        jmp    _T73;
 // LINE 180:
 _T73:

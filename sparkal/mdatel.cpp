@@ -892,7 +892,7 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 	/*bp-0x1004*/ char szCurrentDay[4096]; // 0x1000 bytes
 
 // LINE 246:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T1f;
 _T1c:
 	i++;
@@ -932,7 +932,7 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 	/*bp-0x1004*/ char szCurrentMonth[4096]; // 0x1000 bytes
 
 // LINE 267:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T1f;
 _T1c:
 	i++;

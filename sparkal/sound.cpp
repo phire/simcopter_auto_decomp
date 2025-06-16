@@ -789,7 +789,7 @@ void SoundManager::SoundManager() {
 
 	this-><vftable> = 0x58f448;
 // LINE 285:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T24;
 _T21:
 	i++;
@@ -824,7 +824,7 @@ void SoundManager::DeleteAllSounds() {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 297:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -1047,7 +1047,7 @@ void SoundManager::StopAllSounds() {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 394:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -1105,8 +1105,7 @@ _T51:
 _T5f:
 	this->sSoundFile.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->sSoundFile.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 _T78:
 	this-><vftable> = 0x58f458;
@@ -1780,7 +1779,7 @@ void DigitalSound::DigitalSound() {
 // LINE 548:
 	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 549:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T5e;
 _T5b:
 	i++;
@@ -1988,7 +1987,7 @@ _T231:
 	this->bStreaming = this->DigitalSound::ShouldWeStream();
 // LINE 580:
 _T24c:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T25b;
 _T258:
 	i++;
@@ -3185,7 +3184,7 @@ long DigitalSound::IsPlaying(/*packed*/ struct IDirectSoundBuffer **lplpSoundPla
 	/*bp-0xc*/   long hResult;
 
 // LINE 1230:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -3500,7 +3499,7 @@ int32_t DigitalSound::GetSoundAliasToPlay(/*packed*/ struct IDirectSoundBuffer *
 	/*bp-0xc*/   long hResult;
 
 // LINE 1373:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -3619,7 +3618,7 @@ long DigitalSound::Stop() {
 	__asm        jmp    __RETURN;
 // LINE 1419:
 _T37:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T46;
 _T43:
 	i++;

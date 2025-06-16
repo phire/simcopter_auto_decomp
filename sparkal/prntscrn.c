@@ -166,7 +166,7 @@ _T4b:
 // LINE 103:
 	ptr = buffer1;
 // LINE 104:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _Tf6;
 _Tf3:
 	y++;
@@ -211,7 +211,7 @@ _T121:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 114:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T171;
 _T16e:
 	y++;
@@ -300,7 +300,7 @@ _T21:
 	__asm        cmp    eax, 0x3F;
 	__asm        jge    _T9d;
 
-	__asm        inc    i;
+	i++;
 	__asm        jmp    _T21;
 // LINE 142:
 _T9d:

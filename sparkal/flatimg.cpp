@@ -178,9 +178,7 @@ _T9c:
 _Ta8:
 	pSourceBits = this->mpBits;
 // LINE 52:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    SourceStride, eax;
+	SourceStride = this->mStride;
 	__asm        jmp    _Tbf;
 // LINE 54:
 _Tbf:
@@ -188,9 +186,7 @@ _Tbf:
 _Tc4:
 	pDestBits = pDest->mpBits;
 // LINE 55:
-	__asm        mov    eax, pDest;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    DestStride, eax;
+	DestStride = pDest->mStride;
 	__asm        jmp    _Tdb;
 // LINE 57:
 _Tdb:
@@ -451,9 +447,7 @@ _Tfc:
 _T101:
 	pDestBits = pDest->mpBits;
 // LINE 171:
-	__asm        mov    eax, pDest;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    DestStride, eax;
+	DestStride = pDest->mStride;
 	__asm        jmp    _T118;
 // LINE 173:
 _T118:
@@ -960,9 +954,7 @@ _T240:
 _T24e:
 	pSource = pImage->mpBits;
 // LINE 298:
-	__asm        mov    eax, pImage;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    SrcStride, eax;
+	SrcStride = pImage->mStride;
 	__asm        jmp    _T265;
 // LINE 301:
 _T265:

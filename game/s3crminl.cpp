@@ -462,8 +462,7 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 // FUNCTION: COPTER_D 0x00534a4c
 void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593258;
+	this-><CriminalEvaderCarClass+0x00> = 0x593258;
 	__asm        jmp    __RETURN;
 __RETURN:
 	__asm        mov    ecx, this;
@@ -540,7 +539,7 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 // LINE 160:
 	startLoc.y = reinterpret_cast<uint8_t>(y);
 // LINE 165:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T24;
 _T21:
 	i++;

@@ -300,7 +300,7 @@ _T113:
 // LINE 184:
 	FaceArray = 0x0;
 // LINE 185:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T134;
 _T131:
 	i++;
@@ -375,7 +375,7 @@ void VRAssignMemPoolToRes(/*packed*/ struct VRResource *res, /*packed*/ struct V
 // LINE 229:
 	geo = res;
 // LINE 230:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1e;
 _T1b:
 	i++;
@@ -649,7 +649,7 @@ _T2a4:
 	return 0x0;
 // LINE 566:
 _T2e1:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T2f6;
 _T2f0:
 	y++;
@@ -1045,7 +1045,7 @@ _T79:
 // LINE 812:
 	faceptr = oh->FacePtr;
 // LINE 813:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Ta6;
 _Ta3:
 	i++;
@@ -1118,7 +1118,7 @@ _T12d:
 	__asm        mov    eax, maxy;
 	__asm        mov    maxx, eax;
 // LINE 845:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T175;
 _T172:
 	j++;
@@ -1659,7 +1659,7 @@ _T79:
 // LINE 1124:
 	faceptr = oh->FacePtr;
 // LINE 1125:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Ta6;
 _Ta3:
 	i++;
@@ -1740,7 +1740,7 @@ _T143:
 	__asm        mov    eax, maxy;
 	__asm        mov    maxx, eax;
 // LINE 1167:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T18b;
 _T188:
 	j++;
@@ -2277,7 +2277,7 @@ _T20:
 // LINE 1442:
 	faceptr = oh->FacePtr;
 // LINE 1443:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3f;
 _T3c:
 	i++;
@@ -2334,7 +2334,7 @@ _Ta4:
 	__asm        mov    eax, maxy;
 	__asm        mov    maxx, eax;
 // LINE 1466:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _Te9;
 _Te6:
 	j++;
@@ -2476,7 +2476,7 @@ _T20:
 // LINE 1544:
 	faceptr = oh->FacePtr;
 // LINE 1545:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3f;
 _T3c:
 	i++;
@@ -2533,7 +2533,7 @@ _Ta2:
 	__asm        mov    eax, maxy;
 	__asm        mov    maxx, eax;
 // LINE 1568:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _Te7;
 _Te4:
 	j++;
@@ -2661,7 +2661,7 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 // LINE 1639:
 	faceptr = oh->FacePtr;
 // LINE 1640:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T30;
 _T2d:
 	i++;
@@ -2985,7 +2985,7 @@ void NormalizeObj(/*packed*/ struct ObjectHdr *obj) {
 // LINE 1850:
 	d = obj->VertsPtr;
 // LINE 1851:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T43;
 _T40:
 	i++;
@@ -3040,7 +3040,7 @@ int32_t VRAssignTextureResToGroup(/*packed*/ struct VRResource *g, /*packed*/ st
 // LINE 1881:
 	bmp = b;
 // LINE 1882:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T24;
 _T21:
 	i++;
@@ -3068,7 +3068,7 @@ _T24:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1886:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T6e;
 _T6b:
 	j++;
@@ -3201,7 +3201,7 @@ void VRBCApplyTiledMap(/*packed*/ struct _FaceHdr *fh, /*packed*/ struct VRBmpHd
 // LINE 1941:
 	h = bmp->info.height;
 // LINE 1946:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3b;
 _T38:
 	i++;
@@ -3516,7 +3516,7 @@ _T5d:
 	__asm        shl    eax, 2;
 	__asm        add    G_alloc_used, eax;
 // LINE 2116:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T7e;
 _T7b:
 	i++;
@@ -3554,7 +3554,7 @@ _T7e:
 // LINE 2136:
 	fp = obj->FacePtr;
 // LINE 2137:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _Te5;
 _Te2:
 	j++;
@@ -3570,7 +3570,7 @@ _Te5:
 // LINE 2141:
 	faceverts = fp->PlyVerts;
 // LINE 2147:
-	__asm        mov    k, 0;
+	k = 0x0;
 	__asm        jmp    _T115;
 _T112:
 	k++;
@@ -3815,7 +3815,7 @@ _T84:
 	__asm        shl    eax, 2;
 	__asm        add    ptr, eax;
 // LINE 2272:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T115;
 _T112:
 	i++;
@@ -3852,7 +3852,7 @@ _T14e:
 // LINE 2287:
 	ptr += 0x30;
 // LINE 2288:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T17a;
 _T177:
 	i++;
@@ -3990,7 +3990,7 @@ _T82:
 	__asm        shl    eax, 2;
 	__asm        add    ptr, eax;
 // LINE 2377:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T10c;
 _T109:
 	i++;
@@ -4025,7 +4025,7 @@ _T141:
 // LINE 2391:
 	ptr += 0x30;
 // LINE 2392:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T16d;
 _T16a:
 	i++;
@@ -4164,7 +4164,7 @@ _T40:
 // LINE 2481:
 	fh = oh->FacePtr;
 // LINE 2482:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tb5;
 _Tb2:
 	i++;
@@ -4267,7 +4267,7 @@ int32_t VRStObjPolyHit(/*packed*/ struct Point3d *sloc, /*packed*/ struct Point3
 // LINE 2546:
 	fh = oh->FacePtr;
 // LINE 2547:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T5a;
 _T4f:
 	__asm        inc    i;
@@ -4448,7 +4448,7 @@ _T1a7:
 // LINE 2593:
 	vertno = fh->PlyVerts;
 // LINE 2594:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T235;
 _T232:
 	j++;

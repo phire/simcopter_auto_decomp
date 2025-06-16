@@ -18,8 +18,7 @@
 // FUNCTION: COPTER_D 0x0055d500
 void SetRRandSeed(unsigned long n) {
 
-	__asm        mov    eax, n;
-	__asm        mov    rrandSeed<__unnamed+0x00:4>, eax;
+	rrandSeed<__unnamed+0x00:4> = n;
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -35,8 +34,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0055d52d
 void SetSRandSeed(unsigned long theSeed) {
 
-	__asm        mov    eax, theSeed;
-	__asm        mov    srandSeed, eax;
+	srandSeed = theSeed;
 	__asm        jmp    __RETURN;
 __RETURN:
 }

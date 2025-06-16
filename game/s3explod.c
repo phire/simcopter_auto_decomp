@@ -941,7 +941,7 @@ _T57:
 	__asm        sar    eax, 0x16;
 	__asm        mov    celloc.y, eax;
 // LINE 424:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _Ta7;
 _Ta4:
 	j++;

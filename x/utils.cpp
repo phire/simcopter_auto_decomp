@@ -93,7 +93,7 @@ _T13:
 	__asm        cmp    ecx, eax;
 	__asm        jl     _T45;
 // LINE 67:
-	__asm        inc    count;
+	count++;
 	__asm        jmp    _T13;
 // LINE 68:
 _T45:
@@ -157,7 +157,7 @@ _T9c:
 	__asm        cmp    ecx, eax;
 	__asm        jl     _Te4;
 // LINE 82:
-	__asm        inc    count;
+	count++;
 	__asm        jmp    _T9c;
 // LINE 83:
 _Te4:
@@ -177,7 +177,7 @@ _Te4:
 	__asm        cmp    ecx, eax;
 	__asm        jl     _T116;
 // LINE 84:
-	__asm        inc    count;
+	count++;
 	__asm        jmp    _Te4;
 // LINE 86:
 _T116:
@@ -665,7 +665,7 @@ void CToPString(signed char * cstr, unsigned char * pstr) {
 	__asm        mov    ecx, pstr;
 	__asm        mov    [ecx], al;
 // LINE 261:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T29;
 _T26:
 	count++;
@@ -1014,7 +1014,7 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 	__asm        mov    numChars, ax;
 // LINE 913:
 _T3e:
-	__asm        mov    count, 1;
+	count = 0x1;
 	__asm        jmp    _T4d;
 _T49:
 	count++;
@@ -1138,7 +1138,7 @@ _T14:
 	__asm        test   eax, eax;
 	__asm        jle    _T3e;
 // LINE 931:
-	__asm        dec    place;
+	place--;
 	__asm        jmp    _T14;
 // LINE 933:
 _T3e:

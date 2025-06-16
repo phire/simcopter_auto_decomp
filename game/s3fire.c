@@ -185,7 +185,7 @@ _T30:
 	__asm        jmp    _T26;
 // LINE 119:
 _T4b:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T5a;
 _T57:
 	i++;
@@ -301,7 +301,7 @@ _T72:
 	__asm        jmp    _T68;
 // LINE 181:
 _T16a:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T179;
 _T176:
 	i++;
@@ -1100,7 +1100,7 @@ _Te3:
 	/*bp-0x4*/   long i;
 
 // LINE 621:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;
@@ -3141,8 +3141,7 @@ _Td1:
 _T105:
 	y++;
 // LINE 1261:
-	__asm        mov    eax, x;
-	__asm        mov    i, eax;
+	i = x;
 	__asm        jmp    _T116;
 _T113:
 	i++;
@@ -3155,8 +3154,7 @@ _T116:
 	__asm        cmp    eax, i;
 	__asm        jle    _T186;
 // LINE 1262:
-	__asm        mov    eax, y;
-	__asm        mov    j, eax;
+	j = y;
 	__asm        jmp    _T13f;
 _T13c:
 	j++;
@@ -3401,7 +3399,7 @@ _T38b:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 1352:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T447;
 _T444:
 	j++;
@@ -3588,7 +3586,7 @@ _Tca:
 	stop_now = 0x1;
 // LINE 1452:
 _Te0:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tef;
 _Tec:
 	i++;
@@ -3885,7 +3883,7 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	return 0x0;
 // LINE 1631:
 _T39:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T48;
 _T45:
 	i++;
@@ -3959,7 +3957,7 @@ _T151:
 	return 0x0;
 // LINE 1667:
 _T17e:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18d;
 _T18a:
 	i++;
@@ -4122,7 +4120,7 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   long i;
 
 // LINE 1731:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;

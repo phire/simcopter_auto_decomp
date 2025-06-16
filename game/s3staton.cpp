@@ -901,7 +901,7 @@ _Td7:
 	return direction;
 // LINE 87:
 _Te9:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tf8;
 _Tf5:
 	i++;
@@ -1207,7 +1207,7 @@ void Station::SortStationsByDistanceFromDestination(/*packed*/ struct _GridCoord
 // LINE 132:
 	this->stationHeapSize = 0x0;
 // LINE 134:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T25;
 _T22:
 	i++;
@@ -1347,7 +1347,7 @@ void Station::SortVehiclesByDistanceFromDestination(/*packed*/ struct _GridCoord
 // LINE 178:
 	this->vehicleHeapSize = 0x0;
 // LINE 181:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T25;
 _T22:
 	i++;
@@ -1479,7 +1479,7 @@ _T13c:
 	/*bp-0x8*/   int32_t code;
 
 // LINE 227:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -1500,7 +1500,7 @@ _T48:
 	__asm        jmp    _T18;
 // LINE 235:
 _T4d:
-	__asm        mov    code, 2;
+	code = 0x2;
 	__asm        jmp    _T5c;
 _T59:
 	code++;
@@ -1509,7 +1509,7 @@ _T5c:
 	__asm        cmp    responseLevel, eax;
 	__asm        jle    _Tb8;
 // LINE 237:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T77;
 _T74:
 	i++;
@@ -2180,7 +2180,7 @@ _T6c:
 _T7d:
 	errorMsgSoundFullPath.reference = 0x0;
 _T87:
-	__asm        mov    errorMsgSoundFullPath.c_str_ptr, 0;
+	errorMsgSoundFullPath.c_str_ptr = 0x0;
 	__asm        jmp    _T96;
 // LINE 434:
 _T96:
@@ -3172,7 +3172,7 @@ void Station::Station(unsigned char stationScurkID) {
 // LINE 596:
 	this->quantityOfStations = 0x0;
 // LINE 599:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T2c;
 _T29:
 	y++;
@@ -3180,7 +3180,7 @@ _T2c:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T7e;
 // LINE 601:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T48;
 _T45:
 	x++;
@@ -3204,7 +3204,7 @@ _T79:
 	__asm        jmp    _T29;
 // LINE 610:
 _T7e:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T8d;
 _T8a:
 	x++;
@@ -3212,7 +3212,7 @@ _T8d:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T1a8;
 // LINE 612:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _Ta9;
 _Ta6:
 	y++;
@@ -3322,7 +3322,7 @@ _T1a8:
 // LINE 644:
 	stationIndex = 0x0;
 // LINE 645:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T1de;
 _T1db:
 	y++;
@@ -3330,7 +3330,7 @@ _T1de:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T2cc;
 // LINE 647:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T1fa;
 _T1f7:
 	x++;
@@ -3437,18 +3437,15 @@ _T2cc:
 	__asm        jmp    _T329;
 // LINE 688:
 _T2f7:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 5;
+	this->maxVehicles = 0x5;
 	__asm        jmp    _T355;
 // LINE 689:
 _T306:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 5;
+	this->maxVehicles = 0x5;
 	__asm        jmp    _T355;
 // LINE 690:
 _T315:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 5;
+	this->maxVehicles = 0x5;
 	__asm        jmp    _T355;
 // LINE 691:
 	__asm        jmp    _T355;

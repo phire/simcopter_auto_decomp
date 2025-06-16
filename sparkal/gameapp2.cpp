@@ -807,7 +807,7 @@ _T11:
 	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 201:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tbc;
 _Tb9:
 	i++;
@@ -2016,7 +2016,7 @@ _T55:
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jne    _T98;
 // LINE 491:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T71;
 _T6e:
 	i++;
@@ -3155,8 +3155,7 @@ _Tc5:
 	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    _Tdc;
 _Tdc:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x433C];
+	this-><CGameApp+0x433c:4>--;
 	__asm        jmp    _Tea;
 _Tea:
 	__asm        jmp    _Tef;
@@ -3281,8 +3280,7 @@ _T23a:
 	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    _T251;
 _T251:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x433C];
+	this-><CGameApp+0x433c:4>--;
 	__asm        jmp    _T25f;
 _T25f:
 	__asm        jmp    _T264;
@@ -3399,8 +3397,7 @@ _T393:
 	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    _T3aa;
 _T3aa:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x433C];
+	this-><CGameApp+0x433c:4>--;
 	__asm        jmp    _T3b8;
 _T3b8:
 	__asm        jmp    _T3bd;
@@ -3487,8 +3484,7 @@ _T4a1:
 	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    _T4b8;
 _T4b8:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x433C];
+	this-><CGameApp+0x433c:4>--;
 	__asm        jmp    _T4c6;
 _T4c6:
 	__asm        jmp    _T4cb;
@@ -3575,8 +3571,7 @@ _T5af:
 	__asm        mov    list<CopterGameMode>::free_list, eax;
 	__asm        jmp    _T5c6;
 _T5c6:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x433C];
+	this-><CGameApp+0x433c:4>--;
 	__asm        jmp    _T5d4;
 _T5d4:
 	__asm        jmp    _T5d9;
@@ -3795,8 +3790,7 @@ _T69:
 	__asm        cmp    dword ptr [eax+0x42C8], 0;
 	__asm        jne    _T98;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x42C8], 1;
+	this-><CGameApp+0x42c8:4> = 0x1;
 	__asm        jmp    _Ta5;
 _T98:
 	this-><CGameApp+0x42c8:4> = 0x0;
@@ -4246,8 +4240,7 @@ _T5a2:
 	__asm        cmp    dword ptr [eax+0x4330], 0;
 	__asm        jne    _T5ce;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4330], 1;
+	this-><CGameApp+0x4330:4> = 0x1;
 	__asm        jmp    _T5db;
 _T5ce:
 	this-><CGameApp+0x4330:4> = 0x0;
@@ -5787,7 +5780,7 @@ _T152:
 _T15d:
 	sCheatCodeString.reference = 0x0;
 _T164:
-	__asm        mov    sCheatCodeString.c_str_ptr, 0;
+	sCheatCodeString.c_str_ptr = 0x0;
 	__asm        jmp    _T170;
 // LINE 1262:
 _T170:
@@ -5946,9 +5939,7 @@ _T303:
 // Block start:
 	/*bp-0x14*/  long lCurrentCitySelection;
 _T32a:
-	__asm        mov    eax, gwSource;
-	__asm        mov    eax, [eax+0x74];
-	__asm        mov    lCurrentCitySelection, eax;
+	lCurrentCitySelection = gwSource-><GraphicWindow+0x74:4>;
 	__asm        jmp    _T338;
 // LINE 1283:
 _T338:
@@ -6911,8 +6902,7 @@ _T79:
 	__asm        cmp    lResult, 0;
 	__asm        jne    _Tb9;
 // LINE 1588:
-	__asm        mov    eax, gwSource;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	gwSource-><GraphicWindow+0x54:4> = 0x0;
 	__asm        jmp    _Ta7;
 // LINE 1589:
 _Ta7:
@@ -6925,8 +6915,7 @@ _Tb9:
 	__asm        cmp    lResult, 1;
 	__asm        jne    _Te9;
 // LINE 1593:
-	__asm        mov    eax, gwSource;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	gwSource-><GraphicWindow+0x54:4> = 0x0;
 	__asm        jmp    _Td2;
 // LINE 1594:
 _Td2:
@@ -6940,8 +6929,7 @@ _Te9:
 	__asm        cmp    lResult, 2;
 	__asm        jne    _T119;
 // LINE 1598:
-	__asm        mov    eax, gwSource;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	gwSource-><GraphicWindow+0x54:4> = 0x0;
 	__asm        jmp    _T102;
 // LINE 1599:
 _T102:
@@ -6955,8 +6943,7 @@ _T119:
 	__asm        cmp    lResult, 3;
 	__asm        jne    _T149;
 // LINE 1603:
-	__asm        mov    eax, gwSource;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	gwSource-><GraphicWindow+0x54:4> = 0x0;
 	__asm        jmp    _T132;
 // LINE 1604:
 _T132:

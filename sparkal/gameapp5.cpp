@@ -544,7 +544,7 @@ _T43:
 	__asm        add    eax, pBufferStart;
 	__asm        mov    pBufferCurrentPosition, eax;
 // LINE 244:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T84;
 _T81:
 	i++;
@@ -568,7 +568,7 @@ _Ta6:
 	__asm        sub    eax, 0xD;
 	__asm        mov    pBufferCurrentPosition, eax;
 // LINE 250:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tc8;
 _Tc5:
 	i++;

@@ -167,9 +167,7 @@ public:
 	__asm        cmp    i.fObject, 0;
 	__asm        je     _T2e;
 
-	__asm        mov    eax, i.fObject;
-	__asm        mov    eax, [eax];
-	__asm        mov    i.fCur, eax;
+	i.fCur = i.fObject->fFirst;
 	__asm        jmp    _T35;
 _T2e:
 	i.fCur = 0x0;
@@ -438,9 +436,7 @@ void NResFile::~NResFile() {
 	__asm        cmp    i.fObject, 0;
 	__asm        je     _T37;
 
-	__asm        mov    eax, i.fObject;
-	__asm        mov    eax, [eax];
-	__asm        mov    i.fCur, eax;
+	i.fCur = i.fObject->fFirst;
 	__asm        jmp    _T3e;
 _T37:
 	i.fCur = 0x0;

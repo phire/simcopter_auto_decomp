@@ -755,7 +755,7 @@ _T5b:
 _T66:
 	sText.reference = 0x0;
 _T6d:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T79;
 // LINE 71:
 _T79:
@@ -1805,7 +1805,7 @@ _T56:
 _T61:
 	sCurrentText.reference = 0x0;
 _T68:
-	__asm        mov    sCurrentText.c_str_ptr, 0;
+	sCurrentText.c_str_ptr = 0x0;
 	__asm        jmp    _T74;
 // LINE 228:
 _T74:
@@ -2005,7 +2005,7 @@ _T5c:
 _T67:
 	sCurrentText.reference = 0x0;
 _T6e:
-	__asm        mov    sCurrentText.c_str_ptr, 0;
+	sCurrentText.c_str_ptr = 0x0;
 	__asm        jmp    _T7a;
 // LINE 249:
 _T7a:
@@ -2795,7 +2795,7 @@ _T100:
 	__asm        jae    _T3ec;
 // LINE 331:
 _T123:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T132;
 _T12f:
 	i++;
@@ -3042,14 +3042,11 @@ _T3ec:
 // LINE 342:
 	rectCurrentMessage.bottom = 0x3e8;
 // LINE 343:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    ecx, bufferDestination;
-	__asm        mov    [ecx+0x38], eax;
+	bufferDestination-><CBackBuffer+0x38:4> = reinterpret_cast<uint32_t>(this->colorMessage.Blue);
 	__asm        jmp    _T41d;
 // LINE 345:
 _T41d:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T42c;
 _T429:
 	i++;
@@ -3128,7 +3125,7 @@ _T27:
 	__asm        cmp    [eax+0x48], ecx;
 	__asm        jl     _T369;
 // LINE 363:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4e;
 _T4b:
 	i++;

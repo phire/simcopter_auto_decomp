@@ -579,8 +579,7 @@ _T51:
 _T5f:
 	this->sFontInfoFilePath.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->sFontInfoFilePath.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 _T78:
 	__asm        push   0x10;
@@ -609,8 +608,7 @@ _Tbd:
 _Tcb:
 	this->sFontBitmapFile.reference = 0x0;
 _Td5:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->sFontBitmapFile.c_str_ptr = 0x0;
 	__asm        jmp    _Te4;
 _Te4:
 	__asm        mov    eax, this;
@@ -797,8 +795,7 @@ _T195:
 _T1a3:
 	this->sFontInfoFilePath.reference = 0x0;
 _T1ad:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->sFontInfoFilePath.c_str_ptr = 0x0;
 	__asm        jmp    _T1bc;
 _T1bc:
 	__asm        push   0x10;
@@ -827,8 +824,7 @@ _T201:
 _T20f:
 	this->sFontBitmapFile.reference = 0x0;
 _T219:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->sFontBitmapFile.c_str_ptr = 0x0;
 	__asm        jmp    _T228;
 _T228:
 	__asm        mov    eax, this;
@@ -938,8 +934,7 @@ _Tae:
 _Tbc:
 	this->sFontInfoFilePath.reference = 0x0;
 _Tc6:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->sFontInfoFilePath.c_str_ptr = 0x0;
 	__asm        jmp    _Td5;
 _Td5:
 	__asm        push   0x10;
@@ -968,8 +963,7 @@ _T11a:
 _T128:
 	this->sFontBitmapFile.reference = 0x0;
 _T132:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->sFontBitmapFile.c_str_ptr = 0x0;
 	__asm        jmp    _T141;
 _T141:
 	__asm        mov    eax, this;
@@ -1899,8 +1893,7 @@ _T94a:
 _T97e:
 	__asm        jmp    _T983;
 _T983:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x34], 0x10;
+	this->rectCharacterCells.finish += 0x10;
 	__asm        jmp    _T9b6;
 _T992:
 	__asm        jmp    _T997;
@@ -1928,7 +1921,7 @@ _T9ce:
 	__asm        cmp    eax, 0x20;
 	__asm        je     _T9eb;
 // LINE 113:
-	__asm        inc    chCurrentRectangle;
+	chCurrentRectangle++;
 	__asm        jmp    _T9ce;
 // LINE 114:
 _T9eb:
@@ -1937,14 +1930,14 @@ _T9eb:
 	__asm        cmp    eax, 0x20;
 	__asm        jne    _Ta08;
 // LINE 115:
-	__asm        inc    chCurrentRectangle;
+	chCurrentRectangle++;
 	__asm        jmp    _T9eb;
 // LINE 117:
 _Ta08:
 	__asm        jmp    _T8ca;
 // LINE 119:
 _Ta0d:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Ta1c;
 _Ta1c:
 	__asm        jmp    _Ta21;
@@ -2008,8 +2001,7 @@ _Tae2:
 _Tb04:
 	__asm        jmp    _Tb09;
 _Tb09:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x4C];
+	this->widthCharacters.finish++;
 	__asm        jmp    _Tb3b;
 _Tb17:
 	__asm        jmp    _Tb1c;
@@ -2199,7 +2191,7 @@ _T17c:
 	__asm        jmp    _T1c4;
 // LINE 154:
 _T1c4:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T1d3;
 _T1d0:
 	x++;
@@ -2208,7 +2200,7 @@ _T1d3:
 	__asm        cmp    xEnd, eax;
 	__asm        jle    _T2bd;
 // LINE 155:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T1ee;
 _T1eb:
 	y++;
@@ -2336,8 +2328,7 @@ _T324:
 _T34f:
 	__asm        jmp    _T354;
 _T354:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x40], 0x10;
+	this->rectCharacters.finish += 0x10;
 	__asm        jmp    _T7e0;
 _T363:
 	__asm        jmp    _T368;
@@ -3242,7 +3233,7 @@ _T11:
 	__asm        div    dword ptr [ecx+0x24];
 	__asm        mov    lLines, eax;
 // LINE 311:
-	__asm        mov    nCurrentWidth, 0x14;
+	nCurrentWidth = 0x14;
 	__asm        jmp    _T2f;
 _T2b:
 	nCurrentWidth += 0xa;
@@ -3409,7 +3400,7 @@ _T12d:
 	__asm        test   eax, eax;
 	__asm        jne    _T164;
 // LINE 370:
-	__asm        inc    nCurrentChars;
+	nCurrentChars++;
 	__asm        jmp    _T12d;
 // LINE 375:
 _T164:
@@ -3424,7 +3415,7 @@ _T164:
 	__asm        test   eax, eax;
 	__asm        je     _T189;
 // LINE 376:
-	__asm        inc    nCurrentChars;
+	nCurrentChars++;
 	__asm        jmp    _T164;
 // LINE 378:
 _T189:
@@ -3818,25 +3809,15 @@ void BitmappedFont::DrawTextPara(/*packed*/ class CBackBuffer *destination, /*pa
 // LINE 430:
 	lCurrentYPosition = rectPara.top;
 // LINE 431:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    lCharacterHeight, eax;
+	lCharacterHeight = this->lHeight;
 	__asm        jmp    _T2b;
 // LINE 433:
 _T2b:
-	__asm        mov    eax, rectPara;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, rectPara;
-	__asm        sub    eax, [ecx];
-	__asm        mov    lRectWidth, eax;
+	lRectWidth = (rectPara.right - rectPara.left);
 	__asm        jmp    _T3e;
 // LINE 434:
 _T3e:
-	__asm        mov    eax, rectPara;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, rectPara;
-	__asm        sub    eax, [ecx+4];
-	__asm        mov    lRectHeight, eax;
+	lRectHeight = (rectPara.bottom - rectPara.top);
 	__asm        jmp    _T52;
 // LINE 436:
 _T52:
@@ -3889,25 +3870,15 @@ void BitmappedFont::DrawTextParaNoClip(/*packed*/ class CBackBuffer *destination
 // LINE 456:
 	lCurrentYPosition = rectPara.top;
 // LINE 457:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    lCharacterHeight, eax;
+	lCharacterHeight = this->lHeight;
 	__asm        jmp    _T2b;
 // LINE 459:
 _T2b:
-	__asm        mov    eax, rectPara;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, rectPara;
-	__asm        sub    eax, [ecx];
-	__asm        mov    lRectWidth, eax;
+	lRectWidth = (rectPara.right - rectPara.left);
 	__asm        jmp    _T3e;
 // LINE 460:
 _T3e:
-	__asm        mov    eax, rectPara;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, rectPara;
-	__asm        sub    eax, [ecx+4];
-	__asm        mov    lRectHeight, eax;
+	lRectHeight = (rectPara.bottom - rectPara.top);
 	__asm        jmp    _T52;
 // LINE 462:
 _T52:
@@ -4200,25 +4171,15 @@ void BitmappedFont::DrawTextParaFormat(/*packed*/ class CBackBuffer *destination
 // LINE 558:
 	lCurrentYPosition = rectPara.top;
 // LINE 559:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    lCharacterHeight, eax;
+	lCharacterHeight = this->lHeight;
 	__asm        jmp    _T2b;
 // LINE 561:
 _T2b:
-	__asm        mov    eax, rectPara;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, rectPara;
-	__asm        sub    eax, [ecx];
-	__asm        mov    lRectWidth, eax;
+	lRectWidth = (rectPara.right - rectPara.left);
 	__asm        jmp    _T3e;
 // LINE 562:
 _T3e:
-	__asm        mov    eax, rectPara;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, rectPara;
-	__asm        sub    eax, [ecx+4];
-	__asm        mov    lRectHeight, eax;
+	lRectHeight = (rectPara.bottom - rectPara.top);
 	__asm        jmp    _T52;
 // LINE 564:
 _T52:
@@ -4290,25 +4251,15 @@ void BitmappedFont::DrawTextParaFormatNoClip(/*packed*/ class CBackBuffer *desti
 // LINE 587:
 	lCurrentYPosition = rectPara.top;
 // LINE 588:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    lCharacterHeight, eax;
+	lCharacterHeight = this->lHeight;
 	__asm        jmp    _T2b;
 // LINE 590:
 _T2b:
-	__asm        mov    eax, rectPara;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, rectPara;
-	__asm        sub    eax, [ecx];
-	__asm        mov    lRectWidth, eax;
+	lRectWidth = (rectPara.right - rectPara.left);
 	__asm        jmp    _T3e;
 // LINE 591:
 _T3e:
-	__asm        mov    eax, rectPara;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, rectPara;
-	__asm        sub    eax, [ecx+4];
-	__asm        mov    lRectHeight, eax;
+	lRectHeight = (rectPara.bottom - rectPara.top);
 	__asm        jmp    _T52;
 // LINE 593:
 _T52:

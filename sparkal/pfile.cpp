@@ -586,7 +586,7 @@ _Tf7:
 _Tfc:
 	lUsedBlockSize = _read(lUsedBlockSize, chBuffer, tempPFile.Handle);
 // LINE 199:
-	__asm        mov    lIndex, 0;
+	lIndex = 0x0;
 	__asm        jmp    _T128;
 _T122:
 	lIndex++;

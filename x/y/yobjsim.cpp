@@ -1544,8 +1544,7 @@ _T57:
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T7e;
 
-	__asm        mov    eax, gAvatar;
-	__asm        mov    person, eax;
+	person = gAvatar;
 	__asm        jmp    _Tfa;
 _T7e:
 	__asm        movsx  eax, word ptr [ebp-0x78];
@@ -1649,9 +1648,7 @@ _T1ae:
 	__asm        mov    ecx, person;
 	__asm        mov    [ecx+0xE8], ax;
 // LINE 112:
-	__asm        mov    eax, gGameApp;
-	__asm        mov    eax, [eax+0x4344];
-	__asm        mov    fps, eax;
+	fps = gGameApp-><CGameApp+0x4344:4>;
 	__asm        jmp    _T1e5;
 // LINE 113:
 _T1e5:
@@ -1909,8 +1906,7 @@ _T1c5:
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T205;
 
-	__asm        mov    eax, gAvatar;
-	__asm        mov    obj, eax;
+	obj = gAvatar;
 	__asm        jmp    _T281;
 _T205:
 	__asm        movsx  eax, word ptr [ebp-0x24];
@@ -2084,7 +2080,7 @@ enum cYObject::LocationType cYObject::GetLocType(short cellx, short celly) {
 	__asm        test   eax, eax;
 	__asm        jge    _T46;
 _T3b:
-	__asm        mov    scurkID, 0xFFFF;
+	scurkID = 0xffff;
 	__asm        jmp    _Ta2;
 _T46:
 	__asm        movsx  eax, cellx;
@@ -2578,7 +2574,7 @@ _T28e:
 
 	__asm        jmp    _T311;
 _T305:
-	__asm        mov    masterrad, 0x80000;
+	masterrad = 0x80000;
 	__asm        jmp    _T311;
 // LINE 454:
 _T311:
@@ -2962,12 +2958,12 @@ _T7e0:
 	__asm        test   dword ptr [ebp-0x8C], 0xFFFF;
 	__asm        je     _T810;
 
-	__asm        mov    newneutralandsparse, 1;
+	newneutralandsparse = 0x1;
 	__asm        jmp    _T81b;
 
 	__asm        jmp    _T81b;
 _T810:
-	__asm        mov    newneutralandsparse, 0;
+	newneutralandsparse = 0x0;
 	__asm        jmp    _T81b;
 // LINE 553:
 _T81b:
@@ -2995,12 +2991,12 @@ _T843:
 	__asm        cmp    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], edx;
 	__asm        jne    _T891;
 
-	__asm        mov    thisneutralforme, 1;
+	thisneutralforme = 0x1;
 	__asm        jmp    _T8a1;
 _T891:
 	__asm        jmp    _T83c;
 _T896:
-	__asm        mov    thisneutralforme, 0;
+	thisneutralforme = 0x0;
 	__asm        jmp    _T8a1;
 // LINE 556:
 _T8a1:
@@ -3316,7 +3312,7 @@ __RETURN:
 	__asm        mov    overallcellx, 0;
 	__asm        mov    overallcelly, 0;
 // LINE 666:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T2c;
 _T28:
 	count++;
@@ -3329,8 +3325,7 @@ _T2c:
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T55;
 
-	__asm        mov    eax, gAvatar;
-	__asm        mov    obj, eax;
+	obj = gAvatar;
 	__asm        jmp    _Td1;
 _T55:
 	__asm        movsx  eax, count;
@@ -3631,8 +3626,7 @@ _T210:
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T25f;
 
-	__asm        mov    eax, gAvatar;
-	__asm        mov    obj, eax;
+	obj = gAvatar;
 	__asm        jmp    _T2db;
 _T25f:
 	__asm        movsx  eax, word ptr [ebp-0x4C];
@@ -4003,7 +3997,7 @@ _T1f8:
 // LINE 777:
 	closestdist = 0xffff;
 // LINE 778:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T2f;
 _T2b:
 	count++;
@@ -4020,8 +4014,7 @@ _T2f:
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T58;
 
-	__asm        mov    eax, gAvatar;
-	__asm        mov    obj, eax;
+	obj = gAvatar;
 	__asm        jmp    _Td4;
 _T58:
 	__asm        movsx  eax, count;
@@ -4264,7 +4257,7 @@ _T77:
 // LINE 822:
 	found = 0x0;
 // LINE 823:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T1f;
 _T1b:
 	count++;
@@ -4279,8 +4272,7 @@ _T1f:
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T48;
 
-	__asm        mov    eax, gAvatar;
-	__asm        mov    obj, eax;
+	obj = gAvatar;
 	__asm        jmp    _Tc4;
 _T48:
 	__asm        movsx  eax, count;
@@ -4428,7 +4420,7 @@ __RETURN:
 // LINE 850:
 	found = 0x0;
 // LINE 851:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T22;
 _T1e:
 	count++;
@@ -4443,8 +4435,7 @@ _T22:
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T4b;
 
-	__asm        mov    eax, gAvatar;
-	__asm        mov    obj, eax;
+	obj = gAvatar;
 	__asm        jmp    _Tc7;
 _T4b:
 	__asm        movsx  eax, count;
@@ -6204,20 +6195,7 @@ _T52:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T89:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        push   eax;
-	__asm        call   S3PUtilsGetAlt;
-	__asm        add    esp, 0xC;
-	__asm        lea    eax, [eax+0x30000];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x40], eax;
+	this->fDyn.loc.y = (S3PUtilsGetAlt(this->fDyn.loc.z, this->fDyn.loc.y, this->fDyn.loc.x) + 0x30000);
 	__asm        jmp    _Tb7;
 _Tb7:
 	__asm        jmp    _Td8;
@@ -6580,8 +6558,7 @@ enum TreeSim::ReturnCode cYObject::iIncrementRiotVal(/*unpacked*/ struct TreeSim
 	__asm        cmp    eax, 0xA;
 	__asm        jle    _T78;
 
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE0], 0xA;
+	this->fData[8] = 0xa;
 	__asm        jmp    _T96;
 _T78:
 	__asm        mov    eax, this;
@@ -9008,7 +8985,7 @@ _T1cf:
 
 	__asm        jmp    _T1eb;
 _T1df:
-	__asm        mov    obj, 0;
+	obj = 0x0;
 	__asm        jmp    _T1f1;
 _T1eb:
 	__asm        mov    eax, [ebp-0x20];

@@ -968,9 +968,7 @@ _T1cb:
 // LINE 207:
 // Block start:
 	/*bp-0x2c*/  long DestStride;
-	__asm        mov    eax, pDest;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    DestStride, eax;
+	DestStride = pDest->mStride;
 	__asm        jmp    _T1ec;
 // LINE 209:
 _T1ec:

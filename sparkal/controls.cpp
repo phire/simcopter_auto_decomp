@@ -3110,19 +3110,11 @@ _T3b:
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0x18], ecx;
 // LINE 360:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    nWindowWidth, eax;
+	nWindowWidth = (this-><ButtonWindow+0x18> - this-><ButtonWindow+0x10>);
 	__asm        jmp    _T8e;
 // LINE 361:
 _T8e:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        mov    nWindowHeight, eax;
+	nWindowHeight = (this-><ButtonWindow+0x1c> - this-><ButtonWindow+0x14>);
 	__asm        jmp    _Ta8;
 // LINE 362:
 _Ta8:
@@ -3653,11 +3645,7 @@ _T3f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 448:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    nWindowWidth, eax;
+	nWindowWidth = (this-><ButtonWindow+0x18> - this-><ButtonWindow+0x10>);
 	__asm        jmp    _T62;
 // LINE 449:
 _T62:
@@ -4556,11 +4544,7 @@ _T3f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 583:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    nWindowWidth, eax;
+	nWindowWidth = (this-><CheckBoxWindow+0x18> - this-><CheckBoxWindow+0x10>);
 	__asm        jmp    _T62;
 // LINE 584:
 _T62:
@@ -5214,11 +5198,7 @@ _T3f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 732:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    nWindowWidth, eax;
+	nWindowWidth = (this-><RadioButtonWindow+0x18> - this-><RadioButtonWindow+0x10>);
 	__asm        jmp    _T62;
 // LINE 733:
 _T62:
@@ -5858,8 +5838,7 @@ _T297:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591E20;
 // LINE 869:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this-><ButtonGroup+0x54:4> = 0x0;
 	__asm        jmp    _T2c6;
 // LINE 870:
 _T2c6:
@@ -6189,8 +6168,7 @@ _Td9:
 	__asm        mov    list<RadioButtonWindow *>::free_list, eax;
 	__asm        jmp    _Tf0;
 _Tf0:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x78];
+	this-><ButtonGroup+0x78:4>--;
 	__asm        jmp    _Tfb;
 // LINE 902:
 _Tfb:
@@ -6958,8 +6936,7 @@ _Tcf:
 _Te0:
 	this->sBackgroundFile.reference = 0x0;
 _Ted:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA8], 0;
+	this->sBackgroundFile.c_str_ptr = 0x0;
 	__asm        jmp    _Tff;
 _Tff:
 	__asm        mov    eax, this;
@@ -7037,8 +7014,7 @@ _Te1:
 _Tf2:
 	this->sBackgroundFile.reference = 0x0;
 _Tff:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA8], 0;
+	this->sBackgroundFile.c_str_ptr = 0x0;
 	__asm        jmp    _T111;
 _T111:
 	__asm        mov    eax, this;
@@ -7742,7 +7718,7 @@ _T51:
 _T5c:
 	sBackgroundPath.reference = 0x0;
 _T63:
-	__asm        mov    sBackgroundPath.c_str_ptr, 0;
+	sBackgroundPath.c_str_ptr = 0x0;
 	__asm        jmp    _T6f;
 // LINE 1188:
 _T6f:
@@ -9748,10 +9724,7 @@ _T2a1:
 // LINE 1668:
 	lPageDownButtonStartPosition = (this-><ScrollBarWindow+0x28> - lThumbWidth);
 // LINE 1670:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    eax, lThumbWidth;
-	__asm        mov    i, eax;
+	i = (this-><ScrollBarWindow+0x20> + lThumbWidth);
 	__asm        jmp    _T330;
 _T32a:
 	i += lThumbWidth;
@@ -9870,10 +9843,7 @@ _T3f9:
 // LINE 1692:
 	lPageDownButtonStartPosition = (this-><ScrollBarWindow+0x2c> - lThumbHeight);
 // LINE 1694:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    eax, lThumbHeight;
-	__asm        mov    i, eax;
+	i = (this-><ScrollBarWindow+0x24> + lThumbHeight);
 	__asm        jmp    _T459;
 _T453:
 	i += lThumbHeight;
@@ -10278,8 +10248,7 @@ _Taa:
 	__asm        cmp    [eax+0xCC], ecx;
 	__asm        jne    _Tce;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD0], 1;
+	this->bCursorIsOnInitialHitTestResult = 0x1;
 	__asm        jmp    _Tdb;
 _Tce:
 	this->bCursorIsOnInitialHitTestResult = 0x0;
@@ -12423,8 +12392,7 @@ _T173:
 	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    _T18a;
 _T18a:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x78];
+	this->myStringList.length--;
 	__asm        jmp    _T195;
 _T195:
 	__asm        jmp    _T4c;
@@ -12559,7 +12527,7 @@ _T5b:
 _T66:
 	sNew.reference = 0x0;
 _T6d:
-	__asm        mov    sNew.c_str_ptr, 0;
+	sNew.c_str_ptr = 0x0;
 	__asm        jmp    _T79;
 // LINE 2434:
 _T79:
@@ -13189,7 +13157,7 @@ _T44:
 	__asm        jmp    _T49;
 // LINE 2473:
 _T49:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T58;
 _T55:
 	i++;
@@ -13605,8 +13573,7 @@ _T8b:
 	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    _Ta2;
 _Ta2:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x78], 0xFFFFFFFF;
+	this->myStringList.length += -0x1;
 	__asm        jmp    _Tae;
 _Tae:
 	__asm        jmp    _Tb3;
@@ -13673,8 +13640,7 @@ _T144:
 	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    _T15b;
 _T15b:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x78], 0xFFFFFFFF;
+	this->myStringList.length += -0x1;
 	__asm        jmp    _T167;
 _T167:
 	__asm        jmp    _T16c;
@@ -13815,8 +13781,7 @@ _T2c1:
 	__asm        mov    list<basic_string<char>>::free_list, eax;
 	__asm        jmp    _T2d8;
 _T2d8:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x78];
+	this->myStringList.length--;
 	__asm        jmp    _T2e3;
 // LINE 2556:
 _T2e3:
@@ -15093,7 +15058,7 @@ _T57:
 _T62:
 	sSaved.reference = 0x0;
 _T69:
-	__asm        mov    sSaved.c_str_ptr, 0;
+	sSaved.c_str_ptr = 0x0;
 	__asm        jmp    _T75;
 // LINE 2942:
 _T75:
@@ -15610,7 +15575,7 @@ _T26:
 	__asm        cmp    dword ptr [eax+0x6C], 0;
 	__asm        je     _T68;
 
-	__asm        mov    nScrollBarYPosition, 1;
+	nScrollBarYPosition = 0x1;
 	__asm        jmp    _T6f;
 _T68:
 	nScrollBarYPosition = 0x0;

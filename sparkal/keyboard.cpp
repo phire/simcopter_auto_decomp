@@ -255,7 +255,7 @@ void Keyboard::ClearSettings() {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 98:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;

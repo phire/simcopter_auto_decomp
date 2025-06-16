@@ -319,7 +319,7 @@ void Behavior::StdTreeSwizzle(/*unpacked*/ struct Behavior::Tree *tree, long siz
 	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 50:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T24;
 _T20:
 	count++;
@@ -411,7 +411,7 @@ _T79:
 
 	__asm        jmp    _Ta2;
 _T96:
-	__asm        mov    tree, 0;
+	tree = 0x0;
 	__asm        jmp    _Ta8;
 _Ta2:
 	__asm        mov    eax, [ebp-0x18];
@@ -464,7 +464,7 @@ _T10b:
 
 	__asm        jmp    _T134;
 _T128:
-	__asm        mov    tree, 0;
+	tree = 0x0;
 	__asm        jmp    _T13a;
 _T134:
 	__asm        mov    eax, [ebp-0x2C];

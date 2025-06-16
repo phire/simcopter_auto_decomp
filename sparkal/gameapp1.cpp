@@ -1957,7 +1957,7 @@ _T70:
 _T7e:
 	sApplicationTitle.reference = 0x0;
 _T85:
-	__asm        mov    sApplicationTitle.c_str_ptr, 0;
+	sApplicationTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 261:
 _T91:
@@ -1986,7 +1986,7 @@ _Teb:
 _Tfc:
 	sErrorText.reference = 0x0;
 _T106:
-	__asm        mov    sErrorText.c_str_ptr, 0;
+	sErrorText.c_str_ptr = 0x0;
 	__asm        jmp    _T115;
 // LINE 262:
 _T115:
@@ -2015,7 +2015,7 @@ _T16f:
 _T180:
 	sErrorTitle.reference = 0x0;
 _T18a:
-	__asm        mov    sErrorTitle.c_str_ptr, 0;
+	sErrorTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T199;
 // LINE 266:
 _T199:
@@ -2997,7 +2997,7 @@ unsigned long CGameApp::Initialize() {
 // LINE 390:
 	GraphicWindow::colorConstants.nPaletteIndexTransparent = 0xfe;
 // LINE 392:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T35;
 _T32:
 	i++;
@@ -3592,7 +3592,7 @@ _T9c:
 	return 0x0;
 // LINE 612:
 _Ta3:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tb2;
 _Tae:
 	i++;
@@ -3676,7 +3676,7 @@ _T1ae:
 	__asm        cmp    bInQuotation, 0;
 	__asm        jne    _T1d8;
 
-	__asm        mov    bInQuotation, 1;
+	bInQuotation = 0x1;
 	__asm        jmp    _T1df;
 _T1d8:
 	bInQuotation = 0x0;
@@ -4321,7 +4321,7 @@ void CGameApp::InitializeJoysticks() {
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   JoystickManager::SetNormalizedMinMax;
 // LINE 795:
-	__asm        mov    gJoystickManager.lJoystickThreshold, 0x14;
+	gJoystickManager.lJoystickThreshold = 0x14;
 	__asm        jmp    _T33;
 // LINE 796:
 _T33:
@@ -4385,7 +4385,7 @@ _T7b:
 _T8b:
 	__asm        mov    iEnd, eax;
 // LINE 829:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T9d;
 _T9a:
 	i++;

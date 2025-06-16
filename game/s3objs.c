@@ -145,7 +145,7 @@ void S3ObjInit() {
 // LINE 413:
 	objcount += VRGetResObjectCnt(G_resgeo3);
 // LINE 418:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T12f;
 _T12c:
 	i++;
@@ -252,7 +252,7 @@ _T327:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 531:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T345;
 _T342:
 	j++;
@@ -1431,7 +1431,7 @@ _T3f8:
 	__asm        cmp    G_video_mode, 0x20;
 	__asm        jne    _T22e0;
 // LINE 1232:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T430;
 _T42d:
 	i++;
@@ -4314,7 +4314,7 @@ _T22db:
 	return;
 // LINE 2421:
 _T22e0:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T22ef;
 _T22ec:
 	i++;
@@ -7705,7 +7705,7 @@ _T53:
 // LINE 4162:
 	objcount += VRGetResObjectCnt(G_resgeo3);
 // LINE 4167:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T95;
 _T92:
 	i++;

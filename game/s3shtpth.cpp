@@ -211,7 +211,7 @@ _T74:
 // LINE 54:
 	this->heapSize = 0x0;
 // LINE 57:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _Ta9;
 _Ta6:
 	x++;
@@ -221,7 +221,7 @@ _Ta9:
 // LINE 59:
 // Block start:
 	/*bp-0x28*/  int32_t yindex;
-	__asm        mov    yindex, 0;
+	yindex = 0x0;
 	__asm        jmp    _Tc5;
 _Tc2:
 	yindex++;
@@ -333,7 +333,7 @@ _T143:
 // Block start:
 	/*bp-0x30*/  int32_t i;
 _T1e9:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1f8;
 _T1f5:
 	i++;
@@ -468,7 +468,7 @@ _T85:
 // LINE 160:
 	this->heapSize = 0x0;
 // LINE 163:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _Tba;
 _Tb7:
 	x++;
@@ -478,7 +478,7 @@ _Tba:
 // LINE 165:
 // Block start:
 	/*bp-0x30*/  int32_t yindex;
-	__asm        mov    yindex, 0;
+	yindex = 0x0;
 	__asm        jmp    _Td6;
 _Td3:
 	yindex++;
@@ -612,7 +612,7 @@ _T192:
 // Block start:
 	/*bp-0x38*/  int32_t i;
 _T238:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T247;
 _T244:
 	i++;

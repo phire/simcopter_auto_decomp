@@ -147,7 +147,7 @@ _T40:
 	return 0x1;
 // LINE 141:
 _T61:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T70;
 _T6d:
 	i++;
@@ -195,7 +195,7 @@ _Tc7:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 156:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _Tff;
 _Tfc:
 	j++;
@@ -219,7 +219,7 @@ _Tff:
 _T12a:
 	maxval = 0x0;
 // LINE 163:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T140;
 _T13d:
 	j++;
@@ -306,7 +306,7 @@ _T64:
 	bmpcolors = tabentry[0];
 // LINE 224:
 _T6c:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T7b;
 _T78:
 	i++;
@@ -328,7 +328,7 @@ _T7b:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 231:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _Tbd;
 _Tba:
 	j++;
@@ -338,7 +338,7 @@ _Tbd:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jle    _T111;
 // LINE 233:
-	__asm        mov    k, 0;
+	k = 0x0;
 	__asm        jmp    _Tdb;
 _Td8:
 	k++;
@@ -367,7 +367,7 @@ _Tff:
 _T111:
 	maxval = 0x0;
 // LINE 244:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T127;
 _T124:
 	j++;
@@ -582,7 +582,7 @@ void VRObjSetShading(int32_t obj) {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 401:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T37;
 _T34:
 	i++;
@@ -800,7 +800,7 @@ _T21:
 // LINE 496:
 	fh = oh->FacePtr;
 // LINE 497:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4e;
 _T4b:
 	i++;
@@ -955,7 +955,7 @@ _T21:
 // LINE 575:
 	minv = 0x1e0000;
 // LINE 576:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T45;
 _T42:
 	i++;
@@ -1085,7 +1085,7 @@ void VRObjSetGouraudShade(/*packed*/ struct ObjectHdr *oh, /*packed*/ struct Poi
 // LINE 621:
 	fh = oh->FacePtr;
 // LINE 622:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T21;
 _T1e:
 	i++;
@@ -1112,7 +1112,7 @@ _T42:
 _T63:
 	faceverts = fh->PlyVerts;
 // LINE 634:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T7b;
 _T78:
 	j++;
@@ -1273,7 +1273,7 @@ void VRObjSetTranslucent(int32_t obj, /*packed*/ struct VRResource *res, int32_t
 // LINE 708:
 	fh = oh->FacePtr;
 // LINE 709:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3a;
 _T37:
 	i++;

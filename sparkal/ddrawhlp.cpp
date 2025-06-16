@@ -357,7 +357,7 @@ _Tbb:
 	__asm        call   DebugOutput;
 	__asm        add    esp, 4;
 // LINE 166:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Td7;
 _Td4:
 	i++;

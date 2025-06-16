@@ -509,7 +509,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0052748a
 static void $E3() {
 
-	__asm        mov    BoatClass::lsBoat<vftable>, 0x593200;
+	BoatClass::lsBoat<vftable> = 0x593200;
 	__asm        jmp    _T15;
 _T15:
 	return;
@@ -553,7 +553,7 @@ void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 
 	this-><vftable> = 0x593200;
 // LINE 156:
-	__asm        mov    currentFlag, 0;
+	currentFlag = 0x0;
 	__asm        jmp    _T24;
 _T21:
 	currentFlag++;
@@ -770,7 +770,7 @@ void BoatClass::ResetAll() {
 	/*bp-0x4*/   int32_t currentBoatIndex;
 
 // LINE 489:
-	__asm        mov    currentBoatIndex, 0;
+	currentBoatIndex = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	currentBoatIndex++;
@@ -793,7 +793,7 @@ void BoatClass::ItterateAll() {
 	/*bp-0x4*/   int32_t currentBoatIndex;
 
 // LINE 537:
-	__asm        mov    currentBoatIndex, 0;
+	currentBoatIndex = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	currentBoatIndex++;
@@ -4010,7 +4010,7 @@ _T262:
 	stop_now = 0x1;
 // LINE 2291:
 _T278:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T287;
 _T284:
 	i++;
@@ -4129,7 +4129,7 @@ _T3cc:
 	return;
 // LINE 2323:
 foundCell:
-	__asm        mov    currentFlag, 2;
+	currentFlag = 0x2;
 	__asm        jmp    _T3e0;
 _T3dd:
 	currentFlag++;
@@ -4314,7 +4314,7 @@ _Tde:
 	stop_now = 0x1;
 // LINE 2449:
 _Tf4:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T103;
 _T100:
 	i++;
@@ -4873,7 +4873,7 @@ _T7c2:
 	return 0x0;
 // LINE 2504:
 foundCell:
-	__asm        mov    currentFlag, 2;
+	currentFlag = 0x2;
 	__asm        jmp    _T7d8;
 _T7d5:
 	currentFlag++;
@@ -5299,7 +5299,7 @@ _T7d:
 // LINE 3082:
 	totalpersons = 0x0;
 // LINE 3083:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _Tbb;
 _Tb8:
 	count++;
@@ -5435,7 +5435,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 	return 0x0;
 // LINE 3211:
 _T38:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T47;
 _T44:
 	i++;
@@ -5609,7 +5609,7 @@ int32_t BoatClass::MIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 3266:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;

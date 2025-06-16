@@ -1233,27 +1233,11 @@ _T16b:
 	return 0x80000006;
 // LINE 327:
 _T175:
-	__asm        push   0xE;
-	__asm        lea    eax, bfHeader.bfType;
-	__asm        push   eax;
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
-	__asm        mov    nBytesRead, eax;
+	nBytesRead = _read(0xe, bfHeader.bfType, fileImage->Handle);
 	__asm        jmp    _T195;
 // LINE 328:
 _T195:
-	__asm        push   0x28;
-	__asm        lea    eax, biHeader.biSize;
-	__asm        push   eax;
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
-	__asm        mov    nBytesRead, eax;
+	nBytesRead = _read(0x28, biHeader.biSize, fileImage->Handle);
 	__asm        jmp    _T1b8;
 // LINE 329:
 _T1b8:
@@ -1315,7 +1299,7 @@ _T239:
 _T2ab:
 	nPosition = _tell(fileImage->Handle);
 // LINE 352:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2cf;
 _T2cc:
 	i++;
@@ -2610,16 +2594,12 @@ _T40:
 	__asm        mov    eax, destRect.top;
 	__asm        mov    srcRect.top, eax;
 // LINE 949:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    destRect.right, eax;
+	destRect.right = this->mWidth;
 	__asm        jmp    _T82;
 _T82:
 	srcRect.right = destRect.right;
 // LINE 950:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    destRect.bottom, eax;
+	destRect.bottom = this->mHeight;
 	__asm        jmp    _T99;
 _T99:
 	srcRect.bottom = destRect.bottom;
@@ -2889,8 +2869,7 @@ void CBackBuffer::UpdatePalette(long start, long count, const /*packed*/ struct 
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        je     _Tc4;
 // LINE 1133:
-	__asm        mov    eax, start;
-	__asm        mov    i, eax;
+	i = start;
 	__asm        jmp    _T36;
 _T30:
 	i++;
@@ -3671,7 +3650,7 @@ _T22f:
 	__asm        cmp    nThickness, 1;
 	__asm        jne    _T2b9;
 // LINE 1555:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T254;
 _T251:
 	i++;
@@ -3715,7 +3694,7 @@ _T2b4:
 	__asm        jmp    _T3a5;
 // LINE 1575:
 _T2b9:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T2c8;
 _T2c5:
 	i++;
@@ -4285,7 +4264,7 @@ _T59a:
 	__asm        cmp    nThickness, 1;
 	__asm        jne    _T62d;
 // LINE 1728:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T5bf;
 _T5bc:
 	i++;
@@ -4531,8 +4510,7 @@ _T800:
 	__asm        cmp    eax, x;
 	__asm        jg     _T853;
 
-	__asm        mov    eax, nThickness;
-	__asm        mov    nPixels, eax;
+	nPixels = nThickness;
 	__asm        jmp    _T85a;
 _T853:
 	__asm        mov    eax, x;
@@ -4558,9 +4536,7 @@ _T879:
 	__asm        cmp    eax, x;
 	__asm        jge    _T896;
 
-	__asm        mov    eax, bufferWidth;
-	__asm        sub    eax, x;
-	__asm        mov    nPixels, eax;
+	nPixels = (bufferWidth - x);
 	__asm        jmp    _T89c;
 _T896:
 	nPixels = nThickness;

@@ -620,7 +620,7 @@ _T47b:
 // LINE 339:
 	verts = oinfo.VertsPtr;
 // LINE 342:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T4ce;
 _T4cb:
 	j++;
@@ -884,7 +884,7 @@ _T1ac:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 495:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1ff;
 _T1fc:
 	i++;
@@ -1006,7 +1006,7 @@ _T31b:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 544:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T36e;
 _T36b:
 	i++;
@@ -1098,7 +1098,7 @@ _T431:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 577:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T484;
 _T481:
 	i++;
@@ -1190,7 +1190,7 @@ _T547:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 610:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T59a;
 _T597:
 	i++;
@@ -1282,7 +1282,7 @@ _T65d:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 643:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T6b0;
 _T6ad:
 	i++;
@@ -5240,7 +5240,7 @@ _T72f:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 2075:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T7a6;
 _T7a0:
 	j++;
@@ -6296,7 +6296,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 _T36:
 	S_num_active_teargas = 0x0;
 // LINE 2791:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4e;
 _T4b:
 	i++;
@@ -6419,7 +6419,7 @@ _T1c7:
 _T1f4:
 	S_num_active_debris = 0x0;
 // LINE 2837:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T20c;
 _T209:
 	i++;
@@ -6542,7 +6542,7 @@ int32_t S3MissileMIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   long i;
 
 // LINE 2881:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;
@@ -6579,7 +6579,7 @@ _T88:
 	__asm        jmp    _T15;
 // LINE 2897:
 _T8d:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T9c;
 _T99:
 	i++;

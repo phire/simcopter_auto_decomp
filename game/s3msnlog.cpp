@@ -2004,7 +2004,7 @@ _T493:
 _T4a1:
 	sCurrentText.reference = 0x0;
 _T4a8:
-	__asm        mov    sCurrentText.c_str_ptr, 0;
+	sCurrentText.c_str_ptr = 0x0;
 	__asm        jmp    _T4b4;
 // LINE 253:
 _T4b4:
@@ -3131,7 +3131,7 @@ _T29:
 	__asm        jmp    _T2e;
 // LINE 347:
 _T2e:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3d;
 _T3a:
 	i++;
@@ -3565,9 +3565,7 @@ _T356:
 	__asm        mov    [ecx], al;
 	__asm        jmp    _T380;
 _T380:
-	__asm        mov    eax, sCurrentText;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    dword ptr [eax+4];
+	sCurrentText.reference-><basic_string_ref<char>+0x04:4>++;
 	__asm        jmp    _T38e;
 // LINE 377:
 _T38e:

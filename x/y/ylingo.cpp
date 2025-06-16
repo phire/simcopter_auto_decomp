@@ -472,8 +472,7 @@ public:
 // FUNCTION: COPTER_D 0x005609d0
 void YObjLang::YObjLang(unsigned char * fileName) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593700;
+	this-><YObjLang+0x00> = 0x593700;
 	__asm        jmp    _T1a;
 _T1a:
 	this-><YObjLang+0x00> = 0x5936e8;
@@ -581,8 +580,7 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 // FUNCTION: COPTER_D 0x00560aec
 void YObjLang::YObjLang(/*unpacked*/ class YObjLang& otherLanguage) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593700;
+	this-><YObjLang+0x00> = 0x593700;
 	__asm        jmp    _T1a;
 _T1a:
 	this-><YObjLang+0x00> = 0x5936e8;

@@ -1251,7 +1251,7 @@ _T8f:
 	__asm        jmp    _T107;
 // LINE 547:
 _T94:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Ta3;
 _Ta0:
 	i++;
@@ -1289,7 +1289,7 @@ _Ta3:
 	__asm        jmp    _Ta0;
 // LINE 558:
 _T107:
-	__asm        mov    i, 0xA;
+	i = 0xa;
 	__asm        jmp    _T116;
 _T113:
 	i++;

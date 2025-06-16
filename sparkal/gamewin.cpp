@@ -731,7 +731,7 @@ _Tb1:
 	End = 0xff;
 // LINE 234:
 _Te8:
-	__asm        mov    Counter, 0;
+	Counter = 0x0;
 	__asm        jmp    _Tf7;
 _Tf4:
 	Counter++;
@@ -1370,12 +1370,7 @@ _T63:
 _T75:
 	lpMinMaxInfo = lParam;
 // LINE 520:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x68];
-	__asm        mov    ecx, lpMinMaxInfo;
-	__asm        mov    [ecx+0x20], eax;
+	lpMinMaxInfo->ptMaxTrackSize.x = (this->rectWindowDesired.right - this->rectWindowDesired.left);
 	__asm        jmp    _T92;
 _T92:
 	__asm        mov    eax, lpMinMaxInfo;
@@ -1387,12 +1382,7 @@ _T92:
 	__asm        mov    ecx, lpMinMaxInfo;
 	__asm        mov    [ecx+8], eax;
 // LINE 523:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x74];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x6C];
-	__asm        mov    ecx, lpMinMaxInfo;
-	__asm        mov    [ecx+0x24], eax;
+	lpMinMaxInfo->ptMaxTrackSize.y = (this->rectWindowDesired.bottom - this->rectWindowDesired.top);
 	__asm        jmp    _Tc1;
 _Tc1:
 	__asm        mov    eax, lpMinMaxInfo;

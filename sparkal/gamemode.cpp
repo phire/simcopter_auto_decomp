@@ -673,7 +673,7 @@ _T6c:
 _T7a:
 	tempUMWD.sImageFileName.reference = 0x0;
 _T81:
-	__asm        mov    tempUMWD.sImageFileName.c_str_ptr, 0;
+	tempUMWD.sImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T8d;
 _T8d:
 	__asm        jmp    _T92;
@@ -1293,7 +1293,7 @@ _Ta1:
 _Tf6:
 	pPalettePosition = S_pal;
 // LINE 425:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T116;
 _T110:
 	i++;
@@ -3927,8 +3927,7 @@ _Tef:
 	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    _T106;
 _T106:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x14C], 0xFFFFFFFF;
+	this->commandSystem.commandShortcuts.length += -0x1;
 	__asm        jmp    _T115;
 // LINE 1151:
 _T115:
@@ -5995,8 +5994,7 @@ _T11b:
 	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    _T138;
 _T138:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xF4];
+	this->commandSystem.commandShortcuts.length--;
 	__asm        jmp    _T149;
 _T149:
 	__asm        jmp    _T64;
@@ -6696,8 +6694,7 @@ _T11b:
 	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    _T138;
 _T138:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xF4];
+	this->commandSystem.commandShortcuts.length--;
 	__asm        jmp    _T149;
 _T149:
 	__asm        jmp    _T64;
@@ -7397,8 +7394,7 @@ _T11b:
 	__asm        mov    list<Shortcut>::free_list, eax;
 	__asm        jmp    _T138;
 _T138:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xF4];
+	this->commandSystem.commandShortcuts.length--;
 	__asm        jmp    _T149;
 _T149:
 	__asm        jmp    _T64;

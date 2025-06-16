@@ -1080,8 +1080,7 @@ _T5c:
 	__asm        cmp    G_camera_targ2firey, 0;
 	__asm        je     _T83;
 
-	__asm        mov    eax, G_camera_targ2objy;
-	__asm        mov    alt, eax;
+	alt = G_camera_targ2objy;
 	__asm        jmp    _T8b;
 _T83:
 	alt = G_camera_targ2objy;

@@ -293,8 +293,7 @@ static short Encode(/*packed*/ struct tACompModel *model, /*packed*/ struct tLZS
 	__asm        mov    s, 0;
 	__asm        mov    r, 0xFC4;
 // LINE 537:
-	__asm        mov    eax, s;
-	__asm        mov    i, eax;
+	i = s;
 	__asm        jmp    _T55;
 _T52:
 	i++;
@@ -309,7 +308,7 @@ _T55:
 	__asm        jmp    _T52;
 // LINE 538:
 _T70:
-	__asm        mov    len, 0;
+	len = 0x0;
 	__asm        jmp    _T7f;
 _T7c:
 	len++;
@@ -344,7 +343,7 @@ _T7f:
 _Tc3:
 	state->textsize = len;
 // LINE 543:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _Tdb;
 _Td8:
 	i++;
@@ -441,7 +440,7 @@ _T1b0:
 _T1df:
 	last_match_length = forest->match_length;
 // LINE 561:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1fa;
 _T1f7:
 	i++;
@@ -567,7 +566,7 @@ static void InitTree(/*packed*/ struct tLZSSBinaryForest *forest) {
 	/*bp-0x4*/   long i;
 
 // LINE 206:
-	__asm        mov    i, 0x1001;
+	i = 0x1001;
 	__asm        jmp    _T18;
 _T15:
 	i++;
@@ -581,7 +580,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 207:
 _T3b:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4a;
 _T47:
 	i++;
@@ -688,7 +687,7 @@ _Ted:
 	return;
 // LINE 242:
 _T112:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T121;
 _T11e:
 	i++;
@@ -979,7 +978,7 @@ static void StartModel(/*packed*/ struct tACompModel *model) {
 // LINE 303:
 	model->sym_cum[314] = 0x0;
 // LINE 304:
-	__asm        mov    sym, 0x13A;
+	sym = 0x13a;
 	__asm        jmp    _T25;
 _T22:
 	sym--;
@@ -1022,7 +1021,7 @@ _T90:
 // LINE 312:
 	model->position_cum[4096] = 0x0;
 // LINE 313:
-	__asm        mov    i, 0x1000;
+	i = 0x1000;
 	__asm        jmp    _Tb9;
 _Tb6:
 	i--;
@@ -1180,7 +1179,7 @@ static void UpdateModel(long sym, /*packed*/ struct tACompModel *model) {
 // LINE 324:
 	c = 0x0;
 // LINE 325:
-	__asm        mov    i, 0x13A;
+	i = 0x13a;
 	__asm        jmp    _T32;
 _T2f:
 	i--;
@@ -1213,8 +1212,7 @@ _T82:
 	model->sym_cum[0] = c;
 // LINE 331:
 _T8e:
-	__asm        mov    eax, sym;
-	__asm        mov    i, eax;
+	i = sym;
 	__asm        jmp    _T9c;
 _T99:
 	i--;
@@ -1531,7 +1529,7 @@ static short FlushBitBuffer(/*packed*/ struct tCompressState *dest) {
 	/*bp-0x8*/   short retVal;
 
 // LINE 149:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;
@@ -1709,7 +1707,7 @@ _T49:
 	__asm        call   StartModel;
 	__asm        add    esp, 4;
 // LINE 603:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T74;
 _T71:
 	i++;
@@ -1781,7 +1779,7 @@ _T119:
 // LINE 617:
 	j = (c - 0xfd);
 // LINE 618:
-	__asm        mov    k, 0;
+	k = 0x0;
 	__asm        jmp    _T152;
 _T14f:
 	k++;
@@ -1840,7 +1838,7 @@ static void StartDecode(/*packed*/ struct tACompModel *model, /*packed*/ struct 
 	/*bp-0x4*/   long i;
 
 // LINE 458:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;

@@ -758,7 +758,7 @@ _T78:
 _T86:
 	sMessage.reference = 0x0;
 _T8d:
-	__asm        mov    sMessage.c_str_ptr, 0;
+	sMessage.c_str_ptr = 0x0;
 	__asm        jmp    _T99;
 // LINE 108:
 _T99:
@@ -1986,7 +1986,7 @@ _T5b:
 _T66:
 	sMessage.reference = 0x0;
 _T6d:
-	__asm        mov    sMessage.c_str_ptr, 0;
+	sMessage.c_str_ptr = 0x0;
 	__asm        jmp    _T79;
 // LINE 284:
 _T79:
@@ -2694,7 +2694,7 @@ _T42:
 	__asm        cmp    G_CheatCodes[0], 0;
 	__asm        jne    _T84;
 
-	__asm        mov    G_CheatCodes[0], 1;
+	G_CheatCodes[0] = 0x1;
 	__asm        jmp    _T8e;
 _T84:
 	G_CheatCodes[0] = 0x0;
@@ -2732,7 +2732,7 @@ _Tbd:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _Tff;
 
-	__asm        mov    G_CheatCodes[1], 1;
+	G_CheatCodes[1] = 0x1;
 	__asm        jmp    _T109;
 _Tff:
 	G_CheatCodes[1] = 0x0;
@@ -2770,7 +2770,7 @@ _T138:
 	__asm        cmp    G_CheatCodes[2], 0;
 	__asm        jne    _T17a;
 
-	__asm        mov    G_CheatCodes[2], 1;
+	G_CheatCodes[2] = 0x1;
 	__asm        jmp    _T184;
 _T17a:
 	G_CheatCodes[2] = 0x0;
@@ -2817,7 +2817,7 @@ _T1d5:
 	__asm        cmp    G_CheatCodes[4], 0;
 	__asm        jne    _T217;
 
-	__asm        mov    G_CheatCodes[4], 1;
+	G_CheatCodes[4] = 0x1;
 	__asm        jmp    _T221;
 _T217:
 	G_CheatCodes[4] = 0x0;
@@ -3153,7 +3153,7 @@ _T6c7:
 	__asm        cmp    G_CheatCodes[5], 0;
 	__asm        jne    _T6f0;
 
-	__asm        mov    G_CheatCodes[5], 1;
+	G_CheatCodes[5] = 0x1;
 	__asm        jmp    _T6fa;
 _T6f0:
 	G_CheatCodes[5] = 0x0;
@@ -3772,7 +3772,7 @@ int32_t CGameApp::CheckCommandLineForCheatCodes() {
 	__asm        test   eax, eax;
 	__asm        je     _T284;
 // LINE 509:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T40;
 _T3a:
 	i++;
@@ -4173,7 +4173,7 @@ _T6c:
 _T7a:
 	tempUMWD.sImageFileName.reference = 0x0;
 _T81:
-	__asm        mov    tempUMWD.sImageFileName.c_str_ptr, 0;
+	tempUMWD.sImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T8d;
 _T8d:
 	__asm        jmp    _T92;
@@ -4235,7 +4235,7 @@ _T11c:
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T151;
 
-	__asm        mov    tempUMWD.lMenuStringResourceIndex, 0x3C;
+	tempUMWD.lMenuStringResourceIndex = 0x3c;
 	__asm        jmp    _T158;
 _T151:
 	tempUMWD.lMenuStringResourceIndex = 0x3d;
@@ -4244,7 +4244,7 @@ _T158:
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T171;
 
-	__asm        mov    tempUMWD.lMenuStringResourceCount, 8;
+	tempUMWD.lMenuStringResourceCount = 0x8;
 	__asm        jmp    _T178;
 _T171:
 	tempUMWD.lMenuStringResourceCount = 0x7;
@@ -4253,7 +4253,7 @@ _T178:
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T191;
 
-	__asm        mov    tempUMWD.lSelectionBase, 0;
+	tempUMWD.lSelectionBase = 0x0;
 	__asm        jmp    _T198;
 _T191:
 	tempUMWD.lSelectionBase = 0x1;

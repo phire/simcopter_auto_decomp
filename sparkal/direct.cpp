@@ -655,8 +655,7 @@ _T51:
 _T5f:
 	this->sName.reference = 0x0;
 _T69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->sName.c_str_ptr = 0x0;
 	__asm        jmp    _T78;
 // LINE 35:
 _T78:
@@ -670,9 +669,7 @@ _T78:
 // FUNCTION: COPTER_D 0x00481bae
 void DirectoryEntry::DirectoryEntry(/*unpacked*/ class Directory *directoryNewParent, /*packed*/ class basic_string<char>& sNewName, long lNewType) {
 
-	__asm        mov    eax, directoryNewParent;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->directoryParent = directoryNewParent;
 	__asm        jmp    _T19;
 _T19:
 	__asm        mov    eax, sNewName;
@@ -811,8 +808,7 @@ _T19d:
 _T1ab:
 	this->sName.reference = 0x0;
 _T1b5:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->sName.c_str_ptr = 0x0;
 	__asm        jmp    _T1c4;
 _T1c4:
 	this->lType = lNewType;
@@ -853,7 +849,7 @@ _T47:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T63;
 
-	__asm        mov    nPosition, 0xFFFFFFFF;
+	nPosition = 0xffffffff;
 	__asm        jmp    _T163;
 _T63:
 	__asm        jmp    _T68;
@@ -932,7 +928,7 @@ _T137:
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _T157;
 _T146:
-	__asm        mov    nPosition, 0xFFFFFFFF;
+	nPosition = 0xffffffff;
 	__asm        jmp    _T163;
 
 	__asm        jmp    _T163;
@@ -1290,9 +1286,7 @@ _T554:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _T578;
 
-	__asm        mov    eax, sEntryExtension;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    dword ptr [eax+4], 0;
+	sEntryExtension.reference-><basic_string_ref<char>+0x04:4> = 0x0;
 	__asm        jmp    _T5df;
 _T578:
 	__asm        cmp    dword ptr [ebp-0x44], 0;
@@ -1371,7 +1365,7 @@ _T47:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T63;
 
-	__asm        mov    nPosition, 0xFFFFFFFF;
+	nPosition = 0xffffffff;
 	__asm        jmp    _T163;
 _T63:
 	__asm        jmp    _T68;
@@ -1450,7 +1444,7 @@ _T137:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     _T157;
 _T146:
-	__asm        mov    nPosition, 0xFFFFFFFF;
+	nPosition = 0xffffffff;
 	__asm        jmp    _T163;
 
 	__asm        jmp    _T163;
@@ -1972,9 +1966,7 @@ _T290:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _T2b4;
 
-	__asm        mov    eax, sFullPath;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    dword ptr [eax+4], 0;
+	sFullPath.reference-><basic_string_ref<char>+0x04:4> = 0x0;
 	__asm        jmp    _T344;
 _T2b4:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
@@ -2956,8 +2948,7 @@ _T3d9:
 _T3e7:
 	this-><Directory+0x0c:4> = 0x0;
 _T3f1:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this-><Directory+0x08:4> = 0x0;
 	__asm        jmp    _T400;
 _T400:
 	__asm        mov    eax, SZ_DEFAULT_FILTER;
@@ -3024,8 +3015,7 @@ _T4aa:
 _T4b8:
 	this-><Directory+0x14:4> = 0x0;
 _T4c2:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this-><Directory+0x10:4> = 0x0;
 	__asm        jmp    _T4d1;
 _T4d1:
 	__asm        mov    eax, bNewAllowParentDirectoryAsEntry;
@@ -3947,7 +3937,7 @@ _Td35:
 _Td7a:
 	sParentDirectory.reference = 0x0;
 _Td84:
-	__asm        mov    sParentDirectory.c_str_ptr, 0;
+	sParentDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _Td93;
 // LINE 308:
 _Td93:
@@ -4086,7 +4076,7 @@ _Tf39:
 _Tf7e:
 	sCurrentDirectory.reference = 0x0;
 _Tf88:
-	__asm        mov    sCurrentDirectory.c_str_ptr, 0;
+	sCurrentDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _Tf97;
 _Tf97:
 	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
@@ -5717,12 +5707,10 @@ _T21:
 	__asm        jmp    _T26;
 // LINE 500:
 _T26:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T32;
 _T32:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    iEnd, eax;
+	iEnd = this-><Directory+0x04:4>;
 	__asm        jmp    _T61;
 _T40:
 	__asm        inc    i;
@@ -6549,10 +6537,7 @@ void Directory::SplitDirectoryPath(const /*packed*/ class basic_string<char>& sP
 	/*bp-0x8*/   uint32_t nDirectoryPathLength;
 
 // LINE 548:
-	__asm        mov    eax, sPath;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    nDirectoryPathLength, eax;
+	nDirectoryPathLength = sPath.reference-><basic_string_ref<char>+0x04:4>;
 	__asm        jmp    _T1a;
 // LINE 549:
 _T1a:

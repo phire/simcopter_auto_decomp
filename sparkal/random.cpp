@@ -86,7 +86,7 @@ void Random::seed(unsigned long j) {
 // LINE 36:
 	this->table[54] = j;
 // LINE 37:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2e;
 _T2b:
 	i++;
@@ -121,7 +121,7 @@ _T2e:
 	__asm        jmp    _T2b;
 // LINE 43:
 _T75:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T84;
 _T81:
 	loop++;
@@ -129,7 +129,7 @@ _T84:
 	__asm        cmp    loop, 4;
 	__asm        jge    _Td3;
 // LINE 44:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T9d;
 _T9a:
 	i++;

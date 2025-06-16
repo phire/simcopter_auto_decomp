@@ -434,7 +434,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0052b0da
 static void $E4() {
 
-	__asm        mov    PlaneClass::lsPlane<vftable>, 0x593220;
+	PlaneClass::lsPlane<vftable> = 0x593220;
 	__asm        jmp    _T15;
 _T15:
 	return;
@@ -477,7 +477,7 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 
 	this-><vftable> = 0x593220;
 // LINE 177:
-	__asm        mov    currentFlag, 0;
+	currentFlag = 0x0;
 	__asm        jmp    _T24;
 _T21:
 	currentFlag++;
@@ -661,7 +661,7 @@ void PlaneClass::ResetAll() {
 	/*bp-0x4*/   int32_t currentPlaneIndex;
 
 // LINE 498:
-	__asm        mov    currentPlaneIndex, 0;
+	currentPlaneIndex = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	currentPlaneIndex++;
@@ -684,7 +684,7 @@ void PlaneClass::ItterateAll() {
 	/*bp-0x4*/   int32_t currentPlaneIndex;
 
 // LINE 548:
-	__asm        mov    currentPlaneIndex, 0;
+	currentPlaneIndex = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	currentPlaneIndex++;
@@ -707,7 +707,7 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 	/*bp-0x4*/   int32_t currentPlaneIndex;
 
 // LINE 580:
-	__asm        mov    currentPlaneIndex, 0;
+	currentPlaneIndex = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	currentPlaneIndex++;
@@ -2146,7 +2146,7 @@ _T2e4:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 1575:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T362;
 _T35c:
 	j++;
@@ -2238,7 +2238,7 @@ _T449:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 1599:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T479;
 _T473:
 	j++;
@@ -2454,7 +2454,7 @@ _T5e3:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 1711:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T75a;
 _T754:
 	j++;
@@ -3337,7 +3337,7 @@ _T262:
 	stop_now = 0x1;
 // LINE 2160:
 _T278:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T287;
 _T284:
 	i++;
@@ -3369,7 +3369,7 @@ _T2c2:
 	return;
 // LINE 2182:
 foundCell:
-	__asm        mov    currentFlag, 3;
+	currentFlag = 0x3;
 	__asm        jmp    _T2d6;
 _T2d3:
 	currentFlag++;
@@ -3935,7 +3935,7 @@ void PlaneClass::TurnOnShields() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2730:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T40;
 _T3d:
 	count++;
@@ -3999,7 +3999,7 @@ void PlaneClass::TurnOffShields() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2752:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T40;
 _T3d:
 	count++;
@@ -4071,7 +4071,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	return 0x0;
 // LINE 2809:
 _T38:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T47;
 _T44:
 	i++;
@@ -4198,7 +4198,7 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 2859:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;

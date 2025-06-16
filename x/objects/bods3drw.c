@@ -253,7 +253,7 @@ _T7c:
 	__asm        cmp    shadeFlag, 1;
 	__asm        jne    _T12a;
 // LINE 209:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tbd;
 _Tb7:
 	i++;
@@ -288,7 +288,7 @@ _T12a:
 	__asm        cmp    shadeFlag, 2;
 	__asm        jne    _T2f2;
 // LINE 216:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T149;
 _T143:
 	i++;
@@ -318,7 +318,7 @@ _T19e:
 	__asm        mov    al, [ebp+eax-0xF8];
 	__asm        mov    hiColor, al;
 // LINE 223:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T1c7;
 _T1c0:
 	j += 0x6;
@@ -408,7 +408,7 @@ _T2f2:
 	__asm        cmp    shadeFlag, 1;
 	__asm        jne    _T430;
 // LINE 233:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T311;
 _T30b:
 	i++;
@@ -542,7 +542,7 @@ _T4c4:
 	__asm        cmp    ebx, ditherLimit;
 	__asm        jne    _T5f5;
 // LINE 267:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T519;
 _T513:
 	j++;
@@ -647,7 +647,7 @@ _T687:
 	return;
 // LINE 308:
 _T68c:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T6a1;
 _T69b:
 	i++;
@@ -814,7 +814,7 @@ _T84:
 	__asm        fdivr  qword ptr ds:[0x5939C8];
 	__asm        fstp   yStride;
 // LINE 455:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T10d;
 _T10a:
 	i++;
@@ -1344,7 +1344,7 @@ _T52:
 	width++;
 // LINE 677:
 _T61:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T70;
 _T6d:
 	i++;
@@ -1506,7 +1506,7 @@ _T1cb:
 	return;
 // LINE 725:
 _T215:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T224;
 _T221:
 	i++;
@@ -1528,8 +1528,7 @@ _T224:
 	__asm        imul   eax, Pbufwidth;
 	__asm        add    writeBufferTmp, eax;
 // LINE 738:
-	__asm        mov    eax, startWidth;
-	__asm        mov    j, eax;
+	j = startWidth;
 	__asm        jmp    _T264;
 _T261:
 	j++;
@@ -1614,7 +1613,7 @@ _T318:
 	segLen = 0x1;
 // LINE 764:
 _T329:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T338;
 _T335:
 	i++;
@@ -1789,7 +1788,7 @@ _T2f:
 	return;
 // LINE 855:
 _T3e:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4d;
 _T4a:
 	i++;
@@ -1937,7 +1936,7 @@ _T1a2:
 	__asm        add    ecx, buffer1;
 	__asm        mov    writeBuffer, ecx;
 // LINE 896:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1de;
 _T1db:
 	i++;
@@ -1948,7 +1947,7 @@ _T1de:
 // LINE 898:
 	writeBufferTmp = writeBuffer;
 // LINE 900:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T1ff;
 _T1fc:
 	j++;
@@ -2013,7 +2012,7 @@ _T273:
 	__asm        add    ecx, buffer1;
 	__asm        mov    writeBuffer, ecx;
 // LINE 920:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2a5;
 _T2a2:
 	i++;

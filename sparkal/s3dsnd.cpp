@@ -221,7 +221,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00441e45
 static void $E54() {
 
-	__asm        mov    glMasterVolume, 0x2710;
+	glMasterVolume = 0x2710;
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -239,10 +239,10 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00441e74
 static void $E57() {
 
-	__asm        mov    gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00>, 0x58F5C8;
+	gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00> = 0x58f5c8;
 	__asm        jmp    _T15;
 _T15:
-	__asm        mov    gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00>, 0x58F5C0;
+	gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00> = 0x58f5c0;
 	__asm        jmp    _T24;
 _T24:
 	return;
@@ -294,7 +294,7 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, /*p
 // LINE 88:
 	glMasterVolume = currentSoundPreferences->lMasterVolume;
 // LINE 89:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T55;
 _T52:
 	i++;
@@ -344,7 +344,7 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 131:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;
@@ -5201,7 +5201,7 @@ _T49b1:
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 450:
-	__asm        mov    count, 0x62;
+	count = 0x62;
 	__asm        jmp    _T49de;
 _T49d8:
 	count++;

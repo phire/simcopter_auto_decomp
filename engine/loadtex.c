@@ -167,7 +167,7 @@ _Tf8:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 188:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T14d;
 _T14a:
 	i++;
@@ -383,7 +383,7 @@ _T11c:
 	baseptr = basearg;
 // LINE 346:
 _T122:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T131;
 _T12e:
 	i++;

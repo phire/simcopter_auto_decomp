@@ -412,7 +412,7 @@ _T8c:
 _Td2:
 	pDestinationImage = this->mpBits;
 // LINE 119:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tf6;
 _Tf0:
 	i++;

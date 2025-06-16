@@ -963,8 +963,7 @@ _Ta4:
 _Tb2:
 	this->sCallSign.reference = 0x0;
 _Tbc:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->sCallSign.c_str_ptr = 0x0;
 	__asm        jmp    _Tcb;
 _Tcb:
 	__asm        push   0x10;
@@ -993,8 +992,7 @@ _T110:
 _T11e:
 	this->sStationBaseDirectory.reference = 0x0;
 _T128:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x40], 0;
+	this->sStationBaseDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T137;
 _T137:
 	__asm        push   0x10;
@@ -1023,8 +1021,7 @@ _T17c:
 _T18a:
 	this->sMusicDirectory.reference = 0x0;
 _T194:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x48], 0;
+	this->sMusicDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T1a3;
 _T1a3:
 	__asm        mov    eax, this;
@@ -1075,8 +1072,7 @@ _T230:
 _T23e:
 	this->sDJDirectory.reference = 0x0;
 _T248:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 0;
+	this->sDJDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T257;
 _T257:
 	__asm        mov    eax, this;
@@ -1127,8 +1123,7 @@ _T2e4:
 _T2f2:
 	this->sCommercialDirectory.reference = 0x0;
 _T2fc:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x70], 0;
+	this->sCommercialDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T30b;
 _T30b:
 	__asm        mov    eax, this;
@@ -1168,8 +1163,7 @@ _T353:
 _T380:
 	this->sJingleDirectory.reference = 0x0;
 _T38d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0;
+	this->sJingleDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T39f;
 _T39f:
 	__asm        mov    eax, this;
@@ -1313,8 +1307,7 @@ _T86:
 _T94:
 	this->sCallSign.reference = 0x0;
 _T9e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->sCallSign.c_str_ptr = 0x0;
 	__asm        jmp    _Tad;
 _Tad:
 	__asm        push   0x10;
@@ -1343,8 +1336,7 @@ _Tf2:
 _T100:
 	this->sStationBaseDirectory.reference = 0x0;
 _T10a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x40], 0;
+	this->sStationBaseDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T119;
 _T119:
 	__asm        push   0x10;
@@ -1373,8 +1365,7 @@ _T15e:
 _T16c:
 	this->sMusicDirectory.reference = 0x0;
 _T176:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x48], 0;
+	this->sMusicDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T185;
 _T185:
 	__asm        mov    eax, this;
@@ -1414,8 +1405,7 @@ _T1cd:
 _T1f7:
 	this->sDJDirectory.reference = 0x0;
 _T201:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 0;
+	this->sDJDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T210;
 _T210:
 	__asm        mov    eax, this;
@@ -1455,8 +1445,7 @@ _T258:
 _T282:
 	this->sCommercialDirectory.reference = 0x0;
 _T28c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x70], 0;
+	this->sCommercialDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T29b;
 _T29b:
 	__asm        mov    eax, this;
@@ -1496,8 +1485,7 @@ _T2e3:
 _T310:
 	this->sJingleDirectory.reference = 0x0;
 _T31d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0;
+	this->sJingleDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T32f;
 _T32f:
 	__asm        mov    eax, this;
@@ -4130,7 +4118,7 @@ _T6c:
 _T7a:
 	sCurrentLastItem.reference = 0x0;
 _T81:
-	__asm        mov    sCurrentLastItem.c_str_ptr, 0;
+	sCurrentLastItem.c_str_ptr = 0x0;
 	__asm        jmp    _T8d;
 // LINE 351:
 _T8d:
@@ -4159,7 +4147,7 @@ _Te7:
 _Tf5:
 	sTempItem.reference = 0x0;
 _Tfc:
-	__asm        mov    sTempItem.c_str_ptr, 0;
+	sTempItem.c_str_ptr = 0x0;
 	__asm        jmp    _T108;
 // LINE 357:
 _T108:
@@ -5215,7 +5203,7 @@ _Tea:
 _T112:
 	__asm        jmp    _T117;
 _T117:
-	__asm        add    stringArray.finish, 8;
+	stringArray.finish += 0x8;
 	__asm        jmp    _T138;
 _T120:
 	__asm        jmp    _T125;
@@ -5366,7 +5354,7 @@ _T2c3:
 	__asm        jmp    _T2c8;
 // LINE 431:
 _T2c8:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2d4;
 _T2d4:
 	__asm        jmp    _T2d9;
@@ -6493,7 +6481,7 @@ _T6c:
 _T7a:
 	sStationDirectoryParent.reference = 0x0;
 _T81:
-	__asm        mov    sStationDirectoryParent.c_str_ptr, 0;
+	sStationDirectoryParent.c_str_ptr = 0x0;
 	__asm        jmp    _T8d;
 // LINE 564:
 _T8d:
@@ -6522,7 +6510,7 @@ _Te7:
 _Tf5:
 	sStationDirectoryName.reference = 0x0;
 _Tfc:
-	__asm        mov    sStationDirectoryName.c_str_ptr, 0;
+	sStationDirectoryName.c_str_ptr = 0x0;
 	__asm        jmp    _T108;
 // LINE 569:
 _T108:
@@ -6536,7 +6524,7 @@ _T108:
 	__asm        call   Directory::SplitDirectoryPath;
 	__asm        add    esp, 0xC;
 // LINE 570:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T131;
 _T12e:
 	i++;
@@ -7415,7 +7403,7 @@ int32_t Radio::SetStation(enum RadioStationType radioStationType) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 849:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T18:
 	__asm        jmp    _T1d;
@@ -7482,7 +7470,7 @@ int32_t Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 863:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T18:
 	__asm        jmp    _T1d;
@@ -7596,7 +7584,7 @@ int32_t Radio::StationDirectoryNameIsValid(/*packed*/ class basic_string<char>& 
 	/*bp-0x4*/   int32_t i;
 
 // LINE 898:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;

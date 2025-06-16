@@ -105,7 +105,7 @@ _T14:
 	return 0x0;
 // LINE 148:
 _T2f:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3e;
 _T3b:
 	i++;
@@ -245,7 +245,7 @@ _T1d1:
 	return 0x0;
 // LINE 193:
 _T1ec:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1fb;
 _T1f8:
 	i++;
@@ -367,7 +367,7 @@ _T348:
 	return 0x0;
 // LINE 224:
 _T363:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T372;
 _T36f:
 	i++;
@@ -606,7 +606,7 @@ _T24:
 	return 0x1;
 // LINE 375:
 _T48:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T57;
 _T54:
 	i++;
@@ -803,7 +803,7 @@ _T24:
 	return 0x1;
 // LINE 651:
 _T3b:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4a;
 _T47:
 	i++;

@@ -1225,8 +1225,7 @@ _Te1:
 _Tef:
 	this->sMessage.reference = 0x0;
 _Tf9:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
+	this->sMessage.c_str_ptr = 0x0;
 	__asm        jmp    _T108;
 _T108:
 	__asm        push   0x10;
@@ -1255,8 +1254,7 @@ _T14d:
 _T15e:
 	this->sButtonImageFileName.reference = 0x0;
 _T16b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
+	this->sButtonImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T17d;
 _T17d:
 	__asm        push   0x10;
@@ -1285,8 +1283,7 @@ _T1c2:
 _T1d3:
 	this->sAnimationImageFileName.reference = 0x0;
 _T1e0:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0;
+	this->sAnimationImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T1f2;
 _T1f2:
 	__asm        mov    eax, lNewType;
@@ -1701,8 +1698,7 @@ _T226:
 _T234:
 	this->sMessage.reference = 0x0;
 _T23e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
+	this->sMessage.c_str_ptr = 0x0;
 	__asm        jmp    _T24d;
 _T24d:
 	__asm        push   0x10;
@@ -1731,8 +1727,7 @@ _T292:
 _T2a3:
 	this->sButtonImageFileName.reference = 0x0;
 _T2b0:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
+	this->sButtonImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T2c2;
 _T2c2:
 	__asm        push   0x10;
@@ -1761,8 +1756,7 @@ _T307:
 _T318:
 	this->sAnimationImageFileName.reference = 0x0;
 _T325:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0;
+	this->sAnimationImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T337;
 _T337:
 	__asm        mov    eax, lNewType;
@@ -2037,7 +2031,7 @@ _T87:
 _T92:
 	sText.reference = 0x0;
 _T99:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _Ta5;
 // LINE 92:
 _Ta5:
@@ -2046,7 +2040,7 @@ _Ta5:
 // LINE 94:
 	nButtonCount = 0x0;
 // LINE 95:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _Tc7;
 _Tc3:
 	__asm        shl    i, 1;
@@ -2701,13 +2695,11 @@ _T9f2:
 	tempAnimationWindow = 0x0;
 // LINE 142:
 _T9f9:
-	__asm        mov    eax, tempAnimationWindow;
-	__asm        mov    dword ptr [eax+0x7C], 0x37;
+	tempAnimationWindow->lMillisecondsBetweenFrames = 0x37;
 	__asm        jmp    _Ta08;
 // LINE 143:
 _Ta08:
-	__asm        mov    eax, tempAnimationWindow;
-	__asm        mov    dword ptr [eax+0x88], 2;
+	tempAnimationWindow->nAnimationLoopType = 0x2;
 	__asm        jmp    _Ta1a;
 // LINE 144:
 _Ta1a:
@@ -3673,14 +3665,12 @@ _T66:
 	__asm        cmp    dword ptr [eax+0x8C], 1;
 	__asm        jne    _T9d;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x8C], 0xFFFFFFFF;
+	this->nAnimationDirection = 0xffffffff;
 	__asm        jmp    _T98;
 _T98:
 	__asm        jmp    _Taf;
 _T9d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x8C], 1;
+	this->nAnimationDirection = 0x1;
 	__asm        jmp    _Taf;
 _Taf:
 	__asm        jmp    _Tb4;
@@ -3702,8 +3692,7 @@ _Tcc:
 	__asm        cmp    dword ptr [eax+0x8C], 1;
 	__asm        jne    _Tfe;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 0;
+	this->lCurrentFrame = 0x0;
 	__asm        jmp    _T111;
 _Tfe:
 	__asm        mov    eax, this;
@@ -3801,8 +3790,7 @@ _T3d:
 	__asm        cmp    dword ptr [eax+0x8C], 1;
 	__asm        jne    _T5f;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 0;
+	this->lCurrentFrame = 0x0;
 	__asm        jmp    _T72;
 _T5f:
 	__asm        mov    eax, this;
@@ -3944,7 +3932,7 @@ _T70:
 _T7e:
 	sText.reference = 0x0;
 _T85:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 527:
 _T91:
@@ -6296,7 +6284,7 @@ _T6c:
 _T7a:
 	sSkyPreviewFileName.reference = 0x0;
 _T81:
-	__asm        mov    sSkyPreviewFileName.c_str_ptr, 0;
+	sSkyPreviewFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T8d;
 // LINE 816:
 _T8d:
@@ -6325,7 +6313,7 @@ _Te7:
 _Tf8:
 	sSkyPreviewFilePath.reference = 0x0;
 _T102:
-	__asm        mov    sSkyPreviewFilePath.c_str_ptr, 0;
+	sSkyPreviewFilePath.c_str_ptr = 0x0;
 	__asm        jmp    _T111;
 // LINE 817:
 _T111:
@@ -6354,7 +6342,7 @@ _T16b:
 _T17c:
 	sGroundPreviewFileName.reference = 0x0;
 _T186:
-	__asm        mov    sGroundPreviewFileName.c_str_ptr, 0;
+	sGroundPreviewFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T195;
 // LINE 818:
 _T195:
@@ -6383,7 +6371,7 @@ _T1ef:
 _T200:
 	sGroundPreviewFilePath.reference = 0x0;
 _T20a:
-	__asm        mov    sGroundPreviewFilePath.c_str_ptr, 0;
+	sGroundPreviewFilePath.c_str_ptr = 0x0;
 	__asm        jmp    _T219;
 // LINE 819:
 _T219:
@@ -6412,7 +6400,7 @@ _T273:
 _T281:
 	sBuildingPreviewFileName.reference = 0x0;
 _T288:
-	__asm        mov    sBuildingPreviewFileName.c_str_ptr, 0;
+	sBuildingPreviewFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T294;
 // LINE 820:
 _T294:
@@ -6441,7 +6429,7 @@ _T2ee:
 _T2fc:
 	sBuildingPreviewFilePath.reference = 0x0;
 _T303:
-	__asm        mov    sBuildingPreviewFilePath.c_str_ptr, 0;
+	sBuildingPreviewFilePath.c_str_ptr = 0x0;
 	__asm        jmp    _T30f;
 // LINE 822:
 _T30f:
@@ -7701,8 +7689,7 @@ _Tbf:
 	__asm        cmp    dword ptr [eax], 2;
 	__asm        jne    _Te7;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 1;
+	this->bShowBuildingTextures = 0x1;
 	__asm        jmp    _Tf1;
 _Te7:
 	this->bShowBuildingTextures = 0x0;
@@ -7722,8 +7709,7 @@ _T103:
 	__asm        cmp    dword ptr [eax], 2;
 	__asm        jne    _T12b;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 1;
+	this->bShowGroundTextures = 0x1;
 	__asm        jmp    _T135;
 _T12b:
 	this->bShowGroundTextures = 0x0;
@@ -7743,8 +7729,7 @@ _T147:
 	__asm        cmp    dword ptr [eax], 2;
 	__asm        jne    _T16f;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 1;
+	this->bShowSkyAndClouds = 0x1;
 	__asm        jmp    _T179;
 _T16f:
 	this->bShowSkyAndClouds = 0x0;
@@ -7860,7 +7845,7 @@ _T70:
 _T7e:
 	sText.reference = 0x0;
 _T85:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 1004:
 _T91:
@@ -9291,8 +9276,7 @@ _T34:
 	__asm        cmp    dword ptr [eax], 0x140;
 	__asm        je     _T52;
 
-	__asm        mov    eax, currentRadioPreferences;
-	__asm        mov    dword ptr [eax+4], 1;
+	currentRadioPreferences.bPreferToBeOn = 0x1;
 	__asm        jmp    _T5c;
 _T52:
 	currentRadioPreferences.bPreferToBeOn = 0x0;
@@ -9311,8 +9295,7 @@ _T5c:
 	__asm        cmp    eax, 2;
 	__asm        jne    _Tb2;
 
-	__asm        mov    eax, currentRadioPreferences;
-	__asm        mov    dword ptr [eax+0xC], 1;
+	currentRadioPreferences.bOptionDJ = 0x1;
 	__asm        jmp    _Tbc;
 _Tb2:
 	currentRadioPreferences.bOptionDJ = 0x0;
@@ -9327,8 +9310,7 @@ _Tbc:
 	__asm        cmp    eax, 2;
 	__asm        jne    _Tee;
 
-	__asm        mov    eax, currentRadioPreferences;
-	__asm        mov    dword ptr [eax+0x10], 1;
+	currentRadioPreferences.bOptionCommercials = 0x1;
 	__asm        jmp    _Tf8;
 _Tee:
 	currentRadioPreferences.bOptionCommercials = 0x0;
@@ -9470,7 +9452,7 @@ void CitySettingsWindow::CitySettingsWindow(/*packed*/ class MRect& rectNewPosit
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58FDD0;
 // LINE 1324:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4c;
 _T49:
 	i++;
@@ -9522,7 +9504,7 @@ _T70:
 _T7e:
 	sText.reference = 0x0;
 _T85:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 1338:
 _T91:
@@ -11790,8 +11772,7 @@ _T7a:
 _T8b:
 	this->myBackgroundImageFileName.reference = 0x0;
 _T98:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD0], 0;
+	this->myBackgroundImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _Taa;
 _Taa:
 	this-><PopupMenuExtra+0x00> = 0x58fe98;
@@ -12413,7 +12394,7 @@ _T14b:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1617:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T1af;
 _T1ac:
 	i++;
@@ -13127,7 +13108,7 @@ _T51:
 _T5c:
 	sImagePath.reference = 0x0;
 _T63:
-	__asm        mov    sImagePath.c_str_ptr, 0;
+	sImagePath.c_str_ptr = 0x0;
 	__asm        jmp    _T6f;
 // LINE 1693:
 _T6f:
@@ -13561,8 +13542,7 @@ _T71:
 _T82:
 	this->myBackgroundImageFileName.reference = 0x0;
 _T8f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA8], 0;
+	this->myBackgroundImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _Ta1;
 _Ta1:
 	this-><TooltipWindow+0x00> = 0x58fff8;
@@ -13875,8 +13855,7 @@ _T71:
 _T82:
 	this->myBackgroundImageFileName.reference = 0x0;
 _T8f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA8], 0;
+	this->myBackgroundImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _Ta1;
 _Ta1:
 	this-><TooltipWindow+0x00> = 0x58fff8;
@@ -14559,7 +14538,7 @@ _T51:
 _T5c:
 	sImagePath.reference = 0x0;
 _T63:
-	__asm        mov    sImagePath.c_str_ptr, 0;
+	sImagePath.c_str_ptr = 0x0;
 	__asm        jmp    _T6f;
 // LINE 1899:
 _T6f:
@@ -14820,8 +14799,7 @@ void TooltipWindow::SetTextAndShow(/*packed*/ class MPoint& ptNewPosition, /*pac
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x48];
 // LINE 1929:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 1;
+	this-><TooltipWindow+0x54> = 0x1;
 	__asm        jmp    _T42;
 // LINE 1930:
 _T42:
@@ -14849,8 +14827,7 @@ void TooltipWindow::SetTextAndShow(/*packed*/ class MPoint& ptNewPosition, int32
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 1939:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 1;
+	this-><TooltipWindow+0x54> = 0x1;
 	__asm        jmp    _T45;
 // LINE 1940:
 _T45:
@@ -16479,8 +16456,7 @@ _T111:
 	__asm        cmp    [eax+0xB8], ecx;
 	__asm        jae    _T14c;
 _T13a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xBC], 1;
+	this->bCaretTimerExpired = 0x1;
 	__asm        jmp    _T159;
 _T14c:
 	this->bCaretTimerExpired = 0x0;
@@ -17271,9 +17247,7 @@ _T3df:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _T403;
 
-	__asm        mov    eax, sText;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    dword ptr [eax+4], 0;
+	sText.reference-><basic_string_ref<char>+0x04:4> = 0x0;
 	__asm        jmp    _T49c;
 _T403:
 	__asm        cmp    dword ptr [ebp-0x28], 0;
@@ -17946,8 +17920,7 @@ _T111:
 	__asm        cmp    [eax+0xC4], ecx;
 	__asm        jae    _T14c;
 _T13a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 1;
+	this->bScrollTimerExpired = 0x1;
 	__asm        jmp    _T159;
 _T14c:
 	this->bScrollTimerExpired = 0x0;
@@ -18046,7 +18019,7 @@ void CheckupWindow::CheckupWindow(/*packed*/ class MRect& rectNewPosition, int32
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5903A0;
 // LINE 2421:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4c;
 _T49:
 	i++;
@@ -18060,7 +18033,7 @@ _T4c:
 	__asm        jmp    _T49;
 // LINE 2423:
 _T69:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T78;
 _T75:
 	i++;
@@ -18112,7 +18085,7 @@ _T70:
 _T7e:
 	sText.reference = 0x0;
 _T85:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 2437:
 _T91:

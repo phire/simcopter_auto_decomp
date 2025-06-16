@@ -32,7 +32,7 @@ _T23:
 	return 0xffffff99;
 // LINE 49:
 _T37:
-	__asm        mov    nCt, 0;
+	nCt = 0x0;
 	__asm        jmp    _T46;
 _T43:
 	nCt++;
@@ -142,7 +142,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	return 0xffffff9a;
 // LINE 88:
 _Tc6:
-	__asm        mov    nCt, 0;
+	nCt = 0x0;
 	__asm        jmp    _Tdb;
 _Td5:
 	nCt++;
@@ -241,7 +241,7 @@ void TWKReadAllFiles(char * pszTWKFile) {
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 171:
-	__asm        mov    nCt, 0;
+	nCt = 0x0;
 	__asm        jmp    _T38;
 _T32:
 	nCt++;
@@ -339,7 +339,7 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	__asm        cmp    nNumCtrl, 0xFFFFFF9A;
 	__asm        je     _T1ef;
 // LINE 216:
-	__asm        mov    nCt2, 0;
+	nCt2 = 0x0;
 	__asm        jmp    _T7e;
 _T78:
 	nCt2++;

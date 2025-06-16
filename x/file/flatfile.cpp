@@ -116,8 +116,7 @@ _T2d:
 	/*bp-0x4*/   /*unpacked*/ class FlatFile *srch;
 
 // LINE 44:
-	__asm        mov    eax, FlatFile::sList;
-	__asm        mov    srch, eax;
+	srch = FlatFile::sList;
 	__asm        jmp    _T1f;
 _T16:
 	srch = srch->fNext;
@@ -205,7 +204,7 @@ _T32:
 // Block start:
 	/*bp-0xc*/   long test;
 	/*bp-0x10c*/ char cstrbuff[256]; // 0x100 bytes
-	__asm        mov    test, 1;
+	test = 0x1;
 	__asm        jmp    _T61;
 _T5e:
 	test++;
@@ -716,8 +715,7 @@ short FlatFile::CheckForLeaks() {
 // LINE 302:
 	total = 0x0;
 // LINE 304:
-	__asm        mov    eax, FlatFile::sList;
-	__asm        mov    list, eax;
+	list = FlatFile::sList;
 	__asm        jmp    _T25;
 _T1c:
 	list = list->fNext;

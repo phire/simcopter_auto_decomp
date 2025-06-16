@@ -65,11 +65,7 @@ void PtrList<cCopterAnim>::Iter::Reset() {
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T2a;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->fCur = this->fObject->fFirst;
 	__asm        jmp    _T34;
 _T2a:
 	this->fCur = 0x0;
@@ -229,11 +225,7 @@ void PtrList<cCopterBody>::Iter::Reset() {
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T2a;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->fCur = this->fObject->fFirst;
 	__asm        jmp    _T34;
 _T2a:
 	this->fCur = 0x0;

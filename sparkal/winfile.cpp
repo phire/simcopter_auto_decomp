@@ -758,7 +758,7 @@ _T55:
 _T60:
 	sTitle.reference = 0x0;
 _T67:
-	__asm        mov    sTitle.c_str_ptr, 0;
+	sTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T73;
 // LINE 64:
 _T73:
@@ -787,7 +787,7 @@ _Tb8:
 _Tc3:
 	sFilter.reference = 0x0;
 _Tca:
-	__asm        mov    sFilter.c_str_ptr, 0;
+	sFilter.c_str_ptr = 0x0;
 	__asm        jmp    _Td6;
 // LINE 66:
 _Td6:
@@ -1216,7 +1216,7 @@ _T55:
 _T60:
 	sTitle.reference = 0x0;
 _T67:
-	__asm        mov    sTitle.c_str_ptr, 0;
+	sTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T73;
 // LINE 122:
 _T73:
@@ -1245,7 +1245,7 @@ _Tb8:
 _Tc3:
 	sFilter.reference = 0x0;
 _Tca:
-	__asm        mov    sFilter.c_str_ptr, 0;
+	sFilter.c_str_ptr = 0x0;
 	__asm        jmp    _Td6;
 // LINE 124:
 _Td6:

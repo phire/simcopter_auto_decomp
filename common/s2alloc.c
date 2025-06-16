@@ -149,7 +149,7 @@ int32_t S2AllocPool(unsigned long poolsize) {
 	return 0xffffffff;
 // LINE 299:
 _T20:
-	__asm        mov    index, 0;
+	index = 0x0;
 	__asm        jmp    _T2f;
 _T2c:
 	index++;

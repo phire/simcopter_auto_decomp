@@ -109,7 +109,7 @@ static void $E45() {
 _T5b:
 	__asm        jmp    _T60;
 _T60:
-	__asm        mov    gGraduationState.nGraduationState, 0;
+	gGraduationState.nGraduationState = 0x0;
 	__asm        jmp    _T6f;
 _T6f:
 	return;
@@ -436,7 +436,7 @@ void CareerCityTweakInit() {
 // LINE 268:
 	nPvals = 0x9;
 // LINE 273:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1f;
 _T1c:
 	i++;
@@ -1431,7 +1431,7 @@ void InitializeAllCareerCitiesInfo() {
 // LINE 739:
 	reinterpret_cast<uint32_t>(gGameFilePath[44]) = SZ_CAREER_CITY_FILE_NAME_BASE_31;
 // LINE 744:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tb58;
 _Tb55:
 	i++;

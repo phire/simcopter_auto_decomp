@@ -227,7 +227,7 @@ _T90:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _Tbd;
 
-	__asm        mov    lJoystickValue, 1;
+	lJoystickValue = 0x1;
 	__asm        jmp    _Tc4;
 _Tbd:
 	lJoystickValue = 0x0;
@@ -282,7 +282,7 @@ _T13d:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T16a;
 
-	__asm        mov    lJoystickValue, 1;
+	lJoystickValue = 0x1;
 	__asm        jmp    _T171;
 _T16a:
 	lJoystickValue = 0x0;

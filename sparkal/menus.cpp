@@ -517,8 +517,7 @@ _T59:
 _T67:
 	this->myUserMenuWindowDescription.sImageFileName.reference = 0x0;
 _T71:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 0;
+	this->myUserMenuWindowDescription.sImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T80;
 _T80:
 	__asm        jmp    _T85;
@@ -947,8 +946,7 @@ _T2e1:
 _T2ef:
 	this->myUserMenuWindowDescription.sImageFileName.reference = 0x0;
 _T2f9:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 0;
+	this->myUserMenuWindowDescription.sImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T308;
 _T308:
 	__asm        mov    eax, newUserMenuWindowDescription;
@@ -1077,7 +1075,7 @@ _T24:
 	__asm        sar    eax, 2;
 	__asm        mov    iEnd, eax;
 // LINE 70:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4b;
 _T48:
 	i++;
@@ -1465,7 +1463,7 @@ _T401:
 	__asm        cmp    dword ptr [eax+0x90], 0xFFFFFFFF;
 	__asm        je     _Tb28;
 // LINE 121:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T429;
 _T423:
 	i++;
@@ -1588,8 +1586,7 @@ _T617:
 _T637:
 	__asm        jmp    _T63c;
 _T63c:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0xCC], 4;
+	this->myTextWindowPtrArray.finish += 0x4;
 	__asm        jmp    _Tb1e;
 _T64e:
 	__asm        jmp    _T653;
@@ -1927,7 +1924,7 @@ _T1b:
 	__asm        sar    eax, 2;
 	__asm        mov    iEnd, eax;
 // LINE 171:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T42;
 _T3f:
 	i++;
@@ -2858,7 +2855,7 @@ _T57:
 _T62:
 	sImageFile.reference = 0x0;
 _T69:
-	__asm        mov    sImageFile.c_str_ptr, 0;
+	sImageFile.c_str_ptr = 0x0;
 	__asm        jmp    _T75;
 // LINE 427:
 _T75:
@@ -2887,7 +2884,7 @@ _Tba:
 _Tc5:
 	sImagePath.reference = 0x0;
 _Tcc:
-	__asm        mov    sImagePath.c_str_ptr, 0;
+	sImagePath.c_str_ptr = 0x0;
 	__asm        jmp    _Td8;
 // LINE 429:
 _Td8:
@@ -3420,7 +3417,7 @@ _T104:
 	__asm        mov    ecx, this;
 	__asm        call   CopterMainMenu::GetCoordinatesForLights;
 // LINE 480:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T12c;
 _T129:
 	i++;
@@ -3469,7 +3466,7 @@ _T1b0:
 	__asm        mov    ecx, this;
 	__asm        call   CopterMainMenu::GetCoordinatesForRatchets;
 // LINE 486:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1d2;
 _T1cf:
 	i++;
@@ -3758,7 +3755,7 @@ _T57:
 _T62:
 	sImageFile.reference = 0x0;
 _T69:
-	__asm        mov    sImageFile.c_str_ptr, 0;
+	sImageFile.c_str_ptr = 0x0;
 	__asm        jmp    _T75;
 // LINE 632:
 _T75:
@@ -3787,7 +3784,7 @@ _Tba:
 _Tc5:
 	sImagePath.reference = 0x0;
 _Tcc:
-	__asm        mov    sImagePath.c_str_ptr, 0;
+	sImagePath.c_str_ptr = 0x0;
 	__asm        jmp    _Td8;
 // LINE 634:
 _Td8:

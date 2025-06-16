@@ -803,8 +803,7 @@ _T35d:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T397;
 _T397:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11E], 0;
+	this->mySecondImage = 0x0;
 	__asm        jmp    _T3a9;
 _T3a9:
 	__asm        mov    eax, this;
@@ -821,8 +820,7 @@ _T3c8:
 	__asm        cmp    G_daynight, 0;
 	__asm        jne    _T3fd;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF2], 1;
+	this->bDaytime = 0x1;
 	__asm        jmp    _T40a;
 _T3fd:
 	this->bDaytime = 0x0;
@@ -981,8 +979,7 @@ _T164:
 	__asm        mov    list<HotSpot>::free_list, eax;
 	__asm        jmp    _T17b;
 _T17b:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x11A];
+	this->myHotSpots.length--;
 	__asm        jmp    _T189;
 _T189:
 	__asm        jmp    _T68;
@@ -1080,7 +1077,7 @@ _T70:
 _T7e:
 	sText.reference = 0x0;
 _T85:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 78:
 _T91:
@@ -1090,8 +1087,7 @@ _T96:
 	__asm        cmp    dword ptr [eax+0xF2], 0;
 	__asm        je     _Tb6;
 
-	__asm        mov    eax, SZ_HANGAR_DAY_BUTTON_FILE_NAME;
-	__asm        mov    szButtonFileName, eax;
+	szButtonFileName = SZ_HANGAR_DAY_BUTTON_FILE_NAME;
 	__asm        jmp    _Tbe;
 _Tb6:
 	szButtonFileName = SZ_HANGAR_NIGHT_BUTTON_FILE_NAME;
@@ -2847,10 +2843,7 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 _T11:
 	lHangarWindowWidth = (this-><HangarWindow+0x18> - this-><HangarWindow+0x10>);
 // LINE 315:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x11E];
-	__asm        mov    eax, [eax+8];
-	__asm        mov    lHangarGraphicWidth, eax;
+	lHangarGraphicWidth = this->mySecondImage-><CBackBuffer+0x08:4>;
 	__asm        jmp    _T34;
 // LINE 317:
 _T34:
@@ -3104,7 +3097,7 @@ _T5b:
 _T66:
 	sHelp.reference = 0x0;
 _T6d:
-	__asm        mov    sHelp.c_str_ptr, 0;
+	sHelp.c_str_ptr = 0x0;
 	__asm        jmp    _T79;
 // LINE 441:
 _T79:

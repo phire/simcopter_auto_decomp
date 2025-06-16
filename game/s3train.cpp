@@ -566,7 +566,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0052ddba
 static void $E3() {
 
-	__asm        mov    TrainClass::lsTrain<vftable>, 0x593238;
+	TrainClass::lsTrain<vftable> = 0x593238;
 	__asm        jmp    _T15;
 _T15:
 	return;
@@ -610,7 +610,7 @@ void TrainClass::TrainClass(long mapx, long mapy) {
 
 	this-><vftable> = 0x593238;
 // LINE 183:
-	__asm        mov    currentFlag, 0;
+	currentFlag = 0x0;
 	__asm        jmp    _T24;
 _T21:
 	currentFlag++;
@@ -914,7 +914,7 @@ void TrainClass::ResetAll() {
 	/*bp-0x4*/   int32_t currentTrainIndex;
 
 // LINE 592:
-	__asm        mov    currentTrainIndex, 0;
+	currentTrainIndex = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	currentTrainIndex++;
@@ -937,7 +937,7 @@ void TrainClass::ItterateAll() {
 	/*bp-0x4*/   int32_t currentTrainIndex;
 
 // LINE 641:
-	__asm        mov    currentTrainIndex, 0;
+	currentTrainIndex = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	currentTrainIndex++;
@@ -960,7 +960,7 @@ int32_t TrainClass::FindTrainToCrash(long mission_id) {
 	/*bp-0x4*/   int32_t currentTrainIndex;
 
 // LINE 672:
-	__asm        mov    currentTrainIndex, 0;
+	currentTrainIndex = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	currentTrainIndex++;
@@ -1819,7 +1819,7 @@ _T2c4:
 // LINE 1192:
 	num_debris = 0x3;
 // LINE 1193:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T377;
 _T374:
 	j++;
@@ -1946,7 +1946,7 @@ _T456:
 // LINE 1226:
 	num_debris = 0x3;
 // LINE 1227:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T4ed;
 _T4ea:
 	j++;
@@ -2073,7 +2073,7 @@ _T5cc:
 // LINE 1260:
 	num_debris = 0x3;
 // LINE 1261:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T663;
 _T660:
 	j++;
@@ -2550,7 +2550,7 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const /*packed
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T73;
 _T68:
-	__asm        mov    cellType, 0;
+	cellType = 0x0;
 	__asm        jmp    _Td6;
 _T73:
 	__asm        mov    eax, collisionPoint;
@@ -5155,7 +5155,7 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const /*packed*
 	__asm        cmp    dword ptr [eax+4], 0x80;
 	__asm        jl     _Tbe;
 _Tb3:
-	__asm        mov    currentTile, 0;
+	currentTile = 0x0;
 	__asm        jmp    _T100;
 _Tbe:
 	__asm        mov    eax, point;
@@ -5196,7 +5196,7 @@ _T100:
 	__asm        cmp    dword ptr [eax+0x79], 0x80;
 	__asm        jl     _T145;
 _T13a:
-	__asm        mov    northTile, 0;
+	northTile = 0x0;
 	__asm        jmp    _T189;
 _T145:
 	__asm        mov    eax, this;
@@ -5237,7 +5237,7 @@ _T189:
 	__asm        cmp    dword ptr [eax+0x81], 0x80;
 	__asm        jl     _T1d4;
 _T1c9:
-	__asm        mov    southTile, 0;
+	southTile = 0x0;
 	__asm        jmp    _T21e;
 _T1d4:
 	__asm        mov    eax, this;
@@ -5278,7 +5278,7 @@ _T21e:
 	__asm        cmp    dword ptr [eax+0x89], 0x80;
 	__asm        jl     _T26f;
 _T264:
-	__asm        mov    eastTile, 0;
+	eastTile = 0x0;
 	__asm        jmp    _T2bf;
 _T26f:
 	__asm        mov    eax, this;
@@ -5319,7 +5319,7 @@ _T2bf:
 	__asm        cmp    dword ptr [eax+0x91], 0x80;
 	__asm        jl     _T310;
 _T305:
-	__asm        mov    westTile, 0;
+	westTile = 0x0;
 	__asm        jmp    _T360;
 _T310:
 	__asm        mov    eax, this;
@@ -7058,7 +7058,7 @@ _T60:
 	__asm        cmp    dword ptr [eax+0x39], 0x80;
 	__asm        jl     _Tab;
 _Ta0:
-	__asm        mov    tile, 0;
+	tile = 0x0;
 	__asm        jmp    _Tef;
 _Tab:
 	__asm        mov    eax, this;
@@ -7099,7 +7099,7 @@ _Tef:
 	__asm        cmp    dword ptr [eax+0x59], 0x80;
 	__asm        jl     _T134;
 _T129:
-	__asm        mov    ntile, 0;
+	ntile = 0x0;
 	__asm        jmp    _T178;
 _T134:
 	__asm        mov    eax, this;
@@ -7380,7 +7380,7 @@ _T447:
 	__asm        cmp    eax, [ebp-0x2C];
 	__asm        jae    _T472;
 _T466:
-	__asm        mov    connectionType, 0;
+	connectionType = 0x0;
 	__asm        jmp    _T47b;
 _T472:
 	__asm        add    dword ptr [ebp-0x2C], 8;
@@ -8049,7 +8049,7 @@ _T22b:
 	stop_now = 0x1;
 // LINE 3909:
 _T241:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T250;
 _T24d:
 	i++;
@@ -8072,7 +8072,7 @@ _T250:
 	__asm        cmp    y, 0x80;
 	__asm        jl     _T295;
 _T28a:
-	__asm        mov    tile, 0;
+	tile = 0x0;
 	__asm        jmp    _T2cd;
 _T295:
 	__asm        mov    eax, x;
@@ -8464,7 +8464,7 @@ _Tcf:
 	stop_now = 0x1;
 // LINE 4073:
 _Te5:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tf4;
 _Tf1:
 	i++;
@@ -8487,7 +8487,7 @@ _Tf4:
 	__asm        cmp    y, 0x80;
 	__asm        jl     _T139;
 _T12e:
-	__asm        mov    tile, 0;
+	tile = 0x0;
 	__asm        jmp    _T171;
 _T139:
 	__asm        mov    eax, x;
@@ -9098,7 +9098,7 @@ int32_t TrainClass::FindTrainForRescue(long mission_id, int32_t timetolive) {
 	/*bp-0x34*/  int32_t currentTrainIndex;
 
 // LINE 4743:
-	__asm        mov    currentTrainIndex, 0;
+	currentTrainIndex = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	currentTrainIndex++;
@@ -9190,7 +9190,7 @@ _Td6:
 // LINE 4773:
 	totalpersons = 0x0;
 // LINE 4774:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T114;
 _T111:
 	count++;
@@ -9297,7 +9297,7 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 	return 0x0;
 // LINE 4862:
 _T38:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T47;
 _T44:
 	i++;
@@ -9548,7 +9548,7 @@ int32_t TrainClass::MIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 4928:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;

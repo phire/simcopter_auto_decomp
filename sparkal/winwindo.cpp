@@ -162,7 +162,7 @@ void CSparkalWindow::CSparkalWindow() {
 // LINE 63:
 	this->mhCustomCursor = 0x0;
 // LINE 65:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T7e;
 _T7b:
 	i++;
@@ -213,7 +213,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // LINE 88:
 	this->mhCustomCursor = 0x0;
 // LINE 90:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T9f;
 _T9c:
 	i++;
@@ -491,7 +491,7 @@ _T373:
 	End = 0xff;
 // LINE 192:
 _T3aa:
-	__asm        mov    Counter, 0;
+	Counter = 0x0;
 	__asm        jmp    _T3b9;
 _T3b6:
 	Counter++;
@@ -713,7 +713,7 @@ _T4b:
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 259:
 _T65:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T74;
 _T71:
 	i++;
@@ -1178,8 +1178,7 @@ void CSparkalWindow::UpdatePalette(long start, long count, /*packed*/ struct Spa
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        je     _Tba;
 // LINE 487:
-	__asm        mov    eax, start;
-	__asm        mov    i, eax;
+	i = start;
 	__asm        jmp    _T36;
 _T30:
 	i++;
@@ -1298,7 +1297,7 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, /*pack
 // LINE 535:
 	Info.Header.biClrImportant = 0x0;
 // LINE 537:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T105;
 _Tff:
 	i++;
@@ -1330,7 +1329,7 @@ _T105:
 	__asm        jmp    _Tff;
 // LINE 545:
 _T175:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18a;
 _T184:
 	i++;
@@ -1375,7 +1374,7 @@ _T1b2:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35C0];
 // LINE 555:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T235;
 _T22f:
 	i++;

@@ -254,7 +254,7 @@ class cCopterAnim * cCopterBody::GetPrivateAnim(unsigned long animName) {
 	/*bp-0x4*/   short count;
 
 // LINE 1943:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T1b;
 _T17:
 	count++;
@@ -484,7 +484,7 @@ void cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	__asm        add    esp, 0x10;
 // LINE 2063:
 _T32:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T41;
 _T3d:
 	count++;
@@ -743,7 +743,7 @@ struct cCopterBody::Part * cCopterBody::GetPartByName(unsigned long partname) {
 	/*bp-0x8*/   /*unpacked*/ struct cCopterBody::Part *part;
 
 // LINE 2093:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T1b;
 _T17:
 	count++;
@@ -1025,15 +1025,15 @@ _T21e:
 	__asm        jmp    _T255;
 // LINE 2151:
 _T22c:
-	__asm        mov    flag, 1;
+	flag = 0x1;
 	__asm        jmp    _T278;
 // LINE 2153:
 _T238:
-	__asm        mov    flag, 2;
+	flag = 0x2;
 	__asm        jmp    _T278;
 // LINE 2155:
 _T244:
-	__asm        mov    flag, 0;
+	flag = 0x0;
 	__asm        jmp    _T278;
 // LINE 2156:
 	__asm        jmp    _T278;
@@ -1203,7 +1203,7 @@ _T64:
 	__asm        movsx  eax, word ptr [eax+0x10];
 	__asm        mov    numParts, eax;
 // LINE 2188:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T83;
 _T7f:
 	count++;
@@ -1254,7 +1254,7 @@ _Tc0:
 // LINE 2213:
 	drawordercount = 0x0;
 // LINE 2214:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T126;
 _T122:
 	count++;
@@ -1579,7 +1579,7 @@ _T4a6:
 	__asm        add    esp, 0x10;
 // LINE 2276:
 _T4c8:
-	__asm        mov    orderID, 0;
+	orderID = 0x0;
 	__asm        jmp    _T4d7;
 _T4d3:
 	orderID++;

@@ -614,7 +614,7 @@ _T70:
 _T7e:
 	sText.reference = 0x0;
 _T85:
-	__asm        mov    sText.c_str_ptr, 0;
+	sText.c_str_ptr = 0x0;
 	__asm        jmp    _T91;
 // LINE 109:
 _T91:
@@ -1826,7 +1826,7 @@ _T51:
 _T5c:
 	sImageFile.reference = 0x0;
 _T63:
-	__asm        mov    sImageFile.c_str_ptr, 0;
+	sImageFile.c_str_ptr = 0x0;
 	__asm        jmp    _T6f;
 // LINE 203:
 _T6f:
@@ -1855,7 +1855,7 @@ _Tb4:
 _Tbf:
 	sImagePath.reference = 0x0;
 _Tc6:
-	__asm        mov    sImagePath.c_str_ptr, 0;
+	sImagePath.c_str_ptr = 0x0;
 	__asm        jmp    _Td2;
 // LINE 205:
 _Td2:
@@ -2160,7 +2160,7 @@ int32_t CareerWindow::DrawSelf() {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 241:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -2279,7 +2279,7 @@ _T8e:
 	__asm        mov    ecx, this;
 	__asm        call   CareerWindow::GetCoordinatesForCitySelections;
 // LINE 262:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tbc;
 _Tb6:
 	i++;
@@ -2287,7 +2287,7 @@ _Tbc:
 	__asm        cmp    i, 3;
 	__asm        jge    _T1c0;
 // LINE 263:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _Tde;
 _Td8:
 	j++;
@@ -2415,7 +2415,7 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	/*bp-0x4*/   int32_t i;
 
 // LINE 299:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -2520,7 +2520,7 @@ long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 324:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -2827,13 +2827,13 @@ void CareerWindow::GetCoordinatesForCitySelections(/*packed*/ class MPoint *ptDe
 	__asm        lea    ecx, lowerLeft<vftable>;
 	__asm        call   CareerWindow::CitySelectionFrame::FillSourceRects;
 // LINE 396:
-	__asm        mov    lowerLeft<vftable>, 0x590EF4;
+	lowerLeft<vftable> = 0x590ef4;
 	__asm        jmp    _Te2;
 _Te2:
-	__asm        mov    upperRight<vftable>, 0x590EF4;
+	upperRight<vftable> = 0x590ef4;
 	__asm        jmp    _Tee;
 _Tee:
-	__asm        mov    upperLeft<vftable>, 0x590EF4;
+	upperLeft<vftable> = 0x590ef4;
 	__asm        jmp    _Tfd;
 _Tfd:
 	return;
@@ -3136,7 +3136,7 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(/*packed*/ class MP
 	/*bp-0x4*/   int32_t nN;
 
 // LINE 427:
-	__asm        mov    nN, 0;
+	nN = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	nN++;
@@ -3169,7 +3169,7 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(/*packed*/ class MRect *r
 	/*bp-0x4*/   int32_t nN;
 
 // LINE 435:
-	__asm        mov    nN, 0;
+	nN = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	nN++;

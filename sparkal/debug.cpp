@@ -1345,7 +1345,7 @@ _T15c:
 _T169:
 	help_command.command_string.reference = 0x0;
 _T173:
-	__asm        mov    help_command.command_string.c_str_ptr, 0;
+	help_command.command_string.c_str_ptr = 0x0;
 	__asm        jmp    _T182;
 _T182:
 	__asm        push   0x10;
@@ -1362,10 +1362,10 @@ _T182:
 _T1ab:
 	help_command.usage_string.reference = 0x0;
 _T1b5:
-	__asm        mov    help_command.usage_string.c_str_ptr, 0;
+	help_command.usage_string.c_str_ptr = 0x0;
 	__asm        jmp    _T1c4;
 _T1c4:
-	__asm        mov    help_command<class_debugger<CDebugWindow,CDebugWindowhelp_text>+0x00>, 0x58F420;
+	help_command<class_debugger<CDebugWindow,CDebugWindowhelp_text>+0x00> = 0x58f420;
 	__asm        jmp    _T1d3;
 _T1d3:
 	__asm        mov    help_command<class_debugger<CDebugWindow,CDebugWindowhelp_text>+0x00>, 0x58F41C;
@@ -1586,8 +1586,7 @@ _T468:
 _T47f:
 	__asm        jmp    _T484;
 _T484:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x30], 4;
+	this->m_commands.finish += 0x4;
 	__asm        jmp    _T4ab;
 _T490:
 	__asm        jmp    _T495;
@@ -2798,24 +2797,23 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 	__asm        jmp    _T60;
 // LINE 225:
 _T29:
-	__asm        dec    curPos;
+	curPos--;
 	__asm        jmp    _T8c;
 // LINE 226:
 _T31:
-	__asm        inc    curPos;
+	curPos++;
 	__asm        jmp    _T8c;
 // LINE 227:
 _T39:
-	__asm        sub    curPos, 0xA;
+	curPos -= 0xa;
 	__asm        jmp    _T8c;
 // LINE 228:
 _T42:
-	__asm        add    curPos, 0xA;
+	curPos += 0xa;
 	__asm        jmp    _T8c;
 // LINE 230:
 _T4b:
-	__asm        mov    eax, pos;
-	__asm        mov    curPos, eax;
+	curPos = pos;
 	__asm        jmp    _T8c;
 // LINE 231:
 	__asm        jmp    _T8c;
@@ -2908,7 +2906,7 @@ _T57:
 _T62:
 	str.reference = 0x0;
 _T69:
-	__asm        mov    str.c_str_ptr, 0;
+	str.c_str_ptr = 0x0;
 	__asm        jmp    _T75;
 // LINE 251:
 _T75:
@@ -3543,7 +3541,7 @@ _T1a7:
 _T1b8:
 	str.reference = 0x0;
 _T1c2:
-	__asm        mov    str.c_str_ptr, 0;
+	str.c_str_ptr = 0x0;
 	__asm        jmp    _T1d1;
 // LINE 314:
 _T1d1:
@@ -3572,9 +3570,7 @@ _T1f4:
 // LINE 320:
 	__asm        jmp    _T23a;
 _T23a:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    it, eax;
+	it = this->m_commands.start;
 	__asm        jmp    _T255;
 _T24e:
 	it += 0x4;

@@ -283,7 +283,7 @@ _T29c:
 // LINE 339:
 	i = VRGetResObjectCnt(G_resgeo1);
 // LINE 340:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T2db;
 _T2d5:
 	j++;
@@ -325,7 +325,7 @@ _T36e:
 _T373:
 	i = VRGetResObjectCnt(G_resgeo2);
 // LINE 350:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T39c;
 _T396:
 	j++;
@@ -367,7 +367,7 @@ _T42f:
 _T434:
 	i = VRGetResObjectCnt(G_resgeo3);
 // LINE 361:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T45d;
 _T457:
 	j++;
@@ -566,7 +566,7 @@ _T531:
 // LINE 436:
 	__asm        or     G_InitializationProgress, 0x100;
 // LINE 439:
-	__asm        mov    instanceID, 0;
+	instanceID = 0x0;
 	__asm        jmp    _T736;
 _T730:
 	instanceID++;
@@ -681,7 +681,7 @@ _T89d:
 	__asm        jmp    _T869;
 // LINE 476:
 _T8a2:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T8b7;
 _T8b1:
 	i++;
@@ -697,7 +697,7 @@ _T8b7:
 	__asm        jmp    _T8b1;
 // LINE 488:
 _T8d8:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T8ed;
 _T8e7:
 	i++;
@@ -713,7 +713,7 @@ _T8ed:
 	__asm        jmp    _T8e7;
 // LINE 499:
 _T90e:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T923;
 _T91d:
 	i++;
@@ -882,7 +882,7 @@ _T194:
 _T1a0:
 	up = GetCurrentUserPersonalInfo();
 // LINE 648:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b7;
 _T1b4:
 	i++;

@@ -383,7 +383,7 @@ _Tf8:
 	__asm        call   FlatResFile::Count;
 	__asm        mov    numThings, ax;
 // LINE 190:
-	__asm        mov    count, 1;
+	count = 0x1;
 	__asm        jmp    _T123;
 _T11f:
 	count++;

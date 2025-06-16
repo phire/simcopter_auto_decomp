@@ -62,7 +62,7 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 62:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;

@@ -134,7 +134,7 @@ void S3TerrainInit() {
 	__asm        add    esp, 8;
 	__asm        mov    S_recip_celldim, eax;
 // LINE 135:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2f;
 _T2c:
 	i++;
@@ -214,7 +214,7 @@ _T7c:
 	__asm        and    ecx, 3;
 	__asm        rep stosb;
 // LINE 190:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _Tb0;
 _Tad:
 	x++;
@@ -222,7 +222,7 @@ _Tb0:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T1a4;
 // LINE 191:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _Tcc;
 _Tc9:
 	y++;
@@ -302,7 +302,7 @@ _T1a4:
 	G_terr_minalt = 0x0;
 // LINE 219:
 _T1c9:
-	__asm        mov    x, 1;
+	x = 0x1;
 	__asm        jmp    _T1d9;
 _T1d5:
 	x += 0x2;
@@ -310,7 +310,7 @@ _T1d9:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T37c;
 // LINE 220:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T1f6;
 _T1f2:
 	y += 0x2;
@@ -429,7 +429,7 @@ _T377:
 	__asm        jmp    _T1d5;
 // LINE 242:
 _T37c:
-	__asm        mov    y, 1;
+	y = 0x1;
 	__asm        jmp    _T38c;
 _T388:
 	y += 0x2;
@@ -437,7 +437,7 @@ _T38c:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T52f;
 // LINE 243:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T3a9;
 _T3a5:
 	x += 0x2;
@@ -556,7 +556,7 @@ _T52a:
 	__asm        jmp    _T388;
 // LINE 264:
 _T52f:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T53f;
 _T53b:
 	y += 0x2;
@@ -564,7 +564,7 @@ _T53f:
 	__asm        cmp    y, 0x100;
 	__asm        jg     _T6de;
 // LINE 265:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T55c;
 _T558:
 	x += 0x2;
@@ -683,7 +683,7 @@ _T6d9:
 	__asm        jmp    _T53b;
 // LINE 290:
 _T6de:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T6ed;
 _T6ea:
 	y++;
@@ -691,7 +691,7 @@ _T6ed:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T7bf;
 // LINE 292:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T709;
 _T706:
 	x++;
@@ -751,7 +751,7 @@ _T771:
 	__asm        jmp    _T6ea;
 // LINE 302:
 _T7bf:
-	__asm        mov    y, 0x80;
+	y = 0x80;
 	__asm        jmp    _T7ce;
 _T7cb:
 	y++;
@@ -780,7 +780,7 @@ _T7ce:
 	__asm        jmp    _T7cb;
 // LINE 311:
 _T814:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T823;
 _T820:
 	y++;
@@ -829,7 +829,7 @@ _T823:
 	__asm        jmp    _T820;
 // LINE 317:
 _T8ce:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T8dd;
 _T8da:
 	x++;
@@ -893,7 +893,7 @@ _T98d:
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 326:
-	__asm        mov    x, 0x80;
+	x = 0x80;
 	__asm        jmp    _T9c8;
 _T9c5:
 	x++;
@@ -901,7 +901,7 @@ _T9c8:
 	__asm        cmp    x, 0x90;
 	__asm        jg     _Ta28;
 // LINE 328:
-	__asm        mov    y, 0x80;
+	y = 0x80;
 	__asm        jmp    _T9e4;
 _T9e1:
 	y++;
@@ -948,7 +948,7 @@ _Ta28:
 // LINE 353:
 	k3 = 0x7ae1;
 // LINE 354:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _Ta79;
 _Ta76:
 	x++;
@@ -957,7 +957,7 @@ _Ta79:
 	__asm        cmp    x, eax;
 	__asm        jg     _Tbc2;
 // LINE 356:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _Ta96;
 _Ta93:
 	y++;
@@ -1057,7 +1057,7 @@ _Tbbd:
 _Tbc2:
 	__asm        call   AdjustTerrainMap;
 // LINE 383:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _Tbd6;
 _Tbd3:
 	x++;
@@ -1065,7 +1065,7 @@ _Tbd6:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _Tc1a;
 // LINE 385:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _Tbf2;
 _Tbef:
 	y++;
@@ -1084,7 +1084,7 @@ _Tc15:
 	__asm        jmp    _Tbd3;
 // LINE 402:
 _Tc1a:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _Tc29;
 _Tc26:
 	x++;
@@ -1092,7 +1092,7 @@ _Tc29:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _Td8d;
 // LINE 404:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _Tc45;
 _Tc42:
 	y++;
@@ -1199,7 +1199,7 @@ _Td88:
 	__asm        jmp    _Tc26;
 // LINE 430:
 _Td8d:
-	__asm        mov    x, 1;
+	x = 0x1;
 	__asm        jmp    _Td9c;
 _Td99:
 	x++;
@@ -1207,7 +1207,7 @@ _Td9c:
 	__asm        cmp    x, 0x7F;
 	__asm        jge    _Tee7;
 // LINE 432:
-	__asm        mov    y, 1;
+	y = 0x1;
 	__asm        jmp    _Tdb5;
 _Tdb2:
 	y++;
@@ -1318,7 +1318,7 @@ _Tee2:
 	__asm        jmp    _Td99;
 // LINE 456:
 _Tee7:
-	__asm        mov    x, 1;
+	x = 0x1;
 	__asm        jmp    _Tef6;
 _Tef3:
 	x++;
@@ -1326,7 +1326,7 @@ _Tef6:
 	__asm        cmp    x, 0x7F;
 	__asm        jge    _T1033;
 // LINE 458:
-	__asm        mov    y, 1;
+	y = 0x1;
 	__asm        jmp    _Tf0f;
 _Tf0c:
 	y++;
@@ -1431,7 +1431,7 @@ _T102e:
 	__asm        jmp    _Tef3;
 // LINE 482:
 _T1033:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T1042;
 _T103f:
 	x++;
@@ -1439,7 +1439,7 @@ _T1042:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T15fa;
 // LINE 484:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T105e;
 _T105b:
 	y++;
@@ -1892,7 +1892,7 @@ _T15f5:
 	__asm        jmp    _T103f;
 // LINE 520:
 _T15fa:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T1609;
 _T1606:
 	y++;
@@ -1900,7 +1900,7 @@ _T1609:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T17dc;
 // LINE 522:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T1625;
 _T1622:
 	x++;
@@ -2040,7 +2040,7 @@ _T17dc:
 	__asm        sar    eax, 4;
 	__asm        mov    alt2, ax;
 // LINE 584:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T1805;
 _T1802:
 	x++;
@@ -2048,7 +2048,7 @@ _T1805:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T195c;
 // LINE 586:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T1821;
 _T181e:
 	y++;
@@ -2149,7 +2149,7 @@ _T1957:
 	__asm        jmp    _T1802;
 // LINE 605:
 _T195c:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T196b;
 _T1968:
 	x++;
@@ -2157,7 +2157,7 @@ _T196b:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T1b71;
 // LINE 607:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T1987;
 _T1984:
 	y++;
@@ -2310,7 +2310,7 @@ _T1b6c:
 	__asm        jmp    _T1968;
 // LINE 641:
 _T1b71:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T1b80;
 _T1b7d:
 	x++;
@@ -2318,7 +2318,7 @@ _T1b80:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T1d8b;
 // LINE 643:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T1b9c;
 _T1b99:
 	y++;
@@ -2471,7 +2471,7 @@ _T1d86:
 	__asm        jmp    _T1b7d;
 // LINE 677:
 _T1d8b:
-	__asm        mov    x, 0x80;
+	x = 0x80;
 	__asm        jmp    _T1d9a;
 _T1d97:
 	x++;
@@ -2479,7 +2479,7 @@ _T1d9a:
 	__asm        cmp    x, 0x84;
 	__asm        jge    _T1dde;
 // LINE 679:
-	__asm        mov    y, 0x80;
+	y = 0x80;
 	__asm        jmp    _T1db6;
 _T1db3:
 	y++;
@@ -2498,7 +2498,7 @@ _T1dd9:
 	__asm        jmp    _T1d97;
 // LINE 686:
 _T1dde:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T1ded;
 _T1dea:
 	x++;
@@ -2506,7 +2506,7 @@ _T1ded:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T2090;
 // LINE 688:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T1e09;
 _T1e06:
 	y++;
@@ -2705,7 +2705,7 @@ _T208b:
 	__asm        jmp    _T1dea;
 // LINE 728:
 _T2090:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T209f;
 _T209c:
 	x++;
@@ -2713,7 +2713,7 @@ _T209f:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T2340;
 // LINE 730:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T20bb;
 _T20b8:
 	y++;
@@ -2911,7 +2911,7 @@ _T233b:
 	__asm        jmp    _T209c;
 // LINE 770:
 _T2340:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T234f;
 _T234c:
 	x++;
@@ -2919,7 +2919,7 @@ _T234f:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T25ec;
 // LINE 772:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T236b;
 _T2368:
 	y++;
@@ -3115,7 +3115,7 @@ _T25e7:
 	__asm        jmp    _T234c;
 // LINE 812:
 _T25ec:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T25fb;
 _T25f8:
 	x++;
@@ -3123,7 +3123,7 @@ _T25fb:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T3135;
 // LINE 814:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T2617;
 _T2614:
 	y++;
@@ -4020,7 +4020,7 @@ _T3130:
 	__asm        jmp    _T25f8;
 // LINE 930:
 _T3135:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T3144;
 _T3141:
 	x++;
@@ -4028,7 +4028,7 @@ _T3144:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T337a;
 // LINE 932:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T3160;
 _T315d:
 	y++;
@@ -5179,8 +5179,7 @@ void S3TerrSetGridObj() {
 // LINE 1148:
 	yptr = (GridVerts + 0x4);
 // LINE 1150:
-	__asm        mov    eax, ulp.y;
-	__asm        mov    y, eax;
+	y = ulp.y;
 	__asm        jmp    _T3c;
 _T39:
 	y++;
@@ -5190,8 +5189,7 @@ _T3c:
 	__asm        cmp    eax, y;
 	__asm        jle    __RETURN;
 // LINE 1152:
-	__asm        mov    eax, ulp.x;
-	__asm        mov    x, eax;
+	x = ulp.x;
 	__asm        jmp    _T5c;
 _T59:
 	x++;
@@ -5722,8 +5720,7 @@ _Te4:
 // LINE 1471:
 	cycle[0]++;
 // LINE 1476:
-	__asm        mov    eax, xstart;
-	__asm        mov    x, eax;
+	x = xstart;
 	__asm        jmp    _T10d;
 _T109:
 	x += 0x2;
@@ -5731,8 +5728,7 @@ _T10d:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T1b3;
 // LINE 1478:
-	__asm        mov    eax, ystart;
-	__asm        mov    y, eax;
+	y = ystart;
 	__asm        jmp    _T129;
 _T125:
 	y += 0x2;
@@ -5805,8 +5801,7 @@ void AdjustTerrainMap() {
 // LINE 1546:
 	end = 0x20;
 // LINE 1548:
-	__asm        mov    eax, start;
-	__asm        mov    i, eax;
+	i = start;
 	__asm        jmp    _T30;
 _T2d:
 	i++;
@@ -6087,7 +6082,7 @@ _T38c:
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt, edx;
 // LINE 1580:
-	__asm        mov    x, 0x80;
+	x = 0x80;
 	__asm        jmp    _T3cd;
 _T3ca:
 	x++;
@@ -6095,7 +6090,7 @@ _T3cd:
 	__asm        cmp    x, 0x90;
 	__asm        jg     __RETURN;
 // LINE 1582:
-	__asm        mov    z, 0x80;
+	z = 0x80;
 	__asm        jmp    _T3e9;
 _T3e6:
 	z++;

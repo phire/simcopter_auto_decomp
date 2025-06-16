@@ -611,7 +611,7 @@ void CommandSystem::Initialize() {
 	/*bp-0x8*/   int32_t j;
 
 // LINE 46:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -630,7 +630,7 @@ _T1b:
 	__asm        jmp    _T18;
 // LINE 50:
 _T3f:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4e;
 _T4b:
 	i++;
@@ -644,7 +644,7 @@ _T4e:
 	__asm        jmp    _T4b;
 // LINE 54:
 _T6e:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T7d;
 _T7a:
 	i++;
@@ -652,7 +652,7 @@ _T7d:
 	__asm        cmp    i, 4;
 	__asm        jge    _Tc4;
 // LINE 55:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T96;
 _T93:
 	j++;
@@ -674,7 +674,7 @@ _Tbf:
 	__asm        jmp    _T7a;
 // LINE 58:
 _Tc4:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Td3;
 _Td0:
 	i++;
@@ -696,7 +696,7 @@ void CommandSystem::ClearAllCommands() {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 74:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -724,7 +724,7 @@ void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 89:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -1028,8 +1028,7 @@ void CommandSystem::PollJoysticksForCommands() {
 	/*bp-0x14*/  long lValue;
 
 // LINE 199:
-	__asm        mov    eax, gJoystickManager.nJoystickCount;
-	__asm        mov    iEnd, eax;
+	iEnd = gJoystickManager.nJoystickCount;
 	__asm        jmp    _T19;
 // LINE 200:
 _T19:
@@ -1039,7 +1038,7 @@ _T19:
 	iEnd = 0x4;
 // LINE 205:
 _T2a:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T39;
 _T36:
 	i++;
@@ -1048,7 +1047,7 @@ _T39:
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T91;
 // LINE 206:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T54;
 _T51:
 	j++;
@@ -1073,7 +1072,7 @@ _T8c:
 	__asm        jmp    _T36;
 // LINE 211:
 _T91:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Ta0;
 _T9d:
 	i++;
@@ -1082,7 +1081,7 @@ _Ta0:
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T1d5;
 // LINE 212:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _Tbb;
 _Tb8:
 	j++;
@@ -1139,7 +1138,7 @@ _T14a:
 	__asm        jmp    _Tb8;
 // LINE 220:
 _T14f:
-	__asm        mov    j, 6;
+	j = 0x6;
 	__asm        jmp    _T15e;
 _T15b:
 	j++;
@@ -3789,7 +3788,7 @@ _T139b:
 	__asm        jmp    _T13a0;
 // LINE 858:
 _T13a0:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T13af;
 _T13ac:
 	i++;

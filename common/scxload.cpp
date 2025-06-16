@@ -305,8 +305,7 @@ public:
 // FUNCTION: COPTER_D 0x004cb880
 void cLZAPFileBitStream::cLZAPFileBitStream() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923F8;
+	this-><cLZAPFileBitStream+0x00> = 0x5923f8;
 	__asm        jmp    _T1a;
 _T1a:
 	this-><cLZAPFileBitStream+0x00> = 0x592418;
@@ -727,7 +726,7 @@ void SCXReadNeighbors(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 230:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T2e;
 _T2b:
 	loop++;
@@ -751,7 +750,7 @@ _T2e:
 	__asm        jmp    _T2b;
 // LINE 232:
 _T5c:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T6b;
 _T68:
 	loop++;
@@ -776,7 +775,7 @@ _T6b:
 	__asm        jmp    _T68;
 // LINE 234:
 _T9c:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _Tab;
 _Ta8:
 	loop++;
@@ -801,7 +800,7 @@ _Tab:
 	__asm        jmp    _Ta8;
 // LINE 236:
 _Tdc:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _Teb;
 _Te8:
 	loop++;
@@ -826,7 +825,7 @@ _Teb:
 	__asm        jmp    _Te8;
 // LINE 238:
 _T11c:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T12b;
 _T128:
 	loop++;
@@ -851,7 +850,7 @@ _T12b:
 	__asm        jmp    _T128;
 // LINE 242:
 _T15c:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T16b;
 _T168:
 	loop++;
@@ -1084,7 +1083,7 @@ _T135:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T174;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T152;
 _T152:
 	__asm        jmp    _T157;
@@ -1116,7 +1115,7 @@ _T1a9:
 	__asm        jmp    _T1ae;
 // LINE 318:
 _T1ae:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T1bd;
 _T1ba:
 	loop++;
@@ -1183,7 +1182,7 @@ _T265:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T2a4;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T282;
 _T282:
 	__asm        jmp    _T287;
@@ -1242,7 +1241,7 @@ _T321:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T360;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T33e;
 _T33e:
 	__asm        jmp    _T343;
@@ -1300,7 +1299,7 @@ _T3db:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T41a;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T3f8;
 _T3f8:
 	__asm        jmp    _T3fd;
@@ -1358,7 +1357,7 @@ _T494:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T4d3;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T4b1;
 _T4b1:
 	__asm        jmp    _T4b6;
@@ -1416,7 +1415,7 @@ _T54d:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T58c;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T56a;
 _T56a:
 	__asm        jmp    _T56f;
@@ -1474,7 +1473,7 @@ _T606:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T645;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T623;
 _T623:
 	__asm        jmp    _T628;
@@ -1532,7 +1531,7 @@ _T6bf:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T6fe;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T6dc;
 _T6dc:
 	__asm        jmp    _T6e1;
@@ -1590,7 +1589,7 @@ _T77b:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T7ba;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T798;
 _T798:
 	__asm        jmp    _T79d;
@@ -1622,7 +1621,7 @@ _T7ef:
 	__asm        jmp    _T7f4;
 // LINE 355:
 _T7f4:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T803;
 _T800:
 	loop++;
@@ -1663,7 +1662,7 @@ _T868:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T8a7;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T885;
 _T885:
 	__asm        jmp    _T88a;
@@ -1721,7 +1720,7 @@ _T921:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _T960;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T93e;
 _T93e:
 	__asm        jmp    _T943;
@@ -1779,7 +1778,7 @@ _T9da:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Ta19;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _T9f7;
 _T9f7:
 	__asm        jmp    _T9fc;
@@ -1837,7 +1836,7 @@ _Ta93:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Tad2;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _Tab0;
 _Tab0:
 	__asm        jmp    _Tab5;
@@ -1895,7 +1894,7 @@ _Tb4c:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Tb8b;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _Tb69;
 _Tb69:
 	__asm        jmp    _Tb6e;
@@ -1953,7 +1952,7 @@ _Tc05:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Tc44;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _Tc22;
 _Tc22:
 	__asm        jmp    _Tc27;
@@ -2013,7 +2012,7 @@ _Tccc:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Td0b;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _Tce9;
 _Tce9:
 	__asm        jmp    _Tcee;
@@ -2074,7 +2073,7 @@ _Td96:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Tdd5;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _Tdb3;
 _Tdb3:
 	__asm        jmp    _Tdb8;
@@ -2135,7 +2134,7 @@ _Te60:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Te9f;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _Te7d;
 _Te7d:
 	__asm        jmp    _Te82;
@@ -2196,7 +2195,7 @@ _Tf2a:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Tf69;
 
-	__asm        inc    memstrm.nodeNo;
+	memstrm.nodeNo++;
 	__asm        jmp    _Tf47;
 _Tf47:
 	__asm        jmp    _Tf4c;
@@ -2331,7 +2330,7 @@ _Tfa5:
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 410:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T10f0;
 _T10ed:
 	loop++;
@@ -2402,7 +2401,7 @@ _T1119:
 	__asm        mov    eax, tempLong;
 	__asm        mov    GlobalSeaLevel, ax;
 // LINE 441:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T11cd;
 _T11ca:
 	loop++;
@@ -2421,7 +2420,7 @@ _T11cd:
 	__asm        jmp    _T11ca;
 // LINE 452:
 _T11f6:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T1205;
 _T1202:
 	loop++;
@@ -2585,7 +2584,7 @@ _T128c:
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 515:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T141a;
 _T1417:
 	loop++;
@@ -2607,7 +2606,7 @@ _T1440:
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 520:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T1460;
 _T145d:
 	loop++;
@@ -2629,7 +2628,7 @@ _T1486:
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 525:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T14a5;
 _T14a2:
 	loop++;

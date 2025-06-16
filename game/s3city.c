@@ -183,7 +183,7 @@ _Tad:
 	return 0x1;
 // LINE 238:
 _Te9:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tfe;
 _Tf8:
 	i++;
@@ -550,7 +550,7 @@ short S3CityInitOmap() {
 	__asm        mov    ecx, 0x10000;
 	__asm        rep stosd;
 // LINE 467:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T26;
 _T23:
 	x++;
@@ -558,7 +558,7 @@ _T26:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T3e47;
 // LINE 469:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T42;
 _T3f:
 	y++;
@@ -5006,7 +5006,7 @@ _T3e42:
 	__asm        jmp    _T23;
 // LINE 2119:
 _T3e47:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T3e56;
 _T3e53:
 	x++;
@@ -5014,7 +5014,7 @@ _T3e56:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T45d1;
 // LINE 2121:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T3e72;
 _T3e6f:
 	y++;
@@ -5058,7 +5058,7 @@ _T3ecf:
 	__asm        mov    size, ax;
 // LINE 2135:
 _T3eef:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T3efe;
 _T3efb:
 	j++;
@@ -5067,7 +5067,7 @@ _T3efe:
 	__asm        cmp    eax, j;
 	__asm        jle    _T3fce;
 // LINE 2137:
-	__asm        mov    k, 0;
+	k = 0x0;
 	__asm        jmp    _T3f1a;
 _T3f17:
 	k++;
@@ -5576,7 +5576,7 @@ _T45cc:
 	__asm        jmp    _T3e53;
 // LINE 2264:
 _T45d1:
-	__asm        mov    x, 0x80;
+	x = 0x80;
 	__asm        jmp    _T45e1;
 _T45dd:
 	x += 0x10;
@@ -5584,7 +5584,7 @@ _T45e1:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T4743;
 // LINE 2266:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T45fe;
 _T45fa:
 	y += 0x10;
@@ -5602,7 +5602,7 @@ _T45fe:
 	__asm        add    esp, 4;
 // LINE 2272:
 _T4635:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4644;
 _T4640:
 	i++;
@@ -5611,7 +5611,7 @@ _T4644:
 	__asm        cmp    eax, 0x10;
 	__asm        jge    _T469a;
 // LINE 2273:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T4660;
 _T465d:
 	j++;
@@ -5680,7 +5680,7 @@ _T473e:
 	__asm        jmp    _T45dd;
 // LINE 2294:
 _T4743:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T4753;
 _T474f:
 	x += 0x10;
@@ -5688,7 +5688,7 @@ _T4753:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T48f1;
 // LINE 2296:
-	__asm        mov    y, 0x80;
+	y = 0x80;
 	__asm        jmp    _T4770;
 _T476c:
 	y += 0x10;
@@ -5725,7 +5725,7 @@ _T47b9:
 	__asm        add    esp, 4;
 // LINE 2309:
 _T47e3:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T47f2;
 _T47ee:
 	i++;
@@ -5734,7 +5734,7 @@ _T47f2:
 	__asm        cmp    eax, 0x10;
 	__asm        jge    _T4848;
 // LINE 2310:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T480e;
 _T480b:
 	j++;
@@ -5803,7 +5803,7 @@ _T48ec:
 	__asm        jmp    _T474f;
 // LINE 2419:
 _T48f1:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T4900;
 _T48fd:
 	x++;
@@ -5811,7 +5811,7 @@ _T4900:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T4962;
 // LINE 2421:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T491c;
 _T4919:
 	y++;
@@ -7122,8 +7122,7 @@ _T70:
 _T95:
 	fovcell = 0x609c50;
 // LINE 3247:
-	__asm        mov    eax, y_start;
-	__asm        mov    y, eax;
+	y = y_start;
 	__asm        jmp    _Tad;
 _Ta7:
 	y += y_dir;
@@ -7133,9 +7132,7 @@ _Tad:
 	__asm        cmp    eax, y;
 	__asm        je     _T492;
 // LINE 3250:
-	__asm        mov    eax, lcell;
-	__asm        mov    eax, [eax];
-	__asm        mov    x, eax;
+	x = lcell->x;
 	__asm        jmp    _Tcc;
 _Tc9:
 	x++;
@@ -7195,7 +7192,7 @@ _T160:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T18c;
 // LINE 3264:
-	__asm        inc    x_last;
+	x_last++;
 	__asm        jmp    _T160;
 // LINE 3265:
 _T18c:
@@ -7271,9 +7268,7 @@ _T24d:
 	__asm        jmp    _Tc9;
 // LINE 3293:
 _T252:
-	__asm        mov    eax, rcell;
-	__asm        mov    eax, [eax];
-	__asm        mov    x, eax;
+	x = rcell->x;
 	__asm        jmp    _T262;
 _T25f:
 	x--;
@@ -7333,7 +7328,7 @@ _T2f6:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T322;
 // LINE 3307:
-	__asm        dec    x_last;
+	x_last--;
 	__asm        jmp    _T2f6;
 // LINE 3308:
 _T322:
@@ -7447,7 +7442,7 @@ _T445:
 	__asm        cmp    lend, eax;
 	__asm        jae    _T469;
 // LINE 3347:
-	__asm        sub    lcell, 8;
+	lcell -= 0x8;
 	__asm        jmp    _T445;
 // LINE 3348:
 _T469:
@@ -7460,7 +7455,7 @@ _T469:
 	__asm        cmp    rend, eax;
 	__asm        jae    _T48d;
 // LINE 3349:
-	__asm        sub    rcell, 8;
+	rcell -= 0x8;
 	__asm        jmp    _T469;
 // LINE 3350:
 _T48d:
@@ -7531,8 +7526,7 @@ _T6e:
 _T93:
 	fovcell = 0x609c50;
 // LINE 3398:
-	__asm        mov    eax, x_start;
-	__asm        mov    x, eax;
+	x = x_start;
 	__asm        jmp    _Tab;
 _Ta5:
 	x += x_dir;
@@ -7542,9 +7536,7 @@ _Tab:
 	__asm        cmp    eax, x;
 	__asm        je     _T492;
 // LINE 3401:
-	__asm        mov    eax, tcell;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    y, eax;
+	y = tcell->y;
 	__asm        jmp    _Tcb;
 _Tc8:
 	y++;
@@ -7604,7 +7596,7 @@ _T160:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T18c;
 
-	__asm        inc    y_last;
+	y_last++;
 	__asm        jmp    _T160;
 // LINE 3415:
 _T18c:
@@ -7680,9 +7672,7 @@ _T24d:
 	__asm        jmp    _Tc8;
 // LINE 3441:
 _T252:
-	__asm        mov    eax, bcell;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    y, eax;
+	y = bcell->y;
 	__asm        jmp    _T263;
 _T260:
 	y--;
@@ -7742,7 +7732,7 @@ _T2f8:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T324;
 
-	__asm        dec    y_last;
+	y_last--;
 	__asm        jmp    _T2f8;
 // LINE 3455:
 _T324:
@@ -7856,7 +7846,7 @@ _T447:
 	__asm        cmp    tend, eax;
 	__asm        jae    _T46a;
 
-	__asm        sub    tcell, 8;
+	tcell -= 0x8;
 	__asm        jmp    _T447;
 // LINE 3491:
 _T46a:
@@ -7869,7 +7859,7 @@ _T46a:
 	__asm        cmp    bend, eax;
 	__asm        jae    _T48d;
 
-	__asm        sub    bcell, 8;
+	bcell -= 0x8;
 	__asm        jmp    _T46a;
 // LINE 3492:
 _T48d:
@@ -7910,7 +7900,7 @@ _T34:
 	__asm        cmp    endedge, eax;
 	__asm        jae    _T58;
 
-	__asm        sub    edge, 8;
+	edge -= 0x8;
 	__asm        jmp    _T34;
 // LINE 3533:
 _T58:
@@ -7937,9 +7927,7 @@ _T72:
 	edge->x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(cellpos));
 // LINE 3548:
 _T9d:
-	__asm        mov    eax, edge;
-	__asm        mov    eax, [eax];
-	__asm        mov    x, eax;
+	x = edge->x;
 	__asm        jmp    _Tad;
 _Taa:
 	x++;
@@ -8025,7 +8013,7 @@ _T18c:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T1b8;
 
-	__asm        inc    x;
+	x++;
 	__asm        jmp    _T18c;
 // LINE 3566:
 _T1b8:
@@ -8067,9 +8055,7 @@ _T209:
 	edge->x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(cellpos));
 // LINE 3583:
 _T221:
-	__asm        mov    eax, edge;
-	__asm        mov    eax, [eax];
-	__asm        mov    x, eax;
+	x = edge->x;
 	__asm        jmp    _T231;
 _T22e:
 	x--;
@@ -8155,7 +8141,7 @@ _T310:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T33c;
 
-	__asm        dec    x;
+	x--;
 	__asm        jmp    _T310;
 // LINE 3601:
 _T33c:
@@ -8252,9 +8238,7 @@ _T433:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T46a;
 
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(x_dir);
-	__asm        mov    ecx, edge;
-	__asm        add    [ecx], eax;
+	edge->x += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir));
 	__asm        jmp    _T433;
 // LINE 3630:
 _T46a:
@@ -8284,7 +8268,7 @@ _T19:
 	__asm        cmp    endedge, eax;
 	__asm        jae    _T3c;
 
-	__asm        sub    edge, 8;
+	edge -= 0x8;
 	__asm        jmp    _T19;
 // LINE 3645:
 _T3c:
@@ -8309,9 +8293,7 @@ _T4f:
 	edge->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(cellpos));
 // LINE 3655:
 _T7b:
-	__asm        mov    eax, edge;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    y, eax;
+	y = edge->y;
 	__asm        jmp    _T8c;
 _T89:
 	y++;
@@ -8397,7 +8379,7 @@ _T16b:
 	__asm        cmp    G_omap[0][0][eax+ecx*4], edx;
 	__asm        jne    _T197;
 
-	__asm        inc    y;
+	y++;
 	__asm        jmp    _T16b;
 // LINE 3673:
 _T197:
@@ -8439,9 +8421,7 @@ _T1e8:
 	edge->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(cellpos));
 // LINE 3690:
 _T202:
-	__asm        mov    eax, edge;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    y, eax;
+	y = edge->y;
 	__asm        jmp    _T213;
 _T210:
 	y--;
@@ -8527,7 +8507,7 @@ _T2f2:
 	__asm        cmp    G_omap[0][0][eax+ecx*4], edx;
 	__asm        jne    _T31e;
 
-	__asm        dec    y;
+	y--;
 	__asm        jmp    _T2f2;
 // LINE 3708:
 _T31e:
@@ -8624,9 +8604,7 @@ _T416:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    __RETURN;
 
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(y_dir);
-	__asm        mov    ecx, edge;
-	__asm        add    [ecx+4], eax;
+	edge->y += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir));
 	__asm        jmp    _T416;
 // LINE 3738:
 __RETURN:
@@ -10537,7 +10515,7 @@ _Te7:
 	stop_now = 0x1;
 // LINE 4512:
 _Tfd:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T10c;
 _T109:
 	i++;
@@ -10928,8 +10906,7 @@ short S3CityLowestTerrAlt(long startx, long starty, long size) {
 // LINE 4944:
 	minalt = 0xffff;
 // LINE 4947:
-	__asm        mov    eax, startx;
-	__asm        mov    x, eax;
+	x = startx;
 	__asm        jmp    _T1d;
 _T1a:
 	x++;
@@ -10939,8 +10916,7 @@ _T1d:
 	__asm        cmp    eax, x;
 	__asm        jl     _Ta1;
 // LINE 4948:
-	__asm        mov    eax, starty;
-	__asm        mov    y, eax;
+	y = starty;
 	__asm        jmp    _T3a;
 _T37:
 	y++;
@@ -11279,8 +11255,7 @@ void S3CityCreateHeliBase(long x, long y) {
 // LINE 5063:
 	incity = 0x1;
 // LINE 5066:
-	__asm        mov    eax, x;
-	__asm        mov    px, eax;
+	px = x;
 	__asm        jmp    _T3f;
 _T3c:
 	px++;
@@ -11290,8 +11265,7 @@ _T3f:
 	__asm        cmp    eax, px;
 	__asm        jle    _T1e8;
 // LINE 5068:
-	__asm        mov    eax, y;
-	__asm        mov    py, eax;
+	py = y;
 	__asm        jmp    _T5c;
 _T59:
 	py++;
@@ -11990,8 +11964,7 @@ _Taa0:
 	__asm        cmp    y, 0x7F;
 	__asm        jle    _Tdc6;
 // LINE 5332:
-	__asm        mov    eax, x;
-	__asm        mov    px, eax;
+	px = x;
 	__asm        jmp    _Tac3;
 _Tabf:
 	px += 0x4;
@@ -12001,8 +11974,7 @@ _Tac3:
 	__asm        cmp    eax, px;
 	__asm        jle    _Tdc6;
 // LINE 5334:
-	__asm        mov    eax, y;
-	__asm        mov    py, eax;
+	py = y;
 	__asm        jmp    _Tae1;
 _Tadd:
 	py += 0x4;

@@ -98,23 +98,19 @@ _T74:
 	__asm        jmp    _Tb1;
 // LINE 39:
 _T82:
-	__asm        mov    eax, currLoc;
-	__asm        dec    byte ptr [eax+1];
+	currLoc.y--;
 	__asm        jmp    _Td5;
 // LINE 40:
 _T8d:
-	__asm        mov    eax, currLoc;
-	__asm        inc    byte ptr [eax];
+	currLoc.x++;
 	__asm        jmp    _Td5;
 // LINE 41:
 _T97:
-	__asm        mov    eax, currLoc;
-	__asm        inc    byte ptr [eax+1];
+	currLoc.y++;
 	__asm        jmp    _Td5;
 // LINE 42:
 _Ta2:
-	__asm        mov    eax, currLoc;
-	__asm        dec    byte ptr [eax];
+	currLoc.x--;
 	__asm        jmp    _Td5;
 // LINE 43:
 	__asm        jmp    _Td5;

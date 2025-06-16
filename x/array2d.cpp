@@ -566,7 +566,7 @@ _T2b6:
 // Block start:
 	/*bp-0x110*/ long ycount;
 	/*bp-0x114*/ long xcount;
-	__asm        mov    xcount, 0;
+	xcount = 0x0;
 	__asm        jmp    _T2e0;
 _T2da:
 	xcount++;
@@ -576,7 +576,7 @@ _T2e0:
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jle    _T3a2;
 // LINE 95:
-	__asm        mov    ycount, 0;
+	ycount = 0x0;
 	__asm        jmp    _T30a;
 _T304:
 	ycount++;
@@ -727,7 +727,7 @@ _T40:
 	/*bp-0x8*/   long cnt;
 	bFound = 0x0;
 // LINE 172:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T62;
 _T5f:
 	cnt++;
@@ -811,7 +811,7 @@ void _cArray::MakeTable() {
 	__asm        add    esp, 0x10;
 // LINE 198:
 _T51:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T60;
 _T5d:
 	count++;
@@ -879,7 +879,7 @@ _T42:
 // LINE 254:
 	foundcount = 0xffffffff;
 // LINE 255:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T5d;
 _T5a:
 	count++;
@@ -1134,7 +1134,7 @@ _Ted:
 	__asm        add    esp, 0x10;
 // LINE 344:
 _T109:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T118;
 _T115:
 	cnt++;
@@ -1342,7 +1342,7 @@ _T72:
 	/*bp-0x10*/  short xcount;
 	/*bp-0x14*/  unsigned char * moveto;
 	/*bp-0x18*/  unsigned char * movefrom;
-	__asm        mov    xcount, 0;
+	xcount = 0x0;
 	__asm        jmp    _T9a;
 _T96:
 	xcount++;
@@ -1472,8 +1472,7 @@ _T7c:
 // LINE 419:
 // Block start:
 	/*bp-0x14*/  short count;
-	__asm        mov    ax, which;
-	__asm        mov    count, ax;
+	count = which;
 	__asm        jmp    _T9a;
 _T96:
 	count++;
@@ -1607,7 +1606,7 @@ _T60:
 	__asm        add    esp, 0x10;
 // LINE 441:
 _T7c:
-	__asm        mov    xcount, 0;
+	xcount = 0x0;
 	__asm        jmp    _T8b;
 _T87:
 	xcount++;
@@ -1619,8 +1618,7 @@ _T8b:
 // LINE 442:
 // Block start:
 	/*bp-0x18*/  short ycount;
-	__asm        mov    ax, which;
-	__asm        mov    ycount, ax;
+	ycount = which;
 	__asm        jmp    _Tac;
 _Ta8:
 	ycount++;
@@ -1810,7 +1808,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, signed char zeropad
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-0x7C], eax;
 // LINE 468:
-	__asm        mov    temp<vftable>, 0x593738;
+	temp<vftable> = 0x593738;
 	__asm        jmp    _T4d;
 
 	__asm        call   _cArray::MakeTable;
@@ -1862,7 +1860,7 @@ _Tc0:
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::ClearBytes;
 // LINE 477:
-	__asm        mov    xcnt, 0;
+	xcnt = 0x0;
 	__asm        jmp    _Tdb;
 _Td8:
 	xcnt++;
@@ -1876,7 +1874,7 @@ _Tdb:
 	__asm        cmp    temp.fxSize, eax;
 	__asm        jle    _T186;
 // LINE 479:
-	__asm        mov    ycnt, 0;
+	ycnt = 0x0;
 	__asm        jmp    _T105;
 _T102:
 	ycnt++;
@@ -2075,7 +2073,7 @@ _T2d:
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    [ecx], eax;
 // LINE 523:
-	__asm        mov    count, 1;
+	count = 0x1;
 	__asm        jmp    _T53;
 _T4f:
 	count++;
@@ -2376,7 +2374,7 @@ unsigned long _cArray::GetName() {
 // LINE 612:
 	__asm        call   _cArray::MakeTable;
 // LINE 613:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T1d;
 _T19:
 	cnt++;
@@ -2491,7 +2489,7 @@ _T168:
 // LINE 631:
 	found = 0x0;
 // LINE 633:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T23;
 _T1f:
 	count++;
@@ -2537,7 +2535,7 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 // LINE 648:
 	numByType = 0x0;
 // LINE 649:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T23;
 _T1f:
 	cnt++;
@@ -2577,7 +2575,7 @@ short _cArray::GetArrayIndexInType(/*unpacked*/ class _cArray *findarr) {
 // LINE 660:
 	found = 0x0;
 // LINE 662:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T23;
 _T1f:
 	count++;
@@ -2670,7 +2668,7 @@ _T7d:
 	__asm        call   FlatResFile::Count;
 	__asm        mov    numArrays, ax;
 // LINE 722:
-	__asm        mov    count, 1;
+	count = 0x1;
 	__asm        jmp    _Tce;
 _Tca:
 	count++;
@@ -2837,7 +2835,7 @@ short _cArray::GetLoadedIndex(/*unpacked*/ class ResFile *pFile, unsigned long r
 	__asm        mov    eax, rType;
 	__asm        mov    ft.type, eax;
 // LINE 781:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T2a;
 _T26:
 	cnt++;

@@ -552,8 +552,7 @@ void FireEngineClass::FireEngineClass() {
 // FUNCTION: COPTER_D 0x00536164
 void FireEngineClass::~FireEngineClass() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5932A8;
+	this-><FireEngineClass+0x00> = 0x5932a8;
 	__asm        jmp    __RETURN;
 __RETURN:
 	__asm        mov    ecx, this;

@@ -296,7 +296,7 @@ void CharList::DeleteAllItems() {
 // LINE 121:
 	iEnd = this->nCharDataCount;
 // LINE 123:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T23;
 _T20:
 	i++;

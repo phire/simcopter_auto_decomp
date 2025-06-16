@@ -150,7 +150,7 @@ void S3MissionReset() {
 // LINE 138:
 	S_log.szLogString = 0x6bf060;
 // LINE 141:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T22;
 _T1f:
 	i++;
@@ -731,7 +731,7 @@ void S3MissionDriver() {
 	/*bp-0x34*/  int32_t personriot_done;
 
 // LINE 437:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;
@@ -1155,7 +1155,7 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 659:
 	startthismission = 0x0;
 // LINE 663:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T1f;
 _T1c:
 	i++;
@@ -1251,7 +1251,7 @@ _T13c:
 // LINE 696:
 	numstarted = 0x0;
 // LINE 697:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T159;
 _T156:
 	count++;
@@ -1405,7 +1405,7 @@ _T2a3:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    numtostart, eax;
 // LINE 748:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T30f;
 _T30c:
 	count++;
@@ -1695,7 +1695,7 @@ _T62d:
 	__asm        lea    eax, [edx+2];
 	__asm        mov    numtostart, eax;
 // LINE 859:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T66b;
 _T668:
 	count++;
@@ -2985,7 +2985,7 @@ void S3MissionEnd(long mission_id) {
 // LINE 1412:
 	S_mstatics.curr_mission = 0x0;
 // LINE 1413:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T6d;
 _T6a:
 	i++;
@@ -3049,7 +3049,7 @@ long S3MissionGetByType(long mission_type) {
 	/*bp-0x4*/   long count;
 
 // LINE 1448:
-	__asm        mov    count, 0;
+	count = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	count++;
@@ -3109,7 +3109,7 @@ void S3MissionGenerate(long type) {
 	__asm        jmp    _T3c4;
 // LINE 1487:
 _T14:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T23;
 _T20:
 	i++;
@@ -3173,7 +3173,7 @@ _T9f:
 	return;
 // LINE 1509:
 _Tb8:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tc7;
 _Tc4:
 	i++;
@@ -3258,7 +3258,7 @@ _T170:
 	return;
 // LINE 1535:
 _T185:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T194;
 _T191:
 	i++;
@@ -3306,7 +3306,7 @@ _T1f2:
 	return;
 // LINE 1547:
 _T1f7:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T206;
 _T203:
 	i++;
@@ -3354,7 +3354,7 @@ _T264:
 	return;
 // LINE 1557:
 _T269:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T278;
 _T275:
 	i++;
@@ -3402,7 +3402,7 @@ _T2d6:
 	return;
 // LINE 1567:
 _T2db:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2ea;
 _T2e7:
 	i++;
@@ -3450,7 +3450,7 @@ _T348:
 	return;
 // LINE 1577:
 _T34d:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T35c;
 _T359:
 	i++;
@@ -3637,7 +3637,7 @@ _T91:
 	__asm        jmp    _T42;
 // LINE 1616:
 _T96:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Ta5;
 _Ta2:
 	i++;
@@ -3734,7 +3734,7 @@ _T91:
 	__asm        jmp    _T42;
 // LINE 1651:
 _T96:
-	__asm        mov    i, 0x1E;
+	i = 0x1e;
 	__asm        jmp    _Ta5;
 _Ta2:
 	i--;
@@ -3972,7 +3972,7 @@ long S3MissionStartDirect(long type) {
 	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1898:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T15:
 	i++;
@@ -5301,7 +5301,7 @@ long S3MissionGetIDByKey(long key) {
 	return 0xffffffff;
 // LINE 2444:
 _T1d:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2c;
 _T29:
 	i++;
@@ -5381,7 +5381,7 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 _T39:
 	S_mstatics.curr_mission = 0x0;
 // LINE 2501:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T52;
 _T4f:
 	i++;

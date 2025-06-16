@@ -1166,7 +1166,7 @@ static void label_kludge() {
 	/*bp-0x8*/   short len;
 
 // LINE 476:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T14:
 	i++;
@@ -1219,7 +1219,7 @@ void clear_label() {
 	/*bp-0x8*/   short j;
 
 // LINE 499:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T14:
 	i++;
@@ -1228,7 +1228,7 @@ _T18:
 	__asm        cmp    eax, 0x100;
 	__asm        jge    __RETURN;
 // LINE 500:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T36;
 _T32:
 	j++;
@@ -1258,7 +1258,7 @@ void graph_kludge() {
 	/*bp-0x8*/   short j;
 
 // LINE 519:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T18;
 _T14:
 	i++;
@@ -1273,7 +1273,7 @@ _T18:
 	__asm        mov    edx, GraphMax;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 521:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T4c;
 _T48:
 	j++;
@@ -1306,7 +1306,7 @@ _Ta2:
 	__asm        jmp    _T14;
 // LINE 526:
 _Ta7:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _Tb6;
 _Tb2:
 	i++;
@@ -1315,11 +1315,7 @@ _Tb6:
 	__asm        cmp    eax, 3;
 	__asm        jg     __RETURN;
 // LINE 527:
-	__asm        mov    eax, GraphMax;
-	__asm        mov    eax, [eax];
-	__asm        movsx  ecx, i;
-	__asm        mov    edx, GraphMax;
-	__asm        mov    [edx+ecx*4], eax;
+	GraphMax[reinterpret_cast<int16_t>(i)] = GraphMax[0];
 	__asm        jmp    _Tb2;
 // LINE 528:
 __RETURN:
@@ -1677,7 +1673,7 @@ _T63:
 // LINE 679:
 	ToolActive[5] = lval;
 // LINE 685:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T31a;
 _T316:
 	i++;
@@ -1713,7 +1709,7 @@ _T31a:
 	__asm        jmp    _T316;
 // LINE 691:
 _T386:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T395;
 _T391:
 	i++;
@@ -1749,7 +1745,7 @@ _T395:
 	__asm        jmp    _T391;
 // LINE 697:
 _T403:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T412;
 _T40e:
 	i++;
@@ -1768,7 +1764,7 @@ _T412:
 	__asm        jmp    _T40e;
 // LINE 700:
 _T445:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T454;
 _T450:
 	i++;
@@ -1788,7 +1784,7 @@ _T454:
 	__asm        jmp    _T450;
 // LINE 704:
 _T484:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T493;
 _T48f:
 	i++;
@@ -1807,7 +1803,7 @@ _T493:
 	__asm        jmp    _T48f;
 // LINE 708:
 _T4c2:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T4d1;
 _T4cd:
 	i++;
@@ -1898,7 +1894,7 @@ _T58e:
 	__asm        jmp    _T4cd;
 // LINE 725:
 _T5ed:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T5fc;
 _T5f8:
 	i++;
@@ -1916,7 +1912,7 @@ _T5fc:
 	__asm        jmp    _T5f8;
 // LINE 728:
 _T62b:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T63a;
 _T636:
 	i++;
@@ -1934,7 +1930,7 @@ _T63a:
 	__asm        jmp    _T636;
 // LINE 731:
 _T669:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T678;
 _T674:
 	i++;
@@ -1979,7 +1975,7 @@ _T678:
 	__asm        mov    [ecx+edx+0x68], eax;
 	__asm        inc    ix;
 // LINE 736:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T70f;
 _T70b:
 	j++;
@@ -2052,7 +2048,7 @@ _T785:
 	__asm        mov    Military, al;
 	__asm        inc    ix;
 // LINE 749:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T806;
 _T802:
 	i++;
@@ -2109,7 +2105,7 @@ _T806:
 	__asm        jmp    _T802;
 // LINE 757:
 _T8c1:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T8d0;
 _T8cc:
 	i++;
@@ -2181,7 +2177,7 @@ _T99d:
 	__asm        mov    unemployed, eax;
 	__asm        inc    ix;
 // LINE 769:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T9d8;
 _T9d4:
 	i++;
@@ -3539,7 +3535,7 @@ _Tea:
 	__asm        cmp    eax, count;
 	__asm        jge    _T128;
 // LINE 1223:
-	__asm        inc    ix;
+	ix++;
 	__asm        jmp    _Tea;
 // LINE 1224:
 _T128:
@@ -3941,7 +3937,7 @@ static unsigned short S2CityMiscWrite(/*packed*/ struct _iobuf *filNum) {
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1339:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2e2;
 _T2de:
 	i++;
@@ -3977,7 +3973,7 @@ _T2e2:
 	__asm        jmp    _T2de;
 // LINE 1344:
 _T34e:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T35d;
 _T359:
 	i++;
@@ -4013,7 +4009,7 @@ _T35d:
 	__asm        jmp    _T359;
 // LINE 1349:
 _T3cb:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T3da;
 _T3d6:
 	i++;
@@ -4033,7 +4029,7 @@ _T3da:
 	__asm        jmp    _T3d6;
 // LINE 1351:
 _T40f:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T41e;
 _T41a:
 	i++;
@@ -4052,7 +4048,7 @@ _T41e:
 	__asm        jmp    _T41a;
 // LINE 1353:
 _T44e:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T45d;
 _T459:
 	i++;
@@ -4070,7 +4066,7 @@ _T45d:
 	__asm        jmp    _T459;
 // LINE 1355:
 _T48c:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T49b;
 _T497:
 	i++;
@@ -4114,7 +4110,7 @@ _T49b:
 	__asm        jmp    _T497;
 // LINE 1361:
 _T526:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T535;
 _T531:
 	i++;
@@ -4132,7 +4128,7 @@ _T535:
 	__asm        jmp    _T531;
 // LINE 1363:
 _T564:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T573;
 _T56f:
 	i++;
@@ -4150,7 +4146,7 @@ _T573:
 	__asm        jmp    _T56f;
 // LINE 1365:
 _T5a2:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T5b1;
 _T5ad:
 	i++;
@@ -4195,7 +4191,7 @@ _T5b1:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1369:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T648;
 _T644:
 	j++;
@@ -4272,7 +4268,7 @@ _T6be:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1382:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T748;
 _T744:
 	i++;
@@ -4334,7 +4330,7 @@ _T748:
 	__asm        jmp    _T744;
 // LINE 1390:
 _T80d:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T81c;
 _T818:
 	i++;
@@ -4410,7 +4406,7 @@ _T8f1:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1403:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T92c;
 _T928:
 	i++;
@@ -4769,9 +4765,7 @@ _Te47:
 	__asm        cmp    eax, 0x4B0;
 	__asm        jge    _Te6c;
 // LINE 1477:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    dword ptr [ecx+eax*4], 0;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = 0x0;
 	__asm        jmp    _Te43;
 // LINE 1479:
 _Te6c:
@@ -4795,7 +4789,7 @@ void swizzle_buffer(char * data, long count) {
 // LINE 1502:
 	lptr = data;
 // LINE 1504:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2d;
 _T2a:
 	i++;
@@ -4825,7 +4819,7 @@ void swizzle_Micro(char * data, long count) {
 // LINE 1530:
 	mptr = data;
 // LINE 1532:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T27;
 _T24:
 	i++;
@@ -4880,7 +4874,7 @@ void swizzle_shorts(char * data, long count) {
 // LINE 1560:
 	sptr = data;
 // LINE 1562:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T2a;
 _T27:
 	i++;
@@ -5170,7 +5164,7 @@ _T2d3:
 	__asm        jmp    alloc_failure;
 // LINE 1815:
 _T2ff:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T30e;
 _T30b:
 	i++;
@@ -5187,7 +5181,7 @@ _T30e:
 	__asm        mov    ecx, i;
 	__asm        mov    GraphData[ecx*4], eax;
 // LINE 1817:
-	__asm        mov    j, 0;
+	j = 0x0;
 	__asm        jmp    _T345;
 _T342:
 	j++;
@@ -5228,7 +5222,7 @@ _T37d:
 	__asm        jmp    alloc_failure;
 // LINE 1828:
 _T3dc:
-	__asm        mov    cnt, 1;
+	cnt = 0x1;
 	__asm        jmp    _T3eb;
 _T3e8:
 	cnt++;
@@ -5257,7 +5251,7 @@ _T413:
 	__asm        jmp    alloc_failure;
 // LINE 1832:
 _T442:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T451;
 _T44e:
 	cnt++;
@@ -5286,7 +5280,7 @@ _T479:
 	__asm        jmp    alloc_failure;
 // LINE 1836:
 _T4a8:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T4b7;
 _T4b4:
 	cnt++;
@@ -5315,7 +5309,7 @@ _T4df:
 	__asm        jmp    alloc_failure;
 // LINE 1840:
 _T50e:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T51d;
 _T51a:
 	cnt++;
@@ -5344,7 +5338,7 @@ _T545:
 	__asm        jmp    alloc_failure;
 // LINE 1844:
 _T574:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T583;
 _T580:
 	cnt++;
@@ -5373,7 +5367,7 @@ _T5ab:
 	__asm        jmp    alloc_failure;
 // LINE 1848:
 _T5da:
-	__asm        mov    cnt, 0;
+	cnt = 0x0;
 	__asm        jmp    _T5e9;
 _T5e6:
 	cnt++;
@@ -5430,7 +5424,7 @@ _T66f:
 _T69e:
 	z = 0x0;
 // LINE 1858:
-	__asm        mov    x, 0;
+	x = 0x0;
 	__asm        jmp    _T6b3;
 _T6af:
 	x++;
@@ -5439,7 +5433,7 @@ _T6b3:
 	__asm        cmp    eax, 0x80;
 	__asm        jge    _T76a;
 // LINE 1859:
-	__asm        mov    y, 0;
+	y = 0x0;
 	__asm        jmp    _T6d1;
 _T6cd:
 	y++;
@@ -5620,7 +5614,7 @@ _T911:
 	__asm        jmp    alloc_failure;
 // LINE 1890:
 _T940:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T94f;
 _T94c:
 	i++;
@@ -5643,7 +5637,7 @@ _T94f:
 	__asm        jmp    _T94c;
 // LINE 1894:
 _T98d:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T99c;
 _T999:
 	i++;
@@ -5678,7 +5672,7 @@ _T99c:
 	__asm        jmp    _T999;
 // LINE 1900:
 _Ta03:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Ta12;
 _Ta0f:
 	i++;
@@ -6003,7 +5997,7 @@ void PStringToCString(char * string) {
 // LINE 1980:
 	sizePString = string[0];
 // LINE 1983:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T20;
 _T1d:
 	i++;
@@ -6081,7 +6075,7 @@ void CopyPString(char * stringDestination, char * stringSource) {
 // LINE 2014:
 	stringDestination[0] = stringSource[0];
 // LINE 2015:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T2c;
 _T29:
 	i++;
@@ -6341,7 +6335,7 @@ _T30:
 // LINE 2171:
 	s = res;
 // LINE 2173:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T55;
 _T51:
 	i++;
@@ -6598,7 +6592,7 @@ _Tdb:
 	__asm        cmp    eax, 0x2E;
 	__asm        je     _Tf2;
 // LINE 2294:
-	__asm        dec    s;
+	s--;
 	__asm        jmp    _Tdb;
 // LINE 2295:
 _Tf2:

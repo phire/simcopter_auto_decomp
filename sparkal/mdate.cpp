@@ -1394,16 +1394,7 @@ _T248:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T276;
 _T257:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, d;
-	__asm        push   eax;
-	__asm        mov    eax, m;
-	__asm        push   eax;
-	__asm        call   MDate::Jday;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->Julnum = MDate::Jday(y, d, m);
 	__asm        jmp    _T280;
 _T276:
 	this->Julnum = 0x0;

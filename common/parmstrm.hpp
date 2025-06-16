@@ -2,8 +2,7 @@
 // FUNCTION: COPTER_D 0x004cd5a0
 void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint32_t pagesize) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923F8;
+	this-><cGZXParamBitstream<t_alloc,t_free>+0x00> = 0x5923f8;
 	__asm        jmp    _T23;
 _T23:
 	__asm        mov    eax, this;
@@ -32,8 +31,7 @@ _T6f:
 	__asm        mov    [ecx+0x2C], ax;
 	__asm        jmp    _T90;
 _T90:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 0;
+	this->starting_iterator.m_stream = 0x0;
 	__asm        jmp    _Ta2;
 _Ta2:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
@@ -54,8 +52,7 @@ _Tc2:
 	__asm        mov    [ecx+0x36], ax;
 	__asm        jmp    _Te3;
 _Te3:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2E], 0;
+	this->ending_iterator.m_stream = 0x0;
 	__asm        jmp    _Tf5;
 _Tf5:
 	__asm        jmp    _Tfa;
@@ -120,8 +117,7 @@ _T1bf:
 _T1dc:
 	__asm        jmp    _T1e1;
 _T1e1:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x1A], 8;
+	this->nodeList.finish += 0x8;
 	__asm        jmp    _T57f;
 _T1f0:
 	__asm        jmp    _T1f5;
@@ -436,8 +432,7 @@ _T5cf:
 _T5f2:
 	__asm        jmp    _T5f7;
 _T5f7:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x1A], 8;
+	this->nodeList.finish += 0x8;
 	__asm        jmp    _T9aa;
 _T606:
 	__asm        jmp    _T60b;
@@ -750,7 +745,7 @@ void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
 	/*bp-0x4*/   int32_t loop;
 
 // LINE 366:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T1b;
 _T18:
 	loop++;
@@ -1035,8 +1030,7 @@ _T16a:
 _T187:
 	__asm        jmp    _T18c;
 _T18c:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x1A], 8;
+	this->nodeList.finish += 0x8;
 	__asm        jmp    _T5a5;
 _T19b:
 	__asm        jmp    _T1a0;
@@ -1486,8 +1480,7 @@ _T76e:
 _T791:
 	__asm        jmp    _T796;
 _T796:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x1A], 8;
+	this->nodeList.finish += 0x8;
 	__asm        jmp    _Tc4b;
 _T7a5:
 	__asm        jmp    _T7aa;
@@ -1876,7 +1869,7 @@ long cGZXParamBitstream<t_alloc,t_free>::Size() {
 // LINE 355:
 	retVal = 0x0;
 // LINE 356:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 	__asm        jmp    _T22;
 _T1f:
 	loop++;

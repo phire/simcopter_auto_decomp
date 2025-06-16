@@ -646,8 +646,7 @@ _T450:
 _T464:
 	this->sCheckmarkFileName.reference = 0x0;
 _T474:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x16E], 0;
+	this->sCheckmarkFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T489;
 _T489:
 	__asm        push   0x10;
@@ -676,8 +675,7 @@ _T4ce:
 _T4e2:
 	this->sTitle.reference = 0x0;
 _T4f2:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x176], 0;
+	this->sTitle.c_str_ptr = 0x0;
 	__asm        jmp    _T507;
 _T507:
 	__asm        push   0x10;
@@ -706,8 +704,7 @@ _T54c:
 _T560:
 	this->sAddress1.reference = 0x0;
 _T570:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x17E], 0;
+	this->sAddress1.c_str_ptr = 0x0;
 	__asm        jmp    _T585;
 _T585:
 	__asm        push   0x10;
@@ -736,8 +733,7 @@ _T5ca:
 _T5de:
 	this->sAddress2.reference = 0x0;
 _T5ee:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x186], 0;
+	this->sAddress2.c_str_ptr = 0x0;
 	__asm        jmp    _T603;
 _T603:
 	__asm        push   1;
@@ -1149,7 +1145,7 @@ int32_t InventoryWindow::Initialize() {
 // LINE 81:
 	nReturnValue = this->GraphicWindow::Initialize();
 // LINE 87:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T33;
 _T30:
 	i++;
@@ -1698,7 +1694,7 @@ _T86e:
 	__asm        jmp    _T873;
 // LINE 101:
 _T873:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T882;
 _T87f:
 	i++;
@@ -2498,7 +2494,7 @@ _T24d:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 191:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T299;
 _T296:
 	i++;
@@ -2601,17 +2597,11 @@ void InventoryWindow::DrawInventory() {
 	/*bp-0x24*/  long lCurrentHeliType;
 
 // LINE 208:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x80];
-	__asm        mov    eax, [eax+8];
-	__asm        mov    lCheckmarkWidth, eax;
+	lCheckmarkWidth = this->myCheckmarkImage-><CBackBuffer+0x08:4>;
 	__asm        jmp    _T20;
 // LINE 209:
 _T20:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x80];
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    lCheckmarkHeight, eax;
+	lCheckmarkHeight = this->myCheckmarkImage-><CBackBuffer+0x0c:4>;
 	__asm        jmp    _T34;
 // LINE 210:
 _T34:

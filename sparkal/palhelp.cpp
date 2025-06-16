@@ -373,7 +373,7 @@ _Tb9:
 	return;
 // LINE 118:
 _Tbe:
-	__asm        mov    i, 0xA;
+	i = 0xa;
 	__asm        jmp    _Tcd;
 _Tca:
 	i++;
@@ -412,7 +412,7 @@ _T137:
 // LINE 125:
 	nDivisor = 0x40;
 // LINE 126:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T154;
 _T151:
 	i++;
@@ -482,7 +482,7 @@ _T211:
 	__asm        mov    nMultiplier, eax;
 // LINE 132:
 _T231:
-	__asm        mov    j, 0xA;
+	j = 0xa;
 	__asm        jmp    _T240;
 _T23d:
 	j++;
@@ -697,7 +697,7 @@ _Tb9:
 	return;
 // LINE 206:
 _Tbe:
-	__asm        mov    i, 0xA;
+	i = 0xa;
 	__asm        jmp    _Tcd;
 _Tca:
 	i++;
@@ -736,7 +736,7 @@ _T137:
 // LINE 214:
 	nDivisor = 0x40;
 // LINE 215:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T154;
 _T151:
 	i++;
@@ -806,7 +806,7 @@ _T211:
 	__asm        mov    nMultiplier, eax;
 // LINE 221:
 _T231:
-	__asm        mov    j, 0xA;
+	j = 0xa;
 	__asm        jmp    _T240;
 _T23d:
 	j++;
@@ -1013,7 +1013,7 @@ _Tb9:
 	return;
 // LINE 295:
 _Tbe:
-	__asm        mov    i, 0xA;
+	i = 0xa;
 	__asm        jmp    _Tcd;
 _Tca:
 	i++;
@@ -1052,7 +1052,7 @@ _T137:
 // LINE 303:
 	nDivisor = 0x40;
 // LINE 304:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _T154;
 _T151:
 	i++;
@@ -1122,7 +1122,7 @@ _T211:
 	__asm        mov    nMultiplier, eax;
 // LINE 310:
 _T231:
-	__asm        mov    j, 0xA;
+	j = 0xa;
 	__asm        jmp    _T240;
 _T23d:
 	j++;
@@ -1394,7 +1394,7 @@ _Tb7:
 	return;
 // LINE 401:
 _Tbc:
-	__asm        mov    i, 0;
+	i = 0x0;
 	__asm        jmp    _Tcb;
 _Tc8:
 	i++;
@@ -1403,7 +1403,7 @@ _Tcb:
 	__asm        cmp    i, eax;
 	__asm        jge    _T111;
 // LINE 402:
-	__asm        mov    j, 0xA;
+	j = 0xa;
 	__asm        jmp    _Te6;
 _Te3:
 	j++;
@@ -1423,7 +1423,7 @@ _T10c:
 	__asm        jmp    _Tc8;
 // LINE 406:
 _T111:
-	__asm        mov    j, 0xA;
+	j = 0xa;
 	__asm        jmp    _T120;
 _T11d:
 	j++;
@@ -1483,7 +1483,7 @@ _T1ad:
 // LINE 418:
 	nDivisor = 0x40;
 // LINE 419:
-	__asm        mov    i, 1;
+	i = 0x1;
 	__asm        jmp    _T1ca;
 _T1c7:
 	i++;
@@ -1553,7 +1553,7 @@ _T265:
 	__asm        mov    nMultiplier, eax;
 // LINE 425:
 _T284:
-	__asm        mov    j, 0xA;
+	j = 0xa;
 	__asm        jmp    _T293;
 _T290:
 	j++;
@@ -1806,7 +1806,7 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(/*packed*/ struct SparkalColor
 	/*bp-0x404*/ /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
 
 // LINE 467:
-	__asm        mov    i, 0xA;
+	i = 0xa;
 	__asm        jmp    _T1b;
 _T18:
 	i++;
@@ -1864,7 +1864,7 @@ void SparkalPalette::ImplementNewPalette(/*packed*/ struct SparkalColor *pNewCol
 	/*bp-0x408*/ long hResult;
 
 // LINE 503:
-	__asm        mov    i, 0xA;
+	i = 0xa;
 	__asm        jmp    _T21;
 _T1e:
 	i++;
@@ -1973,7 +1973,7 @@ void ClearWindowsSystemPalette() {
 	__asm        mov    ecx, 0x100;
 	__asm        rep stosd;
 // LINE 573:
-	__asm        mov    Counter, 0;
+	Counter = 0x0;
 	__asm        jmp    _T3c;
 _T39:
 	Counter++;
