@@ -2757,35 +2757,13 @@ _T52c:
 // FUNCTION: COPTER_D 0x0040200d
 int32_t KeyboardWindow::Initialize() {
 // LINE 90:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 91:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        add    eax, 0xC8;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x74;
-	__asm        push   eax;
-	__asm        call   LoadListFromResource;
-	__asm        add    esp, 8;
+	LoadListFromResource((gDefaultLanguage + 0xc8), (this + 0x74));
 // LINE 92:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        add    eax, 0x12C;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        push   eax;
-	__asm        call   LoadListFromResource;
-	__asm        add    esp, 8;
+	LoadListFromResource((gDefaultLanguage + 0x12c), (this + 0x7c));
 // LINE 93:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        add    eax, 0x190;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x84;
-	__asm        push   eax;
-	__asm        call   LoadListFromResource;
-	__asm        add    esp, 8;
+	LoadListFromResource((gDefaultLanguage + 0x190), (this + 0x84));
 // LINE 94:
 	this->bNumLockLastSetting = Keyboard::IsToggleKeySet(0x90);
 // LINE 95:
@@ -2805,10 +2783,7 @@ _Tc7:
 	this->myCurrentlyUsedNumLockHotSpotList = (this + 0x84);
 // LINE 101:
 _Td8:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 103:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -4825,12 +4800,7 @@ _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 395:
 _Ta6:
-	__asm        lea    eax, szTypeface[0];
-	__asm        push   eax;
-	__asm        push   2;
-	__asm        push   0;
-	__asm        call   LanguageManager::GetTypefaceForLanguage;
-	__asm        add    esp, 0xC;
+	LanguageManager::GetTypefaceForLanguage(szTypeface[0], 0x2, 0x0);
 // LINE 396:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA0], 0;
@@ -5620,10 +5590,7 @@ long KeyboardWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 	/*bp-0x8*/   /*packed*/ struct KeyboardWindowMessage tempKeyboardWindowMessage; // 0x8 bytes
 
 // LINE 533:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 534:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -7343,10 +7310,7 @@ long JoystickWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 	/*bp-0x4*/   long lKey;
 
 // LINE 967:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 968:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -8204,8 +8168,7 @@ _T85:
 	__asm        jmp    _T91;
 // LINE 1092:
 _T91:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 1095:
 	__asm        push   0xB0;
 	__asm        call   operator new;
@@ -9473,15 +9436,9 @@ _T1247:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::UpdateDisplay;
 // LINE 1168:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 1169:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 1171:
 	__asm        mov    dword ptr [ebp-0xC8], 1;
 	__asm        mov    eax, sText.reference;
@@ -10802,14 +10759,7 @@ _T61:
 // LINE 1394:
 	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1395:
-	__asm        lea    eax, lIgnoreModifiers;
-	__asm        push   eax;
-	__asm        lea    eax, lPush;
-	__asm        push   eax;
-	__asm        mov    eax, lCurrentCommand;
-	__asm        push   eax;
-	__asm        call   GetPushAndIgnoreSettingsForCommand;
-	__asm        add    esp, 0xC;
+	GetPushAndIgnoreSettingsForCommand(lIgnoreModifiers, lPush, lCurrentCommand);
 // LINE 1396:
 	tempShortcut.lDeviceID = 0x0;
 // LINE 1397:
@@ -12579,14 +12529,7 @@ _T17:
 	__asm        jmp    _T30;
 // LINE 1720:
 _T30:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME, 0x0, 0x6);
 // LINE 1722:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -13784,11 +13727,7 @@ _T5dc:
 // FUNCTION: COPTER_D 0x0040b471
 void UserInputWindow::WriteShortcutsToPreferenceFile() {
 // LINE 1806:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA0;
-	__asm        push   eax;
-	__asm        call   WriteShortcutPrefsFile;
-	__asm        add    esp, 4;
+	WriteShortcutPrefsFile((this + 0xa0));
 // LINE 1807:
 	return;
 }
@@ -13869,8 +13808,7 @@ _T85:
 	__asm        jmp    _T91;
 // LINE 1868:
 _T91:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 1871:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xdc);
 // LINE 1872:
@@ -14809,15 +14747,9 @@ _Td2b:
 // LINE 1920:
 	this->bInitializing = 0x0;
 // LINE 1921:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 1922:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 1923:
 	__asm        mov    dword ptr [ebp-0xA8], 1;
 	__asm        mov    eax, sText.reference;
@@ -16263,12 +16195,7 @@ _T2f5:
 // LINE 2074:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe3);
 // LINE 2075:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        lea    eax, sModifier.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, sModifier.c_str_ptr);
 // LINE 2076:
 	__asm        jmp    _T334;
 _T334:
@@ -16321,12 +16248,7 @@ _T3b2:
 // LINE 2083:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe4);
 // LINE 2084:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        lea    eax, sModifier.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, sModifier.c_str_ptr);
 // LINE 2085:
 	__asm        jmp    _T3e0;
 _T3e0:
@@ -16364,12 +16286,7 @@ _T433:
 // LINE 2092:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe5);
 // LINE 2093:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        lea    eax, sModifier.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, sModifier.c_str_ptr);
 // LINE 2094:
 	__asm        jmp    _T461;
 _T461:
@@ -16402,12 +16319,7 @@ _T48d:
 _T4aa:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, (lKey + 0x2bc));
 // LINE 2100:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        lea    eax, sKey.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, sKey.c_str_ptr);
 // LINE 2101:
 	__asm        jmp    _T4d5;
 _T4d5:

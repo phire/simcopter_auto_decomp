@@ -7503,26 +7503,7 @@ _Tb5:
 	what = 0x4;
 // LINE 1437:
 _T194:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        mov    eax, speed;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, scale;
-	__asm        push   eax;
-	__asm        lea    eax, debrisunitvect.x;
-	__asm        push   eax;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        lea    eax, celloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, what;
-	__asm        push   eax;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(this->fMissionID, speed, (this + 0x24), scale, debrisunitvect.x, loc.x, celloc.x, what);
 // LINE 1438:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;

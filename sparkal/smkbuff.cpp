@@ -1131,11 +1131,7 @@ _T43:
 	__asm        cmp    dword ptr [eax+0x148], 0;
 	__asm        je     _T65;
 // LINE 498:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x148];
-	__asm        push   eax;
-	__asm        call   VRUnLoadResource;
-	__asm        add    esp, 4;
+	VRUnLoadResource(this->vrOriginalResource);
 // LINE 499:
 _T65:
 	__asm        mov    ecx, this;
@@ -1747,11 +1743,7 @@ _T1ea:
 	__asm        cmp    dword ptr [eax+0x148], 0;
 	__asm        je     _T236;
 // LINE 775:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x148];
-	__asm        push   eax;
-	__asm        call   VRUnLoadResource;
-	__asm        add    esp, 4;
+	VRUnLoadResource(this->vrOriginalResource);
 // LINE 776:
 	this->vrOriginalResource = 0x0;
 // LINE 777:

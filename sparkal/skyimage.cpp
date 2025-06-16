@@ -291,8 +291,7 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14C], eax;
 // LINE 51:
-	__asm        mov    ecx, this;
-	__asm        call   SkyImage::LoadImageA;
+	this->SkyImage::LoadImageA();
 // LINE 52:
 	return;
 
@@ -309,8 +308,7 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 // LINE 61:
 	this->nSkyType = nNewSkyType;
 // LINE 62:
-	__asm        mov    ecx, this;
-	__asm        call   SkyImage::LoadImageA;
+	this->SkyImage::LoadImageA();
 // LINE 64:
 _T32:
 	return;
@@ -361,26 +359,12 @@ int32_t SkyImage::LoadImageA() {
 	__asm        cmp    dword ptr [eax+0x13C], 0;
 	__asm        jne    _T43;
 // LINE 103:
-	__asm        lea    eax, szFullSkyImagePath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_SKY_DAY_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSkyImagePath[0], SZ_SKY_DAY_IMAGE_FILE_NAME, 0x0, 0x6);
 // LINE 104:
 	__asm        jmp    _T5c;
 // LINE 105:
 _T43:
-	__asm        lea    eax, szFullSkyImagePath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_SKY_NIGHT_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSkyImagePath[0], SZ_SKY_NIGHT_IMAGE_FILE_NAME, 0x0, 0x6);
 // LINE 107:
 _T5c:
 	vrResource = VRLoadResource(0x59a13c, 0x3, szFullSkyImagePath[0]);
@@ -554,10 +538,7 @@ _T173:
 	__asm        add    esp, 0xC;
 // LINE 203:
 _T354:
-	__asm        mov    eax, vrResource;
-	__asm        push   eax;
-	__asm        call   VRUnLoadResource;
-	__asm        add    esp, 4;
+	VRUnLoadResource(vrResource);
 // LINE 204:
 	return 0x1;
 // LINE 205:

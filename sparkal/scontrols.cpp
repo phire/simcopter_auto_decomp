@@ -498,9 +498,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00471614
 static void $E64() {
 
-	__asm        push   0x471631;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x471631);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -548,9 +546,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0047169c
 static void $E69() {
 
-	__asm        push   0x4716B9;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x4716b9);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -598,9 +594,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00471724
 static void $E74() {
 
-	__asm        push   0x471741;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x471741);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -648,9 +642,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004717ac
 static void $E79() {
 
-	__asm        push   0x4717C9;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x4717c9);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -685,8 +677,7 @@ void SoundButtonWindow::SoundButtonWindow() {
 	__asm        cmp    SoundButtonWindow::lButtonSoundReferenceCount, 0;
 	__asm        jne    _T34;
 // LINE 31:
-	__asm        mov    ecx, 0x6042C8;
-	__asm        call   DigitalSound::Load;
+	0x6042c8->DigitalSound::Load();
 // LINE 32:
 _T34:
 	SoundButtonWindow::lButtonSoundReferenceCount++;
@@ -719,8 +710,7 @@ void SoundButtonWindow::SoundButtonWindow(/*packed*/ class MRect& rectNewWindow,
 	__asm        cmp    SoundButtonWindow::lButtonSoundReferenceCount, 0;
 	__asm        jne    _T4c;
 // LINE 46:
-	__asm        mov    ecx, 0x6042C8;
-	__asm        call   DigitalSound::Load;
+	0x6042c8->DigitalSound::Load();
 // LINE 47:
 _T4c:
 	SoundButtonWindow::lButtonSoundReferenceCount++;
@@ -806,8 +796,7 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(/*unpacked*/ class ButtonGro
 	__asm        cmp    SoundRadioButtonWindow::lRadioSoundReferenceCount, 0;
 	__asm        jne    _T50;
 // LINE 84:
-	__asm        mov    ecx, 0x6043C8;
-	__asm        call   DigitalSound::Load;
+	0x6043c8->DigitalSound::Load();
 // LINE 85:
 _T50:
 	SoundRadioButtonWindow::lRadioSoundReferenceCount++;
@@ -878,8 +867,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 	__asm        cmp    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount, 0;
 	__asm        jne    _T34;
 // LINE 114:
-	__asm        mov    ecx, 0x604348;
-	__asm        call   DigitalSound::Load;
+	0x604348->DigitalSound::Load();
 // LINE 115:
 _T34:
 	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
@@ -912,8 +900,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(/*packed*/ class MRect& rectNewWin
 	__asm        cmp    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount, 0;
 	__asm        jne    _T4c;
 // LINE 128:
-	__asm        mov    ecx, 0x604348;
-	__asm        call   DigitalSound::Load;
+	0x604348->DigitalSound::Load();
 // LINE 129:
 _T4c:
 	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
@@ -984,8 +971,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 	__asm        cmp    SoundScrollBarWindow::lScrollBarSoundReferenceCount, 0;
 	__asm        jne    _T34;
 // LINE 158:
-	__asm        mov    ecx, 0x604248;
-	__asm        call   DigitalSound::Load;
+	0x604248->DigitalSound::Load();
 // LINE 159:
 _T34:
 	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
@@ -1020,8 +1006,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow(/*packed*/ class MRect& rectNewW
 	__asm        cmp    SoundScrollBarWindow::lScrollBarSoundReferenceCount, 0;
 	__asm        jne    _T50;
 // LINE 172:
-	__asm        mov    ecx, 0x604248;
-	__asm        call   DigitalSound::Load;
+	0x604248->DigitalSound::Load();
 // LINE 173:
 _T50:
 	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;

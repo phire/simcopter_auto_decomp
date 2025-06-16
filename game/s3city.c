@@ -148,13 +148,7 @@ _T38:
 	__asm        jmp    _T72;
 // LINE 221:
 _T72:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        push   0x5B5A1C;
-	__asm        push   0;
-	__asm        push   4;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], 0x5b5a1c, 0x0, 0x4);
 // LINE 222:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -167,7 +161,7 @@ _T72:
 	return 0x1;
 // LINE 227:
 _Tad:
-	__asm        call   S3TerrainInitMap;
+	S3TerrainInitMap();
 // LINE 229:
 	G_helibase_found = 0x0;
 // LINE 230:
@@ -10327,10 +10321,7 @@ _T1bd:
 // LINE 4418:
 	S_up_trend = 0x0;
 // LINE 4419:
-	__asm        mov    eax, gsize;
-	__asm        push   eax;
-	__asm        call   VRInitGridObj;
-	__asm        add    esp, 4;
+	VRInitGridObj(gsize);
 // LINE 4420:
 	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;

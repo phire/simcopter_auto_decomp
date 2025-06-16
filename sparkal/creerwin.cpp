@@ -602,8 +602,7 @@ _T85:
 	__asm        jmp    _T91;
 // LINE 109:
 _T91:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 111:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB8], 0;
@@ -1624,14 +1623,7 @@ _Tf62:
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 169:
-	__asm        lea    eax, szFullCityVideoFilePath[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFullCityVideoFileName[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   1;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullCityVideoFilePath[0], szFullCityVideoFileName[0], 0x0, 0x1);
 // LINE 170:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
@@ -1656,14 +1648,7 @@ _Tf62:
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 176:
-	__asm        lea    eax, szFullCityVideoFilePath[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFullCityVideoFileName[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   1;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullCityVideoFilePath[0], szFullCityVideoFileName[0], 0x0, 0x1);
 // LINE 177:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
@@ -1688,14 +1673,7 @@ _Tf62:
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 183:
-	__asm        lea    eax, szFullCityVideoFilePath[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFullCityVideoFileName[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   1;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullCityVideoFilePath[0], szFullCityVideoFileName[0], 0x0, 0x1);
 // LINE 184:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
@@ -1721,15 +1699,9 @@ _Tf62:
 	__asm        mov    ecx, this;
 	__asm        call   CareerWindow::SetCurrentCitySelection;
 // LINE 191:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 192:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 194:
 	__asm        mov    dword ptr [ebp-0x294], 1;
 	__asm        mov    eax, sText.reference;

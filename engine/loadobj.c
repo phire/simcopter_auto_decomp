@@ -2869,11 +2869,7 @@ _T2a:
 	/*bp-0x8*/   unsigned short FaceIndex;
 
 // LINE 1803:
-	__asm        push   2;
-	__asm        lea    eax, FaceIndex;
-	__asm        push   eax;
-	__asm        call   ReadResource;
-	__asm        add    esp, 8;
+	ReadResource(0x2, FaceIndex);
 // LINE 1810:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(FaceIndex);
 	__asm        and    eax, 0xFFFF;

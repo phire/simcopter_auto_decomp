@@ -79,21 +79,11 @@ int32_t S2CityValidate(char * filepath) {
 	return 0x0;
 // LINE 119:
 _T2e:
-	__asm        push   2;
-	__asm        push   0;
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   fseek;
-	__asm        add    esp, 0xC;
+	fseek(0x2, 0x0, filNum);
 // LINE 120:
 	lFileLength = ftell(filNum);
 // LINE 121:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   fseek;
-	__asm        add    esp, 0xC;
+	fseek(0x0, 0x0, filNum);
 // LINE 123:
 	__asm        lea    eax, lCityDataChunkLength;
 	__asm        push   eax;
@@ -196,10 +186,7 @@ _T170:
 	__asm        jmp    _T92;
 // LINE 158:
 exit:
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(filNum);
 // LINE 159:
 	return bOK;
 // LINE 160:
@@ -240,10 +227,7 @@ _T35:
 	__asm        test   eax, eax;
 	__asm        jne    _T64;
 // LINE 191:
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(filNum);
 // LINE 192:
 	return 0x0;
 // LINE 195:
@@ -344,10 +328,7 @@ _T16c:
 	__asm        jmp    _T71;
 // LINE 226:
 _T171:
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(filNum);
 // LINE 227:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
 	__asm        je     _T198;
@@ -407,19 +388,9 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 	__asm        cmp    fp, 0;
 	__asm        je     _T5c;
 // LINE 277:
-	__asm        mov    eax, fp;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        push   1;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        call   fread;
-	__asm        add    esp, 0x10;
+	fread(fp, 0x4, 0x1, buf[0]);
 // LINE 278:
-	__asm        mov    eax, fp;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(fp);
 // LINE 279:
 	buf[4] = 0x0;
 // LINE 281:
@@ -459,10 +430,7 @@ short S2CityLoad(char * filePath) {
 	__asm        test   eax, eax;
 	__asm        je     _T31;
 // LINE 306:
-	__asm        mov    eax, filePath;
-	__asm        push   eax;
-	__asm        call   ReadSCXFile;
-	__asm        add    esp, 4;
+	ReadSCXFile(filePath);
 	__asm        jmp    __RETURN;
 // LINE 308:
 _T31:
@@ -1142,18 +1110,12 @@ _T884:
 	__asm        call   clear_label;
 // LINE 453:
 _T889:
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(filNum);
 // LINE 454:
 	return 0x1;
 // LINE 457:
 badread:
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(filNum);
 // LINE 458:
 	return 0x0;
 // LINE 459:
@@ -3007,25 +2969,14 @@ _T47b:
 	__asm        jmp    badwrite;
 // LINE 1043:
 _T4b0:
-	__asm        mov    eax, WriteLength;
-	__asm        push   eax;
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   S2CityWriteHeader;
-	__asm        add    esp, 8;
+	S2CityWriteHeader(WriteLength, filNum);
 // LINE 1046:
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(filNum);
 // LINE 1048:
 	return 0x1;
 // LINE 1051:
 badwrite:
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(filNum);
 // LINE 1052:
 	return 0x0;
 // LINE 1053:
@@ -6239,10 +6190,7 @@ short check_file_exist(char * filename) {
 	return 0x0;
 // LINE 2324:
 _T2f:
-	__asm        mov    eax, fileNum;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(fileNum);
 // LINE 2325:
 	return 0x1;
 // LINE 2326:

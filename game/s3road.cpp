@@ -181,9 +181,7 @@ _T19a:
 // LINE 87:
 	DiagVector[0].y = 0x0;
 // LINE 88:
-	__asm        push   0x62BB00;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(0x62bb00);
 // LINE 89:
 	__asm        push   0x62BB00;
 	__asm        push   0x62BA00;
@@ -196,11 +194,7 @@ _T19a:
 // LINE 93:
 	DiagVector[1].y = 0x0;
 // LINE 94:
-	__asm        mov    eax, 0x62BB00;
-	__asm        add    eax, 0xC;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize((0x62bb00 + 0xc));
 // LINE 95:
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0xC;
@@ -217,11 +211,7 @@ _T19a:
 // LINE 99:
 	DiagVector[2].y = 0x0;
 // LINE 100:
-	__asm        mov    eax, 0x62BB00;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize((0x62bb00 + 0x18));
 // LINE 101:
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0x18;
@@ -238,11 +228,7 @@ _T19a:
 // LINE 105:
 	DiagVector[3].y = 0x0;
 // LINE 106:
-	__asm        mov    eax, 0x62BB00;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize((0x62bb00 + 0x24));
 // LINE 107:
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0x24;

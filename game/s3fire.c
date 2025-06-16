@@ -983,12 +983,7 @@ _T5bb:
 	__asm        cmp    mindist, 0x32;
 	__asm        jge    _T5d5;
 // LINE 556:
-	__asm        push   1;
-	__asm        lea    eax, minloc.x;
-	__asm        push   eax;
-	__asm        push   0xD;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, minloc.x, 0xd);
 // LINE 562:
 _T5d5:
 	return;
@@ -1080,18 +1075,7 @@ _Te3:
 // LINE 606:
 	cfd->cptr = cptr;
 // LINE 607:
-	__asm        push   0;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        push   eax;
-	__asm        mov    eax, celly;
-	__asm        push   eax;
-	__asm        mov    eax, cellx;
-	__asm        push   eax;
-	__asm        mov    eax, cfd;
-	__asm        push   eax;
-	__asm        call   S3FireStartCell;
-	__asm        add    esp, 0x14;
+	S3FireStartCell(0x0, fd->mission_id, celly, cellx, cfd);
 // LINE 608:
 }
 
@@ -1274,12 +1258,7 @@ _T109:
 	__asm        shl    eax, 0x10;
 	__asm        mov    dloc.z, eax;
 // LINE 706:
-	__asm        push   0;
-	__asm        lea    eax, dloc.x;
-	__asm        push   eax;
-	__asm        push   0xF;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, dloc.x, 0xf);
 // LINE 710:
 _T193:
 	__asm        xor    eax, eax;
@@ -2574,13 +2553,7 @@ _Taac:
 	__asm        test   byte ptr [eax], 4;
 	__asm        je     _Taf5;
 // LINE 929:
-	__asm        push   0x80010;
-	__asm        mov    eax, celly;
-	__asm        push   eax;
-	__asm        mov    eax, cellx;
-	__asm        push   eax;
-	__asm        call   S3MissionStart;
-	__asm        add    esp, 0xC;
+	S3MissionStart(0x80010, celly, cellx);
 // LINE 933:
 _Taf5:
 	return 0x1;
@@ -2795,26 +2768,9 @@ _Tce:
 _Tef:
 	vec.y = S_yval;
 // LINE 1077:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(vec.x);
 // LINE 1089:
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, speed;
-	__asm        push   eax;
-	__asm        mov    eax, dytruck;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        lea    eax, currpos.x;
-	__asm        push   eax;
-	__asm        push   6;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(-0x1, speed, dytruck, 0x1, vec.x, loc.x, currpos.x, 0x6);
 // LINE 1093:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -2920,26 +2876,9 @@ _Td2:
 _Tf3:
 	vec.y = S_yval;
 // LINE 1143:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(vec.x);
 // LINE 1155:
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, speed;
-	__asm        push   eax;
-	__asm        mov    eax, dytruck;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        lea    eax, currpos.x;
-	__asm        push   eax;
-	__asm        push   6;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(-0x1, speed, dytruck, 0x1, vec.x, loc.x, currpos.x, 0x6);
 // LINE 1159:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -2978,12 +2917,7 @@ void S3FireTweakInit() {
 // LINE 1183:
 	pvals[5] = 0x5b739c;
 // LINE 1185:
-	__asm        push   0x5B73DC;
-	__asm        push   6;
-	__asm        lea    eax, pvals[0];
-	__asm        push   eax;
-	__asm        call   TWKEnQueue;
-	__asm        add    esp, 0xC;
+	TWKEnQueue(0x5b73dc, 0x6, pvals[0]);
 // LINE 1186:
 }
 
@@ -3243,12 +3177,7 @@ _T227:
 	return;
 // LINE 1297:
 _T246:
-	__asm        push   0;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, loc.x, 0x4);
 // LINE 1301:
 	stobj = fd->cfd->cptr->stptr;
 // LINE 1302:
@@ -3649,18 +3578,7 @@ _T164:
 // LINE 1483:
 	cfd->cptr = fcptr;
 // LINE 1484:
-	__asm        push   0;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        push   eax;
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    eax, cfd;
-	__asm        push   eax;
-	__asm        call   S3FireStartCell;
-	__asm        add    esp, 0x14;
+	S3FireStartCell(0x0, fd->mission_id, y, x, cfd);
 // LINE 1486:
 _T1be:
 	return fd->mission_id;

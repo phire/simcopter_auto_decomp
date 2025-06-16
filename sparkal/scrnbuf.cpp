@@ -260,8 +260,7 @@ _Tc5:
 // LINE 96:
 	this->rectDirectDrawBackBuffer.bottom = nNewHeight;
 // LINE 100:
-	__asm        mov    ecx, this;
-	__asm        call   ScreenBuffer::CreateSurfaces;
+	this->ScreenBuffer::CreateSurfaces();
 // LINE 101:
 	__asm        mov    eax, pColors;
 	__asm        push   eax;
@@ -278,8 +277,7 @@ void ScreenBuffer::~ScreenBuffer() {
 
 	this-><ScreenBuffer+0x00> = 0x5915b0;
 // LINE 112:
-	__asm        mov    ecx, this;
-	__asm        call   ScreenBuffer::DeleteSurfaces;
+	this->ScreenBuffer::DeleteSurfaces();
 // LINE 114:
 	__asm        mov    ecx, this;
 	__asm        call   ScreenBuffer::FreePalette;

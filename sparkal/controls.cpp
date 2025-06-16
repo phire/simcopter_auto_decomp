@@ -3067,12 +3067,7 @@ _Tbc:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T6a9;
 // LINE 365:
-	__asm        lea    eax, szTypeface[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        call   LanguageManager::GetTypefaceForLanguage;
-	__asm        add    esp, 0xC;
+	LanguageManager::GetTypefaceForLanguage(szTypeface[0], 0x0, 0x0);
 // LINE 366:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -7574,8 +7569,7 @@ int32_t SliderWindow::Initialize() {
 	/*bp-0x4*/   int32_t nReturnValue;
 
 // LINE 1169:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 1170:
 	this-><SliderWindow+0x58> = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 1171:
@@ -8235,10 +8229,7 @@ long SliderWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	__asm        call   SliderWindow::SetValue;
 // LINE 1299:
 _T4c:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 1300:
 	return 0x1;
 // LINE 1301:
@@ -9323,8 +9314,7 @@ int32_t ScrollBarWindow::Initialize() {
 	/*bp-0x4*/   int32_t nReturnValue;
 
 // LINE 1584:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 1585:
 	this-><ScrollBarWindow+0x58> = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 1586:
@@ -9858,10 +9848,7 @@ _T520:
 // FUNCTION: COPTER_D 0x004b35dd
 long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1717:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 1719:
 	__asm        mov    eax, nCursorY;
 	__asm        push   eax;
@@ -14215,10 +14202,7 @@ long ListBoxWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 2669:
 _T66:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 2670:
 	return 0x1;
 // LINE 2671:
@@ -15537,15 +15521,9 @@ int32_t PopupMenuWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x158];
 // LINE 3069:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 3070:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 3071:
 	__asm        mov    eax, this;
 	__asm        push   eax;

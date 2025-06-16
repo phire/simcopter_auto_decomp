@@ -951,11 +951,7 @@ _T2b8:
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::WriteToMIFF;
 // LINE 275:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x4174;
-	__asm        push   eax;
-	__asm        call   VRAppGameSave;
-	__asm        add    esp, 4;
+	VRAppGameSave((this + 0x4174));
 // LINE 277:
 	__asm        mov    eax, szCityPath;
 	__asm        push   eax;
@@ -1770,8 +1766,7 @@ _T54:
 	__asm        je     _Ta8;
 // LINE 429:
 _T7d:
-	__asm        lea    ecx, myMIFF<MIFF+0x00>;
-	__asm        call   MIFF::Close;
+	myMIFF<MIFF+0x00>->MIFF::Close();
 // LINE 430:
 	__asm        mov    dword ptr [ebp-0x154], 0;
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
@@ -1788,8 +1783,7 @@ _Ta8:
 	__asm        cmp    lFileType, 0x55534552;
 	__asm        je     _Tfb;
 // LINE 437:
-	__asm        lea    ecx, myMIFF<MIFF+0x00>;
-	__asm        call   MIFF::Close;
+	myMIFF<MIFF+0x00>->MIFF::Close();
 // LINE 438:
 	__asm        mov    dword ptr [ebp-0x158], 0;
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
@@ -1804,8 +1798,7 @@ _Tfb:
 	__asm        test   eax, eax;
 	__asm        jne    _T13e;
 // LINE 444:
-	__asm        lea    ecx, myMIFF<MIFF+0x00>;
-	__asm        call   MIFF::Close;
+	myMIFF<MIFF+0x00>->MIFF::Close();
 // LINE 445:
 	__asm        mov    dword ptr [ebp-0x15C], 0;
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;

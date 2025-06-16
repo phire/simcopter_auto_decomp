@@ -335,10 +335,7 @@ int32_t LanguageManager::Initialize() {
 // FUNCTION: COPTER_D 0x0042a505
 int32_t LanguageManager::Uninitialize() {
 // LINE 53:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        push   eax;
-	__asm        call   LanguageManager::UnloadLanguageSystemFonts;
-	__asm        add    esp, 4;
+	LanguageManager::UnloadLanguageSystemFonts(gDefaultLanguage);
 // LINE 54:
 	return 0x1;
 // LINE 55:
@@ -459,24 +456,13 @@ _T14d:
 	__asm        test   eax, eax;
 	__asm        je     _T341;
 // LINE 73:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        push   eax;
-	__asm        call   LanguageManager::UnloadLanguageSystemFonts;
-	__asm        add    esp, 4;
+	LanguageManager::UnloadLanguageSystemFonts(gDefaultLanguage);
 // LINE 74:
 	gDefaultLanguage = nLanguage;
 // LINE 75:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        call   LanguageManager::LoadLanguageSystemFonts;
-	__asm        add    esp, 4;
+	LanguageManager::LoadLanguageSystemFonts(nLanguage);
 // LINE 76:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        lea    eax, sLocale.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageRuntimeLibraryName;
-	__asm        add    esp, 8;
+	LanguageManager::GetLanguageRuntimeLibraryName(nLanguage, sLocale.c_str_ptr);
 // LINE 77:
 	__asm        cmp    sLocale.c_str_ptr, 0;
 	__asm        je     _T1b5;
@@ -559,11 +545,7 @@ _T255:
 _T270:
 	__asm        jmp    _T275;
 _T275:
-	__asm        mov    eax, sLocale.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   setlocale;
-	__asm        add    esp, 8;
+	setlocale(sLocale.c_str_ptr, 0x0);
 // LINE 78:
 	__asm        mov    dword ptr [ebp-0x10], 1;
 	__asm        mov    eax, sLocale.reference;
@@ -3648,13 +3630,7 @@ int32_t LanguageManager::GetFontFilePathForLanguage(int32_t nLanguage, int32_t n
 	__asm        cmp    nLanguage, 0x10;
 	__asm        jne    _T2f;
 // LINE 428:
-	__asm        mov    eax, szFontFilePath;
-	__asm        push   eax;
-	__asm        push   0x59768C;
-	__asm        push   0;
-	__asm        push   8;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFontFilePath, 0x59768c, 0x0, 0x8);
 // LINE 429:
 	return 0x1;
 // LINE 433:
@@ -3690,12 +3666,7 @@ _T2a:
 	__asm        test   eax, eax;
 	__asm        jne    _T9e;
 // LINE 466:
-	__asm        lea    eax, szFontPath[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0x10;
-	__asm        call   LanguageManager::GetFontFilePathForLanguage;
-	__asm        add    esp, 0xC;
+	LanguageManager::GetFontFilePathForLanguage(szFontPath[0], 0x0, 0x10);
 // LINE 468:
 	__asm        lea    eax, szFontPath[0];
 	__asm        push   eax;
@@ -3743,12 +3714,7 @@ _T2a:
 	__asm        cmp    nLanguage, 0x10;
 	__asm        jne    _T89;
 // LINE 498:
-	__asm        lea    eax, szFontPath[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0x10;
-	__asm        call   LanguageManager::GetFontFilePathForLanguage;
-	__asm        add    esp, 0xC;
+	LanguageManager::GetFontFilePathForLanguage(szFontPath[0], 0x0, 0x10);
 // LINE 500:
 	__asm        lea    eax, szFontPath[0];
 	__asm        push   eax;

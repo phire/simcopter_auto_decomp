@@ -1331,13 +1331,7 @@ _T214:
 	md->pickuploc.y = md->destmaploc.x;
 	md->pickuploc.x = md->pickuploc.y;
 // LINE 728:
-	__asm        mov    eax, S_mstatics.riot_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4F20;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.riot_ctr, 0x5b4f20, md);
 // LINE 729:
 	md->type_ctr = S_mstatics.riot_ctr;
 	S_mstatics.riot_ctr++;
@@ -1415,13 +1409,7 @@ _T361:
 	__asm        cmp    startthismission, 0;
 	__asm        je     _T3b2;
 // LINE 763:
-	__asm        mov    eax, S_mstatics.rescue_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4F28;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.rescue_ctr, 0x5b4f28, md);
 // LINE 764:
 	md->type_ctr = S_mstatics.rescue_ctr;
 	S_mstatics.rescue_ctr++;
@@ -1473,13 +1461,7 @@ _T416:
 	md->destmaploc.x = 0xffffffff;
 	md->pickuploc.x = md->destmaploc.x;
 // LINE 786:
-	__asm        mov    eax, S_mstatics.rescue_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4F3C;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.rescue_ctr, 0x5b4f3c, md);
 // LINE 787:
 	md->type_ctr = S_mstatics.rescue_ctr;
 	S_mstatics.rescue_ctr++;
@@ -1521,13 +1503,7 @@ _T4ae:
 	md->destmaploc.x = 0xffffffff;
 	md->pickuploc.x = md->destmaploc.x;
 // LINE 803:
-	__asm        mov    eax, S_mstatics.rescue_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4F4C;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.rescue_ctr, 0x5b4f4c, md);
 // LINE 804:
 	md->type_ctr = S_mstatics.rescue_ctr;
 	S_mstatics.rescue_ctr++;
@@ -1611,13 +1587,7 @@ _T589:
 _T5d9:
 	md->mdata.total_person_medevac = 0x1;
 // LINE 843:
-	__asm        mov    eax, S_mstatics.medevac_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4F5C;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.medevac_ctr, 0x5b4f5c, md);
 // LINE 844:
 	md->type_ctr = S_mstatics.medevac_ctr;
 	S_mstatics.medevac_ctr++;
@@ -1698,13 +1668,7 @@ _T6bd:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 875:
-	__asm        mov    eax, S_mstatics.transport_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4F68;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.transport_ctr, 0x5b4f68, md);
 // LINE 876:
 	md->type_ctr = S_mstatics.transport_ctr;
 	S_mstatics.transport_ctr++;
@@ -1736,13 +1700,7 @@ _T743:
 	__asm        jmp    _Te60;
 // LINE 888:
 _T748:
-	__asm        mov    eax, S_mstatics.fire_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4F78;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.fire_ctr, 0x5b4f78, md);
 // LINE 889:
 	md->type_ctr = S_mstatics.fire_ctr;
 	S_mstatics.fire_ctr++;
@@ -1814,13 +1772,7 @@ _T811:
 	__asm        jmp    _Te60;
 // LINE 906:
 _T830:
-	__asm        mov    eax, S_mstatics.plane_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4F80;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.plane_ctr, 0x5b4f80, md);
 // LINE 907:
 	md->type_ctr = S_mstatics.plane_ctr;
 	S_mstatics.plane_ctr++;
@@ -1850,13 +1802,7 @@ _T894:
 	__asm        jmp    _Te60;
 // LINE 916:
 _T8a3:
-	__asm        mov    eax, S_mstatics.train_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4F90;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.train_ctr, 0x5b4f90, md);
 // LINE 917:
 	md->type_ctr = S_mstatics.train_ctr;
 	S_mstatics.train_ctr++;
@@ -1886,13 +1832,7 @@ _T907:
 	__asm        jmp    _Te60;
 // LINE 926:
 _T916:
-	__asm        mov    eax, S_mstatics.crime_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4FA0;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.crime_ctr, 0x5b4fa0, md);
 // LINE 927:
 	md->type_ctr = S_mstatics.crime_ctr;
 	S_mstatics.crime_ctr++;
@@ -1979,13 +1919,7 @@ _T9aa:
 _Ta34:
 	md->mdata.total_person_crime = 0x1;
 // LINE 953:
-	__asm        mov    eax, S_mstatics.crime_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4FAC;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.crime_ctr, 0x5b4fac, md);
 // LINE 954:
 	md->type_ctr = S_mstatics.crime_ctr;
 	S_mstatics.crime_ctr++;
@@ -2047,13 +1981,7 @@ _Ta88:
 _Tb12:
 	md->mdata.total_person_crime = 0x1;
 // LINE 979:
-	__asm        mov    eax, S_mstatics.crime_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4FB8;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.crime_ctr, 0x5b4fb8, md);
 // LINE 980:
 	md->type_ctr = S_mstatics.crime_ctr;
 	S_mstatics.crime_ctr++;
@@ -2115,13 +2043,7 @@ _Tb66:
 _Tbf0:
 	md->mdata.total_person_crime = 0x1;
 // LINE 1005:
-	__asm        mov    eax, S_mstatics.crime_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4FC4;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.crime_ctr, 0x5b4fc4, md);
 // LINE 1006:
 	md->type_ctr = S_mstatics.crime_ctr;
 	S_mstatics.crime_ctr++;
@@ -2161,13 +2083,7 @@ _Tc44:
 	__asm        jmp    __RETURN;
 // LINE 1017:
 _Tc81:
-	__asm        mov    eax, S_mstatics.traffic_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4FD0;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.traffic_ctr, 0x5b4fd0, md);
 // LINE 1018:
 	md->type_ctr = S_mstatics.traffic_ctr;
 	S_mstatics.traffic_ctr++;
@@ -2206,13 +2122,7 @@ _Tcc8:
 	__asm        jmp    __RETURN;
 // LINE 1030:
 _Td02:
-	__asm        mov    eax, S_mstatics.traffic_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B4FE0;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.traffic_ctr, 0x5b4fe0, md);
 // LINE 1031:
 	md->type_ctr = S_mstatics.traffic_ctr;
 	S_mstatics.traffic_ctr++;
@@ -3096,14 +3006,7 @@ _T90:
 	return;
 // LINE 1499:
 _T9f:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        call   S3MissionStart;
-	__asm        add    esp, 0xC;
+	S3MissionStart(type, y, x);
 // LINE 1500:
 	return;
 // LINE 1509:
@@ -3173,22 +3076,12 @@ _T156:
 	return;
 // LINE 1527:
 _T15b:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0xFFFFFFFF;
-	__asm        call   S3MissionStart;
-	__asm        add    esp, 0xC;
+	S3MissionStart(type, -0x1, -0x1);
 // LINE 1528:
 	return;
 // LINE 1531:
 _T170:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0xFFFFFFFF;
-	__asm        call   S3MissionStart;
-	__asm        add    esp, 0xC;
+	S3MissionStart(type, -0x1, -0x1);
 // LINE 1532:
 	return;
 // LINE 1535:
@@ -3771,42 +3664,12 @@ _T21:
 	__asm        jmp    _T92;
 // LINE 1822:
 _T2f:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x78];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x74];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x70];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x64];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x60];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x58];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        push   0x5B500C;
-	__asm        mov    eax, p;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x24;
+	sprintf(md->mdata.burnout_debris, md->mdata.doused_debris, md->mdata.total_debris, md->mdata.burnout_fires, md->mdata.doused_fires, md->mdata.total_fires, md, 0x5b500c, p);
 // LINE 1823:
 	return;
 // LINE 1828:
 _T73:
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        push   0x5B5050;
-	__asm        mov    eax, p;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(md, 0x5b5050, p);
 // LINE 1829:
 	return;
 // LINE 1830:
@@ -3886,13 +3749,7 @@ _Taa:
 _Tb0:
 	S_log.nMissionID = md->key;
 // LINE 1873:
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        push   0x5B5054;
-	__asm        mov    eax, S_log.szLogString;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(md, 0x5b5054, S_log.szLogString);
 // LINE 1875:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
@@ -4097,13 +3954,7 @@ _T246:
 	__asm        jmp    _T36d;
 // LINE 1957:
 _T26a:
-	__asm        mov    eax, S_mstatics.traffic_ctr;
-	__asm        push   eax;
-	__asm        push   0x5B5064;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(S_mstatics.traffic_ctr, 0x5b5064, md);
 // LINE 1958:
 	md->state = 0x2;
 // LINE 1959:
@@ -4323,13 +4174,7 @@ _Tdf:
 // LINE 2052:
 	reason = 0x5b50b4;
 // LINE 2054:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2056:
 	__asm        jmp    _T5f2;
 // LINE 2058:
@@ -4373,13 +4218,7 @@ _T166:
 // LINE 2069:
 	reason = 0x5b50d4;
 // LINE 2071:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2073:
 	__asm        jmp    _T5f2;
 // LINE 2075:
@@ -4417,13 +4256,7 @@ _T1e3:
 // LINE 2082:
 	reason = 0x5b50f4;
 // LINE 2084:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2086:
 	__asm        jmp    _T5f2;
 // LINE 2088:
@@ -4460,13 +4293,7 @@ _T248:
 // LINE 2102:
 	reason = 0x5b5104;
 // LINE 2104:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2106:
 	__asm        jmp    _T5f2;
 // LINE 2108:
@@ -4485,13 +4312,7 @@ _T28f:
 // LINE 2110:
 	reason = 0x5b5114;
 // LINE 2112:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2114:
 	__asm        jmp    _T5f2;
 // LINE 2116:
@@ -4510,13 +4331,7 @@ _T2d6:
 // LINE 2118:
 	reason = 0x5b5128;
 // LINE 2120:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2122:
 	__asm        jmp    _T5f2;
 // LINE 2124:
@@ -4535,13 +4350,7 @@ _T31d:
 // LINE 2126:
 	reason = 0x5b5138;
 // LINE 2128:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2130:
 	__asm        jmp    _T5f2;
 // LINE 2132:
@@ -4578,13 +4387,7 @@ _T382:
 // LINE 2146:
 	reason = 0x5b5148;
 // LINE 2148:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2150:
 	__asm        jmp    _T5f2;
 // LINE 2152:
@@ -4603,13 +4406,7 @@ _T3c9:
 // LINE 2154:
 	reason = 0x5b5154;
 // LINE 2156:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2158:
 	__asm        jmp    _T5f2;
 // LINE 2160:
@@ -4659,13 +4456,7 @@ _T446:
 // LINE 2169:
 	reason = 0x5b516c;
 // LINE 2171:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2173:
 	__asm        jmp    _T5f2;
 // LINE 2175:
@@ -4696,21 +4487,9 @@ _T4b3:
 // LINE 2179:
 	reason = 0x5b517c;
 // LINE 2181:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x24;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x24);
 // LINE 2182:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x27;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x27);
 // LINE 2184:
 	__asm        jmp    _T5f2;
 // LINE 2187:
@@ -4772,17 +4551,7 @@ _T5f2:
 	__asm        cmp    money, 0;
 	__asm        je     _T632;
 // LINE 2200:
-	__asm        mov    eax, money;
-	__asm        push   eax;
-	__asm        mov    eax, reason;
-	__asm        push   eax;
-	__asm        mov    eax, mname;
-	__asm        push   eax;
-	__asm        push   0x5B518C;
-	__asm        mov    eax, S_log.szLogString;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(money, reason, mname, 0x5b518c, S_log.szLogString);
 // LINE 2202:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
@@ -4793,17 +4562,7 @@ _T632:
 	__asm        cmp    points, 0;
 	__asm        je     __RETURN;
 // LINE 2210:
-	__asm        mov    eax, points;
-	__asm        push   eax;
-	__asm        mov    eax, reason;
-	__asm        push   eax;
-	__asm        mov    eax, mname;
-	__asm        push   eax;
-	__asm        push   0x5B51AC;
-	__asm        mov    eax, S_log.szLogString;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(points, reason, mname, 0x5b51ac, S_log.szLogString);
 // LINE 2212:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
@@ -5158,24 +4917,12 @@ _T42d:
 	__asm        cmp    total_pts, 0;
 	__asm        jle    _T451;
 // LINE 2374:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x27;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x27);
 // LINE 2377:
 	__asm        jmp    _T466;
 // LINE 2380:
 _T451:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x28;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x28);
 // LINE 2385:
 _T466:
 	__asm        cmp    total_money, 0;
@@ -5186,17 +4933,7 @@ _T466:
 _T477:
 	S_log.nMissionID = md->key;
 // LINE 2394:
-	__asm        mov    eax, total_money;
-	__asm        push   eax;
-	__asm        mov    eax, total_pts;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        push   0x5B51CC;
-	__asm        mov    eax, S_log.szLogString;
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(total_money, total_pts, md, 0x5b51cc, S_log.szLogString);
 // LINE 2396:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;

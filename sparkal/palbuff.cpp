@@ -235,15 +235,9 @@ _T80:
 	this->paletteColors = 0x0;
 // LINE 38:
 _T8d:
-	__asm        mov    ecx, this;
-	__asm        call   PaletteBuffer::SetPalette;
+	this->PaletteBuffer::SetPalette();
 // LINE 39:
-	__asm        lea    eax, szTypeFaceName[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        call   LanguageManager::GetTypefaceForLanguage;
-	__asm        add    esp, 0xC;
+	LanguageManager::GetTypefaceForLanguage(szTypeFaceName[0], 0x0, 0x0);
 // LINE 40:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -330,12 +324,7 @@ _T8d:
 	__asm        call   PaletteBuffer::SetPalette;
 // LINE 58:
 _Ta9:
-	__asm        lea    eax, szTypeFaceName[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        call   LanguageManager::GetTypefaceForLanguage;
-	__asm        add    esp, 0xC;
+	LanguageManager::GetTypefaceForLanguage(szTypeFaceName[0], 0x0, 0x0);
 // LINE 59:
 	__asm        push   0x1C;
 	__asm        call   operator new;

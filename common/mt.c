@@ -304,10 +304,7 @@ int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p
 	d.y = p->y;
 	d.z = p->z;
 // LINE 149:
-	__asm        lea    eax, d.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(d.x);
 // LINE 150:
 	__asm        mov    eax, p;
 	__asm        push   eax;
@@ -1424,10 +1421,7 @@ void MTCreateDOF4x4(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 	__asm        neg    eax;
 	__asm        mov    xv.z, eax;
 // LINE 582:
-	__asm        lea    eax, xv.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(xv.x);
 // LINE 589:
 	__asm        lea    eax, yv.x;
 	__asm        push   eax;
@@ -1438,10 +1432,7 @@ void MTCreateDOF4x4(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 	__asm        call   MTXProduct;
 	__asm        add    esp, 0xC;
 // LINE 590:
-	__asm        lea    eax, yv.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(yv.x);
 // LINE 596:
 	mat[0] = xv.x;
 // LINE 597:
@@ -1487,10 +1478,7 @@ void MTCreateDOF4x4Y(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 // LINE 641:
 	xv.z = 0x0;
 // LINE 642:
-	__asm        lea    eax, xv.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(xv.x);
 // LINE 649:
 	__asm        lea    eax, zv.x;
 	__asm        push   eax;
@@ -1501,10 +1489,7 @@ void MTCreateDOF4x4Y(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 	__asm        call   MTXProduct;
 	__asm        add    esp, 0xC;
 // LINE 650:
-	__asm        lea    eax, zv.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(zv.x);
 // LINE 656:
 	mat[0] = xv.x;
 // LINE 657:

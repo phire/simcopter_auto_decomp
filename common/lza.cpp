@@ -550,12 +550,7 @@ _T2f3:
 	__asm        cmp    len, 0;
 	__asm        jg     _T10d;
 // LINE 582:
-	__asm        mov    eax, state;
-	__asm        push   eax;
-	__asm        mov    eax, model;
-	__asm        push   eax;
-	__asm        call   EncodeEnd;
-	__asm        add    esp, 8;
+	EncodeEnd(state, model);
 // LINE 588:
 	return 0x0;
 // LINE 589:

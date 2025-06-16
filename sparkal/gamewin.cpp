@@ -362,8 +362,7 @@ _Td1:
 	__asm        call   dword ptr ds:[0x6C3814];
 // LINE 67:
 _T14c:
-	__asm        mov    ecx, this;
-	__asm        call   GameWindow::CreateSparkalWindow;
+	this->GameWindow::CreateSparkalWindow();
 // LINE 68:
 	__asm        mov    eax, pColors;
 	__asm        push   eax;

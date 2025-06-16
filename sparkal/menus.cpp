@@ -1028,15 +1028,9 @@ _T432:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912F8;
 // LINE 56:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 57:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 58:
 	return;
 
@@ -1217,14 +1211,7 @@ _T17:
 	__asm        jmp    _T1c;
 // LINE 93:
 _T1c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_MENU_SELECTION_SOUND;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], SZ_MENU_SELECTION_SOUND, 0x0, 0x2);
 // LINE 94:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2800,8 +2787,7 @@ _Tfd:
 	this->mySiblingWindows[1] = 0x0;
 // LINE 416:
 _T10a:
-	__asm        mov    ecx, this;
-	__asm        call   UserMenuWindow::Initialize;
+	this->UserMenuWindow::Initialize();
 // LINE 417:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -3319,8 +3305,7 @@ _Tba:
 // FUNCTION: COPTER_D 0x0049d4c9
 int32_t CopterMainMenu::DrawSelf() {
 // LINE 462:
-	__asm        mov    ecx, this;
-	__asm        call   UserMenuWindow::DrawSelf;
+	this->UserMenuWindow::DrawSelf();
 // LINE 463:
 	__asm        mov    ecx, this;
 	__asm        call   CopterMainMenu::DrawRatchetAndLights;
@@ -3700,8 +3685,7 @@ void CopterPlayMenu::~CopterPlayMenu() {
 // FUNCTION: COPTER_D 0x0049da9d
 int32_t CopterPlayMenu::Initialize() {
 // LINE 622:
-	__asm        mov    ecx, this;
-	__asm        call   UserMenuWindow::Initialize;
+	this->UserMenuWindow::Initialize();
 // LINE 623:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -4230,8 +4214,7 @@ _Tba:
 // FUNCTION: COPTER_D 0x0049e11b
 int32_t CopterPlayMenu::DrawSelf() {
 // LINE 668:
-	__asm        mov    ecx, this;
-	__asm        call   UserMenuWindow::DrawSelf;
+	this->UserMenuWindow::DrawSelf();
 // LINE 669:
 	__asm        mov    ecx, this;
 	__asm        call   CopterPlayMenu::DrawRatchet;

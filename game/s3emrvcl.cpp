@@ -2008,58 +2008,22 @@ _T74:
 	__asm        jmp    _T140;
 // LINE 1370:
 _T79:
-	__asm        mov    eax, mapy;
-	__asm        push   eax;
-	__asm        mov    eax, mapx;
-	__asm        push   eax;
-	__asm        mov    eax, emergencyLevel;
-	__asm        push   eax;
-	__asm        mov    eax, emergencyType;
-	__asm        push   eax;
-	__asm        call   FireEngineClass::Dispatch;
-	__asm        add    esp, 0x10;
+	FireEngineClass::Dispatch(mapy, mapx, emergencyLevel, emergencyType);
 // LINE 1371:
 	__asm        jmp    _T140;
 // LINE 1375:
 _T96:
-	__asm        mov    eax, mapy;
-	__asm        push   eax;
-	__asm        mov    eax, mapx;
-	__asm        push   eax;
-	__asm        mov    eax, emergencyLevel;
-	__asm        push   eax;
-	__asm        mov    eax, emergencyType;
-	__asm        push   eax;
-	__asm        call   AmbulanceClass::Dispatch;
-	__asm        add    esp, 0x10;
+	AmbulanceClass::Dispatch(mapy, mapx, emergencyLevel, emergencyType);
 // LINE 1376:
 	__asm        jmp    _T140;
 // LINE 1381:
 _Tb3:
-	__asm        mov    eax, mapy;
-	__asm        push   eax;
-	__asm        mov    eax, mapx;
-	__asm        push   eax;
-	__asm        mov    eax, emergencyLevel;
-	__asm        push   eax;
-	__asm        mov    eax, emergencyType;
-	__asm        push   eax;
-	__asm        call   PoliceCarClass::Dispatch;
-	__asm        add    esp, 0x10;
+	PoliceCarClass::Dispatch(mapy, mapx, emergencyLevel, emergencyType);
 // LINE 1382:
 	__asm        jmp    _T140;
 // LINE 1386:
 _Td0:
-	__asm        mov    eax, mapy;
-	__asm        push   eax;
-	__asm        mov    eax, mapx;
-	__asm        push   eax;
-	__asm        mov    eax, emergencyLevel;
-	__asm        push   eax;
-	__asm        mov    eax, emergencyType;
-	__asm        push   eax;
-	__asm        call   PoliceCarClass::Dispatch;
-	__asm        add    esp, 0x10;
+	PoliceCarClass::Dispatch(mapy, mapx, emergencyLevel, emergencyType);
 // LINE 1387:
 	__asm        jmp    _T140;
 // LINE 1391:

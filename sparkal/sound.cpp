@@ -3973,11 +3973,7 @@ _T266:
 	__asm        cmp    ecx, 1;
 	__asm        je     _T28e;
 // LINE 1534:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveCloseReadFile;
-	__asm        add    esp, 4;
+	WaveCloseReadFile(this->lpStreamBufferInfo);
 // LINE 1535:
 	return 0x0;
 // LINE 1538:
@@ -4051,11 +4047,7 @@ _T2a6:
 	__asm        call   dword ptr [eax+0xC];
 	__asm        mov    hResult, eax;
 // LINE 1558:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveCloseReadFile;
-	__asm        add    esp, 4;
+	WaveCloseReadFile(this->lpStreamBufferInfo);
 // LINE 1559:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T384;
@@ -4217,11 +4209,7 @@ _T183:
 	__asm        cmp    nError, 0;
 	__asm        je     _T1c9;
 // LINE 1615:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveCloseReadFile;
-	__asm        add    esp, 4;
+	WaveCloseReadFile(this->lpStreamBufferInfo);
 // LINE 1616:
 	return 0x0;
 // LINE 1621:
@@ -4264,11 +4252,7 @@ _T22b:
 	__asm        lea    ecx, [ebp-0x28];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1630:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveCloseReadFile;
-	__asm        add    esp, 4;
+	WaveCloseReadFile(this->lpStreamBufferInfo);
 // LINE 1631:
 	return 0x0;
 // LINE 1634:
@@ -4296,11 +4280,7 @@ _T24e:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x4C];
 // LINE 1639:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveCloseReadFile;
-	__asm        add    esp, 4;
+	WaveCloseReadFile(this->lpStreamBufferInfo);
 // LINE 1640:
 	return 0x0;
 // LINE 1642:
@@ -4325,36 +4305,9 @@ _T2e1:
 	__asm        neg    eax;
 	__asm        sub    dwLength1, eax;
 // LINE 1659:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveStartDataRead;
-	__asm        add    esp, 0xC;
+	WaveStartDataRead((this->lpStreamBufferInfo + 0x18), (this->lpStreamBufferInfo + 0x4), this->lpStreamBufferInfo);
 // LINE 1661:
-	__asm        lea    eax, nActualBytesRead;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, lpTemp;
-	__asm        push   eax;
-	__asm        mov    eax, dwLength1;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   WaveReadFile;
-	__asm        add    esp, 0x14;
+	WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpTemp, dwLength1, this->lpStreamBufferInfo->hmmio);
 // LINE 1662:
 	__asm        mov    eax, dwLength1;
 	__asm        cmp    nActualBytesRead, eax;
@@ -4412,11 +4365,7 @@ _T39d:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T3e0;
 // LINE 1679:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveCloseReadFile;
-	__asm        add    esp, 4;
+	WaveCloseReadFile(this->lpStreamBufferInfo);
 // LINE 1680:
 	return 0x0;
 // LINE 1685:
@@ -4442,11 +4391,7 @@ _T3e0:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T462;
 // LINE 1695:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveCloseReadFile;
-	__asm        add    esp, 4;
+	WaveCloseReadFile(this->lpStreamBufferInfo);
 // LINE 1696:
 	return 0x0;
 // LINE 1699:
@@ -4480,11 +4425,7 @@ _T484:
 	__asm        test   eax, eax;
 	__asm        je     _T4f8;
 // LINE 1708:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveCloseReadFile;
-	__asm        add    esp, 4;
+	WaveCloseReadFile(this->lpStreamBufferInfo);
 // LINE 1709:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x52];
@@ -4591,11 +4532,7 @@ _T95:
 	__asm        call   dword ptr [eax+0x48];
 // LINE 1777:
 _Td1:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveCloseReadFile;
-	__asm        add    esp, 4;
+	WaveCloseReadFile(this->lpStreamBufferInfo);
 // LINE 1780:
 _Te0:
 	return 0x1;

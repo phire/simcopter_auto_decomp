@@ -54,10 +54,7 @@ void VRFrustSetNormals() {
 // LINE 83:
 	vect.z = 0x10000;
 // LINE 86:
-	__asm        lea    eax, vect.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(vect.x);
 // LINE 89:
 	__asm        mov    eax, vect.z;
 	__asm        neg    eax;
@@ -93,10 +90,7 @@ void VRFrustSetNormals() {
 // LINE 101:
 	vect.z = 0x10000;
 // LINE 104:
-	__asm        lea    eax, vect.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(vect.x);
 // LINE 107:
 	__asm        mov    eax, vect.z;
 	__asm        neg    eax;

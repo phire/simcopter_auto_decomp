@@ -148,43 +148,19 @@ _T64:
 // LINE 271:
 	__asm        or     G_InitializationProgress, 4;
 // LINE 276:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        push   0x5B47A4;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], 0x5b47a4, 0x0, 0x6);
 // LINE 277:
 	G_restex = VRLoadResource(0x5b47b0, 0x3, szFilePath[0]);
 // LINE 279:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        push   0x5B47B4;
-	__asm        push   0;
-	__asm        push   7;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], 0x5b47b4, 0x0, 0x7);
 // LINE 280:
 	G_resgeo1 = VRLoadResource(0x5b47c0, 0x1, szFilePath[0]);
 // LINE 282:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        push   0x5B47C8;
-	__asm        push   0;
-	__asm        push   7;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], 0x5b47c8, 0x0, 0x7);
 // LINE 283:
 	G_resgeo2 = VRLoadResource(0x5b47d4, 0x1, szFilePath[0]);
 // LINE 285:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        push   0x5B47DC;
-	__asm        push   0;
-	__asm        push   7;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], 0x5b47dc, 0x0, 0x7);
 // LINE 286:
 	G_resgeo3 = VRLoadResource(0x5b47e8, 0x1, szFilePath[0]);
 // LINE 305:
@@ -206,13 +182,7 @@ _T1bd:
 	__asm        add    esp, 4;
 // LINE 311:
 _T1ca:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        push   0x5B480C;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], 0x5b480c, 0x0, 0x6);
 // LINE 312:
 	__asm        push   0x14;
 	__asm        push   0x1F1F;
@@ -230,37 +200,13 @@ _T1ca:
 	__asm        add    esp, 4;
 // LINE 319:
 _T214:
-	__asm        push   0;
-	__asm        push   2;
-	__asm        push   0x1F1F;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRSetBmpToTiled;
-	__asm        add    esp, 0x10;
+	VRSetBmpToTiled(0x0, 0x2, 0x1f1f, G_restex);
 // LINE 320:
-	__asm        push   0;
-	__asm        push   0x27;
-	__asm        push   0x1F1F;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRSetBmpToTiled;
-	__asm        add    esp, 0x10;
+	VRSetBmpToTiled(0x0, 0x27, 0x1f1f, G_restex);
 // LINE 321:
-	__asm        push   0;
-	__asm        push   0x28;
-	__asm        push   0x1F1F;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRSetBmpToTiled;
-	__asm        add    esp, 0x10;
+	VRSetBmpToTiled(0x0, 0x28, 0x1f1f, G_restex);
 // LINE 322:
-	__asm        push   0;
-	__asm        push   0xD;
-	__asm        push   0x1F1F;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRSetBmpToTiled;
-	__asm        add    esp, 0x10;
+	VRSetBmpToTiled(0x0, 0xd, 0x1f1f, G_restex);
 // LINE 324:
 	__asm        or     G_InitializationProgress, 8;
 // LINE 326:
@@ -447,26 +393,11 @@ _T531:
 // LINE 387:
 	__asm        call   S3ObjInit;
 // LINE 393:
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        mov    eax, G_resgeo1;
-	__asm        push   eax;
-	__asm        call   VRAssignTextureResToGroup;
-	__asm        add    esp, 8;
+	VRAssignTextureResToGroup(G_restex, G_resgeo1);
 // LINE 394:
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        mov    eax, G_resgeo2;
-	__asm        push   eax;
-	__asm        call   VRAssignTextureResToGroup;
-	__asm        add    esp, 8;
+	VRAssignTextureResToGroup(G_restex, G_resgeo2);
 // LINE 395:
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        mov    eax, G_resgeo3;
-	__asm        push   eax;
-	__asm        call   VRAssignTextureResToGroup;
-	__asm        add    esp, 8;
+	VRAssignTextureResToGroup(G_restex, G_resgeo3);
 // LINE 398:
 	__asm        mov    eax, G_resgeo1;
 	__asm        push   eax;
@@ -688,10 +619,7 @@ _T8b7:
 	__asm        cmp    i, 1;
 	__asm        jge    _T8d8;
 // LINE 483:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   CreateTrainInstance;
-	__asm        add    esp, 4;
+	CreateTrainInstance(i);
 // LINE 484:
 	__asm        jmp    _T8b1;
 // LINE 488:
@@ -720,10 +648,7 @@ _T923:
 	__asm        cmp    i, 3;
 	__asm        jge    _T944;
 // LINE 506:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   CreateBoatInstance;
-	__asm        add    esp, 4;
+	CreateBoatInstance(i);
 // LINE 507:
 	__asm        jmp    _T91d;
 // LINE 510:
@@ -794,7 +719,7 @@ _T1d:
 _T7b:
 	__asm        call   S3MissionReset;
 // LINE 579:
-	__asm        call   S3CityInit;
+	S3CityInit();
 // LINE 581:
 	__asm        or     G_InitializationProgress, 0x2000;
 // LINE 583:
@@ -975,45 +900,21 @@ int32_t VRAppGameInit(void * __ptr32 miffReader) {
 	__asm        cmp    miffReader, 0;
 	__asm        je     _T75;
 // LINE 711:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   S3HeliMIFFLoad;
-	__asm        add    esp, 4;
+	S3HeliMIFFLoad(miffReader);
 // LINE 712:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   S3MissileMIFFLoad;
-	__asm        add    esp, 4;
+	S3MissileMIFFLoad(miffReader);
 // LINE 713:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   S3FireMIFFLoad;
-	__asm        add    esp, 4;
+	S3FireMIFFLoad(miffReader);
 // LINE 714:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   S3MissionMIFFLoad;
-	__asm        add    esp, 4;
+	S3MissionMIFFLoad(miffReader);
 // LINE 715:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   S3BoatMIFFLoad;
-	__asm        add    esp, 4;
+	S3BoatMIFFLoad(miffReader);
 // LINE 716:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   S3PlaneMIFFLoad;
-	__asm        add    esp, 4;
+	S3PlaneMIFFLoad(miffReader);
 // LINE 717:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   S3TrainMIFFLoad;
-	__asm        add    esp, 4;
+	S3TrainMIFFLoad(miffReader);
 // LINE 718:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   S3AutoMIFFLoad;
-	__asm        add    esp, 4;
+	S3AutoMIFFLoad(miffReader);
 // LINE 720:
 	__asm        jmp    _T75;
 // LINE 724:
@@ -1030,45 +931,21 @@ _T75:
 // FUNCTION: COPTER_D 0x004eb909
 int32_t VRAppGameSave(void * __ptr32 miffWriter) {
 // LINE 742:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   S3HeliMIFFSave;
-	__asm        add    esp, 4;
+	S3HeliMIFFSave(miffWriter);
 // LINE 743:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   S3MissileMIFFSave;
-	__asm        add    esp, 4;
+	S3MissileMIFFSave(miffWriter);
 // LINE 744:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   S3FireMIFFSave;
-	__asm        add    esp, 4;
+	S3FireMIFFSave(miffWriter);
 // LINE 745:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   S3MissionMIFFSave;
-	__asm        add    esp, 4;
+	S3MissionMIFFSave(miffWriter);
 // LINE 746:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   S3BoatMIFFSave;
-	__asm        add    esp, 4;
+	S3BoatMIFFSave(miffWriter);
 // LINE 747:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   S3PlaneMIFFSave;
-	__asm        add    esp, 4;
+	S3PlaneMIFFSave(miffWriter);
 // LINE 748:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   S3TrainMIFFSave;
-	__asm        add    esp, 4;
+	S3TrainMIFFSave(miffWriter);
 // LINE 749:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   S3AutoMIFFSave;
-	__asm        add    esp, 4;
+	S3AutoMIFFSave(miffWriter);
 // LINE 751:
 	return 0x1;
 // LINE 752:

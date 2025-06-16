@@ -790,18 +790,11 @@ _T69d:
 	__asm        mov    ecx, this;
 	__asm        call   InventoryWindow::CreateImage;
 // LINE 57:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::SetImageToDrawOnto;
+	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 58:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 59:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 60:
 	return;
 
@@ -816,15 +809,9 @@ void InventoryWindow::~InventoryWindow() {
 	__asm        mov    ecx, this;
 	__asm        call   InventoryWindow::DestroyImage;
 // LINE 68:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::RemoveFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::RemoveFocus(this);
 // LINE 69:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::RemoveModal;
-	__asm        add    esp, 4;
+	GraphicWindow::RemoveModal(this);
 // LINE 70:
 	__asm        jmp    _T3a;
 _T3a:

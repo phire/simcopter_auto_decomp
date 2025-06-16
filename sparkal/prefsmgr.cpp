@@ -821,8 +821,7 @@ void PreferenceManager::~PreferenceManager() {
 
 	this-><vftable> = 0x590db0;
 // LINE 192:
-	__asm        mov    ecx, this;
-	__asm        call   PreferenceManager::SaveAllPrefs;
+	this->PreferenceManager::SaveAllPrefs();
 // LINE 193:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;

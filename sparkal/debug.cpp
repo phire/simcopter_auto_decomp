@@ -1546,9 +1546,7 @@ _T424:
 _T429:
 	__asm        jmp    _T42e;
 _T42e:
-	__asm        push   0x422DBA;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x422dba);
 _T43b:
 	__asm        mov    dword ptr [ebp-0xC], 0x5C2900;
 // LINE 60:
@@ -2329,13 +2327,7 @@ _T242:
 	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 // LINE 161:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        push   2;
-	__asm        push   0x5973EC;
-	__asm        call   fwrite;
-	__asm        add    esp, 0x10;
+	fwrite(file, 0x1, 0x2, 0x5973ec);
 // LINE 162:
 	__asm        lea    eax, it.current;
 	__asm        lea    ecx, [ebp-0x50];
@@ -2381,15 +2373,9 @@ _T2e7:
 	__asm        jmp    _T52;
 // LINE 165:
 _T2ec:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   fflush;
-	__asm        add    esp, 4;
+	fflush(file);
 // LINE 166:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(file);
 // LINE 167:
 	return 0x1;
 // LINE 168:
@@ -4018,14 +4004,7 @@ void DebugOutput(char * text, ...) {
 	__asm        lea    eax, [ebp+0xC];
 	__asm        mov    Marker, eax;
 // LINE 405:
-	__asm        mov    eax, Marker;
-	__asm        push   eax;
-	__asm        mov    eax, text;
-	__asm        push   eax;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        call   vsprintf;
-	__asm        add    esp, 0xC;
+	vsprintf(Marker, text, buf[0]);
 // LINE 406:
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T4e;

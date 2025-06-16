@@ -3007,8 +3007,7 @@ _T4d1:
 	__asm        cmp    bReadNow, 0;
 	__asm        je     _T4fd;
 // LINE 201:
-	__asm        mov    ecx, this;
-	__asm        call   Directory::ReadDirectoryEntries;
+	this->Directory::ReadDirectoryEntries();
 // LINE 202:
 _T4fd:
 	return;
@@ -5571,8 +5570,7 @@ _T1d3:
 	__asm        cmp    bReadNow, 0;
 	__asm        je     _T1ed;
 // LINE 477:
-	__asm        mov    ecx, this;
-	__asm        call   Directory::ReadDirectoryEntries;
+	this->Directory::ReadDirectoryEntries();
 // LINE 478:
 _T1ed:
 	return 0x1;
@@ -6085,8 +6083,7 @@ _T440:
 	__asm        cmp    bRereadEntries, 0;
 	__asm        je     _T452;
 // LINE 516:
-	__asm        mov    ecx, this;
-	__asm        call   Directory::ReadDirectoryEntries;
+	this->Directory::ReadDirectoryEntries();
 // LINE 517:
 _T452:
 	return;

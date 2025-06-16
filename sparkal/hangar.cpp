@@ -829,13 +829,9 @@ _T40a:
 	__asm        mov    ecx, this;
 	__asm        call   HangarWindow::CreateImage;
 // LINE 57:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::SetImageToDrawOnto;
+	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 58:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 59:
 	return;
 
@@ -1089,8 +1085,7 @@ _Tb6:
 	szButtonFileName = SZ_HANGAR_NIGHT_BUTTON_FILE_NAME;
 // LINE 80:
 _Tbe:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 81:
 	__asm        push   0xA4;
 	__asm        call   operator new;
@@ -3719,12 +3714,7 @@ _T198:
 // FUNCTION: COPTER_D 0x0047474e
 void HangarWindow::LoadHotSpots() {
 // LINE 505:
-	__asm        push   0x6A;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x116;
-	__asm        push   eax;
-	__asm        call   LoadListFromResource;
-	__asm        add    esp, 8;
+	LoadListFromResource(0x6a, (this + 0x116));
 // LINE 506:
 	return;
 }

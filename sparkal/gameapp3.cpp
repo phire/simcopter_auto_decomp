@@ -792,9 +792,7 @@ _Ta9:
 	__asm        jmp    _Td5;
 // LINE 295:
 _Tbd:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::CreateIndependentSurfaces;
+	(this + 0xa0)->GameModePlayData::CreateIndependentSurfaces();
 // LINE 296:
 	__asm        jmp    _Te4;
 // LINE 297:

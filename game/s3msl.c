@@ -765,12 +765,7 @@ _T77:
 	return 0x0;
 // LINE 435:
 _T88:
-	__asm        push   0;
-	__asm        mov    eax, loc;
-	__asm        push   eax;
-	__asm        push   6;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, loc, 0x6);
 // LINE 438:
 	smoke_size = 0x1;
 // LINE 440:
@@ -807,12 +802,7 @@ _Tf8:
 	return 0x0;
 // LINE 457:
 _T109:
-	__asm        push   0;
-	__asm        mov    eax, loc;
-	__asm        push   eax;
-	__asm        push   0x2A;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, loc, 0x2a);
 // LINE 460:
 	smoke_size = 0x1;
 // LINE 462:
@@ -855,12 +845,7 @@ _T18a:
 	__asm        test   eax, eax;
 	__asm        jne    _T1ac;
 // LINE 483:
-	__asm        push   1;
-	__asm        mov    eax, loc;
-	__asm        push   eax;
-	__asm        push   5;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, loc, 0x5);
 // LINE 486:
 _T1ac:
 	smoke_size = 0x4;
@@ -976,12 +961,7 @@ _T2f9:
 	__asm        test   eax, eax;
 	__asm        jne    _T31b;
 // LINE 533:
-	__asm        push   1;
-	__asm        mov    eax, loc;
-	__asm        push   eax;
-	__asm        push   0x25;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, loc, 0x25);
 // LINE 536:
 _T31b:
 	smoke_size = 0x8;
@@ -1405,12 +1385,7 @@ _T7fd:
 _T80e:
 	md->gas_on = 0x0;
 // LINE 694:
-	__asm        push   0;
-	__asm        mov    eax, loc;
-	__asm        push   eax;
-	__asm        push   0x17;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, loc, 0x17);
 // LINE 696:
 	smoke_size = 0x4;
 // LINE 698:
@@ -2246,15 +2221,7 @@ _T2f4:
 	__asm        test   eax, eax;
 	__asm        jne    _T324;
 // LINE 1004:
-	__asm        push   1;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x30];
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        call   S3MissionStart;
-	__asm        add    esp, 0xC;
+	S3MissionStart(0x1, md->celloc.y, md->celloc.x);
 // LINE 1006:
 	__asm        jmp    _T383;
 // LINE 1009:
@@ -2598,14 +2565,7 @@ _T75d:
 	__asm        cmp    dword ptr [eax+0xC], 0x140000;
 	__asm        jle    _T7a9;
 // LINE 1116:
-	__asm        push   0;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        push   0x16;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (md->dymissile + 0x18), 0x16);
 // LINE 1119:
 _T7a9:
 	__asm        jmp    _T83a;
@@ -2645,14 +2605,7 @@ _T7ee:
 	__asm        cmp    dword ptr [eax+0xC], 0x140000;
 	__asm        jle    _T83a;
 // LINE 1131:
-	__asm        push   0;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        push   0x16;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (md->dymissile + 0x18), 0x16);
 // LINE 1137:
 _T83a:
 	__asm        mov    eax, lcptr;
@@ -2884,14 +2837,7 @@ _Tb3f:
 // LINE 1228:
 	md->smoketime = 0x0;
 // LINE 1230:
-	__asm        push   0;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        push   0x18;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (md->dymissile + 0x18), 0x18);
 // LINE 1236:
 _Tb7f:
 	__asm        xor    ebx, ebx;
@@ -3163,14 +3109,7 @@ _Tebe:
 	__asm        cmp    dword ptr [eax+0xC], 0x140000;
 	__asm        jle    _Tf0a;
 // LINE 1303:
-	__asm        push   0;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        push   0x16;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (md->dymissile + 0x18), 0x16);
 // LINE 1306:
 _Tf0a:
 	__asm        jmp    _Tf9b;
@@ -3210,14 +3149,7 @@ _Tf4f:
 	__asm        cmp    dword ptr [eax+0xC], 0x140000;
 	__asm        jle    _Tf9b;
 // LINE 1318:
-	__asm        push   0;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        push   0x16;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (md->dymissile + 0x18), 0x16);
 // LINE 1324:
 _Tf9b:
 	__asm        mov    eax, lcptr;
@@ -3506,14 +3438,7 @@ _T1225:
 	md->smoketime = 0x3333;
 // LINE 1418:
 _T135b:
-	__asm        mov    eax, lcptr;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   S3MissileCollisionCheck;
-	__asm        add    esp, 0xC;
+	S3MissileCollisionCheck(lcptr, dist, md);
 // LINE 1419:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -3526,14 +3451,7 @@ _T1386:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T13bd;
 // LINE 1427:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   S3MissileCollisionCheck;
-	__asm        add    esp, 0xC;
+	S3MissileCollisionCheck(cptr, dist, md);
 // LINE 1428:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -3798,14 +3716,7 @@ _T1620:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1517:
-	__asm        mov    eax, lcptr;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   S3MissileCollisionCheck;
-	__asm        add    esp, 0xC;
+	S3MissileCollisionCheck(lcptr, dist, md);
 // LINE 1518:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -3818,14 +3729,7 @@ _T173f:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T1776;
 // LINE 1526:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   S3MissileCollisionCheck;
-	__asm        add    esp, 0xC;
+	S3MissileCollisionCheck(cptr, dist, md);
 // LINE 1527:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -4233,14 +4137,7 @@ _T1bd9:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1656:
-	__asm        mov    eax, lcptr;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   S3MissileCollisionCheck;
-	__asm        add    esp, 0xC;
+	S3MissileCollisionCheck(lcptr, dist, md);
 // LINE 1657:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -4253,14 +4150,7 @@ _T1cf8:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T1d2f;
 // LINE 1664:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        push   eax;
-	__asm        call   S3MissileCollisionCheck;
-	__asm        add    esp, 0xC;
+	S3MissileCollisionCheck(cptr, dist, md);
 // LINE 1665:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -4923,12 +4813,7 @@ _T282:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1942:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   7;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0x7);
 // LINE 1944:
 	__asm        jmp    _T3d8;
 _T392:
@@ -4951,12 +4836,7 @@ _T392:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1947:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   7;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0x7);
 // LINE 1951:
 _T3d8:
 	__asm        push   0;
@@ -5221,12 +5101,7 @@ _T72f:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2069:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   7;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0x7);
 // LINE 2071:
 	md->flags = (md->flags & -0x2);
 // LINE 2074:
@@ -5333,12 +5208,7 @@ _T873:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2101:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   7;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0x7);
 // LINE 2104:
 	__asm        jmp    _T96c;
 _T8c1:
@@ -5380,12 +5250,7 @@ _T906:
 	__asm        call   S3FireDouse;
 	__asm        add    esp, 0xC;
 // LINE 2112:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   0xA;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0xa);
 // LINE 2115:
 	__asm        jmp    _T96c;
 // LINE 2117:
@@ -5405,12 +5270,7 @@ _T932:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2119:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   9;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0x9);
 // LINE 2122:
 _T96c:
 	md->flags = (md->flags & -0x2);
@@ -5529,12 +5389,7 @@ _Tad6:
 	__asm        test   byte ptr [eax], 0x80;
 	__asm        jne    _Tb13;
 // LINE 2177:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   0xF;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0xf);
 // LINE 2179:
 _Tb13:
 	md->flags = (md->flags & -0x2);
@@ -5620,12 +5475,7 @@ _Tbff:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2210:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   7;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0x7);
 // LINE 2212:
 	md->flags = (md->flags & -0x2);
 // LINE 2214:
@@ -5669,12 +5519,7 @@ _Tc90:
 	__asm        call   S3FireDouse;
 	__asm        add    esp, 0xC;
 // LINE 2222:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   0xA;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0xa);
 // LINE 2224:
 	md->flags = (md->flags & -0x2);
 // LINE 2226:
@@ -5696,12 +5541,7 @@ _Tcc9:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 2230:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   9;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0x9);
 // LINE 2232:
 	md->flags = (md->flags & -0x2);
 // LINE 2235:
@@ -6229,14 +6069,7 @@ _Tbc:
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+0xC], ax;
 // LINE 2734:
-	__asm        push   0;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        push   0xF;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (md->dymissile + 0x18), 0xf);
 // LINE 2736:
 }
 

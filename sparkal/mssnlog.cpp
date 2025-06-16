@@ -700,8 +700,7 @@ _T2f3:
 	__asm        mov    ecx, this;
 	__asm        call   MissionLogWindow::CreateImage;
 // LINE 51:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::SetImageToDrawOnto;
+	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 52:
 	return;
 
@@ -759,8 +758,7 @@ _T6d:
 	__asm        jmp    _T79;
 // LINE 71:
 _T79:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 75:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -1521,14 +1519,7 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T95;
 // LINE 132:
-	__asm        lea    eax, szBackgroundBufferPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_MISSION_LOG_WINDOW_BACKGROUND_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szBackgroundBufferPath[0], SZ_MISSION_LOG_WINDOW_BACKGROUND_IMAGE_FILE_NAME, 0x0, 0x6);
 // LINE 133:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -1807,8 +1798,7 @@ _T68:
 	__asm        jmp    _T74;
 // LINE 228:
 _T74:
-	__asm        mov    ecx, 0x606E78;
-	__asm        call   LogManager::SortLogEntriesByDate;
+	0x606e78->LogManager::SortLogEntriesByDate();
 // LINE 229:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -2007,8 +1997,7 @@ _T6e:
 	__asm        jmp    _T7a;
 // LINE 249:
 _T7a:
-	__asm        mov    ecx, 0x606E78;
-	__asm        call   LogManager::SortLogEntriesByType;
+	0x606e78->LogManager::SortLogEntriesByType();
 // LINE 250:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;

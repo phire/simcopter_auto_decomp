@@ -988,15 +988,7 @@ _T3a0:
 	__asm        jmp    _T3a5;
 // LINE 127:
 _T3a5:
-	__asm        mov    eax, szVersionInformation;
-	__asm        push   eax;
-	__asm        lea    ecx, sMessage.c_str_ptr;
-	__asm        call   basic_string<char>::c_str;
-	__asm        push   eax;
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(szVersionInformation, sMessage.c_str_ptr->basic_string<char>::c_str(szVersionInformation), szUnformattedVersionInformation[0]);
 // LINE 128:
 	__asm        lea    eax, szUnformattedVersionInformation[0];
 	__asm        push   eax;
@@ -1081,15 +1073,7 @@ _T4d9:
 	__asm        jmp    _T4de;
 // LINE 134:
 _T4de:
-	__asm        mov    eax, szVersionInformation;
-	__asm        push   eax;
-	__asm        lea    ecx, sMessage.c_str_ptr;
-	__asm        call   basic_string<char>::c_str;
-	__asm        push   eax;
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(szVersionInformation, sMessage.c_str_ptr->basic_string<char>::c_str(szVersionInformation), szUnformattedVersionInformation[0]);
 // LINE 135:
 	__asm        lea    eax, szUnformattedVersionInformation[0];
 	__asm        push   eax;
@@ -1169,21 +1153,7 @@ _T607:
 	__asm        jmp    _T60c;
 // LINE 144:
 _T60c:
-	__asm        push   1;
-	__asm        call   Version::GetSystemVersion;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   Version::GetSystemVersion;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        lea    ecx, sMessage.c_str_ptr;
-	__asm        call   basic_string<char>::c_str;
-	__asm        push   eax;
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x10;
+	sprintf(Version::GetSystemVersion(0x1), 0x0, Version::GetSystemVersion(Version::GetSystemVersion(0x1), 0x0), sMessage.c_str_ptr->basic_string<char>::c_str(Version::GetSystemVersion(0x1), 0x0, Version::GetSystemVersion(Version::GetSystemVersion(0x1), 0x0)), szUnformattedVersionInformation[0]);
 // LINE 145:
 	__asm        lea    eax, szUnformattedVersionInformation[0];
 	__asm        push   eax;
@@ -1280,15 +1250,7 @@ _T779:
 	__asm        jmp    _T77e;
 // LINE 158:
 _T77e:
-	__asm        mov    eax, lPhysicalMemory;
-	__asm        push   eax;
-	__asm        lea    ecx, sMessage.c_str_ptr;
-	__asm        call   basic_string<char>::c_str;
-	__asm        push   eax;
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(lPhysicalMemory, sMessage.c_str_ptr->basic_string<char>::c_str(lPhysicalMemory), szUnformattedVersionInformation[0]);
 // LINE 159:
 	__asm        lea    eax, szUnformattedVersionInformation[0];
 	__asm        push   eax;
@@ -1448,15 +1410,7 @@ _T9ca:
 	__asm        jmp    _T9cf;
 // LINE 172:
 _T9cf:
-	__asm        mov    eax, lCPUSpeed;
-	__asm        push   eax;
-	__asm        lea    ecx, sMessage.c_str_ptr;
-	__asm        call   basic_string<char>::c_str;
-	__asm        push   eax;
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(lCPUSpeed, sMessage.c_str_ptr->basic_string<char>::c_str(lCPUSpeed), szUnformattedVersionInformation[0]);
 // LINE 173:
 	__asm        lea    eax, szUnformattedVersionInformation[0];
 	__asm        push   eax;
@@ -3566,14 +3520,7 @@ _Tc80:
 // Block start:
 	/*bp-0x138*/ char szFullPath[260]; // 0x104 bytes
 	/*bp-0x13c*/ /*packed*/ class DigitalSound *tempCheatCodeSound;
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, szCheatSoundFileName;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], szCheatSoundFileName, 0x0, 0x2);
 // LINE 485:
 	__asm        push   0x7A;
 	__asm        call   operator new;
@@ -3990,12 +3937,7 @@ _T51:
 	__asm        jmp    _Ta4;
 // LINE 534:
 _Ta4:
-	__asm        lea    eax, szTypeFaceName[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        call   LanguageManager::GetTypefaceForLanguage;
-	__asm        add    esp, 0xC;
+	LanguageManager::GetTypefaceForLanguage(szTypeFaceName[0], 0x0, 0x0);
 // LINE 535:
 	__asm        push   0x1C;
 	__asm        call   operator new;

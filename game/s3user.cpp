@@ -119,9 +119,7 @@ _T6f:
 // SYNTHETIC: COPTER_D 0x00428f13
 static void $E47() {
 
-	__asm        push   0x428F30;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x428f30);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -468,14 +466,7 @@ _T1f:
 // LINE 283:
 	pvals[8] = (currentCareerCityInfo + 0x24);
 // LINE 284:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        push   9;
-	__asm        lea    eax, pvals[0];
-	__asm        push   eax;
-	__asm        call   TWKEnQueue;
-	__asm        add    esp, 0xC;
+	TWKEnQueue(currentCareerCityInfo->chCityFileNameBase, 0x9, pvals[0]);
 // LINE 285:
 	__asm        jmp    _T1c;
 // LINE 286:
@@ -508,13 +499,7 @@ _T27:
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 308:
-	__asm        push   0x5C2918;
-	__asm        lea    eax, szFullCityFileName[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   5;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(0x5c2918, szFullCityFileName[0], 0x0, 0x5);
 // LINE 310:
 	gCurrentCareerCityInfo.lCurrentCities[0] = 0x0;
 // LINE 311:
@@ -760,13 +745,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 399:
-	__asm        push   0x5C2918;
-	__asm        lea    eax, szFullCityFileName[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   5;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(0x5c2918, szFullCityFileName[0], 0x0, 0x5);
 // LINE 401:
 	__asm        mov    eax, lOriginalIndex;
 	__asm        shl    eax, 3;

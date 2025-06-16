@@ -4213,16 +4213,12 @@ _T337a:
 	__asm        cmp    G_use_height_backplane, 1;
 	__asm        jne    _T3396;
 // LINE 991:
-	__asm        push   0x11;
-	__asm        call   VRInitGridObj;
-	__asm        add    esp, 4;
+	VRInitGridObj(0x11);
 // LINE 992:
 	__asm        jmp    _T33a0;
 // LINE 995:
 _T3396:
-	__asm        push   0x19;
-	__asm        call   VRInitGridObj;
-	__asm        add    esp, 4;
+	VRInitGridObj(0x19);
 // LINE 998:
 _T33a0:
 	__asm        shl    G_terr_minalt, 0x10;

@@ -519,9 +519,7 @@ _T15:
 // SYNTHETIC: COPTER_D 0x005274a9
 static void $E6() {
 
-	__asm        push   0x5274C6;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x5274c6);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1034,13 +1032,7 @@ _Te1:
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 711:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x97;
-	__asm        push   eax;
-	__asm        push   0xF;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (this + 0x97), 0xf);
 // LINE 714:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x53];
@@ -1094,23 +1086,7 @@ _T159:
 	__asm        neg    eax;
 	__asm        mov    sprayvect.z, eax;
 // LINE 748:
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x140000;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7F;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        lea    eax, sprayvect.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x97;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x33;
-	__asm        push   eax;
-	__asm        push   7;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(-0x1, 0x140000, (this + 0x7f), 0x1, sprayvect.x, (this + 0x97), (this + 0x33), 0x7);
 // LINE 750:
 	this->sprayTimer = 0xe666;
 // LINE 795:

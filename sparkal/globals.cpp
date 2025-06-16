@@ -150,9 +150,7 @@ _T0b:
 // SYNTHETIC: COPTER_D 0x004471df
 static void $E3() {
 
-	__asm        push   0x4471FC;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x4471fc);
 	__asm        jmp    __RETURN;
 __RETURN:
 }

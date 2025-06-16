@@ -217,8 +217,7 @@ void CSparkalApp::CSparkalApp() {
 
 	this-><vftable> = 0x58f428;
 // LINE 15:
-	__asm        mov    ecx, this;
-	__asm        call   CSparkalApp::DecideRuntimePlatform;
+	this->CSparkalApp::DecideRuntimePlatform();
 // LINE 19:
 	__asm        jmp    _T31;
 // LINE 20:

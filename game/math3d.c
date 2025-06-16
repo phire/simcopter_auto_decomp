@@ -281,10 +281,7 @@ int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, 
 	d.y = p->y;
 	d.z = p->z;
 // LINE 135:
-	__asm        lea    eax, d.x;
-	__asm        push   eax;
-	__asm        call   Normalize;
-	__asm        add    esp, 4;
+	Normalize(d.x);
 // LINE 136:
 	__asm        mov    eax, p;
 	__asm        push   eax;

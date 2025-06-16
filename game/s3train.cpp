@@ -576,9 +576,7 @@ _T15:
 // SYNTHETIC: COPTER_D 0x0052ddd9
 static void $E6() {
 
-	__asm        push   0x52DDF6;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x52ddf6);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1227,13 +1225,7 @@ _T68:
 	__asm        test   eax, eax;
 	__asm        jne    _Tde;
 // LINE 802:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xB9;
-	__asm        push   eax;
-	__asm        push   0x19;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, (this + 0xb9), 0x19);
 // LINE 806:
 _Tde:
 	__asm        push   0xF0600000;
@@ -1808,14 +1800,7 @@ _T2c4:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1149:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        push   0x1A;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (this->leadcar + 0x18), 0x1a);
 // LINE 1192:
 	num_debris = 0x3;
 // LINE 1193:
@@ -1877,27 +1862,7 @@ _T377:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 1210:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x69];
-	__asm        push   eax;
-	__asm        mov    eax, speed;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        push   eax;
-	__asm        push   2;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x35;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(this->missionId, speed, this->leadcar, 0x2, vec.x, (this->leadcar + 0x18), (this + 0x35), 0x4);
 // LINE 1211:
 	__asm        jmp    _T374;
 // LINE 1214:
@@ -2004,27 +1969,7 @@ _T4ed:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 1244:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x69];
-	__asm        push   eax;
-	__asm        mov    eax, speed;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        push   eax;
-	__asm        push   2;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x35;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(this->missionId, speed, this->midcar, 0x2, vec.x, (this->midcar + 0x18), (this + 0x35), 0x4);
 // LINE 1245:
 	__asm        jmp    _T4ea;
 // LINE 1248:
@@ -2131,27 +2076,7 @@ _T663:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 1278:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x69];
-	__asm        push   eax;
-	__asm        mov    eax, speed;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        push   eax;
-	__asm        push   2;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x35;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(this->missionId, speed, this->endcar, 0x2, vec.x, (this->endcar + 0x18), (this + 0x35), 0x4);
 // LINE 1279:
 	__asm        jmp    _T660;
 // LINE 1281:
@@ -6614,10 +6539,7 @@ void TrainClass::AdjustTrailingCars() {
 // LINE 3341:
 	vec.z = (loc.z - this->midcar->loc.z);
 // LINE 3344:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(vec.x);
 // LINE 3347:
 	__asm        mov    ebx, loc.x;
 	__asm        mov    eax, this;
@@ -6718,10 +6640,7 @@ void TrainClass::AdjustTrailingCars() {
 // LINE 3364:
 	vec.z = (loc.z - this->endcar->loc.z);
 // LINE 3367:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(vec.x);
 // LINE 3370:
 	__asm        mov    ebx, loc.x;
 	__asm        mov    eax, this;

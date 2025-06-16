@@ -617,13 +617,7 @@ void InitBodiesAndAnimations() {
 
 	// Function registers exception cleanup function at 0x0055e286
 // LINE 199:
-	__asm        lea    eax, animpath[0];
-	__asm        push   eax;
-	__asm        push   0x5BE0FC;
-	__asm        push   0;
-	__asm        push   0xA;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(animpath[0], 0x5be0fc, 0x0, 0xa);
 // LINE 200:
 	__asm        lea    eax, privname[0];
 	__asm        push   eax;
@@ -1061,8 +1055,7 @@ _L39453:
 // LINE 206:
 // No fallthrough
 _T6f1:
-	__asm        mov    ecx, cCopterAnim::fsList;
-	__asm        call   cBList<cCopterAnim>::LoadAll;
+	cCopterAnim::fsList->cBList<cCopterAnim>::LoadAll();
 // LINE 209:
 	PersonFaceNums[0] = 0x4;
 // LINE 210:

@@ -101,8 +101,7 @@ void FlatFile::~FlatFile() {
 	__asm        cmp    dword ptr [eax+0x10C], 0;
 	__asm        je     _T2d;
 
-	__asm        mov    ecx, this;
-	__asm        call   FlatFile::Close;
+	this->FlatFile::Close();
 // LINE 32:
 _T2d:
 	__asm        mov    ecx, this;

@@ -373,13 +373,7 @@ int32_t S3LoadSounds() {
 	/*bp-0x108*/ int32_t count;
 
 // LINE 153:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598974;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598974, 0x0, 0x2);
 // LINE 154:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -423,13 +417,7 @@ _Tcb:
 	__asm        jmp    _Td0;
 // LINE 156:
 _Td0:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598980;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598980, 0x0, 0x2);
 // LINE 157:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -473,13 +461,7 @@ _T18f:
 	__asm        jmp    _T194;
 // LINE 159:
 _T194:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x59898C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x59898c, 0x0, 0x2);
 // LINE 160:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -523,13 +505,7 @@ _T253:
 	__asm        jmp    _T258;
 // LINE 162:
 _T258:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x59899C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x59899c, 0x0, 0x2);
 // LINE 163:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -573,13 +549,7 @@ _T317:
 	__asm        jmp    _T31c;
 // LINE 165:
 _T31c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x5989AC;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x5989ac, 0x0, 0x2);
 // LINE 166:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -623,13 +593,7 @@ _T3db:
 	__asm        jmp    _T3e0;
 // LINE 168:
 _T3e0:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x5989B8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x5989b8, 0x0, 0x2);
 // LINE 169:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -673,13 +637,7 @@ _T49f:
 	__asm        jmp    _T4a4;
 // LINE 171:
 _T4a4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x5989C8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x5989c8, 0x0, 0x2);
 // LINE 172:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -723,13 +681,7 @@ _T563:
 	__asm        jmp    _T568;
 // LINE 174:
 _T568:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x5989D4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x5989d4, 0x0, 0x2);
 // LINE 175:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -773,13 +725,7 @@ _T627:
 	__asm        jmp    _T62c;
 // LINE 177:
 _T62c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x5989E0;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x5989e0, 0x0, 0x2);
 // LINE 178:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -823,13 +769,7 @@ _T6eb:
 	__asm        jmp    _T6f0;
 // LINE 180:
 _T6f0:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x5989EC;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x5989ec, 0x0, 0x2);
 // LINE 181:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -873,13 +813,7 @@ _T7af:
 	__asm        jmp    _T7b4;
 // LINE 183:
 _T7b4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x5989F8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x5989f8, 0x0, 0x2);
 // LINE 184:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -923,13 +857,7 @@ _T873:
 	__asm        jmp    _T878;
 // LINE 186:
 _T878:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A04;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a04, 0x0, 0x2);
 // LINE 187:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -973,13 +901,7 @@ _T937:
 	__asm        jmp    _T93c;
 // LINE 189:
 _T93c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A14;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a14, 0x0, 0x2);
 // LINE 190:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1023,13 +945,7 @@ _T9fb:
 	__asm        jmp    _Ta00;
 // LINE 192:
 _Ta00:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A20;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a20, 0x0, 0x2);
 // LINE 193:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1073,13 +989,7 @@ _Tabf:
 	__asm        jmp    _Tac4;
 // LINE 195:
 _Tac4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A30;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a30, 0x0, 0x2);
 // LINE 196:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1123,13 +1033,7 @@ _Tb83:
 	__asm        jmp    _Tb88;
 // LINE 198:
 _Tb88:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A40;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a40, 0x0, 0x2);
 // LINE 199:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1173,13 +1077,7 @@ _Tc47:
 	__asm        jmp    _Tc4c;
 // LINE 201:
 _Tc4c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A4C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a4c, 0x0, 0x2);
 // LINE 202:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1223,13 +1121,7 @@ _Td0b:
 	__asm        jmp    _Td10;
 // LINE 204:
 _Td10:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A58;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a58, 0x0, 0x2);
 // LINE 205:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1273,13 +1165,7 @@ _Tdcf:
 	__asm        jmp    _Tdd4;
 // LINE 207:
 _Tdd4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A68;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a68, 0x0, 0x2);
 // LINE 208:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1323,13 +1209,7 @@ _Te93:
 	__asm        jmp    _Te98;
 // LINE 210:
 _Te98:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A78;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a78, 0x0, 0x2);
 // LINE 211:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1373,13 +1253,7 @@ _Tf57:
 	__asm        jmp    _Tf5c;
 // LINE 213:
 _Tf5c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A88;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a88, 0x0, 0x2);
 // LINE 214:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1423,13 +1297,7 @@ _T101b:
 	__asm        jmp    _T1020;
 // LINE 216:
 _T1020:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598A98;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598a98, 0x0, 0x2);
 // LINE 217:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1473,13 +1341,7 @@ _T10df:
 	__asm        jmp    _T10e4;
 // LINE 219:
 _T10e4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598AA8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598aa8, 0x0, 0x2);
 // LINE 220:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1523,13 +1385,7 @@ _T11a3:
 	__asm        jmp    _T11a8;
 // LINE 222:
 _T11a8:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598AB4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598ab4, 0x0, 0x2);
 // LINE 223:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1573,13 +1429,7 @@ _T1267:
 	__asm        jmp    _T126c;
 // LINE 225:
 _T126c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598AC4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598ac4, 0x0, 0x2);
 // LINE 226:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1623,13 +1473,7 @@ _T132b:
 	__asm        jmp    _T1330;
 // LINE 228:
 _T1330:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598AD0;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598ad0, 0x0, 0x2);
 // LINE 229:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1673,13 +1517,7 @@ _T13ef:
 	__asm        jmp    _T13f4;
 // LINE 231:
 _T13f4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598ADC;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598adc, 0x0, 0x2);
 // LINE 232:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1723,13 +1561,7 @@ _T14b3:
 	__asm        jmp    _T14b8;
 // LINE 234:
 _T14b8:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598AE8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598ae8, 0x0, 0x2);
 // LINE 235:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1773,13 +1605,7 @@ _T1577:
 	__asm        jmp    _T157c;
 // LINE 237:
 _T157c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598AF4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598af4, 0x0, 0x2);
 // LINE 238:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1823,13 +1649,7 @@ _T163b:
 	__asm        jmp    _T1640;
 // LINE 240:
 _T1640:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B00;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b00, 0x0, 0x2);
 // LINE 241:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1873,13 +1693,7 @@ _T16ff:
 	__asm        jmp    _T1704;
 // LINE 243:
 _T1704:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B0C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b0c, 0x0, 0x2);
 // LINE 244:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1923,13 +1737,7 @@ _T17c3:
 	__asm        jmp    _T17c8;
 // LINE 246:
 _T17c8:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B18;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b18, 0x0, 0x2);
 // LINE 247:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1973,13 +1781,7 @@ _T1887:
 	__asm        jmp    _T188c;
 // LINE 249:
 _T188c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B24;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b24, 0x0, 0x2);
 // LINE 250:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2023,13 +1825,7 @@ _T194b:
 	__asm        jmp    _T1950;
 // LINE 252:
 _T1950:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B30;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b30, 0x0, 0x2);
 // LINE 253:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2073,13 +1869,7 @@ _T1a0f:
 	__asm        jmp    _T1a14;
 // LINE 255:
 _T1a14:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B3C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b3c, 0x0, 0x2);
 // LINE 256:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2123,13 +1913,7 @@ _T1ad3:
 	__asm        jmp    _T1ad8;
 // LINE 258:
 _T1ad8:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B48;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b48, 0x0, 0x2);
 // LINE 259:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2173,13 +1957,7 @@ _T1b97:
 	__asm        jmp    _T1b9c;
 // LINE 261:
 _T1b9c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B54;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b54, 0x0, 0x2);
 // LINE 262:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2223,13 +2001,7 @@ _T1c5b:
 	__asm        jmp    _T1c60;
 // LINE 264:
 _T1c60:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B60;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b60, 0x0, 0x2);
 // LINE 265:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2273,13 +2045,7 @@ _T1d1f:
 	__asm        jmp    _T1d24;
 // LINE 267:
 _T1d24:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B70;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b70, 0x0, 0x2);
 // LINE 268:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2323,13 +2089,7 @@ _T1de3:
 	__asm        jmp    _T1de8;
 // LINE 270:
 _T1de8:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B80;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b80, 0x0, 0x2);
 // LINE 271:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2373,13 +2133,7 @@ _T1ea7:
 	__asm        jmp    _T1eac;
 // LINE 273:
 _T1eac:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B8C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b8c, 0x0, 0x2);
 // LINE 274:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2423,13 +2177,7 @@ _T1f6b:
 	__asm        jmp    _T1f70;
 // LINE 276:
 _T1f70:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B94;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b94, 0x0, 0x2);
 // LINE 277:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2473,13 +2221,7 @@ _T202f:
 	__asm        jmp    _T2034;
 // LINE 279:
 _T2034:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598B9C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598b9c, 0x0, 0x2);
 // LINE 280:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2523,13 +2265,7 @@ _T20f3:
 	__asm        jmp    _T20f8;
 // LINE 282:
 _T20f8:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598BA8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598ba8, 0x0, 0x2);
 // LINE 283:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2573,13 +2309,7 @@ _T21b7:
 	__asm        jmp    _T21bc;
 // LINE 285:
 _T21bc:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598BB4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598bb4, 0x0, 0x2);
 // LINE 286:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2623,13 +2353,7 @@ _T227b:
 	__asm        jmp    _T2280;
 // LINE 288:
 _T2280:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598BC0;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598bc0, 0x0, 0x2);
 // LINE 289:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2673,13 +2397,7 @@ _T233f:
 	__asm        jmp    _T2344;
 // LINE 291:
 _T2344:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598BCC;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598bcc, 0x0, 0x2);
 // LINE 292:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2723,13 +2441,7 @@ _T2403:
 	__asm        jmp    _T2408;
 // LINE 294:
 _T2408:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598BD8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598bd8, 0x0, 0x2);
 // LINE 295:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2773,13 +2485,7 @@ _T24c7:
 	__asm        jmp    _T24cc;
 // LINE 297:
 _T24cc:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598BE4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598be4, 0x0, 0x2);
 // LINE 298:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2823,13 +2529,7 @@ _T258b:
 	__asm        jmp    _T2590;
 // LINE 300:
 _T2590:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598BF0;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598bf0, 0x0, 0x2);
 // LINE 301:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2873,13 +2573,7 @@ _T264f:
 	__asm        jmp    _T2654;
 // LINE 305:
 _T2654:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C00;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c00, 0x0, 0x2);
 // LINE 306:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2923,13 +2617,7 @@ _T2713:
 	__asm        jmp    _T2718;
 // LINE 308:
 _T2718:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C0C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c0c, 0x0, 0x2);
 // LINE 309:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2973,13 +2661,7 @@ _T27d7:
 	__asm        jmp    _T27dc;
 // LINE 311:
 _T27dc:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C18;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c18, 0x0, 0x2);
 // LINE 312:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3023,13 +2705,7 @@ _T289b:
 	__asm        jmp    _T28a0;
 // LINE 314:
 _T28a0:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C24;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c24, 0x0, 0x2);
 // LINE 315:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3073,13 +2749,7 @@ _T295f:
 	__asm        jmp    _T2964;
 // LINE 317:
 _T2964:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C30;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c30, 0x0, 0x2);
 // LINE 318:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3123,13 +2793,7 @@ _T2a23:
 	__asm        jmp    _T2a28;
 // LINE 320:
 _T2a28:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C3C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c3c, 0x0, 0x2);
 // LINE 321:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3173,13 +2837,7 @@ _T2ae7:
 	__asm        jmp    _T2aec;
 // LINE 323:
 _T2aec:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C48;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c48, 0x0, 0x2);
 // LINE 324:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3223,13 +2881,7 @@ _T2bab:
 	__asm        jmp    _T2bb0;
 // LINE 326:
 _T2bb0:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C54;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c54, 0x0, 0x2);
 // LINE 327:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3273,13 +2925,7 @@ _T2c6f:
 	__asm        jmp    _T2c74;
 // LINE 329:
 _T2c74:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C60;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c60, 0x0, 0x2);
 // LINE 330:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3323,13 +2969,7 @@ _T2d33:
 	__asm        jmp    _T2d38;
 // LINE 332:
 _T2d38:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C6C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c6c, 0x0, 0x2);
 // LINE 333:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3373,13 +3013,7 @@ _T2df7:
 	__asm        jmp    _T2dfc;
 // LINE 335:
 _T2dfc:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C78;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c78, 0x0, 0x2);
 // LINE 336:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3423,13 +3057,7 @@ _T2ebb:
 	__asm        jmp    _T2ec0;
 // LINE 338:
 _T2ec0:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C84;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c84, 0x0, 0x2);
 // LINE 339:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3473,13 +3101,7 @@ _T2f7f:
 	__asm        jmp    _T2f84;
 // LINE 341:
 _T2f84:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C90;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c90, 0x0, 0x2);
 // LINE 342:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3523,13 +3145,7 @@ _T3043:
 	__asm        jmp    _T3048;
 // LINE 344:
 _T3048:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598C9C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598c9c, 0x0, 0x2);
 // LINE 345:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3573,13 +3189,7 @@ _T3107:
 	__asm        jmp    _T310c;
 // LINE 347:
 _T310c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598CA8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598ca8, 0x0, 0x2);
 // LINE 348:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3623,13 +3233,7 @@ _T31cb:
 	__asm        jmp    _T31d0;
 // LINE 350:
 _T31d0:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598CB4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598cb4, 0x0, 0x2);
 // LINE 351:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3673,13 +3277,7 @@ _T328f:
 	__asm        jmp    _T3294;
 // LINE 353:
 _T3294:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598CC0;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598cc0, 0x0, 0x2);
 // LINE 354:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3723,13 +3321,7 @@ _T3353:
 	__asm        jmp    _T3358;
 // LINE 356:
 _T3358:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598CCC;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598ccc, 0x0, 0x2);
 // LINE 357:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3773,13 +3365,7 @@ _T3417:
 	__asm        jmp    _T341c;
 // LINE 359:
 _T341c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598CD8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598cd8, 0x0, 0x2);
 // LINE 360:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3823,13 +3409,7 @@ _T34db:
 	__asm        jmp    _T34e0;
 // LINE 362:
 _T34e0:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598CE4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598ce4, 0x0, 0x2);
 // LINE 363:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3873,13 +3453,7 @@ _T359f:
 	__asm        jmp    _T35a4;
 // LINE 365:
 _T35a4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598CF0;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598cf0, 0x0, 0x2);
 // LINE 366:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3923,13 +3497,7 @@ _T3663:
 	__asm        jmp    _T3668;
 // LINE 368:
 _T3668:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598CFC;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598cfc, 0x0, 0x2);
 // LINE 369:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3973,13 +3541,7 @@ _T3727:
 	__asm        jmp    _T372c;
 // LINE 371:
 _T372c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D08;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d08, 0x0, 0x2);
 // LINE 372:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4023,13 +3585,7 @@ _T37eb:
 	__asm        jmp    _T37f0;
 // LINE 374:
 _T37f0:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D14;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d14, 0x0, 0x2);
 // LINE 375:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4073,13 +3629,7 @@ _T38af:
 	__asm        jmp    _T38b4;
 // LINE 377:
 _T38b4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D20;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d20, 0x0, 0x2);
 // LINE 378:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4123,13 +3673,7 @@ _T3973:
 	__asm        jmp    _T3978;
 // LINE 380:
 _T3978:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D2C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d2c, 0x0, 0x2);
 // LINE 381:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4173,13 +3717,7 @@ _T3a37:
 	__asm        jmp    _T3a3c;
 // LINE 383:
 _T3a3c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D38;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d38, 0x0, 0x2);
 // LINE 384:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4223,13 +3761,7 @@ _T3afb:
 	__asm        jmp    _T3b00;
 // LINE 386:
 _T3b00:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D44;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d44, 0x0, 0x2);
 // LINE 387:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4273,13 +3805,7 @@ _T3bbf:
 	__asm        jmp    _T3bc4;
 // LINE 389:
 _T3bc4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D50;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d50, 0x0, 0x2);
 // LINE 390:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4323,13 +3849,7 @@ _T3c83:
 	__asm        jmp    _T3c88;
 // LINE 392:
 _T3c88:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D5C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d5c, 0x0, 0x2);
 // LINE 393:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4373,13 +3893,7 @@ _T3d47:
 	__asm        jmp    _T3d4c;
 // LINE 395:
 _T3d4c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D68;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d68, 0x0, 0x2);
 // LINE 396:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4423,13 +3937,7 @@ _T3e0b:
 	__asm        jmp    _T3e10;
 // LINE 398:
 _T3e10:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D74;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d74, 0x0, 0x2);
 // LINE 399:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4473,13 +3981,7 @@ _T3ecf:
 	__asm        jmp    _T3ed4;
 // LINE 401:
 _T3ed4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D80;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d80, 0x0, 0x2);
 // LINE 402:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4523,13 +4025,7 @@ _T3f93:
 	__asm        jmp    _T3f98;
 // LINE 404:
 _T3f98:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D8C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d8c, 0x0, 0x2);
 // LINE 405:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4573,13 +4069,7 @@ _T4057:
 	__asm        jmp    _T405c;
 // LINE 407:
 _T405c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598D98;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598d98, 0x0, 0x2);
 // LINE 408:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4623,13 +4113,7 @@ _T411b:
 	__asm        jmp    _T4120;
 // LINE 410:
 _T4120:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598DA4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598da4, 0x0, 0x2);
 // LINE 411:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4673,13 +4157,7 @@ _T41df:
 	__asm        jmp    _T41e4;
 // LINE 413:
 _T41e4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598DB0;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598db0, 0x0, 0x2);
 // LINE 414:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4723,13 +4201,7 @@ _T42a3:
 	__asm        jmp    _T42a8;
 // LINE 416:
 _T42a8:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598DBC;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598dbc, 0x0, 0x2);
 // LINE 417:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4773,13 +4245,7 @@ _T4367:
 	__asm        jmp    _T436c;
 // LINE 419:
 _T436c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598DC8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598dc8, 0x0, 0x2);
 // LINE 420:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4823,13 +4289,7 @@ _T442b:
 	__asm        jmp    _T4430;
 // LINE 422:
 _T4430:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598DD4;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598dd4, 0x0, 0x2);
 // LINE 423:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4873,13 +4333,7 @@ _T44ef:
 	__asm        jmp    _T44f4;
 // LINE 425:
 _T44f4:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598DE0;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598de0, 0x0, 0x2);
 // LINE 426:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4923,13 +4377,7 @@ _T45b3:
 	__asm        jmp    _T45b8;
 // LINE 428:
 _T45b8:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598DEC;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598dec, 0x0, 0x2);
 // LINE 429:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4973,13 +4421,7 @@ _T4677:
 	__asm        jmp    _T467c;
 // LINE 431:
 _T467c:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598DF8;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598df8, 0x0, 0x2);
 // LINE 432:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -5023,13 +4465,7 @@ _T473b:
 	__asm        jmp    _T4740;
 // LINE 434:
 _T4740:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598E04;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598e04, 0x0, 0x2);
 // LINE 435:
 	__asm        push   2;
 	__asm        push   0x5D;
@@ -5057,13 +4493,7 @@ _T47b8:
 	__asm        jmp    _T47bd;
 // LINE 437:
 _T47bd:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598E10;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598e10, 0x0, 0x2);
 // LINE 438:
 	__asm        push   2;
 	__asm        push   0x5E;
@@ -5091,13 +4521,7 @@ _T4835:
 	__asm        jmp    _T483a;
 // LINE 440:
 _T483a:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598E1C;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598e1c, 0x0, 0x2);
 // LINE 441:
 	__asm        push   2;
 	__asm        push   0x5F;
@@ -5125,13 +4549,7 @@ _T48b2:
 	__asm        jmp    _T48b7;
 // LINE 443:
 _T48b7:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598E28;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598e28, 0x0, 0x2);
 // LINE 444:
 	__asm        push   2;
 	__asm        push   0x60;
@@ -5159,13 +4577,7 @@ _T492f:
 	__asm        jmp    _T4934;
 // LINE 446:
 _T4934:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598E34;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598e34, 0x0, 0x2);
 // LINE 447:
 	__asm        push   2;
 	__asm        push   0x61;
@@ -5193,13 +4605,7 @@ _T49ac:
 	__asm        jmp    _T49b1;
 // LINE 449:
 _T49b1:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        push   0x598E40;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], 0x598e40, 0x0, 0x2);
 // LINE 450:
 	count = 0x62;
 	__asm        jmp    _T49de;
@@ -5256,14 +4662,7 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        cmp    theSound, 0;
 	__asm        je     _T24d;
 // LINE 474:
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, szSoundFile;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullSoundPath[0], szSoundFile, 0x0, 0x2);
 // LINE 475:
 	__asm        push   0x10;
 	__asm        call   operator new;

@@ -997,7 +997,7 @@ int32_t ReadSCXFile(char * filePath) {
 // LINE 296:
 	__asm        call   S2CityFree;
 // LINE 297:
-	__asm        call   S2CityAlloc;
+	S2CityAlloc();
 // LINE 299:
 	scxbuf = operator new(0xffff);
 // LINE 301:

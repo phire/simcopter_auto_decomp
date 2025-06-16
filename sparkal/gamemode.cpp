@@ -593,22 +593,9 @@ _T94:
 	this->pColorTable = 0x0;
 // LINE 175:
 _Ta1:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_MAIN_MENU_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szPath[0], SZ_MAIN_MENU_IMAGE_FILE_NAME, 0x0, 0x6);
 // LINE 176:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        call   CBackBuffer::GetPaletteFromImage;
-	__asm        add    esp, 8;
+	CBackBuffer::GetPaletteFromImage(this->pColorTable, szPath[0]);
 // LINE 177:
 	return;
 }
@@ -974,22 +961,9 @@ _T94:
 	this->pColorTable = 0x0;
 // LINE 279:
 _Ta1:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_CAREER_PALETTE_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szPath[0], SZ_CAREER_PALETTE_IMAGE_FILE_NAME, 0x0, 0x6);
 // LINE 280:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        call   CBackBuffer::GetPaletteFromImage;
-	__asm        add    esp, 8;
+	CBackBuffer::GetPaletteFromImage(this->pColorTable, szPath[0]);
 // LINE 281:
 	return;
 }
@@ -1272,14 +1246,7 @@ _Ta1:
 	__asm        cmp    S_pal, 0;
 	__asm        jne    _Tf6;
 // LINE 419:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_VR_APP_PALETTE_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   7;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szPath[0], SZ_VR_APP_PALETTE_FILE_NAME, 0x0, 0x7);
 // LINE 420:
 	G_respal = VRLoadResource(SZ_VR_APP_PALETTE_CHUNK_TYPE, 0x4, szPath[0]);
 // LINE 421:
@@ -1596,8 +1563,7 @@ void GameModePlayData::Awake() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x70];
 // LINE 495:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::CreateIndependentSurfaces;
+	this->GameModePlayData::CreateIndependentSurfaces();
 // LINE 496:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1837,11 +1803,9 @@ _T2be:
 // FUNCTION: COPTER_D 0x004be898
 int32_t GameModePlayData::CreateAllSurfaces() {
 // LINE 543:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::CreateIndependentSurfaces;
+	this->GameModePlayData::CreateIndependentSurfaces();
 // LINE 544:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::CreatePanels;
+	this->GameModePlayData::CreatePanels();
 // LINE 545:
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::CreatePalette;
@@ -2916,8 +2880,7 @@ void GameModePlayData::DestroyAllSurfaces() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::DestroyIndependentSurfaces;
 // LINE 754:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::DestroyPanels;
+	this->GameModePlayData::DestroyPanels();
 // LINE 755:
 	return;
 }

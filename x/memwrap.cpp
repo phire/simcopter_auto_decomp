@@ -157,10 +157,7 @@ _T29:
 	__asm        test   reinterpret_cast<uint8_t>(state), 0x80;
 	__asm        je     _T5a;
 
-	__asm        mov    eax, mem;
-	__asm        push   eax;
-	__asm        call   Memory::HLock;
-	__asm        add    esp, 4;
+	Memory::HLock(mem);
 // LINE 168:
 _T5a:
 	__asm        cmp    mem, 0;
@@ -750,10 +747,7 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 	__asm        test   reinterpret_cast<uint8_t>(newState), 0x80;
 	__asm        je     _T21;
 
-	__asm        mov    eax, h;
-	__asm        push   eax;
-	__asm        call   Memory::HLock;
-	__asm        add    esp, 4;
+	Memory::HLock(h);
 // LINE 487:
 	__asm        jmp    _T2d;
 _T21:

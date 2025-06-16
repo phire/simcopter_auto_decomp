@@ -524,11 +524,7 @@ void AxisTransformToScreen(/*unpacked*/ struct DXZY *xAxis, /*unpacked*/ struct 
 	__asm        fstp   tf.y;
 // LINE 127:
 _T60:
-	__asm        push   0;
-	__asm        lea    eax, tf.x;
-	__asm        push   eax;
-	__asm        call   PutInPerspective;
-	__asm        add    esp, 8;
+	PutInPerspective(0x0, tf.x);
 // LINE 128:
 	__asm        lea    eax, tf.x;
 	__asm        mov    ecx, dxzy;
@@ -585,11 +581,7 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 	__asm        test   reinterpret_cast<uint32_t>(perspective), 0xFFFF;
 	__asm        je     _T6b;
 // LINE 141:
-	__asm        push   0;
-	__asm        lea    eax, transformed.x;
-	__asm        push   eax;
-	__asm        call   PutInPerspective;
-	__asm        add    esp, 8;
+	PutInPerspective(0x0, transformed.x);
 // LINE 143:
 _T6b:
 	__asm        cmp    ptH, 0;
@@ -2182,11 +2174,7 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, /*unpacked*
 	__asm        test   reinterpret_cast<uint32_t>(perspective), 0xFFFF;
 	__asm        je     _Ta7;
 // LINE 710:
-	__asm        push   0;
-	__asm        lea    eax, dpt.x;
-	__asm        push   eax;
-	__asm        call   PutInPerspective;
-	__asm        add    esp, 8;
+	PutInPerspective(0x0, dpt.x);
 // LINE 711:
 _Ta7:
 	__asm        cmp    ptH, 0;

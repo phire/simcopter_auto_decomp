@@ -70,8 +70,7 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 	__asm        cmp    bLoadNow, 0;
 	__asm        je     _T63;
 // LINE 46:
-	__asm        mov    ecx, this;
-	__asm        call   ResourceRCData::ReadResource;
+	this->ResourceRCData::ReadResource();
 // LINE 47:
 _T63:
 	return;

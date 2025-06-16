@@ -32,30 +32,12 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 // LINE 47:
 	descBuff[175] = 0x0;
 // LINE 50:
-	__asm        lea    eax, descBuff[0];
-	__asm        push   eax;
-	__asm        mov    eax, lineNum;
-	__asm        push   eax;
-	__asm        mov    eax, fileName;
-	__asm        push   eax;
-	__asm        push   0x5BC5FC;
-	__asm        lea    eax, message[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(descBuff[0], lineNum, fileName, 0x5bc5fc, message[0]);
 // LINE 51:
 	__asm        cmp    tackonNumber, 0x8C085;
 	__asm        je     _T7a;
 // LINE 52:
-	__asm        mov    eax, tackonNumber;
-	__asm        push   eax;
-	__asm        lea    eax, message[0];
-	__asm        push   eax;
-	__asm        push   0x5BC620;
-	__asm        lea    eax, message[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x10;
+	sprintf(tackonNumber, message[0], 0x5bc620, message[0]);
 // LINE 67:
 _T7a:
 	__asm        push   2;

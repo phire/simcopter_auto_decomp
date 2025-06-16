@@ -88,8 +88,7 @@ _Tb3:
 // FUNCTION: COPTER_D 0x00471f41
 void CGameApp::PlayNextSoundTrackIfNeeded() {
 // LINE 62:
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::DoState;
+	0x604480->Radio::DoState();
 // LINE 63:
 	return;
 }

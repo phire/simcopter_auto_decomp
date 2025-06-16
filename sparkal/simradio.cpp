@@ -7770,8 +7770,7 @@ _T226:
 	__asm        test   eax, eax;
 	__asm        je     _Td4f;
 // LINE 948:
-	__asm        lea    ecx, tempRadioStation<vftable>;
-	__asm        call   RadioStation::DetectRadioStationType;
+	tempRadioStation<vftable>->RadioStation::DetectRadioStationType();
 // LINE 952:
 	__asm        mov    eax, SZ_RADIO_STATIONS_MUSIC_DIRECTORY_NAME;
 	__asm        push   eax;
@@ -7829,11 +7828,7 @@ _T33c:
 	__asm        jmp    _T341;
 // LINE 957:
 _T341:
-	__asm        push   0;
-	__asm        lea    eax, sCurrentLanguage.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageDirectoryName;
-	__asm        add    esp, 8;
+	LanguageManager::GetLanguageDirectoryName(0x0, sCurrentLanguage.c_str_ptr);
 // LINE 958:
 	__asm        lea    eax, sCurrentLanguage.c_str_ptr;
 	__asm        push   eax;
@@ -7883,11 +7878,7 @@ _T3bc:
 	__asm        test   eax, eax;
 	__asm        je     _T41a;
 // LINE 961:
-	__asm        push   1;
-	__asm        lea    eax, sCurrentLanguage.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageDirectoryName;
-	__asm        add    esp, 8;
+	LanguageManager::GetLanguageDirectoryName(0x1, sCurrentLanguage.c_str_ptr);
 // LINE 962:
 	__asm        jmp    _T429;
 // LINE 963:
@@ -8032,11 +8023,7 @@ _T607:
 	__asm        jmp    _T60c;
 // LINE 970:
 _T60c:
-	__asm        push   0;
-	__asm        lea    eax, sCurrentLanguage.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageDirectoryName;
-	__asm        add    esp, 8;
+	LanguageManager::GetLanguageDirectoryName(0x0, sCurrentLanguage.c_str_ptr);
 // LINE 971:
 	__asm        jmp    _T622;
 _T622:
@@ -8187,11 +8174,7 @@ _T802:
 	__asm        test   eax, eax;
 	__asm        je     _T860;
 // LINE 974:
-	__asm        push   1;
-	__asm        lea    eax, sCurrentLanguage.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageDirectoryName;
-	__asm        add    esp, 8;
+	LanguageManager::GetLanguageDirectoryName(0x1, sCurrentLanguage.c_str_ptr);
 // LINE 975:
 	__asm        jmp    _T86f;
 // LINE 976:
@@ -8336,11 +8319,7 @@ _Ta4d:
 	__asm        jmp    _Ta52;
 // LINE 983:
 _Ta52:
-	__asm        push   0;
-	__asm        lea    eax, sCurrentLanguage.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageDirectoryName;
-	__asm        add    esp, 8;
+	LanguageManager::GetLanguageDirectoryName(0x0, sCurrentLanguage.c_str_ptr);
 // LINE 984:
 	__asm        jmp    _Ta68;
 _Ta68:
@@ -8491,11 +8470,7 @@ _Tc48:
 	__asm        test   eax, eax;
 	__asm        je     _Tca6;
 // LINE 987:
-	__asm        push   1;
-	__asm        lea    eax, sCurrentLanguage.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageDirectoryName;
-	__asm        add    esp, 8;
+	LanguageManager::GetLanguageDirectoryName(0x1, sCurrentLanguage.c_str_ptr);
 // LINE 988:
 	__asm        jmp    _Tcb5;
 // LINE 989:

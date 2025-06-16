@@ -329,8 +329,7 @@ _T2f:
 	__asm        je     _T46;
 // LINE 99:
 _T3e:
-	__asm        mov    ecx, this;
-	__asm        call   MIFF::Close;
+	this->MIFF::Close();
 // LINE 101:
 _T46:
 	__asm        jmp    _T4b;
@@ -354,11 +353,7 @@ _T7d:
 	__asm        cmp    dword ptr [eax+0x10C], 0;
 	__asm        je     _T9f;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(this->Handle);
 _T9f:
 	return;
 }
@@ -585,13 +580,7 @@ _Tae:
 _Tdd:
 	this->lReadWriteMode = 0x2;
 // LINE 182:
-	__asm        push   2;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
+	_lseek(0x2, 0x0, this->Handle);
 	__asm        jmp    _T105;
 // LINE 183:
 _T105:
@@ -619,8 +608,7 @@ long MIFF::Close() {
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 196:
 _T37:
-	__asm        mov    ecx, this;
-	__asm        call   PFile::Close;
+	this->PFile::Close();
 // LINE 197:
 	return 0x1;
 // LINE 198:
@@ -695,25 +683,11 @@ _T26:
 	__asm        je     _T7c;
 // LINE 224:
 _T35:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
+	_lseek(0x0, 0x0, this->Handle);
 	__asm        jmp    _T50;
 // LINE 225:
 _T50:
-	__asm        push   0x1C;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x12C;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read(0x1c, (this + 0x12c), this->Handle);
 	__asm        jmp    _T72;
 // LINE 226:
 _T72:
@@ -921,15 +895,7 @@ long MIFF::ReadRecordHeader() {
 	/*bp-0x4*/   long lBytesRead;
 
 // LINE 314:
-	__asm        push   4;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x114;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read(0x4, (this + 0x114), this->Handle);
 	__asm        jmp    _T2e;
 // LINE 315:
 _T2e:
@@ -1097,13 +1063,7 @@ _T45:
 	return 0x0;
 // LINE 393:
 _T4c:
-	__asm        push   0;
-	__asm        push   0x1C;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
+	_lseek(0x0, 0x1c, this->Handle);
 	__asm        jmp    _T67;
 // LINE 394:
 _T67:
@@ -1218,14 +1178,7 @@ _T111:
 	__asm        cmp    [eax+0x110], ecx;
 	__asm        jg     _T153;
 // LINE 442:
-	__asm        push   0;
-	__asm        mov    eax, lSavedPreviousStart;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
+	_lseek(0x0, lSavedPreviousStart, this->Handle);
 	__asm        jmp    _T14c;
 // LINE 443:
 _T14c:
@@ -1239,14 +1192,7 @@ _T153:
 	__asm        test   eax, eax;
 	__asm        jne    _T18a;
 // LINE 447:
-	__asm        push   0;
-	__asm        mov    eax, lSavedPreviousStart;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
+	_lseek(0x0, lSavedPreviousStart, this->Handle);
 	__asm        jmp    _T183;
 // LINE 448:
 _T183:
@@ -1501,13 +1447,7 @@ _T4c:
 _T62:
 	__asm        mov    lActualBytesToRead, eax;
 // LINE 607:
-	__asm        push   1;
-	__asm        push   8;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
+	_lseek(0x1, 0x8, this->Handle);
 	__asm        jmp    _T80;
 // LINE 609:
 _T80:
@@ -1594,13 +1534,7 @@ _T4c:
 // LINE 656:
 	this->bFileEndWritten = 0x0;
 // LINE 657:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
+	_lseek(0x0, 0x0, this->Handle);
 	__asm        jmp    _Tcc;
 // LINE 658:
 _Tcc:
@@ -1704,25 +1638,11 @@ _T4e:
 _T55:
 	this->bFileEndWritten = 0x0;
 // LINE 711:
-	__asm        push   4;
-	__asm        lea    eax, lRecordType;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _write;
-	__asm        add    esp, 0xC;
+	_write(0x4, lRecordType, this->Handle);
 	__asm        jmp    _T7f;
 // LINE 712:
 _T7f:
-	__asm        push   4;
-	__asm        lea    eax, lRecordLength;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _write;
-	__asm        add    esp, 0xC;
+	_write(0x4, lRecordLength, this->Handle);
 	__asm        jmp    _T9c;
 // LINE 715:
 _T9c:
@@ -1754,48 +1674,23 @@ long MIFF::WriteEnd() {
 	__asm        jmp    _T26;
 // LINE 741:
 _T26:
-	__asm        mov    eax, lPresentPosition;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _chsize;
-	__asm        add    esp, 8;
+	_chsize(lPresentPosition, this->Handle);
 	__asm        jmp    _T41;
 // LINE 742:
 _T41:
 	lFileLength = this->PFile::Length();
 // LINE 743:
-	__asm        push   0;
-	__asm        push   0x14;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
+	_lseek(0x0, 0x14, this->Handle);
 	__asm        jmp    _T67;
 // LINE 744:
 _T67:
-	__asm        push   4;
-	__asm        lea    eax, lFileLength;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _write;
-	__asm        add    esp, 0xC;
+	_write(0x4, lFileLength, this->Handle);
 	__asm        jmp    _T84;
 // LINE 745:
 _T84:
 	this->bFileEndWritten = 0x1;
 // LINE 746:
-	__asm        push   2;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
+	_lseek(0x2, 0x0, this->Handle);
 	__asm        jmp    _Tac;
 // LINE 747:
 _Tac:

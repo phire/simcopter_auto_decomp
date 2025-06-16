@@ -783,9 +783,7 @@ _T3a4:
 // SYNTHETIC: COPTER_D 0x00491548
 static void $E31() {
 
-	__asm        push   0x491565;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x491565);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -2171,10 +2169,7 @@ _T32a:
 	__asm        cmp    tempPFile.ShouldClose, 0;
 	__asm        je     _T340;
 
-	__asm        mov    eax, tempPFile.Handle;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(tempPFile.Handle);
 _T340:
 	__asm        jmp    _T345;
 _T345:
@@ -2228,8 +2223,7 @@ _T3cf:
 	__asm        cmp    eax, 0x4C4B40;
 	__asm        jge    _T4e5;
 // LINE 147:
-	__asm        lea    ecx, tempPFile<vftable>;
-	__asm        call   PFile::Close;
+	tempPFile<vftable>->PFile::Close();
 // LINE 148:
 	__asm        mov    dword ptr [ebp-0x120], 0;
 	__asm        mov    tempPFile<vftable>, 0x590468;
@@ -2248,10 +2242,7 @@ _T440:
 	__asm        cmp    tempPFile.ShouldClose, 0;
 	__asm        je     _T456;
 
-	__asm        mov    eax, tempPFile.Handle;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(tempPFile.Handle);
 _T456:
 	__asm        jmp    _T45b;
 _T45b:
@@ -2293,8 +2284,7 @@ _T4da:
 	__asm        jmp    __RETURN;
 // LINE 150:
 _T4e5:
-	__asm        lea    ecx, tempPFile<vftable>;
-	__asm        call   PFile::Close;
+	tempPFile<vftable>->PFile::Close();
 // LINE 151:
 	__asm        mov    dword ptr [ebp-0x124], 1;
 	__asm        mov    tempPFile<vftable>, 0x590468;
@@ -2313,10 +2303,7 @@ _T52a:
 	__asm        cmp    tempPFile.ShouldClose, 0;
 	__asm        je     _T540;
 
-	__asm        mov    eax, tempPFile.Handle;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(tempPFile.Handle);
 _T540:
 	__asm        jmp    _T545;
 _T545:

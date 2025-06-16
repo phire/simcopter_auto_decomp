@@ -155,13 +155,7 @@ _T4b:
 	__asm        cmp    hFileOut, 0;
 	__asm        je     __RETURN;
 // LINE 101:
-	__asm        mov    eax, hFileOut;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        push   0x80;
-	__asm        push   0x603DC8;
-	__asm        call   fwrite;
-	__asm        add    esp, 0x10;
+	fwrite(hFileOut, 0x1, 0x80, 0x603dc8);
 // LINE 103:
 	ptr = buffer1;
 // LINE 104:
@@ -174,25 +168,14 @@ _Tf6:
 	__asm        cmp    ydim, eax;
 	__asm        jle    _T121;
 // LINE 106:
-	__asm        mov    eax, xdim;
-	__asm        push   eax;
-	__asm        mov    eax, ptr;
-	__asm        push   eax;
-	__asm        mov    eax, hFileOut;
-	__asm        push   eax;
-	__asm        call   S3WritePCXLine;
-	__asm        add    esp, 0xC;
+	S3WritePCXLine(xdim, ptr, hFileOut);
 // LINE 107:
 	ptr += pitch;
 // LINE 108:
 	__asm        jmp    _Tf3;
 // LINE 109:
 _T121:
-	__asm        mov    eax, hFileOut;
-	__asm        push   eax;
-	__asm        push   0xC;
-	__asm        call   fputc;
-	__asm        add    esp, 8;
+	fputc(hFileOut, 0xc);
 // LINE 111:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3850];
@@ -236,18 +219,9 @@ _T171:
 	__asm        jmp    _T16e;
 // LINE 120:
 _T1bf:
-	__asm        mov    eax, hFileOut;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        push   0x300;
-	__asm        push   0x603AC0;
-	__asm        call   fwrite;
-	__asm        add    esp, 0x10;
+	fwrite(hFileOut, 0x1, 0x300, 0x603ac0);
 // LINE 124:
-	__asm        mov    eax, hFileOut;
-	__asm        push   eax;
-	__asm        call   fclose;
-	__asm        add    esp, 4;
+	fclose(hFileOut);
 // LINE 127:
 __RETURN:
 }

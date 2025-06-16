@@ -705,9 +705,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004ebbf4
 static void $E56() {
 
-	__asm        push   0x4EBC11;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x4ebc11);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -951,8 +949,7 @@ void LogManager::~LogManager() {
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T1f6;
 // LINE 55:
-	__asm        mov    ecx, this;
-	__asm        call   LogManager::PurgeAllEntries;
+	this->LogManager::PurgeAllEntries();
 // LINE 56:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1125,8 +1122,7 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::MIFF;
 // LINE 70:
-	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
-	__asm        call   MIFF::OpenForReading;
+	tempMIFF<MIFF+0x00>->MIFF::OpenForReading();
 // LINE 71:
 	__asm        lea    eax, tempMIFF<MIFF+0x00>;
 	__asm        push   eax;
@@ -1134,8 +1130,7 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 	__asm        call   LogManager::ReadFromMIFF;
 	__asm        mov    nReturnValue, eax;
 // LINE 72:
-	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
-	__asm        call   MIFF::Close;
+	tempMIFF<MIFF+0x00>->MIFF::Close();
 // LINE 73:
 	__asm        mov    eax, nReturnValue;
 	__asm        mov    [ebp-0x150], eax;
@@ -1158,8 +1153,7 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::MIFF;
 // LINE 85:
-	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
-	__asm        call   MIFF::OpenForAppending;
+	tempMIFF<MIFF+0x00>->MIFF::OpenForAppending();
 // LINE 86:
 	__asm        lea    eax, tempMIFF<MIFF+0x00>;
 	__asm        push   eax;
@@ -1167,8 +1161,7 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 	__asm        call   LogManager::WriteToMIFF;
 	__asm        mov    nReturnValue, eax;
 // LINE 87:
-	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
-	__asm        call   MIFF::Close;
+	tempMIFF<MIFF+0x00>->MIFF::Close();
 // LINE 88:
 	__asm        mov    eax, nReturnValue;
 	__asm        mov    [ebp-0x150], eax;
@@ -3746,15 +3739,7 @@ _T5dc:
 	__asm        jmp    _T5e1;
 // LINE 398:
 _T5e1:
-	__asm        mov    eax, lCEE;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        lea    eax, szBuffer1[0];
-	__asm        push   eax;
-	__asm        lea    eax, szBuffer[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf((lCEE + 0x10), szBuffer1[0], szBuffer[0]);
 // LINE 400:
 // Block end:
 	__asm        jmp    _T6de;
@@ -3811,18 +3796,7 @@ _T6b6:
 	__asm        jmp    _T6bb;
 // LINE 403:
 _T6bb:
-	__asm        mov    eax, logData;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, logData;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        lea    eax, szBuffer1[0];
-	__asm        push   eax;
-	__asm        lea    eax, szBuffer[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x10;
+	sprintf(logData->nMissionID, logData->nType, szBuffer1[0], szBuffer[0]);
 // LINE 406:
 _T6de:
 	__asm        jmp    _T6e3;

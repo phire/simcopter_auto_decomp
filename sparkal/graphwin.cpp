@@ -902,9 +902,7 @@ _T24f:
 // SYNTHETIC: COPTER_D 0x004a0c73
 static void $E47() {
 
-	__asm        push   0x4A0C90;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x4a0c90);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1255,9 +1253,7 @@ _T24f:
 // SYNTHETIC: COPTER_D 0x004a10d2
 static void $E52() {
 
-	__asm        push   0x4A10EF;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x4a10ef);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1608,9 +1604,7 @@ _T24f:
 // SYNTHETIC: COPTER_D 0x004a1531
 static void $E57() {
 
-	__asm        push   0x4A154E;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x4a154e);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -2847,8 +2841,7 @@ _Te5:
 // LINE 233:
 	this->nBusyIteratingCount = 0x0;
 // LINE 234:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
+	this->GraphicWindowManager::DeleteAllWindowsInDeletionList();
 // LINE 237:
 _T10a:
 	return nReturnValue;
@@ -2952,8 +2945,7 @@ _Te5:
 // LINE 265:
 	this->nBusyIteratingCount = 0x0;
 // LINE 266:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
+	this->GraphicWindowManager::DeleteAllWindowsInDeletionList();
 // LINE 269:
 _T10a:
 	return nReturnValue;
@@ -3055,8 +3047,7 @@ _Te1:
 // LINE 292:
 	this->nBusyIteratingCount = 0x0;
 // LINE 293:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
+	this->GraphicWindowManager::DeleteAllWindowsInDeletionList();
 // LINE 296:
 _T106:
 	return nReturnValue;
@@ -3441,8 +3432,7 @@ int32_t GraphicWindowManager::ComposeAllWindows() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T41;
 // LINE 405:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
+	this->GraphicWindowManager::DeleteAllWindowsInDeletionList();
 // LINE 406:
 _T41:
 	return nReturnValue;
@@ -4584,8 +4574,7 @@ _T4bc:
 	__asm        call   dword ptr [edx+0x54];
 // LINE 492:
 _T538:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::SetImageToDrawOnto;
+	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 493:
 	return;
 
@@ -5090,8 +5079,7 @@ _T6d3:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::CreateImage;
 // LINE 527:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::SetImageToDrawOnto;
+	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 528:
 	return;
 
@@ -5193,15 +5181,9 @@ _T120:
 	__asm        call   GraphicWindow::CaptureCursorEnd;
 // LINE 541:
 _T132:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::RemoveFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::RemoveFocus(this);
 // LINE 542:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::RemoveModal;
-	__asm        add    esp, 4;
+	GraphicWindow::RemoveModal(this);
 // LINE 543:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DeleteAllChildren;
@@ -7315,8 +7297,7 @@ _T1a8:
 	__asm        test   eax, eax;
 	__asm        jg     _T1cb;
 // LINE 882:
-	__asm        mov    ecx, GraphicWindow::windowManager;
-	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
+	GraphicWindow::windowManager->GraphicWindowManager::DeleteAllWindowsInDeletionList();
 // LINE 883:
 _T1cb:
 	return windowFound;
@@ -7577,8 +7558,7 @@ _T153:
 	__asm        test   eax, eax;
 	__asm        jg     _T176;
 // LINE 928:
-	__asm        mov    ecx, GraphicWindow::windowManager;
-	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
+	GraphicWindow::windowManager->GraphicWindowManager::DeleteAllWindowsInDeletionList();
 // LINE 929:
 _T176:
 	return;
@@ -8637,15 +8617,7 @@ _T134:
 _T164:
 	__asm        jmp    _T169;
 _T169:
-	__asm        lea    eax, szFullImagePath[0];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x5C];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullImagePath[0], this-><GraphicWindow+0x5c:4>, 0x0, 0x6);
 // LINE 1357:
 	__asm        jmp    _T18b;
 _T18b:
@@ -9312,10 +9284,7 @@ _T2f:
 // FUNCTION: COPTER_D 0x004a7075
 int32_t GraphicWindow::MakeModal(/*unpacked*/ class GraphicWindow *windowModal) {
 // LINE 1485:
-	__asm        mov    eax, windowModal;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::RemoveModal;
-	__asm        add    esp, 4;
+	GraphicWindow::RemoveModal(windowModal);
 // LINE 1486:
 	__asm        mov    eax, GraphicWindow::listModalWindows.node;
 	__asm        mov    eax, [eax];
@@ -9655,10 +9624,7 @@ _T121:
 // FUNCTION: COPTER_D 0x004a7470
 int32_t GraphicWindow::MakeFocus(/*unpacked*/ class GraphicWindow *windowFocus) {
 // LINE 1531:
-	__asm        mov    eax, windowFocus;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::RemoveFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::RemoveFocus(windowFocus);
 // LINE 1532:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
 	__asm        mov    eax, [eax];

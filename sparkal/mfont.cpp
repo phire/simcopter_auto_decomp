@@ -428,8 +428,7 @@ _T2d1:
 	__asm        cmp    bCreateNow, 0;
 	__asm        je     _T308;
 // LINE 63:
-	__asm        mov    ecx, this;
-	__asm        call   MFont::CreateFontA;
+	this->MFont::CreateFontA();
 // LINE 64:
 _T308:
 	return;

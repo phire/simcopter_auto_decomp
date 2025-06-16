@@ -163,13 +163,7 @@ _T12f:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T17b;
 // LINE 423:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        push   0x5B72A4;
-	__asm        lea    eax, msg[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(i, 0x5b72a4, msg[0]);
 // LINE 424:
 	__asm        lea    eax, msg[0];
 	__asm        push   eax;

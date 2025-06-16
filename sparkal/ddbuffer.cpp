@@ -698,8 +698,7 @@ _T16c:
 	this->mHeight = 0x0;
 	this->mWidth = this->mHeight;
 // LINE 81:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Close;
+	fileImage->PFile::Close();
 // LINE 82:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x50], eax;
@@ -719,25 +718,11 @@ _T1b1:
 	return;
 // LINE 86:
 _T1b6:
-	__asm        push   0xE;
-	__asm        lea    eax, bfHeader.bfType;
-	__asm        push   eax;
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read(0xe, bfHeader.bfType, fileImage->Handle);
 	__asm        jmp    _T1d3;
 // LINE 87:
 _T1d3:
-	__asm        push   0x28;
-	__asm        lea    eax, biHeader.biSize;
-	__asm        push   eax;
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read(0x28, biHeader.biSize, fileImage->Handle);
 	__asm        jmp    _T1f0;
 // LINE 88:
 _T1f0:
@@ -753,8 +738,7 @@ _T1f0:
 // LINE 93:
 	this->rectDirectDrawBuffer.bottom = this->mHeight;
 // LINE 94:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Close;
+	fileImage->PFile::Close();
 // LINE 95:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x58], eax;
@@ -825,8 +809,7 @@ _T2fd:
 	__asm        imul   eax, [ecx+0xC];
 	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 142:
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::Load;
+	this->CBackBuffer::Load();
 // LINE 145:
 	return;
 
@@ -919,11 +902,9 @@ _T120:
 	__asm        imul   eax, [ecx+0xC];
 	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 204:
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::Lock;
+	this->CBackBuffer::Lock();
 // LINE 205:
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::Unlock;
+	this->CBackBuffer::Unlock();
 // LINE 208:
 	return;
 
@@ -1184,8 +1165,7 @@ _T110:
 // LINE 321:
 	this->mHeight = 0x0;
 // LINE 322:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Close;
+	fileImage->PFile::Close();
 // LINE 323:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x45C], eax;
@@ -1331,8 +1311,7 @@ _T37b:
 _T380:
 	nPosition = _tell(fileImage->Handle);
 // LINE 363:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Close;
+	fileImage->PFile::Close();
 // LINE 364:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x464], eax;
@@ -3100,8 +3079,7 @@ _Tbd:
 	__asm        jne    _T105;
 // LINE 1266:
 _Tcc:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Close;
+	fileImage->PFile::Close();
 // LINE 1267:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x48], eax;
@@ -3121,25 +3099,11 @@ _Tfb:
 	return 0x80000000;
 // LINE 1271:
 _T105:
-	__asm        push   0xE;
-	__asm        lea    eax, bfHeader.bfType;
-	__asm        push   eax;
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read(0xe, bfHeader.bfType, fileImage->Handle);
 	__asm        jmp    _T122;
 // LINE 1272:
 _T122:
-	__asm        push   0x28;
-	__asm        lea    eax, biHeader.biSize;
-	__asm        push   eax;
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read(0x28, biHeader.biSize, fileImage->Handle);
 	__asm        jmp    _T13f;
 // LINE 1278:
 _T13f:
@@ -3159,8 +3123,7 @@ _T156:
 	__asm        ja     _T1a6;
 // LINE 1281:
 _T16d:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Close;
+	fileImage->PFile::Close();
 // LINE 1282:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x50], eax;
@@ -3195,8 +3158,7 @@ _T1a6:
 	__asm        jmp    _T1ce;
 // LINE 1286:
 _T1ce:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Close;
+	fileImage->PFile::Close();
 // LINE 1287:
 	__asm        mov    eax, fileImage;
 	__asm        mov    [ebp-0x58], eax;

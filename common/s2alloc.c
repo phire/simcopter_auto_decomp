@@ -103,12 +103,7 @@ static /*packed*/ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	__asm        jne    _T59;
 // LINE 243:
 _T39:
-	__asm        push   0x59B53C;
-	__asm        mov    eax, 0x5C0BF8;
-	__asm        add    eax, 0x40;
-	__asm        push   eax;
-	__asm        call   fprintf;
-	__asm        add    esp, 8;
+	fprintf(0x59b53c, (0x5c0bf8 + 0x40));
 // LINE 244:
 	__asm        push   1;
 	__asm        call   exit;
@@ -422,9 +417,9 @@ _T9e:
 // LINE 513:
 	poolCount--;
 // LINE 516:
-	__asm        call   _heapmin;
+	_heapmin();
 // LINE 517:
-	__asm        call   _heapchk;
+	_heapchk();
 // LINE 523:
 }
 

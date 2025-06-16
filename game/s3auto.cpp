@@ -3995,13 +3995,7 @@ _T82:
 	__asm        add    esp, 4;
 // LINE 1722:
 _Td3:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        push   0xF;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (this + 0x24), 0xf);
 // LINE 1725:
 	return;
 }
@@ -4061,13 +4055,7 @@ _T67:
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1762:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        push   8;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (this + 0x24), 0x8);
 // LINE 1764:
 	return;
 }
@@ -5995,10 +5983,7 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 // LINE 2566:
 	pulloverVector.x = this->pDirVector->z;
 // LINE 2567:
-	__asm        lea    eax, pulloverVector.x;
-	__asm        push   eax;
-	__asm        call   Normalize;
-	__asm        add    esp, 4;
+	Normalize(pulloverVector.x);
 // LINE 2569:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x10;
@@ -7543,24 +7528,7 @@ _T71:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 3328:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        push   eax;
-	__asm        push   0x320000;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xC;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        lea    eax, currpos.x;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(this->missionId, 0x320000, (this + 0xc), 0x1, vec.x, (this + 0x24), currpos.x, 0x4);
 // LINE 3334:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10E];
@@ -7596,13 +7564,7 @@ _T71:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 3336:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (this + 0x24), 0x4);
 // LINE 3339:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10E], 0xFFFFFFFF;
@@ -11110,15 +11072,7 @@ _T5c:
 	__asm        test   eax, eax;
 	__asm        jne    _T91;
 // LINE 4755:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xCA];
-	__asm        push   eax;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (this + 0x24), this->hornSoundId);
 // LINE 4759:
 _T91:
 	return;
@@ -11168,12 +11122,7 @@ void S3AutoSoundDriver() {
 	__asm        test   eax, eax;
 	__asm        jne    _T61;
 // LINE 4802:
-	__asm        push   1;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        push   0x12;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, loc.x, 0x12);
 // LINE 4805:
 _T61:
 	__asm        push   0xF0600000;
@@ -11231,12 +11180,7 @@ _Tb6:
 	__asm        test   eax, eax;
 	__asm        jne    _T10e;
 // LINE 4826:
-	__asm        push   1;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        push   0x13;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, loc.x, 0x13);
 // LINE 4829:
 _T10e:
 	__asm        push   0xF0600000;
@@ -11294,12 +11238,7 @@ _T163:
 	__asm        test   eax, eax;
 	__asm        jne    _T1bb;
 // LINE 4850:
-	__asm        push   1;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        push   0x11;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, loc.x, 0x11);
 // LINE 4853:
 _T1bb:
 	__asm        push   0xF0600000;
@@ -11357,12 +11296,7 @@ _T210:
 	__asm        test   eax, eax;
 	__asm        jne    _T268;
 // LINE 4874:
-	__asm        push   1;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        push   0x14;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, loc.x, 0x14);
 // LINE 4877:
 _T268:
 	__asm        push   0xF0600000;
@@ -11420,12 +11354,7 @@ _T2bd:
 	__asm        test   eax, eax;
 	__asm        jne    _T315;
 // LINE 4898:
-	__asm        push   1;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        push   0x14;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, loc.x, 0x14);
 // LINE 4901:
 _T315:
 	__asm        push   0xF0600000;

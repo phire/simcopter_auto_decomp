@@ -808,9 +808,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00487864
 static void $E117() {
 
-	__asm        push   0x487881;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x487881);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -851,9 +849,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004878d4
 static void $E122() {
 
-	__asm        push   0x4878F1;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x4878f1);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -892,9 +888,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0048793f
 static void $E127() {
 
-	__asm        push   0x48795C;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x48795c);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -933,9 +927,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004879aa
 static void $E132() {
 
-	__asm        push   0x4879C7;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x4879c7);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -984,9 +976,7 @@ _T36:
 // SYNTHETIC: COPTER_D 0x00487a3b
 static void $E137() {
 
-	__asm        push   0x487A58;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x487a58);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1039,9 +1029,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00487ad8
 static void $E142() {
 
-	__asm        push   0x487AF5;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x487af5);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1508,8 +1496,7 @@ _T1e8:
 	gszAppDirectory = 0x0;
 // LINE 169:
 _T219:
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::DeInitialize;
+	0x604480->Radio::DeInitialize();
 // LINE 170:
 	__asm        push   1;
 	__asm        mov    ecx, 0x604450;
@@ -1526,7 +1513,7 @@ _T219:
 // LINE 181:
 	__asm        call   VRCloseResourceFile;
 // LINE 182:
-	__asm        call   VRUnLoadAllResources;
+	VRUnLoadAllResources();
 // LINE 183:
 	__asm        mov    eax, G_main_mp;
 	__asm        push   eax;
@@ -2691,13 +2678,11 @@ _Tb3f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 340:
-	__asm        mov    ecx, 0x5C37EC;
-	__asm        call   SoundChangeNotificationSink::Initialize;
+	0x5c37ec->SoundChangeNotificationSink::Initialize();
 // LINE 341:
-	__asm        call   S3LoadSounds;
+	S3LoadSounds();
 // LINE 342:
-	__asm        mov    ecx, 0x604450;
-	__asm        call   SoundQueue::Initialize;
+	0x604450->SoundQueue::Initialize();
 // LINE 343:
 	__asm        lea    ecx, gSoundQueue[1]<vftable>;
 	__asm        call   SoundQueue::Initialize;
@@ -3197,8 +3182,7 @@ _T320:
 // LINE 465:
 	__asm        call   InitializeAllCareerCitiesInfo;
 // LINE 466:
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::Initialize;
+	0x604480->Radio::Initialize();
 // LINE 470:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
@@ -3215,8 +3199,7 @@ _T320:
 // LINE 484:
 	__asm        call   TWKGameInit;
 // LINE 487:
-	__asm        mov    ecx, 0x604530;
-	__asm        call   MessageDisplayManager::Initialize;
+	0x604530->MessageDisplayManager::Initialize();
 // LINE 488:
 	gLogManager.myMessageDisplayManager = 0x604530;
 // LINE 492:
@@ -3436,12 +3419,7 @@ _T1c1:
 	__asm        test   eax, eax;
 	__asm        je     _T228;
 // LINE 546:
-	__asm        lea    eax, nLanguage;
-	__asm        push   eax;
-	__asm        lea    eax, szCommandValue[0];
-	__asm        push   eax;
-	__asm        call   LanguageManager::ConvertNameToID;
-	__asm        add    esp, 8;
+	LanguageManager::ConvertNameToID(nLanguage, szCommandValue[0]);
 // LINE 547:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
@@ -3689,10 +3667,7 @@ _T212:
 // FUNCTION: COPTER_D 0x0048a15d
 int32_t CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 // LINE 651:
-	__asm        mov    eax, nLanguageID;
-	__asm        push   eax;
-	__asm        call   LanguageManager::SetDefaultLanguage;
-	__asm        add    esp, 4;
+	LanguageManager::SetDefaultLanguage(nLanguageID);
 // LINE 653:
 	return 0x1;
 // LINE 654:
@@ -3717,13 +3692,7 @@ void CGameApp::DisplayDebugSystemInformation() {
 	__asm        test   eax, eax;
 	__asm        je     _T5b;
 // LINE 668:
-	__asm        mov    eax, szVersionInformation;
-	__asm        push   eax;
-	__asm        push   0x599CB0;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(szVersionInformation, 0x599cb0, szFormattedVersionInformation[0]);
 // LINE 669:
 	__asm        lea    eax, szFormattedVersionInformation[0];
 	__asm        push   eax;
@@ -3738,13 +3707,7 @@ _T5b:
 	__asm        test   eax, eax;
 	__asm        je     _T9c;
 // LINE 673:
-	__asm        mov    eax, szVersionInformation;
-	__asm        push   eax;
-	__asm        push   0x599CB4;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(szVersionInformation, 0x599cb4, szFormattedVersionInformation[0]);
 // LINE 674:
 	__asm        lea    eax, szFormattedVersionInformation[0];
 	__asm        push   eax;
@@ -3759,13 +3722,7 @@ _T9c:
 	__asm        test   eax, eax;
 	__asm        je     _Tdd;
 // LINE 678:
-	__asm        mov    eax, szVersionInformation;
-	__asm        push   eax;
-	__asm        push   0x599CC4;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(szVersionInformation, 0x599cc4, szFormattedVersionInformation[0]);
 // LINE 679:
 	__asm        lea    eax, szFormattedVersionInformation[0];
 	__asm        push   eax;
@@ -3780,13 +3737,7 @@ _Tdd:
 	__asm        test   eax, eax;
 	__asm        je     _T11e;
 // LINE 683:
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        push   0x599CD8;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(szUnformattedVersionInformation[0], 0x599cd8, szFormattedVersionInformation[0]);
 // LINE 684:
 	__asm        lea    eax, szFormattedVersionInformation[0];
 	__asm        push   eax;
@@ -3802,13 +3753,7 @@ _T11e:
 	__asm        jmp    _T137;
 // LINE 688:
 _T137:
-	__asm        lea    eax, szUnformattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        push   0x599CE8;
-	__asm        lea    eax, szFormattedVersionInformation[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(szUnformattedVersionInformation[0], 0x599ce8, szFormattedVersionInformation[0]);
 // LINE 689:
 	__asm        lea    eax, szFormattedVersionInformation[0];
 	__asm        push   eax;
@@ -4293,8 +4238,7 @@ _T51f:
 // FUNCTION: COPTER_D 0x0048a943
 void CGameApp::InitializeJoysticks() {
 // LINE 793:
-	__asm        mov    ecx, 0x604C78;
-	__asm        call   JoystickManager::Initialize;
+	0x604c78->JoystickManager::Initialize();
 // LINE 794:
 	__asm        push   0x64;
 	__asm        push   0xFFFFFF9C;

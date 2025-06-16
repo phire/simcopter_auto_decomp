@@ -1153,12 +1153,7 @@ void S3CameraTweakInit() {
 // LINE 728:
 	pvals[2] = 0x5b4df8;
 // LINE 730:
-	__asm        push   0x5B4E04;
-	__asm        push   3;
-	__asm        lea    eax, pvals[0];
-	__asm        push   eax;
-	__asm        call   TWKEnQueue;
-	__asm        add    esp, 0xC;
+	TWKEnQueue(0x5b4e04, 0x3, pvals[0]);
 // LINE 732:
 }
 

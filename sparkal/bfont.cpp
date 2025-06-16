@@ -1797,19 +1797,7 @@ _T8d0:
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _Ta0d;
 // LINE 106:
-	__asm        lea    eax, rectTemp.bottom;
-	__asm        push   eax;
-	__asm        lea    eax, rectTemp.right;
-	__asm        push   eax;
-	__asm        lea    eax, rectTemp.top;
-	__asm        push   eax;
-	__asm        lea    eax, rectTemp.left;
-	__asm        push   eax;
-	__asm        push   0x59941C;
-	__asm        mov    eax, chCurrentRectangle;
-	__asm        push   eax;
-	__asm        call   sscanf;
-	__asm        add    esp, 0x18;
+	sscanf(rectTemp.bottom, rectTemp.right, rectTemp.top, rectTemp.left, 0x59941c, chCurrentRectangle);
 // LINE 107:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;

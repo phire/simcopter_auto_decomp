@@ -91,14 +91,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 // LINE 77:
 	g_nNextTWKErrorSlot = 0x0;
 // LINE 78:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, pszTWKFile;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0xB;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], pszTWKFile, 0x0, 0xb);
 // LINE 80:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -232,14 +225,7 @@ void TWKReadAllFiles(char * pszTWKFile) {
 	/*bp-0x23c*/ char * pszSection;
 
 // LINE 170:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, pszTWKFile;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0xB;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], pszTWKFile, 0x0, 0xb);
 // LINE 171:
 	nCt = 0x0;
 	__asm        jmp    _T38;
@@ -310,21 +296,9 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	/*bp-0x164*/ char szKey[50]; // 0x32 bytes
 
 // LINE 211:
-	__asm        push   0x59B484;
-	__asm        push   0x59B48C;
-	__asm        lea    eax, szKey[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(0x59b484, 0x59b48c, szKey[0]);
 // LINE 212:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, pszFile;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0xB;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], pszFile, 0x0, 0xb);
 // LINE 213:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -348,15 +322,7 @@ _T7e:
 	__asm        cmp    nNumCtrl, eax;
 	__asm        jle    _T1ea;
 // LINE 217:
-	__asm        push   0x59B490;
-	__asm        mov    eax, nCt2;
-	__asm        push   eax;
-	__asm        push   0x59B498;
-	__asm        push   0x59B4A0;
-	__asm        lea    eax, szKey[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(0x59b490, nCt2, 0x59b498, 0x59b4a0, szKey[0]);
 // LINE 219:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -370,15 +336,7 @@ _T7e:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3618];
 // LINE 220:
-	__asm        push   0x59B4BC;
-	__asm        mov    eax, nCt2;
-	__asm        push   eax;
-	__asm        push   0x59B4C8;
-	__asm        push   0x59B4D0;
-	__asm        lea    eax, szKey[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(0x59b4bc, nCt2, 0x59b4c8, 0x59b4d0, szKey[0]);
 // LINE 222:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;

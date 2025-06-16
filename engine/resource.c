@@ -176,10 +176,7 @@ _Tfc:
 	__asm        test   eax, eax;
 	__asm        jne    _T12e;
 // LINE 164:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   VRUnLoadResource;
-	__asm        add    esp, 4;
+	VRUnLoadResource(res);
 // LINE 165:
 	return 0x0;
 // LINE 167:
@@ -224,10 +221,7 @@ _T197:
 	__asm        test   eax, eax;
 	__asm        jne    _T1c9;
 // LINE 183:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   VRUnLoadResource;
-	__asm        add    esp, 4;
+	VRUnLoadResource(res);
 // LINE 184:
 	return 0x0;
 // LINE 186:
@@ -336,10 +330,7 @@ _T2f3:
 	__asm        test   eax, eax;
 	__asm        jne    _T325;
 // LINE 209:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   VRUnLoadResource;
-	__asm        add    esp, 4;
+	VRUnLoadResource(res);
 // LINE 210:
 	return 0x0;
 // LINE 212:
@@ -441,10 +432,7 @@ _T43b:
 	__asm        test   eax, eax;
 	__asm        jne    _T46d;
 // LINE 240:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   VRUnLoadResource;
-	__asm        add    esp, 4;
+	VRUnLoadResource(res);
 // LINE 241:
 	return 0x0;
 // LINE 243:
@@ -1040,10 +1028,7 @@ _T3f:
 	__asm        cmp    ResFileMemPool, 0;
 	__asm        jge    _T7d;
 // LINE 880:
-	__asm        mov    eax, ResourceFilePtr;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(ResourceFilePtr);
 // LINE 881:
 	GlobalError = 0x1;
 // LINE 882:
@@ -1089,10 +1074,7 @@ void VRCloseResourceFile() {
 	__asm        cmp    ResourceFilePtr, 0;
 	__asm        je     _T21;
 // LINE 1093:
-	__asm        mov    eax, ResourceFilePtr;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(ResourceFilePtr);
 // LINE 1094:
 _T21:
 	__asm        cmp    ResFileMemPool, 0;

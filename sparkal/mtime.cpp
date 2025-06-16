@@ -800,10 +800,7 @@ void MTime::MTime() {
 
 	this-><MTime+0x04:4> = 0x0;
 // LINE 165:
-	__asm        lea    eax, ltime;
-	__asm        push   eax;
-	__asm        call   time;
-	__asm        add    esp, 4;
+	time(ltime);
 // LINE 166:
 	t = localtime(ltime);
 // LINE 172:

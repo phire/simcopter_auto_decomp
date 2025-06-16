@@ -563,14 +563,7 @@ _T5f:
 	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _T1b9;
 // LINE 117:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_COPTER_MAIN_PREFERENCES_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   9;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szPath[0], SZ_COPTER_MAIN_PREFERENCES_FILE_NAME, 0x0, 0x9);
 // LINE 118:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
@@ -1095,14 +1088,7 @@ _T73:
 // Block start:
 	/*bp-0x118*/ char szPath[260]; // 0x104 bytes
 _T8d:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_SMACKER_INTRO_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   1;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szPath[0], SZ_SMACKER_INTRO_FILE_NAME, 0x0, 0x1);
 // LINE 278:
 	__asm        mov    dword ptr [ebp-0x124], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x120], 1;
@@ -1912,8 +1898,7 @@ _T551:
 	__asm        jne    _T601;
 // LINE 462:
 _T570:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::S3PreRender;
+	this->CGameApp::S3PreRender();
 // LINE 463:
 	__asm        call   S3CityDrawGrid;
 // LINE 464:
@@ -2395,16 +2380,13 @@ _T52e:
 // LINE 527:
 	this-><CGameApp+0x68:4> = this-><CGameApp+0x38:4>;
 // LINE 528:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x58;
-	__asm        call   GameModeMainMenuData::CreateAllSurfaces;
+	(this + 0x58)->GameModeMainMenuData::CreateAllSurfaces();
 // LINE 529:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x58;
 	__asm        call   GameModeMainMenuData::UsePalette;
 // LINE 530:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::StartVideoForMainMenu;
+	this->CGameApp::StartVideoForMainMenu();
 // LINE 531:
 	this-><CGameApp+0x1c:4> = 0x1;
 // LINE 532:
@@ -2495,9 +2477,7 @@ _T6c9:
 	__asm        add    ecx, 0x70;
 	__asm        call   GameModePickCareerCityData::Initialize;
 // LINE 541:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   GameModePickCareerCityData::CreateAllSurfaces;
+	(this + 0x70)->GameModePickCareerCityData::CreateAllSurfaces();
 // LINE 542:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x70;
@@ -2607,9 +2587,7 @@ _T89c:
 // LINE 558:
 	this-><CGameApp+0xb0:4> = this-><CGameApp+0x38:4>;
 // LINE 559:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::CreateAllSurfaces;
+	(this + 0xa0)->GameModePlayData::CreateAllSurfaces();
 // LINE 560:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
@@ -2622,9 +2600,7 @@ _T89c:
 	__asm        cmp    G_VRAppInitCalled, 0;
 	__asm        je     _T912;
 // LINE 566:
-	__asm        push   1;
-	__asm        call   VRAppCityInit;
-	__asm        add    esp, 4;
+	VRAppCityInit(0x1);
 // LINE 567:
 	__asm        jmp    _T97b;
 // LINE 568:
@@ -2668,11 +2644,7 @@ _T97b:
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::ReadFromMIFF;
 // LINE 588:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x4174;
-	__asm        push   eax;
-	__asm        call   VRAppGameInit;
-	__asm        add    esp, 4;
+	VRAppGameInit((this + 0x4174));
 // LINE 589:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -2683,9 +2655,7 @@ _T97b:
 	__asm        jmp    _Ta07;
 // LINE 592:
 _T9e2:
-	__asm        push   0;
-	__asm        call   VRAppGameInit;
-	__asm        add    esp, 4;
+	VRAppGameInit(0x0);
 // LINE 593:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -2716,8 +2686,7 @@ _Ta4b:
 	__asm        cmp    bCheckForCommandLineCheatCodes, 0;
 	__asm        je     _Ta60;
 // LINE 605:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CheckCommandLineForCheatCodes;
+	this->CGameApp::CheckCommandLineForCheatCodes();
 // LINE 606:
 _Ta60:
 	this-><CGameApp+0x1c:4> = 0x1;
@@ -2806,9 +2775,7 @@ _Tbb3:
 // LINE 614:
 	this-><CGameApp+0xbc8:4> = this-><CGameApp+0x38:4>;
 // LINE 615:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xBB8;
-	__asm        call   GameModeHangarData::CreateAllSurfaces;
+	(this + 0xbb8)->GameModeHangarData::CreateAllSurfaces();
 // LINE 616:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBB8;
@@ -2899,9 +2866,7 @@ _Td4f:
 // LINE 626:
 	this-><CGameApp+0x1688:4> = this-><CGameApp+0x38:4>;
 // LINE 627:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x1678;
-	__asm        call   GameModeCatalogData::CreateAllSurfaces;
+	(this + 0x1678)->GameModeCatalogData::CreateAllSurfaces();
 // LINE 628:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1678;
@@ -2981,9 +2946,7 @@ _Teba:
 // LINE 636:
 	this-><CGameApp+0x2148:4> = this-><CGameApp+0x38:4>;
 // LINE 637:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2138;
-	__asm        call   GameModeMissionLogData::CreateAllSurfaces;
+	(this + 0x2138)->GameModeMissionLogData::CreateAllSurfaces();
 // LINE 638:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2138;
@@ -3063,9 +3026,7 @@ _T1025:
 // LINE 646:
 	this-><CGameApp+0x2c08:4> = this-><CGameApp+0x38:4>;
 // LINE 647:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x2BF8;
-	__asm        call   GameModeInventoryData::CreateAllSurfaces;
+	(this + 0x2bf8)->GameModeInventoryData::CreateAllSurfaces();
 // LINE 648:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2BF8;
@@ -3234,9 +3195,7 @@ _T1b5:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::EndVideoForMainMenu;
 // LINE 691:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x58;
-	__asm        call   GameModeMainMenuData::DestroyAllSurfaces;
+	(this + 0x58)->GameModeMainMenuData::DestroyAllSurfaces();
 // LINE 692:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3296,9 +3255,7 @@ _T273:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x70];
 // LINE 698:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   GameModePickCareerCityData::DestroyAllSurfaces;
+	(this + 0x70)->GameModePickCareerCityData::DestroyAllSurfaces();
 // LINE 699:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -3663,9 +3620,7 @@ _Te0:
 	__asm        jmp    _T16d;
 // LINE 763:
 _Tf4:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x58;
-	__asm        call   GameModeMainMenuData::DestroyAllSurfaces;
+	(this + 0x58)->GameModeMainMenuData::DestroyAllSurfaces();
 	__asm        jmp    _T104;
 // LINE 764:
 _T104:
@@ -4279,8 +4234,7 @@ _T63a:
 	__asm        cmp    nCommand, 0x3A;
 	__asm        jne    _T656;
 // LINE 939:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateCheatCodeEntryMessageBox;
+	this->CGameApp::CreateCheatCodeEntryMessageBox();
 // LINE 940:
 	return;
 // LINE 942:
@@ -5471,14 +5425,7 @@ _T141:
 	__asm        mov    ecx, 0x604530;
 	__asm        call   MessageDisplayManager::AddNewMessage;
 // LINE 1230:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   2;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME, 0x0, 0x2);
 // LINE 1231:
 	__asm        push   0x7A;
 	__asm        call   operator new;
@@ -6383,9 +6330,7 @@ _T859:
 	__asm        cmp    lMessage, 2;
 	__asm        jne    _T87b;
 // LINE 1402:
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DoSaveGameAs;
+	(this - 0x14)->CGameApp::DoSaveGameAs();
 // LINE 1403:
 _T87b:
 	__asm        mov    eax, nCurrentGameMode;
@@ -6574,13 +6519,7 @@ _T58:
 // LINE 1475:
 // Block start:
 	/*bp-0x510*/ char szFilePath[260]; // 0x104 bytes
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        push   0x5992F0;
-	__asm        push   0;
-	__asm        push   4;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], 0x5992f0, 0x0, 0x4);
 // LINE 1476:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -7095,14 +7034,7 @@ int32_t CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 1667:
-	__asm        lea    eax, szFullCityVideoFilePath[0];
-	__asm        push   eax;
-	__asm        lea    eax, szFullCityVideoFileName[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   1;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullCityVideoFilePath[0], szFullCityVideoFileName[0], 0x0, 0x1);
 // LINE 1669:
 	__asm        mov    dword ptr [ebp-0x214], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x210], 1;
@@ -7330,14 +7262,7 @@ int32_t CGameApp::StartVideoForMainMenu() {
 	/*bp-0x104*/ char szMainMenuVideoPath[260]; // 0x104 bytes
 
 // LINE 1717:
-	__asm        lea    eax, szMainMenuVideoPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_MAIN_MENU_VIDEO_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   1;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szMainMenuVideoPath[0], SZ_MAIN_MENU_VIDEO_FILE_NAME, 0x0, 0x1);
 // LINE 1719:
 	__asm        mov    dword ptr [ebp-0x110], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x10C], 1;

@@ -87,10 +87,7 @@ _T38:
 	__asm        cmp    r, 0x10;
 	__asm        je     _T74;
 // LINE 87:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(file);
 // LINE 89:
 	GlobalError = 0x2;
 // LINE 91:
@@ -130,10 +127,7 @@ _Tad:
 // LINE 177:
 	GlobalError = 0x4;
 // LINE 179:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(file);
 // LINE 180:
 	return 0x0;
 // LINE 183:
@@ -152,20 +146,9 @@ _Tf8:
 	__asm        add    esp, 0xC;
 	__asm        add    r, eax;
 // LINE 185:
-	__asm        mov    eax, s;
-	__asm        sub    eax, r;
-	__asm        push   eax;
-	__asm        mov    eax, byteptr;
-	__asm        push   eax;
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read((s - r), byteptr, file);
 // LINE 186:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(file);
 // LINE 188:
 	i = 0x0;
 	__asm        jmp    _T14d;
@@ -457,10 +440,7 @@ _T51:
 	__asm        cmp    r, 0x10;
 	__asm        je     _T8d;
 // LINE 407:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(file);
 // LINE 408:
 	GlobalError = 0x2;
 // LINE 409:
@@ -470,10 +450,7 @@ _T8d:
 	__asm        cmp    bmp.BmpCount, 1;
 	__asm        je     _Tb4;
 // LINE 450:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(file);
 // LINE 451:
 	GlobalError = 0x2;
 // LINE 452:
@@ -491,13 +468,7 @@ _Tb4:
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 // LINE 459:
-	__asm        push   0xC;
-	__asm        mov    eax, alignptr;
-	__asm        push   eax;
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read(0xc, alignptr, file);
 // LINE 462:
 	bhdr = alignptr;
 // LINE 471:
@@ -510,54 +481,30 @@ _Tb4:
 	__asm        je     _T122;
 // LINE 473:
 _T105:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(file);
 // LINE 474:
 	GlobalError = 0x2;
 // LINE 475:
 	return 0x0;
 // LINE 479:
 _T122:
-	__asm        push   0x400;
-	__asm        mov    eax, alignptr;
-	__asm        push   eax;
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read(0x400, alignptr, file);
 // LINE 482:
 	r = _read(0x10000, alignptr, file);
 // LINE 483:
 	__asm        cmp    r, 0x10000;
 	__asm        je     _T179;
 // LINE 485:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(file);
 // LINE 486:
 	GlobalError = 0x2;
 // LINE 487:
 	return 0x0;
 // LINE 490:
 _T179:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(file);
 // LINE 493:
-	__asm        mov    eax, alignptr;
-	__asm        push   eax;
-	__asm        mov    eax, bmpid;
-	__asm        push   eax;
-	__asm        mov    eax, mask;
-	__asm        push   eax;
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   VRSetBmpToTiled;
-	__asm        add    esp, 0x10;
+	VRSetBmpToTiled(alignptr, bmpid, mask, res);
 // LINE 495:
 	return 0x1;
 // LINE 496:

@@ -899,8 +899,7 @@ _Tea:
 // FUNCTION: COPTER_D 0x0044853b
 int32_t RadioCompassWindow::Initialize() {
 // LINE 93:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 94:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -2498,8 +2497,7 @@ void DialWindow::~DialWindow() {
 // FUNCTION: COPTER_D 0x00449a83
 int32_t DialWindow::Initialize() {
 // LINE 419:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 420:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -3191,14 +3189,7 @@ _Td0:
 	__asm        cmp    dword ptr [eax+0x80], 0;
 	__asm        jne    _T174;
 // LINE 558:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_DIAL_WINDOW_DAMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_DAMAGE_FILE_NAME, 0x0, 0x6);
 // LINE 559:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3233,14 +3224,7 @@ _T174:
 	__asm        cmp    dword ptr [eax+0x84], 0;
 	__asm        jne    _T1f3;
 // LINE 563:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_DIAL_WINDOW_FUEL_LIGHT_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_FUEL_LIGHT_FILE_NAME, 0x0, 0x6);
 // LINE 564:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3264,14 +3248,7 @@ _T1f3:
 	__asm        cmp    dword ptr [eax+0x88], 0;
 	__asm        jne    _T272;
 // LINE 567:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_DIAL_WINDOW_MANA_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_MANA_FILE_NAME, 0x0, 0x6);
 // LINE 568:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3295,14 +3272,7 @@ _T272:
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T2fd;
 // LINE 571:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_DIAL_WINDOW_MONEY_FONT_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   8;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_MONEY_FONT_FILE_NAME, 0x0, 0x8);
 // LINE 572:
 	__asm        push   0x54;
 	__asm        call   operator new;
@@ -3335,14 +3305,7 @@ _T2fd:
 	__asm        cmp    dword ptr [eax+0x8C], 0;
 	__asm        jne    _T37c;
 // LINE 576:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_DIAL_WINDOW_ALTITUDE_NBR_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_ALTITUDE_NBR_FILE_NAME, 0x0, 0x6);
 // LINE 577:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3366,14 +3329,7 @@ _T37c:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T420;
 // LINE 580:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_DIAL_WINDOW_BOOT_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_BOOT_FILE_NAME, 0x0, 0x6);
 // LINE 581:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3408,14 +3364,7 @@ _T420:
 	__asm        cmp    dword ptr [eax+0x94], 0;
 	__asm        jne    _T49f;
 // LINE 585:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_DIAL_WINDOW_BOOT_BACK_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_BOOT_BACK_FILE_NAME, 0x0, 0x6);
 // LINE 586:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -5219,8 +5168,7 @@ _Tef:
 // FUNCTION: COPTER_D 0x0044c133
 int32_t PassengerWindow::Initialize() {
 // LINE 931:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 932:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -6558,11 +6506,7 @@ _T45:
 	__asm        test   eax, eax;
 	__asm        jne    _T85;
 // LINE 1227:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x94];
-	__asm        push   eax;
-	__asm        call   GetOutOfHeli;
-	__asm        add    esp, 4;
+	GetOutOfHeli(this->lPassengerDraggedID);
 // LINE 1228:
 _T85:
 	this->lPassengerDraggedID = 0xffffffff;
@@ -6828,8 +6772,7 @@ void MapWindow::~MapWindow() {
 // FUNCTION: COPTER_D 0x0044d587
 int32_t MapWindow::Initialize() {
 // LINE 1338:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 1339:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -6897,14 +6840,7 @@ _T91:
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        jne    _T107;
 // LINE 1367:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_MAP_WINDOW_BUTTON_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], SZ_MAP_WINDOW_BUTTON_FILE_NAME, 0x0, 0x6);
 // LINE 1368:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -7788,12 +7724,7 @@ int32_t MapWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lW
 	__asm        cmp    lMessageData, 1;
 	__asm        jne    _T49;
 // LINE 1563:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x84];
-	__asm        push   eax;
-	__asm        call   AutomobileClass::S3AutoMessage;
-	__asm        add    esp, 8;
+	AutomobileClass::S3AutoMessage(0x1, this->nCurrentAutoID);
 // LINE 1565:
 _T49:
 	return 0x1;
@@ -8159,14 +8090,7 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        cmp    dword ptr [eax+0xBC], 0;
 	__asm        jne    _Ta1;
 // LINE 1722:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_BUCKET_WATER_GUAGE_IMAGE;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szPath[0], SZ_BUCKET_WATER_GUAGE_IMAGE, 0x0, 0x6);
 // LINE 1723:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -8194,14 +8118,7 @@ _Ta1:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _Te2;
 // LINE 1728:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_EQUIPMENT_BUTTON_IMAGE_0;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szPath[0], SZ_EQUIPMENT_BUTTON_IMAGE_0, 0x0, 0x6);
 // LINE 1729:
 	__asm        jmp    _T129;
 _Te2:
@@ -8209,26 +8126,12 @@ _Te2:
 	__asm        cmp    dword ptr [eax+4], 2;
 	__asm        jne    _T110;
 // LINE 1730:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_EQUIPMENT_BUTTON_IMAGE_2;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szPath[0], SZ_EQUIPMENT_BUTTON_IMAGE_2, 0x0, 0x6);
 // LINE 1731:
 	__asm        jmp    _T129;
 // LINE 1732:
 _T110:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_EQUIPMENT_BUTTON_IMAGE_1;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szPath[0], SZ_EQUIPMENT_BUTTON_IMAGE_1, 0x0, 0x6);
 // LINE 1733:
 _T129:
 	__asm        push   0x134;

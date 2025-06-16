@@ -1622,100 +1622,45 @@ _T1450:
 _T1455:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b2);
 // LINE 96:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x256;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, (this + 0x256));
 // LINE 97:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b3);
 // LINE 98:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x27E;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, (this + 0x27e));
 // LINE 99:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b4);
 // LINE 100:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x286;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, (this + 0x286));
 // LINE 101:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b5);
 // LINE 102:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x28E;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, (this + 0x28e));
 // LINE 103:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b6);
 // LINE 104:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x296;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, (this + 0x296));
 // LINE 105:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b7);
 // LINE 106:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x29E;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, (this + 0x29e));
 // LINE 107:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b8);
 // LINE 108:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x2A6;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, (this + 0x2a6));
 // LINE 109:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b9);
 // LINE 110:
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x2AE;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
+	SetStringFromStringResource(nFullStringID, (this + 0x2ae));
 // LINE 112:
 	__asm        push   1;
 	__asm        mov    ecx, this;
 	__asm        call   CatalogWindow::CreateImage;
 // LINE 113:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::SetImageToDrawOnto;
+	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 114:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 115:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 116:
 	return;
 
@@ -1730,15 +1675,9 @@ void CatalogWindow::~CatalogWindow() {
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 124:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::RemoveFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::RemoveFocus(this);
 // LINE 125:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::RemoveModal;
-	__asm        add    esp, 4;
+	GraphicWindow::RemoveModal(this);
 // LINE 126:
 	__asm        jmp    _T4c;
 _T4c:
@@ -2130,8 +2069,7 @@ _T6d:
 	__asm        jmp    _T79;
 // LINE 136:
 _T79:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 139:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -5398,14 +5336,7 @@ _T2b1e:
 // LINE 366:
 // Block start:
 	/*bp-0x6d8*/ /*unpacked*/ class CBackBuffer tempStainImage;
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_STAIN_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], SZ_STAIN_IMAGE_FILE_NAME, 0x0, 0x6);
 // LINE 367:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -5476,14 +5407,7 @@ _T2c2c:
 // LINE 377:
 // Block start:
 	/*bp-0x80c*/ /*unpacked*/ class CBackBuffer tempPaperClipImage;
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFilePath[0], SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME, 0x0, 0x6);
 // LINE 378:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -6846,8 +6770,7 @@ _T47:
 // FUNCTION: COPTER_D 0x0047ab4e
 int32_t CatalogWindow::ComposeSelf() {
 // LINE 544:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::ComposeSelf;
+	this->GraphicWindow::ComposeSelf();
 // LINE 547:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 8;

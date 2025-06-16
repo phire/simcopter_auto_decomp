@@ -628,8 +628,7 @@ void FlatResFile::~FlatResFile() {
 	__asm        test   eax, eax;
 	__asm        je     _T4c;
 
-	__asm        mov    ecx, this;
-	__asm        call   FlatResFile::Close;
+	this->FlatResFile::Close();
 // LINE 279:
 _T4c:
 	__asm        jmp    _T51;

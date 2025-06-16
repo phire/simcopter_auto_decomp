@@ -2022,8 +2022,7 @@ _T99:
 	__asm        jmp    _Ta5;
 // LINE 92:
 _Ta5:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 94:
 	nButtonCount = 0x0;
 // LINE 95:
@@ -2700,15 +2699,9 @@ _Ta22:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xD0];
 // LINE 149:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 150:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 151:
 	__asm        mov    dword ptr [ebp-0x6C], 1;
 	__asm        mov    eax, sText.reference;
@@ -3210,12 +3203,7 @@ _T473:
 	__asm        jmp    _T478;
 // LINE 242:
 _T478:
-	__asm        lea    eax, szTypeface[0];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        call   LanguageManager::GetTypefaceForLanguage;
-	__asm        add    esp, 0xC;
+	LanguageManager::GetTypefaceForLanguage(szTypeface[0], 0x0, 0x0);
 // LINE 243:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -3921,8 +3909,7 @@ _T85:
 	__asm        jmp    _T91;
 // LINE 527:
 _T91:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 528:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -5698,15 +5685,9 @@ _T1a59:
 	__asm        jmp    _T1a5e;
 // LINE 648:
 _T1a5e:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 649:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 651:
 	__asm        mov    dword ptr [ebp-0x18C], 1;
 	__asm        mov    eax, sText.reference;
@@ -7830,8 +7811,7 @@ _T85:
 	__asm        jmp    _T91;
 // LINE 1004:
 _T91:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 1007:
 	__asm        push   0xA4;
 	__asm        call   operator new;
@@ -9038,15 +9018,9 @@ _T1191:
 	__asm        mov    ecx, tempButtonWindow2;
 	__asm        call   dword ptr [eax+4];
 // LINE 1112:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 1113:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 1115:
 	__asm        mov    dword ptr [ebp-0xF8], 1;
 	__asm        mov    eax, sText.reference;
@@ -9489,8 +9463,7 @@ _T85:
 	__asm        jmp    _T91;
 // LINE 1338:
 _T91:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 1345:
 	__asm        push   0xA4;
 	__asm        call   operator new;
@@ -11455,15 +11428,9 @@ _T1d00:
 	__asm        mov    ecx, tempButtonWindow;
 	__asm        call   dword ptr [eax+4];
 // LINE 1457:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 1458:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 1460:
 	__asm        mov    dword ptr [ebp-0x180], 1;
 	__asm        mov    eax, sText.reference;
@@ -15527,8 +15494,7 @@ _T27:
 // FUNCTION: COPTER_D 0x0045c39e
 int32_t BoneheadTextEditWindow::Initialize() {
 // LINE 2018:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 2019:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15581,10 +15547,7 @@ _Tb8:
 	__asm        jmp    _Tbd;
 // LINE 2021:
 _Tbd:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 2022:
 	return 0x1;
 // LINE 2023:
@@ -15698,15 +15661,7 @@ _T15f:
 _T18f:
 	__asm        jmp    _T194;
 _T194:
-	__asm        lea    eax, szFullPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x5C];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(szFullPath[0], this-><BoneheadTextEditWindow+0x5c>, 0x0, 0x6);
 // LINE 2034:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -17500,8 +17455,7 @@ _Td1:
 // FUNCTION: COPTER_D 0x0045db55
 int32_t MessageBoxWindowEdit::Initialize() {
 // LINE 2285:
-	__asm        mov    ecx, this;
-	__asm        call   MessageBoxWindow::Initialize;
+	this->MessageBoxWindow::Initialize();
 // LINE 2286:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -17720,8 +17674,7 @@ _T118:
 // FUNCTION: COPTER_D 0x0045de71
 int32_t ScrollingCreditWindow::Initialize() {
 // LINE 2335:
-	__asm        mov    ecx, this;
-	__asm        call   ScrollingCreditWindow::LoadCreditStringArray;
+	this->ScrollingCreditWindow::LoadCreditStringArray();
 // LINE 2336:
 	__asm        jmp    _T19;
 _T19:
@@ -18047,8 +18000,7 @@ _T85:
 	__asm        jmp    _T91;
 // LINE 2437:
 _T91:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
+	this->GraphicWindow::Initialize();
 // LINE 2440:
 	__asm        push   0xA4;
 	__asm        call   operator new;
@@ -19833,15 +19785,9 @@ _T1a81:
 	__asm        mov    ecx, this;
 	__asm        call   CheckupWindow::SetAllControlValuesToDefaults;
 // LINE 2535:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeModal;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeModal(this);
 // LINE 2536:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
+	GraphicWindow::MakeFocus(this);
 // LINE 2538:
 	__asm        mov    dword ptr [ebp-0x158], 1;
 	__asm        mov    eax, sText.reference;
@@ -20141,13 +20087,7 @@ _T5e:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2642:
-	__asm        call   GetUserMoney;
-	__asm        push   eax;
-	__asm        push   0x599270;
-	__asm        lea    eax, szCurrentText[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(GetUserMoney(), 0x599270, szCurrentText[0]);
 // LINE 2643:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -20240,13 +20180,7 @@ _T1a9:
 // LINE 2647:
 	lCurrentValue = ((lSliderValues[1] + lSliderValues[2]) + lSliderValues[0]);
 // LINE 2648:
-	__asm        mov    eax, lCurrentValue;
-	__asm        push   eax;
-	__asm        push   0x599274;
-	__asm        lea    eax, szCurrentText[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(lCurrentValue, 0x599274, szCurrentText[0]);
 // LINE 2649:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -20361,13 +20295,7 @@ _T361:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2657:
-	__asm        mov    eax, lSliderValues[0];
-	__asm        push   eax;
-	__asm        push   0x599278;
-	__asm        lea    eax, szCurrentText[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(lSliderValues[0], 0x599278, szCurrentText[0]);
 // LINE 2658:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -20503,13 +20431,7 @@ _T55c:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2662:
-	__asm        mov    eax, lSliderValues[1];
-	__asm        push   eax;
-	__asm        push   0x59927C;
-	__asm        lea    eax, szCurrentText[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(lSliderValues[1], 0x59927c, szCurrentText[0]);
 // LINE 2663:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -20600,13 +20522,7 @@ _T6ab:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2667:
-	__asm        mov    eax, lSliderValues[2];
-	__asm        push   eax;
-	__asm        push   0x599280;
-	__asm        lea    eax, szCurrentText[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(lSliderValues[2], 0x599280, szCurrentText[0]);
 // LINE 2668:
 	__asm        push   0x10;
 	__asm        call   operator new;

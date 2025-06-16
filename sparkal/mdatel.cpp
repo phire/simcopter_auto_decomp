@@ -542,41 +542,17 @@ _T194:
 	__asm        jmp    _T211;
 // LINE 85:
 _T1a5:
-	__asm        mov    eax, mm;
-	__asm        push   eax;
-	__asm        mov    eax, hh;
-	__asm        push   eax;
-	__asm        push   0x5972B8;
-	__asm        lea    eax, buf1[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x10;
+	sprintf(mm, hh, 0x5972b8, buf1[0]);
 // LINE 86:
 	__asm        jmp    _T29f;
 // LINE 96:
 _T1c9:
-	__asm        mov    eax, mm;
-	__asm        push   eax;
-	__asm        mov    eax, hh;
-	__asm        push   eax;
-	__asm        push   0x5972C0;
-	__asm        lea    eax, buf1[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x10;
+	sprintf(mm, hh, 0x5972c0, buf1[0]);
 // LINE 97:
 	__asm        jmp    _T29f;
 // LINE 100:
 _T1ed:
-	__asm        mov    eax, mm;
-	__asm        push   eax;
-	__asm        mov    eax, hh;
-	__asm        push   eax;
-	__asm        push   0x5972C8;
-	__asm        lea    eax, buf1[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x10;
+	sprintf(mm, hh, 0x5972c8, buf1[0]);
 // LINE 101:
 	__asm        jmp    _T29f;
 _T211:
@@ -1077,110 +1053,32 @@ _T24:
 	__asm        jmp    _T155;
 // LINE 340:
 _T2f:
-	__asm        mov    ecx, d;
-	__asm        call   MDate::YearLastTwoDigits;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::DayOfMonth;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::Month;
-	__asm        push   eax;
-	__asm        push   0x5972D0;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits()), d->MDate::Month(d->MDate::YearLastTwoDigits(), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits())), 0x5972d0, buf[0]);
 // LINE 341:
 	__asm        jmp    _T1e0;
 // LINE 356:
 _T60:
-	__asm        mov    ecx, d;
-	__asm        call   MDate::YearLastTwoDigits;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::Month;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::DayOfMonth;
-	__asm        push   eax;
-	__asm        push   0x5972DC;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits())), 0x5972dc, buf[0]);
 // LINE 357:
 	__asm        jmp    _T1e0;
 // LINE 366:
 _T91:
-	__asm        mov    ecx, d;
-	__asm        call   MDate::YearLastTwoDigits;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::Month;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::DayOfMonth;
-	__asm        push   eax;
-	__asm        push   0x5972E8;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits())), 0x5972e8, buf[0]);
 // LINE 367:
 	__asm        jmp    _T1e0;
 // LINE 382:
 _Tc2:
-	__asm        mov    ecx, d;
-	__asm        call   MDate::YearLastTwoDigits;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::Month;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::DayOfMonth;
-	__asm        push   eax;
-	__asm        push   0x5972F4;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits())), 0x5972f4, buf[0]);
 // LINE 383:
 	__asm        jmp    _T1e0;
 // LINE 393:
 _Tf3:
-	__asm        mov    ecx, d;
-	__asm        call   MDate::DayOfMonth;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::Month;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::YearLastTwoDigits;
-	__asm        push   eax;
-	__asm        push   0x597300;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(d->MDate::DayOfMonth(), d->MDate::Month(d->MDate::DayOfMonth()), d->MDate::YearLastTwoDigits(d->MDate::DayOfMonth(), d->MDate::Month(d->MDate::DayOfMonth())), 0x597300, buf[0]);
 // LINE 394:
 	__asm        jmp    _T1e0;
 // LINE 401:
 _T124:
-	__asm        mov    ecx, d;
-	__asm        call   MDate::YearLastTwoDigits;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::Month;
-	__asm        push   eax;
-	__asm        mov    ecx, d;
-	__asm        call   MDate::DayOfMonth;
-	__asm        push   eax;
-	__asm        push   0x59730C;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x14;
+	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits())), 0x59730c, buf[0]);
 // LINE 402:
 	__asm        jmp    _T1e0;
 _T155:

@@ -3040,9 +3040,7 @@ _L54996:
 // SYNTHETIC: COPTER_D 0x005440a0
 static void $E74() {
 
-	__asm        push   0x5440BD;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x5440bd);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -3123,9 +3121,7 @@ _L55021:
 // SYNTHETIC: COPTER_D 0x005441c8
 static void $E80() {
 
-	__asm        push   0x5441E5;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x5441e5);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -3216,9 +3212,7 @@ _T60:
 // SYNTHETIC: COPTER_D 0x0054430d
 static void $E85() {
 
-	__asm        push   0x54432A;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x54432a);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -5194,23 +5188,7 @@ _Tbc0:
 // LINE 391:
 // Block start:
 	/*bp-0xa0*/  char str[80]; // 0x50 bytes
-	__asm        mov    eax, offcelly;
-	__asm        push   eax;
-	__asm        mov    eax, offcellx;
-	__asm        push   eax;
-	__asm        movsx  eax, offscurk;
-	__asm        push   eax;
-	__asm        mov    eax, centcelly;
-	__asm        push   eax;
-	__asm        mov    eax, centcellx;
-	__asm        push   eax;
-	__asm        movsx  eax, centerscurk;
-	__asm        push   eax;
-	__asm        push   0x5B8964;
-	__asm        lea    eax, str[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0x20;
+	sprintf(offcelly, offcellx, reinterpret_cast<int16_t>(offscurk), centcelly, centcellx, reinterpret_cast<int16_t>(centerscurk), 0x5b8964, str[0]);
 // LINE 392:
 	__asm        push   0x8C085;
 	__asm        lea    eax, str[0];
@@ -7947,13 +7925,7 @@ void MakeAllPeople() {
 	__asm        call   SetSRandSeed;
 	__asm        add    esp, 4;
 // LINE 919:
-	__asm        lea    eax, peoplepath[0];
-	__asm        push   eax;
-	__asm        push   0x5B8FF8;
-	__asm        push   0;
-	__asm        push   0xA;
-	__asm        call   GetPathForFile;
-	__asm        add    esp, 0x10;
+	GetPathForFile(peoplepath[0], 0x5b8ff8, 0x0, 0xa);
 // LINE 920:
 	__asm        lea    eax, peoplepath[0];
 	__asm        push   eax;
@@ -12943,11 +12915,7 @@ _T2ba:
 	__asm        add    esp, 8;
 	__asm        mov    nextsoundchannel, ax;
 // LINE 1860:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(nextsoundchannel);
-	__asm        push   eax;
-	__asm        push   2;
-	__asm        call   cYObject::DistributeSoundChannels;
-	__asm        add    esp, 8;
+	cYObject::DistributeSoundChannels(reinterpret_cast<uint32_t>(nextsoundchannel), 0x2);
 // LINE 1861:
 	return;
 }
@@ -14055,13 +14023,7 @@ unsigned short cYObject::AddToHeli() {
 	return 0x0;
 // LINE 2151:
 _T5b:
-	__asm        lea    eax, tempPassengerInfo.lPassengerFace;
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        add    eax, 0x1C4;
-	__asm        push   eax;
-	__asm        call   HeliPassengerAdd;
-	__asm        add    esp, 8;
+	HeliPassengerAdd(tempPassengerInfo.lPassengerFace, (G_uheli + 0x1c4));
 // LINE 2152:
 	this->fData[9] = 0x0;
 // LINE 2153:
@@ -18349,8 +18311,7 @@ _T7c:
 	__asm        test   eax, eax;
 	__asm        je     _Ta4;
 
-	__asm        mov    ecx, 0x636BB8;
-	__asm        call   FlatResFile::Close;
+	0x636bb8->FlatResFile::Close();
 // LINE 2770:
 _Ta4:
 	__asm        cmp    cYObject::sLanguage, 0;
@@ -19636,13 +19597,7 @@ _T347:
 	__asm        jmp    _T434;
 // LINE 3039:
 _T41f:
-	__asm        lea    eax, text[0];
-	__asm        push   eax;
-	__asm        push   0x5BB8E8;
-	__asm        lea    eax, bdi.text[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
+	sprintf(text[0], 0x5bb8e8, bdi.text[0]);
 // LINE 3040:
 _T434:
 	__asm        movsx  eax, gBodyDebugInfoIndex;
@@ -19831,12 +19786,7 @@ void S3PersonTweakInit() {
 // LINE 3089:
 	pvals[6] = 0x5b86a4;
 // LINE 3091:
-	__asm        push   0x5BB968;
-	__asm        push   7;
-	__asm        lea    eax, pvals[0];
-	__asm        push   eax;
-	__asm        call   TWKEnQueue;
-	__asm        add    esp, 0xC;
+	TWKEnQueue(0x5bb968, 0x7, pvals[0]);
 // LINE 3092:
 	return;
 }

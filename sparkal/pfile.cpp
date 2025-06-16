@@ -348,8 +348,7 @@ _T35:
 // LINE 96:
 	lFileLength = _filelength(this->Handle);
 // LINE 97:
-	__asm        mov    ecx, this;
-	__asm        call   PFile::Close;
+	this->PFile::Close();
 // LINE 98:
 	return lFileLength;
 // LINE 101:
@@ -628,13 +627,7 @@ _T196:
 	__asm        cmp    lFileLength, eax;
 	__asm        jle    _T1cf;
 // LINE 207:
-	__asm        push   1;
-	__asm        lea    eax, chValue;
-	__asm        push   eax;
-	__asm        mov    eax, tempPFile.Handle;
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
+	_read(0x1, chValue, tempPFile.Handle);
 	__asm        jmp    _T1bf;
 // LINE 208:
 _T1bf:
@@ -645,8 +638,7 @@ _T1bf:
 	__asm        jmp    _T190;
 // LINE 211:
 _T1cf:
-	__asm        lea    ecx, tempPFile<vftable>;
-	__asm        call   PFile::Close;
+	tempPFile<vftable>->PFile::Close();
 // LINE 213:
 _T1da:
 	__asm        mov    eax, lCurrentValue;
@@ -667,10 +659,7 @@ _T213:
 	__asm        cmp    tempPFile.ShouldClose, 0;
 	__asm        je     _T229;
 
-	__asm        mov    eax, tempPFile.Handle;
-	__asm        push   eax;
-	__asm        call   _close;
-	__asm        add    esp, 4;
+	_close(tempPFile.Handle);
 _T229:
 	__asm        jmp    _T22e;
 _T22e:

@@ -396,11 +396,7 @@ _T1b8:
 // LINE 246:
 	ViewState.view_vect.y = 0x0;
 // LINE 247:
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x14;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize((0x6c1210 + 0x14));
 // LINE 248:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x14;
@@ -466,11 +462,7 @@ _T1b8:
 // LINE 268:
 	viewSize = G_ViewSize;
 // LINE 269:
-	__asm        mov    eax, viewSize;
-	__asm        add    eax, 2;
-	__asm        push   eax;
-	__asm        call   VRInitGridObj;
-	__asm        add    esp, 4;
+	VRInitGridObj((viewSize + 0x2));
 // LINE 270:
 	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
@@ -502,11 +494,7 @@ _T3f4:
 // LINE 278:
 	viewSize = G_ViewSize;
 // LINE 279:
-	__asm        mov    eax, viewSize;
-	__asm        sub    eax, 2;
-	__asm        push   eax;
-	__asm        call   VRInitGridObj;
-	__asm        add    esp, 4;
+	VRInitGridObj((viewSize - 0x2));
 // LINE 280:
 	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
@@ -542,11 +530,7 @@ _T45a:
 // LINE 288:
 	viewSize = G_ViewSize;
 // LINE 289:
-	__asm        mov    eax, viewSize;
-	__asm        add    eax, 2;
-	__asm        push   eax;
-	__asm        call   VRInitGridObj;
-	__asm        add    esp, 4;
+	VRInitGridObj((viewSize + 0x2));
 // LINE 290:
 	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
@@ -573,11 +557,7 @@ _T4c8:
 _T4cd:
 	viewSize = G_ViewSize;
 // LINE 299:
-	__asm        mov    eax, viewSize;
-	__asm        sub    eax, 2;
-	__asm        push   eax;
-	__asm        call   VRInitGridObj;
-	__asm        add    esp, 4;
+	VRInitGridObj((viewSize - 0x2));
 // LINE 300:
 	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;
@@ -623,10 +603,7 @@ _T22:
 _T33:
 	nConvertedValue = ConvertGUIBackPlaneValueToRender(lValue);
 // LINE 332:
-	__asm        mov    eax, nConvertedValue;
-	__asm        push   eax;
-	__asm        call   VRInitGridObj;
-	__asm        add    esp, 4;
+	VRInitGridObj(nConvertedValue);
 // LINE 333:
 	__asm        mov    eax, G_ViewSize;
 	__asm        cdq;

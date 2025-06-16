@@ -110,9 +110,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00431c84
 static void $E3() {
 
-	__asm        push   0x431CA1;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x431ca1);
 	__asm        jmp    __RETURN;
 __RETURN:
 }

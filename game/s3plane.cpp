@@ -444,9 +444,7 @@ _T15:
 // SYNTHETIC: COPTER_D 0x0052b0f9
 static void $E7() {
 
-	__asm        push   0x52B116;
-	__asm        call   atexit;
-	__asm        add    esp, 4;
+	atexit(0x52b116);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -1006,13 +1004,7 @@ _T88:
 	__asm        test   eax, eax;
 	__asm        jne    _Tf3;
 // LINE 776:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        push   0x1C;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, (this + 0x70), 0x1c);
 // LINE 780:
 _Tf3:
 	__asm        push   0xF0600000;
@@ -1046,13 +1038,7 @@ _T12b:
 	__asm        test   eax, eax;
 	__asm        jne    _T15f;
 // LINE 789:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        push   0x1B;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, (this + 0x70), 0x1b);
 // LINE 791:
 _T15f:
 	__asm        mov    eax, vol_adj;
@@ -1141,13 +1127,7 @@ _T209:
 	__asm        test   eax, eax;
 	__asm        jne    _T274;
 // LINE 835:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        push   0x29;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x1, (this + 0x70), 0x29);
 // LINE 839:
 _T274:
 	__asm        push   0xF0600000;
@@ -1537,13 +1517,7 @@ _T215:
 	__asm        jne    _T243;
 // LINE 1249:
 _T229:
-	__asm        push   0;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0x1D;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x1d);
 // LINE 1251:
 	__asm        jmp    _T243;
 // LINE 1258:
@@ -2077,12 +2051,7 @@ _T147:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1542:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   0x1A;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0x1a);
 // LINE 1545:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::UnPlacePlane;
@@ -2200,24 +2169,7 @@ _T362:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 1592:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        push   eax;
-	__asm        mov    eax, speed;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        push   8;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        lea    eax, celloc.x;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(this->missionId, speed, (this + 0x58), 0x8, vec.x, sloc.x, celloc.x, 0x4);
 // LINE 1593:
 	__asm        jmp    _T35c;
 // LINE 1595:
@@ -2292,24 +2244,7 @@ _T479:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 1616:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        push   eax;
-	__asm        mov    eax, speed;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        push   8;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        lea    eax, celloc.x;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(this->missionId, speed, (this + 0x58), 0x8, vec.x, sloc.x, celloc.x, 0x4);
 // LINE 1617:
 	__asm        jmp    _T473;
 // LINE 1621:
@@ -2429,12 +2364,7 @@ _T5e3:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1664:
-	__asm        push   0;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        push   0x1A;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
+	S3DSPlay(0x0, sloc.x, 0x1a);
 // LINE 1667:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::UnPlacePlane;
@@ -2508,24 +2438,7 @@ _T75a:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 1728:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        push   eax;
-	__asm        mov    eax, speed;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        push   8;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        lea    eax, sloc.x;
-	__asm        push   eax;
-	__asm        lea    eax, celloc.x;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(this->missionId, speed, (this + 0x58), 0x8, vec.x, sloc.x, celloc.x, 0x4);
 // LINE 1729:
 	__asm        jmp    _T754;
 // LINE 1733:
@@ -2885,10 +2798,7 @@ _T90:
 // LINE 1953:
 	nextFineLocation.y = 0x0;
 // LINE 1956:
-	__asm        lea    eax, nextFineLocation.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
+	MTNormalize(nextFineLocation.x);
 // LINE 1959:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -3630,23 +3540,7 @@ _T34:
 // LINE 2494:
 	this->smokeTime = 0xb40000;
 // LINE 2504:
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0x12C0000;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        push   0xB;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
+	S3MissileStart(-0x1, 0x12c0000, (this + 0x58), 0x1, vec.x, (this + 0x70), (this + 0x20), 0xb);
 // LINE 2506:
 _T9b:
 	return;
@@ -3655,10 +3549,7 @@ _T9b:
 // FUNCTION: COPTER_D 0x0052d6bd
 void CreatePlaneInstance(int32_t instanceID) {
 // LINE 2554:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        call   PlaneClass::CreateInstance;
-	__asm        add    esp, 4;
+	PlaneClass::CreateInstance(instanceID);
 // LINE 2555:
 	return;
 }
