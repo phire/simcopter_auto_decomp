@@ -1808,7 +1808,7 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	__asm        sar    eax, 0x16;
 	__asm        mov    loc.y, al;
 // LINE 653:
-_T49:
+__DO_49:
 	__asm        xor    eax, eax;
 	__asm        mov    al, loc.x;
 	__asm        test   eax, eax;
@@ -1858,7 +1858,7 @@ _Td8:
 	__asm        jmp    _Te4;
 _Te4:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     _T110;
+	__asm        je     __DO_WHILE_49;
 // LINE 655:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(loc.x);
 	__asm        mov    ecx, this;
@@ -1870,13 +1870,13 @@ _T108:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    __RETURN;
 // LINE 659:
-_T110:
+__DO_WHILE_49:
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
 	__asm        lea    ecx, scan.currDist;
 	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
-	__asm        jne    _T49;
+	__asm        jne    __DO_49;
 // LINE 661:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    _T130;
@@ -1930,7 +1930,7 @@ _T61:
 	__asm        lea    ecx, spiral.currDist;
 	__asm        call   SpiralScan::SpiralScan;
 // LINE 694:
-_T16:
+__DO_16:
 	__asm        mov    eax, scanLoc;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
@@ -1962,9 +1962,9 @@ _T79:
 // LINE 697:
 	dyptr = cptr->dyptr;
 // LINE 701:
-_T88:
+__WHILE_88:
 	__asm        cmp    dyptr, 0;
-	__asm        je     _T117;
+	__asm        je     __DO_WHILE_16;
 // LINE 703:
 	__asm        mov    eax, dyptr;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -2009,15 +2009,15 @@ _T102:
 _T10a:
 	dyptr = dyptr->next;
 // LINE 713:
-	__asm        jmp    _T88;
+	__asm        jmp    __WHILE_88;
 // LINE 715:
-_T117:
+__DO_WHILE_16:
 	__asm        mov    eax, scanLoc;
 	__asm        push   eax;
 	__asm        lea    ecx, spiral.currDist;
 	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
-	__asm        jne    _T16;
+	__asm        jne    __DO_16;
 // LINE 717:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        jmp    _T137;

@@ -195,94 +195,95 @@ void S3MissileReset() {
 // LINE 121:
 	S_num_active_lasers = 0x0;
 // LINE 128:
+_FOR_52:
 	i = 0x0;
 	md = 0x66c2f0;
-	__asm        jmp    _T59;
-_T52:
+	__asm        jmp    _FOR_COND_52;
+_FOR_NEXT_52:
 	i++;
 	md += 0x48;
-_T59:
+_FOR_COND_52:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _T71;
+	__asm        jge    _FOR_84;
 // LINE 131:
 	md->flags = 0x2;
 // LINE 132:
-	__asm        jmp    _T52;
+	__asm        jmp    _FOR_NEXT_52;
 // LINE 138:
-_T71:
+_FOR_84:
 	i = 0x0;
 	md = 0x66c5c0;
-	__asm        jmp    _T8b;
-_T84:
+	__asm        jmp    _FOR_COND_84;
+_FOR_NEXT_84:
 	i++;
 	md += 0x48;
-_T8b:
+_FOR_COND_84:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _Ta3;
+	__asm        jge    _FOR_b6;
 // LINE 141:
 	md->flags = 0x8;
 // LINE 142:
-	__asm        jmp    _T84;
+	__asm        jmp    _FOR_NEXT_84;
 // LINE 149:
-_Ta3:
+_FOR_b6:
 	i = 0x0;
 	md = 0x66e270;
-	__asm        jmp    _Tbd;
-_Tb6:
+	__asm        jmp    _FOR_COND_b6;
+_FOR_NEXT_b6:
 	i++;
 	md += 0x48;
-_Tbd:
+_FOR_COND_b6:
 	__asm        cmp    i, 0x1E;
-	__asm        jge    _Td5;
+	__asm        jge    _FOR_e8;
 // LINE 151:
 	md->flags = 0x10;
 // LINE 152:
-	__asm        jmp    _Tb6;
+	__asm        jmp    _FOR_NEXT_b6;
 // LINE 159:
-_Td5:
+_FOR_e8:
 	i = 0x0;
 	md = 0x66dfa0;
-	__asm        jmp    _Tef;
-_Te8:
+	__asm        jmp    _FOR_COND_e8;
+_FOR_NEXT_e8:
 	i++;
 	md += 0x48;
-_Tef:
+_FOR_COND_e8:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _T107;
+	__asm        jge    _FOR_11a;
 // LINE 161:
 	md->flags = 0x100;
 // LINE 162:
-	__asm        jmp    _Te8;
+	__asm        jmp    _FOR_NEXT_e8;
 // LINE 169:
-_T107:
+_FOR_11a:
 	i = 0x0;
 	md = 0x66c890;
-	__asm        jmp    _T121;
-_T11a:
+	__asm        jmp    _FOR_COND_11a;
+_FOR_NEXT_11a:
 	i++;
 	md += 0x48;
-_T121:
+_FOR_COND_11a:
 	__asm        cmp    i, 2;
-	__asm        jge    _T139;
+	__asm        jge    _FOR_14c;
 // LINE 171:
 	md->flags = 0x800;
 // LINE 172:
-	__asm        jmp    _T11a;
+	__asm        jmp    _FOR_NEXT_11a;
 // LINE 179:
-_T139:
+_FOR_14c:
 	i = 0x0;
 	md = 0x66c920;
-	__asm        jmp    _T153;
-_T14c:
+	__asm        jmp    _FOR_COND_14c;
+_FOR_NEXT_14c:
 	i++;
 	md += 0x48;
-_T153:
+_FOR_COND_14c:
 	__asm        cmp    i, 0x50;
 	__asm        jge    __RETURN;
 // LINE 181:
 	md->flags = 0x4;
 // LINE 182:
-	__asm        jmp    _T14c;
+	__asm        jmp    _FOR_NEXT_14c;
 // LINE 184:
 __RETURN:
 }
@@ -307,13 +308,14 @@ void S3MissileInit() {
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 210:
+_FOR_32:
 	i = 0x0;
 	md = 0x66c890;
-	__asm        jmp    _T39;
-_T32:
+	__asm        jmp    _FOR_COND_32;
+_FOR_NEXT_32:
 	i++;
 	md += 0x48;
-_T39:
+_FOR_COND_32:
 	__asm        cmp    i, 2;
 	__asm        jge    _Tee;
 // LINE 213:
@@ -357,7 +359,7 @@ _T39:
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 225:
-	__asm        jmp    _T32;
+	__asm        jmp    _FOR_NEXT_32;
 // LINE 229:
 _Tee:
 	__asm        push   0xAE;
@@ -368,13 +370,14 @@ _Tee:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 236:
+_FOR_11a:
 	i = 0x0;
 	md = 0x66c2f0;
-	__asm        jmp    _T121;
-_T11a:
+	__asm        jmp    _FOR_COND_11a;
+_FOR_NEXT_11a:
 	i++;
 	md += 0x48;
-_T121:
+_FOR_COND_11a:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T1d9;
 // LINE 239:
@@ -418,7 +421,7 @@ _T121:
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 251:
-	__asm        jmp    _T11a;
+	__asm        jmp    _FOR_NEXT_11a;
 // LINE 254:
 _T1d9:
 	__asm        push   0x147;
@@ -429,15 +432,16 @@ _T1d9:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 261:
+_FOR_205:
 	i = 0x0;
 	md = 0x66c5c0;
-	__asm        jmp    _T20c;
-_T205:
+	__asm        jmp    _FOR_COND_205;
+_FOR_NEXT_205:
 	i++;
 	md += 0x48;
-_T20c:
+_FOR_COND_205:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _T2c4;
+	__asm        jge    _FOR_2d7;
 // LINE 264:
 	md->flags = 0x8;
 // LINE 265:
@@ -479,18 +483,18 @@ _T20c:
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 276:
-	__asm        jmp    _T205;
+	__asm        jmp    _FOR_NEXT_205;
 // LINE 283:
-_T2c4:
+_FOR_2d7:
 	i = 0x0;
 	md = 0x66e270;
-	__asm        jmp    _T2de;
-_T2d7:
+	__asm        jmp    _FOR_COND_2d7;
+_FOR_NEXT_2d7:
 	i++;
 	md += 0x48;
-_T2de:
+_FOR_COND_2d7:
 	__asm        cmp    i, 0x1E;
-	__asm        jge    _T3c1;
+	__asm        jge    _FOR_3d4;
 // LINE 286:
 	__asm        mov    eax, i;
 	__asm        cdq;
@@ -548,18 +552,18 @@ _T2de:
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 304:
-	__asm        jmp    _T2d7;
+	__asm        jmp    _FOR_NEXT_2d7;
 // LINE 311:
-_T3c1:
+_FOR_3d4:
 	i = 0x0;
 	md = 0x66c920;
-	__asm        jmp    _T3db;
-_T3d4:
+	__asm        jmp    _FOR_COND_3d4;
+_FOR_NEXT_3d4:
 	i++;
 	md += 0x48;
-_T3db:
+_FOR_COND_3d4:
 	__asm        cmp    i, 0x50;
-	__asm        jge    _T514;
+	__asm        jge    _FOR_527;
 // LINE 314:
 	md->animseq = 0x0;
 // LINE 315:
@@ -618,11 +622,12 @@ _T47b:
 // LINE 339:
 	verts = oinfo.VertsPtr;
 // LINE 342:
+_FOR_4cb:
 	j = 0x0;
-	__asm        jmp    _T4ce;
-_T4cb:
+	__asm        jmp    _FOR_COND_4cb;
+_FOR_NEXT_4cb:
 	j++;
-_T4ce:
+_FOR_COND_4cb:
 	__asm        cmp    j, 3;
 	__asm        jge    _T503;
 // LINE 344:
@@ -638,21 +643,21 @@ _T4ce:
 // LINE 347:
 	verts += 0xc;
 // LINE 348:
-	__asm        jmp    _T4cb;
+	__asm        jmp    _FOR_NEXT_4cb;
 // LINE 349:
 _T503:
 	md->dymissile->mesh = obj;
 // LINE 350:
-	__asm        jmp    _T3d4;
+	__asm        jmp    _FOR_NEXT_3d4;
 // LINE 357:
-_T514:
+_FOR_527:
 	i = 0x0;
 	md = 0x66dfa0;
-	__asm        jmp    _T52e;
-_T527:
+	__asm        jmp    _FOR_COND_527;
+_FOR_NEXT_527:
 	i++;
 	md += 0x48;
-_T52e:
+_FOR_COND_527:
 	__asm        cmp    i, 0xA;
 	__asm        jge    __RETURN;
 // LINE 360:
@@ -704,7 +709,7 @@ _T5c1:
 // LINE 382:
 	md->dymissile->mesh = obj;
 // LINE 383:
-	__asm        jmp    _T527;
+	__asm        jmp    _FOR_NEXT_527;
 // LINE 385:
 __RETURN:
 }
@@ -735,13 +740,14 @@ __RETURN:
 _T2a:
 	S_msl_fire_delay = 0x3333;
 // LINE 424:
+_FOR_4a:
 	i = 0x0;
 	md = 0x66c2f0;
-	__asm        jmp    _T54;
-_T4a:
+	__asm        jmp    _FOR_COND_4a;
+_FOR_NEXT_4a:
 	i++;
 	md += 0x48;
-_T54:
+_FOR_COND_4a:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T77;
 // LINE 426:
@@ -752,7 +758,7 @@ _T54:
 	__asm        jmp    _T77;
 // LINE 428:
 _T72:
-	__asm        jmp    _T4a;
+	__asm        jmp    _FOR_NEXT_4a;
 // LINE 431:
 _T77:
 	__asm        cmp    i, 0xA;
@@ -772,13 +778,14 @@ _Tab:
 	__asm        cmp    msl_type, 0xB;
 	__asm        jne    _T12c;
 // LINE 446:
+_FOR_cb:
 	i = 0x0;
 	md = 0x66c890;
-	__asm        jmp    _Td5;
-_Tcb:
+	__asm        jmp    _FOR_COND_cb;
+_FOR_NEXT_cb:
 	i++;
 	md += 0x48;
-_Td5:
+_FOR_COND_cb:
 	__asm        cmp    i, 2;
 	__asm        jge    _Tf8;
 // LINE 448:
@@ -789,7 +796,7 @@ _Td5:
 	__asm        jmp    _Tf8;
 // LINE 450:
 _Tf3:
-	__asm        jmp    _Tcb;
+	__asm        jmp    _FOR_NEXT_cb;
 // LINE 453:
 _Tf8:
 	__asm        cmp    i, 2;
@@ -809,13 +816,14 @@ _T12c:
 	__asm        cmp    msl_type, 2;
 	__asm        jne    _T29b;
 // LINE 468:
+_FOR_14c:
 	i = 0x0;
 	md = 0x66c920;
-	__asm        jmp    _T156;
-_T14c:
+	__asm        jmp    _FOR_COND_14c;
+_FOR_NEXT_14c:
 	i++;
 	md += 0x48;
-_T156:
+_FOR_COND_14c:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T179;
 // LINE 470:
@@ -826,7 +834,7 @@ _T156:
 	__asm        jmp    _T179;
 // LINE 472:
 _T174:
-	__asm        jmp    _T14c;
+	__asm        jmp    _FOR_NEXT_14c;
 // LINE 475:
 _T179:
 	__asm        cmp    i, 0x50;
@@ -865,11 +873,12 @@ _T1ac:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 495:
+_FOR_1fc:
 	i = 0x0;
-	__asm        jmp    _T1ff;
-_T1fc:
+	__asm        jmp    _FOR_COND_1fc;
+_FOR_NEXT_1fc:
 	i++;
-_T1ff:
+_FOR_COND_1fc:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T28f;
@@ -915,7 +924,7 @@ _T260:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 511:
-	__asm        jmp    _T1fc;
+	__asm        jmp    _FOR_NEXT_1fc;
 // LINE 513:
 _T28f:
 	S_num_active_bullets++;
@@ -925,13 +934,14 @@ _T29b:
 	__asm        cmp    msl_type, 5;
 	__asm        jne    _T3d3;
 // LINE 518:
+_FOR_2bb:
 	i = 0x0;
 	md = 0x66c920;
-	__asm        jmp    _T2c5;
-_T2bb:
+	__asm        jmp    _FOR_COND_2bb;
+_FOR_NEXT_2bb:
 	i++;
 	md += 0x48;
-_T2c5:
+_FOR_COND_2bb:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T2e8;
 // LINE 520:
@@ -942,7 +952,7 @@ _T2c5:
 	__asm        jmp    _T2e8;
 // LINE 522:
 _T2e3:
-	__asm        jmp    _T2bb;
+	__asm        jmp    _FOR_NEXT_2bb;
 // LINE 525:
 _T2e8:
 	__asm        cmp    i, 0x50;
@@ -981,11 +991,12 @@ _T31b:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 544:
+_FOR_36b:
 	i = 0x0;
-	__asm        jmp    _T36e;
-_T36b:
+	__asm        jmp    _FOR_COND_36b;
+_FOR_NEXT_36b:
 	i++;
-_T36e:
+_FOR_COND_36b:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T3c7;
@@ -1016,7 +1027,7 @@ _T36e:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 552:
-	__asm        jmp    _T36b;
+	__asm        jmp    _FOR_NEXT_36b;
 // LINE 554:
 _T3c7:
 	S_num_active_bullets++;
@@ -1026,13 +1037,14 @@ _T3d3:
 	__asm        cmp    msl_type, 6;
 	__asm        jne    _T4e9;
 // LINE 559:
+_FOR_3f3:
 	i = 0x0;
 	md = 0x66c920;
-	__asm        jmp    _T3fd;
-_T3f3:
+	__asm        jmp    _FOR_COND_3f3;
+_FOR_NEXT_3f3:
 	i++;
 	md += 0x48;
-_T3fd:
+_FOR_COND_3f3:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T420;
 // LINE 561:
@@ -1043,7 +1055,7 @@ _T3fd:
 	__asm        jmp    _T420;
 // LINE 563:
 _T41b:
-	__asm        jmp    _T3f3;
+	__asm        jmp    _FOR_NEXT_3f3;
 // LINE 566:
 _T420:
 	__asm        cmp    i, 0x50;
@@ -1073,11 +1085,12 @@ _T431:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 577:
+_FOR_481:
 	i = 0x0;
-	__asm        jmp    _T484;
-_T481:
+	__asm        jmp    _FOR_COND_481;
+_FOR_NEXT_481:
 	i++;
-_T484:
+_FOR_COND_481:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T4dd;
@@ -1108,7 +1121,7 @@ _T484:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 585:
-	__asm        jmp    _T481;
+	__asm        jmp    _FOR_NEXT_481;
 // LINE 587:
 _T4dd:
 	S_num_active_bullets++;
@@ -1118,13 +1131,14 @@ _T4e9:
 	__asm        cmp    msl_type, 7;
 	__asm        jne    _T5ff;
 // LINE 592:
+_FOR_509:
 	i = 0x0;
 	md = 0x66c920;
-	__asm        jmp    _T513;
-_T509:
+	__asm        jmp    _FOR_COND_509;
+_FOR_NEXT_509:
 	i++;
 	md += 0x48;
-_T513:
+_FOR_COND_509:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T536;
 // LINE 594:
@@ -1135,7 +1149,7 @@ _T513:
 	__asm        jmp    _T536;
 // LINE 596:
 _T531:
-	__asm        jmp    _T509;
+	__asm        jmp    _FOR_NEXT_509;
 // LINE 599:
 _T536:
 	__asm        cmp    i, 0x50;
@@ -1165,11 +1179,12 @@ _T547:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 610:
+_FOR_597:
 	i = 0x0;
-	__asm        jmp    _T59a;
-_T597:
+	__asm        jmp    _FOR_COND_597;
+_FOR_NEXT_597:
 	i++;
-_T59a:
+_FOR_COND_597:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T5f3;
@@ -1200,7 +1215,7 @@ _T59a:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 618:
-	__asm        jmp    _T597;
+	__asm        jmp    _FOR_NEXT_597;
 // LINE 620:
 _T5f3:
 	S_num_active_bullets++;
@@ -1210,13 +1225,14 @@ _T5ff:
 	__asm        cmp    msl_type, 9;
 	__asm        jne    _T792;
 // LINE 625:
+_FOR_61f:
 	i = 0x0;
 	md = 0x66c920;
-	__asm        jmp    _T629;
-_T61f:
+	__asm        jmp    _FOR_COND_61f;
+_FOR_NEXT_61f:
 	i++;
 	md += 0x48;
-_T629:
+_FOR_COND_61f:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T64c;
 // LINE 627:
@@ -1227,7 +1243,7 @@ _T629:
 	__asm        jmp    _T64c;
 // LINE 629:
 _T647:
-	__asm        jmp    _T61f;
+	__asm        jmp    _FOR_NEXT_61f;
 // LINE 632:
 _T64c:
 	__asm        cmp    i, 0x50;
@@ -1257,11 +1273,12 @@ _T65d:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 643:
+_FOR_6ad:
 	i = 0x0;
-	__asm        jmp    _T6b0;
-_T6ad:
+	__asm        jmp    _FOR_COND_6ad;
+_FOR_NEXT_6ad:
 	i++;
-_T6b0:
+_FOR_COND_6ad:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T786;
@@ -1329,7 +1346,7 @@ _T762:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 669:
-	__asm        jmp    _T6ad;
+	__asm        jmp    _FOR_NEXT_6ad;
 // LINE 671:
 _T786:
 	S_num_active_bullets++;
@@ -1347,13 +1364,14 @@ _T792:
 _T7b0:
 	S_msl_fire_delay = 0x3333;
 // LINE 681:
+_FOR_7d0:
 	i = 0x0;
 	md = 0x66c5c0;
-	__asm        jmp    _T7da;
-_T7d0:
+	__asm        jmp    _FOR_COND_7d0;
+_FOR_NEXT_7d0:
 	i++;
 	md += 0x48;
-_T7da:
+_FOR_COND_7d0:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T7fd;
 // LINE 683:
@@ -1364,7 +1382,7 @@ _T7da:
 	__asm        jmp    _T7fd;
 // LINE 685:
 _T7f8:
-	__asm        jmp    _T7d0;
+	__asm        jmp    _FOR_NEXT_7d0;
 // LINE 688:
 _T7fd:
 	__asm        cmp    i, 0xA;
@@ -1401,13 +1419,14 @@ _T879:
 	__asm        cmp    msl_type, 4;
 	__asm        jne    _T96d;
 // LINE 706:
+_FOR_899:
 	i = 0x0;
 	md = 0x66e270;
-	__asm        jmp    _T8a3;
-_T899:
+	__asm        jmp    _FOR_COND_899;
+_FOR_NEXT_899:
 	i++;
 	md += 0x48;
-_T8a3:
+_FOR_COND_899:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T8c6;
 // LINE 708:
@@ -1418,7 +1437,7 @@ _T8a3:
 	__asm        jmp    _T8c6;
 // LINE 710:
 _T8c1:
-	__asm        jmp    _T899;
+	__asm        jmp    _FOR_NEXT_899;
 // LINE 713:
 _T8c6:
 	__asm        cmp    i, 0x1E;
@@ -1470,13 +1489,14 @@ _T96d:
 	__asm        cmp    msl_type, 0xA;
 	__asm        jne    _Ta39;
 // LINE 739:
+_FOR_98d:
 	i = 0x0;
 	md = 0x66e270;
-	__asm        jmp    _T997;
-_T98d:
+	__asm        jmp    _FOR_COND_98d;
+_FOR_NEXT_98d:
 	i++;
 	md += 0x48;
-_T997:
+_FOR_COND_98d:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T9ba;
 // LINE 741:
@@ -1487,7 +1507,7 @@ _T997:
 	__asm        jmp    _T9ba;
 // LINE 743:
 _T9b5:
-	__asm        jmp    _T98d;
+	__asm        jmp    _FOR_NEXT_98d;
 // LINE 746:
 _T9ba:
 	__asm        cmp    i, 0x1E;
@@ -1529,13 +1549,14 @@ _Ta39:
 	__asm        cmp    msl_type, 8;
 	__asm        jne    _Taaf;
 // LINE 773:
+_FOR_a59:
 	i = 0x0;
 	md = 0x66dfa0;
-	__asm        jmp    _Ta63;
-_Ta59:
+	__asm        jmp    _FOR_COND_a59;
+_FOR_NEXT_a59:
 	i++;
 	md += 0x48;
-_Ta63:
+_FOR_COND_a59:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _Ta86;
 // LINE 775:
@@ -1546,7 +1567,7 @@ _Ta63:
 	__asm        jmp    _Ta86;
 // LINE 777:
 _Ta81:
-	__asm        jmp    _Ta59;
+	__asm        jmp    _FOR_NEXT_a59;
 // LINE 780:
 _Ta86:
 	__asm        cmp    i, 0xA;
@@ -1884,36 +1905,36 @@ _T29:
 _T58:
 	__asm        mov    eax, G_uheli;
 	__asm        cmp    dword ptr [eax+0x14C], 2;
-	__asm        je     _T87;
+	__asm        je     _FOR_9d;
 // LINE 941:
 	__asm        push   5;
 	__asm        call   S3SoundIsPlaying;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 1;
-	__asm        jne    _T87;
+	__asm        jne    _FOR_9d;
 // LINE 943:
 	S3DSStopPlay(0x5);
 // LINE 948:
-_T87:
+_FOR_9d:
 	i = 0x0;
 	md = 0x66e270;
-	__asm        jmp    _Ta7;
-_T9d:
+	__asm        jmp    _FOR_COND_9d;
+_FOR_NEXT_9d:
 	i++;
 	md += 0x48;
-_Ta7:
+_FOR_COND_9d:
 	__asm        cmp    i, 0x1E;
-	__asm        jge    _Ta26;
+	__asm        jge    _FOR_a3c;
 
 	__asm        movsx  eax, S_num_active_debris;
 	__asm        test   eax, eax;
-	__asm        jle    _Ta26;
+	__asm        jle    _FOR_a3c;
 // LINE 950:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _Td4;
 // LINE 951:
-	__asm        jmp    _T9d;
+	__asm        jmp    _FOR_NEXT_9d;
 // LINE 955:
 _Td4:
 	__asm        mov    eax, md;
@@ -2119,7 +2140,7 @@ _T324:
 _T383:
 	dyptrptr = (cptr + 0x10);
 // LINE 1021:
-_T38c:
+__WHILE_38c:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T3ce;
@@ -2137,7 +2158,7 @@ _T38c:
 _T3c1:
 	dyptrptr = dyptrptr->;
 // LINE 1029:
-	__asm        jmp    _T38c;
+	__asm        jmp    __WHILE_38c;
 // LINE 1032:
 _T3ce:
 	S_num_active_debris--;
@@ -2167,7 +2188,7 @@ _T411:
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+0xC], ax;
 // LINE 1047:
-	__asm        jmp    _T9d;
+	__asm        jmp    _FOR_NEXT_9d;
 // LINE 1050:
 _T448:
 	__asm        jmp    _T4c1;
@@ -2441,7 +2462,7 @@ _T83a:
 // LINE 1139:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1140:
-_T84f:
+__WHILE_84f:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T891;
@@ -2459,7 +2480,7 @@ _T84f:
 _T884:
 	dyptrptr = dyptrptr->;
 // LINE 1148:
-	__asm        jmp    _T84f;
+	__asm        jmp    __WHILE_84f;
 // LINE 1150:
 _T891:
 	md->dymissile->next = cptr->dyptr;
@@ -2527,7 +2548,7 @@ _T90b:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 1166:
-	__asm        jmp    _T9d;
+	__asm        jmp    _FOR_NEXT_9d;
 // LINE 1168:
 debris_unlink_next:
 	S_num_active_debris--;
@@ -2549,7 +2570,7 @@ debris_unlink_next:
 _T9d6:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1182:
-_T9df:
+__WHILE_9df:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Ta21;
@@ -2567,31 +2588,31 @@ _T9df:
 _Ta14:
 	dyptrptr = dyptrptr->;
 // LINE 1190:
-	__asm        jmp    _T9df;
+	__asm        jmp    __WHILE_9df;
 // LINE 1191:
 _Ta21:
-	__asm        jmp    _T9d;
+	__asm        jmp    _FOR_NEXT_9d;
 // LINE 1194:
-_Ta26:
+_FOR_a3c:
 	i = 0x0;
 	md = 0x66c5c0;
-	__asm        jmp    _Ta46;
-_Ta3c:
+	__asm        jmp    _FOR_COND_a3c;
+_FOR_NEXT_a3c:
 	i++;
 	md += 0x48;
-_Ta46:
+_FOR_COND_a3c:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _T1121;
+	__asm        jge    _FOR_1137;
 
 	__asm        movsx  eax, S_num_active_teargas;
 	__asm        test   eax, eax;
-	__asm        jle    _T1121;
+	__asm        jle    _FOR_1137;
 // LINE 1196:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _Ta73;
 // LINE 1197:
-	__asm        jmp    _Ta3c;
+	__asm        jmp    _FOR_NEXT_a3c;
 // LINE 1201:
 _Ta73:
 	__asm        xor    eax, eax;
@@ -2620,7 +2641,7 @@ _Ta73:
 // LINE 1208:
 	dyptrptr = (cptr + 0x10);
 // LINE 1209:
-_Tad9:
+__WHILE_ad9:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Tb1b;
@@ -2638,14 +2659,14 @@ _Tad9:
 _Tb0e:
 	dyptrptr = dyptrptr->;
 // LINE 1217:
-	__asm        jmp    _Tad9;
+	__asm        jmp    __WHILE_ad9;
 // LINE 1219:
 _Tb1b:
 	S_num_active_teargas--;
 // LINE 1220:
 	md->flags = (md->flags & -0x2);
 // LINE 1222:
-	__asm        jmp    _Ta3c;
+	__asm        jmp    _FOR_NEXT_a3c;
 // LINE 1224:
 	__asm        jmp    _Tb7f;
 // LINE 1226:
@@ -2851,7 +2872,7 @@ _Td91:
 // LINE 1278:
 	dyobj = tmpcptr->dyptr;
 // LINE 1279:
-_Te40:
+__WHILE_e40:
 	__asm        cmp    dyobj, 0;
 	__asm        je     _Te8a;
 // LINE 1281:
@@ -2865,7 +2886,7 @@ _Te40:
 _Te7d:
 	dyobj = dyobj->next;
 // LINE 1286:
-	__asm        jmp    _Te40;
+	__asm        jmp    __WHILE_e40;
 // LINE 1293:
 _Te8a:
 	__asm        mov    eax, lcptr;
@@ -2948,7 +2969,7 @@ _Tf9b:
 // LINE 1326:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1327:
-_Tfb0:
+__WHILE_fb0:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Tff2;
@@ -2966,7 +2987,7 @@ _Tfb0:
 _Tfe5:
 	dyptrptr = dyptrptr->;
 // LINE 1335:
-	__asm        jmp    _Tfb0;
+	__asm        jmp    __WHILE_fb0;
 // LINE 1337:
 _Tff2:
 	md->dymissile->next = cptr->dyptr;
@@ -3029,14 +3050,14 @@ _T1039:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 1350:
-	__asm        jmp    _Ta3c;
+	__asm        jmp    _FOR_NEXT_a3c;
 // LINE 1353:
 teargas_unlink_next:
 	S_num_active_teargas--;
 // LINE 1354:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1355:
-_T10da:
+__WHILE_10da:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T111c;
@@ -3054,31 +3075,31 @@ _T10da:
 _T110f:
 	dyptrptr = dyptrptr->;
 // LINE 1363:
-	__asm        jmp    _T10da;
+	__asm        jmp    __WHILE_10da;
 // LINE 1365:
 _T111c:
-	__asm        jmp    _Ta3c;
+	__asm        jmp    _FOR_NEXT_a3c;
 // LINE 1368:
-_T1121:
+_FOR_1137:
 	i = 0x0;
 	md = 0x66c2f0;
-	__asm        jmp    _T1141;
-_T1137:
+	__asm        jmp    _FOR_COND_1137;
+_FOR_NEXT_1137:
 	i++;
 	md += 0x48;
-_T1141:
+_FOR_COND_1137:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _T151c;
+	__asm        jge    _FOR_1532;
 
 	__asm        movsx  eax, S_num_active_missiles;
 	__asm        test   eax, eax;
-	__asm        jle    _T151c;
+	__asm        jle    _FOR_1532;
 // LINE 1370:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T116e;
 // LINE 1371:
-	__asm        jmp    _T1137;
+	__asm        jmp    _FOR_NEXT_1137;
 // LINE 1374:
 _T116e:
 	__asm        xor    eax, eax;
@@ -3103,7 +3124,7 @@ _T116e:
 // LINE 1379:
 	dyptrptr = (cptr + 0x10);
 // LINE 1380:
-_T11c4:
+__WHILE_11c4:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T1206;
@@ -3121,14 +3142,14 @@ _T11c4:
 _T11f9:
 	dyptrptr = dyptrptr->;
 // LINE 1388:
-	__asm        jmp    _T11c4;
+	__asm        jmp    __WHILE_11c4;
 // LINE 1390:
 _T1206:
 	S_num_active_missiles--;
 // LINE 1391:
 	md->flags = (md->flags & -0x2);
 // LINE 1393:
-	__asm        jmp    _T1137;
+	__asm        jmp    _FOR_NEXT_1137;
 // LINE 1397:
 _T1225:
 	__asm        mov    eax, G_AvLoopTime;
@@ -3244,7 +3265,7 @@ _T13bd:
 // LINE 1435:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1436:
-_T13d2:
+__WHILE_13d2:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T1414;
@@ -3262,7 +3283,7 @@ _T13d2:
 _T1407:
 	dyptrptr = dyptrptr->;
 // LINE 1444:
-	__asm        jmp    _T13d2;
+	__asm        jmp    __WHILE_13d2;
 // LINE 1446:
 _T1414:
 	md->dymissile->next = cptr->dyptr;
@@ -3316,14 +3337,14 @@ _T1434:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 1458:
-	__asm        jmp    _T1137;
+	__asm        jmp    _FOR_NEXT_1137;
 // LINE 1463:
 missile_unlink_next:
 	S_num_active_missiles--;
 // LINE 1464:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1465:
-_T14d5:
+__WHILE_14d5:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T1517;
@@ -3341,31 +3362,31 @@ _T14d5:
 _T150a:
 	dyptrptr = dyptrptr->;
 // LINE 1473:
-	__asm        jmp    _T14d5;
+	__asm        jmp    __WHILE_14d5;
 // LINE 1474:
 _T1517:
-	__asm        jmp    _T1137;
+	__asm        jmp    _FOR_NEXT_1137;
 // LINE 1477:
-_T151c:
+_FOR_1532:
 	i = 0x0;
 	md = 0x66c890;
-	__asm        jmp    _T153c;
-_T1532:
+	__asm        jmp    _FOR_COND_1532;
+_FOR_NEXT_1532:
 	i++;
 	md += 0x48;
-_T153c:
+_FOR_COND_1532:
 	__asm        cmp    i, 2;
-	__asm        jge    _T18d5;
+	__asm        jge    _FOR_18eb;
 
 	__asm        movsx  eax, S_num_active_lasers;
 	__asm        test   eax, eax;
-	__asm        jle    _T18d5;
+	__asm        jle    _FOR_18eb;
 // LINE 1479:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T1569;
 // LINE 1480:
-	__asm        jmp    _T1532;
+	__asm        jmp    _FOR_NEXT_1532;
 // LINE 1483:
 _T1569:
 	__asm        xor    eax, eax;
@@ -3390,7 +3411,7 @@ _T1569:
 // LINE 1488:
 	dyptrptr = (cptr + 0x10);
 // LINE 1489:
-_T15bf:
+__WHILE_15bf:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T1601;
@@ -3408,14 +3429,14 @@ _T15bf:
 _T15f4:
 	dyptrptr = dyptrptr->;
 // LINE 1497:
-	__asm        jmp    _T15bf;
+	__asm        jmp    __WHILE_15bf;
 // LINE 1499:
 _T1601:
 	S_num_active_lasers--;
 // LINE 1500:
 	md->flags = (md->flags & -0x2);
 // LINE 1502:
-	__asm        jmp    _T1532;
+	__asm        jmp    _FOR_NEXT_1532;
 // LINE 1506:
 _T1620:
 	__asm        mov    eax, G_AvLoopTime;
@@ -3516,7 +3537,7 @@ _T1776:
 // LINE 1534:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1535:
-_T178b:
+__WHILE_178b:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T17cd;
@@ -3534,7 +3555,7 @@ _T178b:
 _T17c0:
 	dyptrptr = dyptrptr->;
 // LINE 1543:
-	__asm        jmp    _T178b;
+	__asm        jmp    __WHILE_178b;
 // LINE 1545:
 _T17cd:
 	md->dymissile->next = cptr->dyptr;
@@ -3588,14 +3609,14 @@ _T17ed:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 1557:
-	__asm        jmp    _T1532;
+	__asm        jmp    _FOR_NEXT_1532;
 // LINE 1562:
 laser_unlink_next:
 	S_num_active_lasers--;
 // LINE 1563:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1564:
-_T188e:
+__WHILE_188e:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T18d0;
@@ -3613,31 +3634,31 @@ _T188e:
 _T18c3:
 	dyptrptr = dyptrptr->;
 // LINE 1572:
-	__asm        jmp    _T188e;
+	__asm        jmp    __WHILE_188e;
 // LINE 1573:
 _T18d0:
-	__asm        jmp    _T1532;
+	__asm        jmp    _FOR_NEXT_1532;
 // LINE 1576:
-_T18d5:
+_FOR_18eb:
 	i = 0x0;
 	md = 0x66c920;
-	__asm        jmp    _T18f5;
-_T18eb:
+	__asm        jmp    _FOR_COND_18eb;
+_FOR_NEXT_18eb:
 	i++;
 	md += 0x48;
-_T18f5:
+_FOR_COND_18eb:
 	__asm        cmp    i, 0x50;
-	__asm        jge    _T1e8e;
+	__asm        jge    _FOR_1ea4;
 
 	__asm        movsx  eax, S_num_active_bullets;
 	__asm        test   eax, eax;
-	__asm        jle    _T1e8e;
+	__asm        jle    _FOR_1ea4;
 // LINE 1578:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T1922;
 // LINE 1579:
-	__asm        jmp    _T18eb;
+	__asm        jmp    _FOR_NEXT_18eb;
 // LINE 1582:
 _T1922:
 	__asm        xor    eax, eax;
@@ -3662,7 +3683,7 @@ _T1922:
 // LINE 1587:
 	dyptrptr = (cptr + 0x10);
 // LINE 1588:
-_T1978:
+__WHILE_1978:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T19ba;
@@ -3680,14 +3701,14 @@ _T1978:
 _T19ad:
 	dyptrptr = dyptrptr->;
 // LINE 1596:
-	__asm        jmp    _T1978;
+	__asm        jmp    __WHILE_1978;
 // LINE 1598:
 _T19ba:
 	S_num_active_bullets--;
 // LINE 1599:
 	md->flags = (md->flags & -0x2);
 // LINE 1601:
-	__asm        jmp    _T18eb;
+	__asm        jmp    _FOR_NEXT_18eb;
 // LINE 1605:
 _T19d9:
 	__asm        mov    eax, md;
@@ -3931,7 +3952,7 @@ _T1d2f:
 // LINE 1672:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1673:
-_T1d44:
+__WHILE_1d44:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T1d86;
@@ -3949,7 +3970,7 @@ _T1d44:
 _T1d79:
 	dyptrptr = dyptrptr->;
 // LINE 1681:
-	__asm        jmp    _T1d44;
+	__asm        jmp    __WHILE_1d44;
 // LINE 1683:
 _T1d86:
 	md->dymissile->next = cptr->dyptr;
@@ -4003,14 +4024,14 @@ _T1da6:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 1693:
-	__asm        jmp    _T18eb;
+	__asm        jmp    _FOR_NEXT_18eb;
 // LINE 1698:
 bullet_unlink_next:
 	S_num_active_bullets--;
 // LINE 1699:
 	dyptrptr = (lcptr + 0x10);
 // LINE 1700:
-_T1e47:
+__WHILE_1e47:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T1e89;
@@ -4028,19 +4049,19 @@ _T1e47:
 _T1e7c:
 	dyptrptr = dyptrptr->;
 // LINE 1708:
-	__asm        jmp    _T1e47;
+	__asm        jmp    __WHILE_1e47;
 // LINE 1709:
 _T1e89:
-	__asm        jmp    _T18eb;
+	__asm        jmp    _FOR_NEXT_18eb;
 // LINE 1712:
-_T1e8e:
+_FOR_1ea4:
 	i = 0x0;
 	md = 0x66dfa0;
-	__asm        jmp    _T1eae;
-_T1ea4:
+	__asm        jmp    _FOR_COND_1ea4;
+_FOR_NEXT_1ea4:
 	i++;
 	md += 0x48;
-_T1eae:
+_FOR_COND_1ea4:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T2202;
 
@@ -4052,7 +4073,7 @@ _T1eae:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T1edb;
 // LINE 1715:
-	__asm        jmp    _T1ea4;
+	__asm        jmp    _FOR_NEXT_1ea4;
 // LINE 1719:
 _T1edb:
 	__asm        xor    eax, eax;
@@ -4069,7 +4090,7 @@ _T1edb:
 // LINE 1723:
 	md->flags = (md->flags & -0x2);
 // LINE 1724:
-	__asm        jmp    _T1ea4;
+	__asm        jmp    _FOR_NEXT_1ea4;
 // LINE 1728:
 _T1f1d:
 	__asm        xor    ebx, ebx;
@@ -4282,7 +4303,7 @@ _T21ca:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1774:
-	__asm        jmp    _T1ea4;
+	__asm        jmp    _FOR_NEXT_1ea4;
 // LINE 1776:
 _T2202:
 	return;
@@ -4388,7 +4409,7 @@ _Tec:
 _T100:
 	dyobj = cptr->dyptr;
 // LINE 1845:
-_T109:
+__WHILE_109:
 	__asm        cmp    dyobj, 0;
 	__asm        je     skip_dynamic_objs;
 // LINE 1848:
@@ -4399,7 +4420,7 @@ _T109:
 // LINE 1850:
 	dyobj = dyobj->next;
 // LINE 1851:
-	__asm        jmp    _T109;
+	__asm        jmp    __WHILE_109;
 // LINE 1855:
 _T12f:
 	__asm        mov    eax, md;
@@ -4425,7 +4446,7 @@ _T17c:
 	dyobj = dyobj->next;
 // LINE 1861:
 _T184:
-	__asm        jmp    _T109;
+	__asm        jmp    __WHILE_109;
 // LINE 1865:
 _T189:
 	__asm        mov    eax, dyobj;
@@ -4435,7 +4456,7 @@ _T189:
 // LINE 1867:
 	dyobj = dyobj->next;
 // LINE 1868:
-	__asm        jmp    _T109;
+	__asm        jmp    __WHILE_109;
 // LINE 1872:
 _T1a5:
 	__asm        mov    eax, dyobj;
@@ -4445,7 +4466,7 @@ _T1a5:
 // LINE 1874:
 	dyobj = dyobj->next;
 // LINE 1875:
-	__asm        jmp    _T109;
+	__asm        jmp    __WHILE_109;
 // LINE 1881:
 _T1c1:
 	__asm        mov    eax, dyobj;
@@ -4463,7 +4484,7 @@ _T1c1:
 // LINE 1883:
 	dyobj = dyobj->next;
 // LINE 1884:
-	__asm        jmp    _T109;
+	__asm        jmp    __WHILE_109;
 // LINE 1893:
 _T1fc:
 	__asm        cmp    hit_type, 4;
@@ -4591,12 +4612,12 @@ _T449:
 	dyobj = dyobj->next;
 // LINE 1987:
 _T451:
-	__asm        jmp    _T109;
+	__asm        jmp    __WHILE_109;
 // LINE 1992:
 skip_dynamic_objs:
 	stobj = cptr->stptr;
 // LINE 1994:
-_T45f:
+__WHILE_45f:
 	__asm        cmp    stobj, 0;
 	__asm        je     _T990;
 // LINE 1998:
@@ -4812,11 +4833,12 @@ _T72f:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 2075:
+_FOR_7a0:
 	j = 0x0;
-	__asm        jmp    _T7a6;
-_T7a0:
+	__asm        jmp    _FOR_COND_7a0;
+_FOR_NEXT_7a0:
 	j++;
-_T7a6:
+_FOR_COND_7a0:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
 	__asm        jge    _T86e;
@@ -4881,7 +4903,7 @@ _T7a6:
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 2092:
-	__asm        jmp    _T7a0;
+	__asm        jmp    _FOR_NEXT_7a0;
 // LINE 2094:
 _T86e:
 	__asm        jmp    _T979;
@@ -4933,7 +4955,7 @@ _T979:
 _T983:
 	stobj = stobj->next;
 // LINE 2151:
-	__asm        jmp    _T45f;
+	__asm        jmp    __WHILE_45f;
 // LINE 2157:
 _T990:
 	newdist = S3MissileGroundHit(cloc.x, dist, (md + 0x10), (md->dymissile + 0x18));
@@ -5530,13 +5552,14 @@ _T9e:
 	/*bp-0x8*/   /*packed*/ struct _MISSILE_DATA *md;
 
 // LINE 2667:
+_FOR_1c:
 	i = 0x0;
 	md = 0x66e270;
-	__asm        jmp    _T23;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
 	md += 0x48;
-_T23:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T55;
 // LINE 2669:
@@ -5552,7 +5575,7 @@ _T23:
 	return md;
 // LINE 2671:
 _T50:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 2673:
 _T55:
 	return 0x0;
@@ -5607,7 +5630,7 @@ _T53:
 // LINE 2710:
 	dyptrptr = (cptr + 0x10);
 // LINE 2711:
-_T80:
+__WHILE_80:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Tbc;
@@ -5625,7 +5648,7 @@ _T80:
 _Taf:
 	dyptrptr = dyptrptr->;
 // LINE 2719:
-	__asm        jmp    _T80;
+	__asm        jmp    __WHILE_80;
 // LINE 2721:
 _Tbc:
 	S_num_active_debris--;
@@ -5709,11 +5732,12 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 _T36:
 	S_num_active_teargas = 0x0;
 // LINE 2791:
+_FOR_4b:
 	i = 0x0;
-	__asm        jmp    _T4e;
-_T4b:
+	__asm        jmp    _FOR_COND_4b;
+_FOR_NEXT_4b:
 	i++;
-_T4e:
+_FOR_COND_4b:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T1c7;
 // LINE 2793:
@@ -5819,7 +5843,7 @@ _T18b:
 	return 0x0;
 // LINE 2825:
 _T1c2:
-	__asm        jmp    _T4b;
+	__asm        jmp    _FOR_NEXT_4b;
 // LINE 2831:
 _T1c7:
 	ret = ReadFirstMIFFChunk(0x48, 0x62a530, dbMIFFID, miffReader);
@@ -5832,11 +5856,12 @@ _T1c7:
 _T1f4:
 	S_num_active_debris = 0x0;
 // LINE 2837:
+_FOR_209:
 	i = 0x0;
-	__asm        jmp    _T20c;
-_T209:
+	__asm        jmp    _FOR_COND_209;
+_FOR_NEXT_209:
 	i++;
-_T20c:
+_FOR_COND_209:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T385;
 // LINE 2839:
@@ -5942,7 +5967,7 @@ _T349:
 	return 0x0;
 // LINE 2871:
 _T380:
-	__asm        jmp    _T209;
+	__asm        jmp    _FOR_NEXT_209;
 // LINE 2872:
 _T385:
 	return 0x1;
@@ -5955,13 +5980,14 @@ int32_t S3MissileMIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   long i;
 
 // LINE 2881:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _T8d;
+	__asm        jge    _FOR_99;
 // LINE 2884:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
@@ -5989,14 +6015,14 @@ _T18:
 	return 0x0;
 // LINE 2894:
 _T88:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 2897:
-_T8d:
+_FOR_99:
 	i = 0x0;
-	__asm        jmp    _T9c;
-_T99:
+	__asm        jmp    _FOR_COND_99;
+_FOR_NEXT_99:
 	i++;
-_T9c:
+_FOR_COND_99:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T111;
 // LINE 2900:
@@ -6026,7 +6052,7 @@ _T9c:
 	return 0x0;
 // LINE 2910:
 _T10c:
-	__asm        jmp    _T99;
+	__asm        jmp    _FOR_NEXT_99;
 // LINE 2912:
 _T111:
 	return 0x1;

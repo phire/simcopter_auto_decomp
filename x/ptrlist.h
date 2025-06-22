@@ -7,7 +7,7 @@ void PtrList<cBBase>::Remove(/*unpacked*/ class cBBase *data) {
 // LINE 43:
 	srch = this;
 // LINE 44:
-_T12:
+__WHILE_12:
 	__asm        mov    eax, srch;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T9f;
@@ -46,7 +46,7 @@ _T8a:
 _T8f:
 	srch = (srch-> + 0x4);
 // LINE 54:
-	__asm        jmp    _T12;
+	__asm        jmp    __WHILE_12;
 // LINE 55:
 _T9f:
 	return;
@@ -72,7 +72,7 @@ _T34:
 // FUNCTION: COPTER_D 0x0055e8d0
 void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 // LINE 22:
-_T0c:
+__WHILE_0c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T79;
@@ -102,7 +102,7 @@ _T0c:
 
 	doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 _T74:
-	__asm        jmp    _T0c;
+	__asm        jmp    __WHILE_0c;
 _T79:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
@@ -129,7 +129,7 @@ _Tce:
 // FUNCTION: COPTER_D 0x0055fcb0
 void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 // LINE 22:
-_T0c:
+__WHILE_0c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T79;
@@ -159,7 +159,7 @@ _T0c:
 
 	doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 _T74:
-	__asm        jmp    _T0c;
+	__asm        jmp    __WHILE_0c;
 _T79:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
@@ -202,7 +202,7 @@ _T34:
 // FUNCTION: COPTER_D 0x00551de0
 void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 // LINE 22:
-_T0c:
+__WHILE_0c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T79;
@@ -232,7 +232,7 @@ _T0c:
 
 	doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 _T74:
-	__asm        jmp    _T0c;
+	__asm        jmp    __WHILE_0c;
 _T79:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];

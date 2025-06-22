@@ -845,8 +845,8 @@ _T47:
 	nPosition = 0xffffffff;
 	__asm        jmp    _T163;
 _T63:
-	__asm        jmp    _T68;
-_T68:
+	__asm        jmp    _LOOP_68;
+_LOOP_68:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -883,7 +883,7 @@ _Tc9:
 	__asm        jbe    _Tdb;
 
 	__asm        dec    dword ptr [ebp-8];
-	__asm        jmp    _T68;
+	__asm        jmp    _LOOP_68;
 _Tdb:
 	__asm        cmp    dword ptr [ebp-8], 1;
 	__asm        jne    _T157;
@@ -1350,8 +1350,8 @@ _T47:
 	nPosition = 0xffffffff;
 	__asm        jmp    _T163;
 _T63:
-	__asm        jmp    _T68;
-_T68:
+	__asm        jmp    _LOOP_68;
+_LOOP_68:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1388,7 +1388,7 @@ _Tc9:
 	__asm        jbe    _Tdb;
 
 	__asm        dec    dword ptr [ebp-0x2C];
-	__asm        jmp    _T68;
+	__asm        jmp    _LOOP_68;
 _Tdb:
 	__asm        cmp    dword ptr [ebp-0x2C], 1;
 	__asm        jne    _T157;
@@ -3073,7 +3073,7 @@ _Tf2:
 	__asm        mov    [ebp-0x33C], eax;
 	__asm        mov    eax, [ebp-0x188];
 	__asm        mov    [ebp-0x340], eax;
-_T10a:
+_LOOP_10a:
 	__asm        mov    eax, [ebp-0x33C];
 	__asm        cmp    [ebp-0x340], eax;
 	__asm        jne    _T126;
@@ -3105,7 +3105,7 @@ _T154:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   list<DirectoryEntry>::erase;
-	__asm        jmp    _T10a;
+	__asm        jmp    _LOOP_10a;
 _T17b:
 	__asm        jmp    _T180;
 // LINE 233:
@@ -3364,7 +3364,7 @@ _T55c:
 	__asm        jmp    _T581;
 // LINE 256:
 _T581:
-	__asm        jmp    _T5d9;
+	__asm        jmp    _LOOP_5d9;
 // LINE 257:
 _T586:
 	directoryEntryCurrent.lType = 0x8;
@@ -3386,9 +3386,9 @@ _T5b4:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   list<DirectoryEntry>::insert;
-	__asm        jmp    _T5d9;
+	__asm        jmp    _LOOP_5d9;
 // LINE 262:
-_T5d9:
+_LOOP_5d9:
 	__asm        lea    eax, findData.dwFileAttributes;
 	__asm        push   eax;
 	__asm        mov    eax, hFind;
@@ -3838,7 +3838,7 @@ _Tca8:
 	__asm        jmp    _Tccd;
 // LINE 299:
 _Tccd:
-	__asm        jmp    _T5d9;
+	__asm        jmp    _LOOP_5d9;
 // LINE 305:
 _Tcd2:
 	__asm        mov    eax, this;
@@ -4431,11 +4431,11 @@ _T445:
 	__asm        jmp    _T44a;
 // LINE 377:
 _T44a:
-	__asm        jmp    _T533;
+	__asm        jmp    _LOOP_533;
 // LINE 378:
 _T44f:
 	__asm        test   reinterpret_cast<uint8_t>(lFilter), 8;
-	__asm        je     _T533;
+	__asm        je     _LOOP_533;
 // LINE 379:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4489,9 +4489,9 @@ _T4ef:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T52e:
-	__asm        jmp    _T533;
+	__asm        jmp    _LOOP_533;
 // LINE 383:
-_T533:
+_LOOP_533:
 	__asm        lea    eax, findData.dwFileAttributes;
 	__asm        push   eax;
 	__asm        mov    eax, hFind;
@@ -4876,7 +4876,7 @@ _Tb2b:
 	__asm        jmp    _Tb30;
 // LINE 408:
 _Tb30:
-	__asm        jmp    _T533;
+	__asm        jmp    _LOOP_533;
 // LINE 412:
 _Tb35:
 	__asm        test   reinterpret_cast<uint8_t>(lFilter), 2;
@@ -5258,9 +5258,9 @@ int32_t Directory::DoesDirectoryListContainEntry(const /*packed*/ class basic_st
 	__asm        mov    tempDirectoryEntryListIterator.node, eax;
 	__asm        jmp    _T21;
 _T21:
-	__asm        jmp    _T26;
+	__asm        jmp    _LOOP_26;
 // LINE 450:
-_T26:
+_LOOP_26:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x20], eax;
@@ -5376,7 +5376,7 @@ _T156:
 	__asm        jmp    _T161;
 // LINE 454:
 _T161:
-	__asm        jmp    _T26;
+	__asm        jmp    _LOOP_26;
 // LINE 455:
 _T166:
 	return 0x0;
@@ -5658,7 +5658,7 @@ _T26:
 _T32:
 	iEnd = this-><Directory+0x04:4>;
 	__asm        jmp    _T61;
-_T40:
+_LOOP_40:
 	__asm        inc    i;
 	__asm        mov    eax, iterator.node;
 	__asm        mov    [ebp-0x18], eax;
@@ -5684,7 +5684,7 @@ _T7e:
 	return (iterator.node + 0x8);
 // LINE 503:
 _T89:
-	__asm        jmp    _T40;
+	__asm        jmp    _LOOP_40;
 // LINE 504:
 _T8e:
 	return 0x0;
@@ -6306,7 +6306,7 @@ _T2cd:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        cmp    eax, [ecx+8];
-	__asm        jbe    _T452;
+	__asm        jbe    _FOR_45e;
 _T2e6:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -6431,12 +6431,12 @@ _T449:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
-_T452:
+_FOR_45e:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
-	__asm        jmp    _T461;
-_T45e:
+	__asm        jmp    _FOR_COND_45e;
+_FOR_NEXT_45e:
 	__asm        inc    dword ptr [ebp-0x3C];
-_T461:
+_FOR_COND_45e:
 	__asm        cmp    dword ptr [ebp-0x3C], 1;
 	__asm        jae    _T49e;
 
@@ -6457,7 +6457,7 @@ _T475:
 	__asm        mov    [ecx], al;
 	__asm        jmp    _T499;
 _T499:
-	__asm        jmp    _T45e;
+	__asm        jmp    _FOR_NEXT_45e;
 _T49e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];

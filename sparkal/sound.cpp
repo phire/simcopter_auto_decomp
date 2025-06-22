@@ -775,18 +775,19 @@ void SoundManager::SoundManager() {
 
 	this-><vftable> = 0x58f448;
 // LINE 285:
+_FOR_21:
 	i = 0x0;
-	__asm        jmp    _T24;
-_T21:
+	__asm        jmp    _FOR_COND_21;
+_FOR_NEXT_21:
 	i++;
-_T24:
+_FOR_COND_21:
 	__asm        cmp    i, 0x80;
 	__asm        jge    _T44;
 // LINE 286:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+4], 0;
-	__asm        jmp    _T21;
+	__asm        jmp    _FOR_NEXT_21;
 // LINE 287:
 _T44:
 	return;
@@ -809,11 +810,12 @@ void SoundManager::DeleteAllSounds() {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 297:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0x80;
 	__asm        jge    _T5b;
 // LINE 298:
@@ -833,7 +835,7 @@ _T1b:
 	__asm        call   dword ptr [eax];
 	__asm        jmp    _T56;
 _T56:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 299:
 _T5b:
 	return;
@@ -1032,11 +1034,12 @@ void SoundManager::StopAllSounds() {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 394:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0x80;
 	__asm        jge    _T57;
 // LINE 395:
@@ -1055,7 +1058,7 @@ _T1b:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 397:
 _T52:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 398:
 _T57:
 	return;
@@ -1750,18 +1753,19 @@ void DigitalSound::DigitalSound() {
 // LINE 548:
 	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 549:
+_FOR_5b:
 	i = 0x0;
-	__asm        jmp    _T5e;
-_T5b:
+	__asm        jmp    _FOR_COND_5b;
+_FOR_NEXT_5b:
 	i++;
-_T5e:
+_FOR_COND_5b:
 	__asm        cmp    i, 8;
 	__asm        jge    _T7b;
 // LINE 550:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x52], 0;
-	__asm        jmp    _T5b;
+	__asm        jmp    _FOR_NEXT_5b;
 // LINE 556:
 _T7b:
 	return;
@@ -1940,27 +1944,27 @@ _T20b:
 // LINE 577:
 	this->bStreaming = 0x1;
 // LINE 578:
-	__asm        jmp    _T24c;
+	__asm        jmp    _FOR_258;
 _T231:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x34], 2;
-	__asm        jne    _T24c;
+	__asm        jne    _FOR_258;
 // LINE 579:
 	this->bStreaming = this->DigitalSound::ShouldWeStream();
 // LINE 580:
-_T24c:
+_FOR_258:
 	i = 0x0;
-	__asm        jmp    _T25b;
-_T258:
+	__asm        jmp    _FOR_COND_258;
+_FOR_NEXT_258:
 	i++;
-_T25b:
+_FOR_COND_258:
 	__asm        cmp    i, 8;
 	__asm        jge    _T278;
 // LINE 581:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x52], 0;
-	__asm        jmp    _T258;
+	__asm        jmp    _FOR_NEXT_258;
 // LINE 587:
 _T278:
 	return;
@@ -2743,7 +2747,7 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
-	__asm        je     _T34;
+	__asm        je     __WHILE_34;
 // LINE 948:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, this;
@@ -2751,7 +2755,7 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 	__asm        neg    eax;
 	__asm        sub    Sound::lTotalMemoryUsage, eax;
 // LINE 953:
-_T34:
+__WHILE_34:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
@@ -2774,7 +2778,7 @@ _T34:
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x52], 0;
 // LINE 956:
-	__asm        jmp    _T34;
+	__asm        jmp    __WHILE_34;
 // LINE 957:
 _T7c:
 	return 0x1;
@@ -3124,11 +3128,12 @@ long DigitalSound::IsPlaying(/*packed*/ struct IDirectSoundBuffer **lplpSoundPla
 	/*bp-0xc*/   long hResult;
 
 // LINE 1230:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 8;
 	__asm        jge    _Tbc;
 // LINE 1231:
@@ -3161,7 +3166,7 @@ _T6c:
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1235:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 1241:
 _T7e:
 	__asm        test   reinterpret_cast<uint8_t>(dwStatus), 1;
@@ -3186,7 +3191,7 @@ _Tb0:
 	return 0x0;
 // LINE 1249:
 _Tb7:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 1250:
 _Tbc:
 	return 0x0;
@@ -3439,11 +3444,12 @@ int32_t DigitalSound::GetSoundAliasToPlay(/*packed*/ struct IDirectSoundBuffer *
 	/*bp-0xc*/   long hResult;
 
 // LINE 1373:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 8;
 	__asm        jge    _T114;
 // LINE 1374:
@@ -3475,7 +3481,7 @@ _T6c:
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1377:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 1379:
 _T7e:
 	__asm        cmp    dwStatus, 0;
@@ -3528,7 +3534,7 @@ _T105:
 	return 0x1;
 // LINE 1393:
 _T10f:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 1394:
 _T114:
 	return 0x0;
@@ -3549,7 +3555,7 @@ long DigitalSound::Stop() {
 // LINE 1416:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
-	__asm        je     _T37;
+	__asm        je     _FOR_43;
 // LINE 1417:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3557,12 +3563,12 @@ long DigitalSound::Stop() {
 	__asm        call   dword ptr [eax+0x48];
 	__asm        jmp    __RETURN;
 // LINE 1419:
-_T37:
+_FOR_43:
 	i = 0x0;
-	__asm        jmp    _T46;
-_T43:
+	__asm        jmp    _FOR_COND_43;
+_FOR_NEXT_43:
 	i++;
-_T46:
+_FOR_COND_43:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
@@ -3581,7 +3587,7 @@ _T46:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x48];
 // LINE 1425:
-	__asm        jmp    _T43;
+	__asm        jmp    _FOR_NEXT_43;
 // LINE 1426:
 _T80:
 	__asm        mov    eax, this;
@@ -4259,7 +4265,7 @@ _T2c2:
 	/*bp-0x24*/  unsigned char * lpTemp;
 	lpTemp = lpWrite1;
 // LINE 1655:
-_T2e1:
+__DO_2e1:
 	lpTemp += nActualBytesRead;
 // LINE 1656:
 	__asm        xor    eax, eax;
@@ -4271,9 +4277,10 @@ _T2e1:
 // LINE 1661:
 	WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpTemp, dwLength1, this->lpStreamBufferInfo->hmmio);
 // LINE 1662:
+__DO_WHILE_2e1:
 	__asm        mov    eax, dwLength1;
 	__asm        cmp    nActualBytesRead, eax;
-	__asm        jb     _T2e1;
+	__asm        jb     __DO_2e1;
 // LINE 1664:
 // Block end:
 	__asm        jmp    _T39d;
@@ -4862,7 +4869,7 @@ _T3cc:
 _T3d1:
 	lpTemp = lpWrite1;
 // LINE 1945:
-_T3d7:
+__DO_3d7:
 	lpTemp += nActualBytesRead;
 // LINE 1946:
 	__asm        xor    eax, eax;
@@ -4874,9 +4881,10 @@ _T3d7:
 // LINE 1951:
 	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpTemp, dwLength1, this->lpStreamBufferInfo->hmmio);
 // LINE 1952:
+__DO_WHILE_3d7:
 	__asm        mov    eax, nActualBytesRead;
 	__asm        cmp    dwLength1, eax;
-	__asm        ja     _T3d7;
+	__asm        ja     __DO_3d7;
 // LINE 1961:
 _T443:
 	__asm        jmp    _T489;
@@ -5017,7 +5025,7 @@ _T5fd:
 _T602:
 	lpTemp = lpWrite2;
 // LINE 2004:
-_T608:
+__DO_608:
 	lpTemp += nActualBytesRead;
 // LINE 2005:
 	__asm        xor    eax, eax;
@@ -5029,9 +5037,10 @@ _T608:
 // LINE 2011:
 	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpTemp, dwLength2, this->lpStreamBufferInfo->hmmio);
 // LINE 2012:
+__DO_WHILE_608:
 	__asm        mov    eax, nActualBytesRead;
 	__asm        cmp    dwLength2, eax;
-	__asm        ja     _T608;
+	__asm        ja     __DO_608;
 // LINE 2016:
 _T674:
 	__asm        jmp    _T6ba;

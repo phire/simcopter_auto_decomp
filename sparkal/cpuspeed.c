@@ -171,7 +171,7 @@ _T143:
 	__asm        cmp    manual, 0;
 	__asm        jne    _T2fb;
 // LINE 183:
-_T157:
+__DO_157:
 	tries++;
 // LINE 186:
 	freq3 = freq2;
@@ -186,7 +186,7 @@ _T157:
 // LINE 195:
 	t1<_LARGE_INTEGER+0x04:4> = t0<_LARGE_INTEGER+0x04:4>;
 // LINE 197:
-_T17c:
+__WHILE_17c:
 	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
 	__asm        sub    eax, t0<_LARGE_INTEGER+0x00:4>;
 	__asm        cmp    eax, 0x32;
@@ -196,7 +196,7 @@ _T17c:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
 // LINE 205:
-	__asm        jmp    _T17c;
+	__asm        jmp    __WHILE_17c;
 // LINE 208:
 _T19a:
 	__asm        rdtsc;
@@ -207,7 +207,7 @@ _T19a:
 // LINE 216:
 	t0<_LARGE_INTEGER+0x04:4> = t1<_LARGE_INTEGER+0x04:4>;
 // LINE 218:
-_T1ab:
+__WHILE_1ab:
 	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
 	__asm        sub    eax, t0<_LARGE_INTEGER+0x00:4>;
 	__asm        cmp    eax, 0x3E8;
@@ -217,7 +217,7 @@ _T1ab:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
 // LINE 227:
-	__asm        jmp    _T1ab;
+	__asm        jmp    __WHILE_1ab;
 // LINE 230:
 _T1cb:
 	__asm        rdtsc;
@@ -278,7 +278,7 @@ _T250:
 	total = ((freq2 + freq3) + freq);
 // LINE 285:
 	__asm        cmp    tries, 3;
-	__asm        jl     _T157;
+	__asm        jl     __DO_157;
 
 	__asm        cmp    tries, 0x14;
 	__asm        jge    _T2c1;
@@ -290,7 +290,7 @@ _T250:
 	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
-	__asm        jg     _T157;
+	__asm        jg     __DO_157;
 
 	__asm        mov    eax, freq2;
 	__asm        lea    eax, [eax+eax*2];
@@ -299,8 +299,8 @@ _T250:
 	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
-	__asm        jg     _T157;
-
+	__asm        jg     __DO_157;
+__DO_WHILE_157:
 	__asm        mov    eax, freq3;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    eax, total;
@@ -308,7 +308,7 @@ _T250:
 	__asm        call   abs;
 	__asm        add    esp, 4;
 	__asm        cmp    eax, 3;
-	__asm        jg     _T157;
+	__asm        jg     __DO_157;
 // LINE 290:
 _T2c1:
 	__asm        mov    eax, total;
@@ -348,11 +348,12 @@ _T2fb:
 // LINE 313:
 	lowest = 0xffffffff;
 // LINE 325:
+_FOR_326:
 	i = 0x0;
-	__asm        jmp    _T329;
-_T326:
+	__asm        jmp    _FOR_COND_326;
+_FOR_NEXT_326:
 	i++;
-_T329:
+_FOR_COND_326:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T37b;
 // LINE 331:
@@ -384,7 +385,7 @@ loop1:
 	lowest = current;
 // LINE 359:
 _T376:
-	__asm        jmp    _T326;
+	__asm        jmp    _FOR_NEXT_326;
 // LINE 363:
 _T37b:
 	ticks = lowest;
@@ -531,7 +532,7 @@ static unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 // LINE 442:
 	speeds = i386Speeds[0];
 // LINE 444:
-_Tf9:
+__WHILE_f9:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
@@ -557,7 +558,7 @@ _Tf9:
 _T138:
 	ptr++;
 // LINE 452:
-	__asm        jmp    _Tf9;
+	__asm        jmp    __WHILE_f9;
 // LINE 454:
 _T140:
 	return freq;
@@ -571,7 +572,7 @@ _T14d:
 // LINE 460:
 	speeds = i486Speeds[0];
 // LINE 462:
-_T164:
+__WHILE_164:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
@@ -597,7 +598,7 @@ _T164:
 _T1a3:
 	ptr++;
 // LINE 470:
-	__asm        jmp    _T164;
+	__asm        jmp    __WHILE_164;
 // LINE 472:
 _T1ab:
 	return freq;
@@ -611,7 +612,7 @@ _T1b8:
 // LINE 478:
 	speeds = iPentiumSpeeds[0];
 // LINE 480:
-_T1cf:
+__WHILE_1cf:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
@@ -637,7 +638,7 @@ _T1cf:
 _T20e:
 	ptr++;
 // LINE 488:
-	__asm        jmp    _T1cf;
+	__asm        jmp    __WHILE_1cf;
 // LINE 490:
 _T216:
 	return freq;
@@ -651,7 +652,7 @@ _T223:
 // LINE 496:
 	speeds = iPentiumProSpeeds[0];
 // LINE 498:
-_T23a:
+__WHILE_23a:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, speeds;
 	__asm        xor    edx, edx;
@@ -677,7 +678,7 @@ _T23a:
 _T279:
 	ptr++;
 // LINE 506:
-	__asm        jmp    _T23a;
+	__asm        jmp    __WHILE_23a;
 // LINE 508:
 _T281:
 	return freq;

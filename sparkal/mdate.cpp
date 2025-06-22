@@ -444,7 +444,7 @@ static int32_t FindMatch(char * str, char * *candidates, int32_t icand) {
 	__asm        add    esp, 4;
 	__asm        mov    len, eax;
 // LINE 58:
-_T18:
+__WHILE_18:
 	__asm        mov    eax, icand;
 	__asm        mov    [ebp-8], eax;
 	__asm        dec    icand;
@@ -467,7 +467,7 @@ _T18:
 	__asm        jmp    _T57;
 // LINE 61:
 _T52:
-	__asm        jmp    _T18;
+	__asm        jmp    __WHILE_18;
 // LINE 62:
 _T57:
 	return icand;
@@ -1444,19 +1444,19 @@ static void SkipDelim(/*unpacked*/ class istream& strm) {
 	__asm        cmp    dword ptr [eax+ecx+8], 0;
 	__asm        jne    _T29;
 
-	__asm        jmp    _T3d;
+	__asm        jmp    __DO_3d;
 
 	__asm        jmp    _T29;
 _T29:
 	__asm        jmp    _T38;
 
 	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        jne    _T3d;
+	__asm        jne    __DO_3d;
 // LINE 528:
 _T38:
 	return;
 // LINE 531:
-_T3d:
+__DO_3d:
 	__asm        lea    eax, c;
 	__asm        push   eax;
 	__asm        mov    ecx, strm;
@@ -1487,7 +1487,7 @@ _T78:
 	__asm        call   _isctype;
 	__asm        add    esp, 8;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    _Tb8;
+	__asm        jmp    __DO_WHILE_3d;
 _T9f:
 	__asm        movsx  eax, c;
 	__asm        mov    ecx, _pctype;
@@ -1495,9 +1495,9 @@ _T9f:
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        and    edx, 0x107;
 	__asm        mov    [ebp-8], edx;
-_Tb8:
+__DO_WHILE_3d:
 	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     _T3d;
+	__asm        je     __DO_3d;
 // LINE 534:
 _Tc2:
 	__asm        mov    eax, strm;
@@ -1544,7 +1544,7 @@ static char * ParseMonth(/*unpacked*/ class istream& s) {
 	__asm        mov    ecx, s;
 	__asm        call   istream::get;
 // LINE 553:
-_T28:
+_LOOP_28:
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1597,7 +1597,7 @@ _T97:
 	__asm        mov    ecx, s;
 	__asm        call   istream::get;
 // LINE 556:
-	__asm        jmp    _T28;
+	__asm        jmp    _LOOP_28;
 // LINE 557:
 _Tce:
 	__asm        mov    eax, s;

@@ -220,11 +220,12 @@ _T29c:
 // LINE 339:
 	i = VRGetResObjectCnt(G_resgeo1);
 // LINE 340:
+_FOR_2d5:
 	j = 0x0;
-	__asm        jmp    _T2db;
-_T2d5:
+	__asm        jmp    _FOR_COND_2d5;
+_FOR_NEXT_2d5:
 	j++;
-_T2db:
+_FOR_COND_2d5:
 	__asm        mov    eax, i;
 	__asm        cmp    j, eax;
 	__asm        jge    _T373;
@@ -257,16 +258,17 @@ _T33b:
 	mem2d = maxval;
 // LINE 347:
 _T36e:
-	__asm        jmp    _T2d5;
+	__asm        jmp    _FOR_NEXT_2d5;
 // LINE 349:
 _T373:
 	i = VRGetResObjectCnt(G_resgeo2);
 // LINE 350:
+_FOR_396:
 	j = 0x0;
-	__asm        jmp    _T39c;
-_T396:
+	__asm        jmp    _FOR_COND_396;
+_FOR_NEXT_396:
 	j++;
-_T39c:
+_FOR_COND_396:
 	__asm        mov    eax, i;
 	__asm        cmp    j, eax;
 	__asm        jge    _T434;
@@ -299,16 +301,17 @@ _T3fc:
 	mem2d = maxval;
 // LINE 357:
 _T42f:
-	__asm        jmp    _T396;
+	__asm        jmp    _FOR_NEXT_396;
 // LINE 360:
 _T434:
 	i = VRGetResObjectCnt(G_resgeo3);
 // LINE 361:
+_FOR_457:
 	j = 0x0;
-	__asm        jmp    _T45d;
-_T457:
+	__asm        jmp    _FOR_COND_457;
+_FOR_NEXT_457:
 	j++;
-_T45d:
+_FOR_COND_457:
 	__asm        mov    eax, i;
 	__asm        cmp    j, eax;
 	__asm        jge    _T4f5;
@@ -341,7 +344,7 @@ _T4bd:
 	mem2d = maxval;
 // LINE 368:
 _T4f0:
-	__asm        jmp    _T457;
+	__asm        jmp    _FOR_NEXT_457;
 // LINE 372:
 _T4f5:
 	__asm        shl    mem2d, 3;
@@ -428,11 +431,12 @@ _T531:
 // LINE 436:
 	__asm        or     G_InitializationProgress, 0x100;
 // LINE 439:
+_FOR_730:
 	instanceID = 0x0;
-	__asm        jmp    _T736;
-_T730:
+	__asm        jmp    _FOR_COND_730;
+_FOR_NEXT_730:
 	instanceID++;
-_T736:
+_FOR_COND_730:
 	__asm        cmp    instanceID, 0x32;
 	__asm        jge    _T764;
 // LINE 441:
@@ -446,15 +450,16 @@ _T736:
 	__asm        jmp    _T764;
 // LINE 443:
 _T75f:
-	__asm        jmp    _T730;
+	__asm        jmp    _FOR_NEXT_730;
 // LINE 445:
 _T764:
 	totalVehicles = (instanceID + 0x5);
 // LINE 446:
-	__asm        jmp    _T77e;
-_T778:
+_FOR_778:
+	__asm        jmp    _FOR_COND_778;
+_FOR_NEXT_778:
 	instanceID++;
-_T77e:
+_FOR_COND_778:
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
 	__asm        jle    _T7b1;
@@ -469,15 +474,16 @@ _T77e:
 	__asm        jmp    _T7b1;
 // LINE 450:
 _T7ac:
-	__asm        jmp    _T778;
+	__asm        jmp    _FOR_NEXT_778;
 // LINE 452:
 _T7b1:
 	totalVehicles = (instanceID + 0x5);
 // LINE 453:
-	__asm        jmp    _T7cb;
-_T7c5:
+_FOR_7c5:
+	__asm        jmp    _FOR_COND_7c5;
+_FOR_NEXT_7c5:
 	instanceID++;
-_T7cb:
+_FOR_COND_7c5:
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
 	__asm        jle    _T7fe;
@@ -492,15 +498,16 @@ _T7cb:
 	__asm        jmp    _T7fe;
 // LINE 457:
 _T7f9:
-	__asm        jmp    _T7c5;
+	__asm        jmp    _FOR_NEXT_7c5;
 // LINE 459:
 _T7fe:
 	totalVehicles = (instanceID + 0x5);
 // LINE 460:
-	__asm        jmp    _T818;
-_T812:
+_FOR_812:
+	__asm        jmp    _FOR_COND_812;
+_FOR_NEXT_812:
 	instanceID++;
-_T818:
+_FOR_COND_812:
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
 	__asm        jle    _T84b;
@@ -515,20 +522,21 @@ _T818:
 	__asm        jmp    _T84b;
 // LINE 464:
 _T846:
-	__asm        jmp    _T812;
+	__asm        jmp    _FOR_NEXT_812;
 // LINE 467:
 _T84b:
 	__asm        or     G_InitializationProgress, 0x200;
 // LINE 468:
 	totalVehicles = (instanceID + 0x5);
 // LINE 469:
-	__asm        jmp    _T86f;
-_T869:
+_FOR_869:
+	__asm        jmp    _FOR_COND_869;
+_FOR_NEXT_869:
 	instanceID++;
-_T86f:
+_FOR_COND_869:
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
-	__asm        jle    _T8a2;
+	__asm        jle    _FOR_8b1;
 // LINE 471:
 	__asm        mov    eax, instanceID;
 	__asm        push   eax;
@@ -537,49 +545,49 @@ _T86f:
 	__asm        test   eax, eax;
 	__asm        jne    _T89d;
 // LINE 472:
-	__asm        jmp    _T8a2;
+	__asm        jmp    _FOR_8b1;
 // LINE 473:
 _T89d:
-	__asm        jmp    _T869;
+	__asm        jmp    _FOR_NEXT_869;
 // LINE 476:
-_T8a2:
+_FOR_8b1:
 	i = 0x0;
-	__asm        jmp    _T8b7;
-_T8b1:
+	__asm        jmp    _FOR_COND_8b1;
+_FOR_NEXT_8b1:
 	i++;
-_T8b7:
+_FOR_COND_8b1:
 	__asm        cmp    i, 1;
-	__asm        jge    _T8d8;
+	__asm        jge    _FOR_8e7;
 // LINE 483:
 	CreateTrainInstance(i);
 // LINE 484:
-	__asm        jmp    _T8b1;
+	__asm        jmp    _FOR_NEXT_8b1;
 // LINE 488:
-_T8d8:
+_FOR_8e7:
 	i = 0x0;
-	__asm        jmp    _T8ed;
-_T8e7:
+	__asm        jmp    _FOR_COND_8e7;
+_FOR_NEXT_8e7:
 	i++;
-_T8ed:
+_FOR_COND_8e7:
 	__asm        cmp    i, 2;
-	__asm        jge    _T90e;
+	__asm        jge    _FOR_91d;
 // LINE 495:
 	CreatePlaneInstance(i);
 // LINE 496:
-	__asm        jmp    _T8e7;
+	__asm        jmp    _FOR_NEXT_8e7;
 // LINE 499:
-_T90e:
+_FOR_91d:
 	i = 0x0;
-	__asm        jmp    _T923;
-_T91d:
+	__asm        jmp    _FOR_COND_91d;
+_FOR_NEXT_91d:
 	i++;
-_T923:
+_FOR_COND_91d:
 	__asm        cmp    i, 3;
 	__asm        jge    _T944;
 // LINE 506:
 	CreateBoatInstance(i);
 // LINE 507:
-	__asm        jmp    _T91d;
+	__asm        jmp    _FOR_NEXT_91d;
 // LINE 510:
 _T944:
 	__asm        or     G_InitializationProgress, 0x400;
@@ -714,11 +722,12 @@ _T194:
 _T1a0:
 	up = GetCurrentUserPersonalInfo();
 // LINE 648:
+_FOR_1b4:
 	i = 0x0;
-	__asm        jmp    _T1b7;
-_T1b4:
+	__asm        jmp    _FOR_COND_1b4;
+_FOR_NEXT_1b4:
 	i++;
-_T1b7:
+_FOR_COND_1b4:
 	__asm        cmp    i, 9;
 	__asm        jge    _T29e;
 // LINE 651:
@@ -765,7 +774,7 @@ _T1ff:
 	__asm        mov    eax, up;
 	__asm        or     dword ptr [eax+0x44], 4;
 // LINE 666:
-	__asm        jmp    _T1b4;
+	__asm        jmp    _FOR_NEXT_1b4;
 // LINE 670:
 _T24e:
 	__asm        mov    eax, up;
@@ -795,7 +804,7 @@ _T24e:
 	__asm        add    esp, 0xC;
 // LINE 675:
 _T299:
-	__asm        jmp    _T1b4;
+	__asm        jmp    _FOR_NEXT_1b4;
 // LINE 692:
 _T29e:
 	return 0x1;

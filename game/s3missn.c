@@ -150,11 +150,12 @@ void S3MissionReset() {
 // LINE 138:
 	S_log.szLogString = 0x6bf060;
 // LINE 141:
+_FOR_1f:
 	i = 0x0;
-	__asm        jmp    _T22;
-_T1f:
+	__asm        jmp    _FOR_COND_1f;
+_FOR_NEXT_1f:
 	i++;
-_T22:
+_FOR_COND_1f:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T4a;
 // LINE 143:
@@ -165,7 +166,7 @@ _T22:
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        mov    S_mstatics.missions[0].flags[eax*4], 0;
 // LINE 144:
-	__asm        jmp    _T1f;
+	__asm        jmp    _FOR_NEXT_1f;
 // LINE 146:
 _T4a:
 	S_mstatics.num_active_missions = 0x0;
@@ -685,11 +686,12 @@ void S3MissionDriver() {
 	/*bp-0x34*/  int32_t personriot_done;
 
 // LINE 437:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    __RETURN;
 // LINE 440:
@@ -706,7 +708,7 @@ _T18:
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        jne    _T4f;
 // LINE 443:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 446:
 _T4f:
 	md->timer += G_AvLoopTime;
@@ -726,7 +728,7 @@ _T4f:
 	S3MissionCancel(i);
 // LINE 457:
 _T90:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 461:
 _T95:
 	__asm        mov    eax, md;
@@ -735,7 +737,7 @@ _T95:
 // LINE 463:
 	S3MissionCancel(i);
 // LINE 464:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 468:
 _Tb3:
 	__asm        mov    eax, md;
@@ -744,7 +746,7 @@ _Tb3:
 // LINE 470:
 	S3MissionEnd(i);
 // LINE 471:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 480:
 _Td1:
 	__asm        cmp    S_mstatics.curr_mission, 0;
@@ -1080,7 +1082,7 @@ _T4cc:
 	S3MissionEnd(i);
 // LINE 640:
 _T546:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 641:
 __RETURN:
 }
@@ -1097,11 +1099,12 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 659:
 	startthismission = 0x0;
 // LINE 663:
+_FOR_1c:
 	i = 0x0;
-	__asm        jmp    _T1f;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
-_T1f:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T6a;
 // LINE 665:
@@ -1125,7 +1128,7 @@ _T1f:
 	__asm        jmp    _T6a;
 // LINE 670:
 _T65:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 673:
 _T6a:
 	__asm        cmp    i, 0x1E;
@@ -1191,11 +1194,12 @@ _T13c:
 // LINE 696:
 	numstarted = 0x0;
 // LINE 697:
+_FOR_156:
 	count = 0x0;
-	__asm        jmp    _T159;
-_T156:
+	__asm        jmp    _FOR_COND_156;
+_FOR_NEXT_156:
 	count++;
-_T159:
+_FOR_COND_156:
 	__asm        mov    eax, numtostart;
 	__asm        cmp    count, eax;
 	__asm        jge    _T1cf;
@@ -1236,7 +1240,7 @@ _T197:
 	__asm        jmp    __RETURN;
 // LINE 709:
 _T1ca:
-	__asm        jmp    _T156;
+	__asm        jmp    _FOR_NEXT_156;
 // LINE 710:
 _T1cf:
 	__asm        cmp    numstarted, 0xA;
@@ -1308,11 +1312,12 @@ _T2a3:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    numtostart, eax;
 // LINE 748:
+_FOR_30c:
 	count = 0x0;
-	__asm        jmp    _T30f;
-_T30c:
+	__asm        jmp    _FOR_COND_30c;
+_FOR_NEXT_30c:
 	count++;
-_T30f:
+_FOR_COND_30c:
 	__asm        mov    eax, count;
 	__asm        cmp    numtostart, eax;
 	__asm        jle    _T361;
@@ -1341,7 +1346,7 @@ _T30f:
 	startthismission = 0x1;
 // LINE 759:
 _T35c:
-	__asm        jmp    _T30c;
+	__asm        jmp    _FOR_NEXT_30c;
 // LINE 761:
 _T361:
 	__asm        cmp    startthismission, 0;
@@ -1522,11 +1527,12 @@ _T62d:
 	__asm        lea    eax, [edx+2];
 	__asm        mov    numtostart, eax;
 // LINE 859:
+_FOR_668:
 	count = 0x0;
-	__asm        jmp    _T66b;
-_T668:
+	__asm        jmp    _FOR_COND_668;
+_FOR_NEXT_668:
 	count++;
-_T66b:
+_FOR_COND_668:
 	__asm        mov    eax, count;
 	__asm        cmp    numtostart, eax;
 	__asm        jle    _T6bd;
@@ -1555,7 +1561,7 @@ _T66b:
 	startthismission = 0x1;
 // LINE 870:
 _T6b8:
-	__asm        jmp    _T668;
+	__asm        jmp    _FOR_NEXT_668;
 // LINE 872:
 _T6bd:
 	__asm        cmp    startthismission, 0;
@@ -2638,11 +2644,12 @@ void S3MissionEnd(long mission_id) {
 // LINE 1412:
 	S_mstatics.curr_mission = 0x0;
 // LINE 1413:
+_FOR_6a:
 	i = 0x0;
-	__asm        jmp    _T6d;
-_T6a:
+	__asm        jmp    _FOR_COND_6a;
+_FOR_NEXT_6a:
 	i++;
-_T6d:
+_FOR_COND_6a:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    __RETURN;
 // LINE 1415:
@@ -2668,7 +2675,7 @@ _T6d:
 	return;
 // LINE 1421:
 _Tb9:
-	__asm        jmp    _T6a;
+	__asm        jmp    _FOR_NEXT_6a;
 // LINE 1424:
 __RETURN:
 }
@@ -2702,11 +2709,12 @@ long S3MissionGetByType(long mission_type) {
 	/*bp-0x4*/   long count;
 
 // LINE 1448:
+_FOR_15:
 	count = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	count++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    count, 0x1E;
 	__asm        jge    _T6b;
 // LINE 1452:
@@ -2733,7 +2741,7 @@ _T18:
 	__asm        jmp    __RETURN;
 // LINE 1454:
 _T66:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 1455:
 _T6b:
 	return 0xffffffff;
@@ -2761,12 +2769,12 @@ void S3MissionGenerate(long type) {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T3c4;
 // LINE 1487:
-_T14:
+_FOR_20:
 	i = 0x0;
-	__asm        jmp    _T23;
-_T20:
+	__asm        jmp    _FOR_COND_20;
+_FOR_NEXT_20:
 	i++;
-_T23:
+_FOR_COND_20:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T90;
 // LINE 1489:
@@ -2805,7 +2813,7 @@ _T23:
 	__asm        jmp    _T90;
 // LINE 1494:
 _T8b:
-	__asm        jmp    _T20;
+	__asm        jmp    _FOR_NEXT_20;
 // LINE 1496:
 _T90:
 	__asm        cmp    i, 0x14;
@@ -2818,12 +2826,12 @@ _T9f:
 // LINE 1500:
 	return;
 // LINE 1509:
-_Tb8:
+_FOR_c4:
 	i = 0x0;
-	__asm        jmp    _Tc7;
-_Tc4:
+	__asm        jmp    _FOR_COND_c4;
+_FOR_NEXT_c4:
 	i++;
-_Tc7:
+_FOR_COND_c4:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T156;
 // LINE 1511:
@@ -2861,7 +2869,7 @@ _Tc7:
 	__asm        jle    _T130;
 // LINE 1518:
 _T12b:
-	__asm        jmp    _Tc4;
+	__asm        jmp    _FOR_NEXT_c4;
 // LINE 1520:
 _T130:
 	__asm        mov    eax, type;
@@ -2878,7 +2886,7 @@ _T130:
 	__asm        jmp    _T156;
 // LINE 1522:
 _T151:
-	__asm        jmp    _Tc4;
+	__asm        jmp    _FOR_NEXT_c4;
 // LINE 1523:
 _T156:
 	return;
@@ -2893,12 +2901,12 @@ _T170:
 // LINE 1532:
 	return;
 // LINE 1535:
-_T185:
+_FOR_191:
 	i = 0x0;
-	__asm        jmp    _T194;
-_T191:
+	__asm        jmp    _FOR_COND_191;
+_FOR_NEXT_191:
 	i++;
-_T194:
+_FOR_COND_191:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T1f2;
 // LINE 1537:
@@ -2936,17 +2944,17 @@ _T194:
 	__asm        jmp    _T1f2;
 // LINE 1541:
 _T1ed:
-	__asm        jmp    _T191;
+	__asm        jmp    _FOR_NEXT_191;
 // LINE 1542:
 _T1f2:
 	return;
 // LINE 1547:
-_T1f7:
+_FOR_203:
 	i = 0x0;
-	__asm        jmp    _T206;
-_T203:
+	__asm        jmp    _FOR_COND_203;
+_FOR_NEXT_203:
 	i++;
-_T206:
+_FOR_COND_203:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T264;
 // LINE 1549:
@@ -2984,17 +2992,17 @@ _T206:
 	__asm        jmp    _T264;
 // LINE 1553:
 _T25f:
-	__asm        jmp    _T203;
+	__asm        jmp    _FOR_NEXT_203;
 // LINE 1554:
 _T264:
 	return;
 // LINE 1557:
-_T269:
+_FOR_275:
 	i = 0x0;
-	__asm        jmp    _T278;
-_T275:
+	__asm        jmp    _FOR_COND_275;
+_FOR_NEXT_275:
 	i++;
-_T278:
+_FOR_COND_275:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T2d6;
 // LINE 1559:
@@ -3032,17 +3040,17 @@ _T278:
 	__asm        jmp    _T2d6;
 // LINE 1563:
 _T2d1:
-	__asm        jmp    _T275;
+	__asm        jmp    _FOR_NEXT_275;
 // LINE 1564:
 _T2d6:
 	return;
 // LINE 1567:
-_T2db:
+_FOR_2e7:
 	i = 0x0;
-	__asm        jmp    _T2ea;
-_T2e7:
+	__asm        jmp    _FOR_COND_2e7;
+_FOR_NEXT_2e7:
 	i++;
-_T2ea:
+_FOR_COND_2e7:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T348;
 // LINE 1569:
@@ -3080,17 +3088,17 @@ _T2ea:
 	__asm        jmp    _T348;
 // LINE 1573:
 _T343:
-	__asm        jmp    _T2e7;
+	__asm        jmp    _FOR_NEXT_2e7;
 // LINE 1574:
 _T348:
 	return;
 // LINE 1577:
-_T34d:
+_FOR_359:
 	i = 0x0;
-	__asm        jmp    _T35c;
-_T359:
+	__asm        jmp    _FOR_COND_359;
+_FOR_NEXT_359:
 	i++;
-_T35c:
+_FOR_COND_359:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T3ba;
 // LINE 1579:
@@ -3128,7 +3136,7 @@ _T35c:
 	__asm        jmp    _T3ba;
 // LINE 1583:
 _T3b5:
-	__asm        jmp    _T359;
+	__asm        jmp    _FOR_NEXT_359;
 // LINE 1584:
 _T3ba:
 	return;
@@ -3141,34 +3149,34 @@ _T3c4:
 	__asm        je     _T15b;
 
 	__asm        cmp    dword ptr [ebp-0x18], 1;
-	__asm        je     _T14;
+	__asm        je     _FOR_20;
 
 	return;
 _T3e3:
 	__asm        cmp    dword ptr [ebp-0x18], 0x20;
 	__asm        jg     _T402;
 
-	__asm        je     _Tb8;
+	__asm        je     _FOR_c4;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0x10;
-	__asm        je     _T1f7;
+	__asm        je     _FOR_203;
 
 	return;
 _T402:
 	__asm        cmp    dword ptr [ebp-0x18], 0x90;
 	__asm        jg     _T424;
 
-	__asm        je     _T1f7;
+	__asm        je     _FOR_203;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0x40;
-	__asm        je     _Tb8;
+	__asm        je     _FOR_c4;
 
 	return;
 _T424:
 	__asm        cmp    dword ptr [ebp-0x18], 0x110;
 	__asm        jg     _T449;
 
-	__asm        je     _T1f7;
+	__asm        je     _FOR_203;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0x100;
 	__asm        je     _T170;
@@ -3178,41 +3186,41 @@ _T449:
 	__asm        cmp    dword ptr [ebp-0x18], 0x408;
 	__asm        jg     _T46e;
 
-	__asm        je     _T2db;
+	__asm        je     _FOR_2e7;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0x200;
-	__asm        je     _Tb8;
+	__asm        je     _FOR_c4;
 
 	return;
 _T46e:
 	__asm        cmp    dword ptr [ebp-0x18], 0x1000;
 	__asm        jg     _T493;
 
-	__asm        je     _T269;
+	__asm        je     _FOR_275;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0x800;
-	__asm        je     _T34d;
+	__asm        je     _FOR_359;
 
 	return;
 _T493:
 	__asm        cmp    dword ptr [ebp-0x18], 0x4000;
 	__asm        jg     _T4b8;
 
-	__asm        je     _T185;
+	__asm        je     _FOR_191;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0x2000;
-	__asm        je     _Tb8;
+	__asm        je     _FOR_c4;
 
 	return;
 _T4b8:
 	__asm        cmp    dword ptr [ebp-0x18], 0x10000;
-	__asm        je     _Tb8;
+	__asm        je     _FOR_c4;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0x20000;
-	__asm        je     _Tb8;
+	__asm        je     _FOR_c4;
 
 	__asm        cmp    dword ptr [ebp-0x18], 0x40000;
-	__asm        je     _Tb8;
+	__asm        je     _FOR_c4;
 
 	return;
 // LINE 1590:
@@ -3227,11 +3235,11 @@ void S3MissionSetCurrNext() {
 	md = 0x0;
 // LINE 1603:
 	__asm        cmp    S_mstatics.curr_mission, 0;
-	__asm        jne    _T22;
+	__asm        jne    _FOR_42;
 // LINE 1604:
 	return;
 // LINE 1606:
-_T22:
+_FOR_42:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
 	__asm        add    ecx, 0x38;
@@ -3241,12 +3249,12 @@ _T22:
 	__asm        idiv   ecx;
 	__asm        inc    eax;
 	__asm        mov    i, eax;
-	__asm        jmp    _T45;
-_T42:
+	__asm        jmp    _FOR_COND_42;
+_FOR_NEXT_42:
 	i++;
-_T45:
+_FOR_COND_42:
 	__asm        cmp    i, 0x1E;
-	__asm        jge    _T96;
+	__asm        jge    _FOR_a2;
 // LINE 1608:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -3270,14 +3278,14 @@ _T45:
 	return;
 // LINE 1614:
 _T91:
-	__asm        jmp    _T42;
+	__asm        jmp    _FOR_NEXT_42;
 // LINE 1616:
-_T96:
+_FOR_a2:
 	i = 0x0;
-	__asm        jmp    _Ta5;
-_Ta2:
+	__asm        jmp    _FOR_COND_a2;
+_FOR_NEXT_a2:
 	i++;
-_Ta5:
+_FOR_COND_a2:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
 	__asm        add    ecx, 0x38;
@@ -3310,7 +3318,7 @@ _Ta5:
 	return;
 // LINE 1624:
 _T107:
-	__asm        jmp    _Ta2;
+	__asm        jmp    _FOR_NEXT_a2;
 // LINE 1625:
 __RETURN:
 }
@@ -3324,11 +3332,11 @@ void S3MissionSetCurrPrev() {
 	md = 0x0;
 // LINE 1638:
 	__asm        cmp    S_mstatics.curr_mission, 0;
-	__asm        jne    _T22;
+	__asm        jne    _FOR_42;
 // LINE 1639:
 	return;
 // LINE 1641:
-_T22:
+_FOR_42:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
 	__asm        add    ecx, 0x38;
@@ -3338,12 +3346,12 @@ _T22:
 	__asm        idiv   ecx;
 	__asm        dec    eax;
 	__asm        mov    i, eax;
-	__asm        jmp    _T45;
-_T42:
+	__asm        jmp    _FOR_COND_42;
+_FOR_NEXT_42:
 	i--;
-_T45:
+_FOR_COND_42:
 	__asm        cmp    i, 0;
-	__asm        jl     _T96;
+	__asm        jl     _FOR_a2;
 // LINE 1643:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -3367,14 +3375,14 @@ _T45:
 	return;
 // LINE 1649:
 _T91:
-	__asm        jmp    _T42;
+	__asm        jmp    _FOR_NEXT_42;
 // LINE 1651:
-_T96:
+_FOR_a2:
 	i = 0x1e;
-	__asm        jmp    _Ta5;
-_Ta2:
+	__asm        jmp    _FOR_COND_a2;
+_FOR_NEXT_a2:
 	i--;
-_Ta5:
+_FOR_COND_a2:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
 	__asm        add    ecx, 0x38;
@@ -3407,7 +3415,7 @@ _Ta5:
 	return;
 // LINE 1659:
 _T107:
-	__asm        jmp    _Ta2;
+	__asm        jmp    _FOR_NEXT_a2;
 // LINE 1660:
 __RETURN:
 }
@@ -3565,11 +3573,12 @@ long S3MissionStartDirect(long type) {
 	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1898:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T63;
 // LINE 1900:
@@ -3593,7 +3602,7 @@ _T18:
 	__asm        jmp    _T63;
 // LINE 1905:
 _T5e:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 1908:
 _T63:
 	__asm        cmp    i, 0x1E;
@@ -4579,16 +4588,16 @@ long S3MissionGetIDByKey(long key) {
 
 // LINE 2440:
 	__asm        cmp    key, 0xFFFFFFFF;
-	__asm        jne    _T1d;
+	__asm        jne    _FOR_29;
 // LINE 2441:
 	return 0xffffffff;
 // LINE 2444:
-_T1d:
+_FOR_29:
 	i = 0x0;
-	__asm        jmp    _T2c;
-_T29:
+	__asm        jmp    _FOR_COND_29;
+_FOR_NEXT_29:
 	i++;
-_T2c:
+_FOR_COND_29:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T7f;
 // LINE 2446:
@@ -4605,7 +4614,7 @@ _T2c:
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        jne    _T63;
 // LINE 2449:
-	__asm        jmp    _T29;
+	__asm        jmp    _FOR_NEXT_29;
 // LINE 2451:
 _T63:
 	__asm        mov    eax, md;
@@ -4616,7 +4625,7 @@ _T63:
 	return i;
 // LINE 2453:
 _T7a:
-	__asm        jmp    _T29;
+	__asm        jmp    _FOR_NEXT_29;
 // LINE 2456:
 _T7f:
 	return 0xffffffff;
@@ -4664,11 +4673,12 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 _T39:
 	S_mstatics.curr_mission = 0x0;
 // LINE 2501:
+_FOR_4f:
 	i = 0x0;
-	__asm        jmp    _T52;
-_T4f:
+	__asm        jmp    _FOR_COND_4f;
+_FOR_NEXT_4f:
 	i++;
-_T52:
+_FOR_COND_4f:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _Ta3;
 // LINE 2503:
@@ -4694,7 +4704,7 @@ _T52:
 	__asm        jmp    _Ta3;
 // LINE 2510:
 _T9e:
-	__asm        jmp    _T4f;
+	__asm        jmp    _FOR_NEXT_4f;
 // LINE 2512:
 _Ta3:
 	return 0x1;

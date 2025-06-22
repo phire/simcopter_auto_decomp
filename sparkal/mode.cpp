@@ -62,11 +62,12 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 62:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        mov    eax, i;
 	__asm        cmp    gNumModes, eax;
 	__asm        jle    _T78;
@@ -92,7 +93,7 @@ _T18:
 	return 0x1;
 // LINE 67:
 _T73:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 68:
 _T78:
 	return 0x0;

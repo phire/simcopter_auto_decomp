@@ -572,14 +572,14 @@ void GameModeMainMenuData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-0x10C], 0x100;
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    [ebp-0x110], eax;
-_T58:
+__WHILE_58:
 	__asm        dec    dword ptr [ebp-0x10C];
 	__asm        js     _T7b;
 
 	__asm        mov    ecx, [ebp-0x110];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x110], 4;
-	__asm        jmp    _T58;
+	__asm        jmp    __WHILE_58;
 _T7b:
 	__asm        jmp    _T80;
 _T80:
@@ -938,14 +938,14 @@ void GameModePickCareerCityData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-0x10C], 0x100;
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    [ebp-0x110], eax;
-_T58:
+__WHILE_58:
 	__asm        dec    dword ptr [ebp-0x10C];
 	__asm        js     _T7b;
 
 	__asm        mov    ecx, [ebp-0x110];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x110], 4;
-	__asm        jmp    _T58;
+	__asm        jmp    __WHILE_58;
 _T7b:
 	__asm        jmp    _T80;
 _T80:
@@ -1213,14 +1213,14 @@ void GameModePlayData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-0x114], 0x100;
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    [ebp-0x118], eax;
-_T58:
+__WHILE_58:
 	__asm        dec    dword ptr [ebp-0x114];
 	__asm        js     _T7b;
 
 	__asm        mov    ecx, [ebp-0x118];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x118], 4;
-	__asm        jmp    _T58;
+	__asm        jmp    __WHILE_58;
 _T7b:
 	__asm        jmp    _T80;
 _T80:
@@ -1244,11 +1244,12 @@ _Ta1:
 _Tf6:
 	pPalettePosition = S_pal;
 // LINE 425:
+_FOR_110:
 	i = 0x0;
-	__asm        jmp    _T116;
-_T110:
+	__asm        jmp    _FOR_COND_110;
+_FOR_NEXT_110:
 	i++;
-_T116:
+_FOR_COND_110:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T18d;
 // LINE 426:
@@ -1276,7 +1277,7 @@ _T116:
 	__asm        mov    [ecx+edx*4], al;
 	__asm        inc    pPalettePosition;
 // LINE 429:
-	__asm        jmp    _T110;
+	__asm        jmp    _FOR_NEXT_110;
 // LINE 430:
 _T18d:
 	return;
@@ -3778,9 +3779,9 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 	__asm        mov    tempShortcutListIterator.node, eax;
 	__asm        jmp    _T25;
 _T25:
-	__asm        jmp    _T2a;
+	__asm        jmp    _LOOP_2a;
 // LINE 1147:
-_T2a:
+_LOOP_2a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
 	__asm        mov    [ebp-0x1C], eax;
@@ -3877,7 +3878,7 @@ _T12d:
 	__asm        jmp    _T138;
 // LINE 1153:
 _T138:
-	__asm        jmp    _T2a;
+	__asm        jmp    _LOOP_2a;
 // LINE 1154:
 _T13d:
 	return;
@@ -5117,14 +5118,14 @@ void GameModeHangarData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-8], 0x100;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0xC], eax;
-_T40:
+__WHILE_40:
 	__asm        dec    dword ptr [ebp-8];
 	__asm        js     _T5a;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
-	__asm        jmp    _T40;
+	__asm        jmp    __WHILE_40;
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:
@@ -5206,7 +5207,7 @@ _T52:
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xB8], eax;
-_T64:
+_LOOP_64:
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        cmp    [ebp-0xB8], eax;
 	__asm        jne    _T80;
@@ -5245,7 +5246,7 @@ _Tde:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xF0;
 	__asm        call   list<Shortcut>::erase;
-	__asm        jmp    _T64;
+	__asm        jmp    _LOOP_64;
 _Tfb:
 	__asm        jmp    _T100;
 // LINE 1524:
@@ -5759,14 +5760,14 @@ void GameModeCatalogData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-8], 0x100;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0xC], eax;
-_T40:
+__WHILE_40:
 	__asm        dec    dword ptr [ebp-8];
 	__asm        js     _T5a;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
-	__asm        jmp    _T40;
+	__asm        jmp    __WHILE_40;
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:
@@ -5848,7 +5849,7 @@ _T52:
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xF4], eax;
-_T64:
+_LOOP_64:
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        cmp    [ebp-0xF4], eax;
 	__asm        jne    _T80;
@@ -5908,7 +5909,7 @@ _T138:
 	this->commandSystem.commandShortcuts.length--;
 	__asm        jmp    _T149;
 _T149:
-	__asm        jmp    _T64;
+	__asm        jmp    _LOOP_64;
 _T14e:
 	__asm        jmp    _T153;
 // LINE 1678:
@@ -6450,14 +6451,14 @@ void GameModeMissionLogData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-8], 0x100;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0xC], eax;
-_T40:
+__WHILE_40:
 	__asm        dec    dword ptr [ebp-8];
 	__asm        js     _T5a;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
-	__asm        jmp    _T40;
+	__asm        jmp    __WHILE_40;
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:
@@ -6539,7 +6540,7 @@ _T52:
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xF4], eax;
-_T64:
+_LOOP_64:
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        cmp    [ebp-0xF4], eax;
 	__asm        jne    _T80;
@@ -6599,7 +6600,7 @@ _T138:
 	this->commandSystem.commandShortcuts.length--;
 	__asm        jmp    _T149;
 _T149:
-	__asm        jmp    _T64;
+	__asm        jmp    _LOOP_64;
 _T14e:
 	__asm        jmp    _T153;
 // LINE 1803:
@@ -7141,14 +7142,14 @@ void GameModeInventoryData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-8], 0x100;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0xC], eax;
-_T40:
+__WHILE_40:
 	__asm        dec    dword ptr [ebp-8];
 	__asm        js     _T5a;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0xC], 4;
-	__asm        jmp    _T40;
+	__asm        jmp    __WHILE_40;
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:
@@ -7230,7 +7231,7 @@ _T52:
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xF4], eax;
-_T64:
+_LOOP_64:
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        cmp    [ebp-0xF4], eax;
 	__asm        jne    _T80;
@@ -7290,7 +7291,7 @@ _T138:
 	this->commandSystem.commandShortcuts.length--;
 	__asm        jmp    _T149;
 _T149:
-	__asm        jmp    _T64;
+	__asm        jmp    _LOOP_64;
 _T14e:
 	__asm        jmp    _T153;
 // LINE 1924:

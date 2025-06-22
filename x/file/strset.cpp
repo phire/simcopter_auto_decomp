@@ -258,24 +258,24 @@ unsigned char * StringSet::GetString(short which) {
 
 	__asm        movsx  eax, which;
 	__asm        cmp    eax, 1;
-	__asm        jge    _T49;
+	__asm        jge    _FOR_62;
 // LINE 67:
 _T29:
 	doAssert(0x8c085, 0x5bf534, 0x43, 0x5bf54c);
 // LINE 68:
 	return 0x0;
 // LINE 74:
-_T49:
+_FOR_62:
 	__asm        mov    ax, which;
 	__asm        mov    cnt, ax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        add    eax, 2;
 	__asm        mov    str, eax;
-	__asm        jmp    _T66;
-_T62:
+	__asm        jmp    _FOR_COND_62;
+_FOR_NEXT_62:
 	cnt--;
-_T66:
+_FOR_COND_62:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 1;
 	__asm        jle    _T83;
@@ -285,7 +285,7 @@ _T66:
 	__asm        mov    cl, [eax];
 	__asm        inc    ecx;
 	__asm        add    str, ecx;
-	__asm        jmp    _T62;
+	__asm        jmp    _FOR_NEXT_62;
 // LINE 76:
 _T83:
 	return str;

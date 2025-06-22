@@ -568,7 +568,7 @@ unsigned long GameWindow::Draw() {
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     _T4e;
 // LINE 173:
-_T19:
+__WHILE_19:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x14];
@@ -578,7 +578,7 @@ _T19:
 	__asm        test   eax, eax;
 	__asm        je     _T37;
 
-	__asm        jmp    _T19;
+	__asm        jmp    __WHILE_19;
 // LINE 174:
 _T37:
 	__asm        push   0;
@@ -603,7 +603,7 @@ unsigned long GameWindow::SwapBuffer() {
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     _T4e;
 // LINE 186:
-_T19:
+__WHILE_19:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x14];
@@ -613,7 +613,7 @@ _T19:
 	__asm        test   eax, eax;
 	__asm        je     _T37;
 
-	__asm        jmp    _T19;
+	__asm        jmp    __WHILE_19;
 // LINE 187:
 _T37:
 	__asm        push   0;
@@ -708,34 +708,35 @@ _Tb1:
 	__asm        mov    End, ecx;
 // LINE 228:
 	__asm        cmp    PaletteUse, 2;
-	__asm        jne    _Te8;
+	__asm        jne    _FOR_f4;
 // LINE 229:
 	Start = 0x1;
 // LINE 230:
 	End = 0xff;
 // LINE 234:
-_Te8:
+_FOR_f4:
 	Counter = 0x0;
-	__asm        jmp    _Tf7;
-_Tf4:
+	__asm        jmp    _FOR_COND_f4;
+_FOR_NEXT_f4:
 	Counter++;
-_Tf7:
+_FOR_COND_f4:
 	__asm        mov    eax, Counter;
 	__asm        cmp    Start, eax;
 	__asm        jle    _T113;
 // LINE 235:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 0;
-	__asm        jmp    _Tf4;
+	__asm        jmp    _FOR_NEXT_f4;
 // LINE 238:
 _T113:
 	__asm        cmp    pColors, 0;
-	__asm        je     _T181;
+	__asm        je     _FOR_186;
 // LINE 239:
-	__asm        jmp    _T125;
-_T122:
+_FOR_122:
+	__asm        jmp    _FOR_COND_122;
+_FOR_NEXT_122:
 	Counter++;
-_T125:
+_FOR_COND_122:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
 	__asm        jge    _T17c;
@@ -761,19 +762,19 @@ _T125:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
 // LINE 244:
-	__asm        jmp    _T122;
+	__asm        jmp    _FOR_NEXT_122;
 // LINE 246:
 _T17c:
-	__asm        jmp    _T1cc;
+	__asm        jmp    _FOR_1d1;
 // LINE 247:
-_T181:
-	__asm        jmp    _T189;
-_T186:
+_FOR_186:
+	__asm        jmp    _FOR_COND_186;
+_FOR_NEXT_186:
 	Counter++;
-_T189:
+_FOR_COND_186:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
-	__asm        jge    _T1cc;
+	__asm        jge    _FOR_1d1;
 // LINE 248:
 	__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
 	__asm        mov    ecx, Counter;
@@ -790,19 +791,19 @@ _T189:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
 // LINE 252:
-	__asm        jmp    _T186;
+	__asm        jmp    _FOR_NEXT_186;
 // LINE 256:
-_T1cc:
-	__asm        jmp    _T1d4;
-_T1d1:
+_FOR_1d1:
+	__asm        jmp    _FOR_COND_1d1;
+_FOR_NEXT_1d1:
 	Counter++;
-_T1d4:
+_FOR_COND_1d1:
 	__asm        cmp    Counter, 0x100;
 	__asm        jge    _T1f1;
 // LINE 257:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 0;
-	__asm        jmp    _T1d1;
+	__asm        jmp    _FOR_NEXT_1d1;
 // LINE 260:
 _T1f1:
 	__asm        lea    eax, LogPalette.Version;

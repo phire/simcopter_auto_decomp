@@ -150,11 +150,12 @@ _Tf8:
 // LINE 186:
 	_close(file);
 // LINE 188:
+_FOR_14a:
 	i = 0x0;
-	__asm        jmp    _T14d;
-_T14a:
+	__asm        jmp    _FOR_COND_14a;
+_FOR_NEXT_14a:
 	i++;
-_T14d:
+_FOR_COND_14a:
 	__asm        mov    eax, i;
 	__asm        cmp    bmp.BmpCount, eax;
 	__asm        jle    _T1b4;
@@ -191,7 +192,7 @@ _T14d:
 	__asm        add    eax, 0xC;
 	__asm        add    byteptr, eax;
 // LINE 202:
-	__asm        jmp    _T14a;
+	__asm        jmp    _FOR_NEXT_14a;
 // LINE 206:
 _T1b4:
 	res->res.mem = group;
@@ -346,17 +347,17 @@ _Tef:
 // LINE 336:
 	baseptr += 0x40c;
 // LINE 338:
-	__asm        jmp    _T122;
+	__asm        jmp    _FOR_12e;
 // LINE 340:
 _T11c:
 	baseptr = basearg;
 // LINE 346:
-_T122:
+_FOR_12e:
 	i = 0x0;
-	__asm        jmp    _T131;
-_T12e:
+	__asm        jmp    _FOR_COND_12e;
+_FOR_NEXT_12e:
 	i++;
-_T131:
+_FOR_COND_12e:
 	__asm        mov    eax, notiles;
 	__asm        cmp    i, eax;
 	__asm        jge    _T18d;
@@ -380,7 +381,7 @@ _T131:
 	__asm        mov    edx, bhdr;
 	__asm        mov    [edx+ecx*8+0x10], eax;
 // LINE 355:
-	__asm        jmp    _T12e;
+	__asm        jmp    _FOR_NEXT_12e;
 // LINE 357:
 _T18d:
 	return 0x1;

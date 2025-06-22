@@ -576,14 +576,14 @@ _Tdf:
 	__asm        mov    eax, 0x604C00;
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-0x1C], eax;
-_Tf1:
+__WHILE_f1:
 	__asm        dec    dword ptr [ebp-0x18];
 	__asm        js     _T10b;
 
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x1C], 8;
-	__asm        jmp    _Tf1;
+	__asm        jmp    __WHILE_f1;
 _T10b:
 	__asm        jmp    _T110;
 _T110:
@@ -799,14 +799,14 @@ _T0e:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x38], eax;
-_T29:
+__WHILE_29:
 	__asm        dec    dword ptr [ebp-0x34];
 	__asm        js     _T43;
 
 	__asm        sub    dword ptr [ebp-0x38], 8;
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    _T29;
+	__asm        jmp    __WHILE_29;
 _T43:
 	__asm        jmp    _T48;
 _T48:
@@ -1133,7 +1133,7 @@ _T267:
 	__asm        test   eax, eax;
 	__asm        jne    _T520;
 // LINE 56:
-_T286:
+__DO_286:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x24);
 // LINE 57:
 	__asm        push   0xFFF;
@@ -1330,8 +1330,9 @@ _T500:
 _T508:
 	bRemotePathFound = this->FileServices::FindRemotePath();
 // LINE 66:
+__DO_WHILE_286:
 	__asm        cmp    bRemotePathFound, 0;
-	__asm        je     _T286;
+	__asm        je     __DO_286;
 // LINE 68:
 _T520:
 	__asm        mov    dword ptr [ebp-0x28], 1;
@@ -1430,7 +1431,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        mov    eax, lDriveStringLength;
 	__asm        dec    eax;
 	__asm        mov    iEnd, eax;
-_T72:
+__WHILE_72:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T67e;
@@ -1463,10 +1464,10 @@ _Ta7:
 	__asm        mov    ecx, szDriveStrings;
 	__asm        movsx  eax, byte ptr [eax+ecx];
 	__asm        cmp    eax, 0x63;
-	__asm        jl     _T650;
+	__asm        jl     __WHILE_650;
 
 	__asm        cmp    uiDriveType, 2;
-	__asm        jne    _T650;
+	__asm        jne    __WHILE_650;
 // LINE 106:
 _Tde:
 	__asm        jmp    _Te3;
@@ -1891,13 +1892,13 @@ _T631:
 	__asm        mov    ecx, this;
 	__asm        call   FileServices::ValidateRemotePath;
 	__asm        test   eax, eax;
-	__asm        je     _T650;
+	__asm        je     __WHILE_650;
 // LINE 109:
 	nReturnValue = 0x1;
 // LINE 110:
 	__asm        jmp    _T67e;
 // LINE 113:
-_T650:
+__WHILE_650:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T676;
@@ -1909,12 +1910,12 @@ _T650:
 	__asm        je     _T676;
 // LINE 114:
 	i++;
-	__asm        jmp    _T650;
+	__asm        jmp    __WHILE_650;
 // LINE 115:
 _T676:
 	i++;
 // LINE 116:
-	__asm        jmp    _T72;
+	__asm        jmp    __WHILE_72;
 // LINE 117:
 _T67e:
 	__asm        mov    eax, szDriveStrings;
@@ -2415,7 +2416,7 @@ _T103:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    tempStringListIterator.node, eax;
 // LINE 174:
-_T109:
+_LOOP_109:
 	__asm        mov    eax, tempStringListDirectories.node;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
@@ -2577,7 +2578,7 @@ _T2fe:
 	__asm        jmp    _T309;
 // LINE 179:
 _T309:
-	__asm        jmp    _T109;
+	__asm        jmp    _LOOP_109;
 // LINE 180:
 _T30e:
 	__asm        lea    ecx, sTempDirectory.c_str_ptr;

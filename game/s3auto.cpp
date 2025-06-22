@@ -677,11 +677,12 @@ int32_t S3StartSpeederMission() {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 74:
+_FOR_15:
 	i = 0x1;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x46;
 	__asm        jge    _Tdd;
 // LINE 76:
@@ -737,7 +738,7 @@ _T86:
 	return 0x1;
 // LINE 96:
 _Td8:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 98:
 _Tdd:
 	return 0x0;
@@ -836,12 +837,12 @@ __RETURN:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T2eb;
 // LINE 153:
-_T27:
+_FOR_33:
 	i = 0x0;
-	__asm        jmp    _T36;
-_T33:
+	__asm        jmp    _FOR_COND_33;
+_FOR_NEXT_33:
 	i++;
-_T36:
+_FOR_COND_33:
 	__asm        cmp    i, 5;
 	__asm        jge    _Taa;
 // LINE 156:
@@ -871,7 +872,7 @@ _T36:
 	carID = i;
 // LINE 166:
 _Ta5:
-	__asm        jmp    _T33;
+	__asm        jmp    _FOR_NEXT_33;
 // LINE 168:
 _Taa:
 	__asm        cmp    minDist, 0x7D00;
@@ -879,7 +880,7 @@ _Taa:
 // LINE 169:
 	return 0x0;
 // LINE 170:
-	__asm        jmp    _Td5;
+	__asm        jmp    _FOR_e1;
 // LINE 171:
 _Tc3:
 	__asm        mov    eax, carID;
@@ -887,12 +888,12 @@ _Tc3:
 	__asm        add    eax, 0xC;
 	__asm        jmp    __RETURN;
 // LINE 174:
-_Td5:
+_FOR_e1:
 	i = 0x0;
-	__asm        jmp    _Te4;
-_Te1:
+	__asm        jmp    _FOR_COND_e1;
+_FOR_NEXT_e1:
 	i++;
-_Te4:
+_FOR_COND_e1:
 	__asm        cmp    i, 5;
 	__asm        jge    _T158;
 // LINE 177:
@@ -922,7 +923,7 @@ _Te4:
 	carID = i;
 // LINE 187:
 _T153:
-	__asm        jmp    _Te1;
+	__asm        jmp    _FOR_NEXT_e1;
 // LINE 189:
 _T158:
 	__asm        cmp    minDist, 0x7D00;
@@ -930,7 +931,7 @@ _T158:
 // LINE 190:
 	return 0x0;
 // LINE 191:
-	__asm        jmp    _T183;
+	__asm        jmp    _FOR_18f;
 // LINE 192:
 _T171:
 	__asm        mov    eax, carID;
@@ -938,12 +939,12 @@ _T171:
 	__asm        add    eax, 0xC;
 	__asm        jmp    __RETURN;
 // LINE 195:
-_T183:
+_FOR_18f:
 	i = 0x0;
-	__asm        jmp    _T192;
-_T18f:
+	__asm        jmp    _FOR_COND_18f;
+_FOR_NEXT_18f:
 	i++;
-_T192:
+_FOR_COND_18f:
 	__asm        cmp    i, 5;
 	__asm        jge    _T206;
 // LINE 198:
@@ -973,7 +974,7 @@ _T192:
 	carID = i;
 // LINE 208:
 _T201:
-	__asm        jmp    _T18f;
+	__asm        jmp    _FOR_NEXT_18f;
 // LINE 210:
 _T206:
 	__asm        cmp    minDist, 0x7D00;
@@ -981,7 +982,7 @@ _T206:
 // LINE 211:
 	return 0x0;
 // LINE 212:
-	__asm        jmp    _T231;
+	__asm        jmp    _FOR_23d;
 // LINE 213:
 _T21f:
 	__asm        mov    eax, carID;
@@ -989,12 +990,12 @@ _T21f:
 	__asm        add    eax, 0xC;
 	__asm        jmp    __RETURN;
 // LINE 216:
-_T231:
+_FOR_23d:
 	i = 0x0;
-	__asm        jmp    _T240;
-_T23d:
+	__asm        jmp    _FOR_COND_23d;
+_FOR_NEXT_23d:
 	i++;
-_T240:
+_FOR_COND_23d:
 	__asm        cmp    i, 5;
 	__asm        jge    _T2b4;
 // LINE 219:
@@ -1024,7 +1025,7 @@ _T240:
 	carID = i;
 // LINE 229:
 _T2af:
-	__asm        jmp    _T23d;
+	__asm        jmp    _FOR_NEXT_23d;
 // LINE 231:
 _T2b4:
 	__asm        cmp    minDist, 0x7D00;
@@ -1051,10 +1052,10 @@ _T2eb:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    _Switch_2ff[0][eax*4];
 // Switch pointers:
-//   _T27
-//   _Td5
-//   _T183
-//   _T231
+//   _FOR_33
+//   _FOR_e1
+//   _FOR_18f
+//   _FOR_23d
 // LINE 240:
 _T30f:
 	return 0x0;
@@ -1369,11 +1370,12 @@ void AutomobileClass::ResetAll() {
 	/*bp-0x4*/   int32_t currentCarIndex;
 
 // LINE 543:
+_FOR_15:
 	currentCarIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentCarIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T36;
 // LINE 545:
@@ -1381,7 +1383,7 @@ _T18:
 	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   AutomobileClass::Reset;
 // LINE 546:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 547:
 _T36:
 	return;
@@ -1392,11 +1394,12 @@ void AutomobileClass::ItterateAll() {
 	/*bp-0x4*/   int32_t currentCarIndex;
 
 // LINE 574:
+_FOR_15:
 	currentCarIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentCarIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T36;
 // LINE 576:
@@ -1404,7 +1407,7 @@ _T18:
 	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   AutomobileClass::Itterate;
 // LINE 577:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 578:
 _T36:
 	return;
@@ -1635,20 +1638,22 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 // LINE 750:
 	maxRadius = (this->autoDynomitor.radius + 0x400000);
 // LINE 756:
+_FOR_46:
 	radius = (this->autoDynomitor.radius + 0x50000);
-	__asm        jmp    _T4d;
-_T46:
+	__asm        jmp    _FOR_COND_46;
+_FOR_NEXT_46:
 	radius += 0xa0000;
-_T4d:
+_FOR_COND_46:
 	__asm        mov    eax, maxRadius;
 	__asm        cmp    radius, eax;
 	__asm        jge    _T126;
 // LINE 758:
+_FOR_65:
 	angle = 0x0;
-	__asm        jmp    _T6c;
-_T65:
+	__asm        jmp    _FOR_COND_65;
+_FOR_NEXT_65:
 	angle += 0x640000;
-_T6c:
+_FOR_COND_65:
 	__asm        cmp    angle, 0xE100000;
 	__asm        jge    _T121;
 // LINE 760:
@@ -1710,10 +1715,10 @@ _T6c:
 	return 0x1;
 // LINE 768:
 _T11c:
-	__asm        jmp    _T65;
+	__asm        jmp    _FOR_NEXT_65;
 // LINE 769:
 _T121:
-	__asm        jmp    _T46;
+	__asm        jmp    _FOR_NEXT_46;
 // LINE 771:
 _T126:
 	return 0x0;
@@ -2262,11 +2267,11 @@ _T758:
 _T75d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x116], 0;
-	__asm        jle    _T776;
+	__asm        jle    __WHILE_776;
 // LINE 1004:
 	this->spotlightHitCounter--;
 // LINE 1009:
-_T776:
+__WHILE_776:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xEA];
@@ -2280,7 +2285,7 @@ _T776:
 // LINE 1014:
 	this->AutomobileClass::TransitionBetweenGoals();
 // LINE 1020:
-	__asm        jmp    _T776;
+	__asm        jmp    __WHILE_776;
 // LINE 1032:
 _T7c0:
 	__asm        mov    eax, this;
@@ -2326,7 +2331,7 @@ _T53:
 	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
 	dyptrptr = (pCell + 0x10);
 // LINE 1061:
-_T66:
+__WHILE_66:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Ta0;
@@ -2344,7 +2349,7 @@ _T66:
 _T93:
 	dyptrptr = dyptrptr->;
 // LINE 1071:
-	__asm        jmp    _T66;
+	__asm        jmp    __WHILE_66;
 // LINE 1073:
 _Ta0:
 	__asm        mov    eax, dyptrptr;
@@ -2819,7 +2824,7 @@ int32_t AutomobileClass::BeamToLocation(const /*packed*/ struct _GridCoordinates
 // LINE 1291:
 	hiway = 0x0;
 // LINE 1298:
-_T42:
+__DO_42:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
 	__asm        test   eax, eax;
@@ -3139,9 +3144,9 @@ _T4a0:
 	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
 	__asm        je     _T4be;
-
+__DO_WHILE_42:
 	__asm        cmp    foundcell, 0;
-	__asm        je     _T42;
+	__asm        je     __DO_42;
 // LINE 1342:
 _T4be:
 	__asm        cmp    foundcell, 0;
@@ -3316,11 +3321,12 @@ _T74a:
 	__asm        sub    eax, edx;
 	__asm        mov    dirIndex, eax;
 // LINE 1525:
+_FOR_773:
 	i = 0x0;
-	__asm        jmp    _T779;
-_T773:
+	__asm        jmp    _FOR_COND_773;
+_FOR_NEXT_773:
 	i++;
-_T779:
+_FOR_COND_773:
 	__asm        cmp    i, 4;
 	__asm        jge    _T99e;
 // LINE 1527:
@@ -3498,7 +3504,7 @@ _T93c:
 	__asm        jmp    _T99e;
 // LINE 1556:
 _T999:
-	__asm        jmp    _T773;
+	__asm        jmp    _FOR_NEXT_773;
 // LINE 1558:
 _T99e:
 	__asm        cmp    i, 4;
@@ -3529,11 +3535,12 @@ _T9c5:
 	__asm        sub    eax, edx;
 	__asm        mov    dirIndex, eax;
 // LINE 1575:
+_FOR_a20:
 	i = 0x0;
-	__asm        jmp    _Ta26;
-_Ta20:
+	__asm        jmp    _FOR_COND_a20;
+_FOR_NEXT_a20:
 	i++;
-_Ta26:
+_FOR_COND_a20:
 	__asm        cmp    i, 4;
 	__asm        jge    _Ta6c;
 // LINE 1577:
@@ -3552,7 +3559,7 @@ _Ta26:
 	__asm        jmp    _Ta6c;
 // LINE 1580:
 _Ta67:
-	__asm        jmp    _Ta20;
+	__asm        jmp    _FOR_NEXT_a20;
 // LINE 1581:
 _Ta6c:
 	__asm        cmp    i, 4;
@@ -3995,7 +4002,7 @@ void AutomobileClass::PullOverCiviliansInWay() {
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(scanLoc.x), ax;
 // LINE 1815:
-_T21:
+__DO_21:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.y;
 	__asm        mov    [ebp-0x24], eax;
@@ -4024,9 +4031,9 @@ _T7f:
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    currentObject, eax;
 // LINE 1819:
-_T88:
+__WHILE_88:
 	__asm        cmp    currentObject, 0;
-	__asm        je     _T197;
+	__asm        je     __DO_WHILE_21;
 // LINE 1822:
 // Block start:
 	/*bp-0x1c*/  /*packed*/ class AutomobileClass *pCar;
@@ -4037,7 +4044,7 @@ _T88:
 // LINE 1824:
 	currentObject = currentObject->next;
 // LINE 1825:
-	__asm        jmp    _T88;
+	__asm        jmp    __WHILE_88;
 // LINE 1829:
 _Tae:
 	__asm        mov    eax, currentObject;
@@ -4110,15 +4117,15 @@ _T18a:
 	currentObject = currentObject->next;
 // LINE 1841:
 // Block end:
-	__asm        jmp    _T88;
+	__asm        jmp    __WHILE_88;
 // LINE 1843:
-_T197:
+__DO_WHILE_21:
 	__asm        lea    eax, scanLoc.x;
 	__asm        push   eax;
 	__asm        lea    ecx, spiral.currDist;
 	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
-	__asm        jne    _T21;
+	__asm        jne    __DO_21;
 // LINE 1844:
 	__asm        jmp    _T1b0;
 _T1b0:
@@ -4536,7 +4543,7 @@ _T298:
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    currentObject, eax;
 // LINE 2122:
-_T2a1:
+__WHILE_2a1:
 	__asm        cmp    currentObject, 0;
 	__asm        je     _T308;
 // LINE 2125:
@@ -4547,7 +4554,7 @@ _T2a1:
 // LINE 2127:
 	currentObject = currentObject->next;
 // LINE 2128:
-	__asm        jmp    _T2a1;
+	__asm        jmp    __WHILE_2a1;
 // LINE 2133:
 _T2c7:
 	__asm        mov    eax, currentObject;
@@ -4572,7 +4579,7 @@ _T2c7:
 _T2fb:
 	currentObject = currentObject->next;
 // LINE 2144:
-	__asm        jmp    _T2a1;
+	__asm        jmp    __WHILE_2a1;
 // LINE 2146:
 _T308:
 	return 0x1;
@@ -4699,7 +4706,7 @@ _T70:
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    currentObject, eax;
 // LINE 2181:
-_T79:
+__WHILE_79:
 	__asm        cmp    currentObject, 0;
 	__asm        je     _Tfd;
 // LINE 2184:
@@ -4710,7 +4717,7 @@ _T79:
 // LINE 2186:
 	currentObject = currentObject->next;
 // LINE 2187:
-	__asm        jmp    _T79;
+	__asm        jmp    __WHILE_79;
 // LINE 2192:
 _T9f:
 	__asm        mov    eax, currentObject;
@@ -4737,7 +4744,7 @@ _T9f:
 _Tf0:
 	currentObject = currentObject->next;
 // LINE 2200:
-	__asm        jmp    _T79;
+	__asm        jmp    __WHILE_79;
 // LINE 2202:
 _Tfd:
 	return 0x1;
@@ -6162,7 +6169,7 @@ _T3dd:
 // LINE 2683:
 	currentObject = cptr->dyptr;
 // LINE 2685:
-_T3ec:
+_LOOP_3ec:
 	__asm        cmp    currentObject, 0;
 	__asm        je     _T52c;
 // LINE 2688:
@@ -6173,7 +6180,7 @@ _T3ec:
 // LINE 2690:
 	currentObject = currentObject->next;
 // LINE 2691:
-	__asm        jmp    _T3ec;
+	__asm        jmp    _LOOP_3ec;
 // LINE 2695:
 _T412:
 	__asm        mov    eax, currentObject;
@@ -6183,7 +6190,7 @@ _T412:
 // LINE 2697:
 	currentObject = currentObject->next;
 // LINE 2698:
-	__asm        jmp    _T3ec;
+	__asm        jmp    _LOOP_3ec;
 // LINE 2701:
 _T42e:
 	dyblock-> = currentObject;
@@ -6211,7 +6218,7 @@ _T42e:
 // LINE 2716:
 	currentObject = currentObject->next;
 // LINE 2717:
-	__asm        jmp    _T3ec;
+	__asm        jmp    _LOOP_3ec;
 // LINE 2723:
 _T487:
 	__asm        mov    eax, carblock;
@@ -6262,13 +6269,13 @@ _T515:
 _T51f:
 	currentObject = currentObject->next;
 // LINE 2749:
-	__asm        jmp    _T3ec;
+	__asm        jmp    _LOOP_3ec;
 // LINE 2755:
 // Block end:
 _T52c:
 	currentObject = currentCell->dyptr;
 // LINE 2758:
-_T535:
+__WHILE_535:
 	__asm        cmp    currentObject, 0;
 	__asm        je     _T6cb;
 // LINE 2761:
@@ -6279,7 +6286,7 @@ _T535:
 // LINE 2763:
 	currentObject = currentObject->next;
 // LINE 2764:
-	__asm        jmp    _T535;
+	__asm        jmp    __WHILE_535;
 // LINE 2768:
 _T55b:
 	__asm        mov    eax, currentObject;
@@ -6289,7 +6296,7 @@ _T55b:
 // LINE 2770:
 	currentObject = currentObject->next;
 // LINE 2771:
-	__asm        jmp    _T535;
+	__asm        jmp    __WHILE_535;
 // LINE 2776:
 _T577:
 	__asm        mov    eax, collisionPoint.x;
@@ -6399,7 +6406,7 @@ _T6b4:
 _T6be:
 	currentObject = currentObject->next;
 // LINE 2828:
-	__asm        jmp    _T535;
+	__asm        jmp    __WHILE_535;
 // LINE 2831:
 _T6cb:
 	__asm        xor    eax, eax;
@@ -6450,7 +6457,7 @@ _T73d:
 _T76e:
 	currentObject = currentCell->dyptr;
 // LINE 2849:
-_T777:
+__WHILE_777:
 	__asm        cmp    currentObject, 0;
 	__asm        je     _T90d;
 // LINE 2852:
@@ -6461,7 +6468,7 @@ _T777:
 // LINE 2854:
 	currentObject = currentObject->next;
 // LINE 2855:
-	__asm        jmp    _T777;
+	__asm        jmp    __WHILE_777;
 // LINE 2859:
 _T79d:
 	__asm        mov    eax, currentObject;
@@ -6471,7 +6478,7 @@ _T79d:
 // LINE 2861:
 	currentObject = currentObject->next;
 // LINE 2862:
-	__asm        jmp    _T777;
+	__asm        jmp    __WHILE_777;
 // LINE 2867:
 _T7b9:
 	__asm        mov    eax, collisionPoint.x;
@@ -6581,7 +6588,7 @@ _T8f6:
 _T900:
 	currentObject = currentObject->next;
 // LINE 2919:
-	__asm        jmp    _T777;
+	__asm        jmp    __WHILE_777;
 // LINE 2923:
 _T90d:
 	return 0x0;
@@ -6886,11 +6893,12 @@ int32_t AutomobileClass::MissionStartFire(long mission_id, /*packed*/ struct Poi
 	/*bp-0x8*/   /*packed*/ class AutomobileClass *targcar;
 
 // LINE 3128:
+_FOR_15:
 	currentCarIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentCarIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T53;
 // LINE 3130:
@@ -6909,7 +6917,7 @@ _T18:
 	__asm        jmp    _T53;
 // LINE 3133:
 _T4e:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 3135:
 _T53:
 	__asm        cmp    currentCarIndex, 0x46;
@@ -6937,11 +6945,12 @@ int32_t AutomobileClass::MissionStartJam(long mission_id, /*packed*/ struct Poin
 	/*bp-0x8*/   /*packed*/ class AutomobileClass *targcar;
 
 // LINE 3161:
+_FOR_15:
 	currentCarIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentCarIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T53;
 // LINE 3163:
@@ -6960,7 +6969,7 @@ _T18:
 	__asm        jmp    _T53;
 // LINE 3166:
 _T4e:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 3168:
 _T53:
 	__asm        cmp    currentCarIndex, 0x46;
@@ -7372,11 +7381,12 @@ void AutomobileClass::MissionCancel(long mission_id) {
 	/*bp-0x8*/   /*packed*/ class AutomobileClass *targcar;
 
 // LINE 3464:
+_FOR_15:
 	currentCarIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentCarIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T77;
 // LINE 3467:
@@ -7403,7 +7413,7 @@ _T18:
 	targcar->missionId = 0xffffffff;
 // LINE 3481:
 _T72:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 3482:
 _T77:
 	return;
@@ -7423,11 +7433,12 @@ void AutomobileClass::SetAllHeadlights(int32_t lights_on) {
 	/*bp-0x8*/   /*packed*/ class AutomobileClass *targcar;
 
 // LINE 3511:
+_FOR_15:
 	currentCarIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentCarIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T60;
 // LINE 3513:
@@ -7450,7 +7461,7 @@ _T53:
 	targcar->AutomobileClass::TurnOffHeadlight();
 // LINE 3521:
 _T5b:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 3524:
 _T60:
 	return;
@@ -7479,11 +7490,12 @@ void AutomobileClass::TurnOnHeadlight() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 3546:
+_FOR_3d:
 	count = 0x0;
-	__asm        jmp    _T40;
-_T3d:
+	__asm        jmp    _FOR_COND_3d;
+_FOR_NEXT_3d:
 	count++;
-_T40:
+_FOR_COND_3d:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T91;
@@ -7514,7 +7526,7 @@ _T7d:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 3555:
-	__asm        jmp    _T3d;
+	__asm        jmp    _FOR_NEXT_3d;
 // LINE 3556:
 _T91:
 	return;
@@ -7543,11 +7555,12 @@ void AutomobileClass::TurnOffHeadlight() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 3569:
+_FOR_3d:
 	count = 0x0;
-	__asm        jmp    _T40;
-_T3d:
+	__asm        jmp    _FOR_COND_3d;
+_FOR_NEXT_3d:
 	count++;
-_T40:
+_FOR_COND_3d:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T95;
@@ -7578,7 +7591,7 @@ _T81:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 3578:
-	__asm        jmp    _T3d;
+	__asm        jmp    _FOR_NEXT_3d;
 // LINE 3579:
 _T95:
 	return;
@@ -8151,7 +8164,7 @@ _T188:
 	/*bp-0x8*/   enum DirectionTypes fromConnections;
 _T192:
 	__asm        mov    dword ptr [ebp-0x14], 0x5B57E8;
-_T199:
+_LOOP_199:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(fromTile);
 	__asm        and    ecx, 0xFFFF;
@@ -8176,11 +8189,11 @@ _T1da:
 	__asm        jmp    _T1ef;
 _T1e6:
 	__asm        add    dword ptr [ebp-0x14], 8;
-	__asm        jmp    _T199;
+	__asm        jmp    _LOOP_199;
 // LINE 3758:
 _T1ef:
 	__asm        mov    dword ptr [ebp-0x18], 0x5B57E8;
-_T1f6:
+_LOOP_1f6:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(toTile);
 	__asm        and    ecx, 0xFFFF;
@@ -8205,7 +8218,7 @@ _T237:
 	__asm        jmp    _T24c;
 _T243:
 	__asm        add    dword ptr [ebp-0x18], 8;
-	__asm        jmp    _T1f6;
+	__asm        jmp    _LOOP_1f6;
 // LINE 3765:
 _T24c:
 	__asm        test   reinterpret_cast<uint8_t>(direction), 1;
@@ -8904,7 +8917,7 @@ _T691:
 // LINE 3963:
 _T6a3:
 	__asm        mov    dword ptr [ebp-0x48], 0x5B57E8;
-_T6aa:
+_LOOP_6aa:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(ntile);
 	__asm        and    ecx, 0xFFFF;
@@ -8929,7 +8942,7 @@ _T6eb:
 	__asm        jmp    _T700;
 _T6f7:
 	__asm        add    dword ptr [ebp-0x48], 8;
-	__asm        jmp    _T6aa;
+	__asm        jmp    _LOOP_6aa;
 // LINE 3966:
 _T700:
 	__asm        cmp    connectionType, 0;
@@ -10249,16 +10262,16 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 	ret = ReadFirstMIFFChunk(0x344, 0x608c28, 0x4155544f, miffReader);
 // LINE 4550:
 	__asm        cmp    ret, 0;
-	__asm        jne    _T38;
+	__asm        jne    _FOR_44;
 // LINE 4551:
 	return 0x0;
 // LINE 4553:
-_T38:
+_FOR_44:
 	i = 0x0;
-	__asm        jmp    _T47;
-_T44:
+	__asm        jmp    _FOR_COND_44;
+_FOR_NEXT_44:
 	i++;
-_T47:
+_FOR_COND_44:
 	__asm        cmp    i, 0x46;
 	__asm        jge    _Tad;
 // LINE 4555:
@@ -10281,7 +10294,7 @@ _T47:
 	return 0x0;
 // LINE 4565:
 _Ta8:
-	__asm        jmp    _T44;
+	__asm        jmp    _FOR_NEXT_44;
 // LINE 4566:
 _Tad:
 	return 0x1;
@@ -10294,11 +10307,12 @@ int32_t AutomobileClass::MIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 4580:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x46;
 	__asm        jge    _T74;
 // LINE 4583:
@@ -10318,7 +10332,7 @@ _T18:
 	return 0x0;
 // LINE 4591:
 _T6f:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 4592:
 _T74:
 	return 0x1;
@@ -11103,11 +11117,12 @@ _T4c:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 4943:
+_FOR_7d:
 	count = 0x0;
-	__asm        jmp    _T80;
-_T7d:
+	__asm        jmp    _FOR_COND_7d;
+_FOR_NEXT_7d:
 	count++;
-_T80:
+_FOR_COND_7d:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T2b1;
@@ -11218,7 +11233,7 @@ _T29d:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 4987:
-	__asm        jmp    _T7d;
+	__asm        jmp    _FOR_NEXT_7d;
 // LINE 4988:
 _T2b1:
 	return;

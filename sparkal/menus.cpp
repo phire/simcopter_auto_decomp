@@ -1047,11 +1047,12 @@ _T1f:
 _T24:
 	iEnd = ((this->myTextWindowPtrArray.finish - this->myTextWindowPtrArray.start) >> 0x2);
 // LINE 70:
+_FOR_48:
 	i = 0x0;
-	__asm        jmp    _T4b;
-_T48:
+	__asm        jmp    _FOR_COND_48;
+_FOR_NEXT_48:
 	i++;
-_T4b:
+_FOR_COND_48:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T9d;
@@ -1077,7 +1078,7 @@ _T61:
 	__asm        call   dword ptr [eax+0xAC];
 	__asm        jmp    _T98;
 _T98:
-	__asm        jmp    _T48;
+	__asm        jmp    _FOR_NEXT_48;
 // LINE 73:
 _T9d:
 	this->GraphicWindow::DestroyImage();
@@ -1090,7 +1091,7 @@ _Taa:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    [ebp-0x30], eax;
-_Tc4:
+__WHILE_c4:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        cmp    [eax+0xCC], ecx;
@@ -1099,7 +1100,7 @@ _Tc4:
 	__asm        jmp    _Tdb;
 _Tdb:
 	__asm        add    dword ptr [ebp-0x30], 4;
-	__asm        jmp    _Tc4;
+	__asm        jmp    __WHILE_c4;
 _Te4:
 	__asm        jmp    _Te9;
 _Te9:
@@ -1426,11 +1427,12 @@ _T401:
 	__asm        cmp    dword ptr [eax+0x90], 0xFFFFFFFF;
 	__asm        je     _Tb28;
 // LINE 121:
+_FOR_423:
 	i = 0x0;
-	__asm        jmp    _T429;
-_T423:
+	__asm        jmp    _FOR_COND_423;
+_FOR_NEXT_423:
 	i++;
-_T429:
+_FOR_COND_423:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x94], ecx;
@@ -1587,7 +1589,7 @@ _T6e2:
 	__asm        mov    eax, [eax+0xCC];
 	__asm        sub    eax, 4;
 	__asm        mov    [ebp-0x184], eax;
-_T709:
+__WHILE_709:
 	__asm        mov    eax, [ebp-0x184];
 	__asm        cmp    [ebp-0x1C8], eax;
 	__asm        je     _T73e;
@@ -1598,7 +1600,7 @@ _T709:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x180];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    _T709;
+	__asm        jmp    __WHILE_709;
 _T73e:
 	__asm        jmp    _T743;
 _T743:
@@ -1679,7 +1681,7 @@ _T864:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    [ebp-0x1AC], eax;
-_T882:
+__WHILE_882:
 	__asm        mov    eax, [ebp-0x1AC];
 	__asm        cmp    [ebp-0x1C8], eax;
 	__asm        je     _T8f7;
@@ -1705,7 +1707,7 @@ _T8cb:
 _T8ed:
 	__asm        jmp    _T8f2;
 _T8f2:
-	__asm        jmp    _T882;
+	__asm        jmp    __WHILE_882;
 _T8f7:
 	__asm        jmp    _T8fc;
 _T8fc:
@@ -1755,7 +1757,7 @@ _T96b:
 	__asm        mov    [ebp-0x1C0], eax;
 	__asm        mov    eax, [ebp-0x1C8];
 	__asm        mov    [ebp-0x1C4], eax;
-_T9b6:
+__WHILE_9b6:
 	__asm        mov    eax, [ebp-0x1C0];
 	__asm        cmp    [ebp-0x1C4], eax;
 	__asm        je     _Ta2b;
@@ -1781,7 +1783,7 @@ _T9ff:
 _Ta21:
 	__asm        jmp    _Ta26;
 _Ta26:
-	__asm        jmp    _T9b6;
+	__asm        jmp    __WHILE_9b6;
 _Ta2b:
 	__asm        jmp    _Ta30;
 _Ta30:
@@ -1792,7 +1794,7 @@ _Ta3a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    [ebp-0x168], eax;
-_Ta4c:
+__WHILE_a4c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x168];
 	__asm        cmp    [eax+0xCC], ecx;
@@ -1801,7 +1803,7 @@ _Ta4c:
 	__asm        jmp    _Ta69;
 _Ta69:
 	__asm        add    dword ptr [ebp-0x168], 4;
-	__asm        jmp    _Ta4c;
+	__asm        jmp    __WHILE_a4c;
 _Ta75:
 	__asm        jmp    _Ta7a;
 _Ta7a:
@@ -1848,7 +1850,7 @@ _Tb1e:
 	__asm        jmp    _Tb23;
 // LINE 147:
 _Tb23:
-	__asm        jmp    _T423;
+	__asm        jmp    _FOR_NEXT_423;
 // LINE 149:
 _Tb28:
 	__asm        mov    eax, glMasterVolume;
@@ -1877,11 +1879,12 @@ _T16:
 _T1b:
 	iEnd = ((this->myTextWindowPtrArray.finish - this->myTextWindowPtrArray.start) >> 0x2);
 // LINE 171:
+_FOR_3f:
 	i = 0x0;
-	__asm        jmp    _T42;
-_T3f:
+	__asm        jmp    _FOR_COND_3f;
+_FOR_NEXT_3f:
 	i++;
-_T42:
+_FOR_COND_3f:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T80;
@@ -1901,7 +1904,7 @@ _T58:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   dword ptr [eax+0x18];
-	__asm        jmp    _T3f;
+	__asm        jmp    _FOR_NEXT_3f;
 // LINE 173:
 _T80:
 	return 0x1;
@@ -2031,16 +2034,17 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 	/*bp-0x8*/   int32_t i;
 
 // LINE 235:
+_FOR_29:
 	__asm        mov    i, 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xD4];
 	__asm        mov    iEnd, eax;
-	__asm        jmp    _T2c;
-_T29:
+	__asm        jmp    _FOR_COND_29;
+_FOR_NEXT_29:
 	i++;
-_T2c:
+_FOR_COND_29:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _Tf4;
@@ -2104,7 +2108,7 @@ _Tdd:
 	return 0x1;
 // LINE 240:
 _Tef:
-	__asm        jmp    _T29;
+	__asm        jmp    _FOR_NEXT_29;
 // LINE 241:
 _Tf4:
 	return 0x0;
@@ -2138,7 +2142,7 @@ _T1d:
 _T22:
 	iEnd = ((this->myTextWindowPtrArray.finish - this->myTextWindowPtrArray.start) >> 0x2);
 // LINE 267:
-_T3a:
+__WHILE_3a:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T2a5;
@@ -2344,7 +2348,7 @@ _T26d:
 _T29d:
 	i++;
 // LINE 273:
-	__asm        jmp    _T3a;
+	__asm        jmp    __WHILE_3a;
 // LINE 274:
 _T2a5:
 	return 0x0;
@@ -3287,14 +3291,14 @@ void CopterMainMenu::DrawRatchetAndLights() {
 	__asm        lea    eax, ptLightsDestination[0].x;
 	__asm        mov    [ebp-0xFC], eax;
 // LINE 473:
-_T28:
+__WHILE_28:
 	__asm        dec    dword ptr [ebp-0xF8];
 	__asm        js     _T4b;
 
 	__asm        mov    ecx, [ebp-0xFC];
 	__asm        call   MPoint::MPoint;
 	__asm        add    dword ptr [ebp-0xFC], 8;
-	__asm        jmp    _T28;
+	__asm        jmp    __WHILE_28;
 _T4b:
 	__asm        jmp    _T50;
 _T50:
@@ -3302,14 +3306,14 @@ _T50:
 	__asm        lea    eax, rectLightsSource[0].left;
 	__asm        mov    [ebp-0x104], eax;
 // LINE 474:
-_T66:
+__WHILE_66:
 	__asm        dec    dword ptr [ebp-0x100];
 	__asm        js     _T89;
 
 	__asm        mov    ecx, [ebp-0x104];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x104], 0x10;
-	__asm        jmp    _T66;
+	__asm        jmp    __WHILE_66;
 _T89:
 	__asm        jmp    _T8e;
 _T8e:
@@ -3317,14 +3321,14 @@ _T8e:
 	__asm        lea    eax, ptRatchetsDestination[0].x;
 	__asm        mov    [ebp-0x10C], eax;
 // LINE 475:
-_Ta1:
+__WHILE_a1:
 	__asm        dec    dword ptr [ebp-0x108];
 	__asm        js     _Tc4;
 
 	__asm        mov    ecx, [ebp-0x10C];
 	__asm        call   MPoint::MPoint;
 	__asm        add    dword ptr [ebp-0x10C], 8;
-	__asm        jmp    _Ta1;
+	__asm        jmp    __WHILE_a1;
 _Tc4:
 	__asm        jmp    _Tc9;
 _Tc9:
@@ -3332,14 +3336,14 @@ _Tc9:
 	__asm        lea    eax, rectRatchetsSource[0].left;
 	__asm        mov    [ebp-0x114], eax;
 // LINE 476:
-_Tdc:
+__WHILE_dc:
 	__asm        dec    dword ptr [ebp-0x110];
 	__asm        js     _Tff;
 
 	__asm        mov    ecx, [ebp-0x114];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x114], 0x10;
-	__asm        jmp    _Tdc;
+	__asm        jmp    __WHILE_dc;
 _Tff:
 	__asm        jmp    _T104;
 // LINE 479:
@@ -3351,11 +3355,12 @@ _T104:
 	__asm        mov    ecx, this;
 	__asm        call   CopterMainMenu::GetCoordinatesForLights;
 // LINE 480:
+_FOR_129:
 	i = 0x0;
-	__asm        jmp    _T12c;
-_T129:
+	__asm        jmp    _FOR_COND_129;
+_FOR_NEXT_129:
 	i++;
-_T12c:
+_FOR_COND_129:
 	__asm        cmp    i, 5;
 	__asm        jge    _T1b0;
 // LINE 483:
@@ -3390,7 +3395,7 @@ _T12c:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x15E];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _T129;
+	__asm        jmp    _FOR_NEXT_129;
 // LINE 485:
 _T1b0:
 	__asm        lea    eax, rectRatchetsSource[0].left;
@@ -3400,11 +3405,12 @@ _T1b0:
 	__asm        mov    ecx, this;
 	__asm        call   CopterMainMenu::GetCoordinatesForRatchets;
 // LINE 486:
+_FOR_1cf:
 	i = 0x0;
-	__asm        jmp    _T1d2;
-_T1cf:
+	__asm        jmp    _FOR_COND_1cf;
+_FOR_NEXT_1cf:
 	i++;
-_T1d2:
+_FOR_COND_1cf:
 	__asm        cmp    i, 5;
 	__asm        jge    _T244;
 // LINE 489:
@@ -3439,7 +3445,7 @@ _T1d2:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x15A];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _T1cf;
+	__asm        jmp    _FOR_NEXT_1cf;
 // LINE 490:
 _T244:
 	return;

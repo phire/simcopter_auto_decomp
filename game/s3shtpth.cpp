@@ -209,21 +209,23 @@ _T74:
 // LINE 54:
 	this->heapSize = 0x0;
 // LINE 57:
+_FOR_a6:
 	x = 0x0;
-	__asm        jmp    _Ta9;
-_Ta6:
+	__asm        jmp    _FOR_COND_a6;
+_FOR_NEXT_a6:
 	x++;
-_Ta9:
+_FOR_COND_a6:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T118;
 // LINE 59:
 // Block start:
 	/*bp-0x28*/  int32_t yindex;
+_FOR_c2:
 	yindex = 0x0;
-	__asm        jmp    _Tc5;
-_Tc2:
+	__asm        jmp    _FOR_COND_c2;
+_FOR_NEXT_c2:
 	yindex++;
-_Tc5:
+_FOR_COND_c2:
 	__asm        mov    eax, x;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, gRoadGraph.RGLength[eax];
@@ -249,11 +251,11 @@ _Tc5:
 	pRGV->yindexPrev = 0xff;
 // LINE 65:
 // Block end:
-	__asm        jmp    _Tc2;
+	__asm        jmp    _FOR_NEXT_c2;
 // LINE 66:
 // Block end:
 _T113:
-	__asm        jmp    _Ta6;
+	__asm        jmp    _FOR_NEXT_a6;
 // LINE 70:
 _T118:
 	__asm        mov    al, startVertex.yindex;
@@ -275,7 +277,7 @@ _T118:
 	__asm        mov    ecx, this;
 	__asm        call   ShortestPath::PriorityHeapInsert;
 // LINE 81:
-_T143:
+__WHILE_143:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T2a8;
@@ -323,14 +325,14 @@ _T143:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, destVertex.x;
 	__asm        cmp    eax, ecx;
-	__asm        jne    _T1e9;
+	__asm        jne    _FOR_1f5;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, path.yindexCurr;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, destVertex.yindex;
 	__asm        cmp    eax, ecx;
-	__asm        jne    _T1e9;
+	__asm        jne    _FOR_1f5;
 // LINE 101:
 	pathFoundFlag = 0x1;
 // LINE 104:
@@ -338,12 +340,12 @@ _T143:
 // LINE 108:
 // Block start:
 	/*bp-0x30*/  int32_t i;
-_T1e9:
+_FOR_1f5:
 	i = 0x0;
-	__asm        jmp    _T1f8;
-_T1f5:
+	__asm        jmp    _FOR_COND_1f5;
+_FOR_NEXT_1f5:
 	i++;
-_T1f8:
+_FOR_COND_1f5:
 	__asm        cmp    i, 4;
 	__asm        jge    _T2a3;
 // LINE 111:
@@ -358,7 +360,7 @@ _T1f8:
 	__asm        test   IndexToType[0][eax*4], ecx;
 	__asm        jne    _T223;
 // LINE 112:
-	__asm        jmp    _T1f5;
+	__asm        jmp    _FOR_NEXT_1f5;
 // LINE 115:
 _T223:
 	__asm        mov    eax, i;
@@ -412,11 +414,11 @@ _T223:
 // LINE 126:
 // Block end:
 _T29e:
-	__asm        jmp    _T1f5;
+	__asm        jmp    _FOR_NEXT_1f5;
 // LINE 129:
 // Block end:
 _T2a3:
-	__asm        jmp    _T143;
+	__asm        jmp    __WHILE_143;
 // LINE 131:
 _T2a8:
 	return pathFoundFlag;
@@ -489,21 +491,23 @@ _T85:
 // LINE 160:
 	this->heapSize = 0x0;
 // LINE 163:
+_FOR_b7:
 	x = 0x0;
-	__asm        jmp    _Tba;
-_Tb7:
+	__asm        jmp    _FOR_COND_b7;
+_FOR_NEXT_b7:
 	x++;
-_Tba:
+_FOR_COND_b7:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T129;
 // LINE 165:
 // Block start:
 	/*bp-0x30*/  int32_t yindex;
+_FOR_d3:
 	yindex = 0x0;
-	__asm        jmp    _Td6;
-_Td3:
+	__asm        jmp    _FOR_COND_d3;
+_FOR_NEXT_d3:
 	yindex++;
-_Td6:
+_FOR_COND_d3:
 	__asm        mov    eax, x;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, gRoadGraph.RGLength[eax];
@@ -529,11 +533,11 @@ _Td6:
 	pRGV->yindexPrev = 0xff;
 // LINE 171:
 // Block end:
-	__asm        jmp    _Td3;
+	__asm        jmp    _FOR_NEXT_d3;
 // LINE 172:
 // Block end:
 _T124:
-	__asm        jmp    _Tb7;
+	__asm        jmp    _FOR_NEXT_b7;
 // LINE 176:
 _T129:
 	__asm        xor    eax, eax;
@@ -581,7 +585,7 @@ _T129:
 	__asm        mov    ecx, this;
 	__asm        call   ShortestPath::PriorityHeapInsert;
 // LINE 191:
-_T192:
+__WHILE_192:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T313;
@@ -629,14 +633,14 @@ _T192:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, destVertex.x;
 	__asm        cmp    eax, ecx;
-	__asm        jne    _T238;
+	__asm        jne    _FOR_244;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, path.yindexCurr;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, destVertex.yindex;
 	__asm        cmp    eax, ecx;
-	__asm        jne    _T238;
+	__asm        jne    _FOR_244;
 // LINE 212:
 	pathFoundFlag = 0x1;
 // LINE 215:
@@ -644,12 +648,12 @@ _T192:
 // LINE 219:
 // Block start:
 	/*bp-0x38*/  int32_t i;
-_T238:
+_FOR_244:
 	i = 0x0;
-	__asm        jmp    _T247;
-_T244:
+	__asm        jmp    _FOR_COND_244;
+_FOR_NEXT_244:
 	i++;
-_T247:
+_FOR_COND_244:
 	__asm        cmp    i, 4;
 	__asm        jge    _T30e;
 // LINE 222:
@@ -665,7 +669,7 @@ _T247:
 	__asm        test   IndexToType[0][eax*4], ecx;
 	__asm        jne    _T272;
 // LINE 223:
-	__asm        jmp    _T244;
+	__asm        jmp    _FOR_NEXT_244;
 // LINE 226:
 _T272:
 	__asm        mov    eax, i;
@@ -733,11 +737,11 @@ _T272:
 // LINE 241:
 // Block end:
 _T309:
-	__asm        jmp    _T244;
+	__asm        jmp    _FOR_NEXT_244;
 // LINE 244:
 // Block end:
 _T30e:
-	__asm        jmp    _T192;
+	__asm        jmp    __WHILE_192;
 // LINE 246:
 _T313:
 	return pathFoundFlag;
@@ -765,7 +769,7 @@ void ShortestPath::PriorityHeapInsert(const /*packed*/ struct _FringeHeapNode *p
 	__asm        mov    al, [eax+8];
 	__asm        mov    [ecx+8], al;
 // LINE 264:
-_T39:
+__WHILE_39:
 	__asm        mov    eax, index;
 	__asm        cdq;
 	__asm        sub    eax, edx;
@@ -832,7 +836,7 @@ _T39:
 	__asm        sar    eax, 1;
 	__asm        mov    index, eax;
 // LINE 270:
-	__asm        jmp    _T39;
+	__asm        jmp    __WHILE_39;
 // LINE 271:
 _Te2:
 	return;
@@ -889,7 +893,7 @@ void ShortestPath::PriorityHeapRemove(/*packed*/ struct _FringeHeapNode *pRemove
 // LINE 287:
 	parent = 0x1;
 // LINE 290:
-_T83:
+__WHILE_83:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        cdq;
@@ -980,7 +984,7 @@ _T101:
 // LINE 309:
 	parent = child;
 // LINE 310:
-	__asm        jmp    _T83;
+	__asm        jmp    __WHILE_83;
 // LINE 313:
 _T176:
 	__asm        lea    eax, tempNode.xCurr;

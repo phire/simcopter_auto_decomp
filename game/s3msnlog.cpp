@@ -976,7 +976,7 @@ _T6a:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x38], eax;
-_T76:
+_LOOP_76:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    [ebp-0x38], eax;
 	__asm        jne    _T8c;
@@ -1037,7 +1037,7 @@ _T114:
 	__asm        dec    dword ptr [eax+4];
 	__asm        jmp    _T11f;
 _T11f:
-	__asm        jmp    _T76;
+	__asm        jmp    _LOOP_76;
 _T124:
 	__asm        jmp    _T129;
 _T129:
@@ -1053,7 +1053,7 @@ _T129:
 _T148:
 	__asm        dec    list<tagLogBase *>::number_of_lists;
 	__asm        jne    _T1d2;
-_T154:
+__WHILE_154:
 	__asm        cmp    list<tagLogBase *>::buffer_list, 0;
 	__asm        je     _T1af;
 
@@ -1081,7 +1081,7 @@ _T194:
 _T1a5:
 	__asm        jmp    _T1aa;
 _T1aa:
-	__asm        jmp    _T154;
+	__asm        jmp    __WHILE_154;
 _T1af:
 	list<tagLogBase *>::free_list = 0x0;
 	list<tagLogBase *>::next_avail = 0x0;
@@ -1178,7 +1178,7 @@ int32_t LogManager::ReadFromMIFF(/*packed*/ class MIFF *miffReader) {
 	__asm        mov    ecx, miffReader;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 104:
-_T17:
+__WHILE_17:
 	__asm        push   0x434C4F47;
 	__asm        mov    eax, miffReader;
 	__asm        mov    eax, [eax];
@@ -1196,13 +1196,13 @@ _T17:
 	__asm        cmp    lPresentRecordDataLength, 0xC;
 	__asm        jge    _T4c;
 // LINE 107:
-	__asm        jmp    _T17;
+	__asm        jmp    __WHILE_17;
 // LINE 108:
 _T4c:
 	__asm        cmp    lPresentRecordDataLength, 0x38;
 	__asm        jle    _T5b;
 // LINE 109:
-	__asm        jmp    _T17;
+	__asm        jmp    __WHILE_17;
 // LINE 110:
 _T5b:
 	__asm        push   0xC;
@@ -1220,7 +1220,7 @@ _T5b:
 	__asm        test   eax, eax;
 	__asm        jne    _T85;
 // LINE 112:
-	__asm        jmp    _T17;
+	__asm        jmp    __WHILE_17;
 // LINE 113:
 _T85:
 	__asm        mov    eax, miffReader;
@@ -1228,7 +1228,7 @@ _T85:
 	__asm        mov    ecx, this;
 	__asm        call   LogManager::ReadCurrentRecordFromMIFF;
 // LINE 114:
-	__asm        jmp    _T17;
+	__asm        jmp    __WHILE_17;
 // LINE 115:
 _T96:
 	return 0x1;
@@ -1252,9 +1252,9 @@ int32_t LogManager::WriteToMIFF(/*packed*/ class MIFF *miffWriter) {
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    _T3e;
 _T3e:
-	__asm        jmp    _T43;
+	__asm        jmp    _LOOP_43;
 // LINE 23:
-_T43:
+_LOOP_43:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14C], eax;
@@ -1380,7 +1380,7 @@ _T1cd:
 	__asm        jmp    _T1de;
 // LINE 147:
 _T1de:
-	__asm        jmp    _T43;
+	__asm        jmp    _LOOP_43;
 _T1e3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1415,7 +1415,7 @@ _T249:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x17C], eax;
-_T26f:
+_LOOP_26f:
 	__asm        mov    eax, [ebp-0x174];
 	__asm        cmp    [ebp-0x178], eax;
 	__asm        jne    _T28b;
@@ -1476,7 +1476,7 @@ _T343:
 	__asm        dec    dword ptr [eax+4];
 	__asm        jmp    _T351;
 _T351:
-	__asm        jmp    _T26f;
+	__asm        jmp    _LOOP_26f;
 _T356:
 	__asm        jmp    _T35b;
 // LINE 149:
@@ -2203,8 +2203,8 @@ _T24a:
 	__asm        jmp    _T24f;
 // LINE 270:
 _T24f:
-	__asm        jmp    _T254;
-_T254:
+	__asm        jmp    __WHILE_254;
+__WHILE_254:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2229,7 +2229,7 @@ _T28b:
 // LINE 272:
 	currentLowest.node = iterator.node;
 // LINE 23:
-_T297:
+_LOOP_297:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
@@ -2293,7 +2293,7 @@ _T333:
 	__asm        jmp    _T33e;
 // LINE 277:
 _T33e:
-	__asm        jmp    _T297;
+	__asm        jmp    _LOOP_297;
 // LINE 278:
 _T343:
 	__asm        jmp    _T348;
@@ -2389,7 +2389,7 @@ _T454:
 	__asm        jmp    _T462;
 // LINE 280:
 _T462:
-	__asm        jmp    _T254;
+	__asm        jmp    __WHILE_254;
 // LINE 281:
 _T467:
 	__asm        mov    eax, this;
@@ -2619,8 +2619,8 @@ _T24a:
 	__asm        jmp    _T24f;
 // LINE 296:
 _T24f:
-	__asm        jmp    _T254;
-_T254:
+	__asm        jmp    __WHILE_254;
+__WHILE_254:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2645,7 +2645,7 @@ _T28b:
 // LINE 298:
 	currentLowest.node = iterator.node;
 // LINE 23:
-_T297:
+_LOOP_297:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
@@ -2709,7 +2709,7 @@ _T333:
 	__asm        jmp    _T33e;
 // LINE 303:
 _T33e:
-	__asm        jmp    _T297;
+	__asm        jmp    _LOOP_297;
 // LINE 304:
 _T343:
 	__asm        jmp    _T348;
@@ -2805,7 +2805,7 @@ _T454:
 	__asm        jmp    _T462;
 // LINE 306:
 _T462:
-	__asm        jmp    _T254;
+	__asm        jmp    __WHILE_254;
 // LINE 307:
 _T467:
 	__asm        mov    eax, this;
@@ -2891,9 +2891,9 @@ int32_t LogManager::PurgeAllEntries() {
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    _T29;
 _T29:
-	__asm        jmp    _T2e;
+	__asm        jmp    _LOOP_2e;
 // LINE 23:
-_T2e:
+_LOOP_2e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x3C], eax;
@@ -2975,7 +2975,7 @@ _Tf6:
 	__asm        jmp    _T101;
 // LINE 329:
 _T101:
-	__asm        jmp    _T2e;
+	__asm        jmp    _LOOP_2e;
 _T106:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3010,7 +3010,7 @@ _T148:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x6C], eax;
-_T15c:
+_LOOP_15c:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        cmp    [ebp-0x68], eax;
 	__asm        jne    _T172;
@@ -3071,7 +3071,7 @@ _T1fa:
 	__asm        dec    dword ptr [eax+4];
 	__asm        jmp    _T205;
 _T205:
-	__asm        jmp    _T15c;
+	__asm        jmp    _LOOP_15c;
 _T20a:
 	__asm        jmp    _T20f;
 // LINE 331:
@@ -3098,14 +3098,14 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    _T29;
 _T29:
-	__asm        jmp    _T2e;
+	__asm        jmp    _FOR_3a;
 // LINE 347:
-_T2e:
+_FOR_3a:
 	i = 0x0;
-	__asm        jmp    _T3d;
-_T3a:
+	__asm        jmp    _FOR_COND_3a;
+_FOR_NEXT_3a:
 	i++;
-_T3d:
+_FOR_COND_3a:
 	__asm        mov    eax, lEntryCountToPurge;
 	__asm        cmp    i, eax;
 	__asm        jge    _T10d;
@@ -3185,7 +3185,7 @@ _Tfd:
 	__asm        jmp    _T108;
 // LINE 354:
 _T108:
-	__asm        jmp    _T3a;
+	__asm        jmp    _FOR_NEXT_3a;
 _T10d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3208,7 +3208,7 @@ _T12f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
-_T143:
+_LOOP_143:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        cmp    [ebp-0x5C], eax;
 	__asm        jne    _T159;
@@ -3269,7 +3269,7 @@ _T1e1:
 	__asm        dec    dword ptr [eax+4];
 	__asm        jmp    _T1ec;
 _T1ec:
-	__asm        jmp    _T143;
+	__asm        jmp    _LOOP_143;
 _T1f1:
 	__asm        jmp    _T1f6;
 // LINE 356:

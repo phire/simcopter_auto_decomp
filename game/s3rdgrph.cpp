@@ -193,35 +193,37 @@ void RoadGraph::Init() {
 	/*bp-0xc*/   unsigned char yindex;
 
 // LINE 91:
+_FOR_18:
 	x = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	x++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    x, 0x80;
-	__asm        jge    _T3b;
+	__asm        jge    _FOR_47;
 
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+0x200], 0;
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 96:
-_T3b:
+_FOR_47:
 	x = 0x0;
-	__asm        jmp    _T4a;
-_T47:
+	__asm        jmp    _FOR_COND_47;
+_FOR_NEXT_47:
 	x++;
-_T4a:
+_FOR_COND_47:
 	__asm        cmp    x, 0x80;
-	__asm        jge    _T19b;
+	__asm        jge    _FOR_1a7;
 // LINE 98:
 // Block start:
 	/*bp-0x10*/  int32_t y;
+_FOR_63:
 	y = 0x0;
-	__asm        jmp    _T66;
-_T63:
+	__asm        jmp    _FOR_COND_63;
+_FOR_NEXT_63:
 	y++;
-_T66:
+_FOR_COND_63:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T196;
 // LINE 99:
@@ -304,7 +306,7 @@ _T162:
 	__asm        test   al, 1;
 	__asm        je     _T173;
 
-	__asm        jmp    _T63;
+	__asm        jmp    _FOR_NEXT_63;
 // LINE 104:
 _T173:
 	__asm        mov    eax, y;
@@ -312,7 +314,7 @@ _T173:
 	__asm        test   al, 1;
 	__asm        je     _T184;
 
-	__asm        jmp    _T63;
+	__asm        jmp    _FOR_NEXT_63;
 // LINE 107:
 _T184:
 	__asm        mov    eax, x;
@@ -320,19 +322,19 @@ _T184:
 	__asm        inc    byte ptr [eax+ecx+0x200];
 // LINE 109:
 _T191:
-	__asm        jmp    _T63;
+	__asm        jmp    _FOR_NEXT_63;
 // Block end:
 _T196:
-	__asm        jmp    _T47;
+	__asm        jmp    _FOR_NEXT_47;
 // LINE 113:
-_T19b:
+_FOR_1a7:
 	x = 0x0;
-	__asm        jmp    _T1aa;
-_T1a7:
+	__asm        jmp    _FOR_COND_1a7;
+_FOR_NEXT_1a7:
 	x++;
-_T1aa:
+_FOR_COND_1a7:
 	__asm        cmp    x, 0x80;
-	__asm        jge    _T1ee;
+	__asm        jge    _FOR_1fa;
 // LINE 114:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
@@ -350,23 +352,24 @@ _T1aa:
 	__asm        mov    ecx, x;
 	__asm        mov    edx, this;
 	__asm        mov    [edx+ecx*4], eax;
-	__asm        jmp    _T1a7;
+	__asm        jmp    _FOR_NEXT_1a7;
 // LINE 118:
-_T1ee:
+_FOR_1fa:
 	x = 0x0;
-	__asm        jmp    _T1fd;
-_T1fa:
+	__asm        jmp    _FOR_COND_1fa;
+_FOR_NEXT_1fa:
 	x++;
-_T1fd:
+_FOR_COND_1fa:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T47d;
 // LINE 120:
+_FOR_21a:
 	y = 0x0;
 	yindex = 0x0;
-	__asm        jmp    _T21d;
-_T21a:
+	__asm        jmp    _FOR_COND_21a;
+_FOR_NEXT_21a:
 	y++;
-_T21d:
+_FOR_COND_21a:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T478;
 // LINE 122:
@@ -451,7 +454,7 @@ _T319:
 	__asm        test   al, 1;
 	__asm        je     _T32a;
 
-	__asm        jmp    _T21a;
+	__asm        jmp    _FOR_NEXT_21a;
 // LINE 129:
 _T32a:
 	__asm        mov    eax, y;
@@ -459,7 +462,7 @@ _T32a:
 	__asm        test   al, 1;
 	__asm        je     _T33b;
 
-	__asm        jmp    _T21a;
+	__asm        jmp    _FOR_NEXT_21a;
 // LINE 132:
 _T33b:
 	__asm        mov    al, reinterpret_cast<uint8_t>(x);
@@ -508,11 +511,12 @@ _T33b:
 	__asm        lea    ecx, [edx+ecx*2];
 	__asm        and    byte ptr [eax+ecx+2], 0xF;
 // LINE 137:
+_FOR_3c2:
 	i = 0x0;
-	__asm        jmp    _T3c5;
-_T3c2:
+	__asm        jmp    _FOR_COND_3c2;
+_FOR_NEXT_3c2:
 	i++;
-_T3c5:
+_FOR_COND_3c2:
 	__asm        cmp    i, 4;
 	__asm        jge    _T470;
 // LINE 139:
@@ -572,34 +576,36 @@ _T3c5:
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        mov    byte ptr [eax+ecx*2+5], 0xFF;
 // LINE 143:
-	__asm        jmp    _T3c2;
+	__asm        jmp    _FOR_NEXT_3c2;
 // LINE 145:
 _T470:
 	yindex++;
 // LINE 147:
 // Block end:
 _T473:
-	__asm        jmp    _T21a;
+	__asm        jmp    _FOR_NEXT_21a;
 // LINE 148:
 _T478:
-	__asm        jmp    _T1fa;
+	__asm        jmp    _FOR_NEXT_1fa;
 // LINE 150:
 _T47d:
 	this->RoadGraph::FindDeadEnds();
 // LINE 156:
+_FOR_491:
 	x = 0x0;
-	__asm        jmp    _T494;
-_T491:
+	__asm        jmp    _FOR_COND_491;
+_FOR_NEXT_491:
 	x++;
-_T494:
+_FOR_COND_491:
 	__asm        cmp    x, 0x80;
-	__asm        jge    _T521;
+	__asm        jge    _FOR_52d;
 // LINE 158:
+_FOR_4aa:
 	yindex = 0x0;
-	__asm        jmp    _T4ad;
-_T4aa:
+	__asm        jmp    _FOR_COND_4aa;
+_FOR_NEXT_4aa:
 	yindex++;
-_T4ad:
+_FOR_COND_4aa:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -643,25 +649,26 @@ _T4ad:
 	__asm        call   RoadGraph::FindEdges;
 // LINE 162:
 // Block end:
-	__asm        jmp    _T4aa;
+	__asm        jmp    _FOR_NEXT_4aa;
 // LINE 163:
 _T51c:
-	__asm        jmp    _T491;
+	__asm        jmp    _FOR_NEXT_491;
 // LINE 167:
-_T521:
+_FOR_52d:
 	x = 0x0;
-	__asm        jmp    _T530;
-_T52d:
+	__asm        jmp    _FOR_COND_52d;
+_FOR_NEXT_52d:
 	x++;
-_T530:
+_FOR_COND_52d:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T5bd;
 // LINE 169:
+_FOR_546:
 	yindex = 0x0;
-	__asm        jmp    _T549;
-_T546:
+	__asm        jmp    _FOR_COND_546;
+_FOR_NEXT_546:
 	yindex++;
-_T549:
+_FOR_COND_546:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -705,10 +712,10 @@ _T549:
 	__asm        call   RoadGraph::FindRoads;
 // LINE 173:
 // Block end:
-	__asm        jmp    _T546;
+	__asm        jmp    _FOR_NEXT_546;
 // LINE 174:
 _T5b8:
-	__asm        jmp    _T52d;
+	__asm        jmp    _FOR_NEXT_52d;
 // LINE 191:
 _T5bd:
 	return;
@@ -1057,7 +1064,7 @@ void RoadGraph::PickPlaceOnRoad(/*packed*/ struct Goal *pGoal, int32_t x, int32_
 // LINE 344:
 	loopCounter = 0x0;
 // LINE 350:
-_T44:
+__DO_44:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -1094,8 +1101,9 @@ _T92:
 	__asm        and    ecx, tempDir;
 	__asm        mov    validTurn, ecx;
 // LINE 359:
+__DO_WHILE_44:
 	__asm        cmp    validTurn, 0;
-	__asm        je     _T44;
+	__asm        je     __DO_44;
 // LINE 361:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0xE];
@@ -1161,11 +1169,12 @@ _T13a:
 // LINE 378:
 	pRoad = ((pGoal->elementIndex + pGoal->elementIndex) + pEdge->roadArray);
 // LINE 382:
+_FOR_171:
 	i = 0x0;
-	__asm        jmp    _T174;
-_T171:
+	__asm        jmp    _FOR_COND_171;
+_FOR_NEXT_171:
 	i++;
-_T174:
+_FOR_COND_171:
 	__asm        mov    eax, pGoal;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
@@ -1241,7 +1250,7 @@ _T20e:
 //   _T1eb
 // LINE 391:
 _T232:
-	__asm        jmp    _T171;
+	__asm        jmp    _FOR_NEXT_171;
 // LINE 395:
 _T237:
 	__asm        mov    eax, pRoad;
@@ -1968,7 +1977,7 @@ void RoadGraph::SamePlaceOtherDirection(/*packed*/ struct Goal *pGoal) {
 	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        je     _T62;
+	__asm        je     __DO_62;
 // LINE 560:
 	pGoal->direction = ((pGoal->direction - 0x2) & 0x3);
 // LINE 561:
@@ -1976,7 +1985,7 @@ void RoadGraph::SamePlaceOtherDirection(/*packed*/ struct Goal *pGoal) {
 // LINE 562:
 	return;
 // LINE 567:
-_T62:
+__DO_62:
 	prevDir = pGoal->direction;
 // LINE 570:
 	__asm        mov    eax, pGoal;
@@ -2034,15 +2043,15 @@ _T105:
 	__asm        xor    eax, eax;
 	__asm        mov    al, here.x;
 	__asm        cmp    ecx, eax;
-	__asm        jne    _T62;
-
+	__asm        jne    __DO_62;
+__DO_WHILE_62:
 	__asm        mov    eax, pGoal;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD];
 	__asm        xor    eax, eax;
 	__asm        mov    al, here.y;
 	__asm        cmp    ecx, eax;
-	__asm        jne    _T62;
+	__asm        jne    __DO_62;
 // LINE 587:
 	return;
 }
@@ -2052,11 +2061,12 @@ unsigned char RoadGraph::FindYIndexToVertex(int32_t x, int32_t y) {
 	/*bp-0x4*/   unsigned char yindex;
 
 // LINE 597:
+_FOR_15:
 	yindex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	yindex++;
-_T18:
+_FOR_COND_15:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -2083,7 +2093,7 @@ _T18:
 	return yindex;
 // LINE 603:
 _T64:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 _T69:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
@@ -2148,18 +2158,18 @@ _T58:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
 	__asm        cmp    eax, ecx;
-	__asm        jne    _T83;
+	__asm        jne    _LOOP_83;
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, destLoc.y;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        cmp    eax, ecx;
-	__asm        jne    _T83;
+	__asm        jne    _LOOP_83;
 // LINE 649:
 	returnVal = 0x1;
 // LINE 655:
-_T83:
+_LOOP_83:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(here.y);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
@@ -2287,7 +2297,7 @@ _T1c7:
 	__asm        jmp    _T1d1;
 // LINE 699:
 _T1cc:
-	__asm        jmp    _T83;
+	__asm        jmp    _LOOP_83;
 // LINE 701:
 _T1d1:
 	return returnVal;
@@ -2304,21 +2314,23 @@ void RoadGraph::FindDeadEnds() {
 	/*bp-0x10*/  int32_t stepSize;
 
 // LINE 713:
+_FOR_18:
 	x = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	x++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T4cb;
 // LINE 715:
 // Block start:
 	/*bp-0x14*/  int32_t yindex;
+_FOR_34:
 	yindex = 0x0;
-	__asm        jmp    _T37;
-_T34:
+	__asm        jmp    _FOR_COND_34;
+_FOR_NEXT_34:
 	yindex++;
-_T37:
+_FOR_COND_34:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -2722,11 +2734,11 @@ _T45e:
 // LINE 756:
 // Block end:
 _T4c1:
-	__asm        jmp    _T34;
+	__asm        jmp    _FOR_NEXT_34;
 // LINE 757:
 // Block end:
 _T4c6:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 758:
 _T4cb:
 	return;
@@ -2753,11 +2765,11 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 	__asm        call   IsThisAnIntersection;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        je     _T3c;
+	__asm        je     _LOOP_3c;
 // LINE 771:
 	return 0x0;
 // LINE 776:
-_T3c:
+_LOOP_3c:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
@@ -2830,7 +2842,7 @@ _Tcd:
 //   _Tc0
 // LINE 802:
 _Tf1:
-	__asm        jmp    _T3c;
+	__asm        jmp    _LOOP_3c;
 // LINE 803:
 }
 
@@ -3633,11 +3645,11 @@ void RoadGraph::FindNumRoadElements(/*packed*/ struct RGVertex *pRGV, /*packed*/
 // LINE 895:
 _T65:
 	__asm        cmp    fDeadEnd, 0;
-	__asm        je     _T76;
+	__asm        je     _LOOP_76;
 // LINE 896:
 	pEdge->numElementsToPath++;
 // LINE 900:
-_T76:
+_LOOP_76:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
@@ -3715,7 +3727,7 @@ _T111:
 //   _T104
 // LINE 931:
 _T135:
-	__asm        jmp    _T76;
+	__asm        jmp    _LOOP_76;
 // LINE 936:
 _T13a:
 	__asm        cmp    returnStatus, 0xFFFFFFFE;
@@ -3810,7 +3822,7 @@ _T1fe:
 // LINE 965:
 	repeatCount = 0x0;
 // LINE 969:
-_T218:
+_LOOP_218:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        test   eax, eax;
@@ -4077,7 +4089,7 @@ _T549:
 //   _T53c
 // LINE 998:
 _T56d:
-	__asm        jmp    _T218;
+	__asm        jmp    _LOOP_218;
 // LINE 1007:
 _T572:
 	__asm        cmp    fDeadEnd, 0;
@@ -6806,7 +6818,7 @@ _T34d:
 	__asm        cmp    deadEnd, 0;
 	__asm        jne    _T3fb;
 // LINE 1300:
-_T357:
+_LOOP_357:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
@@ -6867,7 +6879,7 @@ _T3c6:
 //   _T3b9
 // LINE 1315:
 _T3ea:
-	__asm        jmp    _T357;
+	__asm        jmp    _LOOP_357;
 // LINE 1319:
 _T3ef:
 	currentDir = ((returnDir - 0x2) & 0x3);
@@ -7107,7 +7119,7 @@ _T683:
 	__asm        and    edx, 0x1F;
 	__asm        mov    lastAlt, dx;
 // LINE 1339:
-_T6bf:
+_LOOP_6bf:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
@@ -7484,7 +7496,7 @@ _Tac5:
 //   _Tab8
 // LINE 1404:
 _Tae9:
-	__asm        jmp    _T6bf;
+	__asm        jmp    _LOOP_6bf;
 // LINE 1406:
 _Taee:
 	return;
@@ -7507,7 +7519,7 @@ void RoadGraph::FindPlaceOnRoad(/*packed*/ struct Goal& goal, /*packed*/ struct 
 	__asm        mov    ecx, goal;
 	__asm        mov    [ecx+0xD], al;
 // LINE 1417:
-_T27:
+_LOOP_27:
 	__asm        mov    eax, goal;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xC];
@@ -7600,7 +7612,7 @@ _Tfe:
 	__asm        jmp    _T11f;
 // LINE 1433:
 _T11f:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 1435:
 _T124:
 	__asm        mov    eax, goal;

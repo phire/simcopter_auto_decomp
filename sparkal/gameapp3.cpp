@@ -736,9 +736,9 @@ _T24:
 	__asm        mov    i.node, eax;
 	__asm        jmp    _T45;
 _T45:
-	__asm        jmp    _T4a;
+	__asm        jmp    _LOOP_4a;
 // LINE 291:
-_T4a:
+_LOOP_4a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x14], eax;
@@ -804,7 +804,7 @@ _Tf7:
 	__asm        jmp    _T102;
 // LINE 299:
 _T102:
-	__asm        jmp    _T4a;
+	__asm        jmp    _LOOP_4a;
 // LINE 300:
 _T107:
 	return 0x1;
@@ -853,9 +853,9 @@ _T63:
 	__asm        mov    i.node, eax;
 	__asm        jmp    _T84;
 _T84:
-	__asm        jmp    _T89;
+	__asm        jmp    _LOOP_89;
 // LINE 334:
-_T89:
+_LOOP_89:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x1C], eax;
@@ -921,7 +921,7 @@ _T136:
 	__asm        jmp    _T141;
 // LINE 342:
 _T141:
-	__asm        jmp    _T89;
+	__asm        jmp    _LOOP_89;
 // LINE 343:
 _T146:
 	return 0x1;

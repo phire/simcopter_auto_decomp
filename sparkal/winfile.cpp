@@ -260,8 +260,8 @@ void FixResourceFilterString(/*packed*/ class basic_string<char>& sFilter, char 
 // LINE 36:
 	szString = sFilter->basic_string<char>::c_str();
 // LINE 38:
-	__asm        jmp    _T20;
-_T20:
+	__asm        jmp    __WHILE_20;
+__WHILE_20:
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, i;
@@ -713,7 +713,7 @@ _T54c:
 _T557:
 	i++;
 // LINE 48:
-	__asm        jmp    _T20;
+	__asm        jmp    __WHILE_20;
 // LINE 49:
 _T55f:
 	return;

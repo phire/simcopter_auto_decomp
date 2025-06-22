@@ -876,11 +876,12 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 	/*bp-0x1004*/ char szCurrentDay[4096]; // 0x1000 bytes
 
 // LINE 246:
+_FOR_1c:
 	i = 0x1;
-	__asm        jmp    _T1f;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
-_T1f:
+_FOR_COND_1c:
 	__asm        cmp    i, 7;
 	__asm        jg     _T62;
 // LINE 247:
@@ -903,7 +904,7 @@ _T1f:
 	return i;
 // LINE 249:
 _T5d:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 250:
 _T62:
 	return 0x0;
@@ -916,11 +917,12 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 	/*bp-0x1004*/ char szCurrentMonth[4096]; // 0x1000 bytes
 
 // LINE 267:
+_FOR_1c:
 	i = 0x1;
-	__asm        jmp    _T1f;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
-_T1f:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x1F;
 	__asm        jg     _T62;
 // LINE 268:
@@ -943,7 +945,7 @@ _T1f:
 	return i;
 // LINE 270:
 _T5d:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 271:
 _T62:
 	return 0x0;

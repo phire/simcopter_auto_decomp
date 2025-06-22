@@ -113,11 +113,12 @@ _T2d:
 	/*bp-0x4*/   /*unpacked*/ class FlatFile *srch;
 
 // LINE 44:
+_FOR_16:
 	srch = FlatFile::sList;
-	__asm        jmp    _T1f;
-_T16:
+	__asm        jmp    _FOR_COND_16;
+_FOR_NEXT_16:
 	srch = srch->fNext;
-_T1f:
+_FOR_COND_16:
 	__asm        cmp    srch, 0;
 	__asm        je     _T64;
 // LINE 46:
@@ -140,7 +141,7 @@ _T1f:
 	return srch;
 // LINE 47:
 _T5f:
-	__asm        jmp    _T16;
+	__asm        jmp    _FOR_NEXT_16;
 // LINE 48:
 _T64:
 	return 0x0;
@@ -192,11 +193,12 @@ _T32:
 // Block start:
 	/*bp-0xc*/   long test;
 	/*bp-0x10c*/ char cstrbuff[256]; // 0x100 bytes
+_FOR_5e:
 	test = 0x1;
-	__asm        jmp    _T61;
-_T5e:
+	__asm        jmp    _FOR_COND_5e;
+_FOR_NEXT_5e:
 	test++;
-_T61:
+_FOR_COND_5e:
 	__asm        mov    eax, name;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -216,7 +218,7 @@ _T61:
 	doAssert(0x8c085, 0x5bdde0, 0x4b, 0x5bddec);
 // LINE 77:
 _Ta8:
-	__asm        jmp    _T5e;
+	__asm        jmp    _FOR_NEXT_5e;
 // LINE 80:
 _Tad:
 	Memory::BlockMove(0x100, cstrbuff[0], name);
@@ -576,7 +578,7 @@ void FlatFile::Unlink() {
 // LINE 271:
 	srch = 0x5bddd8;
 // LINE 273:
-_T13:
+__WHILE_13:
 	__asm        mov    eax, srch;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T4f;
@@ -593,7 +595,7 @@ _T13:
 _T3f:
 	srch = (srch-> + 0x4);
 // LINE 279:
-	__asm        jmp    _T13;
+	__asm        jmp    __WHILE_13;
 // LINE 280:
 _T4f:
 	doAssert(0x8c085, 0x5bde5c, 0x118, 0x5bde74);
@@ -608,7 +610,7 @@ unsigned short FlatFile::Exclusive() {
 // LINE 285:
 	srch = FlatFile::sList;
 // LINE 286:
-_T14:
+__WHILE_14:
 	__asm        cmp    srch, 0;
 	__asm        je     _T57;
 // LINE 287:
@@ -629,7 +631,7 @@ _T14:
 _T49:
 	srch = srch->fNext;
 // LINE 290:
-	__asm        jmp    _T14;
+	__asm        jmp    __WHILE_14;
 // LINE 291:
 _T57:
 	return 0x1;
@@ -664,17 +666,18 @@ short FlatFile::CheckForLeaks() {
 // LINE 302:
 	total = 0x0;
 // LINE 304:
+_FOR_1c:
 	list = FlatFile::sList;
-	__asm        jmp    _T25;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	list = list->fNext;
-_T25:
+_FOR_COND_1c:
 	__asm        cmp    list, 0;
 	__asm        je     _T38;
 // LINE 306:
 	total++;
 // LINE 307:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 308:
 _T38:
 	return total;

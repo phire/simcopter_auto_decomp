@@ -294,11 +294,12 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, /*p
 // LINE 88:
 	glMasterVolume = currentSoundPreferences->lMasterVolume;
 // LINE 89:
+_FOR_52:
 	i = 0x0;
-	__asm        jmp    _T55;
-_T52:
+	__asm        jmp    _FOR_COND_52;
+_FOR_NEXT_52:
 	i++;
-_T55:
+_FOR_COND_52:
 	__asm        cmp    i, 0x71;
 	__asm        jge    _Tc4;
 // LINE 90:
@@ -333,7 +334,7 @@ _Ta2:
 	__asm        call   dword ptr [edx+0x24];
 // LINE 94:
 _Tbf:
-	__asm        jmp    _T52;
+	__asm        jmp    _FOR_NEXT_52;
 // LINE 97:
 _Tc4:
 	return;
@@ -344,18 +345,19 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 131:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x71;
 	__asm        jge    _T35;
 // LINE 132:
 	__asm        mov    eax, i;
 	__asm        mov    lOriginalSoundVolumes[eax*4], 0x2710;
 // LINE 133:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 134:
 _T35:
 	__asm        mov    eax, hWnd;
@@ -4607,11 +4609,12 @@ _T49ac:
 _T49b1:
 	GetPathForFile(szFullSoundPath[0], 0x598e40, 0x0, 0x2);
 // LINE 450:
+_FOR_49d8:
 	count = 0x62;
-	__asm        jmp    _T49de;
-_T49d8:
+	__asm        jmp    _FOR_COND_49d8;
+_FOR_NEXT_49d8:
 	count++;
-_T49de:
+_FOR_COND_49d8:
 	__asm        cmp    count, 0x71;
 	__asm        jge    _T4a5a;
 // LINE 451:
@@ -4642,7 +4645,7 @@ _T4a50:
 	__asm        jmp    _T4a55;
 // LINE 452:
 _T4a55:
-	__asm        jmp    _T49d8;
+	__asm        jmp    _FOR_NEXT_49d8;
 // LINE 453:
 _T4a5a:
 	return 0x1;

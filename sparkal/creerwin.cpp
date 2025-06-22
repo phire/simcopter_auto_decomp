@@ -431,14 +431,14 @@ void CareerWindow::CareerWindow(/*packed*/ class MRect& rectNewPosition, int32_t
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x78;
 	__asm        mov    [ebp-8], eax;
-_T40:
+__WHILE_40:
 	__asm        dec    dword ptr [ebp-4];
 	__asm        js     _T5a;
 
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-8], 0x10;
-	__asm        jmp    _T40;
+	__asm        jmp    __WHILE_40;
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:
@@ -449,14 +449,14 @@ _T5f:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xBC;
 	__asm        mov    [ebp-0x10], eax;
-_T7d:
+__WHILE_7d:
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        js     _T9a;
 
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
 	__asm        add    dword ptr [ebp-0x10], 0x27C;
-	__asm        jmp    _T7d;
+	__asm        jmp    __WHILE_7d;
 _T9a:
 	__asm        jmp    _T9f;
 _T9f:
@@ -547,14 +547,14 @@ _T22:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        add    eax, ecx;
 	__asm        add    [ebp-8], eax;
-_T46:
+__WHILE_46:
 	__asm        dec    dword ptr [ebp-4];
 	__asm        js     _T63;
 
 	__asm        sub    dword ptr [ebp-8], 0x27C;
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
-	__asm        jmp    _T46;
+	__asm        jmp    __WHILE_46;
 _T63:
 	return;
 
@@ -2105,11 +2105,12 @@ int32_t CareerWindow::DrawSelf() {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 241:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0xB4], ecx;
@@ -2171,7 +2172,7 @@ _T37:
 	__asm        call   dword ptr [edx+0xC];
 	__asm        mov    nErrorCode, eax;
 // LINE 246:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 247:
 _Tcf:
 	return nErrorCode;
@@ -2190,14 +2191,14 @@ void CareerWindow::DrawCitySelection() {
 	__asm        lea    eax, ptDestinations[0][0].x;
 	__asm        mov    [ebp-0x130], eax;
 // LINE 257:
-_T28:
+__WHILE_28:
 	__asm        dec    dword ptr [ebp-0x12C];
 	__asm        js     _T4b;
 
 	__asm        mov    ecx, [ebp-0x130];
 	__asm        call   MPoint::MPoint;
 	__asm        add    dword ptr [ebp-0x130], 8;
-	__asm        jmp    _T28;
+	__asm        jmp    __WHILE_28;
 _T4b:
 	__asm        jmp    _T50;
 _T50:
@@ -2205,14 +2206,14 @@ _T50:
 	__asm        lea    eax, rectSources[0][0].left;
 	__asm        mov    [ebp-0x138], eax;
 // LINE 258:
-_T66:
+__WHILE_66:
 	__asm        dec    dword ptr [ebp-0x134];
 	__asm        js     _T89;
 
 	__asm        mov    ecx, [ebp-0x138];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x138], 0x10;
-	__asm        jmp    _T66;
+	__asm        jmp    __WHILE_66;
 _T89:
 	__asm        jmp    _T8e;
 // LINE 261:
@@ -2224,19 +2225,21 @@ _T8e:
 	__asm        mov    ecx, this;
 	__asm        call   CareerWindow::GetCoordinatesForCitySelections;
 // LINE 262:
+_FOR_b6:
 	i = 0x0;
-	__asm        jmp    _Tbc;
-_Tb6:
+	__asm        jmp    _FOR_COND_b6;
+_FOR_NEXT_b6:
 	i++;
-_Tbc:
+_FOR_COND_b6:
 	__asm        cmp    i, 3;
 	__asm        jge    _T1c0;
 // LINE 263:
+_FOR_d8:
 	j = 0x0;
-	__asm        jmp    _Tde;
-_Td8:
+	__asm        jmp    _FOR_COND_d8;
+_FOR_NEXT_d8:
 	j++;
-_Tde:
+_FOR_COND_d8:
 	__asm        cmp    j, 4;
 	__asm        jge    _T1bb;
 // LINE 270:
@@ -2290,10 +2293,10 @@ _Tde:
 	__asm        mov    ecx, [eax+0x83C];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 271:
-	__asm        jmp    _Td8;
+	__asm        jmp    _FOR_NEXT_d8;
 // LINE 272:
 _T1bb:
-	__asm        jmp    _Tb6;
+	__asm        jmp    _FOR_NEXT_b6;
 // LINE 273:
 _T1c0:
 	return;
@@ -2360,11 +2363,12 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	/*bp-0x4*/   int32_t i;
 
 // LINE 299:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0xB4], ecx;
@@ -2453,7 +2457,7 @@ _T107:
 	return 0x1;
 // LINE 312:
 _T11d:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 313:
 _T122:
 	return 0x1;
@@ -2465,11 +2469,12 @@ long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 324:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0xB4], ecx;
@@ -2529,7 +2534,7 @@ _Tba:
 	return 0x1;
 // LINE 329:
 _Td0:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 330:
 _Td5:
 	return 0x1;
@@ -2799,14 +2804,14 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
 	__asm        mov    [ebp-0xC8], eax;
-_T4f:
+__WHILE_4f:
 	__asm        dec    dword ptr [ebp-0xC4];
 	__asm        js     _T72;
 
 	__asm        mov    ecx, [ebp-0xC8];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0xC8], 0x10;
-	__asm        jmp    _T4f;
+	__asm        jmp    __WHILE_4f;
 _T72:
 	__asm        jmp    _T77;
 _T77:
@@ -3080,11 +3085,12 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(/*packed*/ class MP
 	/*bp-0x4*/   int32_t nN;
 
 // LINE 427:
+_FOR_18:
 	nN = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	nN++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    nN, 4;
 	__asm        jge    _T4e;
 // LINE 429:
@@ -3102,7 +3108,7 @@ _T2a:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 430:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 431:
 _T4e:
 	return;
@@ -3113,11 +3119,12 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(/*packed*/ class MRect *r
 	/*bp-0x4*/   int32_t nN;
 
 // LINE 435:
+_FOR_18:
 	nN = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	nN++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    nN, 4;
 	__asm        jge    _T109;
 // LINE 437:
@@ -3200,7 +3207,7 @@ _Te2:
 	__asm        mov    [ecx+0xC], eax;
 // LINE 449:
 _T104:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 450:
 _T109:
 	return;

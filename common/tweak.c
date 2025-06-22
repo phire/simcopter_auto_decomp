@@ -27,16 +27,16 @@ int32_t TWKEnQueue(int32_t * *pValues, int32_t nNumValues, char * pszSection) {
 // LINE 46:
 _T23:
 	__asm        cmp    nNumValues, 0x32;
-	__asm        jle    _T37;
+	__asm        jle    _FOR_43;
 // LINE 47:
 	return 0xffffff99;
 // LINE 49:
-_T37:
+_FOR_43:
 	nCt = 0x0;
-	__asm        jmp    _T46;
-_T43:
+	__asm        jmp    _FOR_COND_43;
+_FOR_NEXT_43:
 	nCt++;
-_T46:
+_FOR_COND_43:
 	__asm        mov    eax, nCt;
 	__asm        cmp    nNumValues, eax;
 	__asm        jle    _T79;
@@ -51,7 +51,7 @@ _T46:
 	__asm        sub    edx, ebx;
 	__asm        sub    edx, ebx;
 	__asm        mov    TWKQueue[0].pValues[edx+ecx*4], eax;
-	__asm        jmp    _T43;
+	__asm        jmp    _FOR_NEXT_43;
 // LINE 52:
 _T79:
 	strcpy(pszSection, (((((g_nNextTWKQueueSlot << 0x8) - g_nNextTWKQueueSlot) - g_nNextTWKQueueSlot) + 0x63a860) + 0xcc));
@@ -119,16 +119,16 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	__asm        call   strcmp;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    _Tc6;
+	__asm        jne    _FOR_d5;
 // LINE 86:
 	return 0xffffff9a;
 // LINE 88:
-_Tc6:
+_FOR_d5:
 	nCt = 0x0;
-	__asm        jmp    _Tdb;
-_Td5:
+	__asm        jmp    _FOR_COND_d5;
+_FOR_NEXT_d5:
 	nCt++;
-_Tdb:
+_FOR_COND_d5:
 	__asm        mov    eax, nCt;
 	__asm        cmp    g_nNextTWKQueueSlot, eax;
 	__asm        jle    _T128;
@@ -151,7 +151,7 @@ _Tdb:
 	__asm        jmp    _T128;
 // LINE 92:
 _T123:
-	__asm        jmp    _Td5;
+	__asm        jmp    _FOR_NEXT_d5;
 _T128:
 	__asm        mov    eax, nCt;
 	__asm        cmp    g_nNextTWKQueueSlot, eax;
@@ -206,11 +206,12 @@ void TWKReadAllFiles(char * pszTWKFile) {
 // LINE 170:
 	GetPathForFile(szFullPath[0], pszTWKFile, 0x0, 0xb);
 // LINE 171:
+_FOR_32:
 	nCt = 0x0;
-	__asm        jmp    _T38;
-_T32:
+	__asm        jmp    _FOR_COND_32;
+_FOR_NEXT_32:
 	nCt++;
-_T38:
+_FOR_COND_32:
 	__asm        mov    eax, nCt;
 	__asm        cmp    g_nNextTWKQueueSlot, eax;
 	__asm        jle    __RETURN;
@@ -246,7 +247,7 @@ _Tbd:
 _Tc3:
 	TWKReadSection(nCt, pszSection, pszFile);
 // LINE 185:
-	__asm        jmp    _T32;
+	__asm        jmp    _FOR_NEXT_32;
 // LINE 191:
 __RETURN:
 }
@@ -278,11 +279,12 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	__asm        cmp    nNumCtrl, 0xFFFFFF9A;
 	__asm        je     _T1ef;
 // LINE 216:
+_FOR_78:
 	nCt2 = 0x0;
-	__asm        jmp    _T7e;
-_T78:
+	__asm        jmp    _FOR_COND_78;
+_FOR_NEXT_78:
 	nCt2++;
-_T7e:
+_FOR_COND_78:
 	__asm        mov    eax, nCt2;
 	__asm        cmp    nNumCtrl, eax;
 	__asm        jle    _T1ea;
@@ -379,7 +381,7 @@ _T1be:
 	__asm        mov    [ecx], eax;
 // LINE 232:
 _T1e5:
-	__asm        jmp    _T78;
+	__asm        jmp    _FOR_NEXT_78;
 // LINE 234:
 _T1ea:
 	return;
@@ -407,7 +409,7 @@ void TWKGetToEOLN(char * pDest, char * pSource) {
 // LINE 362:
 	nCt = 0x0;
 // LINE 363:
-_T10:
+__WHILE_10:
 	__asm        mov    eax, pSource;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0xD;
@@ -423,7 +425,7 @@ _T10:
 // LINE 366:
 	nCt++;
 // LINE 367:
-	__asm        jmp    _T10;
+	__asm        jmp    __WHILE_10;
 // LINE 368:
 _T38:
 	__asm        mov    eax, nCt;

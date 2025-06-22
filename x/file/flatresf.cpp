@@ -1426,13 +1426,14 @@ void ResMap::ResMap(short refNum, short numTypes, void * __ptr32 resMap, unsigne
 // LINE 690:
 	typeList = mapStart;
 // LINE 691:
+_FOR_67:
 	typeCnt = 0x0;
 	total = 0x0;
-	__asm        jmp    _T6f;
-_T67:
+	__asm        jmp    _FOR_COND_67;
+_FOR_NEXT_67:
 	typeCnt++;
 	typeList += 0x8;
-_T6f:
+_FOR_COND_67:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+6];
 	__asm        movsx  ecx, typeCnt;
@@ -1448,19 +1449,20 @@ _T6f:
 	__asm        inc    eax;
 	__asm        mov    total, ax;
 // LINE 695:
-	__asm        jmp    _T67;
+	__asm        jmp    _FOR_NEXT_67;
 // LINE 697:
 _Ta5:
 	this-><ResMap+0x10:4> = (typeList - this-><ResMap+0x0c:4>);
 // LINE 700:
 	resList = (this-><ResMap+0x10:4> + mapStart);
 // LINE 701:
+_FOR_cb:
 	resCnt = 0x0;
-	__asm        jmp    _Td3;
-_Tcb:
+	__asm        jmp    _FOR_COND_cb;
+_FOR_NEXT_cb:
 	resCnt++;
 	resList += 0xc;
-_Td3:
+_FOR_COND_cb:
 	__asm        movsx  eax, resCnt;
 	__asm        movsx  ecx, total;
 	__asm        cmp    eax, ecx;
@@ -1471,7 +1473,7 @@ _Td3:
 	__asm        mov    eax, resList;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 705:
-	__asm        jmp    _Tcb;
+	__asm        jmp    _FOR_NEXT_cb;
 // LINE 721:
 _Tfe:
 	this-><ResMap+0x14:4> = (resList - this-><ResMap+0x0c:4>);
@@ -1492,7 +1494,7 @@ void ResMap::~ResMap() {
 // LINE 730:
 	last = (this-><ResMap+0x14:4> + this-><ResMap+0x0c:4>);
 // LINE 732:
-_T2a:
+__WHILE_2a:
 	__asm        mov    eax, srch;
 	__asm        cmp    last, eax;
 	__asm        jbe    _T93;
@@ -1532,7 +1534,7 @@ _T71:
 _T8a:
 	srch += 0xc;
 // LINE 743:
-	__asm        jmp    _T2a;
+	__asm        jmp    __WHILE_2a;
 // LINE 745:
 _T93:
 	Memory::HUnlock(this-><ResMap+0x08:4>);
@@ -1552,11 +1554,12 @@ long ResMap::Get(/*unpacked*/ class FlatResFile *fromFile) {
 
 	// Function registers exception cleanup function at 0x00553db3
 // LINE 755:
+_FOR_2b:
 	srch = ResMap::sMaps;
-	__asm        jmp    _T33;
-_T2b:
+	__asm        jmp    _FOR_COND_2b;
+_FOR_NEXT_2b:
 	srch = srch-><ResMap+0x00:4>;
-_T33:
+_FOR_COND_2b:
 	__asm        cmp    srch, 0;
 	__asm        je     _T76;
 // LINE 756:
@@ -1575,7 +1578,7 @@ _T42:
 	return 0x0;
 // LINE 763:
 _T71:
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 768:
 _T76:
 	__asm        lea    eax, dataLoc;
@@ -1674,11 +1677,12 @@ _T35:
 // LINE 791:
 // Block start:
 	/*bp-0x4*/   /*unpacked*/ class ResMap **rmv;
+_FOR_54:
 	rmv = 0x5bbedc;
-	__asm        jmp    _T5c;
-_T54:
+	__asm        jmp    _FOR_COND_54;
+_FOR_NEXT_54:
 	rmv = rmv->;
-_T5c:
+_FOR_COND_54:
 	__asm        mov    eax, rmv;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T8c;
@@ -1692,7 +1696,7 @@ _T5c:
 	__asm        jmp    _T8c;
 // LINE 794:
 _T87:
-	__asm        jmp    _T54;
+	__asm        jmp    _FOR_NEXT_54;
 _T8c:
 	__asm        mov    eax, this;
 	__asm        mov    [ebp-0xC], eax;
@@ -1724,16 +1728,17 @@ short ResMap::CheckForLeaks() {
 // LINE 803:
 	total = 0x0;
 // LINE 804:
+_FOR_1c:
 	srch = ResMap::sMaps;
-	__asm        jmp    _T24;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	srch = srch-><ResMap+0x00:4>;
-_T24:
+_FOR_COND_1c:
 	__asm        cmp    srch, 0;
 	__asm        je     _T37;
 // LINE 805:
 	total++;
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 806:
 _T37:
 	return total;
@@ -2041,7 +2046,7 @@ short ResMap::Count(unsigned long type) {
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
 // LINE 899:
-_T20:
+__WHILE_20:
 	__asm        movsx  eax, cnt;
 	__asm        test   eax, eax;
 	__asm        jle    _T4c;
@@ -2058,7 +2063,7 @@ _T3f:
 // LINE 903:
 	cnt--;
 // LINE 904:
-	__asm        jmp    _T20;
+	__asm        jmp    __WHILE_20;
 // LINE 905:
 _T4c:
 	__asm        movsx  eax, cnt;
@@ -2092,7 +2097,7 @@ unsigned long ResMap::FindType(/*unpacked*/ struct ResMap::Entry *entry) {
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
 // LINE 919:
-_T27:
+__WHILE_27:
 	__asm        movsx  eax, cnt;
 	__asm        test   eax, eax;
 	__asm        jle    _T8b;
@@ -2130,7 +2135,7 @@ _T7e:
 	cnt--;
 // LINE 929:
 // Block end:
-	__asm        jmp    _T27;
+	__asm        jmp    __WHILE_27;
 // LINE 930:
 _T8b:
 	return 0x0;
@@ -2150,7 +2155,7 @@ struct ResMap::Entry * ResMap::FindEntry(void * __ptr32 res) {
 // LINE 937:
 	last = (this-><ResMap+0x14:4> + this-><ResMap+0x0c:4>);
 // LINE 938:
-_T31:
+__WHILE_31:
 	__asm        mov    eax, srch;
 	__asm        cmp    last, eax;
 	__asm        jbe    _T60;
@@ -2166,7 +2171,7 @@ _T31:
 _T57:
 	srch += 0xc;
 // LINE 942:
-	__asm        jmp    _T31;
+	__asm        jmp    __WHILE_31;
 // LINE 943:
 _T60:
 	return found;
@@ -2188,7 +2193,7 @@ struct ResMap::Entry * ResMap::FindEntry(unsigned long type, short id) {
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
 // LINE 953:
-_T27:
+__WHILE_27:
 	__asm        movsx  eax, cnt;
 	__asm        test   eax, eax;
 	__asm        jle    _T53;
@@ -2205,7 +2210,7 @@ _T46:
 // LINE 957:
 	cnt--;
 // LINE 958:
-	__asm        jmp    _T27;
+	__asm        jmp    __WHILE_27;
 // LINE 959:
 _T53:
 	__asm        movsx  eax, cnt;
@@ -2226,7 +2231,7 @@ _T53:
 	__asm        inc    eax;
 	__asm        mov    cnt, ax;
 // LINE 963:
-_T7e:
+__WHILE_7e:
 	__asm        movsx  eax, cnt;
 	__asm        test   eax, eax;
 	__asm        jle    _Tb4;
@@ -2245,7 +2250,7 @@ _Ta7:
 // LINE 967:
 	cnt--;
 // LINE 968:
-	__asm        jmp    _T7e;
+	__asm        jmp    __WHILE_7e;
 // LINE 971:
 // Block end:
 _Tb4:
@@ -2268,7 +2273,7 @@ struct ResMap::Entry * ResMap::FindEntry(unsigned long type, unsigned char * nam
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
 // LINE 981:
-_T27:
+__WHILE_27:
 	__asm        movsx  eax, cnt;
 	__asm        test   eax, eax;
 	__asm        jle    _T53;
@@ -2285,7 +2290,7 @@ _T46:
 // LINE 985:
 	cnt--;
 // LINE 986:
-	__asm        jmp    _T27;
+	__asm        jmp    __WHILE_27;
 // LINE 987:
 _T53:
 	__asm        movsx  eax, cnt;
@@ -2309,7 +2314,7 @@ _T53:
 	__asm        inc    eax;
 	__asm        mov    cnt, ax;
 // LINE 992:
-_T8d:
+__WHILE_8d:
 	__asm        movsx  eax, cnt;
 	__asm        test   eax, eax;
 	__asm        jle    _Tea;
@@ -2341,7 +2346,7 @@ _Tdd:
 // LINE 999:
 	cnt--;
 // LINE 1000:
-	__asm        jmp    _T8d;
+	__asm        jmp    __WHILE_8d;
 // LINE 1003:
 // Block end:
 _Tea:
@@ -2364,7 +2369,7 @@ struct ResMap::Entry * ResMap::FindIndEntry(unsigned long type, short index) {
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
 // LINE 1013:
-_T27:
+__WHILE_27:
 	__asm        movsx  eax, cnt;
 	__asm        test   eax, eax;
 	__asm        jle    _T53;
@@ -2381,7 +2386,7 @@ _T46:
 // LINE 1017:
 	cnt--;
 // LINE 1018:
-	__asm        jmp    _T27;
+	__asm        jmp    __WHILE_27;
 // LINE 1019:
 _T53:
 	__asm        movsx  eax, cnt;

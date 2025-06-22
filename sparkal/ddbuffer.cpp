@@ -1214,11 +1214,12 @@ _T239:
 _T2ab:
 	nPosition = _tell(fileImage->Handle);
 // LINE 352:
+_FOR_2cc:
 	i = 0x0;
-	__asm        jmp    _T2cf;
-_T2cc:
+	__asm        jmp    _FOR_COND_2cc;
+_FOR_NEXT_2cc:
 	i++;
-_T2cf:
+_FOR_COND_2cc:
 	__asm        mov    eax, biHeader.biHeight;
 	__asm        dec    eax;
 	__asm        cmp    eax, i;
@@ -1252,7 +1253,7 @@ _T320:
 	__asm        neg    eax;
 	__asm        sub    biData, eax;
 // LINE 357:
-	__asm        jmp    _T2cc;
+	__asm        jmp    _FOR_NEXT_2cc;
 _T34a:
 	__asm        mov    eax, biHeader.biWidth;
 	__asm        mov    [ebp-0x474], eax;
@@ -2632,11 +2633,11 @@ _T30:
 	__asm        mov    pOurSurface, eax;
 // LINE 1046:
 	__asm        cmp    pOurSurface, 0;
-	__asm        jne    _T4f;
+	__asm        jne    __WHILE_4f;
 // LINE 1047:
 	return 0x0;
 // LINE 1050:
-_T4f:
+__WHILE_4f:
 	__asm        push   0;
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -2652,7 +2653,7 @@ _T4f:
 	__asm        cmp    ddrval, 0x8876021C;
 	__asm        jne    _T7d;
 
-	__asm        jmp    _T4f;
+	__asm        jmp    __WHILE_4f;
 // LINE 1051:
 _T7d:
 	__asm        cmp    ddrval, 0;
@@ -2766,11 +2767,12 @@ void CBackBuffer::UpdatePalette(long start, long count, const /*packed*/ struct 
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        je     _Tc4;
 // LINE 1133:
+_FOR_30:
 	i = start;
-	__asm        jmp    _T36;
-_T30:
+	__asm        jmp    _FOR_COND_30;
+_FOR_NEXT_30:
 	i++;
-_T36:
+_FOR_COND_30:
 	__asm        mov    eax, count;
 	__asm        add    eax, start;
 	__asm        cmp    eax, i;
@@ -2796,7 +2798,7 @@ _T36:
 // LINE 1138:
 	pColor += 0x4;
 // LINE 1139:
-	__asm        jmp    _T30;
+	__asm        jmp    _FOR_NEXT_30;
 // LINE 1141:
 _T97:
 	__asm        mov    eax, start;
@@ -3351,7 +3353,7 @@ _T5c:
 // LINE 1477:
 	i = nThickness;
 // LINE 1478:
-_T82:
+__WHILE_82:
 	__asm        mov    eax, i;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        dec    i;
@@ -3362,7 +3364,7 @@ _T82:
 // LINE 1481:
 	address += this->mStride;
 // LINE 1482:
-	__asm        jmp    _T82;
+	__asm        jmp    __WHILE_82;
 // LINE 1486:
 _Tba:
 	__asm        jmp    _T3a5;
@@ -3387,7 +3389,7 @@ _Te9:
 	__asm        inc    eax;
 	__asm        mov    i, eax;
 // LINE 1494:
-_T109:
+__WHILE_109:
 	__asm        mov    eax, i;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        dec    i;
@@ -3398,7 +3400,7 @@ _T109:
 // LINE 1497:
 	address += this->mStride;
 // LINE 1498:
-	__asm        jmp    _T109;
+	__asm        jmp    __WHILE_109;
 // LINE 1501:
 _T141:
 	__asm        jmp    _T3a5;
@@ -3494,13 +3496,14 @@ _T22f:
 	y = nStartY;
 // LINE 1553:
 	__asm        cmp    nThickness, 1;
-	__asm        jne    _T2b9;
+	__asm        jne    _FOR_2c5;
 // LINE 1555:
+_FOR_251:
 	i = 0x1;
-	__asm        jmp    _T254;
-_T251:
+	__asm        jmp    _FOR_COND_251;
+_FOR_NEXT_251:
 	i++;
-_T254:
+_FOR_COND_251:
 	__asm        mov    eax, i;
 	__asm        cmp    numpixels, eax;
 	__asm        jl     _T2b4;
@@ -3534,17 +3537,17 @@ _T29d:
 	y += yinc2;
 // LINE 1571:
 _T2af:
-	__asm        jmp    _T251;
+	__asm        jmp    _FOR_NEXT_251;
 // LINE 1573:
 _T2b4:
 	__asm        jmp    _T3a5;
 // LINE 1575:
-_T2b9:
+_FOR_2c5:
 	i = 0x1;
-	__asm        jmp    _T2c8;
-_T2c5:
+	__asm        jmp    _FOR_COND_2c5;
+_FOR_NEXT_2c5:
 	i++;
-_T2c8:
+_FOR_COND_2c5:
 	__asm        mov    eax, i;
 	__asm        cmp    numpixels, eax;
 	__asm        jl     _T3a5;
@@ -3570,7 +3573,7 @@ _T2fd:
 _T313:
 	j = nThickness;
 // LINE 1587:
-_T319:
+__WHILE_319:
 	__asm        mov    eax, j;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        dec    j;
@@ -3594,7 +3597,7 @@ _T35f:
 	address += this->mStride;
 // LINE 1594:
 _T368:
-	__asm        jmp    _T319;
+	__asm        jmp    __WHILE_319;
 // LINE 1596:
 _T36d:
 	__asm        cmp    d, 0;
@@ -3616,7 +3619,7 @@ _T38e:
 	y += yinc2;
 // LINE 1608:
 _T3a0:
-	__asm        jmp    _T2c5;
+	__asm        jmp    _FOR_NEXT_2c5;
 // LINE 1612:
 // Block end:
 _T3a5:
@@ -3711,22 +3714,22 @@ _Tf5:
 _T109:
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0x90], eax;
-	__asm        jmp    _T11a;
-_T11a:
+	__asm        jmp    __DO_11a;
+__DO_11a:
 	__asm        mov    eax, [ebp-0x90];
 	__asm        or     eax, [ebp-0x88];
 	__asm        jne    _T13f;
 
 	__asm        mov    dword ptr [ebp-0x7C], 1;
 	__asm        mov    dword ptr [ebp-0x80], 1;
-	__asm        jmp    _T36c;
+	__asm        jmp    __DO_WHILE_11a;
 _T13f:
 	__asm        mov    eax, [ebp-0x90];
 	__asm        test   [ebp-0x88], eax;
 	__asm        je     _T15d;
 
 	__asm        mov    dword ptr [ebp-0x80], 1;
-	__asm        jmp    _T36c;
+	__asm        jmp    __DO_WHILE_11a;
 _T15d:
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        je     _T178;
@@ -3852,7 +3855,7 @@ _T2e0:
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    _T2f1;
 _T2f1:
-	__asm        jmp    _T36c;
+	__asm        jmp    __DO_WHILE_11a;
 _T2f6:
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    nEndX, eax;
@@ -3885,10 +3888,10 @@ _T347:
 _T35b:
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    [ebp-0x90], eax;
-	__asm        jmp    _T36c;
-_T36c:
+	__asm        jmp    __DO_WHILE_11a;
+__DO_WHILE_11a:
 	__asm        cmp    dword ptr [ebp-0x80], 0;
-	__asm        je     _T11a;
+	__asm        je     __DO_11a;
 
 	__asm        jmp    _T37b;
 _T37b:
@@ -3917,7 +3920,7 @@ _T3af:
 // LINE 1650:
 	i = nThickness;
 // LINE 1651:
-_T3db:
+__WHILE_3db:
 	__asm        mov    eax, i;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        dec    i;
@@ -3928,7 +3931,7 @@ _T3db:
 // LINE 1654:
 	address += this->mStride;
 // LINE 1655:
-	__asm        jmp    _T3db;
+	__asm        jmp    __WHILE_3db;
 // LINE 1659:
 _T419:
 	__asm        jmp    _T921;
@@ -3953,7 +3956,7 @@ _T448:
 	__asm        inc    eax;
 	__asm        mov    i, eax;
 // LINE 1667:
-_T46e:
+__WHILE_46e:
 	__asm        mov    eax, i;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        dec    i;
@@ -3964,7 +3967,7 @@ _T46e:
 // LINE 1670:
 	address += this->mStride;
 // LINE 1671:
-	__asm        jmp    _T46e;
+	__asm        jmp    __WHILE_46e;
 // LINE 1674:
 _T4ac:
 	__asm        jmp    _T921;
@@ -4062,11 +4065,12 @@ _T59a:
 	__asm        cmp    nThickness, 1;
 	__asm        jne    _T62d;
 // LINE 1728:
+_FOR_5bc:
 	i = 0x1;
-	__asm        jmp    _T5bf;
-_T5bc:
+	__asm        jmp    _FOR_COND_5bc;
+_FOR_NEXT_5bc:
 	i++;
-_T5bf:
+_FOR_COND_5bc:
 	__asm        mov    eax, i;
 	__asm        cmp    numpixels, eax;
 	__asm        jl     _T628;
@@ -4100,7 +4104,7 @@ _T611:
 	y += yinc2;
 // LINE 1744:
 _T623:
-	__asm        jmp    _T5bc;
+	__asm        jmp    _FOR_NEXT_5bc;
 // LINE 1746:
 _T628:
 	__asm        jmp    _T921;
@@ -4123,25 +4127,25 @@ _T62d:
 // LINE 1764:
 	maxSafeY = (bufferHeight - nThickness);
 // LINE 1768:
-_T64d:
+__WHILE_64d:
 	__asm        cmp    numpixels, 0;
-	__asm        je     _T770;
+	__asm        je     __WHILE_770;
 
 	__asm        mov    eax, x;
 	__asm        cmp    minSafeX, eax;
-	__asm        jg     _T770;
+	__asm        jg     __WHILE_770;
 
 	__asm        mov    eax, x;
 	__asm        cmp    maxSafeX, eax;
-	__asm        jl     _T770;
+	__asm        jl     __WHILE_770;
 
 	__asm        mov    eax, y;
 	__asm        cmp    minSafeY, eax;
-	__asm        jg     _T770;
+	__asm        jg     __WHILE_770;
 
 	__asm        mov    eax, y;
 	__asm        cmp    maxSafeY, eax;
-	__asm        jl     _T770;
+	__asm        jl     __WHILE_770;
 // LINE 1771:
 	__asm        cmp    xinc2, 0xFFFFFFFF;
 	__asm        jne    _T6b6;
@@ -4164,7 +4168,7 @@ _T6b6:
 _T6d2:
 	j = nThickness;
 // LINE 1777:
-_T6d8:
+__WHILE_6d8:
 	__asm        mov    eax, j;
 	__asm        mov    [ebp-0x70], eax;
 	__asm        dec    j;
@@ -4188,7 +4192,7 @@ _T724:
 	address += this->mStride;
 // LINE 1784:
 _T730:
-	__asm        jmp    _T6d8;
+	__asm        jmp    __WHILE_6d8;
 // LINE 1786:
 _T735:
 	__asm        cmp    d, 0;
@@ -4212,9 +4216,9 @@ _T756:
 _T768:
 	numpixels--;
 // LINE 1800:
-	__asm        jmp    _T64d;
+	__asm        jmp    __WHILE_64d;
 // LINE 1804:
-_T770:
+__WHILE_770:
 	__asm        cmp    numpixels, 0;
 	__asm        je     _T921;
 // LINE 1807:
@@ -4263,7 +4267,7 @@ _T7e1:
 // LINE 1816:
 	j = nThickness;
 // LINE 1818:
-_T800:
+__WHILE_800:
 	__asm        mov    eax, j;
 	__asm        mov    [ebp-0x74], eax;
 	__asm        dec    j;
@@ -4332,7 +4336,7 @@ _T8d5:
 	address += this->mStride;
 // LINE 1841:
 _T8e1:
-	__asm        jmp    _T800;
+	__asm        jmp    __WHILE_800;
 // LINE 1843:
 _T8e6:
 	__asm        cmp    d, 0;
@@ -4357,7 +4361,7 @@ _T919:
 	numpixels--;
 // LINE 1857:
 // Block end:
-	__asm        jmp    _T770;
+	__asm        jmp    __WHILE_770;
 // LINE 1861:
 // Block end:
 // Block end:

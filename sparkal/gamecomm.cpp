@@ -606,13 +606,14 @@ void CommandSystem::Initialize() {
 	/*bp-0x8*/   int32_t j;
 
 // LINE 46:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0x64;
-	__asm        jge    _T3f;
+	__asm        jge    _FOR_4b;
 // LINE 47:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
@@ -622,36 +623,37 @@ _T1b:
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [ecx+eax*2+1], 0;
 // LINE 49:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 50:
-_T3f:
+_FOR_4b:
 	i = 0x0;
-	__asm        jmp    _T4e;
-_T4b:
+	__asm        jmp    _FOR_COND_4b;
+_FOR_NEXT_4b:
 	i++;
-_T4e:
+_FOR_COND_4b:
 	__asm        cmp    i, 0x800;
-	__asm        jge    _T6e;
+	__asm        jge    _FOR_7a;
 // LINE 51:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+0xE0], 0;
-	__asm        jmp    _T4b;
+	__asm        jmp    _FOR_NEXT_4b;
 // LINE 54:
-_T6e:
+_FOR_7a:
 	i = 0x0;
-	__asm        jmp    _T7d;
-_T7a:
+	__asm        jmp    _FOR_COND_7a;
+_FOR_NEXT_7a:
 	i++;
-_T7d:
+_FOR_COND_7a:
 	__asm        cmp    i, 4;
-	__asm        jge    _Tc4;
+	__asm        jge    _FOR_d0;
 // LINE 55:
+_FOR_93:
 	j = 0x0;
-	__asm        jmp    _T96;
-_T93:
+	__asm        jmp    _FOR_COND_93;
+_FOR_NEXT_93:
 	j++;
-_T96:
+_FOR_COND_93:
 	__asm        cmp    j, 0xE;
 	__asm        jge    _Tbf;
 // LINE 56:
@@ -663,24 +665,24 @@ _T96:
 	__asm        add    eax, j;
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+0x8E0], 0;
-	__asm        jmp    _T93;
+	__asm        jmp    _FOR_NEXT_93;
 // LINE 57:
 _Tbf:
-	__asm        jmp    _T7a;
+	__asm        jmp    _FOR_NEXT_7a;
 // LINE 58:
-_Tc4:
+_FOR_d0:
 	i = 0x0;
-	__asm        jmp    _Td3;
-_Td0:
+	__asm        jmp    _FOR_COND_d0;
+_FOR_NEXT_d0:
 	i++;
-_Td3:
+_FOR_COND_d0:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _Tf3;
 // LINE 59:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x918], 0;
-	__asm        jmp    _Td0;
+	__asm        jmp    _FOR_NEXT_d0;
 // LINE 61:
 _Tf3:
 	return;
@@ -691,11 +693,12 @@ void CommandSystem::ClearAllCommands() {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 74:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T39;
 // LINE 75:
@@ -704,7 +707,7 @@ _T1b:
 	__asm        mov    byte ptr [ecx+eax*2], 0;
 	__asm        jmp    _T34;
 _T34:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 76:
 _T39:
 	(this + 0xc8)->CharList::DeleteAllItems();
@@ -717,11 +720,12 @@ void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 89:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T51;
 // LINE 90:
@@ -739,7 +743,7 @@ _T1b:
 	__asm        mov    [ecx+eax*2], dl;
 	__asm        jmp    _T4c;
 _T4c:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 91:
 _T51:
 	(this + 0xc8)->CharList::DeleteAllItems();
@@ -774,7 +778,7 @@ _T2a:
 	__asm        mov    ecx, this;
 	__asm        call   CommandSystem::ClearAllCommandsDevice;
 // LINE 137:
-_T3c:
+_LOOP_3c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD8];
 	__asm        mov    [ebp-0x2C], eax;
@@ -1009,7 +1013,7 @@ _T2a2:
 	__asm        jmp    _T2ad;
 // LINE 181:
 _T2ad:
-	__asm        jmp    _T3c;
+	__asm        jmp    _LOOP_3c;
 // LINE 182:
 _T2b2:
 	return;
@@ -1029,25 +1033,26 @@ void CommandSystem::PollJoysticksForCommands() {
 // LINE 200:
 _T19:
 	__asm        cmp    iEnd, 4;
-	__asm        jle    _T2a;
+	__asm        jle    _FOR_36;
 // LINE 201:
 	iEnd = 0x4;
 // LINE 205:
-_T2a:
+_FOR_36:
 	i = 0x0;
-	__asm        jmp    _T39;
-_T36:
+	__asm        jmp    _FOR_COND_36;
+_FOR_NEXT_36:
 	i++;
-_T39:
+_FOR_COND_36:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
-	__asm        jle    _T91;
+	__asm        jle    _FOR_9d;
 // LINE 206:
+_FOR_51:
 	j = 0x0;
-	__asm        jmp    _T54;
-_T51:
+	__asm        jmp    _FOR_COND_51;
+_FOR_NEXT_51:
 	j++;
-_T54:
+_FOR_COND_51:
 	__asm        cmp    j, 0xE;
 	__asm        jge    _T8c;
 // LINE 207:
@@ -1062,28 +1067,29 @@ _T54:
 	__asm        mov    dl, [eax+ecx+0x8E0];
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+edx*4+0x918], 0;
-	__asm        jmp    _T51;
+	__asm        jmp    _FOR_NEXT_51;
 // LINE 208:
 _T8c:
-	__asm        jmp    _T36;
+	__asm        jmp    _FOR_NEXT_36;
 // LINE 211:
-_T91:
+_FOR_9d:
 	i = 0x0;
-	__asm        jmp    _Ta0;
-_T9d:
+	__asm        jmp    _FOR_COND_9d;
+_FOR_NEXT_9d:
 	i++;
-_Ta0:
+_FOR_COND_9d:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T1d5;
 // LINE 212:
+_FOR_b8:
 	j = 0x0;
-	__asm        jmp    _Tbb;
-_Tb8:
+	__asm        jmp    _FOR_COND_b8;
+_FOR_NEXT_b8:
 	j++;
-_Tbb:
+_FOR_COND_b8:
 	__asm        cmp    j, 5;
-	__asm        jg     _T14f;
+	__asm        jg     _FOR_15b;
 // LINE 213:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -1131,14 +1137,14 @@ _Tbb:
 	__asm        mov    [edx+ecx*4+0x918], eax;
 // LINE 219:
 _T14a:
-	__asm        jmp    _Tb8;
+	__asm        jmp    _FOR_NEXT_b8;
 // LINE 220:
-_T14f:
+_FOR_15b:
 	j = 0x6;
-	__asm        jmp    _T15e;
-_T15b:
+	__asm        jmp    _FOR_COND_15b;
+_FOR_NEXT_15b:
 	j++;
-_T15e:
+_FOR_COND_15b:
 	__asm        cmp    j, 0xD;
 	__asm        jg     _T1d0;
 // LINE 221:
@@ -1176,10 +1182,10 @@ _T15e:
 	__asm        jmp    _T1cb;
 // LINE 227:
 _T1cb:
-	__asm        jmp    _T15b;
+	__asm        jmp    _FOR_NEXT_15b;
 // LINE 228:
 _T1d0:
-	__asm        jmp    _T9d;
+	__asm        jmp    _FOR_NEXT_9d;
 // LINE 233:
 _T1d5:
 	return;
@@ -1440,7 +1446,7 @@ void CGameCommander::ProcessKeyDown(long lKey, /*packed*/ struct CommandSystem& 
 	/*bp-0x10*/  /*packed*/ class CharData *currentCharData;
 	currentCharData = commandSystem.keyboardCommandList.firstCharData;
 // LINE 428:
-_T40:
+__WHILE_40:
 	__asm        cmp    currentCharData, 0;
 	__asm        je     _T7e;
 
@@ -1462,14 +1468,14 @@ _T40:
 _T70:
 	currentCharData = currentCharData->nextCharData;
 // LINE 431:
-	__asm        jmp    _T40;
+	__asm        jmp    __WHILE_40;
 // LINE 432:
 _T7e:
 	(commandSystem + 0xc8)->CharList::DeleteAllItems();
 // LINE 434:
 	currentCharData = gKeyboard.myCharDownList.firstCharData;
 // LINE 435:
-_T94:
+__WHILE_94:
 	__asm        cmp    currentCharData, 0;
 	__asm        je     _T136;
 // LINE 436:
@@ -1524,7 +1530,7 @@ _T116:
 _T128:
 	currentCharData = currentCharData->nextCharData;
 // LINE 445:
-	__asm        jmp    _T94;
+	__asm        jmp    __WHILE_94;
 // LINE 447:
 // Block end:
 _T136:
@@ -1608,7 +1614,7 @@ void CGameCommander::ProcessKeyUp(long lKey, /*packed*/ struct CommandSystem& co
 	/*bp-0x10*/  /*packed*/ class CharData *currentCharData;
 	currentCharData = commandSystem.keyboardCommandList.firstCharData;
 // LINE 490:
-_T2e:
+__WHILE_2e:
 	__asm        cmp    currentCharData, 0;
 	__asm        je     _T6c;
 
@@ -1630,14 +1636,14 @@ _T2e:
 _T5e:
 	currentCharData = currentCharData->nextCharData;
 // LINE 493:
-	__asm        jmp    _T2e;
+	__asm        jmp    __WHILE_2e;
 // LINE 494:
 _T6c:
 	(commandSystem + 0xc8)->CharList::DeleteAllItems();
 // LINE 496:
 	currentCharData = gKeyboard.myCharDownList.firstCharData;
 // LINE 497:
-_T82:
+__WHILE_82:
 	__asm        cmp    currentCharData, 0;
 	__asm        je     _T124;
 // LINE 498:
@@ -1692,7 +1698,7 @@ _T104:
 _T116:
 	currentCharData = currentCharData->nextCharData;
 // LINE 509:
-	__asm        jmp    _T82;
+	__asm        jmp    __WHILE_82;
 // LINE 511:
 // Block end:
 _T124:
@@ -1794,7 +1800,7 @@ int32_t ReadShortcutPrefsFile(/*packed*/ class list<Shortcut>& shortcutList) {
 // LINE 563:
 	myMIFF<MIFF+0x00>->MIFF::GoToFirstRecord();
 // LINE 565:
-_Tb1:
+__DO_b1:
 	__asm        push   0x18;
 	__asm        lea    eax, tempShortcut.lDeviceID;
 	__asm        push   eax;
@@ -1806,7 +1812,7 @@ _Tb1:
 	__asm        call   ValidateConfigurableShortcut;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        je     _T45a;
+	__asm        je     __DO_WHILE_b1;
 // LINE 567:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2019,13 +2025,13 @@ _T3f9:
 _T450:
 	__asm        jmp    _T455;
 _T455:
-	__asm        jmp    _T45a;
+	__asm        jmp    __DO_WHILE_b1;
 // LINE 573:
-_T45a:
+__DO_WHILE_b1:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::GoToNextRecord;
 	__asm        test   eax, eax;
-	__asm        jne    _Tb1;
+	__asm        jne    __DO_b1;
 // LINE 575:
 _T46d:
 	myMIFF<MIFF+0x00>->MIFF::Close();
@@ -2090,9 +2096,9 @@ int32_t WriteShortcutPrefsFile(/*packed*/ class list<Shortcut>& shortcutList) {
 	__asm        mov    tempShortcutListIterator.node, eax;
 	__asm        jmp    _T9b;
 _T9b:
-	__asm        jmp    _Ta0;
+	__asm        jmp    _LOOP_a0;
 // LINE 595:
-_Ta0:
+_LOOP_a0:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x280], eax;
@@ -2152,7 +2158,7 @@ _T15b:
 	__asm        jmp    _T16c;
 // LINE 599:
 _T16c:
-	__asm        jmp    _Ta0;
+	__asm        jmp    _LOOP_a0;
 // LINE 600:
 _T171:
 	myMIFF<MIFF+0x00>->MIFF::WriteEnd();
@@ -3503,14 +3509,14 @@ _T133e:
 _T1396:
 	__asm        jmp    _T139b;
 _T139b:
-	__asm        jmp    _T13a0;
+	__asm        jmp    _FOR_13ac;
 // LINE 858:
-_T13a0:
+_FOR_13ac:
 	i = 0x1;
-	__asm        jmp    _T13af;
-_T13ac:
+	__asm        jmp    _FOR_COND_13ac;
+_FOR_NEXT_13ac:
 	i++;
-_T13af:
+_FOR_COND_13ac:
 	__asm        cmp    i, 4;
 	__asm        jg     _T1aed;
 // LINE 859:
@@ -4008,7 +4014,7 @@ _T1ae3:
 	__asm        jmp    _T1ae8;
 // LINE 921:
 _T1ae8:
-	__asm        jmp    _T13ac;
+	__asm        jmp    _FOR_NEXT_13ac;
 // LINE 922:
 _T1aed:
 	return;

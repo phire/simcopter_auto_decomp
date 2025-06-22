@@ -1971,14 +1971,14 @@ int32_t MessageBoxWindow::Initialize() {
 	__asm        lea    eax, rectButtons[0].left;
 	__asm        mov    [ebp-0x7C], eax;
 // LINE 87:
-_T23:
+__WHILE_23:
 	__asm        dec    dword ptr [ebp-0x78];
 	__asm        js     _T3d;
 
 	__asm        mov    ecx, [ebp-0x7C];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x7C], 0x10;
-	__asm        jmp    _T23;
+	__asm        jmp    __WHILE_23;
 _T3d:
 	__asm        jmp    _T42;
 // LINE 89:
@@ -2016,11 +2016,12 @@ _Ta5:
 // LINE 94:
 	nButtonCount = 0x0;
 // LINE 95:
+_FOR_c3:
 	i = 0x1;
-	__asm        jmp    _Tc7;
-_Tc3:
+	__asm        jmp    _FOR_COND_c3;
+_FOR_NEXT_c3:
 	__asm        shl    i, 1;
-_Tc7:
+_FOR_COND_c3:
 	__asm        cmp    i, 0x80000000;
 	__asm        jae    _T129;
 // LINE 96:
@@ -2050,7 +2051,7 @@ _Tc7:
 	__asm        jmp    _T129;
 // LINE 103:
 _T124:
-	__asm        jmp    _Tc3;
+	__asm        jmp    _FOR_NEXT_c3;
 // LINE 105:
 _T129:
 	__asm        cmp    nButtonCount, 0;
@@ -3560,12 +3561,12 @@ _T57:
 	__asm        idiv   dword ptr [ecx+0x7C];
 	__asm        mov    lFramesToShift, eax;
 // LINE 365:
-_T100:
+__WHILE_100:
 	__asm        cmp    lFramesToShift, 0;
 	__asm        je     _T117;
 // LINE 366:
 	this->AnimationWindow::GotoNextFrame();
-	__asm        jmp    _T100;
+	__asm        jmp    __WHILE_100;
 // LINE 368:
 _T117:
 	__asm        jmp    _T124;
@@ -9337,18 +9338,19 @@ void CitySettingsWindow::CitySettingsWindow(/*packed*/ class MRect& rectNewPosit
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58FDD0;
 // LINE 1324:
+_FOR_49:
 	i = 0x0;
-	__asm        jmp    _T4c;
-_T49:
+	__asm        jmp    _FOR_COND_49;
+_FOR_NEXT_49:
 	i++;
-_T4c:
+_FOR_COND_49:
 	__asm        cmp    i, 8;
 	__asm        jge    _T69;
 // LINE 1325:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x74], 0;
-	__asm        jmp    _T49;
+	__asm        jmp    _FOR_NEXT_49;
 // LINE 1326:
 _T69:
 	return;
@@ -12002,7 +12004,7 @@ _T13b:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x2C], eax;
-_T147:
+_LOOP_147:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    [ebp-0x2C], eax;
 	__asm        jne    _T15d;
@@ -12041,7 +12043,7 @@ _T1a3:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x74;
 	__asm        call   list<basic_string<char>>::erase;
-	__asm        jmp    _T147;
+	__asm        jmp    _LOOP_147;
 _T1b7:
 	__asm        jmp    _T1bc;
 _T1bc:
@@ -12057,7 +12059,7 @@ _T1bc:
 _T1dc:
 	__asm        dec    list<basic_string<char>>::number_of_lists;
 	__asm        jne    _T266;
-_T1e8:
+__WHILE_1e8:
 	__asm        cmp    list<basic_string<char>>::buffer_list, 0;
 	__asm        je     _T243;
 
@@ -12085,7 +12087,7 @@ _T228:
 _T239:
 	__asm        jmp    _T23e;
 _T23e:
-	__asm        jmp    _T1e8;
+	__asm        jmp    __WHILE_1e8;
 _T243:
 	list<basic_string<char>>::free_list = 0x0;
 	list<basic_string<char>>::next_avail = 0x0;
@@ -12187,7 +12189,7 @@ _T6c:
 // LINE 1608:
 	lCurrentXPosition += lSourceWidth;
 // LINE 1609:
-_Te2:
+__WHILE_e2:
 	__asm        mov    eax, lEndXPosition;
 	__asm        sub    eax, lSourceWidth;
 	__asm        cmp    eax, lCurrentXPosition;
@@ -12219,7 +12221,7 @@ _Te2:
 // LINE 1612:
 	lCurrentXPosition += lSourceWidth;
 // LINE 1613:
-	__asm        jmp    _Te2;
+	__asm        jmp    __WHILE_e2;
 // LINE 1615:
 _T14b:
 	__asm        mov    eax, this;
@@ -12248,11 +12250,12 @@ _T14b:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1617:
+_FOR_1ac:
 	i = 0x1;
-	__asm        jmp    _T1af;
-_T1ac:
+	__asm        jmp    _FOR_COND_1ac;
+_FOR_NEXT_1ac:
 	i++;
-_T1af:
+_FOR_COND_1ac:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
 	__asm        dec    eax;
@@ -12292,7 +12295,7 @@ _T1af:
 // LINE 1621:
 	lCurrentXPosition += lSourceWidth;
 // LINE 1622:
-_T248:
+__WHILE_248:
 	__asm        mov    eax, lEndXPosition;
 	__asm        sub    eax, lSourceWidth;
 	__asm        cmp    eax, lCurrentXPosition;
@@ -12331,7 +12334,7 @@ _T248:
 // LINE 1625:
 	lCurrentXPosition += lSourceWidth;
 // LINE 1626:
-	__asm        jmp    _T248;
+	__asm        jmp    __WHILE_248;
 // LINE 1628:
 _T2d8:
 	__asm        mov    eax, this;
@@ -12367,7 +12370,7 @@ _T2d8:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1629:
-	__asm        jmp    _T1ac;
+	__asm        jmp    _FOR_NEXT_1ac;
 // LINE 1630:
 _T359:
 	lCurrentXPosition = this-><PopupMenuExtra+0x20>;
@@ -12407,7 +12410,7 @@ _T359:
 // LINE 1633:
 	lCurrentXPosition += lSourceWidth;
 // LINE 1634:
-_T3f4:
+__WHILE_3f4:
 	__asm        mov    eax, lEndXPosition;
 	__asm        sub    eax, lSourceWidth;
 	__asm        cmp    eax, lCurrentXPosition;
@@ -12450,7 +12453,7 @@ _T3f4:
 // LINE 1637:
 	lCurrentXPosition += lSourceWidth;
 // LINE 1638:
-	__asm        jmp    _T3f4;
+	__asm        jmp    __WHILE_3f4;
 // LINE 1640:
 _T49c:
 	__asm        mov    eax, this;
@@ -12508,7 +12511,7 @@ _T49c:
 _T56b:
 	i = 0x0;
 // LINE 1652:
-_T572:
+__WHILE_572:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0xB4], ecx;
@@ -12560,16 +12563,17 @@ _T5f4:
 _T5ff:
 	i++;
 // LINE 1655:
-	__asm        jmp    _T572;
+	__asm        jmp    __WHILE_572;
 // LINE 1658:
 _T607:
 	j = 0x0;
 // LINE 23:
-	__asm        jmp    _T616;
+_FOR_613:
+	__asm        jmp    _FOR_COND_613;
 // LINE 1658:
-_T613:
+_FOR_NEXT_613:
 	j++;
-_T616:
+_FOR_COND_613:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x54], eax;
@@ -12915,7 +12919,7 @@ _Tad9:
 _Tae4:
 	i++;
 // LINE 1681:
-	__asm        jmp    _T613;
+	__asm        jmp    _FOR_NEXT_613;
 // LINE 1683:
 _Taec:
 	return 0x1;
@@ -14135,7 +14139,7 @@ _T5e:
 // LINE 1874:
 	lCurrentXPosition += lSourceWidth;
 // LINE 1875:
-_Ta2:
+__WHILE_a2:
 	__asm        mov    eax, lEndXPosition;
 	__asm        sub    eax, lSourceWidth;
 	__asm        cmp    eax, lCurrentXPosition;
@@ -14170,7 +14174,7 @@ _Tb6:
 // LINE 1878:
 	lCurrentXPosition += lSourceWidth;
 // LINE 1879:
-	__asm        jmp    _Ta2;
+	__asm        jmp    __WHILE_a2;
 // LINE 1881:
 _T104:
 	__asm        jmp    _T109;
@@ -17450,7 +17454,7 @@ _T1f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x1C], eax;
-_T3f:
+__WHILE_3f:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    [ebp-0x1C], eax;
 	__asm        je     _Tf4;
@@ -17513,7 +17517,7 @@ _Te6:
 	__asm        jmp    _Teb;
 _Teb:
 	__asm        add    dword ptr [ebp-0x1C], 8;
-	__asm        jmp    _T3f;
+	__asm        jmp    __WHILE_3f;
 _Tf4:
 	__asm        jmp    _Tf9;
 _Tf9:
@@ -17792,32 +17796,33 @@ void CheckupWindow::CheckupWindow(/*packed*/ class MRect& rectNewPosition, int32
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5903A0;
 // LINE 2421:
+_FOR_49:
 	i = 0x0;
-	__asm        jmp    _T4c;
-_T49:
+	__asm        jmp    _FOR_COND_49;
+_FOR_NEXT_49:
 	i++;
-_T4c:
+_FOR_COND_49:
 	__asm        cmp    i, 3;
-	__asm        jge    _T69;
+	__asm        jge    _FOR_75;
 // LINE 2422:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x74], 0;
-	__asm        jmp    _T49;
+	__asm        jmp    _FOR_NEXT_49;
 // LINE 2423:
-_T69:
+_FOR_75:
 	i = 0x0;
-	__asm        jmp    _T78;
-_T75:
+	__asm        jmp    _FOR_COND_75;
+_FOR_NEXT_75:
 	i++;
-_T78:
+_FOR_COND_75:
 	__asm        cmp    i, 5;
 	__asm        jge    _T98;
 // LINE 2424:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x80], 0;
-	__asm        jmp    _T75;
+	__asm        jmp    _FOR_NEXT_75;
 // LINE 2425:
 _T98:
 	return;

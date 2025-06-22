@@ -249,18 +249,19 @@ void Keyboard::ClearSettings() {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 98:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T38;
 // LINE 99:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+0x10], 0;
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 100:
 _T38:
 	this->CharList::DeleteAllItems();

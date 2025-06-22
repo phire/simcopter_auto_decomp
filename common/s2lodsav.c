@@ -104,7 +104,7 @@ _T84:
 // LINE 129:
 	lBytesReadSoFar = 0x4;
 // LINE 132:
-_T92:
+_LOOP_92:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
 	__asm        push   1;
@@ -183,7 +183,7 @@ _T156:
 	__asm        jmp    exit;
 // LINE 155:
 _T170:
-	__asm        jmp    _T92;
+	__asm        jmp    _LOOP_92;
 // LINE 158:
 exit:
 	fclose(filNum);
@@ -236,7 +236,7 @@ _T64:
 // LINE 196:
 	sofar = 0x4;
 // LINE 198:
-_T71:
+__WHILE_71:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
 	__asm        jne    _T171;
 // LINE 199:
@@ -325,7 +325,7 @@ _T151:
 	done = 0x1;
 // LINE 224:
 _T16c:
-	__asm        jmp    _T71;
+	__asm        jmp    __WHILE_71;
 // LINE 226:
 _T171:
 	fclose(filNum);
@@ -474,7 +474,7 @@ _T91:
 // LINE 319:
 	got_label = 0x0;
 // LINE 321:
-_Tb6:
+__WHILE_b6:
 	__asm        test   reinterpret_cast<uint32_t>(bDone), 0xFFFF;
 	__asm        jne    _T7f6;
 // LINE 322:
@@ -1041,7 +1041,7 @@ _T7ca:
 	bDone = 0x1;
 // LINE 431:
 _T7f1:
-	__asm        jmp    _Tb6;
+	__asm        jmp    __WHILE_b6;
 // LINE 434:
 _T7f6:
 	__asm        test   reinterpret_cast<uint32_t>(bFoundName), 0xFFFF;
@@ -1099,11 +1099,12 @@ static void label_kludge() {
 	/*bp-0x8*/   short len;
 
 // LINE 476:
+_FOR_14:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T14:
+	__asm        jmp    _FOR_COND_14;
+_FOR_NEXT_14:
 	i++;
-_T18:
+_FOR_COND_14:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
 	__asm        jge    __RETURN;
@@ -1141,7 +1142,7 @@ _T7a:
 	__asm        mov    ecx, LabelArray;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 481:
-	__asm        jmp    _T14;
+	__asm        jmp    _FOR_NEXT_14;
 // LINE 482:
 __RETURN:
 }
@@ -1152,20 +1153,22 @@ void clear_label() {
 	/*bp-0x8*/   short j;
 
 // LINE 499:
+_FOR_14:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T14:
+	__asm        jmp    _FOR_COND_14;
+_FOR_NEXT_14:
 	i++;
-_T18:
+_FOR_COND_14:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
 	__asm        jge    __RETURN;
 // LINE 500:
+_FOR_32:
 	j = 0x0;
-	__asm        jmp    _T36;
-_T32:
+	__asm        jmp    _FOR_COND_32;
+_FOR_NEXT_32:
 	j++;
-_T36:
+_FOR_COND_32:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0x19;
 	__asm        jge    _T62;
@@ -1177,10 +1180,10 @@ _T36:
 	__asm        add    eax, ecx;
 	__asm        mov    ecx, LabelArray;
 	__asm        mov    byte ptr [eax+ecx], 0;
-	__asm        jmp    _T32;
+	__asm        jmp    _FOR_NEXT_32;
 // LINE 502:
 _T62:
-	__asm        jmp    _T14;
+	__asm        jmp    _FOR_NEXT_14;
 // LINE 503:
 __RETURN:
 }
@@ -1191,14 +1194,15 @@ void graph_kludge() {
 	/*bp-0x8*/   short j;
 
 // LINE 519:
+_FOR_14:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T14:
+	__asm        jmp    _FOR_COND_14;
+_FOR_NEXT_14:
 	i++;
-_T18:
+_FOR_COND_14:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
-	__asm        jge    _Ta7;
+	__asm        jge    _FOR_b2;
 // LINE 520:
 	__asm        movsx  eax, i;
 	__asm        mov    eax, GraphStart[eax*4];
@@ -1206,11 +1210,12 @@ _T18:
 	__asm        mov    edx, GraphMax;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 521:
+_FOR_48:
 	j = 0x0;
-	__asm        jmp    _T4c;
-_T48:
+	__asm        jmp    _FOR_COND_48;
+_FOR_NEXT_48:
 	j++;
-_T4c:
+_FOR_COND_48:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0x34;
 	__asm        jge    _Ta2;
@@ -1233,23 +1238,23 @@ _T4c:
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 524:
 _T9d:
-	__asm        jmp    _T48;
+	__asm        jmp    _FOR_NEXT_48;
 // LINE 525:
 _Ta2:
-	__asm        jmp    _T14;
+	__asm        jmp    _FOR_NEXT_14;
 // LINE 526:
-_Ta7:
+_FOR_b2:
 	i = 0x1;
-	__asm        jmp    _Tb6;
-_Tb2:
+	__asm        jmp    _FOR_COND_b2;
+_FOR_NEXT_b2:
 	i++;
-_Tb6:
+_FOR_COND_b2:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 3;
 	__asm        jg     __RETURN;
 // LINE 527:
 	GraphMax[reinterpret_cast<int16_t>(i)] = GraphMax[0];
-	__asm        jmp    _Tb2;
+	__asm        jmp    _FOR_NEXT_b2;
 // LINE 528:
 __RETURN:
 }
@@ -1526,14 +1531,15 @@ _T63:
 // LINE 679:
 	ToolActive[5] = lval;
 // LINE 685:
+_FOR_316:
 	i = 0x0;
-	__asm        jmp    _T31a;
-_T316:
+	__asm        jmp    _FOR_COND_316;
+_FOR_NEXT_316:
 	i++;
-_T31a:
+_FOR_COND_316:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x14;
-	__asm        jge    _T386;
+	__asm        jge    _FOR_391;
 // LINE 686:
 	PopRatio[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
 	ix++;
@@ -1544,17 +1550,17 @@ _T31a:
 	HealthRatio[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
 	ix++;
 // LINE 689:
-	__asm        jmp    _T316;
+	__asm        jmp    _FOR_NEXT_316;
 // LINE 691:
-_T386:
+_FOR_391:
 	i = 0x0;
-	__asm        jmp    _T395;
-_T391:
+	__asm        jmp    _FOR_COND_391;
+_FOR_NEXT_391:
 	i++;
-_T395:
+_FOR_COND_391:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0xB;
-	__asm        jge    _T403;
+	__asm        jge    _FOR_40e;
 // LINE 692:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1575,17 +1581,17 @@ _T395:
 	IndRatio[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
 	ix++;
 // LINE 695:
-	__asm        jmp    _T391;
+	__asm        jmp    _FOR_NEXT_391;
 // LINE 697:
-_T403:
+_FOR_40e:
 	i = 0x0;
-	__asm        jmp    _T412;
-_T40e:
+	__asm        jmp    _FOR_COND_40e;
+_FOR_NEXT_40e:
 	i++;
-_T412:
+_FOR_COND_40e:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
-	__asm        jge    _T445;
+	__asm        jge    _FOR_450;
 // LINE 698:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1594,32 +1600,32 @@ _T412:
 	__asm        mov    edx, TileCnt;
 	__asm        mov    [edx+ecx*2], ax;
 	__asm        inc    ix;
-	__asm        jmp    _T40e;
+	__asm        jmp    _FOR_NEXT_40e;
 // LINE 700:
-_T445:
+_FOR_450:
 	i = 0x0;
-	__asm        jmp    _T454;
-_T450:
+	__asm        jmp    _FOR_COND_450;
+_FOR_NEXT_450:
 	i++;
-_T454:
+_FOR_COND_450:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
-	__asm        jge    _T484;
+	__asm        jge    _FOR_48f;
 // LINE 701:
 	ZonePop[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
 	ix++;
 // LINE 702:
-	__asm        jmp    _T450;
+	__asm        jmp    _FOR_NEXT_450;
 // LINE 704:
-_T484:
+_FOR_48f:
 	i = 0x0;
-	__asm        jmp    _T493;
-_T48f:
+	__asm        jmp    _FOR_COND_48f;
+_FOR_NEXT_48f:
 	i++;
-_T493:
+_FOR_COND_48f:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x32;
-	__asm        jge    _T4c2;
+	__asm        jge    _FOR_4cd;
 // LINE 705:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1628,17 +1634,17 @@ _T493:
 	__asm        mov    BondRate[ecx*2], ax;
 	__asm        inc    ix;
 // LINE 706:
-	__asm        jmp    _T48f;
+	__asm        jmp    _FOR_NEXT_48f;
 // LINE 708:
-_T4c2:
+_FOR_4cd:
 	i = 0x0;
-	__asm        jmp    _T4d1;
-_T4cd:
+	__asm        jmp    _FOR_COND_4cd;
+_FOR_NEXT_4cd:
 	i++;
-_T4d1:
+_FOR_COND_4cd:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 4;
-	__asm        jge    _T5ed;
+	__asm        jge    _FOR_5f8;
 // LINE 709:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1704,17 +1710,17 @@ _T58e:
 	NeighborFame[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
 	ix++;
 // LINE 723:
-	__asm        jmp    _T4cd;
+	__asm        jmp    _FOR_NEXT_4cd;
 // LINE 725:
-_T5ed:
+_FOR_5f8:
 	i = 0x0;
-	__asm        jmp    _T5fc;
-_T5f8:
+	__asm        jmp    _FOR_COND_5f8;
+_FOR_NEXT_5f8:
 	i++;
-_T5fc:
+_FOR_COND_5f8:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
-	__asm        jge    _T62b;
+	__asm        jge    _FOR_636;
 // LINE 726:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1722,17 +1728,17 @@ _T5fc:
 	__asm        movsx  ecx, i;
 	__asm        mov    Valve[ecx*2], ax;
 	__asm        inc    ix;
-	__asm        jmp    _T5f8;
+	__asm        jmp    _FOR_NEXT_5f8;
 // LINE 728:
-_T62b:
+_FOR_636:
 	i = 0x0;
-	__asm        jmp    _T63a;
-_T636:
+	__asm        jmp    _FOR_COND_636;
+_FOR_NEXT_636:
 	i++;
-_T63a:
+_FOR_COND_636:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x11;
-	__asm        jge    _T669;
+	__asm        jge    _FOR_674;
 // LINE 729:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1740,14 +1746,14 @@ _T63a:
 	__asm        movsx  ecx, i;
 	__asm        mov    Invent[ecx*2], ax;
 	__asm        inc    ix;
-	__asm        jmp    _T636;
+	__asm        jmp    _FOR_NEXT_636;
 // LINE 731:
-_T669:
+_FOR_674:
 	i = 0x0;
-	__asm        jmp    _T678;
-_T674:
+	__asm        jmp    _FOR_COND_674;
+_FOR_NEXT_674:
 	i++;
-_T678:
+_FOR_COND_674:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
 	__asm        jge    _T785;
@@ -1788,11 +1794,12 @@ _T678:
 	__asm        mov    [ecx+edx+0x68], eax;
 	__asm        inc    ix;
 // LINE 736:
+_FOR_70b:
 	j = 0x0;
-	__asm        jmp    _T70f;
-_T70b:
+	__asm        jmp    _FOR_COND_70b;
+_FOR_NEXT_70b:
 	j++;
-_T70f:
+_FOR_COND_70b:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0xC;
 	__asm        jge    _T780;
@@ -1825,10 +1832,10 @@ _T70f:
 	__asm        mov    [ecx+edx+0x30], eax;
 	__asm        inc    ix;
 // LINE 739:
-	__asm        jmp    _T70b;
+	__asm        jmp    _FOR_NEXT_70b;
 // LINE 740:
 _T780:
-	__asm        jmp    _T674;
+	__asm        jmp    _FOR_NEXT_674;
 // LINE 743:
 _T785:
 	__asm        movsx  eax, ix;
@@ -1861,14 +1868,15 @@ _T785:
 	__asm        mov    Military, al;
 	__asm        inc    ix;
 // LINE 749:
+_FOR_802:
 	i = 0x0;
-	__asm        jmp    _T806;
-_T802:
+	__asm        jmp    _FOR_COND_802;
+_FOR_NEXT_802:
 	i++;
-_T806:
+_FOR_COND_802:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 6;
-	__asm        jge    _T8c1;
+	__asm        jge    _FOR_8cc;
 // LINE 750:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1915,14 +1923,14 @@ _T806:
 	__asm        mov    [ecx+edx+4], al;
 	__asm        inc    ix;
 // LINE 755:
-	__asm        jmp    _T802;
+	__asm        jmp    _FOR_NEXT_802;
 // LINE 757:
-_T8c1:
+_FOR_8cc:
 	i = 0x0;
-	__asm        jmp    _T8d0;
-_T8cc:
+	__asm        jmp    _FOR_COND_8cc;
+_FOR_NEXT_8cc:
 	i++;
-_T8d0:
+_FOR_COND_8cc:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 9;
 	__asm        jge    _T99d;
@@ -1975,7 +1983,7 @@ _T8d0:
 	__asm        mov    [edx+ecx*8+7], al;
 	__asm        inc    ix;
 // LINE 764:
-	__asm        jmp    _T8cc;
+	__asm        jmp    _FOR_NEXT_8cc;
 // LINE 766:
 _T99d:
 	Ordinances = MiscInfo[reinterpret_cast<int16_t>(ix)];
@@ -1984,11 +1992,12 @@ _T99d:
 	unemployed = MiscInfo[reinterpret_cast<int16_t>(ix)];
 	ix++;
 // LINE 769:
+_FOR_9d4:
 	i = 0x0;
-	__asm        jmp    _T9d8;
-_T9d4:
+	__asm        jmp    _FOR_COND_9d4;
+_FOR_NEXT_9d4:
 	i++;
-_T9d8:
+_FOR_COND_9d4:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
 	__asm        jge    _Ta09;
@@ -2000,7 +2009,7 @@ _T9d8:
 	__asm        mov    edx, MilCnt;
 	__asm        mov    [edx+ecx*2], ax;
 	__asm        inc    ix;
-	__asm        jmp    _T9d4;
+	__asm        jmp    _FOR_NEXT_9d4;
 // LINE 772:
 _Ta09:
 	__asm        movsx  eax, ix;
@@ -2406,7 +2415,7 @@ _T6f:
 // LINE 932:
 	count = dataSize;
 // LINE 933:
-_T88:
+__WHILE_88:
 	__asm        mov    eax, tp;
 	__asm        cmp    size, eax;
 	__asm        jle    _T13a;
@@ -2433,10 +2442,11 @@ _T88:
 	__asm        mov    b, al;
 	__asm        inc    tp;
 // LINE 938:
-	__asm        jmp    _Tdc;
-_Td9:
+_FOR_d9:
+	__asm        jmp    _FOR_COND_d9;
+_FOR_NEXT_d9:
 	ix--;
-_Tdc:
+_FOR_COND_d9:
 	__asm        cmp    ix, 0;
 	__asm        jl     _Tfa;
 // LINE 939:
@@ -2445,7 +2455,7 @@ _Tdc:
 	__asm        mov    edx, data;
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    dp;
-	__asm        jmp    _Td9;
+	__asm        jmp    _FOR_NEXT_d9;
 // LINE 940:
 _Tfa:
 	__asm        jmp    _T135;
@@ -2453,10 +2463,11 @@ _Tfa:
 _Tff:
 	ix = reinterpret_cast<int16_t>(b);
 // LINE 942:
-	__asm        jmp    _T10e;
-_T10b:
+_FOR_10b:
+	__asm        jmp    _FOR_COND_10b;
+_FOR_NEXT_10b:
 	ix--;
-_T10e:
+_FOR_COND_10b:
 	__asm        cmp    ix, 0;
 	__asm        jle    _T135;
 // LINE 943:
@@ -2468,10 +2479,10 @@ _T10e:
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    tp;
 	__asm        inc    dp;
-	__asm        jmp    _T10b;
+	__asm        jmp    _FOR_NEXT_10b;
 // LINE 945:
 _T135:
-	__asm        jmp    _T88;
+	__asm        jmp    __WHILE_88;
 // LINE 947:
 _T13a:
 	S2AllocReset(ScratchPoolIndex);
@@ -3189,7 +3200,7 @@ _Ta5:
 	dp = 0x0;
 	tp = dp;
 // LINE 1216:
-_Tb2:
+__WHILE_b2:
 	__asm        mov    eax, count;
 	__asm        dec    eax;
 	__asm        cmp    eax, dp;
@@ -3210,7 +3221,7 @@ _Tb2:
 // LINE 1221:
 	ix = 0x2;
 // LINE 1222:
-_Tea:
+__WHILE_ea:
 	__asm        mov    eax, ix;
 	__asm        add    eax, dp;
 	__asm        mov    ecx, data;
@@ -3229,7 +3240,7 @@ _Tea:
 	__asm        jge    _T128;
 // LINE 1223:
 	ix++;
-	__asm        jmp    _Tea;
+	__asm        jmp    __WHILE_ea;
 // LINE 1224:
 _T128:
 	__asm        mov    eax, ix;
@@ -3258,7 +3269,7 @@ _T154:
 	__asm        mov    edx, temp;
 	__asm        mov    [ecx+edx+1], al;
 // LINE 1232:
-_T168:
+__WHILE_168:
 	__asm        mov    eax, ix;
 	__asm        add    eax, dp;
 	__asm        mov    ecx, data;
@@ -3289,7 +3300,7 @@ _T168:
 	__asm        mov    edx, temp;
 	__asm        mov    [ecx+edx], al;
 // LINE 1235:
-	__asm        jmp    _T168;
+	__asm        jmp    __WHILE_168;
 // LINE 1237:
 _T1c4:
 	__asm        mov    eax, ix;
@@ -3305,7 +3316,7 @@ _T1c4:
 	tp += ix;
 // LINE 1241:
 _T1de:
-	__asm        jmp    _Tb2;
+	__asm        jmp    __WHILE_b2;
 // LINE 1243:
 _T1e3:
 	__asm        mov    eax, count;
@@ -3537,14 +3548,15 @@ static unsigned short S2CityMiscWrite(/*packed*/ struct _iobuf *filNum) {
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = ToolActive[5];
 	ix++;
 // LINE 1339:
+_FOR_2de:
 	i = 0x0;
-	__asm        jmp    _T2e2;
-_T2de:
+	__asm        jmp    _FOR_COND_2de;
+_FOR_NEXT_2de:
 	i++;
-_T2e2:
+_FOR_COND_2de:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x14;
-	__asm        jge    _T34e;
+	__asm        jge    _FOR_359;
 // LINE 1340:
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = PopRatio[reinterpret_cast<int16_t>(i)];
 	ix++;
@@ -3555,17 +3567,17 @@ _T2e2:
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = HealthRatio[reinterpret_cast<int16_t>(i)];
 	ix++;
 // LINE 1343:
-	__asm        jmp    _T2de;
+	__asm        jmp    _FOR_NEXT_2de;
 // LINE 1344:
-_T34e:
+_FOR_359:
 	i = 0x0;
-	__asm        jmp    _T35d;
-_T359:
+	__asm        jmp    _FOR_COND_359;
+_FOR_NEXT_359:
 	i++;
-_T35d:
+_FOR_COND_359:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0xB;
-	__asm        jge    _T3cb;
+	__asm        jge    _FOR_3d6;
 // LINE 1345:
 	__asm        movsx  eax, i;
 	__asm        mov    ecx, IndDemand;
@@ -3586,17 +3598,17 @@ _T35d:
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = IndRatio[reinterpret_cast<int16_t>(i)];
 	ix++;
 // LINE 1348:
-	__asm        jmp    _T359;
+	__asm        jmp    _FOR_NEXT_359;
 // LINE 1349:
-_T3cb:
+_FOR_3d6:
 	i = 0x0;
-	__asm        jmp    _T3da;
-_T3d6:
+	__asm        jmp    _FOR_COND_3d6;
+_FOR_NEXT_3d6:
 	i++;
-_T3da:
+_FOR_COND_3d6:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
-	__asm        jge    _T40f;
+	__asm        jge    _FOR_41a;
 // LINE 1350:
 	__asm        movsx  eax, i;
 	__asm        mov    ecx, TileCnt;
@@ -3606,31 +3618,31 @@ _T3da:
 	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
-	__asm        jmp    _T3d6;
+	__asm        jmp    _FOR_NEXT_3d6;
 // LINE 1351:
-_T40f:
+_FOR_41a:
 	i = 0x0;
-	__asm        jmp    _T41e;
-_T41a:
+	__asm        jmp    _FOR_COND_41a;
+_FOR_NEXT_41a:
 	i++;
-_T41e:
+_FOR_COND_41a:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
-	__asm        jge    _T44e;
+	__asm        jge    _FOR_459;
 // LINE 1352:
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = ZonePop[reinterpret_cast<int16_t>(i)];
 	ix++;
-	__asm        jmp    _T41a;
+	__asm        jmp    _FOR_NEXT_41a;
 // LINE 1353:
-_T44e:
+_FOR_459:
 	i = 0x0;
-	__asm        jmp    _T45d;
-_T459:
+	__asm        jmp    _FOR_COND_459;
+_FOR_NEXT_459:
 	i++;
-_T45d:
+_FOR_COND_459:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x32;
-	__asm        jge    _T48c;
+	__asm        jge    _FOR_497;
 // LINE 1354:
 	__asm        movsx  eax, i;
 	__asm        movsx  eax, BondRate[eax*2];
@@ -3638,17 +3650,17 @@ _T45d:
 	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
-	__asm        jmp    _T459;
+	__asm        jmp    _FOR_NEXT_459;
 // LINE 1355:
-_T48c:
+_FOR_497:
 	i = 0x0;
-	__asm        jmp    _T49b;
-_T497:
+	__asm        jmp    _FOR_COND_497;
+_FOR_NEXT_497:
 	i++;
-_T49b:
+_FOR_COND_497:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 4;
-	__asm        jge    _T526;
+	__asm        jge    _FOR_531;
 // LINE 1356:
 	__asm        movsx  eax, i;
 	__asm        mov    ecx, NeighborName;
@@ -3667,17 +3679,17 @@ _T49b:
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = NeighborFame[reinterpret_cast<int16_t>(i)];
 	ix++;
 // LINE 1360:
-	__asm        jmp    _T497;
+	__asm        jmp    _FOR_NEXT_497;
 // LINE 1361:
-_T526:
+_FOR_531:
 	i = 0x0;
-	__asm        jmp    _T535;
-_T531:
+	__asm        jmp    _FOR_COND_531;
+_FOR_NEXT_531:
 	i++;
-_T535:
+_FOR_COND_531:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
-	__asm        jge    _T564;
+	__asm        jge    _FOR_56f;
 // LINE 1362:
 	__asm        movsx  eax, i;
 	__asm        movsx  eax, Valve[eax*2];
@@ -3685,17 +3697,17 @@ _T535:
 	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
-	__asm        jmp    _T531;
+	__asm        jmp    _FOR_NEXT_531;
 // LINE 1363:
-_T564:
+_FOR_56f:
 	i = 0x0;
-	__asm        jmp    _T573;
-_T56f:
+	__asm        jmp    _FOR_COND_56f;
+_FOR_NEXT_56f:
 	i++;
-_T573:
+_FOR_COND_56f:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x11;
-	__asm        jge    _T5a2;
+	__asm        jge    _FOR_5ad;
 // LINE 1364:
 	__asm        movsx  eax, i;
 	__asm        movsx  eax, Invent[eax*2];
@@ -3703,14 +3715,14 @@ _T573:
 	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
-	__asm        jmp    _T56f;
+	__asm        jmp    _FOR_NEXT_56f;
 // LINE 1365:
-_T5a2:
+_FOR_5ad:
 	i = 0x0;
-	__asm        jmp    _T5b1;
-_T5ad:
+	__asm        jmp    _FOR_COND_5ad;
+_FOR_NEXT_5ad:
 	i++;
-_T5b1:
+_FOR_COND_5ad:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
 	__asm        jge    _T6be;
@@ -3751,11 +3763,12 @@ _T5b1:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1369:
+_FOR_644:
 	j = 0x0;
-	__asm        jmp    _T648;
-_T644:
+	__asm        jmp    _FOR_COND_644;
+_FOR_NEXT_644:
 	j++;
-_T648:
+_FOR_COND_644:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0xC;
 	__asm        jge    _T6b9;
@@ -3788,10 +3801,10 @@ _T648:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1372:
-	__asm        jmp    _T644;
+	__asm        jmp    _FOR_NEXT_644;
 // LINE 1373:
 _T6b9:
-	__asm        jmp    _T5ad;
+	__asm        jmp    _FOR_NEXT_5ad;
 // LINE 1376:
 _T6be:
 	__asm        xor    eax, eax;
@@ -3825,14 +3838,15 @@ _T6be:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1382:
+_FOR_744:
 	i = 0x0;
-	__asm        jmp    _T748;
-_T744:
+	__asm        jmp    _FOR_COND_744;
+_FOR_NEXT_744:
 	i++;
-_T748:
+_FOR_COND_744:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 6;
-	__asm        jge    _T80d;
+	__asm        jge    _FOR_818;
 // LINE 1383:
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
@@ -3884,14 +3898,14 @@ _T748:
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1388:
-	__asm        jmp    _T744;
+	__asm        jmp    _FOR_NEXT_744;
 // LINE 1390:
-_T80d:
+_FOR_818:
 	i = 0x0;
-	__asm        jmp    _T81c;
-_T818:
+	__asm        jmp    _FOR_COND_818;
+_FOR_NEXT_818:
 	i++;
-_T81c:
+_FOR_COND_818:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 9;
 	__asm        jge    _T8f1;
@@ -3948,7 +3962,7 @@ _T81c:
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
 // LINE 1397:
-	__asm        jmp    _T818;
+	__asm        jmp    _FOR_NEXT_818;
 // LINE 1400:
 _T8f1:
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = Ordinances;
@@ -3957,11 +3971,12 @@ _T8f1:
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = unemployed;
 	ix++;
 // LINE 1403:
+_FOR_928:
 	i = 0x0;
-	__asm        jmp    _T92c;
-_T928:
+	__asm        jmp    _FOR_COND_928;
+_FOR_NEXT_928:
 	i++;
-_T92c:
+_FOR_COND_928:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
 	__asm        jge    _T95f;
@@ -3974,7 +3989,7 @@ _T92c:
 	__asm        mov    ecx, MiscInfo;
 	__asm        mov    [ecx+eax*4], edx;
 	__asm        inc    ix;
-	__asm        jmp    _T928;
+	__asm        jmp    _FOR_NEXT_928;
 // LINE 1406:
 _T95f:
 	__asm        xor    eax, eax;
@@ -4192,16 +4207,17 @@ _T95f:
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = TotalRate;
 	ix++;
 // LINE 1476:
-	__asm        jmp    _Te47;
-_Te43:
+_FOR_e43:
+	__asm        jmp    _FOR_COND_e43;
+_FOR_NEXT_e43:
 	ix++;
-_Te47:
+_FOR_COND_e43:
 	__asm        movsx  eax, ix;
 	__asm        cmp    eax, 0x4B0;
 	__asm        jge    _Te6c;
 // LINE 1477:
 	MiscInfo[reinterpret_cast<int16_t>(ix)] = 0x0;
-	__asm        jmp    _Te43;
+	__asm        jmp    _FOR_NEXT_e43;
 // LINE 1479:
 _Te6c:
 	return S2CityGameWriteCompressed(0x12c0, MiscInfo, 0x59b1e4, stol(0x12c0, MiscInfo, 0x59b1e4), filNum);
@@ -4224,11 +4240,12 @@ void swizzle_buffer(char * data, long count) {
 // LINE 1502:
 	lptr = data;
 // LINE 1504:
+_FOR_2a:
 	i = 0x0;
-	__asm        jmp    _T2d;
-_T2a:
+	__asm        jmp    _FOR_COND_2a;
+_FOR_NEXT_2a:
 	i++;
-_T2d:
+_FOR_COND_2a:
 	__asm        mov    eax, i;
 	__asm        cmp    count, eax;
 	__asm        jle    __RETURN;
@@ -4237,7 +4254,7 @@ _T2d:
 // LINE 1506:
 	lptr[i] = swizzle_long(lval);
 // LINE 1507:
-	__asm        jmp    _T2a;
+	__asm        jmp    _FOR_NEXT_2a;
 // LINE 1509:
 __RETURN:
 }
@@ -4252,11 +4269,12 @@ void swizzle_Micro(char * data, long count) {
 // LINE 1530:
 	mptr = data;
 // LINE 1532:
+_FOR_24:
 	i = 0x0;
-	__asm        jmp    _T27;
-_T24:
+	__asm        jmp    _FOR_COND_24;
+_FOR_NEXT_24:
 	i++;
-_T27:
+_FOR_COND_24:
 	__asm        mov    eax, count;
 	__asm        cmp    i, eax;
 	__asm        jge    __RETURN;
@@ -4287,7 +4305,7 @@ _T27:
 // LINE 1536:
 	mptr += 0x8;
 // LINE 1537:
-	__asm        jmp    _T24;
+	__asm        jmp    _FOR_NEXT_24;
 // LINE 1539:
 __RETURN:
 }
@@ -4307,11 +4325,12 @@ void swizzle_shorts(char * data, long count) {
 // LINE 1560:
 	sptr = data;
 // LINE 1562:
+_FOR_27:
 	i = 0x0;
-	__asm        jmp    _T2a;
-_T27:
+	__asm        jmp    _FOR_COND_27;
+_FOR_NEXT_27:
 	i++;
-_T2a:
+_FOR_COND_27:
 	__asm        mov    eax, i;
 	__asm        cmp    count, eax;
 	__asm        jle    __RETURN;
@@ -4323,7 +4342,7 @@ _T2a:
 // LINE 1564:
 	sptr[i] = swizzle_short(reinterpret_cast<uint32_t>(sval));
 // LINE 1565:
-	__asm        jmp    _T27;
+	__asm        jmp    _FOR_NEXT_27;
 // LINE 1567:
 __RETURN:
 }
@@ -4623,16 +4642,16 @@ _T2d3:
 	__asm        add    esp, 0xC;
 	__asm        mov    GraphMax, eax;
 	__asm        cmp    GraphMax, 0;
-	__asm        jne    _T2ff;
+	__asm        jne    _FOR_30b;
 // LINE 1814:
 	__asm        jmp    alloc_failure;
 // LINE 1815:
-_T2ff:
+_FOR_30b:
 	i = 0x0;
-	__asm        jmp    _T30e;
-_T30b:
+	__asm        jmp    _FOR_COND_30b;
+_FOR_NEXT_30b:
 	i++;
-_T30e:
+_FOR_COND_30b:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T37d;
 // LINE 1816:
@@ -4645,11 +4664,12 @@ _T30e:
 	__asm        mov    ecx, i;
 	__asm        mov    GraphData[ecx*4], eax;
 // LINE 1817:
+_FOR_342:
 	j = 0x0;
-	__asm        jmp    _T345;
-_T342:
+	__asm        jmp    _FOR_COND_342;
+_FOR_NEXT_342:
 	j++;
-_T345:
+_FOR_COND_342:
 	__asm        cmp    j, 0x34;
 	__asm        jge    _T368;
 // LINE 1818:
@@ -4657,12 +4677,12 @@ _T345:
 	__asm        mov    eax, GraphData[eax*4];
 	__asm        mov    ecx, j;
 	__asm        mov    dword ptr [eax+ecx*4], 0;
-	__asm        jmp    _T342;
+	__asm        jmp    _FOR_NEXT_342;
 // LINE 1819:
 _T368:
 	GraphMax[i] = 0x1;
 // LINE 1820:
-	__asm        jmp    _T30b;
+	__asm        jmp    _FOR_NEXT_30b;
 // LINE 1821:
 _T37d:
 	GraphMax[32] = 0x64;
@@ -4681,16 +4701,16 @@ _T37d:
 	__asm        add    esp, 0xC;
 	__asm        mov    AltMap[0], eax;
 	__asm        cmp    AltMap[0], 0;
-	__asm        jne    _T3dc;
+	__asm        jne    _FOR_3e8;
 // LINE 1827:
 	__asm        jmp    alloc_failure;
 // LINE 1828:
-_T3dc:
+_FOR_3e8:
 	cnt = 0x1;
-	__asm        jmp    _T3eb;
-_T3e8:
+	__asm        jmp    _FOR_COND_3e8;
+_FOR_NEXT_3e8:
 	cnt++;
-_T3eb:
+_FOR_COND_3e8:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T413;
 // LINE 1829:
@@ -4699,7 +4719,7 @@ _T3eb:
 	__asm        add    eax, AltMap[0];
 	__asm        mov    ecx, cnt;
 	__asm        mov    AltMap[ecx*4], eax;
-	__asm        jmp    _T3e8;
+	__asm        jmp    _FOR_NEXT_3e8;
 // LINE 1830:
 _T413:
 	__asm        push   0x4000;
@@ -4710,16 +4730,16 @@ _T413:
 	__asm        add    esp, 0xC;
 	__asm        mov    S_ptr1, eax;
 	__asm        cmp    S_ptr1, 0;
-	__asm        jne    _T442;
+	__asm        jne    _FOR_44e;
 // LINE 1831:
 	__asm        jmp    alloc_failure;
 // LINE 1832:
-_T442:
+_FOR_44e:
 	cnt = 0x0;
-	__asm        jmp    _T451;
-_T44e:
+	__asm        jmp    _FOR_COND_44e;
+_FOR_NEXT_44e:
 	cnt++;
-_T451:
+_FOR_COND_44e:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T479;
 // LINE 1833:
@@ -4728,7 +4748,7 @@ _T451:
 	__asm        add    eax, S_ptr1;
 	__asm        mov    ecx, cnt;
 	__asm        mov    BuildMap[ecx*4], eax;
-	__asm        jmp    _T44e;
+	__asm        jmp    _FOR_NEXT_44e;
 // LINE 1834:
 _T479:
 	__asm        push   0x4000;
@@ -4739,16 +4759,16 @@ _T479:
 	__asm        add    esp, 0xC;
 	__asm        mov    S_ptr2, eax;
 	__asm        cmp    S_ptr2, 0;
-	__asm        jne    _T4a8;
+	__asm        jne    _FOR_4b4;
 // LINE 1835:
 	__asm        jmp    alloc_failure;
 // LINE 1836:
-_T4a8:
+_FOR_4b4:
 	cnt = 0x0;
-	__asm        jmp    _T4b7;
-_T4b4:
+	__asm        jmp    _FOR_COND_4b4;
+_FOR_NEXT_4b4:
 	cnt++;
-_T4b7:
+_FOR_COND_4b4:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T4df;
 // LINE 1837:
@@ -4757,7 +4777,7 @@ _T4b7:
 	__asm        add    eax, S_ptr2;
 	__asm        mov    ecx, cnt;
 	__asm        mov    ZoneMap[ecx*4], eax;
-	__asm        jmp    _T4b4;
+	__asm        jmp    _FOR_NEXT_4b4;
 // LINE 1838:
 _T4df:
 	__asm        push   0x4000;
@@ -4768,16 +4788,16 @@ _T4df:
 	__asm        add    esp, 0xC;
 	__asm        mov    S_ptr3, eax;
 	__asm        cmp    S_ptr3, 0;
-	__asm        jne    _T50e;
+	__asm        jne    _FOR_51a;
 // LINE 1839:
 	__asm        jmp    alloc_failure;
 // LINE 1840:
-_T50e:
+_FOR_51a:
 	cnt = 0x0;
-	__asm        jmp    _T51d;
-_T51a:
+	__asm        jmp    _FOR_COND_51a;
+_FOR_NEXT_51a:
 	cnt++;
-_T51d:
+_FOR_COND_51a:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T545;
 // LINE 1841:
@@ -4786,7 +4806,7 @@ _T51d:
 	__asm        add    eax, S_ptr3;
 	__asm        mov    ecx, cnt;
 	__asm        mov    TerrainMap[ecx*4], eax;
-	__asm        jmp    _T51a;
+	__asm        jmp    _FOR_NEXT_51a;
 // LINE 1842:
 _T545:
 	__asm        push   0x4000;
@@ -4797,16 +4817,16 @@ _T545:
 	__asm        add    esp, 0xC;
 	__asm        mov    S_ptr4, eax;
 	__asm        cmp    S_ptr4, 0;
-	__asm        jne    _T574;
+	__asm        jne    _FOR_580;
 // LINE 1843:
 	__asm        jmp    alloc_failure;
 // LINE 1844:
-_T574:
+_FOR_580:
 	cnt = 0x0;
-	__asm        jmp    _T583;
-_T580:
+	__asm        jmp    _FOR_COND_580;
+_FOR_NEXT_580:
 	cnt++;
-_T583:
+_FOR_COND_580:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T5ab;
 // LINE 1845:
@@ -4815,7 +4835,7 @@ _T583:
 	__asm        add    eax, S_ptr4;
 	__asm        mov    ecx, cnt;
 	__asm        mov    UnderMap[ecx*4], eax;
-	__asm        jmp    _T580;
+	__asm        jmp    _FOR_NEXT_580;
 // LINE 1846:
 _T5ab:
 	__asm        push   0x4000;
@@ -4826,16 +4846,16 @@ _T5ab:
 	__asm        add    esp, 0xC;
 	__asm        mov    S_ptr5, eax;
 	__asm        cmp    S_ptr5, 0;
-	__asm        jne    _T5da;
+	__asm        jne    _FOR_5e6;
 // LINE 1847:
 	__asm        jmp    alloc_failure;
 // LINE 1848:
-_T5da:
+_FOR_5e6:
 	cnt = 0x0;
-	__asm        jmp    _T5e9;
-_T5e6:
+	__asm        jmp    _FOR_COND_5e6;
+_FOR_NEXT_5e6:
 	cnt++;
-_T5e9:
+_FOR_COND_5e6:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T611;
 // LINE 1849:
@@ -4844,7 +4864,7 @@ _T5e9:
 	__asm        add    eax, S_ptr5;
 	__asm        mov    ecx, cnt;
 	__asm        mov    TextMap[ecx*4], eax;
-	__asm        jmp    _T5e6;
+	__asm        jmp    _FOR_NEXT_5e6;
 // LINE 1850:
 _T611:
 	__asm        push   0x1900;
@@ -4888,20 +4908,22 @@ _T66f:
 _T69e:
 	z = 0x0;
 // LINE 1858:
+_FOR_6af:
 	x = 0x0;
-	__asm        jmp    _T6b3;
-_T6af:
+	__asm        jmp    _FOR_COND_6af;
+_FOR_NEXT_6af:
 	x++;
-_T6b3:
+_FOR_COND_6af:
 	__asm        movsx  eax, x;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    _T76a;
 // LINE 1859:
+_FOR_6cd:
 	y = 0x0;
-	__asm        jmp    _T6d1;
-_T6cd:
+	__asm        jmp    _FOR_COND_6cd;
+_FOR_NEXT_6cd:
 	y++;
-_T6d1:
+_FOR_COND_6cd:
 	__asm        movsx  eax, y;
 	__asm        cmp    eax, 0x80;
 	__asm        jge    _T765;
@@ -4942,10 +4964,10 @@ _T6d1:
 	__asm        movsx  edx, y;
 	__asm        mov    [ecx+edx], al;
 // LINE 1866:
-	__asm        jmp    _T6cd;
+	__asm        jmp    _FOR_NEXT_6cd;
 // LINE 1867:
 _T765:
-	__asm        jmp    _T6af;
+	__asm        jmp    _FOR_NEXT_6af;
 // LINE 1869:
 _T76a:
 	__asm        push   0x8000;
@@ -5073,18 +5095,18 @@ _T911:
 	__asm        add    esp, 0xC;
 	__asm        mov    ROGMap[0], eax;
 	__asm        cmp    ROGMap[0], 0;
-	__asm        jne    _T940;
+	__asm        jne    _FOR_94c;
 // LINE 1889:
 	__asm        jmp    alloc_failure;
 // LINE 1890:
-_T940:
+_FOR_94c:
 	i = 0x0;
-	__asm        jmp    _T94f;
-_T94c:
+	__asm        jmp    _FOR_COND_94c;
+_FOR_NEXT_94c:
 	i++;
-_T94f:
+_FOR_COND_94c:
 	__asm        cmp    i, 0x80;
-	__asm        jge    _T98d;
+	__asm        jge    _FOR_999;
 // LINE 1891:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 8;
@@ -5098,16 +5120,16 @@ _T94f:
 	__asm        mov    ecx, i;
 	__asm        mov    BitsMap[ecx*4], eax;
 // LINE 1893:
-	__asm        jmp    _T94c;
+	__asm        jmp    _FOR_NEXT_94c;
 // LINE 1894:
-_T98d:
+_FOR_999:
 	i = 0x0;
-	__asm        jmp    _T99c;
-_T999:
+	__asm        jmp    _FOR_COND_999;
+_FOR_NEXT_999:
 	i++;
-_T99c:
+_FOR_COND_999:
 	__asm        cmp    i, 0x40;
-	__asm        jge    _Ta03;
+	__asm        jge    _FOR_a0f;
 // LINE 1895:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 6;
@@ -5133,14 +5155,14 @@ _T99c:
 	__asm        mov    ecx, i;
 	__asm        mov    CrimeMap[ecx*4], eax;
 // LINE 1899:
-	__asm        jmp    _T999;
+	__asm        jmp    _FOR_NEXT_999;
 // LINE 1900:
-_Ta03:
+_FOR_a0f:
 	i = 0x0;
-	__asm        jmp    _Ta12;
-_Ta0f:
+	__asm        jmp    _FOR_COND_a0f;
+_FOR_NEXT_a0f:
 	i++;
-_Ta12:
+_FOR_COND_a0f:
 	__asm        cmp    i, 0x20;
 	__asm        jge    _Ta79;
 // LINE 1901:
@@ -5168,7 +5190,7 @@ _Ta12:
 	__asm        mov    ecx, i;
 	__asm        mov    ROGMap[ecx*4], eax;
 // LINE 1905:
-	__asm        jmp    _Ta0f;
+	__asm        jmp    _FOR_NEXT_a0f;
 // LINE 1906:
 _Ta79:
 	__asm        push   0x700;
@@ -5457,11 +5479,12 @@ void PStringToCString(char * string) {
 	__asm        mov    al, [eax];
 	__asm        mov    sizePString, al;
 // LINE 1983:
+_FOR_1d:
 	i = 0x0;
-	__asm        jmp    _T20;
-_T1d:
+	__asm        jmp    _FOR_COND_1d;
+_FOR_NEXT_1d:
 	i++;
-_T20:
+_FOR_COND_1d:
 	__asm        movsx  eax, sizePString;
 	__asm        cmp    eax, i;
 	__asm        jle    _T45;
@@ -5472,7 +5495,7 @@ _T20:
 	__asm        mov    ecx, i;
 	__asm        mov    edx, string;
 	__asm        mov    [ecx+edx], al;
-	__asm        jmp    _T1d;
+	__asm        jmp    _FOR_NEXT_1d;
 // LINE 1985:
 _T45:
 	__asm        mov    eax, i;
@@ -5494,18 +5517,18 @@ void CStringToPString(char * string) {
 	__asm        mov    sizeCString, eax;
 // LINE 1997:
 	__asm        cmp    sizeCString, 0xFF;
-	__asm        jle    _T2c;
+	__asm        jle    _FOR_38;
 // LINE 1998:
 	sizeCString = 0xff;
 // LINE 2000:
-_T2c:
+_FOR_38:
 	__asm        mov    eax, sizeCString;
 	__asm        dec    eax;
 	__asm        mov    i, eax;
-	__asm        jmp    _T3b;
-_T38:
+	__asm        jmp    _FOR_COND_38;
+_FOR_NEXT_38:
 	i--;
-_T3b:
+_FOR_COND_38:
 	__asm        cmp    i, 0;
 	__asm        jl     _T5d;
 // LINE 2001:
@@ -5515,7 +5538,7 @@ _T3b:
 	__asm        mov    ecx, i;
 	__asm        mov    edx, string;
 	__asm        mov    [ecx+edx+1], al;
-	__asm        jmp    _T38;
+	__asm        jmp    _FOR_NEXT_38;
 // LINE 2002:
 _T5d:
 	__asm        mov    al, reinterpret_cast<uint8_t>(sizeCString);
@@ -5540,11 +5563,12 @@ void CopyPString(char * stringDestination, char * stringSource) {
 	__asm        mov    ecx, stringDestination;
 	__asm        mov    [ecx], al;
 // LINE 2015:
+_FOR_29:
 	i = 0x1;
-	__asm        jmp    _T2c;
-_T29:
+	__asm        jmp    _FOR_COND_29;
+_FOR_NEXT_29:
 	i++;
-_T2c:
+_FOR_COND_29:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    __RETURN;
@@ -5555,7 +5579,7 @@ _T2c:
 	__asm        mov    ecx, i;
 	__asm        mov    edx, stringDestination;
 	__asm        mov    [ecx+edx], al;
-	__asm        jmp    _T29;
+	__asm        jmp    _FOR_NEXT_29;
 // LINE 2017:
 __RETURN:
 }
@@ -5632,7 +5656,7 @@ _T64:
 // LINE 2082:
 	count = 0x0;
 // LINE 2084:
-_T79:
+__WHILE_79:
 	__asm        lea    eax, pathonly[0];
 	__asm        cmp    s, eax;
 	__asm        jb     _Tf2;
@@ -5674,7 +5698,7 @@ _Tcb:
 	count--;
 // LINE 2099:
 _Ted:
-	__asm        jmp    _T79;
+	__asm        jmp    __WHILE_79;
 // LINE 2100:
 _Tf2:
 	__asm        movsx  eax, count;
@@ -5715,7 +5739,7 @@ _T30:
 	__asm        dec    eax;
 	__asm        mov    s, eax;
 // LINE 2132:
-_T3b:
+__WHILE_3b:
 	__asm        mov    eax, ref;
 	__asm        cmp    s, eax;
 	__asm        jb     _T75;
@@ -5738,7 +5762,7 @@ _T65:
 _T6d:
 	s--;
 // LINE 2138:
-	__asm        jmp    _T3b;
+	__asm        jmp    __WHILE_3b;
 // LINE 2139:
 _T75:
 	__asm        mov    eax, ref;
@@ -5785,11 +5809,12 @@ _T30:
 // LINE 2171:
 	s = res;
 // LINE 2173:
+_FOR_51:
 	i = 0x0;
-	__asm        jmp    _T55;
-_T51:
+	__asm        jmp    _FOR_COND_51;
+_FOR_NEXT_51:
 	i++;
-_T55:
+_FOR_COND_51:
 	__asm        movsx  eax, i;
 	__asm        movsx  ecx, len;
 	__asm        cmp    eax, ecx;
@@ -5814,7 +5839,7 @@ _T55:
 _T91:
 	s++;
 // LINE 2177:
-	__asm        jmp    _T51;
+	__asm        jmp    _FOR_NEXT_51;
 // LINE 2178:
 __RETURN:
 }
@@ -5845,7 +5870,7 @@ _T30:
 	__asm        dec    eax;
 	__asm        mov    s, eax;
 // LINE 2205:
-_T3b:
+__WHILE_3b:
 	__asm        mov    eax, ref;
 	__asm        cmp    s, eax;
 	__asm        jb     _T75;
@@ -5868,7 +5893,7 @@ _T65:
 _T6d:
 	s--;
 // LINE 2211:
-	__asm        jmp    _T3b;
+	__asm        jmp    __WHILE_3b;
 // LINE 2212:
 _T75:
 	__asm        mov    eax, ref;
@@ -5915,7 +5940,7 @@ _T2a:
 	__asm        dec    eax;
 	__asm        mov    s, eax;
 // LINE 2242:
-_T35:
+__WHILE_35:
 	__asm        mov    eax, ref;
 	__asm        cmp    s, eax;
 	__asm        je     __RETURN;
@@ -5932,7 +5957,7 @@ _T35:
 _T5b:
 	s--;
 // LINE 2248:
-	__asm        jmp    _T35;
+	__asm        jmp    __WHILE_35;
 // LINE 2249:
 __RETURN:
 }
@@ -5969,7 +5994,7 @@ _T5f:
 	__asm        dec    eax;
 	__asm        mov    s, eax;
 // LINE 2282:
-_T6b:
+__WHILE_6b:
 	__asm        movsx  eax, len;
 	__asm        test   eax, eax;
 	__asm        je     _T97;
@@ -5986,7 +6011,7 @@ _T8b:
 // LINE 2286:
 	len--;
 // LINE 2287:
-	__asm        jmp    _T6b;
+	__asm        jmp    __WHILE_6b;
 // LINE 2288:
 _T97:
 	__asm        mov    eax, s;
@@ -6017,14 +6042,14 @@ _Tc6:
 	__asm        dec    ecx;
 	__asm        mov    s, ecx;
 // LINE 2293:
-_Tdb:
+__WHILE_db:
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x2E;
 	__asm        je     _Tf2;
 // LINE 2294:
 	s--;
-	__asm        jmp    _Tdb;
+	__asm        jmp    __WHILE_db;
 // LINE 2295:
 _Tf2:
 	s[1] = 0x0;
@@ -6085,7 +6110,7 @@ _T33:
 // LINE 2353:
 	s = ref;
 // LINE 2355:
-_T42:
+__WHILE_42:
 	__asm        movsx  eax, len;
 	__asm        test   eax, eax;
 	__asm        je     _T192;
@@ -6200,7 +6225,7 @@ _T183:
 _T186:
 	len--;
 // LINE 2368:
-	__asm        jmp    _T42;
+	__asm        jmp    __WHILE_42;
 // LINE 2369:
 _T192:
 	r[0] = 0x0;
@@ -6233,7 +6258,7 @@ _T33:
 // LINE 2394:
 	s = ref;
 // LINE 2396:
-_T42:
+__WHILE_42:
 	__asm        movsx  eax, len;
 	__asm        test   eax, eax;
 	__asm        je     _T84;
@@ -6258,7 +6283,7 @@ _T75:
 _T78:
 	len--;
 // LINE 2402:
-	__asm        jmp    _T42;
+	__asm        jmp    __WHILE_42;
 // LINE 2403:
 _T84:
 	r[0] = 0x0;

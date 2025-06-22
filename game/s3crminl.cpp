@@ -538,11 +538,12 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 	__asm        mov    al, reinterpret_cast<uint8_t>(y);
 	__asm        mov    startLoc.y, al;
 // LINE 165:
+_FOR_21:
 	i = 0x0;
-	__asm        jmp    _T24;
-_T21:
+	__asm        jmp    _FOR_COND_21;
+_FOR_NEXT_21:
 	i++;
-_T24:
+_FOR_COND_21:
 	__asm        cmp    i, 5;
 	__asm        jge    _T118;
 // LINE 167:
@@ -609,7 +610,7 @@ _T10c:
 	return 0x0;
 // LINE 195:
 _T113:
-	__asm        jmp    _T21;
+	__asm        jmp    _FOR_NEXT_21;
 // LINE 198:
 _T118:
 	return 0x0;
@@ -1043,7 +1044,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 447:
 // Block start:
 	/*bp-0x18*/  unsigned short tt;
-_T27:
+__DO_27:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
 	__asm        mov    eax, BuildMap[eax*4];
@@ -1095,7 +1096,7 @@ _T80:
 //  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 1, 1, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, 2, 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3, 7, 7, 7, 4, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6]
 // LINE 484:
 _T153:
-	__asm        jmp    _T4da;
+	__asm        jmp    __DO_WHILE_27;
 // LINE 487:
 _T158:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
@@ -1140,7 +1141,7 @@ _T186:
 //  [0, 12, 12, 12, 12, 1, 1, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 2, 2, 12, 3, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 4, 12, 12, 5, 5, 12, 12, 6, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 7, 7, 7, 12, 8, 8, 12, 9, 9, 9, 9, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 10, 12, 11]
 // LINE 513:
 _T255:
-	__asm        jmp    _T4da;
+	__asm        jmp    __DO_WHILE_27;
 // LINE 516:
 _T25a:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
@@ -1179,7 +1180,7 @@ _T288:
 //  [0, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 1, 1, 1, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 2, 2, 6, 3, 6, 4, 6, 6, 6, 5, 5]
 // LINE 534:
 _T2f0:
-	__asm        jmp    _T4da;
+	__asm        jmp    __DO_WHILE_27;
 // LINE 537:
 _T2f5:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
@@ -1224,7 +1225,7 @@ _T323:
 //  [0, 0, 12, 12, 1, 1, 1, 1, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 2, 12, 3, 3, 3, 12, 12, 12, 4, 4, 4, 4, 4, 4, 4, 4, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 5, 5, 5, 5, 5, 5, 5, 5, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 6, 12, 12, 7, 12, 12, 12, 12, 12, 8, 12, 12, 9, 9, 12, 12, 10, 12, 11]
 // LINE 575:
 _T3ed:
-	__asm        jmp    _T4da;
+	__asm        jmp    __DO_WHILE_27;
 // LINE 578:
 _T3f2:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
@@ -1268,12 +1269,12 @@ _T420:
 //  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 11, 11, 11, 11, 11, 1, 11, 11, 11, 11, 2, 2, 2, 11, 11, 3, 3, 11, 4, 4, 4, 4, 4, 11, 5, 5, 11, 11, 6, 6, 11, 7, 11, 8, 8, 11, 9, 11, 10, 10, 10]
 // LINE 616:
 _T4a8:
-	__asm        jmp    _T4da;
+	__asm        jmp    __DO_WHILE_27;
 // LINE 617:
-	__asm        jmp    _T4da;
+	__asm        jmp    __DO_WHILE_27;
 _T4b2:
 	__asm        cmp    dword ptr [ebp-0x38], 4;
-	__asm        ja     _T4da;
+	__asm        ja     __DO_WHILE_27;
 
 	__asm        mov    eax, [ebp-0x38];
 	__asm        jmp    _Switch_4c6[0][eax*4];
@@ -1285,13 +1286,13 @@ _T4b2:
 //   _T3f2
 // LINE 619:
 // Block end:
-_T4da:
+__DO_WHILE_27:
 	__asm        lea    eax, scanLoc.x;
 	__asm        push   eax;
 	__asm        lea    ecx, scan.currDist;
 	__asm        call   SpiralScan::Next;
 	__asm        test   eax, eax;
-	__asm        jne    _T27;
+	__asm        jne    __DO_27;
 // LINE 621:
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        jmp    _T4fa;

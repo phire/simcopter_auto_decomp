@@ -93,16 +93,16 @@ _T14:
 	__asm        call   GetDir_CMAP;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    _T2f;
+	__asm        jne    _FOR_3b;
 // LINE 147:
 	return 0x0;
 // LINE 148:
-_T2f:
+_FOR_3b:
 	i = 0x0;
-	__asm        jmp    _T3e;
-_T3b:
+	__asm        jmp    _FOR_COND_3b;
+_FOR_NEXT_3b:
 	i++;
-_T3e:
+_FOR_COND_3b:
 	__asm        mov    eax, i;
 	__asm        cmp    CMAP_hdr.PaletteCount, eax;
 	__asm        jle    _T13b;
@@ -177,7 +177,7 @@ _T12e:
 	return res;
 // LINE 169:
 _T136:
-	__asm        jmp    _T3b;
+	__asm        jmp    _FOR_NEXT_3b;
 // LINE 170:
 _T13b:
 	GlobalError = 0x7;
@@ -227,16 +227,16 @@ _T1d1:
 	__asm        call   GetDir_GEOM;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    _T1ec;
+	__asm        jne    _FOR_1f8;
 // LINE 191:
 	return 0x0;
 // LINE 193:
-_T1ec:
+_FOR_1f8:
 	i = 0x0;
-	__asm        jmp    _T1fb;
-_T1f8:
+	__asm        jmp    _FOR_COND_1f8;
+_FOR_NEXT_1f8:
 	i++;
-_T1fb:
+_FOR_COND_1f8:
 	__asm        mov    eax, i;
 	__asm        cmp    GEOM_hdr.GroupCount, eax;
 	__asm        jle    _T332;
@@ -331,7 +331,7 @@ _T325:
 	return res;
 // LINE 214:
 _T32d:
-	__asm        jmp    _T1f8;
+	__asm        jmp    _FOR_NEXT_1f8;
 // LINE 215:
 _T332:
 	GlobalError = 0x7;
@@ -346,16 +346,16 @@ _T348:
 	__asm        call   GetDir_GEOM;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
-	__asm        jne    _T363;
+	__asm        jne    _FOR_36f;
 // LINE 222:
 	return 0x0;
 // LINE 224:
-_T363:
+_FOR_36f:
 	i = 0x0;
-	__asm        jmp    _T372;
-_T36f:
+	__asm        jmp    _FOR_COND_36f;
+_FOR_NEXT_36f:
 	i++;
-_T372:
+_FOR_COND_36f:
 	__asm        mov    eax, i;
 	__asm        cmp    GEOM_hdr.IdCount, eax;
 	__asm        jle    _T47a;
@@ -433,7 +433,7 @@ _T46d:
 	return res;
 // LINE 245:
 _T475:
-	__asm        jmp    _T36f;
+	__asm        jmp    _FOR_NEXT_36f;
 // LINE 246:
 _T47a:
 	GlobalError = 0x8;
@@ -469,7 +469,7 @@ int32_t VRUnLoadAllResources() {
 	/*bp-0x4*/   /*packed*/ struct VRResource *res;
 
 // LINE 278:
-_T09:
+__WHILE_09:
 	__asm        cmp    NextResource, 0;
 	__asm        je     _T3e;
 // LINE 279:
@@ -485,7 +485,7 @@ _T09:
 	return 0x0;
 // LINE 282:
 _T39:
-	__asm        jmp    _T09;
+	__asm        jmp    __WHILE_09;
 // LINE 283:
 _T3e:
 	return 0x1;
@@ -566,19 +566,19 @@ int32_t GetDir_GEOM(char * name) {
 // LINE 369:
 _T24:
 	__asm        cmp    GEOM_GPdir, 0;
-	__asm        je     _T48;
+	__asm        je     _FOR_54;
 
 	__asm        cmp    GEOM_IDdir, 0;
-	__asm        je     _T48;
+	__asm        je     _FOR_54;
 // LINE 370:
 	return 0x1;
 // LINE 375:
-_T48:
+_FOR_54:
 	i = 0x0;
-	__asm        jmp    _T57;
-_T54:
+	__asm        jmp    _FOR_COND_54;
+_FOR_NEXT_54:
 	i++;
-_T57:
+_FOR_COND_54:
 	__asm        mov    eax, i;
 	__asm        cmp    ResourceDirHdr.Count, eax;
 	__asm        jle    _T273;
@@ -740,7 +740,7 @@ _T264:
 	return 0x1;
 // LINE 611:
 _T26e:
-	__asm        jmp    _T54;
+	__asm        jmp    _FOR_NEXT_54;
 // LINE 612:
 _T273:
 	GlobalError = 0x5;
@@ -766,16 +766,16 @@ int32_t GetDir_CMAP(char * name) {
 // LINE 645:
 _T24:
 	__asm        cmp    CMAP_directory, 0;
-	__asm        je     _T3b;
+	__asm        je     _FOR_47;
 // LINE 646:
 	return 0x1;
 // LINE 651:
-_T3b:
+_FOR_47:
 	i = 0x0;
-	__asm        jmp    _T4a;
-_T47:
+	__asm        jmp    _FOR_COND_47;
+_FOR_NEXT_47:
 	i++;
-_T4a:
+_FOR_COND_47:
 	__asm        mov    eax, i;
 	__asm        cmp    ResourceDirHdr.Count, eax;
 	__asm        jle    _T183;
@@ -870,7 +870,7 @@ _T174:
 	return 0x1;
 // LINE 728:
 _T17e:
-	__asm        jmp    _T47;
+	__asm        jmp    _FOR_NEXT_47;
 // LINE 729:
 _T183:
 	GlobalError = 0x5;

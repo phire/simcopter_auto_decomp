@@ -740,10 +740,11 @@ _T2c:
 _T69:
 	it = this->m_commands.start;
 // LINE 35:
-	__asm        jmp    _T7e;
-_T7a:
+_FOR_7a:
+	__asm        jmp    _FOR_COND_7a;
+_FOR_NEXT_7a:
 	it += 0x4;
-_T7e:
+_FOR_COND_7a:
 	__asm        jmp    _T83;
 _T83:
 	__asm        mov    eax, this;
@@ -852,7 +853,7 @@ _T19e:
 	__asm        push   eax;
 	__asm        call   DebugOutput;
 	__asm        add    esp, 4;
-	__asm        jmp    _T7a;
+	__asm        jmp    _FOR_NEXT_7a;
 // LINE 37:
 _T1b1:
 	DebugOutput(0x5973b8);
@@ -864,10 +865,11 @@ _T1c3:
 _T1c8:
 	it = this->m_commands.start;
 // LINE 43:
-	__asm        jmp    _T1dd;
-_T1d9:
+_FOR_1d9:
+	__asm        jmp    _FOR_COND_1d9;
+_FOR_NEXT_1d9:
 	it += 0x4;
-_T1dd:
+_FOR_COND_1d9:
 	__asm        jmp    _T1e2;
 _T1e2:
 	__asm        mov    eax, this;
@@ -1155,14 +1157,14 @@ _T56b:
 	__asm        add    esp, 0xC;
 // LINE 49:
 _T58a:
-	__asm        jmp    _T1d9;
+	__asm        jmp    _FOR_NEXT_1d9;
 // LINE 50:
 _T58f:
 	__asm        mov    eax, commands.finish;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, commands.start;
 	__asm        mov    [ebp-0x48], eax;
-_T59b:
+__WHILE_59b:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        cmp    [ebp-0x48], eax;
 	__asm        je     _T63c;
@@ -1218,7 +1220,7 @@ _T62e:
 	__asm        jmp    _T633;
 _T633:
 	__asm        add    dword ptr [ebp-0x48], 8;
-	__asm        jmp    _T59b;
+	__asm        jmp    __WHILE_59b;
 _T63c:
 	__asm        jmp    _T641;
 _T641:
@@ -1740,7 +1742,7 @@ _T35:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    [ebp-0x6C], eax;
-_T3e:
+__WHILE_3e:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x6C];
 	__asm        cmp    [eax+0x30], ecx;
@@ -1749,7 +1751,7 @@ _T3e:
 	__asm        jmp    _T52;
 _T52:
 	__asm        add    dword ptr [ebp-0x6C], 4;
-	__asm        jmp    _T3e;
+	__asm        jmp    __WHILE_3e;
 _T5b:
 	__asm        jmp    _T60;
 _T60:
@@ -1764,8 +1766,8 @@ _T60:
 _T7a:
 	__asm        jmp    _T7f;
 _T7f:
-	__asm        jmp    _T84;
-_T84:
+	__asm        jmp    _LOOP_84;
+_LOOP_84:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0;
 	__asm        jne    _T9b;
@@ -1945,7 +1947,7 @@ _T282:
 _T287:
 	__asm        jmp    _T28c;
 _T28c:
-	__asm        jmp    _T84;
+	__asm        jmp    _LOOP_84;
 _T291:
 	return;
 }
@@ -2125,9 +2127,9 @@ _T31:
 	__asm        mov    [ecx+8], edx;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
-	__asm        jmp    _T52;
+	__asm        jmp    _LOOP_52;
 // LINE 158:
-_T52:
+_LOOP_52:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
 	__asm        lea    ecx, [ebp-0x24];
@@ -2356,7 +2358,7 @@ _T2c6:
 	__asm        jmp    _T2e7;
 // LINE 163:
 _T2e7:
-	__asm        jmp    _T52;
+	__asm        jmp    _LOOP_52;
 // LINE 165:
 _T2ec:
 	fflush(file);
@@ -2479,7 +2481,7 @@ _Tad:
 // LINE 23:
 	__asm        jmp    _T170;
 // LINE 204:
-_Td4:
+_LOOP_d4:
 	__asm        lea    eax, it.current;
 	__asm        lea    ecx, [ebp-0xE8];
 	__asm        mov    edx, [eax];
@@ -2719,7 +2721,7 @@ _T443:
 	scrollStart--;
 // LINE 211:
 _T446:
-	__asm        jmp    _Td4;
+	__asm        jmp    _LOOP_d4;
 // LINE 214:
 _T44b:
 	__asm        lea    eax, ps.hdc;
@@ -3023,8 +3025,8 @@ _T268:
 	__asm        jmp    _T280;
 // LINE 253:
 _T280:
-	__asm        jmp    _T285;
-_T285:
+	__asm        jmp    __WHILE_285;
+__WHILE_285:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x20], 0x1F4;
 	__asm        jbe    _T488;
@@ -3174,7 +3176,7 @@ _T479:
 _T47e:
 	__asm        jmp    _T483;
 _T483:
-	__asm        jmp    _T285;
+	__asm        jmp    __WHILE_285;
 // LINE 255:
 _T488:
 	this->CDebugWindow::RecalcScrollRange();
@@ -3516,13 +3518,13 @@ _T1f4:
 	__asm        cmp    num, 0;
 	__asm        je     _T38c;
 // LINE 320:
-	__asm        jmp    _T23a;
-_T23a:
+	__asm        jmp    _FOR_24e;
+_FOR_24e:
 	it = this->m_commands.start;
-	__asm        jmp    _T255;
-_T24e:
+	__asm        jmp    _FOR_COND_24e;
+_FOR_NEXT_24e:
 	it += 0x4;
-_T255:
+_FOR_COND_24e:
 	__asm        jmp    _T25a;
 _T25a:
 	__asm        mov    eax, this;
@@ -3613,7 +3615,7 @@ _T36c:
 	__asm        call   dword ptr [edx];
 // LINE 323:
 _T387:
-	__asm        jmp    _T24e;
+	__asm        jmp    _FOR_NEXT_24e;
 _T38c:
 	this->CDebugWindow::RecalcScrollRange();
 // LINE 324:
@@ -3621,7 +3623,7 @@ _T38c:
 	__asm        mov    [ebp-0x254], eax;
 	__asm        mov    eax, command_vector.start;
 	__asm        mov    [ebp-0x258], eax;
-_T3af:
+__WHILE_3af:
 	__asm        mov    eax, [ebp-0x254];
 	__asm        cmp    [ebp-0x258], eax;
 	__asm        je     _T49d;
@@ -3684,7 +3686,7 @@ _T48c:
 	__asm        jmp    _T491;
 _T491:
 	__asm        add    dword ptr [ebp-0x258], 8;
-	__asm        jmp    _T3af;
+	__asm        jmp    __WHILE_3af;
 _T49d:
 	__asm        jmp    _T4a2;
 _T4a2:
@@ -4067,7 +4069,7 @@ _Td3:
 	__asm        mov    eax, [eax+0x30];
 	__asm        sub    eax, 4;
 	__asm        mov    [ebp-0x34], eax;
-_Te8:
+__WHILE_e8:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    [ebp-0x78], eax;
 	__asm        je     _T10b;
@@ -4078,7 +4080,7 @@ _Te8:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    _Te8;
+	__asm        jmp    __WHILE_e8;
 _T10b:
 	__asm        jmp    _T110;
 _T110:
@@ -4159,7 +4161,7 @@ _T1da:
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    [ebp-0x5C], eax;
-_T1e9:
+__WHILE_1e9:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        cmp    [ebp-0x78], eax;
 	__asm        je     _T237;
@@ -4185,7 +4187,7 @@ _T214:
 _T22d:
 	__asm        jmp    _T232;
 _T232:
-	__asm        jmp    _T1e9;
+	__asm        jmp    __WHILE_1e9;
 _T237:
 	__asm        jmp    _T23c;
 _T23c:
@@ -4235,7 +4237,7 @@ _T28d:
 	__asm        mov    [ebp-0x70], eax;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x74], eax;
-_T2ba:
+__WHILE_2ba:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        cmp    [ebp-0x74], eax;
 	__asm        je     _T308;
@@ -4261,7 +4263,7 @@ _T2e5:
 _T2fe:
 	__asm        jmp    _T303;
 _T303:
-	__asm        jmp    _T2ba;
+	__asm        jmp    __WHILE_2ba;
 _T308:
 	__asm        jmp    _T30d;
 _T30d:
@@ -4272,7 +4274,7 @@ _T317:
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    [ebp-0x18], eax;
-_T320:
+__WHILE_320:
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        cmp    [eax+0x30], ecx;
@@ -4281,7 +4283,7 @@ _T320:
 	__asm        jmp    _T334;
 _T334:
 	__asm        add    dword ptr [ebp-0x18], 4;
-	__asm        jmp    _T320;
+	__asm        jmp    __WHILE_320;
 _T33d:
 	__asm        jmp    _T342;
 _T342:
@@ -4355,7 +4357,7 @@ _T2e:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
-_T46:
+__WHILE_46:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    [ebp-8], eax;
 	__asm        je     _T69;
@@ -4366,7 +4368,7 @@ _T46:
 	__asm        je     _T69;
 
 	__asm        add    dword ptr [ebp-8], 4;
-	__asm        jmp    _T46;
+	__asm        jmp    __WHILE_46;
 _T69:
 	__asm        jmp    _T6e;
 _T6e:
@@ -4385,7 +4387,7 @@ _T8b:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x10], eax;
-_T9b:
+__WHILE_9b:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    [ebp-0x10], eax;
 	__asm        je     _Tcc;
@@ -4402,7 +4404,7 @@ _T9b:
 	__asm        add    dword ptr [ebp-0xC], 4;
 _Tc3:
 	__asm        add    dword ptr [ebp-0x10], 4;
-	__asm        jmp    _T9b;
+	__asm        jmp    __WHILE_9b;
 _Tcc:
 	__asm        jmp    _Td1;
 _Td1:
@@ -4510,7 +4512,7 @@ _Tcd:
 // LINE 444:
 	index = 0x0;
 // LINE 446:
-_Tf4:
+__WHILE_f4:
 	__asm        cmp    pos, 0xFFFFFFFF;
 	__asm        je     _T3fc;
 // LINE 449:
@@ -4742,7 +4744,7 @@ _T3d7:
 	__asm        mov    pos, eax;
 // LINE 464:
 _T3f7:
-	__asm        jmp    _Tf4;
+	__asm        jmp    __WHILE_f4;
 // LINE 467:
 _T3fc:
 	__asm        jmp    _T401;

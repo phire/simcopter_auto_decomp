@@ -1659,13 +1659,14 @@ void MissionLogWindow::DrawBackground() {
 	/*bp-0xc*/   long y;
 
 // LINE 192:
+_FOR_26:
 	i = 0x0;
 	x = 0x42;
 	y = 0x50;
-	__asm        jmp    _T29;
-_T26:
+	__asm        jmp    _FOR_COND_26;
+_FOR_NEXT_26:
 	i++;
-_T29:
+_FOR_COND_26:
 	__asm        cmp    i, 0x15;
 	__asm        jge    _T67;
 // LINE 193:
@@ -1689,7 +1690,7 @@ _T29:
 // LINE 194:
 	x += 0x18;
 // LINE 195:
-	__asm        jmp    _T26;
+	__asm        jmp    _FOR_NEXT_26;
 // LINE 196:
 _T67:
 	return;
@@ -1809,7 +1810,7 @@ _Tb4:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    iterator.node, eax;
 // LINE 23:
-_Tba:
+_LOOP_ba:
 	__asm        mov    eax, gLogManager.myLogBasePtrList;
 	__asm        mov    [ebp-0x20], eax;
 // LINE 231:
@@ -1871,7 +1872,7 @@ _T15f:
 	__asm        jmp    _T16a;
 // LINE 235:
 _T16a:
-	__asm        jmp    _Tba;
+	__asm        jmp    _LOOP_ba;
 // LINE 236:
 _T16f:
 	this->nCurrentSort = 0x0;
@@ -2005,7 +2006,7 @@ _Tc0:
 _Tcb:
 	nCurrentMissionID = iterator.node->data->nMissionID;
 // LINE 23:
-_Td7:
+_LOOP_d7:
 	__asm        mov    eax, gLogManager.myLogBasePtrList;
 	__asm        mov    [ebp-0x2C], eax;
 // LINE 253:
@@ -2211,7 +2212,7 @@ _T33b:
 	__asm        jmp    _T346;
 // LINE 261:
 _T346:
-	__asm        jmp    _Td7;
+	__asm        jmp    _LOOP_d7;
 // LINE 262:
 _T34b:
 	this->nCurrentSort = 0x1;
@@ -2369,14 +2370,14 @@ void MessageDisplayManager::~MessageDisplayManager() {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x28], eax;
-_T53:
+__WHILE_53:
 	__asm        dec    dword ptr [ebp-0x24];
 	__asm        js     _T6d;
 
 	__asm        sub    dword ptr [ebp-0x28], 8;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    _T53;
+	__asm        jmp    __WHILE_53;
 _T6d:
 	__asm        jmp    _T72;
 _T72:
@@ -2500,14 +2501,14 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x38], eax;
-_T57:
+__WHILE_57:
 	__asm        dec    dword ptr [ebp-0x34];
 	__asm        js     _T71;
 
 	__asm        sub    dword ptr [ebp-0x38], 8;
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    _T57;
+	__asm        jmp    __WHILE_57;
 _T71:
 	__asm        jmp    _T76;
 _T76:
@@ -2614,14 +2615,14 @@ _T15c:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x18], eax;
-_T19d:
+__WHILE_19d:
 	__asm        dec    dword ptr [ebp-0x14];
 	__asm        js     _T1b7;
 
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x18], 8;
-	__asm        jmp    _T19d;
+	__asm        jmp    __WHILE_19d;
 _T1b7:
 	__asm        jmp    _T1bc;
 _T1bc:
@@ -2728,26 +2729,26 @@ _Tb9:
 	__asm        cmp    [eax+0x44], ecx;
 	__asm        jae    _T3ec;
 
-	__asm        jmp    _T123;
+	__asm        jmp    _FOR_12f;
 _T100:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        cmp    [eax+0x44], ecx;
 	__asm        jae    _T3ec;
 
-	__asm        jmp    _T123;
+	__asm        jmp    _FOR_12f;
 
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        cmp    [eax+0x44], ecx;
 	__asm        jae    _T3ec;
 // LINE 331:
-_T123:
+_FOR_12f:
 	i = 0x0;
-	__asm        jmp    _T132;
-_T12f:
+	__asm        jmp    _FOR_COND_12f;
+_FOR_NEXT_12f:
 	i++;
-_T132:
+_FOR_COND_12f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x48];
 	__asm        dec    eax;
@@ -2916,7 +2917,7 @@ _T319:
 _T323:
 	__asm        jmp    _T328;
 _T328:
-	__asm        jmp    _T12f;
+	__asm        jmp    _FOR_NEXT_12f;
 // LINE 333:
 _T32d:
 	this->lCurrentDisplayedMessageCount--;
@@ -2989,14 +2990,14 @@ _T3ec:
 	rectCurrentMessage.bottom = 0x3e8;
 // LINE 343:
 	bufferDestination-><CBackBuffer+0x38:4> = reinterpret_cast<uint32_t>(this->colorMessage.Blue);
-	__asm        jmp    _T41d;
+	__asm        jmp    _FOR_429;
 // LINE 345:
-_T41d:
+_FOR_429:
 	i = 0x0;
-	__asm        jmp    _T42c;
-_T429:
+	__asm        jmp    _FOR_COND_429;
+_FOR_NEXT_429:
 	i++;
-_T42c:
+_FOR_COND_429:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x48], ecx;
@@ -3047,7 +3048,7 @@ _T484:
 // LINE 348:
 	rectCurrentMessage.top += this->lVerticalSpaceBetweenMessages;
 // LINE 349:
-	__asm        jmp    _T429;
+	__asm        jmp    _FOR_NEXT_429;
 // LINE 350:
 _T4bf:
 	return;
@@ -3071,11 +3072,12 @@ _T27:
 	__asm        cmp    [eax+0x48], ecx;
 	__asm        jl     _T369;
 // LINE 363:
+_FOR_4b:
 	i = 0x0;
-	__asm        jmp    _T4e;
-_T4b:
+	__asm        jmp    _FOR_COND_4b;
+_FOR_NEXT_4b:
 	i++;
-_T4e:
+_FOR_COND_4b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        dec    eax;
@@ -3162,7 +3164,7 @@ _T161:
 _T16e:
 	__asm        jmp    _T173;
 _T173:
-	__asm        jmp    _T4b;
+	__asm        jmp    _FOR_NEXT_4b;
 _T178:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];

@@ -413,7 +413,7 @@ _T24:
 	__asm        mov    eax, [eax+ecx+0x10];
 	__asm        mov    curBeh, eax;
 // LINE 65:
-_T42:
+__WHILE_42:
 	__asm        movsx  eax, stackSize;
 	__asm        test   eax, eax;
 	__asm        jl     _T115;
@@ -489,7 +489,7 @@ _T107:
 _T10c:
 	stackSize--;
 // LINE 69:
-	__asm        jmp    _T42;
+	__asm        jmp    __WHILE_42;
 // LINE 70:
 _T115:
 	__asm        mov    eax, this;
@@ -615,7 +615,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        mov    ax, bOnceOnly;
 	__asm        mov    done, ax;
 // LINE 127:
-_T23:
+__DO_23:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -800,7 +800,7 @@ _T214:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        cmp    eax, 0x80;
-	__asm        jle    _T240;
+	__asm        jle    __DO_WHILE_23;
 // LINE 175:
 	__asm        push   0x3EA;
 	__asm        mov    eax, this;
@@ -811,9 +811,9 @@ _T214:
 
 	__asm        jmp    tree_error;
 // LINE 177:
-_T240:
+__DO_WHILE_23:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
-	__asm        je     _T23;
+	__asm        je     __DO_23;
 // LINE 179:
 _T260:
 _T263:
@@ -842,7 +842,7 @@ signed char TreeSim::NodeComplete(unsigned short success) {
 // LINE 202:
 	done = 0x0;
 // LINE 204:
-_T12:
+__WHILE_12:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
 	__asm        jne    _T11f;
 // LINE 205:
@@ -934,7 +934,7 @@ _Tf3:
 	__asm        mov    [ecx+edx+2], ax;
 // LINE 226:
 _T11a:
-	__asm        jmp    _T12;
+	__asm        jmp    __WHILE_12;
 // LINE 227:
 _T11f:
 	return trans;

@@ -791,11 +791,12 @@ _T11:
 	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 201:
+_FOR_b9:
 	i = 0x0;
-	__asm        jmp    _Tbc;
-_Tb9:
+	__asm        jmp    _FOR_COND_b9;
+_FOR_NEXT_b9:
 	i++;
-_Tbc:
+_FOR_COND_b9:
 	__asm        mov    eax, lCurrentJoystickCount;
 	__asm        cmp    i, eax;
 	__asm        jge    _T10e;
@@ -825,7 +826,7 @@ _Tbc:
 	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 205:
-	__asm        jmp    _Tb9;
+	__asm        jmp    _FOR_NEXT_b9;
 // LINE 206:
 _T10e:
 	__asm        mov    eax, gPreferenceManager;
@@ -1970,11 +1971,12 @@ _T55:
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jne    _T98;
 // LINE 491:
+_FOR_6e:
 	i = 0x0;
-	__asm        jmp    _T71;
-_T6e:
+	__asm        jmp    _FOR_COND_6e;
+_FOR_NEXT_6e:
 	i++;
-_T71:
+_FOR_COND_6e:
 	__asm        jmp    _T76;
 _T76:
 	__asm        mov    eax, i;
@@ -1985,7 +1987,7 @@ _T76:
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   JoystickManager::GetCompleteState;
-	__asm        jmp    _T6e;
+	__asm        jmp    _FOR_NEXT_6e;
 // LINE 494:
 _T98:
 	return;
@@ -3521,9 +3523,9 @@ _T63:
 	__asm        mov    i.node, eax;
 	__asm        jmp    _T7c;
 _T7c:
-	__asm        jmp    _T81;
+	__asm        jmp    _LOOP_81;
 // LINE 759:
-_T81:
+_LOOP_81:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
 	__asm        mov    [ebp-0x1C], eax;
@@ -3627,7 +3629,7 @@ _T1b8:
 	__asm        jmp    _T1c3;
 // LINE 782:
 _T1c3:
-	__asm        jmp    _T81;
+	__asm        jmp    _LOOP_81;
 // LINE 783:
 _T1c8:
 	return;

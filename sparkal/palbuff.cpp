@@ -216,14 +216,14 @@ void PaletteBuffer::PaletteBuffer() {
 	__asm        mov    dword ptr [ebp-0x50], 0x100;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x54], eax;
-_T50:
+__WHILE_50:
 	__asm        dec    dword ptr [ebp-0x50];
 	__asm        js     _T6a;
 
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x54], 4;
-	__asm        jmp    _T50;
+	__asm        jmp    __WHILE_50;
 _T6a:
 	__asm        jmp    _T6f;
 _T6f:
@@ -294,14 +294,14 @@ void PaletteBuffer::PaletteBuffer(/*packed*/ struct SparkalColor *newSparkalColo
 	__asm        mov    dword ptr [ebp-0x50], 0x100;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x54], eax;
-_T50:
+__WHILE_50:
 	__asm        dec    dword ptr [ebp-0x50];
 	__asm        js     _T6a;
 
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        call   SparkalColor::SparkalColor;
 	__asm        add    dword ptr [ebp-0x54], 4;
-	__asm        jmp    _T50;
+	__asm        jmp    __WHILE_50;
 _T6a:
 	__asm        jmp    _T6f;
 _T6f:
@@ -387,11 +387,12 @@ int32_t PaletteBuffer::SetPalette(const /*packed*/ struct SparkalColor *pColors)
 	/*bp-0x4*/   int32_t i;
 
 // LINE 81:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T45;
 // LINE 82:
@@ -403,7 +404,7 @@ _T1b:
 	__asm        mov    edx, i;
 	__asm        mov    [ecx+edx*4], eax;
 // LINE 83:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 84:
 _T45:
 	return 0x1;
@@ -437,11 +438,12 @@ _T2d:
 	__asm        call   dword ptr [eax+0x10];
 	__asm        mov    hResult, eax;
 // LINE 104:
+_FOR_59:
 	i = 0x0;
-	__asm        jmp    _T5c;
-_T59:
+	__asm        jmp    _FOR_COND_59;
+_FOR_NEXT_59:
 	i++;
-_T5c:
+_FOR_COND_59:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _Tba;
 // LINE 105:
@@ -469,7 +471,7 @@ _T5c:
 	__asm        mov    edx, [edx+0x134];
 	__asm        mov    [edx+ecx*4], al;
 // LINE 108:
-	__asm        jmp    _T59;
+	__asm        jmp    _FOR_NEXT_59;
 // LINE 109:
 _Tba:
 	__asm        mov    eax, paletteEntries;
@@ -511,11 +513,12 @@ _T17:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 138:
+_FOR_63:
 	i = 0x0;
-	__asm        jmp    _T66;
-_T63:
+	__asm        jmp    _FOR_COND_63;
+_FOR_NEXT_63:
 	i++;
-_T66:
+_FOR_COND_63:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T15f;
 // LINE 139:
@@ -596,7 +599,7 @@ _T66:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x4C];
 // LINE 151:
-	__asm        jmp    _T63;
+	__asm        jmp    _FOR_NEXT_63;
 // LINE 152:
 _T15f:
 	return;

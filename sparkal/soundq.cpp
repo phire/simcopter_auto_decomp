@@ -1326,7 +1326,7 @@ _T58:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x30], eax;
-_T64:
+_LOOP_64:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    [ebp-0x30], eax;
 	__asm        jne    _T7a;
@@ -1386,7 +1386,7 @@ _T102:
 	this->mySoundQueueItemList.length--;
 	__asm        jmp    _T10d;
 _T10d:
-	__asm        jmp    _T64;
+	__asm        jmp    _LOOP_64;
 _T112:
 	__asm        jmp    _T117;
 _T117:
@@ -1402,7 +1402,7 @@ _T117:
 _T137:
 	__asm        dec    list<SoundQueueItem *>::number_of_lists;
 	__asm        jne    _T1c1;
-_T143:
+__WHILE_143:
 	__asm        cmp    list<SoundQueueItem *>::buffer_list, 0;
 	__asm        je     _T19e;
 
@@ -1430,7 +1430,7 @@ _T183:
 _T194:
 	__asm        jmp    _T199;
 _T199:
-	__asm        jmp    _T143;
+	__asm        jmp    __WHILE_143;
 _T19e:
 	list<SoundQueueItem *>::free_list = 0x0;
 	list<SoundQueueItem *>::next_avail = 0x0;
@@ -1558,9 +1558,9 @@ _T80:
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    _Ta5;
 _Ta5:
-	__asm        jmp    _Taa;
+	__asm        jmp    _LOOP_aa;
 // LINE 209:
-_Taa:
+_LOOP_aa:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x28], eax;
@@ -1737,7 +1737,7 @@ _T294:
 	__asm        jmp    _T2a0;
 // LINE 215:
 _T2a0:
-	__asm        jmp    _Taa;
+	__asm        jmp    _LOOP_aa;
 // LINE 217:
 // Block end:
 _T2a5:

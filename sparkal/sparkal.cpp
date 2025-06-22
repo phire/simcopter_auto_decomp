@@ -184,7 +184,7 @@ _T54:
 	__asm        cmp    tempTimer.lStartTime, 0;
 	__asm        je     _T63;
 
-	__asm        jmp    _Tc6;
+	__asm        jmp    _LOOP_c6;
 _T63:
 	__asm        cmp    tempTimer.nTimerResolution, 1;
 	__asm        jne    _T80;
@@ -216,9 +216,9 @@ _Taa:
 	__asm        mov    tempTimer.lStartTime, eax;
 	__asm        jmp    _Tc1;
 _Tc1:
-	__asm        jmp    _Tc6;
+	__asm        jmp    _LOOP_c6;
 // LINE 105:
-_Tc6:
+_LOOP_c6:
 	__asm        mov    eax, tempTimer.lTotalElapsedTime;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _Td1;
@@ -292,7 +292,7 @@ _T183:
 	__asm        jae    _T1a5;
 // LINE 106:
 _T1a0:
-	__asm        jmp    _Tc6;
+	__asm        jmp    _LOOP_c6;
 // LINE 107:
 _T1a5:
 	__asm        jmp    _T1aa;

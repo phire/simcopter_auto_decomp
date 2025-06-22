@@ -227,11 +227,11 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        jne    _Tab;
 
 	_assert(0x63, 0x59836c, 0x598394);
-	__asm        jmp    _Tb0;
+	__asm        jmp    __DO_b0;
 _Tab:
-	__asm        jmp    _Tb0;
+	__asm        jmp    __DO_b0;
 // LINE 102:
-_Tb0:
+__DO_b0:
 	__asm        mov    eax, DestTop;
 	__asm        push   eax;
 	__asm        mov    eax, Left;
@@ -261,9 +261,10 @@ _Tb0:
 	__asm        neg    eax;
 	__asm        sub    DestTop, eax;
 // LINE 105:
+__DO_WHILE_b0:
 	__asm        mov    eax, Top;
 	__asm        cmp    DestTop, eax;
-	__asm        jg     _Tb0;
+	__asm        jg     __DO_b0;
 // LINE 106:
 	__asm        mov    eax, Top;
 	__asm        push   eax;

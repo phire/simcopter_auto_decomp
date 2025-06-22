@@ -176,20 +176,22 @@ _T6a:
 // LINE 225:
 	goff = GridFaces;
 // LINE 226:
+_FOR_2fc:
 	y = 0x0;
-	__asm        jmp    _T2ff;
-_T2fc:
+	__asm        jmp    _FOR_COND_2fc;
+_FOR_NEXT_2fc:
 	y++;
-_T2ff:
+_FOR_COND_2fc:
 	__asm        mov    eax, y;
 	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T35d;
 // LINE 228:
+_FOR_31a:
 	x = 0x0;
-	__asm        jmp    _T31d;
-_T31a:
+	__asm        jmp    _FOR_COND_31a;
+_FOR_NEXT_31a:
 	x++;
-_T31d:
+_FOR_COND_31a:
 	__asm        mov    eax, x;
 	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T358;
@@ -206,10 +208,10 @@ _T31d:
 // LINE 231:
 	goff += (GridFaceSize + GridFaceSize);
 // LINE 232:
-	__asm        jmp    _T31a;
+	__asm        jmp    _FOR_NEXT_31a;
 // LINE 233:
 _T358:
-	__asm        jmp    _T2fc;
+	__asm        jmp    _FOR_NEXT_2fc;
 // LINE 240:
 _T35d:
 	CVerts[0][0] = 0x0;
@@ -260,22 +262,24 @@ _T35d:
 // LINE 257:
 	v = GridVerts;
 // LINE 258:
+_FOR_418:
 	i = 0x0;
-	__asm        jmp    _T41c;
-_T418:
+	__asm        jmp    _FOR_COND_418;
+_FOR_NEXT_418:
 	i++;
-_T41c:
+_FOR_COND_418:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, G_VertDim;
 	__asm        jge    _T480;
 // LINE 260:
 	x_val = x_start;
 // LINE 261:
+_FOR_43d:
 	j = 0x0;
-	__asm        jmp    _T441;
-_T43d:
+	__asm        jmp    _FOR_COND_43d;
+_FOR_NEXT_43d:
 	j++;
-_T441:
+_FOR_COND_43d:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, G_VertDim;
 	__asm        jge    _T471;
@@ -288,7 +292,7 @@ _T441:
 // LINE 266:
 	v += 0xc;
 // LINE 267:
-	__asm        jmp    _T43d;
+	__asm        jmp    _FOR_NEXT_43d;
 // LINE 268:
 _T471:
 	__asm        xor    eax, eax;
@@ -296,36 +300,39 @@ _T471:
 	__asm        neg    eax;
 	__asm        sub    z_val, eax;
 // LINE 269:
-	__asm        jmp    _T418;
+	__asm        jmp    _FOR_NEXT_418;
 // LINE 275:
 _T480:
 	dataptr = GridFaces;
 // LINE 276:
+_FOR_494:
 	y = 0x0;
-	__asm        jmp    _T497;
-_T494:
+	__asm        jmp    _FOR_COND_494;
+_FOR_NEXT_494:
 	y++;
-_T497:
+_FOR_COND_494:
 	__asm        mov    eax, y;
 	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T644;
 // LINE 278:
+_FOR_4b2:
 	x = 0x0;
-	__asm        jmp    _T4b5;
-_T4b2:
+	__asm        jmp    _FOR_COND_4b2;
+_FOR_NEXT_4b2:
 	x++;
-_T4b5:
+_FOR_COND_4b2:
 	__asm        mov    eax, x;
 	__asm        cmp    G_ViewSize, eax;
 	__asm        jle    _T63f;
 // LINE 281:
 	ul = ((G_VertDim * y) + x);
 // LINE 303:
+_FOR_4de:
 	i = 0x0;
-	__asm        jmp    _T4e2;
-_T4de:
+	__asm        jmp    _FOR_COND_4de;
+_FOR_NEXT_4de:
 	i++;
-_T4e2:
+_FOR_COND_4de:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 2;
 	__asm        jge    _T63a;
@@ -411,13 +418,13 @@ _T61c:
 	__asm        jmp    _T635;
 // LINE 343:
 _T635:
-	__asm        jmp    _T4de;
+	__asm        jmp    _FOR_NEXT_4de;
 // LINE 344:
 _T63a:
-	__asm        jmp    _T4b2;
+	__asm        jmp    _FOR_NEXT_4b2;
 // LINE 345:
 _T63f:
-	__asm        jmp    _T494;
+	__asm        jmp    _FOR_NEXT_494;
 // LINE 350:
 _T644:
 	__asm        cmp    b_FirstTime, 0;

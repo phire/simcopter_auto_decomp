@@ -608,11 +608,12 @@ void TrainClass::TrainClass(long mapx, long mapy) {
 
 	this-><vftable> = 0x593238;
 // LINE 183:
+_FOR_21:
 	currentFlag = 0x0;
-	__asm        jmp    _T24;
-_T21:
+	__asm        jmp    _FOR_COND_21;
+_FOR_NEXT_21:
 	currentFlag++;
-_T24:
+_FOR_COND_21:
 	__asm        cmp    currentFlag, 9;
 	__asm        jge    _T3e;
 // LINE 185:
@@ -620,7 +621,7 @@ _T24:
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 186:
-	__asm        jmp    _T21;
+	__asm        jmp    _FOR_NEXT_21;
 // LINE 188:
 _T3e:
 	this->dyObj1.mesh = 0x0;
@@ -907,11 +908,12 @@ void TrainClass::ResetAll() {
 	/*bp-0x4*/   int32_t currentTrainIndex;
 
 // LINE 592:
+_FOR_15:
 	currentTrainIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentTrainIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    _T36;
 // LINE 594:
@@ -919,7 +921,7 @@ _T18:
 	__asm        mov    ecx, trains[0][eax*4];
 	__asm        call   TrainClass::Reset;
 // LINE 595:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 597:
 _T36:
 	return;
@@ -930,11 +932,12 @@ void TrainClass::ItterateAll() {
 	/*bp-0x4*/   int32_t currentTrainIndex;
 
 // LINE 641:
+_FOR_15:
 	currentTrainIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentTrainIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    _T36;
 // LINE 643:
@@ -942,7 +945,7 @@ _T18:
 	__asm        mov    ecx, trains[0][eax*4];
 	__asm        call   TrainClass::Itterate;
 // LINE 644:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 646:
 _T36:
 	return;
@@ -953,11 +956,12 @@ int32_t TrainClass::FindTrainToCrash(long mission_id) {
 	/*bp-0x4*/   int32_t currentTrainIndex;
 
 // LINE 672:
+_FOR_15:
 	currentTrainIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentTrainIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    _T89;
 // LINE 675:
@@ -992,7 +996,7 @@ _T7a:
 	return 0x1;
 // LINE 680:
 _T84:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 682:
 _T89:
 	return 0x0;
@@ -1731,11 +1735,12 @@ _T2c4:
 // LINE 1192:
 	num_debris = 0x3;
 // LINE 1193:
+_FOR_374:
 	j = 0x0;
-	__asm        jmp    _T377;
-_T374:
+	__asm        jmp    _FOR_COND_374;
+_FOR_NEXT_374:
 	j++;
-_T377:
+_FOR_COND_374:
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
 	__asm        jle    _T456;
@@ -1791,7 +1796,7 @@ _T377:
 // LINE 1210:
 	S3MissileStart(this->missionId, speed, this->leadcar, 0x2, vec.x, (this->leadcar + 0x18), (this + 0x35), 0x4);
 // LINE 1211:
-	__asm        jmp    _T374;
+	__asm        jmp    _FOR_NEXT_374;
 // LINE 1214:
 _T456:
 	__asm        mov    eax, this;
@@ -1825,11 +1830,12 @@ _T456:
 // LINE 1226:
 	num_debris = 0x3;
 // LINE 1227:
+_FOR_4ea:
 	j = 0x0;
-	__asm        jmp    _T4ed;
-_T4ea:
+	__asm        jmp    _FOR_COND_4ea;
+_FOR_NEXT_4ea:
 	j++;
-_T4ed:
+_FOR_COND_4ea:
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
 	__asm        jle    _T5cc;
@@ -1885,7 +1891,7 @@ _T4ed:
 // LINE 1244:
 	S3MissileStart(this->missionId, speed, this->midcar, 0x2, vec.x, (this->midcar + 0x18), (this + 0x35), 0x4);
 // LINE 1245:
-	__asm        jmp    _T4ea;
+	__asm        jmp    _FOR_NEXT_4ea;
 // LINE 1248:
 _T5cc:
 	__asm        mov    eax, this;
@@ -1919,11 +1925,12 @@ _T5cc:
 // LINE 1260:
 	num_debris = 0x3;
 // LINE 1261:
+_FOR_660:
 	j = 0x0;
-	__asm        jmp    _T663;
-_T660:
+	__asm        jmp    _FOR_COND_660;
+_FOR_NEXT_660:
 	j++;
-_T663:
+_FOR_COND_660:
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
 	__asm        jle    _T742;
@@ -1979,7 +1986,7 @@ _T663:
 // LINE 1278:
 	S3MissileStart(this->missionId, speed, this->endcar, 0x2, vec.x, (this->endcar + 0x18), (this + 0x35), 0x4);
 // LINE 1279:
-	__asm        jmp    _T660;
+	__asm        jmp    _FOR_NEXT_660;
 // LINE 1281:
 _T742:
 	this->flags[7] = 0x0;
@@ -2417,7 +2424,7 @@ _T12a:
 _T144:
 	currentObject = currentCell->dyptr;
 // LINE 1500:
-_T14d:
+__WHILE_14d:
 	__asm        cmp    currentObject, 0;
 	__asm        je     _T283;
 // LINE 1503:
@@ -2428,7 +2435,7 @@ _T14d:
 // LINE 1505:
 	currentObject = currentObject->next;
 // LINE 1506:
-	__asm        jmp    _T14d;
+	__asm        jmp    __WHILE_14d;
 // LINE 1508:
 	__asm        jmp    _T1be;
 _T17b:
@@ -2439,7 +2446,7 @@ _T17b:
 // LINE 1510:
 	currentObject = currentObject->next;
 // LINE 1511:
-	__asm        jmp    _T14d;
+	__asm        jmp    __WHILE_14d;
 // LINE 1513:
 	__asm        jmp    _T1be;
 _T19f:
@@ -2450,7 +2457,7 @@ _T19f:
 // LINE 1515:
 	currentObject = currentObject->next;
 // LINE 1516:
-	__asm        jmp    _T14d;
+	__asm        jmp    __WHILE_14d;
 // LINE 1520:
 _T1be:
 	__asm        mov    eax, currentObject;
@@ -2460,7 +2467,7 @@ _T1be:
 // LINE 1522:
 	currentObject = currentObject->next;
 // LINE 1523:
-	__asm        jmp    _T14d;
+	__asm        jmp    __WHILE_14d;
 // LINE 1528:
 _T1da:
 	__asm        mov    eax, collisionPoint;
@@ -2523,7 +2530,7 @@ _T26c:
 _T276:
 	currentObject = currentObject->next;
 // LINE 1557:
-	__asm        jmp    _T14d;
+	__asm        jmp    __WHILE_14d;
 // LINE 1560:
 _T283:
 	__asm        mov    eax, this;
@@ -2571,7 +2578,7 @@ _T302:
 _T31c:
 	currentObject = currentCell->dyptr;
 // LINE 1577:
-_T325:
+__WHILE_325:
 	__asm        cmp    currentObject, 0;
 	__asm        je     _T45b;
 // LINE 1580:
@@ -2582,7 +2589,7 @@ _T325:
 // LINE 1582:
 	currentObject = currentObject->next;
 // LINE 1583:
-	__asm        jmp    _T325;
+	__asm        jmp    __WHILE_325;
 // LINE 1585:
 	__asm        jmp    _T396;
 _T353:
@@ -2593,7 +2600,7 @@ _T353:
 // LINE 1587:
 	currentObject = currentObject->next;
 // LINE 1588:
-	__asm        jmp    _T325;
+	__asm        jmp    __WHILE_325;
 // LINE 1590:
 	__asm        jmp    _T396;
 _T377:
@@ -2604,7 +2611,7 @@ _T377:
 // LINE 1592:
 	currentObject = currentObject->next;
 // LINE 1593:
-	__asm        jmp    _T325;
+	__asm        jmp    __WHILE_325;
 // LINE 1597:
 _T396:
 	__asm        mov    eax, currentObject;
@@ -2614,7 +2621,7 @@ _T396:
 // LINE 1599:
 	currentObject = currentObject->next;
 // LINE 1600:
-	__asm        jmp    _T325;
+	__asm        jmp    __WHILE_325;
 // LINE 1604:
 _T3b2:
 	__asm        mov    eax, collisionPoint;
@@ -2677,7 +2684,7 @@ _T444:
 _T44e:
 	currentObject = currentObject->next;
 // LINE 1633:
-	__asm        jmp    _T325;
+	__asm        jmp    __WHILE_325;
 // LINE 1637:
 _T45b:
 	return 0x0;
@@ -2694,37 +2701,37 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 // LINE 1662:
 	deltaY = (CameraCell.y - this->currentLocation1.y);
 // LINE 1667:
-_T28:
+__WHILE_28:
 	__asm        cmp    deltaX, 0x80;
-	__asm        jle    _T41;
+	__asm        jle    __WHILE_41;
 // LINE 1669:
 	deltaX -= 0x100;
 // LINE 1670:
-	__asm        jmp    _T28;
+	__asm        jmp    __WHILE_28;
 // LINE 1671:
-_T41:
+__WHILE_41:
 	__asm        cmp    deltaX, 0xFFFFFF80;
-	__asm        jge    _T57;
+	__asm        jge    __WHILE_57;
 // LINE 1673:
 	deltaX += 0x100;
 // LINE 1674:
-	__asm        jmp    _T41;
+	__asm        jmp    __WHILE_41;
 // LINE 1676:
-_T57:
+__WHILE_57:
 	__asm        cmp    deltaY, 0x80;
-	__asm        jle    _T70;
+	__asm        jle    __WHILE_70;
 // LINE 1678:
 	deltaY -= 0x100;
 // LINE 1679:
-	__asm        jmp    _T57;
+	__asm        jmp    __WHILE_57;
 // LINE 1680:
-_T70:
+__WHILE_70:
 	__asm        cmp    deltaY, 0xFFFFFF80;
 	__asm        jge    _T86;
 // LINE 1682:
 	deltaY += 0x100;
 // LINE 1683:
-	__asm        jmp    _T70;
+	__asm        jmp    __WHILE_70;
 // LINE 1685:
 _T86:
 	__asm        cmp    deltaX, 0;
@@ -4774,7 +4781,7 @@ _T90:
 	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
 	dyptrptr = (cellPointer + 0x10);
 // LINE 2825:
-_Ta3:
+__WHILE_a3:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Td9;
@@ -4791,7 +4798,7 @@ _Ta3:
 _Tcc:
 	dyptrptr = dyptrptr->;
 // LINE 2839:
-	__asm        jmp    _Ta3;
+	__asm        jmp    __WHILE_a3;
 // LINE 2841:
 _Td9:
 	__asm        mov    eax, dyptrptr;
@@ -5730,7 +5737,7 @@ _T9fe:
 int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes direction) {
 // LINE 3118:
 	__asm        mov    dword ptr [ebp-0xC], 0x5B7BB8;
-_T13:
+_LOOP_13:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(fromTile);
 	__asm        and    ecx, 0xFFFF;
@@ -5755,10 +5762,10 @@ _T54:
 	__asm        jmp    _T69;
 _T60:
 	__asm        add    dword ptr [ebp-0xC], 8;
-	__asm        jmp    _T13;
+	__asm        jmp    _LOOP_13;
 _T69:
 	__asm        mov    dword ptr [ebp-0x10], 0x5B7BB8;
-_T70:
+_LOOP_70:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(toTile);
 	__asm        and    ecx, 0xFFFF;
@@ -5783,7 +5790,7 @@ _Tb1:
 	__asm        jmp    _Tc6;
 _Tbd:
 	__asm        add    dword ptr [ebp-0x10], 8;
-	__asm        jmp    _T70;
+	__asm        jmp    _LOOP_70;
 _Tc6:
 	__asm        test   reinterpret_cast<uint8_t>(direction), 1;
 	__asm        je     _Tf0;
@@ -7010,7 +7017,7 @@ _T419:
 // LINE 3579:
 _T41e:
 	__asm        mov    dword ptr [ebp-0x2C], 0x5B7BB8;
-_T425:
+_LOOP_425:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(ntile);
 	__asm        and    ecx, 0xFFFF;
@@ -7035,7 +7042,7 @@ _T466:
 	__asm        jmp    _T47b;
 _T472:
 	__asm        add    dword ptr [ebp-0x2C], 8;
-	__asm        jmp    _T425;
+	__asm        jmp    _LOOP_425;
 // LINE 3581:
 _T47b:
 	__asm        cmp    connectionType, 0;
@@ -7582,7 +7589,7 @@ _T166:
 // LINE 3868:
 	y = ((0x20000000 - (ViewState.world_pos.z + vec.z)) >> 0x16);
 // LINE 3875:
-_T197:
+_LOOP_197:
 	curr_dir++;
 // LINE 3876:
 	__asm        mov    eax, curr_dir;
@@ -7640,18 +7647,18 @@ _T203:
 _T22b:
 	__asm        mov    eax, curr_dist;
 	__asm        cmp    spiral_dist, eax;
-	__asm        jne    _T241;
+	__asm        jne    _FOR_24d;
 // LINE 3904:
 	curr_dist--;
 // LINE 3905:
 	stop_now = 0x1;
 // LINE 3909:
-_T241:
+_FOR_24d:
 	i = 0x0;
-	__asm        jmp    _T250;
-_T24d:
+	__asm        jmp    _FOR_COND_24d;
+_FOR_NEXT_24d:
 	i++;
-_T250:
+_FOR_COND_24d:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
 	__asm        jle    _T426;
@@ -7796,7 +7803,7 @@ _T415:
 	y += ydir;
 // LINE 3926:
 // Block end:
-	__asm        jmp    _T24d;
+	__asm        jmp    _FOR_NEXT_24d;
 // LINE 3928:
 _T426:
 	__asm        cmp    stop_now, 1;
@@ -7805,7 +7812,7 @@ _T426:
 	__asm        jmp    _T43a;
 // LINE 3932:
 _T435:
-	__asm        jmp    _T197;
+	__asm        jmp    _LOOP_197;
 // LINE 3935:
 _T43a:
 	return;
@@ -7986,7 +7993,7 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 // LINE 4032:
 	y = mapy;
 // LINE 4039:
-_T3b:
+_LOOP_3b:
 	curr_dir++;
 // LINE 4040:
 	__asm        mov    eax, curr_dir;
@@ -8044,18 +8051,18 @@ _Ta7:
 _Tcf:
 	__asm        mov    eax, spiral_dist;
 	__asm        cmp    curr_dist, eax;
-	__asm        jne    _Te5;
+	__asm        jne    _FOR_f1;
 // LINE 4068:
 	curr_dist--;
 // LINE 4069:
 	stop_now = 0x1;
 // LINE 4073:
-_Te5:
+_FOR_f1:
 	i = 0x0;
-	__asm        jmp    _Tf4;
-_Tf1:
+	__asm        jmp    _FOR_COND_f1;
+_FOR_NEXT_f1:
 	i++;
-_Tf4:
+_FOR_COND_f1:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
 	__asm        jle    _T2ca;
@@ -8200,7 +8207,7 @@ _T2b9:
 	y += ydir;
 // LINE 4090:
 // Block end:
-	__asm        jmp    _Tf1;
+	__asm        jmp    _FOR_NEXT_f1;
 // LINE 4092:
 _T2ca:
 	__asm        cmp    stop_now, 1;
@@ -8209,7 +8216,7 @@ _T2ca:
 	__asm        jmp    _T2de;
 // LINE 4096:
 _T2d9:
-	__asm        jmp    _T3b;
+	__asm        jmp    _LOOP_3b;
 // LINE 4099:
 _T2de:
 	return 0x0;
@@ -8751,11 +8758,12 @@ _Td6:
 // LINE 4773:
 	totalpersons = 0x0;
 // LINE 4774:
+_FOR_111:
 	count = 0x0;
-	__asm        jmp    _T114;
-_T111:
+	__asm        jmp    _FOR_COND_111;
+_FOR_NEXT_111:
 	count++;
-_T114:
+_FOR_COND_111:
 	__asm        mov    eax, numtostart;
 	__asm        cmp    count, eax;
 	__asm        jge    _T161;
@@ -8783,7 +8791,7 @@ _T114:
 	totalpersons++;
 // LINE 4785:
 _T15c:
-	__asm        jmp    _T111;
+	__asm        jmp    _FOR_NEXT_111;
 // LINE 4788:
 _T161:
 	__asm        cmp    totalpersons, 0;
@@ -8847,16 +8855,16 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 	ret = ReadFirstMIFFChunk(0x1d9, 0x62b7b8, 0x5452414e, miffReader);
 // LINE 4859:
 	__asm        cmp    ret, 0;
-	__asm        jne    _T38;
+	__asm        jne    _FOR_44;
 // LINE 4860:
 	return 0x0;
 // LINE 4862:
-_T38:
+_FOR_44:
 	i = 0x0;
-	__asm        jmp    _T47;
-_T44:
+	__asm        jmp    _FOR_COND_44;
+_FOR_NEXT_44:
 	i++;
-_T47:
+_FOR_COND_44:
 	__asm        cmp    i, 1;
 	__asm        jge    _T353;
 // LINE 4865:
@@ -9090,7 +9098,7 @@ _T315:
 	return 0x0;
 // LINE 4913:
 _T34e:
-	__asm        jmp    _T44;
+	__asm        jmp    _FOR_NEXT_44;
 // LINE 4914:
 _T353:
 	return 0x1;
@@ -9103,11 +9111,12 @@ int32_t TrainClass::MIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 4928:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 1;
 	__asm        jge    _T5c;
 // LINE 4933:
@@ -9128,7 +9137,7 @@ _T18:
 	return 0x0;
 // LINE 4936:
 _T57:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 4937:
 _T5c:
 	return 0x1;

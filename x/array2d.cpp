@@ -520,21 +520,23 @@ _T2b6:
 // Block start:
 	/*bp-0x110*/ long ycount;
 	/*bp-0x114*/ long xcount;
+_FOR_2da:
 	xcount = 0x0;
-	__asm        jmp    _T2e0;
-_T2da:
+	__asm        jmp    _FOR_COND_2da;
+_FOR_NEXT_2da:
 	xcount++;
-_T2e0:
+_FOR_COND_2da:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, xcount;
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jle    _T3a2;
 // LINE 95:
+_FOR_304:
 	ycount = 0x0;
-	__asm        jmp    _T30a;
-_T304:
+	__asm        jmp    _FOR_COND_304;
+_FOR_NEXT_304:
 	ycount++;
-_T30a:
+_FOR_COND_304:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, ycount;
 	__asm        cmp    [eax+0x10], ecx;
@@ -556,10 +558,10 @@ _T353:
 // LINE 99:
 	Swizzler(this->fEntrySize, data);
 // LINE 100:
-	__asm        jmp    _T304;
+	__asm        jmp    _FOR_NEXT_304;
 // LINE 101:
 _T39d:
-	__asm        jmp    _T2da;
+	__asm        jmp    _FOR_NEXT_2da;
 // LINE 105:
 // Block end:
 _T3a2:
@@ -642,11 +644,12 @@ _T40:
 	/*bp-0x8*/   long cnt;
 	bFound = 0x0;
 // LINE 172:
+_FOR_5f:
 	cnt = 0x0;
-	__asm        jmp    _T62;
-_T5f:
+	__asm        jmp    _FOR_COND_5f;
+_FOR_NEXT_5f:
 	cnt++;
-_T62:
+_FOR_COND_5f:
 	__asm        cmp    cnt, 0x400;
 	__asm        jge    _T126;
 // LINE 173:
@@ -688,7 +691,7 @@ _T10b:
 	bFound = 0x1;
 // LINE 187:
 _T121:
-	__asm        jmp    _T5f;
+	__asm        jmp    _FOR_NEXT_5f;
 // LINE 190:
 // Block end:
 _T126:
@@ -706,22 +709,22 @@ void _cArray::MakeTable() {
 	_cArray::sArrayTable = operator new(0x1000);
 // LINE 197:
 	__asm        cmp    _cArray::sArrayTable, 0;
-	__asm        jne    _T51;
+	__asm        jne    _FOR_5d;
 
 	doAssert(0x8c085, 0x5bf9f8, 0xc5, 0x5bfa18);
 // LINE 198:
-_T51:
+_FOR_5d:
 	count = 0x0;
-	__asm        jmp    _T60;
-_T5d:
+	__asm        jmp    _FOR_COND_5d;
+_FOR_NEXT_5d:
 	count++;
-_T60:
+_FOR_COND_5d:
 	__asm        cmp    count, 0x400;
 	__asm        jge    _T82;
 // LINE 199:
 	_cArray::sArrayTable-> = 0x0;
 // LINE 200:
-	__asm        jmp    _T5d;
+	__asm        jmp    _FOR_NEXT_5d;
 // LINE 202:
 // Block end:
 _T82:
@@ -774,11 +777,12 @@ _T42:
 // LINE 254:
 	foundcount = 0xffffffff;
 // LINE 255:
+_FOR_5a:
 	count = 0x0;
-	__asm        jmp    _T5d;
-_T5a:
+	__asm        jmp    _FOR_COND_5a;
+_FOR_NEXT_5a:
 	count++;
-_T5d:
+_FOR_COND_5a:
 	__asm        cmp    count, 0x400;
 	__asm        jge    _Tdc;
 // LINE 256:
@@ -809,7 +813,7 @@ _Tb4:
 	foundcount = count;
 // LINE 259:
 _Td7:
-	__asm        jmp    _T5a;
+	__asm        jmp    _FOR_NEXT_5a;
 // LINE 261:
 _Tdc:
 	__asm        cmp    foundcount, 0xFFFFFFFF;
@@ -966,16 +970,16 @@ _Tbf:
 	__asm        jle    _Ted;
 
 	__asm        cmp    numBytes, 0x7A1200;
-	__asm        jl     _T109;
+	__asm        jl     _FOR_115;
 _Ted:
 	doAssert(0x8c085, 0x5bfc78, 0x157, 0x5bfc9c);
 // LINE 344:
-_T109:
+_FOR_115:
 	cnt = 0x0;
-	__asm        jmp    _T118;
-_T115:
+	__asm        jmp    _FOR_COND_115;
+_FOR_NEXT_115:
 	cnt++;
-_T118:
+_FOR_COND_115:
 	__asm        mov    eax, cnt;
 	__asm        cmp    numBytes, eax;
 	__asm        jle    _T16f;
@@ -1001,7 +1005,7 @@ _T15f:
 // LINE 351:
 	fillPtr++;
 // LINE 352:
-	__asm        jmp    _T115;
+	__asm        jmp    _FOR_NEXT_115;
 // LINE 354:
 _T16f:
 	return;
@@ -1060,14 +1064,15 @@ _T72:
 	/*bp-0x10*/  short count;
 	/*bp-0x14*/  unsigned char * moveto;
 	/*bp-0x18*/  unsigned char * movefrom;
+_FOR_a8:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        dec    eax;
 	__asm        mov    count, ax;
-	__asm        jmp    _Tac;
-_Ta8:
+	__asm        jmp    _FOR_COND_a8;
+_FOR_NEXT_a8:
 	count--;
-_Tac:
+_FOR_COND_a8:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, beforewhich;
 	__asm        cmp    eax, ecx;
@@ -1094,7 +1099,7 @@ _Td7:
 	doAssert(0x8c085, 0x5bfd20, 0x17a, 0x5bfd28);
 // LINE 379:
 _T12d:
-	__asm        jmp    _Ta8;
+	__asm        jmp    _FOR_NEXT_a8;
 // LINE 382:
 // Block end:
 _T132:
@@ -1151,11 +1156,12 @@ _T72:
 	/*bp-0x10*/  short xcount;
 	/*bp-0x14*/  unsigned char * moveto;
 	/*bp-0x18*/  unsigned char * movefrom;
+_FOR_96:
 	xcount = 0x0;
-	__asm        jmp    _T9a;
-_T96:
+	__asm        jmp    _FOR_COND_96;
+_FOR_NEXT_96:
 	xcount++;
-_T9a:
+_FOR_COND_96:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, xcount;
 	__asm        cmp    [eax+0x14], ecx;
@@ -1163,14 +1169,15 @@ _T9a:
 // LINE 398:
 // Block start:
 	/*bp-0x1c*/  short ycount;
+_FOR_ba:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        dec    eax;
 	__asm        mov    ycount, ax;
-	__asm        jmp    _Tbe;
-_Tba:
+	__asm        jmp    _FOR_COND_ba;
+_FOR_NEXT_ba:
 	ycount--;
-_Tbe:
+_FOR_COND_ba:
 	__asm        movsx  eax, ycount;
 	__asm        movsx  ecx, beforewhich;
 	__asm        cmp    eax, ecx;
@@ -1201,11 +1208,11 @@ _T11c:
 // LINE 402:
 	Memory::BlockMove(this->fEntrySize, moveto, movefrom);
 // LINE 403:
-	__asm        jmp    _Tba;
+	__asm        jmp    _FOR_NEXT_ba;
 // LINE 404:
 // Block end:
 _T157:
-	__asm        jmp    _T96;
+	__asm        jmp    _FOR_NEXT_96;
 // LINE 406:
 // Block end:
 _T15c:
@@ -1249,12 +1256,13 @@ _T7c:
 // LINE 419:
 // Block start:
 	/*bp-0x14*/  short count;
+_FOR_96:
 	__asm        mov    ax, which;
 	__asm        mov    count, ax;
-	__asm        jmp    _T9a;
-_T96:
+	__asm        jmp    _FOR_COND_96;
+_FOR_NEXT_96:
 	count++;
-_T9a:
+_FOR_COND_96:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        dec    eax;
@@ -1276,7 +1284,7 @@ _Tc8:
 // LINE 422:
 	Memory::BlockMove((this->fEntrySize * this->fySize), moveto, movefrom);
 // LINE 423:
-	__asm        jmp    _T96;
+	__asm        jmp    _FOR_NEXT_96;
 // LINE 426:
 // Block end:
 _Tfb:
@@ -1344,16 +1352,16 @@ _T44:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, which;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jg     _T7c;
+	__asm        jg     _FOR_87;
 _T60:
 	doAssert(0x8c085, 0x5bfea4, 0x1b8, 0x5bfebc);
 // LINE 441:
-_T7c:
+_FOR_87:
 	xcount = 0x0;
-	__asm        jmp    _T8b;
-_T87:
+	__asm        jmp    _FOR_COND_87;
+_FOR_NEXT_87:
 	xcount++;
-_T8b:
+_FOR_COND_87:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, xcount;
 	__asm        cmp    [eax+0x14], ecx;
@@ -1361,12 +1369,13 @@ _T8b:
 // LINE 442:
 // Block start:
 	/*bp-0x18*/  short ycount;
+_FOR_a8:
 	__asm        mov    ax, which;
 	__asm        mov    ycount, ax;
-	__asm        jmp    _Tac;
-_Ta8:
+	__asm        jmp    _FOR_COND_a8;
+_FOR_NEXT_a8:
 	ycount++;
-_Tac:
+_FOR_COND_a8:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, ycount;
 	__asm        cmp    [eax+0x10], ecx;
@@ -1397,7 +1406,7 @@ _Tf6:
 	Memory::BlockMove(this->fEntrySize, thisone, nextone);
 // LINE 448:
 _T129:
-	__asm        jmp    _Ta8;
+	__asm        jmp    _FOR_NEXT_a8;
 // LINE 450:
 _T12e:
 	__asm        mov    eax, this;
@@ -1445,7 +1454,7 @@ _T169:
 // Block end:
 // Block end:
 _T1c7:
-	__asm        jmp    _T87;
+	__asm        jmp    _FOR_NEXT_87;
 // LINE 457:
 _T1cc:
 	__asm        push   0;
@@ -1553,11 +1562,12 @@ _Tc0:
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::ClearBytes;
 // LINE 477:
+_FOR_d8:
 	xcnt = 0x0;
-	__asm        jmp    _Tdb;
-_Td8:
+	__asm        jmp    _FOR_COND_d8;
+_FOR_NEXT_d8:
 	xcnt++;
-_Tdb:
+_FOR_COND_d8:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, xcnt;
 	__asm        cmp    [eax+0x14], ecx;
@@ -1567,11 +1577,12 @@ _Tdb:
 	__asm        cmp    temp.fxSize, eax;
 	__asm        jle    _T186;
 // LINE 479:
+_FOR_102:
 	ycnt = 0x0;
-	__asm        jmp    _T105;
-_T102:
+	__asm        jmp    _FOR_COND_102;
+_FOR_NEXT_102:
 	ycnt++;
-_T105:
+_FOR_COND_102:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, ycnt;
 	__asm        cmp    [eax+0x10], ecx;
@@ -1598,10 +1609,10 @@ _T17c:
 	__asm        jmp    _T186;
 // LINE 487:
 _T181:
-	__asm        jmp    _T102;
+	__asm        jmp    _FOR_NEXT_102;
 // LINE 488:
 _T186:
-	__asm        jmp    _Td8;
+	__asm        jmp    _FOR_NEXT_d8;
 // LINE 489:
 _T18b:
 	__asm        mov    word ptr [ebp-0x70], 1;
@@ -1713,11 +1724,12 @@ void _cArray::SetXPointers() {
 _T2d:
 	this->fData-> = ((this->fxSize << 0x2) + this->fData);
 // LINE 523:
+_FOR_4f:
 	count = 0x1;
-	__asm        jmp    _T53;
-_T4f:
+	__asm        jmp    _FOR_COND_4f;
+_FOR_NEXT_4f:
 	count++;
-_T53:
+_FOR_COND_4f:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, count;
 	__asm        cmp    [eax+0x14], ecx;
@@ -1737,7 +1749,7 @@ _T53:
 	__asm        mov    edx, [edx+4];
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 526:
-	__asm        jmp    _T4f;
+	__asm        jmp    _FOR_NEXT_4f;
 // LINE 527:
 _T92:
 	return;
@@ -1933,11 +1945,12 @@ unsigned long _cArray::GetName() {
 // LINE 612:
 	_cArray::MakeTable();
 // LINE 613:
+_FOR_19:
 	cnt = 0x0;
-	__asm        jmp    _T1d;
-_T19:
+	__asm        jmp    _FOR_COND_19;
+_FOR_NEXT_19:
 	cnt++;
-_T1d:
+_FOR_COND_19:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x400;
 	__asm        jge    _T168;
@@ -2020,7 +2033,7 @@ _T12c:
 // LINE 624:
 // Block end:
 _T163:
-	__asm        jmp    _T19;
+	__asm        jmp    _FOR_NEXT_19;
 // LINE 625:
 _T168:
 	return 0x0;
@@ -2038,11 +2051,12 @@ _T168:
 // LINE 631:
 	found = 0x0;
 // LINE 633:
+_FOR_1f:
 	count = 0x0;
-	__asm        jmp    _T23;
-_T1f:
+	__asm        jmp    _FOR_COND_1f;
+_FOR_NEXT_1f:
 	count++;
-_T23:
+_FOR_COND_1f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x400;
 	__asm        jge    _T77;
@@ -2067,7 +2081,7 @@ _T6e:
 	found++;
 // LINE 641:
 _T72:
-	__asm        jmp    _T1f;
+	__asm        jmp    _FOR_NEXT_1f;
 // LINE 642:
 _T77:
 	return 0x0;
@@ -2084,11 +2098,12 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 // LINE 648:
 	numByType = 0x0;
 // LINE 649:
+_FOR_1f:
 	cnt = 0x0;
-	__asm        jmp    _T23;
-_T1f:
+	__asm        jmp    _FOR_COND_1f;
+_FOR_NEXT_1f:
 	cnt++;
-_T23:
+_FOR_COND_1f:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x400;
 	__asm        jge    _T5a;
@@ -2106,7 +2121,7 @@ _T23:
 // LINE 653:
 // Block end:
 _T55:
-	__asm        jmp    _T1f;
+	__asm        jmp    _FOR_NEXT_1f;
 // LINE 654:
 _T5a:
 	return numByType;
@@ -2124,11 +2139,12 @@ short _cArray::GetArrayIndexInType(/*unpacked*/ class _cArray *findarr) {
 // LINE 660:
 	found = 0x0;
 // LINE 662:
+_FOR_1f:
 	count = 0x0;
-	__asm        jmp    _T23;
-_T1f:
+	__asm        jmp    _FOR_COND_1f;
+_FOR_NEXT_1f:
 	count++;
-_T23:
+_FOR_COND_1f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x400;
 	__asm        jge    _T77;
@@ -2153,7 +2169,7 @@ _T6e:
 	found++;
 // LINE 670:
 _T72:
-	__asm        jmp    _T1f;
+	__asm        jmp    _FOR_NEXT_1f;
 // LINE 671:
 _T77:
 	return 0xffff;
@@ -2205,11 +2221,12 @@ _T7d:
 	__asm        call   FlatResFile::Count;
 	__asm        mov    numArrays, ax;
 // LINE 722:
+_FOR_ca:
 	count = 0x1;
-	__asm        jmp    _Tce;
-_Tca:
+	__asm        jmp    _FOR_COND_ca;
+_FOR_NEXT_ca:
 	count++;
-_Tce:
+_FOR_COND_ca:
 	__asm        movsx  eax, numArrays;
 	__asm        movsx  ecx, count;
 	__asm        cmp    eax, ecx;
@@ -2306,7 +2323,7 @@ _T210:
 // LINE 755:
 // Block end:
 _T241:
-	__asm        jmp    _Tca;
+	__asm        jmp    _FOR_NEXT_ca;
 // LINE 756:
 _T246:
 	__asm        test   reinterpret_cast<uint32_t>(fileOpened), 0xFFFF;
@@ -2346,11 +2363,12 @@ short _cArray::GetLoadedIndex(/*unpacked*/ class ResFile *pFile, unsigned long r
 	ft.file = pFile;
 	ft.type = rType;
 // LINE 781:
+_FOR_26:
 	cnt = 0x0;
-	__asm        jmp    _T2a;
-_T26:
+	__asm        jmp    _FOR_COND_26;
+_FOR_NEXT_26:
 	cnt++;
-_T2a:
+_FOR_COND_26:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x40;
 	__asm        jge    _Ta9;
@@ -2382,7 +2400,7 @@ _T9c:
 	__asm        mov    foundcount, ax;
 // LINE 792:
 _Ta4:
-	__asm        jmp    _T26;
+	__asm        jmp    _FOR_NEXT_26;
 // LINE 793:
 _Ta9:
 	return foundcount;

@@ -254,11 +254,12 @@ class cCopterAnim * cCopterBody::GetPrivateAnim(unsigned long animName) {
 	/*bp-0x4*/   short count;
 
 // LINE 1943:
+_FOR_17:
 	count = 0x0;
-	__asm        jmp    _T1b;
-_T17:
+	__asm        jmp    _FOR_COND_17;
+_FOR_NEXT_17:
 	count++;
-_T1b:
+_FOR_COND_17:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        movsx  ecx, count;
@@ -351,7 +352,7 @@ _T15f:
 	__asm        jmp    _T164;
 _T164:
 	__asm        jmp    _T181;
-_T169:
+_LOOP_169:
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        je     _T17c;
 
@@ -422,7 +423,7 @@ _T225:
 _T22b:
 	__asm        jmp    _T241;
 _T230:
-	__asm        jmp    _T169;
+	__asm        jmp    _LOOP_169;
 _T235:
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        jmp    _T241;
@@ -441,7 +442,7 @@ _T26d:
 // Block end:
 // Block end:
 _T275:
-	__asm        jmp    _T17;
+	__asm        jmp    _FOR_NEXT_17;
 // LINE 1951:
 _T27a:
 	return 0x0;
@@ -454,16 +455,16 @@ void cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 
 // LINE 2062:
 	__asm        cmp    this, 0;
-	__asm        jne    _T32;
+	__asm        jne    _FOR_3d;
 
 	doAssert(0x8c085, 0x5be67c, 0x80e, 0x5be6cc);
 // LINE 2063:
-_T32:
+_FOR_3d:
 	count = 0x0;
-	__asm        jmp    _T41;
-_T3d:
+	__asm        jmp    _FOR_COND_3d;
+_FOR_NEXT_3d:
 	count++;
-_T41:
+_FOR_COND_3d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
 	__asm        movsx  ecx, count;
@@ -557,7 +558,7 @@ _T172:
 // LINE 2080:
 // Block end:
 _T17c:
-	__asm        jmp    _T3d;
+	__asm        jmp    _FOR_NEXT_3d;
 // LINE 2081:
 _T181:
 	return;
@@ -610,7 +611,7 @@ _T9c:
 	__asm        jmp    _Ta1;
 _Ta1:
 	__asm        jmp    _Tbe;
-_Ta6:
+_LOOP_a6:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     _Tb9;
 
@@ -681,7 +682,7 @@ _T162:
 _T168:
 	__asm        jmp    _T17e;
 _T16d:
-	__asm        jmp    _Ta6;
+	__asm        jmp    _LOOP_a6;
 _T172:
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    _T17e;
@@ -698,11 +699,12 @@ struct cCopterBody::Part * cCopterBody::GetPartByName(unsigned long partname) {
 	/*bp-0x8*/   /*unpacked*/ struct cCopterBody::Part *part;
 
 // LINE 2093:
+_FOR_17:
 	count = 0x0;
-	__asm        jmp    _T1b;
-_T17:
+	__asm        jmp    _FOR_COND_17;
+_FOR_NEXT_17:
 	count++;
-_T1b:
+_FOR_COND_17:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
 	__asm        movsx  ecx, count;
@@ -755,7 +757,7 @@ _Tb2:
 	return part;
 // LINE 2097:
 _Tde:
-	__asm        jmp    _T17;
+	__asm        jmp    _FOR_NEXT_17;
 // LINE 2098:
 _Te3:
 	return 0x0;
@@ -1113,11 +1115,12 @@ _T64:
 	__asm        movsx  eax, word ptr [eax+0x10];
 	__asm        mov    numParts, eax;
 // LINE 2188:
+_FOR_7f:
 	count = 0x0;
-	__asm        jmp    _T83;
-_T7f:
+	__asm        jmp    _FOR_COND_7f;
+_FOR_NEXT_7f:
 	count++;
-_T83:
+_FOR_COND_7f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, numParts;
 	__asm        jge    _Tc0;
@@ -1131,7 +1134,7 @@ _T83:
 	__asm        movsx  ecx, count;
 	__asm        shl    ecx, 2;
 	__asm        mov    sTransformedInfo[0].bStartTransformed[ecx+ecx*4], al;
-	__asm        jmp    _T7f;
+	__asm        jmp    _FOR_NEXT_7f;
 // LINE 2196:
 _Tc0:
 	__asm        fld    xOff;
@@ -1164,11 +1167,12 @@ _Tc0:
 // LINE 2213:
 	drawordercount = 0x0;
 // LINE 2214:
+_FOR_122:
 	count = 0x0;
-	__asm        jmp    _T126;
-_T122:
+	__asm        jmp    _FOR_COND_122;
+_FOR_NEXT_122:
 	count++;
-_T126:
+_FOR_COND_122:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, numParts;
 	__asm        jge    _T4a6;
@@ -1408,20 +1412,20 @@ _T45e:
 // Block end:
 // Block end:
 _T4a1:
-	__asm        jmp    _T122;
+	__asm        jmp    _FOR_NEXT_122;
 // LINE 2271:
 _T4a6:
 	__asm        cmp    drawordercount, 0;
-	__asm        je     _T4c8;
+	__asm        je     _FOR_4d3;
 // LINE 2272:
 	qsort(0x5623cd, 0x4, drawordercount, 0x638670);
 // LINE 2276:
-_T4c8:
+_FOR_4d3:
 	orderID = 0x0;
-	__asm        jmp    _T4d7;
-_T4d3:
+	__asm        jmp    _FOR_COND_4d3;
+_FOR_NEXT_4d3:
 	orderID++;
-_T4d7:
+_FOR_COND_4d3:
 	__asm        movsx  eax, orderID;
 	__asm        cmp    eax, drawordercount;
 	__asm        jge    _T557;
@@ -1460,7 +1464,7 @@ _T518:
 	__asm        call   cCopterBody::DrawSwitch;
 // LINE 2281:
 _T552:
-	__asm        jmp    _T4d3;
+	__asm        jmp    _FOR_NEXT_4d3;
 // LINE 2282:
 _T557:
 	return;
@@ -1816,7 +1820,7 @@ void cCopterBody::DestroyAll() {
 _T2b:
 	count = 0x0;
 // LINE 2304:
-_T31:
+__WHILE_31:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        mov    eax, cCopterBody::fsList;
@@ -1842,12 +1846,12 @@ _T5d:
 	doAssert(0x8c085, 0x5be944, 0x902, 0x5be970);
 // LINE 2307:
 _T94:
-	__asm        jmp    _T31;
+	__asm        jmp    __WHILE_31;
 // LINE 2308:
 _T99:
 	count = 0x0;
 // LINE 2309:
-_T9f:
+__WHILE_9f:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   0x41524350;
@@ -1871,12 +1875,12 @@ _Tc7:
 	doAssert(0x8c085, 0x5be994, 0x907, 0x5be9c0);
 // LINE 2312:
 _Tfe:
-	__asm        jmp    _T9f;
+	__asm        jmp    __WHILE_9f;
 // LINE 2313:
 _T103:
 	count = 0x0;
 // LINE 2314:
-_T109:
+__WHILE_109:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   0x41524C55;
@@ -1900,12 +1904,12 @@ _T131:
 	doAssert(0x8c085, 0x5be9e4, 0x90c, 0x5bea10);
 // LINE 2317:
 _T168:
-	__asm        jmp    _T109;
+	__asm        jmp    __WHILE_109;
 _T16d:
 	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    [ebp-0x4C], eax;
 // LINE 2318:
-_T175:
+_LOOP_175:
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     _T18d;
 
@@ -1971,7 +1975,7 @@ _T21e:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x3C], eax;
-_T235:
+__WHILE_235:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T2c2;
@@ -2013,7 +2017,7 @@ _T2b2:
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        jmp    _T235;
+	__asm        jmp    __WHILE_235;
 _T2c2:
 	__asm        jmp    _T2c7;
 _T2c7:
@@ -2033,7 +2037,7 @@ _T2c7:
 _T2ef:
 	__asm        jmp    _T2f4;
 _T2f4:
-	__asm        jmp    _T175;
+	__asm        jmp    _LOOP_175;
 _T2f9:
 	__asm        jmp    _T2fe;
 // LINE 2320:

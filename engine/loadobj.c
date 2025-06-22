@@ -285,11 +285,12 @@ _T113:
 // LINE 184:
 	FaceArray = 0x0;
 // LINE 185:
+_FOR_131:
 	i = 0x0;
-	__asm        jmp    _T134;
-_T131:
+	__asm        jmp    _FOR_COND_131;
+_FOR_NEXT_131:
 	i++;
-_T134:
+_FOR_COND_131:
 	__asm        mov    eax, objs;
 	__asm        cmp    i, eax;
 	__asm        jge    _T19b;
@@ -318,7 +319,7 @@ _T181:
 	return 0x0;
 // LINE 194:
 _T196:
-	__asm        jmp    _T131;
+	__asm        jmp    _FOR_NEXT_131;
 // LINE 196:
 _T19b:
 	__asm        cmp    ObjDataSize, 0;
@@ -351,11 +352,12 @@ void VRAssignMemPoolToRes(/*packed*/ struct VRResource *res, /*packed*/ struct V
 // LINE 229:
 	geo = res;
 // LINE 230:
+_FOR_1b:
 	i = 0x0;
-	__asm        jmp    _T1e;
-_T1b:
+	__asm        jmp    _FOR_COND_1b;
+_FOR_NEXT_1b:
 	i++;
-_T1e:
+_FOR_COND_1b:
 	__asm        mov    eax, geo;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -370,7 +372,7 @@ _T1e:
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 232:
-	__asm        jmp    _T1b;
+	__asm        jmp    _FOR_NEXT_1b;
 // LINE 233:
 __RETURN:
 }
@@ -522,12 +524,13 @@ _T10d:
 _T168:
 	ObjectPtr->FacePtr = dataptr;
 // LINE 460:
+_FOR_18d:
 	x = 0x0;
 	VertCount = 0x0;
-	__asm        jmp    _T193;
-_T18d:
+	__asm        jmp    _FOR_COND_18d;
+_FOR_NEXT_18d:
 	x++;
-_T193:
+_FOR_COND_18d:
 	__asm        movsx  eax, fileobjhdr.NFaces;
 	__asm        cmp    eax, x;
 	__asm        jle    _T5bf;
@@ -610,16 +613,16 @@ _T2a4:
 	__asm        call   ReadResource;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    _T2e1;
+	__asm        jne    _FOR_2f0;
 // LINE 545:
 	return 0x0;
 // LINE 566:
-_T2e1:
+_FOR_2f0:
 	y = 0x0;
-	__asm        jmp    _T2f6;
-_T2f0:
+	__asm        jmp    _FOR_COND_2f0;
+_FOR_NEXT_2f0:
 	y++;
-_T2f6:
+_FOR_COND_2f0:
 	__asm        movsx  eax, filefacehdr.NVerts;
 	__asm        cmp    eax, y;
 	__asm        jle    _T339;
@@ -634,7 +637,7 @@ _T2f6:
 	__asm        mov    [ecx], eax;
 	__asm        add    FaceVertPtr, 4;
 // LINE 570:
-	__asm        jmp    _T2f0;
+	__asm        jmp    _FOR_NEXT_2f0;
 // LINE 571:
 _T339:
 	dataptr = FaceVertPtr;
@@ -795,7 +798,7 @@ _T581:
 	FaceArray-> = faceptr;
 // LINE 653:
 _T5ba:
-	__asm        jmp    _T18d;
+	__asm        jmp    _FOR_NEXT_18d;
 // LINE 658:
 _T5bf:
 	__asm        test   reinterpret_cast<uint8_t>(fileobjhdr.Attrib), 1;
@@ -958,11 +961,12 @@ _T79:
 // LINE 812:
 	faceptr = oh->FacePtr;
 // LINE 813:
+_FOR_a3:
 	i = 0x0;
-	__asm        jmp    _Ta6;
-_Ta3:
+	__asm        jmp    _FOR_COND_a3;
+_FOR_NEXT_a3:
 	i++;
-_Ta6:
+_FOR_COND_a3:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -1027,11 +1031,12 @@ _T12d:
 	maxy = maxz;
 	maxx = maxy;
 // LINE 845:
+_FOR_172:
 	j = 0x0;
-	__asm        jmp    _T175;
-_T172:
+	__asm        jmp    _FOR_COND_172;
+_FOR_NEXT_172:
 	j++;
-_T175:
+_FOR_COND_172:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
@@ -1096,7 +1101,7 @@ _T213:
 	maxz = vert->z;
 // LINE 864:
 _T22b:
-	__asm        jmp    _T172;
+	__asm        jmp    _FOR_NEXT_172;
 // LINE 868:
 _T230:
 	__asm        mov    eax, dim;
@@ -1350,7 +1355,7 @@ _T52b:
 next_face:
 	faceptr = faceptr->NextFace;
 // LINE 995:
-	__asm        jmp    _Ta3;
+	__asm        jmp    _FOR_NEXT_a3;
 // LINE 1003:
 do_2d_face:
 	vertno = faceptr->PlyVerts;
@@ -1432,7 +1437,7 @@ _T619:
 _T649:
 	faceptr = faceptr->NextFace;
 // LINE 1044:
-	__asm        jmp    _Ta3;
+	__asm        jmp    _FOR_NEXT_a3;
 // LINE 1046:
 _T656:
 	__asm        cmp    check_for_overhang, 0;
@@ -1542,11 +1547,12 @@ _T79:
 // LINE 1124:
 	faceptr = oh->FacePtr;
 // LINE 1125:
+_FOR_a3:
 	i = 0x0;
-	__asm        jmp    _Ta6;
-_Ta3:
+	__asm        jmp    _FOR_COND_a3;
+_FOR_NEXT_a3:
 	i++;
-_Ta6:
+_FOR_COND_a3:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -1619,11 +1625,12 @@ _T143:
 	maxy = maxz;
 	maxx = maxy;
 // LINE 1167:
+_FOR_188:
 	j = 0x0;
-	__asm        jmp    _T18b;
-_T188:
+	__asm        jmp    _FOR_COND_188;
+_FOR_NEXT_188:
 	j++;
-_T18b:
+_FOR_COND_188:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
@@ -1688,7 +1695,7 @@ _T229:
 	maxz = vert->z;
 // LINE 1186:
 _T241:
-	__asm        jmp    _T188;
+	__asm        jmp    _FOR_NEXT_188;
 // LINE 1190:
 _T246:
 	__asm        mov    eax, dim;
@@ -1977,7 +1984,7 @@ _T5b4:
 next_face:
 	faceptr = faceptr->NextFace;
 // LINE 1337:
-	__asm        jmp    _Ta3;
+	__asm        jmp    _FOR_NEXT_a3;
 // LINE 1345:
 do_2d_face:
 	vertno = faceptr->PlyVerts;
@@ -2059,7 +2066,7 @@ _T6a2:
 _T6d2:
 	faceptr = faceptr->NextFace;
 // LINE 1386:
-	__asm        jmp    _Ta3;
+	__asm        jmp    _FOR_NEXT_a3;
 // LINE 1388:
 _T6df:
 	__asm        cmp    check_for_overhang, 0;
@@ -2130,11 +2137,12 @@ _T20:
 // LINE 1442:
 	faceptr = oh->FacePtr;
 // LINE 1443:
+_FOR_3c:
 	i = 0x0;
-	__asm        jmp    _T3f;
-_T3c:
+	__asm        jmp    _FOR_COND_3c;
+_FOR_NEXT_3c:
 	i++;
-_T3f:
+_FOR_COND_3c:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -2183,11 +2191,12 @@ _Ta4:
 	maxy = maxz;
 	maxx = maxy;
 // LINE 1466:
+_FOR_e6:
 	j = 0x0;
-	__asm        jmp    _Te9;
-_Te6:
+	__asm        jmp    _FOR_COND_e6;
+_FOR_NEXT_e6:
 	j++;
-_Te9:
+_FOR_COND_e6:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
@@ -2252,7 +2261,7 @@ _T187:
 	maxz = vert->z;
 // LINE 1485:
 _T19f:
-	__asm        jmp    _Te6;
+	__asm        jmp    _FOR_NEXT_e6;
 // LINE 1489:
 _T1a4:
 	__asm        mov    eax, dim;
@@ -2284,7 +2293,7 @@ _T1a4:
 next_face:
 	faceptr = faceptr->NextFace;
 // LINE 1507:
-	__asm        jmp    _T3c;
+	__asm        jmp    _FOR_NEXT_3c;
 // LINE 1509:
 _T207:
 	return distz;
@@ -2322,11 +2331,12 @@ _T20:
 // LINE 1544:
 	faceptr = oh->FacePtr;
 // LINE 1545:
+_FOR_3c:
 	i = 0x0;
-	__asm        jmp    _T3f;
-_T3c:
+	__asm        jmp    _FOR_COND_3c;
+_FOR_NEXT_3c:
 	i++;
-_T3f:
+_FOR_COND_3c:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -2375,11 +2385,12 @@ _Ta2:
 	maxy = maxz;
 	maxx = maxy;
 // LINE 1568:
+_FOR_e4:
 	j = 0x0;
-	__asm        jmp    _Te7;
-_Te4:
+	__asm        jmp    _FOR_COND_e4;
+_FOR_NEXT_e4:
 	j++;
-_Te7:
+_FOR_COND_e4:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
@@ -2444,7 +2455,7 @@ _T185:
 	maxz = vert->z;
 // LINE 1587:
 _T19d:
-	__asm        jmp    _Te4;
+	__asm        jmp    _FOR_NEXT_e4;
 // LINE 1591:
 _T1a2:
 	__asm        mov    eax, dim;
@@ -2476,7 +2487,7 @@ _T1a2:
 next_face:
 	faceptr = faceptr->NextFace;
 // LINE 1609:
-	__asm        jmp    _T3c;
+	__asm        jmp    _FOR_NEXT_3c;
 // LINE 1611:
 _T205:
 	return distx;
@@ -2500,11 +2511,12 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 // LINE 1639:
 	faceptr = oh->FacePtr;
 // LINE 1640:
+_FOR_2d:
 	i = 0x0;
-	__asm        jmp    _T30;
-_T2d:
+	__asm        jmp    _FOR_COND_2d;
+_FOR_NEXT_2d:
 	i++;
-_T30:
+_FOR_COND_2d:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -2550,7 +2562,7 @@ _T51:
 next_face:
 	faceptr = faceptr->NextFace;
 // LINE 1671:
-	__asm        jmp    _T2d;
+	__asm        jmp    _FOR_NEXT_2d;
 // LINE 1673:
 __RETURN:
 }
@@ -2564,13 +2576,14 @@ void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 // LINE 1685:
 	oh = obj;
 // LINE 1689:
+_FOR_24:
 	i = 0x0;
 	vert = oh->VertsPtr;
-	__asm        jmp    _T2b;
-_T24:
+	__asm        jmp    _FOR_COND_24;
+_FOR_NEXT_24:
 	i++;
 	vert += 0xc;
-_T2b:
+_FOR_COND_24:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
@@ -2582,7 +2595,7 @@ _T2b:
 // LINE 1693:
 	vert->z += z;
 // LINE 1694:
-	__asm        jmp    _T24;
+	__asm        jmp    _FOR_NEXT_24;
 // LINE 1697:
 _T59:
 	oh->CenterOrg.x += x;
@@ -2605,13 +2618,14 @@ int32_t VRObjGetHeight(int32_t obj) {
 // LINE 1716:
 	maxy = 0x80000000;
 // LINE 1718:
+_FOR_2b:
 	i = 0x0;
 	vert = oh->VertsPtr;
-	__asm        jmp    _T32;
-_T2b:
+	__asm        jmp    _FOR_COND_2b;
+_FOR_NEXT_2b:
 	i++;
 	vert += 0xc;
-_T32:
+_FOR_COND_2b:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
@@ -2625,7 +2639,7 @@ _T32:
 	maxy = vert->y;
 // LINE 1722:
 _T59:
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 1724:
 _T5e:
 	return maxy;
@@ -2786,11 +2800,12 @@ void NormalizeObj(/*packed*/ struct ObjectHdr *obj) {
 // LINE 1850:
 	d = obj->VertsPtr;
 // LINE 1851:
+_FOR_40:
 	i = 0x0;
-	__asm        jmp    _T43;
-_T40:
+	__asm        jmp    _FOR_COND_40;
+_FOR_NEXT_40:
 	i++;
-_T43:
+_FOR_COND_40:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
@@ -2806,7 +2821,7 @@ _T43:
 // LINE 1856:
 	s += 0xc;
 // LINE 1857:
-	__asm        jmp    _T40;
+	__asm        jmp    _FOR_NEXT_40;
 // LINE 1858:
 _T8a:
 	obj->CenterOrg.z = 0x0;
@@ -2834,11 +2849,12 @@ int32_t VRAssignTextureResToGroup(/*packed*/ struct VRResource *g, /*packed*/ st
 // LINE 1881:
 	bmp = b;
 // LINE 1882:
+_FOR_21:
 	i = 0x0;
-	__asm        jmp    _T24;
-_T21:
+	__asm        jmp    _FOR_COND_21;
+_FOR_NEXT_21:
 	i++;
-_T24:
+_FOR_COND_21:
 	__asm        mov    eax, geo;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -2862,11 +2878,12 @@ _T24:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1886:
+_FOR_6b:
 	j = 0x0;
-	__asm        jmp    _T6e;
-_T6b:
+	__asm        jmp    _FOR_COND_6b;
+_FOR_NEXT_6b:
 	j++;
-_T6e:
+_FOR_COND_6b:
 	__asm        mov    eax, j;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T191;
@@ -2966,10 +2983,10 @@ next_face:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1920:
-	__asm        jmp    _T6b;
+	__asm        jmp    _FOR_NEXT_6b;
 // LINE 1921:
 _T191:
-	__asm        jmp    _T21;
+	__asm        jmp    _FOR_NEXT_21;
 // LINE 1922:
 _T196:
 	return 0x1;
@@ -2993,11 +3010,12 @@ void VRBCApplyTiledMap(/*packed*/ struct _FaceHdr *fh, /*packed*/ struct VRBmpHd
 // LINE 1941:
 	h = bmp->info.height;
 // LINE 1946:
+_FOR_38:
 	i = 0x0;
-	__asm        jmp    _T3b;
-_T38:
+	__asm        jmp    _FOR_COND_38;
+_FOR_NEXT_38:
 	i++;
-_T3b:
+_FOR_COND_38:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
@@ -3011,7 +3029,7 @@ _T3b:
 // LINE 1951:
 	barry += 0x8;
 // LINE 1952:
-	__asm        jmp    _T38;
+	__asm        jmp    _FOR_NEXT_38;
 // LINE 1958:
 _T75:
 	fh->Bitmap = (((tileid << 0x3) + bmp) + 0xc);
@@ -3292,11 +3310,12 @@ _T5d:
 	__asm        shl    eax, 2;
 	__asm        add    G_alloc_used, eax;
 // LINE 2116:
+_FOR_7b:
 	i = 0x0;
-	__asm        jmp    _T7e;
-_T7b:
+	__asm        jmp    _FOR_COND_7b;
+_FOR_NEXT_7b:
 	i++;
-_T7e:
+_FOR_COND_7b:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
@@ -3321,11 +3340,12 @@ _T7e:
 // LINE 2136:
 	fp = obj->FacePtr;
 // LINE 2137:
+_FOR_e2:
 	j = 0x0;
-	__asm        jmp    _Te5;
-_Te2:
+	__asm        jmp    _FOR_COND_e2;
+_FOR_NEXT_e2:
 	j++;
-_Te5:
+_FOR_COND_e2:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+0x10], ecx;
@@ -3337,11 +3357,12 @@ _Te5:
 // LINE 2141:
 	faceverts = fp->PlyVerts;
 // LINE 2147:
+_FOR_112:
 	k = 0x0;
-	__asm        jmp    _T115;
-_T112:
+	__asm        jmp    _FOR_COND_112;
+_FOR_NEXT_112:
 	k++;
-_T115:
+_FOR_COND_112:
 	__asm        mov    eax, fp;
 	__asm        mov    ecx, k;
 	__asm        cmp    [eax+4], ecx;
@@ -3364,13 +3385,13 @@ _T115:
 	__asm        jmp    _T165;
 // LINE 2157:
 _T160:
-	__asm        jmp    _T112;
+	__asm        jmp    _FOR_NEXT_112;
 // LINE 2160:
 _T165:
 	fp = fp->NextFace;
 // LINE 2162:
 // Block end:
-	__asm        jmp    _Te2;
+	__asm        jmp    _FOR_NEXT_e2;
 // LINE 2168:
 _T172:
 	__asm        cmp    no_vert_faces, 0;
@@ -3441,7 +3462,7 @@ _T172:
 // LINE 2182:
 // Block end:
 _T23a:
-	__asm        jmp    _T7b;
+	__asm        jmp    _FOR_NEXT_7b;
 // LINE 2185:
 _T23f:
 	VRObjSetGouraudShade(vnorms, obj);
@@ -3564,11 +3585,12 @@ _T84:
 	__asm        shl    eax, 2;
 	__asm        add    ptr, eax;
 // LINE 2272:
+_FOR_112:
 	i = 0x0;
-	__asm        jmp    _T115;
-_T112:
+	__asm        jmp    _FOR_COND_112;
+_FOR_NEXT_112:
 	i++;
-_T115:
+_FOR_COND_112:
 	__asm        mov    eax, i;
 	__asm        cmp    nverts, eax;
 	__asm        jle    _T14e;
@@ -3584,7 +3606,7 @@ _T115:
 // LINE 2276:
 	vert += 0xc;
 // LINE 2277:
-	__asm        jmp    _T112;
+	__asm        jmp    _FOR_NEXT_112;
 // LINE 2281:
 _T14e:
 	mvert = ptr;
@@ -3597,11 +3619,12 @@ _T14e:
 // LINE 2287:
 	ptr += 0x30;
 // LINE 2288:
+_FOR_177:
 	i = 0x0;
-	__asm        jmp    _T17a;
-_T177:
+	__asm        jmp    _FOR_COND_177;
+_FOR_NEXT_177:
 	i++;
-_T17a:
+_FOR_COND_177:
 	__asm        mov    eax, nverts;
 	__asm        dec    eax;
 	__asm        cmp    eax, i;
@@ -3640,7 +3663,7 @@ _T17a:
 // LINE 2310:
 	ptr += 0x30;
 // LINE 2311:
-	__asm        jmp    _T177;
+	__asm        jmp    _FOR_NEXT_177;
 // LINE 2313:
 _T205:
 	return dataptr;
@@ -3726,11 +3749,12 @@ _T82:
 	__asm        shl    eax, 2;
 	__asm        add    ptr, eax;
 // LINE 2377:
+_FOR_109:
 	i = 0x0;
-	__asm        jmp    _T10c;
-_T109:
+	__asm        jmp    _FOR_COND_109;
+_FOR_NEXT_109:
 	i++;
-_T10c:
+_FOR_COND_109:
 	__asm        mov    eax, i;
 	__asm        cmp    nverts, eax;
 	__asm        jle    _T141;
@@ -3741,7 +3765,7 @@ _T10c:
 // LINE 2380:
 	vert += 0xc;
 // LINE 2381:
-	__asm        jmp    _T109;
+	__asm        jmp    _FOR_NEXT_109;
 // LINE 2385:
 _T141:
 	mvert = ptr;
@@ -3754,11 +3778,12 @@ _T141:
 // LINE 2391:
 	ptr += 0x30;
 // LINE 2392:
+_FOR_16a:
 	i = 0x0;
-	__asm        jmp    _T16d;
-_T16a:
+	__asm        jmp    _FOR_COND_16a;
+_FOR_NEXT_16a:
 	i++;
-_T16d:
+_FOR_COND_16a:
 	__asm        mov    eax, i;
 	__asm        cmp    nverts, eax;
 	__asm        jle    _T1e6;
@@ -3789,7 +3814,7 @@ _T16d:
 // LINE 2413:
 	ptr += 0x30;
 // LINE 2414:
-	__asm        jmp    _T16a;
+	__asm        jmp    _FOR_NEXT_16a;
 // LINE 2416:
 _T1e6:
 	return dataptr;
@@ -3881,11 +3906,12 @@ _T40:
 // LINE 2481:
 	fh = oh->FacePtr;
 // LINE 2482:
+_FOR_b2:
 	i = 0x0;
-	__asm        jmp    _Tb5;
-_Tb2:
+	__asm        jmp    _FOR_COND_b2;
+_FOR_NEXT_b2:
 	i++;
-_Tb5:
+_FOR_COND_b2:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -3913,7 +3939,7 @@ _Tb5:
 // LINE 2503:
 	fh = fh->NextFace;
 // LINE 2504:
-	__asm        jmp    _Tb2;
+	__asm        jmp    _FOR_NEXT_b2;
 // LINE 2506:
 _T159:
 	return mem;
@@ -3952,12 +3978,13 @@ int32_t VRStObjPolyHit(/*packed*/ struct Point3d *sloc, /*packed*/ struct Point3
 // LINE 2546:
 	fh = oh->FacePtr;
 // LINE 2547:
+_FOR_4f:
 	i = 0x0;
-	__asm        jmp    _T5a;
-_T4f:
+	__asm        jmp    _FOR_COND_4f;
+_FOR_NEXT_4f:
 	i++;
 	fh = fh->NextFace;
-_T5a:
+_FOR_COND_4f:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -3999,7 +4026,7 @@ _T5a:
 	__asm        cmp    dotp1, 0xFFFFFAE2;
 	__asm        jl     _Tcf;
 // LINE 2558:
-	__asm        jmp    _T4f;
+	__asm        jmp    _FOR_NEXT_4f;
 // LINE 2562:
 _Tcf:
 	v0 = fh->Normal->p;
@@ -4081,7 +4108,7 @@ _Tcf:
 	__asm        cmp    eax, tval;
 	__asm        jge    _T1a7;
 // LINE 2578:
-	__asm        jmp    _T4f;
+	__asm        jmp    _FOR_NEXT_4f;
 // LINE 2581:
 _T1a7:
 	__asm        mov    eax, svec;
@@ -4127,11 +4154,12 @@ _T1a7:
 // LINE 2593:
 	vertno = fh->PlyVerts;
 // LINE 2594:
+_FOR_232:
 	j = 0x0;
-	__asm        jmp    _T235;
-_T232:
+	__asm        jmp    _FOR_COND_232;
+_FOR_NEXT_232:
 	j++;
-_T235:
+_FOR_COND_232:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
@@ -4196,7 +4224,7 @@ _T2d3:
 	maxz = v0->z;
 // LINE 2613:
 _T2eb:
-	__asm        jmp    _T232;
+	__asm        jmp    _FOR_NEXT_232;
 // LINE 2617:
 _T2f0:
 	__asm        mov    eax, maxz;
@@ -4210,7 +4238,7 @@ _T2f0:
 	__asm        jge    _T317;
 // LINE 2618:
 _T312:
-	__asm        jmp    _T4f;
+	__asm        jmp    _FOR_NEXT_4f;
 // LINE 2619:
 _T317:
 	__asm        mov    eax, maxy;
@@ -4224,7 +4252,7 @@ _T317:
 	__asm        jge    _T33e;
 // LINE 2620:
 _T339:
-	__asm        jmp    _T4f;
+	__asm        jmp    _FOR_NEXT_4f;
 // LINE 2621:
 _T33e:
 	__asm        mov    eax, maxx;
@@ -4238,7 +4266,7 @@ _T33e:
 	__asm        jle    _T365;
 // LINE 2622:
 _T360:
-	__asm        jmp    _T4f;
+	__asm        jmp    _FOR_NEXT_4f;
 // LINE 2626:
 _T365:
 	__asm        cmp    nptrptr, 0;
@@ -4249,7 +4277,7 @@ _T365:
 _T37a:
 	return tval;
 // LINE 2631:
-	__asm        jmp    _T4f;
+	__asm        jmp    _FOR_NEXT_4f;
 // LINE 2635:
 _T387:
 	return 0xffffffff;

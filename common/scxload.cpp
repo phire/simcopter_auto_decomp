@@ -715,14 +715,15 @@ void SCXReadNeighbors(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 230:
+_FOR_2b:
 	loop = 0x0;
-	__asm        jmp    _T2e;
-_T2b:
+	__asm        jmp    _FOR_COND_2b;
+_FOR_NEXT_2b:
 	loop++;
-_T2e:
+_FOR_COND_2b:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    _T5c;
+	__asm        jge    _FOR_68;
 // LINE 231:
 	__asm        push   0x20;
 	__asm        mov    eax, loop;
@@ -736,17 +737,17 @@ _T2e:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 232:
-_T5c:
+_FOR_68:
 	loop = 0x0;
-	__asm        jmp    _T6b;
-_T68:
+	__asm        jmp    _FOR_COND_68;
+_FOR_NEXT_68:
 	loop++;
-_T6b:
+_FOR_COND_68:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    _T9c;
+	__asm        jge    _FOR_a8;
 // LINE 233:
 	__asm        push   2;
 	__asm        mov    eax, loop;
@@ -761,17 +762,17 @@ _T6b:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    _T68;
+	__asm        jmp    _FOR_NEXT_68;
 // LINE 234:
-_T9c:
+_FOR_a8:
 	loop = 0x0;
-	__asm        jmp    _Tab;
-_Ta8:
+	__asm        jmp    _FOR_COND_a8;
+_FOR_NEXT_a8:
 	loop++;
-_Tab:
+_FOR_COND_a8:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    _Tdc;
+	__asm        jge    _FOR_e8;
 // LINE 235:
 	__asm        push   4;
 	__asm        mov    eax, loop;
@@ -786,17 +787,17 @@ _Tab:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    _Ta8;
+	__asm        jmp    _FOR_NEXT_a8;
 // LINE 236:
-_Tdc:
+_FOR_e8:
 	loop = 0x0;
-	__asm        jmp    _Teb;
-_Te8:
+	__asm        jmp    _FOR_COND_e8;
+_FOR_NEXT_e8:
 	loop++;
-_Teb:
+_FOR_COND_e8:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    _T11c;
+	__asm        jge    _FOR_128;
 // LINE 237:
 	__asm        push   4;
 	__asm        mov    eax, loop;
@@ -811,17 +812,17 @@ _Teb:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    _Te8;
+	__asm        jmp    _FOR_NEXT_e8;
 // LINE 238:
-_T11c:
+_FOR_128:
 	loop = 0x0;
-	__asm        jmp    _T12b;
-_T128:
+	__asm        jmp    _FOR_COND_128;
+_FOR_NEXT_128:
 	loop++;
-_T12b:
+_FOR_COND_128:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
-	__asm        jge    _T15c;
+	__asm        jge    _FOR_168;
 // LINE 239:
 	__asm        push   4;
 	__asm        mov    eax, loop;
@@ -836,14 +837,14 @@ _T12b:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
-	__asm        jmp    _T128;
+	__asm        jmp    _FOR_NEXT_128;
 // LINE 242:
-_T15c:
+_FOR_168:
 	loop = 0x0;
-	__asm        jmp    _T16b;
-_T168:
+	__asm        jmp    _FOR_COND_168;
+_FOR_NEXT_168:
 	loop++;
-_T16b:
+_FOR_COND_168:
 	__asm        cmp    loop, 4;
 	__asm        jge    _T286;
 // LINE 244:
@@ -938,7 +939,7 @@ _T221:
 	__asm        mov    edx, NeighborFame;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 257:
-	__asm        jmp    _T168;
+	__asm        jmp    _FOR_NEXT_168;
 // LINE 258:
 _T286:
 	return;
@@ -1046,7 +1047,7 @@ _Te2:
 // LINE 317:
 _Tf4:
 	__asm        mov    dword ptr [ebp-0x594], 0;
-_Tfe:
+__WHILE_fe:
 	__asm        cmp    dword ptr [ebp-0x594], 4;
 	__asm        jae    _T1a9;
 
@@ -1059,7 +1060,7 @@ _T115:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _T12b;
 
-	__asm        jmp    _T1ae;
+	__asm        jmp    _FOR_1ba;
 _T12b:
 	__asm        jmp    _T130;
 _T130:
@@ -1081,7 +1082,7 @@ _T157:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _T16d;
 
-	__asm        jmp    _T1ae;
+	__asm        jmp    _FOR_1ba;
 _T16d:
 	memstrm.curPos = 0x0;
 _T174:
@@ -1098,22 +1099,22 @@ _T17e:
 	__asm        mov    [ebp+ecx-0x138], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x594];
-	__asm        jmp    _Tfe;
+	__asm        jmp    __WHILE_fe;
 _T1a9:
-	__asm        jmp    _T1ae;
+	__asm        jmp    _FOR_1ba;
 // LINE 318:
-_T1ae:
+_FOR_1ba:
 	loop = 0x0;
-	__asm        jmp    _T1bd;
-_T1ba:
+	__asm        jmp    _FOR_COND_1ba;
+_FOR_NEXT_1ba:
 	loop++;
-_T1bd:
+_FOR_COND_1ba:
 	__asm        mov    eax, tempLong;
 	__asm        cmp    loop, eax;
 	__asm        jge    _T1e3;
 // LINE 319:
 	SCXReadPlayer(scxbuf, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>);
-	__asm        jmp    _T1ba;
+	__asm        jmp    _FOR_NEXT_1ba;
 // LINE 322:
 _T1e3:
 	SCXReadBudget(budgetList, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>);
@@ -1130,7 +1131,7 @@ _T1e3:
 	__asm        mov    [ebp-0x59C], eax;
 // LINE 331:
 	__asm        mov    dword ptr [ebp-0x598], 0;
-_T22e:
+__WHILE_22e:
 	__asm        cmp    dword ptr [ebp-0x598], 0x20;
 	__asm        jae    _T2db;
 
@@ -1183,13 +1184,13 @@ _T2ae:
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x598];
-	__asm        jmp    _T22e;
+	__asm        jmp    __WHILE_22e;
 _T2db:
 	__asm        jmp    _T2e0;
 // LINE 334:
 _T2e0:
 	__asm        mov    dword ptr [ebp-0x5A0], 0;
-_T2ea:
+__WHILE_2ea:
 	__asm        cmp    dword ptr [ebp-0x5A0], 4;
 	__asm        jae    _T395;
 
@@ -1241,13 +1242,13 @@ _T36a:
 	__asm        mov    [ebp+ecx-0x138], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A0];
-	__asm        jmp    _T2ea;
+	__asm        jmp    __WHILE_2ea;
 _T395:
 	__asm        jmp    _T39a;
 // LINE 337:
 _T39a:
 	__asm        mov    dword ptr [ebp-0x5A4], 0;
-_T3a4:
+__WHILE_3a4:
 	__asm        cmp    dword ptr [ebp-0x5A4], 0x10;
 	__asm        jae    _T44e;
 
@@ -1299,13 +1300,13 @@ _T424:
 	__asm        mov    reinterpret_cast<uint8_t>(Valve[0])[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A4];
-	__asm        jmp    _T3a4;
+	__asm        jmp    __WHILE_3a4;
 _T44e:
 	__asm        jmp    _T453;
 // LINE 340:
 _T453:
 	__asm        mov    dword ptr [ebp-0x5A8], 0;
-_T45d:
+__WHILE_45d:
 	__asm        cmp    dword ptr [ebp-0x5A8], 0x22;
 	__asm        jae    _T507;
 
@@ -1357,13 +1358,13 @@ _T4dd:
 	__asm        mov    reinterpret_cast<uint8_t>(Invent[0])[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A8];
-	__asm        jmp    _T45d;
+	__asm        jmp    __WHILE_45d;
 _T507:
 	__asm        jmp    _T50c;
 // LINE 343:
 _T50c:
 	__asm        mov    dword ptr [ebp-0x5AC], 0;
-_T516:
+__WHILE_516:
 	__asm        cmp    dword ptr [ebp-0x5AC], 4;
 	__asm        jae    _T5c0;
 
@@ -1415,13 +1416,13 @@ _T596:
 	__asm        mov    reinterpret_cast<uint8_t>(TotalFunds)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5AC];
-	__asm        jmp    _T516;
+	__asm        jmp    __WHILE_516;
 _T5c0:
 	__asm        jmp    _T5c5;
 // LINE 346:
 _T5c5:
 	__asm        mov    dword ptr [ebp-0x5B0], 0;
-_T5cf:
+__WHILE_5cf:
 	__asm        cmp    dword ptr [ebp-0x5B0], 4;
 	__asm        jae    _T679;
 
@@ -1473,13 +1474,13 @@ _T64f:
 	__asm        mov    reinterpret_cast<uint8_t>(TotalBonds)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B0];
-	__asm        jmp    _T5cf;
+	__asm        jmp    __WHILE_5cf;
 _T679:
 	__asm        jmp    _T67e;
 // LINE 349:
 _T67e:
 	__asm        mov    dword ptr [ebp-0x5B4], 0;
-_T688:
+__WHILE_688:
 	__asm        cmp    dword ptr [ebp-0x5B4], 4;
 	__asm        jae    _T732;
 
@@ -1531,13 +1532,13 @@ _T708:
 	__asm        mov    reinterpret_cast<uint8_t>(TotalPop)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B4];
-	__asm        jmp    _T688;
+	__asm        jmp    __WHILE_688;
 _T732:
 	__asm        jmp    _T737;
 // LINE 354:
 _T737:
 	__asm        mov    dword ptr [ebp-0x5B8], 0;
-_T741:
+__WHILE_741:
 	__asm        cmp    dword ptr [ebp-0x5B8], 0xC8;
 	__asm        jae    _T7ef;
 
@@ -1550,7 +1551,7 @@ _T75b:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _T771;
 
-	__asm        jmp    _T7f4;
+	__asm        jmp    _FOR_800;
 _T771:
 	__asm        jmp    _T776;
 _T776:
@@ -1572,7 +1573,7 @@ _T79d:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _T7b3;
 
-	__asm        jmp    _T7f4;
+	__asm        jmp    _FOR_800;
 _T7b3:
 	memstrm.curPos = 0x0;
 _T7ba:
@@ -1589,16 +1590,16 @@ _T7c4:
 	__asm        mov    [ebp+ecx-0x134], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B8];
-	__asm        jmp    _T741;
+	__asm        jmp    __WHILE_741;
 _T7ef:
-	__asm        jmp    _T7f4;
+	__asm        jmp    _FOR_800;
 // LINE 355:
-_T7f4:
+_FOR_800:
 	loop = 0x0;
-	__asm        jmp    _T803;
-_T800:
+	__asm        jmp    _FOR_COND_800;
+_FOR_NEXT_800:
 	loop++;
-_T803:
+_FOR_COND_800:
 	__asm        cmp    loop, 0x32;
 	__asm        jge    _T827;
 // LINE 356:
@@ -1606,11 +1607,11 @@ _T803:
 	__asm        mov    eax, [ebp+eax*4-0x134];
 	__asm        mov    ecx, loop;
 	__asm        mov    BondRate[ecx*2], ax;
-	__asm        jmp    _T800;
+	__asm        jmp    _FOR_NEXT_800;
 // LINE 359:
 _T827:
 	__asm        mov    dword ptr [ebp-0x5BC], 0;
-_T831:
+__WHILE_831:
 	__asm        cmp    dword ptr [ebp-0x5BC], 4;
 	__asm        jae    _T8db;
 
@@ -1662,13 +1663,13 @@ _T8b1:
 	__asm        mov    reinterpret_cast<uint8_t>(TotalRate)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5BC];
-	__asm        jmp    _T831;
+	__asm        jmp    __WHILE_831;
 _T8db:
 	__asm        jmp    _T8e0;
 // LINE 362:
 _T8e0:
 	__asm        mov    dword ptr [ebp-0x5C0], 0;
-_T8ea:
+__WHILE_8ea:
 	__asm        cmp    dword ptr [ebp-0x5C0], 2;
 	__asm        jae    _T994;
 
@@ -1720,13 +1721,13 @@ _T96a:
 	__asm        mov    reinterpret_cast<uint8_t>(baseYear)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C0];
-	__asm        jmp    _T8ea;
+	__asm        jmp    __WHILE_8ea;
 _T994:
 	__asm        jmp    _T999;
 // LINE 365:
 _T999:
 	__asm        mov    dword ptr [ebp-0x5C4], 0;
-_T9a3:
+__WHILE_9a3:
 	__asm        cmp    dword ptr [ebp-0x5C4], 2;
 	__asm        jae    _Ta4d;
 
@@ -1778,13 +1779,13 @@ _Ta23:
 	__asm        mov    reinterpret_cast<uint8_t>(month)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C4];
-	__asm        jmp    _T9a3;
+	__asm        jmp    __WHILE_9a3;
 _Ta4d:
 	__asm        jmp    _Ta52;
 // LINE 368:
 _Ta52:
 	__asm        mov    dword ptr [ebp-0x5C8], 0;
-_Ta5c:
+__WHILE_a5c:
 	__asm        cmp    dword ptr [ebp-0x5C8], 2;
 	__asm        jae    _Tb06;
 
@@ -1836,13 +1837,13 @@ _Tadc:
 	__asm        mov    reinterpret_cast<uint8_t>(year)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C8];
-	__asm        jmp    _Ta5c;
+	__asm        jmp    __WHILE_a5c;
 _Tb06:
 	__asm        jmp    _Tb0b;
 // LINE 371:
 _Tb0b:
 	__asm        mov    dword ptr [ebp-0x5CC], 0;
-_Tb15:
+__WHILE_b15:
 	__asm        cmp    dword ptr [ebp-0x5CC], 2;
 	__asm        jae    _Tbbf;
 
@@ -1894,13 +1895,13 @@ _Tb95:
 	__asm        mov    reinterpret_cast<uint8_t>(season)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5CC];
-	__asm        jmp    _Tb15;
+	__asm        jmp    __WHILE_b15;
 _Tbbf:
 	__asm        jmp    _Tbc4;
 // LINE 374:
 _Tbc4:
 	__asm        mov    dword ptr [ebp-0x5D0], 0;
-_Tbce:
+__WHILE_bce:
 	__asm        cmp    dword ptr [ebp-0x5D0], 2;
 	__asm        jae    _Tc78;
 
@@ -1952,7 +1953,7 @@ _Tc4e:
 	__asm        mov    reinterpret_cast<uint8_t>(CityStatus)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5D0];
-	__asm        jmp    _Tbce;
+	__asm        jmp    __WHILE_bce;
 _Tc78:
 	__asm        jmp    _Tc7d;
 _Tc7d:
@@ -1960,7 +1961,7 @@ _Tc7d:
 	__asm        mov    [ebp-0x5D8], eax;
 // LINE 377:
 	__asm        mov    dword ptr [ebp-0x5D4], 0;
-_Tc92:
+__WHILE_c92:
 	__asm        cmp    dword ptr [ebp-0x5D4], 0x1000;
 	__asm        jae    _Td42;
 
@@ -2013,7 +2014,7 @@ _Td15:
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5D4];
-	__asm        jmp    _Tc92;
+	__asm        jmp    __WHILE_c92;
 _Td42:
 	__asm        jmp    _Td47;
 _Td47:
@@ -2021,7 +2022,7 @@ _Td47:
 	__asm        mov    [ebp-0x5E0], eax;
 // LINE 378:
 	__asm        mov    dword ptr [ebp-0x5DC], 0;
-_Td5c:
+__WHILE_d5c:
 	__asm        cmp    dword ptr [ebp-0x5DC], 0x1000;
 	__asm        jae    _Te0c;
 
@@ -2074,7 +2075,7 @@ _Tddf:
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5DC];
-	__asm        jmp    _Td5c;
+	__asm        jmp    __WHILE_d5c;
 _Te0c:
 	__asm        jmp    _Te11;
 _Te11:
@@ -2082,7 +2083,7 @@ _Te11:
 	__asm        mov    [ebp-0x5E8], eax;
 // LINE 379:
 	__asm        mov    dword ptr [ebp-0x5E4], 0;
-_Te26:
+__WHILE_e26:
 	__asm        cmp    dword ptr [ebp-0x5E4], 0x1000;
 	__asm        jae    _Ted6;
 
@@ -2135,7 +2136,7 @@ _Tea9:
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5E4];
-	__asm        jmp    _Te26;
+	__asm        jmp    __WHILE_e26;
 _Ted6:
 	__asm        jmp    _Tedb;
 _Tedb:
@@ -2143,7 +2144,7 @@ _Tedb:
 	__asm        mov    [ebp-0x5F0], eax;
 // LINE 380:
 	__asm        mov    dword ptr [ebp-0x5EC], 0;
-_Tef0:
+__WHILE_ef0:
 	__asm        cmp    dword ptr [ebp-0x5EC], 0x1000;
 	__asm        jae    _Tfa0;
 
@@ -2196,7 +2197,7 @@ _Tf73:
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5EC];
-	__asm        jmp    _Tef0;
+	__asm        jmp    __WHILE_ef0;
 _Tfa0:
 	__asm        jmp    _Tfa5;
 // LINE 383:
@@ -2303,11 +2304,12 @@ _Tfa5:
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 410:
+_FOR_10ed:
 	loop = 0x0;
-	__asm        jmp    _T10f0;
-_T10ed:
+	__asm        jmp    _FOR_COND_10ed;
+_FOR_NEXT_10ed:
 	loop++;
-_T10f0:
+_FOR_COND_10ed:
 	__asm        cmp    loop, 0x100;
 	__asm        jge    _T1119;
 // LINE 411:
@@ -2316,7 +2318,7 @@ _T10f0:
 	__asm        mov    ecx, loop;
 	__asm        mov    edx, TileCnt;
 	__asm        mov    [edx+ecx*2], ax;
-	__asm        jmp    _T10ed;
+	__asm        jmp    _FOR_NEXT_10ed;
 // LINE 414:
 _T1119:
 	__asm        push   4;
@@ -2374,13 +2376,14 @@ _T1119:
 	__asm        mov    eax, tempLong;
 	__asm        mov    GlobalSeaLevel, ax;
 // LINE 441:
+_FOR_11ca:
 	loop = 0x0;
-	__asm        jmp    _T11cd;
-_T11ca:
+	__asm        jmp    _FOR_COND_11ca;
+_FOR_NEXT_11ca:
 	loop++;
-_T11cd:
+_FOR_COND_11ca:
 	__asm        cmp    loop, 0x32;
-	__asm        jge    _T11f6;
+	__asm        jge    _FOR_1202;
 // LINE 442:
 	__asm        push   0x19;
 	__asm        mov    eax, loop;
@@ -2390,14 +2393,14 @@ _T11cd:
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
-	__asm        jmp    _T11ca;
+	__asm        jmp    _FOR_NEXT_11ca;
 // LINE 452:
-_T11f6:
+_FOR_1202:
 	loop = 0x0;
-	__asm        jmp    _T1205;
-_T1202:
+	__asm        jmp    _FOR_COND_1202;
+_FOR_NEXT_1202:
 	loop++;
-_T1205:
+_FOR_COND_1202:
 	__asm        cmp    loop, 0x96;
 	__asm        jge    _T128c;
 // LINE 454:
@@ -2432,7 +2435,7 @@ _T1205:
 	__asm        mov    edx, MicroRecord;
 	__asm        mov    [edx+ecx*8+6], ax;
 // LINE 460:
-	__asm        jmp    _T1202;
+	__asm        jmp    _FOR_NEXT_1202;
 // LINE 463:
 _T128c:
 	__asm        push   1;
@@ -2557,11 +2560,12 @@ _T128c:
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 515:
+_FOR_1417:
 	loop = 0x0;
-	__asm        jmp    _T141a;
-_T1417:
+	__asm        jmp    _FOR_COND_1417;
+_FOR_NEXT_1417:
 	loop++;
-_T141a:
+_FOR_COND_1417:
 	__asm        cmp    loop, 0xB;
 	__asm        jge    _T1440;
 // LINE 516:
@@ -2570,7 +2574,7 @@ _T141a:
 	__asm        mov    ecx, loop;
 	__asm        mov    edx, IndDemand;
 	__asm        mov    [edx+ecx*2], ax;
-	__asm        jmp    _T1417;
+	__asm        jmp    _FOR_NEXT_1417;
 // LINE 519:
 _T1440:
 	__asm        push   0x2C;
@@ -2579,11 +2583,12 @@ _T1440:
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 520:
+_FOR_145d:
 	loop = 0x0;
-	__asm        jmp    _T1460;
-_T145d:
+	__asm        jmp    _FOR_COND_145d;
+_FOR_NEXT_145d:
 	loop++;
-_T1460:
+_FOR_COND_145d:
 	__asm        cmp    loop, 0xB;
 	__asm        jge    _T1486;
 // LINE 521:
@@ -2592,7 +2597,7 @@ _T1460:
 	__asm        mov    ecx, loop;
 	__asm        mov    edx, IndRatio;
 	__asm        mov    [edx+ecx*4], eax;
-	__asm        jmp    _T145d;
+	__asm        jmp    _FOR_NEXT_145d;
 // LINE 524:
 _T1486:
 	__asm        push   0x40;
@@ -2601,11 +2606,12 @@ _T1486:
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 525:
+_FOR_14a2:
 	loop = 0x0;
-	__asm        jmp    _T14a5;
-_T14a2:
+	__asm        jmp    _FOR_COND_14a2;
+_FOR_NEXT_14a2:
 	loop++;
-_T14a5:
+_FOR_COND_14a2:
 	__asm        cmp    loop, 0x10;
 	__asm        jge    _T14cc;
 // LINE 526:
@@ -2615,7 +2621,7 @@ _T14a5:
 	__asm        push   eax;
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
-	__asm        jmp    _T14a2;
+	__asm        jmp    _FOR_NEXT_14a2;
 // LINE 528:
 _T14cc:
 	__asm        mov    eax, scxbuf;

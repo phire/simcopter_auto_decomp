@@ -170,26 +170,27 @@ void S3FireReset() {
 // LINE 105:
 	S_fire_count = 0x0;
 // LINE 111:
+_FOR_26:
 	i = 0x0;
 	fd = 0x6666f0;
-	__asm        jmp    _T30;
-_T26:
+	__asm        jmp    _FOR_COND_26;
+_FOR_NEXT_26:
 	i++;
 	fd += 0xa0;
-_T30:
+_FOR_COND_26:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    _T4b;
+	__asm        jge    _FOR_57;
 // LINE 114:
 	fd->flags = 0x0;
 // LINE 115:
-	__asm        jmp    _T26;
+	__asm        jmp    _FOR_NEXT_26;
 // LINE 119:
-_T4b:
+_FOR_57:
 	i = 0x0;
-	__asm        jmp    _T5a;
-_T57:
+	__asm        jmp    _FOR_COND_57;
+_FOR_NEXT_57:
 	i++;
-_T5a:
+_FOR_COND_57:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    __RETURN;
 // LINE 121:
@@ -199,7 +200,7 @@ _T5a:
 	__asm        mov    eax, i;
 	__asm        mov    S_cfdata[0].fire_count[eax*8], 0;
 // LINE 123:
-	__asm        jmp    _T57;
+	__asm        jmp    _FOR_NEXT_57;
 // LINE 126:
 __RETURN:
 }
@@ -239,15 +240,16 @@ void S3FireInit() {
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 154:
+_FOR_68:
 	i = 0x0;
 	fd = 0x6666f0;
-	__asm        jmp    _T72;
-_T68:
+	__asm        jmp    _FOR_COND_68;
+_FOR_NEXT_68:
 	i++;
 	fd += 0xa0;
-_T72:
+_FOR_COND_68:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    _T16a;
+	__asm        jge    _FOR_176;
 // LINE 157:
 	fd->flags = 0x0;
 // LINE 158:
@@ -298,14 +300,14 @@ _T72:
 // LINE 176:
 	fd->dyfire.mesh = fd->stptr->mesh;
 // LINE 177:
-	__asm        jmp    _T68;
+	__asm        jmp    _FOR_NEXT_68;
 // LINE 181:
-_T16a:
+_FOR_176:
 	i = 0x0;
-	__asm        jmp    _T179;
-_T176:
+	__asm        jmp    _FOR_COND_176;
+_FOR_NEXT_176:
 	i++;
-_T179:
+_FOR_COND_176:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    __RETURN;
 // LINE 183:
@@ -315,7 +317,7 @@ _T179:
 	__asm        mov    eax, i;
 	__asm        mov    S_cfdata[0].fire_count[eax*8], 0;
 // LINE 185:
-	__asm        jmp    _T176;
+	__asm        jmp    _FOR_NEXT_176;
 // LINE 187:
 __RETURN:
 }
@@ -331,13 +333,14 @@ int32_t S3FireStart(/*packed*/ struct _CELL_FIRE_DATA *cfd, long cellx, long cel
 	/*bp-0x50*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 213:
+_FOR_1c:
 	i = 0x0;
 	fd = 0x6666f0;
-	__asm        jmp    _T26;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
 	fd += 0xa0;
-_T26:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T49;
 // LINE 215:
@@ -348,7 +351,7 @@ _T26:
 	__asm        jmp    _T49;
 // LINE 217:
 _T44:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 220:
 _T49:
 	__asm        cmp    i, 0x8C;
@@ -386,7 +389,7 @@ _T8f:
 // LINE 240:
 	fd->building = 0x0;
 // LINE 241:
-_Tdb:
+__WHILE_db:
 	__asm        cmp    stobj, 0;
 	__asm        je     _T13e;
 // LINE 243:
@@ -418,7 +421,7 @@ _T11f:
 _T131:
 	stobj = stobj->next;
 // LINE 252:
-	__asm        jmp    _Tdb;
+	__asm        jmp    __WHILE_db;
 // LINE 254:
 _T13e:
 	__asm        mov    eax, cptr;
@@ -558,13 +561,14 @@ _T3e:
 _T43:
 	mindist = 0x7d00;
 // LINE 341:
+_FOR_5d:
 	i = 0x0;
 	fd = 0x6666f0;
-	__asm        jmp    _T67;
-_T5d:
+	__asm        jmp    _FOR_COND_5d;
+_FOR_NEXT_5d:
 	i++;
 	fd += 0xa0;
-_T67:
+_FOR_COND_5d:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T585;
 // LINE 343:
@@ -572,7 +576,7 @@ _T67:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T85;
 // LINE 344:
-	__asm        jmp    _T5d;
+	__asm        jmp    _FOR_NEXT_5d;
 // LINE 346:
 _T85:
 	__asm        mov    eax, fd;
@@ -648,7 +652,7 @@ _T13c:
 // LINE 380:
 	fd->elevation = 0x0;
 // LINE 381:
-	__asm        jmp    _T5d;
+	__asm        jmp    _FOR_NEXT_5d;
 // LINE 385:
 _T185:
 	__asm        mov    eax, fd;
@@ -707,7 +711,7 @@ _T28e:
 // LINE 433:
 	fd->elevation = 0x0;
 // LINE 434:
-	__asm        jmp    _T5d;
+	__asm        jmp    _FOR_NEXT_5d;
 // LINE 437:
 _T2a7:
 	fd->elevation--;
@@ -760,7 +764,7 @@ _T350:
 // LINE 455:
 	stptrptr = (cptr + 0xc);
 // LINE 456:
-_T383:
+__WHILE_383:
 	__asm        mov    eax, stptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T3bf;
@@ -778,7 +782,7 @@ _T383:
 _T3b2:
 	stptrptr = stptrptr->;
 // LINE 464:
-	__asm        jmp    _T383;
+	__asm        jmp    __WHILE_383;
 // LINE 466:
 _T3bf:
 	fd->flags = (fd->flags & -0x2);
@@ -861,7 +865,7 @@ _T4fc:
 	S3FireDestroyCell(fd);
 // LINE 513:
 _T508:
-	__asm        jmp    _T5d;
+	__asm        jmp    _FOR_NEXT_5d;
 // LINE 517:
 _T50d:
 	S3FireDyObjCollisionCheck(0x6, fd);
@@ -893,7 +897,7 @@ _T50d:
 	S3FireSpread(fd);
 // LINE 529:
 _T580:
-	__asm        jmp    _T5d;
+	__asm        jmp    _FOR_NEXT_5d;
 // LINE 535:
 _T585:
 	__asm        cmp    fireloopsound, 1;
@@ -973,18 +977,18 @@ void S3FireSpread(/*packed*/ struct _FIRE_DATA *fd) {
 _T7d:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    _T8f;
+	__asm        jne    _FOR_a2;
 // LINE 594:
 	return;
 // LINE 599:
-_T8f:
+_FOR_a2:
 	i = 0x0;
 	tfd = 0x6666f0;
-	__asm        jmp    _Tac;
-_Ta2:
+	__asm        jmp    _FOR_COND_a2;
+_FOR_NEXT_a2:
 	i++;
 	tfd += 0xa0;
-_Tac:
+_FOR_COND_a2:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _Te3;
 // LINE 601:
@@ -1001,7 +1005,7 @@ _Tac:
 	return;
 // LINE 603:
 _Tde:
-	__asm        jmp    _Ta2;
+	__asm        jmp    _FOR_NEXT_a2;
 // LINE 605:
 _Te3:
 	cfd = S3FireGetCellData();
@@ -1017,11 +1021,12 @@ _Te3:
 	/*bp-0x4*/   long i;
 
 // LINE 621:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T4a;
 // LINE 623:
@@ -1034,7 +1039,7 @@ _T18:
 	__asm        jmp    __RETURN;
 // LINE 625:
 _T45:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 627:
 _T4a:
 	return 0x0;
@@ -1099,7 +1104,7 @@ _T30:
 // LINE 664:
 	stobj = cptr->stptr;
 // LINE 665:
-_T77:
+__WHILE_77:
 	__asm        cmp    stobj, 0;
 	__asm        je     check_dyobjs;
 // LINE 667:
@@ -1206,7 +1211,7 @@ _T193:
 // LINE 715:
 	stptrptr = (cptr + 0xc);
 // LINE 716:
-_T1b6:
+__WHILE_1b6:
 	__asm        mov    eax, stptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T1f2;
@@ -1224,7 +1229,7 @@ _T1b6:
 _T1e5:
 	stptrptr = stptrptr->;
 // LINE 724:
-	__asm        jmp    _T1b6;
+	__asm        jmp    __WHILE_1b6;
 // LINE 726:
 _T1f2:
 	fd->flags = (fd->flags & -0x2);
@@ -1312,14 +1317,14 @@ _T334:
 next_obj:
 	stobj = stobj->next;
 // LINE 778:
-	__asm        jmp    _T77;
+	__asm        jmp    __WHILE_77;
 // LINE 786:
 check_dyobjs:
 	return;
 // LINE 788:
 	dyobj = cptr->dyptr;
 // LINE 789:
-_T354:
+__WHILE_354:
 	__asm        cmp    dyobj, 0;
 	__asm        je     __RETURN;
 // LINE 792:
@@ -1371,7 +1376,7 @@ _T3e1:
 _T3e6:
 	dyobj = dyobj->next;
 // LINE 818:
-	__asm        jmp    _T354;
+	__asm        jmp    __WHILE_354;
 // LINE 820:
 __RETURN:
 }
@@ -2478,13 +2483,14 @@ _Taf5:
 	/*bp-0x8*/   long i;
 
 // LINE 947:
+_FOR_1c:
 	i = 0x0;
 	fd = 0x6666f0;
-	__asm        jmp    _T26;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
 	fd += 0xa0;
-_T26:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T5e;
 // LINE 949:
@@ -2500,7 +2506,7 @@ _T26:
 	return fd;
 // LINE 951:
 _T59:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 953:
 _T5e:
 	return 0x0;
@@ -2532,7 +2538,7 @@ _T1e:
 // LINE 980:
 	stobj = cptr->stptr;
 // LINE 981:
-_T3b:
+__WHILE_3b:
 	__asm        cmp    stobj, 0;
 	__asm        je     _Tf4;
 // LINE 983:
@@ -2590,7 +2596,7 @@ _Tdf:
 next_obj:
 	stobj = stobj->next;
 // LINE 1009:
-	__asm        jmp    _T3b;
+	__asm        jmp    __WHILE_3b;
 // LINE 1012:
 _Tf4:
 	return 0x0;
@@ -2935,7 +2941,7 @@ void S3FireDestroyCell(/*packed*/ struct _FIRE_DATA *fd) {
 // LINE 1254:
 	y = fd->celloc.y;
 // LINE 1255:
-_T9a:
+__WHILE_9a:
 	__asm        dec    x;
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -2948,12 +2954,12 @@ _T9a:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _Tce;
 
-	__asm        jmp    _T9a;
+	__asm        jmp    __WHILE_9a;
 // LINE 1256:
 _Tce:
 	x++;
 // LINE 1257:
-_Td1:
+__WHILE_d1:
 	__asm        dec    y;
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
@@ -2966,16 +2972,17 @@ _Td1:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T105;
 
-	__asm        jmp    _Td1;
+	__asm        jmp    __WHILE_d1;
 // LINE 1258:
 _T105:
 	y++;
 // LINE 1261:
+_FOR_113:
 	i = x;
-	__asm        jmp    _T116;
-_T113:
+	__asm        jmp    _FOR_COND_113;
+_FOR_NEXT_113:
 	i++;
-_T116:
+_FOR_COND_113:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    eax, [eax];
@@ -2984,11 +2991,12 @@ _T116:
 	__asm        cmp    eax, i;
 	__asm        jle    _T186;
 // LINE 1262:
+_FOR_13c:
 	j = y;
-	__asm        jmp    _T13f;
-_T13c:
+	__asm        jmp    _FOR_COND_13c;
+_FOR_NEXT_13c:
 	j++;
-_T13f:
+_FOR_COND_13c:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    eax, [eax];
@@ -3007,9 +3015,9 @@ _T13f:
 	__asm        shl    ecx, 8;
 	__asm        mov    G_texmap[0][eax+ecx], 0xA;
 // LINE 1266:
-	__asm        jmp    _T13c;
+	__asm        jmp    _FOR_NEXT_13c;
 _T181:
-	__asm        jmp    _T113;
+	__asm        jmp    _FOR_NEXT_113;
 // LINE 1268:
 _T186:
 	__asm        jmp    _T1c5;
@@ -3040,7 +3048,7 @@ _T1c5:
 // LINE 1277:
 	stobj = fd->cfd->cptr->stptr;
 // LINE 1278:
-_T1f0:
+__WHILE_1f0:
 	__asm        cmp    stobj, 0;
 	__asm        je     _T227;
 // LINE 1280:
@@ -3057,7 +3065,7 @@ _T1f0:
 _T21a:
 	stobj = stobj->next;
 // LINE 1286:
-	__asm        jmp    _T1f0;
+	__asm        jmp    __WHILE_1f0;
 // LINE 1288:
 _T227:
 	S3ExplosionSmokeStart(0x1, loc.x, fd->cfd->cptr);
@@ -3069,7 +3077,7 @@ _T246:
 // LINE 1301:
 	stobj = fd->cfd->cptr->stptr;
 // LINE 1302:
-_T267:
+__WHILE_267:
 	__asm        cmp    stobj, 0;
 	__asm        je     _T38b;
 // LINE 1304:
@@ -3161,7 +3169,7 @@ _T379:
 _T37e:
 	stobj = stobj->next;
 // LINE 1337:
-	__asm        jmp    _T267;
+	__asm        jmp    __WHILE_267;
 // LINE 1340:
 _T38b:
 	S3FireDyObjCollisionCheck(0x10, fd);
@@ -3200,11 +3208,12 @@ _T38b:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 1352:
+_FOR_444:
 	j = 0x0;
-	__asm        jmp    _T447;
-_T444:
+	__asm        jmp    _FOR_COND_444;
+_FOR_NEXT_444:
 	j++;
-_T447:
+_FOR_COND_444:
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
 	__asm        jle    __RETURN;
@@ -3281,7 +3290,7 @@ _T447:
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 1370:
-	__asm        jmp    _T444;
+	__asm        jmp    _FOR_NEXT_444;
 // LINE 1371:
 __RETURN:
 }
@@ -3322,7 +3331,7 @@ long S3FireAddToNearest(/*packed*/ struct _CELL_INFO *fcptr, /*packed*/ struct P
 // LINE 1411:
 	y = loc->y;
 // LINE 1418:
-_T36:
+_LOOP_36:
 	curr_dir++;
 // LINE 1419:
 	__asm        mov    eax, curr_dir;
@@ -3380,18 +3389,18 @@ _Ta2:
 _Tca:
 	__asm        mov    eax, spiral_dist;
 	__asm        cmp    curr_dist, eax;
-	__asm        jne    _Te0;
+	__asm        jne    _FOR_ec;
 // LINE 1447:
 	curr_dist--;
 // LINE 1448:
 	stop_now = 0x1;
 // LINE 1452:
-_Te0:
+_FOR_ec:
 	i = 0x0;
-	__asm        jmp    _Tef;
-_Tec:
+	__asm        jmp    _FOR_COND_ec;
+_FOR_NEXT_ec:
 	i++;
-_Tef:
+_FOR_COND_ec:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
 	__asm        jle    _T13d;
@@ -3416,7 +3425,7 @@ _Tef:
 	__asm        jmp    FoundFire;
 // LINE 1459:
 _T138:
-	__asm        jmp    _Tec;
+	__asm        jmp    _FOR_NEXT_ec;
 // LINE 1461:
 _T13d:
 	__asm        cmp    stop_now, 1;
@@ -3425,7 +3434,7 @@ _T13d:
 	__asm        jmp    _T151;
 // LINE 1465:
 _T14c:
-	__asm        jmp    _T36;
+	__asm        jmp    _LOOP_36;
 // LINE 1468:
 _T151:
 	return 0xffffffff;
@@ -3433,7 +3442,7 @@ _T151:
 FoundFire:
 	stobj = cptr->stptr;
 // LINE 1475:
-_T164:
+__WHILE_164:
 	__asm        cmp    stobj, 0;
 	__asm        je     _T1d9;
 // LINE 1477:
@@ -3458,7 +3467,7 @@ _T1be:
 _T1cc:
 	stobj = stobj->next;
 // LINE 1491:
-	__asm        jmp    _T164;
+	__asm        jmp    __WHILE_164;
 // LINE 1493:
 _T1d9:
 	return 0xffffffff;
@@ -3494,7 +3503,7 @@ _T42:
 // LINE 1521:
 	dyobj = fd->cfd->cptr->dyptr;
 // LINE 1522:
-_T60:
+__WHILE_60:
 	__asm        cmp    dyobj, 0;
 	__asm        je     _T22d;
 // LINE 1525:
@@ -3627,7 +3636,7 @@ _T220:
 	dyobj = dyobj->next;
 // LINE 1596:
 _T228:
-	__asm        jmp    _T60;
+	__asm        jmp    __WHILE_60;
 // LINE 1598:
 _T22d:
 	return;
@@ -3644,16 +3653,16 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	ret = ReadFirstMIFFChunk(0xa0, 0x62b550, FireMIFFID, miffReader);
 // LINE 1627:
 	__asm        cmp    ret, 0;
-	__asm        jne    _T39;
+	__asm        jne    _FOR_45;
 // LINE 1628:
 	return 0x0;
 // LINE 1631:
-_T39:
+_FOR_45:
 	i = 0x0;
-	__asm        jmp    _T48;
-_T45:
+	__asm        jmp    _FOR_COND_45;
+_FOR_NEXT_45:
 	i++;
-_T48:
+_FOR_COND_45:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T151;
 // LINE 1633:
@@ -3712,22 +3721,22 @@ _T48:
 	return 0x0;
 // LINE 1656:
 _T14c:
-	__asm        jmp    _T45;
+	__asm        jmp    _FOR_NEXT_45;
 // LINE 1662:
 _T151:
 	ret = ReadFirstMIFFChunk(0x8, 0x62b548, CfdMIFFID, miffReader);
 // LINE 1663:
 	__asm        cmp    ret, 0;
-	__asm        jne    _T17e;
+	__asm        jne    _FOR_18a;
 // LINE 1664:
 	return 0x0;
 // LINE 1667:
-_T17e:
+_FOR_18a:
 	i = 0x0;
-	__asm        jmp    _T18d;
-_T18a:
+	__asm        jmp    _FOR_COND_18a;
+_FOR_NEXT_18a:
 	i++;
-_T18d:
+_FOR_COND_18a:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T1e8;
 // LINE 1671:
@@ -3746,18 +3755,19 @@ _T18d:
 	return 0x0;
 // LINE 1681:
 _T1e3:
-	__asm        jmp    _T18a;
+	__asm        jmp    _FOR_NEXT_18a;
 // LINE 1685:
 _T1e8:
 	S_fire_count = 0x0;
 // LINE 1686:
+_FOR_205:
 	i = 0x0;
 	fd = 0x6666f0;
-	__asm        jmp    _T20f;
-_T205:
+	__asm        jmp    _FOR_COND_205;
+_FOR_NEXT_205:
 	i++;
 	fd += 0xa0;
-_T20f:
+_FOR_COND_205:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T396;
 // LINE 1688:
@@ -3765,7 +3775,7 @@ _T20f:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T22d;
 // LINE 1689:
-	__asm        jmp    _T205;
+	__asm        jmp    _FOR_NEXT_205;
 // LINE 1692:
 _T22d:
 	S_fire_count++;
@@ -3853,7 +3863,7 @@ _T22d:
 // LINE 1718:
 	fd->cfd->cptr->stptr = fd->stptr;
 // LINE 1720:
-	__asm        jmp    _T205;
+	__asm        jmp    _FOR_NEXT_205;
 // LINE 1722:
 _T396:
 	return 0x1;
@@ -3866,11 +3876,12 @@ int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   long i;
 
 // LINE 1731:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _Tfa;
 // LINE 1734:
@@ -3931,7 +3942,7 @@ _Tc2:
 	return 0x0;
 // LINE 1760:
 _Tf5:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 1762:
 _Tfa:
 	return 0x1;

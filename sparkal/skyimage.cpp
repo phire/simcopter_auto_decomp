@@ -392,11 +392,12 @@ _T8c:
 _Td2:
 	pDestinationImage = this->mpBits;
 // LINE 119:
+_FOR_f0:
 	i = 0x0;
-	__asm        jmp    _Tf6;
-_Tf0:
+	__asm        jmp    _FOR_COND_f0;
+_FOR_NEXT_f0:
 	i++;
-_Tf6:
+_FOR_COND_f0:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x138], ecx;
@@ -410,7 +411,7 @@ _T133:
 // LINE 122:
 	pSourceImage += this->nBitmapWidth;
 // LINE 123:
-	__asm        jmp    _Tf0;
+	__asm        jmp    _FOR_NEXT_f0;
 // LINE 124:
 _T156:
 	__asm        mov    eax, this;

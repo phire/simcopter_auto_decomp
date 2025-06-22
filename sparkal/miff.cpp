@@ -996,7 +996,7 @@ _T8b:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 365:
-_T96:
+_LOOP_96:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -1012,7 +1012,7 @@ _Tb3:
 	lCount++;
 // LINE 369:
 _Tb6:
-	__asm        jmp    _T96;
+	__asm        jmp    _LOOP_96;
 // LINE 370:
 _Tbb:
 	__asm        mov    eax, this;
@@ -1236,11 +1236,11 @@ long MIFF::GoToFirstRecordOfGivenType(long lRecordType) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x14];
 	__asm        cmp    eax, lRecordType;
-	__asm        jne    _T35;
+	__asm        jne    __WHILE_35;
 // LINE 494:
 	return 0x1;
 // LINE 496:
-_T35:
+__WHILE_35:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -1258,7 +1258,7 @@ _T35:
 	return 0x1;
 // LINE 499:
 _T66:
-	__asm        jmp    _T35;
+	__asm        jmp    __WHILE_35;
 // LINE 500:
 _T6b:
 	return 0x0;
@@ -1268,7 +1268,7 @@ _T6b:
 // FUNCTION: COPTER_D 0x004ac3ab
 long MIFF::GoToNextRecordOfGivenType(long lRecordType) {
 // LINE 515:
-_T0c:
+__WHILE_0c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -1286,7 +1286,7 @@ _T0c:
 	return 0x1;
 // LINE 518:
 _T3d:
-	__asm        jmp    _T0c;
+	__asm        jmp    __WHILE_0c;
 // LINE 519:
 _T42:
 	return 0x0;
@@ -1303,11 +1303,12 @@ long MIFF::GoToNthRecord(long lRecordToGoTo) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 541:
+_FOR_23:
 	lTempPresentRecord = 0x0;
-	__asm        jmp    _T26;
-_T23:
+	__asm        jmp    _FOR_COND_23;
+_FOR_NEXT_23:
 	lTempPresentRecord++;
-_T26:
+_FOR_COND_23:
 	__asm        mov    eax, lRecordToGoTo;
 	__asm        cmp    lTempPresentRecord, eax;
 	__asm        jge    _T42;
@@ -1316,7 +1317,7 @@ _T26:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x48];
-	__asm        jmp    _T23;
+	__asm        jmp    _FOR_NEXT_23;
 // LINE 543:
 _T42:
 	return 0x1;

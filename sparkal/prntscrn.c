@@ -155,11 +155,12 @@ _T4b:
 // LINE 103:
 	ptr = buffer1;
 // LINE 104:
+_FOR_f3:
 	y = 0x0;
-	__asm        jmp    _Tf6;
-_Tf3:
+	__asm        jmp    _FOR_COND_f3;
+_FOR_NEXT_f3:
 	y++;
-_Tf6:
+_FOR_COND_f3:
 	__asm        mov    eax, y;
 	__asm        cmp    ydim, eax;
 	__asm        jle    _T121;
@@ -168,7 +169,7 @@ _Tf6:
 // LINE 107:
 	ptr += pitch;
 // LINE 108:
-	__asm        jmp    _Tf3;
+	__asm        jmp    _FOR_NEXT_f3;
 // LINE 109:
 _T121:
 	fputc(hFileOut, 0xc);
@@ -189,11 +190,12 @@ _T121:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 114:
+_FOR_16e:
 	y = 0x0;
-	__asm        jmp    _T171;
-_T16e:
+	__asm        jmp    _FOR_COND_16e;
+_FOR_NEXT_16e:
 	y++;
-_T171:
+_FOR_COND_16e:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T1bf;
 // LINE 116:
@@ -212,7 +214,7 @@ _T171:
 	__asm        mov    ecx, y;
 	__asm        mov    wpal[2][ecx+ecx*2], al;
 // LINE 119:
-	__asm        jmp    _T16e;
+	__asm        jmp    _FOR_NEXT_16e;
 // LINE 120:
 _T1bf:
 	fwrite(hFileOut, 0x1, 0x300, 0x603ac0);
@@ -233,10 +235,10 @@ int32_t S3WritePCXLine(/*packed*/ struct _iobuf *fp, char * p, unsigned short n)
 	j = 0x0;
 	t = 0x0;
 // LINE 140:
-_T1b:
+__DO_1b:
 	i = 0x0;
 // LINE 141:
-_T21:
+__WHILE_21:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(i);
@@ -270,7 +272,7 @@ _T21:
 	__asm        jge    _T9d;
 
 	i++;
-	__asm        jmp    _T21;
+	__asm        jmp    __WHILE_21;
 // LINE 142:
 _T9d:
 	__asm        test   reinterpret_cast<uint32_t>(i), 0xFFFF;
@@ -317,7 +319,7 @@ _T106:
 	__asm        add    eax, 2;
 	__asm        mov    j, ax;
 // LINE 148:
-	__asm        jmp    _T1b1;
+	__asm        jmp    __DO_WHILE_1b;
 // LINE 149:
 _T131:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
@@ -362,13 +364,13 @@ _T172:
 _T1ad:
 	j++;
 // LINE 156:
-_T1b1:
+__DO_WHILE_1b:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(n);
 	__asm        and    ecx, 0xFFFF;
 	__asm        cmp    eax, ecx;
-	__asm        jl     _T1b;
+	__asm        jl     __DO_1b;
 // LINE 157:
 	return (reinterpret_cast<uint32_t>(n) & 0xffff);
 // LINE 158:

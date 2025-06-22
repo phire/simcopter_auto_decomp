@@ -1796,7 +1796,7 @@ _T84:
 	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
 	dyptrptr = (cellPointer + 0x10);
 // LINE 952:
-_T97:
+__WHILE_97:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Td6;
@@ -1814,7 +1814,7 @@ _T97:
 _Tc9:
 	dyptrptr = dyptrptr->;
 // LINE 962:
-	__asm        jmp    _T97;
+	__asm        jmp    __WHILE_97;
 // LINE 963:
 _Td6:
 	__asm        mov    eax, dyptrptr;
@@ -2003,7 +2003,7 @@ void EmergencyVehicleClass::BuildPath(/*packed*/ struct _RGIndex startVertex, /*
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destVertex.x);
 	__asm        mov    reinterpret_cast<uint16_t>(index.x), ax;
 // LINE 1412:
-_T1e:
+_LOOP_1e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.x;
 	__asm        xor    ecx, ecx;
@@ -2057,21 +2057,22 @@ _Tb1:
 _Tb6:
 	this->dispatchPathLength++;
 // LINE 1424:
-	__asm        jmp    _T1e;
+	__asm        jmp    _LOOP_1e;
 // LINE 1432:
 _Tc4:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destVertex.x);
 	__asm        mov    reinterpret_cast<uint16_t>(index.x), ax;
 // LINE 1433:
+_FOR_e2:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x293];
 	__asm        sub    ecx, 2;
 	__asm        mov    i, ecx;
-	__asm        jmp    _Te5;
-_Te2:
+	__asm        jmp    _FOR_COND_e2;
+_FOR_NEXT_e2:
 	i--;
-_Te5:
+_FOR_COND_e2:
 	__asm        cmp    i, 0;
 	__asm        jl     _T13a;
 // LINE 1436:
@@ -2101,7 +2102,7 @@ _Te5:
 	__asm        mov    edx, this;
 	__asm        mov    [ecx+edx+0x192], al;
 // LINE 1440:
-	__asm        jmp    _Te2;
+	__asm        jmp    _FOR_NEXT_e2;
 // LINE 1441:
 _T13a:
 	return;
@@ -2130,11 +2131,12 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1463:
+_FOR_3d:
 	count = 0x0;
-	__asm        jmp    _T40;
-_T3d:
+	__asm        jmp    _FOR_COND_3d;
+_FOR_NEXT_3d:
 	count++;
-_T40:
+_FOR_COND_3d:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T91;
@@ -2165,7 +2167,7 @@ _T7d:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1472:
-	__asm        jmp    _T3d;
+	__asm        jmp    _FOR_NEXT_3d;
 // LINE 1473:
 _T91:
 	return;
@@ -2194,11 +2196,12 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1486:
+_FOR_3d:
 	count = 0x0;
-	__asm        jmp    _T40;
-_T3d:
+	__asm        jmp    _FOR_COND_3d;
+_FOR_NEXT_3d:
 	count++;
-_T40:
+_FOR_COND_3d:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T95;
@@ -2229,7 +2232,7 @@ _T81:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1495:
-	__asm        jmp    _T3d;
+	__asm        jmp    _FOR_NEXT_3d;
 // LINE 1496:
 _T95:
 	return;

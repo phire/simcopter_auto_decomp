@@ -172,11 +172,12 @@ void JoystickManager::JoystickManager() {
 // LINE 32:
 	this->lJoystickThreshold = 0x0;
 // LINE 33:
+_FOR_40:
 	i = 0x0;
-	__asm        jmp    _T43;
-_T40:
+	__asm        jmp    _FOR_COND_40;
+_FOR_NEXT_40:
 	i++;
-_T43:
+_FOR_COND_40:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T6b;
 // LINE 34:
@@ -188,7 +189,7 @@ _T43:
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
 // LINE 36:
-	__asm        jmp    _T40;
+	__asm        jmp    _FOR_NEXT_40;
 // LINE 38:
 _T6b:
 	return;
@@ -208,11 +209,12 @@ int32_t JoystickManager::Initialize() {
 // LINE 60:
 	this->nJoystickCount = 0x0;
 // LINE 61:
+_FOR_2a:
 	i = 0x0;
-	__asm        jmp    _T2d;
-_T2a:
+	__asm        jmp    _FOR_COND_2a;
+_FOR_NEXT_2a:
 	i++;
-_T2d:
+_FOR_COND_2a:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T55;
 // LINE 62:
@@ -224,23 +226,23 @@ _T2d:
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
 // LINE 64:
-	__asm        jmp    _T2a;
+	__asm        jmp    _FOR_NEXT_2a;
 // LINE 66:
 _T55:
 	__asm        call   dword ptr ds:[0x6C38DC];
 	__asm        mov    nMaxJoysticks, eax;
 // LINE 67:
 	__asm        cmp    nMaxJoysticks, 0x10;
-	__asm        jle    _T6f;
+	__asm        jle    _FOR_7b;
 // LINE 68:
 	nMaxJoysticks = 0x10;
 // LINE 70:
-_T6f:
+_FOR_7b:
 	i = 0x0;
-	__asm        jmp    _T7e;
-_T7b:
+	__asm        jmp    _FOR_COND_7b;
+_FOR_NEXT_7b:
 	i++;
-_T7e:
+_FOR_COND_7b:
 	__asm        mov    eax, i;
 	__asm        cmp    nMaxJoysticks, eax;
 	__asm        jle    _Tf3;
@@ -284,7 +286,7 @@ _T7e:
 	this->nJoystickCount++;
 // LINE 78:
 _Tee:
-	__asm        jmp    _T7b;
+	__asm        jmp    _FOR_NEXT_7b;
 // LINE 82:
 _Tf3:
 	return this->nJoystickCount;
@@ -296,11 +298,12 @@ int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 93:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T5f;
 // LINE 95:
@@ -323,7 +326,7 @@ _T1b:
 	return 0x1;
 // LINE 98:
 _T5a:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 99:
 _T5f:
 	return 0x0;
@@ -371,11 +374,12 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 	/*bp-0x4*/   int32_t i;
 
 // LINE 127:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T67;
 // LINE 129:
@@ -400,7 +404,7 @@ _T1b:
 	return 0x1;
 // LINE 134:
 _T62:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 135:
 _T67:
 	return 0xffffffff;

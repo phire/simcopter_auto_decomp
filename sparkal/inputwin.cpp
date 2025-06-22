@@ -2418,7 +2418,7 @@ _Tce:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x34], eax;
-_Tda:
+_LOOP_da:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        cmp    [ebp-0x34], eax;
 	__asm        jne    _Tf0;
@@ -2457,7 +2457,7 @@ _T136:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x90;
 	__asm        call   list<KeyColors>::erase;
-	__asm        jmp    _Tda;
+	__asm        jmp    _LOOP_da;
 _T150:
 	__asm        jmp    _T155;
 _T155:
@@ -2501,7 +2501,7 @@ _T1dd:
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x5C], eax;
-_T1e9:
+_LOOP_1e9:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        cmp    [ebp-0x5C], eax;
 	__asm        jne    _T1ff;
@@ -2534,7 +2534,7 @@ _T227:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
 	__asm        call   list<HotSpot>::erase;
-	__asm        jmp    _T1e9;
+	__asm        jmp    _LOOP_1e9;
 _T24e:
 	__asm        jmp    _T253;
 _T253:
@@ -2550,7 +2550,7 @@ _T253:
 _T279:
 	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T303;
-_T285:
+__WHILE_285:
 	__asm        cmp    list<HotSpot>::buffer_list, 0;
 	__asm        je     _T2e0;
 
@@ -2578,7 +2578,7 @@ _T2c5:
 _T2d6:
 	__asm        jmp    _T2db;
 _T2db:
-	__asm        jmp    _T285;
+	__asm        jmp    __WHILE_285;
 _T2e0:
 	list<HotSpot>::free_list = 0x0;
 	list<HotSpot>::next_avail = 0x0;
@@ -2610,7 +2610,7 @@ _T342:
 	__asm        mov    [ebp-0x88], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x8C], eax;
-_T354:
+_LOOP_354:
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        cmp    [ebp-0x88], eax;
 	__asm        jne    _T370;
@@ -2643,7 +2643,7 @@ _T39b:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x7C;
 	__asm        call   list<HotSpot>::erase;
-	__asm        jmp    _T354;
+	__asm        jmp    _LOOP_354;
 _T3c2:
 	__asm        jmp    _T3c7;
 _T3c7:
@@ -2687,7 +2687,7 @@ _T455:
 	__asm        mov    [ebp-0xB0], eax;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0xB4], eax;
-_T46d:
+_LOOP_46d:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        cmp    [ebp-0xB4], eax;
 	__asm        jne    _T489;
@@ -2720,7 +2720,7 @@ _T4b7:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x74;
 	__asm        call   list<HotSpot>::erase;
-	__asm        jmp    _T46d;
+	__asm        jmp    _LOOP_46d;
 _T4e1:
 	__asm        jmp    _T4e6;
 _T4e6:
@@ -3756,9 +3756,9 @@ int32_t KeyboardWindow::DoesKeyExistOnKeyboard(long lKey) {
 	__asm        mov    tempHotSpotListIterator.node, eax;
 	__asm        jmp    _T22;
 _T22:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 178:
-_T27:
+_LOOP_27:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x2C], eax;
@@ -3813,7 +3813,7 @@ _Taf:
 	__asm        jmp    _Tba;
 // LINE 182:
 _Tba:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 _Tbf:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
@@ -3832,7 +3832,7 @@ _Te5:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 23:
-_Teb:
+_LOOP_eb:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    [ebp-0x20], eax;
@@ -3891,7 +3891,7 @@ _T17e:
 	__asm        jmp    _T189;
 // LINE 190:
 _T189:
-	__asm        jmp    _Teb;
+	__asm        jmp    _LOOP_eb;
 // LINE 191:
 _T18e:
 	return 0x0;
@@ -3911,9 +3911,9 @@ int32_t KeyboardWindow::DoesPositionHitKey(long lXPosition, long lYPosition, lon
 	__asm        mov    tempHotSpotListIterator.node, eax;
 	__asm        jmp    _T22;
 _T22:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 203:
-_T27:
+_LOOP_27:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x2C], eax;
@@ -3977,7 +3977,7 @@ _Tcb:
 	__asm        jmp    _Td6;
 // LINE 209:
 _Td6:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 _Tdb:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
@@ -3996,7 +3996,7 @@ _T101:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 23:
-_T107:
+_LOOP_107:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    [ebp-0x20], eax;
@@ -4064,7 +4064,7 @@ _T1b6:
 	__asm        jmp    _T1c1;
 // LINE 219:
 _T1c1:
-	__asm        jmp    _T107;
+	__asm        jmp    _LOOP_107;
 // LINE 220:
 _T1c6:
 	return 0x0;
@@ -4394,9 +4394,9 @@ _T36:
 _T3b:
 	__asm        jmp    _T40;
 _T40:
-	__asm        jmp    _T45;
+	__asm        jmp    _LOOP_45;
 // LINE 328:
-_T45:
+_LOOP_45:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x7C], eax;
@@ -4446,7 +4446,7 @@ _Td7:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    tempKeyColorsListIterator.node, eax;
 // LINE 333:
-_Tdd:
+_LOOP_dd:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        mov    [ebp-0x70], eax;
@@ -4533,7 +4533,7 @@ _T1e0:
 	__asm        jmp    _T1ee;
 // LINE 349:
 _T1ee:
-	__asm        jmp    _Tdd;
+	__asm        jmp    _LOOP_dd;
 // LINE 350:
 _T1f3:
 	__asm        mov    eax, tempHotSpotListIterator.node;
@@ -4548,7 +4548,7 @@ _T209:
 	__asm        jmp    _T217;
 // LINE 351:
 _T217:
-	__asm        jmp    _T45;
+	__asm        jmp    _LOOP_45;
 _T21c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
@@ -4567,7 +4567,7 @@ _T251:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 23:
-_T257:
+_LOOP_257:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    [ebp-0x64], eax;
@@ -4621,7 +4621,7 @@ _T2f1:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    tempKeyColorsListIterator.node, eax;
 // LINE 360:
-_T2f7:
+_LOOP_2f7:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
 	__asm        mov    [ebp-0x54], eax;
@@ -4708,7 +4708,7 @@ _T3fa:
 	__asm        jmp    _T408;
 // LINE 376:
 _T408:
-	__asm        jmp    _T2f7;
+	__asm        jmp    _LOOP_2f7;
 // LINE 377:
 _T40d:
 	__asm        mov    eax, tempHotSpotListIterator.node;
@@ -4723,7 +4723,7 @@ _T423:
 	__asm        jmp    _T431;
 // LINE 378:
 _T431:
-	__asm        jmp    _T257;
+	__asm        jmp    _LOOP_257;
 // LINE 379:
 _T436:
 	return;
@@ -4836,7 +4836,7 @@ _T16a:
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 402:
-_T170:
+_LOOP_170:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0xA4], eax;
@@ -5057,7 +5057,7 @@ _T42b:
 	__asm        jmp    _T43c;
 // LINE 423:
 _T43c:
-	__asm        jmp    _T170;
+	__asm        jmp    _LOOP_170;
 _T441:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
@@ -5076,7 +5076,7 @@ _T479:
 	__asm        mov    eax, [ebp-0x88];
 	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 23:
-_T482:
+_LOOP_482:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8C];
 	__asm        mov    [ebp-0x98], eax;
@@ -5301,7 +5301,7 @@ _T754:
 	__asm        jmp    _T765;
 // LINE 447:
 _T765:
-	__asm        jmp    _T482;
+	__asm        jmp    _LOOP_482;
 // LINE 448:
 _T76a:
 	__asm        mov    eax, sKey.reference;
@@ -5726,14 +5726,14 @@ void JoystickWindow::JoystickWindow(/*packed*/ class MRect& rectNewPosition, int
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xBE;
 	__asm        mov    [ebp-0xC], eax;
-_T4c:
+__WHILE_4c:
 	__asm        dec    dword ptr [ebp-8];
 	__asm        js     _T66;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0xC], 0x10;
-	__asm        jmp    _T4c;
+	__asm        jmp    __WHILE_4c;
 _T66:
 	__asm        jmp    _T6b;
 _T6b:
@@ -5741,14 +5741,14 @@ _T6b:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x13E;
 	__asm        mov    [ebp-0x14], eax;
-_T7d:
+__WHILE_7d:
 	__asm        dec    dword ptr [ebp-0x10];
 	__asm        js     _T97;
 
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x14], 0x10;
-	__asm        jmp    _T7d;
+	__asm        jmp    __WHILE_7d;
 _T97:
 	__asm        jmp    _T9c;
 _T9c:
@@ -5760,14 +5760,14 @@ _Ta6:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x18E;
 	__asm        mov    [ebp-0x1C], eax;
-_Tb8:
+__WHILE_b8:
 	__asm        dec    dword ptr [ebp-0x18];
 	__asm        js     _Td2;
 
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x1C], 0x10;
-	__asm        jmp    _Tb8;
+	__asm        jmp    __WHILE_b8;
 _Td2:
 	__asm        jmp    _Td7;
 _Td7:
@@ -5777,11 +5777,12 @@ _Td7:
 	this->myHandleBaseImage = 0x0;
 	this-><JoystickWindow+0x00> = 0x58f140;
 // LINE 615:
+_FOR_120:
 	i = 0x0;
-	__asm        jmp    _T123;
-_T120:
+	__asm        jmp    _FOR_COND_120;
+_FOR_NEXT_120:
 	i++;
-_T123:
+_FOR_COND_120:
 	__asm        cmp    i, 0xE;
 	__asm        jge    _T14e;
 // LINE 616:
@@ -5793,7 +5794,7 @@ _T123:
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+0xB0], 0;
 // LINE 618:
-	__asm        jmp    _T120;
+	__asm        jmp    _FOR_NEXT_120;
 // LINE 620:
 _T14e:
 	this->rectButtons[0].left = 0x16;
@@ -6647,11 +6648,12 @@ _T57:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 744:
+_FOR_75:
 	i = 0x0;
-	__asm        jmp    _T78;
-_T75:
+	__asm        jmp    _FOR_COND_75;
+_FOR_NEXT_75:
 	i++;
-_T78:
+_FOR_COND_75:
 	__asm        cmp    i, 0xE;
 	__asm        jge    _Te0;
 // LINE 745:
@@ -6662,11 +6664,12 @@ _T78:
 	__asm        cmp    [ecx+eax*4+0x78], edx;
 	__asm        je     _Tdb;
 // LINE 746:
+_FOR_a5:
 	j = 0x0;
-	__asm        jmp    _Ta8;
-_Ta5:
+	__asm        jmp    _FOR_COND_a5;
+_FOR_NEXT_a5:
 	j++;
-_Ta8:
+_FOR_COND_a5:
 	__asm        cmp    j, 0xE;
 	__asm        jge    _Tc8;
 // LINE 747:
@@ -6675,7 +6678,7 @@ _Ta8:
 	__asm        mov    ecx, i;
 	__asm        mov    edx, this;
 	__asm        mov    [edx+ecx*4+0x78], eax;
-	__asm        jmp    _Ta5;
+	__asm        jmp    _FOR_NEXT_a5;
 // LINE 748:
 _Tc8:
 	__asm        mov    eax, this;
@@ -6686,7 +6689,7 @@ _Tc8:
 	__asm        jmp    _Te0;
 // LINE 751:
 _Tdb:
-	__asm        jmp    _T75;
+	__asm        jmp    _FOR_NEXT_75;
 // LINE 754:
 _Te0:
 	return 0x1;
@@ -6728,13 +6731,14 @@ _T16:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 768:
+_FOR_60:
 	i = 0x0;
-	__asm        jmp    _T63;
-_T60:
+	__asm        jmp    _FOR_COND_60;
+_FOR_NEXT_60:
 	i++;
-_T63:
+_FOR_COND_60:
 	__asm        cmp    i, 8;
-	__asm        jge    _T84;
+	__asm        jge    _FOR_90;
 // LINE 769:
 	__asm        mov    eax, i;
 	__asm        push   eax;
@@ -6742,14 +6746,14 @@ _T63:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xD0];
-	__asm        jmp    _T60;
+	__asm        jmp    _FOR_NEXT_60;
 // LINE 772:
-_T84:
+_FOR_90:
 	i = 0x2;
-	__asm        jmp    _T93;
-_T90:
+	__asm        jmp    _FOR_COND_90;
+_FOR_NEXT_90:
 	i++;
-_T93:
+_FOR_COND_90:
 	__asm        cmp    i, 6;
 	__asm        jge    _Tb4;
 // LINE 773:
@@ -6759,7 +6763,7 @@ _T93:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xD4];
-	__asm        jmp    _T90;
+	__asm        jmp    _FOR_NEXT_90;
 // LINE 776:
 _Tb4:
 	__asm        mov    eax, this;
@@ -6930,14 +6934,14 @@ void JoystickWindow::DrawHandle() {
 	__asm        lea    eax, rectHandleBaseSources[0].left;
 	__asm        mov    [ebp-0x5C], eax;
 // LINE 838:
-_T19:
+__WHILE_19:
 	__asm        dec    dword ptr [ebp-0x58];
 	__asm        js     _T33;
 
 	__asm        mov    ecx, [ebp-0x5C];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x5C], 0x10;
-	__asm        jmp    _T19;
+	__asm        jmp    __WHILE_19;
 _T33:
 	__asm        jmp    _T38;
 // LINE 842:
@@ -6949,11 +6953,12 @@ _T38:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xE4];
 // LINE 843:
+_FOR_56:
 	i = 0x0;
-	__asm        jmp    _T59;
-_T56:
+	__asm        jmp    _FOR_COND_56;
+_FOR_NEXT_56:
 	i++;
-_T59:
+_FOR_COND_56:
 	__asm        cmp    i, 4;
 	__asm        jge    _Te0;
 // LINE 848:
@@ -6997,7 +7002,7 @@ _T59:
 	__asm        mov    ecx, [eax+0x1DA];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 849:
-	__asm        jmp    _T56;
+	__asm        jmp    _FOR_NEXT_56;
 // LINE 852:
 _Te0:
 	__asm        jmp    _Te5;
@@ -7193,13 +7198,14 @@ void JoystickWindow::GetNewJoystickControlStates(long * lNewJoystickControlState
 	/*bp-0x4*/   int32_t i;
 
 // LINE 928:
+_FOR_18:
 	i = 0x6;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0xE;
-	__asm        jge    _T6a;
+	__asm        jge    _FOR_76;
 // LINE 929:
 	__asm        push   1;
 	__asm        mov    eax, i;
@@ -7222,14 +7228,14 @@ _T1b:
 	lNewJoystickControlStates[i] = 0x1;
 // LINE 932:
 _T65:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 933:
-_T6a:
+_FOR_76:
 	i = 0x0;
-	__asm        jmp    _T79;
-_T76:
+	__asm        jmp    _FOR_COND_76;
+_FOR_NEXT_76:
 	i++;
-_T79:
+_FOR_COND_76:
 	__asm        cmp    i, 6;
 	__asm        jge    _Ta8;
 // LINE 934:
@@ -7245,7 +7251,7 @@ _T79:
 	__asm        mov    edx, lNewJoystickControlStates;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 935:
-	__asm        jmp    _T76;
+	__asm        jmp    _FOR_NEXT_76;
 // LINE 936:
 _Ta8:
 	return;
@@ -7459,26 +7465,26 @@ _T142:
 
 	__asm        jmp    _T194;
 _T18f:
-	__asm        jmp    _T1b6;
+	__asm        jmp    _FOR_1c2;
 _T194:
 	__asm        jmp    _T1a3;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     _T1b6;
+	__asm        je     _FOR_1c2;
 // LINE 1010:
 _T1a3:
 	lKey. = 0x1;
 // LINE 1011:
 	return 0x1;
 // LINE 1015:
-_T1b6:
+_FOR_1c2:
 	i = 0x2;
-	__asm        jmp    _T1c5;
-_T1c2:
+	__asm        jmp    _FOR_COND_1c2;
+_FOR_NEXT_1c2:
 	i++;
-_T1c5:
+_FOR_COND_1c2:
 	__asm        cmp    i, 6;
-	__asm        jge    _T26f;
+	__asm        jge    _FOR_27b;
 // LINE 1016:
 	__asm        mov    eax, i;
 	__asm        sub    eax, 2;
@@ -7527,14 +7533,14 @@ _T258:
 	return 0x1;
 // LINE 1020:
 _T26a:
-	__asm        jmp    _T1c2;
+	__asm        jmp    _FOR_NEXT_1c2;
 // LINE 1023:
-_T26f:
+_FOR_27b:
 	i = 0x6;
-	__asm        jmp    _T27e;
-_T27b:
+	__asm        jmp    _FOR_COND_27b;
+_FOR_NEXT_27b:
 	i++;
-_T27e:
+_FOR_COND_27b:
 	__asm        cmp    i, 0xE;
 	__asm        jge    _T328;
 // LINE 1024:
@@ -7585,7 +7591,7 @@ _T311:
 	return 0x1;
 // LINE 1028:
 _T323:
-	__asm        jmp    _T27b;
+	__asm        jmp    _FOR_NEXT_27b;
 // LINE 1029:
 _T328:
 	return 0x0;
@@ -9574,7 +9580,7 @@ _Tda:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x44], eax;
-_Te6:
+_LOOP_e6:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        cmp    [ebp-0x44], eax;
 	__asm        jne    _Tfc;
@@ -9634,7 +9640,7 @@ _T184:
 	this->myShortcutListConfigurable.length--;
 	__asm        jmp    _T192;
 _T192:
-	__asm        jmp    _Te6;
+	__asm        jmp    _LOOP_e6;
 _T197:
 	__asm        jmp    _T19c;
 // LINE 1213:
@@ -11053,9 +11059,9 @@ _T34:
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    _T58;
 _T58:
-	__asm        jmp    _T5d;
+	__asm        jmp    _LOOP_5d;
 // LINE 1451:
-_T5d:
+_LOOP_5d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
 	__asm        mov    [ebp-0x30], eax;
@@ -11129,7 +11135,7 @@ _T11f:
 	__asm        jmp    _T12a;
 // LINE 1460:
 _T12a:
-	__asm        jmp    _T5d;
+	__asm        jmp    _LOOP_5d;
 // LINE 1463:
 // Block end:
 _T12f:
@@ -11163,9 +11169,9 @@ _T161:
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    _T185;
 _T185:
-	__asm        jmp    _T18a;
+	__asm        jmp    _LOOP_18a;
 // LINE 1466:
-_T18a:
+_LOOP_18a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
 	__asm        mov    [ebp-0x20], eax;
@@ -11251,7 +11257,7 @@ _T268:
 	__asm        jmp    _T273;
 // LINE 1478:
 _T273:
-	__asm        jmp    _T18a;
+	__asm        jmp    _LOOP_18a;
 // LINE 1481:
 // Block end:
 _T278:
@@ -11273,9 +11279,9 @@ void UserInputWindow::RemoveShortcutFromList(long lCommand, long lDevice, long l
 	__asm        mov    tempShortcutListIterator.node, eax;
 	__asm        jmp    _T25;
 _T25:
-	__asm        jmp    _T2a;
+	__asm        jmp    _LOOP_2a;
 // LINE 1493:
-_T2a:
+_LOOP_2a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
 	__asm        mov    [ebp-0x30], eax;
@@ -11385,7 +11391,7 @@ _T159:
 	__asm        jmp    _T164;
 // LINE 1505:
 _T164:
-	__asm        jmp    _T2a;
+	__asm        jmp    _LOOP_2a;
 // LINE 1506:
 _T169:
 	return;
@@ -11470,7 +11476,7 @@ _T74:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    tempIterator.node, eax;
 // LINE 1547:
-_T7a:
+__WHILE_7a:
 	__asm        mov    eax, i;
 	__asm        cmp    lCurrentInputDeviceIndex, eax;
 	__asm        jle    _Tac;
@@ -11489,7 +11495,7 @@ _T99:
 _Ta4:
 	i++;
 // LINE 1550:
-	__asm        jmp    _T7a;
+	__asm        jmp    __WHILE_7a;
 // LINE 1551:
 _Tac:
 	__asm        jmp    _Tb1;
@@ -11543,7 +11549,7 @@ _T77:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    tempIterator.node, eax;
 // LINE 1569:
-_T7d:
+__WHILE_7d:
 	__asm        mov    eax, i;
 	__asm        cmp    lCurrentCommandIndex, eax;
 	__asm        jle    _Taf;
@@ -11562,7 +11568,7 @@ _T9c:
 _Ta7:
 	i++;
 // LINE 1572:
-	__asm        jmp    _T7d;
+	__asm        jmp    __WHILE_7d;
 // LINE 1573:
 _Taf:
 	__asm        jmp    _Tb4;
@@ -11693,7 +11699,7 @@ _T184:
 	__asm        mov    eax, [eax+0x78];
 	__asm        add    eax, 0x90;
 	__asm        mov    [ebp-0x170], eax;
-_T1aa:
+_LOOP_1aa:
 	__asm        mov    eax, [ebp-0x168];
 	__asm        cmp    [ebp-0x16C], eax;
 	__asm        jne    _T1c6;
@@ -11754,7 +11760,7 @@ _T27e:
 	__asm        dec    dword ptr [eax+4];
 	__asm        jmp    _T28c;
 _T28c:
-	__asm        jmp    _T1aa;
+	__asm        jmp    _LOOP_1aa;
 _T291:
 	__asm        jmp    _T296;
 // LINE 1616:
@@ -11763,7 +11769,7 @@ _T296:
 // LINE 1617:
 	i = 0x0;
 // LINE 1618:
-_T2a9:
+__WHILE_2a9:
 	__asm        mov    eax, i;
 	__asm        cmp    dword ptr [ebp+eax*4-0x60], 0;
 	__asm        je     _T45c;
@@ -11870,7 +11876,7 @@ _T44f:
 _T454:
 	i++;
 // LINE 1623:
-	__asm        jmp    _T2a9;
+	__asm        jmp    __WHILE_2a9;
 // LINE 1626:
 _T45c:
 	__asm        mov    eax, this;
@@ -11881,9 +11887,9 @@ _T45c:
 	__asm        mov    tempShortcutListIterator.node, eax;
 	__asm        jmp    _T47e;
 _T47e:
-	__asm        jmp    _T483;
+	__asm        jmp    _LOOP_483;
 // LINE 1627:
-_T483:
+_LOOP_483:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
 	__asm        mov    [ebp-0xA4], eax;
@@ -12147,7 +12153,7 @@ _T87d:
 	__asm        jmp    _T88e;
 // LINE 1646:
 _T88e:
-	__asm        jmp    _T483;
+	__asm        jmp    _LOOP_483;
 // LINE 1649:
 // Block end:
 _T893:
@@ -12227,11 +12233,12 @@ _T953:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+0xC4];
 // LINE 1663:
+_FOR_999:
 	i = 0x0;
-	__asm        jmp    _T99c;
-_T999:
+	__asm        jmp    _FOR_COND_999;
+_FOR_NEXT_999:
 	i++;
-_T99c:
+_FOR_COND_999:
 	__asm        cmp    i, 0xE;
 	__asm        jge    _T9bf;
 // LINE 1664:
@@ -12239,7 +12246,7 @@ _T99c:
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    ecx, i;
 	__asm        mov    byte ptr [eax+ecx+0xB0], 0;
-	__asm        jmp    _T999;
+	__asm        jmp    _FOR_NEXT_999;
 // LINE 1667:
 _T9bf:
 	__asm        mov    eax, this;
@@ -12250,9 +12257,9 @@ _T9bf:
 	__asm        mov    tempShortcutListIterator.node, eax;
 	__asm        jmp    _T9e1;
 _T9e1:
-	__asm        jmp    _T9e6;
+	__asm        jmp    _LOOP_9e6;
 // LINE 1668:
-_T9e6:
+_LOOP_9e6:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
 	__asm        mov    [ebp-0x90], eax;
@@ -12352,7 +12359,7 @@ _Tb1f:
 	__asm        jmp    _Tb30;
 // LINE 1684:
 _Tb30:
-	__asm        jmp    _T9e6;
+	__asm        jmp    _LOOP_9e6;
 // LINE 1687:
 // Block end:
 _Tb35:
@@ -12375,9 +12382,9 @@ int32_t UserInputWindow::DoesTwinCommandExistForShortcut(long lDevice, long lCom
 	__asm        mov    tempShortcutListIterator.node, eax;
 	__asm        jmp    _T34;
 _T34:
-	__asm        jmp    _T39;
+	__asm        jmp    _LOOP_39;
 // LINE 1698:
-_T39:
+_LOOP_39:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
 	__asm        mov    [ebp-0x14], eax;
@@ -12449,7 +12456,7 @@ _Tf6:
 	__asm        jmp    _T101;
 // LINE 1707:
 _T101:
-	__asm        jmp    _T39;
+	__asm        jmp    _LOOP_39;
 // LINE 1708:
 _T106:
 	return 0x0;
@@ -12563,7 +12570,7 @@ _Tdd:
 	__asm        mov    [ebp-0xD0], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0xD4], eax;
-_Tef:
+_LOOP_ef:
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        cmp    [ebp-0xD4], eax;
 	__asm        jne    _T10b;
@@ -12627,7 +12634,7 @@ _T1d3:
 	this->myInputDeviceStringIDAssociationList.length--;
 	__asm        jmp    _T1e4;
 _T1e4:
-	__asm        jmp    _Tef;
+	__asm        jmp    _LOOP_ef;
 _T1e9:
 	__asm        jmp    _T1ee;
 // LINE 1744:
@@ -12759,14 +12766,14 @@ _T384:
 	__asm        call   dword ptr [edx+0xD4];
 // LINE 1751:
 	nJoystickCount = gJoystickManager.nJoystickCount;
-	__asm        jmp    _T3b1;
+	__asm        jmp    _FOR_3bd;
 // LINE 1752:
-_T3b1:
+_FOR_3bd:
 	i = 0x0;
-	__asm        jmp    _T3c0;
-_T3bd:
+	__asm        jmp    _FOR_COND_3bd;
+_FOR_NEXT_3bd:
 	i++;
-_T3c0:
+_FOR_COND_3bd:
 	__asm        mov    eax, nJoystickCount;
 	__asm        cmp    i, eax;
 	__asm        jge    _T4c6;
@@ -12852,7 +12859,7 @@ _T4a1:
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   dword ptr [edx+0xD4];
 // LINE 1758:
-	__asm        jmp    _T3bd;
+	__asm        jmp    _FOR_NEXT_3bd;
 // LINE 1759:
 _T4c6:
 	__asm        mov    eax, sDeviceName.reference;
@@ -12925,14 +12932,14 @@ _T66:
 	sCommandName.reference = 0x0;
 _T6d:
 	sCommandName.c_str_ptr = 0x0;
-	__asm        jmp    _T79;
+	__asm        jmp    _FOR_85;
 // LINE 1772:
-_T79:
+_FOR_85:
 	i = 0x2;
-	__asm        jmp    _T88;
-_T85:
+	__asm        jmp    _FOR_COND_85;
+_FOR_NEXT_85:
 	i++;
-_T88:
+_FOR_COND_85:
 	__asm        cmp    i, 0x21;
 	__asm        jge    _T3a9;
 // LINE 1773:
@@ -13178,7 +13185,7 @@ _T37e:
 	__asm        mov    ecx, [eax+0x80];
 	__asm        call   dword ptr [edx+0xD4];
 // LINE 1777:
-	__asm        jmp    _T85;
+	__asm        jmp    _FOR_NEXT_85;
 // LINE 1778:
 _T3a9:
 	__asm        mov    eax, sCommandName.reference;
@@ -13239,9 +13246,9 @@ void UserInputWindow::ReadShortcuts(/*packed*/ class list<Shortcut>& shortCutLis
 	__asm        mov    tempShortcutListIterator.node, eax;
 	__asm        jmp    _T27;
 _T27:
-	__asm        jmp    _T2c;
+	__asm        jmp    _LOOP_2c;
 // LINE 1789:
-_T2c:
+_LOOP_2c:
 	__asm        mov    eax, shortCutList;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
@@ -13652,7 +13659,7 @@ _T5c9:
 	__asm        jmp    _T5d7;
 // LINE 1796:
 _T5d7:
-	__asm        jmp    _T2c;
+	__asm        jmp    _LOOP_2c;
 // LINE 1797:
 _T5dc:
 	__asm        push   0;
@@ -15050,7 +15057,7 @@ _T181:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    shortcutIterator.node, eax;
 // LINE 2002:
-_T187:
+_LOOP_187:
 	__asm        mov    eax, addedShortcutList;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x88], eax;
@@ -15133,7 +15140,7 @@ _T27b:
 	__asm        jmp    _T289;
 // LINE 2012:
 _T289:
-	__asm        jmp    _T187;
+	__asm        jmp    _LOOP_187;
 // LINE 2014:
 _T28e:
 	__asm        jmp    _T293;
@@ -15154,7 +15161,7 @@ _T2bc:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    tempLongSetIterator.node, eax;
 // LINE 2015:
-_T2c2:
+_LOOP_2c2:
 	__asm        mov    eax, tempLongSet.t.header;
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        mov    eax, [ebp-0x7C];
@@ -15215,7 +15222,7 @@ _T35e:
 // LINE 2018:
 	nKeyCountForCommand = 0x0;
 // LINE 2019:
-_T36b:
+_LOOP_36b:
 	__asm        mov    eax, addedShortcutList;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x70], eax;
@@ -15294,7 +15301,7 @@ _T432:
 	__asm        jmp    _T440;
 // LINE 2028:
 _T440:
-	__asm        jmp    _T36b;
+	__asm        jmp    _LOOP_36b;
 // LINE 2029:
 _T445:
 	__asm        push   0xFFFFFFFF;
@@ -15336,7 +15343,7 @@ _T445:
 	__asm        jmp    _T4bc;
 // LINE 2034:
 _T4bc:
-	__asm        jmp    _T2c2;
+	__asm        jmp    _LOOP_2c2;
 // LINE 2035:
 _T4c1:
 	this->bInitializing = 0x0;

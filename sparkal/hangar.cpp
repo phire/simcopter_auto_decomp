@@ -865,7 +865,7 @@ _T5c:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x3C], eax;
-_T68:
+_LOOP_68:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        cmp    [ebp-0x3C], eax;
 	__asm        jne    _T7e;
@@ -921,7 +921,7 @@ _Tef:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x30], eax;
-_T101:
+__WHILE_101:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    [ebp-0x30], eax;
 	__asm        je     _T122;
@@ -931,7 +931,7 @@ _T101:
 	__asm        call   destroy;
 	__asm        add    esp, 4;
 	__asm        add    dword ptr [ebp-0x30], 8;
-	__asm        jmp    _T101;
+	__asm        jmp    __WHILE_101;
 _T122:
 	__asm        jmp    _T127;
 _T127:
@@ -968,7 +968,7 @@ _T17b:
 	this->myHotSpots.length--;
 	__asm        jmp    _T189;
 _T189:
-	__asm        jmp    _T68;
+	__asm        jmp    _LOOP_68;
 _T18e:
 	__asm        jmp    _T193;
 _T193:
@@ -984,7 +984,7 @@ _T193:
 _T1b6:
 	__asm        dec    list<HotSpot>::number_of_lists;
 	__asm        jne    _T240;
-_T1c2:
+__WHILE_1c2:
 	__asm        cmp    list<HotSpot>::buffer_list, 0;
 	__asm        je     _T21d;
 
@@ -1012,7 +1012,7 @@ _T202:
 _T213:
 	__asm        jmp    _T218;
 _T218:
-	__asm        jmp    _T1c2;
+	__asm        jmp    __WHILE_1c2;
 _T21d:
 	list<HotSpot>::free_list = 0x0;
 	list<HotSpot>::next_avail = 0x0;
@@ -2724,9 +2724,9 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, /*packed*/ class MPo
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    _T2c;
 _T2c:
-	__asm        jmp    _T31;
+	__asm        jmp    _LOOP_31;
 // LINE 296:
-_T31:
+_LOOP_31:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x116];
 	__asm        mov    [ebp-0x14], eax;
@@ -2796,7 +2796,7 @@ _Te6:
 _Tf1:
 	i++;
 // LINE 303:
-	__asm        jmp    _T31;
+	__asm        jmp    _LOOP_31;
 // LINE 304:
 _Tf9:
 	lHelpID. = 0x0;

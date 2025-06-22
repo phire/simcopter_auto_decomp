@@ -88,10 +88,11 @@ void CharList::~CharList() {
 // LINE 36:
 	this->presentCharData = this->firstCharData;
 // LINE 38:
-	__asm        jmp    _T32;
-_T29:
+_FOR_29:
+	__asm        jmp    _FOR_COND_29;
+_FOR_NEXT_29:
 	this->presentCharData = nextCharData;
-_T32:
+_FOR_COND_29:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     _T6b;
@@ -108,7 +109,7 @@ _T32:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 42:
-	__asm        jmp    _T29;
+	__asm        jmp    _FOR_NEXT_29;
 // LINE 44:
 _T6b:
 	return;
@@ -287,11 +288,12 @@ void CharList::DeleteAllItems() {
 // LINE 121:
 	iEnd = this->nCharDataCount;
 // LINE 123:
+_FOR_20:
 	i = 0x0;
-	__asm        jmp    _T23;
-_T20:
+	__asm        jmp    _FOR_COND_20;
+_FOR_NEXT_20:
 	i++;
-_T23:
+_FOR_COND_20:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T40;
@@ -300,7 +302,7 @@ _T23:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   CharList::DeleteItem;
-	__asm        jmp    _T20;
+	__asm        jmp    _FOR_NEXT_20;
 // LINE 125:
 _T40:
 	return;
@@ -323,11 +325,12 @@ _T21:
 	nPresentIndex = 0x0;
 	this->presentCharData = this->firstCharData;
 // LINE 138:
-	__asm        jmp    _T45;
-_T39:
+_FOR_39:
+	__asm        jmp    _FOR_COND_39;
+_FOR_NEXT_39:
 	nPresentIndex++;
 	this->presentCharData = nextCharData;
-_T45:
+_FOR_COND_39:
 	__asm        mov    eax, nIndex;
 	__asm        cmp    nPresentIndex, eax;
 	__asm        jge    _T6f;
@@ -338,7 +341,7 @@ _T45:
 // LINE 141:
 	nextCharData = this->presentCharData->nextCharData;
 // LINE 142:
-	__asm        jmp    _T39;
+	__asm        jmp    _FOR_NEXT_39;
 // LINE 144:
 _T6f:
 	return this->presentCharData;
@@ -352,10 +355,11 @@ _T6f:
 // LINE 152:
 	this->presentCharData = this->firstCharData;
 // LINE 154:
-	__asm        jmp    _T26;
-_T1d:
+_FOR_1d:
+	__asm        jmp    _FOR_COND_1d;
+_FOR_NEXT_1d:
 	this->presentCharData = nextCharData;
-_T26:
+_FOR_COND_1d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     _T66;
@@ -374,7 +378,7 @@ _T26:
 	return this->presentCharData;
 // LINE 159:
 _T61:
-	__asm        jmp    _T1d;
+	__asm        jmp    _FOR_NEXT_1d;
 // LINE 160:
 _T66:
 	return 0x0;

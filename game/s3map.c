@@ -181,11 +181,12 @@ _Tf9:
 // LINE 235:
 	S_icon_pitch = bhdr->info.width;
 // LINE 238:
+_FOR_1ad:
 	i = 0x0;
-	__asm        jmp    _T1b0;
-_T1ad:
+	__asm        jmp    _FOR_COND_1ad;
+_FOR_NEXT_1ad:
 	i++;
-_T1b0:
+_FOR_COND_1ad:
 	__asm        cmp    i, 8;
 	__asm        jge    _T1d4;
 // LINE 240:
@@ -195,7 +196,7 @@ _T1b0:
 // LINE 241:
 	ptr += S_icon_dim;
 // LINE 242:
-	__asm        jmp    _T1ad;
+	__asm        jmp    _FOR_NEXT_1ad;
 // LINE 245:
 _T1d4:
 	bhdr = VRInt2BmpHdr(0xc, G_restex);
@@ -208,13 +209,14 @@ _T1d4:
 // LINE 252:
 	S_dicon_pitch = bhdr->info.width;
 // LINE 255:
+_FOR_21d:
 	i = 0x0;
-	__asm        jmp    _T220;
-_T21d:
+	__asm        jmp    _FOR_COND_21d;
+_FOR_NEXT_21d:
 	i++;
-_T220:
+_FOR_COND_21d:
 	__asm        cmp    i, 3;
-	__asm        jge    _T244;
+	__asm        jge    _FOR_250;
 // LINE 257:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, i;
@@ -222,14 +224,14 @@ _T220:
 // LINE 258:
 	ptr += S_dicon_dim;
 // LINE 259:
-	__asm        jmp    _T21d;
+	__asm        jmp    _FOR_NEXT_21d;
 // LINE 262:
-_T244:
+_FOR_250:
 	i = 0x0;
-	__asm        jmp    _T253;
-_T250:
+	__asm        jmp    _FOR_COND_250;
+_FOR_NEXT_250:
 	i++;
-_T253:
+_FOR_COND_250:
 	__asm        cmp    i, 0x14;
 	__asm        jge    __RETURN;
 // LINE 264:
@@ -237,7 +239,7 @@ _T253:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    S_carinfo[0].flags[eax*8], 0;
 // LINE 265:
-	__asm        jmp    _T250;
+	__asm        jmp    _FOR_NEXT_250;
 // LINE 267:
 __RETURN:
 }
@@ -312,26 +314,28 @@ _T82:
 	__asm        dec    eax;
 	__asm        mov    S_lrc.y, eax;
 // LINE 327:
+_FOR_de:
 	y = S_ulc.y;
 	county = 0x0;
-	__asm        jmp    _Te4;
-_Tde:
+	__asm        jmp    _FOR_COND_de;
+_FOR_NEXT_de:
 	county++;
 	y++;
-_Te4:
+_FOR_COND_de:
 	__asm        mov    eax, county;
 	__asm        cmp    S_mapdimy, eax;
 	__asm        jle    _T417;
 // LINE 330:
 	__asm        and    y, 0xFF;
 // LINE 332:
+_FOR_10e:
 	x = S_ulc.x;
 	countx = 0x0;
-	__asm        jmp    _T114;
-_T10e:
+	__asm        jmp    _FOR_COND_10e;
+_FOR_NEXT_10e:
 	countx++;
 	x++;
-_T114:
+_FOR_COND_10e:
 	__asm        mov    eax, countx;
 	__asm        cmp    S_mapdimx, eax;
 	__asm        jle    _T40e;
@@ -377,7 +381,7 @@ _T15f:
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 355:
-	__asm        jmp    _T10e;
+	__asm        jmp    _FOR_NEXT_10e;
 // LINE 358:
 _T1a2:
 	__asm        cmp    tile, 0xD1;
@@ -386,7 +390,7 @@ _T1a2:
 	ptr[0] = 0xea;
 	ptr++;
 // LINE 361:
-	__asm        jmp    _T10e;
+	__asm        jmp    _FOR_NEXT_10e;
 // LINE 363:
 _T1bd:
 	__asm        cmp    tile, 0xD2;
@@ -395,7 +399,7 @@ _T1bd:
 	ptr[0] = 0x9a;
 	ptr++;
 // LINE 366:
-	__asm        jmp    _T10e;
+	__asm        jmp    _FOR_NEXT_10e;
 // LINE 368:
 _T1d8:
 	__asm        cmp    tile, 0xD3;
@@ -404,7 +408,7 @@ _T1d8:
 	ptr[0] = 0x1a;
 	ptr++;
 // LINE 371:
-	__asm        jmp    _T10e;
+	__asm        jmp    _FOR_NEXT_10e;
 // LINE 374:
 _T1f3:
 	__asm        mov    eax, x;
@@ -428,7 +432,7 @@ _T1f3:
 	ptr[0] = 0xca;
 	ptr++;
 // LINE 377:
-	__asm        jmp    _T10e;
+	__asm        jmp    _FOR_NEXT_10e;
 // LINE 381:
 _T241:
 	__asm        cmp    tile, 0xD;
@@ -441,7 +445,7 @@ _T258:
 	ptr[0] = 0x5a;
 	ptr++;
 // LINE 384:
-	__asm        jmp    _T10e;
+	__asm        jmp    _FOR_NEXT_10e;
 // LINE 388:
 _T266:
 	__asm        cmp    tile, 0x1D;
@@ -453,7 +457,7 @@ _T266:
 	ptr[0] = 0x33;
 	ptr++;
 // LINE 391:
-	__asm        jmp    _T10e;
+	__asm        jmp    _FOR_NEXT_10e;
 // LINE 395:
 _T288:
 	__asm        cmp    tile, 0x70;
@@ -462,7 +466,7 @@ _T288:
 	ptr[0] = 0x3a;
 	ptr++;
 // LINE 398:
-	__asm        jmp    _T10e;
+	__asm        jmp    _FOR_NEXT_10e;
 // LINE 402:
 _T2a0:
 	__asm        mov    eax, y;
@@ -578,12 +582,12 @@ _T3b8:
 	__asm        inc    ptr;
 // LINE 425:
 _T409:
-	__asm        jmp    _T10e;
+	__asm        jmp    _FOR_NEXT_10e;
 // LINE 426:
 _T40e:
 	ptr += 0x14;
 // LINE 427:
-	__asm        jmp    _Tde;
+	__asm        jmp    _FOR_NEXT_de;
 // LINE 428:
 _T417:
 	__asm        jmp    _T178e;
@@ -607,13 +611,14 @@ _T41c:
 	__asm        dec    eax;
 	__asm        mov    S_lrc.y, eax;
 // LINE 437:
+_FOR_482:
 	y = S_ulc.y;
 	county = 0x0;
-	__asm        jmp    _T488;
-_T482:
+	__asm        jmp    _FOR_COND_482;
+_FOR_NEXT_482:
 	county++;
 	y++;
-_T488:
+_FOR_COND_482:
 	__asm        mov    eax, S_mapdimy;
 	__asm        sar    eax, 1;
 	__asm        cmp    eax, county;
@@ -623,13 +628,14 @@ _T488:
 // LINE 441:
 	lineptr = ptr;
 // LINE 443:
+_FOR_4ba:
 	x = S_ulc.x;
 	countx = 0x0;
-	__asm        jmp    _T4c0;
-_T4ba:
+	__asm        jmp    _FOR_COND_4ba;
+_FOR_NEXT_4ba:
 	countx++;
 	x++;
-_T4c0:
+_FOR_COND_4ba:
 	__asm        mov    eax, S_mapdimx;
 	__asm        sar    eax, 1;
 	__asm        cmp    eax, countx;
@@ -682,7 +688,7 @@ _T50d:
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 466:
-	__asm        jmp    _T4ba;
+	__asm        jmp    _FOR_NEXT_4ba;
 // LINE 469:
 _T562:
 	__asm        cmp    tile, 0xD1;
@@ -694,7 +700,7 @@ _T562:
 	ptr[0] = 0xea;
 	ptr++;
 // LINE 473:
-	__asm        jmp    _T4ba;
+	__asm        jmp    _FOR_NEXT_4ba;
 // LINE 475:
 _T586:
 	__asm        cmp    tile, 0xD2;
@@ -706,7 +712,7 @@ _T586:
 	ptr[0] = 0x9a;
 	ptr++;
 // LINE 479:
-	__asm        jmp    _T4ba;
+	__asm        jmp    _FOR_NEXT_4ba;
 // LINE 481:
 _T5aa:
 	__asm        cmp    tile, 0xD3;
@@ -718,7 +724,7 @@ _T5aa:
 	ptr[0] = 0x1a;
 	ptr++;
 // LINE 485:
-	__asm        jmp    _T4ba;
+	__asm        jmp    _FOR_NEXT_4ba;
 // LINE 488:
 _T5ce:
 	__asm        mov    eax, x;
@@ -745,7 +751,7 @@ _T5ce:
 	ptr[0] = 0xca;
 	ptr++;
 // LINE 492:
-	__asm        jmp    _T4ba;
+	__asm        jmp    _FOR_NEXT_4ba;
 // LINE 495:
 _T625:
 	__asm        cmp    tile, 0xD;
@@ -761,7 +767,7 @@ _T63c:
 	ptr[0] = 0x5a;
 	ptr++;
 // LINE 499:
-	__asm        jmp    _T4ba;
+	__asm        jmp    _FOR_NEXT_4ba;
 // LINE 503:
 _T653:
 	__asm        cmp    tile, 0x1D;
@@ -776,7 +782,7 @@ _T653:
 	ptr[0] = 0x33;
 	ptr++;
 // LINE 507:
-	__asm        jmp    _T4ba;
+	__asm        jmp    _FOR_NEXT_4ba;
 // LINE 511:
 _T67e:
 	__asm        cmp    tile, 0x70;
@@ -788,7 +794,7 @@ _T67e:
 	ptr[0] = 0x3a;
 	ptr++;
 // LINE 515:
-	__asm        jmp    _T4ba;
+	__asm        jmp    _FOR_NEXT_4ba;
 // LINE 519:
 _T69f:
 	__asm        mov    eax, y;
@@ -928,7 +934,7 @@ _T7e8:
 	__asm        inc    ptr;
 // LINE 546:
 _T84e:
-	__asm        jmp    _T4ba;
+	__asm        jmp    _FOR_NEXT_4ba;
 // LINE 547:
 _T853:
 	ptr += 0x14;
@@ -945,7 +951,7 @@ _T853:
 // LINE 549:
 	ptr += S_borderdimx;
 // LINE 550:
-	__asm        jmp    _T482;
+	__asm        jmp    _FOR_NEXT_482;
 // LINE 551:
 _T87d:
 	__asm        jmp    _T178e;
@@ -968,13 +974,14 @@ _T882:
 	__asm        dec    eax;
 	__asm        mov    S_lrc.y, eax;
 // LINE 560:
+_FOR_8e6:
 	y = S_ulc.y;
 	county = 0x0;
-	__asm        jmp    _T8ec;
-_T8e6:
+	__asm        jmp    _FOR_COND_8e6;
+_FOR_NEXT_8e6:
 	county++;
 	y++;
-_T8ec:
+_FOR_COND_8e6:
 	__asm        mov    eax, S_mapdimy;
 	__asm        sar    eax, 2;
 	__asm        cmp    eax, county;
@@ -984,13 +991,14 @@ _T8ec:
 // LINE 564:
 	lineptr = ptr;
 // LINE 566:
+_FOR_91e:
 	x = S_ulc.x;
 	countx = 0x0;
-	__asm        jmp    _T924;
-_T91e:
+	__asm        jmp    _FOR_COND_91e;
+_FOR_NEXT_91e:
 	countx++;
 	x++;
-_T924:
+_FOR_COND_91e:
 	__asm        mov    eax, S_mapdimx;
 	__asm        sar    eax, 2;
 	__asm        cmp    eax, countx;
@@ -1018,7 +1026,7 @@ _T924:
 	ptr[0] = 0x70;
 	ptr++;
 // LINE 576:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 580:
 _T97d:
 	__asm        cmp    x, 0x7F;
@@ -1075,7 +1083,7 @@ _T9b2:
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 600:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 603:
 _Ta22:
 	__asm        cmp    tile, 0xD1;
@@ -1093,7 +1101,7 @@ _Ta22:
 	ptr[0] = 0xea;
 	ptr++;
 // LINE 609:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 611:
 _Ta58:
 	__asm        cmp    tile, 0xD2;
@@ -1111,7 +1119,7 @@ _Ta58:
 	ptr[0] = 0x9a;
 	ptr++;
 // LINE 617:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 619:
 _Ta8e:
 	__asm        cmp    tile, 0xD3;
@@ -1129,7 +1137,7 @@ _Ta8e:
 	ptr[0] = 0x1a;
 	ptr++;
 // LINE 625:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 628:
 _Tac4:
 	__asm        mov    eax, x;
@@ -1162,7 +1170,7 @@ _Tac4:
 	ptr[0] = 0xca;
 	ptr++;
 // LINE 634:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 637:
 _Tb2d:
 	__asm        cmp    tile, 0xD;
@@ -1184,7 +1192,7 @@ _Tb44:
 	ptr[0] = 0x5a;
 	ptr++;
 // LINE 643:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 647:
 _Tb6d:
 	__asm        cmp    tile, 0x1D;
@@ -1205,7 +1213,7 @@ _Tb6d:
 	ptr[0] = 0x33;
 	ptr++;
 // LINE 653:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 657:
 _Tbaa:
 	__asm        cmp    tile, 0x70;
@@ -1223,7 +1231,7 @@ _Tbaa:
 	ptr[0] = 0x3a;
 	ptr++;
 // LINE 663:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 667:
 _Tbdd:
 	__asm        mov    eax, y;
@@ -1399,7 +1407,7 @@ _Td72:
 	__asm        inc    ptr;
 // LINE 702:
 _Tdf6:
-	__asm        jmp    _T91e;
+	__asm        jmp    _FOR_NEXT_91e;
 // LINE 703:
 _Tdfb:
 	ptr += 0x14;
@@ -1440,7 +1448,7 @@ _Tdfb:
 // LINE 709:
 	ptr += S_borderdimx;
 // LINE 710:
-	__asm        jmp    _T8e6;
+	__asm        jmp    _FOR_NEXT_8e6;
 // LINE 711:
 _Te6a:
 	__asm        jmp    _T178e;
@@ -1463,13 +1471,14 @@ _Te6f:
 	__asm        dec    eax;
 	__asm        mov    S_lrc.y, eax;
 // LINE 720:
+_FOR_ed3:
 	y = S_ulc.y;
 	county = 0x0;
-	__asm        jmp    _Ted9;
-_Ted3:
+	__asm        jmp    _FOR_COND_ed3;
+_FOR_NEXT_ed3:
 	county++;
 	y++;
-_Ted9:
+_FOR_COND_ed3:
 	__asm        mov    eax, S_mapdimy;
 	__asm        sar    eax, 3;
 	__asm        cmp    eax, county;
@@ -1479,13 +1488,14 @@ _Ted9:
 // LINE 724:
 	lineptr = ptr;
 // LINE 726:
+_FOR_f0b:
 	x = S_ulc.x;
 	countx = 0x0;
-	__asm        jmp    _Tf11;
-_Tf0b:
+	__asm        jmp    _FOR_COND_f0b;
+_FOR_NEXT_f0b:
 	countx++;
 	x++;
-_Tf11:
+_FOR_COND_f0b:
 	__asm        mov    eax, S_mapdimx;
 	__asm        sar    eax, 3;
 	__asm        cmp    eax, countx;
@@ -1525,7 +1535,7 @@ _Tf11:
 	ptr[0] = 0x70;
 	ptr++;
 // LINE 740:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 745:
 _Tf8e:
 	__asm        cmp    x, 0x7F;
@@ -1606,7 +1616,7 @@ _Tfc3:
 	__asm        mov    [ecx], al;
 	__asm        inc    ptr;
 // LINE 769:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 772:
 _T107b:
 	__asm        cmp    tile, 0xD1;
@@ -1636,7 +1646,7 @@ _T107b:
 	ptr[0] = 0xea;
 	ptr++;
 // LINE 782:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 784:
 _T10d5:
 	__asm        cmp    tile, 0xD2;
@@ -1666,7 +1676,7 @@ _T10d5:
 	ptr[0] = 0x9a;
 	ptr++;
 // LINE 794:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 796:
 _T112f:
 	__asm        cmp    tile, 0xD3;
@@ -1696,7 +1706,7 @@ _T112f:
 	ptr[0] = 0x1a;
 	ptr++;
 // LINE 806:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 809:
 _T1189:
 	__asm        mov    eax, x;
@@ -1741,7 +1751,7 @@ _T1189:
 	ptr[0] = 0xca;
 	ptr++;
 // LINE 819:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 823:
 _T1216:
 	__asm        cmp    tile, 0xD;
@@ -1775,7 +1785,7 @@ _T122d:
 	ptr[0] = 0x5a;
 	ptr++;
 // LINE 833:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 837:
 _T127a:
 	__asm        cmp    tile, 0x1D;
@@ -1808,7 +1818,7 @@ _T127a:
 	ptr[0] = 0x33;
 	ptr++;
 // LINE 847:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 851:
 _T12db:
 	__asm        cmp    tile, 0x70;
@@ -1838,7 +1848,7 @@ _T12db:
 	ptr[0] = 0x3a;
 	ptr++;
 // LINE 861:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 865:
 _T1332:
 	__asm        mov    eax, y;
@@ -2110,7 +2120,7 @@ _T158b:
 	__asm        inc    ptr;
 // LINE 916:
 _T1663:
-	__asm        jmp    _Tf0b;
+	__asm        jmp    _FOR_NEXT_f0b;
 // LINE 924:
 _T1668:
 	ptr += 0x14;
@@ -2199,7 +2209,7 @@ _T1668:
 // LINE 939:
 	ptr += S_borderdimx;
 // LINE 940:
-	__asm        jmp    _Ted3;
+	__asm        jmp    _FOR_NEXT_ed3;
 // LINE 941:
 _T175b:
 	__asm        jmp    _T178e;
@@ -2420,11 +2430,12 @@ _T295:
 	dfy = 0x0;
 	dfx = dfy;
 // LINE 1049:
+_FOR_2ae:
 	i = 0x0;
-	__asm        jmp    _T2b1;
-_T2ae:
+	__asm        jmp    _FOR_COND_2ae;
+_FOR_NEXT_2ae:
 	i++;
-_T2b1:
+_FOR_COND_2ae:
 	__asm        mov    eax, i;
 	__asm        cmp    S_dirlen, eax;
 	__asm        jle    __RETURN;
@@ -2441,7 +2452,7 @@ _T2b1:
 // LINE 1057:
 	ptr[0] = 0x70;
 // LINE 1058:
-	__asm        jmp    _T2ae;
+	__asm        jmp    _FOR_NEXT_2ae;
 // LINE 1059:
 __RETURN:
 }
@@ -2504,13 +2515,14 @@ _T71:
 _T8a:
 	__asm        mov    eax, dx;
 	__asm        cmp    dy, eax;
-	__asm        jge    _T138;
+	__asm        jge    _FOR_144;
 // LINE 1110:
+_FOR_a2:
 	index = 0x0;
-	__asm        jmp    _Ta5;
-_Ta2:
+	__asm        jmp    _FOR_COND_a2;
+_FOR_NEXT_a2:
 	index++;
-_Ta5:
+_FOR_COND_a2:
 	__asm        mov    eax, dx;
 	__asm        cmp    index, eax;
 	__asm        jg     _T133;
@@ -2562,17 +2574,17 @@ _T129:
 	__asm        jmp    _T133;
 // LINE 1125:
 _T12e:
-	__asm        jmp    _Ta2;
+	__asm        jmp    _FOR_NEXT_a2;
 // LINE 1127:
 _T133:
 	__asm        jmp    _T1d1;
 // LINE 1129:
-_T138:
+_FOR_144:
 	index = 0x0;
-	__asm        jmp    _T147;
-_T144:
+	__asm        jmp    _FOR_COND_144;
+_FOR_NEXT_144:
 	index++;
-_T147:
+_FOR_COND_144:
 	__asm        mov    eax, dy;
 	__asm        cmp    index, eax;
 	__asm        jg     _T1d1;
@@ -2623,7 +2635,7 @@ _T1c7:
 	__asm        jmp    _T1d1;
 // LINE 1143:
 _T1cc:
-	__asm        jmp    _T144;
+	__asm        jmp    _FOR_NEXT_144;
 // LINE 1146:
 _T1d1:
 	S3MapBlitIcon(ypos, xpos, icon_id);
@@ -2645,22 +2657,24 @@ void S3MapBlit(char * destbuf, long destpitch) {
 // LINE 1170:
 	mptr = S_borderbuf;
 // LINE 1172:
+_FOR_35:
 	y = 0x0;
-	__asm        jmp    _T38;
-_T35:
+	__asm        jmp    _FOR_COND_35;
+_FOR_NEXT_35:
 	y++;
-_T38:
+_FOR_COND_35:
 	__asm        mov    eax, y;
 	__asm        cmp    S_borderdimy, eax;
 	__asm        jle    __RETURN;
 // LINE 1173:
 	ptr = cptr;
 // LINE 1174:
+_FOR_59:
 	x = 0x0;
-	__asm        jmp    _T5c;
-_T59:
+	__asm        jmp    _FOR_COND_59;
+_FOR_NEXT_59:
 	x++;
-_T5c:
+_FOR_COND_59:
 	__asm        mov    eax, S_borderdimx;
 	__asm        sar    eax, 2;
 	__asm        cmp    eax, x;
@@ -2670,12 +2684,12 @@ _T5c:
 	mptr += 0x4;
 	ptr += 0x4;
 // LINE 1176:
-	__asm        jmp    _T59;
+	__asm        jmp    _FOR_NEXT_59;
 // LINE 1177:
 _T84:
 	cptr += destpitch;
 // LINE 1178:
-	__asm        jmp    _T35;
+	__asm        jmp    _FOR_NEXT_35;
 // LINE 1179:
 __RETURN:
 }
@@ -2695,22 +2709,24 @@ void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long y
 // LINE 1194:
 	mptr = S_borderbuf;
 // LINE 1196:
+_FOR_30:
 	y = 0x0;
-	__asm        jmp    _T33;
-_T30:
+	__asm        jmp    _FOR_COND_30;
+_FOR_NEXT_30:
 	y++;
-_T33:
+_FOR_COND_30:
 	__asm        mov    eax, y;
 	__asm        cmp    S_borderdimy, eax;
 	__asm        jle    __RETURN;
 // LINE 1197:
 	ptr = cptr;
 // LINE 1198:
+_FOR_54:
 	x = 0x0;
-	__asm        jmp    _T57;
-_T54:
+	__asm        jmp    _FOR_COND_54;
+_FOR_NEXT_54:
 	x++;
-_T57:
+_FOR_COND_54:
 	__asm        mov    eax, S_borderdimx;
 	__asm        sar    eax, 2;
 	__asm        cmp    eax, x;
@@ -2719,12 +2735,12 @@ _T57:
 	ptr[0] = mptr[0];
 	mptr += 0x4;
 	ptr += 0x4;
-	__asm        jmp    _T54;
+	__asm        jmp    _FOR_NEXT_54;
 // LINE 1200:
 _T7f:
 	cptr += destpitch;
 // LINE 1201:
-	__asm        jmp    _T30;
+	__asm        jmp    _FOR_NEXT_30;
 // LINE 1202:
 __RETURN:
 }
@@ -2818,11 +2834,12 @@ int32_t S3MapCursorDown(long posx, long posy) {
 // LINE 1286:
 	car_id = 0xffffffff;
 // LINE 1290:
+_FOR_1c:
 	i = 0x0;
-	__asm        jmp    _T1f;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
-_T1f:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T94;
 // LINE 1292:
@@ -2835,7 +2852,7 @@ _T1f:
 	__asm        test   byte ptr [eax], 3;
 	__asm        jne    _T4a;
 // LINE 1294:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 1297:
 _T4a:
 	__asm        mov    eax, ci;
@@ -2861,7 +2878,7 @@ _T4a:
 	car_id = ci->car_id;
 // LINE 1303:
 _T8f:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 1305:
 _T94:
 	return car_id;
@@ -2973,20 +2990,22 @@ _Ta2:
 	__asm        mov    eax, S_icons[eax*4];
 	__asm        mov    iptr, eax;
 // LINE 1403:
+_FOR_d1:
 	mapy = 0x0;
-	__asm        jmp    _Td4;
-_Td1:
+	__asm        jmp    _FOR_COND_d1;
+_FOR_NEXT_d1:
 	mapy++;
-_Td4:
+_FOR_COND_d1:
 	__asm        mov    eax, S_icon_dim;
 	__asm        cmp    mapy, eax;
 	__asm        jge    __RETURN;
 // LINE 1405:
+_FOR_ee:
 	mapx = 0x0;
-	__asm        jmp    _Tf1;
-_Tee:
+	__asm        jmp    _FOR_COND_ee;
+_FOR_NEXT_ee:
 	mapx++;
-_Tf1:
+_FOR_COND_ee:
 	__asm        mov    eax, S_icon_dim;
 	__asm        cmp    mapx, eax;
 	__asm        jge    _T12d;
@@ -3011,14 +3030,14 @@ _T122:
 	iptr++;
 // LINE 1416:
 _T128:
-	__asm        jmp    _Tee;
+	__asm        jmp    _FOR_NEXT_ee;
 // LINE 1417:
 _T12d:
 	bufptr += (S_borderdimx - S_icon_dim);
 // LINE 1418:
 	iptr += (S_icon_pitch - S_icon_dim);
 // LINE 1419:
-	__asm        jmp    _Td1;
+	__asm        jmp    _FOR_NEXT_d1;
 // LINE 1421:
 __RETURN:
 }
@@ -3223,11 +3242,12 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 // LINE 1508:
 	currmd = S3MissionGetCurr();
 // LINE 1510:
+_FOR_1d:
 	i = 0x0;
-	__asm        jmp    _T20;
-_T1d:
+	__asm        jmp    _FOR_COND_1d;
+_FOR_NEXT_1d:
 	i++;
-_T20:
+_FOR_COND_1d:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    __RETURN;
 // LINE 1512:
@@ -3249,7 +3269,7 @@ _T20:
 	__asm        jne    _T6e;
 // LINE 1518:
 _T69:
-	__asm        jmp    _T1d;
+	__asm        jmp    _FOR_NEXT_1d;
 // LINE 1521:
 _T6e:
 	S3MapGetMissionIcons(pickicon, desticon, md->type);
@@ -3325,7 +3345,7 @@ _T108:
 	__asm        add    esp, 0x10;
 // LINE 1548:
 _T147:
-	__asm        jmp    _T1d;
+	__asm        jmp    _FOR_NEXT_1d;
 // LINE 1549:
 __RETURN:
 }
@@ -3336,11 +3356,12 @@ void S3MapAddCarInfo(long car_id, long car_type, long mission_id, /*packed*/ str
 	/*bp-0x8*/   /*packed*/ struct _MAP_CARINFO *ci;
 
 // LINE 1567:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T48;
 // LINE 1569:
@@ -3356,7 +3377,7 @@ _T18:
 	__asm        jmp    _T48;
 // LINE 1572:
 _T43:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 1575:
 _T48:
 	__asm        cmp    i, 0x14;
@@ -3385,11 +3406,12 @@ void S3MapRemoveCarInfo(long car_id) {
 	/*bp-0x4*/   long i;
 
 // LINE 1601:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x14;
 	__asm        jge    __RETURN;
 // LINE 1603:
@@ -3406,7 +3428,7 @@ _T18:
 	return;
 // LINE 1608:
 _T4b:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 1610:
 __RETURN:
 }
@@ -3420,11 +3442,12 @@ void S3MapDrawCarIcons() {
 	/*bp-0x14*/  long dy;
 
 // LINE 1631:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x14;
 	__asm        jge    __RETURN;
 // LINE 1633:
@@ -3437,7 +3460,7 @@ _T18:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T43;
 // LINE 1635:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 1641:
 _T43:
 	__asm        mov    eax, ci;
@@ -3472,7 +3495,7 @@ _T9d:
 	__asm        mov    eax, ci;
 	__asm        and    dword ptr [eax], 0xFFFFFFFD;
 // LINE 1644:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 1648:
 _Ta8:
 	__asm        mov    eax, ci;
@@ -3573,7 +3596,7 @@ _T1bf:
 // LINE 1682:
 	S3MapBlitDIcon(ci->top, ci->left, ci->car_type);
 // LINE 1683:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 1684:
 __RETURN:
 }
@@ -3602,20 +3625,22 @@ _T18:
 	__asm        mov    eax, S_dicons[eax*4];
 	__asm        mov    iptr, eax;
 // LINE 1713:
+_FOR_53:
 	mapy = 0x0;
-	__asm        jmp    _T56;
-_T53:
+	__asm        jmp    _FOR_COND_53;
+_FOR_NEXT_53:
 	mapy++;
-_T56:
+_FOR_COND_53:
 	__asm        mov    eax, S_dicon_dim;
 	__asm        cmp    mapy, eax;
 	__asm        jge    __RETURN;
 // LINE 1715:
+_FOR_70:
 	mapx = 0x0;
-	__asm        jmp    _T73;
-_T70:
+	__asm        jmp    _FOR_COND_70;
+_FOR_NEXT_70:
 	mapx++;
-_T73:
+_FOR_COND_70:
 	__asm        mov    eax, S_dicon_dim;
 	__asm        cmp    mapx, eax;
 	__asm        jge    _Taf;
@@ -3640,14 +3665,14 @@ _Ta4:
 	iptr++;
 // LINE 1726:
 _Taa:
-	__asm        jmp    _T70;
+	__asm        jmp    _FOR_NEXT_70;
 // LINE 1727:
 _Taf:
 	bufptr += (S_borderdimx - S_dicon_dim);
 // LINE 1728:
 	iptr += (S_dicon_pitch - S_dicon_dim);
 // LINE 1729:
-	__asm        jmp    _T53;
+	__asm        jmp    _FOR_NEXT_53;
 // LINE 1731:
 __RETURN:
 }
@@ -3704,13 +3729,14 @@ _T68:
 _T81:
 	__asm        mov    eax, dx;
 	__asm        cmp    dy, eax;
-	__asm        jge    _T131;
+	__asm        jge    _FOR_13d;
 // LINE 1775:
+_FOR_99:
 	index = 0x0;
-	__asm        jmp    _T9c;
-_T99:
+	__asm        jmp    _FOR_COND_99;
+_FOR_NEXT_99:
 	index++;
-_T9c:
+_FOR_COND_99:
 	__asm        mov    eax, dx;
 	__asm        cmp    index, eax;
 	__asm        jg     _T12c;
@@ -3762,17 +3788,17 @@ _T122:
 	__asm        jmp    _T12c;
 // LINE 1790:
 _T127:
-	__asm        jmp    _T99;
+	__asm        jmp    _FOR_NEXT_99;
 // LINE 1792:
 _T12c:
 	return;
 // LINE 1794:
-_T131:
+_FOR_13d:
 	index = 0x0;
-	__asm        jmp    _T140;
-_T13d:
+	__asm        jmp    _FOR_COND_13d;
+_FOR_NEXT_13d:
 	index++;
-_T140:
+_FOR_COND_13d:
 	__asm        mov    eax, dy;
 	__asm        cmp    index, eax;
 	__asm        jg     __RETURN;
@@ -3823,7 +3849,7 @@ _T1c2:
 	return;
 // LINE 1808:
 _T1c7:
-	__asm        jmp    _T13d;
+	__asm        jmp    _FOR_NEXT_13d;
 // LINE 1811:
 __RETURN:
 }

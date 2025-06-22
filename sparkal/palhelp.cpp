@@ -205,12 +205,13 @@ void SparkalPalette::GetNearestIndex(/*packed*/ struct SparkalColor& colorValue,
 // LINE 67:
 	lClosestDistance = 0xffffffff;
 // LINE 70:
+_FOR_25:
 	nCurrentBestMatch = 0x0;
 	i = nCurrentBestMatch;
-	__asm        jmp    _T28;
-_T25:
+	__asm        jmp    _FOR_COND_25;
+_FOR_NEXT_25:
 	i++;
-_T28:
+_FOR_COND_25:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+8], ecx;
@@ -297,7 +298,7 @@ _T28:
 	nCurrentBestMatch = i;
 // LINE 82:
 _T114:
-	__asm        jmp    _T25;
+	__asm        jmp    _FOR_NEXT_25;
 // LINE 83:
 _T119:
 	nIndex. = nCurrentBestMatch;
@@ -354,18 +355,18 @@ _T88:
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 116:
 	__asm        cmp    lpPalette, 0;
-	__asm        jne    _Tbe;
+	__asm        jne    _FOR_ca;
 // LINE 117:
 	__asm        jmp    _Tb9;
 _Tb9:
 	return;
 // LINE 118:
-_Tbe:
+_FOR_ca:
 	i = 0xa;
-	__asm        jmp    _Tcd;
-_Tca:
+	__asm        jmp    _FOR_COND_ca;
+_FOR_NEXT_ca:
 	i++;
-_Tcd:
+_FOR_COND_ca:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T137;
 // LINE 119:
@@ -393,18 +394,19 @@ _Tcd:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x411], 5;
 // LINE 123:
-	__asm        jmp    _Tca;
+	__asm        jmp    _FOR_NEXT_ca;
 // LINE 124:
 _T137:
 	nMultiplier = 0x3f;
 // LINE 125:
 	nDivisor = 0x40;
 // LINE 126:
+_FOR_151:
 	i = 0x0;
-	__asm        jmp    _T154;
-_T151:
+	__asm        jmp    _FOR_COND_151;
+_FOR_NEXT_151:
 	i++;
-_T154:
+_FOR_COND_151:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T442;
 // LINE 127:
@@ -461,7 +463,7 @@ _T211:
 	__asm        and    eax, 0xF;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        jne    _T231;
+	__asm        jne    _FOR_23d;
 // LINE 129:
 	__asm        sar    nDivisor, 1;
 // LINE 130:
@@ -469,12 +471,12 @@ _T211:
 	__asm        dec    eax;
 	__asm        mov    nMultiplier, eax;
 // LINE 132:
-_T231:
+_FOR_23d:
 	j = 0xa;
-	__asm        jmp    _T240;
-_T23d:
+	__asm        jmp    _FOR_COND_23d;
+_FOR_NEXT_23d:
 	j++;
-_T240:
+_FOR_COND_23d:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T2d6;
 // LINE 134:
@@ -517,7 +519,7 @@ _T240:
 	__asm        mov    eax, j;
 	__asm        mov    [ebp+eax*4-0x412], cl;
 // LINE 137:
-	__asm        jmp    _T23d;
+	__asm        jmp    _FOR_NEXT_23d;
 // LINE 139:
 _T2d6:
 	__asm        push   0;
@@ -539,7 +541,7 @@ _T2d6:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 144:
-_T30a:
+_LOOP_30a:
 	__asm        mov    eax, timerFade.lTotalElapsedTime;
 	__asm        mov    [ebp-0x448], eax;
 	__asm        jmp    _T31b;
@@ -612,10 +614,10 @@ _T40f:
 	__asm        cmp    [ebp-0x45C], eax;
 	__asm        jae    _T43d;
 _T438:
-	__asm        jmp    _T30a;
+	__asm        jmp    _LOOP_30a;
 // LINE 145:
 _T43d:
-	__asm        jmp    _T151;
+	__asm        jmp    _FOR_NEXT_151;
 // LINE 147:
 _T442:
 	__asm        mov    eax, nOriginalPriority;
@@ -678,18 +680,18 @@ _T88:
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 203:
 	__asm        cmp    lpPalette, 0;
-	__asm        jne    _Tbe;
+	__asm        jne    _FOR_ca;
 // LINE 204:
 	__asm        jmp    _Tb9;
 _Tb9:
 	return;
 // LINE 206:
-_Tbe:
+_FOR_ca:
 	i = 0xa;
-	__asm        jmp    _Tcd;
-_Tca:
+	__asm        jmp    _FOR_COND_ca;
+_FOR_NEXT_ca:
 	i++;
-_Tcd:
+_FOR_COND_ca:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T137;
 // LINE 207:
@@ -717,18 +719,19 @@ _Tcd:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x411], 5;
 // LINE 211:
-	__asm        jmp    _Tca;
+	__asm        jmp    _FOR_NEXT_ca;
 // LINE 213:
 _T137:
 	nMultiplier = 0x3f;
 // LINE 214:
 	nDivisor = 0x40;
 // LINE 215:
+_FOR_151:
 	i = 0x0;
-	__asm        jmp    _T154;
-_T151:
+	__asm        jmp    _FOR_COND_151;
+_FOR_NEXT_151:
 	i++;
-_T154:
+_FOR_COND_151:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T41e;
 // LINE 216:
@@ -785,7 +788,7 @@ _T211:
 	__asm        and    eax, 0xF;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        jne    _T231;
+	__asm        jne    _FOR_23d;
 // LINE 218:
 	__asm        sar    nDivisor, 1;
 // LINE 219:
@@ -793,12 +796,12 @@ _T211:
 	__asm        dec    eax;
 	__asm        mov    nMultiplier, eax;
 // LINE 221:
-_T231:
+_FOR_23d:
 	j = 0xa;
-	__asm        jmp    _T240;
-_T23d:
+	__asm        jmp    _FOR_COND_23d;
+_FOR_NEXT_23d:
 	j++;
-_T240:
+_FOR_COND_23d:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T2b2;
 // LINE 223:
@@ -832,7 +835,7 @@ _T240:
 	__asm        mov    ecx, j;
 	__asm        mov    [ebp+ecx*4-0x412], al;
 // LINE 226:
-	__asm        jmp    _T23d;
+	__asm        jmp    _FOR_NEXT_23d;
 // LINE 228:
 _T2b2:
 	__asm        push   0;
@@ -854,7 +857,7 @@ _T2b2:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 233:
-_T2e6:
+_LOOP_2e6:
 	__asm        mov    eax, timerFade.lTotalElapsedTime;
 	__asm        mov    [ebp-0x448], eax;
 	__asm        jmp    _T2f7;
@@ -927,10 +930,10 @@ _T3eb:
 	__asm        cmp    lDelayTime, eax;
 	__asm        jbe    _T419;
 _T414:
-	__asm        jmp    _T2e6;
+	__asm        jmp    _LOOP_2e6;
 // LINE 234:
 _T419:
-	__asm        jmp    _T151;
+	__asm        jmp    _FOR_NEXT_151;
 // LINE 236:
 _T41e:
 	__asm        mov    eax, nOriginalPriority;
@@ -994,18 +997,18 @@ _T88:
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 293:
 	__asm        cmp    lpPalette, 0;
-	__asm        jne    _Tbe;
+	__asm        jne    _FOR_ca;
 // LINE 294:
 	__asm        jmp    _Tb9;
 _Tb9:
 	return;
 // LINE 295:
-_Tbe:
+_FOR_ca:
 	i = 0xa;
-	__asm        jmp    _Tcd;
-_Tca:
+	__asm        jmp    _FOR_COND_ca;
+_FOR_NEXT_ca:
 	i++;
-_Tcd:
+_FOR_COND_ca:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T137;
 // LINE 296:
@@ -1033,18 +1036,19 @@ _Tcd:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
 // LINE 300:
-	__asm        jmp    _Tca;
+	__asm        jmp    _FOR_NEXT_ca;
 // LINE 302:
 _T137:
 	nMultiplier = 0x3f;
 // LINE 303:
 	nDivisor = 0x40;
 // LINE 304:
+_FOR_151:
 	i = 0x0;
-	__asm        jmp    _T154;
-_T151:
+	__asm        jmp    _FOR_COND_151;
+_FOR_NEXT_151:
 	i++;
-_T154:
+_FOR_COND_151:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T471;
 // LINE 305:
@@ -1101,7 +1105,7 @@ _T211:
 	__asm        and    eax, 0xF;
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
-	__asm        jne    _T231;
+	__asm        jne    _FOR_23d;
 // LINE 307:
 	__asm        sar    nDivisor, 1;
 // LINE 308:
@@ -1109,12 +1113,12 @@ _T211:
 	__asm        dec    eax;
 	__asm        mov    nMultiplier, eax;
 // LINE 310:
-_T231:
+_FOR_23d:
 	j = 0xa;
-	__asm        jmp    _T240;
-_T23d:
+	__asm        jmp    _FOR_COND_23d;
+_FOR_NEXT_23d:
 	j++;
-_T240:
+_FOR_COND_23d:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T305;
 // LINE 311:
@@ -1178,7 +1182,7 @@ _T240:
 	__asm        mov    eax, j;
 	__asm        mov    [ebp+eax*4-0x416], cl;
 // LINE 319:
-	__asm        jmp    _T23d;
+	__asm        jmp    _FOR_NEXT_23d;
 // LINE 321:
 _T305:
 	__asm        push   0;
@@ -1200,7 +1204,7 @@ _T305:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 326:
-_T339:
+_LOOP_339:
 	__asm        mov    eax, timerFade.lTotalElapsedTime;
 	__asm        mov    [ebp-0x44C], eax;
 	__asm        jmp    _T34a;
@@ -1273,10 +1277,10 @@ _T43e:
 	__asm        cmp    [ebp-0x460], eax;
 	__asm        jae    _T46c;
 _T467:
-	__asm        jmp    _T339;
+	__asm        jmp    _LOOP_339;
 // LINE 327:
 _T46c:
-	__asm        jmp    _T151;
+	__asm        jmp    _FOR_NEXT_151;
 // LINE 329:
 _T471:
 	__asm        mov    eax, nOriginalPriority;
@@ -1360,27 +1364,28 @@ _T6d:
 	__asm        call   dword ptr ds:[0x6C35F8];
 // LINE 399:
 	__asm        cmp    lpPalette, 0;
-	__asm        jne    _Tbc;
+	__asm        jne    _FOR_c8;
 // LINE 400:
 	__asm        jmp    _Tb7;
 _Tb7:
 	return;
 // LINE 401:
-_Tbc:
+_FOR_c8:
 	i = 0x0;
-	__asm        jmp    _Tcb;
-_Tc8:
+	__asm        jmp    _FOR_COND_c8;
+_FOR_NEXT_c8:
 	i++;
-_Tcb:
+_FOR_COND_c8:
 	__asm        mov    eax, lSteps;
 	__asm        cmp    i, eax;
-	__asm        jge    _T111;
+	__asm        jge    _FOR_11d;
 // LINE 402:
+_FOR_e3:
 	j = 0xa;
-	__asm        jmp    _Te6;
-_Te3:
+	__asm        jmp    _FOR_COND_e3;
+_FOR_NEXT_e3:
 	j++;
-_Te6:
+_FOR_COND_e3:
 	__asm        cmp    j, 0xF5;
 	__asm        jge    _T10c;
 // LINE 403:
@@ -1390,17 +1395,17 @@ _Te6:
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        mov    ecx, paletteArray;
 	__asm        mov    byte ptr [eax+ecx+3], 5;
-	__asm        jmp    _Te3;
+	__asm        jmp    _FOR_NEXT_e3;
 // LINE 404:
 _T10c:
-	__asm        jmp    _Tc8;
+	__asm        jmp    _FOR_NEXT_c8;
 // LINE 406:
-_T111:
+_FOR_11d:
 	j = 0xa;
-	__asm        jmp    _T120;
-_T11d:
+	__asm        jmp    _FOR_COND_11d;
+_FOR_NEXT_11d:
 	j++;
-_T120:
+_FOR_COND_11d:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T1ad;
 // LINE 407:
@@ -1449,18 +1454,19 @@ _T120:
 	__asm        mov    edx, paletteArray;
 	__asm        mov    [ecx+edx+2], al;
 // LINE 413:
-	__asm        jmp    _T11d;
+	__asm        jmp    _FOR_NEXT_11d;
 // LINE 417:
 _T1ad:
 	nMultiplier = 0x3f;
 // LINE 418:
 	nDivisor = 0x40;
 // LINE 419:
+_FOR_1c7:
 	i = 0x1;
-	__asm        jmp    _T1ca;
-_T1c7:
+	__asm        jmp    _FOR_COND_1c7;
+_FOR_NEXT_1c7:
 	i++;
-_T1ca:
+_FOR_COND_1c7:
 	__asm        mov    eax, nLastStepIndex;
 	__asm        cmp    i, eax;
 	__asm        jge    _T4b8;
@@ -1517,7 +1523,7 @@ _T265:
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        test   edx, edx;
-	__asm        jne    _T284;
+	__asm        jne    _FOR_290;
 // LINE 422:
 	__asm        sar    nDivisor, 1;
 // LINE 423:
@@ -1525,12 +1531,12 @@ _T265:
 	__asm        dec    eax;
 	__asm        mov    nMultiplier, eax;
 // LINE 425:
-_T284:
+_FOR_290:
 	j = 0xa;
-	__asm        jmp    _T293;
-_T290:
+	__asm        jmp    _FOR_COND_290;
+_FOR_NEXT_290:
 	j++;
-_T293:
+_FOR_COND_290:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T39a;
 // LINE 426:
@@ -1627,7 +1633,7 @@ _T293:
 	__asm        mov    ecx, paletteArray;
 	__asm        mov    [eax+ecx+2], bl;
 // LINE 434:
-	__asm        jmp    _T290;
+	__asm        jmp    _FOR_NEXT_290;
 // LINE 436:
 _T39a:
 	__asm        push   0;
@@ -1652,7 +1658,7 @@ _T39a:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 441:
-_T3d4:
+_LOOP_3d4:
 	__asm        mov    eax, timerFade.lTotalElapsedTime;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T3df;
@@ -1725,10 +1731,10 @@ _T491:
 	__asm        cmp    [ebp-0x70], eax;
 	__asm        jae    _T4b3;
 _T4ae:
-	__asm        jmp    _T3d4;
+	__asm        jmp    _LOOP_3d4;
 // LINE 442:
 _T4b3:
-	__asm        jmp    _T1c7;
+	__asm        jmp    _FOR_NEXT_1c7;
 // LINE 444:
 _T4b8:
 	__asm        push   0;
@@ -1779,11 +1785,12 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(/*packed*/ struct SparkalColor
 	/*bp-0x404*/ /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
 
 // LINE 467:
+_FOR_18:
 	i = 0xa;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T67;
 // LINE 468:
@@ -1805,7 +1812,7 @@ _T1b:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x401], 5;
 // LINE 472:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 475:
 _T67:
 	__asm        push   0;
@@ -1837,11 +1844,12 @@ void SparkalPalette::ImplementNewPalette(/*packed*/ struct SparkalColor *pNewCol
 	/*bp-0x408*/ long hResult;
 
 // LINE 503:
+_FOR_1e:
 	i = 0xa;
-	__asm        jmp    _T21;
-_T1e:
+	__asm        jmp    _FOR_COND_1e;
+_FOR_NEXT_1e:
 	i++;
-_T21:
+_FOR_COND_1e:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T79;
 // LINE 504:
@@ -1866,7 +1874,7 @@ _T21:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x401], 5;
 // LINE 508:
-	__asm        jmp    _T1e;
+	__asm        jmp    _FOR_NEXT_1e;
 // LINE 510:
 _T79:
 	__asm        cmp    lpPalette, 0;
@@ -1944,11 +1952,12 @@ void ClearWindowsSystemPalette() {
 	__asm        mov    ecx, 0x100;
 	__asm        rep stosd;
 // LINE 573:
+_FOR_39:
 	Counter = 0x0;
-	__asm        jmp    _T3c;
-_T39:
+	__asm        jmp    _FOR_COND_39;
+_FOR_NEXT_39:
 	Counter++;
-_T3c:
+_FOR_COND_39:
 	__asm        cmp    Counter, 0x100;
 	__asm        jge    _T7a;
 // LINE 574:
@@ -1964,7 +1973,7 @@ _T3c:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x401], 5;
 // LINE 578:
-	__asm        jmp    _T39;
+	__asm        jmp    _FOR_NEXT_39;
 // LINE 582:
 _T7a:
 	__asm        push   0;

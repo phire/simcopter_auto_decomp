@@ -715,19 +715,19 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004ca7b4
 int32_t MTAngleBounds(int32_t a) {
 // LINE 385:
-_T06:
+__WHILE_06:
 	__asm        cmp    a, 0;
-	__asm        jge    _T1c;
+	__asm        jge    __WHILE_1c;
 
 	a += 0xe100000;
-	__asm        jmp    _T06;
+	__asm        jmp    __WHILE_06;
 // LINE 386:
-_T1c:
+__WHILE_1c:
 	__asm        cmp    a, 0xE100000;
 	__asm        jle    _T35;
 
 	a -= 0xe100000;
-	__asm        jmp    _T1c;
+	__asm        jmp    __WHILE_1c;
 // LINE 387:
 _T35:
 _T4f:

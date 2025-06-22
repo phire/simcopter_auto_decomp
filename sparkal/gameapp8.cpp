@@ -501,7 +501,7 @@ _T150:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 146:
-_T181:
+__DO_181:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4174];
@@ -565,21 +565,21 @@ _T235:
 // LINE 163:
 _T280:
 	__asm        cmp    bPathInfoFound, 0;
-	__asm        je     _T29f;
+	__asm        je     __DO_WHILE_181;
 
 	__asm        cmp    bSaveGameInfoFound, 0;
-	__asm        je     _T29f;
+	__asm        je     __DO_WHILE_181;
 // LINE 164:
 	__asm        jmp    _T2c2;
 // LINE 165:
-_T29f:
+__DO_WHILE_181:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4174];
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x48];
 	__asm        test   eax, eax;
-	__asm        jne    _T181;
+	__asm        jne    __DO_181;
 // LINE 167:
 _T2c2:
 	__asm        cmp    bPathInfoFound, 0;

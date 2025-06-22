@@ -130,18 +130,18 @@ int32_t VRCreateTexColors(/*packed*/ struct VRResource *res, int32_t create_new)
 _T40:
 	__asm        mov    eax, hdr;
 	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        jne    _T61;
+	__asm        jne    _FOR_6d;
 // LINE 134:
 	GlobalError = 0x4;
 // LINE 135:
 	return 0x1;
 // LINE 141:
-_T61:
+_FOR_6d:
 	i = 0x0;
-	__asm        jmp    _T70;
-_T6d:
+	__asm        jmp    _FOR_COND_6d;
+_FOR_NEXT_6d:
 	i++;
-_T70:
+_FOR_COND_6d:
 	__asm        mov    eax, hdr;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -168,7 +168,7 @@ _T70:
 	__asm        call   CreateTiledTexColors;
 	__asm        add    esp, 0x10;
 // LINE 149:
-	__asm        jmp    _T6d;
+	__asm        jmp    _FOR_NEXT_6d;
 // LINE 152:
 _Tc7:
 	tptr = bhdr;
@@ -177,11 +177,12 @@ _Tc7:
 // LINE 154:
 	memset(0x400, 0x0, 0x606a78);
 // LINE 156:
+_FOR_fc:
 	j = 0x0;
-	__asm        jmp    _Tff;
-_Tfc:
+	__asm        jmp    _FOR_COND_fc;
+_FOR_NEXT_fc:
 	j++;
-_Tff:
+_FOR_COND_fc:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, bhdr;
@@ -196,16 +197,17 @@ _Tff:
 // LINE 159:
 	tptr++;
 // LINE 160:
-	__asm        jmp    _Tfc;
+	__asm        jmp    _FOR_NEXT_fc;
 // LINE 162:
 _T12a:
 	maxval = 0x0;
 // LINE 163:
+_FOR_13d:
 	j = 0x0;
-	__asm        jmp    _T140;
-_T13d:
+	__asm        jmp    _FOR_COND_13d;
+_FOR_NEXT_13d:
 	j++;
-_T140:
+_FOR_COND_13d:
 	__asm        cmp    j, 0x100;
 	__asm        jge    _T178;
 // LINE 165:
@@ -221,7 +223,7 @@ _T140:
 	maxcolor = j;
 // LINE 170:
 _T173:
-	__asm        jmp    _T13d;
+	__asm        jmp    _FOR_NEXT_13d;
 // LINE 171:
 _T178:
 	__asm        mov    eax, maxcolor;
@@ -230,7 +232,7 @@ _T178:
 	__asm        mov    edx, i;
 	__asm        mov    [ecx+edx*4], eax;
 // LINE 172:
-	__asm        jmp    _T6d;
+	__asm        jmp    _FOR_NEXT_6d;
 // LINE 174:
 _T18c:
 	return 0x0;
@@ -272,17 +274,17 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, /*packed*/ struct VRBmpHdr *bh
 	return 0x0;
 // LINE 212:
 _T5f:
-	__asm        jmp    _T6c;
+	__asm        jmp    _FOR_78;
 // LINE 214:
 _T64:
 	bmpcolors = tabentry[0];
 // LINE 224:
-_T6c:
+_FOR_78:
 	i = 0x0;
-	__asm        jmp    _T7b;
-_T78:
+	__asm        jmp    _FOR_COND_78;
+_FOR_NEXT_78:
 	i++;
-_T7b:
+_FOR_COND_78:
 	__asm        mov    eax, notiles;
 	__asm        cmp    i, eax;
 	__asm        jge    _T170;
@@ -296,21 +298,23 @@ _T7b:
 // LINE 228:
 	memset(0x400, 0x0, 0x606a78);
 // LINE 231:
+_FOR_ba:
 	j = 0x0;
-	__asm        jmp    _Tbd;
-_Tba:
+	__asm        jmp    _FOR_COND_ba;
+_FOR_NEXT_ba:
 	j++;
-_Tbd:
+_FOR_COND_ba:
 	__asm        mov    eax, bhdr;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jle    _T111;
 // LINE 233:
+_FOR_d8:
 	k = 0x0;
-	__asm        jmp    _Tdb;
-_Td8:
+	__asm        jmp    _FOR_COND_d8;
+_FOR_NEXT_d8:
 	k++;
-_Tdb:
+_FOR_COND_d8:
 	__asm        mov    eax, bhdr;
 	__asm        mov    ecx, k;
 	__asm        cmp    [eax], ecx;
@@ -323,23 +327,24 @@ _Tdb:
 // LINE 236:
 	tptr++;
 // LINE 237:
-	__asm        jmp    _Td8;
+	__asm        jmp    _FOR_NEXT_d8;
 // LINE 238:
 _Tff:
 	ltptr += 0x100;
 // LINE 239:
 	tptr = ltptr;
 // LINE 240:
-	__asm        jmp    _Tba;
+	__asm        jmp    _FOR_NEXT_ba;
 // LINE 243:
 _T111:
 	maxval = 0x0;
 // LINE 244:
+_FOR_124:
 	j = 0x0;
-	__asm        jmp    _T127;
-_T124:
+	__asm        jmp    _FOR_COND_124;
+_FOR_NEXT_124:
 	j++;
-_T127:
+_FOR_COND_124:
 	__asm        cmp    j, 0x100;
 	__asm        jge    _T15f;
 // LINE 246:
@@ -355,12 +360,12 @@ _T127:
 	maxcolor = j;
 // LINE 251:
 _T15a:
-	__asm        jmp    _T124;
+	__asm        jmp    _FOR_NEXT_124;
 // LINE 252:
 _T15f:
 	bmpcolors[i] = maxcolor;
 // LINE 253:
-	__asm        jmp    _T78;
+	__asm        jmp    _FOR_NEXT_78;
 // LINE 255:
 _T170:
 	return 0x1;
@@ -479,12 +484,12 @@ _T5a:
 	__asm        jl     _T27;
 
 	__asm        cmp    color, 0x100;
-	__asm        jle    _T2e;
+	__asm        jle    _LOOP_2e;
 // LINE 351:
 _T27:
 	return 0x0;
 // LINE 355:
-_T2e:
+_LOOP_2e:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, color;
 	__asm        cmp    [eax], ecx;
@@ -502,7 +507,7 @@ _T2e:
 _T58:
 	cptr += 0x8;
 // LINE 359:
-	__asm        jmp    _T2e;
+	__asm        jmp    _LOOP_2e;
 // LINE 361:
 }
 
@@ -545,11 +550,12 @@ void VRObjSetShading(int32_t obj) {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 401:
+_FOR_34:
 	i = 0x0;
-	__asm        jmp    _T37;
-_T34:
+	__asm        jmp    _FOR_COND_34;
+_FOR_NEXT_34:
 	i++;
-_T37:
+_FOR_COND_34:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    __RETURN;
@@ -726,7 +732,7 @@ next_face:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 462:
-	__asm        jmp    _T34;
+	__asm        jmp    _FOR_NEXT_34;
 // LINE 463:
 __RETURN:
 }
@@ -763,11 +769,12 @@ _T21:
 // LINE 496:
 	fh = oh->FacePtr;
 // LINE 497:
+_FOR_4b:
 	i = 0x0;
-	__asm        jmp    _T4e;
-_T4b:
+	__asm        jmp    _FOR_COND_4b;
+_FOR_NEXT_4b:
 	i++;
-_T4e:
+_FOR_COND_4b:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -889,7 +896,7 @@ _T18e:
 next_face:
 	fh = fh->NextFace;
 // LINE 540:
-	__asm        jmp    _T4b;
+	__asm        jmp    _FOR_NEXT_4b;
 // LINE 541:
 __RETURN:
 }
@@ -918,11 +925,12 @@ _T21:
 // LINE 575:
 	minv = 0x1e0000;
 // LINE 576:
+_FOR_42:
 	i = 0x0;
-	__asm        jmp    _T45;
-_T42:
+	__asm        jmp    _FOR_COND_42;
+_FOR_NEXT_42:
 	i++;
-_T45:
+_FOR_COND_42:
 	__asm        cmp    i, 4;
 	__asm        jge    _Ta4;
 // LINE 578:
@@ -955,7 +963,7 @@ _T45:
 	__asm        mov    minv, eax;
 // LINE 584:
 _T9f:
-	__asm        jmp    _T42;
+	__asm        jmp    _FOR_NEXT_42;
 // LINE 587:
 _Ta4:
 	__asm        mov    eax, stvert;
@@ -1045,11 +1053,12 @@ void VRObjSetGouraudShade(/*packed*/ struct ObjectHdr *oh, /*packed*/ struct Poi
 // LINE 621:
 	fh = oh->FacePtr;
 // LINE 622:
+_FOR_1e:
 	i = 0x0;
-	__asm        jmp    _T21;
-_T1e:
+	__asm        jmp    _FOR_COND_1e;
+_FOR_NEXT_1e:
 	i++;
-_T21:
+_FOR_COND_1e:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -1072,11 +1081,12 @@ _T42:
 _T63:
 	faceverts = fh->PlyVerts;
 // LINE 634:
+_FOR_78:
 	j = 0x0;
-	__asm        jmp    _T7b;
-_T78:
+	__asm        jmp    _FOR_COND_78;
+_FOR_NEXT_78:
 	j++;
-_T7b:
+_FOR_COND_78:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
@@ -1205,12 +1215,12 @@ _T1cc:
 	__asm        mov    edx, j;
 	__asm        mov    [ecx+edx*8], eax;
 // LINE 678:
-	__asm        jmp    _T78;
+	__asm        jmp    _FOR_NEXT_78;
 // LINE 681:
 next_face:
 	fh = fh->NextFace;
 // LINE 682:
-	__asm        jmp    _T1e;
+	__asm        jmp    _FOR_NEXT_1e;
 // LINE 683:
 __RETURN:
 }
@@ -1229,11 +1239,12 @@ void VRObjSetTranslucent(int32_t obj, /*packed*/ struct VRResource *res, int32_t
 // LINE 708:
 	fh = oh->FacePtr;
 // LINE 709:
+_FOR_37:
 	i = 0x0;
-	__asm        jmp    _T3a;
-_T37:
+	__asm        jmp    _FOR_COND_37;
+_FOR_NEXT_37:
 	i++;
-_T3a:
+_FOR_COND_37:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
@@ -1247,7 +1258,7 @@ _T3a:
 // LINE 714:
 	fh = fh->NextFace;
 // LINE 715:
-	__asm        jmp    _T37;
+	__asm        jmp    _FOR_NEXT_37;
 // LINE 716:
 __RETURN:
 }

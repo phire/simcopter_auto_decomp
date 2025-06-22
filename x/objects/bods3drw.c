@@ -255,11 +255,12 @@ _T7c:
 	__asm        cmp    shadeFlag, 1;
 	__asm        jne    _T12a;
 // LINE 209:
+_FOR_b7:
 	i = 0x0;
-	__asm        jmp    _Tbd;
-_Tb7:
+	__asm        jmp    _FOR_COND_b7;
+_FOR_NEXT_b7:
 	i++;
-_Tbd:
+_FOR_COND_b7:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
 	__asm        jge    _T112;
@@ -278,7 +279,7 @@ _Tbd:
 	__asm        add    eax, ecx;
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx-0xF8], al;
-	__asm        jmp    _Tb7;
+	__asm        jmp    _FOR_NEXT_b7;
 // LINE 212:
 _T112:
 	__asm        mov    eax, radius;
@@ -290,11 +291,12 @@ _T12a:
 	__asm        cmp    shadeFlag, 2;
 	__asm        jne    _T2f2;
 // LINE 216:
+_FOR_143:
 	i = 0x0;
-	__asm        jmp    _T149;
-_T143:
+	__asm        jmp    _FOR_COND_143;
+_FOR_NEXT_143:
 	i++;
-_T149:
+_FOR_COND_143:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
 	__asm        jge    _T19e;
@@ -313,18 +315,19 @@ _T149:
 	__asm        add    eax, ecx;
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx-0xF8], al;
-	__asm        jmp    _T143;
+	__asm        jmp    _FOR_NEXT_143;
 // LINE 219:
 _T19e:
 	__asm        mov    eax, radius;
 	__asm        mov    al, [ebp+eax-0xF8];
 	__asm        mov    hiColor, al;
 // LINE 223:
+_FOR_1c0:
 	j = 0x0;
-	__asm        jmp    _T1c7;
-_T1c0:
+	__asm        jmp    _FOR_COND_1c0;
+_FOR_NEXT_1c0:
 	j += 0x6;
-_T1c7:
+_FOR_COND_1c0:
 	__asm        mov    eax, diameter;
 	__asm        cmp    j, eax;
 	__asm        jge    _T2f2;
@@ -404,17 +407,18 @@ _T1c7:
 	__asm        mov    ecx, j;
 	__asm        mov    [ebp+ecx-0x39], al;
 // LINE 228:
-	__asm        jmp    _T1c0;
+	__asm        jmp    _FOR_NEXT_1c0;
 // LINE 231:
 _T2f2:
 	__asm        cmp    shadeFlag, 1;
 	__asm        jne    _T430;
 // LINE 233:
+_FOR_30b:
 	i = 0x0;
-	__asm        jmp    _T311;
-_T30b:
+	__asm        jmp    _FOR_COND_30b;
+_FOR_NEXT_30b:
 	i++;
-_T311:
+_FOR_COND_30b:
 	__asm        mov    eax, radius;
 	__asm        cmp    i, eax;
 	__asm        jge    _T3f3;
@@ -466,7 +470,7 @@ _T311:
 	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 247:
-	__asm        jmp    _T30b;
+	__asm        jmp    _FOR_NEXT_30b;
 // LINE 249:
 _T3f3:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
@@ -490,7 +494,7 @@ _T42b:
 	return;
 _T430:
 	__asm        cmp    shadeFlag, 2;
-	__asm        jne    _T68c;
+	__asm        jne    _FOR_69b;
 // LINE 254:
 	__asm        fld    qword ptr ds:[0x5939B0];
 	__asm        fdiv   G_figureShadeSpread;
@@ -526,7 +530,7 @@ _T4b0:
 // LINE 263:
 _T4ba:
 	i = 0x0;
-_T4c4:
+__WHILE_4c4:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
 	__asm        jge    _T687;
@@ -544,11 +548,12 @@ _T4c4:
 	__asm        cmp    ebx, ditherLimit;
 	__asm        jne    _T5f5;
 // LINE 267:
+_FOR_513:
 	j = 0x0;
-	__asm        jmp    _T519;
-_T513:
+	__asm        jmp    _FOR_COND_513;
+_FOR_NEXT_513:
 	j++;
-_T519:
+_FOR_COND_513:
 	__asm        mov    eax, j;
 	__asm        cmp    ditherLimit, eax;
 	__asm        jl     _T5ed;
@@ -601,7 +606,7 @@ _T5e3:
 	return;
 // LINE 287:
 _T5e8:
-	__asm        jmp    _T513;
+	__asm        jmp    _FOR_NEXT_513;
 // LINE 288:
 _T5ed:
 	shftCt++;
@@ -643,17 +648,17 @@ _T5f5:
 	i++;
 // LINE 304:
 _T682:
-	__asm        jmp    _T4c4;
+	__asm        jmp    __WHILE_4c4;
 // LINE 306:
 _T687:
 	return;
 // LINE 308:
-_T68c:
+_FOR_69b:
 	i = 0x0;
-	__asm        jmp    _T6a1;
-_T69b:
+	__asm        jmp    _FOR_COND_69b;
+_FOR_NEXT_69b:
 	i++;
-_T6a1:
+_FOR_COND_69b:
 	__asm        mov    eax, radius;
 	__asm        cmp    i, eax;
 	__asm        jge    _T76c;
@@ -684,7 +689,7 @@ _T6a1:
 // LINE 321:
 	DrawHorzLine(reinterpret_cast<uint32_t>(color), lineY, endX, startX);
 // LINE 322:
-	__asm        jmp    _T69b;
+	__asm        jmp    _FOR_NEXT_69b;
 // LINE 324:
 _T76c:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
@@ -766,11 +771,12 @@ _T84:
 	__asm        fdivr  qword ptr ds:[0x5939C8];
 	__asm        fstp   yStride;
 // LINE 455:
+_FOR_10a:
 	i = 0x0;
-	__asm        jmp    _T10d;
-_T10a:
+	__asm        jmp    _FOR_COND_10a;
+_FOR_NEXT_10a:
 	i++;
-_T10d:
+_FOR_COND_10a:
 	__asm        mov    eax, i;
 	__asm        cmp    vertRad, eax;
 	__asm        jle    _T20f;
@@ -814,7 +820,7 @@ _T10d:
 // LINE 475:
 	DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, yLine, endX, startX);
 // LINE 476:
-	__asm        jmp    _T10a;
+	__asm        jmp    _FOR_NEXT_10a;
 // LINE 478:
 _T20f:
 	pixLine.ptr = ((faceCenter.y * pixLine.width) + pixPtr);
@@ -1120,16 +1126,16 @@ _T41:
 _T52:
 	__asm        mov    eax, taper;
 	__asm        cmp    width, eax;
-	__asm        jne    _T61;
+	__asm        jne    _FOR_6d;
 // LINE 670:
 	width++;
 // LINE 677:
-_T61:
+_FOR_6d:
 	i = 0x0;
-	__asm        jmp    _T70;
-_T6d:
+	__asm        jmp    _FOR_COND_6d;
+_FOR_NEXT_6d:
 	i++;
-_T70:
+_FOR_COND_6d:
 	__asm        mov    eax, i;
 	__asm        cmp    width, eax;
 	__asm        jle    _Tdf;
@@ -1158,7 +1164,7 @@ _Tb1:
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx-0x1C], al;
 // LINE 682:
-	__asm        jmp    _T6d;
+	__asm        jmp    _FOR_NEXT_6d;
 // LINE 685:
 _Tdf:
 	__asm        cmp    startPt.x, 0;
@@ -1277,16 +1283,16 @@ _T1cb:
 	__asm        mov    segLen, eax;
 // LINE 723:
 	__asm        cmp    segLen, 1;
-	__asm        jge    _T215;
+	__asm        jge    _FOR_221;
 
 	return;
 // LINE 725:
-_T215:
+_FOR_221:
 	i = 0x0;
-	__asm        jmp    _T224;
-_T221:
+	__asm        jmp    _FOR_COND_221;
+_FOR_NEXT_221:
 	i++;
-_T224:
+_FOR_COND_221:
 	__asm        mov    eax, dx;
 	__asm        cmp    i, eax;
 	__asm        jge    _T2d3;
@@ -1302,11 +1308,12 @@ _T224:
 // LINE 736:
 	writeBufferTmp += (startWidth * Pbufwidth);
 // LINE 738:
+_FOR_261:
 	j = startWidth;
-	__asm        jmp    _T264;
-_T261:
+	__asm        jmp    _FOR_COND_261;
+_FOR_NEXT_261:
 	j++;
-_T264:
+_FOR_COND_261:
 	__asm        mov    eax, j;
 	__asm        cmp    endWidth, eax;
 	__asm        jle    _T2a6;
@@ -1330,7 +1337,7 @@ _T28d:
 // LINE 742:
 	writeBufferTmp += Pbufwidth;
 // LINE 743:
-	__asm        jmp    _T261;
+	__asm        jmp    _FOR_NEXT_261;
 // LINE 745:
 _T2a6:
 	error += dy;
@@ -1349,7 +1356,7 @@ _T2a6:
 _T2c8:
 	writeBuffer += xInc;
 // LINE 752:
-	__asm        jmp    _T221;
+	__asm        jmp    _FOR_NEXT_221;
 // LINE 754:
 _T2d3:
 	return;
@@ -1382,16 +1389,16 @@ _T2d8:
 // LINE 761:
 _T318:
 	__asm        cmp    segLen, 0;
-	__asm        jne    _T329;
+	__asm        jne    _FOR_335;
 // LINE 762:
 	segLen = 0x1;
 // LINE 764:
-_T329:
+_FOR_335:
 	i = 0x0;
-	__asm        jmp    _T338;
-_T335:
+	__asm        jmp    _FOR_COND_335;
+_FOR_NEXT_335:
 	i++;
-_T338:
+_FOR_COND_335:
 	__asm        mov    eax, dy;
 	__asm        cmp    i, eax;
 	__asm        jge    __RETURN;
@@ -1416,11 +1423,11 @@ _T338:
 	fourByteWrites = (tapWidth >> 0x2);
 // LINE 790:
 	__asm        cmp    oneByteWrites, 0;
-	__asm        jge    _T393;
+	__asm        jge    __WHILE_393;
 
 	return;
 // LINE 791:
-_T393:
+__WHILE_393:
 	__asm        mov    eax, oneByteWrites;
 	__asm        mov    [ebp-0x74], eax;
 	__asm        dec    oneByteWrites;
@@ -1446,15 +1453,15 @@ _T3c6:
 	__asm        inc    cInc;
 	__asm        inc    writeBufferTmp;
 // LINE 796:
-	__asm        jmp    _T393;
+	__asm        jmp    __WHILE_393;
 // LINE 798:
 _T3dd:
 	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    _T3ec;
+	__asm        jge    __WHILE_3ec;
 
 	return;
 // LINE 800:
-_T3ec:
+__WHILE_3ec:
 	__asm        mov    eax, fourByteWrites;
 	__asm        mov    [ebp-0x78], eax;
 	__asm        dec    fourByteWrites;
@@ -1497,7 +1504,7 @@ _T41f:
 // LINE 806:
 	cInc += 0x4;
 // LINE 807:
-	__asm        jmp    _T3ec;
+	__asm        jmp    __WHILE_3ec;
 // LINE 809:
 _T466:
 	error += dx;
@@ -1516,7 +1523,7 @@ _T466:
 _T488:
 	writeBuffer += yInc;
 // LINE 816:
-	__asm        jmp    _T335;
+	__asm        jmp    _FOR_NEXT_335;
 // LINE 818:
 __RETURN:
 }
@@ -1553,16 +1560,16 @@ void DrawLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Point3d e
 // LINE 851:
 _T2f:
 	__asm        cmp    width, 0;
-	__asm        jne    _T3e;
+	__asm        jne    _FOR_4a;
 // LINE 852:
 	return;
 // LINE 855:
-_T3e:
+_FOR_4a:
 	i = 0x0;
-	__asm        jmp    _T4d;
-_T4a:
+	__asm        jmp    _FOR_COND_4a;
+_FOR_NEXT_4a:
 	i++;
-_T4d:
+_FOR_COND_4a:
 	__asm        mov    eax, width;
 	__asm        cmp    i, eax;
 	__asm        jge    _Tb6;
@@ -1591,7 +1598,7 @@ _T8e:
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx-0x1C], al;
 // LINE 860:
-	__asm        jmp    _T4a;
+	__asm        jmp    _FOR_NEXT_4a;
 // LINE 862:
 _Tb6:
 	__asm        cmp    startPt.x, 0;
@@ -1701,22 +1708,24 @@ _T1a2:
 	__asm        add    ecx, buffer1;
 	__asm        mov    writeBuffer, ecx;
 // LINE 896:
+_FOR_1db:
 	i = 0x0;
-	__asm        jmp    _T1de;
-_T1db:
+	__asm        jmp    _FOR_COND_1db;
+_FOR_NEXT_1db:
 	i++;
-_T1de:
+_FOR_COND_1db:
 	__asm        mov    eax, dx;
 	__asm        cmp    i, eax;
 	__asm        jge    _T26e;
 // LINE 898:
 	writeBufferTmp = writeBuffer;
 // LINE 900:
+_FOR_1fc:
 	j = 0x0;
-	__asm        jmp    _T1ff;
-_T1fc:
+	__asm        jmp    _FOR_COND_1fc;
+_FOR_NEXT_1fc:
 	j++;
-_T1ff:
+_FOR_COND_1fc:
 	__asm        mov    eax, width;
 	__asm        cmp    j, eax;
 	__asm        jge    _T241;
@@ -1740,7 +1749,7 @@ _T228:
 // LINE 904:
 	writeBufferTmp += Pbufwidth;
 // LINE 905:
-	__asm        jmp    _T1fc;
+	__asm        jmp    _FOR_NEXT_1fc;
 // LINE 907:
 _T241:
 	error += dy;
@@ -1759,7 +1768,7 @@ _T241:
 _T263:
 	writeBuffer += xInc;
 // LINE 914:
-	__asm        jmp    _T1db;
+	__asm        jmp    _FOR_NEXT_1db;
 // LINE 916:
 _T26e:
 	return;
@@ -1777,11 +1786,12 @@ _T273:
 	__asm        add    ecx, buffer1;
 	__asm        mov    writeBuffer, ecx;
 // LINE 920:
+_FOR_2a2:
 	i = 0x0;
-	__asm        jmp    _T2a5;
-_T2a2:
+	__asm        jmp    _FOR_COND_2a2;
+_FOR_NEXT_2a2:
 	i++;
-_T2a5:
+_FOR_COND_2a2:
 	__asm        mov    eax, dy;
 	__asm        cmp    i, eax;
 	__asm        jge    __RETURN;
@@ -1803,18 +1813,18 @@ _T2a5:
 // LINE 935:
 _T2fb:
 	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    _T326;
+	__asm        jge    __WHILE_326;
 // LINE 936:
 	return;
 // LINE 937:
 	doAssert(0x8c085, 0x5bf25c, 0x3a9, 0x5bf288);
 // LINE 940:
-_T326:
+__WHILE_326:
 	__asm        mov    eax, oneByteWrites;
 	__asm        mov    [ebp-0x64], eax;
 	__asm        dec    oneByteWrites;
 	__asm        cmp    dword ptr [ebp-0x64], 0;
-	__asm        je     _T370;
+	__asm        je     __WHILE_370;
 // LINE 943:
 	__asm        push   0x5BF2B0;
 	__asm        push   1;
@@ -1835,9 +1845,9 @@ _T359:
 	__asm        inc    cInc;
 	__asm        inc    writeBufferTmp;
 // LINE 945:
-	__asm        jmp    _T326;
+	__asm        jmp    __WHILE_326;
 // LINE 947:
-_T370:
+__WHILE_370:
 	__asm        mov    eax, fourByteWrites;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        dec    fourByteWrites;
@@ -1880,7 +1890,7 @@ _T3a3:
 // LINE 953:
 	cInc += 0x4;
 // LINE 954:
-	__asm        jmp    _T370;
+	__asm        jmp    __WHILE_370;
 // LINE 956:
 _T3ea:
 	error += dx;
@@ -1899,7 +1909,7 @@ _T3ea:
 _T40c:
 	writeBuffer += yInc;
 // LINE 963:
-	__asm        jmp    _T2a2;
+	__asm        jmp    _FOR_NEXT_2a2;
 // LINE 966:
 __RETURN:
 }
@@ -1991,18 +2001,18 @@ _Ta6:
 // LINE 1022:
 _T103:
 	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    _T12e;
+	__asm        jge    __WHILE_12e;
 // LINE 1023:
 	return;
 // LINE 1024:
 	doAssert(0x8c085, 0x5bf324, 0x400, 0x5bf35c);
 // LINE 1027:
-_T12e:
+__WHILE_12e:
 	__asm        mov    eax, oneByteWrites;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        dec    oneByteWrites;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
-	__asm        je     _T18e;
+	__asm        je     __WHILE_18e;
 // LINE 1030:
 	__asm        push   0x5BF384;
 	__asm        push   1;
@@ -2032,9 +2042,9 @@ _T161:
 	__asm        fadd   curPatOffset;
 	__asm        fstp   curPatOffset;
 // LINE 1033:
-	__asm        jmp    _T12e;
+	__asm        jmp    __WHILE_12e;
 // LINE 1036:
-_T18e:
+__WHILE_18e:
 	__asm        mov    eax, fourByteWrites;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        dec    fourByteWrites;
@@ -2106,7 +2116,7 @@ _T1c1:
 	__asm        fadd   curPatOffset;
 	__asm        fstp   curPatOffset;
 // LINE 1047:
-	__asm        jmp    _T18e;
+	__asm        jmp    __WHILE_18e;
 // LINE 1050:
 __RETURN:
 }
@@ -2191,18 +2201,18 @@ _T65:
 // LINE 1103:
 _Te8:
 	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    _T113;
+	__asm        jge    __WHILE_113;
 // LINE 1104:
 	return;
 // LINE 1105:
 	doAssert(0x8c085, 0x5bf3fc, 0x451, 0x5bf430);
 // LINE 1108:
-_T113:
+__WHILE_113:
 	__asm        mov    eax, oneByteWrites;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        dec    oneByteWrites;
 	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     _T156;
+	__asm        je     __WHILE_156;
 // LINE 1111:
 	__asm        push   0x5BF458;
 	__asm        push   1;
@@ -2221,9 +2231,9 @@ _T146:
 	__asm        mov    [ecx], al;
 	__asm        inc    writeBuffer;
 // LINE 1113:
-	__asm        jmp    _T113;
+	__asm        jmp    __WHILE_113;
 // LINE 1115:
-_T156:
+__WHILE_156:
 	__asm        mov    eax, fourByteWrites;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        dec    fourByteWrites;
@@ -2248,7 +2258,7 @@ _T189:
 // LINE 1119:
 	writeBuffer += 0x4;
 // LINE 1120:
-	__asm        jmp    _T156;
+	__asm        jmp    __WHILE_156;
 // LINE 1123:
 __RETURN:
 }

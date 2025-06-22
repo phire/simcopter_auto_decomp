@@ -834,7 +834,7 @@ _T8d:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x38], eax;
-_T99:
+_LOOP_99:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    [ebp-0x38], eax;
 	__asm        jne    _Taf;
@@ -907,7 +907,7 @@ _T15b:
 	this->myPreferences.length--;
 	__asm        jmp    _T166;
 _T166:
-	__asm        jmp    _T99;
+	__asm        jmp    _LOOP_99;
 _T16b:
 	__asm        jmp    _T170;
 _T170:
@@ -923,7 +923,7 @@ _T170:
 _T190:
 	__asm        dec    list<PreferenceItem>::number_of_lists;
 	__asm        jne    _T21a;
-_T19c:
+__WHILE_19c:
 	__asm        cmp    list<PreferenceItem>::buffer_list, 0;
 	__asm        je     _T1f7;
 
@@ -951,7 +951,7 @@ _T1dc:
 _T1ed:
 	__asm        jmp    _T1f2;
 _T1f2:
-	__asm        jmp    _T19c;
+	__asm        jmp    __WHILE_19c;
 _T1f7:
 	list<PreferenceItem>::free_list = 0x0;
 	list<PreferenceItem>::next_avail = 0x0;
@@ -985,7 +985,7 @@ _T2c:
 // LINE 23:
 	__asm        jmp    _T55;
 // LINE 207:
-_T37:
+_LOOP_37:
 	__asm        mov    eax, i.node;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, i.node;
@@ -1035,7 +1035,7 @@ _Tb1:
 	__asm        add    eax, 8;
 	__asm        mov    eax, [eax];
 	__asm        mov    j, eax;
-	__asm        jmp    _T37;
+	__asm        jmp    _LOOP_37;
 // LINE 209:
 _Tc1:
 	return;
@@ -1122,7 +1122,7 @@ _Tc2:
 // LINE 23:
 	__asm        jmp    _Teb;
 // LINE 241:
-_Tcd:
+_LOOP_cd:
 	__asm        mov    eax, i.node;
 	__asm        mov    [ebp-0x50], eax;
 	__asm        mov    eax, i.node;
@@ -1187,7 +1187,7 @@ _T151:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x64];
-	__asm        jmp    _Tcd;
+	__asm        jmp    _LOOP_cd;
 // LINE 245:
 _T17c:
 	__asm        mov    eax, this;
@@ -1287,8 +1287,9 @@ _Tb2:
 	__asm        call   dword ptr [edx+0x44];
 	__asm        mov    bStillMoreRecords, eax;
 // LINE 288:
-	__asm        jmp    _Tdf;
-_Tcb:
+_FOR_cb:
+	__asm        jmp    _FOR_COND_cb;
+_FOR_NEXT_cb:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x10];
@@ -1296,7 +1297,7 @@ _Tcb:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x48];
 	__asm        mov    bStillMoreRecords, eax;
-_Tdf:
+_FOR_COND_cb:
 	__asm        cmp    bStillMoreRecords, 0;
 	__asm        je     _T18d;
 // LINE 290:
@@ -1305,7 +1306,7 @@ _Tdf:
 	__asm        cmp    dword ptr [eax+0x114], 0xFFFFFF;
 	__asm        jne    _T104;
 // LINE 291:
-	__asm        jmp    _Tcb;
+	__asm        jmp    _FOR_NEXT_cb;
 // LINE 292:
 _T104:
 	__asm        mov    eax, this;
@@ -1357,7 +1358,7 @@ _T104:
 // LINE 299:
 	tempPrefItem.chPreferenceData = 0x0;
 // LINE 300:
-	__asm        jmp    _Tcb;
+	__asm        jmp    _FOR_NEXT_cb;
 // LINE 301:
 _T18d:
 	__asm        mov    eax, this;
@@ -1404,7 +1405,7 @@ _T40:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x2C], eax;
-_T4c:
+_LOOP_4c:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    [ebp-0x2C], eax;
 	__asm        jne    _T62;
@@ -1477,7 +1478,7 @@ _T10e:
 	this->myPreferences.length--;
 	__asm        jmp    _T119;
 _T119:
-	__asm        jmp    _T4c;
+	__asm        jmp    _LOOP_4c;
 _T11e:
 	__asm        jmp    _T123;
 // LINE 314:
@@ -1511,7 +1512,7 @@ _T2c:
 // LINE 23:
 	__asm        jmp    _T55;
 // LINE 329:
-_T37:
+_LOOP_37:
 	__asm        mov    eax, i.node;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, i.node;
@@ -1618,7 +1619,7 @@ _T153:
 	return 0x1;
 // LINE 337:
 _T15d:
-	__asm        jmp    _T37;
+	__asm        jmp    _LOOP_37;
 // LINE 338:
 _T162:
 	return 0x0;
@@ -1648,7 +1649,7 @@ _T2c:
 // LINE 23:
 	__asm        jmp    _T55;
 // LINE 357:
-_T37:
+_LOOP_37:
 	__asm        mov    eax, i.node;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, i.node;
@@ -1704,7 +1705,7 @@ _Tc5:
 	return (i.node + 0x8);
 // LINE 360:
 _Td0:
-	__asm        jmp    _T37;
+	__asm        jmp    _LOOP_37;
 // LINE 361:
 _Td5:
 	return 0x0;
@@ -2712,7 +2713,7 @@ _T33:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    iterator.node, eax;
 // LINE 575:
-_T39:
+_LOOP_39:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    [ebp-0x20], eax;
@@ -2818,7 +2819,7 @@ _T149:
 	__asm        jmp    _T154;
 // LINE 584:
 _T154:
-	__asm        jmp    _T39;
+	__asm        jmp    _LOOP_39;
 // LINE 585:
 _T159:
 	return nFound;
@@ -2895,9 +2896,9 @@ void NotificationPreferenceManager::DoNotification(long lPrefType) {
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    _T22;
 _T22:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 620:
-_T27:
+_LOOP_27:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    [ebp-0x18], eax;
@@ -2966,7 +2967,7 @@ _Tcb:
 	__asm        jmp    _Td6;
 // LINE 624:
 _Td6:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 625:
 _Tdb:
 	return;

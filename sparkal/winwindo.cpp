@@ -162,18 +162,19 @@ void CSparkalWindow::CSparkalWindow() {
 // LINE 63:
 	this->mhCustomCursor = 0x0;
 // LINE 65:
+_FOR_7b:
 	i = 0x0;
-	__asm        jmp    _T7e;
-_T7b:
+	__asm        jmp    _FOR_COND_7b;
+_FOR_NEXT_7b:
 	i++;
-_T7e:
+_FOR_COND_7b:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T9b;
 // LINE 66:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
-	__asm        jmp    _T7b;
+	__asm        jmp    _FOR_NEXT_7b;
 // LINE 67:
 _T9b:
 	return;
@@ -213,18 +214,19 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // LINE 88:
 	this->mhCustomCursor = 0x0;
 // LINE 90:
+_FOR_9c:
 	i = 0x0;
-	__asm        jmp    _T9f;
-_T9c:
+	__asm        jmp    _FOR_COND_9c;
+_FOR_NEXT_9c:
 	i++;
-_T9f:
+_FOR_COND_9c:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _Tbf;
 // LINE 91:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
-	__asm        jmp    _T9c;
+	__asm        jmp    _FOR_NEXT_9c;
 // LINE 94:
 _Tbf:
 	__asm        lea    eax, ClassInfo.style;
@@ -472,34 +474,35 @@ _T373:
 	__asm        mov    End, ecx;
 // LINE 184:
 	__asm        cmp    PaletteUse, 2;
-	__asm        jne    _T3aa;
+	__asm        jne    _FOR_3b6;
 // LINE 185:
 	Start = 0x1;
 // LINE 186:
 	End = 0xff;
 // LINE 192:
-_T3aa:
+_FOR_3b6:
 	Counter = 0x0;
-	__asm        jmp    _T3b9;
-_T3b6:
+	__asm        jmp    _FOR_COND_3b6;
+_FOR_NEXT_3b6:
 	Counter++;
-_T3b9:
+_FOR_COND_3b6:
 	__asm        mov    eax, Start;
 	__asm        cmp    Counter, eax;
 	__asm        jge    _T3d5;
 // LINE 193:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
-	__asm        jmp    _T3b6;
+	__asm        jmp    _FOR_NEXT_3b6;
 // LINE 196:
 _T3d5:
 	__asm        cmp    pColors, 0;
-	__asm        je     _T443;
+	__asm        je     _FOR_448;
 // LINE 197:
-	__asm        jmp    _T3e7;
-_T3e4:
+_FOR_3e4:
+	__asm        jmp    _FOR_COND_3e4;
+_FOR_NEXT_3e4:
 	Counter++;
-_T3e7:
+_FOR_COND_3e4:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
 	__asm        jge    _T43e;
@@ -525,19 +528,19 @@ _T3e7:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
 // LINE 202:
-	__asm        jmp    _T3e4;
+	__asm        jmp    _FOR_NEXT_3e4;
 // LINE 204:
 _T43e:
-	__asm        jmp    _T48e;
+	__asm        jmp    _FOR_493;
 // LINE 205:
-_T443:
-	__asm        jmp    _T44b;
-_T448:
+_FOR_448:
+	__asm        jmp    _FOR_COND_448;
+_FOR_NEXT_448:
 	Counter++;
-_T44b:
+_FOR_COND_448:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
-	__asm        jge    _T48e;
+	__asm        jge    _FOR_493;
 // LINE 206:
 	__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
 	__asm        mov    ecx, Counter;
@@ -554,19 +557,19 @@ _T44b:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
 // LINE 210:
-	__asm        jmp    _T448;
+	__asm        jmp    _FOR_NEXT_448;
 // LINE 214:
-_T48e:
-	__asm        jmp    _T496;
-_T493:
+_FOR_493:
+	__asm        jmp    _FOR_COND_493;
+_FOR_NEXT_493:
 	Counter++;
-_T496:
+_FOR_COND_493:
 	__asm        cmp    Counter, 0x100;
 	__asm        jge    _T4b3;
 // LINE 215:
 	__asm        mov    eax, Counter;
 	__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
-	__asm        jmp    _T493;
+	__asm        jmp    _FOR_NEXT_493;
 // LINE 218:
 _T4b3:
 	__asm        lea    eax, LogPalette.Version;
@@ -693,19 +696,19 @@ _T3e:
 _T4b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
-	__asm        je     _T65;
+	__asm        je     _FOR_71;
 // LINE 258:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 259:
-_T65:
+_FOR_71:
 	i = 0x0;
-	__asm        jmp    _T74;
-_T71:
+	__asm        jmp    _FOR_COND_71;
+_FOR_NEXT_71:
 	i++;
-_T74:
+_FOR_COND_71:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _Ta5;
 // LINE 260:
@@ -721,7 +724,7 @@ _T74:
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 262:
 _Ta0:
-	__asm        jmp    _T71;
+	__asm        jmp    _FOR_NEXT_71;
 // LINE 267:
 _Ta5:
 	__asm        mov    eax, this;
@@ -1150,11 +1153,12 @@ void CSparkalWindow::UpdatePalette(long start, long count, /*packed*/ struct Spa
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        je     _Tba;
 // LINE 487:
+_FOR_30:
 	i = start;
-	__asm        jmp    _T36;
-_T30:
+	__asm        jmp    _FOR_COND_30;
+_FOR_NEXT_30:
 	i++;
-_T36:
+_FOR_COND_30:
 	__asm        mov    eax, count;
 	__asm        add    eax, start;
 	__asm        cmp    eax, i;
@@ -1180,7 +1184,7 @@ _T36:
 // LINE 492:
 	pColor += 0x4;
 // LINE 493:
-	__asm        jmp    _T30;
+	__asm        jmp    _FOR_NEXT_30;
 // LINE 494:
 _T97:
 	__asm        mov    eax, start;
@@ -1269,13 +1273,14 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, /*pack
 // LINE 535:
 	Info.Header.biClrImportant = 0x0;
 // LINE 537:
+_FOR_ff:
 	i = 0x0;
-	__asm        jmp    _T105;
-_Tff:
+	__asm        jmp    _FOR_COND_ff;
+_FOR_NEXT_ff:
 	i++;
-_T105:
+_FOR_COND_ff:
 	__asm        cmp    i, 0x100;
-	__asm        jge    _T175;
+	__asm        jge    _FOR_184;
 // LINE 538:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, pColors;
@@ -1298,21 +1303,21 @@ _T105:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x515], 0;
 // LINE 542:
-	__asm        jmp    _Tff;
+	__asm        jmp    _FOR_NEXT_ff;
 // LINE 545:
-_T175:
+_FOR_184:
 	i = 0x0;
-	__asm        jmp    _T18a;
-_T184:
+	__asm        jmp    _FOR_COND_184;
+_FOR_NEXT_184:
 	i++;
-_T18a:
+_FOR_COND_184:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T1b2;
 // LINE 546:
 	__asm        mov    al, reinterpret_cast<uint8_t>(i);
 	__asm        mov    ecx, i;
 	__asm        mov    [ebp+ecx-0x100], al;
-	__asm        jmp    _T184;
+	__asm        jmp    _FOR_NEXT_184;
 // LINE 549:
 _T1b2:
 	__asm        push   0xCC0020;
@@ -1346,11 +1351,12 @@ _T1b2:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35C0];
 // LINE 555:
+_FOR_22f:
 	i = 0x0;
-	__asm        jmp    _T235;
-_T22f:
+	__asm        jmp    _FOR_COND_22f;
+_FOR_NEXT_22f:
 	i++;
-_T235:
+_FOR_COND_22f:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T274;
 // LINE 556:
@@ -1365,7 +1371,7 @@ _T235:
 	__asm        jmp    _T274;
 // LINE 560:
 _T26f:
-	__asm        jmp    _T22f;
+	__asm        jmp    _FOR_NEXT_22f;
 // LINE 563:
 _T274:
 	__asm        mov    eax, Mono;

@@ -182,7 +182,7 @@ _Tdb:
 // LINE 62:
 	YCount = 0x0;
 // LINE 63:
-_T10a:
+__WHILE_10a:
 	__asm        mov    eax, SourceHeight;
 	__asm        cmp    YCount, eax;
 	__asm        jge    _T195;
@@ -200,7 +200,7 @@ _T10a:
 // LINE 70:
 	XCount = 0x0;
 // LINE 71:
-_T131:
+__WHILE_131:
 	__asm        mov    eax, SourceWidth;
 	__asm        cmp    XCount, eax;
 	__asm        jge    _T16b;
@@ -225,7 +225,7 @@ _T131:
 	XCount++;
 // LINE 84:
 _T166:
-	__asm        jmp    _T131;
+	__asm        jmp    __WHILE_131;
 // LINE 87:
 _T16b:
 	pDestLeft += DestStride;
@@ -245,7 +245,7 @@ _T16b:
 // LINE 97:
 // Block end:
 _T190:
-	__asm        jmp    _T10a;
+	__asm        jmp    __WHILE_10a;
 // LINE 99:
 _T195:
 	__asm        mov    eax, pDest;
@@ -434,7 +434,7 @@ _T118:
 // LINE 175:
 	pDestBits += ((DestStride * DestTop) + DestLeft);
 // LINE 176:
-_T15a:
+__WHILE_15a:
 	__asm        mov    eax, Height;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        dec    Height;
@@ -447,7 +447,7 @@ _T15a:
 // LINE 181:
 	pSource += this->mStride;
 // LINE 182:
-	__asm        jmp    _T15a;
+	__asm        jmp    __WHILE_15a;
 // LINE 185:
 _T195:
 	__asm        mov    eax, pDest;
@@ -537,7 +537,7 @@ _Ta9:
 	__asm        cmp    Width, 0;
 	__asm        je     _T11a;
 // LINE 231:
-_Te5:
+__WHILE_e5:
 	__asm        mov    eax, Height;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        dec    Height;
@@ -548,7 +548,7 @@ _Te5:
 // LINE 233:
 	pBits += this->mStride;
 // LINE 234:
-	__asm        jmp    _Te5;
+	__asm        jmp    __WHILE_e5;
 // LINE 236:
 _T11a:
 	__asm        mov    eax, this;
@@ -866,7 +866,7 @@ _T265:
 	/*bp-0x10*/  int32_t Count;
 	Count = this-><CFlatImage+0x0c>;
 // LINE 304:
-_T28c:
+__WHILE_28c:
 	__asm        mov    eax, Count;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        dec    Count;
@@ -879,7 +879,7 @@ _T28c:
 // LINE 308:
 	pSource += SrcStride;
 // LINE 309:
-	__asm        jmp    _T28c;
+	__asm        jmp    __WHILE_28c;
 // LINE 311:
 // Block end:
 _T2ca:

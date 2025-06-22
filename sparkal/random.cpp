@@ -86,13 +86,14 @@ void Random::seed(unsigned long j) {
 // LINE 36:
 	this->table[54] = j;
 // LINE 37:
+_FOR_2b:
 	i = 0x0;
-	__asm        jmp    _T2e;
-_T2b:
+	__asm        jmp    _FOR_COND_2b;
+_FOR_NEXT_2b:
 	i++;
-_T2e:
+_FOR_COND_2b:
 	__asm        cmp    i, 0x36;
-	__asm        jae    _T75;
+	__asm        jae    _FOR_81;
 // LINE 38:
 // Block start:
 	/*bp-0x10*/  uint32_t ii;
@@ -118,22 +119,23 @@ _T2e:
 	__asm        mov    j, eax;
 // LINE 42:
 // Block end:
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 43:
-_T75:
+_FOR_81:
 	loop = 0x0;
-	__asm        jmp    _T84;
-_T81:
+	__asm        jmp    _FOR_COND_81;
+_FOR_NEXT_81:
 	loop++;
-_T84:
+_FOR_COND_81:
 	__asm        cmp    loop, 4;
 	__asm        jge    _Td3;
 // LINE 44:
+_FOR_9a:
 	i = 0x0;
-	__asm        jmp    _T9d;
-_T9a:
+	__asm        jmp    _FOR_COND_9a;
+_FOR_NEXT_9a:
 	i++;
-_T9d:
+_FOR_COND_9a:
 	__asm        cmp    i, 0x37;
 	__asm        jae    _Tce;
 // LINE 45:
@@ -149,10 +151,10 @@ _T9d:
 	__asm        mov    eax, i;
 	__asm        mov    edx, this;
 	__asm        sub    [edx+eax*4], ecx;
-	__asm        jmp    _T9a;
+	__asm        jmp    _FOR_NEXT_9a;
 // LINE 46:
 _Tce:
-	__asm        jmp    _T81;
+	__asm        jmp    _FOR_NEXT_81;
 // LINE 47:
 _Td3:
 	this->index1 = 0x0;

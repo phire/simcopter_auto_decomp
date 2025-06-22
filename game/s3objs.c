@@ -125,11 +125,12 @@ void S3ObjInit() {
 // LINE 413:
 	objcount += VRGetResObjectCnt(G_resgeo3);
 // LINE 418:
+_FOR_12c:
 	i = 0x0;
-	__asm        jmp    _T12f;
-_T12c:
+	__asm        jmp    _FOR_COND_12c;
+_FOR_NEXT_12c:
 	i++;
-_T12f:
+_FOR_COND_12c:
 	__asm        mov    eax, objcount;
 	__asm        cmp    i, eax;
 	__asm        jge    __RETURN;
@@ -223,11 +224,12 @@ _T327:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 531:
+_FOR_342:
 	j = 0x0;
-	__asm        jmp    _T345;
-_T342:
+	__asm        jmp    _FOR_COND_342;
+_FOR_NEXT_342:
 	j++;
-_T345:
+_FOR_COND_342:
 	__asm        mov    eax, j;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T5d5;
@@ -350,12 +352,12 @@ _T5a5:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 674:
-	__asm        jmp    _T342;
+	__asm        jmp    _FOR_NEXT_342;
 // LINE 677:
 _T5d5:
 	VRObjSetShading(obj);
 // LINE 679:
-	__asm        jmp    _T12c;
+	__asm        jmp    _FOR_NEXT_12c;
 // LINE 680:
 __RETURN:
 }
@@ -1361,13 +1363,14 @@ _T3f8:
 	__asm        mov    tablerow, eax;
 // LINE 1230:
 	__asm        cmp    G_video_mode, 0x20;
-	__asm        jne    _T22e0;
+	__asm        jne    _FOR_22ec;
 // LINE 1232:
+_FOR_42d:
 	i = 0x0;
-	__asm        jmp    _T430;
-_T42d:
+	__asm        jmp    _FOR_COND_42d;
+_FOR_NEXT_42d:
 	i++;
-_T430:
+_FOR_COND_42d:
 	__asm        mov    eax, i;
 	__asm        cmp    num3, eax;
 	__asm        jle    _T22db;
@@ -5006,17 +5009,17 @@ _T229a:
 //   _T1b0a
 // LINE 2416:
 _T22d6:
-	__asm        jmp    _T42d;
+	__asm        jmp    _FOR_NEXT_42d;
 // LINE 2419:
 _T22db:
 	return;
 // LINE 2421:
-_T22e0:
+_FOR_22ec:
 	i = 0x0;
-	__asm        jmp    _T22ef;
-_T22ec:
+	__asm        jmp    _FOR_COND_22ec;
+_FOR_NEXT_22ec:
 	i++;
-_T22ef:
+_FOR_COND_22ec:
 	__asm        mov    eax, i;
 	__asm        cmp    num3, eax;
 	__asm        jle    __RETURN;
@@ -7876,7 +7879,7 @@ _T3d8f:
 //   _T374d
 // LINE 3670:
 _T3dcb:
-	__asm        jmp    _T22ec;
+	__asm        jmp    _FOR_NEXT_22ec;
 // LINE 3672:
 __RETURN:
 }
@@ -8936,11 +8939,12 @@ _T53:
 // LINE 4162:
 	objcount += VRGetResObjectCnt(G_resgeo3);
 // LINE 4167:
+_FOR_92:
 	i = 0x0;
-	__asm        jmp    _T95;
-_T92:
+	__asm        jmp    _FOR_COND_92;
+_FOR_NEXT_92:
 	i++;
-_T95:
+_FOR_COND_92:
 	__asm        mov    eax, objcount;
 	__asm        cmp    i, eax;
 	__asm        jge    __RETURN;
@@ -8957,7 +8961,7 @@ _T95:
 _Tba:
 	VRObjSetShading(obj);
 // LINE 4178:
-	__asm        jmp    _T92;
+	__asm        jmp    _FOR_NEXT_92;
 // LINE 4179:
 __RETURN:
 }

@@ -121,34 +121,35 @@ void S3ExplosionReset() {
 // LINE 60:
 	S_num_smoke = 0x0;
 // LINE 63:
+_FOR_30:
 	i = 0x0;
 	ed = 0x62a578;
-	__asm        jmp    _T37;
-_T30:
+	__asm        jmp    _FOR_COND_30;
+_FOR_NEXT_30:
 	i++;
 	ed += 0x34;
-_T37:
+_FOR_COND_30:
 	__asm        cmp    i, 0x14;
-	__asm        jge    _T4f;
+	__asm        jge    _FOR_62;
 // LINE 66:
 	ed->flags = 0x0;
 // LINE 67:
-	__asm        jmp    _T30;
+	__asm        jmp    _FOR_NEXT_30;
 // LINE 70:
-_T4f:
+_FOR_62:
 	i = 0x0;
 	sd = 0x62aa58;
-	__asm        jmp    _T69;
-_T62:
+	__asm        jmp    _FOR_COND_62;
+_FOR_NEXT_62:
 	i++;
 	sd += 0x1c;
-_T69:
+_FOR_COND_62:
 	__asm        cmp    i, 0x64;
 	__asm        jge    __RETURN;
 // LINE 73:
 	sd->flags = 0x0;
 // LINE 75:
-	__asm        jmp    _T62;
+	__asm        jmp    _FOR_NEXT_62;
 // LINE 77:
 __RETURN:
 }
@@ -172,13 +173,14 @@ void S3ExplosionInit() {
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 103:
+_FOR_32:
 	i = 0x0;
 	ed = 0x62a578;
-	__asm        jmp    _T39;
-_T32:
+	__asm        jmp    _FOR_COND_32;
+_FOR_NEXT_32:
 	i++;
 	ed += 0x34;
-_T39:
+_FOR_COND_32:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T14a;
 // LINE 106:
@@ -250,7 +252,7 @@ _T39:
 // LINE 129:
 	ed->dy2d->next = 0x0;
 // LINE 130:
-	__asm        jmp    _T32;
+	__asm        jmp    _FOR_NEXT_32;
 // LINE 133:
 _T14a:
 	__asm        push   0x148;
@@ -261,13 +263,14 @@ _T14a:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 140:
+_FOR_176:
 	i = 0x0;
 	sd = 0x62aa58;
-	__asm        jmp    _T17d;
-_T176:
+	__asm        jmp    _FOR_COND_176;
+_FOR_NEXT_176:
 	i++;
 	sd += 0x1c;
-_T17d:
+_FOR_COND_176:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T236;
 // LINE 143:
@@ -313,7 +316,7 @@ _T17d:
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 159:
-	__asm        jmp    _T176;
+	__asm        jmp    _FOR_NEXT_176;
 // LINE 162:
 _T236:
 	S_explseq[0] = VRInt2BmpHdr(0xf, G_restex);
@@ -603,13 +606,14 @@ void S3ExplosionStart(/*packed*/ struct _CELL_INFO *cptr, int32_t x, int32_t y, 
 	/*bp-0x2c*/  /*packed*/ struct _EXPLODE_DATA *ed;
 
 // LINE 240:
+_FOR_1c:
 	i = 0x0;
 	ed = 0x62a578;
-	__asm        jmp    _T23;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
 	ed += 0x34;
-_T23:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T43;
 // LINE 242:
@@ -620,7 +624,7 @@ _T23:
 	__asm        jmp    _T43;
 // LINE 244:
 _T3e:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 248:
 _T43:
 	__asm        cmp    i, 0x14;
@@ -730,13 +734,14 @@ void S3ExplosionSmokeStart(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct
 	/*bp-0x28*/  long i;
 
 // LINE 319:
+_FOR_1c:
 	i = 0x0;
 	sd = 0x62aa58;
-	__asm        jmp    _T23;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
 	sd += 0x1c;
-_T23:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T43;
 // LINE 321:
@@ -747,7 +752,7 @@ _T23:
 	__asm        jmp    _T43;
 // LINE 323:
 _T3e:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 327:
 _T43:
 	__asm        cmp    i, 0x64;
@@ -890,24 +895,25 @@ void S3ExplosionDriver() {
 	/*bp-0x94*/  /*packed*/ struct _EXPLODE_DATA *ed;
 
 // LINE 410:
+_FOR_22:
 	i = 0x0;
 	ed = 0x62a578;
-	__asm        jmp    _T2c;
-_T22:
+	__asm        jmp    _FOR_COND_22;
+_FOR_NEXT_22:
 	i++;
 	ed += 0x34;
-_T2c:
+_FOR_COND_22:
 	__asm        cmp    S_num_expls, 0;
-	__asm        jle    _T218;
+	__asm        jle    _FOR_22b;
 
 	__asm        cmp    i, 0x14;
-	__asm        jge    _T218;
+	__asm        jge    _FOR_22b;
 // LINE 412:
 	__asm        mov    eax, ed;
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T57;
 // LINE 413:
-	__asm        jmp    _T22;
+	__asm        jmp    _FOR_NEXT_22;
 // LINE 416:
 _T57:
 	ed->animseq++;
@@ -920,11 +926,12 @@ _T57:
 // LINE 423:
 	celloc.y = ((0x20000000 - ed->loc.z) >> 0x16);
 // LINE 424:
+_FOR_a4:
 	j = 0x0;
-	__asm        jmp    _Ta7;
-_Ta4:
+	__asm        jmp    _FOR_COND_a4;
+_FOR_NEXT_a4:
 	j++;
-_Ta7:
+_FOR_COND_a4:
 	__asm        cmp    j, 0xE;
 	__asm        jge    _Tff;
 // LINE 435:
@@ -951,7 +958,7 @@ _Ta7:
 	__asm        call   S3MissileStart;
 	__asm        add    esp, 0x20;
 // LINE 436:
-	__asm        jmp    _Ta4;
+	__asm        jmp    _FOR_NEXT_a4;
 // LINE 440:
 _Tff:
 	__asm        mov    eax, ed;
@@ -960,7 +967,7 @@ _Tff:
 // LINE 443:
 	dyptrptr = (ed->cptr + 0x10);
 // LINE 444:
-_T11e:
+__WHILE_11e:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T160;
@@ -978,14 +985,14 @@ _T11e:
 _T153:
 	dyptrptr = dyptrptr->;
 // LINE 452:
-	__asm        jmp    _T11e;
+	__asm        jmp    __WHILE_11e;
 // LINE 454:
 _T160:
 	ed->flags = (ed->flags & -0x2);
 // LINE 455:
 	S_num_expls--;
 // LINE 456:
-	__asm        jmp    _T22;
+	__asm        jmp    _FOR_NEXT_22;
 // LINE 460:
 _T17e:
 	__asm        lea    eax, finfo.Face;
@@ -1037,16 +1044,16 @@ _T17e:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 469:
-	__asm        jmp    _T22;
+	__asm        jmp    _FOR_NEXT_22;
 // LINE 472:
-_T218:
+_FOR_22b:
 	i = 0x0;
 	sd = 0x62aa58;
-	__asm        jmp    _T232;
-_T22b:
+	__asm        jmp    _FOR_COND_22b;
+_FOR_NEXT_22b:
 	i++;
 	sd += 0x1c;
-_T232:
+_FOR_COND_22b:
 	__asm        cmp    S_num_smoke, 0;
 	__asm        jle    _T347;
 
@@ -1057,7 +1064,7 @@ _T232:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T25a;
 // LINE 475:
-	__asm        jmp    _T22b;
+	__asm        jmp    _FOR_NEXT_22b;
 // LINE 478:
 _T25a:
 	__asm        xor    eax, eax;
@@ -1072,7 +1079,7 @@ _T25a:
 // LINE 484:
 	dyptrptr = (sd->cptr + 0x10);
 // LINE 485:
-_T283:
+__WHILE_283:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T2bf;
@@ -1090,14 +1097,14 @@ _T283:
 _T2b2:
 	dyptrptr = dyptrptr->;
 // LINE 493:
-	__asm        jmp    _T283;
+	__asm        jmp    __WHILE_283;
 // LINE 495:
 _T2bf:
 	sd->flags = (sd->flags & -0x2);
 // LINE 496:
 	S_num_smoke--;
 // LINE 497:
-	__asm        jmp    _T22b;
+	__asm        jmp    _FOR_NEXT_22b;
 // LINE 501:
 _T2d7:
 	__asm        mov    eax, G_AvLoopTime;
@@ -1139,7 +1146,7 @@ _T2d7:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 508:
-	__asm        jmp    _T22b;
+	__asm        jmp    _FOR_NEXT_22b;
 // LINE 510:
 _T347:
 	return;

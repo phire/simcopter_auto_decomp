@@ -146,13 +146,13 @@ _T15f:
 	return 0x0;
 // LINE 70:
 _T166:
-	__asm        jmp    _T16b;
-_T16b:
+	__asm        jmp    __WHILE_16b;
+__WHILE_16b:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        test   byte ptr [eax+0xC], 1;
 	__asm        je     Cleanup;
 // LINE 71:
-_T17a:
+__WHILE_17a:
 	__asm        push   1;
 	__asm        push   0;
 	__asm        push   0;
@@ -187,7 +187,7 @@ _T1bc:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C37EC];
 // LINE 78:
-	__asm        jmp    _T17a;
+	__asm        jmp    __WHILE_17a;
 // LINE 82:
 _T1d5:
 	__asm        jmp    _T1da;
@@ -204,7 +204,7 @@ _T1da:
 	__asm        call   dword ptr [eax+0xC];
 // LINE 86:
 _T1fc:
-	__asm        jmp    _T16b;
+	__asm        jmp    __WHILE_16b;
 // LINE 89:
 Cleanup:
 	__asm        mov    eax, _gSparkalApp;

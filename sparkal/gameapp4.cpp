@@ -511,9 +511,9 @@ _T2a2:
 	__asm        mov    eax, [ebp-0x4B8];
 	__asm        mov    ecx, [ebp-0x4C8];
 	__asm        mov    [ecx+0x38], eax;
-	__asm        jmp    _T2c5;
+	__asm        jmp    __WHILE_2c5;
 // LINE 128:
-_T2c5:
+__WHILE_2c5:
 	__asm        cmp    tempVRAppInitThreadStruct.nReturnValue, 0;
 	__asm        jne    _T685;
 // LINE 129:
@@ -767,7 +767,7 @@ _T661:
 	__asm        push   0x1E;
 	__asm        call   dword ptr ds:[0x6C35D8];
 // LINE 141:
-	__asm        jmp    _T2c5;
+	__asm        jmp    __WHILE_2c5;
 // LINE 142:
 _T685:
 	tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>->SmackerBuffer::Close();

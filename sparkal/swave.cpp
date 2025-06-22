@@ -348,11 +348,12 @@ _T48:
 	__asm        mov    ecx, pckIn;
 	__asm        sub    [ecx+4], eax;
 // LINE 208:
+_FOR_61:
 	cT = 0x0;
-	__asm        jmp    _T64;
-_T61:
+	__asm        jmp    _FOR_COND_61;
+_FOR_NEXT_61:
 	cT++;
-_T64:
+_FOR_COND_61:
 	__asm        mov    eax, cbRead;
 	__asm        cmp    cT, eax;
 	__asm        jae    _Te2;
@@ -399,7 +400,7 @@ _Tc0:
 // LINE 225:
 	mmioinfoIn.pchNext = tempBYTEPointerToFoolCrappyMicrosoftCompiler;
 // LINE 226:
-	__asm        jmp    _T61;
+	__asm        jmp    _FOR_NEXT_61;
 // LINE 228:
 _Te2:
 	__asm        push   0;

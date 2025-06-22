@@ -812,7 +812,7 @@ _T65:
 	__asm        mov    TransparentColor, al;
 	__asm        inc    pCompressedBits;
 // LINE 173:
-_Tc8:
+__WHILE_c8:
 	__asm        mov    eax, Top;
 	__asm        cmp    ClipTop, eax;
 	__asm        jle    _Te7;
@@ -824,7 +824,7 @@ _Tc8:
 // LINE 177:
 	Top++;
 // LINE 178:
-	__asm        jmp    _Tc8;
+	__asm        jmp    __WHILE_c8;
 // LINE 180:
 _Te7:
 	__asm        mov    eax, Bottom;
@@ -960,7 +960,7 @@ static void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride
 // LINE 328:
 	pSource += 0x2;
 // LINE 330:
-_T27:
+__WHILE_27:
 	__asm        movsx  eax, Height;
 	__asm        test   eax, eax;
 	__asm        je     _T17a;
@@ -1058,7 +1058,7 @@ _Tfa:
 	__asm        inc    eax;
 	__asm        mov    counter, eax;
 // LINE 383:
-_T103:
+__WHILE_103:
 	__asm        mov    eax, counter;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        dec    counter;
@@ -1083,7 +1083,7 @@ _T134:
 // LINE 389:
 	pSource++;
 // LINE 390:
-	__asm        jmp    _T103;
+	__asm        jmp    __WHILE_103;
 // LINE 391:
 _T13f:
 	__asm        jmp    _T175;
@@ -1106,7 +1106,7 @@ _T14e:
 // LINE 398:
 // Block end:
 _T175:
-	__asm        jmp    _T27;
+	__asm        jmp    __WHILE_27;
 // LINE 399:
 _T17a:
 	return;
@@ -1136,7 +1136,7 @@ static void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, 
 	__asm        neg    eax;
 	__asm        mov    PixelCount, ax;
 // LINE 415:
-_T31:
+__WHILE_31:
 	__asm        movsx  eax, Height;
 	__asm        test   eax, eax;
 	__asm        je     _T328;
@@ -1193,7 +1193,7 @@ _T9d:
 // LINE 448:
 	__asm        movsx  eax, PixelCount;
 	__asm        test   eax, eax;
-	__asm        jge    _Tfc;
+	__asm        jge    __WHILE_fc;
 // LINE 451:
 	__asm        movsx  eax, PixelCount;
 	__asm        neg    eax;
@@ -1208,7 +1208,7 @@ _T9d:
 // LINE 456:
 	counter = 0x0;
 // LINE 458:
-	__asm        jmp    _Tfc;
+	__asm        jmp    __WHILE_fc;
 // LINE 461:
 _Tde:
 	__asm        movsx  eax, PixelCount;
@@ -1224,7 +1224,7 @@ _Tde:
 // LINE 463:
 	PixelCount = 0x0;
 // LINE 470:
-_Tfc:
+__WHILE_fc:
 	__asm        cmp    counter, 0;
 	__asm        je     _T132;
 
@@ -1244,7 +1244,7 @@ _Tfc:
 // LINE 474:
 	PixelCount++;
 // LINE 475:
-	__asm        jmp    _Tfc;
+	__asm        jmp    __WHILE_fc;
 // LINE 476:
 _T132:
 	__asm        jmp    _T30d;
@@ -1262,7 +1262,7 @@ _T137:
 // LINE 482:
 	__asm        movsx  eax, PixelCount;
 	__asm        test   eax, eax;
-	__asm        jge    _T192;
+	__asm        jge    __WHILE_192;
 // LINE 485:
 	__asm        movsx  eax, PixelCount;
 	__asm        neg    eax;
@@ -1275,7 +1275,7 @@ _T137:
 // LINE 489:
 	counter = 0x0;
 // LINE 491:
-	__asm        jmp    _T192;
+	__asm        jmp    __WHILE_192;
 // LINE 494:
 _T17d:
 	__asm        xor    eax, eax;
@@ -1287,7 +1287,7 @@ _T17d:
 // LINE 495:
 	PixelCount = 0x0;
 // LINE 501:
-_T192:
+__WHILE_192:
 	__asm        cmp    counter, 0;
 	__asm        je     _T1c3;
 
@@ -1305,7 +1305,7 @@ _T192:
 // LINE 505:
 	PixelCount++;
 // LINE 506:
-	__asm        jmp    _T192;
+	__asm        jmp    __WHILE_192;
 // LINE 507:
 _T1c3:
 	__asm        jmp    _T30d;
@@ -1360,7 +1360,7 @@ _T22e:
 // LINE 536:
 	__asm        movsx  eax, PixelCount;
 	__asm        test   eax, eax;
-	__asm        jge    _T28d;
+	__asm        jge    __WHILE_28d;
 // LINE 539:
 	__asm        movsx  eax, PixelCount;
 	__asm        neg    eax;
@@ -1375,7 +1375,7 @@ _T22e:
 // LINE 544:
 	counter = 0x0;
 // LINE 546:
-	__asm        jmp    _T28d;
+	__asm        jmp    __WHILE_28d;
 // LINE 549:
 _T26f:
 	__asm        movsx  eax, PixelCount;
@@ -1391,7 +1391,7 @@ _T26f:
 // LINE 551:
 	PixelCount = 0x0;
 // LINE 558:
-_T28d:
+__WHILE_28d:
 	__asm        cmp    counter, 0;
 	__asm        je     _T2d7;
 
@@ -1422,7 +1422,7 @@ _T2c5:
 // LINE 566:
 	PixelCount++;
 // LINE 567:
-	__asm        jmp    _T28d;
+	__asm        jmp    __WHILE_28d;
 // LINE 568:
 _T2d7:
 	__asm        jmp    _T30d;
@@ -1453,7 +1453,7 @@ _T30d:
 // LINE 579:
 // Block end:
 _T323:
-	__asm        jmp    _T31;
+	__asm        jmp    __WHILE_31;
 // LINE 580:
 _T328:
 	return;

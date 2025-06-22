@@ -1737,14 +1737,14 @@ _T2b3:
 	__asm        add    esp, 8;
 	__asm        mov    halfradius, eax;
 // LINE 193:
-_T6e:
+__WHILE_6e:
 	__asm        cmp    dyobj, 0;
 	__asm        je     _T2e8;
 // LINE 196:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;
-	__asm        jne    _Ta0;
+	__asm        jne    __WHILE_a0;
 
 	__asm        movsx  eax, helipartcount;
 	__asm        test   eax, eax;
@@ -1754,7 +1754,7 @@ _T6e:
 	__asm        cmp    eax, 9;
 	__asm        jge    _Tef;
 // LINE 198:
-_Ta0:
+__WHILE_a0:
 	__asm        inc    helipartcount;
 	__asm        movsx  eax, helipartcount;
 	__asm        cmp    eax, 0xA;
@@ -1769,7 +1769,7 @@ _Ta0:
 // LINE 200:
 	dyobj = dyobj->next;
 // LINE 202:
-	__asm        jmp    _Ta0;
+	__asm        jmp    __WHILE_a0;
 // LINE 203:
 _Td4:
 	__asm        cmp    dyobj, 0;
@@ -1780,7 +1780,7 @@ _Td4:
 	__asm        je     _Tef;
 // LINE 204:
 _Tea:
-	__asm        jmp    _T6e;
+	__asm        jmp    __WHILE_6e;
 // LINE 209:
 _Tef:
 	__asm        mov    eax, donotignore;
@@ -1794,7 +1794,7 @@ _Tef:
 // LINE 211:
 	dyobj = dyobj->next;
 // LINE 212:
-	__asm        jmp    _T6e;
+	__asm        jmp    __WHILE_6e;
 // LINE 216:
 _T117:
 	__asm        mov    eax, ignore1;
@@ -1815,7 +1815,7 @@ _T12f:
 _T157:
 	dyobj = dyobj->next;
 // LINE 220:
-	__asm        jmp    _T6e;
+	__asm        jmp    __WHILE_6e;
 // LINE 224:
 _T164:
 	__asm        mov    eax, radiusReduction;
@@ -1915,7 +1915,7 @@ _T2a7:
 // LINE 235:
 	dyobj = dyobj->next;
 // LINE 236:
-	__asm        jmp    _T6e;
+	__asm        jmp    __WHILE_6e;
 // LINE 239:
 // Block end:
 _T2c6:
@@ -1929,7 +1929,7 @@ _T2c6:
 _T2db:
 	dyobj = dyobj->next;
 // LINE 247:
-	__asm        jmp    _T6e;
+	__asm        jmp    __WHILE_6e;
 // LINE 249:
 _T2e8:
 	return founddyobj;
@@ -1983,7 +1983,7 @@ _T2e8:
 // LINE 288:
 	stobj = cptr->stptr;
 // LINE 289:
-_T82:
+__WHILE_82:
 	__asm        cmp    stobj, 0;
 	__asm        je     _Tdc;
 // LINE 292:
@@ -1999,7 +1999,7 @@ _T82:
 _Tcf:
 	stobj = stobj->next;
 // LINE 311:
-	__asm        jmp    _T82;
+	__asm        jmp    __WHILE_82;
 // LINE 314:
 _Tdc:
 	return 0x0;
@@ -2114,7 +2114,7 @@ enum cYObject::MoveErrorCode cYObject::TryTableMove(short speed, unsigned short 
 // LINE 350:
 	attempts = 0x0;
 // LINE 354:
-_T12:
+_LOOP_12:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD0];
 	__asm        add    eax, 2;
@@ -2207,7 +2207,7 @@ _T100:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD0], ax;
 // LINE 376:
-	__asm        jmp    _T12;
+	__asm        jmp    _LOOP_12;
 // LINE 377:
 }
 
@@ -2780,16 +2780,16 @@ _T69d:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xF6];
 	__asm        test   eax, eax;
-	__asm        je     _T6db;
+	__asm        je     _FOR_6e9;
 
 	doAssert(0x8c085, 0x5bc8a4, 0x227, 0x5bc8d4);
 // LINE 552:
-_T6db:
+_FOR_6e9:
 	__asm        mov    word ptr [ebp-0x94], 0;
-	__asm        jmp    _T6f0;
-_T6e9:
+	__asm        jmp    _FOR_COND_6e9;
+_FOR_NEXT_6e9:
 	__asm        inc    word ptr [ebp-0x94];
-_T6f0:
+_FOR_COND_6e9:
 	__asm        movsx  eax, word ptr [ebp-0x94];
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T73d;
@@ -2806,7 +2806,7 @@ _T6f0:
 	__asm        mov    word ptr [ebp-0x90], 1;
 	__asm        jmp    _T74b;
 _T738:
-	__asm        jmp    _T6e9;
+	__asm        jmp    _FOR_NEXT_6e9;
 _T73d:
 	__asm        mov    word ptr [ebp-0x90], 0;
 	__asm        jmp    _T74b;
@@ -2820,7 +2820,7 @@ _T74b:
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x98], eax;
 	__asm        mov    word ptr [ebp-0x9C], 0;
-_T771:
+__WHILE_771:
 	__asm        cmp    dword ptr [ebp-0x98], 0;
 	__asm        je     _T7aa;
 
@@ -2834,7 +2834,7 @@ _T797:
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x98], eax;
-	__asm        jmp    _T771;
+	__asm        jmp    __WHILE_771;
 _T7aa:
 	__asm        jmp    _T7af;
 _T7af:
@@ -2869,11 +2869,12 @@ _T81b:
 // LINE 554:
 	failnonneutral = 0x1;
 // LINE 555:
+_FOR_83c:
 	__asm        mov    word ptr [ebp-0x88], 0;
-	__asm        jmp    _T843;
-_T83c:
+	__asm        jmp    _FOR_COND_83c;
+_FOR_NEXT_83c:
 	__asm        inc    word ptr [ebp-0x88];
-_T843:
+_FOR_COND_83c:
 	__asm        movsx  eax, word ptr [ebp-0x88];
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T896;
@@ -2891,7 +2892,7 @@ _T843:
 	thisneutralforme = 0x1;
 	__asm        jmp    _T8a1;
 _T891:
-	__asm        jmp    _T83c;
+	__asm        jmp    _FOR_NEXT_83c;
 _T896:
 	thisneutralforme = 0x0;
 	__asm        jmp    _T8a1;
@@ -3192,11 +3193,12 @@ __RETURN:
 	overallcellx = 0x0;
 	overallcelly = 0x0;
 // LINE 666:
+_FOR_28:
 	count = 0x0;
-	__asm        jmp    _T2c;
-_T28:
+	__asm        jmp    _FOR_COND_28;
+_FOR_NEXT_28:
 	count++;
-_T2c:
+_FOR_COND_28:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T11c;
@@ -3238,7 +3240,7 @@ _Td1:
 	__asm        test   eax, eax;
 	__asm        jne    _Te8;
 
-	__asm        jmp    _T28;
+	__asm        jmp    _FOR_NEXT_28;
 // LINE 669:
 _Te8:
 	__asm        mov    eax, obj;
@@ -3259,7 +3261,7 @@ _Te8:
 	numcounted++;
 // LINE 674:
 _T117:
-	__asm        jmp    _T28;
+	__asm        jmp    _FOR_NEXT_28;
 // LINE 675:
 _T11c:
 	__asm        movsx  eax, numcounted;
@@ -3325,16 +3327,17 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 	reinterpret_cast<uint32_t>(overallzloc) = 0x0;
 	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&overallzloc) + 4) = 0x0;
 // LINE 692:
+_FOR_79:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
 	__asm        movsx  eax, todist;
 	__asm        sub    ecx, eax;
 	__asm        mov    cellx, cx;
-	__asm        jmp    _T7d;
-_T79:
+	__asm        jmp    _FOR_COND_79;
+_FOR_NEXT_79:
 	cellx++;
-_T7d:
+_FOR_COND_79:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
@@ -3342,18 +3345,19 @@ _T7d:
 	__asm        add    ecx, eax;
 	__asm        movsx  eax, cellx;
 	__asm        cmp    ecx, eax;
-	__asm        jl     _T138;
+	__asm        jl     _FOR_152;
 // LINE 693:
+_FOR_b4:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        movsx  eax, todist;
 	__asm        sub    ecx, eax;
 	__asm        mov    celly, cx;
-	__asm        jmp    _Tb8;
-_Tb4:
+	__asm        jmp    _FOR_COND_b4;
+_FOR_NEXT_b4:
 	celly++;
-_Tb8:
+_FOR_COND_b4:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -3385,22 +3389,22 @@ _Tb8:
 	doAssert(0x8c085, 0x5bc9b4, 0x2b8, 0x5bc9cc);
 // LINE 697:
 _T12e:
-	__asm        jmp    _Tb4;
+	__asm        jmp    _FOR_NEXT_b4;
 // LINE 698:
 _T133:
-	__asm        jmp    _T79;
+	__asm        jmp    _FOR_NEXT_79;
 // LINE 700:
-_T138:
+_FOR_152:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
 	__asm        movsx  eax, todist;
 	__asm        sub    ecx, eax;
 	__asm        mov    cellx, cx;
-	__asm        jmp    _T156;
-_T152:
+	__asm        jmp    _FOR_COND_152;
+_FOR_NEXT_152:
 	cellx++;
-_T156:
+_FOR_COND_152:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
@@ -3410,16 +3414,17 @@ _T156:
 	__asm        cmp    ecx, eax;
 	__asm        jl     _T3bc;
 // LINE 701:
+_FOR_18d:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        movsx  eax, todist;
 	__asm        sub    ecx, eax;
 	__asm        mov    celly, cx;
-	__asm        jmp    _T191;
-_T18d:
+	__asm        jmp    _FOR_COND_18d;
+_FOR_NEXT_18d:
 	celly++;
-_T191:
+_FOR_COND_18d:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -3450,12 +3455,12 @@ _T1f4:
 	__asm        test   al, 4;
 	__asm        je     _T207;
 // LINE 705:
-	__asm        jmp    _T18d;
+	__asm        jmp    _FOR_NEXT_18d;
 // LINE 706:
 _T207:
 	dyobj = cptr->dyptr;
 // LINE 707:
-_T210:
+__WHILE_210:
 	__asm        cmp    dyobj, 0;
 	__asm        je     _T3a3;
 // LINE 708:
@@ -3563,7 +3568,7 @@ _T32f:
 _T396:
 	dyobj = dyobj->next;
 // LINE 721:
-	__asm        jmp    _T210;
+	__asm        jmp    __WHILE_210;
 // LINE 722:
 _T3a3:
 	__asm        mov    eax, cptr;
@@ -3573,10 +3578,10 @@ _T3a3:
 	__asm        mov    [ecx], ax;
 // LINE 723:
 // Block end:
-	__asm        jmp    _T18d;
+	__asm        jmp    _FOR_NEXT_18d;
 // LINE 724:
 _T3b7:
-	__asm        jmp    _T152;
+	__asm        jmp    _FOR_NEXT_152;
 // LINE 725:
 _T3bc:
 	__asm        movsx  eax, numcounted;
@@ -3658,16 +3663,17 @@ unsigned short cYObject::GetNearbyFire(short todist, short * firecellx, short * 
 	/*bp-0xc*/   /*unpacked*/ struct _CELL_INFO *cptr;
 
 // LINE 748:
+_FOR_26:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
 	__asm        movsx  eax, todist;
 	__asm        sub    ecx, eax;
 	__asm        mov    cellx, cx;
-	__asm        jmp    _T2a;
-_T26:
+	__asm        jmp    _FOR_COND_26;
+_FOR_NEXT_26:
 	cellx++;
-_T2a:
+_FOR_COND_26:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
@@ -3675,18 +3681,19 @@ _T2a:
 	__asm        add    ecx, eax;
 	__asm        movsx  eax, cellx;
 	__asm        cmp    ecx, eax;
-	__asm        jl     _Te5;
+	__asm        jl     _FOR_ff;
 // LINE 749:
+_FOR_61:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        movsx  eax, todist;
 	__asm        sub    ecx, eax;
 	__asm        mov    celly, cx;
-	__asm        jmp    _T65;
-_T61:
+	__asm        jmp    _FOR_COND_61;
+_FOR_NEXT_61:
 	celly++;
-_T65:
+_FOR_COND_61:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -3718,22 +3725,22 @@ _T65:
 	doAssert(0x8c085, 0x5bcaa8, 0x2f0, 0x5bcac0);
 // LINE 753:
 _Tdb:
-	__asm        jmp    _T61;
+	__asm        jmp    _FOR_NEXT_61;
 // LINE 754:
 _Te0:
-	__asm        jmp    _T26;
+	__asm        jmp    _FOR_NEXT_26;
 // LINE 756:
-_Te5:
+_FOR_ff:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
 	__asm        movsx  eax, todist;
 	__asm        sub    ecx, eax;
 	__asm        mov    cellx, cx;
-	__asm        jmp    _T103;
-_Tff:
+	__asm        jmp    _FOR_COND_ff;
+_FOR_NEXT_ff:
 	cellx++;
-_T103:
+_FOR_COND_ff:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
@@ -3743,16 +3750,17 @@ _T103:
 	__asm        cmp    ecx, eax;
 	__asm        jl     _T1f8;
 // LINE 757:
+_FOR_13a:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
 	__asm        movsx  eax, todist;
 	__asm        sub    ecx, eax;
 	__asm        mov    celly, cx;
-	__asm        jmp    _T13e;
-_T13a:
+	__asm        jmp    _FOR_COND_13a;
+_FOR_NEXT_13a:
 	celly++;
-_T13e:
+_FOR_COND_13a:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -3781,7 +3789,7 @@ _T1a1:
 	__asm        test   al, 4;
 	__asm        je     _T1b4;
 // LINE 761:
-	__asm        jmp    _T13a;
+	__asm        jmp    _FOR_NEXT_13a;
 // LINE 762:
 _T1b4:
 	__asm        mov    eax, cptr;
@@ -3806,10 +3814,10 @@ _T1df:
 	__asm        mov    ecx, cptr;
 	__asm        mov    [ecx], ax;
 // LINE 768:
-	__asm        jmp    _T13a;
+	__asm        jmp    _FOR_NEXT_13a;
 // LINE 769:
 _T1f3:
-	__asm        jmp    _Tff;
+	__asm        jmp    _FOR_NEXT_ff;
 // LINE 770:
 _T1f8:
 	return 0x0;
@@ -3830,11 +3838,12 @@ _T1f8:
 // LINE 777:
 	closestdist = 0xffff;
 // LINE 778:
+_FOR_2b:
 	count = 0x0;
-	__asm        jmp    _T2f;
-_T2b:
+	__asm        jmp    _FOR_COND_2b;
+_FOR_NEXT_2b:
 	count++;
-_T2f:
+_FOR_COND_2b:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T281;
@@ -3886,14 +3895,14 @@ _Tfa:
 	__asm        test   eax, eax;
 	__asm        jne    _T111;
 
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 782:
 _T111:
 	__asm        mov    eax, obj;
 	__asm        cmp    this, eax;
 	__asm        jne    _T122;
 
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 783:
 _T122:
 	__asm        cmp    missionsupertype, 0xFFFFFFFE;
@@ -3904,7 +3913,7 @@ _T122:
 	__asm        cmp    eax, missionsupertype;
 	__asm        je     _T144;
 
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 784:
 _T144:
 	__asm        cmp    missiontype, 0xFFFFFFFE;
@@ -3915,7 +3924,7 @@ _T144:
 	__asm        cmp    eax, missiontype;
 	__asm        je     _T166;
 
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 786:
 _T166:
 	__asm        cmp    missionsupertype, 0xFFFFFFFE;
@@ -3935,7 +3944,7 @@ _T196:
 	__asm        test   eax, eax;
 	__asm        je     _T1b7;
 
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 788:
 _T1b7:
 	__asm        test   reinterpret_cast<uint32_t>(onlyvisible), 0xFFFF;
@@ -3946,7 +3955,7 @@ _T1b7:
 	__asm        test   eax, eax;
 	__asm        jne    _T1db;
 
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 789:
 _T1db:
 	dyn = (obj + 0x24);
@@ -3997,7 +4006,7 @@ _T24f:
 // LINE 796:
 // Block end:
 _T27c:
-	__asm        jmp    _T2b;
+	__asm        jmp    _FOR_NEXT_2b;
 // LINE 797:
 _T281:
 	__asm        cmp    dist, 0;
@@ -4064,11 +4073,12 @@ _T77:
 // LINE 822:
 	found = 0x0;
 // LINE 823:
+_FOR_1b:
 	count = 0x0;
-	__asm        jmp    _T1f;
-_T1b:
+	__asm        jmp    _FOR_COND_1b;
+_FOR_NEXT_1b:
 	count++;
-_T1f:
+_FOR_COND_1b:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T145;
@@ -4112,7 +4122,7 @@ _Tc4:
 	__asm        test   eax, eax;
 	__asm        jne    _Tdb;
 
-	__asm        jmp    _T1b;
+	__asm        jmp    _FOR_NEXT_1b;
 // LINE 826:
 _Tdb:
 	__asm        movsx  eax, visible;
@@ -4124,7 +4134,7 @@ _Tdb:
 	__asm        test   eax, eax;
 	__asm        jne    _Tff;
 
-	__asm        jmp    _T1b;
+	__asm        jmp    _FOR_NEXT_1b;
 // LINE 827:
 _Tff:
 	__asm        movsx  eax, visible;
@@ -4136,7 +4146,7 @@ _Tff:
 	__asm        test   eax, eax;
 	__asm        je     _T122;
 
-	__asm        jmp    _T1b;
+	__asm        jmp    _FOR_NEXT_1b;
 // LINE 829:
 _T122:
 	__asm        mov    eax, obj;
@@ -4149,7 +4159,7 @@ _T122:
 // LINE 831:
 // Block end:
 _T140:
-	__asm        jmp    _T1b;
+	__asm        jmp    _FOR_NEXT_1b;
 // LINE 832:
 _T145:
 	return 0x0;
@@ -4207,11 +4217,12 @@ __RETURN:
 // LINE 850:
 	found = 0x0;
 // LINE 851:
+_FOR_1e:
 	count = 0x0;
-	__asm        jmp    _T22;
-_T1e:
+	__asm        jmp    _FOR_COND_1e;
+_FOR_NEXT_1e:
 	count++;
-_T22:
+_FOR_COND_1e:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T129;
@@ -4255,7 +4266,7 @@ _Tc7:
 	__asm        test   eax, eax;
 	__asm        jne    _Tde;
 
-	__asm        jmp    _T1e;
+	__asm        jmp    _FOR_NEXT_1e;
 // LINE 854:
 _Tde:
 	__asm        jmp    _Te3;
@@ -4276,7 +4287,7 @@ _T11e:
 // LINE 858:
 // Block end:
 _T124:
-	__asm        jmp    _T1e;
+	__asm        jmp    _FOR_NEXT_1e;
 // LINE 860:
 _T129:
 	return found;
@@ -4646,7 +4657,7 @@ _Ta8:
 	__asm        jmp    _Tad;
 _Tad:
 	__asm        jmp    _Tca;
-_Tb2:
+_LOOP_b2:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _Tc5;
 
@@ -4717,7 +4728,7 @@ _T16e:
 _T174:
 	__asm        jmp    _T18a;
 _T179:
-	__asm        jmp    _Tb2;
+	__asm        jmp    _LOOP_b2;
 _T17e:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    _T18a;
@@ -5944,11 +5955,12 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(/*unpacked*/ struct Tre
 	__asm        add    esp, 8;
 	__asm        mov    loctype, eax;
 // LINE 1291:
+_FOR_41:
 	__asm        mov    word ptr [ebp-0xC], 0;
-	__asm        jmp    _T45;
-_T41:
+	__asm        jmp    _FOR_COND_41;
+_FOR_NEXT_41:
 	__asm        inc    word ptr [ebp-0xC];
-_T45:
+_FOR_COND_41:
 	__asm        movsx  eax, word ptr [ebp-0xC];
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T80;
@@ -5964,7 +5976,7 @@ _T45:
 
 	__asm        jmp    _T97;
 _T7b:
-	__asm        jmp    _T41;
+	__asm        jmp    _FOR_NEXT_41;
 _T80:
 	__asm        jmp    _Ta3;
 
@@ -6866,11 +6878,11 @@ _T66:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD0];
 	__asm        cmp    eax, 0x1E;
-	__asm        jl     _Td8;
+	__asm        jl     __WHILE_d8;
 _Tbc:
 	doAssert(0x8c085, 0x5bd100, 0x582, 0x5bd11c);
 // LINE 1411:
-_Td8:
+__WHILE_d8:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD0];
 	__asm        test   eax, eax;
@@ -6881,7 +6893,7 @@ _Td8:
 	__asm        add    eax, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD0], ax;
-	__asm        jmp    _Td8;
+	__asm        jmp    __WHILE_d8;
 // LINE 1413:
 _T106:
 	__asm        mov    eax, this;

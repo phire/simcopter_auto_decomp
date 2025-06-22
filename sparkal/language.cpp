@@ -1128,14 +1128,14 @@ _T119:
 	stringLanguageName.reference = 0x0;
 _T120:
 	stringLanguageName.c_str_ptr = 0x0;
-	__asm        jmp    _T12c;
+	__asm        jmp    _FOR_138;
 // LINE 134:
-_T12c:
+_FOR_138:
 	i = 0x1;
-	__asm        jmp    _T13b;
-_T138:
+	__asm        jmp    _FOR_COND_138;
+_FOR_NEXT_138:
 	i++;
-_T13b:
+_FOR_COND_138:
 	__asm        cmp    i, 0x2D;
 	__asm        jg     _T2ee;
 // LINE 137:
@@ -1284,7 +1284,7 @@ _T2e1:
 	__asm        jmp    __RETURN;
 // LINE 144:
 _T2e9:
-	__asm        jmp    _T138;
+	__asm        jmp    _FOR_NEXT_138;
 // LINE 145:
 _T2ee:
 	__asm        mov    dword ptr [ebp-0x20], 0;
@@ -1838,12 +1838,12 @@ int32_t LanguageManager::GetNextLanguage(int32_t nCurrentLanguage) {
 	__asm        jge    _T23;
 
 	__asm        cmp    nCurrentLanguage, 0;
-	__asm        jge    _T2a;
+	__asm        jge    __DO_2a;
 // LINE 196:
 _T23:
 	return 0x0;
 // LINE 199:
-_T2a:
+__DO_2a:
 	nCurrentLanguage++;
 // LINE 200:
 	__asm        cmp    nCurrentLanguage, 0x2D;
@@ -1858,10 +1858,10 @@ _T3e:
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    _T5e;
-
+__DO_WHILE_2a:
 	__asm        mov    eax, nCurrentLanguage;
 	__asm        cmp    nInitialLanguage, eax;
-	__asm        jne    _T2a;
+	__asm        jne    __DO_2a;
 // LINE 203:
 _T5e:
 	return nCurrentLanguage;

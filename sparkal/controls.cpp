@@ -5997,7 +5997,7 @@ _T27:
 _T39:
 	this-><ButtonGroup+0x7c:4> = 0x1;
 // LINE 899:
-_T43:
+_LOOP_43:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x10], eax;
@@ -6080,7 +6080,7 @@ _T113:
 	__asm        jmp    _T11e;
 // LINE 905:
 _T11e:
-	__asm        jmp    _T43;
+	__asm        jmp    _LOOP_43;
 // LINE 906:
 _T123:
 	this-><ButtonGroup+0x7c:4> = 0x0;
@@ -6113,7 +6113,7 @@ _T27:
 _T3c:
 	this-><ButtonGroup+0x80:4> = 0x1;
 // LINE 926:
-_T49:
+_LOOP_49:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x20], eax;
@@ -6195,7 +6195,7 @@ _T114:
 	__asm        jmp    _T11f;
 // LINE 932:
 _T11f:
-	__asm        jmp    _T49;
+	__asm        jmp    _LOOP_49;
 // LINE 933:
 _T124:
 	__asm        mov    eax, this;
@@ -6248,7 +6248,7 @@ _T27:
 _T3c:
 	this-><ButtonGroup+0x80:4> = 0x1;
 // LINE 956:
-_T49:
+_LOOP_49:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x20], eax;
@@ -6331,7 +6331,7 @@ _T117:
 	__asm        jmp    _T122;
 // LINE 962:
 _T122:
-	__asm        jmp    _T49;
+	__asm        jmp    _LOOP_49;
 // LINE 964:
 _T127:
 	__asm        mov    eax, this;
@@ -6390,7 +6390,7 @@ _T27:
 _T43:
 	this-><ButtonGroup+0x80:4> = 0x1;
 // LINE 988:
-_T50:
+_LOOP_50:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x24], eax;
@@ -6471,7 +6471,7 @@ _T117:
 	__asm        jmp    _T122;
 // LINE 995:
 _T122:
-	__asm        jmp    _T50;
+	__asm        jmp    _LOOP_50;
 // LINE 997:
 _T127:
 	__asm        mov    eax, this;
@@ -6515,9 +6515,9 @@ int32_t ButtonGroup::GetSelection(/*packed*/ class RadioButtonWindow*& radioButt
 	__asm        mov    iterator.node, eax;
 	__asm        jmp    _T22;
 _T22:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 1014:
-_T27:
+_LOOP_27:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x18], eax;
@@ -6583,7 +6583,7 @@ _Td6:
 	__asm        jmp    _Te1;
 // LINE 1020:
 _Te1:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 1021:
 _Te6:
 	return 0x0;
@@ -6628,7 +6628,7 @@ _T22:
 _T27:
 	i = 0x0;
 // LINE 1053:
-_T2e:
+_LOOP_2e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x1C], eax;
@@ -6692,7 +6692,7 @@ _Tcf:
 	__asm        jmp    _Tda;
 // LINE 1058:
 _Tda:
-	__asm        jmp    _T2e;
+	__asm        jmp    _LOOP_2e;
 // LINE 1059:
 _Tdf:
 	return 0xffffffff;
@@ -6712,9 +6712,9 @@ int32_t ButtonGroup::IsButtonInGroup(/*packed*/ class RadioButtonWindow *buttonT
 	__asm        mov    i.node, eax;
 	__asm        jmp    _T22;
 _T22:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 1071:
-_T27:
+_LOOP_27:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x10], eax;
@@ -6769,7 +6769,7 @@ _Taf:
 	__asm        jmp    _Tba;
 // LINE 1075:
 _Tba:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 1076:
 _Tbf:
 	return 0x0;
@@ -9566,11 +9566,12 @@ _T2a1:
 // LINE 1668:
 	lPageDownButtonStartPosition = (this-><ScrollBarWindow+0x28> - lThumbWidth);
 // LINE 1670:
+_FOR_32a:
 	i = (this-><ScrollBarWindow+0x20> + lThumbWidth);
-	__asm        jmp    _T330;
-_T32a:
+	__asm        jmp    _FOR_COND_32a;
+_FOR_NEXT_32a:
 	i += lThumbWidth;
-_T330:
+_FOR_COND_32a:
 	__asm        mov    eax, lPageDownButtonStartPosition;
 	__asm        cmp    i, eax;
 	__asm        jge    _T378;
@@ -9599,7 +9600,7 @@ _T330:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1674:
-	__asm        jmp    _T32a;
+	__asm        jmp    _FOR_NEXT_32a;
 // LINE 1678:
 _T378:
 	__asm        mov    eax, lThumbHeight;
@@ -9685,11 +9686,12 @@ _T3f9:
 // LINE 1692:
 	lPageDownButtonStartPosition = (this-><ScrollBarWindow+0x2c> - lThumbHeight);
 // LINE 1694:
+_FOR_453:
 	i = (this-><ScrollBarWindow+0x24> + lThumbHeight);
-	__asm        jmp    _T459;
-_T453:
+	__asm        jmp    _FOR_COND_453;
+_FOR_NEXT_453:
 	i += lThumbHeight;
-_T459:
+_FOR_COND_453:
 	__asm        mov    eax, lPageDownButtonStartPosition;
 	__asm        cmp    i, eax;
 	__asm        jge    _T4a3;
@@ -9719,7 +9721,7 @@ _T459:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1698:
-	__asm        jmp    _T453;
+	__asm        jmp    _FOR_NEXT_453;
 // LINE 1702:
 _T4a3:
 	__asm        mov    eax, lThumbHeight;
@@ -11514,7 +11516,7 @@ _T192:
 _T1cd:
 	i = 0x0;
 // LINE 2290:
-_T1d4:
+__WHILE_1d4:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0xB4], ecx;
@@ -11566,16 +11568,17 @@ _T256:
 _T261:
 	i++;
 // LINE 2293:
-	__asm        jmp    _T1d4;
+	__asm        jmp    __WHILE_1d4;
 // LINE 2296:
 _T269:
 	j = 0x0;
 // LINE 23:
-	__asm        jmp    _T278;
+_FOR_275:
+	__asm        jmp    _FOR_COND_275;
 // LINE 2296:
-_T275:
+_FOR_NEXT_275:
 	j++;
-_T278:
+_FOR_COND_275:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x4C], eax;
@@ -11921,7 +11924,7 @@ _T72f:
 _T73a:
 	i++;
 // LINE 2319:
-	__asm        jmp    _T275;
+	__asm        jmp    _FOR_NEXT_275;
 // LINE 2321:
 _T742:
 	__asm        mov    eax, this;
@@ -12084,7 +12087,7 @@ _T40:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-0x3C], eax;
-_T4c:
+_LOOP_4c:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        cmp    [ebp-0x3C], eax;
 	__asm        jne    _T62;
@@ -12200,7 +12203,7 @@ _T18a:
 	this->myStringList.length--;
 	__asm        jmp    _T195;
 _T195:
-	__asm        jmp    _T4c;
+	__asm        jmp    _LOOP_4c;
 _T19a:
 	__asm        jmp    _T19f;
 // LINE 2387:
@@ -12953,14 +12956,14 @@ _T2e:
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    _T44;
 _T44:
-	__asm        jmp    _T49;
+	__asm        jmp    _FOR_55;
 // LINE 2473:
-_T49:
+_FOR_55:
 	i = 0x0;
-	__asm        jmp    _T58;
-_T55:
+	__asm        jmp    _FOR_COND_55;
+_FOR_NEXT_55:
 	i++;
-_T58:
+_FOR_COND_55:
 	__asm        mov    eax, i;
 	__asm        cmp    lStringCount, eax;
 	__asm        jle    _Tad;
@@ -12988,7 +12991,7 @@ _T9d:
 	__asm        jmp    _Ta8;
 // LINE 2481:
 _Ta8:
-	__asm        jmp    _T55;
+	__asm        jmp    _FOR_NEXT_55;
 // LINE 2482:
 _Tad:
 	return 0x0;
@@ -13186,9 +13189,9 @@ int32_t ListBoxWindow::GetIndexFromString(long& lIndex, /*packed*/ class basic_s
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    _T29;
 _T29:
-	__asm        jmp    _T2e;
+	__asm        jmp    _LOOP_2e;
 // LINE 2514:
-_T2e:
+_LOOP_2e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x24], eax;
@@ -13308,7 +13311,7 @@ _T167:
 _T172:
 	i++;
 // LINE 2521:
-	__asm        jmp    _T2e;
+	__asm        jmp    _LOOP_2e;
 // LINE 2522:
 _T17a:
 	return 0x0;
@@ -13461,9 +13464,9 @@ _T171:
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    _T18e;
 _T18e:
-	__asm        jmp    _T193;
+	__asm        jmp    _LOOP_193;
 // LINE 2553:
-_T193:
+_LOOP_193:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x18], eax;
@@ -13601,7 +13604,7 @@ _T2fb:
 _T306:
 	i++;
 // LINE 2560:
-	__asm        jmp    _T193;
+	__asm        jmp    _LOOP_193;
 // LINE 2562:
 // Block end:
 _T30e:
@@ -13771,9 +13774,9 @@ _T1b7:
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    _T1d7;
 _T1d7:
-	__asm        jmp    _T1dc;
+	__asm        jmp    _LOOP_1dc;
 // LINE 2596:
-_T1dc:
+_LOOP_1dc:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x1C], eax;
@@ -14012,7 +14015,7 @@ _T506:
 _T511:
 	i++;
 // LINE 2603:
-	__asm        jmp    _T1dc;
+	__asm        jmp    _LOOP_1dc;
 // LINE 2605:
 // Block end:
 _T519:
@@ -14633,9 +14636,9 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	__asm        mov    tempStringListIterator.node, eax;
 	__asm        jmp    _T29;
 _T29:
-	__asm        jmp    _T2e;
+	__asm        jmp    _LOOP_2e;
 // LINE 2905:
-_T2e:
+_LOOP_2e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x14], eax;
@@ -14796,7 +14799,7 @@ _T1d4:
 _T1df:
 	i++;
 // LINE 2912:
-	__asm        jmp    _T2e;
+	__asm        jmp    _LOOP_2e;
 // LINE 2913:
 _T1e7:
 	return 0x0;
@@ -14895,31 +14898,31 @@ _Tf5:
 	__asm        mov    dword ptr [ebp-0x25C], 0x40;
 	__asm        lea    eax, [ebp-0x234];
 	__asm        mov    [ebp-0x260], eax;
-_T10b:
+__WHILE_10b:
 	__asm        dec    dword ptr [ebp-0x25C];
 	__asm        js     _T12e;
 
 	__asm        mov    ecx, [ebp-0x260];
 	__asm        call   list<basic_string<char>>::list<basic_string<char>>;
 	__asm        add    dword ptr [ebp-0x260], 8;
-	__asm        jmp    _T10b;
+	__asm        jmp    __WHILE_10b;
 _T12e:
 	__asm        jmp    _T133;
 _T133:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
-_T13a:
+_LOOP_13a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T154;
 
-	__asm        jmp    _T32a;
+	__asm        jmp    __WHILE_32a;
 
 	__asm        jmp    _T154;
 _T154:
 	__asm        jmp    _T166;
 
 	__asm        cmp    dword ptr [ebp-0x258], 0;
-	__asm        jne    _T32a;
+	__asm        jne    __WHILE_32a;
 _T166:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -14950,7 +14953,7 @@ _T1ae:
 	__asm        lea    ecx, [ebp-0x34];
 	__asm        call   list<basic_string<char>>::splice;
 	__asm        mov    dword ptr [ebp-0x238], 0;
-_T1d8:
+__WHILE_1d8:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    [ebp-0x238], eax;
 	__asm        jge    _T2ac;
@@ -14998,7 +15001,7 @@ _T271:
 _T2a2:
 	__asm        jmp    _T2a7;
 _T2a7:
-	__asm        jmp    _T1d8;
+	__asm        jmp    __WHILE_1d8;
 _T2ac:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x26C], eax;
@@ -15028,8 +15031,8 @@ _T313:
 
 	__asm        inc    dword ptr [ebp-0x2C];
 _T325:
-	__asm        jmp    _T13a;
-_T32a:
+	__asm        jmp    _LOOP_13a;
+__WHILE_32a:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x248], eax;
 	__asm        dec    dword ptr [ebp-0x2C];
@@ -15042,7 +15045,7 @@ _T32a:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x74;
 	__asm        call   list<basic_string<char>>::merge;
-	__asm        jmp    _T32a;
+	__asm        jmp    __WHILE_32a;
 _T361:
 	__asm        mov    dword ptr [ebp-0x274], 0x40;
 	__asm        lea    eax, [ebp-0x234];
@@ -15050,14 +15053,14 @@ _T361:
 	__asm        mov    eax, [ebp-0x274];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x278], eax;
-_T386:
+__WHILE_386:
 	__asm        dec    dword ptr [ebp-0x274];
 	__asm        js     _T3a9;
 
 	__asm        sub    dword ptr [ebp-0x278], 8;
 	__asm        mov    ecx, [ebp-0x278];
 	__asm        call   list<basic_string<char>>::~list<basic_string<char>>;
-	__asm        jmp    _T386;
+	__asm        jmp    __WHILE_386;
 _T3a9:
 	__asm        jmp    _T3ae;
 _T3ae:
@@ -15765,9 +15768,9 @@ _T5b:
 	__asm        mov    rectNewWindow.right, eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    rectNewWindow.bottom, eax;
-	__asm        jmp    _T78;
+	__asm        jmp    _LOOP_78;
 // LINE 3180:
-_T78:
+_LOOP_78:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x2C], eax;
@@ -15927,7 +15930,7 @@ _T21c:
 	__asm        jmp    _T227;
 // LINE 3185:
 _T227:
-	__asm        jmp    _T78;
+	__asm        jmp    _LOOP_78;
 // LINE 3186:
 _T22c:
 	rectNewWindow.right = ((rectNewWindow.left + lCurrentLongestLineWidth) + 0xa);

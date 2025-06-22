@@ -1140,7 +1140,7 @@ int32_t FireEngineClass::ScanForFire(/*packed*/ struct _GridCoordinates fireloc)
 // LINE 430:
 	this->currentDyObjFire = 0x0;
 // LINE 431:
-_T3f:
+__WHILE_3f:
 	__asm        lea    eax, fireloc.x;
 	__asm        push   eax;
 	__asm        lea    ecx, spiral.currDist;
@@ -1184,7 +1184,7 @@ _Tb1:
 // LINE 442:
 	stobj = cptr->stptr;
 // LINE 443:
-_Td5:
+__WHILE_d5:
 	__asm        cmp    stobj, 0;
 	__asm        je     _T153;
 // LINE 445:
@@ -1194,7 +1194,7 @@ _Td5:
 // LINE 448:
 	stobj = stobj->next;
 // LINE 449:
-	__asm        jmp    _Td5;
+	__asm        jmp    __WHILE_d5;
 // LINE 452:
 _Tf9:
 	fires_found++;
@@ -1222,12 +1222,12 @@ _T13e:
 _T146:
 	stobj = stobj->next;
 // LINE 469:
-	__asm        jmp    _Td5;
+	__asm        jmp    __WHILE_d5;
 // LINE 472:
 _T153:
 	dyobj = cptr->dyptr;
 // LINE 473:
-_T15c:
+__WHILE_15c:
 	__asm        cmp    dyobj, 0;
 	__asm        je     _T1d1;
 // LINE 476:
@@ -1258,10 +1258,10 @@ _T1c4:
 	dyobj = dyobj->next;
 // LINE 489:
 _T1cc:
-	__asm        jmp    _T15c;
+	__asm        jmp    __WHILE_15c;
 // LINE 490:
 _T1d1:
-	__asm        jmp    _T3f;
+	__asm        jmp    __WHILE_3f;
 // LINE 494:
 _T1d6:
 	__asm        mov    eax, this;

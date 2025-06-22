@@ -139,7 +139,7 @@ _T39:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T99;
 // LINE 41:
-_T67:
+__WHILE_67:
 	__asm        mov    eax, lpDD;
 	__asm        push   eax;
 	__asm        mov    eax, lpDD;
@@ -148,7 +148,7 @@ _T67:
 	__asm        cmp    eax, 0x8876021C;
 	__asm        jne    _T87;
 
-	__asm        jmp    _T67;
+	__asm        jmp    __WHILE_67;
 // LINE 42:
 _T87:
 	lpDD = 0x0;
@@ -164,11 +164,11 @@ _T99:
 void DDDisable() {
 // LINE 60:
 	__asm        cmp    lpDD, 0;
-	__asm        jne    _T18;
+	__asm        jne    __WHILE_18;
 // LINE 61:
 	return;
 // LINE 65:
-_T18:
+__WHILE_18:
 	__asm        mov    eax, lpDD;
 	__asm        push   eax;
 	__asm        mov    eax, lpDD;
@@ -177,7 +177,7 @@ _T18:
 	__asm        cmp    eax, 0x8876021C;
 	__asm        jne    _T38;
 
-	__asm        jmp    _T18;
+	__asm        jmp    __WHILE_18;
 // LINE 66:
 _T38:
 	lpDD = 0x0;
@@ -355,11 +355,12 @@ _T4f:
 _Tbb:
 	DebugOutput(0x59726c);
 // LINE 166:
+_FOR_d4:
 	i = 0x0;
-	__asm        jmp    _Td7;
-_Td4:
+	__asm        jmp    _FOR_COND_d4;
+_FOR_NEXT_d4:
 	i++;
-_Td7:
+_FOR_COND_d4:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T157;
 // LINE 168:
@@ -401,7 +402,7 @@ _Td7:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x40D], 0;
 // LINE 172:
-	__asm        jmp    _Td4;
+	__asm        jmp    _FOR_NEXT_d4;
 // LINE 179:
 _T157:
 	__asm        push   0;

@@ -67,13 +67,14 @@ void S3RoadDataInit() {
 	reinterpret_cast<uint32_t>(straightLegSize) = 0x9999999a;
 	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&straightLegSize) + 4) = 0x40199999;
 // LINE 54:
+_FOR_26:
 	leg = 0x0;
-	__asm        jmp    _T29;
-_T26:
+	__asm        jmp    _FOR_COND_26;
+_FOR_NEXT_26:
 	leg++;
-_T29:
+_FOR_COND_26:
 	__asm        cmp    leg, 0xB;
-	__asm        jge    _T7a;
+	__asm        jge    _FOR_86;
 // LINE 56:
 	__asm        fld    OT[0].x;
 	__asm        fmul   qword ptr ds:[0x593400];
@@ -91,16 +92,16 @@ _T29:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[0][0][0].z[ecx*8], eax;
 // LINE 58:
-	__asm        jmp    _T26;
+	__asm        jmp    _FOR_NEXT_26;
 // LINE 59:
-_T7a:
+_FOR_86:
 	leg = 0x0;
-	__asm        jmp    _T89;
-_T86:
+	__asm        jmp    _FOR_COND_86;
+_FOR_NEXT_86:
 	leg++;
-_T89:
+_FOR_COND_86:
 	__asm        cmp    leg, 0xB;
-	__asm        jge    _Tda;
+	__asm        jge    _FOR_e6;
 // LINE 61:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x40], eax;
@@ -118,16 +119,16 @@ _T89:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[0][1][0].z[ecx*8], eax;
 // LINE 63:
-	__asm        jmp    _T86;
+	__asm        jmp    _FOR_NEXT_86;
 // LINE 64:
-_Tda:
+_FOR_e6:
 	leg = 0x0;
-	__asm        jmp    _Te9;
-_Te6:
+	__asm        jmp    _FOR_COND_e6;
+_FOR_NEXT_e6:
 	leg++;
-_Te9:
+_FOR_COND_e6:
 	__asm        cmp    leg, 0xB;
-	__asm        jge    _T13a;
+	__asm        jge    _FOR_146;
 // LINE 66:
 	__asm        fld    OT[2].x;
 	__asm        fmul   qword ptr ds:[0x593400];
@@ -145,14 +146,14 @@ _Te9:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[0][2][0].z[ecx*8], eax;
 // LINE 68:
-	__asm        jmp    _Te6;
+	__asm        jmp    _FOR_NEXT_e6;
 // LINE 69:
-_T13a:
+_FOR_146:
 	leg = 0x0;
-	__asm        jmp    _T149;
-_T146:
+	__asm        jmp    _FOR_COND_146;
+_FOR_NEXT_146:
 	leg++;
-_T149:
+_FOR_COND_146:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T19a;
 // LINE 71:
@@ -172,7 +173,7 @@ _T149:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[0][3][0].z[ecx*8], eax;
 // LINE 73:
-	__asm        jmp    _T146;
+	__asm        jmp    _FOR_NEXT_146;
 // LINE 85:
 _T19a:
 	DiagVector[0].x = 0x1;
@@ -301,13 +302,14 @@ _T19a:
 	reinterpret_cast<uint32_t>(turnAngle) = 0x769a7903;
 	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4) = 0x3fc41b2f;
 // LINE 153:
+_FOR_430:
 	leg = 0x0;
-	__asm        jmp    _T433;
-_T430:
+	__asm        jmp    _FOR_COND_430;
+_FOR_NEXT_430:
 	leg++;
-_T433:
+_FOR_COND_430:
 	__asm        cmp    leg, 0xB;
-	__asm        jge    _T4a0;
+	__asm        jge    _FOR_4ac;
 // LINE 155:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x4C], eax;
@@ -333,16 +335,16 @@ _T433:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[1][0][0].z[ecx*8], eax;
 // LINE 157:
-	__asm        jmp    _T430;
+	__asm        jmp    _FOR_NEXT_430;
 // LINE 158:
-_T4a0:
+_FOR_4ac:
 	leg = 0x0;
-	__asm        jmp    _T4af;
-_T4ac:
+	__asm        jmp    _FOR_COND_4ac;
+_FOR_NEXT_4ac:
 	leg++;
-_T4af:
+_FOR_COND_4ac:
 	__asm        cmp    leg, 0xB;
-	__asm        jge    _T51c;
+	__asm        jge    _FOR_528;
 // LINE 160:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x54], eax;
@@ -368,16 +370,16 @@ _T4af:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[1][1][0].z[ecx*8], eax;
 // LINE 162:
-	__asm        jmp    _T4ac;
+	__asm        jmp    _FOR_NEXT_4ac;
 // LINE 163:
-_T51c:
+_FOR_528:
 	leg = 0x0;
-	__asm        jmp    _T52b;
-_T528:
+	__asm        jmp    _FOR_COND_528;
+_FOR_NEXT_528:
 	leg++;
-_T52b:
+_FOR_COND_528:
 	__asm        cmp    leg, 0xB;
-	__asm        jge    _T598;
+	__asm        jge    _FOR_5a4;
 // LINE 165:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x5C], eax;
@@ -403,14 +405,14 @@ _T52b:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[1][2][0].z[ecx*8], eax;
 // LINE 167:
-	__asm        jmp    _T528;
+	__asm        jmp    _FOR_NEXT_528;
 // LINE 168:
-_T598:
+_FOR_5a4:
 	leg = 0x0;
-	__asm        jmp    _T5a7;
-_T5a4:
+	__asm        jmp    _FOR_COND_5a4;
+_FOR_NEXT_5a4:
 	leg++;
-_T5a7:
+_FOR_COND_5a4:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T614;
 // LINE 170:
@@ -438,7 +440,7 @@ _T5a7:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[1][3][0].z[ecx*8], eax;
 // LINE 172:
-	__asm        jmp    _T5a4;
+	__asm        jmp    _FOR_NEXT_5a4;
 // LINE 176:
 _T614:
 	__asm        fld    OT[0].x;
@@ -448,13 +450,14 @@ _T614:
 	reinterpret_cast<uint32_t>(turnAngle) = 0x769a7903;
 	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4) = 0x3fc41b2f;
 // LINE 178:
+_FOR_63d:
 	leg = 0x0;
-	__asm        jmp    _T640;
-_T63d:
+	__asm        jmp    _FOR_COND_63d;
+_FOR_NEXT_63d:
 	leg++;
-_T640:
+_FOR_COND_63d:
 	__asm        cmp    leg, 0xB;
-	__asm        jge    _T6ad;
+	__asm        jge    _FOR_6b9;
 // LINE 180:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x6C], eax;
@@ -480,16 +483,16 @@ _T640:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[2][0][0].z[ecx*8], eax;
 // LINE 182:
-	__asm        jmp    _T63d;
+	__asm        jmp    _FOR_NEXT_63d;
 // LINE 183:
-_T6ad:
+_FOR_6b9:
 	leg = 0x0;
-	__asm        jmp    _T6bc;
-_T6b9:
+	__asm        jmp    _FOR_COND_6b9;
+_FOR_NEXT_6b9:
 	leg++;
-_T6bc:
+_FOR_COND_6b9:
 	__asm        cmp    leg, 0xB;
-	__asm        jge    _T729;
+	__asm        jge    _FOR_735;
 // LINE 185:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x74], eax;
@@ -515,16 +518,16 @@ _T6bc:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[2][1][0].z[ecx*8], eax;
 // LINE 187:
-	__asm        jmp    _T6b9;
+	__asm        jmp    _FOR_NEXT_6b9;
 // LINE 188:
-_T729:
+_FOR_735:
 	leg = 0x0;
-	__asm        jmp    _T738;
-_T735:
+	__asm        jmp    _FOR_COND_735;
+_FOR_NEXT_735:
 	leg++;
-_T738:
+_FOR_COND_735:
 	__asm        cmp    leg, 0xB;
-	__asm        jge    _T7a5;
+	__asm        jge    _FOR_7b1;
 // LINE 190:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x7C], eax;
@@ -550,14 +553,14 @@ _T738:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[2][2][0].z[ecx*8], eax;
 // LINE 192:
-	__asm        jmp    _T735;
+	__asm        jmp    _FOR_NEXT_735;
 // LINE 193:
-_T7a5:
+_FOR_7b1:
 	leg = 0x0;
-	__asm        jmp    _T7b4;
-_T7b1:
+	__asm        jmp    _FOR_COND_7b1;
+_FOR_NEXT_7b1:
 	leg++;
-_T7b4:
+_FOR_COND_7b1:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T82d;
 // LINE 195:
@@ -585,7 +588,7 @@ _T7b4:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[2][3][0].z[ecx*8], eax;
 // LINE 197:
-	__asm        jmp    _T7b1;
+	__asm        jmp    _FOR_NEXT_7b1;
 // LINE 201:
 _T82d:
 	reinterpret_cast<uint32_t>(turnRadius) = 0x0;
@@ -604,11 +607,12 @@ _T82d:
 	__asm        call   0x0056EBE8;
 	__asm        mov    OTT[3][0][0].z, eax;
 // LINE 206:
+_FOR_881:
 	leg = 0x1;
-	__asm        jmp    _T884;
-_T881:
+	__asm        jmp    _FOR_COND_881;
+_FOR_NEXT_881:
 	leg++;
-_T884:
+_FOR_COND_881:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _T8f3;
 // LINE 208:
@@ -636,7 +640,7 @@ _T884:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[3][0][0].z[ecx*8], eax;
 // LINE 210:
-	__asm        jmp    _T881;
+	__asm        jmp    _FOR_NEXT_881;
 // LINE 211:
 _T8f3:
 	OTT[3][0][10].x = 0xfff80000;
@@ -653,11 +657,12 @@ _T8f3:
 	__asm        call   0x0056EBE8;
 	__asm        mov    OTT[3][1][0].z, eax;
 // LINE 216:
+_FOR_93f:
 	leg = 0x1;
-	__asm        jmp    _T942;
-_T93f:
+	__asm        jmp    _FOR_COND_93f;
+_FOR_NEXT_93f:
 	leg++;
-_T942:
+_FOR_COND_93f:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _T9b3;
 // LINE 218:
@@ -686,7 +691,7 @@ _T942:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[3][1][0].z[ecx*8], eax;
 // LINE 220:
-	__asm        jmp    _T93f;
+	__asm        jmp    _FOR_NEXT_93f;
 // LINE 221:
 _T9b3:
 	OTT[3][1][10].x = 0xffe00000;
@@ -703,11 +708,12 @@ _T9b3:
 	__asm        call   0x0056EBE8;
 	__asm        mov    OTT[3][2][0].z, eax;
 // LINE 226:
+_FOR_9ff:
 	leg = 0x1;
-	__asm        jmp    _Ta02;
-_T9ff:
+	__asm        jmp    _FOR_COND_9ff;
+_FOR_NEXT_9ff:
 	leg++;
-_Ta02:
+_FOR_COND_9ff:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _Ta75;
 // LINE 228:
@@ -737,7 +743,7 @@ _Ta02:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[3][2][0].z[ecx*8], eax;
 // LINE 230:
-	__asm        jmp    _T9ff;
+	__asm        jmp    _FOR_NEXT_9ff;
 // LINE 231:
 _Ta75:
 	OTT[3][2][10].x = 0x80000;
@@ -754,11 +760,12 @@ _Ta75:
 	__asm        call   0x0056EBE8;
 	__asm        mov    OTT[3][3][0].z, eax;
 // LINE 236:
+_FOR_ac1:
 	leg = 0x1;
-	__asm        jmp    _Tac4;
-_Tac1:
+	__asm        jmp    _FOR_COND_ac1;
+_FOR_NEXT_ac1:
 	leg++;
-_Tac4:
+_FOR_COND_ac1:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _Tb35;
 // LINE 238:
@@ -787,7 +794,7 @@ _Tac4:
 	__asm        mov    ecx, leg;
 	__asm        mov    OTT[3][3][0].z[ecx*8], eax;
 // LINE 240:
-	__asm        jmp    _Tac1;
+	__asm        jmp    _FOR_NEXT_ac1;
 // LINE 241:
 _Tb35:
 	OTT[3][3][10].x = 0x200000;
@@ -796,37 +803,41 @@ _Tb35:
 // LINE 245:
 	incline = 0x0;
 // LINE 249:
+_FOR_b5c:
 	incline = 0x0;
-	__asm        jmp    _Tb5f;
-_Tb5c:
+	__asm        jmp    _FOR_COND_b5c;
+_FOR_NEXT_b5c:
 	incline++;
-_Tb5f:
+_FOR_COND_b5c:
 	__asm        cmp    incline, 3;
 	__asm        jge    _Tde6;
 // LINE 250:
 // Block start:
 	/*bp-0x38*/  int32_t tType;
+_FOR_b75:
 	tType = 0x0;
-	__asm        jmp    _Tb78;
-_Tb75:
+	__asm        jmp    _FOR_COND_b75;
+_FOR_NEXT_b75:
 	tType++;
-_Tb78:
+_FOR_COND_b75:
 	__asm        cmp    tType, 4;
 	__asm        jge    _Tde1;
 // LINE 252:
+_FOR_b8e:
 	dir = 0x0;
-	__asm        jmp    _Tb91;
-_Tb8e:
+	__asm        jmp    _FOR_COND_b8e;
+_FOR_NEXT_b8e:
 	dir++;
-_Tb91:
+_FOR_COND_b8e:
 	__asm        cmp    dir, 4;
 	__asm        jge    _Tddc;
 // LINE 254:
+_FOR_ba7:
 	leg = 0x0;
-	__asm        jmp    _Tbaa;
-_Tba7:
+	__asm        jmp    _FOR_COND_ba7;
+_FOR_NEXT_ba7:
 	leg++;
-_Tbaa:
+_FOR_COND_ba7:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _Tdd7;
 // LINE 258:
@@ -1010,16 +1021,16 @@ _Tbaa:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 271:
-	__asm        jmp    _Tba7;
+	__asm        jmp    _FOR_NEXT_ba7;
 // LINE 272:
 _Tdd7:
-	__asm        jmp    _Tb8e;
+	__asm        jmp    _FOR_NEXT_b8e;
 // LINE 273:
 _Tddc:
-	__asm        jmp    _Tb75;
+	__asm        jmp    _FOR_NEXT_b75;
 // Block end:
 _Tde1:
-	__asm        jmp    _Tb5c;
+	__asm        jmp    _FOR_NEXT_b5c;
 // LINE 274:
 _Tde6:
 	return;
@@ -1672,7 +1683,7 @@ _T43c:
 // LINE 552:
 _T443:
 	__asm        mov    dword ptr [ebp-0x1C], 0x5B57E8;
-_T44a:
+_LOOP_44a:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(fromTile);
 	__asm        and    ecx, 0xFFFF;
@@ -1697,11 +1708,11 @@ _T48b:
 	__asm        jmp    _T4a0;
 _T497:
 	__asm        add    dword ptr [ebp-0x1C], 8;
-	__asm        jmp    _T44a;
+	__asm        jmp    _LOOP_44a;
 // LINE 553:
 _T4a0:
 	__asm        mov    dword ptr [ebp-0x20], 0x5B57E8;
-_T4a7:
+_LOOP_4a7:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(toTile);
 	__asm        and    ecx, 0xFFFF;
@@ -1726,7 +1737,7 @@ _T4e8:
 	__asm        jmp    _T4fd;
 _T4f4:
 	__asm        add    dword ptr [ebp-0x20], 8;
-	__asm        jmp    _T4a7;
+	__asm        jmp    _LOOP_4a7;
 // LINE 556:
 _T4fd:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 1;

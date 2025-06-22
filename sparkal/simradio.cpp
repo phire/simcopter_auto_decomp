@@ -3580,7 +3580,7 @@ _T19a:
 	__asm        mov    [ebp-0x88], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x8C], eax;
-_T1ac:
+_LOOP_1ac:
 	__asm        mov    eax, [ebp-0x88];
 	__asm        cmp    [ebp-0x8C], eax;
 	__asm        jne    _T1c8;
@@ -3619,7 +3619,7 @@ _T21a:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x50;
 	__asm        call   list<basic_string<char>>::erase;
-	__asm        jmp    _T1ac;
+	__asm        jmp    _LOOP_1ac;
 _T231:
 	__asm        jmp    _T236;
 // LINE 323:
@@ -3663,7 +3663,7 @@ _T29d:
 	__asm        mov    [ebp-0xA0], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0xA4], eax;
-_T2af:
+_LOOP_2af:
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        cmp    [ebp-0xA4], eax;
 	__asm        jne    _T2cb;
@@ -3702,7 +3702,7 @@ _T329:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x64;
 	__asm        call   list<basic_string<char>>::erase;
-	__asm        jmp    _T2af;
+	__asm        jmp    _LOOP_2af;
 _T343:
 	__asm        jmp    _T348;
 // LINE 327:
@@ -3746,7 +3746,7 @@ _T3af:
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0xBC], eax;
-_T3c1:
+_LOOP_3c1:
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        cmp    [ebp-0xBC], eax;
 	__asm        jne    _T3dd;
@@ -3785,7 +3785,7 @@ _T43b:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x78;
 	__asm        call   list<basic_string<char>>::erase;
-	__asm        jmp    _T3c1;
+	__asm        jmp    _LOOP_3c1;
 _T455:
 	__asm        jmp    _T45a;
 // LINE 331:
@@ -3829,7 +3829,7 @@ _T4c7:
 	__asm        mov    [ebp-0xD0], eax;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0xD4], eax;
-_T4d9:
+_LOOP_4d9:
 	__asm        mov    eax, [ebp-0xD0];
 	__asm        cmp    [ebp-0xD4], eax;
 	__asm        jne    _T4f5;
@@ -3868,7 +3868,7 @@ _T553:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x8C;
 	__asm        call   list<basic_string<char>>::erase;
-	__asm        jmp    _T4d9;
+	__asm        jmp    _LOOP_4d9;
 _T570:
 	__asm        jmp    _T575;
 // LINE 335:
@@ -4964,9 +4964,9 @@ _T43:
 	stringArray.start = 0x0;
 	stringArray.finish = 0x0;
 	stringArray.end_of_storage = 0x0;
-	__asm        jmp    _T5d;
+	__asm        jmp    _LOOP_5d;
 // LINE 419:
-_T5d:
+_LOOP_5d:
 	__asm        mov    eax, stringList;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x44], eax;
@@ -5054,7 +5054,7 @@ _T153:
 	__asm        jmp    _T161;
 // LINE 422:
 _T161:
-	__asm        jmp    _T5d;
+	__asm        jmp    _LOOP_5d;
 // LINE 425:
 _T166:
 	__asm        jmp    _T16b;
@@ -5069,17 +5069,17 @@ _T170:
 _T181:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        cmp    [ebp-0x40], eax;
-	__asm        jne    _T192;
+	__asm        jne    _FOR_1a0;
 
 	__asm        jmp    _T1f2;
-_T192:
+_FOR_1a0:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    _T1a4;
-_T1a0:
+	__asm        jmp    _FOR_COND_1a0;
+_FOR_NEXT_1a0:
 	__asm        add    dword ptr [ebp-0x34], 8;
-_T1a4:
+_FOR_COND_1a0:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    [ebp-0x3C], eax;
 	__asm        je     _T1ed;
@@ -5105,7 +5105,7 @@ _T1d1:
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T1e8;
 _T1e8:
-	__asm        jmp    _T1a0;
+	__asm        jmp    _FOR_NEXT_1a0;
 _T1ed:
 	__asm        jmp    _T1f2;
 _T1f2:
@@ -5135,7 +5135,7 @@ _T229:
 	__asm        mov    [ebp-0x90], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x94], eax;
-_T23b:
+_LOOP_23b:
 	__asm        mov    eax, [ebp-0x90];
 	__asm        cmp    [ebp-0x94], eax;
 	__asm        jne    _T257;
@@ -5173,7 +5173,7 @@ _T2b2:
 	__asm        push   eax;
 	__asm        mov    ecx, stringList;
 	__asm        call   list<basic_string<char>>::erase;
-	__asm        jmp    _T23b;
+	__asm        jmp    _LOOP_23b;
 _T2c3:
 	__asm        jmp    _T2c8;
 // LINE 431:
@@ -5183,13 +5183,13 @@ _T2c8:
 _T2d4:
 	__asm        jmp    _T2d9;
 _T2d9:
-	__asm        jmp    _T2de;
-_T2de:
+	__asm        jmp    _FOR_2ef;
+_FOR_2ef:
 	iEnd = ((stringArray.finish - stringArray.start) >> 0x3);
-	__asm        jmp    _T2f2;
-_T2ef:
+	__asm        jmp    _FOR_COND_2ef;
+_FOR_NEXT_2ef:
 	i++;
-_T2f2:
+_FOR_COND_2ef:
 	__asm        mov    eax, iEnd;
 	__asm        cmp    i, eax;
 	__asm        jge    _T39e;
@@ -5250,14 +5250,14 @@ _T394:
 	__asm        jmp    _T399;
 // LINE 433:
 _T399:
-	__asm        jmp    _T2ef;
+	__asm        jmp    _FOR_NEXT_2ef;
 // LINE 434:
 _T39e:
 	__asm        mov    eax, stringArray.finish;
 	__asm        mov    [ebp-0x78], eax;
 	__asm        mov    eax, stringArray.start;
 	__asm        mov    [ebp-0x7C], eax;
-_T3aa:
+__WHILE_3aa:
 	__asm        mov    eax, [ebp-0x78];
 	__asm        cmp    [ebp-0x7C], eax;
 	__asm        je     _T40d;
@@ -5292,7 +5292,7 @@ _T3ff:
 	__asm        jmp    _T404;
 _T404:
 	__asm        add    dword ptr [ebp-0x7C], 8;
-	__asm        jmp    _T3aa;
+	__asm        jmp    __WHILE_3aa;
 _T40d:
 	__asm        jmp    _T412;
 _T412:
@@ -5351,17 +5351,17 @@ _T4b:
 _T62:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    [ebp-0x24], eax;
-	__asm        jne    _T73;
+	__asm        jne    _FOR_81;
 
 	__asm        jmp    _Te0;
-_T73:
+_FOR_81:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    _T85;
-_T81:
+	__asm        jmp    _FOR_COND_81;
+_FOR_NEXT_81:
 	__asm        add    dword ptr [ebp-0x14], 4;
-_T85:
+_FOR_COND_81:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    [ebp-0x20], eax;
 	__asm        je     _Tdb;
@@ -5392,7 +5392,7 @@ _Tb2:
 _Td1:
 	__asm        jmp    _Td6;
 _Td6:
-	__asm        jmp    _T81;
+	__asm        jmp    _FOR_NEXT_81;
 _Tdb:
 	__asm        jmp    _Te0;
 _Te0:
@@ -6332,11 +6332,12 @@ _Tfc:
 _T108:
 	Directory::SplitDirectoryPath(sStationDirectoryName.c_str_ptr, sStationDirectoryParent.c_str_ptr, (this + 0x40));
 // LINE 570:
+_FOR_12e:
 	i = 0x0;
-	__asm        jmp    _T131;
-_T12e:
+	__asm        jmp    _FOR_COND_12e;
+_FOR_NEXT_12e:
 	i++;
-_T131:
+_FOR_COND_12e:
 	__asm        cmp    i, 9;
 	__asm        jge    _T358;
 
@@ -6516,7 +6517,7 @@ _T34b:
 	__asm        jmp    __RETURN;
 // LINE 577:
 _T353:
-	__asm        jmp    _T12e;
+	__asm        jmp    _FOR_NEXT_12e;
 // LINE 578:
 _T358:
 	__asm        mov    dword ptr [ebp-0x28], 0xFFFFFFFF;
@@ -6641,7 +6642,7 @@ _T29:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
-_T46:
+__WHILE_46:
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    [ebp-0xC], eax;
 	__asm        je     _T6f;
@@ -6654,7 +6655,7 @@ _T46:
 	__asm        jmp    _T63;
 _T63:
 	__asm        add    dword ptr [ebp-0xC], 0x98;
-	__asm        jmp    _T46;
+	__asm        jmp    __WHILE_46;
 _T6f:
 	__asm        jmp    _T74;
 _T74:
@@ -7201,8 +7202,8 @@ int32_t Radio::SetStation(enum RadioStationType radioStationType) {
 _T18:
 	__asm        jmp    _T1d;
 _T1d:
-	__asm        jmp    _T22;
-_T22:
+	__asm        jmp    _FOR_3e;
+_FOR_3e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -7211,10 +7212,10 @@ _T22:
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        mov    iEnd, eax;
-	__asm        jmp    _T41;
-_T3e:
+	__asm        jmp    _FOR_COND_3e;
+_FOR_NEXT_3e:
 	i++;
-_T41:
+_FOR_COND_3e:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _Ta1;
@@ -7249,7 +7250,7 @@ _T6e:
 	__asm        jmp    __RETURN;
 // LINE 852:
 _T9c:
-	__asm        jmp    _T3e;
+	__asm        jmp    _FOR_NEXT_3e;
 // LINE 853:
 _Ta1:
 	return 0x0;
@@ -7268,8 +7269,8 @@ int32_t Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 _T18:
 	__asm        jmp    _T1d;
 _T1d:
-	__asm        jmp    _T22;
-_T22:
+	__asm        jmp    _FOR_3e;
+_FOR_3e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
@@ -7278,10 +7279,10 @@ _T22:
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        mov    iEnd, eax;
-	__asm        jmp    _T41;
-_T3e:
+	__asm        jmp    _FOR_COND_3e;
+_FOR_NEXT_3e:
 	i++;
-_T41:
+_FOR_COND_3e:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T97;
@@ -7310,7 +7311,7 @@ _T6e:
 	return 0x1;
 // LINE 866:
 _T92:
-	__asm        jmp    _T3e;
+	__asm        jmp    _FOR_NEXT_3e;
 // LINE 867:
 _T97:
 	return 0x0;
@@ -7377,11 +7378,12 @@ int32_t Radio::StationDirectoryNameIsValid(/*packed*/ class basic_string<char>& 
 	/*bp-0x4*/   int32_t i;
 
 // LINE 898:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        cmp    i, 9;
 	__asm        jge    _T1b9;
 
@@ -7523,7 +7525,7 @@ _T1aa:
 	return 0x1;
 // LINE 901:
 _T1b4:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 902:
 _T1b9:
 	return 0x0;
@@ -7654,7 +7656,7 @@ _T15a:
 // LINE 939:
 	nStationCount = 0x0;
 // LINE 940:
-_T1a6:
+_LOOP_1a6:
 	__asm        mov    eax, radioStationStringList.node;
 	__asm        mov    [ebp-0x164], eax;
 	__asm        mov    eax, [ebp-0x164];
@@ -8473,7 +8475,7 @@ _Td65:
 	__asm        jmp    _Td76;
 // LINE 999:
 _Td76:
-	__asm        jmp    _T1a6;
+	__asm        jmp    _LOOP_1a6;
 // LINE 1002:
 _Td7b:
 	__asm        jmp    _Td80;

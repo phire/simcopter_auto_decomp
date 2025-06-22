@@ -811,8 +811,8 @@ _T3f0:
 	__asm        add    esp, 0x10;
 	__asm        jmp    _T410;
 _T410:
-	__asm        jmp    _T415;
-_T415:
+	__asm        jmp    _FOR_442;
+_FOR_442:
 	__asm        mov    eax, [ebp-0x268];
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
@@ -821,10 +821,10 @@ _T415:
 	__asm        call   FlatResFile::Count;
 	__asm        mov    [ebp-0x254], ax;
 	__asm        mov    word ptr [ebp-0x258], 1;
-	__asm        jmp    _T449;
-_T442:
+	__asm        jmp    _FOR_COND_442;
+_FOR_NEXT_442:
 	__asm        inc    word ptr [ebp-0x258];
-_T449:
+_FOR_COND_442:
 	__asm        movsx  eax, word ptr [ebp-0x254];
 	__asm        movsx  ecx, word ptr [ebp-0x258];
 	__asm        cmp    eax, ecx;
@@ -849,7 +849,7 @@ _T4b2:
 	__asm        push   eax;
 	__asm        call   cCopterBody::MakeNew;
 	__asm        add    esp, 4;
-	__asm        jmp    _T442;
+	__asm        jmp    _FOR_NEXT_442;
 _T4c6:
 	__asm        test   dword ptr [ebp-0x260], 0xFFFF;
 	__asm        je     _T4ed;
@@ -1026,7 +1026,7 @@ void DeleteBodiesAndAnimations() {
 	__asm        mov    eax, cCopterAnim::fsList;
 	__asm        mov    [ebp-0x38], eax;
 // LINE 233:
-_T11:
+_LOOP_11:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     _T29;
 
@@ -1098,25 +1098,25 @@ _T9f:
 _Tde:
 	__asm        jmp    _Te3;
 _Te3:
-	__asm        jmp    _T11;
+	__asm        jmp    _LOOP_11;
 _Te8:
-	__asm        jmp    _Ted;
-_Ted:
+	__asm        jmp    _FOR_102;
+_FOR_102:
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    _T10b;
-_T102:
+	__asm        jmp    _FOR_COND_102;
+_FOR_NEXT_102:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x30], eax;
-_T10b:
+_FOR_COND_102:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     _T11d;
 
 	__asm        inc    dword ptr [ebp-0x34];
-	__asm        jmp    _T102;
+	__asm        jmp    _FOR_NEXT_102;
 _T11d:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        movsx  eax, word ptr [eax+8];
@@ -1173,7 +1173,7 @@ _T1db:
 	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    [ebp-0x70], eax;
 // LINE 234:
-_T1e3:
+_LOOP_1e3:
 	__asm        cmp    dword ptr [ebp-0x70], 0;
 	__asm        je     _T1fb;
 
@@ -1245,25 +1245,25 @@ _T271:
 _T2b0:
 	__asm        jmp    _T2b5;
 _T2b5:
-	__asm        jmp    _T1e3;
+	__asm        jmp    _LOOP_1e3;
 _T2ba:
-	__asm        jmp    _T2bf;
-_T2bf:
+	__asm        jmp    _FOR_2d4;
+_FOR_2d4:
 	__asm        mov    dword ptr [ebp-0x6C], 0;
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x68], eax;
-	__asm        jmp    _T2dd;
-_T2d4:
+	__asm        jmp    _FOR_COND_2d4;
+_FOR_NEXT_2d4:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x68], eax;
-_T2dd:
+_FOR_COND_2d4:
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        je     _T2ef;
 
 	__asm        inc    dword ptr [ebp-0x6C];
-	__asm        jmp    _T2d4;
+	__asm        jmp    _FOR_NEXT_2d4;
 _T2ef:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        movsx  eax, word ptr [eax+8];

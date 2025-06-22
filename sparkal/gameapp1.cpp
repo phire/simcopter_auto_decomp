@@ -950,14 +950,14 @@ static void $E135() {
 
 	__asm        mov    dword ptr [ebp-4], 2;
 	__asm        mov    dword ptr [ebp-8], 0x604450;
-_T17:
+__WHILE_17:
 	__asm        dec    dword ptr [ebp-4];
 	__asm        js     _T31;
 
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   SoundQueue::SoundQueue;
 	__asm        add    dword ptr [ebp-8], 0x18;
-	__asm        jmp    _T17;
+	__asm        jmp    __WHILE_17;
 _T31:
 	__asm        jmp    _T36;
 _T36:
@@ -983,14 +983,14 @@ static void $E136() {
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-8], eax;
-_T23:
+__WHILE_23:
 	__asm        dec    dword ptr [ebp-4];
 	__asm        js     _T3d;
 
 	__asm        sub    dword ptr [ebp-8], 0x18;
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   SoundQueue::~SoundQueue;
-	__asm        jmp    _T23;
+	__asm        jmp    __WHILE_23;
 _T3d:
 	__asm        jmp    _T42;
 _T42:
@@ -2885,17 +2885,18 @@ unsigned long CGameApp::Initialize() {
 // LINE 390:
 	GraphicWindow::colorConstants.nPaletteIndexTransparent = 0xfe;
 // LINE 392:
+_FOR_32:
 	i = 0x0;
-	__asm        jmp    _T35;
-_T32:
+	__asm        jmp    _FOR_COND_32;
+_FOR_NEXT_32:
 	i++;
-_T35:
+_FOR_COND_32:
 	__asm        cmp    i, 6;
 	__asm        jge    _T52;
 // LINE 393:
 	__asm        mov    eax, i;
 	__asm        mov    G_CheatCodes[eax*4], 0;
-	__asm        jmp    _T32;
+	__asm        jmp    _FOR_NEXT_32;
 // LINE 396:
 _T52:
 	gszAppDirectory = operator new(0x105);
@@ -2912,10 +2913,11 @@ _T52:
 	__asm        add    esp, 4;
 	__asm        mov    i, eax;
 // LINE 400:
-	__asm        jmp    _T90;
-_T8d:
+_FOR_8d:
+	__asm        jmp    _FOR_COND_8d;
+_FOR_NEXT_8d:
 	i--;
-_T90:
+_FOR_COND_8d:
 	__asm        cmp    i, 0;
 	__asm        jl     _Tc2;
 
@@ -2929,7 +2931,7 @@ _T90:
 	__asm        mov    ecx, gszAppDirectory;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 402:
-	__asm        jmp    _T8d;
+	__asm        jmp    _FOR_NEXT_8d;
 // LINE 407:
 _Tc2:
 	__asm        mov    ecx, 0x604C00;
@@ -3427,7 +3429,7 @@ int32_t CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
 	__asm        add    eax, 0x20;
 	__asm        mov    chLowerToCheck, al;
 // LINE 602:
-	__asm        jmp    _Ta3;
+	__asm        jmp    _FOR_ae;
 _T42:
 	__asm        movsx  eax, chSwitchToCheck;
 	__asm        cmp    eax, 0x61;
@@ -3444,7 +3446,7 @@ _T42:
 	__asm        sub    eax, 0x20;
 	__asm        mov    chUpperToCheck, al;
 // LINE 606:
-	__asm        jmp    _Ta3;
+	__asm        jmp    _FOR_ae;
 _T71:
 	__asm        movsx  eax, chSwitchToCheck;
 	__asm        cmp    eax, 0x30;
@@ -3459,17 +3461,17 @@ _T71:
 	__asm        mov    al, chUpperToCheck;
 	__asm        mov    chLowerToCheck, al;
 // LINE 609:
-	__asm        jmp    _Ta3;
+	__asm        jmp    _FOR_ae;
 // LINE 610:
 _T9c:
 	return 0x0;
 // LINE 612:
-_Ta3:
+_FOR_ae:
 	i = 0x0;
-	__asm        jmp    _Tb2;
-_Tae:
+	__asm        jmp    _FOR_COND_ae;
+_FOR_NEXT_ae:
 	i++;
-_Tb2:
+_FOR_COND_ae:
 	__asm        movsx  eax, i;
 	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        test   eax, eax;
@@ -3511,11 +3513,12 @@ _T12f:
 	__asm        add    eax, 2;
 	__asm        mov    j, ax;
 // LINE 619:
-	__asm        jmp    _T157;
-_T14f:
+_FOR_14f:
+	__asm        jmp    _FOR_COND_14f;
+_FOR_NEXT_14f:
 	k++;
 	j++;
-_T157:
+_FOR_COND_14f:
 	__asm        movsx  eax, j;
 	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        test   eax, eax;
@@ -3561,7 +3564,7 @@ _T1df:
 	__asm        mov    edx, szResult;
 	__asm        mov    [ecx+edx], al;
 // LINE 628:
-	__asm        jmp    _T14f;
+	__asm        jmp    _FOR_NEXT_14f;
 // LINE 629:
 _T1f8:
 	__asm        movsx  eax, k;
@@ -3572,7 +3575,7 @@ _T203:
 	return 0x1;
 // LINE 633:
 _T20d:
-	__asm        jmp    _Tae;
+	__asm        jmp    _FOR_NEXT_ae;
 // LINE 634:
 _T212:
 	return 0x0;
@@ -3759,7 +3762,7 @@ _T52:
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xB0], eax;
-_T64:
+_LOOP_64:
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        cmp    [ebp-0xB0], eax;
 	__asm        jne    _T80;
@@ -3798,7 +3801,7 @@ _Tde:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x3794;
 	__asm        call   list<Shortcut>::erase;
-	__asm        jmp    _T64;
+	__asm        jmp    _LOOP_64;
 _Tfb:
 	__asm        jmp    _T100;
 // LINE 753:
@@ -4190,11 +4193,12 @@ _T7b:
 _T8b:
 	__asm        mov    iEnd, eax;
 // LINE 829:
+_FOR_9a:
 	i = 0x0;
-	__asm        jmp    _T9d;
-_T9a:
+	__asm        jmp    _FOR_COND_9a;
+_FOR_NEXT_9a:
 	i++;
-_T9d:
+_FOR_COND_9a:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
 	__asm        jle    _T111;
@@ -4211,7 +4215,7 @@ _T9d:
 	__asm        cmp    chLastJoystickName, 0;
 	__asm        jne    _Td4;
 // LINE 832:
-	__asm        jmp    _T9a;
+	__asm        jmp    _FOR_NEXT_9a;
 // LINE 833:
 _Td4:
 	chCurrentJoystickName[0] = 0x0;
@@ -4235,7 +4239,7 @@ _Td4:
 	return 0x1;
 // LINE 837:
 _T10c:
-	__asm        jmp    _T9a;
+	__asm        jmp    _FOR_NEXT_9a;
 // LINE 838:
 _T111:
 	return 0x0;

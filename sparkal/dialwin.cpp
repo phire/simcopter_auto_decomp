@@ -1965,14 +1965,14 @@ void DialWindow::DialWindow(/*packed*/ class MRect& rectNewWindow, long lNewID, 
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA4;
 	__asm        mov    [ebp-8], eax;
-_Td7:
+__WHILE_d7:
 	__asm        dec    dword ptr [ebp-4];
 	__asm        js     _Tf1;
 
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   DialHand::DialHand;
 	__asm        add    dword ptr [ebp-8], 0x34;
-	__asm        jmp    _Td7;
+	__asm        jmp    __WHILE_d7;
 _Tf1:
 	__asm        jmp    _Tf6;
 _Tf6:
@@ -1980,14 +1980,14 @@ _Tf6:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x140;
 	__asm        mov    [ebp-0x10], eax;
-_T108:
+__WHILE_108:
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        js     _T122;
 
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x10], 0x10;
-	__asm        jmp    _T108;
+	__asm        jmp    __WHILE_108;
 _T122:
 	__asm        jmp    _T127;
 _T127:
@@ -2015,14 +2015,14 @@ _T1ad:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x1A4;
 	__asm        mov    [ebp-0x18], eax;
-_T1bf:
+__WHILE_1bf:
 	__asm        dec    dword ptr [ebp-0x14];
 	__asm        js     _T1d9;
 
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x18], 0x10;
-	__asm        jmp    _T1bf;
+	__asm        jmp    __WHILE_1bf;
 _T1d9:
 	__asm        jmp    _T1de;
 _T1de:
@@ -3410,11 +3410,12 @@ void DialWindow::DrawCurrentDamage() {
 	__asm        idiv   ecx;
 	__asm        mov    nDamageInRangeOf0to15, eax;
 // LINE 619:
+_FOR_3f:
 	i = 0x0;
-	__asm        jmp    _T42;
-_T3f:
+	__asm        jmp    _FOR_COND_3f;
+_FOR_NEXT_3f:
 	i++;
-_T42:
+_FOR_COND_3f:
 	__asm        cmp    i, 6;
 	__asm        jge    _Td5;
 // LINE 620:
@@ -3465,7 +3466,7 @@ _T91:
 	__asm        mov    ecx, [eax+0x80];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 630:
-	__asm        jmp    _T3f;
+	__asm        jmp    _FOR_NEXT_3f;
 // LINE 631:
 _Td5:
 	return;
@@ -3487,7 +3488,7 @@ long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButto
 // LINE 641:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
-	__asm        jl     _T48;
+	__asm        jl     _FOR_54;
 // LINE 642:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1E4];
@@ -3495,12 +3496,12 @@ long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButto
 	__asm        mov    ecx, this;
 	__asm        call   DialWindow::TurnOffSpotlightCommand;
 // LINE 643:
-_T48:
+_FOR_54:
 	i = 0x0;
-	__asm        jmp    _T57;
-_T54:
+	__asm        jmp    _FOR_COND_54;
+_FOR_NEXT_54:
 	i++;
-_T57:
+_FOR_COND_54:
 	__asm        cmp    i, 4;
 	__asm        jge    _T106;
 // LINE 644:
@@ -3554,7 +3555,7 @@ _Tde:
 	__asm        jmp    _T106;
 // LINE 648:
 _T101:
-	__asm        jmp    _T54;
+	__asm        jmp    _FOR_NEXT_54;
 // LINE 650:
 _T106:
 	return 0x1;
@@ -3613,12 +3614,13 @@ long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        cmp    dword ptr [eax+0x1E4], 0;
 	__asm        jl     _T10f;
 // LINE 677:
+_FOR_2f:
 	i = 0x0;
 	lNewSpotlightCommand = 0xffffffff;
-	__asm        jmp    _T32;
-_T2f:
+	__asm        jmp    _FOR_COND_2f;
+_FOR_NEXT_2f:
 	i++;
-_T32:
+_FOR_COND_2f:
 	__asm        cmp    i, 4;
 	__asm        jge    _Tc9;
 // LINE 678:
@@ -3665,7 +3667,7 @@ _Tb9:
 	__asm        jmp    _Tc9;
 // LINE 682:
 _Tc4:
-	__asm        jmp    _T2f;
+	__asm        jmp    _FOR_NEXT_2f;
 // LINE 683:
 _Tc9:
 	__asm        cmp    lNewSpotlightCommand, 0;
@@ -4471,12 +4473,13 @@ _Td49:
 	__asm        idiv   ecx;
 	__asm        mov    iLitEnd, eax;
 // LINE 767:
+_FOR_d72:
 	i = 0x0;
-	__asm        jmp    _Td79;
-_Td72:
+	__asm        jmp    _FOR_COND_d72;
+_FOR_NEXT_d72:
 	i++;
 	nXPosition += 0x5;
-_Td79:
+_FOR_COND_d72:
 	__asm        mov    eax, i;
 	__asm        cmp    iLitEnd, eax;
 	__asm        jle    _Tdbf;
@@ -4497,7 +4500,7 @@ _Td79:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x88];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _Td72;
+	__asm        jmp    _FOR_NEXT_d72;
 // LINE 769:
 _Tdbf:
 	__asm        cmp    i, 0xF;
@@ -4524,11 +4527,12 @@ _Tdbf:
 // LINE 773:
 	nXPosition += 0x5;
 // LINE 776:
-	__asm        jmp    _Te11;
-_Te0a:
+_FOR_e0a:
+	__asm        jmp    _FOR_COND_e0a;
+_FOR_NEXT_e0a:
 	i++;
 	nXPosition += 0x5;
-_Te11:
+_FOR_COND_e0a:
 	__asm        cmp    i, 0xF;
 	__asm        jge    _Te55;
 // LINE 777:
@@ -4548,7 +4552,7 @@ _Te11:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x88];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _Te0a;
+	__asm        jmp    _FOR_NEXT_e0a;
 // LINE 784:
 // Block end:
 _Te55:
@@ -5864,27 +5868,27 @@ _T1e:
 _T23:
 	__asm        jmp    _T28;
 _T28:
-	__asm        jmp    _T2d;
+	__asm        jmp    _FOR_39;
 // LINE 1071:
-_T2d:
+_FOR_39:
 	i = 0x0;
-	__asm        jmp    _T3c;
-_T39:
+	__asm        jmp    _FOR_COND_39;
+_FOR_NEXT_39:
 	i++;
-_T3c:
+_FOR_COND_39:
 	__asm        cmp    i, 0x10;
-	__asm        jge    _T56;
+	__asm        jge    _FOR_62;
 // LINE 1072:
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [ebp+eax*4-0x40], 0;
-	__asm        jmp    _T39;
+	__asm        jmp    _FOR_NEXT_39;
 // LINE 1074:
-_T56:
+_FOR_62:
 	i = 0x0;
-	__asm        jmp    _T65;
-_T62:
+	__asm        jmp    _FOR_COND_62;
+_FOR_NEXT_62:
 	i++;
-_T65:
+_FOR_COND_62:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T1b6;
 // LINE 1075:
@@ -5895,7 +5899,7 @@ _T65:
 	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
 	__asm        jne    _T8b;
 // LINE 1076:
-	__asm        jmp    _T62;
+	__asm        jmp    _FOR_NEXT_62;
 // LINE 1077:
 _T8b:
 	__asm        mov    eax, i;
@@ -6005,7 +6009,7 @@ _T1a6:
 	__asm        mov    eax, nCurrentSeat;
 	__asm        mov    dword ptr [ebp+eax*4-0x40], 1;
 // LINE 1093:
-	__asm        jmp    _T62;
+	__asm        jmp    _FOR_NEXT_62;
 // LINE 1096:
 _T1b6:
 	__asm        lea    eax, rectSource.left;
@@ -6015,11 +6019,12 @@ _T1b6:
 	__asm        mov    ecx, this;
 	__asm        call   PassengerWindow::GetRectOfPassengerGraphic;
 // LINE 1097:
+_FOR_1d2:
 	nCurrentSeat = 0x0;
-	__asm        jmp    _T1d5;
-_T1d2:
+	__asm        jmp    _FOR_COND_1d2;
+_FOR_NEXT_1d2:
 	nCurrentSeat++;
-_T1d5:
+_FOR_COND_1d2:
 	__asm        mov    eax, tempHeliPassengerData;
 	__asm        mov    ecx, nCurrentSeat;
 	__asm        cmp    [eax+4], ecx;
@@ -6092,7 +6097,7 @@ _T267:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1108:
 _T29d:
-	__asm        jmp    _T1d2;
+	__asm        jmp    _FOR_NEXT_1d2;
 // LINE 1109:
 _T2a2:
 	HeliPassengerClearChanged(tempHeliPassengerData);
@@ -6514,11 +6519,12 @@ _T11:
 _T16:
 	tempHeliPassengerData = (G_uheli + 0x1c4);
 // LINE 1255:
+_FOR_2f:
 	i = 0x0;
-	__asm        jmp    _T32;
-_T2f:
+	__asm        jmp    _FOR_COND_2f;
+_FOR_NEXT_2f:
 	i++;
-_T32:
+_FOR_COND_2f:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T11b;
 // LINE 1256:
@@ -6529,7 +6535,7 @@ _T32:
 	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
 	__asm        jne    _T58;
 // LINE 1257:
-	__asm        jmp    _T2f;
+	__asm        jmp    _FOR_NEXT_2f;
 // LINE 1258:
 _T58:
 	__asm        mov    eax, i;
@@ -6599,7 +6605,7 @@ _Tf7:
 	return 0x1;
 // LINE 1267:
 _T116:
-	__asm        jmp    _T2f;
+	__asm        jmp    _FOR_NEXT_2f;
 // LINE 1268:
 _T11b:
 	return 0x0;
@@ -6641,14 +6647,14 @@ void MapWindow::MapWindow(/*packed*/ class MRect& rectNewPosition, long lNewID, 
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA8;
 	__asm        mov    [ebp-8], eax;
-_T88:
+__WHILE_88:
 	__asm        dec    dword ptr [ebp-4];
 	__asm        js     _Ta2;
 
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-8], 0x10;
-	__asm        jmp    _T88;
+	__asm        jmp    __WHILE_88;
 _Ta2:
 	__asm        jmp    _Ta7;
 _Ta7:
@@ -7359,12 +7365,12 @@ _T168:
 
 	__asm        jmp    _T1ba;
 _T1b5:
-	__asm        jmp    _T21a;
+	__asm        jmp    _FOR_226;
 _T1ba:
 	__asm        jmp    _T1c9;
 
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     _T21a;
+	__asm        je     _FOR_226;
 // LINE 1502:
 _T1c9:
 	__asm        mov    eax, this;
@@ -7390,12 +7396,12 @@ _T1ef:
 // LINE 1506:
 	__asm        jmp    _T2f1;
 // LINE 1507:
-_T21a:
+_FOR_226:
 	i = 0x0;
-	__asm        jmp    _T229;
-_T226:
+	__asm        jmp    _FOR_COND_226;
+_FOR_NEXT_226:
 	i++;
-_T229:
+_FOR_COND_226:
 	__asm        cmp    i, 4;
 	__asm        jge    _T2f1;
 // LINE 1508:
@@ -7457,7 +7463,7 @@ _T2b0:
 	return 0x1;
 // LINE 1514:
 _T2ec:
-	__asm        jmp    _T226;
+	__asm        jmp    _FOR_NEXT_226;
 // LINE 1516:
 _T2f1:
 	return 0x1;
@@ -7897,14 +7903,14 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, /*packed
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x74;
 	__asm        mov    [ebp-8], eax;
-_T3c:
+__WHILE_3c:
 	__asm        dec    dword ptr [ebp-4];
 	__asm        js     _T56;
 
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-8], 0x10;
-	__asm        jmp    _T3c;
+	__asm        jmp    __WHILE_3c;
 _T56:
 	__asm        jmp    _T5b;
 _T5b:
@@ -8588,12 +8594,13 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 // LINE 1873:
 	this->lLastBucketWaterGuageLevel = iLitEnd;
 // LINE 1875:
+_FOR_67:
 	i = 0x0;
-	__asm        jmp    _T6e;
-_T67:
+	__asm        jmp    _FOR_COND_67;
+_FOR_NEXT_67:
 	i++;
 	nXPosition += 0x5;
-_T6e:
+_FOR_COND_67:
 	__asm        mov    eax, i;
 	__asm        cmp    iLitEnd, eax;
 	__asm        jle    _Tab;
@@ -8614,7 +8621,7 @@ _T6e:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0xBC];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _T67;
+	__asm        jmp    _FOR_NEXT_67;
 // LINE 1877:
 _Tab:
 	__asm        cmp    i, 0xB;
@@ -8641,11 +8648,12 @@ _Tab:
 // LINE 1881:
 	nXPosition += 0x5;
 // LINE 1884:
-	__asm        jmp    _Tf4;
-_Ted:
+_FOR_ed:
+	__asm        jmp    _FOR_COND_ed;
+_FOR_NEXT_ed:
 	i++;
 	nXPosition += 0x5;
-_Tf4:
+_FOR_COND_ed:
 	__asm        cmp    i, 0xB;
 	__asm        jge    _T12f;
 // LINE 1885:
@@ -8665,7 +8673,7 @@ _Tf4:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0xBC];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _Ted;
+	__asm        jmp    _FOR_NEXT_ed;
 // LINE 1887:
 _T12f:
 	return;
@@ -8715,19 +8723,19 @@ _T62:
 // LINE 1903:
 _T83:
 	__asm        cmp    lTeargasUsed, 0xA;
-	__asm        jle    _T94;
+	__asm        jle    _FOR_a0;
 // LINE 1904:
 	lTeargasUsed = 0xa;
 // LINE 1906:
-_T94:
+_FOR_a0:
 	i = 0x0;
-	__asm        jmp    _Ta3;
-_Ta0:
+	__asm        jmp    _FOR_COND_a0;
+_FOR_NEXT_a0:
 	i++;
-_Ta3:
+_FOR_COND_a0:
 	__asm        mov    eax, lTeargasUsed;
 	__asm        cmp    i, eax;
-	__asm        jge    _T108;
+	__asm        jge    _FOR_10d;
 // LINE 1907:
 	__asm        mov    ecx, 5;
 	__asm        mov    eax, i;
@@ -8761,13 +8769,13 @@ _Ta3:
 	__asm        mov    ecx, [eax+0xC0];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1910:
-	__asm        jmp    _Ta0;
+	__asm        jmp    _FOR_NEXT_a0;
 // LINE 1911:
-_T108:
-	__asm        jmp    _T110;
-_T10d:
+_FOR_10d:
+	__asm        jmp    _FOR_COND_10d;
+_FOR_NEXT_10d:
 	i++;
-_T110:
+_FOR_COND_10d:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T173;
 // LINE 1912:
@@ -8803,7 +8811,7 @@ _T110:
 	__asm        mov    ecx, [eax+0xC0];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1915:
-	__asm        jmp    _T10d;
+	__asm        jmp    _FOR_NEXT_10d;
 // LINE 1916:
 _T173:
 	return;
@@ -9642,11 +9650,12 @@ _Tb5:
 	__asm        mov    ecx, tempPopupMenuWindow;
 	__asm        call   dword ptr [eax+0x128];
 // LINE 2073:
+_FOR_e0:
 	i = 0x22;
-	__asm        jmp    _Te3;
-_Te0:
+	__asm        jmp    _FOR_COND_e0;
+_FOR_NEXT_e0:
 	i++;
-_Te3:
+_FOR_COND_e0:
 	__asm        cmp    i, 0x25;
 	__asm        jg     _T10b;
 // LINE 2074:
@@ -9658,7 +9667,7 @@ _Te3:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, tempPopupMenuWindow;
 	__asm        call   dword ptr [eax+0xD0];
-	__asm        jmp    _Te0;
+	__asm        jmp    _FOR_NEXT_e0;
 // LINE 2076:
 _T10b:
 	return;

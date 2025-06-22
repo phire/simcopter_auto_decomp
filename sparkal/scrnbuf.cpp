@@ -703,7 +703,7 @@ _T8a:
 // LINE 295:
 	ddbltfx.dwFillColor = nClearPaletteIndex;
 // LINE 300:
-_T97:
+__WHILE_97:
 	__asm        lea    eax, ddbltfx.dwSize;
 	__asm        push   eax;
 	__asm        push   0x1000400;
@@ -721,7 +721,7 @@ _T97:
 	__asm        cmp    hResult, 0x8876021C;
 	__asm        jne    _Tcd;
 
-	__asm        jmp    _T97;
+	__asm        jmp    __WHILE_97;
 // LINE 301:
 _Tcd:
 	__asm        push   1;
@@ -738,7 +738,7 @@ _Tcd:
 // LINE 303:
 	ddbltfx.dwFillColor = nClearPaletteIndex;
 // LINE 308:
-_Tf0:
+__WHILE_f0:
 	__asm        lea    eax, ddbltfx.dwSize;
 	__asm        push   eax;
 	__asm        push   0x1000400;
@@ -756,7 +756,7 @@ _Tf0:
 	__asm        cmp    hResult, 0x8876021C;
 	__asm        jne    _T126;
 
-	__asm        jmp    _Tf0;
+	__asm        jmp    __WHILE_f0;
 // LINE 310:
 _T126:
 	__asm        jmp    _T2ac;
@@ -832,7 +832,7 @@ _T1e1:
 // LINE 328:
 	ddbltfx.dwFillColor = nClearPaletteIndex;
 // LINE 333:
-_T1ee:
+__WHILE_1ee:
 	__asm        lea    eax, ddbltfx.dwSize;
 	__asm        push   eax;
 	__asm        push   0x1000400;
@@ -850,11 +850,11 @@ _T1ee:
 	__asm        cmp    hResult, 0x8876021C;
 	__asm        jne    _T224;
 
-	__asm        jmp    _T1ee;
+	__asm        jmp    __WHILE_1ee;
 // LINE 334:
 _T224:
 	__asm        cmp    hResult, 0;
-	__asm        je     _T24d;
+	__asm        je     __WHILE_24d;
 // LINE 335:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x78], eax;
@@ -866,7 +866,7 @@ _T239:
 // LINE 336:
 	return 0x0;
 // LINE 342:
-_T24d:
+__WHILE_24d:
 	__asm        lea    eax, ddbltfx.dwSize;
 	__asm        push   eax;
 	__asm        push   0x1000400;
@@ -884,7 +884,7 @@ _T24d:
 	__asm        cmp    hResult, 0x8876021C;
 	__asm        jne    _T283;
 
-	__asm        jmp    _T24d;
+	__asm        jmp    __WHILE_24d;
 // LINE 343:
 _T283:
 	__asm        cmp    hResult, 0;
@@ -1087,7 +1087,7 @@ void ScreenBuffer::WaitTillReadyToFlip() {
 	/*bp-0x8*/   long hResult;
 
 // LINE 426:
-_T0c:
+__DO_0c:
 	__asm        lea    eax, bIsInVerticalBlank;
 	__asm        push   eax;
 	__asm        mov    eax, lpDD;
@@ -1099,9 +1099,9 @@ _T0c:
 // LINE 427:
 	__asm        cmp    bIsInVerticalBlank, 0;
 	__asm        jne    _T37;
-
+__DO_WHILE_0c:
 	__asm        cmp    hResult, 0;
-	__asm        je     _T0c;
+	__asm        je     __DO_0c;
 // LINE 429:
 _T37:
 	return;
@@ -1193,7 +1193,7 @@ int32_t ScreenBuffer::UsePalette(/*packed*/ struct SparkalColor *pColors) {
 	/*bp-0x418*/ /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
-	__asm        jne    _T94;
+	__asm        jne    _FOR_a0;
 // LINE 539:
 // Block start:
 	/*bp-0x41c*/ void * __ptr32 hdc;
@@ -1219,16 +1219,16 @@ int32_t ScreenBuffer::UsePalette(/*packed*/ struct SparkalColor *pColors) {
 // LINE 545:
 // Block end:
 _T8f:
-	__asm        jmp    _T107;
+	__asm        jmp    _FOR_113;
 // LINE 547:
-_T94:
+_FOR_a0:
 	i = 0x0;
-	__asm        jmp    _Ta3;
-_Ta0:
+	__asm        jmp    _FOR_COND_a0;
+_FOR_NEXT_a0:
 	i++;
-_Ta3:
+_FOR_COND_a0:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _T107;
+	__asm        jge    _FOR_113;
 // LINE 548:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 2;
@@ -1257,14 +1257,14 @@ _Ta3:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x3E], 0;
 // LINE 556:
-	__asm        jmp    _Ta0;
+	__asm        jmp    _FOR_NEXT_a0;
 // LINE 558:
-_T107:
+_FOR_113:
 	i = 0xa;
-	__asm        jmp    _T116;
-_T113:
+	__asm        jmp    _FOR_COND_113;
+_FOR_NEXT_113:
 	i++;
-_T116:
+_FOR_COND_113:
 	__asm        cmp    i, 0xF5;
 	__asm        jg     _T16e;
 // LINE 559:
@@ -1289,7 +1289,7 @@ _T116:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
 // LINE 563:
-	__asm        jmp    _T113;
+	__asm        jmp    _FOR_NEXT_113;
 // LINE 564:
 _T16e:
 	__asm        cmp    lpPalette, 0;

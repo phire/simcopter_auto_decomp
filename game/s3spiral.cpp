@@ -54,7 +54,7 @@ void SpiralScan::SpiralScan(int32_t radius) {
 // FUNCTION: COPTER_D 0x00542e03
 int32_t SpiralScan::Next(/*packed*/ struct _GridCoordinates& currLoc) {
 // LINE 21:
-_T0c:
+__DO_0c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
@@ -129,13 +129,14 @@ _Tb1:
 _Td5:
 	this->currDist++;
 // LINE 46:
+__DO_WHILE_0c:
 	__asm        mov    eax, currLoc;
 	__asm        mov    ax, [eax];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   SpiralScan::InCityGridLimits;
 	__asm        test   eax, eax;
-	__asm        je     _T0c;
+	__asm        je     __DO_0c;
 // LINE 48:
 	return 0x1;
 // LINE 49:

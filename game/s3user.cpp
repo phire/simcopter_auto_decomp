@@ -410,11 +410,12 @@ void CareerCityTweakInit() {
 // LINE 268:
 	nPvals = 0x9;
 // LINE 273:
+_FOR_1c:
 	i = 0x0;
-	__asm        jmp    _T1f;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
-_T1f:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x1F;
 	__asm        jge    _Ta5;
 // LINE 274:
@@ -444,7 +445,7 @@ _T1f:
 // LINE 284:
 	TWKEnQueue(currentCareerCityInfo->chCityFileNameBase, 0x9, pvals[0]);
 // LINE 285:
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 286:
 _Ta5:
 	return;
@@ -1380,11 +1381,12 @@ void InitializeAllCareerCitiesInfo() {
 // LINE 739:
 	reinterpret_cast<uint32_t>(gGameFilePath[44]) = SZ_CAREER_CITY_FILE_NAME_BASE_31;
 // LINE 744:
+_FOR_b55:
 	i = 0x0;
-	__asm        jmp    _Tb58;
-_Tb55:
+	__asm        jmp    _FOR_COND_b55;
+_FOR_NEXT_b55:
 	i++;
-_Tb58:
+_FOR_COND_b55:
 	__asm        cmp    i, 0x1F;
 	__asm        jge    _Tc0a;
 // LINE 745:
@@ -1429,7 +1431,7 @@ _Tb58:
 	__asm        shl    eax, 3;
 	__asm        mov    gAllCareerCities[0].citySettings.lDaytime[eax+eax*8], 1;
 // LINE 754:
-	__asm        jmp    _Tb55;
+	__asm        jmp    _FOR_NEXT_b55;
 // LINE 755:
 _Tc0a:
 	return;

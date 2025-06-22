@@ -552,14 +552,14 @@ _T310:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xFE;
 	__asm        mov    [ebp-0x1C], eax;
-_T353:
+__WHILE_353:
 	__asm        dec    dword ptr [ebp-0x18];
 	__asm        js     _T36d;
 
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x1C], 8;
-	__asm        jmp    _T353;
+	__asm        jmp    __WHILE_353;
 _T36d:
 	__asm        jmp    _T372;
 _T372:
@@ -567,14 +567,14 @@ _T372:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x146;
 	__asm        mov    [ebp-0x24], eax;
-_T387:
+__WHILE_387:
 	__asm        dec    dword ptr [ebp-0x20];
 	__asm        js     _T3a1;
 
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        add    dword ptr [ebp-0x24], 8;
-	__asm        jmp    _T387;
+	__asm        jmp    __WHILE_387;
 _T3a1:
 	__asm        jmp    _T3a6;
 _T3a6:
@@ -1002,14 +1002,14 @@ _T2a8:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x48], eax;
-_T2c3:
+__WHILE_2c3:
 	__asm        dec    dword ptr [ebp-0x44];
 	__asm        js     _T2dd;
 
 	__asm        sub    dword ptr [ebp-0x48], 8;
 	__asm        mov    ecx, [ebp-0x48];
 	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    _T2c3;
+	__asm        jmp    __WHILE_2c3;
 _T2dd:
 	__asm        jmp    _T2e2;
 _T2e2:
@@ -1020,14 +1020,14 @@ _T2e2:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x50], eax;
-_T2fd:
+__WHILE_2fd:
 	__asm        dec    dword ptr [ebp-0x4C];
 	__asm        js     _T317;
 
 	__asm        sub    dword ptr [ebp-0x50], 8;
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    _T2fd;
+	__asm        jmp    __WHILE_2fd;
 _T317:
 	__asm        jmp    _T31c;
 _T31c:
@@ -1057,7 +1057,7 @@ _T35e:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x78], eax;
-_T36a:
+_LOOP_36a:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        cmp    [ebp-0x78], eax;
 	__asm        jne    _T380;
@@ -1090,7 +1090,7 @@ _T3a8:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x74;
 	__asm        call   list<HotSpot>::erase;
-	__asm        jmp    _T36a;
+	__asm        jmp    _LOOP_36a;
 _T3c9:
 	__asm        jmp    _T3ce;
 _T3ce:
@@ -1123,11 +1123,12 @@ int32_t InventoryWindow::Initialize() {
 // LINE 81:
 	nReturnValue = this->GraphicWindow::Initialize();
 // LINE 87:
+_FOR_30:
 	i = 0x0;
-	__asm        jmp    _T33;
-_T30:
+	__asm        jmp    _FOR_COND_30;
+_FOR_NEXT_30:
 	i++;
-_T33:
+_FOR_COND_30:
 	__asm        cmp    i, 9;
 	__asm        jge    _T2bd;
 // LINE 88:
@@ -1290,7 +1291,7 @@ _T2b3:
 	__asm        jmp    _T2b8;
 // LINE 90:
 _T2b8:
-	__asm        jmp    _T30;
+	__asm        jmp    _FOR_NEXT_30;
 // LINE 92:
 _T2bd:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1a4);
@@ -1567,7 +1568,7 @@ _T6bf:
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    _T6e8;
 _T6e8:
-	__asm        jmp    _T873;
+	__asm        jmp    _FOR_87f;
 _T6ed:
 	__asm        jmp    _T6f2;
 _T6f2:
@@ -1663,14 +1664,14 @@ _T84f:
 _T869:
 	__asm        jmp    _T86e;
 _T86e:
-	__asm        jmp    _T873;
+	__asm        jmp    _FOR_87f;
 // LINE 101:
-_T873:
+_FOR_87f:
 	i = 0x0;
-	__asm        jmp    _T882;
-_T87f:
+	__asm        jmp    _FOR_COND_87f;
+_FOR_NEXT_87f:
 	i++;
-_T882:
+_FOR_COND_87f:
 	__asm        cmp    i, 5;
 	__asm        jge    _T9a9;
 // LINE 102:
@@ -1748,7 +1749,7 @@ _T99f:
 	__asm        jmp    _T9a4;
 // LINE 104:
 _T9a4:
-	__asm        jmp    _T87f;
+	__asm        jmp    _FOR_NEXT_87f;
 // LINE 105:
 _T9a9:
 	return nReturnValue;
@@ -2270,14 +2271,14 @@ void InventoryWindow::DrawTitleText() {
 	__asm        lea    eax, rectText[0].left;
 	__asm        mov    [ebp-0x64], eax;
 // LINE 175:
-_T1f:
+__WHILE_1f:
 	__asm        dec    dword ptr [ebp-0x60];
 	__asm        js     _T39;
 
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        call   MRect::MRect;
 	__asm        add    dword ptr [ebp-0x64], 0x10;
-	__asm        jmp    _T1f;
+	__asm        jmp    __WHILE_1f;
 _T39:
 	__asm        jmp    _T3e;
 // LINE 176:
@@ -2464,11 +2465,12 @@ _T24d:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 191:
+_FOR_296:
 	i = 0x0;
-	__asm        jmp    _T299;
-_T296:
+	__asm        jmp    _FOR_COND_296;
+_FOR_NEXT_296:
 	i++;
-_T299:
+_FOR_COND_296:
 	__asm        cmp    i, 5;
 	__asm        jge    _T3bf;
 // LINE 192:
@@ -2551,7 +2553,7 @@ _T379:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 196:
-	__asm        jmp    _T296;
+	__asm        jmp    _FOR_NEXT_296;
 // LINE 197:
 _T3bf:
 	return;
@@ -2582,12 +2584,13 @@ _T39:
 _T3e:
 	currentUserPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 214:
+_FOR_59:
 	lCurrentHeliType = 0x0;
 	lCurrentRow = 0x0;
-	__asm        jmp    _T5c;
-_T59:
+	__asm        jmp    _FOR_COND_59;
+_FOR_NEXT_59:
 	lCurrentHeliType++;
-_T5c:
+_FOR_COND_59:
 	__asm        cmp    lCurrentHeliType, 9;
 	__asm        jge    _T313;
 // LINE 215:
@@ -2851,7 +2854,7 @@ _T30b:
 	lCurrentRow++;
 // LINE 259:
 _T30e:
-	__asm        jmp    _T59;
+	__asm        jmp    _FOR_NEXT_59;
 // LINE 260:
 _T313:
 	return;
@@ -2898,9 +2901,9 @@ int32_t InventoryWindow::GetRectFromID(long lID, /*packed*/ class MRect& rectHot
 	__asm        mov    i.node, eax;
 	__asm        jmp    _T22;
 _T22:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 304:
-_T27:
+_LOOP_27:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    [ebp-0x10], eax;
@@ -2963,7 +2966,7 @@ _Tc3:
 	__asm        jmp    _Tce;
 // LINE 310:
 _Tce:
-	__asm        jmp    _T27;
+	__asm        jmp    _LOOP_27;
 // LINE 311:
 _Td3:
 	return 0x0;

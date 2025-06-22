@@ -103,11 +103,12 @@ void HeliPassengerInit(/*packed*/ struct tagHeliPassengerData *heliPassengerData
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    [eax+0xC], ecx;
 // LINE 76:
+_FOR_96:
 	i = 0x0;
-	__asm        jmp    _T99;
-_T96:
+	__asm        jmp    _FOR_COND_96;
+_FOR_NEXT_96:
 	i++;
-_T99:
+_FOR_COND_96:
 	__asm        cmp    i, 0x10;
 	__asm        jge    __RETURN;
 // LINE 77:
@@ -135,7 +136,7 @@ _T99:
 	__asm        mov    ecx, heliPassengerData;
 	__asm        mov    dword ptr [eax+ecx+0x28], 0xFFFFFFFF;
 // LINE 81:
-	__asm        jmp    _T96;
+	__asm        jmp    _FOR_NEXT_96;
 // LINE 82:
 __RETURN:
 }
@@ -159,16 +160,16 @@ int32_t HeliPassengerAdd(/*packed*/ struct tagHeliPassengerData *heliPassengerDa
 	__asm        call   HeliPassengerCanAdd;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
-	__asm        jne    _T28;
+	__asm        jne    _FOR_34;
 // LINE 112:
 	return 0x0;
 // LINE 114:
-_T28:
+_FOR_34:
 	i = 0x0;
-	__asm        jmp    _T37;
-_T34:
+	__asm        jmp    _FOR_COND_34;
+_FOR_NEXT_34:
 	i++;
-_T37:
+_FOR_COND_34:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _Te2;
 // LINE 116:
@@ -222,7 +223,7 @@ _T37:
 	return 0x1;
 // LINE 132:
 _Tdd:
-	__asm        jmp    _T34;
+	__asm        jmp    _FOR_NEXT_34;
 // LINE 135:
 _Te2:
 	return 0x0;
@@ -234,11 +235,12 @@ int32_t HeliPassengerGetIndexInHeli(/*packed*/ struct tagHeliPassengerData *heli
 	/*bp-0x4*/   int32_t i;
 
 // LINE 147:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T48;
 // LINE 148:
@@ -253,7 +255,7 @@ _T18:
 	return i;
 // LINE 151:
 _T43:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 152:
 _T48:
 	return 0xffffffff;
@@ -353,24 +355,25 @@ void HeliPassengerFitToSeats(/*packed*/ struct tagHeliPassengerData *heliPasseng
 	/*bp-0x48*/  int32_t i;
 
 // LINE 220:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 0x10;
-	__asm        jge    _T32;
+	__asm        jge    _FOR_3e;
 // LINE 221:
 	__asm        mov    eax, i;
 	__asm        mov    dword ptr [ebp+eax*4-0x40], 0;
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 223:
-_T32:
+_FOR_3e:
 	i = 0x0;
-	__asm        jmp    _T41;
-_T3e:
+	__asm        jmp    _FOR_COND_3e;
+_FOR_NEXT_3e:
 	i++;
-_T41:
+_FOR_COND_3e:
 	__asm        cmp    i, 0x10;
 	__asm        jge    __RETURN;
 // LINE 224:
@@ -394,7 +397,7 @@ _T41:
 	__asm        mov    [ecx+edx+0x2C], eax;
 // LINE 229:
 _T9f:
-	__asm        jmp    _T3e;
+	__asm        jmp    _FOR_NEXT_3e;
 // LINE 230:
 __RETURN:
 }
@@ -404,11 +407,12 @@ int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTota
 	/*bp-0x4*/   int32_t j;
 
 // LINE 245:
+_FOR_15:
 	j = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	j++;
-_T18:
+_FOR_COND_15:
 	__asm        mov    eax, nSeatsTotal;
 	__asm        cmp    j, eax;
 	__asm        jge    _T41;
@@ -421,7 +425,7 @@ _T18:
 	return j;
 // LINE 248:
 _T3c:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 249:
 _T41:
 	return 0xffffffff;

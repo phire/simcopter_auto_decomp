@@ -134,11 +134,12 @@ void S3TerrainInit() {
 	__asm        add    esp, 8;
 	__asm        mov    S_recip_celldim, eax;
 // LINE 135:
+_FOR_2c:
 	i = 0x0;
-	__asm        jmp    _T2f;
-_T2c:
+	__asm        jmp    _FOR_COND_2c;
+_FOR_NEXT_2c:
 	i++;
-_T2f:
+_FOR_COND_2c:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T62;
 // LINE 137:
@@ -152,7 +153,7 @@ _T2f:
 	__asm        mov    ecx, i;
 	__asm        mov    G_terr2bmp[64][ecx*4], eax;
 // LINE 139:
-	__asm        jmp    _T2c;
+	__asm        jmp    _FOR_NEXT_2c;
 // LINE 143:
 _T62:
 	return;
@@ -203,19 +204,21 @@ _T7c:
 	__asm        and    ecx, 3;
 	__asm        rep stosb;
 // LINE 190:
+_FOR_ad:
 	x = 0x0;
-	__asm        jmp    _Tb0;
-_Tad:
+	__asm        jmp    _FOR_COND_ad;
+_FOR_NEXT_ad:
 	x++;
-_Tb0:
+_FOR_COND_ad:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T1a4;
 // LINE 191:
+_FOR_c9:
 	y = 0x0;
-	__asm        jmp    _Tcc;
-_Tc9:
+	__asm        jmp    _FOR_COND_c9;
+_FOR_NEXT_c9:
 	y++;
-_Tcc:
+_FOR_COND_c9:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T19f;
 // LINE 193:
@@ -276,9 +279,9 @@ _T167:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 208:
-	__asm        jmp    _Tc9;
+	__asm        jmp    _FOR_NEXT_c9;
 _T19f:
-	__asm        jmp    _Tad;
+	__asm        jmp    _FOR_NEXT_ad;
 // LINE 211:
 _T1a4:
 	G_terr_minalt -= 0x32;
@@ -286,24 +289,25 @@ _T1a4:
 	G_terr_maxalt += 0x64;
 // LINE 213:
 	__asm        cmp    G_terr_minalt, 0;
-	__asm        jge    _T1c9;
+	__asm        jge    _FOR_1d5;
 
 	G_terr_minalt = 0x0;
 // LINE 219:
-_T1c9:
+_FOR_1d5:
 	x = 0x1;
-	__asm        jmp    _T1d9;
-_T1d5:
+	__asm        jmp    _FOR_COND_1d5;
+_FOR_NEXT_1d5:
 	x += 0x2;
-_T1d9:
+_FOR_COND_1d5:
 	__asm        cmp    x, 0x100;
-	__asm        jge    _T37c;
+	__asm        jge    _FOR_388;
 // LINE 220:
+_FOR_1f2:
 	y = 0x0;
-	__asm        jmp    _T1f6;
-_T1f2:
+	__asm        jmp    _FOR_COND_1f2;
+_FOR_NEXT_1f2:
 	y += 0x2;
-_T1f6:
+_FOR_COND_1f2:
 	__asm        cmp    y, 0x100;
 	__asm        jg     _T377;
 // LINE 222:
@@ -413,24 +417,25 @@ _T2e4:
 	__asm        mov    [edx+ecx], ax;
 // LINE 237:
 _T372:
-	__asm        jmp    _T1f2;
+	__asm        jmp    _FOR_NEXT_1f2;
 _T377:
-	__asm        jmp    _T1d5;
+	__asm        jmp    _FOR_NEXT_1d5;
 // LINE 242:
-_T37c:
+_FOR_388:
 	y = 0x1;
-	__asm        jmp    _T38c;
-_T388:
+	__asm        jmp    _FOR_COND_388;
+_FOR_NEXT_388:
 	y += 0x2;
-_T38c:
+_FOR_COND_388:
 	__asm        cmp    y, 0x100;
-	__asm        jge    _T52f;
+	__asm        jge    _FOR_53b;
 // LINE 243:
+_FOR_3a5:
 	x = 0x0;
-	__asm        jmp    _T3a9;
-_T3a5:
+	__asm        jmp    _FOR_COND_3a5;
+_FOR_NEXT_3a5:
 	x += 0x2;
-_T3a9:
+_FOR_COND_3a5:
 	__asm        cmp    x, 0x100;
 	__asm        jg     _T52a;
 // LINE 245:
@@ -540,24 +545,25 @@ _T497:
 	__asm        mov    [edx+ecx], ax;
 // LINE 260:
 _T525:
-	__asm        jmp    _T3a5;
+	__asm        jmp    _FOR_NEXT_3a5;
 _T52a:
-	__asm        jmp    _T388;
+	__asm        jmp    _FOR_NEXT_388;
 // LINE 264:
-_T52f:
+_FOR_53b:
 	y = 0x0;
-	__asm        jmp    _T53f;
-_T53b:
+	__asm        jmp    _FOR_COND_53b;
+_FOR_NEXT_53b:
 	y += 0x2;
-_T53f:
+_FOR_COND_53b:
 	__asm        cmp    y, 0x100;
-	__asm        jg     _T6de;
+	__asm        jg     _FOR_6ea;
 // LINE 265:
+_FOR_558:
 	x = 0x0;
-	__asm        jmp    _T55c;
-_T558:
+	__asm        jmp    _FOR_COND_558;
+_FOR_NEXT_558:
 	x += 0x2;
-_T55c:
+_FOR_COND_558:
 	__asm        cmp    x, 0x100;
 	__asm        jg     _T6d9;
 // LINE 267:
@@ -667,24 +673,25 @@ _T646:
 	__asm        mov    [edx+ecx], ax;
 // LINE 282:
 _T6d4:
-	__asm        jmp    _T558;
+	__asm        jmp    _FOR_NEXT_558;
 _T6d9:
-	__asm        jmp    _T53b;
+	__asm        jmp    _FOR_NEXT_53b;
 // LINE 290:
-_T6de:
+_FOR_6ea:
 	y = 0x0;
-	__asm        jmp    _T6ed;
-_T6ea:
+	__asm        jmp    _FOR_COND_6ea;
+_FOR_NEXT_6ea:
 	y++;
-_T6ed:
+_FOR_COND_6ea:
 	__asm        cmp    y, 0x80;
-	__asm        jge    _T7bf;
+	__asm        jge    _FOR_7cb;
 // LINE 292:
+_FOR_706:
 	x = 0x0;
-	__asm        jmp    _T709;
-_T706:
+	__asm        jmp    _FOR_COND_706;
+_FOR_NEXT_706:
 	x++;
-_T709:
+_FOR_COND_706:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T771;
 // LINE 294:
@@ -711,7 +718,7 @@ _T709:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 295:
-	__asm        jmp    _T706;
+	__asm        jmp    _FOR_NEXT_706;
 // LINE 298:
 _T771:
 	__asm        mov    eax, G_tdim;
@@ -737,17 +744,17 @@ _T771:
 	__asm        and    ecx, 3;
 	__asm        rep stosb;
 // LINE 299:
-	__asm        jmp    _T6ea;
+	__asm        jmp    _FOR_NEXT_6ea;
 // LINE 302:
-_T7bf:
+_FOR_7cb:
 	y = 0x80;
-	__asm        jmp    _T7ce;
-_T7cb:
+	__asm        jmp    _FOR_COND_7cb;
+_FOR_NEXT_7cb:
 	y++;
-_T7ce:
+_FOR_COND_7cb:
 	__asm        mov    eax, G_tdim;
 	__asm        cmp    y, eax;
-	__asm        jge    _T814;
+	__asm        jge    _FOR_820;
 // LINE 304:
 	__asm        mov    edx, G_tdim;
 	__asm        add    edx, edx;
@@ -766,16 +773,16 @@ _T7ce:
 	__asm        and    ecx, 3;
 	__asm        rep stosb;
 // LINE 305:
-	__asm        jmp    _T7cb;
+	__asm        jmp    _FOR_NEXT_7cb;
 // LINE 311:
-_T814:
+_FOR_820:
 	y = 0x0;
-	__asm        jmp    _T823;
-_T820:
+	__asm        jmp    _FOR_COND_820;
+_FOR_NEXT_820:
 	y++;
-_T823:
+_FOR_COND_820:
 	__asm        cmp    y, 0x80;
-	__asm        jge    _T8ce;
+	__asm        jge    _FOR_8da;
 // LINE 313:
 	__asm        mov    eax, y;
 	__asm        and    eax, G_tmask;
@@ -815,14 +822,14 @@ _T823:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [ecx+edx*2], ax;
 // LINE 315:
-	__asm        jmp    _T820;
+	__asm        jmp    _FOR_NEXT_820;
 // LINE 317:
-_T8ce:
+_FOR_8da:
 	x = 0x0;
-	__asm        jmp    _T8dd;
-_T8da:
+	__asm        jmp    _FOR_COND_8da;
+_FOR_NEXT_8da:
 	x++;
-_T8dd:
+_FOR_COND_8da:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T98d;
 // LINE 319:
@@ -867,7 +874,7 @@ _T8dd:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 321:
-	__asm        jmp    _T8da;
+	__asm        jmp    _FOR_NEXT_8da;
 // LINE 324:
 _T98d:
 	__asm        mov    eax, G_tmask;
@@ -882,19 +889,21 @@ _T98d:
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 326:
+_FOR_9c5:
 	x = 0x80;
-	__asm        jmp    _T9c8;
-_T9c5:
+	__asm        jmp    _FOR_COND_9c5;
+_FOR_NEXT_9c5:
 	x++;
-_T9c8:
+_FOR_COND_9c5:
 	__asm        cmp    x, 0x90;
 	__asm        jg     _Ta28;
 // LINE 328:
+_FOR_9e1:
 	y = 0x80;
-	__asm        jmp    _T9e4;
-_T9e1:
+	__asm        jmp    _FOR_COND_9e1;
+_FOR_NEXT_9e1:
 	y++;
-_T9e4:
+_FOR_COND_9e1:
 	__asm        cmp    y, 0x90;
 	__asm        jg     _Ta23;
 // LINE 330:
@@ -910,10 +919,10 @@ _T9e4:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 331:
-	__asm        jmp    _T9e1;
+	__asm        jmp    _FOR_NEXT_9e1;
 // LINE 332:
 _Ta23:
-	__asm        jmp    _T9c5;
+	__asm        jmp    _FOR_NEXT_9c5;
 // LINE 343:
 _Ta28:
 	srand(clock());
@@ -929,20 +938,22 @@ _Ta28:
 // LINE 353:
 	k3 = 0x7ae1;
 // LINE 354:
+_FOR_a76:
 	x = 0x0;
-	__asm        jmp    _Ta79;
-_Ta76:
+	__asm        jmp    _FOR_COND_a76;
+_FOR_NEXT_a76:
 	x++;
-_Ta79:
+_FOR_COND_a76:
 	__asm        mov    eax, G_tdim;
 	__asm        cmp    x, eax;
 	__asm        jg     _Tbc2;
 // LINE 356:
+_FOR_a93:
 	y = 0x0;
-	__asm        jmp    _Ta96;
-_Ta93:
+	__asm        jmp    _FOR_COND_a93;
+_FOR_NEXT_a93:
 	y++;
-_Ta96:
+_FOR_COND_a93:
 	__asm        mov    eax, G_tdim;
 	__asm        cmp    y, eax;
 	__asm        jg     _Tbbd;
@@ -957,7 +968,7 @@ _Ta96:
 	__asm        cmp    eax, y;
 	__asm        jle    _Tacb;
 
-	__asm        jmp    _Ta93;
+	__asm        jmp    _FOR_NEXT_a93;
 // LINE 365:
 _Tacb:
 	__asm        mov    eax, y;
@@ -1030,27 +1041,29 @@ _Tacb:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [eax+ecx], bx;
 // LINE 366:
-	__asm        jmp    _Ta93;
+	__asm        jmp    _FOR_NEXT_a93;
 // LINE 367:
 _Tbbd:
-	__asm        jmp    _Ta76;
+	__asm        jmp    _FOR_NEXT_a76;
 // LINE 375:
 _Tbc2:
 	AdjustTerrainMap();
 // LINE 383:
+_FOR_bd3:
 	x = 0x0;
-	__asm        jmp    _Tbd6;
-_Tbd3:
+	__asm        jmp    _FOR_COND_bd3;
+_FOR_NEXT_bd3:
 	x++;
-_Tbd6:
+_FOR_COND_bd3:
 	__asm        cmp    x, 0x100;
-	__asm        jge    _Tc1a;
+	__asm        jge    _FOR_c26;
 // LINE 385:
+_FOR_bef:
 	y = 0x0;
-	__asm        jmp    _Tbf2;
-_Tbef:
+	__asm        jmp    _FOR_COND_bef;
+_FOR_NEXT_bef:
 	y++;
-_Tbf2:
+_FOR_COND_bef:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _Tc15;
 // LINE 395:
@@ -1059,25 +1072,26 @@ _Tbf2:
 	__asm        shl    ecx, 8;
 	__asm        mov    G_texmap[0][eax+ecx], 0x30;
 // LINE 396:
-	__asm        jmp    _Tbef;
+	__asm        jmp    _FOR_NEXT_bef;
 // LINE 397:
 _Tc15:
-	__asm        jmp    _Tbd3;
+	__asm        jmp    _FOR_NEXT_bd3;
 // LINE 402:
-_Tc1a:
+_FOR_c26:
 	x = 0x0;
-	__asm        jmp    _Tc29;
-_Tc26:
+	__asm        jmp    _FOR_COND_c26;
+_FOR_NEXT_c26:
 	x++;
-_Tc29:
+_FOR_COND_c26:
 	__asm        cmp    x, 0x80;
-	__asm        jge    _Td8d;
+	__asm        jge    _FOR_d99;
 // LINE 404:
+_FOR_c42:
 	y = 0x0;
-	__asm        jmp    _Tc45;
-_Tc42:
+	__asm        jmp    _FOR_COND_c42;
+_FOR_NEXT_c42:
 	y++;
-_Tc45:
+_FOR_COND_c42:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _Td88;
 // LINE 406:
@@ -1174,25 +1188,26 @@ _Tcec:
 	__asm        mov    [eax+ecx], dx;
 // LINE 423:
 _Td83:
-	__asm        jmp    _Tc42;
+	__asm        jmp    _FOR_NEXT_c42;
 // LINE 424:
 _Td88:
-	__asm        jmp    _Tc26;
+	__asm        jmp    _FOR_NEXT_c26;
 // LINE 430:
-_Td8d:
+_FOR_d99:
 	x = 0x1;
-	__asm        jmp    _Td9c;
-_Td99:
+	__asm        jmp    _FOR_COND_d99;
+_FOR_NEXT_d99:
 	x++;
-_Td9c:
+_FOR_COND_d99:
 	__asm        cmp    x, 0x7F;
-	__asm        jge    _Tee7;
+	__asm        jge    _FOR_ef3;
 // LINE 432:
+_FOR_db2:
 	y = 0x1;
-	__asm        jmp    _Tdb5;
-_Tdb2:
+	__asm        jmp    _FOR_COND_db2;
+_FOR_NEXT_db2:
 	y++;
-_Tdb5:
+_FOR_COND_db2:
 	__asm        cmp    y, 0x7F;
 	__asm        jge    _Tee2;
 // LINE 434:
@@ -1293,25 +1308,26 @@ _Tecc:
 // LINE 450:
 // Block end:
 _Tedd:
-	__asm        jmp    _Tdb2;
+	__asm        jmp    _FOR_NEXT_db2;
 // LINE 451:
 _Tee2:
-	__asm        jmp    _Td99;
+	__asm        jmp    _FOR_NEXT_d99;
 // LINE 456:
-_Tee7:
+_FOR_ef3:
 	x = 0x1;
-	__asm        jmp    _Tef6;
-_Tef3:
+	__asm        jmp    _FOR_COND_ef3;
+_FOR_NEXT_ef3:
 	x++;
-_Tef6:
+_FOR_COND_ef3:
 	__asm        cmp    x, 0x7F;
-	__asm        jge    _T1033;
+	__asm        jge    _FOR_103f;
 // LINE 458:
+_FOR_f0c:
 	y = 0x1;
-	__asm        jmp    _Tf0f;
-_Tf0c:
+	__asm        jmp    _FOR_COND_f0c;
+_FOR_NEXT_f0c:
 	y++;
-_Tf0f:
+_FOR_COND_f0c:
 	__asm        cmp    y, 0x7F;
 	__asm        jge    _T102e;
 // LINE 460:
@@ -1406,25 +1422,26 @@ _T1018:
 // LINE 476:
 // Block end:
 _T1029:
-	__asm        jmp    _Tf0c;
+	__asm        jmp    _FOR_NEXT_f0c;
 // LINE 477:
 _T102e:
-	__asm        jmp    _Tef3;
+	__asm        jmp    _FOR_NEXT_ef3;
 // LINE 482:
-_T1033:
+_FOR_103f:
 	x = 0x0;
-	__asm        jmp    _T1042;
-_T103f:
+	__asm        jmp    _FOR_COND_103f;
+_FOR_NEXT_103f:
 	x++;
-_T1042:
+_FOR_COND_103f:
 	__asm        cmp    x, 0x80;
-	__asm        jge    _T15fa;
+	__asm        jge    _FOR_1606;
 // LINE 484:
+_FOR_105b:
 	y = 0x0;
-	__asm        jmp    _T105e;
-_T105b:
+	__asm        jmp    _FOR_COND_105b;
+_FOR_NEXT_105b:
 	y++;
-_T105e:
+_FOR_COND_105b:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T15f5;
 // LINE 487:
@@ -1436,7 +1453,7 @@ _T105e:
 	__asm        cmp    edx, 5;
 	__asm        je     _T108b;
 // LINE 488:
-	__asm        jmp    _T105b;
+	__asm        jmp    _FOR_NEXT_105b;
 // LINE 490:
 _T108b:
 	wflags = 0x0;
@@ -1867,25 +1884,26 @@ _T15d3:
 	__asm        mov    G_texmap[0][eax+ecx], 0;
 // LINE 513:
 _T15f0:
-	__asm        jmp    _T105b;
+	__asm        jmp    _FOR_NEXT_105b;
 // LINE 514:
 _T15f5:
-	__asm        jmp    _T103f;
+	__asm        jmp    _FOR_NEXT_103f;
 // LINE 520:
-_T15fa:
+_FOR_1606:
 	y = 0x0;
-	__asm        jmp    _T1609;
-_T1606:
+	__asm        jmp    _FOR_COND_1606;
+_FOR_NEXT_1606:
 	y++;
-_T1609:
+_FOR_COND_1606:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T17dc;
 // LINE 522:
+_FOR_1622:
 	x = 0x0;
-	__asm        jmp    _T1625;
-_T1622:
+	__asm        jmp    _FOR_COND_1622;
+_FOR_NEXT_1622:
 	x++;
-_T1625:
+_FOR_COND_1622:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T17d7;
 // LINE 525:
@@ -1907,13 +1925,13 @@ _T1661:
 	__asm        jmp    _T16be;
 // LINE 558:
 _T1666:
-	__asm        jmp    _T1622;
+	__asm        jmp    _FOR_NEXT_1622;
 // LINE 559:
 	__asm        jmp    _T16be;
 _T1670:
 	__asm        sub    dword ptr [ebp-0x34], 0x1D;
 	__asm        cmp    dword ptr [ebp-0x34], 0x1D;
-	__asm        ja     _T1622;
+	__asm        ja     _FOR_NEXT_1622;
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
@@ -2007,10 +2025,10 @@ _T170c:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 570:
-	__asm        jmp    _T1622;
+	__asm        jmp    _FOR_NEXT_1622;
 // LINE 572:
 _T17d7:
-	__asm        jmp    _T1606;
+	__asm        jmp    _FOR_NEXT_1606;
 // LINE 578:
 _T17dc:
 	__asm        mov    eax, G_terr_maxalt;
@@ -2021,19 +2039,21 @@ _T17dc:
 	__asm        sar    eax, 4;
 	__asm        mov    alt2, ax;
 // LINE 584:
+_FOR_1802:
 	x = 0x0;
-	__asm        jmp    _T1805;
-_T1802:
+	__asm        jmp    _FOR_COND_1802;
+_FOR_NEXT_1802:
 	x++;
-_T1805:
+_FOR_COND_1802:
 	__asm        cmp    x, 0x100;
-	__asm        jge    _T195c;
+	__asm        jge    _FOR_1968;
 // LINE 586:
+_FOR_181e:
 	y = 0x0;
-	__asm        jmp    _T1821;
-_T181e:
+	__asm        jmp    _FOR_COND_181e;
+_FOR_NEXT_181e:
 	y++;
-_T1821:
+_FOR_COND_181e:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T1957;
 // LINE 589:
@@ -2043,7 +2063,7 @@ _T1821:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T184d;
 // LINE 590:
-	__asm        jmp    _T181e;
+	__asm        jmp    _FOR_NEXT_181e;
 // LINE 593:
 _T184d:
 	__asm        mov    eax, y;
@@ -2124,25 +2144,26 @@ _T184d:
 	__asm        mov    G_texmap[0][eax+ecx], 0;
 // LINE 601:
 _T1952:
-	__asm        jmp    _T181e;
+	__asm        jmp    _FOR_NEXT_181e;
 // LINE 602:
 _T1957:
-	__asm        jmp    _T1802;
+	__asm        jmp    _FOR_NEXT_1802;
 // LINE 605:
-_T195c:
+_FOR_1968:
 	x = 0x0;
-	__asm        jmp    _T196b;
-_T1968:
+	__asm        jmp    _FOR_COND_1968;
+_FOR_NEXT_1968:
 	x++;
-_T196b:
+_FOR_COND_1968:
 	__asm        cmp    x, 0x100;
-	__asm        jge    _T1b71;
+	__asm        jge    _FOR_1b7d;
 // LINE 607:
+_FOR_1984:
 	y = 0x0;
-	__asm        jmp    _T1987;
-_T1984:
+	__asm        jmp    _FOR_COND_1984;
+_FOR_NEXT_1984:
 	y++;
-_T1987:
+_FOR_COND_1984:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T1b6c;
 // LINE 616:
@@ -2285,25 +2306,26 @@ _T1b3e:
 	__asm        mov    G_texmap[0][eax+ecx], 0x10;
 // LINE 637:
 _T1b67:
-	__asm        jmp    _T1984;
+	__asm        jmp    _FOR_NEXT_1984;
 // LINE 638:
 _T1b6c:
-	__asm        jmp    _T1968;
+	__asm        jmp    _FOR_NEXT_1968;
 // LINE 641:
-_T1b71:
+_FOR_1b7d:
 	x = 0x0;
-	__asm        jmp    _T1b80;
-_T1b7d:
+	__asm        jmp    _FOR_COND_1b7d;
+_FOR_NEXT_1b7d:
 	x++;
-_T1b80:
+_FOR_COND_1b7d:
 	__asm        cmp    x, 0x100;
-	__asm        jge    _T1d8b;
+	__asm        jge    _FOR_1d97;
 // LINE 643:
+_FOR_1b99:
 	y = 0x0;
-	__asm        jmp    _T1b9c;
-_T1b99:
+	__asm        jmp    _FOR_COND_1b99;
+_FOR_NEXT_1b99:
 	y++;
-_T1b9c:
+_FOR_COND_1b99:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T1d86;
 // LINE 652:
@@ -2446,25 +2468,26 @@ _T1d57:
 	__asm        mov    G_texmap[0][eax+ecx], 0x20;
 // LINE 672:
 _T1d81:
-	__asm        jmp    _T1b99;
+	__asm        jmp    _FOR_NEXT_1b99;
 // LINE 673:
 _T1d86:
-	__asm        jmp    _T1b7d;
+	__asm        jmp    _FOR_NEXT_1b7d;
 // LINE 677:
-_T1d8b:
+_FOR_1d97:
 	x = 0x80;
-	__asm        jmp    _T1d9a;
-_T1d97:
+	__asm        jmp    _FOR_COND_1d97;
+_FOR_NEXT_1d97:
 	x++;
-_T1d9a:
+_FOR_COND_1d97:
 	__asm        cmp    x, 0x84;
-	__asm        jge    _T1dde;
+	__asm        jge    _FOR_1dea;
 // LINE 679:
+_FOR_1db3:
 	y = 0x80;
-	__asm        jmp    _T1db6;
-_T1db3:
+	__asm        jmp    _FOR_COND_1db3;
+_FOR_NEXT_1db3:
 	y++;
-_T1db6:
+_FOR_COND_1db3:
 	__asm        cmp    y, 0x84;
 	__asm        jge    _T1dd9;
 // LINE 681:
@@ -2473,25 +2496,26 @@ _T1db6:
 	__asm        shl    ecx, 8;
 	__asm        mov    G_texmap[0][eax+ecx], 0x20;
 // LINE 682:
-	__asm        jmp    _T1db3;
+	__asm        jmp    _FOR_NEXT_1db3;
 // LINE 683:
 _T1dd9:
-	__asm        jmp    _T1d97;
+	__asm        jmp    _FOR_NEXT_1d97;
 // LINE 686:
-_T1dde:
+_FOR_1dea:
 	x = 0x0;
-	__asm        jmp    _T1ded;
-_T1dea:
+	__asm        jmp    _FOR_COND_1dea;
+_FOR_NEXT_1dea:
 	x++;
-_T1ded:
+_FOR_COND_1dea:
 	__asm        cmp    x, 0x100;
-	__asm        jge    _T2090;
+	__asm        jge    _FOR_209c;
 // LINE 688:
+_FOR_1e06:
 	y = 0x0;
-	__asm        jmp    _T1e09;
-_T1e06:
+	__asm        jmp    _FOR_COND_1e06;
+_FOR_NEXT_1e06:
 	y++;
-_T1e09:
+_FOR_COND_1e06:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T208b;
 // LINE 696:
@@ -2505,7 +2529,7 @@ _T1e09:
 	__asm        cmp    edx, 0x30;
 	__asm        je     _T1e41;
 // LINE 697:
-	__asm        jmp    _T1e06;
+	__asm        jmp    _FOR_NEXT_1e06;
 // LINE 700:
 _T1e41:
 	__asm        mov    eax, y;
@@ -2582,7 +2606,7 @@ _T1e41:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T1f3d;
 // LINE 710:
-	__asm        jmp    _T1e06;
+	__asm        jmp    _FOR_NEXT_1e06;
 // LINE 719:
 _T1f3d:
 	__asm        mov    eax, x;
@@ -2680,25 +2704,26 @@ _T2075:
 	__asm        mov    G_texmap[0][eax+ecx], 0x40;
 // LINE 724:
 _T2086:
-	__asm        jmp    _T1e06;
+	__asm        jmp    _FOR_NEXT_1e06;
 // LINE 725:
 _T208b:
-	__asm        jmp    _T1dea;
+	__asm        jmp    _FOR_NEXT_1dea;
 // LINE 728:
-_T2090:
+_FOR_209c:
 	x = 0x0;
-	__asm        jmp    _T209f;
-_T209c:
+	__asm        jmp    _FOR_COND_209c;
+_FOR_NEXT_209c:
 	x++;
-_T209f:
+_FOR_COND_209c:
 	__asm        cmp    x, 0x100;
-	__asm        jge    _T2340;
+	__asm        jge    _FOR_234c;
 // LINE 730:
+_FOR_20b8:
 	y = 0x0;
-	__asm        jmp    _T20bb;
-_T20b8:
+	__asm        jmp    _FOR_COND_20b8;
+_FOR_NEXT_20b8:
 	y++;
-_T20bb:
+_FOR_COND_20b8:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T233b;
 // LINE 738:
@@ -2712,7 +2737,7 @@ _T20bb:
 	__asm        cmp    edx, 0x40;
 	__asm        je     _T20f3;
 // LINE 739:
-	__asm        jmp    _T20b8;
+	__asm        jmp    _FOR_NEXT_20b8;
 // LINE 742:
 _T20f3:
 	__asm        mov    eax, y;
@@ -2788,7 +2813,7 @@ _T20f3:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T21ed;
 // LINE 752:
-	__asm        jmp    _T20b8;
+	__asm        jmp    _FOR_NEXT_20b8;
 // LINE 761:
 _T21ed:
 	__asm        mov    eax, x;
@@ -2886,25 +2911,26 @@ _T2325:
 	__asm        mov    G_texmap[0][eax+ecx], 0x50;
 // LINE 766:
 _T2336:
-	__asm        jmp    _T20b8;
+	__asm        jmp    _FOR_NEXT_20b8;
 // LINE 767:
 _T233b:
-	__asm        jmp    _T209c;
+	__asm        jmp    _FOR_NEXT_209c;
 // LINE 770:
-_T2340:
+_FOR_234c:
 	x = 0x0;
-	__asm        jmp    _T234f;
-_T234c:
+	__asm        jmp    _FOR_COND_234c;
+_FOR_NEXT_234c:
 	x++;
-_T234f:
+_FOR_COND_234c:
 	__asm        cmp    x, 0x100;
-	__asm        jge    _T25ec;
+	__asm        jge    _FOR_25f8;
 // LINE 772:
+_FOR_2368:
 	y = 0x0;
-	__asm        jmp    _T236b;
-_T2368:
+	__asm        jmp    _FOR_COND_2368;
+_FOR_NEXT_2368:
 	y++;
-_T236b:
+_FOR_COND_2368:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T25e7;
 // LINE 780:
@@ -2918,7 +2944,7 @@ _T236b:
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T23a3;
 // LINE 781:
-	__asm        jmp    _T2368;
+	__asm        jmp    _FOR_NEXT_2368;
 // LINE 784:
 _T23a3:
 	__asm        mov    eax, y;
@@ -2992,7 +3018,7 @@ _T23a3:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T2499;
 // LINE 794:
-	__asm        jmp    _T2368;
+	__asm        jmp    _FOR_NEXT_2368;
 // LINE 803:
 _T2499:
 	__asm        mov    eax, x;
@@ -3090,25 +3116,26 @@ _T25d1:
 	__asm        mov    G_texmap[0][eax+ecx], 0x60;
 // LINE 808:
 _T25e2:
-	__asm        jmp    _T2368;
+	__asm        jmp    _FOR_NEXT_2368;
 // LINE 809:
 _T25e7:
-	__asm        jmp    _T234c;
+	__asm        jmp    _FOR_NEXT_234c;
 // LINE 812:
-_T25ec:
+_FOR_25f8:
 	x = 0x0;
-	__asm        jmp    _T25fb;
-_T25f8:
+	__asm        jmp    _FOR_COND_25f8;
+_FOR_NEXT_25f8:
 	x++;
-_T25fb:
+_FOR_COND_25f8:
 	__asm        cmp    x, 0x100;
-	__asm        jge    _T3135;
+	__asm        jge    _FOR_3141;
 // LINE 814:
+_FOR_2614:
 	y = 0x0;
-	__asm        jmp    _T2617;
-_T2614:
+	__asm        jmp    _FOR_COND_2614;
+_FOR_NEXT_2614:
 	y++;
-_T2617:
+_FOR_COND_2614:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T3130;
 // LINE 816:
@@ -3995,25 +4022,26 @@ _T3118:
 	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 925:
 _T312b:
-	__asm        jmp    _T2614;
+	__asm        jmp    _FOR_NEXT_2614;
 // LINE 926:
 _T3130:
-	__asm        jmp    _T25f8;
+	__asm        jmp    _FOR_NEXT_25f8;
 // LINE 930:
-_T3135:
+_FOR_3141:
 	x = 0x0;
-	__asm        jmp    _T3144;
-_T3141:
+	__asm        jmp    _FOR_COND_3141;
+_FOR_NEXT_3141:
 	x++;
-_T3144:
+_FOR_COND_3141:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T337a;
 // LINE 932:
+_FOR_315d:
 	y = 0x0;
-	__asm        jmp    _T3160;
-_T315d:
+	__asm        jmp    _FOR_COND_315d;
+_FOR_NEXT_315d:
 	y++;
-_T3160:
+_FOR_COND_315d:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T3375;
 // LINE 934:
@@ -4185,10 +4213,10 @@ _T330d:
 	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 970:
 _T3370:
-	__asm        jmp    _T315d;
+	__asm        jmp    _FOR_NEXT_315d;
 // LINE 971:
 _T3375:
-	__asm        jmp    _T3141;
+	__asm        jmp    _FOR_NEXT_3141;
 // LINE 990:
 _T337a:
 	__asm        cmp    G_use_height_backplane, 1;
@@ -5112,21 +5140,23 @@ void S3TerrSetGridObj() {
 // LINE 1148:
 	yptr = (GridVerts + 0x4);
 // LINE 1150:
+_FOR_39:
 	y = ulp.y;
-	__asm        jmp    _T3c;
-_T39:
+	__asm        jmp    _FOR_COND_39;
+_FOR_NEXT_39:
 	y++;
-_T3c:
+_FOR_COND_39:
 	__asm        mov    eax, ulp.y;
 	__asm        add    eax, G_VertDim;
 	__asm        cmp    eax, y;
 	__asm        jle    __RETURN;
 // LINE 1152:
+_FOR_59:
 	x = ulp.x;
-	__asm        jmp    _T5c;
-_T59:
+	__asm        jmp    _FOR_COND_59;
+_FOR_NEXT_59:
 	x++;
-_T5c:
+_FOR_COND_59:
 	__asm        mov    eax, ulp.x;
 	__asm        add    eax, G_VertDim;
 	__asm        cmp    eax, x;
@@ -5169,10 +5199,10 @@ _Tce:
 // LINE 1160:
 	yptr += 0xc;
 // LINE 1161:
-	__asm        jmp    _T59;
+	__asm        jmp    _FOR_NEXT_59;
 // LINE 1162:
 _T109:
-	__asm        jmp    _T39;
+	__asm        jmp    _FOR_NEXT_39;
 // LINE 1163:
 __RETURN:
 }
@@ -5637,19 +5667,21 @@ _Te4:
 // LINE 1471:
 	cycle[0]++;
 // LINE 1476:
+_FOR_109:
 	x = xstart;
-	__asm        jmp    _T10d;
-_T109:
+	__asm        jmp    _FOR_COND_109;
+_FOR_NEXT_109:
 	x += 0x2;
-_T10d:
+_FOR_COND_109:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T1b3;
 // LINE 1478:
+_FOR_125:
 	y = ystart;
-	__asm        jmp    _T129;
-_T125:
+	__asm        jmp    _FOR_COND_125;
+_FOR_NEXT_125:
 	y += 0x2;
-_T129:
+_FOR_COND_125:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T1ae;
 // LINE 1481:
@@ -5686,10 +5718,10 @@ _T129:
 	__asm        mov    [eax+ecx], dx;
 // LINE 1485:
 _T1a9:
-	__asm        jmp    _T125;
+	__asm        jmp    _FOR_NEXT_125;
 // LINE 1486:
 _T1ae:
-	__asm        jmp    _T109;
+	__asm        jmp    _FOR_NEXT_109;
 // LINE 1488:
 _T1b3:
 	return 0x1;
@@ -5716,11 +5748,12 @@ void AdjustTerrainMap() {
 // LINE 1546:
 	end = 0x20;
 // LINE 1548:
+_FOR_2d:
 	i = start;
-	__asm        jmp    _T30;
-_T2d:
+	__asm        jmp    _FOR_COND_2d;
+_FOR_NEXT_2d:
 	i++;
-_T30:
+_FOR_COND_2d:
 	__asm        mov    eax, i;
 	__asm        cmp    end, eax;
 	__asm        jle    _T38c;
@@ -5729,10 +5762,11 @@ _T30:
 // LINE 1551:
 	z = (citysize + i);
 // LINE 1553:
-	__asm        jmp    _T56;
-_T53:
+_FOR_53:
+	__asm        jmp    _FOR_COND_53;
+_FOR_NEXT_53:
 	z--;
-_T56:
+_FOR_COND_53:
 	__asm        mov    eax, i;
 	__asm        neg    eax;
 	__asm        dec    eax;
@@ -5850,17 +5884,18 @@ _T1b0:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1560:
-	__asm        jmp    _T53;
+	__asm        jmp    _FOR_NEXT_53;
 // LINE 1563:
 _T1e1:
 	x = (citysize + i);
 // LINE 1564:
 	z = (citysize + i);
 // LINE 1566:
-	__asm        jmp    _T1fb;
-_T1f8:
+_FOR_1f8:
+	__asm        jmp    _FOR_COND_1f8;
+_FOR_NEXT_1f8:
 	x--;
-_T1fb:
+_FOR_COND_1f8:
 	__asm        mov    eax, i;
 	__asm        neg    eax;
 	__asm        dec    eax;
@@ -5978,10 +6013,10 @@ _T356:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1573:
-	__asm        jmp    _T1f8;
+	__asm        jmp    _FOR_NEXT_1f8;
 // LINE 1575:
 _T387:
-	__asm        jmp    _T2d;
+	__asm        jmp    _FOR_NEXT_2d;
 // LINE 1578:
 _T38c:
 	__asm        mov    eax, G_tmask;
@@ -5997,19 +6032,21 @@ _T38c:
 	__asm        mov    dx, [eax+ecx];
 	__asm        mov    alt, edx;
 // LINE 1580:
+_FOR_3ca:
 	x = 0x80;
-	__asm        jmp    _T3cd;
-_T3ca:
+	__asm        jmp    _FOR_COND_3ca;
+_FOR_NEXT_3ca:
 	x++;
-_T3cd:
+_FOR_COND_3ca:
 	__asm        cmp    x, 0x90;
 	__asm        jg     __RETURN;
 // LINE 1582:
+_FOR_3e6:
 	z = 0x80;
-	__asm        jmp    _T3e9;
-_T3e6:
+	__asm        jmp    _FOR_COND_3e6;
+_FOR_NEXT_3e6:
 	z++;
-_T3e9:
+_FOR_COND_3e6:
 	__asm        cmp    z, 0x90;
 	__asm        jg     _T427;
 // LINE 1584:
@@ -6025,10 +6062,10 @@ _T3e9:
 	__asm        mov    ecx, G_tmap;
 	__asm        mov    [edx+ecx], ax;
 // LINE 1585:
-	__asm        jmp    _T3e6;
+	__asm        jmp    _FOR_NEXT_3e6;
 // LINE 1586:
 _T427:
-	__asm        jmp    _T3ca;
+	__asm        jmp    _FOR_NEXT_3ca;
 // LINE 1588:
 __RETURN:
 }
@@ -6413,7 +6450,7 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 // LINE 1841:
 	stobj = cptr->stptr;
 // LINE 1842:
-_T79:
+__WHILE_79:
 	__asm        cmp    stobj, 0;
 	__asm        je     _Td5;
 // LINE 1844:
@@ -6430,7 +6467,7 @@ _T79:
 _Tc8:
 	stobj = stobj->next;
 // LINE 1855:
-	__asm        jmp    _T79;
+	__asm        jmp    __WHILE_79;
 // LINE 1860:
 _Td5:
 	__asm        cmp    maxobjy, 0;

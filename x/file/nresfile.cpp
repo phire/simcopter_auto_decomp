@@ -178,7 +178,7 @@ _T3a:
 // LINE 14:
 _T3f:
 	__asm        jmp    _T5c;
-_T44:
+_LOOP_44:
 	__asm        cmp    i.fCur, 0;
 	__asm        je     _T57;
 
@@ -242,7 +242,7 @@ _Tef:
 	__asm        jmp    __RETURN;
 // LINE 17:
 _Tf4:
-	__asm        jmp    _T44;
+	__asm        jmp    _LOOP_44;
 // LINE 20:
 // Block end:
 _Tf9:
@@ -271,11 +271,11 @@ _Tf9:
 	__asm        movsx  eax, ax;
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    _T154;
+	__asm        jmp    _FOR_17c;
 _T14b:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax], 0;
-_T154:
+_FOR_17c:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
@@ -289,10 +289,10 @@ _T154:
 	__asm        mov    eax, [eax];
 	__asm        dec    eax;
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    _T17f;
-_T17c:
+	__asm        jmp    _FOR_COND_17c;
+_FOR_NEXT_17c:
 	__asm        dec    dword ptr [ebp-0x20];
-_T17f:
+_FOR_COND_17c:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jl     _T239;
 
@@ -353,7 +353,7 @@ _T20d:
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        mov    dword ptr [eax+ecx*4], 0;
 _T234:
-	__asm        jmp    _T17c;
+	__asm        jmp    _FOR_NEXT_17c;
 _T239:
 	__asm        jmp    _T23e;
 _T23e:
@@ -368,16 +368,16 @@ _T24e:
 _T255:
 	__asm        cmp    loader, 0;
 	__asm        je     _T2b2;
-
+_FOR_270:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11A];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    _T279;
-_T270:
+	__asm        jmp    _FOR_COND_270;
+_FOR_NEXT_270:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x30], eax;
-_T279:
+_FOR_COND_270:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        je     _T29b;
 
@@ -388,7 +388,7 @@ _T279:
 
 	__asm        jmp    _T2b2;
 _T296:
-	__asm        jmp    _T270;
+	__asm        jmp    _FOR_NEXT_270;
 _T29b:
 	__asm        jmp    _T2b7;
 
@@ -447,7 +447,7 @@ _T43:
 // LINE 32:
 _T48:
 	__asm        jmp    _T65;
-_T4d:
+_LOOP_4d:
 	__asm        cmp    i.fCur, 0;
 	__asm        je     _T60;
 
@@ -492,16 +492,16 @@ _Tc1:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T148;
 
-	__asm        jmp    _Td6;
-_Td6:
+	__asm        jmp    _FOR_e4;
+_FOR_e4:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        dec    eax;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    _Te7;
-_Te4:
+	__asm        jmp    _FOR_COND_e4;
+_FOR_NEXT_e4:
 	__asm        dec    dword ptr [ebp-0x18];
-_Te7:
+_FOR_COND_e4:
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jl     _T112;
 
@@ -514,7 +514,7 @@ _Te7:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, [eax+8];
 	__asm        call   FlatResFile::Release;
-	__asm        jmp    _Te4;
+	__asm        jmp    _FOR_NEXT_e4;
 _T112:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+4];
@@ -536,11 +536,11 @@ _T143:
 	__asm        jmp    _T148;
 // LINE 34:
 _T148:
-	__asm        jmp    _T4d;
+	__asm        jmp    _LOOP_4d;
 // LINE 35:
 _T14d:
-	__asm        jmp    _T152;
-_T152:
+	__asm        jmp    __WHILE_152;
+__WHILE_152:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11A], 0;
 	__asm        je     _T1d5;
@@ -570,7 +570,7 @@ _T152:
 
 	doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 _T1d0:
-	__asm        jmp    _T152;
+	__asm        jmp    __WHILE_152;
 _T1d5:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x11E];

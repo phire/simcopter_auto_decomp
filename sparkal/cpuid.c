@@ -172,11 +172,12 @@ unsigned short wincpuidext() {
 // LINE 180:
 	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 183:
+_FOR_75:
 	i = 0x0;
-	__asm        jmp    _T78;
-_T75:
+	__asm        jmp    _FOR_COND_75;
+_FOR_NEXT_75:
 	i++;
-_T78:
+_FOR_COND_75:
 	__asm        cmp    i, 0xC;
 	__asm        jge    _Tab;
 // LINE 185:
@@ -192,7 +193,7 @@ _T78:
 	clone_flag = 0x1;
 // LINE 187:
 _Ta6:
-	__asm        jmp    _T75;
+	__asm        jmp    _FOR_NEXT_75;
 // LINE 191:
 _Tab:
 	__asm        cmp    eax, 1;
@@ -270,11 +271,12 @@ unsigned long wincpufeatures() {
 // LINE 270:
 	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 273:
+_FOR_70:
 	i = 0x0;
-	__asm        jmp    _T73;
-_T70:
+	__asm        jmp    _FOR_COND_70;
+_FOR_NEXT_70:
 	i++;
-_T73:
+_FOR_COND_70:
 	__asm        cmp    i, 0xC;
 	__asm        jge    _Ta6;
 // LINE 275:
@@ -290,7 +292,7 @@ _T73:
 	clone_flag = 0x1;
 // LINE 277:
 _Ta1:
-	__asm        jmp    _T70;
+	__asm        jmp    _FOR_NEXT_70;
 // LINE 281:
 _Ta6:
 	__asm        cmp    eax, 1;
@@ -578,11 +580,12 @@ static unsigned short check_IDProc() {
 // LINE 578:
 	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 581:
+_FOR_67:
 	i = 0x0;
-	__asm        jmp    _T6a;
-_T67:
+	__asm        jmp    _FOR_COND_67;
+_FOR_NEXT_67:
 	i++;
-_T6a:
+_FOR_COND_67:
 	__asm        cmp    i, 0xC;
 	__asm        jge    _T9d;
 // LINE 583:
@@ -598,7 +601,7 @@ _T6a:
 	clone_flag = 0x1;
 // LINE 585:
 _T98:
-	__asm        jmp    _T67;
+	__asm        jmp    _FOR_NEXT_67;
 // LINE 589:
 _T9d:
 	__asm        cmp    eax, 1;

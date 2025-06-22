@@ -898,16 +898,16 @@ _Tcb:
 	__asm        jmp    _Td7;
 _Td7:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     _Te9;
+	__asm        je     _FOR_f5;
 
 	return direction;
 // LINE 87:
-_Te9:
+_FOR_f5:
 	i = 0x0;
-	__asm        jmp    _Tf8;
-_Tf5:
+	__asm        jmp    _FOR_COND_f5;
+_FOR_NEXT_f5:
 	i++;
-_Tf8:
+_FOR_COND_f5:
 	__asm        cmp    i, 4;
 	__asm        jge    _T26a;
 // LINE 89:
@@ -1036,7 +1036,7 @@ _T25e:
 	__asm        inc    direction;
 	__asm        and    direction, 3;
 // LINE 100:
-	__asm        jmp    _Tf5;
+	__asm        jmp    _FOR_NEXT_f5;
 // LINE 103:
 _T26a:
 	return 0xff;
@@ -1107,7 +1107,7 @@ _Tb7:
 	__asm        jmp    _Tc3;
 _Tc3:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     _Te1;
+	__asm        je     __WHILE_e1;
 // LINE 114:
 	__asm        mov    dword ptr [ebp-0x14], 1;
 	__asm        jmp    _Td9;
@@ -1115,7 +1115,7 @@ _Td9:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    __RETURN;
 // LINE 116:
-_Te1:
+__WHILE_e1:
 	__asm        mov    eax, loc;
 	__asm        push   eax;
 	__asm        lea    ecx, spiral.currDist;
@@ -1187,7 +1187,7 @@ _T1b5:
 	__asm        jmp    __RETURN;
 // LINE 120:
 _T1bd:
-	__asm        jmp    _Te1;
+	__asm        jmp    __WHILE_e1;
 // LINE 122:
 _T1c2:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
@@ -1209,11 +1209,12 @@ void Station::SortStationsByDistanceFromDestination(/*packed*/ struct _GridCoord
 // LINE 132:
 	this->stationHeapSize = 0x0;
 // LINE 134:
+_FOR_22:
 	i = 0x0;
-	__asm        jmp    _T25;
-_T22:
+	__asm        jmp    _FOR_COND_22;
+_FOR_NEXT_22:
 	i++;
-_T25:
+_FOR_COND_22:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+4], ecx;
@@ -1327,7 +1328,7 @@ _T13a:
 	__asm        call   Station::StationHeapInsert;
 // LINE 165:
 _T14c:
-	__asm        jmp    _T22;
+	__asm        jmp    _FOR_NEXT_22;
 // LINE 166:
 _T151:
 	return;
@@ -1343,11 +1344,12 @@ void Station::SortVehiclesByDistanceFromDestination(/*packed*/ struct _GridCoord
 // LINE 178:
 	this->vehicleHeapSize = 0x0;
 // LINE 181:
+_FOR_22:
 	i = 0x0;
-	__asm        jmp    _T25;
-_T22:
+	__asm        jmp    _FOR_COND_22;
+_FOR_NEXT_22:
 	i++;
-_T25:
+_FOR_COND_22:
 	__asm        mov    eax, vehicleListLength;
 	__asm        cmp    i, eax;
 	__asm        jge    _T13c;
@@ -1362,7 +1364,7 @@ _T36:
 	__asm        cmp    dword ptr [eax+0x294], 3;
 	__asm        jle    _T51;
 // LINE 185:
-	__asm        jmp    _T22;
+	__asm        jmp    _FOR_NEXT_22;
 // LINE 187:
 _T51:
 	__asm        mov    eax, i;
@@ -1457,7 +1459,7 @@ _T11f:
 	__asm        call   Station::VehicleHeapInsert;
 // LINE 217:
 // Block end:
-	__asm        jmp    _T22;
+	__asm        jmp    _FOR_NEXT_22;
 // LINE 218:
 _T13c:
 	return;
@@ -1469,14 +1471,15 @@ _T13c:
 	/*bp-0x8*/   int32_t code;
 
 // LINE 227:
+_FOR_18:
 	i = 0x0;
-	__asm        jmp    _T1b;
-_T18:
+	__asm        jmp    _FOR_COND_18;
+_FOR_NEXT_18:
 	i++;
-_T1b:
+_FOR_COND_18:
 	__asm        mov    eax, vehicleListLength;
 	__asm        cmp    i, eax;
-	__asm        jge    _T4d;
+	__asm        jge    _FOR_59;
 // LINE 229:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, vehicleList;
@@ -1487,23 +1490,24 @@ _T1b:
 	return vehicleList->;
 // LINE 231:
 _T48:
-	__asm        jmp    _T18;
+	__asm        jmp    _FOR_NEXT_18;
 // LINE 235:
-_T4d:
+_FOR_59:
 	code = 0x2;
-	__asm        jmp    _T5c;
-_T59:
+	__asm        jmp    _FOR_COND_59;
+_FOR_NEXT_59:
 	code++;
-_T5c:
+_FOR_COND_59:
 	__asm        mov    eax, code;
 	__asm        cmp    responseLevel, eax;
 	__asm        jle    _Tb8;
 // LINE 237:
+_FOR_74:
 	i = 0x0;
-	__asm        jmp    _T77;
-_T74:
+	__asm        jmp    _FOR_COND_74;
+_FOR_NEXT_74:
 	i++;
-_T77:
+_FOR_COND_74:
 	__asm        mov    eax, vehicleListLength;
 	__asm        cmp    i, eax;
 	__asm        jge    _Tb3;
@@ -1520,10 +1524,10 @@ _T88:
 	return vehicleList->;
 // LINE 241:
 _Tae:
-	__asm        jmp    _T74;
+	__asm        jmp    _FOR_NEXT_74;
 // LINE 242:
 _Tb3:
-	__asm        jmp    _T59;
+	__asm        jmp    _FOR_NEXT_59;
 // LINE 244:
 _Tb8:
 	return 0x0;
@@ -1549,7 +1553,7 @@ void Station::StationHeapInsert(const /*packed*/ struct _StationHeapStruct *pIns
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 261:
-_T34:
+__WHILE_34:
 	__asm        mov    eax, index;
 	__asm        cdq;
 	__asm        sub    eax, edx;
@@ -1606,7 +1610,7 @@ _T34:
 	__asm        sar    eax, 1;
 	__asm        mov    index, eax;
 // LINE 267:
-	__asm        jmp    _T34;
+	__asm        jmp    __WHILE_34;
 // LINE 268:
 _Tc5:
 	return;
@@ -1655,7 +1659,7 @@ void Station::StationHeapRemove(/*packed*/ struct _StationHeapStruct *pRemovedSt
 // LINE 284:
 	parent = 0x1;
 // LINE 287:
-_T71:
+__WHILE_71:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cdq;
@@ -1730,7 +1734,7 @@ _Te3:
 // LINE 306:
 	parent = child;
 // LINE 307:
-	__asm        jmp    _T71;
+	__asm        jmp    __WHILE_71;
 // LINE 310:
 _T13e:
 	__asm        mov    eax, tempStruct.cost;
@@ -1767,7 +1771,7 @@ void Station::VehicleHeapInsert(const /*packed*/ struct _VehicleHeapStruct *pIns
 	__asm        mov    ax, [eax+8];
 	__asm        mov    [ecx+8], ax;
 // LINE 327:
-_T3f:
+__WHILE_3f:
 	__asm        mov    eax, index;
 	__asm        cdq;
 	__asm        sub    eax, edx;
@@ -1838,7 +1842,7 @@ _T3f:
 	__asm        sar    eax, 1;
 	__asm        mov    index, eax;
 // LINE 333:
-	__asm        jmp    _T3f;
+	__asm        jmp    __WHILE_3f;
 // LINE 334:
 _Tfc:
 	return;
@@ -1895,7 +1899,7 @@ void Station::VehicleHeapRemove(/*packed*/ struct _VehicleHeapStruct *pRemovedSt
 // LINE 350:
 	parent = 0x1;
 // LINE 353:
-_T8e:
+__WHILE_8e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        cdq;
@@ -1986,7 +1990,7 @@ _T10c:
 // LINE 372:
 	parent = child;
 // LINE 373:
-	__asm        jmp    _T8e;
+	__asm        jmp    __WHILE_8e;
 // LINE 376:
 _T18f:
 	__asm        lea    eax, tempStruct.cost;
@@ -2575,7 +2579,7 @@ _T68c:
 	__asm        mov    ecx, this;
 	__asm        call   Station::SortVehiclesByDistanceFromDestination;
 // LINE 487:
-_T6b3:
+__WHILE_6b3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     _T85c;
@@ -2711,7 +2715,7 @@ _T7d0:
 	__asm        jmp    _T85c;
 // LINE 522:
 _T857:
-	__asm        jmp    _T6b3;
+	__asm        jmp    __WHILE_6b3;
 // LINE 524:
 _T85c:
 	__asm        jmp    _Ta84;
@@ -2722,7 +2726,7 @@ _T861:
 	__asm        mov    ecx, this;
 	__asm        call   Station::SortStationsByDistanceFromDestination;
 // LINE 530:
-_T873:
+__WHILE_873:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     _Ta84;
@@ -2898,7 +2902,7 @@ _T9b3:
 // LINE 570:
 // Block end:
 _Ta7f:
-	__asm        jmp    _T873;
+	__asm        jmp    __WHILE_873;
 // LINE 573:
 _Ta84:
 	__asm        cmp    pathFound, 0;
@@ -3155,19 +3159,21 @@ void Station::Station(unsigned char stationScurkID) {
 // LINE 596:
 	this->quantityOfStations = 0x0;
 // LINE 599:
+_FOR_29:
 	y = 0x0;
-	__asm        jmp    _T2c;
-_T29:
+	__asm        jmp    _FOR_COND_29;
+_FOR_NEXT_29:
 	y++;
-_T2c:
+_FOR_COND_29:
 	__asm        cmp    y, 0x80;
-	__asm        jge    _T7e;
+	__asm        jge    _FOR_8a;
 // LINE 601:
+_FOR_45:
 	x = 0x0;
-	__asm        jmp    _T48;
-_T45:
+	__asm        jmp    _FOR_COND_45;
+_FOR_NEXT_45:
 	x++;
-_T48:
+_FOR_COND_45:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T79;
 // LINE 603:
@@ -3181,25 +3187,26 @@ _T48:
 	__asm        mov    edx, tempBuildMap;
 	__asm        mov    [ecx+edx], al;
 // LINE 604:
-	__asm        jmp    _T45;
+	__asm        jmp    _FOR_NEXT_45;
 // LINE 605:
 _T79:
-	__asm        jmp    _T29;
+	__asm        jmp    _FOR_NEXT_29;
 // LINE 610:
-_T7e:
+_FOR_8a:
 	x = 0x0;
-	__asm        jmp    _T8d;
-_T8a:
+	__asm        jmp    _FOR_COND_8a;
+_FOR_NEXT_8a:
 	x++;
-_T8d:
+_FOR_COND_8a:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T1a8;
 // LINE 612:
+_FOR_a6:
 	y = 0x0;
-	__asm        jmp    _Ta9;
-_Ta6:
+	__asm        jmp    _FOR_COND_a6;
+_FOR_NEXT_a6:
 	y++;
-_Ta9:
+_FOR_COND_a6:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T1a3;
 // LINE 614:
@@ -3285,10 +3292,10 @@ _Ta9:
 // LINE 637:
 // Block end:
 _T19e:
-	__asm        jmp    _Ta6;
+	__asm        jmp    _FOR_NEXT_a6;
 // LINE 638:
 _T1a3:
-	__asm        jmp    _T8a;
+	__asm        jmp    _FOR_NEXT_8a;
 // LINE 641:
 _T1a8:
 	__asm        mov    eax, this;
@@ -3305,19 +3312,21 @@ _T1a8:
 // LINE 644:
 	stationIndex = 0x0;
 // LINE 645:
+_FOR_1db:
 	y = 0x0;
-	__asm        jmp    _T1de;
-_T1db:
+	__asm        jmp    _FOR_COND_1db;
+_FOR_NEXT_1db:
 	y++;
-_T1de:
+_FOR_COND_1db:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T2cc;
 // LINE 647:
+_FOR_1f7:
 	x = 0x0;
-	__asm        jmp    _T1fa;
-_T1f7:
+	__asm        jmp    _FOR_COND_1f7;
+_FOR_NEXT_1f7:
 	x++;
-_T1fa:
+_FOR_COND_1f7:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T2c7;
 // LINE 649:
@@ -3352,7 +3361,7 @@ _T1fa:
 	__asm        cmp    direction, 0xFF;
 	__asm        jne    _T254;
 // LINE 662:
-	__asm        jmp    _T1f7;
+	__asm        jmp    _FOR_NEXT_1f7;
 // LINE 665:
 _T254:
 	__asm        mov    eax, stationIndex;
@@ -3401,10 +3410,10 @@ _T254:
 // LINE 680:
 // Block end:
 _T2c2:
-	__asm        jmp    _T1f7;
+	__asm        jmp    _FOR_NEXT_1f7;
 // LINE 681:
 _T2c7:
-	__asm        jmp    _T1db;
+	__asm        jmp    _FOR_NEXT_1db;
 // LINE 683:
 _T2cc:
 	this->stationHeap = S2Alloc((this->quantityOfStations << 0x3), G_citymempool);

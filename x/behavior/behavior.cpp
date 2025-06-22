@@ -313,11 +313,12 @@ void Behavior::StdTreeSwizzle(/*unpacked*/ struct Behavior::Tree *tree, long siz
 // LINE 49:
 	Swizzle2(tree);
 // LINE 50:
+_FOR_20:
 	count = 0x0;
-	__asm        jmp    _T24;
-_T20:
+	__asm        jmp    _FOR_COND_20;
+_FOR_NEXT_20:
 	count++;
-_T24:
+_FOR_COND_20:
 	__asm        mov    eax, tree;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        movsx  ecx, count;
@@ -347,7 +348,7 @@ _T24:
 	__asm        call   paramswizzler;
 	__asm        add    esp, 8;
 // LINE 53:
-	__asm        jmp    _T20;
+	__asm        jmp    _FOR_NEXT_20;
 // LINE 54:
 _T7b:
 	return;
@@ -360,8 +361,9 @@ const /*unpacked*/ struct Behavior::Node* Behavior::GetNodeRef(short treeID, sho
 // LINE 74:
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0xFFF;
-	__asm        jge    _Tad;
+	__asm        jge    _FOR_c9;
 // LINE 75:
+_FOR_37:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
@@ -370,11 +372,11 @@ const /*unpacked*/ struct Behavior::Node* Behavior::GetNodeRef(short treeID, sho
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    _T3e;
-_T37:
+	__asm        jmp    _FOR_COND_37;
+_FOR_NEXT_37:
 	__asm        dec    dword ptr [ebp-0xC];
 	__asm        add    dword ptr [ebp-0x10], 0xC;
-_T3e:
+_FOR_COND_37:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jle    _T67;
 
@@ -387,7 +389,7 @@ _T3e:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T79;
 _T62:
-	__asm        jmp    _T37;
+	__asm        jmp    _FOR_NEXT_37;
 _T67:
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    _T79;
@@ -414,7 +416,7 @@ _Ta2:
 _Ta8:
 	__asm        jmp    _T13a;
 // LINE 78:
-_Tad:
+_FOR_c9:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    eax, [eax];
@@ -423,11 +425,11 @@ _Tad:
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    _Td0;
-_Tc9:
+	__asm        jmp    _FOR_COND_c9;
+_FOR_NEXT_c9:
 	__asm        dec    dword ptr [ebp-0x20];
 	__asm        add    dword ptr [ebp-0x24], 0xC;
-_Td0:
+_FOR_COND_c9:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jle    _Tf9;
 
@@ -440,7 +442,7 @@ _Td0:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T10b;
 _Tf4:
-	__asm        jmp    _Tc9;
+	__asm        jmp    _FOR_NEXT_c9;
 _Tf9:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    _T10b;

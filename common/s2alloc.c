@@ -137,16 +137,16 @@ int32_t S2AllocPool(unsigned long poolsize) {
 
 // LINE 295:
 	__asm        cmp    poolCount, 0x20;
-	__asm        jne    _T20;
+	__asm        jne    _FOR_2c;
 // LINE 296:
 	return 0xffffffff;
 // LINE 299:
-_T20:
+_FOR_2c:
 	index = 0x0;
-	__asm        jmp    _T2f;
-_T2c:
+	__asm        jmp    _FOR_COND_2c;
+_FOR_NEXT_2c:
 	index++;
-_T2f:
+_FOR_COND_2c:
 	__asm        cmp    index, 0x20;
 	__asm        jge    _T54;
 // LINE 301:
@@ -157,7 +157,7 @@ _T2f:
 	__asm        jmp    _T54;
 // LINE 303:
 _T4f:
-	__asm        jmp    _T2c;
+	__asm        jmp    _FOR_NEXT_2c;
 // LINE 305:
 _T54:
 	__asm        cmp    index, 0x20;
@@ -309,7 +309,7 @@ _T1f:
 	__asm        mov    eax, [eax];
 	__asm        mov    hdr, eax;
 // LINE 463:
-_T2e:
+__WHILE_2e:
 	__asm        cmp    hdr, 0;
 	__asm        je     _T5d;
 // LINE 465:
@@ -324,7 +324,7 @@ _T2e:
 // LINE 466:
 	hdr = hdr->next;
 // LINE 467:
-	__asm        jmp    _T2e;
+	__asm        jmp    __WHILE_2e;
 // LINE 469:
 _T5d:
 	__asm        mov    eax, index;
@@ -363,7 +363,7 @@ _T1f:
 	__asm        mov    eax, [eax];
 	__asm        mov    hdr, eax;
 // LINE 498:
-_T2e:
+__WHILE_2e:
 	__asm        cmp    hdr, 0;
 	__asm        je     _T9e;
 // LINE 500:
@@ -390,7 +390,7 @@ _T2e:
 // LINE 507:
 	hdr = next_hdr;
 // LINE 508:
-	__asm        jmp    _T2e;
+	__asm        jmp    __WHILE_2e;
 // LINE 509:
 _T9e:
 	__asm        mov    eax, index;

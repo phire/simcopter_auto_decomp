@@ -475,11 +475,12 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 
 	this-><vftable> = 0x593220;
 // LINE 177:
+_FOR_21:
 	currentFlag = 0x0;
-	__asm        jmp    _T24;
-_T21:
+	__asm        jmp    _FOR_COND_21;
+_FOR_NEXT_21:
 	currentFlag++;
-_T24:
+_FOR_COND_21:
 	__asm        cmp    currentFlag, 4;
 	__asm        jge    _T3e;
 // LINE 179:
@@ -487,7 +488,7 @@ _T24:
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 180:
-	__asm        jmp    _T21;
+	__asm        jmp    _FOR_NEXT_21;
 // LINE 182:
 _T3e:
 	this->dyObj.mesh = 0x0;
@@ -659,11 +660,12 @@ void PlaneClass::ResetAll() {
 	/*bp-0x4*/   int32_t currentPlaneIndex;
 
 // LINE 498:
+_FOR_15:
 	currentPlaneIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentPlaneIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentPlaneIndex, 2;
 	__asm        jge    _T36;
 // LINE 500:
@@ -671,7 +673,7 @@ _T18:
 	__asm        mov    ecx, planes[0][eax*4];
 	__asm        call   PlaneClass::Reset;
 // LINE 501:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 503:
 _T36:
 	return;
@@ -682,11 +684,12 @@ void PlaneClass::ItterateAll() {
 	/*bp-0x4*/   int32_t currentPlaneIndex;
 
 // LINE 548:
+_FOR_15:
 	currentPlaneIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentPlaneIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentPlaneIndex, 2;
 	__asm        jge    _T36;
 // LINE 550:
@@ -694,7 +697,7 @@ _T18:
 	__asm        mov    ecx, planes[0][eax*4];
 	__asm        call   PlaneClass::Itterate;
 // LINE 551:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 553:
 _T36:
 	return;
@@ -705,11 +708,12 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 	/*bp-0x4*/   int32_t currentPlaneIndex;
 
 // LINE 580:
+_FOR_15:
 	currentPlaneIndex = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	currentPlaneIndex++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    currentPlaneIndex, 2;
 	__asm        jge    _Tb9;
 // LINE 584:
@@ -759,7 +763,7 @@ _Taa:
 	return 0x1;
 // LINE 589:
 _Tb4:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 591:
 _Tb9:
 	return 0x0;
@@ -1465,37 +1469,37 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 // LINE 1282:
 	deltaY = (CameraCell.y - this->currentLocation.y);
 // LINE 1287:
-_T28:
+__WHILE_28:
 	__asm        cmp    deltaX, 0x80;
-	__asm        jle    _T41;
+	__asm        jle    __WHILE_41;
 // LINE 1289:
 	deltaX -= 0x100;
 // LINE 1290:
-	__asm        jmp    _T28;
+	__asm        jmp    __WHILE_28;
 // LINE 1291:
-_T41:
+__WHILE_41:
 	__asm        cmp    deltaX, 0xFFFFFF80;
-	__asm        jge    _T57;
+	__asm        jge    __WHILE_57;
 // LINE 1293:
 	deltaX += 0x100;
 // LINE 1294:
-	__asm        jmp    _T41;
+	__asm        jmp    __WHILE_41;
 // LINE 1296:
-_T57:
+__WHILE_57:
 	__asm        cmp    deltaY, 0x80;
-	__asm        jle    _T70;
+	__asm        jle    __WHILE_70;
 // LINE 1298:
 	deltaY -= 0x100;
 // LINE 1299:
-	__asm        jmp    _T57;
+	__asm        jmp    __WHILE_57;
 // LINE 1300:
-_T70:
+__WHILE_70:
 	__asm        cmp    deltaY, 0xFFFFFF80;
 	__asm        jge    _T86;
 // LINE 1302:
 	deltaY += 0x100;
 // LINE 1303:
-	__asm        jmp    _T70;
+	__asm        jmp    __WHILE_70;
 // LINE 1305:
 _T86:
 	__asm        cmp    deltaX, 0;
@@ -1834,7 +1838,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, /*packed*/ struct _CELL_IN
 // LINE 1497:
 	stobj = cptr->stptr;
 // LINE 1498:
-_T64:
+__WHILE_64:
 	__asm        cmp    stobj, 0;
 	__asm        je     _T5e3;
 // LINE 1502:
@@ -1998,11 +2002,12 @@ _T2e4:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 1575:
+_FOR_35c:
 	j = 0x0;
-	__asm        jmp    _T362;
-_T35c:
+	__asm        jmp    _FOR_COND_35c;
+_FOR_NEXT_35c:
 	j++;
-_T362:
+_FOR_COND_35c:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
 	__asm        jge    _T444;
@@ -2058,7 +2063,7 @@ _T362:
 // LINE 1592:
 	S3MissileStart(this->missionId, speed, (this + 0x58), 0x8, vec.x, sloc.x, celloc.x, 0x4);
 // LINE 1593:
-	__asm        jmp    _T35c;
+	__asm        jmp    _FOR_NEXT_35c;
 // LINE 1595:
 _T444:
 	__asm        jmp    _T5cc;
@@ -2073,11 +2078,12 @@ _T449:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 1599:
+_FOR_473:
 	j = 0x0;
-	__asm        jmp    _T479;
-_T473:
+	__asm        jmp    _FOR_COND_473;
+_FOR_NEXT_473:
 	j++;
-_T479:
+_FOR_COND_473:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
 	__asm        jge    _T55b;
@@ -2133,7 +2139,7 @@ _T479:
 // LINE 1616:
 	S3MissileStart(this->missionId, speed, (this + 0x58), 0x8, vec.x, sloc.x, celloc.x, 0x4);
 // LINE 1617:
-	__asm        jmp    _T473;
+	__asm        jmp    _FOR_NEXT_473;
 // LINE 1621:
 _T55b:
 	mp.op = 0x1d;
@@ -2162,7 +2168,7 @@ _T5cc:
 _T5d6:
 	stobj = stobj->next;
 // LINE 1641:
-	__asm        jmp    _T64;
+	__asm        jmp    __WHILE_64;
 // LINE 1647:
 _T5e3:
 	newdist = S3MissileGroundHit(cloc.x, dist, (this + 0x8), (this + 0x70));
@@ -2247,11 +2253,12 @@ _T5e3:
 	__asm        lea    eax, [edx+3];
 	__asm        mov    num_debris, eax;
 // LINE 1711:
+_FOR_754:
 	j = 0x0;
-	__asm        jmp    _T75a;
-_T754:
+	__asm        jmp    _FOR_COND_754;
+_FOR_NEXT_754:
 	j++;
-_T75a:
+_FOR_COND_754:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
 	__asm        jge    _T83c;
@@ -2307,7 +2314,7 @@ _T75a:
 // LINE 1728:
 	S3MissileStart(this->missionId, speed, (this + 0x58), 0x8, vec.x, sloc.x, celloc.x, 0x4);
 // LINE 1729:
-	__asm        jmp    _T754;
+	__asm        jmp    _FOR_NEXT_754;
 // LINE 1733:
 _T83c:
 	mp.op = 0x1d;
@@ -2412,7 +2419,7 @@ _T90:
 	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
 	dyptrptr = (cellPointer + 0x10);
 // LINE 1838:
-_Ta3:
+__WHILE_a3:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Tdd;
@@ -2430,7 +2437,7 @@ _Ta3:
 _Td0:
 	dyptrptr = dyptrptr->;
 // LINE 1852:
-	__asm        jmp    _Ta3;
+	__asm        jmp    __WHILE_a3;
 // LINE 1854:
 _Tdd:
 	__asm        mov    eax, dyptrptr;
@@ -2927,12 +2934,12 @@ _T170:
 	__asm        jl     _T1c9;
 
 	__asm        cmp    y, 0x7D;
-	__asm        jle    _T1ce;
+	__asm        jle    _LOOP_1ce;
 // LINE 2119:
 _T1c9:
 	return;
 // LINE 2126:
-_T1ce:
+_LOOP_1ce:
 	curr_dir++;
 // LINE 2127:
 	__asm        mov    eax, curr_dir;
@@ -3012,7 +3019,7 @@ _T287:
 // LINE 2164:
 	__asm        jmp    _T37c;
 
-	__asm        jmp    foundCell;
+	__asm        jmp    _FOR_2d3;
 // LINE 2167:
 	__asm        jmp    _T284;
 // LINE 2169:
@@ -3023,17 +3030,17 @@ _T2ae:
 	__asm        jmp    _T2c2;
 // LINE 2173:
 _T2bd:
-	__asm        jmp    _T1ce;
+	__asm        jmp    _LOOP_1ce;
 // LINE 2176:
 _T2c2:
 	return;
 // LINE 2182:
-foundCell:
+_FOR_2d3:
 	currentFlag = 0x3;
-	__asm        jmp    _T2d6;
-_T2d3:
+	__asm        jmp    _FOR_COND_2d3;
+_FOR_NEXT_2d3:
 	currentFlag++;
-_T2d6:
+_FOR_COND_2d3:
 	__asm        cmp    currentFlag, 4;
 	__asm        jge    _T2f0;
 // LINE 2184:
@@ -3041,7 +3048,7 @@ _T2d6:
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 2185:
-	__asm        jmp    _T2d3;
+	__asm        jmp    _FOR_NEXT_2d3;
 // LINE 2187:
 _T2f0:
 	this->speed = 0x0;
@@ -3086,7 +3093,7 @@ _T36d:
 _T377:
 	return;
 _T37c:
-	__asm        jmp    foundCell;
+	__asm        jmp    _FOR_2d3;
 }
 
 // FUNCTION: COPTER_D 0x0052d411
@@ -3549,11 +3556,12 @@ void PlaneClass::TurnOnShields() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2730:
+_FOR_3d:
 	count = 0x0;
-	__asm        jmp    _T40;
-_T3d:
+	__asm        jmp    _FOR_COND_3d;
+_FOR_NEXT_3d:
 	count++;
-_T40:
+_FOR_COND_3d:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T91;
@@ -3584,7 +3592,7 @@ _T7d:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2739:
-	__asm        jmp    _T3d;
+	__asm        jmp    _FOR_NEXT_3d;
 // LINE 2740:
 _T91:
 	return;
@@ -3613,11 +3621,12 @@ void PlaneClass::TurnOffShields() {
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2752:
+_FOR_3d:
 	count = 0x0;
-	__asm        jmp    _T40;
-_T3d:
+	__asm        jmp    _FOR_COND_3d;
+_FOR_NEXT_3d:
 	count++;
-_T40:
+_FOR_COND_3d:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T95;
@@ -3648,7 +3657,7 @@ _T81:
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2761:
-	__asm        jmp    _T3d;
+	__asm        jmp    _FOR_NEXT_3d;
 // LINE 2762:
 _T95:
 	return;
@@ -3678,16 +3687,16 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	ret = ReadFirstMIFFChunk(0xbc, 0x62b6e8, 0x504c414e, miffReader);
 // LINE 2806:
 	__asm        cmp    ret, 0;
-	__asm        jne    _T38;
+	__asm        jne    _FOR_44;
 // LINE 2807:
 	return 0x0;
 // LINE 2809:
-_T38:
+_FOR_44:
 	i = 0x0;
-	__asm        jmp    _T47;
-_T44:
+	__asm        jmp    _FOR_COND_44;
+_FOR_NEXT_44:
 	i++;
-_T47:
+_FOR_COND_44:
 	__asm        cmp    i, 2;
 	__asm        jge    _T1d0;
 // LINE 2812:
@@ -3797,7 +3806,7 @@ _T192:
 	return 0x0;
 // LINE 2844:
 _T1cb:
-	__asm        jmp    _T44;
+	__asm        jmp    _FOR_NEXT_44;
 // LINE 2845:
 _T1d0:
 	return 0x1;
@@ -3810,11 +3819,12 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 2859:
+_FOR_15:
 	i = 0x0;
-	__asm        jmp    _T18;
-_T15:
+	__asm        jmp    _FOR_COND_15;
+_FOR_NEXT_15:
 	i++;
-_T18:
+_FOR_COND_15:
 	__asm        cmp    i, 2;
 	__asm        jge    _T5c;
 // LINE 2864:
@@ -3835,7 +3845,7 @@ _T18:
 	return 0x0;
 // LINE 2867:
 _T57:
-	__asm        jmp    _T15;
+	__asm        jmp    _FOR_NEXT_15;
 // LINE 2868:
 _T5c:
 	return 0x1;

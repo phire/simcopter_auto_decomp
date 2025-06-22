@@ -3566,11 +3566,12 @@ _T10a:
 // LINE 225:
 	foundobj = 0x0;
 // LINE 226:
+_FOR_1b:
 	count = 0x0;
-	__asm        jmp    _T1f;
-_T1b:
+	__asm        jmp    _FOR_COND_1b;
+_FOR_NEXT_1b:
 	count++;
-_T1f:
+_FOR_COND_1b:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T109;
@@ -3610,7 +3611,7 @@ _Tc4:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Td3;
 
-	__asm        jmp    _T1b;
+	__asm        jmp    _FOR_NEXT_1b;
 // LINE 229:
 _Td3:
 	__asm        mov    eax, obj;
@@ -3618,7 +3619,7 @@ _Td3:
 	__asm        test   eax, eax;
 	__asm        jne    _Tea;
 
-	__asm        jmp    _T1b;
+	__asm        jmp    _FOR_NEXT_1b;
 // LINE 230:
 _Tea:
 	__asm        mov    eax, obj;
@@ -3631,7 +3632,7 @@ _Tea:
 	__asm        jmp    _T109;
 // LINE 234:
 _T104:
-	__asm        jmp    _T1b;
+	__asm        jmp    _FOR_NEXT_1b;
 // LINE 235:
 _T109:
 	__asm        cmp    foundobj, 0;
@@ -3753,7 +3754,7 @@ __RETURN:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x10], eax;
-_T4d:
+__WHILE_4d:
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _T82;
 
@@ -3770,7 +3771,7 @@ _T75:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    _T4d;
+	__asm        jmp    __WHILE_4d;
 _T82:
 	dyobj = 0x0;
 	__asm        jmp    _T94;
@@ -3831,11 +3832,12 @@ _T61:
 	__asm        sar    eax, 1;
 	__asm        mov    smallradius, ax;
 // LINE 265:
+_FOR_7a:
 	count = 0x0;
-	__asm        jmp    _T7e;
-_T7a:
+	__asm        jmp    _FOR_COND_7a;
+_FOR_NEXT_7a:
 	count++;
-_T7e:
+_FOR_COND_7a:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, maxcount;
 	__asm        cmp    eax, ecx;
@@ -4055,7 +4057,7 @@ _T337:
 	__asm        test   eax, eax;
 	__asm        je     _T367;
 // LINE 292:
-	__asm        jmp    _T7a;
+	__asm        jmp    _FOR_NEXT_7a;
 // LINE 294:
 _T367:
 	__asm        lea    eax, newloc.x;
@@ -4070,7 +4072,7 @@ _T367:
 	return 0x1;
 // LINE 296:
 // Block end:
-	__asm        jmp    _T7a;
+	__asm        jmp    _FOR_NEXT_7a;
 // LINE 297:
 _T38b:
 	return 0x0;
@@ -4215,12 +4217,12 @@ _Tad:
 // LINE 328:
 // Block start:
 	/*bp-0x1c*/  short count;
-_Tdb:
+_FOR_e6:
 	count = 0x0;
-	__asm        jmp    _Tea;
-_Te6:
+	__asm        jmp    _FOR_COND_e6;
+_FOR_NEXT_e6:
 	count++;
-_Tea:
+_FOR_COND_e6:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
 	__asm        jge    _T454;
@@ -4430,7 +4432,7 @@ _T366:
 	__asm        test   eax, eax;
 	__asm        je     _T3c6;
 // LINE 336:
-	__asm        jmp    _Te6;
+	__asm        jmp    _FOR_NEXT_e6;
 // LINE 337:
 _T3c6:
 	__asm        jmp    _T3cb;
@@ -4470,14 +4472,14 @@ _T42a:
 	__asm        je     _T444;
 // LINE 338:
 _T43f:
-	__asm        jmp    _Te6;
+	__asm        jmp    _FOR_NEXT_e6;
 // LINE 342:
 _T444:
 	ret = 0x1;
 // LINE 343:
 	__asm        jmp    _T454;
 // LINE 344:
-	__asm        jmp    _Te6;
+	__asm        jmp    _FOR_NEXT_e6;
 // LINE 345:
 _T454:
 	__asm        jmp    _T974;
@@ -4485,12 +4487,12 @@ _T454:
 // Block end:
 // Block start:
 	/*bp-0x20*/  short count;
-_T459:
+_FOR_464:
 	count = 0x0;
-	__asm        jmp    _T468;
-_T464:
+	__asm        jmp    _FOR_COND_464;
+_FOR_NEXT_464:
 	count++;
-_T468:
+_FOR_COND_464:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
 	__asm        jge    _T6ec;
@@ -4630,7 +4632,7 @@ _T5fe:
 	__asm        test   eax, eax;
 	__asm        je     _T65e;
 // LINE 353:
-	__asm        jmp    _T464;
+	__asm        jmp    _FOR_NEXT_464;
 // LINE 354:
 _T65e:
 	__asm        jmp    _T663;
@@ -4670,14 +4672,14 @@ _T6c2:
 	__asm        jne    _T6dc;
 // LINE 355:
 _T6d7:
-	__asm        jmp    _T464;
+	__asm        jmp    _FOR_NEXT_464;
 // LINE 356:
 _T6dc:
 	ret = 0x1;
 // LINE 357:
 	__asm        jmp    _T6ec;
 // LINE 358:
-	__asm        jmp    _T464;
+	__asm        jmp    _FOR_NEXT_464;
 // LINE 359:
 _T6ec:
 	__asm        jmp    _T974;
@@ -4685,12 +4687,12 @@ _T6ec:
 // Block end:
 // Block start:
 	/*bp-0x24*/  short count;
-_T6f1:
+_FOR_6fc:
 	count = 0x0;
-	__asm        jmp    _T700;
-_T6fc:
+	__asm        jmp    _FOR_COND_6fc;
+_FOR_NEXT_6fc:
 	count++;
-_T700:
+_FOR_COND_6fc:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
 	__asm        jge    _T924;
@@ -4830,7 +4832,7 @@ _T896:
 	__asm        test   eax, eax;
 	__asm        je     _T8f6;
 // LINE 367:
-	__asm        jmp    _T6fc;
+	__asm        jmp    _FOR_NEXT_6fc;
 // LINE 368:
 _T8f6:
 	__asm        jmp    _T8fb;
@@ -4842,14 +4844,14 @@ _T8fb:
 	__asm        test   eax, eax;
 	__asm        jne    _T914;
 // LINE 369:
-	__asm        jmp    _T6fc;
+	__asm        jmp    _FOR_NEXT_6fc;
 // LINE 370:
 _T914:
 	ret = 0x1;
 // LINE 371:
 	__asm        jmp    _T924;
 // LINE 372:
-	__asm        jmp    _T6fc;
+	__asm        jmp    _FOR_NEXT_6fc;
 // LINE 373:
 _T924:
 	__asm        jmp    _T974;
@@ -4866,10 +4868,10 @@ _T94a:
 	__asm        mov    eax, [ebp-0x19C];
 	__asm        jmp    _Switch_964[0][eax*4];
 // Switch pointers:
-//   _Tdb
-//   _Tdb
-//   _T459
-//   _T6f1
+//   _FOR_e6
+//   _FOR_e6
+//   _FOR_464
+//   _FOR_6fc
 // LINE 379:
 _T974:
 	__asm        test   reinterpret_cast<uint32_t>(ret), 0xFFFF;
@@ -5075,11 +5077,12 @@ void S3PersonInit() {
 // LINE 406:
 	success = 0x0;
 // LINE 409:
+_FOR_1c:
 	i = 0x0;
-	__asm        jmp    _T1f;
-_T1c:
+	__asm        jmp    _FOR_COND_1c;
+_FOR_NEXT_1c:
 	i++;
-_T1f:
+_FOR_COND_1c:
 	__asm        cmp    i, 0x271;
 	__asm        jge    _T5d;
 // LINE 410:
@@ -5094,7 +5097,7 @@ _T1f:
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, i;
 	__asm        mov    g_sqrtTable[ecx*4], eax;
-	__asm        jmp    _T1c;
+	__asm        jmp    _FOR_NEXT_1c;
 // LINE 412:
 _T5d:
 	InitBodiesAndAnimations();
@@ -5147,11 +5150,12 @@ void S3PersonReset() {
 	/*bp-0x4*/   short count;
 
 // LINE 446:
+_FOR_14:
 	count = 0x0;
-	__asm        jmp    _T18;
-_T14:
+	__asm        jmp    _FOR_COND_14;
+_FOR_NEXT_14:
 	count++;
-_T18:
+_FOR_COND_14:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _Tf3;
@@ -5202,7 +5206,7 @@ _Te3:
 	__asm        call   dword ptr [eax+0x18];
 // LINE 450:
 // Block end:
-	__asm        jmp    _T14;
+	__asm        jmp    _FOR_NEXT_14;
 // LINE 451:
 _Tf3:
 	__asm        mov    eax, gAvatar;
@@ -5413,11 +5417,12 @@ _T46:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _Tf3;
 // LINE 472:
+_FOR_9f:
 	__asm        mov    word ptr [ebp-0x14], 0;
-	__asm        jmp    _Ta3;
-_T9f:
+	__asm        jmp    _FOR_COND_9f;
+_FOR_NEXT_9f:
 	__asm        inc    word ptr [ebp-0x14];
-_Ta3:
+_FOR_COND_9f:
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        cmp    eax, 3;
 	__asm        jge    _Td9;
@@ -5432,7 +5437,7 @@ _Ta3:
 	__asm        mov    [ebp-0x18], ax;
 	__asm        jmp    _Te4;
 _Td4:
-	__asm        jmp    _T9f;
+	__asm        jmp    _FOR_NEXT_9f;
 _Td9:
 	__asm        mov    word ptr [ebp-0x18], 0xC;
 	__asm        jmp    _Te4;
@@ -6145,7 +6150,7 @@ _T7e:
 // LINE 659:
 	dyobj = cptr->dyptr;
 // LINE 660:
-_T51:
+__WHILE_51:
 	__asm        cmp    dyobj, 0;
 	__asm        je     _T7c;
 // LINE 663:
@@ -6159,7 +6164,7 @@ _T51:
 _T6f:
 	dyobj = dyobj->next;
 // LINE 667:
-	__asm        jmp    _T51;
+	__asm        jmp    __WHILE_51;
 // LINE 669:
 _T7c:
 	__asm        cmp    dyobj, 0;
@@ -6242,7 +6247,7 @@ _T122:
 	__asm        jge    _T46;
 _T3b:
 	scurkID = 0xffff;
-	__asm        jmp    _Ta2;
+	__asm        jmp    _FOR_ad;
 _T46:
 	__asm        movsx  eax, cellx;
 	__asm        mov    eax, BuildMap[eax*4];
@@ -6261,14 +6266,14 @@ _T79:
 _T95:
 	__asm        mov    ax, [ebp-0x10];
 	__asm        mov    scurkID, ax;
-	__asm        jmp    _Ta2;
+	__asm        jmp    _FOR_ad;
 // LINE 697:
-_Ta2:
+_FOR_ad:
 	count = 0x0;
-	__asm        jmp    _Tb1;
-_Tad:
+	__asm        jmp    _FOR_COND_ad;
+_FOR_NEXT_ad:
 	count++;
-_Tb1:
+_FOR_COND_ad:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T1df;
@@ -6352,7 +6357,7 @@ _T197:
 // LINE 704:
 // Block end:
 _T1da:
-	__asm        jmp    _Tad;
+	__asm        jmp    _FOR_NEXT_ad;
 // LINE 705:
 _T1df:
 	return 0x0;
@@ -7221,11 +7226,12 @@ _T71:
 	__asm        add    eax, eax;
 	__asm        mov    rectdiam, ax;
 // LINE 860:
+_FOR_f1:
 	count = 0x0;
-	__asm        jmp    _Tf5;
-_Tf1:
+	__asm        jmp    _FOR_COND_f1;
+_FOR_NEXT_f1:
 	count++;
-_Tf5:
+_FOR_COND_f1:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, rectdiam;
 	__asm        cmp    eax, ecx;
@@ -7247,7 +7253,7 @@ _Tf5:
 	return;
 // LINE 867:
 _T17c:
-	__asm        jmp    _Tf1;
+	__asm        jmp    _FOR_NEXT_f1;
 // LINE 868:
 _T181:
 	return;
@@ -7260,7 +7266,7 @@ void cYObject::BeamRemainingAmbients() {
 // LINE 872:
 	numtries = 0x0;
 // LINE 873:
-_T0f:
+__WHILE_0f:
 	__asm        movsx  eax, cYObject::sAmbientTopOff;
 	__asm        movsx  ecx, cYObject::sNumAmbientAwake;
 	__asm        cmp    eax, ecx;
@@ -7345,7 +7351,7 @@ _T17e:
 // LINE 884:
 // Block end:
 _T19a:
-	__asm        jmp    _T0f;
+	__asm        jmp    __WHILE_0f;
 // LINE 885:
 _T19f:
 	return;
@@ -7392,11 +7398,12 @@ _T53:
 // LINE 899:
 	sleeper = 0x0;
 // LINE 900:
+_FOR_1b:
 	count = 0x0;
-	__asm        jmp    _T1f;
-_T1b:
+	__asm        jmp    _FOR_COND_1b;
+_FOR_NEXT_1b:
 	count++;
-_T1f:
+_FOR_COND_1b:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T10c;
@@ -7449,7 +7456,7 @@ _Tea:
 	__asm        jmp    _T10c;
 // LINE 907:
 _T107:
-	__asm        jmp    _T1b;
+	__asm        jmp    _FOR_NEXT_1b;
 // LINE 908:
 _T10c:
 	return sleeper;
@@ -7520,11 +7527,12 @@ void cYObject::MakePlebes() {
 	p.y = 0x0;
 	p.z = 0x0;
 // LINE 950:
+_FOR_2a:
 	pindex = 0x0;
-	__asm        jmp    _T2d;
-_T2a:
+	__asm        jmp    _FOR_COND_2a;
+_FOR_NEXT_2a:
 	pindex++;
-_T2d:
+_FOR_COND_2a:
 	__asm        cmp    pindex, 0x64;
 	__asm        jge    _T1a2;
 // LINE 952:
@@ -7606,7 +7614,7 @@ _T175:
 // LINE 960:
 // Block end:
 _T19d:
-	__asm        jmp    _T2a;
+	__asm        jmp    _FOR_NEXT_2a;
 // LINE 961:
 _T1a2:
 	return;
@@ -7656,26 +7664,27 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // LINE 989:
 	cYObject::sUnitVectorTable[7].z = 0xffff4afc;
 // LINE 992:
+_FOR_d9:
 	count = 0x0;
-	__asm        jmp    _Tdd;
-_Td9:
+	__asm        jmp    _FOR_COND_d9;
+_FOR_NEXT_d9:
 	count++;
-_Tdd:
+_FOR_COND_d9:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 8;
-	__asm        jge    _T101;
+	__asm        jge    _FOR_10c;
 // LINE 993:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    cYObject::sUnitVectorTable[0].y[eax*4], 0;
-	__asm        jmp    _Td9;
+	__asm        jmp    _FOR_NEXT_d9;
 // LINE 995:
-_T101:
+_FOR_10c:
 	count = 0x0;
-	__asm        jmp    _T110;
-_T10c:
+	__asm        jmp    _FOR_COND_10c;
+_FOR_NEXT_10c:
 	count++;
-_T110:
+_FOR_COND_10c:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 8;
 	__asm        jge    _T1a0;
@@ -7713,19 +7722,20 @@ _T110:
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        mov    cYObject::sMoveTable[0].y[ecx*4], eax;
 // LINE 999:
-	__asm        jmp    _T10c;
+	__asm        jmp    _FOR_NEXT_10c;
 // LINE 1003:
 _T1a0:
 	cYObject::sStackSize[0] = 0xa;
 // LINE 1005:
+_FOR_1b4:
 	count = 0x0;
-	__asm        jmp    _T1b8;
-_T1b4:
+	__asm        jmp    _FOR_COND_1b4;
+_FOR_NEXT_1b4:
 	count++;
-_T1b8:
+_FOR_COND_1b4:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
-	__asm        jge    _T319;
+	__asm        jge    _FOR_324;
 // LINE 1006:
 	__asm        movsx  eax, count;
 	__asm        mov    [ebp-0x28], eax;
@@ -7819,14 +7829,14 @@ _T2cd:
 //   _T27c
 // LINE 1036:
 _T314:
-	__asm        jmp    _T1b4;
+	__asm        jmp    _FOR_NEXT_1b4;
 // LINE 1039:
-_T319:
+_FOR_324:
 	count = 0x0;
-	__asm        jmp    _T328;
-_T324:
+	__asm        jmp    _FOR_COND_324;
+_FOR_NEXT_324:
 	count++;
-_T328:
+_FOR_COND_324:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x14;
 	__asm        jge    _T382;
@@ -7846,7 +7856,7 @@ _T36a:
 	__asm        jmp    _T37d;
 // LINE 1041:
 _T37d:
-	__asm        jmp    _T324;
+	__asm        jmp    _FOR_NEXT_324;
 // LINE 1043:
 _T382:
 	__asm        jmp    _T3a3;
@@ -7982,17 +7992,17 @@ _T672:
 	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
 _T693:
 	cYObject::sHitRxnTree[16] = 0x387;
-	__asm        jmp    _T6a1;
+	__asm        jmp    _FOR_6ac;
 // LINE 1069:
-_T6a1:
+_FOR_6ac:
 	count = 0x0;
-	__asm        jmp    _T6b0;
-_T6ac:
+	__asm        jmp    _FOR_COND_6ac;
+_FOR_NEXT_6ac:
 	count++;
-_T6b0:
+_FOR_COND_6ac:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
-	__asm        jge    _T911;
+	__asm        jge    _FOR_91c;
 // LINE 1070:
 	__asm        movsx  eax, count;
 	__asm        mov    [ebp-0x2C], eax;
@@ -8003,11 +8013,12 @@ _T6c9:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    cYObject::sNeutralMissionLocs[0][0][eax*8], 2;
 // LINE 1081:
+_FOR_6e6:
 	n = 0x1;
-	__asm        jmp    _T6ea;
-_T6e6:
+	__asm        jmp    _FOR_COND_6e6;
+_FOR_NEXT_6e6:
 	n++;
-_T6ea:
+_FOR_COND_6e6:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T715;
@@ -8017,7 +8028,7 @@ _T6ea:
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
 	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
-	__asm        jmp    _T6e6;
+	__asm        jmp    _FOR_NEXT_6e6;
 // LINE 1082:
 _T715:
 	__asm        jmp    _T90c;
@@ -8039,11 +8050,12 @@ _T71a:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    cYObject::sNeutralMissionLocs[0][3][eax*8], 0xC;
 // LINE 1088:
+_FOR_76d:
 	n = 0x4;
-	__asm        jmp    _T771;
-_T76d:
+	__asm        jmp    _FOR_COND_76d;
+_FOR_NEXT_76d:
 	n++;
-_T771:
+_FOR_COND_76d:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T79c;
@@ -8053,7 +8065,7 @@ _T771:
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
 	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
-	__asm        jmp    _T76d;
+	__asm        jmp    _FOR_NEXT_76d;
 // LINE 1089:
 _T79c:
 	__asm        jmp    _T90c;
@@ -8063,11 +8075,12 @@ _T7a1:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    cYObject::sNeutralMissionLocs[0][1][eax*8], 7;
 // LINE 1094:
+_FOR_7be:
 	n = 0x3;
-	__asm        jmp    _T7c2;
-_T7be:
+	__asm        jmp    _FOR_COND_7be;
+_FOR_NEXT_7be:
 	n++;
-_T7c2:
+_FOR_COND_7be:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T7ed;
@@ -8077,7 +8090,7 @@ _T7c2:
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
 	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
-	__asm        jmp    _T7be;
+	__asm        jmp    _FOR_NEXT_7be;
 // LINE 1095:
 _T7ed:
 	__asm        jmp    _T90c;
@@ -8087,11 +8100,12 @@ _T7f2:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    cYObject::sNeutralMissionLocs[0][0][eax*8], 0xC;
 // LINE 1098:
+_FOR_80f:
 	n = 0x1;
-	__asm        jmp    _T813;
-_T80f:
+	__asm        jmp    _FOR_COND_80f;
+_FOR_NEXT_80f:
 	n++;
-_T813:
+_FOR_COND_80f:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T83e;
@@ -8101,7 +8115,7 @@ _T813:
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
 	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
-	__asm        jmp    _T80f;
+	__asm        jmp    _FOR_NEXT_80f;
 // LINE 1099:
 _T83e:
 	__asm        jmp    _T90c;
@@ -8127,11 +8141,12 @@ _T843:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    cYObject::sNeutralMissionLocs[0][4][eax*8], 7;
 // LINE 1113:
+_FOR_8a8:
 	n = 0x5;
-	__asm        jmp    _T8ac;
-_T8a8:
+	__asm        jmp    _FOR_COND_8a8;
+_FOR_NEXT_8a8:
 	n++;
-_T8ac:
+_FOR_COND_8a8:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T8d7;
@@ -8141,7 +8156,7 @@ _T8ac:
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
 	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
-	__asm        jmp    _T8a8;
+	__asm        jmp    _FOR_NEXT_8a8;
 // LINE 1114:
 _T8d7:
 	__asm        jmp    _T90c;
@@ -8162,17 +8177,17 @@ _T8e1:
 //   _T7f2
 // LINE 1117:
 _T90c:
-	__asm        jmp    _T6ac;
+	__asm        jmp    _FOR_NEXT_6ac;
 // LINE 1119:
-_T911:
+_FOR_91c:
 	count = 0x0;
-	__asm        jmp    _T920;
-_T91c:
+	__asm        jmp    _FOR_COND_91c;
+_FOR_NEXT_91c:
 	count++;
-_T920:
+_FOR_COND_91c:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x12;
-	__asm        jge    _Taa4;
+	__asm        jge    _FOR_aaf;
 // LINE 1120:
 	__asm        movsx  eax, count;
 	__asm        mov    [ebp-0x30], eax;
@@ -8183,11 +8198,12 @@ _T939:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    cYObject::sNeutralPersonLocs[0][0][eax*8], 0xD;
 // LINE 1123:
+_FOR_956:
 	n = 0x1;
-	__asm        jmp    _T95a;
-_T956:
+	__asm        jmp    _FOR_COND_956;
+_FOR_NEXT_956:
 	n++;
-_T95a:
+_FOR_COND_956:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T985;
@@ -8197,7 +8213,7 @@ _T95a:
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
 	__asm        mov    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], 0;
-	__asm        jmp    _T956;
+	__asm        jmp    _FOR_NEXT_956;
 // LINE 1124:
 _T985:
 	__asm        jmp    _Ta9f;
@@ -8215,11 +8231,12 @@ _T98a:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    cYObject::sNeutralPersonLocs[0][2][eax*8], 3;
 // LINE 1129:
+_FOR_9cb:
 	n = 0x3;
-	__asm        jmp    _T9cf;
-_T9cb:
+	__asm        jmp    _FOR_COND_9cb;
+_FOR_NEXT_9cb:
 	n++;
-_T9cf:
+_FOR_COND_9cb:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T9fa;
@@ -8229,7 +8246,7 @@ _T9cf:
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
 	__asm        mov    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], 0;
-	__asm        jmp    _T9cb;
+	__asm        jmp    _FOR_NEXT_9cb;
 // LINE 1130:
 _T9fa:
 	__asm        jmp    _Ta9f;
@@ -8251,11 +8268,12 @@ _T9ff:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    cYObject::sNeutralPersonLocs[0][3][eax*8], 0xA;
 // LINE 1142:
+_FOR_a52:
 	n = 0x4;
-	__asm        jmp    _Ta56;
-_Ta52:
+	__asm        jmp    _FOR_COND_a52;
+_FOR_NEXT_a52:
 	n++;
-_Ta56:
+_FOR_COND_a52:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _Ta81;
@@ -8265,7 +8283,7 @@ _Ta56:
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
 	__asm        mov    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], 0;
-	__asm        jmp    _Ta52;
+	__asm        jmp    _FOR_NEXT_a52;
 // LINE 1143:
 _Ta81:
 	__asm        jmp    _Ta9f;
@@ -8279,17 +8297,17 @@ _Ta86:
 	__asm        jmp    _T9ff;
 // LINE 1144:
 _Ta9f:
-	__asm        jmp    _T91c;
+	__asm        jmp    _FOR_NEXT_91c;
 // LINE 1145:
-_Taa4:
+_FOR_aaf:
 	count = 0x0;
-	__asm        jmp    _Tab3;
-_Taaf:
+	__asm        jmp    _FOR_COND_aaf;
+_FOR_NEXT_aaf:
 	count++;
-_Tab3:
+_FOR_COND_aaf:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
-	__asm        jge    _Tb65;
+	__asm        jge    _FOR_b70;
 // LINE 1146:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 7;
@@ -8339,17 +8357,17 @@ _Tb43:
 	__asm        mov    cYObject::sLocInfo[0].maxNormalLoiterers[eax*8], 4;
 // LINE 1157:
 _Tb60:
-	__asm        jmp    _Taaf;
+	__asm        jmp    _FOR_NEXT_aaf;
 // LINE 1162:
-_Tb65:
+_FOR_b70:
 	count = 0x0;
-	__asm        jmp    _Tb74;
-_Tb70:
+	__asm        jmp    _FOR_COND_b70;
+_FOR_NEXT_b70:
 	count++;
-_Tb74:
+_FOR_COND_b70:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x100;
-	__asm        jge    _T1042;
+	__asm        jge    _FOR_104d;
 // LINE 1163:
 	__asm        movsx  eax, count;
 	__asm        test   eax, eax;
@@ -8696,21 +8714,21 @@ _T102e:
 	__asm        mov    cYObject::sLocType[0][eax*4], 1;
 // LINE 1189:
 _T103d:
-	__asm        jmp    _Tb70;
+	__asm        jmp    _FOR_NEXT_b70;
 // LINE 1192:
-_T1042:
+_FOR_104d:
 	count = 0x0;
-	__asm        jmp    _T1051;
-_T104d:
+	__asm        jmp    _FOR_COND_104d;
+_FOR_NEXT_104d:
 	count++;
-_T1051:
+_FOR_COND_104d:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T1072;
 // LINE 1193:
 	__asm        movsx  eax, count;
 	__asm        mov    cYObject::sObjects[0][eax*4], 0;
-	__asm        jmp    _T104d;
+	__asm        jmp    _FOR_NEXT_104d;
 // LINE 1194:
 _T1072:
 	cYObject::sInited = 0x1;
@@ -8787,18 +8805,19 @@ _T118d:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    cYObject::sBehavior, eax;
 // LINE 1208:
+_FOR_11a7:
 	count = 0x0;
-	__asm        jmp    _T11ab;
-_T11a7:
+	__asm        jmp    _FOR_COND_11a7;
+_FOR_NEXT_11a7:
 	count++;
-_T11ab:
+_FOR_COND_11a7:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x40;
 	__asm        jge    _T11cc;
 // LINE 1209:
 	__asm        movsx  eax, count;
 	__asm        mov    cYObject::PrimProcs[0][eax*4], 0;
-	__asm        jmp    _T11a7;
+	__asm        jmp    _FOR_NEXT_11a7;
 // LINE 1210:
 _T11cc:
 	__asm        jmp    _T11ed;
@@ -9295,7 +9314,7 @@ _T156:
 // LINE 1335:
 	y = ((0x20000000 - (ViewState.world_pos.z + vec.z)) >> 0x16);
 // LINE 1342:
-_T187:
+_LOOP_187:
 	curr_dir++;
 // LINE 1343:
 	__asm        mov    eax, curr_dir;
@@ -9353,18 +9372,18 @@ _T1f3:
 _T21b:
 	__asm        mov    eax, spiral_dist;
 	__asm        cmp    curr_dist, eax;
-	__asm        jne    _T230;
+	__asm        jne    _FOR_23c;
 // LINE 1371:
 	curr_dist--;
 // LINE 1372:
 	stop_now = 0x1;
 // LINE 1376:
-_T230:
+_FOR_23c:
 	i = 0x0;
-	__asm        jmp    _T23f;
-_T23c:
+	__asm        jmp    _FOR_COND_23c;
+_FOR_NEXT_23c:
 	i++;
-_T23f:
+_FOR_COND_23c:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
 	__asm        jle    _T2c9;
@@ -9412,7 +9431,7 @@ _T2b8:
 // LINE 1397:
 	y += ydir;
 // LINE 1398:
-	__asm        jmp    _T23c;
+	__asm        jmp    _FOR_NEXT_23c;
 // LINE 1400:
 _T2c9:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(stop_now);
@@ -9432,7 +9451,7 @@ _T2f9:
 	return 0x0;
 // LINE 1407:
 _T301:
-	__asm        jmp    _T187;
+	__asm        jmp    _LOOP_187;
 // LINE 1408:
 	doAssert(0x8c085, 0x5ba5f4, 0x580, 0x5ba60c);
 // LINE 1409:
@@ -9523,37 +9542,37 @@ _Tce:
 	__asm        sub    eax, edx;
 	__asm        mov    deltaY, ax;
 // LINE 1429:
-_Tfa:
+__WHILE_fa:
 	__asm        movsx  eax, deltaX;
 	__asm        cmp    eax, 0x80;
-	__asm        jle    _T11b;
+	__asm        jle    __WHILE_11b;
 // LINE 1430:
 	__asm        movsx  eax, deltaX;
 	__asm        sub    eax, 0x100;
 	__asm        mov    deltaX, ax;
-	__asm        jmp    _Tfa;
+	__asm        jmp    __WHILE_fa;
 // LINE 1431:
-_T11b:
+__WHILE_11b:
 	__asm        movsx  eax, deltaX;
 	__asm        cmp    eax, 0xFFFFFF80;
-	__asm        jge    _T13a;
+	__asm        jge    __WHILE_13a;
 // LINE 1432:
 	__asm        movsx  eax, deltaX;
 	__asm        add    eax, 0x100;
 	__asm        mov    deltaX, ax;
-	__asm        jmp    _T11b;
+	__asm        jmp    __WHILE_11b;
 // LINE 1434:
-_T13a:
+__WHILE_13a:
 	__asm        movsx  eax, deltaY;
 	__asm        cmp    eax, 0x80;
-	__asm        jle    _T15b;
+	__asm        jle    __WHILE_15b;
 // LINE 1435:
 	__asm        movsx  eax, deltaY;
 	__asm        sub    eax, 0x100;
 	__asm        mov    deltaY, ax;
-	__asm        jmp    _T13a;
+	__asm        jmp    __WHILE_13a;
 // LINE 1436:
-_T15b:
+__WHILE_15b:
 	__asm        movsx  eax, deltaY;
 	__asm        cmp    eax, 0xFFFFFF80;
 	__asm        jge    _T17a;
@@ -9561,7 +9580,7 @@ _T15b:
 	__asm        movsx  eax, deltaY;
 	__asm        add    eax, 0x100;
 	__asm        mov    deltaY, ax;
-	__asm        jmp    _T15b;
+	__asm        jmp    __WHILE_15b;
 // LINE 1439:
 _T17a:
 	__asm        movsx  eax, deltaY;
@@ -9722,11 +9741,12 @@ void LiberateMissionPeople(long missionid) {
 	/*bp-0x4*/   short count;
 
 // LINE 1477:
+_FOR_14:
 	count = 0x0;
-	__asm        jmp    _T18;
-_T14:
+	__asm        jmp    _FOR_COND_14;
+_FOR_NEXT_14:
 	count++;
-_T18:
+_FOR_COND_14:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T111;
@@ -9785,7 +9805,7 @@ _Te3:
 // LINE 1483:
 // Block end:
 _T10c:
-	__asm        jmp    _T14;
+	__asm        jmp    _FOR_NEXT_14;
 // LINE 1484:
 _T111:
 	return;
@@ -9805,11 +9825,12 @@ void KillMissionPeople(long missionid) {
 // LINE 1496:
 	mp.op = 0x17;
 // LINE 1499:
+_FOR_2f:
 	count = 0x0;
-	__asm        jmp    _T33;
-_T2f:
+	__asm        jmp    _FOR_COND_2f;
+_FOR_NEXT_2f:
 	count++;
-_T33:
+_FOR_COND_2f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T240;
@@ -9932,7 +9953,7 @@ _T227:
 // Block end:
 // Block end:
 _T23b:
-	__asm        jmp    _T2f;
+	__asm        jmp    _FOR_NEXT_2f;
 // LINE 1530:
 _T240:
 	return;
@@ -10062,11 +10083,12 @@ _Tf0:
 _Tfb:
 	loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
 // LINE 1551:
+_FOR_119:
 	count = 0x0;
-	__asm        jmp    _T11d;
-_T119:
+	__asm        jmp    _FOR_COND_119;
+_FOR_NEXT_119:
 	count++;
-_T11d:
+_FOR_COND_119:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T157;
@@ -10084,7 +10106,7 @@ _T11d:
 	__asm        jmp    _T157;
 // LINE 1556:
 _T152:
-	__asm        jmp    _T119;
+	__asm        jmp    _FOR_NEXT_119;
 // LINE 1560:
 // Block end:
 // Block end:
@@ -10215,14 +10237,14 @@ _T1fe:
 _T249:
 	this->fDyn.radius = 0x50000;
 _T256:
-	__asm        jmp    _T25b;
+	__asm        jmp    _FOR_266;
 // LINE 1588:
-_T25b:
+_FOR_266:
 	count = 0x0;
-	__asm        jmp    _T26a;
-_T266:
+	__asm        jmp    _FOR_COND_266;
+_FOR_NEXT_266:
 	count++;
-_T26a:
+_FOR_COND_266:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 4;
 	__asm        jge    _T300;
@@ -10269,7 +10291,7 @@ _T26a:
 // LINE 1595:
 // Block end:
 _T2fb:
-	__asm        jmp    _T266;
+	__asm        jmp    _FOR_NEXT_266;
 // LINE 1596:
 _T300:
 	__asm        test   reinterpret_cast<uint32_t>(foundplace), 0xFFFF;
@@ -10524,11 +10546,12 @@ _T642:
 _T65e:
 	ret = 0x0;
 // LINE 1649:
+_FOR_66f:
 	count = 0x0;
-	__asm        jmp    _T673;
-_T66f:
+	__asm        jmp    _FOR_COND_66f;
+_FOR_NEXT_66f:
 	count++;
-_T673:
+_FOR_COND_66f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 4;
 	__asm        jge    _T925;
@@ -10599,11 +10622,12 @@ _T673:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    destcelly, ax;
 // LINE 1662:
+_FOR_745:
 	cnt = 0x0;
-	__asm        jmp    _T749;
-_T745:
+	__asm        jmp    _FOR_COND_745;
+_FOR_NEXT_745:
 	cnt++;
-_T749:
+_FOR_COND_745:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _T81c;
@@ -10684,7 +10708,7 @@ _T812:
 // LINE 1676:
 // Block end:
 _T817:
-	__asm        jmp    _T745;
+	__asm        jmp    _FOR_NEXT_745;
 // LINE 1678:
 // Block end:
 _T81c:
@@ -10785,7 +10809,7 @@ _T91c:
 // LINE 1733:
 // Block end:
 _T920:
-	__asm        jmp    _T66f;
+	__asm        jmp    _FOR_NEXT_66f;
 // LINE 1734:
 _T925:
 	__asm        jmp    _Td96;
@@ -11551,10 +11575,10 @@ void cYObject::PhaseAndBeamSoundChannels() {
 // LINE 1842:
 	count = 0x0;
 // LINE 1843:
-_T0f:
+__WHILE_0f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
-	__asm        jge    _T26d;
+	__asm        jge    _FOR_278;
 // LINE 1844:
 	__asm        mov    ax, count;
 	__asm        mov    [ebp-0x18], ax;
@@ -11722,14 +11746,14 @@ _T254:
 // LINE 1856:
 // Block end:
 _T268:
-	__asm        jmp    _T0f;
+	__asm        jmp    __WHILE_0f;
 // LINE 1858:
-_T26d:
+_FOR_278:
 	__asm        mov    word ptr [ebp-0x24], 0;
-	__asm        jmp    _T27c;
-_T278:
+	__asm        jmp    _FOR_COND_278;
+_FOR_NEXT_278:
 	__asm        inc    word ptr [ebp-0x24];
-_T27c:
+_FOR_COND_278:
 	__asm        movsx  eax, word ptr [ebp-0x24];
 	__asm        cmp    eax, 0xC;
 	__asm        jge    _T2af;
@@ -11743,7 +11767,7 @@ _T27c:
 	__asm        mov    [ebp-0x28], ax;
 	__asm        jmp    _T2ba;
 _T2aa:
-	__asm        jmp    _T278;
+	__asm        jmp    _FOR_NEXT_278;
 _T2af:
 	__asm        mov    word ptr [ebp-0x28], 0xFFFF;
 	__asm        jmp    _T2ba;
@@ -11772,7 +11796,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 // LINE 1866:
 	count = 0x0;
 // LINE 1869:
-_T17:
+__WHILE_17:
 	__asm        movsx  eax, soundchannel;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     _T1b9;
@@ -11821,7 +11845,7 @@ _Td5:
 	__asm        test   eax, eax;
 	__asm        jne    _Tec;
 // LINE 1872:
-	__asm        jmp    _T17;
+	__asm        jmp    __WHILE_17;
 // LINE 1873:
 _Tec:
 	__asm        mov    eax, obj;
@@ -11870,11 +11894,12 @@ _T145:
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::SetSoundChannel;
 // LINE 1878:
+_FOR_172:
 	__asm        mov    word ptr [ebp-0x1C], 0;
-	__asm        jmp    _T176;
-_T172:
+	__asm        jmp    _FOR_COND_172;
+_FOR_NEXT_172:
 	__asm        inc    word ptr [ebp-0x1C];
-_T176:
+_FOR_COND_172:
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        cmp    eax, 0xC;
 	__asm        jge    _T1a9;
@@ -11888,14 +11913,14 @@ _T176:
 	__asm        mov    soundchannel, ax;
 	__asm        jmp    _T1b4;
 _T1a4:
-	__asm        jmp    _T172;
+	__asm        jmp    _FOR_NEXT_172;
 _T1a9:
 	soundchannel = 0xffff;
 	__asm        jmp    _T1b4;
 // LINE 1881:
 // Block end:
 _T1b4:
-	__asm        jmp    _T17;
+	__asm        jmp    __WHILE_17;
 // LINE 1882:
 _T1b9:
 	return soundchannel;
@@ -12054,16 +12079,16 @@ _T132:
 	__asm        jne    _T1c4;
 // LINE 1917:
 	__asm        test   reinterpret_cast<uint32_t>(playforsure), 0xFFFF;
-	__asm        jne    _T168;
+	__asm        jne    _FOR_173;
 // LINE 1918:
 	return 0x1;
 // LINE 1919:
-_T168:
+_FOR_173:
 	__asm        mov    word ptr [ebp-0x2C], 0;
-	__asm        jmp    _T177;
-_T173:
+	__asm        jmp    _FOR_COND_173;
+_FOR_NEXT_173:
 	__asm        inc    word ptr [ebp-0x2C];
-_T177:
+_FOR_COND_173:
 	__asm        movsx  eax, word ptr [ebp-0x2C];
 	__asm        cmp    eax, 3;
 	__asm        jge    _T1b3;
@@ -12079,7 +12104,7 @@ _T177:
 	__asm        mov    [ecx+0x102], ax;
 	__asm        jmp    _T1c4;
 _T1ae:
-	__asm        jmp    _T173;
+	__asm        jmp    _FOR_NEXT_173;
 _T1b3:
 	this->fData[25] = 0xc;
 	__asm        jmp    _T1c4;
@@ -12341,11 +12366,12 @@ _T56:
 // LINE 2099:
 // Block start:
 	/*bp-0xc*/   short count;
+_FOR_73:
 	count = 0x0;
-	__asm        jmp    _T77;
-_T73:
+	__asm        jmp    _FOR_COND_73;
+_FOR_NEXT_73:
 	count++;
-_T77:
+_FOR_COND_73:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T1b0;
@@ -12428,7 +12454,7 @@ _T163:
 // LINE 2103:
 // Block end:
 _T1ab:
-	__asm        jmp    _T73;
+	__asm        jmp    _FOR_NEXT_73;
 // LINE 2105:
 // Block end:
 _T1b0:
@@ -12448,16 +12474,16 @@ _T1d8:
 	__asm        inc    gPersonSoundBeamSlice;
 	__asm        movsx  eax, gPersonSoundBeamSlice;
 	__asm        cmp    eax, 2;
-	__asm        jle    _T1f8;
+	__asm        jle    _FOR_203;
 
 	gPersonSoundBeamSlice = 0x0;
 // LINE 2108:
-_T1f8:
+_FOR_203:
 	count = 0x0;
-	__asm        jmp    _T207;
-_T203:
+	__asm        jmp    _FOR_COND_203;
+_FOR_NEXT_203:
 	count++;
-_T207:
+_FOR_COND_203:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T61c;
@@ -12658,7 +12684,7 @@ _T57a:
 	__asm        jmp    _T587;
 // LINE 2120:
 _T587:
-	__asm        jmp    _T203;
+	__asm        jmp    _FOR_NEXT_203;
 // LINE 2123:
 _T58c:
 	__asm        jmp    _T591;
@@ -12703,7 +12729,7 @@ _T60f:
 // LINE 2126:
 // Block end:
 _T617:
-	__asm        jmp    _T203;
+	__asm        jmp    _FOR_NEXT_203;
 // LINE 2127:
 _T61c:
 	__asm        cmp    gPersonBeamSlice, 0;
@@ -12792,11 +12818,12 @@ _T53:
 	/*bp-0x4*/   short count;
 
 // LINE 2166:
+_FOR_17:
 	count = 0x0;
-	__asm        jmp    _T1b;
-_T17:
+	__asm        jmp    _FOR_COND_17;
+_FOR_NEXT_17:
 	count++;
-_T1b:
+_FOR_COND_17:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T10a;
@@ -12852,7 +12879,7 @@ _Teb:
 // LINE 2171:
 // Block end:
 _T105:
-	__asm        jmp    _T17;
+	__asm        jmp    _FOR_NEXT_17;
 // LINE 2172:
 _T10a:
 	return 0x0;
@@ -13460,11 +13487,12 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 // LINE 2246:
 	loctype = cYObject::GetLocType(celly[0], cellx[0]);
 // LINE 2251:
+_FOR_86:
 	__asm        mov    word ptr [ebp-0x68], 0;
-	__asm        jmp    _T8a;
-_T86:
+	__asm        jmp    _FOR_COND_86;
+_FOR_NEXT_86:
 	__asm        inc    word ptr [ebp-0x68];
-_T8a:
+_FOR_COND_86:
 	__asm        movsx  eax, word ptr [ebp-0x68];
 	__asm        cmp    eax, 0xA;
 	__asm        jge    _Tce;
@@ -13481,7 +13509,7 @@ _T8a:
 	__asm        mov    word ptr [ebp-0x64], 1;
 	__asm        jmp    _Td9;
 _Tc9:
-	__asm        jmp    _T86;
+	__asm        jmp    _FOR_NEXT_86;
 _Tce:
 	__asm        mov    word ptr [ebp-0x64], 0;
 	__asm        jmp    _Td9;
@@ -13490,7 +13518,7 @@ _Td9:
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    word ptr [ebp-0x70], 0;
-_Te8:
+__WHILE_e8:
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
 	__asm        je     _T112;
 
@@ -13504,7 +13532,7 @@ _T105:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x6C], eax;
-	__asm        jmp    _Te8;
+	__asm        jmp    __WHILE_e8;
 _T112:
 	__asm        jmp    _T117;
 _T117:
@@ -14123,7 +14151,7 @@ _T23d:
 	person = this->cYObject::GetToted();
 // LINE 2337:
 	__asm        cmp    person, 0;
-	__asm        je     _T309;
+	__asm        je     _FOR_314;
 // LINE 2338:
 // Block start:
 	/*bp-0x28*/  /*unpacked*/ class cYObject *obj;
@@ -14162,12 +14190,12 @@ _T2e7:
 // Block end:
 	__asm        jmp    _T41a;
 // LINE 2349:
-_T309:
+_FOR_314:
 	__asm        mov    word ptr [ebp-0x30], 0;
-	__asm        jmp    _T318;
-_T314:
+	__asm        jmp    _FOR_COND_314;
+_FOR_NEXT_314:
 	__asm        inc    word ptr [ebp-0x30];
-_T318:
+_FOR_COND_314:
 	__asm        movsx  eax, word ptr [ebp-0x30];
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T3c2;
@@ -14217,7 +14245,7 @@ _T3ab:
 _T3b8:
 	__asm        jmp    _T3bd;
 _T3bd:
-	__asm        jmp    _T314;
+	__asm        jmp    _FOR_NEXT_314;
 _T3c2:
 	__asm        jmp    _T3c7;
 // LINE 2350:
@@ -16071,7 +16099,7 @@ void cYObject::SetPersonType(enum PersonType type) {
 	__asm        cmp    type, 0xFFFFFFFF;
 	__asm        jne    _T9b;
 // LINE 2619:
-_T1c:
+_LOOP_1c:
 	__asm        push   0x12;
 	__asm        call   SRand;
 	__asm        add    esp, 4;
@@ -16107,12 +16135,12 @@ _T5e:
 	__asm        cmp    eax, 5;
 	__asm        jge    _T91;
 // LINE 2622:
-	__asm        jmp    _T1c;
+	__asm        jmp    _LOOP_1c;
 // LINE 2623:
 _T91:
 	__asm        jmp    _T9b;
 // LINE 2624:
-	__asm        jmp    _T1c;
+	__asm        jmp    _LOOP_1c;
 // LINE 2626:
 _T9b:
 	__asm        mov    eax, type;
@@ -16414,7 +16442,7 @@ _T3f7:
 	__asm        jmp    _T3fc;
 _T3fc:
 	__asm        jmp    _T419;
-_T401:
+_LOOP_401:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     _T414;
 
@@ -16485,7 +16513,7 @@ _T4bd:
 _T4c3:
 	__asm        jmp    _T4d9;
 _T4c8:
-	__asm        jmp    _T401;
+	__asm        jmp    _LOOP_401;
 _T4cd:
 	__asm        mov    dword ptr [ebp-0x38], 0;
 	__asm        jmp    _T4d9;
@@ -16546,11 +16574,12 @@ void cYObject::DestroyObjects() {
 // LINE 2763:
 // Block start:
 	/*bp-0x4*/   short cnt;
+_FOR_24:
 	cnt = 0x0;
-	__asm        jmp    _T28;
-_T24:
+	__asm        jmp    _FOR_COND_24;
+_FOR_NEXT_24:
 	cnt++;
-_T28:
+_FOR_COND_24:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T7c;
@@ -16575,7 +16604,7 @@ _T28:
 	__asm        jmp    _T77;
 // LINE 2765:
 _T77:
-	__asm        jmp    _T24;
+	__asm        jmp    _FOR_NEXT_24;
 _T7c:
 	cYObject::sInited = 0x0;
 // LINE 2767:
@@ -16740,7 +16769,7 @@ _T3e:
 // LINE 2800:
 	dyptrptr = (cptr + 0x10);
 // LINE 2801:
-_T6a:
+__WHILE_6a:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Ta4;
@@ -16758,7 +16787,7 @@ _T6a:
 _T97:
 	dyptrptr = dyptrptr->;
 // LINE 2809:
-	__asm        jmp    _T6a;
+	__asm        jmp    __WHILE_6a;
 // LINE 2812:
 _Ta4:
 	this->fbLinked = 0x0;
@@ -16867,16 +16896,16 @@ short cYObject::MakeNewObject(short type, /*unpacked*/ struct Point3d loc, /*unp
 	__asm        xor    eax, eax;
 	__asm        mov    ax, cYObject::sInited;
 	__asm        test   eax, eax;
-	__asm        jne    _T4a;
+	__asm        jne    _FOR_55;
 
 	doAssert(0x8c085, 0x5bb6e0, 0xb0a, 0x5bb6f8);
 // LINE 2828:
-_T4a:
+_FOR_55:
 	id = 0x0;
-	__asm        jmp    _T59;
-_T55:
+	__asm        jmp    _FOR_COND_55;
+_FOR_NEXT_55:
 	id++;
-_T59:
+_FOR_COND_55:
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _T8c;
@@ -16885,14 +16914,14 @@ _T59:
 	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        je     _T82;
 
-	__asm        jmp    _T55;
+	__asm        jmp    _FOR_NEXT_55;
 // LINE 2830:
 	__asm        jmp    _T87;
 _T82:
 	__asm        jmp    _T8c;
 // LINE 2831:
 _T87:
-	__asm        jmp    _T55;
+	__asm        jmp    _FOR_NEXT_55;
 // LINE 2833:
 _T8c:
 	__asm        movsx  eax, id;
@@ -17166,11 +17195,12 @@ void cYObject::cYObject(short type, /*unpacked*/ class Behavior *pBehavior, /*un
 // LINE 2891:
 	this->fPointers[0] = 0x0;
 // LINE 2893:
+_FOR_ba:
 	cnt = 0x0;
-	__asm        jmp    _Tbe;
-_Tba:
+	__asm        jmp    _FOR_COND_ba;
+_FOR_NEXT_ba:
 	cnt++;
-_Tbe:
+_FOR_COND_ba:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x30;
 	__asm        jge    _Te1;
@@ -17178,16 +17208,17 @@ _Tbe:
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, this;
 	__asm        mov    word ptr [ecx+eax*2+0xD0], 0;
-	__asm        jmp    _Tba;
+	__asm        jmp    _FOR_NEXT_ba;
 // LINE 2895:
 _Te1:
 	this->fData[25] = 0xffff;
 // LINE 2896:
+_FOR_f8:
 	cnt = 0x0;
-	__asm        jmp    _Tfc;
-_Tf8:
+	__asm        jmp    _FOR_COND_f8;
+_FOR_NEXT_f8:
 	cnt++;
-_Tfc:
+_FOR_COND_f8:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 4;
 	__asm        jge    _T120;
@@ -17195,7 +17226,7 @@ _Tfc:
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x130], 0;
-	__asm        jmp    _Tf8;
+	__asm        jmp    _FOR_NEXT_f8;
 // LINE 2899:
 _T120:
 	this->fBehavior = pBehavior;
@@ -17788,11 +17819,12 @@ void BodyDrawDebugInfo(/*unpacked*/ class CBackBuffer *buf) {
 // LINE 3052:
 // Block start:
 	/*bp-0x4*/   short count;
+_FOR_29:
 	count = 0x0;
-	__asm        jmp    _T2d;
-_T29:
+	__asm        jmp    _FOR_COND_29;
+_FOR_NEXT_29:
 	count++;
-_T2d:
+_FOR_COND_29:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, gBodyDebugInfoIndex;
 	__asm        cmp    eax, ecx;
@@ -17825,7 +17857,7 @@ _T2d:
 	__asm        call   dword ptr [eax+0x4C];
 // LINE 3055:
 // Block end:
-	__asm        jmp    _T29;
+	__asm        jmp    _FOR_NEXT_29;
 // LINE 3057:
 // Block end:
 _T80:
@@ -17850,11 +17882,12 @@ void cYObject::~cYObject() {
 // LINE 3063:
 	found = 0x0;
 // LINE 3064:
+_FOR_51:
 	srch = 0x5b8684;
-	__asm        jmp    _T5e;
-_T51:
+	__asm        jmp    _FOR_COND_51;
+_FOR_NEXT_51:
 	srch = (srch-> + 0xb8);
-_T5e:
+_FOR_COND_51:
 	__asm        mov    eax, srch;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T98;
@@ -17871,7 +17904,7 @@ _T5e:
 	__asm        jmp    _T98;
 // LINE 3072:
 _T93:
-	__asm        jmp    _T51;
+	__asm        jmp    _FOR_NEXT_51;
 _T98:
 	__asm        test   reinterpret_cast<uint32_t>(found), 0xFFFF;
 	__asm        jne    _Tc1;
@@ -18150,7 +18183,7 @@ _T59:
 // LINE 3169:
 	maxobjy = 0x0;
 // LINE 3170:
-_Ta6:
+__WHILE_a6:
 	__asm        cmp    stobj, 0;
 	__asm        je     _Tfe;
 // LINE 3172:
@@ -18167,7 +18200,7 @@ _Ta6:
 _Tf1:
 	stobj = stobj->next;
 // LINE 3177:
-	__asm        jmp    _Ta6;
+	__asm        jmp    __WHILE_a6;
 // LINE 3182:
 _Tfe:
 	__asm        cmp    maxobjy, 0;
