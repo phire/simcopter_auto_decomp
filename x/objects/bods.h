@@ -249,8 +249,6 @@ void cCopterBody::WriteToDisk() {
 // FUNCTION: COPTER_D 0x0055fc90
 class cBList<class cBBase> * cCopterBody::GetList() {
 
-	__asm        mov    eax, cCopterBody::fsList;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return cCopterBody::fsList;
 }
 

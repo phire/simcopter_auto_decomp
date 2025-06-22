@@ -177,8 +177,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00447226
 static void $E6() {
 
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 

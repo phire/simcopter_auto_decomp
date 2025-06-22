@@ -26,9 +26,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0055d518
 unsigned long GetSRandSeed() {
 
-	__asm        mov    eax, srandSeed;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return srandSeed;
 }
 
 // FUNCTION: COPTER_D 0x0055d52d

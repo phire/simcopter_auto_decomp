@@ -2,8 +2,8 @@
 // FUNCTION: COPTER_D 0x00447790
 void SparkalColor::SparkalColor() {
 
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 

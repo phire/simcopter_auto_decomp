@@ -58,9 +58,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0055f6a0
 /*unpacked*/ class cBList<cBBase>* cCopterAnim::GetList() {
 
-	__asm        mov    eax, cCopterAnim::fsList;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return cCopterAnim::fsList;
 }
 
 // Function in module: Bodydefs.obj

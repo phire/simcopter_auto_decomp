@@ -52,9 +52,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0055f260
 unsigned short cBBase::CanDestroy() {
 
-	__asm        mov    ax, 1;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return 0x1;
 }
 
 // Function in module: Bodydefs.obj

@@ -5062,8 +5062,7 @@ _Tc6a:
 // FUNCTION: COPTER_D 0x00545cc3
 void duh(double __formal) {
 
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00545cd3
