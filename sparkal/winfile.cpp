@@ -708,8 +708,6 @@ __WHILE_20:
 		// LINE 47:
 		_T557:
 			i++;
-		// LINE 48:
-			__asm        jmp    __WHILE_20;
 	}
 // LINE 49:
 _T55f:

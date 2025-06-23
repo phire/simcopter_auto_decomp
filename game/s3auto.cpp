@@ -2222,8 +2222,6 @@ __WHILE_776:
 			this->currDist = 0x0;
 		// LINE 1014:
 			this->AutomobileClass::TransitionBetweenGoals();
-		// LINE 1020:
-			__asm        jmp    __WHILE_776;
 	}
 // LINE 1032:
 _T7c0:
@@ -2285,8 +2283,6 @@ __WHILE_66:
 		// LINE 1070:
 		_T93:
 			dyptrptr = dyptrptr->;
-		// LINE 1071:
-			__asm        jmp    __WHILE_66;
 	}
 // LINE 1073:
 _Ta0:
@@ -4041,9 +4037,6 @@ __WHILE_88:
 		// LINE 1840:
 		_T18a:
 			currentObject = currentObject->next;
-		// LINE 1841:
-		// Block end:
-			__asm        jmp    __WHILE_88;
 	}
 // LINE 1843:
 __DO_WHILE_21:
@@ -4504,8 +4497,6 @@ __WHILE_2a1:
 		// Block end:
 		_T2fb:
 			currentObject = currentObject->next;
-		// LINE 2144:
-			__asm        jmp    __WHILE_2a1;
 	}
 // LINE 2146:
 _T308:
@@ -4669,8 +4660,6 @@ __WHILE_79:
 		// LINE 2199:
 		_Tf0:
 			currentObject = currentObject->next;
-		// LINE 2200:
-			__asm        jmp    __WHILE_79;
 	}
 // LINE 2202:
 _Tfd:
@@ -6335,8 +6324,6 @@ __WHILE_535:
 		// LINE 2827:
 		_T6be:
 			currentObject = currentObject->next;
-		// LINE 2828:
-			__asm        jmp    __WHILE_535;
 	}
 // LINE 2831:
 _T6cb:
@@ -6517,8 +6504,6 @@ __WHILE_777:
 		// LINE 2918:
 		_T900:
 			currentObject = currentObject->next;
-		// LINE 2919:
-			__asm        jmp    __WHILE_777;
 	}
 // LINE 2923:
 _T90d:

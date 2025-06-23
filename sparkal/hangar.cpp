@@ -1021,7 +1021,6 @@ __WHILE_1c2:
 		_T213:
 			__asm        jmp    _T218;
 		_T218:
-			__asm        jmp    __WHILE_1c2;
 	}
 _T21d:
 	list<HotSpot>::free_list = 0x0;

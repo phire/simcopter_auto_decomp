@@ -1811,8 +1811,6 @@ __WHILE_97:
 		// LINE 961:
 		_Tc9:
 			dyptrptr = dyptrptr->;
-		// LINE 962:
-			__asm        jmp    __WHILE_97;
 	}
 // LINE 963:
 _Td6:

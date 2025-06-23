@@ -316,8 +316,6 @@ __WHILE_2e:
 			__asm        sub    G_alloc_used, eax;
 		// LINE 466:
 			hdr = hdr->next;
-		// LINE 467:
-			__asm        jmp    __WHILE_2e;
 	}
 // LINE 469:
 _T5d:
@@ -382,8 +380,6 @@ __WHILE_2e:
 			free(hdr);
 		// LINE 507:
 			hdr = next_hdr;
-		// LINE 508:
-			__asm        jmp    __WHILE_2e;
 	}
 // LINE 509:
 _T9e:

@@ -202,7 +202,6 @@ __WHILE_16b:
 			__asm        call   dword ptr [eax+0xC];
 		// LINE 86:
 		_T1fc:
-			__asm        jmp    __WHILE_16b;
 	}
 // LINE 89:
 Cleanup:

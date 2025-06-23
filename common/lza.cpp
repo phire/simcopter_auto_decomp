@@ -1715,7 +1715,6 @@ __WHILE_9e:
 			}
 		// LINE 629:
 		_T1c0:
-			__asm        jmp    __WHILE_9e;
 	}
 // LINE 631:
 _T1c5:
@@ -1954,7 +1953,6 @@ __WHILE_17:
 			j = k;
 		// LINE 434:
 		_T5a:
-			__asm        jmp    __WHILE_17;
 	}
 // LINE 435:
 _T5f:
@@ -2106,7 +2104,6 @@ __WHILE_17:
 			j = k;
 		// LINE 450:
 		_T5a:
-			__asm        jmp    __WHILE_17;
 	}
 // LINE 451:
 _T5f:

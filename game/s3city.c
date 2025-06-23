@@ -5970,8 +5970,6 @@ __WHILE_33e:
 			S_rlast->x = reinterpret_cast<int16_t>(x_pos);
 		// LINE 2760:
 			x_pos--;
-		// LINE 2761:
-			__asm        jmp    __WHILE_33e;
 	}
 // LINE 2762:
 _T37c:
@@ -5999,8 +5997,6 @@ __WHILE_39e:
 			S_llast->x = reinterpret_cast<int16_t>(x_pos);
 		// LINE 2774:
 			y_pos--;
-		// LINE 2775:
-			__asm        jmp    __WHILE_39e;
 	}
 // LINE 2776:
 _T3de:
@@ -6050,8 +6046,6 @@ __WHILE_450:
 			S_llast->x = reinterpret_cast<int16_t>(x_pos);
 		// LINE 2797:
 			x_pos++;
-		// LINE 2798:
-			__asm        jmp    __WHILE_450;
 	}
 // LINE 2799:
 _T48e:
@@ -6079,8 +6073,6 @@ __WHILE_4b0:
 			S_rlast->x = reinterpret_cast<int16_t>(x_pos);
 		// LINE 2811:
 			y_pos--;
-		// LINE 2812:
-			__asm        jmp    __WHILE_4b0;
 	}
 // LINE 2813:
 _T4f0:
@@ -6130,8 +6122,6 @@ __WHILE_562:
 			S_rlast->x = reinterpret_cast<int16_t>(x_pos);
 		// LINE 2834:
 			x_pos++;
-		// LINE 2835:
-			__asm        jmp    __WHILE_562;
 	}
 // LINE 2836:
 _T5a0:
@@ -6159,8 +6149,6 @@ __WHILE_5c2:
 			S_llast->x = reinterpret_cast<int16_t>(x_pos);
 		// LINE 2848:
 			y_pos++;
-		// LINE 2849:
-			__asm        jmp    __WHILE_5c2;
 	}
 // LINE 2850:
 _T602:
@@ -6210,8 +6198,6 @@ __WHILE_674:
 			S_llast->x = reinterpret_cast<int16_t>(x_pos);
 		// LINE 2871:
 			x_pos--;
-		// LINE 2872:
-			__asm        jmp    __WHILE_674;
 	}
 // LINE 2873:
 _T6b2:
@@ -6239,8 +6225,6 @@ __WHILE_6d4:
 			S_rlast->x = reinterpret_cast<int16_t>(x_pos);
 		// LINE 2885:
 			y_pos++;
-		// LINE 2886:
-			__asm        jmp    __WHILE_6d4;
 	}
 // LINE 2887:
 _T714:
@@ -9641,8 +9625,6 @@ __WHILE_99:
 		// LINE 4298:
 		_Tccb:
 			dyobj = dyobj->next;
-		// LINE 4299:
-			__asm        jmp    __WHILE_99;
 	}
 // LINE 4300:
 _Tcd8:
@@ -9694,8 +9676,6 @@ __WHILE_0f:
 		// LINE 4336:
 		_Tab:
 			caddr -= 0x4;
-		// LINE 4337:
-			__asm        jmp    __WHILE_0f;
 	}
 // LINE 4339:
 _Tb4:
@@ -10242,8 +10222,6 @@ __WHILE_211:
 		// LINE 4839:
 		_T233:
 			dyobj = dyobj->next;
-		// LINE 4840:
-			__asm        jmp    __WHILE_211;
 	}
 // LINE 4843:
 _T240:

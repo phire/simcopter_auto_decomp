@@ -6904,8 +6904,6 @@ __WHILE_2b4:
 		// LINE 2988:
 		_T30b:
 			stobj = stobj->next;
-		// LINE 2989:
-			__asm        jmp    __WHILE_2b4;
 	}
 // LINE 2992:
 _T318:
@@ -6964,7 +6962,6 @@ __WHILE_344:
 			dyobj = dyobj->next;
 		// LINE 3028:
 		_T40a:
-			__asm        jmp    __WHILE_344;
 	}
 // LINE 3030:
 _T40f:
@@ -7159,8 +7156,6 @@ __WHILE_9c:
 		// LINE 3371:
 		_T139:
 			stobj = stobj->next;
-		// LINE 3372:
-			__asm        jmp    __WHILE_9c;
 	}
 // LINE 3377:
 _T146:
@@ -7724,8 +7719,6 @@ __WHILE_19:
 		// LINE 3744:
 		_T58:
 			stobj = stobj->next;
-		// LINE 3745:
-			__asm        jmp    __WHILE_19;
 	}
 // LINE 3747:
 _T65:
@@ -8413,8 +8406,6 @@ __WHILE_39:
 		// LINE 4196:
 		_Tf0:
 			stobj = stobj->next;
-		// LINE 4197:
-			__asm        jmp    __WHILE_39;
 	}
 // LINE 4203:
 _Tfd:
@@ -10262,7 +10253,6 @@ __WHILE_3d:
 			dyobj = dyobj->next;
 		// LINE 5196:
 		_T185:
-			__asm        jmp    __WHILE_3d;
 	}
 // LINE 5198:
 _T18a:
@@ -10454,7 +10444,6 @@ _LOOP_7a:
 							dyobj = dyobj->next;
 						// LINE 5325:
 						_T20f:
-							__asm        jmp    __WHILE_166;
 					}
 				// LINE 5328:
 				_T214:
@@ -10521,8 +10510,6 @@ _FOR_1c:
 				// LINE 5378:
 				_T90:
 					dyobj = dyobj->next;
-				// LINE 5379:
-					__asm        jmp    __WHILE_72;
 			}
 		// LINE 5382:
 		_T9d:
@@ -10847,8 +10834,6 @@ __WHILE_12:
 		// LINE 5602:
 		_T59:
 			dyptrptr = dyptrptr->;
-		// LINE 5603:
-			__asm        jmp    __WHILE_12;
 	}
 // LINE 5604:
 __RETURN:

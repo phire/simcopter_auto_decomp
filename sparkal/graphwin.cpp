@@ -1042,7 +1042,6 @@ __WHILE_142:
 		_T193:
 			__asm        jmp    _T198;
 		_T198:
-			__asm        jmp    __WHILE_142;
 	}
 _T19d:
 	list<GraphicWindow *>::free_list = 0x0;
@@ -1392,7 +1391,6 @@ __WHILE_142:
 		_T193:
 			__asm        jmp    _T198;
 		_T198:
-			__asm        jmp    __WHILE_142;
 	}
 _T19d:
 	list<GraphicWindow *>::free_list = 0x0;
@@ -1742,7 +1740,6 @@ __WHILE_142:
 		_T193:
 			__asm        jmp    _T198;
 		_T198:
-			__asm        jmp    __WHILE_142;
 	}
 _T19d:
 	list<GraphicWindow *>::free_list = 0x0;
@@ -2137,7 +2134,6 @@ __WHILE_139:
 		_T18a:
 			__asm        jmp    _T18f;
 		_T18f:
-			__asm        jmp    __WHILE_139;
 	}
 _T194:
 	list<GraphicWindow *>::free_list = 0x0;
@@ -2721,8 +2717,6 @@ _LOOP_27:
 				// LINE 201:
 				_Tac:
 					currentGraphicWindowToCheck = currentGraphicWindowToCheck-><GraphicWindow+0x3c:4>;
-				// LINE 202:
-					__asm        jmp    __WHILE_84;
 			}
 		// LINE 203:
 		_Tba:
@@ -8525,8 +8519,6 @@ __WHILE_12:
 			nYPosition. += currentWindow-><GraphicWindow+0x14:4>;
 		// LINE 1304:
 			currentWindow = currentWindow-><GraphicWindow+0x3c:4>;
-		// LINE 1305:
-			__asm        jmp    __WHILE_12;
 	}
 // LINE 1307:
 _T43:
@@ -8966,8 +8958,6 @@ __WHILE_5c:
 		// LINE 1382:
 		_T109:
 			gwCurrentParent = gwCurrentParent-><GraphicWindow+0x3c:4>;
-		// LINE 1383:
-			__asm        jmp    __WHILE_5c;
 	}
 // LINE 1384:
 _T117:

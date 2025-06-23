@@ -398,8 +398,6 @@ __WHILE_10:
 	nCt++;
 // LINE 367:
 	__asm        jmp    __WHILE_10;
-// LINE 367:
-	__asm        jmp    __WHILE_10;
 // LINE 368:
 _T38:
 	__asm        mov    eax, nCt;

@@ -468,9 +468,7 @@ _T16c:
 _T18b:
 	__asm        jmp    _T190;
 _T190:
-	__asm        jmp    __WHILE_141;
 _T190:
-	__asm        jmp    __WHILE_141;
 _T195:
 	__asm        jmp    _T19a;
 _T19a:
@@ -689,9 +687,7 @@ _T387:
 _T3a6:
 	__asm        jmp    _T3ab;
 _T3ab:
-	__asm        jmp    __WHILE_35c;
 _T3ab:
-	__asm        jmp    __WHILE_35c;
 _T3b0:
 	__asm        jmp    _T3b5;
 _T3b5:
@@ -948,9 +944,7 @@ _FOR_61:
 		_T302:
 			__asm        jmp    _T307;
 		_T307:
-			__asm        jmp    __WHILE_2b5;
 		_T307:
-			__asm        jmp    __WHILE_2b5;
 		_T30c:
 			__asm        jmp    _T311;
 		_T311:
@@ -1030,9 +1024,7 @@ _FOR_61:
 		_T403:
 			__asm        jmp    _T408;
 		_T408:
-			__asm        jmp    __WHILE_3ad;
 		_T408:
-			__asm        jmp    __WHILE_3ad;
 		_T40d:
 			__asm        jmp    _T412;
 		_T412:
@@ -1352,9 +1344,7 @@ _FOR_70:
 		_T312:
 			__asm        jmp    _T317;
 		_T317:
-			__asm        jmp    __WHILE_2c5;
 		_T317:
-			__asm        jmp    __WHILE_2c5;
 		_T31c:
 			__asm        jmp    _T321;
 		_T321:
@@ -1434,9 +1424,7 @@ _FOR_70:
 		_T41c:
 			__asm        jmp    _T421;
 		_T421:
-			__asm        jmp    __WHILE_3c0;
 		_T421:
-			__asm        jmp    __WHILE_3c0;
 		_T426:
 			__asm        jmp    _T42b;
 		_T42b:
@@ -1743,9 +1731,7 @@ _T2c1:
 _T2e0:
 	__asm        jmp    _T2e5;
 _T2e5:
-	__asm        jmp    __WHILE_293;
 _T2e5:
-	__asm        jmp    __WHILE_293;
 _T2ea:
 	__asm        jmp    _T2ef;
 _T2ef:
@@ -1825,9 +1811,7 @@ _T3d4:
 _T3f9:
 	__asm        jmp    _T3fe;
 _T3fe:
-	__asm        jmp    __WHILE_38e;
 _T3fe:
-	__asm        jmp    __WHILE_38e;
 _T403:
 	__asm        jmp    _T408;
 _T408:
@@ -2348,9 +2332,7 @@ _T15d:
 _T17c:
 	__asm        jmp    _T181;
 _T181:
-	__asm        jmp    __WHILE_132;
 _T181:
-	__asm        jmp    __WHILE_132;
 _T186:
 	__asm        jmp    _T18b;
 _T18b:
@@ -2569,9 +2551,7 @@ _T378:
 _T397:
 	__asm        jmp    _T39c;
 _T39c:
-	__asm        jmp    __WHILE_34d;
 _T39c:
-	__asm        jmp    __WHILE_34d;
 _T3a1:
 	__asm        jmp    _T3a6;
 _T3a6:

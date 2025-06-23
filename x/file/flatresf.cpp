@@ -1531,8 +1531,6 @@ __WHILE_2a:
 		// LINE 742:
 		_T8a:
 			srch += 0xc;
-		// LINE 743:
-			__asm        jmp    __WHILE_2a;
 	}
 // LINE 745:
 _T93:
@@ -2149,8 +2147,6 @@ __WHILE_31:
 		// LINE 941:
 		_T57:
 			srch += 0xc;
-		// LINE 942:
-			__asm        jmp    __WHILE_31;
 	}
 // LINE 943:
 _T60:

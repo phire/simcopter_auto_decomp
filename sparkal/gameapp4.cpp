@@ -765,8 +765,6 @@ __WHILE_2c5:
 		// LINE 140:
 			__asm        push   0x1E;
 			__asm        call   dword ptr ds:[0x6C35D8];
-		// LINE 141:
-			__asm        jmp    __WHILE_2c5;
 	}
 // LINE 142:
 _T685:

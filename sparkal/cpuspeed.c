@@ -195,8 +195,6 @@ __WHILE_17c:
 			__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
 			__asm        push   eax;
 			__asm        call   dword ptr ds:[0x6C365C];
-		// LINE 205:
-			__asm        jmp    __WHILE_17c;
 	}
 // LINE 208:
 _T19a:
@@ -214,8 +212,6 @@ __WHILE_1ab:
 			__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
 			__asm        push   eax;
 			__asm        call   dword ptr ds:[0x6C365C];
-		// LINE 227:
-			__asm        jmp    __WHILE_1ab;
 	}
 // LINE 230:
 _T1cb:

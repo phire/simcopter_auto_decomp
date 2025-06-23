@@ -463,7 +463,6 @@ __WHILE_09:
 			return 0x0;
 		// LINE 282:
 		_T39:
-			__asm        jmp    __WHILE_09;
 	}
 // LINE 283:
 _T3e:

@@ -2668,7 +2668,6 @@ __WHILE_6b3:
 			__asm        jmp    _T85c;
 		// LINE 522:
 		_T857:
-			__asm        jmp    __WHILE_6b3;
 	}
 // LINE 524:
 _T85c:
@@ -2854,7 +2853,6 @@ __WHILE_873:
 		// LINE 570:
 		// Block end:
 		_Ta7f:
-			__asm        jmp    __WHILE_873;
 	}
 // LINE 573:
 _Ta84:

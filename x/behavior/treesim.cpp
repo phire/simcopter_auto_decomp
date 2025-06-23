@@ -933,7 +933,6 @@ __WHILE_12:
 			__asm        mov    [ecx+edx+2], ax;
 		// LINE 226:
 		_T11a:
-			__asm        jmp    __WHILE_12;
 	}
 // LINE 227:
 _T11f:

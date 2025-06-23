@@ -404,7 +404,6 @@ __WHILE_143:
 		// LINE 129:
 		// Block end:
 		_T2a3:
-			__asm        jmp    __WHILE_143;
 	}
 // LINE 131:
 _T2a8:
@@ -714,7 +713,6 @@ __WHILE_192:
 		// LINE 244:
 		// Block end:
 		_T30e:
-			__asm        jmp    __WHILE_192;
 	}
 // LINE 246:
 _T313:

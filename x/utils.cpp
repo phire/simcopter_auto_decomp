@@ -364,9 +364,6 @@ __WHILE_e9:
 			num = (num - (tenPower * digit));
 		// LINE 148:
 			power++;
-		// LINE 149:
-		// Block end:
-			__asm        jmp    __WHILE_e9;
 	}
 // LINE 150:
 _T133:
@@ -566,9 +563,6 @@ __WHILE_8e:
 			__asm        sub    num, eax;
 		// LINE 206:
 			power++;
-		// LINE 207:
-		// Block end:
-			__asm        jmp    __WHILE_8e;
 	}
 // LINE 208:
 _Tec:

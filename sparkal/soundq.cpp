@@ -1432,7 +1432,6 @@ __WHILE_143:
 		_T194:
 			__asm        jmp    _T199;
 		_T199:
-			__asm        jmp    __WHILE_143;
 	}
 _T19e:
 	list<SoundQueueItem *>::free_list = 0x0;

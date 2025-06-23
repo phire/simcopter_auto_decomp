@@ -6096,8 +6096,6 @@ __WHILE_79:
 		// LINE 1854:
 		_Tc8:
 			stobj = stobj->next;
-		// LINE 1855:
-			__asm        jmp    __WHILE_79;
 	}
 // LINE 1860:
 _Td5:

@@ -2752,8 +2752,6 @@ __WHILE_34:
 	__asm        mov    dword ptr [ecx+eax*4+0x52], 0;
 // LINE 956:
 	__asm        jmp    __WHILE_34;
-// LINE 956:
-	__asm        jmp    __WHILE_34;
 // LINE 957:
 _T7c:
 	return 0x1;

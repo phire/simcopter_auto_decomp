@@ -4179,8 +4179,6 @@ __WHILE_64d:
 		// LINE 1799:
 		_T768:
 			numpixels--;
-		// LINE 1800:
-			__asm        jmp    __WHILE_64d;
 	}
 // LINE 1804:
 __WHILE_770:
@@ -4323,9 +4321,6 @@ __WHILE_770:
 		// LINE 1856:
 		_T919:
 			numpixels--;
-		// LINE 1857:
-		// Block end:
-			__asm        jmp    __WHILE_770;
 	}
 // LINE 1861:
 // Block end:

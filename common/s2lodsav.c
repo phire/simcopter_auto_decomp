@@ -328,7 +328,6 @@ __WHILE_71:
 			done = 0x1;
 		// LINE 224:
 		_T16c:
-			__asm        jmp    __WHILE_71;
 	}
 // LINE 226:
 _T171:
@@ -1044,7 +1043,6 @@ __WHILE_b6:
 			bDone = 0x1;
 		// LINE 431:
 		_T7f1:
-			__asm        jmp    __WHILE_b6;
 	}
 // LINE 434:
 _T7f6:
@@ -2340,7 +2338,6 @@ __WHILE_88:
 			}
 		// LINE 945:
 		_T135:
-			__asm        jmp    __WHILE_88;
 	}
 // LINE 947:
 _T13a:
@@ -3175,10 +3172,8 @@ _T1c4:
 	tp += ix;
 // LINE 1241:
 _T1de:
-	__asm        jmp    __WHILE_b2;
 // LINE 1241:
 _T1de:
-	__asm        jmp    __WHILE_b2;
 // LINE 1243:
 _T1e3:
 	__asm        mov    eax, count;
@@ -5346,7 +5341,6 @@ __WHILE_79:
 			count--;
 		// LINE 2099:
 		_Ted:
-			__asm        jmp    __WHILE_79;
 	}
 // LINE 2100:
 _Tf2:
@@ -5408,8 +5402,6 @@ __WHILE_3b:
 		// LINE 2137:
 		_T6d:
 			s--;
-		// LINE 2138:
-			__asm        jmp    __WHILE_3b;
 	}
 // LINE 2139:
 _T75:
@@ -5529,8 +5521,6 @@ __WHILE_3b:
 		// LINE 2210:
 		_T6d:
 			s--;
-		// LINE 2211:
-			__asm        jmp    __WHILE_3b;
 	}
 // LINE 2212:
 _T75:
@@ -5592,8 +5582,6 @@ __WHILE_35:
 		// LINE 2247:
 		_T5b:
 			s--;
-		// LINE 2248:
-			__asm        jmp    __WHILE_35;
 	}
 // LINE 2249:
 __RETURN:
@@ -5645,8 +5633,6 @@ __WHILE_6b:
 			s--;
 		// LINE 2286:
 			len--;
-		// LINE 2287:
-			__asm        jmp    __WHILE_6b;
 	}
 // LINE 2288:
 _T97:
@@ -5861,8 +5847,6 @@ __WHILE_42:
 		// LINE 2367:
 		_T186:
 			len--;
-		// LINE 2368:
-			__asm        jmp    __WHILE_42;
 	}
 // LINE 2369:
 _T192:
@@ -5918,8 +5902,6 @@ __WHILE_42:
 		// LINE 2401:
 		_T78:
 			len--;
-		// LINE 2402:
-			__asm        jmp    __WHILE_42;
 	}
 // LINE 2403:
 _T84:

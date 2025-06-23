@@ -1703,9 +1703,7 @@ _FOR_423:
 		_T8ed:
 			__asm        jmp    _T8f2;
 		_T8f2:
-			__asm        jmp    __WHILE_882;
 		_T8f2:
-			__asm        jmp    __WHILE_882;
 		_T8f7:
 			__asm        jmp    _T8fc;
 		_T8fc:
@@ -1781,9 +1779,7 @@ _FOR_423:
 		_Ta21:
 			__asm        jmp    _Ta26;
 		_Ta26:
-			__asm        jmp    __WHILE_9b6;
 		_Ta26:
-			__asm        jmp    __WHILE_9b6;
 		_Ta2b:
 			__asm        jmp    _Ta30;
 		_Ta30:
@@ -2338,8 +2334,6 @@ __WHILE_3a:
 		// LINE 272:
 		_T29d:
 			i++;
-		// LINE 273:
-			__asm        jmp    __WHILE_3a;
 	}
 // LINE 274:
 _T2a5:

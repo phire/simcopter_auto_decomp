@@ -611,7 +611,6 @@ __WHILE_4c4:
 			i++;
 		// LINE 304:
 		_T682:
-			__asm        jmp    __WHILE_4c4;
 	}
 // LINE 306:
 _T687:

@@ -1446,32 +1446,24 @@ __WHILE_28:
 	while ((deltaX > 0x80)) {
 		// LINE 1289:
 			deltaX -= 0x100;
-		// LINE 1290:
-			__asm        jmp    __WHILE_28;
 	}
 // LINE 1291:
 __WHILE_41:
 	while ((deltaX < -0x80)) {
 		// LINE 1293:
 			deltaX += 0x100;
-		// LINE 1294:
-			__asm        jmp    __WHILE_41;
 	}
 // LINE 1296:
 __WHILE_57:
 	while ((deltaY > 0x80)) {
 		// LINE 1298:
 			deltaY -= 0x100;
-		// LINE 1299:
-			__asm        jmp    __WHILE_57;
 	}
 // LINE 1300:
 __WHILE_70:
 	while ((deltaY < -0x80)) {
 		// LINE 1302:
 			deltaY += 0x100;
-		// LINE 1303:
-			__asm        jmp    __WHILE_70;
 	}
 // LINE 1305:
 _T86:
@@ -2123,8 +2115,6 @@ __WHILE_64:
 		// LINE 1640:
 		_T5d6:
 			stobj = stobj->next;
-		// LINE 1641:
-			__asm        jmp    __WHILE_64;
 	}
 // LINE 1647:
 _T5e3:
@@ -2383,8 +2373,6 @@ __WHILE_a3:
 		// LINE 1851:
 		_Td0:
 			dyptrptr = dyptrptr->;
-		// LINE 1852:
-			__asm        jmp    __WHILE_a3;
 	}
 // LINE 1854:
 _Tdd:

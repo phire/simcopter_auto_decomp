@@ -2108,8 +2108,6 @@ __WHILE_38c:
 		// LINE 1028:
 		_T3c1:
 			dyptrptr = dyptrptr->;
-		// LINE 1029:
-			__asm        jmp    __WHILE_38c;
 	}
 // LINE 1032:
 _T3ce:
@@ -2429,8 +2427,6 @@ __WHILE_84f:
 		// LINE 1147:
 		_T884:
 			dyptrptr = dyptrptr->;
-		// LINE 1148:
-			__asm        jmp    __WHILE_84f;
 	}
 // LINE 1150:
 _T891:
@@ -2536,8 +2532,6 @@ __WHILE_9df:
 		// LINE 1189:
 		_Ta14:
 			dyptrptr = dyptrptr->;
-		// LINE 1190:
-			__asm        jmp    __WHILE_9df;
 	}
 // LINE 1191:
 _Ta21:
@@ -2606,8 +2600,6 @@ __WHILE_ad9:
 		// LINE 1216:
 		_Tb0e:
 			dyptrptr = dyptrptr->;
-		// LINE 1217:
-			__asm        jmp    __WHILE_ad9;
 	}
 // LINE 1219:
 _Tb1b:
@@ -2833,8 +2825,6 @@ __WHILE_e40:
 		// LINE 1285:
 		_Te7d:
 			dyobj = dyobj->next;
-		// LINE 1286:
-			__asm        jmp    __WHILE_e40;
 	}
 // LINE 1293:
 _Te8a:
@@ -2933,8 +2923,6 @@ __WHILE_fb0:
 		// LINE 1334:
 		_Tfe5:
 			dyptrptr = dyptrptr->;
-		// LINE 1335:
-			__asm        jmp    __WHILE_fb0;
 	}
 // LINE 1337:
 _Tff2:
@@ -3020,8 +3008,6 @@ __WHILE_10da:
 		// LINE 1362:
 		_T110f:
 			dyptrptr = dyptrptr->;
-		// LINE 1363:
-			__asm        jmp    __WHILE_10da;
 	}
 // LINE 1365:
 _T111c:
@@ -3086,8 +3072,6 @@ __WHILE_11c4:
 		// LINE 1387:
 		_T11f9:
 			dyptrptr = dyptrptr->;
-		// LINE 1388:
-			__asm        jmp    __WHILE_11c4;
 	}
 // LINE 1390:
 _T1206:
@@ -3226,8 +3210,6 @@ __WHILE_13d2:
 		// LINE 1443:
 		_T1407:
 			dyptrptr = dyptrptr->;
-		// LINE 1444:
-			__asm        jmp    __WHILE_13d2;
 	}
 // LINE 1446:
 _T1414:
@@ -3304,8 +3286,6 @@ __WHILE_14d5:
 		// LINE 1472:
 		_T150a:
 			dyptrptr = dyptrptr->;
-		// LINE 1473:
-			__asm        jmp    __WHILE_14d5;
 	}
 // LINE 1474:
 _T1517:
@@ -3370,8 +3350,6 @@ __WHILE_15bf:
 		// LINE 1496:
 		_T15f4:
 			dyptrptr = dyptrptr->;
-		// LINE 1497:
-			__asm        jmp    __WHILE_15bf;
 	}
 // LINE 1499:
 _T1601:
@@ -3495,8 +3473,6 @@ __WHILE_178b:
 		// LINE 1542:
 		_T17c0:
 			dyptrptr = dyptrptr->;
-		// LINE 1543:
-			__asm        jmp    __WHILE_178b;
 	}
 // LINE 1545:
 _T17cd:
@@ -3573,8 +3549,6 @@ __WHILE_188e:
 		// LINE 1571:
 		_T18c3:
 			dyptrptr = dyptrptr->;
-		// LINE 1572:
-			__asm        jmp    __WHILE_188e;
 	}
 // LINE 1573:
 _T18d0:
@@ -3639,8 +3613,6 @@ __WHILE_1978:
 		// LINE 1595:
 		_T19ad:
 			dyptrptr = dyptrptr->;
-		// LINE 1596:
-			__asm        jmp    __WHILE_1978;
 	}
 // LINE 1598:
 _T19ba:
@@ -3907,8 +3879,6 @@ __WHILE_1d44:
 		// LINE 1680:
 		_T1d79:
 			dyptrptr = dyptrptr->;
-		// LINE 1681:
-			__asm        jmp    __WHILE_1d44;
 	}
 // LINE 1683:
 _T1d86:
@@ -3985,8 +3955,6 @@ __WHILE_1e47:
 		// LINE 1707:
 		_T1e7c:
 			dyptrptr = dyptrptr->;
-		// LINE 1708:
-			__asm        jmp    __WHILE_1e47;
 	}
 // LINE 1709:
 _T1e89:
@@ -4549,7 +4517,6 @@ __WHILE_109:
 			dyobj = dyobj->next;
 		// LINE 1987:
 		_T451:
-			__asm        jmp    __WHILE_109;
 	}
 // LINE 1992:
 skip_dynamic_objs:
@@ -4883,8 +4850,6 @@ __WHILE_45f:
 		// LINE 2150:
 		_T983:
 			stobj = stobj->next;
-		// LINE 2151:
-			__asm        jmp    __WHILE_45f;
 	}
 // LINE 2157:
 _T990:
@@ -5575,8 +5540,6 @@ __WHILE_80:
 		// LINE 2718:
 		_Taf:
 			dyptrptr = dyptrptr->;
-		// LINE 2719:
-			__asm        jmp    __WHILE_80;
 	}
 // LINE 2721:
 _Tbc:

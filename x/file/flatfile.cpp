@@ -586,8 +586,6 @@ __WHILE_13:
 		// LINE 278:
 		_T3f:
 			srch = (srch-> + 0x4);
-		// LINE 279:
-			__asm        jmp    __WHILE_13;
 	}
 // LINE 280:
 _T4f:
@@ -622,8 +620,6 @@ __WHILE_14:
 		// LINE 289:
 		_T49:
 			srch = srch->fNext;
-		// LINE 290:
-			__asm        jmp    __WHILE_14;
 	}
 // LINE 291:
 _T57:

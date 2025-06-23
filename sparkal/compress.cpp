@@ -821,8 +821,6 @@ __WHILE_c8:
 			__asm        add    pCompressedBits, ecx;
 		// LINE 177:
 			Top++;
-		// LINE 178:
-			__asm        jmp    __WHILE_c8;
 	}
 // LINE 180:
 _Te7:
@@ -1103,7 +1101,6 @@ __WHILE_27:
 		// LINE 398:
 		// Block end:
 		_T175:
-			__asm        jmp    __WHILE_27;
 	}
 // LINE 399:
 _T17a:
@@ -1238,8 +1235,6 @@ __WHILE_31:
 					counter--;
 				// LINE 474:
 					PixelCount++;
-				// LINE 475:
-					__asm        jmp    __WHILE_fc;
 			}
 		// LINE 476:
 		_T132:
@@ -1299,8 +1294,6 @@ __WHILE_31:
 					counter--;
 				// LINE 505:
 					PixelCount++;
-				// LINE 506:
-					__asm        jmp    __WHILE_192;
 			}
 		// LINE 507:
 		_T1c3:
@@ -1416,8 +1409,6 @@ __WHILE_31:
 					counter--;
 				// LINE 566:
 					PixelCount++;
-				// LINE 567:
-					__asm        jmp    __WHILE_28d;
 			}
 		// LINE 568:
 		_T2d7:
@@ -1449,7 +1440,6 @@ __WHILE_31:
 		// LINE 579:
 		// Block end:
 		_T323:
-			__asm        jmp    __WHILE_31;
 	}
 // LINE 580:
 _T328:

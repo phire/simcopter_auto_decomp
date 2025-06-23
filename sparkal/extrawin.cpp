@@ -12084,7 +12084,6 @@ __WHILE_1e8:
 		_T239:
 			__asm        jmp    _T23e;
 		_T23e:
-			__asm        jmp    __WHILE_1e8;
 	}
 _T243:
 	list<basic_string<char>>::free_list = 0x0;
@@ -12215,8 +12214,6 @@ __WHILE_e2:
 			__asm        call   dword ptr [edx+0xC];
 		// LINE 1612:
 			lCurrentXPosition += lSourceWidth;
-		// LINE 1613:
-			__asm        jmp    __WHILE_e2;
 	}
 // LINE 1615:
 _T14b:
@@ -12316,8 +12313,6 @@ __WHILE_248:
 			__asm        call   dword ptr [edx+0xC];
 		// LINE 1625:
 			lCurrentXPosition += lSourceWidth;
-		// LINE 1626:
-			__asm        jmp    __WHILE_248;
 	}
 // LINE 1628:
 _T2d8:
@@ -12433,8 +12428,6 @@ __WHILE_3f4:
 			__asm        call   dword ptr [edx+0xC];
 		// LINE 1637:
 			lCurrentXPosition += lSourceWidth;
-		// LINE 1638:
-			__asm        jmp    __WHILE_3f4;
 	}
 // LINE 1640:
 _T49c:
@@ -12541,8 +12534,6 @@ __WHILE_572:
 		// LINE 1654:
 		_T5ff:
 			i++;
-		// LINE 1655:
-			__asm        jmp    __WHILE_572;
 	}
 // LINE 1658:
 _T607:
@@ -14150,8 +14141,6 @@ __WHILE_a2:
 			__asm        call   dword ptr [edx+0xC];
 		// LINE 1878:
 			lCurrentXPosition += lSourceWidth;
-		// LINE 1879:
-			__asm        jmp    __WHILE_a2;
 	}
 // LINE 1881:
 _T104:

@@ -1399,8 +1399,6 @@ __WHILE_40:
 		// LINE 430:
 		_T70:
 			currentCharData = currentCharData->nextCharData;
-		// LINE 431:
-			__asm        jmp    __WHILE_40;
 	}
 // LINE 432:
 _T7e:
@@ -1461,8 +1459,6 @@ __WHILE_94:
 		// LINE 444:
 		_T128:
 			currentCharData = currentCharData->nextCharData;
-		// LINE 445:
-			__asm        jmp    __WHILE_94;
 	}
 // LINE 447:
 // Block end:
@@ -1567,8 +1563,6 @@ __WHILE_2e:
 		// LINE 492:
 		_T5e:
 			currentCharData = currentCharData->nextCharData;
-		// LINE 493:
-			__asm        jmp    __WHILE_2e;
 	}
 // LINE 494:
 _T6c:
@@ -1629,8 +1623,6 @@ __WHILE_82:
 		// LINE 508:
 		_T116:
 			currentCharData = currentCharData->nextCharData;
-		// LINE 509:
-			__asm        jmp    __WHILE_82;
 	}
 // LINE 511:
 // Block end:

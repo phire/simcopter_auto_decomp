@@ -1220,8 +1220,6 @@ __WHILE_d5:
 		// LINE 468:
 		_T146:
 			stobj = stobj->next;
-		// LINE 469:
-			__asm        jmp    __WHILE_d5;
 	}
 // LINE 472:
 _T153:
@@ -1257,7 +1255,6 @@ __WHILE_15c:
 			dyobj = dyobj->next;
 		// LINE 489:
 		_T1cc:
-			__asm        jmp    __WHILE_15c;
 	}
 // LINE 490:
 _T1d1:

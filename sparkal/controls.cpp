@@ -11576,8 +11576,6 @@ __WHILE_1d4:
 		// LINE 2292:
 		_T261:
 			i++;
-		// LINE 2293:
-			__asm        jmp    __WHILE_1d4;
 	}
 // LINE 2296:
 _T269:
@@ -15025,9 +15023,7 @@ _LOOP_13a:
 		_T2a2:
 			__asm        jmp    _T2a7;
 		_T2a7:
-			__asm        jmp    __WHILE_1d8;
 		_T2a7:
-			__asm        jmp    __WHILE_1d8;
 		_T2ac:
 			__asm        mov    eax, [ebp-0x34];
 			__asm        mov    [ebp-0x26C], eax;

@@ -1911,8 +1911,6 @@ __WHILE_72:
 		// LINE 115:
 		_T676:
 			i++;
-		// LINE 116:
-			__asm        jmp    __WHILE_72;
 	}
 // LINE 117:
 _T67e:

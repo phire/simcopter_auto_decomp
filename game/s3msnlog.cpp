@@ -1083,7 +1083,6 @@ __WHILE_154:
 		_T1a5:
 			__asm        jmp    _T1aa;
 		_T1aa:
-			__asm        jmp    __WHILE_154;
 	}
 _T1af:
 	list<tagLogBase *>::free_list = 0x0;
@@ -2400,7 +2399,6 @@ __WHILE_254:
 			__asm        jmp    _T462;
 		// LINE 280:
 		_T462:
-			__asm        jmp    __WHILE_254;
 	}
 // LINE 281:
 _T467:
@@ -2818,7 +2816,6 @@ __WHILE_254:
 			__asm        jmp    _T462;
 		// LINE 306:
 		_T462:
-			__asm        jmp    __WHILE_254;
 	}
 // LINE 307:
 _T467:

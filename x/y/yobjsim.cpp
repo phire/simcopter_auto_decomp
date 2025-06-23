@@ -1927,8 +1927,6 @@ __WHILE_6e:
 		// LINE 245:
 		_T2db:
 			dyobj = dyobj->next;
-		// LINE 247:
-			__asm        jmp    __WHILE_6e;
 	}
 // LINE 249:
 _T2e8:
@@ -1997,8 +1995,6 @@ __WHILE_82:
 		// LINE 310:
 		_Tcf:
 			stobj = stobj->next;
-		// LINE 311:
-			__asm        jmp    __WHILE_82;
 	}
 // LINE 314:
 _Tdc:
@@ -3568,8 +3564,6 @@ __WHILE_210:
 		// Block end:
 		_T396:
 			dyobj = dyobj->next;
-		// LINE 721:
-			__asm        jmp    __WHILE_210;
 	}
 // LINE 722:
 _T3a3:

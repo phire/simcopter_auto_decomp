@@ -2477,8 +2477,6 @@ __WHILE_14d:
 		// LINE 1556:
 		_T276:
 			currentObject = currentObject->next;
-		// LINE 1557:
-			__asm        jmp    __WHILE_14d;
 	}
 // LINE 1560:
 _T283:
@@ -2631,8 +2629,6 @@ __WHILE_325:
 		// LINE 1632:
 		_T44e:
 			currentObject = currentObject->next;
-		// LINE 1633:
-			__asm        jmp    __WHILE_325;
 	}
 // LINE 1637:
 _T45b:
@@ -2654,32 +2650,24 @@ __WHILE_28:
 	while ((deltaX > 0x80)) {
 		// LINE 1669:
 			deltaX -= 0x100;
-		// LINE 1670:
-			__asm        jmp    __WHILE_28;
 	}
 // LINE 1671:
 __WHILE_41:
 	while ((deltaX < -0x80)) {
 		// LINE 1673:
 			deltaX += 0x100;
-		// LINE 1674:
-			__asm        jmp    __WHILE_41;
 	}
 // LINE 1676:
 __WHILE_57:
 	while ((deltaY > 0x80)) {
 		// LINE 1678:
 			deltaY -= 0x100;
-		// LINE 1679:
-			__asm        jmp    __WHILE_57;
 	}
 // LINE 1680:
 __WHILE_70:
 	while ((deltaY < -0x80)) {
 		// LINE 1682:
 			deltaY += 0x100;
-		// LINE 1683:
-			__asm        jmp    __WHILE_70;
 	}
 // LINE 1685:
 _T86:
@@ -4744,8 +4732,6 @@ __WHILE_a3:
 		// LINE 2838:
 		_Tcc:
 			dyptrptr = dyptrptr->;
-		// LINE 2839:
-			__asm        jmp    __WHILE_a3;
 	}
 // LINE 2841:
 _Td9:

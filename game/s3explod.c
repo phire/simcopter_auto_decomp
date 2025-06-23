@@ -975,8 +975,6 @@ __WHILE_11e:
 		// LINE 451:
 		_T153:
 			dyptrptr = dyptrptr->;
-		// LINE 452:
-			__asm        jmp    __WHILE_11e;
 	}
 // LINE 454:
 _T160:
@@ -1086,8 +1084,6 @@ __WHILE_283:
 		// LINE 492:
 		_T2b2:
 			dyptrptr = dyptrptr->;
-		// LINE 493:
-			__asm        jmp    __WHILE_283;
 	}
 // LINE 495:
 _T2bf:

@@ -1298,8 +1298,6 @@ __WHILE_9d:
 		// LINE 850:
 		_Tf2:
 			stobj = stobj->next;
-		// LINE 851:
-			__asm        jmp    __WHILE_9d;
 	}
 // LINE 853:
 _Tff:

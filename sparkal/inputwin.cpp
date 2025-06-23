@@ -2583,7 +2583,6 @@ __WHILE_285:
 		_T2d6:
 			__asm        jmp    _T2db;
 		_T2db:
-			__asm        jmp    __WHILE_285;
 	}
 _T2e0:
 	list<HotSpot>::free_list = 0x0;
@@ -11499,8 +11498,6 @@ __WHILE_7a:
 		// LINE 1549:
 		_Ta4:
 			i++;
-		// LINE 1550:
-			__asm        jmp    __WHILE_7a;
 	}
 // LINE 1551:
 _Tac:
@@ -11571,8 +11568,6 @@ __WHILE_7d:
 		// LINE 1571:
 		_Ta7:
 			i++;
-		// LINE 1572:
-			__asm        jmp    __WHILE_7d;
 	}
 // LINE 1573:
 _Taf:
@@ -11883,8 +11878,6 @@ _T44f:
 // LINE 1622:
 _T454:
 	i++;
-// LINE 1623:
-	__asm        jmp    __WHILE_2a9;
 // LINE 1623:
 	__asm        jmp    __WHILE_2a9;
 // LINE 1626:

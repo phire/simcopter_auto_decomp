@@ -2480,9 +2480,7 @@ _FOR_NEXT_127:
 		_T5ce:
 			__asm        jmp    _T5d3;
 		_T5d3:
-			__asm        jmp    __WHILE_551;
 		_T5d3:
-			__asm        jmp    __WHILE_551;
 		_T5d8:
 			__asm        jmp    _T5dd;
 		_T5dd:
@@ -2571,9 +2569,7 @@ _FOR_NEXT_127:
 		_T716:
 			__asm        jmp    _T71b;
 		_T71b:
-			__asm        jmp    __WHILE_699;
 		_T71b:
-			__asm        jmp    __WHILE_699;
 		_T720:
 			__asm        jmp    _T725;
 		_T725:
@@ -3019,8 +3015,6 @@ _Tb5:
 	chText++;
 // LINE 235:
 	__asm        jmp    __WHILE_1c;
-// LINE 235:
-	__asm        jmp    __WHILE_1c;
 // LINE 237:
 _Tbd:
 	return lWidth;
@@ -3149,8 +3143,6 @@ __WHILE_42:
 			nVisibleStringLength.--;
 		// LINE 264:
 			chTextEnd--;
-		// LINE 265:
-			__asm        jmp    __WHILE_42;
 	}
 // LINE 266:
 _T148:
@@ -3183,8 +3175,6 @@ __WHILE_1c:
 			chText += lCurrentLineStringLength;
 		// LINE 286:
 			lLineCount++;
-		// LINE 287:
-			__asm        jmp    __WHILE_1c;
 	}
 // LINE 288:
 _T49:
@@ -3341,8 +3331,6 @@ __WHILE_27:
 		// LINE 360:
 		_T11b:
 			chTextCurrent++;
-		// LINE 361:
-			__asm        jmp    __WHILE_27;
 	}
 // LINE 368:
 _T123:
@@ -3570,8 +3558,6 @@ __WHILE_15:
 		// LINE 398:
 		_T1e5:
 			chText++;
-		// LINE 399:
-			__asm        jmp    __WHILE_15;
 	}
 // LINE 400:
 _T1ed:
@@ -3755,8 +3741,6 @@ __WHILE_15:
 		// LINE 415:
 		_T1e5:
 			chText++;
-		// LINE 416:
-			__asm        jmp    __WHILE_15;
 	}
 // LINE 417:
 _T1ed:
@@ -3815,8 +3799,6 @@ __WHILE_52:
 			lCurrentYPosition += lCharacterHeight;
 		// LINE 440:
 			chText += lCurrentLineStringLength;
-		// LINE 441:
-			__asm        jmp    __WHILE_52;
 	}
 // LINE 442:
 _T9e:
@@ -3875,8 +3857,6 @@ __WHILE_52:
 			lCurrentYPosition += lCharacterHeight;
 		// LINE 466:
 			chText += lCurrentLineStringLength;
-		// LINE 467:
-			__asm        jmp    __WHILE_52;
 	}
 // LINE 468:
 _T9e:
@@ -4194,8 +4174,6 @@ __WHILE_52:
 			lCurrentYPosition += lCharacterHeight;
 		// LINE 570:
 			chText += lCurrentLineStringLength;
-		// LINE 571:
-			__asm        jmp    __WHILE_52;
 	}
 // LINE 572:
 _Td4:
@@ -4273,8 +4251,6 @@ __WHILE_52:
 			lCurrentYPosition += lCharacterHeight;
 		// LINE 599:
 			chText += lCurrentLineStringLength;
-		// LINE 600:
-			__asm        jmp    __WHILE_52;
 	}
 // LINE 601:
 _Td4:

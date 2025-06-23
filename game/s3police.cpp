@@ -2007,8 +2007,6 @@ __WHILE_88:
 		// LINE 712:
 		_T10a:
 			dyptr = dyptr->next;
-		// LINE 713:
-			__asm        jmp    __WHILE_88;
 	}
 // LINE 715:
 __DO_WHILE_16:

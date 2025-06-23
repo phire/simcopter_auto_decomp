@@ -2819,8 +2819,6 @@ __WHILE_1da:
 			pDestImageBits += nDestImageStride;
 		// LINE 1295:
 			pSourceImageBits += nSourceImageStride;
-		// LINE 1296:
-			__asm        jmp    __WHILE_1da;
 	}
 // LINE 1297:
 _T20b:
@@ -2886,8 +2884,6 @@ __WHILE_8b:
 			pDestImageBits += nDestImageStride;
 		// LINE 1358:
 			pSourceImageBits += nSourceImageStride;
-		// LINE 1359:
-			__asm        jmp    __WHILE_8b;
 	}
 // LINE 1361:
 _Tbc:

@@ -43,8 +43,6 @@ __WHILE_06:
 		// LINE 36:
 		_T39:
 			nEventStart++;
-		// LINE 37:
-			__asm        jmp    __WHILE_06;
 	}
 // LINE 38:
 _T41:

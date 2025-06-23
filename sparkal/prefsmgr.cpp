@@ -953,7 +953,6 @@ __WHILE_19c:
 		_T1ed:
 			__asm        jmp    _T1f2;
 		_T1f2:
-			__asm        jmp    __WHILE_19c;
 	}
 _T1f7:
 	list<PreferenceItem>::free_list = 0x0;

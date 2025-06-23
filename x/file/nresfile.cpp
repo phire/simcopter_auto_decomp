@@ -574,7 +574,6 @@ __WHILE_152:
 
 			doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 		_T1d0:
-			__asm        jmp    __WHILE_152;
 	}
 _T1d5:
 	__asm        mov    eax, this;

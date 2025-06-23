@@ -289,9 +289,7 @@ _T3f5:
 _T41d:
 	__asm        jmp    _T422;
 _T422:
-	__asm        jmp    __WHILE_3ac;
 _T422:
-	__asm        jmp    __WHILE_3ac;
 _T427:
 	__asm        jmp    _T42c;
 _T42c:
@@ -911,8 +909,6 @@ __WHILE_13:
 			__asm        mov    eax, this;
 			__asm        inc    dword ptr [eax+4];
 			__asm        inc    i;
-		// LINE 295:
-			__asm        jmp    __WHILE_13;
 	}
 // LINE 296:
 _Te3:
@@ -1216,9 +1212,7 @@ __WHILE_19:
 		_T3bc:
 			__asm        jmp    _T3c1;
 		_T3c1:
-			__asm        jmp    __WHILE_357;
 		_T3c1:
-			__asm        jmp    __WHILE_357;
 		_T3c6:
 			__asm        jmp    _T3cb;
 		_T3cb:
@@ -1298,9 +1292,7 @@ __WHILE_19:
 		_T4db:
 			__asm        jmp    _T4e0;
 		_T4e0:
-			__asm        jmp    __WHILE_46a;
 		_T4e0:
-			__asm        jmp    __WHILE_46a;
 		_T4e5:
 			__asm        jmp    _T4ea;
 		_T4ea:
@@ -1686,9 +1678,7 @@ __WHILE_19:
 		_Ta32:
 			__asm        jmp    _Ta37;
 		_Ta37:
-			__asm        jmp    __WHILE_9c1;
 		_Ta37:
-			__asm        jmp    __WHILE_9c1;
 		_Ta3c:
 			__asm        jmp    _Ta41;
 		_Ta41:
@@ -1768,9 +1758,7 @@ __WHILE_19:
 		_Tb66:
 			__asm        jmp    _Tb6b;
 		_Tb6b:
-			__asm        jmp    __WHILE_af5;
 		_Tb6b:
-			__asm        jmp    __WHILE_af5;
 		_Tb70:
 			__asm        jmp    _Tb75;
 		_Tb75:
@@ -1897,7 +1885,6 @@ __WHILE_19:
 			this->maxPos = this->curPos;
 		// LINE 346:
 		_Td28:
-			__asm        jmp    __WHILE_19;
 	}
 // LINE 347:
 _Td2d:

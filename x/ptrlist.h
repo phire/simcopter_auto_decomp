@@ -43,8 +43,6 @@ __WHILE_12:
 		// LINE 53:
 		_T8f:
 			srch = (srch-> + 0x4);
-		// LINE 54:
-			__asm        jmp    __WHILE_12;
 	}
 // LINE 55:
 _T9f:
@@ -99,7 +97,6 @@ __WHILE_0c:
 
 			doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 		_T74:
-			__asm        jmp    __WHILE_0c;
 	}
 _T79:
 	__asm        mov    eax, this;
@@ -155,7 +152,6 @@ __WHILE_0c:
 
 			doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 		_T74:
-			__asm        jmp    __WHILE_0c;
 	}
 _T79:
 	__asm        mov    eax, this;
@@ -227,7 +223,6 @@ __WHILE_0c:
 
 			doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
 		_T74:
-			__asm        jmp    __WHILE_0c;
 	}
 _T79:
 	__asm        mov    eax, this;

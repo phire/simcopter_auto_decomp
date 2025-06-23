@@ -221,7 +221,6 @@ __WHILE_10a:
 					XCount++;
 				// LINE 84:
 				_T166:
-					__asm        jmp    __WHILE_131;
 			}
 		// LINE 87:
 		_T16b:
@@ -242,7 +241,6 @@ __WHILE_10a:
 		// LINE 97:
 		// Block end:
 		_T190:
-			__asm        jmp    __WHILE_10a;
 	}
 // LINE 99:
 _T195:
