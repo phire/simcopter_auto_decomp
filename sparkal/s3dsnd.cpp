@@ -295,46 +295,40 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, /*p
 	glMasterVolume = currentSoundPreferences->lMasterVolume;
 // LINE 89:
 _FOR_52:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_52;
-_FOR_NEXT_52:
-	i++;
-_FOR_COND_52:
-	__asm        cmp    i, 0x71;
-	__asm        jge    _Tc4;
-// LINE 90:
-	__asm        mov    eax, i;
-	__asm        cmp    gSoundManager.sound[0][eax*4], 0;
-	__asm        je     _Tbf;
+	for (i = 0x0; (i < 0x71); i++) {
+		// LINE 90:
+			__asm        mov    eax, i;
+			__asm        cmp    gSoundManager.sound[0][eax*4], 0;
+			__asm        je     _Tbf;
 
-	__asm        mov    eax, i;
-	__asm        mov    eax, lOriginalSoundVolumes[eax*4];
-	__asm        mov    [ebp-0x14], eax;
-// LINE 91:
-	__asm        mov    eax, glMasterVolume;
-	__asm        imul   eax, [ebp-0x14];
-	__asm        mov    [ebp-0x14], eax;
-	__asm        mov    ecx, 0x2710;
-	__asm        mov    eax, [ebp-0x14];
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        mov    [ebp-0x14], eax;
-	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    lNewVolume, eax;
-	__asm        jmp    _Ta2;
-// LINE 92:
-_Ta2:
-	__asm        mov    eax, lNewVolume;
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, i;
-	__asm        mov    ecx, gSoundManager.sound[0][ecx*4];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, gSoundManager.sound[0][eax*4];
-	__asm        call   dword ptr [edx+0x24];
-// LINE 94:
-_Tbf:
-	__asm        jmp    _FOR_NEXT_52;
+			__asm        mov    eax, i;
+			__asm        mov    eax, lOriginalSoundVolumes[eax*4];
+			__asm        mov    [ebp-0x14], eax;
+		// LINE 91:
+			__asm        mov    eax, glMasterVolume;
+			__asm        imul   eax, [ebp-0x14];
+			__asm        mov    [ebp-0x14], eax;
+			__asm        mov    ecx, 0x2710;
+			__asm        mov    eax, [ebp-0x14];
+			__asm        cdq;
+			__asm        idiv   ecx;
+			__asm        mov    [ebp-0x14], eax;
+			__asm        mov    eax, [ebp-0x14];
+			__asm        mov    lNewVolume, eax;
+			__asm        jmp    _Ta2;
+		// LINE 92:
+		_Ta2:
+			__asm        mov    eax, lNewVolume;
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, i;
+			__asm        mov    ecx, gSoundManager.sound[0][ecx*4];
+			__asm        mov    edx, [ecx];
+			__asm        mov    ecx, gSoundManager.sound[0][eax*4];
+			__asm        call   dword ptr [edx+0x24];
+		// LINE 94:
+		_Tbf:
+	}
 // LINE 97:
 _Tc4:
 	return;
@@ -346,18 +340,11 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 
 // LINE 131:
 _FOR_15:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_15;
-_FOR_NEXT_15:
-	i++;
-_FOR_COND_15:
-	__asm        cmp    i, 0x71;
-	__asm        jge    _T35;
-// LINE 132:
-	__asm        mov    eax, i;
-	__asm        mov    lOriginalSoundVolumes[eax*4], 0x2710;
-// LINE 133:
-	__asm        jmp    _FOR_NEXT_15;
+	for (i = 0x0; (i < 0x71); i++) {
+		// LINE 132:
+			__asm        mov    eax, i;
+			__asm        mov    lOriginalSoundVolumes[eax*4], 0x2710;
+	}
 // LINE 134:
 _T35:
 	__asm        mov    eax, hWnd;
@@ -4610,42 +4597,36 @@ _T49b1:
 	GetPathForFile(szFullSoundPath[0], 0x598e40, 0x0, 0x2);
 // LINE 450:
 _FOR_49d8:
-	count = 0x62;
-	__asm        jmp    _FOR_COND_49d8;
-_FOR_NEXT_49d8:
-	count++;
-_FOR_COND_49d8:
-	__asm        cmp    count, 0x71;
-	__asm        jge    _T4a5a;
-// LINE 451:
-	__asm        push   0;
-	__asm        mov    eax, count;
-	__asm        push   eax;
-	__asm        lea    eax, szFullSoundPath[0];
-	__asm        push   eax;
-	__asm        lea    ecx, [ebp-0x420];
-	__asm        call   basic_string<char>::basic_string<char>;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604600;
-	__asm        call   SoundManager::AddDigitalSound;
-	__asm        lea    ecx, [ebp-0x420];
-	__asm        call   basic_string<char>::delete_ref;
-	__asm        cmp    dword ptr [ebp-0x420], 0;
-	__asm        je     _T4a50;
+	for (count = 0x62; (count < 0x71); count++) {
+		// LINE 451:
+			__asm        push   0;
+			__asm        mov    eax, count;
+			__asm        push   eax;
+			__asm        lea    eax, szFullSoundPath[0];
+			__asm        push   eax;
+			__asm        lea    ecx, [ebp-0x420];
+			__asm        call   basic_string<char>::basic_string<char>;
+			__asm        push   eax;
+			__asm        mov    ecx, 0x604600;
+			__asm        call   SoundManager::AddDigitalSound;
+			__asm        lea    ecx, [ebp-0x420];
+			__asm        call   basic_string<char>::delete_ref;
+			__asm        cmp    dword ptr [ebp-0x420], 0;
+			__asm        je     _T4a50;
 
-	__asm        mov    eax, [ebp-0x420];
-	__asm        mov    [ebp-0x734], eax;
-	__asm        mov    eax, [ebp-0x734];
-	__asm        mov    [ebp-0x738], eax;
-	__asm        mov    eax, [ebp-0x738];
-	__asm        push   eax;
-	__asm        call   operator delete;
-	__asm        add    esp, 4;
-_T4a50:
-	__asm        jmp    _T4a55;
-// LINE 452:
-_T4a55:
-	__asm        jmp    _FOR_NEXT_49d8;
+			__asm        mov    eax, [ebp-0x420];
+			__asm        mov    [ebp-0x734], eax;
+			__asm        mov    eax, [ebp-0x734];
+			__asm        mov    [ebp-0x738], eax;
+			__asm        mov    eax, [ebp-0x738];
+			__asm        push   eax;
+			__asm        call   operator delete;
+			__asm        add    esp, 4;
+		_T4a50:
+			__asm        jmp    _T4a55;
+		// LINE 452:
+		_T4a55:
+	}
 // LINE 453:
 _T4a5a:
 	return 0x1;

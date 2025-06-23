@@ -210,95 +210,90 @@ _FOR_25:
 	i = nCurrentBestMatch;
 	__asm        jmp    _FOR_COND_25;
 _FOR_NEXT_25:
-	i++;
-_FOR_COND_25:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+8], ecx;
-	__asm        jle    _T119;
-// LINE 77:
-	__asm        mov    eax, colorValue;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+2];
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, i;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [eax+edx*4+2];
-	__asm        sub    ecx, ebx;
-	__asm        mov    [ebp-0x18], ecx;
-	__asm        mov    eax, colorValue;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+2];
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ebx, i;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+ebx*4+2];
-	__asm        sub    edx, ecx;
-	__asm        mov    eax, [ebp-0x18];
-	__asm        imul   eax, edx;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    [ebp-0x1C], eax;
-	__asm        mov    ecx, colorValue;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    ebx, i;
-	__asm        xor    eax, eax;
-	__asm        mov    al, [ecx+ebx*4];
-	__asm        sub    edx, eax;
-	__asm        mov    [ebp-0x20], edx;
-	__asm        mov    eax, colorValue;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ebx, i;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ebx*4];
-	__asm        sub    ecx, edx;
-	__asm        mov    eax, [ebp-0x20];
-	__asm        imul   eax, ecx;
-	__asm        mov    ecx, [ebp-0x1C];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    [ebp-0x24], eax;
-	__asm        mov    ecx, colorValue;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+1];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    ebx, i;
-	__asm        xor    eax, eax;
-	__asm        mov    al, [ecx+ebx*4+1];
-	__asm        sub    edx, eax;
-	__asm        mov    [ebp-0x28], edx;
-	__asm        mov    eax, colorValue;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ebx, i;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ebx*4+1];
-	__asm        sub    ecx, edx;
-	__asm        mov    eax, [ebp-0x28];
-	__asm        imul   eax, ecx;
-	__asm        mov    ecx, [ebp-0x24];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    lCurrentDistance, eax;
-// LINE 78:
-	__asm        mov    eax, lClosestDistance;
-	__asm        cmp    lCurrentDistance, eax;
-	__asm        jae    _T114;
-// LINE 79:
-	lCurrentDistance = lClosestDistance;
-// LINE 80:
-	nCurrentBestMatch = i;
-// LINE 82:
-_T114:
-	__asm        jmp    _FOR_NEXT_25;
+	for (; (this->lColors > i); i++) {
+		// LINE 77:
+			__asm        mov    eax, colorValue;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+2];
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    edx, i;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [eax+edx*4+2];
+			__asm        sub    ecx, ebx;
+			__asm        mov    [ebp-0x18], ecx;
+			__asm        mov    eax, colorValue;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+2];
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ebx, i;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+ebx*4+2];
+			__asm        sub    edx, ecx;
+			__asm        mov    eax, [ebp-0x18];
+			__asm        imul   eax, edx;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    [ebp-0x1C], eax;
+			__asm        mov    ecx, colorValue;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [ecx];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx+4];
+			__asm        mov    ebx, i;
+			__asm        xor    eax, eax;
+			__asm        mov    al, [ecx+ebx*4];
+			__asm        sub    edx, eax;
+			__asm        mov    [ebp-0x20], edx;
+			__asm        mov    eax, colorValue;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ebx, i;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ebx*4];
+			__asm        sub    ecx, edx;
+			__asm        mov    eax, [ebp-0x20];
+			__asm        imul   eax, ecx;
+			__asm        mov    ecx, [ebp-0x1C];
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    [ebp-0x24], eax;
+			__asm        mov    ecx, colorValue;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [ecx+1];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx+4];
+			__asm        mov    ebx, i;
+			__asm        xor    eax, eax;
+			__asm        mov    al, [ecx+ebx*4+1];
+			__asm        sub    edx, eax;
+			__asm        mov    [ebp-0x28], edx;
+			__asm        mov    eax, colorValue;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ebx, i;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ebx*4+1];
+			__asm        sub    ecx, edx;
+			__asm        mov    eax, [ebp-0x28];
+			__asm        imul   eax, ecx;
+			__asm        mov    ecx, [ebp-0x24];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        mov    lCurrentDistance, eax;
+		// LINE 78:
+			__asm        mov    eax, lClosestDistance;
+			__asm        cmp    lCurrentDistance, eax;
+			__asm        jae    _T114;
+		// LINE 79:
+			lCurrentDistance = lClosestDistance;
+		// LINE 80:
+			nCurrentBestMatch = i;
+		// LINE 82:
+		_T114:
+	}
 // LINE 83:
 _T119:
 	nIndex. = nCurrentBestMatch;
@@ -362,39 +357,32 @@ _Tb9:
 	return;
 // LINE 118:
 _FOR_ca:
-	i = 0xa;
-	__asm        jmp    _FOR_COND_ca;
-_FOR_NEXT_ca:
-	i++;
-_FOR_COND_ca:
-	__asm        cmp    i, 0xF6;
-	__asm        jge    _T137;
-// LINE 119:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*4+2];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x414], al;
-// LINE 120:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*4+1];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x413], al;
-// LINE 121:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*4];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x412], al;
-// LINE 122:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x411], 5;
-// LINE 123:
-	__asm        jmp    _FOR_NEXT_ca;
+	for (i = 0xa; (i < 0xf6); i++) {
+		// LINE 119:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*4+2];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x414], al;
+		// LINE 120:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*4+1];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x413], al;
+		// LINE 121:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*4];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x412], al;
+		// LINE 122:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x411], 5;
+	}
 // LINE 124:
 _T137:
 	nMultiplier = 0x3f;
@@ -402,222 +390,213 @@ _T137:
 	nDivisor = 0x40;
 // LINE 126:
 _FOR_151:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_151;
-_FOR_NEXT_151:
-	i++;
-_FOR_COND_151:
-	__asm        cmp    i, 0x40;
-	__asm        jge    _T442;
-// LINE 127:
-	timerFade.lTotalElapsedTime = 0x0;
-	timerFade.lStartTime = 0x0;
-	__asm        jmp    _T177;
-_T177:
-	__asm        jmp    _T17c;
-_T17c:
-	__asm        cmp    timerFade.lStartTime, 0;
-	__asm        je     _T18e;
+	for (i = 0x0; (i < 0x40); i++) {
+		// LINE 127:
+			timerFade.lTotalElapsedTime = 0x0;
+			timerFade.lStartTime = 0x0;
+			__asm        jmp    _T177;
+		_T177:
+			__asm        jmp    _T17c;
+		_T17c:
+			__asm        cmp    timerFade.lStartTime, 0;
+			__asm        je     _T18e;
 
-	__asm        jmp    _T20c;
-_T18e:
-	__asm        cmp    timerFade.nTimerResolution, 1;
-	__asm        jne    _T1b1;
+			__asm        jmp    _T20c;
+		_T18e:
+			__asm        cmp    timerFade.nTimerResolution, 1;
+			__asm        jne    _T1b1;
 
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T207;
+			__asm        call   dword ptr ds:[0x6C3908];
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T207;
 
-	__asm        jmp    _T207;
-_T1b1:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T1ed;
+			__asm        jmp    _T207;
+		_T1b1:
+			__asm        cmp    timerFade.nTimerResolution, 0;
+			__asm        jne    _T1ed;
 
-	__asm        lea    eax, [ebp-0x434];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-	__asm        mov    eax, [ebp-0x434];
-	__asm        mov    [ebp-0x42C], eax;
-	__asm        mov    eax, [ebp-0x42C];
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T207;
+			__asm        lea    eax, [ebp-0x434];
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+			__asm        mov    eax, [ebp-0x434];
+			__asm        mov    [ebp-0x42C], eax;
+			__asm        mov    eax, [ebp-0x42C];
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T207;
 
-	__asm        jmp    _T207;
-_T1ed:
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ecx, 0x3E8;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T207;
-_T207:
-	__asm        jmp    _T20c;
-_T20c:
-	__asm        jmp    _T211;
-// LINE 128:
-_T211:
-	__asm        mov    eax, i;
-	__asm        cdq;
-	__asm        xor    eax, edx;
-	__asm        sub    eax, edx;
-	__asm        and    eax, 0xF;
-	__asm        xor    eax, edx;
-	__asm        sub    eax, edx;
-	__asm        jne    _FOR_23d;
-// LINE 129:
-	__asm        sar    nDivisor, 1;
-// LINE 130:
-	__asm        mov    eax, nDivisor;
-	__asm        dec    eax;
-	__asm        mov    nMultiplier, eax;
-// LINE 132:
-_FOR_23d:
-	j = 0xa;
-	__asm        jmp    _FOR_COND_23d;
-_FOR_NEXT_23d:
-	j++;
-_FOR_COND_23d:
-	__asm        cmp    j, 0xF6;
-	__asm        jge    _T2d6;
-// LINE 134:
-	__asm        mov    ecx, 0xFF;
-	__asm        mov    eax, 0xFF;
-	__asm        mov    edx, j;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ebp+edx*4-0x414];
-	__asm        sub    eax, ebx;
-	__asm        imul   eax, nMultiplier;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        sub    ecx, eax;
-	__asm        mov    eax, j;
-	__asm        mov    [ebp+eax*4-0x414], cl;
-// LINE 135:
-	__asm        mov    ecx, 0xFF;
-	__asm        mov    eax, 0xFF;
-	__asm        mov    edx, j;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ebp+edx*4-0x413];
-	__asm        sub    eax, ebx;
-	__asm        imul   eax, nMultiplier;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        sub    ecx, eax;
-	__asm        mov    eax, j;
-	__asm        mov    [ebp+eax*4-0x413], cl;
-// LINE 136:
-	__asm        mov    ecx, 0xFF;
-	__asm        mov    eax, 0xFF;
-	__asm        mov    edx, j;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ebp+edx*4-0x412];
-	__asm        sub    eax, ebx;
-	__asm        imul   eax, nMultiplier;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        sub    ecx, eax;
-	__asm        mov    eax, j;
-	__asm        mov    [ebp+eax*4-0x412], cl;
-// LINE 137:
-	__asm        jmp    _FOR_NEXT_23d;
-// LINE 139:
-_T2d6:
-	__asm        push   0;
-	__asm        push   1;
-	__asm        mov    eax, lpDD;
-	__asm        push   eax;
-	__asm        mov    eax, lpDD;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x58];
-// LINE 140:
-	__asm        lea    eax, palEntries[10].peRed;
-	__asm        push   eax;
-	__asm        push   0xEC;
-	__asm        push   0xA;
-	__asm        push   0;
-	__asm        mov    eax, lpPalette;
-	__asm        push   eax;
-	__asm        mov    eax, lpPalette;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x18];
-// LINE 144:
-_LOOP_30a:
-	__asm        mov    eax, timerFade.lTotalElapsedTime;
-	__asm        mov    [ebp-0x448], eax;
-	__asm        jmp    _T31b;
-_T31b:
-	__asm        cmp    timerFade.lStartTime, 0;
-	__asm        je     _T3bf;
+			__asm        jmp    _T207;
+		_T1ed:
+			__asm        call   dword ptr ds:[0x6C3908];
+			__asm        mov    ecx, 0x3E8;
+			__asm        sub    edx, edx;
+			__asm        div    ecx;
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T207;
+		_T207:
+			__asm        jmp    _T20c;
+		_T20c:
+			__asm        jmp    _T211;
+		// LINE 128:
+		_T211:
+			__asm        mov    eax, i;
+			__asm        cdq;
+			__asm        xor    eax, edx;
+			__asm        sub    eax, edx;
+			__asm        and    eax, 0xF;
+			__asm        xor    eax, edx;
+			__asm        sub    eax, edx;
+			__asm        jne    _FOR_23d;
+		// LINE 129:
+			__asm        sar    nDivisor, 1;
+		// LINE 130:
+			__asm        mov    eax, nDivisor;
+			__asm        dec    eax;
+			__asm        mov    nMultiplier, eax;
+		// LINE 132:
+		_FOR_23d:
+			for (j = 0xa; (j < 0xf6); j++) {
+				// LINE 134:
+					__asm        mov    ecx, 0xFF;
+					__asm        mov    eax, 0xFF;
+					__asm        mov    edx, j;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [ebp+edx*4-0x414];
+					__asm        sub    eax, ebx;
+					__asm        imul   eax, nMultiplier;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        sub    ecx, eax;
+					__asm        mov    eax, j;
+					__asm        mov    [ebp+eax*4-0x414], cl;
+				// LINE 135:
+					__asm        mov    ecx, 0xFF;
+					__asm        mov    eax, 0xFF;
+					__asm        mov    edx, j;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [ebp+edx*4-0x413];
+					__asm        sub    eax, ebx;
+					__asm        imul   eax, nMultiplier;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        sub    ecx, eax;
+					__asm        mov    eax, j;
+					__asm        mov    [ebp+eax*4-0x413], cl;
+				// LINE 136:
+					__asm        mov    ecx, 0xFF;
+					__asm        mov    eax, 0xFF;
+					__asm        mov    edx, j;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [ebp+edx*4-0x412];
+					__asm        sub    eax, ebx;
+					__asm        imul   eax, nMultiplier;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        sub    ecx, eax;
+					__asm        mov    eax, j;
+					__asm        mov    [ebp+eax*4-0x412], cl;
+			}
+		// LINE 139:
+		_T2d6:
+			__asm        push   0;
+			__asm        push   1;
+			__asm        mov    eax, lpDD;
+			__asm        push   eax;
+			__asm        mov    eax, lpDD;
+			__asm        mov    eax, [eax];
+			__asm        call   dword ptr [eax+0x58];
+		// LINE 140:
+			__asm        lea    eax, palEntries[10].peRed;
+			__asm        push   eax;
+			__asm        push   0xEC;
+			__asm        push   0xA;
+			__asm        push   0;
+			__asm        mov    eax, lpPalette;
+			__asm        push   eax;
+			__asm        mov    eax, lpPalette;
+			__asm        mov    eax, [eax];
+			__asm        call   dword ptr [eax+0x18];
+		// LINE 144:
+		_LOOP_30a:
+			for (;;) {
+				// LINE 144:
+				_LOOP_30a:
+					__asm        mov    eax, timerFade.lTotalElapsedTime;
+					__asm        mov    [ebp-0x448], eax;
+					__asm        jmp    _T31b;
+				_T31b:
+					__asm        cmp    timerFade.lStartTime, 0;
+					__asm        je     _T3bf;
 
-	__asm        cmp    timerFade.nTimerResolution, 1;
-	__asm        jne    _T34b;
+					__asm        cmp    timerFade.nTimerResolution, 1;
+					__asm        jne    _T34b;
 
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    [ebp-0x458], eax;
-	__asm        jmp    _T3a1;
+					__asm        call   dword ptr ds:[0x6C3908];
+					__asm        mov    [ebp-0x458], eax;
+					__asm        jmp    _T3a1;
 
-	__asm        jmp    _T3a1;
-_T34b:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T387;
+					__asm        jmp    _T3a1;
+				_T34b:
+					__asm        cmp    timerFade.nTimerResolution, 0;
+					__asm        jne    _T387;
 
-	__asm        lea    eax, [ebp-0x454];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-	__asm        mov    eax, [ebp-0x454];
-	__asm        mov    [ebp-0x44C], eax;
-	__asm        mov    eax, [ebp-0x44C];
-	__asm        mov    [ebp-0x458], eax;
-	__asm        jmp    _T3a1;
+					__asm        lea    eax, [ebp-0x454];
+					__asm        push   eax;
+					__asm        call   dword ptr ds:[0x6C365C];
+					__asm        mov    eax, [ebp-0x454];
+					__asm        mov    [ebp-0x44C], eax;
+					__asm        mov    eax, [ebp-0x44C];
+					__asm        mov    [ebp-0x458], eax;
+					__asm        jmp    _T3a1;
 
-	__asm        jmp    _T3a1;
-_T387:
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ecx, 0x3E8;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    [ebp-0x458], eax;
-	__asm        jmp    _T3a1;
-_T3a1:
-	__asm        mov    eax, [ebp-0x458];
-	__asm        sub    eax, timerFade.lStartTime;
-	__asm        mov    [ebp-0x444], eax;
-	__asm        mov    eax, [ebp-0x444];
-	__asm        add    [ebp-0x448], eax;
-_T3bf:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T40f;
+					__asm        jmp    _T3a1;
+				_T387:
+					__asm        call   dword ptr ds:[0x6C3908];
+					__asm        mov    ecx, 0x3E8;
+					__asm        sub    edx, edx;
+					__asm        div    ecx;
+					__asm        mov    [ebp-0x458], eax;
+					__asm        jmp    _T3a1;
+				_T3a1:
+					__asm        mov    eax, [ebp-0x458];
+					__asm        sub    eax, timerFade.lStartTime;
+					__asm        mov    [ebp-0x444], eax;
+					__asm        mov    eax, [ebp-0x444];
+					__asm        add    [ebp-0x448], eax;
+				_T3bf:
+					__asm        cmp    timerFade.nTimerResolution, 0;
+					__asm        jne    _T40f;
 
-	__asm        cmp    timerFade.lFrequency, 0;
-	__asm        je     _T40f;
+					__asm        cmp    timerFade.lFrequency, 0;
+					__asm        je     _T40f;
 
-	__asm        mov    eax, timerFade.lFrequency;
-	__asm        push   eax;
-	__asm        push   0xF4240;
-	__asm        mov    eax, [ebp-0x448];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C372C];
-	__asm        mov    [ebp-0x448], eax;
-	__asm        mov    eax, lDelayTime;
-	__asm        cmp    [ebp-0x448], eax;
-	__asm        jae    _T43d;
+					__asm        mov    eax, timerFade.lFrequency;
+					__asm        push   eax;
+					__asm        push   0xF4240;
+					__asm        mov    eax, [ebp-0x448];
+					__asm        push   eax;
+					__asm        call   dword ptr ds:[0x6C372C];
+					__asm        mov    [ebp-0x448], eax;
+					__asm        mov    eax, lDelayTime;
+					__asm        cmp    [ebp-0x448], eax;
+					__asm        jae    _T43d;
 
-	__asm        jmp    _T438;
-_T40f:
-	__asm        mov    eax, lDelayTime;
-	__asm        cmp    [ebp-0x448], eax;
-	__asm        jae    _T43d;
+					__asm        jmp    _T438;
+				_T40f:
+					__asm        mov    eax, lDelayTime;
+					__asm        cmp    [ebp-0x448], eax;
+					__asm        jae    _T43d;
 
-	__asm        jmp    _T438;
+					__asm        jmp    _T438;
 
-	__asm        mov    eax, lDelayTime;
-	__asm        cmp    [ebp-0x45C], eax;
-	__asm        jae    _T43d;
-_T438:
-	__asm        jmp    _LOOP_30a;
-// LINE 145:
-_T43d:
-	__asm        jmp    _FOR_NEXT_151;
+					__asm        mov    eax, lDelayTime;
+					__asm        cmp    [ebp-0x45C], eax;
+					__asm        jae    _T43d;
+				_T438:
+					__asm        jmp    _LOOP_30a;
+			}
+		// LINE 145:
+		_T43d:
+	}
 // LINE 147:
 _T442:
 	__asm        mov    eax, nOriginalPriority;
@@ -687,39 +666,32 @@ _Tb9:
 	return;
 // LINE 206:
 _FOR_ca:
-	i = 0xa;
-	__asm        jmp    _FOR_COND_ca;
-_FOR_NEXT_ca:
-	i++;
-_FOR_COND_ca:
-	__asm        cmp    i, 0xF6;
-	__asm        jge    _T137;
-// LINE 207:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*4+2];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x414], al;
-// LINE 208:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*4+1];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x413], al;
-// LINE 209:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*4];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x412], al;
-// LINE 210:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x411], 5;
-// LINE 211:
-	__asm        jmp    _FOR_NEXT_ca;
+	for (i = 0xa; (i < 0xf6); i++) {
+		// LINE 207:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*4+2];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x414], al;
+		// LINE 208:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*4+1];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x413], al;
+		// LINE 209:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*4];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x412], al;
+		// LINE 210:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x411], 5;
+	}
 // LINE 213:
 _T137:
 	nMultiplier = 0x3f;
@@ -727,213 +699,204 @@ _T137:
 	nDivisor = 0x40;
 // LINE 215:
 _FOR_151:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_151;
-_FOR_NEXT_151:
-	i++;
-_FOR_COND_151:
-	__asm        cmp    i, 0x40;
-	__asm        jge    _T41e;
-// LINE 216:
-	timerFade.lTotalElapsedTime = 0x0;
-	timerFade.lStartTime = 0x0;
-	__asm        jmp    _T177;
-_T177:
-	__asm        jmp    _T17c;
-_T17c:
-	__asm        cmp    timerFade.lStartTime, 0;
-	__asm        je     _T18e;
+	for (i = 0x0; (i < 0x40); i++) {
+		// LINE 216:
+			timerFade.lTotalElapsedTime = 0x0;
+			timerFade.lStartTime = 0x0;
+			__asm        jmp    _T177;
+		_T177:
+			__asm        jmp    _T17c;
+		_T17c:
+			__asm        cmp    timerFade.lStartTime, 0;
+			__asm        je     _T18e;
 
-	__asm        jmp    _T20c;
-_T18e:
-	__asm        cmp    timerFade.nTimerResolution, 1;
-	__asm        jne    _T1b1;
+			__asm        jmp    _T20c;
+		_T18e:
+			__asm        cmp    timerFade.nTimerResolution, 1;
+			__asm        jne    _T1b1;
 
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T207;
+			__asm        call   dword ptr ds:[0x6C3908];
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T207;
 
-	__asm        jmp    _T207;
-_T1b1:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T1ed;
+			__asm        jmp    _T207;
+		_T1b1:
+			__asm        cmp    timerFade.nTimerResolution, 0;
+			__asm        jne    _T1ed;
 
-	__asm        lea    eax, [ebp-0x434];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-	__asm        mov    eax, [ebp-0x434];
-	__asm        mov    [ebp-0x42C], eax;
-	__asm        mov    eax, [ebp-0x42C];
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T207;
+			__asm        lea    eax, [ebp-0x434];
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+			__asm        mov    eax, [ebp-0x434];
+			__asm        mov    [ebp-0x42C], eax;
+			__asm        mov    eax, [ebp-0x42C];
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T207;
 
-	__asm        jmp    _T207;
-_T1ed:
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ecx, 0x3E8;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T207;
-_T207:
-	__asm        jmp    _T20c;
-_T20c:
-	__asm        jmp    _T211;
-// LINE 217:
-_T211:
-	__asm        mov    eax, i;
-	__asm        cdq;
-	__asm        xor    eax, edx;
-	__asm        sub    eax, edx;
-	__asm        and    eax, 0xF;
-	__asm        xor    eax, edx;
-	__asm        sub    eax, edx;
-	__asm        jne    _FOR_23d;
-// LINE 218:
-	__asm        sar    nDivisor, 1;
-// LINE 219:
-	__asm        mov    eax, nDivisor;
-	__asm        dec    eax;
-	__asm        mov    nMultiplier, eax;
-// LINE 221:
-_FOR_23d:
-	j = 0xa;
-	__asm        jmp    _FOR_COND_23d;
-_FOR_NEXT_23d:
-	j++;
-_FOR_COND_23d:
-	__asm        cmp    j, 0xF6;
-	__asm        jge    _T2b2;
-// LINE 223:
-	__asm        mov    eax, j;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax*4-0x414];
-	__asm        imul   ecx, nMultiplier;
-	__asm        mov    eax, ecx;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx*4-0x414], al;
-// LINE 224:
-	__asm        mov    eax, j;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax*4-0x413];
-	__asm        imul   ecx, nMultiplier;
-	__asm        mov    eax, ecx;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx*4-0x413], al;
-// LINE 225:
-	__asm        mov    eax, j;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax*4-0x412];
-	__asm        imul   ecx, nMultiplier;
-	__asm        mov    eax, ecx;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx*4-0x412], al;
-// LINE 226:
-	__asm        jmp    _FOR_NEXT_23d;
-// LINE 228:
-_T2b2:
-	__asm        push   0;
-	__asm        push   1;
-	__asm        mov    eax, lpDD;
-	__asm        push   eax;
-	__asm        mov    eax, lpDD;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x58];
-// LINE 229:
-	__asm        lea    eax, palEntries[10].peRed;
-	__asm        push   eax;
-	__asm        push   0xEC;
-	__asm        push   0xA;
-	__asm        push   0;
-	__asm        mov    eax, lpPalette;
-	__asm        push   eax;
-	__asm        mov    eax, lpPalette;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x18];
-// LINE 233:
-_LOOP_2e6:
-	__asm        mov    eax, timerFade.lTotalElapsedTime;
-	__asm        mov    [ebp-0x448], eax;
-	__asm        jmp    _T2f7;
-_T2f7:
-	__asm        cmp    timerFade.lStartTime, 0;
-	__asm        je     _T39b;
+			__asm        jmp    _T207;
+		_T1ed:
+			__asm        call   dword ptr ds:[0x6C3908];
+			__asm        mov    ecx, 0x3E8;
+			__asm        sub    edx, edx;
+			__asm        div    ecx;
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T207;
+		_T207:
+			__asm        jmp    _T20c;
+		_T20c:
+			__asm        jmp    _T211;
+		// LINE 217:
+		_T211:
+			__asm        mov    eax, i;
+			__asm        cdq;
+			__asm        xor    eax, edx;
+			__asm        sub    eax, edx;
+			__asm        and    eax, 0xF;
+			__asm        xor    eax, edx;
+			__asm        sub    eax, edx;
+			__asm        jne    _FOR_23d;
+		// LINE 218:
+			__asm        sar    nDivisor, 1;
+		// LINE 219:
+			__asm        mov    eax, nDivisor;
+			__asm        dec    eax;
+			__asm        mov    nMultiplier, eax;
+		// LINE 221:
+		_FOR_23d:
+			for (j = 0xa; (j < 0xf6); j++) {
+				// LINE 223:
+					__asm        mov    eax, j;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [ebp+eax*4-0x414];
+					__asm        imul   ecx, nMultiplier;
+					__asm        mov    eax, ecx;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        mov    ecx, j;
+					__asm        mov    [ebp+ecx*4-0x414], al;
+				// LINE 224:
+					__asm        mov    eax, j;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [ebp+eax*4-0x413];
+					__asm        imul   ecx, nMultiplier;
+					__asm        mov    eax, ecx;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        mov    ecx, j;
+					__asm        mov    [ebp+ecx*4-0x413], al;
+				// LINE 225:
+					__asm        mov    eax, j;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [ebp+eax*4-0x412];
+					__asm        imul   ecx, nMultiplier;
+					__asm        mov    eax, ecx;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        mov    ecx, j;
+					__asm        mov    [ebp+ecx*4-0x412], al;
+			}
+		// LINE 228:
+		_T2b2:
+			__asm        push   0;
+			__asm        push   1;
+			__asm        mov    eax, lpDD;
+			__asm        push   eax;
+			__asm        mov    eax, lpDD;
+			__asm        mov    eax, [eax];
+			__asm        call   dword ptr [eax+0x58];
+		// LINE 229:
+			__asm        lea    eax, palEntries[10].peRed;
+			__asm        push   eax;
+			__asm        push   0xEC;
+			__asm        push   0xA;
+			__asm        push   0;
+			__asm        mov    eax, lpPalette;
+			__asm        push   eax;
+			__asm        mov    eax, lpPalette;
+			__asm        mov    eax, [eax];
+			__asm        call   dword ptr [eax+0x18];
+		// LINE 233:
+		_LOOP_2e6:
+			for (;;) {
+				// LINE 233:
+				_LOOP_2e6:
+					__asm        mov    eax, timerFade.lTotalElapsedTime;
+					__asm        mov    [ebp-0x448], eax;
+					__asm        jmp    _T2f7;
+				_T2f7:
+					__asm        cmp    timerFade.lStartTime, 0;
+					__asm        je     _T39b;
 
-	__asm        cmp    timerFade.nTimerResolution, 1;
-	__asm        jne    _T327;
+					__asm        cmp    timerFade.nTimerResolution, 1;
+					__asm        jne    _T327;
 
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    [ebp-0x458], eax;
-	__asm        jmp    _T37d;
+					__asm        call   dword ptr ds:[0x6C3908];
+					__asm        mov    [ebp-0x458], eax;
+					__asm        jmp    _T37d;
 
-	__asm        jmp    _T37d;
-_T327:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T363;
+					__asm        jmp    _T37d;
+				_T327:
+					__asm        cmp    timerFade.nTimerResolution, 0;
+					__asm        jne    _T363;
 
-	__asm        lea    eax, [ebp-0x454];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-	__asm        mov    eax, [ebp-0x454];
-	__asm        mov    [ebp-0x44C], eax;
-	__asm        mov    eax, [ebp-0x44C];
-	__asm        mov    [ebp-0x458], eax;
-	__asm        jmp    _T37d;
+					__asm        lea    eax, [ebp-0x454];
+					__asm        push   eax;
+					__asm        call   dword ptr ds:[0x6C365C];
+					__asm        mov    eax, [ebp-0x454];
+					__asm        mov    [ebp-0x44C], eax;
+					__asm        mov    eax, [ebp-0x44C];
+					__asm        mov    [ebp-0x458], eax;
+					__asm        jmp    _T37d;
 
-	__asm        jmp    _T37d;
-_T363:
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ecx, 0x3E8;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    [ebp-0x458], eax;
-	__asm        jmp    _T37d;
-_T37d:
-	__asm        mov    eax, [ebp-0x458];
-	__asm        sub    eax, timerFade.lStartTime;
-	__asm        mov    [ebp-0x444], eax;
-	__asm        mov    eax, [ebp-0x444];
-	__asm        add    [ebp-0x448], eax;
-_T39b:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T3eb;
+					__asm        jmp    _T37d;
+				_T363:
+					__asm        call   dword ptr ds:[0x6C3908];
+					__asm        mov    ecx, 0x3E8;
+					__asm        sub    edx, edx;
+					__asm        div    ecx;
+					__asm        mov    [ebp-0x458], eax;
+					__asm        jmp    _T37d;
+				_T37d:
+					__asm        mov    eax, [ebp-0x458];
+					__asm        sub    eax, timerFade.lStartTime;
+					__asm        mov    [ebp-0x444], eax;
+					__asm        mov    eax, [ebp-0x444];
+					__asm        add    [ebp-0x448], eax;
+				_T39b:
+					__asm        cmp    timerFade.nTimerResolution, 0;
+					__asm        jne    _T3eb;
 
-	__asm        cmp    timerFade.lFrequency, 0;
-	__asm        je     _T3eb;
+					__asm        cmp    timerFade.lFrequency, 0;
+					__asm        je     _T3eb;
 
-	__asm        mov    eax, timerFade.lFrequency;
-	__asm        push   eax;
-	__asm        push   0xF4240;
-	__asm        mov    eax, [ebp-0x448];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C372C];
-	__asm        mov    [ebp-0x448], eax;
-	__asm        mov    eax, [ebp-0x448];
-	__asm        cmp    lDelayTime, eax;
-	__asm        jbe    _T419;
+					__asm        mov    eax, timerFade.lFrequency;
+					__asm        push   eax;
+					__asm        push   0xF4240;
+					__asm        mov    eax, [ebp-0x448];
+					__asm        push   eax;
+					__asm        call   dword ptr ds:[0x6C372C];
+					__asm        mov    [ebp-0x448], eax;
+					__asm        mov    eax, [ebp-0x448];
+					__asm        cmp    lDelayTime, eax;
+					__asm        jbe    _T419;
 
-	__asm        jmp    _T414;
-_T3eb:
-	__asm        mov    eax, [ebp-0x448];
-	__asm        cmp    lDelayTime, eax;
-	__asm        jbe    _T419;
+					__asm        jmp    _T414;
+				_T3eb:
+					__asm        mov    eax, [ebp-0x448];
+					__asm        cmp    lDelayTime, eax;
+					__asm        jbe    _T419;
 
-	__asm        jmp    _T414;
+					__asm        jmp    _T414;
 
-	__asm        mov    eax, [ebp-0x45C];
-	__asm        cmp    lDelayTime, eax;
-	__asm        jbe    _T419;
-_T414:
-	__asm        jmp    _LOOP_2e6;
-// LINE 234:
-_T419:
-	__asm        jmp    _FOR_NEXT_151;
+					__asm        mov    eax, [ebp-0x45C];
+					__asm        cmp    lDelayTime, eax;
+					__asm        jbe    _T419;
+				_T414:
+					__asm        jmp    _LOOP_2e6;
+			}
+		// LINE 234:
+		_T419:
+	}
 // LINE 236:
 _T41e:
 	__asm        mov    eax, nOriginalPriority;
@@ -1004,39 +967,32 @@ _Tb9:
 	return;
 // LINE 295:
 _FOR_ca:
-	i = 0xa;
-	__asm        jmp    _FOR_COND_ca;
-_FOR_NEXT_ca:
-	i++;
-_FOR_COND_ca:
-	__asm        cmp    i, 0xF6;
-	__asm        jge    _T137;
-// LINE 296:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*4+2];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x418], al;
-// LINE 297:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*4+1];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x417], al;
-// LINE 298:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*4];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x416], al;
-// LINE 299:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
-// LINE 300:
-	__asm        jmp    _FOR_NEXT_ca;
+	for (i = 0xa; (i < 0xf6); i++) {
+		// LINE 296:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*4+2];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x418], al;
+		// LINE 297:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*4+1];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x417], al;
+		// LINE 298:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*4];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x416], al;
+		// LINE 299:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
+	}
 // LINE 302:
 _T137:
 	nMultiplier = 0x3f;
@@ -1044,243 +1000,234 @@ _T137:
 	nDivisor = 0x40;
 // LINE 304:
 _FOR_151:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_151;
-_FOR_NEXT_151:
-	i++;
-_FOR_COND_151:
-	__asm        cmp    i, 0x40;
-	__asm        jge    _T471;
-// LINE 305:
-	timerFade.lTotalElapsedTime = 0x0;
-	timerFade.lStartTime = 0x0;
-	__asm        jmp    _T177;
-_T177:
-	__asm        jmp    _T17c;
-_T17c:
-	__asm        cmp    timerFade.lStartTime, 0;
-	__asm        je     _T18e;
+	for (i = 0x0; (i < 0x40); i++) {
+		// LINE 305:
+			timerFade.lTotalElapsedTime = 0x0;
+			timerFade.lStartTime = 0x0;
+			__asm        jmp    _T177;
+		_T177:
+			__asm        jmp    _T17c;
+		_T17c:
+			__asm        cmp    timerFade.lStartTime, 0;
+			__asm        je     _T18e;
 
-	__asm        jmp    _T20c;
-_T18e:
-	__asm        cmp    timerFade.nTimerResolution, 1;
-	__asm        jne    _T1b1;
+			__asm        jmp    _T20c;
+		_T18e:
+			__asm        cmp    timerFade.nTimerResolution, 1;
+			__asm        jne    _T1b1;
 
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T207;
+			__asm        call   dword ptr ds:[0x6C3908];
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T207;
 
-	__asm        jmp    _T207;
-_T1b1:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T1ed;
+			__asm        jmp    _T207;
+		_T1b1:
+			__asm        cmp    timerFade.nTimerResolution, 0;
+			__asm        jne    _T1ed;
 
-	__asm        lea    eax, [ebp-0x438];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-	__asm        mov    eax, [ebp-0x438];
-	__asm        mov    [ebp-0x430], eax;
-	__asm        mov    eax, [ebp-0x430];
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T207;
+			__asm        lea    eax, [ebp-0x438];
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+			__asm        mov    eax, [ebp-0x438];
+			__asm        mov    [ebp-0x430], eax;
+			__asm        mov    eax, [ebp-0x430];
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T207;
 
-	__asm        jmp    _T207;
-_T1ed:
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ecx, 0x3E8;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T207;
-_T207:
-	__asm        jmp    _T20c;
-_T20c:
-	__asm        jmp    _T211;
-// LINE 306:
-_T211:
-	__asm        mov    eax, i;
-	__asm        cdq;
-	__asm        xor    eax, edx;
-	__asm        sub    eax, edx;
-	__asm        and    eax, 0xF;
-	__asm        xor    eax, edx;
-	__asm        sub    eax, edx;
-	__asm        jne    _FOR_23d;
-// LINE 307:
-	__asm        sar    nDivisor, 1;
-// LINE 308:
-	__asm        mov    eax, nDivisor;
-	__asm        dec    eax;
-	__asm        mov    nMultiplier, eax;
-// LINE 310:
-_FOR_23d:
-	j = 0xa;
-	__asm        jmp    _FOR_COND_23d;
-_FOR_NEXT_23d:
-	j++;
-_FOR_COND_23d:
-	__asm        cmp    j, 0xF6;
-	__asm        jge    _T305;
-// LINE 311:
-	__asm        mov    eax, colorToFadeTo;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+2];
-	__asm        mov    eax, j;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ebp+eax*4-0x418];
-	__asm        sub    ecx, edx;
-	__asm        mov    nDifference, ecx;
-// LINE 312:
-	__asm        mov    eax, j;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax*4-0x418];
-	__asm        mov    eax, nMultiplier;
-	__asm        imul   eax, nDifference;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        add    ecx, eax;
-	__asm        mov    eax, j;
-	__asm        mov    [ebp+eax*4-0x418], cl;
-// LINE 314:
-	__asm        mov    eax, colorToFadeTo;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        mov    eax, j;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ebp+eax*4-0x417];
-	__asm        sub    ecx, edx;
-	__asm        mov    nDifference, ecx;
-// LINE 315:
-	__asm        mov    eax, j;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax*4-0x417];
-	__asm        mov    eax, nMultiplier;
-	__asm        imul   eax, nDifference;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        add    ecx, eax;
-	__asm        mov    eax, j;
-	__asm        mov    [ebp+eax*4-0x417], cl;
-// LINE 317:
-	__asm        mov    eax, colorToFadeTo;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        mov    eax, j;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ebp+eax*4-0x416];
-	__asm        sub    ecx, edx;
-	__asm        mov    nDifference, ecx;
-// LINE 318:
-	__asm        mov    eax, j;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax*4-0x416];
-	__asm        mov    eax, nMultiplier;
-	__asm        imul   eax, nDifference;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        add    ecx, eax;
-	__asm        mov    eax, j;
-	__asm        mov    [ebp+eax*4-0x416], cl;
-// LINE 319:
-	__asm        jmp    _FOR_NEXT_23d;
-// LINE 321:
-_T305:
-	__asm        push   0;
-	__asm        push   1;
-	__asm        mov    eax, lpDD;
-	__asm        push   eax;
-	__asm        mov    eax, lpDD;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x58];
-// LINE 322:
-	__asm        lea    eax, palEntries[10].peRed;
-	__asm        push   eax;
-	__asm        push   0xEC;
-	__asm        push   0xA;
-	__asm        push   0;
-	__asm        mov    eax, lpPalette;
-	__asm        push   eax;
-	__asm        mov    eax, lpPalette;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x18];
-// LINE 326:
-_LOOP_339:
-	__asm        mov    eax, timerFade.lTotalElapsedTime;
-	__asm        mov    [ebp-0x44C], eax;
-	__asm        jmp    _T34a;
-_T34a:
-	__asm        cmp    timerFade.lStartTime, 0;
-	__asm        je     _T3ee;
+			__asm        jmp    _T207;
+		_T1ed:
+			__asm        call   dword ptr ds:[0x6C3908];
+			__asm        mov    ecx, 0x3E8;
+			__asm        sub    edx, edx;
+			__asm        div    ecx;
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T207;
+		_T207:
+			__asm        jmp    _T20c;
+		_T20c:
+			__asm        jmp    _T211;
+		// LINE 306:
+		_T211:
+			__asm        mov    eax, i;
+			__asm        cdq;
+			__asm        xor    eax, edx;
+			__asm        sub    eax, edx;
+			__asm        and    eax, 0xF;
+			__asm        xor    eax, edx;
+			__asm        sub    eax, edx;
+			__asm        jne    _FOR_23d;
+		// LINE 307:
+			__asm        sar    nDivisor, 1;
+		// LINE 308:
+			__asm        mov    eax, nDivisor;
+			__asm        dec    eax;
+			__asm        mov    nMultiplier, eax;
+		// LINE 310:
+		_FOR_23d:
+			for (j = 0xa; (j < 0xf6); j++) {
+				// LINE 311:
+					__asm        mov    eax, colorToFadeTo;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [eax+2];
+					__asm        mov    eax, j;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [ebp+eax*4-0x418];
+					__asm        sub    ecx, edx;
+					__asm        mov    nDifference, ecx;
+				// LINE 312:
+					__asm        mov    eax, j;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [ebp+eax*4-0x418];
+					__asm        mov    eax, nMultiplier;
+					__asm        imul   eax, nDifference;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        add    ecx, eax;
+					__asm        mov    eax, j;
+					__asm        mov    [ebp+eax*4-0x418], cl;
+				// LINE 314:
+					__asm        mov    eax, colorToFadeTo;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [eax+1];
+					__asm        mov    eax, j;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [ebp+eax*4-0x417];
+					__asm        sub    ecx, edx;
+					__asm        mov    nDifference, ecx;
+				// LINE 315:
+					__asm        mov    eax, j;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [ebp+eax*4-0x417];
+					__asm        mov    eax, nMultiplier;
+					__asm        imul   eax, nDifference;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        add    ecx, eax;
+					__asm        mov    eax, j;
+					__asm        mov    [ebp+eax*4-0x417], cl;
+				// LINE 317:
+					__asm        mov    eax, colorToFadeTo;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [eax];
+					__asm        mov    eax, j;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [ebp+eax*4-0x416];
+					__asm        sub    ecx, edx;
+					__asm        mov    nDifference, ecx;
+				// LINE 318:
+					__asm        mov    eax, j;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [ebp+eax*4-0x416];
+					__asm        mov    eax, nMultiplier;
+					__asm        imul   eax, nDifference;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        add    ecx, eax;
+					__asm        mov    eax, j;
+					__asm        mov    [ebp+eax*4-0x416], cl;
+			}
+		// LINE 321:
+		_T305:
+			__asm        push   0;
+			__asm        push   1;
+			__asm        mov    eax, lpDD;
+			__asm        push   eax;
+			__asm        mov    eax, lpDD;
+			__asm        mov    eax, [eax];
+			__asm        call   dword ptr [eax+0x58];
+		// LINE 322:
+			__asm        lea    eax, palEntries[10].peRed;
+			__asm        push   eax;
+			__asm        push   0xEC;
+			__asm        push   0xA;
+			__asm        push   0;
+			__asm        mov    eax, lpPalette;
+			__asm        push   eax;
+			__asm        mov    eax, lpPalette;
+			__asm        mov    eax, [eax];
+			__asm        call   dword ptr [eax+0x18];
+		// LINE 326:
+		_LOOP_339:
+			for (;;) {
+				// LINE 326:
+				_LOOP_339:
+					__asm        mov    eax, timerFade.lTotalElapsedTime;
+					__asm        mov    [ebp-0x44C], eax;
+					__asm        jmp    _T34a;
+				_T34a:
+					__asm        cmp    timerFade.lStartTime, 0;
+					__asm        je     _T3ee;
 
-	__asm        cmp    timerFade.nTimerResolution, 1;
-	__asm        jne    _T37a;
+					__asm        cmp    timerFade.nTimerResolution, 1;
+					__asm        jne    _T37a;
 
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    [ebp-0x45C], eax;
-	__asm        jmp    _T3d0;
+					__asm        call   dword ptr ds:[0x6C3908];
+					__asm        mov    [ebp-0x45C], eax;
+					__asm        jmp    _T3d0;
 
-	__asm        jmp    _T3d0;
-_T37a:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T3b6;
+					__asm        jmp    _T3d0;
+				_T37a:
+					__asm        cmp    timerFade.nTimerResolution, 0;
+					__asm        jne    _T3b6;
 
-	__asm        lea    eax, [ebp-0x458];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-	__asm        mov    eax, [ebp-0x458];
-	__asm        mov    [ebp-0x450], eax;
-	__asm        mov    eax, [ebp-0x450];
-	__asm        mov    [ebp-0x45C], eax;
-	__asm        jmp    _T3d0;
+					__asm        lea    eax, [ebp-0x458];
+					__asm        push   eax;
+					__asm        call   dword ptr ds:[0x6C365C];
+					__asm        mov    eax, [ebp-0x458];
+					__asm        mov    [ebp-0x450], eax;
+					__asm        mov    eax, [ebp-0x450];
+					__asm        mov    [ebp-0x45C], eax;
+					__asm        jmp    _T3d0;
 
-	__asm        jmp    _T3d0;
-_T3b6:
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ecx, 0x3E8;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    [ebp-0x45C], eax;
-	__asm        jmp    _T3d0;
-_T3d0:
-	__asm        mov    eax, [ebp-0x45C];
-	__asm        sub    eax, timerFade.lStartTime;
-	__asm        mov    [ebp-0x448], eax;
-	__asm        mov    eax, [ebp-0x448];
-	__asm        add    [ebp-0x44C], eax;
-_T3ee:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T43e;
+					__asm        jmp    _T3d0;
+				_T3b6:
+					__asm        call   dword ptr ds:[0x6C3908];
+					__asm        mov    ecx, 0x3E8;
+					__asm        sub    edx, edx;
+					__asm        div    ecx;
+					__asm        mov    [ebp-0x45C], eax;
+					__asm        jmp    _T3d0;
+				_T3d0:
+					__asm        mov    eax, [ebp-0x45C];
+					__asm        sub    eax, timerFade.lStartTime;
+					__asm        mov    [ebp-0x448], eax;
+					__asm        mov    eax, [ebp-0x448];
+					__asm        add    [ebp-0x44C], eax;
+				_T3ee:
+					__asm        cmp    timerFade.nTimerResolution, 0;
+					__asm        jne    _T43e;
 
-	__asm        cmp    timerFade.lFrequency, 0;
-	__asm        je     _T43e;
+					__asm        cmp    timerFade.lFrequency, 0;
+					__asm        je     _T43e;
 
-	__asm        mov    eax, timerFade.lFrequency;
-	__asm        push   eax;
-	__asm        push   0xF4240;
-	__asm        mov    eax, [ebp-0x44C];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C372C];
-	__asm        mov    [ebp-0x44C], eax;
-	__asm        mov    eax, [ebp-0x44C];
-	__asm        cmp    lDelayTime, eax;
-	__asm        jbe    _T46c;
+					__asm        mov    eax, timerFade.lFrequency;
+					__asm        push   eax;
+					__asm        push   0xF4240;
+					__asm        mov    eax, [ebp-0x44C];
+					__asm        push   eax;
+					__asm        call   dword ptr ds:[0x6C372C];
+					__asm        mov    [ebp-0x44C], eax;
+					__asm        mov    eax, [ebp-0x44C];
+					__asm        cmp    lDelayTime, eax;
+					__asm        jbe    _T46c;
 
-	__asm        jmp    _T467;
-_T43e:
-	__asm        mov    eax, [ebp-0x44C];
-	__asm        cmp    lDelayTime, eax;
-	__asm        jbe    _T46c;
+					__asm        jmp    _T467;
+				_T43e:
+					__asm        mov    eax, [ebp-0x44C];
+					__asm        cmp    lDelayTime, eax;
+					__asm        jbe    _T46c;
 
-	__asm        jmp    _T467;
+					__asm        jmp    _T467;
 
-	__asm        mov    eax, lDelayTime;
-	__asm        cmp    [ebp-0x460], eax;
-	__asm        jae    _T46c;
-_T467:
-	__asm        jmp    _LOOP_339;
-// LINE 327:
-_T46c:
-	__asm        jmp    _FOR_NEXT_151;
+					__asm        mov    eax, lDelayTime;
+					__asm        cmp    [ebp-0x460], eax;
+					__asm        jae    _T46c;
+				_T467:
+					__asm        jmp    _LOOP_339;
+			}
+		// LINE 327:
+		_T46c:
+	}
 // LINE 329:
 _T471:
 	__asm        mov    eax, nOriginalPriority;
@@ -1371,90 +1318,71 @@ _Tb7:
 	return;
 // LINE 401:
 _FOR_c8:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_c8;
-_FOR_NEXT_c8:
-	i++;
-_FOR_COND_c8:
-	__asm        mov    eax, lSteps;
-	__asm        cmp    i, eax;
-	__asm        jge    _FOR_11d;
-// LINE 402:
-_FOR_e3:
-	j = 0xa;
-	__asm        jmp    _FOR_COND_e3;
-_FOR_NEXT_e3:
-	j++;
-_FOR_COND_e3:
-	__asm        cmp    j, 0xF5;
-	__asm        jge    _T10c;
-// LINE 403:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 0xA;
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    ecx, paletteArray;
-	__asm        mov    byte ptr [eax+ecx+3], 5;
-	__asm        jmp    _FOR_NEXT_e3;
-// LINE 404:
-_T10c:
-	__asm        jmp    _FOR_NEXT_c8;
+	for (i = 0x0; (i < lSteps); i++) {
+		// LINE 402:
+		_FOR_e3:
+			for (j = 0xa; (j < 0xf5); j++) {
+				// LINE 403:
+					__asm        mov    eax, j;
+					__asm        mov    ecx, i;
+					__asm        shl    ecx, 0xA;
+					__asm        lea    eax, [ecx+eax*4];
+					__asm        mov    ecx, paletteArray;
+					__asm        mov    byte ptr [eax+ecx+3], 5;
+					__asm        jmp    _FOR_NEXT_e3;
+			}
+		// LINE 404:
+		_T10c:
+	}
 // LINE 406:
 _FOR_11d:
-	j = 0xa;
-	__asm        jmp    _FOR_COND_11d;
-_FOR_NEXT_11d:
-	j++;
-_FOR_COND_11d:
-	__asm        cmp    j, 0xF6;
-	__asm        jge    _T1ad;
-// LINE 407:
-	__asm        mov    al, colorStart.Red;
-	__asm        mov    ecx, j;
-	__asm        mov    edx, paletteArray;
-	__asm        mov    [edx+ecx*4], al;
-// LINE 408:
-	__asm        mov    al, colorStart.Green;
-	__asm        mov    ecx, j;
-	__asm        mov    edx, paletteArray;
-	__asm        mov    [edx+ecx*4+1], al;
-// LINE 409:
-	__asm        mov    al, colorStart.Blue;
-	__asm        mov    ecx, j;
-	__asm        mov    edx, paletteArray;
-	__asm        mov    [edx+ecx*4+2], al;
-// LINE 410:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, paletteDestination;
-	__asm        mov    al, [ecx+eax*4+2];
-	__asm        mov    ecx, j;
-	__asm        mov    edx, nLastStepIndex;
-	__asm        shl    edx, 0xA;
-	__asm        lea    ecx, [edx+ecx*4];
-	__asm        mov    edx, paletteArray;
-	__asm        mov    [ecx+edx], al;
-// LINE 411:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, paletteDestination;
-	__asm        mov    al, [ecx+eax*4+1];
-	__asm        mov    ecx, j;
-	__asm        mov    edx, nLastStepIndex;
-	__asm        shl    edx, 0xA;
-	__asm        lea    ecx, [edx+ecx*4];
-	__asm        mov    edx, paletteArray;
-	__asm        mov    [ecx+edx+1], al;
-// LINE 412:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, paletteDestination;
-	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ecx, j;
-	__asm        mov    edx, nLastStepIndex;
-	__asm        shl    edx, 0xA;
-	__asm        lea    ecx, [edx+ecx*4];
-	__asm        mov    edx, paletteArray;
-	__asm        mov    [ecx+edx+2], al;
-// LINE 413:
-	__asm        jmp    _FOR_NEXT_11d;
+	for (j = 0xa; (j < 0xf6); j++) {
+		// LINE 407:
+			__asm        mov    al, colorStart.Red;
+			__asm        mov    ecx, j;
+			__asm        mov    edx, paletteArray;
+			__asm        mov    [edx+ecx*4], al;
+		// LINE 408:
+			__asm        mov    al, colorStart.Green;
+			__asm        mov    ecx, j;
+			__asm        mov    edx, paletteArray;
+			__asm        mov    [edx+ecx*4+1], al;
+		// LINE 409:
+			__asm        mov    al, colorStart.Blue;
+			__asm        mov    ecx, j;
+			__asm        mov    edx, paletteArray;
+			__asm        mov    [edx+ecx*4+2], al;
+		// LINE 410:
+			__asm        mov    eax, j;
+			__asm        mov    ecx, paletteDestination;
+			__asm        mov    al, [ecx+eax*4+2];
+			__asm        mov    ecx, j;
+			__asm        mov    edx, nLastStepIndex;
+			__asm        shl    edx, 0xA;
+			__asm        lea    ecx, [edx+ecx*4];
+			__asm        mov    edx, paletteArray;
+			__asm        mov    [ecx+edx], al;
+		// LINE 411:
+			__asm        mov    eax, j;
+			__asm        mov    ecx, paletteDestination;
+			__asm        mov    al, [ecx+eax*4+1];
+			__asm        mov    ecx, j;
+			__asm        mov    edx, nLastStepIndex;
+			__asm        shl    edx, 0xA;
+			__asm        lea    ecx, [edx+ecx*4];
+			__asm        mov    edx, paletteArray;
+			__asm        mov    [ecx+edx+1], al;
+		// LINE 412:
+			__asm        mov    eax, j;
+			__asm        mov    ecx, paletteDestination;
+			__asm        mov    al, [ecx+eax*4];
+			__asm        mov    ecx, j;
+			__asm        mov    edx, nLastStepIndex;
+			__asm        shl    edx, 0xA;
+			__asm        lea    ecx, [edx+ecx*4];
+			__asm        mov    edx, paletteArray;
+			__asm        mov    [ecx+edx+2], al;
+	}
 // LINE 417:
 _T1ad:
 	nMultiplier = 0x3f;
@@ -1462,279 +1390,269 @@ _T1ad:
 	nDivisor = 0x40;
 // LINE 419:
 _FOR_1c7:
-	i = 0x1;
-	__asm        jmp    _FOR_COND_1c7;
-_FOR_NEXT_1c7:
-	i++;
-_FOR_COND_1c7:
-	__asm        mov    eax, nLastStepIndex;
-	__asm        cmp    i, eax;
-	__asm        jge    _T4b8;
-// LINE 420:
-	timerFade.lTotalElapsedTime = 0x0;
-	timerFade.lStartTime = 0x0;
-	__asm        jmp    _T1e9;
-_T1e9:
-	__asm        jmp    _T1ee;
-_T1ee:
-	__asm        cmp    timerFade.lStartTime, 0;
-	__asm        je     _T1fd;
+	for (i = 0x1; (i < nLastStepIndex); i++) {
+		// LINE 420:
+			timerFade.lTotalElapsedTime = 0x0;
+			timerFade.lStartTime = 0x0;
+			__asm        jmp    _T1e9;
+		_T1e9:
+			__asm        jmp    _T1ee;
+		_T1ee:
+			__asm        cmp    timerFade.lStartTime, 0;
+			__asm        je     _T1fd;
 
-	__asm        jmp    _T260;
-_T1fd:
-	__asm        cmp    timerFade.nTimerResolution, 1;
-	__asm        jne    _T21a;
+			__asm        jmp    _T260;
+		_T1fd:
+			__asm        cmp    timerFade.nTimerResolution, 1;
+			__asm        jne    _T21a;
 
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T25b;
+			__asm        call   dword ptr ds:[0x6C3908];
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T25b;
 
-	__asm        jmp    _T25b;
-_T21a:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T244;
+			__asm        jmp    _T25b;
+		_T21a:
+			__asm        cmp    timerFade.nTimerResolution, 0;
+			__asm        jne    _T244;
 
-	__asm        lea    eax, [ebp-0x48];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-	__asm        mov    eax, [ebp-0x48];
-	__asm        mov    [ebp-0x40], eax;
-	__asm        mov    eax, [ebp-0x40];
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T25b;
+			__asm        lea    eax, [ebp-0x48];
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+			__asm        mov    eax, [ebp-0x48];
+			__asm        mov    [ebp-0x40], eax;
+			__asm        mov    eax, [ebp-0x40];
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T25b;
 
-	__asm        jmp    _T25b;
-_T244:
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ecx, 0x3E8;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    timerFade.lStartTime, eax;
-	__asm        jmp    _T25b;
-_T25b:
-	__asm        jmp    _T260;
-_T260:
-	__asm        jmp    _T265;
-// LINE 421:
-_T265:
-	__asm        mov    ecx, lSteps;
-	__asm        sar    ecx, 2;
-	__asm        mov    eax, i;
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        test   edx, edx;
-	__asm        jne    _FOR_290;
-// LINE 422:
-	__asm        sar    nDivisor, 1;
-// LINE 423:
-	__asm        mov    eax, nDivisor;
-	__asm        dec    eax;
-	__asm        mov    nMultiplier, eax;
-// LINE 425:
-_FOR_290:
-	j = 0xa;
-	__asm        jmp    _FOR_COND_290;
-_FOR_NEXT_290:
-	j++;
-_FOR_COND_290:
-	__asm        cmp    j, 0xF6;
-	__asm        jge    _T39a;
-// LINE 426:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, paletteDestination;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+eax*4+2];
-	__asm        mov    eax, i;
-	__asm        dec    eax;
-	__asm        shl    eax, 0xA;
-	__asm        mov    ecx, j;
-	__asm        lea    eax, [eax+ecx*4];
-	__asm        mov    ecx, paletteArray;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [eax+ecx];
-	__asm        sub    edx, ebx;
-	__asm        mov    nDifference, edx;
-// LINE 427:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, paletteDestination;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+eax*4+2];
-	__asm        mov    eax, nMultiplier;
-	__asm        imul   eax, nDifference;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        sub    ebx, eax;
-	__asm        mov    eax, j;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 0xA;
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    ecx, paletteArray;
-	__asm        mov    [eax+ecx], bl;
-// LINE 429:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, paletteDestination;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+eax*4+1];
-	__asm        mov    eax, i;
-	__asm        dec    eax;
-	__asm        shl    eax, 0xA;
-	__asm        mov    ecx, j;
-	__asm        lea    eax, [eax+ecx*4];
-	__asm        mov    ecx, paletteArray;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [eax+ecx+1];
-	__asm        sub    edx, ebx;
-	__asm        mov    nDifference, edx;
-// LINE 430:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, paletteDestination;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+eax*4+1];
-	__asm        mov    eax, nMultiplier;
-	__asm        imul   eax, nDifference;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        sub    ebx, eax;
-	__asm        mov    eax, j;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 0xA;
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    ecx, paletteArray;
-	__asm        mov    [eax+ecx+1], bl;
-// LINE 432:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, paletteDestination;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+eax*4];
-	__asm        mov    eax, i;
-	__asm        dec    eax;
-	__asm        shl    eax, 0xA;
-	__asm        mov    ecx, j;
-	__asm        lea    eax, [eax+ecx*4];
-	__asm        mov    ecx, paletteArray;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [eax+ecx+2];
-	__asm        sub    edx, ebx;
-	__asm        mov    nDifference, edx;
-// LINE 433:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, paletteDestination;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+eax*4];
-	__asm        mov    eax, nMultiplier;
-	__asm        imul   eax, nDifference;
-	__asm        cdq;
-	__asm        idiv   nDivisor;
-	__asm        sub    ebx, eax;
-	__asm        mov    eax, j;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 0xA;
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    ecx, paletteArray;
-	__asm        mov    [eax+ecx+2], bl;
-// LINE 434:
-	__asm        jmp    _FOR_NEXT_290;
-// LINE 436:
-_T39a:
-	__asm        push   0;
-	__asm        push   1;
-	__asm        mov    eax, lpDD;
-	__asm        push   eax;
-	__asm        mov    eax, lpDD;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x58];
-// LINE 437:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 0xA;
-	__asm        add    eax, paletteArray;
-	__asm        add    eax, 0x28;
-	__asm        push   eax;
-	__asm        push   0xEC;
-	__asm        push   0xA;
-	__asm        push   0;
-	__asm        mov    eax, lpPalette;
-	__asm        push   eax;
-	__asm        mov    eax, lpPalette;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x18];
-// LINE 441:
-_LOOP_3d4:
-	__asm        mov    eax, timerFade.lTotalElapsedTime;
-	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    _T3df;
-_T3df:
-	__asm        cmp    timerFade.lStartTime, 0;
-	__asm        je     _T456;
+			__asm        jmp    _T25b;
+		_T244:
+			__asm        call   dword ptr ds:[0x6C3908];
+			__asm        mov    ecx, 0x3E8;
+			__asm        sub    edx, edx;
+			__asm        div    ecx;
+			__asm        mov    timerFade.lStartTime, eax;
+			__asm        jmp    _T25b;
+		_T25b:
+			__asm        jmp    _T260;
+		_T260:
+			__asm        jmp    _T265;
+		// LINE 421:
+		_T265:
+			__asm        mov    ecx, lSteps;
+			__asm        sar    ecx, 2;
+			__asm        mov    eax, i;
+			__asm        cdq;
+			__asm        idiv   ecx;
+			__asm        test   edx, edx;
+			__asm        jne    _FOR_290;
+		// LINE 422:
+			__asm        sar    nDivisor, 1;
+		// LINE 423:
+			__asm        mov    eax, nDivisor;
+			__asm        dec    eax;
+			__asm        mov    nMultiplier, eax;
+		// LINE 425:
+		_FOR_290:
+			for (j = 0xa; (j < 0xf6); j++) {
+				// LINE 426:
+					__asm        mov    eax, j;
+					__asm        mov    ecx, paletteDestination;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [ecx+eax*4+2];
+					__asm        mov    eax, i;
+					__asm        dec    eax;
+					__asm        shl    eax, 0xA;
+					__asm        mov    ecx, j;
+					__asm        lea    eax, [eax+ecx*4];
+					__asm        mov    ecx, paletteArray;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [eax+ecx];
+					__asm        sub    edx, ebx;
+					__asm        mov    nDifference, edx;
+				// LINE 427:
+					__asm        mov    eax, j;
+					__asm        mov    ecx, paletteDestination;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [ecx+eax*4+2];
+					__asm        mov    eax, nMultiplier;
+					__asm        imul   eax, nDifference;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        sub    ebx, eax;
+					__asm        mov    eax, j;
+					__asm        mov    ecx, i;
+					__asm        shl    ecx, 0xA;
+					__asm        lea    eax, [ecx+eax*4];
+					__asm        mov    ecx, paletteArray;
+					__asm        mov    [eax+ecx], bl;
+				// LINE 429:
+					__asm        mov    eax, j;
+					__asm        mov    ecx, paletteDestination;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [ecx+eax*4+1];
+					__asm        mov    eax, i;
+					__asm        dec    eax;
+					__asm        shl    eax, 0xA;
+					__asm        mov    ecx, j;
+					__asm        lea    eax, [eax+ecx*4];
+					__asm        mov    ecx, paletteArray;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [eax+ecx+1];
+					__asm        sub    edx, ebx;
+					__asm        mov    nDifference, edx;
+				// LINE 430:
+					__asm        mov    eax, j;
+					__asm        mov    ecx, paletteDestination;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [ecx+eax*4+1];
+					__asm        mov    eax, nMultiplier;
+					__asm        imul   eax, nDifference;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        sub    ebx, eax;
+					__asm        mov    eax, j;
+					__asm        mov    ecx, i;
+					__asm        shl    ecx, 0xA;
+					__asm        lea    eax, [ecx+eax*4];
+					__asm        mov    ecx, paletteArray;
+					__asm        mov    [eax+ecx+1], bl;
+				// LINE 432:
+					__asm        mov    eax, j;
+					__asm        mov    ecx, paletteDestination;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [ecx+eax*4];
+					__asm        mov    eax, i;
+					__asm        dec    eax;
+					__asm        shl    eax, 0xA;
+					__asm        mov    ecx, j;
+					__asm        lea    eax, [eax+ecx*4];
+					__asm        mov    ecx, paletteArray;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [eax+ecx+2];
+					__asm        sub    edx, ebx;
+					__asm        mov    nDifference, edx;
+				// LINE 433:
+					__asm        mov    eax, j;
+					__asm        mov    ecx, paletteDestination;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [ecx+eax*4];
+					__asm        mov    eax, nMultiplier;
+					__asm        imul   eax, nDifference;
+					__asm        cdq;
+					__asm        idiv   nDivisor;
+					__asm        sub    ebx, eax;
+					__asm        mov    eax, j;
+					__asm        mov    ecx, i;
+					__asm        shl    ecx, 0xA;
+					__asm        lea    eax, [ecx+eax*4];
+					__asm        mov    ecx, paletteArray;
+					__asm        mov    [eax+ecx+2], bl;
+			}
+		// LINE 436:
+		_T39a:
+			__asm        push   0;
+			__asm        push   1;
+			__asm        mov    eax, lpDD;
+			__asm        push   eax;
+			__asm        mov    eax, lpDD;
+			__asm        mov    eax, [eax];
+			__asm        call   dword ptr [eax+0x58];
+		// LINE 437:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 0xA;
+			__asm        add    eax, paletteArray;
+			__asm        add    eax, 0x28;
+			__asm        push   eax;
+			__asm        push   0xEC;
+			__asm        push   0xA;
+			__asm        push   0;
+			__asm        mov    eax, lpPalette;
+			__asm        push   eax;
+			__asm        mov    eax, lpPalette;
+			__asm        mov    eax, [eax];
+			__asm        call   dword ptr [eax+0x18];
+		// LINE 441:
+		_LOOP_3d4:
+			for (;;) {
+				// LINE 441:
+				_LOOP_3d4:
+					__asm        mov    eax, timerFade.lTotalElapsedTime;
+					__asm        mov    [ebp-0x5C], eax;
+					__asm        jmp    _T3df;
+				_T3df:
+					__asm        cmp    timerFade.lStartTime, 0;
+					__asm        je     _T456;
 
-	__asm        cmp    timerFade.nTimerResolution, 1;
-	__asm        jne    _T406;
+					__asm        cmp    timerFade.nTimerResolution, 1;
+					__asm        jne    _T406;
 
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    [ebp-0x6C], eax;
-	__asm        jmp    _T447;
+					__asm        call   dword ptr ds:[0x6C3908];
+					__asm        mov    [ebp-0x6C], eax;
+					__asm        jmp    _T447;
 
-	__asm        jmp    _T447;
-_T406:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T430;
+					__asm        jmp    _T447;
+				_T406:
+					__asm        cmp    timerFade.nTimerResolution, 0;
+					__asm        jne    _T430;
 
-	__asm        lea    eax, [ebp-0x68];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-	__asm        mov    eax, [ebp-0x68];
-	__asm        mov    [ebp-0x60], eax;
-	__asm        mov    eax, [ebp-0x60];
-	__asm        mov    [ebp-0x6C], eax;
-	__asm        jmp    _T447;
+					__asm        lea    eax, [ebp-0x68];
+					__asm        push   eax;
+					__asm        call   dword ptr ds:[0x6C365C];
+					__asm        mov    eax, [ebp-0x68];
+					__asm        mov    [ebp-0x60], eax;
+					__asm        mov    eax, [ebp-0x60];
+					__asm        mov    [ebp-0x6C], eax;
+					__asm        jmp    _T447;
 
-	__asm        jmp    _T447;
-_T430:
-	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        mov    ecx, 0x3E8;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    [ebp-0x6C], eax;
-	__asm        jmp    _T447;
-_T447:
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        sub    eax, timerFade.lStartTime;
-	__asm        mov    [ebp-0x58], eax;
-	__asm        mov    eax, [ebp-0x58];
-	__asm        add    [ebp-0x5C], eax;
-_T456:
-	__asm        cmp    timerFade.nTimerResolution, 0;
-	__asm        jne    _T491;
+					__asm        jmp    _T447;
+				_T430:
+					__asm        call   dword ptr ds:[0x6C3908];
+					__asm        mov    ecx, 0x3E8;
+					__asm        sub    edx, edx;
+					__asm        div    ecx;
+					__asm        mov    [ebp-0x6C], eax;
+					__asm        jmp    _T447;
+				_T447:
+					__asm        mov    eax, [ebp-0x6C];
+					__asm        sub    eax, timerFade.lStartTime;
+					__asm        mov    [ebp-0x58], eax;
+					__asm        mov    eax, [ebp-0x58];
+					__asm        add    [ebp-0x5C], eax;
+				_T456:
+					__asm        cmp    timerFade.nTimerResolution, 0;
+					__asm        jne    _T491;
 
-	__asm        cmp    timerFade.lFrequency, 0;
-	__asm        je     _T491;
+					__asm        cmp    timerFade.lFrequency, 0;
+					__asm        je     _T491;
 
-	__asm        mov    eax, timerFade.lFrequency;
-	__asm        push   eax;
-	__asm        push   0xF4240;
-	__asm        mov    eax, [ebp-0x5C];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C372C];
-	__asm        mov    [ebp-0x5C], eax;
-	__asm        mov    eax, lDelayTime;
-	__asm        cmp    [ebp-0x5C], eax;
-	__asm        jae    _T4b3;
+					__asm        mov    eax, timerFade.lFrequency;
+					__asm        push   eax;
+					__asm        push   0xF4240;
+					__asm        mov    eax, [ebp-0x5C];
+					__asm        push   eax;
+					__asm        call   dword ptr ds:[0x6C372C];
+					__asm        mov    [ebp-0x5C], eax;
+					__asm        mov    eax, lDelayTime;
+					__asm        cmp    [ebp-0x5C], eax;
+					__asm        jae    _T4b3;
 
-	__asm        jmp    _T4ae;
-_T491:
-	__asm        mov    eax, lDelayTime;
-	__asm        cmp    [ebp-0x5C], eax;
-	__asm        jae    _T4b3;
+					__asm        jmp    _T4ae;
+				_T491:
+					__asm        mov    eax, lDelayTime;
+					__asm        cmp    [ebp-0x5C], eax;
+					__asm        jae    _T4b3;
 
-	__asm        jmp    _T4ae;
+					__asm        jmp    _T4ae;
 
-	__asm        mov    eax, lDelayTime;
-	__asm        cmp    [ebp-0x70], eax;
-	__asm        jae    _T4b3;
-_T4ae:
-	__asm        jmp    _LOOP_3d4;
-// LINE 442:
-_T4b3:
-	__asm        jmp    _FOR_NEXT_1c7;
+					__asm        mov    eax, lDelayTime;
+					__asm        cmp    [ebp-0x70], eax;
+					__asm        jae    _T4b3;
+				_T4ae:
+					__asm        jmp    _LOOP_3d4;
+			}
+		// LINE 442:
+		_T4b3:
+	}
 // LINE 444:
 _T4b8:
 	__asm        push   0;
@@ -1786,33 +1704,26 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(/*packed*/ struct SparkalColor
 
 // LINE 467:
 _FOR_18:
-	i = 0xa;
-	__asm        jmp    _FOR_COND_18;
-_FOR_NEXT_18:
-	i++;
-_FOR_COND_18:
-	__asm        cmp    i, 0xF6;
-	__asm        jge    _T67;
-// LINE 468:
-	__asm        mov    eax, colorToSet;
-	__asm        mov    al, [eax+2];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x404], al;
-// LINE 469:
-	__asm        mov    eax, colorToSet;
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x403], al;
-// LINE 470:
-	__asm        mov    eax, colorToSet;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x402], al;
-// LINE 471:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x401], 5;
-// LINE 472:
-	__asm        jmp    _FOR_NEXT_18;
+	for (i = 0xa; (i < 0xf6); i++) {
+		// LINE 468:
+			__asm        mov    eax, colorToSet;
+			__asm        mov    al, [eax+2];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x404], al;
+		// LINE 469:
+			__asm        mov    eax, colorToSet;
+			__asm        mov    al, [eax+1];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x403], al;
+		// LINE 470:
+			__asm        mov    eax, colorToSet;
+			__asm        mov    al, [eax];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x402], al;
+		// LINE 471:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x401], 5;
+	}
 // LINE 475:
 _T67:
 	__asm        push   0;
@@ -1845,36 +1756,29 @@ void SparkalPalette::ImplementNewPalette(/*packed*/ struct SparkalColor *pNewCol
 
 // LINE 503:
 _FOR_1e:
-	i = 0xa;
-	__asm        jmp    _FOR_COND_1e;
-_FOR_NEXT_1e:
-	i++;
-_FOR_COND_1e:
-	__asm        cmp    i, 0xF6;
-	__asm        jge    _T79;
-// LINE 504:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pNewColors;
-	__asm        mov    al, [ecx+eax*4+2];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x404], al;
-// LINE 505:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pNewColors;
-	__asm        mov    al, [ecx+eax*4+1];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x403], al;
-// LINE 506:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pNewColors;
-	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x402], al;
-// LINE 507:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x401], 5;
-// LINE 508:
-	__asm        jmp    _FOR_NEXT_1e;
+	for (i = 0xa; (i < 0xf6); i++) {
+		// LINE 504:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, pNewColors;
+			__asm        mov    al, [ecx+eax*4+2];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x404], al;
+		// LINE 505:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, pNewColors;
+			__asm        mov    al, [ecx+eax*4+1];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x403], al;
+		// LINE 506:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, pNewColors;
+			__asm        mov    al, [ecx+eax*4];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x402], al;
+		// LINE 507:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x401], 5;
+	}
 // LINE 510:
 _T79:
 	__asm        cmp    lpPalette, 0;
@@ -1953,27 +1857,20 @@ void ClearWindowsSystemPalette() {
 	__asm        rep stosd;
 // LINE 573:
 _FOR_39:
-	Counter = 0x0;
-	__asm        jmp    _FOR_COND_39;
-_FOR_NEXT_39:
-	Counter++;
-_FOR_COND_39:
-	__asm        cmp    Counter, 0x100;
-	__asm        jge    _T7a;
-// LINE 574:
-	__asm        mov    eax, Counter;
-	__asm        mov    byte ptr [ebp+eax*4-0x404], 0;
-// LINE 575:
-	__asm        mov    eax, Counter;
-	__asm        mov    byte ptr [ebp+eax*4-0x403], 0;
-// LINE 576:
-	__asm        mov    eax, Counter;
-	__asm        mov    byte ptr [ebp+eax*4-0x402], 0;
-// LINE 577:
-	__asm        mov    eax, Counter;
-	__asm        mov    byte ptr [ebp+eax*4-0x401], 5;
-// LINE 578:
-	__asm        jmp    _FOR_NEXT_39;
+	for (Counter = 0x0; (Counter < 0x100); Counter++) {
+		// LINE 574:
+			__asm        mov    eax, Counter;
+			__asm        mov    byte ptr [ebp+eax*4-0x404], 0;
+		// LINE 575:
+			__asm        mov    eax, Counter;
+			__asm        mov    byte ptr [ebp+eax*4-0x403], 0;
+		// LINE 576:
+			__asm        mov    eax, Counter;
+			__asm        mov    byte ptr [ebp+eax*4-0x402], 0;
+		// LINE 577:
+			__asm        mov    eax, Counter;
+			__asm        mov    byte ptr [ebp+eax*4-0x401], 5;
+	}
 // LINE 582:
 _T7a:
 	__asm        push   0;

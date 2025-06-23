@@ -1131,160 +1131,154 @@ _T120:
 	__asm        jmp    _FOR_138;
 // LINE 134:
 _FOR_138:
-	i = 0x1;
-	__asm        jmp    _FOR_COND_138;
-_FOR_NEXT_138:
-	i++;
-_FOR_COND_138:
-	__asm        cmp    i, 0x2D;
-	__asm        jg     _T2ee;
-// LINE 137:
-	__asm        mov    eax, i;
-	__asm        lea    eax, [eax+eax*4-5];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        shl    eax, 3;
-	__asm        push   eax;
-	__asm        lea    eax, stringLanguageCompare.c_str_ptr;
-	__asm        push   eax;
-	__asm        call   SetStringFromStringResource;
-	__asm        add    esp, 8;
-	__asm        mov    nStringFound, eax;
-// LINE 138:
-	__asm        cmp    nStringFound, 0;
-	__asm        je     _T2e9;
-// LINE 139:
-	__asm        jmp    _T174;
-_T174:
-	__asm        mov    eax, stringLanguageName.reference;
-	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
-	__asm        jae    _T194;
+	for (i = 0x1; (i <= 0x2d); i++) {
+		// LINE 137:
+			__asm        mov    eax, i;
+			__asm        lea    eax, [eax+eax*4-5];
+			__asm        lea    eax, [eax+eax*4];
+			__asm        lea    eax, [eax+eax*4];
+			__asm        shl    eax, 3;
+			__asm        push   eax;
+			__asm        lea    eax, stringLanguageCompare.c_str_ptr;
+			__asm        push   eax;
+			__asm        call   SetStringFromStringResource;
+			__asm        add    esp, 8;
+			__asm        mov    nStringFound, eax;
+		// LINE 138:
+			__asm        cmp    nStringFound, 0;
+			__asm        je     _T2e9;
+		// LINE 139:
+			__asm        jmp    _T174;
+		_T174:
+			__asm        mov    eax, stringLanguageName.reference;
+			__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
+			__asm        jae    _T194;
 
-	__asm        jmp    _T186;
-_T186:
-	__asm        mov    eax, stringLanguageName.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ebp-0x74], eax;
-	__asm        jmp    _T19b;
-_T194:
-	__asm        mov    dword ptr [ebp-0x74], 0xFFFFFFFF;
-_T19b:
-	__asm        jmp    _T1a0;
-_T1a0:
-	__asm        jmp    _T1a5;
-_T1a5:
-	__asm        mov    eax, stringLanguageCompare.reference;
-	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     _T1c4;
+			__asm        jmp    _T186;
+		_T186:
+			__asm        mov    eax, stringLanguageName.reference;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    [ebp-0x74], eax;
+			__asm        jmp    _T19b;
+		_T194:
+			__asm        mov    dword ptr [ebp-0x74], 0xFFFFFFFF;
+		_T19b:
+			__asm        jmp    _T1a0;
+		_T1a0:
+			__asm        jmp    _T1a5;
+		_T1a5:
+			__asm        mov    eax, stringLanguageCompare.reference;
+			__asm        cmp    dword ptr [eax+4], 0;
+			__asm        je     _T1c4;
 
-	__asm        mov    eax, stringLanguageCompare.reference;
-	__asm        mov    eax, [eax];
-	__asm        mov    [ebp-0x78], eax;
-	__asm        jmp    _T1d0;
+			__asm        mov    eax, stringLanguageCompare.reference;
+			__asm        mov    eax, [eax];
+			__asm        mov    [ebp-0x78], eax;
+			__asm        jmp    _T1d0;
 
-	__asm        jmp    _T1d0;
-_T1c4:
-	__asm        mov    dword ptr [ebp-0x78], 0;
-	__asm        jmp    _T1d0;
-_T1d0:
-	__asm        jmp    _T1d5;
-_T1d5:
-	__asm        mov    eax, stringLanguageCompare.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x74];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x78];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        lea    ecx, stringLanguageName.c_str_ptr;
-	__asm        call   basic_string<char>::compare_str;
-	__asm        test   eax, eax;
-	__asm        jne    _T2e9;
-// LINE 140:
-	nLanguage[0] = i;
-// LINE 141:
-	__asm        mov    dword ptr [ebp-0x1C], 1;
-	__asm        mov    eax, stringLanguageName.reference;
-	__asm        dec    dword ptr [eax+0xC];
-	__asm        mov    eax, stringLanguageName.reference;
-	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    _T251;
+			__asm        jmp    _T1d0;
+		_T1c4:
+			__asm        mov    dword ptr [ebp-0x78], 0;
+			__asm        jmp    _T1d0;
+		_T1d0:
+			__asm        jmp    _T1d5;
+		_T1d5:
+			__asm        mov    eax, stringLanguageCompare.reference;
+			__asm        mov    eax, [eax+4];
+			__asm        push   eax;
+			__asm        mov    eax, [ebp-0x74];
+			__asm        push   eax;
+			__asm        mov    eax, [ebp-0x78];
+			__asm        push   eax;
+			__asm        push   0;
+			__asm        lea    ecx, stringLanguageName.c_str_ptr;
+			__asm        call   basic_string<char>::compare_str;
+			__asm        test   eax, eax;
+			__asm        jne    _T2e9;
+		// LINE 140:
+			nLanguage[0] = i;
+		// LINE 141:
+			__asm        mov    dword ptr [ebp-0x1C], 1;
+			__asm        mov    eax, stringLanguageName.reference;
+			__asm        dec    dword ptr [eax+0xC];
+			__asm        mov    eax, stringLanguageName.reference;
+			__asm        cmp    dword ptr [eax+0xC], 0;
+			__asm        jne    _T251;
 
-	__asm        mov    eax, stringLanguageName.reference;
-	__asm        mov    [ebp-0x34], eax;
-	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    [ebp-0x30], eax;
-	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     _T251;
+			__asm        mov    eax, stringLanguageName.reference;
+			__asm        mov    [ebp-0x34], eax;
+			__asm        mov    eax, [ebp-0x34];
+			__asm        mov    [ebp-0x30], eax;
+			__asm        cmp    dword ptr [ebp-0x30], 0;
+			__asm        je     _T251;
 
-	__asm        mov    ecx, [ebp-0x30];
-	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    _T23b;
-_T23b:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        push   eax;
-	__asm        call   operator delete;
-	__asm        add    esp, 4;
-	__asm        jmp    _T24c;
-_T24c:
-	__asm        jmp    _T251;
-_T251:
-	__asm        jmp    _T256;
-_T256:
-	__asm        cmp    stringLanguageName.c_str_ptr, 0;
-	__asm        je     _T278;
+			__asm        mov    ecx, [ebp-0x30];
+			__asm        call   basic_string_ref<char>::delete_ptr;
+			__asm        jmp    _T23b;
+		_T23b:
+			__asm        mov    eax, [ebp-0x30];
+			__asm        push   eax;
+			__asm        call   operator delete;
+			__asm        add    esp, 4;
+			__asm        jmp    _T24c;
+		_T24c:
+			__asm        jmp    _T251;
+		_T251:
+			__asm        jmp    _T256;
+		_T256:
+			__asm        cmp    stringLanguageName.c_str_ptr, 0;
+			__asm        je     _T278;
 
-	__asm        mov    eax, stringLanguageName.c_str_ptr;
-	__asm        mov    [ebp-0x28], eax;
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    [ebp-0x2C], eax;
-	__asm        mov    eax, [ebp-0x2C];
-	__asm        push   eax;
-	__asm        call   operator delete;
-	__asm        add    esp, 4;
-_T278:
-	__asm        jmp    _T27d;
-_T27d:
-	__asm        mov    eax, stringLanguageCompare.reference;
-	__asm        dec    dword ptr [eax+0xC];
-	__asm        mov    eax, stringLanguageCompare.reference;
-	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        jne    _T2b5;
+			__asm        mov    eax, stringLanguageName.c_str_ptr;
+			__asm        mov    [ebp-0x28], eax;
+			__asm        mov    eax, [ebp-0x28];
+			__asm        mov    [ebp-0x2C], eax;
+			__asm        mov    eax, [ebp-0x2C];
+			__asm        push   eax;
+			__asm        call   operator delete;
+			__asm        add    esp, 4;
+		_T278:
+			__asm        jmp    _T27d;
+		_T27d:
+			__asm        mov    eax, stringLanguageCompare.reference;
+			__asm        dec    dword ptr [eax+0xC];
+			__asm        mov    eax, stringLanguageCompare.reference;
+			__asm        cmp    dword ptr [eax+0xC], 0;
+			__asm        jne    _T2b5;
 
-	__asm        mov    eax, stringLanguageCompare.reference;
-	__asm        mov    [ebp-0x44], eax;
-	__asm        mov    eax, [ebp-0x44];
-	__asm        mov    [ebp-0x40], eax;
-	__asm        cmp    dword ptr [ebp-0x40], 0;
-	__asm        je     _T2b5;
+			__asm        mov    eax, stringLanguageCompare.reference;
+			__asm        mov    [ebp-0x44], eax;
+			__asm        mov    eax, [ebp-0x44];
+			__asm        mov    [ebp-0x40], eax;
+			__asm        cmp    dword ptr [ebp-0x40], 0;
+			__asm        je     _T2b5;
 
-	__asm        push   1;
-	__asm        mov    ecx, [ebp-0x40];
-	__asm        call   basic_string_ref<char>::`scalar deleting destructor';
-	__asm        jmp    _T2b5;
-_T2b5:
-	__asm        jmp    _T2ba;
-_T2ba:
-	__asm        cmp    stringLanguageCompare.c_str_ptr, 0;
-	__asm        je     _T2dc;
+			__asm        push   1;
+			__asm        mov    ecx, [ebp-0x40];
+			__asm        call   basic_string_ref<char>::`scalar deleting destructor';
+			__asm        jmp    _T2b5;
+		_T2b5:
+			__asm        jmp    _T2ba;
+		_T2ba:
+			__asm        cmp    stringLanguageCompare.c_str_ptr, 0;
+			__asm        je     _T2dc;
 
-	__asm        mov    eax, stringLanguageCompare.c_str_ptr;
-	__asm        mov    [ebp-0x38], eax;
-	__asm        mov    eax, [ebp-0x38];
-	__asm        mov    [ebp-0x3C], eax;
-	__asm        mov    eax, [ebp-0x3C];
-	__asm        push   eax;
-	__asm        call   operator delete;
-	__asm        add    esp, 4;
-_T2dc:
-	__asm        jmp    _T2e1;
-_T2e1:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    __RETURN;
-// LINE 144:
-_T2e9:
-	__asm        jmp    _FOR_NEXT_138;
+			__asm        mov    eax, stringLanguageCompare.c_str_ptr;
+			__asm        mov    [ebp-0x38], eax;
+			__asm        mov    eax, [ebp-0x38];
+			__asm        mov    [ebp-0x3C], eax;
+			__asm        mov    eax, [ebp-0x3C];
+			__asm        push   eax;
+			__asm        call   operator delete;
+			__asm        add    esp, 4;
+		_T2dc:
+			__asm        jmp    _T2e1;
+		_T2e1:
+			__asm        mov    eax, [ebp-0x1C];
+			__asm        jmp    __RETURN;
+		// LINE 144:
+		_T2e9:
+	}
 // LINE 145:
 _T2ee:
 	__asm        mov    dword ptr [ebp-0x20], 0;
@@ -1844,24 +1838,24 @@ _T23:
 	return 0x0;
 // LINE 199:
 __DO_2a:
-	nCurrentLanguage++;
-// LINE 200:
-	__asm        cmp    nCurrentLanguage, 0x2D;
-	__asm        jl     _T3e;
-// LINE 201:
-	nCurrentLanguage = 0x1;
-// LINE 202:
-_T3e:
-	__asm        mov    eax, nCurrentLanguage;
-	__asm        push   eax;
-	__asm        call   LanguageManager::CanWeSwitchToGivenLanguage;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        jne    _T5e;
-__DO_WHILE_2a:
-	__asm        mov    eax, nCurrentLanguage;
-	__asm        cmp    nInitialLanguage, eax;
-	__asm        jne    __DO_2a;
+	do {
+		// LINE 199:
+		__DO_2a:
+			nCurrentLanguage++;
+		// LINE 200:
+			__asm        cmp    nCurrentLanguage, 0x2D;
+			__asm        jl     _T3e;
+		// LINE 201:
+			nCurrentLanguage = 0x1;
+		// LINE 202:
+		_T3e:
+			__asm        mov    eax, nCurrentLanguage;
+			__asm        push   eax;
+			__asm        call   LanguageManager::CanWeSwitchToGivenLanguage;
+			__asm        add    esp, 4;
+			__asm        test   eax, eax;
+			__asm        jne    _T5e;
+	} while ((nInitialLanguage != nCurrentLanguage));
 // LINE 203:
 _T5e:
 	return nCurrentLanguage;

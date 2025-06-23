@@ -2914,6 +2914,14 @@ _T4ad:
 	__asm        sub    eax, ecx;
 	__asm        mov    [ebp-0x158], eax;
 	__asm        jmp    __WHILE_387;
+_T4ad:
+	__asm        mov    eax, [ebp-0x154];
+	__asm        mov    ecx, [ebp-0x16C];
+	__asm        sub    ecx, [ebp-0x15C];
+	__asm        dec    ecx;
+	__asm        sub    eax, ecx;
+	__asm        mov    [ebp-0x158], eax;
+	__asm        jmp    __WHILE_387;
 _T4cd:
 	__asm        mov    dword ptr [ebp-0x168], 0xFFFFFFFF;
 	__asm        jmp    _T4dc;
@@ -3028,6 +3036,14 @@ _T641:
 
 	__asm        mov    dword ptr [ebp-0x184], 0xFFFFFFFF;
 	__asm        jmp    _T6c2;
+_T693:
+	__asm        mov    eax, [ebp-0x170];
+	__asm        mov    ecx, [ebp-0x188];
+	__asm        sub    ecx, [ebp-0x178];
+	__asm        dec    ecx;
+	__asm        sub    eax, ecx;
+	__asm        mov    [ebp-0x174], eax;
+	__asm        jmp    __WHILE_56d;
 _T693:
 	__asm        mov    eax, [ebp-0x170];
 	__asm        mov    ecx, [ebp-0x188];
@@ -3163,6 +3179,14 @@ _T84b:
 
 	__asm        mov    dword ptr [ebp-0x1A0], 0xFFFFFFFF;
 	__asm        jmp    _T8cc;
+_T89d:
+	__asm        mov    eax, [ebp-0x18C];
+	__asm        mov    ecx, [ebp-0x1A4];
+	__asm        sub    ecx, [ebp-0x194];
+	__asm        dec    ecx;
+	__asm        sub    eax, ecx;
+	__asm        mov    [ebp-0x190], eax;
+	__asm        jmp    __WHILE_777;
 _T89d:
 	__asm        mov    eax, [ebp-0x18C];
 	__asm        mov    ecx, [ebp-0x1A4];
@@ -3355,6 +3379,14 @@ _Tafb:
 
 	__asm        mov    dword ptr [ebp-0x1BC], 0xFFFFFFFF;
 	__asm        jmp    _Tb7c;
+_Tb4d:
+	__asm        mov    eax, [ebp-0x1A8];
+	__asm        mov    ecx, [ebp-0x1C0];
+	__asm        sub    ecx, [ebp-0x1B0];
+	__asm        dec    ecx;
+	__asm        sub    eax, ecx;
+	__asm        mov    [ebp-0x1AC], eax;
+	__asm        jmp    __WHILE_a27;
 _Tb4d:
 	__asm        mov    eax, [ebp-0x1A8];
 	__asm        mov    ecx, [ebp-0x1C0];
@@ -3658,24 +3690,18 @@ int32_t CGameApp::CheckCommandLineForCheatCodes() {
 	__asm        je     _T284;
 // LINE 509:
 _FOR_3a:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_3a;
-_FOR_NEXT_3a:
-	i++;
-_FOR_COND_3a:
-	__asm        cmp    i, 0x80;
-	__asm        jge    _T74;
-// LINE 510:
-	__asm        mov    eax, i;
-	__asm        movsx  eax, byte ptr [ebp+eax-0x80];
-	__asm        cmp    eax, 0x5F;
-	__asm        jne    _T6f;
-// LINE 511:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax-0x80], 0x20;
-// LINE 512:
-_T6f:
-	__asm        jmp    _FOR_NEXT_3a;
+	for (i = 0x0; (i < 0x80); i++) {
+		// LINE 510:
+			__asm        mov    eax, i;
+			__asm        movsx  eax, byte ptr [ebp+eax-0x80];
+			__asm        cmp    eax, 0x5F;
+			__asm        jne    _T6f;
+		// LINE 511:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax-0x80], 0x20;
+		// LINE 512:
+		_T6f:
+	}
 // LINE 513:
 _T74:
 	__asm        push   0x10;

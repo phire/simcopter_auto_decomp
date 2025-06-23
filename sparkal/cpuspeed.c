@@ -173,6 +173,9 @@ _T143:
 // LINE 183:
 __DO_157:
 	tries++;
+// LINE 183:
+__DO_157:
+	tries++;
 // LINE 186:
 	freq3 = freq2;
 // LINE 187:
@@ -187,16 +190,14 @@ __DO_157:
 	t1<_LARGE_INTEGER+0x04:4> = t0<_LARGE_INTEGER+0x04:4>;
 // LINE 197:
 __WHILE_17c:
-	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
-	__asm        sub    eax, t0<_LARGE_INTEGER+0x00:4>;
-	__asm        cmp    eax, 0x32;
-	__asm        jae    _T19a;
-// LINE 203:
-	__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-// LINE 205:
-	__asm        jmp    __WHILE_17c;
+	while (((t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>) < 0x32)) {
+		// LINE 203:
+			__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+		// LINE 205:
+			__asm        jmp    __WHILE_17c;
+	}
 // LINE 208:
 _T19a:
 	__asm        rdtsc;
@@ -208,16 +209,14 @@ _T19a:
 	t0<_LARGE_INTEGER+0x04:4> = t1<_LARGE_INTEGER+0x04:4>;
 // LINE 218:
 __WHILE_1ab:
-	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
-	__asm        sub    eax, t0<_LARGE_INTEGER+0x00:4>;
-	__asm        cmp    eax, 0x3E8;
-	__asm        jae    _T1cb;
-// LINE 225:
-	__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-// LINE 227:
-	__asm        jmp    __WHILE_1ab;
+	while (((t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>) < 0x3e8)) {
+		// LINE 225:
+			__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+		// LINE 227:
+			__asm        jmp    __WHILE_1ab;
+	}
 // LINE 230:
 _T1cb:
 	__asm        rdtsc;
@@ -349,43 +348,37 @@ _T2fb:
 	lowest = 0xffffffff;
 // LINE 325:
 _FOR_326:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_326;
-_FOR_NEXT_326:
-	i++;
-_FOR_COND_326:
-	__asm        cmp    i, 0xA;
-	__asm        jge    _T37b;
-// LINE 331:
-	__asm        lea    eax, t0<_LARGE_INTEGER+0x00:None>;
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-// LINE 336:
-	__asm        mov    eax, 0x80000000;
-// LINE 337:
-	__asm        mov    bx, 0xFA0;
-// LINE 344:
-loop1:
-	__asm        bsf    ecx, eax;
-// LINE 346:
-	__asm        dec    bx;
-// LINE 347:
-	__asm        jne    loop1;
-// LINE 350:
-	__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
-// LINE 352:
-	current = (t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>);
-// LINE 357:
-	__asm        mov    eax, current;
-	__asm        cmp    lowest, eax;
-	__asm        jbe    _T376;
-// LINE 358:
-	lowest = current;
-// LINE 359:
-_T376:
-	__asm        jmp    _FOR_NEXT_326;
+	for (i = 0x0; (i < 0xa); i++) {
+		// LINE 331:
+			__asm        lea    eax, t0<_LARGE_INTEGER+0x00:None>;
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+		// LINE 336:
+			__asm        mov    eax, 0x80000000;
+		// LINE 337:
+			__asm        mov    bx, 0xFA0;
+		// LINE 344:
+		loop1:
+			__asm        bsf    ecx, eax;
+		// LINE 346:
+			__asm        dec    bx;
+		// LINE 347:
+			__asm        jne    loop1;
+		// LINE 350:
+			__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+		// LINE 352:
+			current = (t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>);
+		// LINE 357:
+			__asm        mov    eax, current;
+			__asm        cmp    lowest, eax;
+			__asm        jbe    _T376;
+		// LINE 358:
+			lowest = current;
+		// LINE 359:
+		_T376:
+	}
 // LINE 363:
 _T37b:
 	ticks = lowest;

@@ -411,41 +411,34 @@ void CareerCityTweakInit() {
 	nPvals = 0x9;
 // LINE 273:
 _FOR_1c:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_1c;
-_FOR_NEXT_1c:
-	i++;
-_FOR_COND_1c:
-	__asm        cmp    i, 0x1F;
-	__asm        jge    _Ta5;
-// LINE 274:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 3;
-	__asm        lea    eax, [eax+eax*8];
-	__asm        add    eax, 0x5C2B18;
-	__asm        mov    currentCareerCityInfo, eax;
-// LINE 275:
-	pvals[0] = (currentCareerCityInfo + 0x4);
-// LINE 276:
-	pvals[1] = (currentCareerCityInfo + 0x8);
-// LINE 277:
-	pvals[2] = (currentCareerCityInfo + 0xc);
-// LINE 278:
-	pvals[3] = (currentCareerCityInfo + 0x10);
-// LINE 279:
-	pvals[4] = (currentCareerCityInfo + 0x14);
-// LINE 280:
-	pvals[5] = (currentCareerCityInfo + 0x18);
-// LINE 281:
-	pvals[6] = (currentCareerCityInfo + 0x1c);
-// LINE 282:
-	pvals[7] = (currentCareerCityInfo + 0x20);
-// LINE 283:
-	pvals[8] = (currentCareerCityInfo + 0x24);
-// LINE 284:
-	TWKEnQueue(currentCareerCityInfo->chCityFileNameBase, 0x9, pvals[0]);
-// LINE 285:
-	__asm        jmp    _FOR_NEXT_1c;
+	for (i = 0x0; (i < 0x1f); i++) {
+		// LINE 274:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 3;
+			__asm        lea    eax, [eax+eax*8];
+			__asm        add    eax, 0x5C2B18;
+			__asm        mov    currentCareerCityInfo, eax;
+		// LINE 275:
+			pvals[0] = (currentCareerCityInfo + 0x4);
+		// LINE 276:
+			pvals[1] = (currentCareerCityInfo + 0x8);
+		// LINE 277:
+			pvals[2] = (currentCareerCityInfo + 0xc);
+		// LINE 278:
+			pvals[3] = (currentCareerCityInfo + 0x10);
+		// LINE 279:
+			pvals[4] = (currentCareerCityInfo + 0x14);
+		// LINE 280:
+			pvals[5] = (currentCareerCityInfo + 0x18);
+		// LINE 281:
+			pvals[6] = (currentCareerCityInfo + 0x1c);
+		// LINE 282:
+			pvals[7] = (currentCareerCityInfo + 0x20);
+		// LINE 283:
+			pvals[8] = (currentCareerCityInfo + 0x24);
+		// LINE 284:
+			TWKEnQueue(currentCareerCityInfo->chCityFileNameBase, 0x9, pvals[0]);
+	}
 // LINE 286:
 _Ta5:
 	return;
@@ -1382,56 +1375,49 @@ void InitializeAllCareerCitiesInfo() {
 	reinterpret_cast<uint32_t>(gGameFilePath[44]) = SZ_CAREER_CITY_FILE_NAME_BASE_31;
 // LINE 744:
 _FOR_b55:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_b55;
-_FOR_NEXT_b55:
-	i++;
-_FOR_COND_b55:
-	__asm        cmp    i, 0x1F;
-	__asm        jge    _Tc0a;
-// LINE 745:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        mov    ecx, 0x1F;
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 3;
-	__asm        mov    gAllCareerCities[0].citySettings.lDifficulty[ecx+ecx*8], eax;
-// LINE 746:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 3;
-	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyFire[eax+eax*8], 0x1A;
-// LINE 747:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 3;
-	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyCrime[eax+eax*8], 0x14;
-// LINE 748:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 3;
-	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyRescue[eax+eax*8], 8;
-// LINE 749:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 3;
-	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyRiot[eax+eax*8], 0xC;
-// LINE 750:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 3;
-	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyTraffic[eax+eax*8], 0x14;
-// LINE 751:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 3;
-	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyMedEvac[eax+eax*8], 0xE;
-// LINE 752:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 3;
-	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyTransport[eax+eax*8], 0;
-// LINE 753:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 3;
-	__asm        mov    gAllCareerCities[0].citySettings.lDaytime[eax+eax*8], 1;
-// LINE 754:
-	__asm        jmp    _FOR_NEXT_b55;
+	for (i = 0x0; (i < 0x1f); i++) {
+		// LINE 745:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        mov    ecx, 0x1F;
+			__asm        cdq;
+			__asm        idiv   ecx;
+			__asm        mov    ecx, i;
+			__asm        shl    ecx, 3;
+			__asm        mov    gAllCareerCities[0].citySettings.lDifficulty[ecx+ecx*8], eax;
+		// LINE 746:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 3;
+			__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyFire[eax+eax*8], 0x1A;
+		// LINE 747:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 3;
+			__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyCrime[eax+eax*8], 0x14;
+		// LINE 748:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 3;
+			__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyRescue[eax+eax*8], 8;
+		// LINE 749:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 3;
+			__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyRiot[eax+eax*8], 0xC;
+		// LINE 750:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 3;
+			__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyTraffic[eax+eax*8], 0x14;
+		// LINE 751:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 3;
+			__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyMedEvac[eax+eax*8], 0xE;
+		// LINE 752:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 3;
+			__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyTransport[eax+eax*8], 0;
+		// LINE 753:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 3;
+			__asm        mov    gAllCareerCities[0].citySettings.lDaytime[eax+eax*8], 1;
+	}
 // LINE 755:
 _Tc0a:
 	return;

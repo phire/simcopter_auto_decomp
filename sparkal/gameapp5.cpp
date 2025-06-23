@@ -528,43 +528,29 @@ _T43:
 	pBufferCurrentPosition = ((((nMidYPosition - 0xd) * nSurfaceStride) + nMidXPosition) + pBufferStart);
 // LINE 244:
 _FOR_81:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_81;
-_FOR_NEXT_81:
-	i++;
-_FOR_COND_81:
-	__asm        cmp    i, 0x1C;
-	__asm        jge    _Ta6;
-// LINE 245:
-	pBufferCurrentPosition[0] = 0x0;
-// LINE 246:
-	pBufferCurrentPosition[1] = 0x0;
-// LINE 247:
-	pBufferCurrentPosition += nSurfaceStride;
-// LINE 248:
-	__asm        jmp    _FOR_NEXT_81;
+	for (i = 0x0; (i < 0x1c); i++) {
+		// LINE 245:
+			pBufferCurrentPosition[0] = 0x0;
+		// LINE 246:
+			pBufferCurrentPosition[1] = 0x0;
+		// LINE 247:
+			pBufferCurrentPosition += nSurfaceStride;
+	}
 // LINE 249:
 _Ta6:
 	pBufferCurrentPosition = ((((nMidYPosition * nSurfaceStride) + nMidXPosition) + pBufferStart) - 0xd);
 // LINE 250:
 _FOR_c5:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_c5;
-_FOR_NEXT_c5:
-	i++;
-_FOR_COND_c5:
-	__asm        cmp    i, 0x1C;
-	__asm        jge    _Tea;
-// LINE 251:
-	pBufferCurrentPosition[0] = 0x0;
-// LINE 252:
-	__asm        mov    eax, nSurfaceStride;
-	__asm        mov    ecx, pBufferCurrentPosition;
-	__asm        mov    byte ptr [eax+ecx], 0;
-// LINE 253:
-	pBufferCurrentPosition++;
-// LINE 254:
-	__asm        jmp    _FOR_NEXT_c5;
+	for (i = 0x0; (i < 0x1c); i++) {
+		// LINE 251:
+			pBufferCurrentPosition[0] = 0x0;
+		// LINE 252:
+			__asm        mov    eax, nSurfaceStride;
+			__asm        mov    ecx, pBufferCurrentPosition;
+			__asm        mov    byte ptr [eax+ecx], 0;
+		// LINE 253:
+			pBufferCurrentPosition++;
+	}
 // LINE 255:
 _Tea:
 	__asm        mov    eax, bufferToDrawTo;

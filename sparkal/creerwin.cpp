@@ -2106,73 +2106,64 @@ int32_t CareerWindow::DrawSelf() {
 
 // LINE 241:
 _FOR_18:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_18;
-_FOR_NEXT_18:
-	i++;
-_FOR_COND_18:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0xB4], ecx;
-	__asm        jle    _Tcf;
-// LINE 245:
-	__asm        jmp    _T32;
-_T32:
-	__asm        jmp    _T37;
-_T37:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 7;
-	__asm        sub    eax, ecx;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [eax+ecx+0x208];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 7;
-	__asm        sub    eax, ecx;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [eax+ecx+0x204];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [eax+ecx+0x7C];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [eax+ecx+0x78];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 7;
-	__asm        sub    eax, ecx;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, this;
-	__asm        mov    edx, i;
-	__asm        mov    ebx, edx;
-	__asm        shl    edx, 7;
-	__asm        sub    edx, ebx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        add    edx, ebx;
-	__asm        mov    ebx, this;
-	__asm        mov    edx, [edx+ebx+0x1FC];
-	__asm        lea    ecx, [eax+ecx+0x1FC];
-	__asm        call   dword ptr [edx+0xC];
-	__asm        mov    nErrorCode, eax;
-// LINE 246:
-	__asm        jmp    _FOR_NEXT_18;
+	for (i = 0x0; (this->nCityCount > i); i++) {
+		// LINE 245:
+			__asm        jmp    _T32;
+		_T32:
+			__asm        jmp    _T37;
+		_T37:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, eax;
+			__asm        shl    eax, 7;
+			__asm        sub    eax, ecx;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [eax+ecx+0x208];
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, eax;
+			__asm        shl    eax, 7;
+			__asm        sub    eax, ecx;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [eax+ecx+0x204];
+			__asm        push   eax;
+			__asm        push   0;
+			__asm        push   0;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [eax+ecx+0x7C];
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [eax+ecx+0x78];
+			__asm        push   eax;
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0x40];
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, eax;
+			__asm        shl    eax, 7;
+			__asm        sub    eax, ecx;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, this;
+			__asm        mov    edx, i;
+			__asm        mov    ebx, edx;
+			__asm        shl    edx, 7;
+			__asm        sub    edx, ebx;
+			__asm        lea    edx, [edx+edx*4];
+			__asm        add    edx, ebx;
+			__asm        mov    ebx, this;
+			__asm        mov    edx, [edx+ebx+0x1FC];
+			__asm        lea    ecx, [eax+ecx+0x1FC];
+			__asm        call   dword ptr [edx+0xC];
+			__asm        mov    nErrorCode, eax;
+	}
 // LINE 247:
 _Tcf:
 	return nErrorCode;
@@ -2226,77 +2217,64 @@ _T8e:
 	__asm        call   CareerWindow::GetCoordinatesForCitySelections;
 // LINE 262:
 _FOR_b6:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_b6;
-_FOR_NEXT_b6:
-	i++;
-_FOR_COND_b6:
-	__asm        cmp    i, 3;
-	__asm        jge    _T1c0;
-// LINE 263:
-_FOR_d8:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_d8;
-_FOR_NEXT_d8:
-	j++;
-_FOR_COND_d8:
-	__asm        cmp    j, 4;
-	__asm        jge    _T1bb;
-// LINE 270:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 6;
-	__asm        mov    ecx, j;
-	__asm        shl    ecx, 4;
-	__asm        add    eax, ecx;
-	__asm        mov    eax, [ebp+eax-0xB4];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        shl    eax, 6;
-	__asm        mov    ecx, j;
-	__asm        shl    ecx, 4;
-	__asm        add    eax, ecx;
-	__asm        mov    eax, [ebp+eax-0xB8];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        shl    eax, 6;
-	__asm        mov    ecx, j;
-	__asm        shl    ecx, 4;
-	__asm        add    eax, ecx;
-	__asm        mov    eax, [ebp+eax-0xBC];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        shl    eax, 6;
-	__asm        mov    ecx, j;
-	__asm        shl    ecx, 4;
-	__asm        add    eax, ecx;
-	__asm        mov    eax, [ebp+eax-0xC0];
-	__asm        push   eax;
-	__asm        mov    eax, j;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 5;
-	__asm        lea    eax, [ecx+eax*8];
-	__asm        mov    eax, [ebp+eax-0x124];
-	__asm        push   eax;
-	__asm        mov    eax, j;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 5;
-	__asm        lea    eax, [ecx+eax*8];
-	__asm        mov    eax, [ebp+eax-0x128];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x83C];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x83C];
-	__asm        call   dword ptr [edx+0xC];
-// LINE 271:
-	__asm        jmp    _FOR_NEXT_d8;
-// LINE 272:
-_T1bb:
-	__asm        jmp    _FOR_NEXT_b6;
+	for (i = 0x0; (i < 0x3); i++) {
+		// LINE 263:
+		_FOR_d8:
+			for (j = 0x0; (j < 0x4); j++) {
+				// LINE 270:
+					__asm        mov    eax, i;
+					__asm        shl    eax, 6;
+					__asm        mov    ecx, j;
+					__asm        shl    ecx, 4;
+					__asm        add    eax, ecx;
+					__asm        mov    eax, [ebp+eax-0xB4];
+					__asm        push   eax;
+					__asm        mov    eax, i;
+					__asm        shl    eax, 6;
+					__asm        mov    ecx, j;
+					__asm        shl    ecx, 4;
+					__asm        add    eax, ecx;
+					__asm        mov    eax, [ebp+eax-0xB8];
+					__asm        push   eax;
+					__asm        mov    eax, i;
+					__asm        shl    eax, 6;
+					__asm        mov    ecx, j;
+					__asm        shl    ecx, 4;
+					__asm        add    eax, ecx;
+					__asm        mov    eax, [ebp+eax-0xBC];
+					__asm        push   eax;
+					__asm        mov    eax, i;
+					__asm        shl    eax, 6;
+					__asm        mov    ecx, j;
+					__asm        shl    ecx, 4;
+					__asm        add    eax, ecx;
+					__asm        mov    eax, [ebp+eax-0xC0];
+					__asm        push   eax;
+					__asm        mov    eax, j;
+					__asm        mov    ecx, i;
+					__asm        shl    ecx, 5;
+					__asm        lea    eax, [ecx+eax*8];
+					__asm        mov    eax, [ebp+eax-0x124];
+					__asm        push   eax;
+					__asm        mov    eax, j;
+					__asm        mov    ecx, i;
+					__asm        shl    ecx, 5;
+					__asm        lea    eax, [ecx+eax*8];
+					__asm        mov    eax, [ebp+eax-0x128];
+					__asm        push   eax;
+					__asm        mov    eax, this;
+					__asm        mov    eax, [eax+0x40];
+					__asm        push   eax;
+					__asm        mov    eax, this;
+					__asm        mov    ecx, this;
+					__asm        mov    ecx, [ecx+0x83C];
+					__asm        mov    edx, [ecx];
+					__asm        mov    ecx, [eax+0x83C];
+					__asm        call   dword ptr [edx+0xC];
+			}
+		// LINE 272:
+		_T1bb:
+	}
 // LINE 273:
 _T1c0:
 	return;
@@ -2364,100 +2342,92 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 
 // LINE 299:
 _FOR_18:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_18;
-_FOR_NEXT_18:
-	i++;
-_FOR_COND_18:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0xB4], ecx;
-	__asm        jle    _T122;
-// LINE 300:
-	__asm        jmp    _T32;
-_T32:
-	__asm        mov    eax, nCursorX;
-	__asm        mov    [ebp-0xC], eax;
-	__asm        mov    eax, nCursorY;
-	__asm        mov    [ebp-8], eax;
-	__asm        jmp    _T43;
-_T43:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    edx, [ebp-0xC];
-	__asm        cmp    [eax+ecx+0x78], edx;
-	__asm        jg     _Ta6;
+	for (i = 0x0; (this->nCityCount > i); i++) {
+		// LINE 300:
+			__asm        jmp    _T32;
+		_T32:
+			__asm        mov    eax, nCursorX;
+			__asm        mov    [ebp-0xC], eax;
+			__asm        mov    eax, nCursorY;
+			__asm        mov    [ebp-8], eax;
+			__asm        jmp    _T43;
+		_T43:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    edx, [ebp-0xC];
+			__asm        cmp    [eax+ecx+0x78], edx;
+			__asm        jg     _Ta6;
 
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    edx, [ebp-8];
-	__asm        cmp    [eax+ecx+0x7C], edx;
-	__asm        jg     _Ta6;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    edx, [ebp-8];
+			__asm        cmp    [eax+ecx+0x7C], edx;
+			__asm        jg     _Ta6;
 
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    edx, [ebp-0xC];
-	__asm        cmp    [eax+ecx+0x80], edx;
-	__asm        jle    _Ta6;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    edx, [ebp-0xC];
+			__asm        cmp    [eax+ecx+0x80], edx;
+			__asm        jle    _Ta6;
 
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    edx, [ebp-8];
-	__asm        cmp    [eax+ecx+0x84], edx;
-	__asm        jle    _Ta6;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    edx, [ebp-8];
+			__asm        cmp    [eax+ecx+0x84], edx;
+			__asm        jle    _Ta6;
 
-	__asm        jmp    _Tab;
-_Ta6:
-	__asm        jmp    _T11d;
-_Tab:
-	__asm        jmp    _Tba;
+			__asm        jmp    _Tab;
+		_Ta6:
+			__asm        jmp    _T11d;
+		_Tab:
+			__asm        jmp    _Tba;
 
-	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     _T11d;
-// LINE 301:
-_Tba:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0x74], ecx;
-	__asm        jne    _T107;
-// LINE 303:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+0x38], 0;
-	__asm        je     _Tf8;
-// LINE 304:
-	__asm        push   0;
-	__asm        push   0x3E9;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x38];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x38];
-	__asm        call   dword ptr [edx];
-// LINE 305:
-_Tf8:
-	return 0x1;
-// LINE 307:
-	__asm        jmp    _T11d;
-// LINE 308:
-_T107:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CareerWindow::SetCurrentCitySelection;
-// LINE 309:
-	return 0x1;
-// LINE 312:
-_T11d:
-	__asm        jmp    _FOR_NEXT_18;
+			__asm        cmp    dword ptr [ebp-0x10], 0;
+			__asm        je     _T11d;
+		// LINE 301:
+		_Tba:
+			__asm        mov    eax, this;
+			__asm        mov    ecx, i;
+			__asm        cmp    [eax+0x74], ecx;
+			__asm        jne    _T107;
+		// LINE 303:
+			__asm        mov    eax, this;
+			__asm        cmp    dword ptr [eax+0x38], 0;
+			__asm        je     _Tf8;
+		// LINE 304:
+			__asm        push   0;
+			__asm        push   0x3E9;
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+4];
+			__asm        push   eax;
+			__asm        mov    eax, this;
+			__asm        push   eax;
+			__asm        mov    eax, this;
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx+0x38];
+			__asm        mov    edx, [ecx];
+			__asm        mov    ecx, [eax+0x38];
+			__asm        call   dword ptr [edx];
+		// LINE 305:
+		_Tf8:
+			return 0x1;
+		// LINE 307:
+			__asm        jmp    _T11d;
+		// LINE 308:
+		_T107:
+			__asm        mov    eax, i;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   CareerWindow::SetCurrentCitySelection;
+		// LINE 309:
+			return 0x1;
+		// LINE 312:
+		_T11d:
+	}
 // LINE 313:
 _T122:
 	return 0x1;
@@ -2470,71 +2440,63 @@ long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // LINE 324:
 _FOR_18:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_18;
-_FOR_NEXT_18:
-	i++;
-_FOR_COND_18:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0xB4], ecx;
-	__asm        jle    _Td5;
-// LINE 325:
-	__asm        jmp    _T32;
-_T32:
-	__asm        mov    eax, nCursorX;
-	__asm        mov    [ebp-0xC], eax;
-	__asm        mov    eax, nCursorY;
-	__asm        mov    [ebp-8], eax;
-	__asm        jmp    _T43;
-_T43:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    edx, [ebp-0xC];
-	__asm        cmp    [eax+ecx+0x78], edx;
-	__asm        jg     _Ta6;
+	for (i = 0x0; (this->nCityCount > i); i++) {
+		// LINE 325:
+			__asm        jmp    _T32;
+		_T32:
+			__asm        mov    eax, nCursorX;
+			__asm        mov    [ebp-0xC], eax;
+			__asm        mov    eax, nCursorY;
+			__asm        mov    [ebp-8], eax;
+			__asm        jmp    _T43;
+		_T43:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    edx, [ebp-0xC];
+			__asm        cmp    [eax+ecx+0x78], edx;
+			__asm        jg     _Ta6;
 
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    edx, [ebp-8];
-	__asm        cmp    [eax+ecx+0x7C], edx;
-	__asm        jg     _Ta6;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    edx, [ebp-8];
+			__asm        cmp    [eax+ecx+0x7C], edx;
+			__asm        jg     _Ta6;
 
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    edx, [ebp-0xC];
-	__asm        cmp    [eax+ecx+0x80], edx;
-	__asm        jle    _Ta6;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    edx, [ebp-0xC];
+			__asm        cmp    [eax+ecx+0x80], edx;
+			__asm        jle    _Ta6;
 
-	__asm        mov    eax, i;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    edx, [ebp-8];
-	__asm        cmp    [eax+ecx+0x84], edx;
-	__asm        jle    _Ta6;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    edx, [ebp-8];
+			__asm        cmp    [eax+ecx+0x84], edx;
+			__asm        jle    _Ta6;
 
-	__asm        jmp    _Tab;
-_Ta6:
-	__asm        jmp    _Td0;
-_Tab:
-	__asm        jmp    _Tba;
+			__asm        jmp    _Tab;
+		_Ta6:
+			__asm        jmp    _Td0;
+		_Tab:
+			__asm        jmp    _Tba;
 
-	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     _Td0;
-// LINE 326:
-_Tba:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CareerWindow::SetCurrentCitySelection;
-// LINE 327:
-	return 0x1;
-// LINE 329:
-_Td0:
-	__asm        jmp    _FOR_NEXT_18;
+			__asm        cmp    dword ptr [ebp-0x10], 0;
+			__asm        je     _Td0;
+		// LINE 326:
+		_Tba:
+			__asm        mov    eax, i;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   CareerWindow::SetCurrentCitySelection;
+		// LINE 327:
+			return 0x1;
+		// LINE 329:
+		_Td0:
+	}
 // LINE 330:
 _Td5:
 	return 0x1;
@@ -3086,29 +3048,22 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(/*packed*/ class MP
 
 // LINE 427:
 _FOR_18:
-	nN = 0x0;
-	__asm        jmp    _FOR_COND_18;
-_FOR_NEXT_18:
-	nN++;
-_FOR_COND_18:
-	__asm        cmp    nN, 4;
-	__asm        jge    _T4e;
-// LINE 429:
-	__asm        jmp    _T2a;
-_T2a:
-	__asm        mov    eax, nN;
-	__asm        shl    eax, 4;
-	__asm        add    eax, this;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, nN;
-	__asm        shl    edx, 3;
-	__asm        add    edx, ptDest;
-	__asm        mov    [edx], ecx;
-	__asm        mov    [edx+4], eax;
-// LINE 430:
-	__asm        jmp    _FOR_NEXT_18;
+	for (nN = 0x0; (nN < 0x4); nN++) {
+		// LINE 429:
+			__asm        jmp    _T2a;
+		_T2a:
+			__asm        mov    eax, nN;
+			__asm        shl    eax, 4;
+			__asm        add    eax, this;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, [eax];
+			__asm        mov    eax, [eax+4];
+			__asm        mov    edx, nN;
+			__asm        shl    edx, 3;
+			__asm        add    edx, ptDest;
+			__asm        mov    [edx], ecx;
+			__asm        mov    [edx+4], eax;
+	}
 // LINE 431:
 _T4e:
 	return;
@@ -3120,94 +3075,88 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(/*packed*/ class MRect *r
 
 // LINE 435:
 _FOR_18:
-	nN = 0x0;
-	__asm        jmp    _FOR_COND_18;
-_FOR_NEXT_18:
-	nN++;
-_FOR_COND_18:
-	__asm        cmp    nN, 4;
-	__asm        jge    _T109;
-// LINE 437:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        je     _T62;
-// LINE 439:
-	__asm        mov    eax, nN;
-	__asm        shl    eax, 4;
-	__asm        add    eax, this;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, nN;
-	__asm        shl    ecx, 4;
-	__asm        add    ecx, rectSrc;
-	__asm        mov    edx, [eax];
-	__asm        mov    [ecx], edx;
-	__asm        mov    edx, [eax+4];
-	__asm        mov    [ecx+4], edx;
-	__asm        mov    edx, [eax+8];
-	__asm        mov    [ecx+8], edx;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    [ecx+0xC], eax;
-// LINE 441:
-	__asm        jmp    _T104;
-// LINE 447:
-_T62:
-	__asm        jmp    _T67;
-_T67:
-	__asm        jmp    _T6c;
-_T6c:
-	__asm        jmp    _T71;
-_T71:
-	__asm        jmp    _T76;
-_T76:
-	__asm        mov    eax, nN;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [eax+ecx+0x1C];
-	__asm        add    eax, 0x168;
-	__asm        mov    [ebp-0x18], eax;
-	__asm        mov    eax, nN;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [eax+ecx+0x18];
-	__asm        mov    [ebp-0x1C], eax;
-	__asm        mov    eax, nN;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [eax+ecx+0x14];
-	__asm        add    eax, 0x168;
-	__asm        mov    [ebp-0x20], eax;
-	__asm        mov    eax, nN;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [eax+ecx+0x10];
-	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    _Tc5;
-_Tc5:
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    [ebp-0x14], eax;
-	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    [ebp-0x10], eax;
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    [ebp-0xC], eax;
-	__asm        mov    eax, [ebp-0x18];
-	__asm        mov    [ebp-8], eax;
-	__asm        jmp    _Te2;
-_Te2:
-	__asm        lea    eax, [ebp-0x14];
-	__asm        mov    ecx, nN;
-	__asm        shl    ecx, 4;
-	__asm        add    ecx, rectSrc;
-	__asm        mov    edx, [eax];
-	__asm        mov    [ecx], edx;
-	__asm        mov    edx, [eax+4];
-	__asm        mov    [ecx+4], edx;
-	__asm        mov    edx, [eax+8];
-	__asm        mov    [ecx+8], edx;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    [ecx+0xC], eax;
-// LINE 449:
-_T104:
-	__asm        jmp    _FOR_NEXT_18;
+	for (nN = 0x0; (nN < 0x4); nN++) {
+		// LINE 437:
+			__asm        mov    eax, this;
+			__asm        cmp    dword ptr [eax+0xC], 0;
+			__asm        je     _T62;
+		// LINE 439:
+			__asm        mov    eax, nN;
+			__asm        shl    eax, 4;
+			__asm        add    eax, this;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, nN;
+			__asm        shl    ecx, 4;
+			__asm        add    ecx, rectSrc;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    edx, [eax+8];
+			__asm        mov    [ecx+8], edx;
+			__asm        mov    eax, [eax+0xC];
+			__asm        mov    [ecx+0xC], eax;
+		// LINE 441:
+			__asm        jmp    _T104;
+		// LINE 447:
+		_T62:
+			__asm        jmp    _T67;
+		_T67:
+			__asm        jmp    _T6c;
+		_T6c:
+			__asm        jmp    _T71;
+		_T71:
+			__asm        jmp    _T76;
+		_T76:
+			__asm        mov    eax, nN;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [eax+ecx+0x1C];
+			__asm        add    eax, 0x168;
+			__asm        mov    [ebp-0x18], eax;
+			__asm        mov    eax, nN;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [eax+ecx+0x18];
+			__asm        mov    [ebp-0x1C], eax;
+			__asm        mov    eax, nN;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [eax+ecx+0x14];
+			__asm        add    eax, 0x168;
+			__asm        mov    [ebp-0x20], eax;
+			__asm        mov    eax, nN;
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [eax+ecx+0x10];
+			__asm        mov    [ebp-0x24], eax;
+			__asm        jmp    _Tc5;
+		_Tc5:
+			__asm        mov    eax, [ebp-0x24];
+			__asm        mov    [ebp-0x14], eax;
+			__asm        mov    eax, [ebp-0x20];
+			__asm        mov    [ebp-0x10], eax;
+			__asm        mov    eax, [ebp-0x1C];
+			__asm        mov    [ebp-0xC], eax;
+			__asm        mov    eax, [ebp-0x18];
+			__asm        mov    [ebp-8], eax;
+			__asm        jmp    _Te2;
+		_Te2:
+			__asm        lea    eax, [ebp-0x14];
+			__asm        mov    ecx, nN;
+			__asm        shl    ecx, 4;
+			__asm        add    ecx, rectSrc;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    edx, [eax+8];
+			__asm        mov    [ecx+8], edx;
+			__asm        mov    eax, [eax+0xC];
+			__asm        mov    [ecx+0xC], eax;
+		// LINE 449:
+		_T104:
+	}
 // LINE 450:
 _T109:
 	return;

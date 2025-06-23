@@ -541,47 +541,35 @@ _T6a:
 	lCurrentBlockStartPosition = 0x0;
 // LINE 193:
 _FOR_c3:
-	__asm        jmp    _FOR_COND_c3;
-_FOR_NEXT_c3:
-	lCurrentBlockStartPosition += 0x7d00;
-_FOR_COND_c3:
-	__asm        mov    eax, lFileLength;
-	__asm        cmp    lCurrentBlockStartPosition, eax;
-	__asm        jge    _T152;
-// LINE 195:
-	lUsedBlockSize = 0x7d00;
-// LINE 196:
-	__asm        mov    eax, lCurrentBlockStartPosition;
-	__asm        add    eax, 0x7D00;
-	__asm        cmp    eax, lFileLength;
-	__asm        jle    _Tf7;
-// LINE 197:
-	lUsedBlockSize = (lFileLength - lCurrentBlockStartPosition);
-// LINE 198:
-_Tf7:
-	__asm        jmp    _Tfc;
-_Tfc:
-	lUsedBlockSize = _read(lUsedBlockSize, chBuffer, tempPFile.Handle);
-// LINE 199:
-_FOR_122:
-	lIndex = 0x0;
-	__asm        jmp    _FOR_COND_122;
-_FOR_NEXT_122:
-	lIndex++;
-_FOR_COND_122:
-	__asm        mov    eax, lIndex;
-	__asm        cmp    lUsedBlockSize, eax;
-	__asm        jle    _T14d;
-// LINE 200:
-	__asm        mov    eax, chBuffer;
-	__asm        mov    ecx, lIndex;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        add    lCurrentValue, edx;
-	__asm        jmp    _FOR_NEXT_122;
-// LINE 201:
-_T14d:
-	__asm        jmp    _FOR_NEXT_c3;
+	for (; (lCurrentBlockStartPosition < lFileLength); lCurrentBlockStartPosition += 0x7d00) {
+		// LINE 195:
+			lUsedBlockSize = 0x7d00;
+		// LINE 196:
+			__asm        mov    eax, lCurrentBlockStartPosition;
+			__asm        add    eax, 0x7D00;
+			__asm        cmp    eax, lFileLength;
+			__asm        jle    _Tf7;
+		// LINE 197:
+			lUsedBlockSize = (lFileLength - lCurrentBlockStartPosition);
+		// LINE 198:
+		_Tf7:
+			__asm        jmp    _Tfc;
+		_Tfc:
+			lUsedBlockSize = _read(lUsedBlockSize, chBuffer, tempPFile.Handle);
+		// LINE 199:
+		_FOR_122:
+			for (lIndex = 0x0; (lUsedBlockSize > lIndex); lIndex++) {
+				// LINE 200:
+					__asm        mov    eax, chBuffer;
+					__asm        mov    ecx, lIndex;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [eax+ecx];
+					__asm        add    lCurrentValue, edx;
+					__asm        jmp    _FOR_NEXT_122;
+			}
+		// LINE 201:
+		_T14d:
+	}
 // LINE 202:
 _T152:
 	__asm        mov    eax, chBuffer;
@@ -600,21 +588,16 @@ _FOR_190:
 	lIndex = lCurrentValue;
 	__asm        jmp    _FOR_COND_190;
 _FOR_NEXT_190:
-	lIndex++;
-_FOR_COND_190:
-	__asm        mov    eax, lIndex;
-	__asm        cmp    lFileLength, eax;
-	__asm        jle    _T1cf;
-// LINE 207:
-	_read(0x1, chValue, tempPFile.Handle);
-	__asm        jmp    _T1bf;
-// LINE 208:
-_T1bf:
-	__asm        xor    eax, eax;
-	__asm        mov    al, chValue;
-	__asm        add    lCurrentValue, eax;
-// LINE 209:
-	__asm        jmp    _FOR_NEXT_190;
+	for (; (lFileLength > lIndex); lIndex++) {
+		// LINE 207:
+			_read(0x1, chValue, tempPFile.Handle);
+			__asm        jmp    _T1bf;
+		// LINE 208:
+		_T1bf:
+			__asm        xor    eax, eax;
+			__asm        mov    al, chValue;
+			__asm        add    lCurrentValue, eax;
+	}
 // LINE 211:
 _T1cf:
 	tempPFile<vftable>->PFile::Close();

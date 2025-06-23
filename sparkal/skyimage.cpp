@@ -393,25 +393,16 @@ _Td2:
 	pDestinationImage = this->mpBits;
 // LINE 119:
 _FOR_f0:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_f0;
-_FOR_NEXT_f0:
-	i++;
-_FOR_COND_f0:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0x138], ecx;
-	__asm        jle    _T156;
-// LINE 120:
-	memcpy(this->nBitmapWidth, pSourceImage, pDestinationImage);
-// LINE 121:
-	__asm        jmp    _T133;
-_T133:
-	pDestinationImage += this->mStride;
-// LINE 122:
-	pSourceImage += this->nBitmapWidth;
-// LINE 123:
-	__asm        jmp    _FOR_NEXT_f0;
+	for (i = 0x0; (this->nBitmapHeight > i); i++) {
+		// LINE 120:
+			memcpy(this->nBitmapWidth, pSourceImage, pDestinationImage);
+		// LINE 121:
+			__asm        jmp    _T133;
+		_T133:
+			pDestinationImage += this->mStride;
+		// LINE 122:
+			pSourceImage += this->nBitmapWidth;
+	}
 // LINE 124:
 _T156:
 	__asm        mov    eax, this;

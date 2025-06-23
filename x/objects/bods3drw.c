@@ -256,30 +256,24 @@ _T7c:
 	__asm        jne    _T12a;
 // LINE 209:
 _FOR_b7:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_b7;
-_FOR_NEXT_b7:
-	i++;
-_FOR_COND_b7:
-	__asm        mov    eax, diameter;
-	__asm        cmp    i, eax;
-	__asm        jge    _T112;
-// LINE 210:
-	__asm        mov    eax, i;
-	__asm        mov    [ebp-0x10C], eax;
-	__asm        fild   dword ptr [ebp-0x10C];
-	__asm        mov    eax, diameter;
-	__asm        dec    eax;
-	__asm        mov    [ebp-0x110], eax;
-	__asm        fidiv  dword ptr [ebp-0x110];
-	__asm        fmul   G_figureShadeSpread;
-	__asm        call   0x0056EBE8;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, color;
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx-0xF8], al;
-	__asm        jmp    _FOR_NEXT_b7;
+	for (i = 0x0; (i < diameter); i++) {
+		// LINE 210:
+			__asm        mov    eax, i;
+			__asm        mov    [ebp-0x10C], eax;
+			__asm        fild   dword ptr [ebp-0x10C];
+			__asm        mov    eax, diameter;
+			__asm        dec    eax;
+			__asm        mov    [ebp-0x110], eax;
+			__asm        fidiv  dword ptr [ebp-0x110];
+			__asm        fmul   G_figureShadeSpread;
+			__asm        call   0x0056EBE8;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, color;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx-0xF8], al;
+			__asm        jmp    _FOR_NEXT_b7;
+	}
 // LINE 212:
 _T112:
 	__asm        mov    eax, radius;
@@ -292,30 +286,24 @@ _T12a:
 	__asm        jne    _T2f2;
 // LINE 216:
 _FOR_143:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_143;
-_FOR_NEXT_143:
-	i++;
-_FOR_COND_143:
-	__asm        mov    eax, diameter;
-	__asm        cmp    i, eax;
-	__asm        jge    _T19e;
-// LINE 217:
-	__asm        mov    eax, i;
-	__asm        mov    [ebp-0x114], eax;
-	__asm        fild   dword ptr [ebp-0x114];
-	__asm        mov    eax, diameter;
-	__asm        dec    eax;
-	__asm        mov    [ebp-0x118], eax;
-	__asm        fidiv  dword ptr [ebp-0x118];
-	__asm        fmul   G_figureShadeSpread;
-	__asm        call   0x0056EBE8;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, color;
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx-0xF8], al;
-	__asm        jmp    _FOR_NEXT_143;
+	for (i = 0x0; (i < diameter); i++) {
+		// LINE 217:
+			__asm        mov    eax, i;
+			__asm        mov    [ebp-0x114], eax;
+			__asm        fild   dword ptr [ebp-0x114];
+			__asm        mov    eax, diameter;
+			__asm        dec    eax;
+			__asm        mov    [ebp-0x118], eax;
+			__asm        fidiv  dword ptr [ebp-0x118];
+			__asm        fmul   G_figureShadeSpread;
+			__asm        call   0x0056EBE8;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, color;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx-0xF8], al;
+			__asm        jmp    _FOR_NEXT_143;
+	}
 // LINE 219:
 _T19e:
 	__asm        mov    eax, radius;
@@ -323,154 +311,138 @@ _T19e:
 	__asm        mov    hiColor, al;
 // LINE 223:
 _FOR_1c0:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_1c0;
-_FOR_NEXT_1c0:
-	j += 0x6;
-_FOR_COND_1c0:
-	__asm        mov    eax, diameter;
-	__asm        cmp    j, eax;
-	__asm        jge    _T2f2;
-// LINE 225:
-	__asm        mov    al, color;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0xA4], al;
-	__asm        mov    al, color;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0xA3], al;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        inc    eax;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0xA2], al;
-	__asm        mov    al, color;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0xA1], al;
-	__asm        mov    al, color;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0xA0], al;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        inc    eax;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x9F], al;
-// LINE 226:
-	__asm        mov    al, color;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x71], al;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        inc    eax;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x70], al;
-	__asm        mov    al, color;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x6F], al;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        inc    eax;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x6E], al;
-	__asm        mov    al, color;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x6D], al;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        inc    eax;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x6C], al;
-// LINE 227:
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        inc    eax;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x3E], al;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        inc    eax;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x3D], al;
-	__asm        mov    al, color;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x3C], al;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        inc    eax;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x3B], al;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        inc    eax;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x3A], al;
-	__asm        mov    al, color;
-	__asm        mov    ecx, j;
-	__asm        mov    [ebp+ecx-0x39], al;
-// LINE 228:
-	__asm        jmp    _FOR_NEXT_1c0;
+	for (j = 0x0; (j < diameter); j += 0x6) {
+		// LINE 225:
+			__asm        mov    al, color;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0xA4], al;
+			__asm        mov    al, color;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0xA3], al;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        inc    eax;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0xA2], al;
+			__asm        mov    al, color;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0xA1], al;
+			__asm        mov    al, color;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0xA0], al;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        inc    eax;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x9F], al;
+		// LINE 226:
+			__asm        mov    al, color;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x71], al;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        inc    eax;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x70], al;
+			__asm        mov    al, color;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x6F], al;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        inc    eax;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x6E], al;
+			__asm        mov    al, color;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x6D], al;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        inc    eax;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x6C], al;
+		// LINE 227:
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        inc    eax;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x3E], al;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        inc    eax;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x3D], al;
+			__asm        mov    al, color;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x3C], al;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        inc    eax;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x3B], al;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        inc    eax;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x3A], al;
+			__asm        mov    al, color;
+			__asm        mov    ecx, j;
+			__asm        mov    [ebp+ecx-0x39], al;
+	}
 // LINE 231:
 _T2f2:
 	__asm        cmp    shadeFlag, 1;
 	__asm        jne    _T430;
 // LINE 233:
 _FOR_30b:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_30b;
-_FOR_NEXT_30b:
-	i++;
-_FOR_COND_30b:
-	__asm        mov    eax, radius;
-	__asm        cmp    i, eax;
-	__asm        jge    _T3f3;
-// LINE 236:
-	__asm        mov    eax, radiusSquared;
-	__asm        mov    ecx, radius;
-	__asm        sub    ecx, i;
-	__asm        mov    edx, radius;
-	__asm        sub    edx, i;
-	__asm        imul   ecx, edx;
-	__asm        sub    eax, ecx;
-	__asm        mov    eax, g_sqrtTable[eax*4];
-	__asm        mov    xOffset, eax;
-// LINE 240:
-	startX = (centerPt.x - xOffset);
-// LINE 241:
-	endX = (centerPt.x + xOffset);
-// LINE 242:
-	__asm        mov    eax, radius;
-	__asm        sub    eax, i;
-	__asm        add    eax, centerPt.y;
-	__asm        dec    eax;
-	__asm        mov    lineY, eax;
-// LINE 243:
-	__asm        mov    eax, i;
-	__asm        mov    eax, [ebp+eax-0xF8];
-	__asm        push   eax;
-	__asm        mov    eax, lineY;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawHorzLine;
-	__asm        add    esp, 0x10;
-// LINE 245:
-	lineY = (centerPt.y - (radius - i));
-// LINE 246:
-	__asm        mov    eax, diameter;
-	__asm        sub    eax, i;
-	__asm        mov    eax, [ebp+eax-0xF8];
-	__asm        push   eax;
-	__asm        mov    eax, lineY;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawHorzLine;
-	__asm        add    esp, 0x10;
-// LINE 247:
-	__asm        jmp    _FOR_NEXT_30b;
+	for (i = 0x0; (i < radius); i++) {
+		// LINE 236:
+			__asm        mov    eax, radiusSquared;
+			__asm        mov    ecx, radius;
+			__asm        sub    ecx, i;
+			__asm        mov    edx, radius;
+			__asm        sub    edx, i;
+			__asm        imul   ecx, edx;
+			__asm        sub    eax, ecx;
+			__asm        mov    eax, g_sqrtTable[eax*4];
+			__asm        mov    xOffset, eax;
+		// LINE 240:
+			startX = (centerPt.x - xOffset);
+		// LINE 241:
+			endX = (centerPt.x + xOffset);
+		// LINE 242:
+			__asm        mov    eax, radius;
+			__asm        sub    eax, i;
+			__asm        add    eax, centerPt.y;
+			__asm        dec    eax;
+			__asm        mov    lineY, eax;
+		// LINE 243:
+			__asm        mov    eax, i;
+			__asm        mov    eax, [ebp+eax-0xF8];
+			__asm        push   eax;
+			__asm        mov    eax, lineY;
+			__asm        push   eax;
+			__asm        mov    eax, endX;
+			__asm        push   eax;
+			__asm        mov    eax, startX;
+			__asm        push   eax;
+			__asm        call   DrawHorzLine;
+			__asm        add    esp, 0x10;
+		// LINE 245:
+			lineY = (centerPt.y - (radius - i));
+		// LINE 246:
+			__asm        mov    eax, diameter;
+			__asm        sub    eax, i;
+			__asm        mov    eax, [ebp+eax-0xF8];
+			__asm        push   eax;
+			__asm        mov    eax, lineY;
+			__asm        push   eax;
+			__asm        mov    eax, endX;
+			__asm        push   eax;
+			__asm        mov    eax, startX;
+			__asm        push   eax;
+			__asm        call   DrawHorzLine;
+			__asm        add    esp, 0x10;
+	}
 // LINE 249:
 _T3f3:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
@@ -531,165 +503,149 @@ _T4b0:
 _T4ba:
 	i = 0x0;
 __WHILE_4c4:
-	__asm        mov    eax, diameter;
-	__asm        cmp    i, eax;
-	__asm        jge    _T687;
-// LINE 265:
-	__asm        fld    bandSize;
-	__asm        call   0x0056EBE8;
-	__asm        mov    ebx, eax;
-	__asm        fld    bandSize;
-	__asm        call   0x0056EBE8;
-	__asm        mov    ecx, eax;
-	__asm        mov    eax, i;
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        sub    ebx, edx;
-	__asm        cmp    ebx, ditherLimit;
-	__asm        jne    _T5f5;
-// LINE 267:
-_FOR_513:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_513;
-_FOR_NEXT_513:
-	j++;
-_FOR_COND_513:
-	__asm        mov    eax, j;
-	__asm        cmp    ditherLimit, eax;
-	__asm        jl     _T5ed;
-// LINE 270:
-	__asm        mov    eax, radiusSquared;
-	__asm        mov    ecx, radius;
-	__asm        sub    ecx, i;
-	__asm        mov    edx, radius;
-	__asm        sub    edx, i;
-	__asm        imul   ecx, edx;
-	__asm        sub    eax, ecx;
-	__asm        mov    eax, g_sqrtTable[eax*4];
-	__asm        mov    xOffset, eax;
-// LINE 274:
-	startX = (centerPt.x - xOffset);
-// LINE 275:
-	endX = (centerPt.x + xOffset);
-// LINE 276:
-	lineY = ((radius - i) + centerPt.y);
-// LINE 278:
-	__asm        mov    eax, diameter;
-	__asm        cmp    i, eax;
-	__asm        jge    _T5e3;
-// LINE 280:
-	__asm        push   0x3FF00000;
-	__asm        push   0;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(shftCt);
-	__asm        push   eax;
-	__asm        mov    eax, j;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, [ebp+eax-0xA4];
-	__asm        push   eax;
-	__asm        mov    eax, lineY;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawHorzLinePat;
-	__asm        add    esp, 0x1C;
-// LINE 281:
-	i++;
-// LINE 283:
-	__asm        jmp    _T5e8;
-// LINE 285:
-_T5e3:
-	return;
-// LINE 287:
-_T5e8:
-	__asm        jmp    _FOR_NEXT_513;
-// LINE 288:
-_T5ed:
-	shftCt++;
-// LINE 290:
-	__asm        jmp    _T682;
-// LINE 293:
-_T5f5:
-	__asm        mov    eax, radiusSquared;
-	__asm        mov    ecx, radius;
-	__asm        sub    ecx, i;
-	__asm        mov    edx, radius;
-	__asm        sub    edx, i;
-	__asm        imul   ecx, edx;
-	__asm        sub    eax, ecx;
-	__asm        mov    eax, g_sqrtTable[eax*4];
-	__asm        mov    xOffset, eax;
-// LINE 297:
-	startX = (centerPt.x - xOffset);
-// LINE 298:
-	endX = (centerPt.x + xOffset);
-// LINE 299:
-	lineY = ((radius - i) + centerPt.y);
-// LINE 301:
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, shftCt;
-	__asm        add    eax, ecx;
-	__asm        push   eax;
-	__asm        mov    eax, lineY;
-	__asm        push   eax;
-	__asm        mov    eax, endX;
-	__asm        push   eax;
-	__asm        mov    eax, startX;
-	__asm        push   eax;
-	__asm        call   DrawHorzLine;
-	__asm        add    esp, 0x10;
-// LINE 302:
-	i++;
-// LINE 304:
-_T682:
-	__asm        jmp    __WHILE_4c4;
+	while ((i < diameter)) {
+		// LINE 265:
+			__asm        fld    bandSize;
+			__asm        call   0x0056EBE8;
+			__asm        mov    ebx, eax;
+			__asm        fld    bandSize;
+			__asm        call   0x0056EBE8;
+			__asm        mov    ecx, eax;
+			__asm        mov    eax, i;
+			__asm        cdq;
+			__asm        idiv   ecx;
+			__asm        sub    ebx, edx;
+			__asm        cmp    ebx, ditherLimit;
+			__asm        jne    _T5f5;
+		// LINE 267:
+		_FOR_513:
+			for (j = 0x0; (ditherLimit >= j); j++) {
+				// LINE 270:
+					__asm        mov    eax, radiusSquared;
+					__asm        mov    ecx, radius;
+					__asm        sub    ecx, i;
+					__asm        mov    edx, radius;
+					__asm        sub    edx, i;
+					__asm        imul   ecx, edx;
+					__asm        sub    eax, ecx;
+					__asm        mov    eax, g_sqrtTable[eax*4];
+					__asm        mov    xOffset, eax;
+				// LINE 274:
+					startX = (centerPt.x - xOffset);
+				// LINE 275:
+					endX = (centerPt.x + xOffset);
+				// LINE 276:
+					lineY = ((radius - i) + centerPt.y);
+				// LINE 278:
+					__asm        mov    eax, diameter;
+					__asm        cmp    i, eax;
+					__asm        jge    _T5e3;
+				// LINE 280:
+					__asm        push   0x3FF00000;
+					__asm        push   0;
+					__asm        mov    eax, reinterpret_cast<uint32_t>(shftCt);
+					__asm        push   eax;
+					__asm        mov    eax, j;
+					__asm        mov    ecx, eax;
+					__asm        lea    eax, [eax+eax*4];
+					__asm        lea    eax, [eax+eax*4];
+					__asm        lea    eax, [ecx+eax*2];
+					__asm        lea    eax, [ebp+eax-0xA4];
+					__asm        push   eax;
+					__asm        mov    eax, lineY;
+					__asm        push   eax;
+					__asm        mov    eax, endX;
+					__asm        push   eax;
+					__asm        mov    eax, startX;
+					__asm        push   eax;
+					__asm        call   DrawHorzLinePat;
+					__asm        add    esp, 0x1C;
+				// LINE 281:
+					i++;
+				// LINE 283:
+					__asm        jmp    _T5e8;
+				// LINE 285:
+				_T5e3:
+					return;
+				// LINE 287:
+				_T5e8:
+			}
+		// LINE 288:
+		_T5ed:
+			shftCt++;
+		// LINE 290:
+			__asm        jmp    _T682;
+		// LINE 293:
+		_T5f5:
+			__asm        mov    eax, radiusSquared;
+			__asm        mov    ecx, radius;
+			__asm        sub    ecx, i;
+			__asm        mov    edx, radius;
+			__asm        sub    edx, i;
+			__asm        imul   ecx, edx;
+			__asm        sub    eax, ecx;
+			__asm        mov    eax, g_sqrtTable[eax*4];
+			__asm        mov    xOffset, eax;
+		// LINE 297:
+			startX = (centerPt.x - xOffset);
+		// LINE 298:
+			endX = (centerPt.x + xOffset);
+		// LINE 299:
+			lineY = ((radius - i) + centerPt.y);
+		// LINE 301:
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, shftCt;
+			__asm        add    eax, ecx;
+			__asm        push   eax;
+			__asm        mov    eax, lineY;
+			__asm        push   eax;
+			__asm        mov    eax, endX;
+			__asm        push   eax;
+			__asm        mov    eax, startX;
+			__asm        push   eax;
+			__asm        call   DrawHorzLine;
+			__asm        add    esp, 0x10;
+		// LINE 302:
+			i++;
+		// LINE 304:
+		_T682:
+			__asm        jmp    __WHILE_4c4;
+	}
 // LINE 306:
 _T687:
 	return;
 // LINE 308:
 _FOR_69b:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_69b;
-_FOR_NEXT_69b:
-	i++;
-_FOR_COND_69b:
-	__asm        mov    eax, radius;
-	__asm        cmp    i, eax;
-	__asm        jge    _T76c;
-// LINE 311:
-	__asm        mov    eax, radiusSquared;
-	__asm        mov    ecx, radius;
-	__asm        sub    ecx, i;
-	__asm        mov    edx, radius;
-	__asm        sub    edx, i;
-	__asm        imul   ecx, edx;
-	__asm        sub    eax, ecx;
-	__asm        mov    eax, g_sqrtTable[eax*4];
-	__asm        mov    xOffset, eax;
-// LINE 315:
-	startX = (centerPt.x - xOffset);
-// LINE 316:
-	endX = (centerPt.x + xOffset);
-// LINE 317:
-	__asm        mov    eax, radius;
-	__asm        sub    eax, i;
-	__asm        add    eax, centerPt.y;
-	__asm        dec    eax;
-	__asm        mov    lineY, eax;
-// LINE 318:
-	DrawHorzLine(reinterpret_cast<uint32_t>(color), lineY, endX, startX);
-// LINE 320:
-	lineY = (centerPt.y - (radius - i));
-// LINE 321:
-	DrawHorzLine(reinterpret_cast<uint32_t>(color), lineY, endX, startX);
-// LINE 322:
-	__asm        jmp    _FOR_NEXT_69b;
+	for (i = 0x0; (i < radius); i++) {
+		// LINE 311:
+			__asm        mov    eax, radiusSquared;
+			__asm        mov    ecx, radius;
+			__asm        sub    ecx, i;
+			__asm        mov    edx, radius;
+			__asm        sub    edx, i;
+			__asm        imul   ecx, edx;
+			__asm        sub    eax, ecx;
+			__asm        mov    eax, g_sqrtTable[eax*4];
+			__asm        mov    xOffset, eax;
+		// LINE 315:
+			startX = (centerPt.x - xOffset);
+		// LINE 316:
+			endX = (centerPt.x + xOffset);
+		// LINE 317:
+			__asm        mov    eax, radius;
+			__asm        sub    eax, i;
+			__asm        add    eax, centerPt.y;
+			__asm        dec    eax;
+			__asm        mov    lineY, eax;
+		// LINE 318:
+			DrawHorzLine(reinterpret_cast<uint32_t>(color), lineY, endX, startX);
+		// LINE 320:
+			lineY = (centerPt.y - (radius - i));
+		// LINE 321:
+			DrawHorzLine(reinterpret_cast<uint32_t>(color), lineY, endX, startX);
+	}
 // LINE 324:
 _T76c:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
@@ -772,55 +728,47 @@ _T84:
 	__asm        fstp   yStride;
 // LINE 455:
 _FOR_10a:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_10a;
-_FOR_NEXT_10a:
-	i++;
-_FOR_COND_10a:
-	__asm        mov    eax, i;
-	__asm        cmp    vertRad, eax;
-	__asm        jle    _T20f;
-// LINE 459:
-	__asm        mov    eax, vertRad;
-	__asm        sub    eax, i;
-	__asm        mov    ecx, vertRad;
-	__asm        sub    ecx, i;
-	__asm        imul   eax, ecx;
-	__asm        mov    [ebp-0x70], eax;
-	__asm        fild   dword ptr [ebp-0x70];
-	__asm        fdiv   bSquared;
-	__asm        fsubr  qword ptr ds:[0x5939B0];
-	__asm        fmul   aSquared;
-	__asm        call   0x0056EBE8;
-	__asm        mov    eax, g_sqrtTable[eax*4];
-	__asm        mov    offset.x, eax;
-// LINE 463:
-	startX = (centerPt.x - offset.x);
-// LINE 464:
-	endX = (centerPt.x + offset.x);
-// LINE 465:
-	offset.y = (vertRad - i);
-// LINE 466:
-	__asm        mov    eax, offset.y;
-	__asm        mov    [ebp-0x74], eax;
-	__asm        fild   dword ptr [ebp-0x74];
-	__asm        fmul   yStride;
-	__asm        call   0x0056EBE8;
-	__asm        mov    yScanLine, eax;
-// LINE 467:
-	yLine = (centerPt.y + offset.y);
-// LINE 469:
-	pixLine.ptr = (((faceCenter.y - yScanLine) * pixLine.width) + pixPtr);
-// LINE 470:
-	DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, yLine, endX, startX);
-// LINE 473:
-	yLine = (centerPt.y - offset.y);
-// LINE 474:
-	pixLine.ptr = (((faceCenter.y + yScanLine) * pixLine.width) + pixPtr);
-// LINE 475:
-	DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, yLine, endX, startX);
-// LINE 476:
-	__asm        jmp    _FOR_NEXT_10a;
+	for (i = 0x0; (vertRad > i); i++) {
+		// LINE 459:
+			__asm        mov    eax, vertRad;
+			__asm        sub    eax, i;
+			__asm        mov    ecx, vertRad;
+			__asm        sub    ecx, i;
+			__asm        imul   eax, ecx;
+			__asm        mov    [ebp-0x70], eax;
+			__asm        fild   dword ptr [ebp-0x70];
+			__asm        fdiv   bSquared;
+			__asm        fsubr  qword ptr ds:[0x5939B0];
+			__asm        fmul   aSquared;
+			__asm        call   0x0056EBE8;
+			__asm        mov    eax, g_sqrtTable[eax*4];
+			__asm        mov    offset.x, eax;
+		// LINE 463:
+			startX = (centerPt.x - offset.x);
+		// LINE 464:
+			endX = (centerPt.x + offset.x);
+		// LINE 465:
+			offset.y = (vertRad - i);
+		// LINE 466:
+			__asm        mov    eax, offset.y;
+			__asm        mov    [ebp-0x74], eax;
+			__asm        fild   dword ptr [ebp-0x74];
+			__asm        fmul   yStride;
+			__asm        call   0x0056EBE8;
+			__asm        mov    yScanLine, eax;
+		// LINE 467:
+			yLine = (centerPt.y + offset.y);
+		// LINE 469:
+			pixLine.ptr = (((faceCenter.y - yScanLine) * pixLine.width) + pixPtr);
+		// LINE 470:
+			DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, yLine, endX, startX);
+		// LINE 473:
+			yLine = (centerPt.y - offset.y);
+		// LINE 474:
+			pixLine.ptr = (((faceCenter.y + yScanLine) * pixLine.width) + pixPtr);
+		// LINE 475:
+			DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, yLine, endX, startX);
+	}
 // LINE 478:
 _T20f:
 	pixLine.ptr = ((faceCenter.y * pixLine.width) + pixPtr);
@@ -1131,40 +1079,32 @@ _T52:
 	width++;
 // LINE 677:
 _FOR_6d:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_6d;
-_FOR_NEXT_6d:
-	i++;
-_FOR_COND_6d:
-	__asm        mov    eax, i;
-	__asm        cmp    width, eax;
-	__asm        jle    _Tdf;
-// LINE 679:
-	__asm        fld    colorLimit;
-	__asm        mov    eax, width;
-	__asm        mov    [ebp-0x7C], eax;
-	__asm        fidiv  dword ptr [ebp-0x7C];
-	__asm        fstp   step;
-// LINE 680:
-	__asm        cmp    i, 0x1A;
-	__asm        jl     _Tb1;
+	for (i = 0x0; (width > i); i++) {
+		// LINE 679:
+			__asm        fld    colorLimit;
+			__asm        mov    eax, width;
+			__asm        mov    [ebp-0x7C], eax;
+			__asm        fidiv  dword ptr [ebp-0x7C];
+			__asm        fstp   step;
+		// LINE 680:
+			__asm        cmp    i, 0x1A;
+			__asm        jl     _Tb1;
 
-	doAssert(0x8c085, 0x5bf128, 0x2a8, 0x5bf174);
-// LINE 681:
-_Tb1:
-	__asm        mov    eax, i;
-	__asm        mov    [ebp-0x80], eax;
-	__asm        fild   dword ptr [ebp-0x80];
-	__asm        fmul   step;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        mov    [ebp-0x84], eax;
-	__asm        fiadd  dword ptr [ebp-0x84];
-	__asm        call   0x0056EBE8;
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx-0x1C], al;
-// LINE 682:
-	__asm        jmp    _FOR_NEXT_6d;
+			doAssert(0x8c085, 0x5bf128, 0x2a8, 0x5bf174);
+		// LINE 681:
+		_Tb1:
+			__asm        mov    eax, i;
+			__asm        mov    [ebp-0x80], eax;
+			__asm        fild   dword ptr [ebp-0x80];
+			__asm        fmul   step;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        mov    [ebp-0x84], eax;
+			__asm        fiadd  dword ptr [ebp-0x84];
+			__asm        call   0x0056EBE8;
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx-0x1C], al;
+	}
 // LINE 685:
 _Tdf:
 	__asm        cmp    startPt.x, 0;
@@ -1288,75 +1228,59 @@ _T1cb:
 	return;
 // LINE 725:
 _FOR_221:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_221;
-_FOR_NEXT_221:
-	i++;
-_FOR_COND_221:
-	__asm        mov    eax, dx;
-	__asm        cmp    i, eax;
-	__asm        jge    _T2d3;
-// LINE 727:
-	writeBufferTmp = writeBuffer;
-// LINE 731:
-	__asm        mov    eax, i;
-	__asm        cdq;
-	__asm        idiv   segLen;
-	__asm        mov    startWidth, eax;
-// LINE 735:
-	endWidth = (width - startWidth);
-// LINE 736:
-	writeBufferTmp += (startWidth * Pbufwidth);
-// LINE 738:
-_FOR_261:
-	j = startWidth;
-	__asm        jmp    _FOR_COND_261;
-_FOR_NEXT_261:
-	j++;
-_FOR_COND_261:
-	__asm        mov    eax, j;
-	__asm        cmp    endWidth, eax;
-	__asm        jle    _T2a6;
-// LINE 740:
-	__asm        push   0;
-	__asm        push   1;
-	__asm        mov    eax, writeBufferTmp;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T28d;
+	for (i = 0x0; (i < dx); i++) {
+		// LINE 727:
+			writeBufferTmp = writeBuffer;
+		// LINE 731:
+			__asm        mov    eax, i;
+			__asm        cdq;
+			__asm        idiv   segLen;
+			__asm        mov    startWidth, eax;
+		// LINE 735:
+			endWidth = (width - startWidth);
+		// LINE 736:
+			writeBufferTmp += (startWidth * Pbufwidth);
+		// LINE 738:
+		_FOR_261:
+			for (j = startWidth; (endWidth > j); j++) {
+				// LINE 740:
+					__asm        push   0;
+					__asm        push   1;
+					__asm        mov    eax, writeBufferTmp;
+					__asm        push   eax;
+					__asm        call   Check_Pointer;
+					__asm        add    esp, 0xC;
+					__asm        test   eax, eax;
+					__asm        jne    _T28d;
 
-	return;
-// LINE 741:
-_T28d:
-	__asm        mov    eax, j;
-	__asm        mov    al, [ebp+eax-0x1C];
-	__asm        mov    ecx, writeBufferTmp;
-	__asm        mov    [ecx], al;
-// LINE 742:
-	writeBufferTmp += Pbufwidth;
-// LINE 743:
-	__asm        jmp    _FOR_NEXT_261;
-// LINE 745:
-_T2a6:
-	error += dy;
-// LINE 746:
-	__asm        mov    eax, dx;
-	__asm        cmp    error, eax;
-	__asm        jle    _T2c8;
-// LINE 748:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, dx;
-	__asm        neg    eax;
-	__asm        sub    error, eax;
-// LINE 749:
-	writeBuffer += yInc;
-// LINE 751:
-_T2c8:
-	writeBuffer += xInc;
-// LINE 752:
-	__asm        jmp    _FOR_NEXT_221;
+					return;
+				// LINE 741:
+				_T28d:
+					__asm        mov    eax, j;
+					__asm        mov    al, [ebp+eax-0x1C];
+					__asm        mov    ecx, writeBufferTmp;
+					__asm        mov    [ecx], al;
+				// LINE 742:
+					writeBufferTmp += Pbufwidth;
+			}
+		// LINE 745:
+		_T2a6:
+			error += dy;
+		// LINE 746:
+			__asm        mov    eax, dx;
+			__asm        cmp    error, eax;
+			__asm        jle    _T2c8;
+		// LINE 748:
+			__asm        xor    eax, eax;
+			__asm        sub    eax, dx;
+			__asm        neg    eax;
+			__asm        sub    error, eax;
+		// LINE 749:
+			writeBuffer += yInc;
+		// LINE 751:
+		_T2c8:
+			writeBuffer += xInc;
+	}
 // LINE 754:
 _T2d3:
 	return;
@@ -1394,136 +1318,128 @@ _T318:
 	segLen = 0x1;
 // LINE 764:
 _FOR_335:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_335;
-_FOR_NEXT_335:
-	i++;
-_FOR_COND_335:
-	__asm        mov    eax, dy;
-	__asm        cmp    i, eax;
-	__asm        jge    __RETURN;
-// LINE 766:
-	writeBufferTmp = writeBuffer;
-// LINE 775:
-	__asm        mov    eax, i;
-	__asm        cdq;
-	__asm        idiv   segLen;
-	__asm        mov    startWidth, eax;
-// LINE 776:
-	endWidth = (width - startWidth);
-// LINE 777:
-	tapWidth = (endWidth - startWidth);
-// LINE 778:
-	writeBufferTmp += startWidth;
-// LINE 780:
-	cInc = startWidth;
-// LINE 786:
-	oneByteWrites = (tapWidth & 0x3);
-// LINE 787:
-	fourByteWrites = (tapWidth >> 0x2);
-// LINE 790:
-	__asm        cmp    oneByteWrites, 0;
-	__asm        jge    __WHILE_393;
+	for (i = 0x0; (i < dy); i++) {
+		// LINE 766:
+			writeBufferTmp = writeBuffer;
+		// LINE 775:
+			__asm        mov    eax, i;
+			__asm        cdq;
+			__asm        idiv   segLen;
+			__asm        mov    startWidth, eax;
+		// LINE 776:
+			endWidth = (width - startWidth);
+		// LINE 777:
+			tapWidth = (endWidth - startWidth);
+		// LINE 778:
+			writeBufferTmp += startWidth;
+		// LINE 780:
+			cInc = startWidth;
+		// LINE 786:
+			oneByteWrites = (tapWidth & 0x3);
+		// LINE 787:
+			fourByteWrites = (tapWidth >> 0x2);
+		// LINE 790:
+			__asm        cmp    oneByteWrites, 0;
+			__asm        jge    __WHILE_393;
 
-	return;
-// LINE 791:
-__WHILE_393:
-	__asm        mov    eax, oneByteWrites;
-	__asm        mov    [ebp-0x74], eax;
-	__asm        dec    oneByteWrites;
-	__asm        cmp    dword ptr [ebp-0x74], 0;
-	__asm        je     _T3dd;
-// LINE 794:
-	__asm        push   0x5BF19C;
-	__asm        push   1;
-	__asm        mov    eax, writeBufferTmp;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T3c6;
+			return;
+		// LINE 791:
+		__WHILE_393:
+			__asm        mov    eax, oneByteWrites;
+			__asm        mov    [ebp-0x74], eax;
+			__asm        dec    oneByteWrites;
+			__asm        cmp    dword ptr [ebp-0x74], 0;
+			__asm        je     _T3dd;
+		// LINE 794:
+			__asm        push   0x5BF19C;
+			__asm        push   1;
+			__asm        mov    eax, writeBufferTmp;
+			__asm        push   eax;
+			__asm        call   Check_Pointer;
+			__asm        add    esp, 0xC;
+			__asm        test   eax, eax;
+			__asm        jne    _T3c6;
 
-	return;
-// LINE 795:
-_T3c6:
-	__asm        mov    eax, cInc;
-	__asm        mov    al, [ebp+eax-0x1C];
-	__asm        mov    ecx, writeBufferTmp;
-	__asm        mov    [ecx], al;
-	__asm        inc    cInc;
-	__asm        inc    writeBufferTmp;
-// LINE 796:
-	__asm        jmp    __WHILE_393;
-// LINE 798:
-_T3dd:
-	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    __WHILE_3ec;
+			return;
+		// LINE 795:
+		_T3c6:
+			__asm        mov    eax, cInc;
+			__asm        mov    al, [ebp+eax-0x1C];
+			__asm        mov    ecx, writeBufferTmp;
+			__asm        mov    [ecx], al;
+			__asm        inc    cInc;
+			__asm        inc    writeBufferTmp;
+		// LINE 796:
+			__asm        jmp    __WHILE_393;
+		// LINE 798:
+		_T3dd:
+			__asm        cmp    fourByteWrites, 0;
+			__asm        jge    __WHILE_3ec;
 
-	return;
-// LINE 800:
-__WHILE_3ec:
-	__asm        mov    eax, fourByteWrites;
-	__asm        mov    [ebp-0x78], eax;
-	__asm        dec    fourByteWrites;
-	__asm        cmp    dword ptr [ebp-0x78], 0;
-	__asm        je     _T466;
-// LINE 802:
-	__asm        push   0x5BF1B0;
-	__asm        push   4;
-	__asm        mov    eax, writeBufferTmp;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T41f;
+			return;
+		// LINE 800:
+		__WHILE_3ec:
+			__asm        mov    eax, fourByteWrites;
+			__asm        mov    [ebp-0x78], eax;
+			__asm        dec    fourByteWrites;
+			__asm        cmp    dword ptr [ebp-0x78], 0;
+			__asm        je     _T466;
+		// LINE 802:
+			__asm        push   0x5BF1B0;
+			__asm        push   4;
+			__asm        mov    eax, writeBufferTmp;
+			__asm        push   eax;
+			__asm        call   Check_Pointer;
+			__asm        add    esp, 0xC;
+			__asm        test   eax, eax;
+			__asm        jne    _T41f;
 
-	return;
-// LINE 803:
-_T41f:
-	__asm        mov    eax, cInc;
-	__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
-	__asm        shl    eax, 0x10;
-	__asm        mov    ecx, cInc;
-	__asm        movsx  ecx, byte ptr [ebp+ecx-0x19];
-	__asm        shl    ecx, 0x18;
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, cInc;
-	__asm        movsx  ecx, byte ptr [ebp+ecx-0x1B];
-	__asm        shl    ecx, 8;
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, cInc;
-	__asm        movsx  ecx, byte ptr [ebp+ecx-0x1C];
-	__asm        add    eax, ecx;
-	__asm        mov    longColor, eax;
-// LINE 804:
-	__asm        mov    eax, longColor;
-	__asm        mov    ecx, writeBufferTmp;
-	__asm        mov    [ecx], eax;
-// LINE 805:
-	writeBufferTmp += 0x4;
-// LINE 806:
-	cInc += 0x4;
-// LINE 807:
-	__asm        jmp    __WHILE_3ec;
-// LINE 809:
-_T466:
-	error += dx;
-// LINE 810:
-	__asm        mov    eax, dy;
-	__asm        cmp    error, eax;
-	__asm        jle    _T488;
-// LINE 812:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, dy;
-	__asm        neg    eax;
-	__asm        sub    error, eax;
-// LINE 813:
-	writeBuffer += xInc;
-// LINE 815:
-_T488:
-	writeBuffer += yInc;
-// LINE 816:
-	__asm        jmp    _FOR_NEXT_335;
+			return;
+		// LINE 803:
+		_T41f:
+			__asm        mov    eax, cInc;
+			__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
+			__asm        shl    eax, 0x10;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x19];
+			__asm        shl    ecx, 0x18;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x1B];
+			__asm        shl    ecx, 8;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x1C];
+			__asm        add    eax, ecx;
+			__asm        mov    longColor, eax;
+		// LINE 804:
+			__asm        mov    eax, longColor;
+			__asm        mov    ecx, writeBufferTmp;
+			__asm        mov    [ecx], eax;
+		// LINE 805:
+			writeBufferTmp += 0x4;
+		// LINE 806:
+			cInc += 0x4;
+		// LINE 807:
+			__asm        jmp    __WHILE_3ec;
+		// LINE 809:
+		_T466:
+			error += dx;
+		// LINE 810:
+			__asm        mov    eax, dy;
+			__asm        cmp    error, eax;
+			__asm        jle    _T488;
+		// LINE 812:
+			__asm        xor    eax, eax;
+			__asm        sub    eax, dy;
+			__asm        neg    eax;
+			__asm        sub    error, eax;
+		// LINE 813:
+			writeBuffer += xInc;
+		// LINE 815:
+		_T488:
+			writeBuffer += yInc;
+	}
 // LINE 818:
 __RETURN:
 }
@@ -1565,40 +1481,32 @@ _T2f:
 	return;
 // LINE 855:
 _FOR_4a:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_4a;
-_FOR_NEXT_4a:
-	i++;
-_FOR_COND_4a:
-	__asm        mov    eax, width;
-	__asm        cmp    i, eax;
-	__asm        jge    _Tb6;
-// LINE 857:
-	__asm        fld    colorLimit;
-	__asm        mov    eax, width;
-	__asm        mov    [ebp-0x6C], eax;
-	__asm        fidiv  dword ptr [ebp-0x6C];
-	__asm        fstp   step;
-// LINE 858:
-	__asm        cmp    i, 0x1A;
-	__asm        jl     _T8e;
+	for (i = 0x0; (i < width); i++) {
+		// LINE 857:
+			__asm        fld    colorLimit;
+			__asm        mov    eax, width;
+			__asm        mov    [ebp-0x6C], eax;
+			__asm        fidiv  dword ptr [ebp-0x6C];
+			__asm        fstp   step;
+		// LINE 858:
+			__asm        cmp    i, 0x1A;
+			__asm        jl     _T8e;
 
-	doAssert(0x8c085, 0x5bf1c4, 0x35a, 0x5bf1e0);
-// LINE 859:
-_T8e:
-	__asm        mov    eax, i;
-	__asm        mov    [ebp-0x70], eax;
-	__asm        fild   dword ptr [ebp-0x70];
-	__asm        fmul   step;
-	__asm        xor    eax, eax;
-	__asm        mov    al, color;
-	__asm        mov    [ebp-0x74], eax;
-	__asm        fiadd  dword ptr [ebp-0x74];
-	__asm        call   0x0056EBE8;
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx-0x1C], al;
-// LINE 860:
-	__asm        jmp    _FOR_NEXT_4a;
+			doAssert(0x8c085, 0x5bf1c4, 0x35a, 0x5bf1e0);
+		// LINE 859:
+		_T8e:
+			__asm        mov    eax, i;
+			__asm        mov    [ebp-0x70], eax;
+			__asm        fild   dword ptr [ebp-0x70];
+			__asm        fmul   step;
+			__asm        xor    eax, eax;
+			__asm        mov    al, color;
+			__asm        mov    [ebp-0x74], eax;
+			__asm        fiadd  dword ptr [ebp-0x74];
+			__asm        call   0x0056EBE8;
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx-0x1C], al;
+	}
 // LINE 862:
 _Tb6:
 	__asm        cmp    startPt.x, 0;
@@ -1709,66 +1617,50 @@ _T1a2:
 	__asm        mov    writeBuffer, ecx;
 // LINE 896:
 _FOR_1db:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_1db;
-_FOR_NEXT_1db:
-	i++;
-_FOR_COND_1db:
-	__asm        mov    eax, dx;
-	__asm        cmp    i, eax;
-	__asm        jge    _T26e;
-// LINE 898:
-	writeBufferTmp = writeBuffer;
-// LINE 900:
-_FOR_1fc:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_1fc;
-_FOR_NEXT_1fc:
-	j++;
-_FOR_COND_1fc:
-	__asm        mov    eax, width;
-	__asm        cmp    j, eax;
-	__asm        jge    _T241;
-// LINE 902:
-	__asm        push   0;
-	__asm        push   1;
-	__asm        mov    eax, writeBufferTmp;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T228;
+	for (i = 0x0; (i < dx); i++) {
+		// LINE 898:
+			writeBufferTmp = writeBuffer;
+		// LINE 900:
+		_FOR_1fc:
+			for (j = 0x0; (j < width); j++) {
+				// LINE 902:
+					__asm        push   0;
+					__asm        push   1;
+					__asm        mov    eax, writeBufferTmp;
+					__asm        push   eax;
+					__asm        call   Check_Pointer;
+					__asm        add    esp, 0xC;
+					__asm        test   eax, eax;
+					__asm        jne    _T228;
 
-	return;
-// LINE 903:
-_T228:
-	__asm        mov    eax, j;
-	__asm        mov    al, [ebp+eax-0x1C];
-	__asm        mov    ecx, writeBufferTmp;
-	__asm        mov    [ecx], al;
-// LINE 904:
-	writeBufferTmp += Pbufwidth;
-// LINE 905:
-	__asm        jmp    _FOR_NEXT_1fc;
-// LINE 907:
-_T241:
-	error += dy;
-// LINE 908:
-	__asm        mov    eax, dx;
-	__asm        cmp    error, eax;
-	__asm        jle    _T263;
-// LINE 910:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, dx;
-	__asm        neg    eax;
-	__asm        sub    error, eax;
-// LINE 911:
-	writeBuffer += yInc;
-// LINE 913:
-_T263:
-	writeBuffer += xInc;
-// LINE 914:
-	__asm        jmp    _FOR_NEXT_1db;
+					return;
+				// LINE 903:
+				_T228:
+					__asm        mov    eax, j;
+					__asm        mov    al, [ebp+eax-0x1C];
+					__asm        mov    ecx, writeBufferTmp;
+					__asm        mov    [ecx], al;
+				// LINE 904:
+					writeBufferTmp += Pbufwidth;
+			}
+		// LINE 907:
+		_T241:
+			error += dy;
+		// LINE 908:
+			__asm        mov    eax, dx;
+			__asm        cmp    error, eax;
+			__asm        jle    _T263;
+		// LINE 910:
+			__asm        xor    eax, eax;
+			__asm        sub    eax, dx;
+			__asm        neg    eax;
+			__asm        sub    error, eax;
+		// LINE 911:
+			writeBuffer += yInc;
+		// LINE 913:
+		_T263:
+			writeBuffer += xInc;
+	}
 // LINE 916:
 _T26e:
 	return;
@@ -1787,129 +1679,121 @@ _T273:
 	__asm        mov    writeBuffer, ecx;
 // LINE 920:
 _FOR_2a2:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_2a2;
-_FOR_NEXT_2a2:
-	i++;
-_FOR_COND_2a2:
-	__asm        mov    eax, dy;
-	__asm        cmp    i, eax;
-	__asm        jge    __RETURN;
-// LINE 922:
-	writeBufferTmp = writeBuffer;
-// LINE 923:
-	cInc = 0x0;
-// LINE 929:
-	oneByteWrites = (width & 0x3);
-// LINE 930:
-	fourByteWrites = (width >> 0x2);
-// LINE 931:
-	__asm        cmp    oneByteWrites, 0;
-	__asm        jge    _T2fb;
-// LINE 932:
-	return;
-// LINE 933:
-	doAssert(0x8c085, 0x5bf208, 0x3a5, 0x5bf234);
-// LINE 935:
-_T2fb:
-	__asm        cmp    fourByteWrites, 0;
-	__asm        jge    __WHILE_326;
-// LINE 936:
-	return;
-// LINE 937:
-	doAssert(0x8c085, 0x5bf25c, 0x3a9, 0x5bf288);
-// LINE 940:
-__WHILE_326:
-	__asm        mov    eax, oneByteWrites;
-	__asm        mov    [ebp-0x64], eax;
-	__asm        dec    oneByteWrites;
-	__asm        cmp    dword ptr [ebp-0x64], 0;
-	__asm        je     __WHILE_370;
-// LINE 943:
-	__asm        push   0x5BF2B0;
-	__asm        push   1;
-	__asm        mov    eax, writeBufferTmp;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T359;
+	for (i = 0x0; (i < dy); i++) {
+		// LINE 922:
+			writeBufferTmp = writeBuffer;
+		// LINE 923:
+			cInc = 0x0;
+		// LINE 929:
+			oneByteWrites = (width & 0x3);
+		// LINE 930:
+			fourByteWrites = (width >> 0x2);
+		// LINE 931:
+			__asm        cmp    oneByteWrites, 0;
+			__asm        jge    _T2fb;
+		// LINE 932:
+			return;
+		// LINE 933:
+			doAssert(0x8c085, 0x5bf208, 0x3a5, 0x5bf234);
+		// LINE 935:
+		_T2fb:
+			__asm        cmp    fourByteWrites, 0;
+			__asm        jge    __WHILE_326;
+		// LINE 936:
+			return;
+		// LINE 937:
+			doAssert(0x8c085, 0x5bf25c, 0x3a9, 0x5bf288);
+		// LINE 940:
+		__WHILE_326:
+			__asm        mov    eax, oneByteWrites;
+			__asm        mov    [ebp-0x64], eax;
+			__asm        dec    oneByteWrites;
+			__asm        cmp    dword ptr [ebp-0x64], 0;
+			__asm        je     __WHILE_370;
+		// LINE 943:
+			__asm        push   0x5BF2B0;
+			__asm        push   1;
+			__asm        mov    eax, writeBufferTmp;
+			__asm        push   eax;
+			__asm        call   Check_Pointer;
+			__asm        add    esp, 0xC;
+			__asm        test   eax, eax;
+			__asm        jne    _T359;
 
-	return;
-// LINE 944:
-_T359:
-	__asm        mov    eax, cInc;
-	__asm        mov    al, [ebp+eax-0x1C];
-	__asm        mov    ecx, writeBufferTmp;
-	__asm        mov    [ecx], al;
-	__asm        inc    cInc;
-	__asm        inc    writeBufferTmp;
-// LINE 945:
-	__asm        jmp    __WHILE_326;
-// LINE 947:
-__WHILE_370:
-	__asm        mov    eax, fourByteWrites;
-	__asm        mov    [ebp-0x68], eax;
-	__asm        dec    fourByteWrites;
-	__asm        cmp    dword ptr [ebp-0x68], 0;
-	__asm        je     _T3ea;
-// LINE 949:
-	__asm        push   0x5BF2BC;
-	__asm        push   4;
-	__asm        mov    eax, writeBufferTmp;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T3a3;
+			return;
+		// LINE 944:
+		_T359:
+			__asm        mov    eax, cInc;
+			__asm        mov    al, [ebp+eax-0x1C];
+			__asm        mov    ecx, writeBufferTmp;
+			__asm        mov    [ecx], al;
+			__asm        inc    cInc;
+			__asm        inc    writeBufferTmp;
+		// LINE 945:
+			__asm        jmp    __WHILE_326;
+		// LINE 947:
+		__WHILE_370:
+			__asm        mov    eax, fourByteWrites;
+			__asm        mov    [ebp-0x68], eax;
+			__asm        dec    fourByteWrites;
+			__asm        cmp    dword ptr [ebp-0x68], 0;
+			__asm        je     _T3ea;
+		// LINE 949:
+			__asm        push   0x5BF2BC;
+			__asm        push   4;
+			__asm        mov    eax, writeBufferTmp;
+			__asm        push   eax;
+			__asm        call   Check_Pointer;
+			__asm        add    esp, 0xC;
+			__asm        test   eax, eax;
+			__asm        jne    _T3a3;
 
-	return;
-// LINE 950:
-_T3a3:
-	__asm        mov    eax, cInc;
-	__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
-	__asm        shl    eax, 0x10;
-	__asm        mov    ecx, cInc;
-	__asm        movsx  ecx, byte ptr [ebp+ecx-0x19];
-	__asm        shl    ecx, 0x18;
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, cInc;
-	__asm        movsx  ecx, byte ptr [ebp+ecx-0x1B];
-	__asm        shl    ecx, 8;
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, cInc;
-	__asm        movsx  ecx, byte ptr [ebp+ecx-0x1C];
-	__asm        add    eax, ecx;
-	__asm        mov    longColor, eax;
-// LINE 951:
-	__asm        mov    eax, longColor;
-	__asm        mov    ecx, writeBufferTmp;
-	__asm        mov    [ecx], eax;
-// LINE 952:
-	writeBufferTmp += 0x4;
-// LINE 953:
-	cInc += 0x4;
-// LINE 954:
-	__asm        jmp    __WHILE_370;
-// LINE 956:
-_T3ea:
-	error += dx;
-// LINE 957:
-	__asm        mov    eax, dy;
-	__asm        cmp    error, eax;
-	__asm        jle    _T40c;
-// LINE 959:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, dy;
-	__asm        neg    eax;
-	__asm        sub    error, eax;
-// LINE 960:
-	writeBuffer += xInc;
-// LINE 962:
-_T40c:
-	writeBuffer += yInc;
-// LINE 963:
-	__asm        jmp    _FOR_NEXT_2a2;
+			return;
+		// LINE 950:
+		_T3a3:
+			__asm        mov    eax, cInc;
+			__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
+			__asm        shl    eax, 0x10;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x19];
+			__asm        shl    ecx, 0x18;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x1B];
+			__asm        shl    ecx, 8;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x1C];
+			__asm        add    eax, ecx;
+			__asm        mov    longColor, eax;
+		// LINE 951:
+			__asm        mov    eax, longColor;
+			__asm        mov    ecx, writeBufferTmp;
+			__asm        mov    [ecx], eax;
+		// LINE 952:
+			writeBufferTmp += 0x4;
+		// LINE 953:
+			cInc += 0x4;
+		// LINE 954:
+			__asm        jmp    __WHILE_370;
+		// LINE 956:
+		_T3ea:
+			error += dx;
+		// LINE 957:
+			__asm        mov    eax, dy;
+			__asm        cmp    error, eax;
+			__asm        jle    _T40c;
+		// LINE 959:
+			__asm        xor    eax, eax;
+			__asm        sub    eax, dy;
+			__asm        neg    eax;
+			__asm        sub    error, eax;
+		// LINE 960:
+			writeBuffer += xInc;
+		// LINE 962:
+		_T40c:
+			writeBuffer += yInc;
+	}
 // LINE 966:
 __RETURN:
 }

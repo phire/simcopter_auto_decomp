@@ -137,102 +137,76 @@ _T40:
 	return 0x1;
 // LINE 141:
 _FOR_6d:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_6d;
-_FOR_NEXT_6d:
-	i++;
-_FOR_COND_6d:
-	__asm        mov    eax, hdr;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    _T18c;
-// LINE 143:
-	bhdr = VRInt2BmpHdr(i, res);
-// LINE 146:
-	__asm        mov    eax, bhdr;
-	__asm        movsx  eax, word ptr [eax+8];
-	__asm        test   al, 4;
-	__asm        je     _Tc7;
-// LINE 148:
-	__asm        mov    eax, create_new;
-	__asm        push   eax;
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        mov    eax, bhdr;
-	__asm        push   eax;
-	__asm        mov    eax, hdr;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, i;
-	__asm        lea    eax, [eax+ecx*4];
-	__asm        push   eax;
-	__asm        call   CreateTiledTexColors;
-	__asm        add    esp, 0x10;
-// LINE 149:
-	__asm        jmp    _FOR_NEXT_6d;
-// LINE 152:
-_Tc7:
-	tptr = bhdr;
-// LINE 153:
-	tptr += ((bhdr->info.height << 0x2) + 0xc);
-// LINE 154:
-	memset(0x400, 0x0, 0x606a78);
-// LINE 156:
-_FOR_fc:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_fc;
-_FOR_NEXT_fc:
-	j++;
-_FOR_COND_fc:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, bhdr;
-	__asm        imul   eax, [ecx];
-	__asm        cmp    eax, j;
-	__asm        jle    _T12a;
-// LINE 158:
-	__asm        mov    eax, tptr;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        inc    S_ctrs[ecx*4];
-// LINE 159:
-	tptr++;
-// LINE 160:
-	__asm        jmp    _FOR_NEXT_fc;
-// LINE 162:
-_T12a:
-	maxval = 0x0;
-// LINE 163:
-_FOR_13d:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_13d;
-_FOR_NEXT_13d:
-	j++;
-_FOR_COND_13d:
-	__asm        cmp    j, 0x100;
-	__asm        jge    _T178;
-// LINE 165:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, maxval;
-	__asm        cmp    S_ctrs[eax*4], ecx;
-	__asm        jle    _T173;
-// LINE 167:
-	__asm        mov    eax, j;
-	__asm        mov    eax, S_ctrs[eax*4];
-	__asm        mov    maxval, eax;
-// LINE 168:
-	maxcolor = j;
-// LINE 170:
-_T173:
-	__asm        jmp    _FOR_NEXT_13d;
-// LINE 171:
-_T178:
-	__asm        mov    eax, maxcolor;
-	__asm        mov    ecx, hdr;
-	__asm        mov    ecx, [ecx+0x14];
-	__asm        mov    edx, i;
-	__asm        mov    [ecx+edx*4], eax;
-// LINE 172:
-	__asm        jmp    _FOR_NEXT_6d;
+	for (i = 0x0; (hdr->count > i); i++) {
+		// LINE 143:
+			bhdr = VRInt2BmpHdr(i, res);
+		// LINE 146:
+			__asm        mov    eax, bhdr;
+			__asm        movsx  eax, word ptr [eax+8];
+			__asm        test   al, 4;
+			__asm        je     _Tc7;
+		// LINE 148:
+			__asm        mov    eax, create_new;
+			__asm        push   eax;
+			__asm        mov    eax, res;
+			__asm        push   eax;
+			__asm        mov    eax, bhdr;
+			__asm        push   eax;
+			__asm        mov    eax, hdr;
+			__asm        mov    eax, [eax+0x14];
+			__asm        mov    ecx, i;
+			__asm        lea    eax, [eax+ecx*4];
+			__asm        push   eax;
+			__asm        call   CreateTiledTexColors;
+			__asm        add    esp, 0x10;
+		// LINE 149:
+			__asm        jmp    _FOR_NEXT_6d;
+		// LINE 152:
+		_Tc7:
+			tptr = bhdr;
+		// LINE 153:
+			tptr += ((bhdr->info.height << 0x2) + 0xc);
+		// LINE 154:
+			memset(0x400, 0x0, 0x606a78);
+		// LINE 156:
+		_FOR_fc:
+			for (j = 0x0; ((bhdr->info.height * bhdr->info.width) > j); j++) {
+				// LINE 158:
+					__asm        mov    eax, tptr;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [eax];
+					__asm        inc    S_ctrs[ecx*4];
+				// LINE 159:
+					tptr++;
+			}
+		// LINE 162:
+		_T12a:
+			maxval = 0x0;
+		// LINE 163:
+		_FOR_13d:
+			for (j = 0x0; (j < 0x100); j++) {
+				// LINE 165:
+					__asm        mov    eax, j;
+					__asm        mov    ecx, maxval;
+					__asm        cmp    S_ctrs[eax*4], ecx;
+					__asm        jle    _T173;
+				// LINE 167:
+					__asm        mov    eax, j;
+					__asm        mov    eax, S_ctrs[eax*4];
+					__asm        mov    maxval, eax;
+				// LINE 168:
+					maxcolor = j;
+				// LINE 170:
+				_T173:
+			}
+		// LINE 171:
+		_T178:
+			__asm        mov    eax, maxcolor;
+			__asm        mov    ecx, hdr;
+			__asm        mov    ecx, [ecx+0x14];
+			__asm        mov    edx, i;
+			__asm        mov    [ecx+edx*4], eax;
+	}
 // LINE 174:
 _T18c:
 	return 0x0;
@@ -280,92 +254,60 @@ _T64:
 	bmpcolors = tabentry[0];
 // LINE 224:
 _FOR_78:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_78;
-_FOR_NEXT_78:
-	i++;
-_FOR_COND_78:
-	__asm        mov    eax, notiles;
-	__asm        cmp    i, eax;
-	__asm        jge    _T170;
-// LINE 226:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, bhdr;
-	__asm        mov    eax, [ecx+eax*8+0x10];
-	__asm        mov    tptr, eax;
-	__asm        mov    eax, tptr;
-	__asm        mov    ltptr, eax;
-// LINE 228:
-	memset(0x400, 0x0, 0x606a78);
-// LINE 231:
-_FOR_ba:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_ba;
-_FOR_NEXT_ba:
-	j++;
-_FOR_COND_ba:
-	__asm        mov    eax, bhdr;
-	__asm        mov    ecx, j;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jle    _T111;
-// LINE 233:
-_FOR_d8:
-	k = 0x0;
-	__asm        jmp    _FOR_COND_d8;
-_FOR_NEXT_d8:
-	k++;
-_FOR_COND_d8:
-	__asm        mov    eax, bhdr;
-	__asm        mov    ecx, k;
-	__asm        cmp    [eax], ecx;
-	__asm        jle    _Tff;
-// LINE 235:
-	__asm        mov    eax, tptr;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        inc    S_ctrs[ecx*4];
-// LINE 236:
-	tptr++;
-// LINE 237:
-	__asm        jmp    _FOR_NEXT_d8;
-// LINE 238:
-_Tff:
-	ltptr += 0x100;
-// LINE 239:
-	tptr = ltptr;
-// LINE 240:
-	__asm        jmp    _FOR_NEXT_ba;
-// LINE 243:
-_T111:
-	maxval = 0x0;
-// LINE 244:
-_FOR_124:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_124;
-_FOR_NEXT_124:
-	j++;
-_FOR_COND_124:
-	__asm        cmp    j, 0x100;
-	__asm        jge    _T15f;
-// LINE 246:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, maxval;
-	__asm        cmp    S_ctrs[eax*4], ecx;
-	__asm        jle    _T15a;
-// LINE 248:
-	__asm        mov    eax, j;
-	__asm        mov    eax, S_ctrs[eax*4];
-	__asm        mov    maxval, eax;
-// LINE 249:
-	maxcolor = j;
-// LINE 251:
-_T15a:
-	__asm        jmp    _FOR_NEXT_124;
-// LINE 252:
-_T15f:
-	bmpcolors[i] = maxcolor;
-// LINE 253:
-	__asm        jmp    _FOR_NEXT_78;
+	for (i = 0x0; (i < notiles); i++) {
+		// LINE 226:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, bhdr;
+			__asm        mov    eax, [ecx+eax*8+0x10];
+			__asm        mov    tptr, eax;
+			__asm        mov    eax, tptr;
+			__asm        mov    ltptr, eax;
+		// LINE 228:
+			memset(0x400, 0x0, 0x606a78);
+		// LINE 231:
+		_FOR_ba:
+			for (j = 0x0; (bhdr->info.height > j); j++) {
+				// LINE 233:
+				_FOR_d8:
+					for (k = 0x0; (bhdr->info.width > k); k++) {
+						// LINE 235:
+							__asm        mov    eax, tptr;
+							__asm        xor    ecx, ecx;
+							__asm        mov    cl, [eax];
+							__asm        inc    S_ctrs[ecx*4];
+						// LINE 236:
+							tptr++;
+					}
+				// LINE 238:
+				_Tff:
+					ltptr += 0x100;
+				// LINE 239:
+					tptr = ltptr;
+			}
+		// LINE 243:
+		_T111:
+			maxval = 0x0;
+		// LINE 244:
+		_FOR_124:
+			for (j = 0x0; (j < 0x100); j++) {
+				// LINE 246:
+					__asm        mov    eax, j;
+					__asm        mov    ecx, maxval;
+					__asm        cmp    S_ctrs[eax*4], ecx;
+					__asm        jle    _T15a;
+				// LINE 248:
+					__asm        mov    eax, j;
+					__asm        mov    eax, S_ctrs[eax*4];
+					__asm        mov    maxval, eax;
+				// LINE 249:
+					maxcolor = j;
+				// LINE 251:
+				_T15a:
+			}
+		// LINE 252:
+		_T15f:
+			bmpcolors[i] = maxcolor;
+	}
 // LINE 255:
 _T170:
 	return 0x1;
@@ -490,24 +432,28 @@ _T27:
 	return 0x0;
 // LINE 355:
 _LOOP_2e:
-	__asm        mov    eax, cptr;
-	__asm        mov    ecx, color;
-	__asm        cmp    [eax], ecx;
-	__asm        jg     _T58;
+	for (;;) {
+		// LINE 355:
+		_LOOP_2e:
+			__asm        mov    eax, cptr;
+			__asm        mov    ecx, color;
+			__asm        cmp    [eax], ecx;
+			__asm        jg     _T58;
 
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, cptr;
-	__asm        add    eax, [ecx];
-	__asm        cmp    eax, color;
-	__asm        jle    _T58;
-// LINE 356:
-	return cptr;
-// LINE 358:
-_T58:
-	cptr += 0x8;
-// LINE 359:
-	__asm        jmp    _LOOP_2e;
+			__asm        mov    eax, cptr;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, cptr;
+			__asm        add    eax, [ecx];
+			__asm        cmp    eax, color;
+			__asm        jle    _T58;
+		// LINE 356:
+			return cptr;
+		// LINE 358:
+		_T58:
+			cptr += 0x8;
+		// LINE 359:
+			__asm        jmp    _LOOP_2e;
+	}
 // LINE 361:
 }
 
@@ -551,188 +497,180 @@ void VRObjSetShading(int32_t obj) {
 	__asm        mov    face, eax;
 // LINE 401:
 _FOR_34:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_34;
-_FOR_NEXT_34:
-	i++;
-_FOR_COND_34:
-	__asm        mov    eax, i;
-	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    __RETURN;
-// LINE 403:
-	fh = face;
-// LINE 406:
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+8], 4;
-	__asm        jne    _T70;
+	for (i = 0x0; (oinfo.Faces > i); i++) {
+		// LINE 403:
+			fh = face;
+		// LINE 406:
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+8], 4;
+			__asm        jne    _T70;
 
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+9], 0x80;
-	__asm        jne    _T70;
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+9], 0x80;
+			__asm        jne    _T70;
 
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+0xA], 1;
-	__asm        je     _T75;
-// LINE 408:
-_T70:
-	__asm        jmp    next_face;
-// LINE 411:
-_T75:
-	cptr = VRGetColorShade(fh->Attrib2);
-// LINE 412:
-	__asm        cmp    cptr, 0;
-	__asm        jne    _T96;
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+0xA], 1;
+			__asm        je     _T75;
+		// LINE 408:
+		_T70:
+			__asm        jmp    next_face;
+		// LINE 411:
+		_T75:
+			cptr = VRGetColorShade(fh->Attrib2);
+		// LINE 412:
+			__asm        cmp    cptr, 0;
+			__asm        jne    _T96;
 
-	__asm        jmp    next_face;
-// LINE 416:
-_T96:
-	intensity = 0x0;
-// LINE 419:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect1.z;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect1.y;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect1.x;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    diffuse, ebx;
-// LINE 421:
-	__asm        cmp    diffuse, 0;
-	__asm        jle    _T10c;
-// LINE 422:
-	__asm        mov    eax, S_intensity1;
-	__asm        push   eax;
-	__asm        mov    eax, diffuse;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    intensity, eax;
-// LINE 427:
-_T10c:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect2.z;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect2.y;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect2.x;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    diffuse, ebx;
-// LINE 429:
-	__asm        cmp    diffuse, 0;
-	__asm        jle    _T17b;
-// LINE 430:
-	__asm        mov    eax, S_intensity2;
-	__asm        push   eax;
-	__asm        mov    eax, diffuse;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    intensity, eax;
-// LINE 433:
-_T17b:
-	intensity += S_ambient;
-// LINE 435:
-	__asm        cmp    intensity, 0x10000;
-	__asm        jl     _T1a4;
-// LINE 437:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, cptr;
-	__asm        add    eax, [ecx];
-	__asm        dec    eax;
-	__asm        mov    color, eax;
-// LINE 439:
-	__asm        jmp    _T1cc;
-// LINE 441:
-_T1a4:
-	__asm        mov    eax, intensity;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    level, eax;
-// LINE 442:
-	__asm        sar    level, 0x10;
-// LINE 443:
-	color = (cptr->base + level);
-// LINE 449:
-_T1cc:
-	__asm        cmp    color, 0xEA;
-	__asm        jl     _T1f9;
+			__asm        jmp    next_face;
+		// LINE 416:
+		_T96:
+			intensity = 0x0;
+		// LINE 419:
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x2C];
+			__asm        mov    eax, [eax+8];
+			__asm        push   eax;
+			__asm        mov    eax, G_litevect1.z;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        mov    ebx, eax;
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x2C];
+			__asm        mov    eax, [eax+4];
+			__asm        push   eax;
+			__asm        mov    eax, G_litevect1.y;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        add    ebx, eax;
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x2C];
+			__asm        mov    eax, [eax];
+			__asm        push   eax;
+			__asm        mov    eax, G_litevect1.x;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        add    ebx, eax;
+			__asm        mov    diffuse, ebx;
+		// LINE 421:
+			__asm        cmp    diffuse, 0;
+			__asm        jle    _T10c;
+		// LINE 422:
+			__asm        mov    eax, S_intensity1;
+			__asm        push   eax;
+			__asm        mov    eax, diffuse;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        mov    intensity, eax;
+		// LINE 427:
+		_T10c:
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x2C];
+			__asm        mov    eax, [eax+8];
+			__asm        push   eax;
+			__asm        mov    eax, G_litevect2.z;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        mov    ebx, eax;
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x2C];
+			__asm        mov    eax, [eax+4];
+			__asm        push   eax;
+			__asm        mov    eax, G_litevect2.y;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        add    ebx, eax;
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x2C];
+			__asm        mov    eax, [eax];
+			__asm        push   eax;
+			__asm        mov    eax, G_litevect2.x;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        add    ebx, eax;
+			__asm        mov    diffuse, ebx;
+		// LINE 429:
+			__asm        cmp    diffuse, 0;
+			__asm        jle    _T17b;
+		// LINE 430:
+			__asm        mov    eax, S_intensity2;
+			__asm        push   eax;
+			__asm        mov    eax, diffuse;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        add    intensity, eax;
+		// LINE 433:
+		_T17b:
+			intensity += S_ambient;
+		// LINE 435:
+			__asm        cmp    intensity, 0x10000;
+			__asm        jl     _T1a4;
+		// LINE 437:
+			__asm        mov    eax, cptr;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, cptr;
+			__asm        add    eax, [ecx];
+			__asm        dec    eax;
+			__asm        mov    color, eax;
+		// LINE 439:
+			__asm        jmp    _T1cc;
+		// LINE 441:
+		_T1a4:
+			__asm        mov    eax, intensity;
+			__asm        push   eax;
+			__asm        mov    eax, cptr;
+			__asm        mov    eax, [eax+4];
+			__asm        shl    eax, 0x10;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        mov    level, eax;
+		// LINE 442:
+			__asm        sar    level, 0x10;
+		// LINE 443:
+			color = (cptr->base + level);
+		// LINE 449:
+		_T1cc:
+			__asm        cmp    color, 0xEA;
+			__asm        jl     _T1f9;
 
-	__asm        cmp    color, 0xF5;
-	__asm        jg     _T1f9;
-// LINE 451:
-	color = (0xf5 - (color - 0xea));
-// LINE 454:
-_T1f9:
-	fh->Attrib2 = color;
-// LINE 457:
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    _T21c;
+			__asm        cmp    color, 0xF5;
+			__asm        jg     _T1f9;
+		// LINE 451:
+			color = (0xf5 - (color - 0xea));
+		// LINE 454:
+		_T1f9:
+			fh->Attrib2 = color;
+		// LINE 457:
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+8], 1;
+			__asm        jne    _T21c;
 
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+9], 8;
-	__asm        je     next_face;
-_T21c:
-	__asm        mov    eax, fh;
-	__asm        cmp    dword ptr [eax+0x10], 0xB;
-	__asm        je     next_face;
-// LINE 458:
-	fh->Bitmap = color;
-// LINE 461:
-next_face:
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   0x004D85F8;
-	__asm        add    esp, 4;
-	__asm        mov    face, eax;
-// LINE 462:
-	__asm        jmp    _FOR_NEXT_34;
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+9], 8;
+			__asm        je     next_face;
+		_T21c:
+			__asm        mov    eax, fh;
+			__asm        cmp    dword ptr [eax+0x10], 0xB;
+			__asm        je     next_face;
+		// LINE 458:
+			fh->Bitmap = color;
+		// LINE 461:
+		next_face:
+			__asm        mov    eax, face;
+			__asm        push   eax;
+			__asm        call   0x004D85F8;
+			__asm        add    esp, 4;
+			__asm        mov    face, eax;
+	}
 // LINE 463:
 __RETURN:
 }
@@ -770,133 +708,124 @@ _T21:
 	fh = oh->FacePtr;
 // LINE 497:
 _FOR_4b:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_4b;
-_FOR_NEXT_4b:
-	i++;
-_FOR_COND_4b:
-	__asm        mov    eax, oh;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    __RETURN;
-// LINE 500:
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+8], 4;
-	__asm        jne    _T84;
+	for (i = 0x0; (oh->NFaces > i); i++) {
+		// LINE 500:
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+8], 4;
+			__asm        jne    _T84;
 
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+9], 0x80;
-	__asm        jne    _T84;
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+9], 0x80;
+			__asm        jne    _T84;
 
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+0xA], 1;
-	__asm        je     _T89;
-// LINE 502:
-_T84:
-	__asm        jmp    next_face;
-// LINE 505:
-_T89:
-	cptr = VRGetColorShade(fh->Attrib2);
-// LINE 506:
-	__asm        cmp    cptr, 0;
-	__asm        jne    _Taa;
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+0xA], 1;
+			__asm        je     _T89;
+		// LINE 502:
+		_T84:
+			__asm        jmp    next_face;
+		// LINE 505:
+		_T89:
+			cptr = VRGetColorShade(fh->Attrib2);
+		// LINE 506:
+			__asm        cmp    cptr, 0;
+			__asm        jne    _Taa;
 
-	__asm        jmp    next_face;
-// LINE 510:
-_Taa:
-	intensity = 0x0;
-// LINE 513:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, rotlitevect.y;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, rotlitevect.z;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, rotlitevect.x;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    diffuse, ebx;
-// LINE 515:
-	__asm        cmp    diffuse, 0;
-	__asm        jle    _T11a;
-// LINE 516:
-	__asm        mov    eax, S_intensity3;
-	__asm        push   eax;
-	__asm        mov    eax, diffuse;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    intensity, eax;
-// LINE 519:
-_T11a:
-	intensity += S_ambient;
-// LINE 521:
-	__asm        cmp    intensity, 0x10000;
-	__asm        jl     _T143;
-// LINE 523:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, cptr;
-	__asm        add    eax, [ecx];
-	__asm        dec    eax;
-	__asm        mov    color, eax;
-// LINE 525:
-	__asm        jmp    _T16b;
-// LINE 527:
-_T143:
-	__asm        mov    eax, intensity;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    level, eax;
-// LINE 528:
-	__asm        sar    level, 0x10;
-// LINE 529:
-	color = (cptr->base + level);
-// LINE 531:
-_T16b:
-	fh->Attrib2 = color;
-// LINE 534:
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+8], 1;
-	__asm        jne    _T18e;
+			__asm        jmp    next_face;
+		// LINE 510:
+		_Taa:
+			intensity = 0x0;
+		// LINE 513:
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x2C];
+			__asm        mov    eax, [eax+4];
+			__asm        push   eax;
+			__asm        mov    eax, rotlitevect.y;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        mov    ebx, eax;
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x2C];
+			__asm        mov    eax, [eax+8];
+			__asm        push   eax;
+			__asm        mov    eax, rotlitevect.z;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        add    ebx, eax;
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x2C];
+			__asm        mov    eax, [eax];
+			__asm        push   eax;
+			__asm        mov    eax, rotlitevect.x;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        add    ebx, eax;
+			__asm        mov    diffuse, ebx;
+		// LINE 515:
+			__asm        cmp    diffuse, 0;
+			__asm        jle    _T11a;
+		// LINE 516:
+			__asm        mov    eax, S_intensity3;
+			__asm        push   eax;
+			__asm        mov    eax, diffuse;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        mov    intensity, eax;
+		// LINE 519:
+		_T11a:
+			intensity += S_ambient;
+		// LINE 521:
+			__asm        cmp    intensity, 0x10000;
+			__asm        jl     _T143;
+		// LINE 523:
+			__asm        mov    eax, cptr;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, cptr;
+			__asm        add    eax, [ecx];
+			__asm        dec    eax;
+			__asm        mov    color, eax;
+		// LINE 525:
+			__asm        jmp    _T16b;
+		// LINE 527:
+		_T143:
+			__asm        mov    eax, intensity;
+			__asm        push   eax;
+			__asm        mov    eax, cptr;
+			__asm        mov    eax, [eax+4];
+			__asm        shl    eax, 0x10;
+			__asm        push   eax;
+			__asm        call   0x004D19BD;
+			__asm        add    esp, 8;
+			__asm        mov    level, eax;
+		// LINE 528:
+			__asm        sar    level, 0x10;
+		// LINE 529:
+			color = (cptr->base + level);
+		// LINE 531:
+		_T16b:
+			fh->Attrib2 = color;
+		// LINE 534:
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+8], 1;
+			__asm        jne    _T18e;
 
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+9], 8;
-	__asm        je     next_face;
-_T18e:
-	__asm        mov    eax, fh;
-	__asm        cmp    dword ptr [eax+0x10], 0xB;
-	__asm        je     next_face;
-// LINE 535:
-	fh->Bitmap = color;
-// LINE 539:
-next_face:
-	fh = fh->NextFace;
-// LINE 540:
-	__asm        jmp    _FOR_NEXT_4b;
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+9], 8;
+			__asm        je     next_face;
+		_T18e:
+			__asm        mov    eax, fh;
+			__asm        cmp    dword ptr [eax+0x10], 0xB;
+			__asm        je     next_face;
+		// LINE 535:
+			fh->Bitmap = color;
+		// LINE 539:
+		next_face:
+			fh = fh->NextFace;
+	}
 // LINE 541:
 __RETURN:
 }
@@ -926,44 +855,38 @@ _T21:
 	minv = 0x1e0000;
 // LINE 576:
 _FOR_42:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_42;
-_FOR_NEXT_42:
-	i++;
-_FOR_COND_42:
-	__asm        cmp    i, 4;
-	__asm        jge    _Ta4;
-// LINE 578:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    ecx, i;
-	__asm        mov    edx, minu;
-	__asm        cmp    [eax+ecx*8], edx;
-	__asm        jge    _T9f;
+	for (i = 0x0; (i < 0x4); i++) {
+		// LINE 578:
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x28];
+			__asm        mov    ecx, i;
+			__asm        mov    edx, minu;
+			__asm        cmp    [eax+ecx*8], edx;
+			__asm        jge    _T9f;
 
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    ecx, i;
-	__asm        mov    edx, minv;
-	__asm        cmp    [eax+ecx*8+4], edx;
-	__asm        jge    _T9f;
-// LINE 580:
-	stvert = i;
-// LINE 581:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    ecx, i;
-	__asm        mov    eax, [eax+ecx*8];
-	__asm        mov    minu, eax;
-// LINE 582:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    ecx, i;
-	__asm        mov    eax, [eax+ecx*8+4];
-	__asm        mov    minv, eax;
-// LINE 584:
-_T9f:
-	__asm        jmp    _FOR_NEXT_42;
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x28];
+			__asm        mov    ecx, i;
+			__asm        mov    edx, minv;
+			__asm        cmp    [eax+ecx*8+4], edx;
+			__asm        jge    _T9f;
+		// LINE 580:
+			stvert = i;
+		// LINE 581:
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x28];
+			__asm        mov    ecx, i;
+			__asm        mov    eax, [eax+ecx*8];
+			__asm        mov    minu, eax;
+		// LINE 582:
+			__asm        mov    eax, fh;
+			__asm        mov    eax, [eax+0x28];
+			__asm        mov    ecx, i;
+			__asm        mov    eax, [eax+ecx*8+4];
+			__asm        mov    minv, eax;
+		// LINE 584:
+		_T9f:
+	}
 // LINE 587:
 _Ta4:
 	__asm        mov    eax, stvert;
@@ -1054,173 +977,155 @@ void VRObjSetGouraudShade(/*packed*/ struct ObjectHdr *oh, /*packed*/ struct Poi
 	fh = oh->FacePtr;
 // LINE 622:
 _FOR_1e:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_1e;
-_FOR_NEXT_1e:
-	i++;
-_FOR_COND_1e:
-	__asm        mov    eax, oh;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    __RETURN;
-// LINE 624:
-	__asm        mov    eax, fh;
-	__asm        test   byte ptr [eax+9], 0x40;
-	__asm        jne    _T42;
+	for (i = 0x0; (oh->NFaces > i); i++) {
+		// LINE 624:
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+9], 0x40;
+			__asm        jne    _T42;
 
-	__asm        jmp    next_face;
-// LINE 625:
-_T42:
-	cptr = VRGetColorShade(fh->Attrib2);
-// LINE 626:
-	__asm        cmp    cptr, 0;
-	__asm        jne    _T63;
+			__asm        jmp    next_face;
+		// LINE 625:
+		_T42:
+			cptr = VRGetColorShade(fh->Attrib2);
+		// LINE 626:
+			__asm        cmp    cptr, 0;
+			__asm        jne    _T63;
 
-	__asm        jmp    next_face;
-// LINE 633:
-_T63:
-	faceverts = fh->PlyVerts;
-// LINE 634:
-_FOR_78:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_78;
-_FOR_NEXT_78:
-	j++;
-_FOR_COND_78:
-	__asm        mov    eax, fh;
-	__asm        mov    ecx, j;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jle    next_face;
-// LINE 641:
-	vertidx = (faceverts[j] >> 0x4);
-// LINE 642:
-	__asm        mov    eax, vertidx;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        shl    eax, 2;
-	__asm        add    eax, vnorms;
-	__asm        mov    vn, eax;
-// LINE 646:
-	intensity = 0x0;
-// LINE 649:
-	__asm        mov    eax, vn;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect1.y;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    ebx, eax;
-	__asm        mov    eax, vn;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect1.x;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    eax, vn;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect1.z;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    diffuse, ebx;
-// LINE 651:
-	__asm        cmp    diffuse, 0;
-	__asm        jle    _T115;
-// LINE 652:
-	__asm        mov    eax, S_intensity1;
-	__asm        push   eax;
-	__asm        mov    eax, diffuse;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    intensity, eax;
-// LINE 657:
-_T115:
-	__asm        mov    eax, vn;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect2.y;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    ebx, eax;
-	__asm        mov    eax, vn;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect2.x;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    eax, vn;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, G_litevect2.z;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    diffuse, ebx;
-// LINE 659:
-	__asm        cmp    diffuse, 0;
-	__asm        jle    _T17b;
-// LINE 660:
-	__asm        mov    eax, S_intensity2;
-	__asm        push   eax;
-	__asm        mov    eax, diffuse;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        add    intensity, eax;
-// LINE 663:
-_T17b:
-	intensity += S_ambient;
-// LINE 665:
-	__asm        cmp    intensity, 0x10000;
-	__asm        jl     _T1a4;
-// LINE 667:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, cptr;
-	__asm        add    eax, [ecx];
-	__asm        dec    eax;
-	__asm        mov    color, eax;
-// LINE 669:
-	__asm        jmp    _T1cc;
-// LINE 671:
-_T1a4:
-	__asm        mov    eax, intensity;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+4];
-	__asm        shl    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
-	__asm        mov    level, eax;
-// LINE 672:
-	__asm        sar    level, 0x10;
-// LINE 673:
-	color = (cptr->base + level);
-// LINE 677:
-_T1cc:
-	__asm        mov    eax, color;
-	__asm        shl    eax, 0x10;
-	__asm        mov    ecx, fh;
-	__asm        mov    ecx, [ecx+0x20];
-	__asm        mov    edx, j;
-	__asm        mov    [ecx+edx*8], eax;
-// LINE 678:
-	__asm        jmp    _FOR_NEXT_78;
-// LINE 681:
-next_face:
-	fh = fh->NextFace;
-// LINE 682:
-	__asm        jmp    _FOR_NEXT_1e;
+			__asm        jmp    next_face;
+		// LINE 633:
+		_T63:
+			faceverts = fh->PlyVerts;
+		// LINE 634:
+		_FOR_78:
+			for (j = 0x0; (fh->Nverts > j); j++) {
+				// LINE 641:
+					vertidx = (faceverts[j] >> 0x4);
+				// LINE 642:
+					__asm        mov    eax, vertidx;
+					__asm        lea    eax, [eax+eax*2];
+					__asm        shl    eax, 2;
+					__asm        add    eax, vnorms;
+					__asm        mov    vn, eax;
+				// LINE 646:
+					intensity = 0x0;
+				// LINE 649:
+					__asm        mov    eax, vn;
+					__asm        mov    eax, [eax+4];
+					__asm        push   eax;
+					__asm        mov    eax, G_litevect1.y;
+					__asm        push   eax;
+					__asm        call   0x004D19BD;
+					__asm        add    esp, 8;
+					__asm        mov    ebx, eax;
+					__asm        mov    eax, vn;
+					__asm        mov    eax, [eax];
+					__asm        push   eax;
+					__asm        mov    eax, G_litevect1.x;
+					__asm        push   eax;
+					__asm        call   0x004D19BD;
+					__asm        add    esp, 8;
+					__asm        add    ebx, eax;
+					__asm        mov    eax, vn;
+					__asm        mov    eax, [eax+8];
+					__asm        push   eax;
+					__asm        mov    eax, G_litevect1.z;
+					__asm        push   eax;
+					__asm        call   0x004D19BD;
+					__asm        add    esp, 8;
+					__asm        add    ebx, eax;
+					__asm        mov    diffuse, ebx;
+				// LINE 651:
+					__asm        cmp    diffuse, 0;
+					__asm        jle    _T115;
+				// LINE 652:
+					__asm        mov    eax, S_intensity1;
+					__asm        push   eax;
+					__asm        mov    eax, diffuse;
+					__asm        push   eax;
+					__asm        call   0x004D19BD;
+					__asm        add    esp, 8;
+					__asm        mov    intensity, eax;
+				// LINE 657:
+				_T115:
+					__asm        mov    eax, vn;
+					__asm        mov    eax, [eax+4];
+					__asm        push   eax;
+					__asm        mov    eax, G_litevect2.y;
+					__asm        push   eax;
+					__asm        call   0x004D19BD;
+					__asm        add    esp, 8;
+					__asm        mov    ebx, eax;
+					__asm        mov    eax, vn;
+					__asm        mov    eax, [eax];
+					__asm        push   eax;
+					__asm        mov    eax, G_litevect2.x;
+					__asm        push   eax;
+					__asm        call   0x004D19BD;
+					__asm        add    esp, 8;
+					__asm        add    ebx, eax;
+					__asm        mov    eax, vn;
+					__asm        mov    eax, [eax+8];
+					__asm        push   eax;
+					__asm        mov    eax, G_litevect2.z;
+					__asm        push   eax;
+					__asm        call   0x004D19BD;
+					__asm        add    esp, 8;
+					__asm        add    ebx, eax;
+					__asm        mov    diffuse, ebx;
+				// LINE 659:
+					__asm        cmp    diffuse, 0;
+					__asm        jle    _T17b;
+				// LINE 660:
+					__asm        mov    eax, S_intensity2;
+					__asm        push   eax;
+					__asm        mov    eax, diffuse;
+					__asm        push   eax;
+					__asm        call   0x004D19BD;
+					__asm        add    esp, 8;
+					__asm        add    intensity, eax;
+				// LINE 663:
+				_T17b:
+					intensity += S_ambient;
+				// LINE 665:
+					__asm        cmp    intensity, 0x10000;
+					__asm        jl     _T1a4;
+				// LINE 667:
+					__asm        mov    eax, cptr;
+					__asm        mov    eax, [eax+4];
+					__asm        mov    ecx, cptr;
+					__asm        add    eax, [ecx];
+					__asm        dec    eax;
+					__asm        mov    color, eax;
+				// LINE 669:
+					__asm        jmp    _T1cc;
+				// LINE 671:
+				_T1a4:
+					__asm        mov    eax, intensity;
+					__asm        push   eax;
+					__asm        mov    eax, cptr;
+					__asm        mov    eax, [eax+4];
+					__asm        shl    eax, 0x10;
+					__asm        push   eax;
+					__asm        call   0x004D19BD;
+					__asm        add    esp, 8;
+					__asm        mov    level, eax;
+				// LINE 672:
+					__asm        sar    level, 0x10;
+				// LINE 673:
+					color = (cptr->base + level);
+				// LINE 677:
+				_T1cc:
+					__asm        mov    eax, color;
+					__asm        shl    eax, 0x10;
+					__asm        mov    ecx, fh;
+					__asm        mov    ecx, [ecx+0x20];
+					__asm        mov    edx, j;
+					__asm        mov    [ecx+edx*8], eax;
+			}
+		// LINE 681:
+		next_face:
+			fh = fh->NextFace;
+	}
 // LINE 683:
 __RETURN:
 }
@@ -1240,25 +1145,16 @@ void VRObjSetTranslucent(int32_t obj, /*packed*/ struct VRResource *res, int32_t
 	fh = oh->FacePtr;
 // LINE 709:
 _FOR_37:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_37;
-_FOR_NEXT_37:
-	i++;
-_FOR_COND_37:
-	__asm        mov    eax, oh;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    __RETURN;
-// LINE 711:
-	fh->Attrib1 = 0x3;
-// LINE 712:
-	fh->Plotter = 0xb;
-// LINE 713:
-	fh->Bitmap = bhdr;
-// LINE 714:
-	fh = fh->NextFace;
-// LINE 715:
-	__asm        jmp    _FOR_NEXT_37;
+	for (i = 0x0; (oh->NFaces > i); i++) {
+		// LINE 711:
+			fh->Attrib1 = 0x3;
+		// LINE 712:
+			fh->Plotter = 0xb;
+		// LINE 713:
+			fh->Bitmap = bhdr;
+		// LINE 714:
+			fh = fh->NextFace;
+	}
 // LINE 716:
 __RETURN:
 }

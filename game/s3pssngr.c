@@ -104,39 +104,32 @@ void HeliPassengerInit(/*packed*/ struct tagHeliPassengerData *heliPassengerData
 	__asm        mov    [eax+0xC], ecx;
 // LINE 76:
 _FOR_96:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_96;
-_FOR_NEXT_96:
-	i++;
-_FOR_COND_96:
-	__asm        cmp    i, 0x10;
-	__asm        jge    __RETURN;
-// LINE 77:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, heliPassengerData;
-	__asm        mov    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
-// LINE 78:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, heliPassengerData;
-	__asm        mov    dword ptr [eax+ecx+0x20], 0;
-// LINE 79:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, heliPassengerData;
-	__asm        mov    dword ptr [eax+ecx+0x24], 0;
-// LINE 80:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, heliPassengerData;
-	__asm        mov    dword ptr [eax+ecx+0x28], 0xFFFFFFFF;
-// LINE 81:
-	__asm        jmp    _FOR_NEXT_96;
+	for (i = 0x0; (i < 0x10); i++) {
+		// LINE 77:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        mov    ecx, heliPassengerData;
+			__asm        mov    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
+		// LINE 78:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        mov    ecx, heliPassengerData;
+			__asm        mov    dword ptr [eax+ecx+0x20], 0;
+		// LINE 79:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        mov    ecx, heliPassengerData;
+			__asm        mov    dword ptr [eax+ecx+0x24], 0;
+		// LINE 80:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        mov    ecx, heliPassengerData;
+			__asm        mov    dword ptr [eax+ecx+0x28], 0xFFFFFFFF;
+	}
 // LINE 82:
 __RETURN:
 }
@@ -165,65 +158,59 @@ int32_t HeliPassengerAdd(/*packed*/ struct tagHeliPassengerData *heliPassengerDa
 	return 0x0;
 // LINE 114:
 _FOR_34:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_34;
-_FOR_NEXT_34:
-	i++;
-_FOR_COND_34:
-	__asm        cmp    i, 0x10;
-	__asm        jge    _Te2;
-// LINE 116:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, heliPassengerData;
-	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
-	__asm        jne    _Tdd;
-// LINE 117:
-	__asm        mov    eax, passenger;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 2;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, heliPassengerData;
-	__asm        mov    [ecx+edx+0x1C], eax;
-// LINE 118:
-	__asm        mov    eax, passenger;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 2;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, heliPassengerData;
-	__asm        mov    [ecx+edx+0x20], eax;
-// LINE 119:
-	__asm        mov    eax, passenger;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 2;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, heliPassengerData;
-	__asm        mov    [ecx+edx+0x24], eax;
-// LINE 120:
-	__asm        mov    eax, passenger;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 2;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, heliPassengerData;
-	__asm        mov    [ecx+edx+0x28], eax;
-// LINE 121:
-	heliPassengerData->lSeatsUsed++;
-// LINE 122:
-	heliPassengerData->lPassengerCount++;
-// LINE 125:
-	HeliPassengerFitToSeats(heliPassengerData);
-// LINE 126:
-	HeliPassengerSetChanged(heliPassengerData);
-// LINE 130:
-	return 0x1;
-// LINE 132:
-_Tdd:
-	__asm        jmp    _FOR_NEXT_34;
+	for (i = 0x0; (i < 0x10); i++) {
+		// LINE 116:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        mov    ecx, heliPassengerData;
+			__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
+			__asm        jne    _Tdd;
+		// LINE 117:
+			__asm        mov    eax, passenger;
+			__asm        mov    eax, [eax];
+			__asm        mov    ecx, i;
+			__asm        shl    ecx, 2;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        mov    edx, heliPassengerData;
+			__asm        mov    [ecx+edx+0x1C], eax;
+		// LINE 118:
+			__asm        mov    eax, passenger;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        shl    ecx, 2;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        mov    edx, heliPassengerData;
+			__asm        mov    [ecx+edx+0x20], eax;
+		// LINE 119:
+			__asm        mov    eax, passenger;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    ecx, i;
+			__asm        shl    ecx, 2;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        mov    edx, heliPassengerData;
+			__asm        mov    [ecx+edx+0x24], eax;
+		// LINE 120:
+			__asm        mov    eax, passenger;
+			__asm        mov    eax, [eax+0xC];
+			__asm        mov    ecx, i;
+			__asm        shl    ecx, 2;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        mov    edx, heliPassengerData;
+			__asm        mov    [ecx+edx+0x28], eax;
+		// LINE 121:
+			heliPassengerData->lSeatsUsed++;
+		// LINE 122:
+			heliPassengerData->lPassengerCount++;
+		// LINE 125:
+			HeliPassengerFitToSeats(heliPassengerData);
+		// LINE 126:
+			HeliPassengerSetChanged(heliPassengerData);
+		// LINE 130:
+			return 0x1;
+		// LINE 132:
+		_Tdd:
+	}
 // LINE 135:
 _Te2:
 	return 0x0;
@@ -236,26 +223,20 @@ int32_t HeliPassengerGetIndexInHeli(/*packed*/ struct tagHeliPassengerData *heli
 
 // LINE 147:
 _FOR_15:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_15;
-_FOR_NEXT_15:
-	i++;
-_FOR_COND_15:
-	__asm        cmp    i, 0x10;
-	__asm        jge    _T48;
-// LINE 148:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, heliPassengerData;
-	__asm        mov    edx, id;
-	__asm        cmp    [eax+ecx+0x28], edx;
-	__asm        jne    _T43;
-// LINE 149:
-	return i;
-// LINE 151:
-_T43:
-	__asm        jmp    _FOR_NEXT_15;
+	for (i = 0x0; (i < 0x10); i++) {
+		// LINE 148:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        mov    ecx, heliPassengerData;
+			__asm        mov    edx, id;
+			__asm        cmp    [eax+ecx+0x28], edx;
+			__asm        jne    _T43;
+		// LINE 149:
+			return i;
+		// LINE 151:
+		_T43:
+	}
 // LINE 152:
 _T48:
 	return 0xffffffff;
@@ -356,48 +337,37 @@ void HeliPassengerFitToSeats(/*packed*/ struct tagHeliPassengerData *heliPasseng
 
 // LINE 220:
 _FOR_15:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_15;
-_FOR_NEXT_15:
-	i++;
-_FOR_COND_15:
-	__asm        cmp    i, 0x10;
-	__asm        jge    _FOR_3e;
-// LINE 221:
-	__asm        mov    eax, i;
-	__asm        mov    dword ptr [ebp+eax*4-0x40], 0;
-	__asm        jmp    _FOR_NEXT_15;
+	for (i = 0x0; (i < 0x10); i++) {
+		// LINE 221:
+			__asm        mov    eax, i;
+			__asm        mov    dword ptr [ebp+eax*4-0x40], 0;
+			__asm        jmp    _FOR_NEXT_15;
+	}
 // LINE 223:
 _FOR_3e:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_3e;
-_FOR_NEXT_3e:
-	i++;
-_FOR_COND_3e:
-	__asm        cmp    i, 0x10;
-	__asm        jge    __RETURN;
-// LINE 224:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, heliPassengerData;
-	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
-	__asm        je     _T9f;
-// LINE 225:
-	nSeat = FindFreeSeatForPassenger(bSeats[0], heliPassengerData->lRowWidth, heliPassengerData->lSeatsTotal, 0x1);
-// LINE 226:
-	__asm        mov    eax, nSeat;
-	__asm        mov    dword ptr [ebp+eax*4-0x40], 1;
-// LINE 227:
-	__asm        mov    eax, nSeat;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 2;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, heliPassengerData;
-	__asm        mov    [ecx+edx+0x2C], eax;
-// LINE 229:
-_T9f:
-	__asm        jmp    _FOR_NEXT_3e;
+	for (i = 0x0; (i < 0x10); i++) {
+		// LINE 224:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        mov    ecx, heliPassengerData;
+			__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
+			__asm        je     _T9f;
+		// LINE 225:
+			nSeat = FindFreeSeatForPassenger(bSeats[0], heliPassengerData->lRowWidth, heliPassengerData->lSeatsTotal, 0x1);
+		// LINE 226:
+			__asm        mov    eax, nSeat;
+			__asm        mov    dword ptr [ebp+eax*4-0x40], 1;
+		// LINE 227:
+			__asm        mov    eax, nSeat;
+			__asm        mov    ecx, i;
+			__asm        shl    ecx, 2;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        mov    edx, heliPassengerData;
+			__asm        mov    [ecx+edx+0x2C], eax;
+		// LINE 229:
+		_T9f:
+	}
 // LINE 230:
 __RETURN:
 }
@@ -408,24 +378,17 @@ int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTota
 
 // LINE 245:
 _FOR_15:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_15;
-_FOR_NEXT_15:
-	j++;
-_FOR_COND_15:
-	__asm        mov    eax, nSeatsTotal;
-	__asm        cmp    j, eax;
-	__asm        jge    _T41;
-// LINE 246:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, bSeats;
-	__asm        cmp    dword ptr [ecx+eax*4], 0;
-	__asm        jne    _T3c;
-// LINE 247:
-	return j;
-// LINE 248:
-_T3c:
-	__asm        jmp    _FOR_NEXT_15;
+	for (j = 0x0; (j < nSeatsTotal); j++) {
+		// LINE 246:
+			__asm        mov    eax, j;
+			__asm        mov    ecx, bSeats;
+			__asm        cmp    dword ptr [ecx+eax*4], 0;
+			__asm        jne    _T3c;
+		// LINE 247:
+			return j;
+		// LINE 248:
+		_T3c:
+	}
 // LINE 249:
 _T41:
 	return 0xffffffff;

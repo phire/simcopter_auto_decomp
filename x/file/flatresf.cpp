@@ -1495,46 +1495,45 @@ void ResMap::~ResMap() {
 	last = (this-><ResMap+0x14:4> + this-><ResMap+0x0c:4>);
 // LINE 732:
 __WHILE_2a:
-	__asm        mov    eax, srch;
-	__asm        cmp    last, eax;
-	__asm        jbe    _T93;
-// LINE 734:
-	__asm        mov    eax, srch;
-	__asm        cmp    dword ptr [eax+8], 0;
-	__asm        je     _T8a;
-// LINE 736:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::HGetState;
-	__asm        add    esp, 4;
-	__asm        mov    hState, al;
-// LINE 737:
-	__asm        xor    eax, eax;
-	__asm        mov    al, hState;
-	__asm        test   al, 0x80;
-	__asm        je     _T71;
-// LINE 738:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::HUnlock;
-	__asm        add    esp, 4;
-// LINE 739:
-_T71:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::HFree;
-	__asm        add    esp, 4;
-// LINE 740:
-	__asm        mov    eax, srch;
-	__asm        mov    dword ptr [eax+8], 0;
-// LINE 742:
-_T8a:
-	srch += 0xc;
-// LINE 743:
-	__asm        jmp    __WHILE_2a;
+	while ((last > srch)) {
+		// LINE 734:
+			__asm        mov    eax, srch;
+			__asm        cmp    dword ptr [eax+8], 0;
+			__asm        je     _T8a;
+		// LINE 736:
+			__asm        mov    eax, srch;
+			__asm        mov    eax, [eax+8];
+			__asm        push   eax;
+			__asm        call   Memory::HGetState;
+			__asm        add    esp, 4;
+			__asm        mov    hState, al;
+		// LINE 737:
+			__asm        xor    eax, eax;
+			__asm        mov    al, hState;
+			__asm        test   al, 0x80;
+			__asm        je     _T71;
+		// LINE 738:
+			__asm        mov    eax, srch;
+			__asm        mov    eax, [eax+8];
+			__asm        push   eax;
+			__asm        call   Memory::HUnlock;
+			__asm        add    esp, 4;
+		// LINE 739:
+		_T71:
+			__asm        mov    eax, srch;
+			__asm        mov    eax, [eax+8];
+			__asm        push   eax;
+			__asm        call   Memory::HFree;
+			__asm        add    esp, 4;
+		// LINE 740:
+			__asm        mov    eax, srch;
+			__asm        mov    dword ptr [eax+8], 0;
+		// LINE 742:
+		_T8a:
+			srch += 0xc;
+		// LINE 743:
+			__asm        jmp    __WHILE_2a;
+	}
 // LINE 745:
 _T93:
 	Memory::HUnlock(this-><ResMap+0x08:4>);
@@ -1555,30 +1554,24 @@ long ResMap::Get(/*unpacked*/ class FlatResFile *fromFile) {
 	// Function registers exception cleanup function at 0x00553db3
 // LINE 755:
 _FOR_2b:
-	srch = ResMap::sMaps;
-	__asm        jmp    _FOR_COND_2b;
-_FOR_NEXT_2b:
-	srch = srch-><ResMap+0x00:4>;
-_FOR_COND_2b:
-	__asm        cmp    srch, 0;
-	__asm        je     _T76;
-// LINE 756:
-	__asm        jmp    _T42;
-_T42:
-	__asm        mov    eax, srch;
-	__asm        movsx  eax, word ptr [eax+4];
-	__asm        mov    ecx, fromFile;
-	__asm        cmp    eax, [ecx+0x108];
-	__asm        jne    _T71;
-// LINE 758:
-	srch-><ResMap+0x1c:4>++;
-// LINE 759:
-	fromFile->fMap = srch;
-// LINE 760:
-	return 0x0;
-// LINE 763:
-_T71:
-	__asm        jmp    _FOR_NEXT_2b;
+	for (srch = ResMap::sMaps; (srch != 0x0); srch = srch-><ResMap+0x00:4>) {
+		// LINE 756:
+			__asm        jmp    _T42;
+		_T42:
+			__asm        mov    eax, srch;
+			__asm        movsx  eax, word ptr [eax+4];
+			__asm        mov    ecx, fromFile;
+			__asm        cmp    eax, [ecx+0x108];
+			__asm        jne    _T71;
+		// LINE 758:
+			srch-><ResMap+0x1c:4>++;
+		// LINE 759:
+			fromFile->fMap = srch;
+		// LINE 760:
+			return 0x0;
+		// LINE 763:
+		_T71:
+	}
 // LINE 768:
 _T76:
 	__asm        lea    eax, dataLoc;
@@ -1678,25 +1671,18 @@ _T35:
 // Block start:
 	/*bp-0x4*/   /*unpacked*/ class ResMap **rmv;
 _FOR_54:
-	rmv = 0x5bbedc;
-	__asm        jmp    _FOR_COND_54;
-_FOR_NEXT_54:
-	rmv = rmv->;
-_FOR_COND_54:
-	__asm        mov    eax, rmv;
-	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     _T8c;
-// LINE 792:
-	__asm        mov    eax, rmv;
-	__asm        mov    ecx, this;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T87;
+	for (rmv = 0x5bbedc; (rmv-> != 0x0); rmv = rmv->) {
+		// LINE 792:
+			__asm        mov    eax, rmv;
+			__asm        mov    ecx, this;
+			__asm        cmp    [eax], ecx;
+			__asm        jne    _T87;
 
-	rmv-> = rmv->-><ResMap+0x00:4>;
-	__asm        jmp    _T8c;
-// LINE 794:
-_T87:
-	__asm        jmp    _FOR_NEXT_54;
+			rmv-> = rmv->-><ResMap+0x00:4>;
+			__asm        jmp    _T8c;
+		// LINE 794:
+		_T87:
+	}
 _T8c:
 	__asm        mov    eax, this;
 	__asm        mov    [ebp-0xC], eax;
@@ -1729,16 +1715,11 @@ short ResMap::CheckForLeaks() {
 	total = 0x0;
 // LINE 804:
 _FOR_1c:
-	srch = ResMap::sMaps;
-	__asm        jmp    _FOR_COND_1c;
-_FOR_NEXT_1c:
-	srch = srch-><ResMap+0x00:4>;
-_FOR_COND_1c:
-	__asm        cmp    srch, 0;
-	__asm        je     _T37;
-// LINE 805:
-	total++;
-	__asm        jmp    _FOR_NEXT_1c;
+	for (srch = ResMap::sMaps; (srch != 0x0); srch = srch-><ResMap+0x00:4>) {
+		// LINE 805:
+			total++;
+			__asm        jmp    _FOR_NEXT_1c;
+	}
 // LINE 806:
 _T37:
 	return total;
@@ -2156,22 +2137,21 @@ struct ResMap::Entry * ResMap::FindEntry(void * __ptr32 res) {
 	last = (this-><ResMap+0x14:4> + this-><ResMap+0x0c:4>);
 // LINE 938:
 __WHILE_31:
-	__asm        mov    eax, srch;
-	__asm        cmp    last, eax;
-	__asm        jbe    _T60;
-// LINE 940:
-	__asm        mov    eax, srch;
-	__asm        mov    ecx, res;
-	__asm        cmp    [eax+8], ecx;
-	__asm        jne    _T57;
+	while ((last > srch)) {
+		// LINE 940:
+			__asm        mov    eax, srch;
+			__asm        mov    ecx, res;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jne    _T57;
 
-	found = srch;
-	__asm        jmp    _T60;
-// LINE 941:
-_T57:
-	srch += 0xc;
-// LINE 942:
-	__asm        jmp    __WHILE_31;
+			found = srch;
+			__asm        jmp    _T60;
+		// LINE 941:
+		_T57:
+			srch += 0xc;
+		// LINE 942:
+			__asm        jmp    __WHILE_31;
+	}
 // LINE 943:
 _T60:
 	return found;

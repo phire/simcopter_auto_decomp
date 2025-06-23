@@ -217,6 +217,12 @@ _T17d:
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    __WHILE_100;
+_T17d:
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    eax, [eax];
+	__asm        add    eax, 4;
+	__asm        mov    [ebp-0x24], eax;
+	__asm        jmp    __WHILE_100;
 _T18d:
 	__asm        jmp    _T192;
 _T192:

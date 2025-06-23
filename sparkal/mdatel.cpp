@@ -877,34 +877,28 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 
 // LINE 246:
 _FOR_1c:
-	i = 0x1;
-	__asm        jmp    _FOR_COND_1c;
-_FOR_NEXT_1c:
-	i++;
-_FOR_COND_1c:
-	__asm        cmp    i, 7;
-	__asm        jg     _T62;
-// LINE 247:
-	__asm        mov    eax, dayName;
-	__asm        push   eax;
-	__asm        mov    eax, nLanguageToUse;
-	__asm        push   eax;
-	__asm        lea    eax, szCurrentDay[0];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   MDateLocalized::DayNameLocalized;
-	__asm        add    esp, 0xC;
-	__asm        push   eax;
-	__asm        call   strcmp;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T5d;
-// LINE 248:
-	return i;
-// LINE 249:
-_T5d:
-	__asm        jmp    _FOR_NEXT_1c;
+	for (i = 0x1; (i <= 0x7); i++) {
+		// LINE 247:
+			__asm        mov    eax, dayName;
+			__asm        push   eax;
+			__asm        mov    eax, nLanguageToUse;
+			__asm        push   eax;
+			__asm        lea    eax, szCurrentDay[0];
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        push   eax;
+			__asm        call   MDateLocalized::DayNameLocalized;
+			__asm        add    esp, 0xC;
+			__asm        push   eax;
+			__asm        call   strcmp;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T5d;
+		// LINE 248:
+			return i;
+		// LINE 249:
+		_T5d:
+	}
 // LINE 250:
 _T62:
 	return 0x0;
@@ -918,34 +912,28 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 
 // LINE 267:
 _FOR_1c:
-	i = 0x1;
-	__asm        jmp    _FOR_COND_1c;
-_FOR_NEXT_1c:
-	i++;
-_FOR_COND_1c:
-	__asm        cmp    i, 0x1F;
-	__asm        jg     _T62;
-// LINE 268:
-	__asm        mov    eax, monthName;
-	__asm        push   eax;
-	__asm        mov    eax, nLanguageToUse;
-	__asm        push   eax;
-	__asm        lea    eax, szCurrentMonth[0];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   MDateLocalized::MonthNameLocalized;
-	__asm        add    esp, 0xC;
-	__asm        push   eax;
-	__asm        call   strcmp;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T5d;
-// LINE 269:
-	return i;
-// LINE 270:
-_T5d:
-	__asm        jmp    _FOR_NEXT_1c;
+	for (i = 0x1; (i <= 0x1f); i++) {
+		// LINE 268:
+			__asm        mov    eax, monthName;
+			__asm        push   eax;
+			__asm        mov    eax, nLanguageToUse;
+			__asm        push   eax;
+			__asm        lea    eax, szCurrentMonth[0];
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        push   eax;
+			__asm        call   MDateLocalized::MonthNameLocalized;
+			__asm        add    esp, 0xC;
+			__asm        push   eax;
+			__asm        call   strcmp;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T5d;
+		// LINE 269:
+			return i;
+		// LINE 270:
+		_T5d:
+	}
 // LINE 271:
 _T62:
 	return 0x0;

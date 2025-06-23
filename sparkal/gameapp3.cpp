@@ -739,72 +739,76 @@ _T45:
 	__asm        jmp    _LOOP_4a;
 // LINE 291:
 _LOOP_4a:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4338];
-	__asm        mov    [ebp-0x14], eax;
-	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    _T61;
-_T61:
-	__asm        jmp    _T66;
-_T66:
-	__asm        mov    eax, i.node;
-	__asm        cmp    [ebp-0xC], eax;
-	__asm        jne    _T7c;
+	for (;;) {
+		// LINE 291:
+		_LOOP_4a:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0x4338];
+			__asm        mov    [ebp-0x14], eax;
+			__asm        mov    eax, [ebp-0x14];
+			__asm        mov    [ebp-0xC], eax;
+			__asm        jmp    _T61;
+		_T61:
+			__asm        jmp    _T66;
+		_T66:
+			__asm        mov    eax, i.node;
+			__asm        cmp    [ebp-0xC], eax;
+			__asm        jne    _T7c;
 
-	__asm        jmp    _T90;
+			__asm        jmp    _T90;
 
-	__asm        jmp    _T7c;
-_T7c:
-	__asm        jmp    _T8b;
+			__asm        jmp    _T7c;
+		_T7c:
+			__asm        jmp    _T8b;
 
-	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        jne    _T90;
-_T8b:
-	__asm        jmp    _T95;
-_T90:
-	__asm        jmp    _T107;
-_T95:
-	__asm        jmp    _Ta4;
+			__asm        cmp    dword ptr [ebp-0x18], 0;
+			__asm        jne    _T90;
+		_T8b:
+			__asm        jmp    _T95;
+		_T90:
+			__asm        jmp    _T107;
+		_T95:
+			__asm        jmp    _Ta4;
 
-	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     _T107;
-// LINE 292:
-_Ta4:
-	__asm        jmp    _Ta9;
-_Ta9:
-	nCurrentMode = i.node->data.nModeID;
-// LINE 293:
-	__asm        mov    eax, nCurrentMode;
-	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    _Td5;
-// LINE 295:
-_Tbd:
-	(this + 0xa0)->GameModePlayData::CreateIndependentSurfaces();
-// LINE 296:
-	__asm        jmp    _Te4;
-// LINE 297:
-	__asm        jmp    _Te4;
-_Td5:
-	__asm        cmp    dword ptr [ebp-0x2C], 6;
-	__asm        je     _Tbd;
+			__asm        cmp    dword ptr [ebp-0x1C], 0;
+			__asm        je     _T107;
+		// LINE 292:
+		_Ta4:
+			__asm        jmp    _Ta9;
+		_Ta9:
+			nCurrentMode = i.node->data.nModeID;
+		// LINE 293:
+			__asm        mov    eax, nCurrentMode;
+			__asm        mov    [ebp-0x2C], eax;
+			__asm        jmp    _Td5;
+		// LINE 295:
+		_Tbd:
+			(this + 0xa0)->GameModePlayData::CreateIndependentSurfaces();
+		// LINE 296:
+			__asm        jmp    _Te4;
+		// LINE 297:
+			__asm        jmp    _Te4;
+		_Td5:
+			__asm        cmp    dword ptr [ebp-0x2C], 6;
+			__asm        je     _Tbd;
 
-	__asm        jmp    _Te4;
-// LINE 298:
-_Te4:
-	__asm        mov    eax, i.node;
-	__asm        mov    [ebp-0x24], eax;
-	__asm        mov    eax, i.node;
-	__asm        mov    eax, [eax];
-	__asm        mov    i.node, eax;
-	__asm        jmp    _Tf7;
-_Tf7:
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    _T102;
-// LINE 299:
-_T102:
-	__asm        jmp    _LOOP_4a;
+			__asm        jmp    _Te4;
+		// LINE 298:
+		_Te4:
+			__asm        mov    eax, i.node;
+			__asm        mov    [ebp-0x24], eax;
+			__asm        mov    eax, i.node;
+			__asm        mov    eax, [eax];
+			__asm        mov    i.node, eax;
+			__asm        jmp    _Tf7;
+		_Tf7:
+			__asm        mov    eax, [ebp-0x24];
+			__asm        mov    [ebp-0x10], eax;
+			__asm        jmp    _T102;
+		// LINE 299:
+		_T102:
+			__asm        jmp    _LOOP_4a;
+	}
 // LINE 300:
 _T107:
 	return 0x1;
@@ -856,72 +860,76 @@ _T84:
 	__asm        jmp    _LOOP_89;
 // LINE 334:
 _LOOP_89:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4338];
-	__asm        mov    [ebp-0x1C], eax;
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    _Ta0;
-_Ta0:
-	__asm        jmp    _Ta5;
-_Ta5:
-	__asm        mov    eax, [ebp-0x14];
-	__asm        cmp    i.node, eax;
-	__asm        jne    _Tbb;
+	for (;;) {
+		// LINE 334:
+		_LOOP_89:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0x4338];
+			__asm        mov    [ebp-0x1C], eax;
+			__asm        mov    eax, [ebp-0x1C];
+			__asm        mov    [ebp-0x14], eax;
+			__asm        jmp    _Ta0;
+		_Ta0:
+			__asm        jmp    _Ta5;
+		_Ta5:
+			__asm        mov    eax, [ebp-0x14];
+			__asm        cmp    i.node, eax;
+			__asm        jne    _Tbb;
 
-	__asm        jmp    _Tcf;
+			__asm        jmp    _Tcf;
 
-	__asm        jmp    _Tbb;
-_Tbb:
-	__asm        jmp    _Tca;
+			__asm        jmp    _Tbb;
+		_Tbb:
+			__asm        jmp    _Tca;
 
-	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jne    _Tcf;
-_Tca:
-	__asm        jmp    _Td4;
-_Tcf:
-	__asm        jmp    _T146;
-_Td4:
-	__asm        jmp    _Te3;
+			__asm        cmp    dword ptr [ebp-0x20], 0;
+			__asm        jne    _Tcf;
+		_Tca:
+			__asm        jmp    _Td4;
+		_Tcf:
+			__asm        jmp    _T146;
+		_Td4:
+			__asm        jmp    _Te3;
 
-	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     _T146;
-// LINE 335:
-_Te3:
-	__asm        jmp    _Te8;
-_Te8:
-	nCurrentMode = i.node->data.nModeID;
-// LINE 336:
-	__asm        mov    eax, nCurrentMode;
-	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    _T114;
-// LINE 338:
-_Tfc:
-	(this + 0xa0)->GameModePlayData::DestroyIndependentSurfaces();
-// LINE 339:
-	__asm        jmp    _T123;
-// LINE 340:
-	__asm        jmp    _T123;
-_T114:
-	__asm        cmp    dword ptr [ebp-0x34], 6;
-	__asm        je     _Tfc;
+			__asm        cmp    dword ptr [ebp-0x24], 0;
+			__asm        je     _T146;
+		// LINE 335:
+		_Te3:
+			__asm        jmp    _Te8;
+		_Te8:
+			nCurrentMode = i.node->data.nModeID;
+		// LINE 336:
+			__asm        mov    eax, nCurrentMode;
+			__asm        mov    [ebp-0x34], eax;
+			__asm        jmp    _T114;
+		// LINE 338:
+		_Tfc:
+			(this + 0xa0)->GameModePlayData::DestroyIndependentSurfaces();
+		// LINE 339:
+			__asm        jmp    _T123;
+		// LINE 340:
+			__asm        jmp    _T123;
+		_T114:
+			__asm        cmp    dword ptr [ebp-0x34], 6;
+			__asm        je     _Tfc;
 
-	__asm        jmp    _T123;
-// LINE 341:
-_T123:
-	__asm        mov    eax, i.node;
-	__asm        mov    [ebp-0x2C], eax;
-	__asm        mov    eax, i.node;
-	__asm        mov    eax, [eax];
-	__asm        mov    i.node, eax;
-	__asm        jmp    _T136;
-_T136:
-	__asm        mov    eax, [ebp-0x2C];
-	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    _T141;
-// LINE 342:
-_T141:
-	__asm        jmp    _LOOP_89;
+			__asm        jmp    _T123;
+		// LINE 341:
+		_T123:
+			__asm        mov    eax, i.node;
+			__asm        mov    [ebp-0x2C], eax;
+			__asm        mov    eax, i.node;
+			__asm        mov    eax, [eax];
+			__asm        mov    i.node, eax;
+			__asm        jmp    _T136;
+		_T136:
+			__asm        mov    eax, [ebp-0x2C];
+			__asm        mov    [ebp-0x18], eax;
+			__asm        jmp    _T141;
+		// LINE 342:
+		_T141:
+			__asm        jmp    _LOOP_89;
+	}
 // LINE 343:
 _T146:
 	return 0x1;

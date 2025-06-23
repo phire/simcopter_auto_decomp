@@ -340,34 +340,34 @@ _Tda:
 	power = 0x1;
 // LINE 142:
 __WHILE_e9:
-	__asm        cmp    num, 0;
-	__asm        je     _T133;
-// LINE 144:
-// Block start:
-	/*bp-0x10*/  long digit;
-	__asm        mov    ecx, 0xA;
-	__asm        mov    eax, tenPower;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    tenPower, eax;
-// LINE 145:
-	__asm        mov    eax, num;
-	__asm        sub    edx, edx;
-	__asm        div    tenPower;
-	__asm        mov    digit, eax;
-// LINE 146:
-	__asm        mov    eax, digit;
-	__asm        add    eax, 0x30;
-	__asm        mov    ecx, power;
-	__asm        mov    edx, str;
-	__asm        mov    [ecx+edx], al;
-// LINE 147:
-	num = (num - (tenPower * digit));
-// LINE 148:
-	power++;
-// LINE 149:
-// Block end:
-	__asm        jmp    __WHILE_e9;
+	while ((num != 0x0)) {
+		// LINE 144:
+		// Block start:
+			/*bp-0x10*/  long digit;
+			__asm        mov    ecx, 0xA;
+			__asm        mov    eax, tenPower;
+			__asm        sub    edx, edx;
+			__asm        div    ecx;
+			__asm        mov    tenPower, eax;
+		// LINE 145:
+			__asm        mov    eax, num;
+			__asm        sub    edx, edx;
+			__asm        div    tenPower;
+			__asm        mov    digit, eax;
+		// LINE 146:
+			__asm        mov    eax, digit;
+			__asm        add    eax, 0x30;
+			__asm        mov    ecx, power;
+			__asm        mov    edx, str;
+			__asm        mov    [ecx+edx], al;
+		// LINE 147:
+			num = (num - (tenPower * digit));
+		// LINE 148:
+			power++;
+		// LINE 149:
+		// Block end:
+			__asm        jmp    __WHILE_e9;
+	}
 // LINE 150:
 _T133:
 	return;
@@ -528,48 +528,48 @@ _T7f:
 	power = 0x1;
 // LINE 197:
 __WHILE_8e:
-	__asm        cmp    num, 0;
-	__asm        je     _Tec;
-// LINE 199:
-// Block start:
-	/*bp-0xc*/   long digit;
-	__asm        mov    eax, num;
-	__asm        sub    edx, edx;
-	__asm        div    sixteenPower;
-	__asm        mov    digit, eax;
-// LINE 200:
-	__asm        shr    sixteenPower, 4;
-// LINE 201:
-	__asm        cmp    digit, 9;
-	__asm        jle    _Tc5;
-// LINE 202:
-	__asm        mov    eax, digit;
-	__asm        add    eax, 0x37;
-	__asm        mov    ecx, power;
-	__asm        mov    edx, str;
-	__asm        mov    [ecx+edx], al;
-// LINE 203:
-	__asm        jmp    _Td4;
-// LINE 204:
-_Tc5:
-	__asm        mov    eax, digit;
-	__asm        add    eax, 0x30;
-	__asm        mov    ecx, power;
-	__asm        mov    edx, str;
-	__asm        mov    [ecx+edx], al;
-// LINE 205:
-_Td4:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, digit;
-	__asm        imul   ecx, sixteenPower;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    num, eax;
-// LINE 206:
-	power++;
-// LINE 207:
-// Block end:
-	__asm        jmp    __WHILE_8e;
+	while ((num != 0x0)) {
+		// LINE 199:
+		// Block start:
+			/*bp-0xc*/   long digit;
+			__asm        mov    eax, num;
+			__asm        sub    edx, edx;
+			__asm        div    sixteenPower;
+			__asm        mov    digit, eax;
+		// LINE 200:
+			__asm        shr    sixteenPower, 4;
+		// LINE 201:
+			__asm        cmp    digit, 9;
+			__asm        jle    _Tc5;
+		// LINE 202:
+			__asm        mov    eax, digit;
+			__asm        add    eax, 0x37;
+			__asm        mov    ecx, power;
+			__asm        mov    edx, str;
+			__asm        mov    [ecx+edx], al;
+		// LINE 203:
+			__asm        jmp    _Td4;
+		// LINE 204:
+		_Tc5:
+			__asm        mov    eax, digit;
+			__asm        add    eax, 0x30;
+			__asm        mov    ecx, power;
+			__asm        mov    edx, str;
+			__asm        mov    [ecx+edx], al;
+		// LINE 205:
+		_Td4:
+			__asm        xor    eax, eax;
+			__asm        mov    ecx, digit;
+			__asm        imul   ecx, sixteenPower;
+			__asm        sub    eax, ecx;
+			__asm        neg    eax;
+			__asm        sub    num, eax;
+		// LINE 206:
+			power++;
+		// LINE 207:
+		// Block end:
+			__asm        jmp    __WHILE_8e;
+	}
 // LINE 208:
 _Tec:
 	return;
@@ -740,6 +740,16 @@ __WHILE_0f:
 	__asm        mov    al, [ebp-4];
 	__asm        cmp    eax, 0xFF;
 	__asm        je     _T54;
+
+	__asm        mov    eax, cstr;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, pstr;
+	__asm        xor    edx, edx;
+	__asm        mov    dl, [ecx];
+	__asm        mov    ecx, pstr;
+	__asm        mov    [edx+ecx], al;
+	__asm        inc    cstr;
+	__asm        jmp    __WHILE_0f;
 
 	__asm        mov    eax, cstr;
 	__asm        mov    al, [eax];
@@ -970,79 +980,71 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 	__asm        mov    numChars, ax;
 // LINE 913:
 _FOR_49:
-	count = 0x1;
-	__asm        jmp    _FOR_COND_49;
-_FOR_NEXT_49:
-	count++;
-_FOR_COND_49:
-	__asm        movsx  eax, numChars;
-	__asm        movsx  ecx, count;
-	__asm        cmp    eax, ecx;
-	__asm        jl     _T102;
-// LINE 915:
-	__asm        movsx  eax, count;
-	__asm        mov    ecx, first;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    char1, al;
-// LINE 916:
-	__asm        movsx  eax, count;
-	__asm        mov    ecx, second;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    char2, al;
-// LINE 917:
-	__asm        xor    eax, eax;
-	__asm        mov    al, char1;
-	__asm        cmp    eax, 0x61;
-	__asm        jl     _T9e;
+	for (count = 0x1; (reinterpret_cast<int16_t>(numChars) >= reinterpret_cast<int16_t>(count)); count++) {
+		// LINE 915:
+			__asm        movsx  eax, count;
+			__asm        mov    ecx, first;
+			__asm        mov    al, [eax+ecx];
+			__asm        mov    char1, al;
+		// LINE 916:
+			__asm        movsx  eax, count;
+			__asm        mov    ecx, second;
+			__asm        mov    al, [eax+ecx];
+			__asm        mov    char2, al;
+		// LINE 917:
+			__asm        xor    eax, eax;
+			__asm        mov    al, char1;
+			__asm        cmp    eax, 0x61;
+			__asm        jl     _T9e;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, char1;
-	__asm        cmp    eax, 0x7A;
-	__asm        jg     _T9e;
+			__asm        xor    eax, eax;
+			__asm        mov    al, char1;
+			__asm        cmp    eax, 0x7A;
+			__asm        jg     _T9e;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, char1;
-	__asm        sub    eax, 0x20;
-	__asm        mov    char1, al;
-// LINE 918:
-_T9e:
-	__asm        xor    eax, eax;
-	__asm        mov    al, char2;
-	__asm        cmp    eax, 0x61;
-	__asm        jl     _Tc5;
+			__asm        xor    eax, eax;
+			__asm        mov    al, char1;
+			__asm        sub    eax, 0x20;
+			__asm        mov    char1, al;
+		// LINE 918:
+		_T9e:
+			__asm        xor    eax, eax;
+			__asm        mov    al, char2;
+			__asm        cmp    eax, 0x61;
+			__asm        jl     _Tc5;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, char2;
-	__asm        cmp    eax, 0x7A;
-	__asm        jg     _Tc5;
+			__asm        xor    eax, eax;
+			__asm        mov    al, char2;
+			__asm        cmp    eax, 0x7A;
+			__asm        jg     _Tc5;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, char2;
-	__asm        sub    eax, 0x20;
-	__asm        mov    char2, al;
-// LINE 919:
-_Tc5:
-	__asm        xor    eax, eax;
-	__asm        mov    al, char2;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, char1;
-	__asm        cmp    eax, ecx;
-	__asm        jge    _Te1;
+			__asm        xor    eax, eax;
+			__asm        mov    al, char2;
+			__asm        sub    eax, 0x20;
+			__asm        mov    char2, al;
+		// LINE 919:
+		_Tc5:
+			__asm        xor    eax, eax;
+			__asm        mov    al, char2;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, char1;
+			__asm        cmp    eax, ecx;
+			__asm        jge    _Te1;
 
-	return 0x1;
-// LINE 920:
-_Te1:
-	__asm        xor    eax, eax;
-	__asm        mov    al, char2;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, char1;
-	__asm        cmp    eax, ecx;
-	__asm        jle    _Tfd;
+			return 0x1;
+		// LINE 920:
+		_Te1:
+			__asm        xor    eax, eax;
+			__asm        mov    al, char2;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, char1;
+			__asm        cmp    eax, ecx;
+			__asm        jle    _Tfd;
 
-	return 0xffffffff;
-// LINE 921:
-_Tfd:
-	__asm        jmp    _FOR_NEXT_49;
+			return 0xffffffff;
+		// LINE 921:
+		_Tfd:
+	}
 // LINE 922:
 _T102:
 	__asm        mov    eax, second;

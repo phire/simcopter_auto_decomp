@@ -183,69 +183,67 @@ _Tdb:
 	YCount = 0x0;
 // LINE 63:
 __WHILE_10a:
-	__asm        mov    eax, SourceHeight;
-	__asm        cmp    YCount, eax;
-	__asm        jge    _T195;
-// LINE 66:
-// Block start:
-	/*bp-0x28*/  long XCount;
-	/*bp-0x2c*/  long XError;
-	pSourceBits = pSourceLeft;
-// LINE 67:
-	pDestBits = pDestLeft;
-// LINE 69:
-	__asm        mov    eax, DestWidth;
-	__asm        neg    eax;
-	__asm        mov    XError, eax;
-// LINE 70:
-	XCount = 0x0;
-// LINE 71:
-__WHILE_131:
-	__asm        mov    eax, SourceWidth;
-	__asm        cmp    XCount, eax;
-	__asm        jge    _T16b;
-// LINE 74:
-	__asm        mov    eax, pSourceBits;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pDestBits;
-	__asm        mov    [ecx], al;
-	__asm        inc    pDestBits;
-// LINE 77:
-	XError += SourceWidth;
-// LINE 78:
-	__asm        js     _T166;
-// LINE 80:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, DestWidth;
-	__asm        neg    eax;
-	__asm        sub    XError, eax;
-// LINE 81:
-	pSourceBits++;
-// LINE 82:
-	XCount++;
-// LINE 84:
-_T166:
-	__asm        jmp    __WHILE_131;
-// LINE 87:
-_T16b:
-	pDestLeft += DestStride;
-// LINE 90:
-	YError += SourceHeight;
-// LINE 91:
-	__asm        js     _T190;
-// LINE 93:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, DestHeight;
-	__asm        neg    eax;
-	__asm        sub    YError, eax;
-// LINE 94:
-	pSourceLeft += SourceStride;
-// LINE 95:
-	YCount++;
-// LINE 97:
-// Block end:
-_T190:
-	__asm        jmp    __WHILE_10a;
+	while ((YCount < SourceHeight)) {
+		// LINE 66:
+		// Block start:
+			/*bp-0x28*/  long XCount;
+			/*bp-0x2c*/  long XError;
+			pSourceBits = pSourceLeft;
+		// LINE 67:
+			pDestBits = pDestLeft;
+		// LINE 69:
+			__asm        mov    eax, DestWidth;
+			__asm        neg    eax;
+			__asm        mov    XError, eax;
+		// LINE 70:
+			XCount = 0x0;
+		// LINE 71:
+		__WHILE_131:
+			while ((XCount < SourceWidth)) {
+				// LINE 74:
+					__asm        mov    eax, pSourceBits;
+					__asm        mov    al, [eax];
+					__asm        mov    ecx, pDestBits;
+					__asm        mov    [ecx], al;
+					__asm        inc    pDestBits;
+				// LINE 77:
+					XError += SourceWidth;
+				// LINE 78:
+					__asm        js     _T166;
+				// LINE 80:
+					__asm        xor    eax, eax;
+					__asm        sub    eax, DestWidth;
+					__asm        neg    eax;
+					__asm        sub    XError, eax;
+				// LINE 81:
+					pSourceBits++;
+				// LINE 82:
+					XCount++;
+				// LINE 84:
+				_T166:
+					__asm        jmp    __WHILE_131;
+			}
+		// LINE 87:
+		_T16b:
+			pDestLeft += DestStride;
+		// LINE 90:
+			YError += SourceHeight;
+		// LINE 91:
+			__asm        js     _T190;
+		// LINE 93:
+			__asm        xor    eax, eax;
+			__asm        sub    eax, DestHeight;
+			__asm        neg    eax;
+			__asm        sub    YError, eax;
+		// LINE 94:
+			pSourceLeft += SourceStride;
+		// LINE 95:
+			YCount++;
+		// LINE 97:
+		// Block end:
+		_T190:
+			__asm        jmp    __WHILE_10a;
+	}
 // LINE 99:
 _T195:
 	__asm        mov    eax, pDest;

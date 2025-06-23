@@ -98,86 +98,79 @@ _T14:
 	return 0x0;
 // LINE 148:
 _FOR_3b:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_3b;
-_FOR_NEXT_3b:
-	i++;
-_FOR_COND_3b:
-	__asm        mov    eax, i;
-	__asm        cmp    CMAP_hdr.PaletteCount, eax;
-	__asm        jle    _T13b;
-// LINE 149:
-	__asm        mov    eax, misc;
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        add    eax, CMAP_directory;
-	__asm        push   eax;
-	__asm        call   _stricmp;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T136;
-// LINE 151:
-	bufferBad = 0x1;
-// LINE 153:
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    ecx, CMAP_directory;
-	__asm        mov    eax, [eax+ecx+0x11];
-	__asm        push   eax;
-	__asm        mov    eax, ResourceFilePtr;
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    _Tbd;
-// LINE 154:
-	GlobalError = 0x3;
-// LINE 155:
-	return 0x0;
-// LINE 157:
-_Tbd:
-	__asm        push   0x3E8;
-	__asm        call   S2AllocPool;
-	__asm        add    esp, 4;
-	__asm        mov    G_currmempool, eax;
-	__asm        cmp    G_currmempool, 0;
-	__asm        jge    _Te3;
-// LINE 158:
-	return 0x0;
-// LINE 159:
-_Te3:
-	res = LoadPalette();
-// LINE 160:
-	__asm        cmp    res, 0;
-	__asm        jne    _Tfc;
-// LINE 161:
-	return 0x0;
-// LINE 162:
-_Tfc:
-	res->mempoolid = G_currmempool;
-// LINE 163:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   RegisterResource;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        jne    _T12e;
-// LINE 164:
-	VRUnLoadResource(res);
-// LINE 165:
-	return 0x0;
-// LINE 167:
-_T12e:
-	return res;
-// LINE 169:
-_T136:
-	__asm        jmp    _FOR_NEXT_3b;
+	for (i = 0x0; (CMAP_hdr.PaletteCount > i); i++) {
+		// LINE 149:
+			__asm        mov    eax, misc;
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        add    eax, CMAP_directory;
+			__asm        push   eax;
+			__asm        call   _stricmp;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T136;
+		// LINE 151:
+			bufferBad = 0x1;
+		// LINE 153:
+			__asm        push   0;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        mov    ecx, CMAP_directory;
+			__asm        mov    eax, [eax+ecx+0x11];
+			__asm        push   eax;
+			__asm        mov    eax, ResourceFilePtr;
+			__asm        push   eax;
+			__asm        call   _lseek;
+			__asm        add    esp, 0xC;
+			__asm        cmp    eax, 0xFFFFFFFF;
+			__asm        jne    _Tbd;
+		// LINE 154:
+			GlobalError = 0x3;
+		// LINE 155:
+			return 0x0;
+		// LINE 157:
+		_Tbd:
+			__asm        push   0x3E8;
+			__asm        call   S2AllocPool;
+			__asm        add    esp, 4;
+			__asm        mov    G_currmempool, eax;
+			__asm        cmp    G_currmempool, 0;
+			__asm        jge    _Te3;
+		// LINE 158:
+			return 0x0;
+		// LINE 159:
+		_Te3:
+			res = LoadPalette();
+		// LINE 160:
+			__asm        cmp    res, 0;
+			__asm        jne    _Tfc;
+		// LINE 161:
+			return 0x0;
+		// LINE 162:
+		_Tfc:
+			res->mempoolid = G_currmempool;
+		// LINE 163:
+			__asm        mov    eax, res;
+			__asm        push   eax;
+			__asm        call   RegisterResource;
+			__asm        add    esp, 4;
+			__asm        test   eax, eax;
+			__asm        jne    _T12e;
+		// LINE 164:
+			VRUnLoadResource(res);
+		// LINE 165:
+			return 0x0;
+		// LINE 167:
+		_T12e:
+			return res;
+		// LINE 169:
+		_T136:
+	}
 // LINE 170:
 _T13b:
 	GlobalError = 0x7;
@@ -232,106 +225,99 @@ _T1d1:
 	return 0x0;
 // LINE 193:
 _FOR_1f8:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_1f8;
-_FOR_NEXT_1f8:
-	i++;
-_FOR_COND_1f8:
-	__asm        mov    eax, i;
-	__asm        cmp    GEOM_hdr.GroupCount, eax;
-	__asm        jle    _T332;
-// LINE 194:
-	__asm        mov    eax, misc;
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        add    eax, GEOM_GPdir;
-	__asm        push   eax;
-	__asm        call   _stricmp;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T32d;
-// LINE 196:
-	bufferBad = 0x1;
-// LINE 198:
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    ecx, GEOM_GPdir;
-	__asm        mov    eax, [eax+ecx+0x11];
-	__asm        push   eax;
-	__asm        mov    eax, ResourceFilePtr;
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    _T280;
-// LINE 199:
-	GlobalError = 0x3;
-// LINE 200:
-	return 0x0;
-// LINE 202:
-_T280:
-	__asm        push   0x10000;
-	__asm        call   S2AllocPool;
-	__asm        add    esp, 4;
-	__asm        mov    G_currmempool, eax;
-	__asm        cmp    G_currmempool, 0;
-	__asm        jge    _T2a6;
-// LINE 203:
-	return 0x0;
-// LINE 204:
-_T2a6:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    ecx, GEOM_GPdir;
-	__asm        mov    eax, [eax+ecx+0x15];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        add    eax, GEOM_GPdir;
-	__asm        add    eax, 0x19;
-	__asm        push   eax;
-	__asm        call   LoadGroup;
-	__asm        add    esp, 8;
-	__asm        mov    res, eax;
-// LINE 205:
-	__asm        cmp    res, 0;
-	__asm        jne    _T2f3;
-// LINE 206:
-	return 0x0;
-// LINE 207:
-_T2f3:
-	res->mempoolid = G_currmempool;
-// LINE 208:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   RegisterResource;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        jne    _T325;
-// LINE 209:
-	VRUnLoadResource(res);
-// LINE 210:
-	return 0x0;
-// LINE 212:
-_T325:
-	return res;
-// LINE 214:
-_T32d:
-	__asm        jmp    _FOR_NEXT_1f8;
+	for (i = 0x0; (GEOM_hdr.GroupCount > i); i++) {
+		// LINE 194:
+			__asm        mov    eax, misc;
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        add    eax, GEOM_GPdir;
+			__asm        push   eax;
+			__asm        call   _stricmp;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T32d;
+		// LINE 196:
+			bufferBad = 0x1;
+		// LINE 198:
+			__asm        push   0;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        mov    ecx, GEOM_GPdir;
+			__asm        mov    eax, [eax+ecx+0x11];
+			__asm        push   eax;
+			__asm        mov    eax, ResourceFilePtr;
+			__asm        push   eax;
+			__asm        call   _lseek;
+			__asm        add    esp, 0xC;
+			__asm        cmp    eax, 0xFFFFFFFF;
+			__asm        jne    _T280;
+		// LINE 199:
+			GlobalError = 0x3;
+		// LINE 200:
+			return 0x0;
+		// LINE 202:
+		_T280:
+			__asm        push   0x10000;
+			__asm        call   S2AllocPool;
+			__asm        add    esp, 4;
+			__asm        mov    G_currmempool, eax;
+			__asm        cmp    G_currmempool, 0;
+			__asm        jge    _T2a6;
+		// LINE 203:
+			return 0x0;
+		// LINE 204:
+		_T2a6:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        mov    ecx, GEOM_GPdir;
+			__asm        mov    eax, [eax+ecx+0x15];
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        add    eax, GEOM_GPdir;
+			__asm        add    eax, 0x19;
+			__asm        push   eax;
+			__asm        call   LoadGroup;
+			__asm        add    esp, 8;
+			__asm        mov    res, eax;
+		// LINE 205:
+			__asm        cmp    res, 0;
+			__asm        jne    _T2f3;
+		// LINE 206:
+			return 0x0;
+		// LINE 207:
+		_T2f3:
+			res->mempoolid = G_currmempool;
+		// LINE 208:
+			__asm        mov    eax, res;
+			__asm        push   eax;
+			__asm        call   RegisterResource;
+			__asm        add    esp, 4;
+			__asm        test   eax, eax;
+			__asm        jne    _T325;
+		// LINE 209:
+			VRUnLoadResource(res);
+		// LINE 210:
+			return 0x0;
+		// LINE 212:
+		_T325:
+			return res;
+		// LINE 214:
+		_T32d:
+	}
 // LINE 215:
 _T332:
 	GlobalError = 0x7;
@@ -351,89 +337,82 @@ _T348:
 	return 0x0;
 // LINE 224:
 _FOR_36f:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_36f;
-_FOR_NEXT_36f:
-	i++;
-_FOR_COND_36f:
-	__asm        mov    eax, i;
-	__asm        cmp    GEOM_hdr.IdCount, eax;
-	__asm        jle    _T47a;
-// LINE 225:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*8];
-	__asm        mov    ecx, GEOM_IDdir;
-	__asm        mov    edx, misc;
-	__asm        cmp    [eax+ecx], edx;
-	__asm        jne    _T475;
-// LINE 227:
-	bufferBad = 0x1;
-// LINE 229:
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*8];
-	__asm        mov    ecx, GEOM_IDdir;
-	__asm        mov    eax, [eax+ecx+4];
-	__asm        push   eax;
-	__asm        mov    eax, ResourceFilePtr;
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    _T3e4;
-// LINE 230:
-	GlobalError = 0x3;
-// LINE 231:
-	return 0x0;
-// LINE 233:
-_T3e4:
-	__asm        push   0x10000;
-	__asm        call   S2AllocPool;
-	__asm        add    esp, 4;
-	__asm        mov    G_currmempool, eax;
-	__asm        cmp    G_currmempool, 0;
-	__asm        jge    _T40a;
-// LINE 234:
-	return 0x0;
-// LINE 235:
-_T40a:
-	__asm        push   1;
-	__asm        mov    eax, i;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*8];
-	__asm        add    eax, GEOM_IDdir;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        call   LoadGroup;
-	__asm        add    esp, 8;
-	__asm        mov    res, eax;
-// LINE 236:
-	__asm        cmp    res, 0;
-	__asm        jne    _T43b;
-// LINE 237:
-	return 0x0;
-// LINE 238:
-_T43b:
-	res->mempoolid = G_currmempool;
-// LINE 239:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   RegisterResource;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        jne    _T46d;
-// LINE 240:
-	VRUnLoadResource(res);
-// LINE 241:
-	return 0x0;
-// LINE 243:
-_T46d:
-	return res;
-// LINE 245:
-_T475:
-	__asm        jmp    _FOR_NEXT_36f;
+	for (i = 0x0; (GEOM_hdr.IdCount > i); i++) {
+		// LINE 225:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*8];
+			__asm        mov    ecx, GEOM_IDdir;
+			__asm        mov    edx, misc;
+			__asm        cmp    [eax+ecx], edx;
+			__asm        jne    _T475;
+		// LINE 227:
+			bufferBad = 0x1;
+		// LINE 229:
+			__asm        push   0;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*8];
+			__asm        mov    ecx, GEOM_IDdir;
+			__asm        mov    eax, [eax+ecx+4];
+			__asm        push   eax;
+			__asm        mov    eax, ResourceFilePtr;
+			__asm        push   eax;
+			__asm        call   _lseek;
+			__asm        add    esp, 0xC;
+			__asm        cmp    eax, 0xFFFFFFFF;
+			__asm        jne    _T3e4;
+		// LINE 230:
+			GlobalError = 0x3;
+		// LINE 231:
+			return 0x0;
+		// LINE 233:
+		_T3e4:
+			__asm        push   0x10000;
+			__asm        call   S2AllocPool;
+			__asm        add    esp, 4;
+			__asm        mov    G_currmempool, eax;
+			__asm        cmp    G_currmempool, 0;
+			__asm        jge    _T40a;
+		// LINE 234:
+			return 0x0;
+		// LINE 235:
+		_T40a:
+			__asm        push   1;
+			__asm        mov    eax, i;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*8];
+			__asm        add    eax, GEOM_IDdir;
+			__asm        add    eax, 8;
+			__asm        push   eax;
+			__asm        call   LoadGroup;
+			__asm        add    esp, 8;
+			__asm        mov    res, eax;
+		// LINE 236:
+			__asm        cmp    res, 0;
+			__asm        jne    _T43b;
+		// LINE 237:
+			return 0x0;
+		// LINE 238:
+		_T43b:
+			res->mempoolid = G_currmempool;
+		// LINE 239:
+			__asm        mov    eax, res;
+			__asm        push   eax;
+			__asm        call   RegisterResource;
+			__asm        add    esp, 4;
+			__asm        test   eax, eax;
+			__asm        jne    _T46d;
+		// LINE 240:
+			VRUnLoadResource(res);
+		// LINE 241:
+			return 0x0;
+		// LINE 243:
+		_T46d:
+			return res;
+		// LINE 245:
+		_T475:
+	}
 // LINE 246:
 _T47a:
 	GlobalError = 0x8;
@@ -470,22 +449,22 @@ int32_t VRUnLoadAllResources() {
 
 // LINE 278:
 __WHILE_09:
-	__asm        cmp    NextResource, 0;
-	__asm        je     _T3e;
-// LINE 279:
-	res = ResourceArray[0];
-// LINE 280:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   VRUnLoadResource;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        jne    _T39;
-// LINE 281:
-	return 0x0;
-// LINE 282:
-_T39:
-	__asm        jmp    __WHILE_09;
+	while ((NextResource != 0x0)) {
+		// LINE 279:
+			res = ResourceArray[0];
+		// LINE 280:
+			__asm        mov    eax, res;
+			__asm        push   eax;
+			__asm        call   VRUnLoadResource;
+			__asm        add    esp, 4;
+			__asm        test   eax, eax;
+			__asm        jne    _T39;
+		// LINE 281:
+			return 0x0;
+		// LINE 282:
+		_T39:
+			__asm        jmp    __WHILE_09;
+	}
 // LINE 283:
 _T3e:
 	return 0x1;
@@ -574,173 +553,166 @@ _T24:
 	return 0x1;
 // LINE 375:
 _FOR_54:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_54;
-_FOR_NEXT_54:
-	i++;
-_FOR_COND_54:
-	__asm        mov    eax, i;
-	__asm        cmp    ResourceDirHdr.Count, eax;
-	__asm        jle    _T273;
-// LINE 377:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, ResourceDir;
-	__asm        cmp    dword ptr [ecx+eax*8], 0x4D4F4547;
-	__asm        jne    _T26e;
-// LINE 379:
-	bufferBad = 0x1;
-// LINE 381:
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, ResourceDir;
-	__asm        mov    eax, [ecx+eax*8+4];
-	__asm        push   eax;
-	__asm        mov    eax, ResourceFilePtr;
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    _Tbe;
-// LINE 382:
-	GlobalError = 0x3;
-// LINE 383:
-	return 0x0;
-// LINE 386:
-_Tbe:
-	__asm        push   8;
-	__asm        lea    eax, chunk.Id;
-	__asm        push   eax;
-	__asm        call   ReadResource;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _Tdb;
-// LINE 387:
-	return 0x0;
-// LINE 403:
-_Tdb:
-	__asm        cmp    chunk.Id, 0x4D4F4547;
-	__asm        je     _Tf9;
-// LINE 404:
-	GlobalError = 0x6;
-// LINE 405:
-	return 0x0;
-// LINE 408:
-_Tf9:
-	__asm        push   0x10;
-	__asm        push   0x6666B0;
-	__asm        call   ReadResource;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T117;
-// LINE 409:
-	return 0x0;
-// LINE 438:
-_T117:
-	__asm        mov    eax, GEOM_hdr.GroupCount;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        push   eax;
-	__asm        mov    eax, ResFileMemPool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    GEOM_GPdir, eax;
-// LINE 440:
-	__asm        mov    eax, GEOM_hdr.IdCount;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*8];
-	__asm        push   eax;
-	__asm        mov    eax, ResFileMemPool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    GEOM_IDdir, eax;
-// LINE 441:
-	__asm        cmp    GEOM_GPdir, 0;
-	__asm        jne    _T199;
+	for (i = 0x0; (ResourceDirHdr.Count > i); i++) {
+		// LINE 377:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, ResourceDir;
+			__asm        cmp    dword ptr [ecx+eax*8], 0x4D4F4547;
+			__asm        jne    _T26e;
+		// LINE 379:
+			bufferBad = 0x1;
+		// LINE 381:
+			__asm        push   0;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, ResourceDir;
+			__asm        mov    eax, [ecx+eax*8+4];
+			__asm        push   eax;
+			__asm        mov    eax, ResourceFilePtr;
+			__asm        push   eax;
+			__asm        call   _lseek;
+			__asm        add    esp, 0xC;
+			__asm        cmp    eax, 0xFFFFFFFF;
+			__asm        jne    _Tbe;
+		// LINE 382:
+			GlobalError = 0x3;
+		// LINE 383:
+			return 0x0;
+		// LINE 386:
+		_Tbe:
+			__asm        push   8;
+			__asm        lea    eax, chunk.Id;
+			__asm        push   eax;
+			__asm        call   ReadResource;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _Tdb;
+		// LINE 387:
+			return 0x0;
+		// LINE 403:
+		_Tdb:
+			__asm        cmp    chunk.Id, 0x4D4F4547;
+			__asm        je     _Tf9;
+		// LINE 404:
+			GlobalError = 0x6;
+		// LINE 405:
+			return 0x0;
+		// LINE 408:
+		_Tf9:
+			__asm        push   0x10;
+			__asm        push   0x6666B0;
+			__asm        call   ReadResource;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T117;
+		// LINE 409:
+			return 0x0;
+		// LINE 438:
+		_T117:
+			__asm        mov    eax, GEOM_hdr.GroupCount;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        push   eax;
+			__asm        mov    eax, ResFileMemPool;
+			__asm        push   eax;
+			__asm        call   S2Alloc;
+			__asm        add    esp, 8;
+			__asm        mov    GEOM_GPdir, eax;
+		// LINE 440:
+			__asm        mov    eax, GEOM_hdr.IdCount;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*8];
+			__asm        push   eax;
+			__asm        mov    eax, ResFileMemPool;
+			__asm        push   eax;
+			__asm        call   S2Alloc;
+			__asm        add    esp, 8;
+			__asm        mov    GEOM_IDdir, eax;
+		// LINE 441:
+			__asm        cmp    GEOM_GPdir, 0;
+			__asm        jne    _T199;
 
-	__asm        cmp    GEOM_IDdir, 0;
-	__asm        jne    _T199;
-// LINE 442:
-	GEOM_IDdir = 0x0;
-// LINE 443:
-	GEOM_GPdir = 0x0;
-// LINE 444:
-	GlobalError = 0x4;
-// LINE 445:
-	return 0x0;
-// LINE 449:
-_T199:
-	bufferBad = 0x1;
-// LINE 451:
-	__asm        push   0;
-	__asm        mov    eax, GEOM_hdr.Dir_Group_Offset;
-	__asm        push   eax;
-	__asm        mov    eax, ResourceFilePtr;
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    _T1d3;
-// LINE 452:
-	GlobalError = 0x3;
-// LINE 453:
-	return 0x0;
-// LINE 456:
-_T1d3:
-	__asm        mov    eax, GEOM_hdr.GroupCount;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        push   eax;
-	__asm        mov    eax, GEOM_GPdir;
-	__asm        push   eax;
-	__asm        call   ReadResource;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T201;
-// LINE 457:
-	return 0x0;
-// LINE 533:
-_T201:
-	bufferBad = 0x1;
-// LINE 535:
-	__asm        push   0;
-	__asm        mov    eax, GEOM_hdr.Dir_Id_Offset;
-	__asm        push   eax;
-	__asm        mov    eax, ResourceFilePtr;
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    _T23b;
-// LINE 536:
-	GlobalError = 0x3;
-// LINE 537:
-	return 0x0;
-// LINE 540:
-_T23b:
-	__asm        mov    eax, GEOM_hdr.IdCount;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*8];
-	__asm        push   eax;
-	__asm        mov    eax, GEOM_IDdir;
-	__asm        push   eax;
-	__asm        call   ReadResource;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T264;
-// LINE 541:
-	return 0x0;
-// LINE 609:
-_T264:
-	return 0x1;
-// LINE 611:
-_T26e:
-	__asm        jmp    _FOR_NEXT_54;
+			__asm        cmp    GEOM_IDdir, 0;
+			__asm        jne    _T199;
+		// LINE 442:
+			GEOM_IDdir = 0x0;
+		// LINE 443:
+			GEOM_GPdir = 0x0;
+		// LINE 444:
+			GlobalError = 0x4;
+		// LINE 445:
+			return 0x0;
+		// LINE 449:
+		_T199:
+			bufferBad = 0x1;
+		// LINE 451:
+			__asm        push   0;
+			__asm        mov    eax, GEOM_hdr.Dir_Group_Offset;
+			__asm        push   eax;
+			__asm        mov    eax, ResourceFilePtr;
+			__asm        push   eax;
+			__asm        call   _lseek;
+			__asm        add    esp, 0xC;
+			__asm        cmp    eax, 0xFFFFFFFF;
+			__asm        jne    _T1d3;
+		// LINE 452:
+			GlobalError = 0x3;
+		// LINE 453:
+			return 0x0;
+		// LINE 456:
+		_T1d3:
+			__asm        mov    eax, GEOM_hdr.GroupCount;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        push   eax;
+			__asm        mov    eax, GEOM_GPdir;
+			__asm        push   eax;
+			__asm        call   ReadResource;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T201;
+		// LINE 457:
+			return 0x0;
+		// LINE 533:
+		_T201:
+			bufferBad = 0x1;
+		// LINE 535:
+			__asm        push   0;
+			__asm        mov    eax, GEOM_hdr.Dir_Id_Offset;
+			__asm        push   eax;
+			__asm        mov    eax, ResourceFilePtr;
+			__asm        push   eax;
+			__asm        call   _lseek;
+			__asm        add    esp, 0xC;
+			__asm        cmp    eax, 0xFFFFFFFF;
+			__asm        jne    _T23b;
+		// LINE 536:
+			GlobalError = 0x3;
+		// LINE 537:
+			return 0x0;
+		// LINE 540:
+		_T23b:
+			__asm        mov    eax, GEOM_hdr.IdCount;
+			__asm        shl    eax, 2;
+			__asm        lea    eax, [eax+eax*8];
+			__asm        push   eax;
+			__asm        mov    eax, GEOM_IDdir;
+			__asm        push   eax;
+			__asm        call   ReadResource;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T264;
+		// LINE 541:
+			return 0x0;
+		// LINE 609:
+		_T264:
+			return 0x1;
+		// LINE 611:
+		_T26e:
+	}
 // LINE 612:
 _T273:
 	GlobalError = 0x5;
@@ -771,106 +743,99 @@ _T24:
 	return 0x1;
 // LINE 651:
 _FOR_47:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_47;
-_FOR_NEXT_47:
-	i++;
-_FOR_COND_47:
-	__asm        mov    eax, i;
-	__asm        cmp    ResourceDirHdr.Count, eax;
-	__asm        jle    _T183;
-// LINE 653:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, ResourceDir;
-	__asm        cmp    dword ptr [ecx+eax*8], 0x50414D43;
-	__asm        jne    _T17e;
-// LINE 655:
-	bufferBad = 0x1;
-// LINE 657:
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, ResourceDir;
-	__asm        mov    eax, [ecx+eax*8+4];
-	__asm        push   eax;
-	__asm        mov    eax, ResourceFilePtr;
-	__asm        push   eax;
-	__asm        call   _lseek;
-	__asm        add    esp, 0xC;
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        jne    _Tb1;
-// LINE 658:
-	GlobalError = 0x3;
-// LINE 659:
-	return 0x0;
-// LINE 662:
-_Tb1:
-	__asm        push   8;
-	__asm        lea    eax, chunk.Id;
-	__asm        push   eax;
-	__asm        call   ReadResource;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _Tce;
-// LINE 663:
-	return 0x0;
-// LINE 678:
-_Tce:
-	__asm        cmp    chunk.Id, 0x50414D43;
-	__asm        je     _Tec;
-// LINE 679:
-	GlobalError = 0x6;
-// LINE 680:
-	return 0x0;
-// LINE 683:
-_Tec:
-	__asm        push   4;
-	__asm        push   0x6666A4;
-	__asm        call   ReadResource;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T10a;
-// LINE 684:
-	return 0x0;
-// LINE 694:
-_T10a:
-	__asm        mov    eax, CMAP_hdr.PaletteCount;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        push   eax;
-	__asm        mov    eax, ResFileMemPool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    CMAP_directory, eax;
-// LINE 695:
-	__asm        cmp    CMAP_directory, 0;
-	__asm        jne    _T149;
-// LINE 696:
-	GlobalError = 0x4;
-// LINE 697:
-	return 0x0;
-// LINE 700:
-_T149:
-	__asm        mov    eax, CMAP_hdr.PaletteCount;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        push   eax;
-	__asm        mov    eax, CMAP_directory;
-	__asm        push   eax;
-	__asm        call   ReadResource;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T174;
-// LINE 701:
-	return 0x0;
-// LINE 726:
-_T174:
-	return 0x1;
-// LINE 728:
-_T17e:
-	__asm        jmp    _FOR_NEXT_47;
+	for (i = 0x0; (ResourceDirHdr.Count > i); i++) {
+		// LINE 653:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, ResourceDir;
+			__asm        cmp    dword ptr [ecx+eax*8], 0x50414D43;
+			__asm        jne    _T17e;
+		// LINE 655:
+			bufferBad = 0x1;
+		// LINE 657:
+			__asm        push   0;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, ResourceDir;
+			__asm        mov    eax, [ecx+eax*8+4];
+			__asm        push   eax;
+			__asm        mov    eax, ResourceFilePtr;
+			__asm        push   eax;
+			__asm        call   _lseek;
+			__asm        add    esp, 0xC;
+			__asm        cmp    eax, 0xFFFFFFFF;
+			__asm        jne    _Tb1;
+		// LINE 658:
+			GlobalError = 0x3;
+		// LINE 659:
+			return 0x0;
+		// LINE 662:
+		_Tb1:
+			__asm        push   8;
+			__asm        lea    eax, chunk.Id;
+			__asm        push   eax;
+			__asm        call   ReadResource;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _Tce;
+		// LINE 663:
+			return 0x0;
+		// LINE 678:
+		_Tce:
+			__asm        cmp    chunk.Id, 0x50414D43;
+			__asm        je     _Tec;
+		// LINE 679:
+			GlobalError = 0x6;
+		// LINE 680:
+			return 0x0;
+		// LINE 683:
+		_Tec:
+			__asm        push   4;
+			__asm        push   0x6666A4;
+			__asm        call   ReadResource;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T10a;
+		// LINE 684:
+			return 0x0;
+		// LINE 694:
+		_T10a:
+			__asm        mov    eax, CMAP_hdr.PaletteCount;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        push   eax;
+			__asm        mov    eax, ResFileMemPool;
+			__asm        push   eax;
+			__asm        call   S2Alloc;
+			__asm        add    esp, 8;
+			__asm        mov    CMAP_directory, eax;
+		// LINE 695:
+			__asm        cmp    CMAP_directory, 0;
+			__asm        jne    _T149;
+		// LINE 696:
+			GlobalError = 0x4;
+		// LINE 697:
+			return 0x0;
+		// LINE 700:
+		_T149:
+			__asm        mov    eax, CMAP_hdr.PaletteCount;
+			__asm        mov    ecx, eax;
+			__asm        lea    eax, [eax+eax*4];
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        push   eax;
+			__asm        mov    eax, CMAP_directory;
+			__asm        push   eax;
+			__asm        call   ReadResource;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T174;
+		// LINE 701:
+			return 0x0;
+		// LINE 726:
+		_T174:
+			return 0x1;
+		// LINE 728:
+		_T17e:
+	}
 // LINE 729:
 _T183:
 	GlobalError = 0x5;

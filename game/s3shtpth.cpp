@@ -210,52 +210,46 @@ _T74:
 	this->heapSize = 0x0;
 // LINE 57:
 _FOR_a6:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_a6;
-_FOR_NEXT_a6:
-	x++;
-_FOR_COND_a6:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T118;
-// LINE 59:
-// Block start:
-	/*bp-0x28*/  int32_t yindex;
-_FOR_c2:
-	yindex = 0x0;
-	__asm        jmp    _FOR_COND_c2;
-_FOR_NEXT_c2:
-	yindex++;
-_FOR_COND_c2:
-	__asm        mov    eax, x;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, gRoadGraph.RGLength[eax];
-	__asm        cmp    ecx, yindex;
-	__asm        jle    _T113;
-// LINE 61:
-// Block start:
-	/*bp-0x2c*/  /*packed*/ struct RGVertex *pRGV;
-	__asm        mov    eax, x;
-	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
-	__asm        mov    ecx, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pRGV, eax;
-// LINE 62:
-	pRGV->STVisited = 0x0;
-// LINE 63:
-	pRGV->xPrev = 0xff;
-// LINE 64:
-	pRGV->yindexPrev = 0xff;
-// LINE 65:
-// Block end:
-	__asm        jmp    _FOR_NEXT_c2;
-// LINE 66:
-// Block end:
-_T113:
-	__asm        jmp    _FOR_NEXT_a6;
+	for (x = 0x0; (x < 0x80); x++) {
+		// LINE 59:
+		// Block start:
+			/*bp-0x28*/  int32_t yindex;
+		_FOR_c2:
+			yindex = 0x0;
+			__asm        jmp    _FOR_COND_c2;
+		_FOR_NEXT_c2:
+			yindex++;
+		_FOR_COND_c2:
+			__asm        mov    eax, x;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, gRoadGraph.RGLength[eax];
+			__asm        cmp    ecx, yindex;
+			__asm        jle    _T113;
+		// LINE 61:
+		// Block start:
+			/*bp-0x2c*/  /*packed*/ struct RGVertex *pRGV;
+			__asm        mov    eax, x;
+			__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
+			__asm        mov    ecx, yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    pRGV, eax;
+		// LINE 62:
+			pRGV->STVisited = 0x0;
+		// LINE 63:
+			pRGV->xPrev = 0xff;
+		// LINE 64:
+			pRGV->yindexPrev = 0xff;
+		// LINE 65:
+		// Block end:
+			__asm        jmp    _FOR_NEXT_c2;
+		// LINE 66:
+		// Block end:
+		_T113:
+	}
 // LINE 70:
 _T118:
 	__asm        mov    al, startVertex.yindex;
@@ -278,147 +272,140 @@ _T118:
 	__asm        call   ShortestPath::PriorityHeapInsert;
 // LINE 81:
 __WHILE_143:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     _T2a8;
+	while ((this->heapSize != 0x0)) {
 
-	__asm        cmp    pathFoundFlag, 0;
-	__asm        jne    _T2a8;
-// LINE 85:
-	__asm        lea    eax, path.xCurr;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ShortestPath::PriorityHeapRemove;
-// LINE 87:
-	__asm        xor    eax, eax;
-	__asm        mov    al, path.xCurr;
-	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, path.yindexCurr;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pRGV, eax;
-// LINE 88:
-	__asm        mov    eax, pRGV;
-	__asm        cmp    dword ptr [eax+0x2F], 0;
-	__asm        jne    _T2a3;
-// LINE 92:
-	__asm        mov    al, path.xPrev;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2D], al;
-// LINE 93:
-	__asm        mov    al, path.yindexPrev;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2C], al;
-// LINE 94:
-	__asm        mov    al, path.edgeIndexPrev;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2E], al;
-// LINE 95:
-	pRGV->STVisited = 0x1;
-// LINE 99:
-	__asm        xor    eax, eax;
-	__asm        mov    al, path.xCurr;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destVertex.x;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _FOR_1f5;
+			__asm        cmp    pathFoundFlag, 0;
+			__asm        jne    _T2a8;
+		// LINE 85:
+			__asm        lea    eax, path.xCurr;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   ShortestPath::PriorityHeapRemove;
+		// LINE 87:
+			__asm        xor    eax, eax;
+			__asm        mov    al, path.xCurr;
+			__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, path.yindexCurr;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    pRGV, eax;
+		// LINE 88:
+			__asm        mov    eax, pRGV;
+			__asm        cmp    dword ptr [eax+0x2F], 0;
+			__asm        jne    _T2a3;
+		// LINE 92:
+			__asm        mov    al, path.xPrev;
+			__asm        mov    ecx, pRGV;
+			__asm        mov    [ecx+0x2D], al;
+		// LINE 93:
+			__asm        mov    al, path.yindexPrev;
+			__asm        mov    ecx, pRGV;
+			__asm        mov    [ecx+0x2C], al;
+		// LINE 94:
+			__asm        mov    al, path.edgeIndexPrev;
+			__asm        mov    ecx, pRGV;
+			__asm        mov    [ecx+0x2E], al;
+		// LINE 95:
+			pRGV->STVisited = 0x1;
+		// LINE 99:
+			__asm        xor    eax, eax;
+			__asm        mov    al, path.xCurr;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destVertex.x;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _FOR_1f5;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, path.yindexCurr;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destVertex.yindex;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _FOR_1f5;
-// LINE 101:
-	pathFoundFlag = 0x1;
-// LINE 104:
-	__asm        jmp    _T2a3;
-// LINE 108:
-// Block start:
-	/*bp-0x30*/  int32_t i;
-_FOR_1f5:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_1f5;
-_FOR_NEXT_1f5:
-	i++;
-_FOR_COND_1f5:
-	__asm        cmp    i, 4;
-	__asm        jge    _T2a3;
-// LINE 111:
-// Block start:
-	/*bp-0x34*/  /*packed*/ struct Edge *pEdge;
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        and    al, 0xF;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, al;
-	__asm        mov    eax, i;
-	__asm        test   IndexToType[0][eax*4], ecx;
-	__asm        jne    _T223;
-// LINE 112:
-	__asm        jmp    _FOR_NEXT_1f5;
-// LINE 115:
-_T223:
-	__asm        mov    eax, i;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    eax, pRGV;
-	__asm        add    eax, 4;
-	__asm        mov    pEdge, eax;
-// LINE 116:
-	__asm        mov    eax, pEdge;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
-	__asm        mov    ecx, pEdge;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx];
-	__asm        mov    ecx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    ecx, [ecx+edx*2];
-	__asm        cmp    dword ptr [eax+ecx+0x2F], 0;
-	__asm        jne    _T29e;
-// LINE 118:
-	__asm        mov    eax, pEdge;
-	__asm        mov    al, [eax+1];
-	__asm        mov    scratch.xCurr, al;
-// LINE 119:
-	__asm        mov    eax, pEdge;
-	__asm        mov    al, [eax];
-	__asm        mov    scratch.yindexCurr, al;
-// LINE 120:
-	__asm        mov    eax, pEdge;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cx, [eax+2];
-	__asm        add    ecx, path.cost;
-	__asm        mov    scratch.cost, ecx;
-// LINE 121:
-	__asm        mov    al, reinterpret_cast<uint8_t>(i);
-	__asm        mov    scratch.edgeIndexPrev, al;
-// LINE 122:
-	__asm        mov    al, path.xCurr;
-	__asm        mov    scratch.xPrev, al;
-// LINE 123:
-	__asm        mov    al, path.yindexCurr;
-	__asm        mov    scratch.yindexPrev, al;
-// LINE 124:
-	__asm        lea    eax, scratch.xCurr;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ShortestPath::PriorityHeapInsert;
-// LINE 126:
-// Block end:
-_T29e:
-	__asm        jmp    _FOR_NEXT_1f5;
-// LINE 129:
-// Block end:
-_T2a3:
-	__asm        jmp    __WHILE_143;
+			__asm        xor    eax, eax;
+			__asm        mov    al, path.yindexCurr;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destVertex.yindex;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _FOR_1f5;
+		// LINE 101:
+			pathFoundFlag = 0x1;
+		// LINE 104:
+			__asm        jmp    _T2a3;
+		// LINE 108:
+		// Block start:
+			/*bp-0x30*/  int32_t i;
+		_FOR_1f5:
+			for (i = 0x0; (i < 0x4); i++) {
+				// LINE 111:
+				// Block start:
+					/*bp-0x34*/  /*packed*/ struct Edge *pEdge;
+					__asm        mov    eax, pRGV;
+					__asm        mov    al, [eax+2];
+					__asm        and    al, 0xF;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, al;
+					__asm        mov    eax, i;
+					__asm        test   IndexToType[0][eax*4], ecx;
+					__asm        jne    _T223;
+				// LINE 112:
+					__asm        jmp    _FOR_NEXT_1f5;
+				// LINE 115:
+				_T223:
+					__asm        mov    eax, i;
+					__asm        lea    eax, [eax+eax*4];
+					__asm        add    eax, eax;
+					__asm        add    eax, pRGV;
+					__asm        add    eax, 4;
+					__asm        mov    pEdge, eax;
+				// LINE 116:
+					__asm        mov    eax, pEdge;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [eax+1];
+					__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
+					__asm        mov    ecx, pEdge;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [ecx];
+					__asm        mov    ecx, edx;
+					__asm        lea    edx, [edx+edx*4];
+					__asm        lea    edx, [edx+edx*4];
+					__asm        lea    ecx, [ecx+edx*2];
+					__asm        cmp    dword ptr [eax+ecx+0x2F], 0;
+					__asm        jne    _T29e;
+				// LINE 118:
+					__asm        mov    eax, pEdge;
+					__asm        mov    al, [eax+1];
+					__asm        mov    scratch.xCurr, al;
+				// LINE 119:
+					__asm        mov    eax, pEdge;
+					__asm        mov    al, [eax];
+					__asm        mov    scratch.yindexCurr, al;
+				// LINE 120:
+					__asm        mov    eax, pEdge;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cx, [eax+2];
+					__asm        add    ecx, path.cost;
+					__asm        mov    scratch.cost, ecx;
+				// LINE 121:
+					__asm        mov    al, reinterpret_cast<uint8_t>(i);
+					__asm        mov    scratch.edgeIndexPrev, al;
+				// LINE 122:
+					__asm        mov    al, path.xCurr;
+					__asm        mov    scratch.xPrev, al;
+				// LINE 123:
+					__asm        mov    al, path.yindexCurr;
+					__asm        mov    scratch.yindexPrev, al;
+				// LINE 124:
+					__asm        lea    eax, scratch.xCurr;
+					__asm        push   eax;
+					__asm        mov    ecx, this;
+					__asm        call   ShortestPath::PriorityHeapInsert;
+				// LINE 126:
+				// Block end:
+				_T29e:
+			}
+		// LINE 129:
+		// Block end:
+		_T2a3:
+			__asm        jmp    __WHILE_143;
+	}
 // LINE 131:
 _T2a8:
 	return pathFoundFlag;
@@ -492,52 +479,46 @@ _T85:
 	this->heapSize = 0x0;
 // LINE 163:
 _FOR_b7:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_b7;
-_FOR_NEXT_b7:
-	x++;
-_FOR_COND_b7:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T129;
-// LINE 165:
-// Block start:
-	/*bp-0x30*/  int32_t yindex;
-_FOR_d3:
-	yindex = 0x0;
-	__asm        jmp    _FOR_COND_d3;
-_FOR_NEXT_d3:
-	yindex++;
-_FOR_COND_d3:
-	__asm        mov    eax, x;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, gRoadGraph.RGLength[eax];
-	__asm        cmp    ecx, yindex;
-	__asm        jle    _T124;
-// LINE 167:
-// Block start:
-	/*bp-0x34*/  /*packed*/ struct RGVertex *pRGV;
-	__asm        mov    eax, x;
-	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
-	__asm        mov    ecx, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pRGV, eax;
-// LINE 168:
-	pRGV->STVisited = 0x0;
-// LINE 169:
-	pRGV->xPrev = 0xff;
-// LINE 170:
-	pRGV->yindexPrev = 0xff;
-// LINE 171:
-// Block end:
-	__asm        jmp    _FOR_NEXT_d3;
-// LINE 172:
-// Block end:
-_T124:
-	__asm        jmp    _FOR_NEXT_b7;
+	for (x = 0x0; (x < 0x80); x++) {
+		// LINE 165:
+		// Block start:
+			/*bp-0x30*/  int32_t yindex;
+		_FOR_d3:
+			yindex = 0x0;
+			__asm        jmp    _FOR_COND_d3;
+		_FOR_NEXT_d3:
+			yindex++;
+		_FOR_COND_d3:
+			__asm        mov    eax, x;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, gRoadGraph.RGLength[eax];
+			__asm        cmp    ecx, yindex;
+			__asm        jle    _T124;
+		// LINE 167:
+		// Block start:
+			/*bp-0x34*/  /*packed*/ struct RGVertex *pRGV;
+			__asm        mov    eax, x;
+			__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
+			__asm        mov    ecx, yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    pRGV, eax;
+		// LINE 168:
+			pRGV->STVisited = 0x0;
+		// LINE 169:
+			pRGV->xPrev = 0xff;
+		// LINE 170:
+			pRGV->yindexPrev = 0xff;
+		// LINE 171:
+		// Block end:
+			__asm        jmp    _FOR_NEXT_d3;
+		// LINE 172:
+		// Block end:
+		_T124:
+	}
 // LINE 176:
 _T129:
 	__asm        xor    eax, eax;
@@ -586,162 +567,155 @@ _T129:
 	__asm        call   ShortestPath::PriorityHeapInsert;
 // LINE 191:
 __WHILE_192:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     _T313;
+	while ((this->heapSize != 0x0)) {
 
-	__asm        cmp    pathFoundFlag, 0;
-	__asm        jne    _T313;
-// LINE 195:
-	__asm        lea    eax, path.xCurr;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ShortestPath::PriorityHeapRemove;
-// LINE 197:
-	__asm        xor    eax, eax;
-	__asm        mov    al, path.xCurr;
-	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, path.yindexCurr;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pRGV, eax;
-// LINE 199:
-	__asm        mov    eax, pRGV;
-	__asm        cmp    dword ptr [eax+0x2F], 0;
-	__asm        jne    _T30e;
-// LINE 203:
-	__asm        mov    al, path.xPrev;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2D], al;
-// LINE 204:
-	__asm        mov    al, path.yindexPrev;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2C], al;
-// LINE 205:
-	__asm        mov    al, path.edgeIndexPrev;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2E], al;
-// LINE 206:
-	pRGV->STVisited = 0x1;
-// LINE 210:
-	__asm        xor    eax, eax;
-	__asm        mov    al, path.xCurr;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destVertex.x;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _FOR_244;
+			__asm        cmp    pathFoundFlag, 0;
+			__asm        jne    _T313;
+		// LINE 195:
+			__asm        lea    eax, path.xCurr;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   ShortestPath::PriorityHeapRemove;
+		// LINE 197:
+			__asm        xor    eax, eax;
+			__asm        mov    al, path.xCurr;
+			__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, path.yindexCurr;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    pRGV, eax;
+		// LINE 199:
+			__asm        mov    eax, pRGV;
+			__asm        cmp    dword ptr [eax+0x2F], 0;
+			__asm        jne    _T30e;
+		// LINE 203:
+			__asm        mov    al, path.xPrev;
+			__asm        mov    ecx, pRGV;
+			__asm        mov    [ecx+0x2D], al;
+		// LINE 204:
+			__asm        mov    al, path.yindexPrev;
+			__asm        mov    ecx, pRGV;
+			__asm        mov    [ecx+0x2C], al;
+		// LINE 205:
+			__asm        mov    al, path.edgeIndexPrev;
+			__asm        mov    ecx, pRGV;
+			__asm        mov    [ecx+0x2E], al;
+		// LINE 206:
+			pRGV->STVisited = 0x1;
+		// LINE 210:
+			__asm        xor    eax, eax;
+			__asm        mov    al, path.xCurr;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destVertex.x;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _FOR_244;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, path.yindexCurr;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destVertex.yindex;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _FOR_244;
-// LINE 212:
-	pathFoundFlag = 0x1;
-// LINE 215:
-	__asm        jmp    _T30e;
-// LINE 219:
-// Block start:
-	/*bp-0x38*/  int32_t i;
-_FOR_244:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_244;
-_FOR_NEXT_244:
-	i++;
-_FOR_COND_244:
-	__asm        cmp    i, 4;
-	__asm        jge    _T30e;
-// LINE 222:
-// Block start:
-	/*bp-0x3c*/  /*packed*/ struct Edge *pEdge;
-	/*bp-0x40*/  /*packed*/ struct RGVertex *pCurrRGV;
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        and    al, 0xF;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, al;
-	__asm        mov    eax, i;
-	__asm        test   IndexToType[0][eax*4], ecx;
-	__asm        jne    _T272;
-// LINE 223:
-	__asm        jmp    _FOR_NEXT_244;
-// LINE 226:
-_T272:
-	__asm        mov    eax, i;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    eax, pRGV;
-	__asm        add    eax, 4;
-	__asm        mov    pEdge, eax;
-// LINE 227:
-	__asm        mov    eax, pEdge;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
-	__asm        mov    ecx, pEdge;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx];
-	__asm        mov    ecx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    ecx, [ecx+edx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pCurrRGV, eax;
-// LINE 228:
-	__asm        mov    eax, pCurrRGV;
-	__asm        cmp    dword ptr [eax+0x2F], 0;
-	__asm        jne    _T309;
-// LINE 230:
-	__asm        mov    eax, pCurrRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    currLoc.x, al;
-// LINE 231:
-	__asm        mov    eax, pCurrRGV;
-	__asm        mov    al, [eax+1];
-	__asm        mov    currLoc.y, al;
-// LINE 233:
-	__asm        mov    eax, pEdge;
-	__asm        mov    al, [eax+1];
-	__asm        mov    scratch.xCurr, al;
-// LINE 234:
-	__asm        mov    eax, pEdge;
-	__asm        mov    al, [eax];
-	__asm        mov    scratch.yindexCurr, al;
-// LINE 235:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(currLoc.x);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ShortestPath::FindDistanceFromDestination;
-	__asm        mov    scratch.cost, eax;
-// LINE 236:
-	__asm        mov    al, reinterpret_cast<uint8_t>(i);
-	__asm        mov    scratch.edgeIndexPrev, al;
-// LINE 237:
-	__asm        mov    al, path.xCurr;
-	__asm        mov    scratch.xPrev, al;
-// LINE 238:
-	__asm        mov    al, path.yindexCurr;
-	__asm        mov    scratch.yindexPrev, al;
-// LINE 239:
-	__asm        lea    eax, scratch.xCurr;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ShortestPath::PriorityHeapInsert;
-// LINE 241:
-// Block end:
-_T309:
-	__asm        jmp    _FOR_NEXT_244;
-// LINE 244:
-// Block end:
-_T30e:
-	__asm        jmp    __WHILE_192;
+			__asm        xor    eax, eax;
+			__asm        mov    al, path.yindexCurr;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destVertex.yindex;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _FOR_244;
+		// LINE 212:
+			pathFoundFlag = 0x1;
+		// LINE 215:
+			__asm        jmp    _T30e;
+		// LINE 219:
+		// Block start:
+			/*bp-0x38*/  int32_t i;
+		_FOR_244:
+			for (i = 0x0; (i < 0x4); i++) {
+				// LINE 222:
+				// Block start:
+					/*bp-0x3c*/  /*packed*/ struct Edge *pEdge;
+					/*bp-0x40*/  /*packed*/ struct RGVertex *pCurrRGV;
+					__asm        mov    eax, pRGV;
+					__asm        mov    al, [eax+2];
+					__asm        and    al, 0xF;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, al;
+					__asm        mov    eax, i;
+					__asm        test   IndexToType[0][eax*4], ecx;
+					__asm        jne    _T272;
+				// LINE 223:
+					__asm        jmp    _FOR_NEXT_244;
+				// LINE 226:
+				_T272:
+					__asm        mov    eax, i;
+					__asm        lea    eax, [eax+eax*4];
+					__asm        add    eax, eax;
+					__asm        add    eax, pRGV;
+					__asm        add    eax, 4;
+					__asm        mov    pEdge, eax;
+				// LINE 227:
+					__asm        mov    eax, pEdge;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [eax+1];
+					__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
+					__asm        mov    ecx, pEdge;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [ecx];
+					__asm        mov    ecx, edx;
+					__asm        lea    edx, [edx+edx*4];
+					__asm        lea    edx, [edx+edx*4];
+					__asm        lea    ecx, [ecx+edx*2];
+					__asm        add    eax, ecx;
+					__asm        mov    pCurrRGV, eax;
+				// LINE 228:
+					__asm        mov    eax, pCurrRGV;
+					__asm        cmp    dword ptr [eax+0x2F], 0;
+					__asm        jne    _T309;
+				// LINE 230:
+					__asm        mov    eax, pCurrRGV;
+					__asm        mov    al, [eax];
+					__asm        mov    currLoc.x, al;
+				// LINE 231:
+					__asm        mov    eax, pCurrRGV;
+					__asm        mov    al, [eax+1];
+					__asm        mov    currLoc.y, al;
+				// LINE 233:
+					__asm        mov    eax, pEdge;
+					__asm        mov    al, [eax+1];
+					__asm        mov    scratch.xCurr, al;
+				// LINE 234:
+					__asm        mov    eax, pEdge;
+					__asm        mov    al, [eax];
+					__asm        mov    scratch.yindexCurr, al;
+				// LINE 235:
+					__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
+					__asm        push   eax;
+					__asm        mov    eax, reinterpret_cast<uint32_t>(currLoc.x);
+					__asm        push   eax;
+					__asm        mov    ecx, this;
+					__asm        call   ShortestPath::FindDistanceFromDestination;
+					__asm        mov    scratch.cost, eax;
+				// LINE 236:
+					__asm        mov    al, reinterpret_cast<uint8_t>(i);
+					__asm        mov    scratch.edgeIndexPrev, al;
+				// LINE 237:
+					__asm        mov    al, path.xCurr;
+					__asm        mov    scratch.xPrev, al;
+				// LINE 238:
+					__asm        mov    al, path.yindexCurr;
+					__asm        mov    scratch.yindexPrev, al;
+				// LINE 239:
+					__asm        lea    eax, scratch.xCurr;
+					__asm        push   eax;
+					__asm        mov    ecx, this;
+					__asm        call   ShortestPath::PriorityHeapInsert;
+				// LINE 241:
+				// Block end:
+				_T309:
+			}
+		// LINE 244:
+		// Block end:
+		_T30e:
+			__asm        jmp    __WHILE_192;
+	}
 // LINE 246:
 _T313:
 	return pathFoundFlag;

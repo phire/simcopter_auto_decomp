@@ -1213,17 +1213,8 @@ _T239:
 	__asm        jmp    _T2ab;
 _T2ab:
 	nPosition = _tell(fileImage->Handle);
-// LINE 352:
-_FOR_2cc:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_2cc;
 _FOR_NEXT_2cc:
 	i++;
-_FOR_COND_2cc:
-	__asm        mov    eax, biHeader.biHeight;
-	__asm        dec    eax;
-	__asm        cmp    eax, i;
-	__asm        jle    _T34a;
 
 	__asm        mov    eax, biHeader.biWidth;
 	__asm        mov    [ebp-0x470], eax;
@@ -2768,37 +2759,28 @@ void CBackBuffer::UpdatePalette(long start, long count, const /*packed*/ struct 
 	__asm        je     _Tc4;
 // LINE 1133:
 _FOR_30:
-	i = start;
-	__asm        jmp    _FOR_COND_30;
-_FOR_NEXT_30:
-	i++;
-_FOR_COND_30:
-	__asm        mov    eax, count;
-	__asm        add    eax, start;
-	__asm        cmp    eax, i;
-	__asm        jle    _T97;
-// LINE 1134:
-	__asm        mov    eax, pColor;
-	__asm        mov    al, [eax+2];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x400], al;
-// LINE 1135:
-	__asm        mov    eax, pColor;
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x3FF], al;
-// LINE 1136:
-	__asm        mov    eax, pColor;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x3FE], al;
-// LINE 1137:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x3FD], 5;
-// LINE 1138:
-	pColor += 0x4;
-// LINE 1139:
-	__asm        jmp    _FOR_NEXT_30;
+	for (i = start; ((count + start) > i); i++) {
+		// LINE 1134:
+			__asm        mov    eax, pColor;
+			__asm        mov    al, [eax+2];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x400], al;
+		// LINE 1135:
+			__asm        mov    eax, pColor;
+			__asm        mov    al, [eax+1];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x3FF], al;
+		// LINE 1136:
+			__asm        mov    eax, pColor;
+			__asm        mov    al, [eax];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x3FE], al;
+		// LINE 1137:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x3FD], 5;
+		// LINE 1138:
+			pColor += 0x4;
+	}
 // LINE 1141:
 _T97:
 	__asm        mov    eax, start;
@@ -3499,127 +3481,113 @@ _T22f:
 	__asm        jne    _FOR_2c5;
 // LINE 1555:
 _FOR_251:
-	i = 0x1;
-	__asm        jmp    _FOR_COND_251;
-_FOR_NEXT_251:
-	i++;
-_FOR_COND_251:
-	__asm        mov    eax, i;
-	__asm        cmp    numpixels, eax;
-	__asm        jl     _T2b4;
-// LINE 1557:
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x44];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x14];
-	__asm        imul   ecx, y;
-	__asm        mov    edx, this;
-	__asm        add    ecx, [edx+0x10];
-	__asm        mov    edx, x;
-	__asm        mov    [ecx+edx], al;
-// LINE 1559:
-	__asm        cmp    d, 0;
-	__asm        jge    _T29d;
-// LINE 1561:
-	d += dinc1;
-// LINE 1562:
-	x += xinc1;
-// LINE 1563:
-	y += yinc1;
-// LINE 1565:
-	__asm        jmp    _T2af;
-// LINE 1567:
-_T29d:
-	d += dinc2;
-// LINE 1568:
-	x += xinc2;
-// LINE 1569:
-	y += yinc2;
-// LINE 1571:
-_T2af:
-	__asm        jmp    _FOR_NEXT_251;
+	for (i = 0x1; (numpixels >= i); i++) {
+		// LINE 1557:
+			__asm        mov    eax, this;
+			__asm        mov    al, [eax+0x44];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx+0x14];
+			__asm        imul   ecx, y;
+			__asm        mov    edx, this;
+			__asm        add    ecx, [edx+0x10];
+			__asm        mov    edx, x;
+			__asm        mov    [ecx+edx], al;
+		// LINE 1559:
+			__asm        cmp    d, 0;
+			__asm        jge    _T29d;
+		// LINE 1561:
+			d += dinc1;
+		// LINE 1562:
+			x += xinc1;
+		// LINE 1563:
+			y += yinc1;
+		// LINE 1565:
+			__asm        jmp    _T2af;
+		// LINE 1567:
+		_T29d:
+			d += dinc2;
+		// LINE 1568:
+			x += xinc2;
+		// LINE 1569:
+			y += yinc2;
+		// LINE 1571:
+		_T2af:
+	}
 // LINE 1573:
 _T2b4:
 	__asm        jmp    _T3a5;
 // LINE 1575:
 _FOR_2c5:
-	i = 0x1;
-	__asm        jmp    _FOR_COND_2c5;
-_FOR_NEXT_2c5:
-	i++;
-_FOR_COND_2c5:
-	__asm        mov    eax, i;
-	__asm        cmp    numpixels, eax;
-	__asm        jl     _T3a5;
-// LINE 1581:
-	__asm        cmp    xinc2, 0xFFFFFFFF;
-	__asm        jne    _T2fd;
-// LINE 1582:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, y;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        add    eax, x;
-	__asm        sub    eax, nThickness;
-	__asm        inc    eax;
-	__asm        mov    address, eax;
-// LINE 1583:
-	__asm        jmp    _T313;
-// LINE 1584:
-_T2fd:
-	address = (((this->mStride * y) + this->mpBits) + x);
-// LINE 1586:
-_T313:
-	j = nThickness;
-// LINE 1587:
-__WHILE_319:
-	__asm        mov    eax, j;
-	__asm        mov    [ebp-0x58], eax;
-	__asm        dec    j;
-	__asm        cmp    dword ptr [ebp-0x58], 0;
-	__asm        je     _T36d;
-// LINE 1589:
-	memset(nThickness, this->nColorIndexCurrent, address);
-// LINE 1590:
-	__asm        cmp    yinc2, 0xFFFFFFFF;
-	__asm        jne    _T35f;
-// LINE 1591:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        neg    eax;
-	__asm        sub    address, eax;
-// LINE 1592:
-	__asm        jmp    _T368;
-// LINE 1593:
-_T35f:
-	address += this->mStride;
-// LINE 1594:
-_T368:
-	__asm        jmp    __WHILE_319;
-// LINE 1596:
-_T36d:
-	__asm        cmp    d, 0;
-	__asm        jge    _T38e;
-// LINE 1598:
-	d += dinc1;
-// LINE 1599:
-	x += xinc1;
-// LINE 1600:
-	y += yinc1;
-// LINE 1602:
-	__asm        jmp    _T3a0;
-// LINE 1604:
-_T38e:
-	d += dinc2;
-// LINE 1605:
-	x += xinc2;
-// LINE 1606:
-	y += yinc2;
-// LINE 1608:
-_T3a0:
-	__asm        jmp    _FOR_NEXT_2c5;
+	for (i = 0x1; (numpixels >= i); i++) {
+		// LINE 1581:
+			__asm        cmp    xinc2, 0xFFFFFFFF;
+			__asm        jne    _T2fd;
+		// LINE 1582:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0x14];
+			__asm        imul   eax, y;
+			__asm        mov    ecx, this;
+			__asm        add    eax, [ecx+0x10];
+			__asm        add    eax, x;
+			__asm        sub    eax, nThickness;
+			__asm        inc    eax;
+			__asm        mov    address, eax;
+		// LINE 1583:
+			__asm        jmp    _T313;
+		// LINE 1584:
+		_T2fd:
+			address = (((this->mStride * y) + this->mpBits) + x);
+		// LINE 1586:
+		_T313:
+			j = nThickness;
+		// LINE 1587:
+		__WHILE_319:
+			__asm        mov    eax, j;
+			__asm        mov    [ebp-0x58], eax;
+			__asm        dec    j;
+			__asm        cmp    dword ptr [ebp-0x58], 0;
+			__asm        je     _T36d;
+		// LINE 1589:
+			memset(nThickness, this->nColorIndexCurrent, address);
+		// LINE 1590:
+			__asm        cmp    yinc2, 0xFFFFFFFF;
+			__asm        jne    _T35f;
+		// LINE 1591:
+			__asm        xor    eax, eax;
+			__asm        mov    ecx, this;
+			__asm        sub    eax, [ecx+0x14];
+			__asm        neg    eax;
+			__asm        sub    address, eax;
+		// LINE 1592:
+			__asm        jmp    _T368;
+		// LINE 1593:
+		_T35f:
+			address += this->mStride;
+		// LINE 1594:
+		_T368:
+			__asm        jmp    __WHILE_319;
+		// LINE 1596:
+		_T36d:
+			__asm        cmp    d, 0;
+			__asm        jge    _T38e;
+		// LINE 1598:
+			d += dinc1;
+		// LINE 1599:
+			x += xinc1;
+		// LINE 1600:
+			y += yinc1;
+		// LINE 1602:
+			__asm        jmp    _T3a0;
+		// LINE 1604:
+		_T38e:
+			d += dinc2;
+		// LINE 1605:
+			x += xinc2;
+		// LINE 1606:
+			y += yinc2;
+		// LINE 1608:
+		_T3a0:
+	}
 // LINE 1612:
 // Block end:
 _T3a5:
@@ -3715,6 +3683,10 @@ _T109:
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0x90], eax;
 	__asm        jmp    __DO_11a;
+__DO_11a:
+	__asm        mov    eax, [ebp-0x90];
+	__asm        or     eax, [ebp-0x88];
+	__asm        jne    _T13f;
 __DO_11a:
 	__asm        mov    eax, [ebp-0x90];
 	__asm        or     eax, [ebp-0x88];
@@ -4066,45 +4038,38 @@ _T59a:
 	__asm        jne    _T62d;
 // LINE 1728:
 _FOR_5bc:
-	i = 0x1;
-	__asm        jmp    _FOR_COND_5bc;
-_FOR_NEXT_5bc:
-	i++;
-_FOR_COND_5bc:
-	__asm        mov    eax, i;
-	__asm        cmp    numpixels, eax;
-	__asm        jl     _T628;
-// LINE 1730:
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x44];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x14];
-	__asm        imul   ecx, y;
-	__asm        mov    edx, this;
-	__asm        add    ecx, [edx+0x10];
-	__asm        mov    edx, x;
-	__asm        mov    [ecx+edx], al;
-// LINE 1732:
-	__asm        cmp    d, 0;
-	__asm        jge    _T611;
-// LINE 1734:
-	d += dinc1;
-// LINE 1735:
-	x += xinc1;
-// LINE 1736:
-	y += yinc1;
-// LINE 1738:
-	__asm        jmp    _T623;
-// LINE 1740:
-_T611:
-	d += dinc2;
-// LINE 1741:
-	x += xinc2;
-// LINE 1742:
-	y += yinc2;
-// LINE 1744:
-_T623:
-	__asm        jmp    _FOR_NEXT_5bc;
+	for (i = 0x1; (numpixels >= i); i++) {
+		// LINE 1730:
+			__asm        mov    eax, this;
+			__asm        mov    al, [eax+0x44];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx+0x14];
+			__asm        imul   ecx, y;
+			__asm        mov    edx, this;
+			__asm        add    ecx, [edx+0x10];
+			__asm        mov    edx, x;
+			__asm        mov    [ecx+edx], al;
+		// LINE 1732:
+			__asm        cmp    d, 0;
+			__asm        jge    _T611;
+		// LINE 1734:
+			d += dinc1;
+		// LINE 1735:
+			x += xinc1;
+		// LINE 1736:
+			y += yinc1;
+		// LINE 1738:
+			__asm        jmp    _T623;
+		// LINE 1740:
+		_T611:
+			d += dinc2;
+		// LINE 1741:
+			x += xinc2;
+		// LINE 1742:
+			y += yinc2;
+		// LINE 1744:
+		_T623:
+	}
 // LINE 1746:
 _T628:
 	__asm        jmp    _T921;
@@ -4128,240 +4093,240 @@ _T62d:
 	maxSafeY = (bufferHeight - nThickness);
 // LINE 1768:
 __WHILE_64d:
-	__asm        cmp    numpixels, 0;
-	__asm        je     __WHILE_770;
+	while ((numpixels != 0x0)) {
 
-	__asm        mov    eax, x;
-	__asm        cmp    minSafeX, eax;
-	__asm        jg     __WHILE_770;
+			__asm        mov    eax, x;
+			__asm        cmp    minSafeX, eax;
+			__asm        jg     __WHILE_770;
 
-	__asm        mov    eax, x;
-	__asm        cmp    maxSafeX, eax;
-	__asm        jl     __WHILE_770;
+			__asm        mov    eax, x;
+			__asm        cmp    maxSafeX, eax;
+			__asm        jl     __WHILE_770;
 
-	__asm        mov    eax, y;
-	__asm        cmp    minSafeY, eax;
-	__asm        jg     __WHILE_770;
+			__asm        mov    eax, y;
+			__asm        cmp    minSafeY, eax;
+			__asm        jg     __WHILE_770;
 
-	__asm        mov    eax, y;
-	__asm        cmp    maxSafeY, eax;
-	__asm        jl     __WHILE_770;
-// LINE 1771:
-	__asm        cmp    xinc2, 0xFFFFFFFF;
-	__asm        jne    _T6b6;
-// LINE 1772:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, y;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        add    eax, x;
-	__asm        sub    eax, nThickness;
-	__asm        inc    eax;
-	__asm        mov    address, eax;
-// LINE 1773:
-	__asm        jmp    _T6d2;
-// LINE 1774:
-_T6b6:
-	address = (((this->mStride * y) + this->mpBits) + x);
-// LINE 1776:
-_T6d2:
-	j = nThickness;
-// LINE 1777:
-__WHILE_6d8:
-	__asm        mov    eax, j;
-	__asm        mov    [ebp-0x70], eax;
-	__asm        dec    j;
-	__asm        cmp    dword ptr [ebp-0x70], 0;
-	__asm        je     _T735;
-// LINE 1779:
-	memset(nThickness, this->nColorIndexCurrent, address);
-// LINE 1780:
-	__asm        cmp    yinc2, 0xFFFFFFFF;
-	__asm        jne    _T724;
-// LINE 1781:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        neg    eax;
-	__asm        sub    address, eax;
-// LINE 1782:
-	__asm        jmp    _T730;
-// LINE 1783:
-_T724:
-	address += this->mStride;
-// LINE 1784:
-_T730:
-	__asm        jmp    __WHILE_6d8;
-// LINE 1786:
-_T735:
-	__asm        cmp    d, 0;
-	__asm        jge    _T756;
-// LINE 1788:
-	d += dinc1;
-// LINE 1789:
-	x += xinc1;
-// LINE 1790:
-	y += yinc1;
-// LINE 1792:
-	__asm        jmp    _T768;
-// LINE 1794:
-_T756:
-	d += dinc2;
-// LINE 1795:
-	x += xinc2;
-// LINE 1796:
-	y += yinc2;
-// LINE 1799:
-_T768:
-	numpixels--;
-// LINE 1800:
-	__asm        jmp    __WHILE_64d;
+			__asm        mov    eax, y;
+			__asm        cmp    maxSafeY, eax;
+			__asm        jl     __WHILE_770;
+		// LINE 1771:
+			__asm        cmp    xinc2, 0xFFFFFFFF;
+			__asm        jne    _T6b6;
+		// LINE 1772:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0x14];
+			__asm        imul   eax, y;
+			__asm        mov    ecx, this;
+			__asm        add    eax, [ecx+0x10];
+			__asm        add    eax, x;
+			__asm        sub    eax, nThickness;
+			__asm        inc    eax;
+			__asm        mov    address, eax;
+		// LINE 1773:
+			__asm        jmp    _T6d2;
+		// LINE 1774:
+		_T6b6:
+			address = (((this->mStride * y) + this->mpBits) + x);
+		// LINE 1776:
+		_T6d2:
+			j = nThickness;
+		// LINE 1777:
+		__WHILE_6d8:
+			__asm        mov    eax, j;
+			__asm        mov    [ebp-0x70], eax;
+			__asm        dec    j;
+			__asm        cmp    dword ptr [ebp-0x70], 0;
+			__asm        je     _T735;
+		// LINE 1779:
+			memset(nThickness, this->nColorIndexCurrent, address);
+		// LINE 1780:
+			__asm        cmp    yinc2, 0xFFFFFFFF;
+			__asm        jne    _T724;
+		// LINE 1781:
+			__asm        xor    eax, eax;
+			__asm        mov    ecx, this;
+			__asm        sub    eax, [ecx+0x14];
+			__asm        neg    eax;
+			__asm        sub    address, eax;
+		// LINE 1782:
+			__asm        jmp    _T730;
+		// LINE 1783:
+		_T724:
+			address += this->mStride;
+		// LINE 1784:
+		_T730:
+			__asm        jmp    __WHILE_6d8;
+		// LINE 1786:
+		_T735:
+			__asm        cmp    d, 0;
+			__asm        jge    _T756;
+		// LINE 1788:
+			d += dinc1;
+		// LINE 1789:
+			x += xinc1;
+		// LINE 1790:
+			y += yinc1;
+		// LINE 1792:
+			__asm        jmp    _T768;
+		// LINE 1794:
+		_T756:
+			d += dinc2;
+		// LINE 1795:
+			x += xinc2;
+		// LINE 1796:
+			y += yinc2;
+		// LINE 1799:
+		_T768:
+			numpixels--;
+		// LINE 1800:
+			__asm        jmp    __WHILE_64d;
+	}
 // LINE 1804:
 __WHILE_770:
-	__asm        cmp    numpixels, 0;
-	__asm        je     _T921;
-// LINE 1807:
-// Block start:
-	/*bp-0x60*/  char * bufferEnd;
-	__asm        cmp    xinc2, 0xFFFFFFFF;
-	__asm        jne    _T7b5;
-// LINE 1809:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, y;
-	__asm        mov    ecx, x;
-	__asm        sub    ecx, nThickness;
-	__asm        inc    ecx;
-	__asm        test   ecx, ecx;
-	__asm        jg     _T7a2;
+	while ((numpixels != 0x0)) {
+		// LINE 1807:
+		// Block start:
+			/*bp-0x60*/  char * bufferEnd;
+			__asm        cmp    xinc2, 0xFFFFFFFF;
+			__asm        jne    _T7b5;
+		// LINE 1809:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0x14];
+			__asm        imul   eax, y;
+			__asm        mov    ecx, x;
+			__asm        sub    ecx, nThickness;
+			__asm        inc    ecx;
+			__asm        test   ecx, ecx;
+			__asm        jg     _T7a2;
 
-	__asm        xor    ecx, ecx;
-_T7a2:
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    address, eax;
-// LINE 1810:
-	__asm        jmp    _T7e1;
-// LINE 1812:
-_T7b5:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        imul   eax, y;
-	__asm        mov    ecx, bufferWidth;
-	__asm        dec    ecx;
-	__asm        mov    edx, x;
-	__asm        cmp    ecx, edx;
-	__asm        jl     _T7d3;
+			__asm        xor    ecx, ecx;
+		_T7a2:
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, this;
+			__asm        add    eax, [ecx+0x10];
+			__asm        mov    address, eax;
+		// LINE 1810:
+			__asm        jmp    _T7e1;
+		// LINE 1812:
+		_T7b5:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0x14];
+			__asm        imul   eax, y;
+			__asm        mov    ecx, bufferWidth;
+			__asm        dec    ecx;
+			__asm        mov    edx, x;
+			__asm        cmp    ecx, edx;
+			__asm        jl     _T7d3;
 
-	__asm        mov    ecx, edx;
-_T7d3:
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    address, eax;
-// LINE 1814:
-_T7e1:
-	bufferEnd = ((this->mStride * bufferHeight) + this->mpBits);
-// LINE 1816:
-	j = nThickness;
-// LINE 1818:
-__WHILE_800:
-	__asm        mov    eax, j;
-	__asm        mov    [ebp-0x74], eax;
-	__asm        dec    j;
-	__asm        cmp    dword ptr [ebp-0x74], 0;
-	__asm        je     _T8e6;
-// LINE 1822:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, address;
-	__asm        cmp    [eax+0x10], ecx;
-	__asm        ja     _T8b6;
+			__asm        mov    ecx, edx;
+		_T7d3:
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, this;
+			__asm        add    eax, [ecx+0x10];
+			__asm        mov    address, eax;
+		// LINE 1814:
+		_T7e1:
+			bufferEnd = ((this->mStride * bufferHeight) + this->mpBits);
+		// LINE 1816:
+			j = nThickness;
+		// LINE 1818:
+		__WHILE_800:
+			__asm        mov    eax, j;
+			__asm        mov    [ebp-0x74], eax;
+			__asm        dec    j;
+			__asm        cmp    dword ptr [ebp-0x74], 0;
+			__asm        je     _T8e6;
+		// LINE 1822:
+			__asm        mov    eax, this;
+			__asm        mov    ecx, address;
+			__asm        cmp    [eax+0x10], ecx;
+			__asm        ja     _T8b6;
 
-	__asm        mov    eax, bufferEnd;
-	__asm        cmp    address, eax;
-	__asm        jae    _T8b6;
-// LINE 1825:
-// Block start:
-	/*bp-0x64*/  int32_t nPixels;
-	__asm        cmp    xinc2, 0xFFFFFFFF;
-	__asm        jne    _T879;
-// LINE 1827:
-	__asm        mov    eax, nThickness;
-	__asm        dec    eax;
-	__asm        cmp    eax, x;
-	__asm        jg     _T853;
+			__asm        mov    eax, bufferEnd;
+			__asm        cmp    address, eax;
+			__asm        jae    _T8b6;
+		// LINE 1825:
+		// Block start:
+			/*bp-0x64*/  int32_t nPixels;
+			__asm        cmp    xinc2, 0xFFFFFFFF;
+			__asm        jne    _T879;
+		// LINE 1827:
+			__asm        mov    eax, nThickness;
+			__asm        dec    eax;
+			__asm        cmp    eax, x;
+			__asm        jg     _T853;
 
-	nPixels = nThickness;
-	__asm        jmp    _T85a;
-_T853:
-	__asm        mov    eax, x;
-	__asm        inc    eax;
-	__asm        mov    nPixels, eax;
-// LINE 1828:
-_T85a:
-	memset(nPixels, this->nColorIndexCurrent, address);
-// LINE 1830:
-	__asm        jmp    _T8b6;
-// LINE 1832:
-_T879:
-	__asm        mov    eax, bufferWidth;
-	__asm        sub    eax, nThickness;
-	__asm        cmp    eax, x;
-	__asm        jge    _T896;
+			nPixels = nThickness;
+			__asm        jmp    _T85a;
+		_T853:
+			__asm        mov    eax, x;
+			__asm        inc    eax;
+			__asm        mov    nPixels, eax;
+		// LINE 1828:
+		_T85a:
+			memset(nPixels, this->nColorIndexCurrent, address);
+		// LINE 1830:
+			__asm        jmp    _T8b6;
+		// LINE 1832:
+		_T879:
+			__asm        mov    eax, bufferWidth;
+			__asm        sub    eax, nThickness;
+			__asm        cmp    eax, x;
+			__asm        jge    _T896;
 
-	nPixels = (bufferWidth - x);
-	__asm        jmp    _T89c;
-_T896:
-	nPixels = nThickness;
-// LINE 1833:
-_T89c:
-	memset(nPixels, this->nColorIndexCurrent, address);
-// LINE 1837:
-// Block end:
-_T8b6:
-	__asm        cmp    yinc2, 0xFFFFFFFF;
-	__asm        jne    _T8d5;
-// LINE 1838:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        neg    eax;
-	__asm        sub    address, eax;
-// LINE 1839:
-	__asm        jmp    _T8e1;
-// LINE 1840:
-_T8d5:
-	address += this->mStride;
-// LINE 1841:
-_T8e1:
-	__asm        jmp    __WHILE_800;
-// LINE 1843:
-_T8e6:
-	__asm        cmp    d, 0;
-	__asm        jge    _T907;
-// LINE 1845:
-	d += dinc1;
-// LINE 1846:
-	x += xinc1;
-// LINE 1847:
-	y += yinc1;
-// LINE 1849:
-	__asm        jmp    _T919;
-// LINE 1851:
-_T907:
-	d += dinc2;
-// LINE 1852:
-	x += xinc2;
-// LINE 1853:
-	y += yinc2;
-// LINE 1856:
-_T919:
-	numpixels--;
-// LINE 1857:
-// Block end:
-	__asm        jmp    __WHILE_770;
+			nPixels = (bufferWidth - x);
+			__asm        jmp    _T89c;
+		_T896:
+			nPixels = nThickness;
+		// LINE 1833:
+		_T89c:
+			memset(nPixels, this->nColorIndexCurrent, address);
+		// LINE 1837:
+		// Block end:
+		_T8b6:
+			__asm        cmp    yinc2, 0xFFFFFFFF;
+			__asm        jne    _T8d5;
+		// LINE 1838:
+			__asm        xor    eax, eax;
+			__asm        mov    ecx, this;
+			__asm        sub    eax, [ecx+0x14];
+			__asm        neg    eax;
+			__asm        sub    address, eax;
+		// LINE 1839:
+			__asm        jmp    _T8e1;
+		// LINE 1840:
+		_T8d5:
+			address += this->mStride;
+		// LINE 1841:
+		_T8e1:
+			__asm        jmp    __WHILE_800;
+		// LINE 1843:
+		_T8e6:
+			__asm        cmp    d, 0;
+			__asm        jge    _T907;
+		// LINE 1845:
+			d += dinc1;
+		// LINE 1846:
+			x += xinc1;
+		// LINE 1847:
+			y += yinc1;
+		// LINE 1849:
+			__asm        jmp    _T919;
+		// LINE 1851:
+		_T907:
+			d += dinc2;
+		// LINE 1852:
+			x += xinc2;
+		// LINE 1853:
+			y += yinc2;
+		// LINE 1856:
+		_T919:
+			numpixels--;
+		// LINE 1857:
+		// Block end:
+			__asm        jmp    __WHILE_770;
+	}
 // LINE 1861:
 // Block end:
 // Block end:

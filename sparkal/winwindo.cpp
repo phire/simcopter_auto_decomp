@@ -163,18 +163,13 @@ void CSparkalWindow::CSparkalWindow() {
 	this->mhCustomCursor = 0x0;
 // LINE 65:
 _FOR_7b:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_7b;
-_FOR_NEXT_7b:
-	i++;
-_FOR_COND_7b:
-	__asm        cmp    i, 0x10;
-	__asm        jge    _T9b;
-// LINE 66:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
-	__asm        jmp    _FOR_NEXT_7b;
+	for (i = 0x0; (i < 0x10); i++) {
+		// LINE 66:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, this;
+			__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
+			__asm        jmp    _FOR_NEXT_7b;
+	}
 // LINE 67:
 _T9b:
 	return;
@@ -215,18 +210,13 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 	this->mhCustomCursor = 0x0;
 // LINE 90:
 _FOR_9c:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_9c;
-_FOR_NEXT_9c:
-	i++;
-_FOR_COND_9c:
-	__asm        cmp    i, 0x10;
-	__asm        jge    _Tbf;
-// LINE 91:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
-	__asm        jmp    _FOR_NEXT_9c;
+	for (i = 0x0; (i < 0x10); i++) {
+		// LINE 91:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, this;
+			__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
+			__asm        jmp    _FOR_NEXT_9c;
+	}
 // LINE 94:
 _Tbf:
 	__asm        lea    eax, ClassInfo.style;
@@ -481,95 +471,71 @@ _T373:
 	End = 0xff;
 // LINE 192:
 _FOR_3b6:
-	Counter = 0x0;
-	__asm        jmp    _FOR_COND_3b6;
-_FOR_NEXT_3b6:
-	Counter++;
-_FOR_COND_3b6:
-	__asm        mov    eax, Start;
-	__asm        cmp    Counter, eax;
-	__asm        jge    _T3d5;
-// LINE 193:
-	__asm        mov    eax, Counter;
-	__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
-	__asm        jmp    _FOR_NEXT_3b6;
+	for (Counter = 0x0; (Counter < Start); Counter++) {
+		// LINE 193:
+			__asm        mov    eax, Counter;
+			__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
+			__asm        jmp    _FOR_NEXT_3b6;
+	}
 // LINE 196:
 _T3d5:
 	__asm        cmp    pColors, 0;
 	__asm        je     _FOR_448;
 // LINE 197:
 _FOR_3e4:
-	__asm        jmp    _FOR_COND_3e4;
-_FOR_NEXT_3e4:
-	Counter++;
-_FOR_COND_3e4:
-	__asm        mov    eax, End;
-	__asm        cmp    Counter, eax;
-	__asm        jge    _T43e;
-// LINE 198:
-	__asm        mov    eax, Counter;
-	__asm        mov    ecx, pColors;
-	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ecx, Counter;
-	__asm        mov    [ebp+ecx*4-0x466], al;
-// LINE 199:
-	__asm        mov    eax, Counter;
-	__asm        mov    ecx, pColors;
-	__asm        mov    al, [ecx+eax*4+1];
-	__asm        mov    ecx, Counter;
-	__asm        mov    [ebp+ecx*4-0x467], al;
-// LINE 200:
-	__asm        mov    eax, Counter;
-	__asm        mov    ecx, pColors;
-	__asm        mov    al, [ecx+eax*4+2];
-	__asm        mov    ecx, Counter;
-	__asm        mov    [ebp+ecx*4-0x468], al;
-// LINE 201:
-	__asm        mov    eax, Counter;
-	__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
-// LINE 202:
-	__asm        jmp    _FOR_NEXT_3e4;
+	for (; (Counter < End); Counter++) {
+		// LINE 198:
+			__asm        mov    eax, Counter;
+			__asm        mov    ecx, pColors;
+			__asm        mov    al, [ecx+eax*4];
+			__asm        mov    ecx, Counter;
+			__asm        mov    [ebp+ecx*4-0x466], al;
+		// LINE 199:
+			__asm        mov    eax, Counter;
+			__asm        mov    ecx, pColors;
+			__asm        mov    al, [ecx+eax*4+1];
+			__asm        mov    ecx, Counter;
+			__asm        mov    [ebp+ecx*4-0x467], al;
+		// LINE 200:
+			__asm        mov    eax, Counter;
+			__asm        mov    ecx, pColors;
+			__asm        mov    al, [ecx+eax*4+2];
+			__asm        mov    ecx, Counter;
+			__asm        mov    [ebp+ecx*4-0x468], al;
+		// LINE 201:
+			__asm        mov    eax, Counter;
+			__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
+	}
 // LINE 204:
 _T43e:
 	__asm        jmp    _FOR_493;
 // LINE 205:
 _FOR_448:
-	__asm        jmp    _FOR_COND_448;
-_FOR_NEXT_448:
-	Counter++;
-_FOR_COND_448:
-	__asm        mov    eax, End;
-	__asm        cmp    Counter, eax;
-	__asm        jge    _FOR_493;
-// LINE 206:
-	__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
-	__asm        mov    ecx, Counter;
-	__asm        mov    [ebp+ecx*4-0x466], al;
-// LINE 207:
-	__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
-	__asm        mov    ecx, Counter;
-	__asm        mov    [ebp+ecx*4-0x467], al;
-// LINE 208:
-	__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
-	__asm        mov    ecx, Counter;
-	__asm        mov    [ebp+ecx*4-0x468], al;
-// LINE 209:
-	__asm        mov    eax, Counter;
-	__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
-// LINE 210:
-	__asm        jmp    _FOR_NEXT_448;
+	for (; (Counter < End); Counter++) {
+		// LINE 206:
+			__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
+			__asm        mov    ecx, Counter;
+			__asm        mov    [ebp+ecx*4-0x466], al;
+		// LINE 207:
+			__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
+			__asm        mov    ecx, Counter;
+			__asm        mov    [ebp+ecx*4-0x467], al;
+		// LINE 208:
+			__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
+			__asm        mov    ecx, Counter;
+			__asm        mov    [ebp+ecx*4-0x468], al;
+		// LINE 209:
+			__asm        mov    eax, Counter;
+			__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
+	}
 // LINE 214:
 _FOR_493:
-	__asm        jmp    _FOR_COND_493;
-_FOR_NEXT_493:
-	Counter++;
-_FOR_COND_493:
-	__asm        cmp    Counter, 0x100;
-	__asm        jge    _T4b3;
-// LINE 215:
-	__asm        mov    eax, Counter;
-	__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
-	__asm        jmp    _FOR_NEXT_493;
+	for (; (Counter < 0x100); Counter++) {
+		// LINE 215:
+			__asm        mov    eax, Counter;
+			__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
+			__asm        jmp    _FOR_NEXT_493;
+	}
 // LINE 218:
 _T4b3:
 	__asm        lea    eax, LogPalette.Version;
@@ -704,27 +670,21 @@ _T4b:
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 259:
 _FOR_71:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_71;
-_FOR_NEXT_71:
-	i++;
-_FOR_COND_71:
-	__asm        cmp    i, 0x10;
-	__asm        jge    _Ta5;
-// LINE 260:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        cmp    dword ptr [ecx+eax*4+0x28], 0;
-	__asm        je     _Ta0;
-// LINE 261:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4+0x28];
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C358C];
-// LINE 262:
-_Ta0:
-	__asm        jmp    _FOR_NEXT_71;
+	for (i = 0x0; (i < 0x10); i++) {
+		// LINE 260:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, this;
+			__asm        cmp    dword ptr [ecx+eax*4+0x28], 0;
+			__asm        je     _Ta0;
+		// LINE 261:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [ecx+eax*4+0x28];
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C358C];
+		// LINE 262:
+		_Ta0:
+	}
 // LINE 267:
 _Ta5:
 	__asm        mov    eax, this;
@@ -1154,37 +1114,28 @@ void CSparkalWindow::UpdatePalette(long start, long count, /*packed*/ struct Spa
 	__asm        je     _Tba;
 // LINE 487:
 _FOR_30:
-	i = start;
-	__asm        jmp    _FOR_COND_30;
-_FOR_NEXT_30:
-	i++;
-_FOR_COND_30:
-	__asm        mov    eax, count;
-	__asm        add    eax, start;
-	__asm        cmp    eax, i;
-	__asm        jle    _T97;
-// LINE 488:
-	__asm        mov    eax, pColor;
-	__asm        mov    al, [eax+2];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x400], al;
-// LINE 489:
-	__asm        mov    eax, pColor;
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x3FF], al;
-// LINE 490:
-	__asm        mov    eax, pColor;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x3FE], al;
-// LINE 491:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x3FD], 5;
-// LINE 492:
-	pColor += 0x4;
-// LINE 493:
-	__asm        jmp    _FOR_NEXT_30;
+	for (i = start; ((count + start) > i); i++) {
+		// LINE 488:
+			__asm        mov    eax, pColor;
+			__asm        mov    al, [eax+2];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x400], al;
+		// LINE 489:
+			__asm        mov    eax, pColor;
+			__asm        mov    al, [eax+1];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x3FF], al;
+		// LINE 490:
+			__asm        mov    eax, pColor;
+			__asm        mov    al, [eax];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x3FE], al;
+		// LINE 491:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x3FD], 5;
+		// LINE 492:
+			pColor += 0x4;
+	}
 // LINE 494:
 _T97:
 	__asm        mov    eax, start;
@@ -1274,50 +1225,38 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, /*pack
 	Info.Header.biClrImportant = 0x0;
 // LINE 537:
 _FOR_ff:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_ff;
-_FOR_NEXT_ff:
-	i++;
-_FOR_COND_ff:
-	__asm        cmp    i, 0x100;
-	__asm        jge    _FOR_184;
-// LINE 538:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pColors;
-	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x516], al;
-// LINE 539:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pColors;
-	__asm        mov    al, [ecx+eax*4+1];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x517], al;
-// LINE 540:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pColors;
-	__asm        mov    al, [ecx+eax*4+2];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x518], al;
-// LINE 541:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x515], 0;
-// LINE 542:
-	__asm        jmp    _FOR_NEXT_ff;
+	for (i = 0x0; (i < 0x100); i++) {
+		// LINE 538:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, pColors;
+			__asm        mov    al, [ecx+eax*4];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x516], al;
+		// LINE 539:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, pColors;
+			__asm        mov    al, [ecx+eax*4+1];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x517], al;
+		// LINE 540:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, pColors;
+			__asm        mov    al, [ecx+eax*4+2];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x518], al;
+		// LINE 541:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x515], 0;
+	}
 // LINE 545:
 _FOR_184:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_184;
-_FOR_NEXT_184:
-	i++;
-_FOR_COND_184:
-	__asm        cmp    i, 0x100;
-	__asm        jge    _T1b2;
-// LINE 546:
-	__asm        mov    al, reinterpret_cast<uint8_t>(i);
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx-0x100], al;
-	__asm        jmp    _FOR_NEXT_184;
+	for (i = 0x0; (i < 0x100); i++) {
+		// LINE 546:
+			__asm        mov    al, reinterpret_cast<uint8_t>(i);
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx-0x100], al;
+			__asm        jmp    _FOR_NEXT_184;
+	}
 // LINE 549:
 _T1b2:
 	__asm        push   0xCC0020;
@@ -1352,26 +1291,20 @@ _T1b2:
 	__asm        call   dword ptr ds:[0x6C35C0];
 // LINE 555:
 _FOR_22f:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_22f;
-_FOR_NEXT_22f:
-	i++;
-_FOR_COND_22f:
-	__asm        cmp    i, 0x100;
-	__asm        jge    _T274;
-// LINE 556:
-	__asm        mov    eax, i;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax-0x100];
-	__asm        cmp    ecx, i;
-	__asm        je     _T26f;
-// LINE 557:
-	IsID = 0x0;
-// LINE 558:
-	__asm        jmp    _T274;
-// LINE 560:
-_T26f:
-	__asm        jmp    _FOR_NEXT_22f;
+	for (i = 0x0; (i < 0x100); i++) {
+		// LINE 556:
+			__asm        mov    eax, i;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [ebp+eax-0x100];
+			__asm        cmp    ecx, i;
+			__asm        je     _T26f;
+		// LINE 557:
+			IsID = 0x0;
+		// LINE 558:
+			__asm        jmp    _T274;
+		// LINE 560:
+		_T26f:
+	}
 // LINE 563:
 _T274:
 	__asm        mov    eax, Mono;

@@ -1963,53 +1963,53 @@ _T79:
 	dyptr = cptr->dyptr;
 // LINE 701:
 __WHILE_88:
-	__asm        cmp    dyptr, 0;
-	__asm        je     __DO_WHILE_16;
-// LINE 703:
-	__asm        mov    eax, dyptr;
-	__asm        movsx  eax, word ptr [eax+0xC];
-	__asm        test   al, 8;
-	__asm        je     _Tcd;
+	while ((dyptr != 0x0)) {
+		// LINE 703:
+			__asm        mov    eax, dyptr;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 8;
+			__asm        je     _Tcd;
 
-	__asm        mov    eax, dyptr;
-	__asm        push   eax;
-	__asm        call   IsThisABadGuy;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _Tcd;
-// LINE 705:
-	__asm        mov    eax, dyptr;
-	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    _Tc0;
-_Tc0:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    __RETURN;
-// LINE 707:
-	__asm        jmp    _T10a;
-_Tcd:
-	__asm        mov    eax, dyptr;
-	__asm        movsx  eax, word ptr [eax+0xC];
-	__asm        test   al, 0x10;
-	__asm        je     _T10a;
+			__asm        mov    eax, dyptr;
+			__asm        push   eax;
+			__asm        call   IsThisABadGuy;
+			__asm        add    esp, 4;
+			__asm        test   eax, eax;
+			__asm        je     _Tcd;
+		// LINE 705:
+			__asm        mov    eax, dyptr;
+			__asm        mov    [ebp-0x1C], eax;
+			__asm        jmp    _Tc0;
+		_Tc0:
+			__asm        mov    eax, [ebp-0x1C];
+			__asm        jmp    __RETURN;
+		// LINE 707:
+			__asm        jmp    _T10a;
+		_Tcd:
+			__asm        mov    eax, dyptr;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 0x10;
+			__asm        je     _T10a;
 
-	__asm        mov    eax, dyptr;
-	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    ecx, cars[0][eax*4];
-	__asm        call   AutomobileClass::AmIABadGuy;
-	__asm        test   eax, eax;
-	__asm        je     _T10a;
-// LINE 709:
-	__asm        mov    eax, dyptr;
-	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    _T102;
-_T102:
-	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    __RETURN;
-// LINE 712:
-_T10a:
-	dyptr = dyptr->next;
-// LINE 713:
-	__asm        jmp    __WHILE_88;
+			__asm        mov    eax, dyptr;
+			__asm        movsx  eax, word ptr [eax+0xE];
+			__asm        mov    ecx, cars[0][eax*4];
+			__asm        call   AutomobileClass::AmIABadGuy;
+			__asm        test   eax, eax;
+			__asm        je     _T10a;
+		// LINE 709:
+			__asm        mov    eax, dyptr;
+			__asm        mov    [ebp-0x20], eax;
+			__asm        jmp    _T102;
+		_T102:
+			__asm        mov    eax, [ebp-0x20];
+			__asm        jmp    __RETURN;
+		// LINE 712:
+		_T10a:
+			dyptr = dyptr->next;
+		// LINE 713:
+			__asm        jmp    __WHILE_88;
+	}
 // LINE 715:
 __DO_WHILE_16:
 	__asm        mov    eax, scanLoc;

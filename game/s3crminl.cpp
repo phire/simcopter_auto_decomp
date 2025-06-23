@@ -539,78 +539,72 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 	__asm        mov    startLoc.y, al;
 // LINE 165:
 _FOR_21:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_21;
-_FOR_NEXT_21:
-	i++;
-_FOR_COND_21:
-	__asm        cmp    i, 5;
-	__asm        jge    _T118;
-// LINE 167:
-	__asm        mov    eax, i;
-	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
-	__asm        test   byte ptr [eax+8], 2;
-	__asm        jne    _T113;
-// LINE 170:
-	__asm        lea    eax, startLoc.x;
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][eax*4];
-	__asm        call   AutomobileClass::BeamToLocation;
-	__asm        test   eax, eax;
-	__asm        je     _T10c;
-// LINE 175:
-	mp.op = 0xa;
-// LINE 176:
-	mp.id = reinterpret_cast<int16_t>(mID);
-// LINE 180:
-	__asm        mov    eax, i;
-	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    mp.maploc.x, ecx;
-// LINE 181:
-	__asm        mov    eax, i;
-	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x7D];
-	__asm        mov    mp.maploc.y, ecx;
-// LINE 182:
-	S3MissionUpdate(mp.op);
-// LINE 185:
-	__asm        movsx  eax, mID;
-	__asm        mov    ecx, i;
-	__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
-	__asm        mov    [ecx+0x10E], eax;
-// LINE 186:
-	__asm        mov    eax, i;
-	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
-	__asm        mov    dword ptr [eax+0x11A], 0;
-// LINE 187:
-	__asm        movsx  eax, mType;
-	__asm        mov    ecx, i;
-	__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
-	__asm        mov    [ecx+0x11E], eax;
-// LINE 189:
-	__asm        call   rand;
-	__asm        movsx  eax, ax;
-	__asm        cdq;
-	__asm        idiv   CriminalEvaderCarClass::maxTimeBetweenCriminalActivities;
-	__asm        mov    eax, CriminalEvaderCarClass::baseTimeBetweenCriminalActivities;
-	__asm        add    eax, edx;
-	__asm        mov    ecx, i;
-	__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
-	__asm        mov    [ecx+0x122], eax;
-// LINE 190:
-	return 0x1;
-// LINE 192:
-	__asm        jmp    _T113;
-// LINE 193:
-_T10c:
-	return 0x0;
-// LINE 195:
-_T113:
-	__asm        jmp    _FOR_NEXT_21;
+	for (i = 0x0; (i < 0x5); i++) {
+		// LINE 167:
+			__asm        mov    eax, i;
+			__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
+			__asm        test   byte ptr [eax+8], 2;
+			__asm        jne    _T113;
+		// LINE 170:
+			__asm        lea    eax, startLoc.x;
+			__asm        push   eax;
+			__asm        mov    eax, i;
+			__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][eax*4];
+			__asm        call   AutomobileClass::BeamToLocation;
+			__asm        test   eax, eax;
+			__asm        je     _T10c;
+		// LINE 175:
+			mp.op = 0xa;
+		// LINE 176:
+			mp.id = reinterpret_cast<int16_t>(mID);
+		// LINE 180:
+			__asm        mov    eax, i;
+			__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+0x7C];
+			__asm        mov    mp.maploc.x, ecx;
+		// LINE 181:
+			__asm        mov    eax, i;
+			__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+0x7D];
+			__asm        mov    mp.maploc.y, ecx;
+		// LINE 182:
+			S3MissionUpdate(mp.op);
+		// LINE 185:
+			__asm        movsx  eax, mID;
+			__asm        mov    ecx, i;
+			__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
+			__asm        mov    [ecx+0x10E], eax;
+		// LINE 186:
+			__asm        mov    eax, i;
+			__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
+			__asm        mov    dword ptr [eax+0x11A], 0;
+		// LINE 187:
+			__asm        movsx  eax, mType;
+			__asm        mov    ecx, i;
+			__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
+			__asm        mov    [ecx+0x11E], eax;
+		// LINE 189:
+			__asm        call   rand;
+			__asm        movsx  eax, ax;
+			__asm        cdq;
+			__asm        idiv   CriminalEvaderCarClass::maxTimeBetweenCriminalActivities;
+			__asm        mov    eax, CriminalEvaderCarClass::baseTimeBetweenCriminalActivities;
+			__asm        add    eax, edx;
+			__asm        mov    ecx, i;
+			__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
+			__asm        mov    [ecx+0x122], eax;
+		// LINE 190:
+			return 0x1;
+		// LINE 192:
+			__asm        jmp    _T113;
+		// LINE 193:
+		_T10c:
+			return 0x0;
+		// LINE 195:
+		_T113:
+	}
 // LINE 198:
 _T118:
 	return 0x0;

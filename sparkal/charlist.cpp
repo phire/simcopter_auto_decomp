@@ -89,27 +89,20 @@ void CharList::~CharList() {
 	this->presentCharData = this->firstCharData;
 // LINE 38:
 _FOR_29:
-	__asm        jmp    _FOR_COND_29;
-_FOR_NEXT_29:
-	this->presentCharData = nextCharData;
-_FOR_COND_29:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        je     _T6b;
-// LINE 40:
-	nextCharData = this->presentCharData->nextCharData;
-// LINE 41:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    [ebp-8], eax;
-	__asm        mov    eax, [ebp-8];
-	__asm        mov    [ebp-0xC], eax;
-	__asm        mov    eax, [ebp-0xC];
-	__asm        push   eax;
-	__asm        call   operator delete;
-	__asm        add    esp, 4;
-// LINE 42:
-	__asm        jmp    _FOR_NEXT_29;
+	for (; (this->presentCharData != 0x0); this->presentCharData = nextCharData) {
+		// LINE 40:
+			nextCharData = this->presentCharData->nextCharData;
+		// LINE 41:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0xC];
+			__asm        mov    [ebp-8], eax;
+			__asm        mov    eax, [ebp-8];
+			__asm        mov    [ebp-0xC], eax;
+			__asm        mov    eax, [ebp-0xC];
+			__asm        push   eax;
+			__asm        call   operator delete;
+			__asm        add    esp, 4;
+	}
 // LINE 44:
 _T6b:
 	return;
@@ -289,20 +282,14 @@ void CharList::DeleteAllItems() {
 	iEnd = this->nCharDataCount;
 // LINE 123:
 _FOR_20:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_20;
-_FOR_NEXT_20:
-	i++;
-_FOR_COND_20:
-	__asm        mov    eax, i;
-	__asm        cmp    iEnd, eax;
-	__asm        jle    _T40;
-// LINE 124:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CharList::DeleteItem;
-	__asm        jmp    _FOR_NEXT_20;
+	for (i = 0x0; (iEnd > i); i++) {
+		// LINE 124:
+			__asm        mov    eax, i;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   CharList::DeleteItem;
+			__asm        jmp    _FOR_NEXT_20;
+	}
 // LINE 125:
 _T40:
 	return;
@@ -356,29 +343,23 @@ _T6f:
 	this->presentCharData = this->firstCharData;
 // LINE 154:
 _FOR_1d:
-	__asm        jmp    _FOR_COND_1d;
-_FOR_NEXT_1d:
-	this->presentCharData = nextCharData;
-_FOR_COND_1d:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        je     _T66;
-// LINE 156:
-	nextCharData = this->presentCharData->nextCharData;
-// LINE 157:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        xor    eax, eax;
-	__asm        mov    al, chValue;
-	__asm        cmp    ecx, eax;
-	__asm        jne    _T61;
-// LINE 158:
-	return this->presentCharData;
-// LINE 159:
-_T61:
-	__asm        jmp    _FOR_NEXT_1d;
+	for (; (this->presentCharData != 0x0); this->presentCharData = nextCharData) {
+		// LINE 156:
+			nextCharData = this->presentCharData->nextCharData;
+		// LINE 157:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0xC];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        xor    eax, eax;
+			__asm        mov    al, chValue;
+			__asm        cmp    ecx, eax;
+			__asm        jne    _T61;
+		// LINE 158:
+			return this->presentCharData;
+		// LINE 159:
+		_T61:
+	}
 // LINE 160:
 _T66:
 	return 0x0;

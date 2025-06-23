@@ -194,528 +194,478 @@ void RoadGraph::Init() {
 
 // LINE 91:
 _FOR_18:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_18;
-_FOR_NEXT_18:
-	x++;
-_FOR_COND_18:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _FOR_47;
+	for (x = 0x0; (x < 0x80); x++) {
 
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    byte ptr [eax+ecx+0x200], 0;
-	__asm        jmp    _FOR_NEXT_18;
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        mov    byte ptr [eax+ecx+0x200], 0;
+			__asm        jmp    _FOR_NEXT_18;
+	}
 // LINE 96:
 _FOR_47:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_47;
-_FOR_NEXT_47:
-	x++;
-_FOR_COND_47:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _FOR_1a7;
-// LINE 98:
-// Block start:
-	/*bp-0x10*/  int32_t y;
-_FOR_63:
-	y = 0x0;
-	__asm        jmp    _FOR_COND_63;
-_FOR_NEXT_63:
-	y++;
-_FOR_COND_63:
-	__asm        cmp    y, 0x80;
-	__asm        jge    _T196;
-// LINE 99:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        call   IsThisAnIntersection;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        je     _T191;
-// LINE 101:
-	__asm        cmp    x, 0;
-	__asm        jl     _Tb9;
+	for (x = 0x0; (x < 0x80); x++) {
+		// LINE 98:
+		// Block start:
+			/*bp-0x10*/  int32_t y;
+		_FOR_63:
+			for (y = 0x0; (y < 0x80); y++) {
+				// LINE 99:
+					__asm        mov    eax, y;
+					__asm        push   eax;
+					__asm        mov    eax, x;
+					__asm        push   eax;
+					__asm        call   IsThisAnIntersection;
+					__asm        add    esp, 8;
+					__asm        test   eax, eax;
+					__asm        je     _T191;
+				// LINE 101:
+					__asm        cmp    x, 0;
+					__asm        jl     _Tb9;
 
-	__asm        cmp    y, 0;
-	__asm        jl     _Tb9;
+					__asm        cmp    y, 0;
+					__asm        jl     _Tb9;
 
-	__asm        cmp    x, 0x80;
-	__asm        jge    _Tb9;
+					__asm        cmp    x, 0x80;
+					__asm        jge    _Tb9;
 
-	__asm        cmp    y, 0x80;
-	__asm        jl     _Tc4;
-_Tb9:
-	__asm        mov    word ptr [ebp-0x28], 0;
-	__asm        jmp    _Tfc;
-_Tc4:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BitsMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        and    edx, 2;
-	__asm        movsx  eax, dx;
-	__asm        shl    eax, 0xE;
-	__asm        mov    ecx, x;
-	__asm        mov    ecx, BuildMap[ecx*4];
-	__asm        mov    edx, y;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx];
-	__asm        or     eax, ebx;
-	__asm        mov    [ebp-0x28], ax;
-	__asm        jmp    _Tfc;
-_Tfc:
-	__asm        mov    eax, [ebp-0x28];
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    _T120;
+					__asm        cmp    y, 0x80;
+					__asm        jl     _Tc4;
+				_Tb9:
+					__asm        mov    word ptr [ebp-0x28], 0;
+					__asm        jmp    _Tfc;
+				_Tc4:
+					__asm        mov    eax, x;
+					__asm        mov    eax, BitsMap[eax*4];
+					__asm        mov    ecx, y;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [eax+ecx];
+					__asm        and    edx, 2;
+					__asm        movsx  eax, dx;
+					__asm        shl    eax, 0xE;
+					__asm        mov    ecx, x;
+					__asm        mov    ecx, BuildMap[ecx*4];
+					__asm        mov    edx, y;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [ecx+edx];
+					__asm        or     eax, ebx;
+					__asm        mov    [ebp-0x28], ax;
+					__asm        jmp    _Tfc;
+				_Tfc:
+					__asm        mov    eax, [ebp-0x28];
+					__asm        and    eax, 0xFFFF;
+					__asm        mov    [ebp-0x34], eax;
+					__asm        jmp    _T120;
 
-	__asm        jmp    _T162;
+					__asm        jmp    _T162;
 
-	__asm        jmp    _T184;
+					__asm        jmp    _T184;
 
-	__asm        jmp    _T162;
+					__asm        jmp    _T162;
 
-	__asm        jmp    _T158;
-_T120:
-	__asm        cmp    dword ptr [ebp-0x34], 0x806B;
-	__asm        jg     _T184;
+					__asm        jmp    _T158;
+				_T120:
+					__asm        cmp    dword ptr [ebp-0x34], 0x806B;
+					__asm        jg     _T184;
 
-	__asm        cmp    dword ptr [ebp-0x34], 0x806A;
-	__asm        jge    _T162;
+					__asm        cmp    dword ptr [ebp-0x34], 0x806A;
+					__asm        jge    _T162;
 
-	__asm        cmp    dword ptr [ebp-0x34], 0x61;
-	__asm        jl     _T184;
+					__asm        cmp    dword ptr [ebp-0x34], 0x61;
+					__asm        jl     _T184;
 
-	__asm        cmp    dword ptr [ebp-0x34], 0x6B;
-	__asm        jle    _T162;
+					__asm        cmp    dword ptr [ebp-0x34], 0x6B;
+					__asm        jle    _T162;
 
-	__asm        jmp    _T184;
+					__asm        jmp    _T184;
 
-	__asm        jmp    _T184;
-_T158:
-	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     _T184;
-// LINE 103:
-_T162:
-	__asm        mov    eax, x;
-	__asm        dec    eax;
-	__asm        test   al, 1;
-	__asm        je     _T173;
+					__asm        jmp    _T184;
+				_T158:
+					__asm        cmp    dword ptr [ebp-0x2C], 0;
+					__asm        je     _T184;
+				// LINE 103:
+				_T162:
+					__asm        mov    eax, x;
+					__asm        dec    eax;
+					__asm        test   al, 1;
+					__asm        je     _T173;
 
-	__asm        jmp    _FOR_NEXT_63;
-// LINE 104:
-_T173:
-	__asm        mov    eax, y;
-	__asm        dec    eax;
-	__asm        test   al, 1;
-	__asm        je     _T184;
+					__asm        jmp    _FOR_NEXT_63;
+				// LINE 104:
+				_T173:
+					__asm        mov    eax, y;
+					__asm        dec    eax;
+					__asm        test   al, 1;
+					__asm        je     _T184;
 
-	__asm        jmp    _FOR_NEXT_63;
-// LINE 107:
-_T184:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        inc    byte ptr [eax+ecx+0x200];
-// LINE 109:
-_T191:
-	__asm        jmp    _FOR_NEXT_63;
-// Block end:
-_T196:
-	__asm        jmp    _FOR_NEXT_47;
+					__asm        jmp    _FOR_NEXT_63;
+				// LINE 107:
+				_T184:
+					__asm        mov    eax, x;
+					__asm        mov    ecx, this;
+					__asm        inc    byte ptr [eax+ecx+0x200];
+				// LINE 109:
+				_T191:
+			}
+		// Block end:
+		_T196:
+	}
 // LINE 113:
 _FOR_1a7:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_1a7;
-_FOR_NEXT_1a7:
-	x++;
-_FOR_COND_1a7:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _FOR_1fa;
-// LINE 114:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x200];
-	__asm        mov    eax, edx;
-	__asm        lea    ecx, [edx+edx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    eax, [eax+ecx*2];
-	__asm        push   eax;
-	__asm        mov    eax, G_citymempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        jmp    _FOR_NEXT_1a7;
+	for (x = 0x0; (x < 0x80); x++) {
+		// LINE 114:
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+0x200];
+			__asm        mov    eax, edx;
+			__asm        lea    ecx, [edx+edx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    eax, [eax+ecx*2];
+			__asm        push   eax;
+			__asm        mov    eax, G_citymempool;
+			__asm        push   eax;
+			__asm        call   S2Alloc;
+			__asm        add    esp, 8;
+			__asm        mov    ecx, x;
+			__asm        mov    edx, this;
+			__asm        mov    [edx+ecx*4], eax;
+			__asm        jmp    _FOR_NEXT_1a7;
+	}
 // LINE 118:
 _FOR_1fa:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_1fa;
-_FOR_NEXT_1fa:
-	x++;
-_FOR_COND_1fa:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T47d;
-// LINE 120:
-_FOR_21a:
-	y = 0x0;
-	yindex = 0x0;
-	__asm        jmp    _FOR_COND_21a;
-_FOR_NEXT_21a:
-	y++;
-_FOR_COND_21a:
-	__asm        cmp    y, 0x80;
-	__asm        jge    _T478;
-// LINE 122:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        call   IsThisAnIntersection;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        je     _T473;
-// LINE 126:
-// Block start:
-	/*bp-0x14*/  int32_t i;
-	__asm        cmp    x, 0;
-	__asm        jl     _T270;
+	for (x = 0x0; (x < 0x80); x++) {
+		// LINE 120:
+		_FOR_21a:
+			y = 0x0;
+			yindex = 0x0;
+			__asm        jmp    _FOR_COND_21a;
+		_FOR_NEXT_21a:
+			for (; (y < 0x80); y++) {
+				// LINE 122:
+					__asm        mov    eax, y;
+					__asm        push   eax;
+					__asm        mov    eax, x;
+					__asm        push   eax;
+					__asm        call   IsThisAnIntersection;
+					__asm        add    esp, 8;
+					__asm        test   eax, eax;
+					__asm        je     _T473;
+				// LINE 126:
+				// Block start:
+					/*bp-0x14*/  int32_t i;
+					__asm        cmp    x, 0;
+					__asm        jl     _T270;
 
-	__asm        cmp    y, 0;
-	__asm        jl     _T270;
+					__asm        cmp    y, 0;
+					__asm        jl     _T270;
 
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T270;
+					__asm        cmp    x, 0x80;
+					__asm        jge    _T270;
 
-	__asm        cmp    y, 0x80;
-	__asm        jl     _T27b;
-_T270:
-	__asm        mov    word ptr [ebp-0x20], 0;
-	__asm        jmp    _T2b3;
-_T27b:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BitsMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        and    edx, 2;
-	__asm        movsx  eax, dx;
-	__asm        shl    eax, 0xE;
-	__asm        mov    ecx, x;
-	__asm        mov    ecx, BuildMap[ecx*4];
-	__asm        mov    edx, y;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx];
-	__asm        or     eax, ebx;
-	__asm        mov    [ebp-0x20], ax;
-	__asm        jmp    _T2b3;
-_T2b3:
-	__asm        mov    eax, [ebp-0x20];
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    [ebp-0x38], eax;
-	__asm        jmp    _T2d7;
+					__asm        cmp    y, 0x80;
+					__asm        jl     _T27b;
+				_T270:
+					__asm        mov    word ptr [ebp-0x20], 0;
+					__asm        jmp    _T2b3;
+				_T27b:
+					__asm        mov    eax, x;
+					__asm        mov    eax, BitsMap[eax*4];
+					__asm        mov    ecx, y;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [eax+ecx];
+					__asm        and    edx, 2;
+					__asm        movsx  eax, dx;
+					__asm        shl    eax, 0xE;
+					__asm        mov    ecx, x;
+					__asm        mov    ecx, BuildMap[ecx*4];
+					__asm        mov    edx, y;
+					__asm        xor    ebx, ebx;
+					__asm        mov    bl, [ecx+edx];
+					__asm        or     eax, ebx;
+					__asm        mov    [ebp-0x20], ax;
+					__asm        jmp    _T2b3;
+				_T2b3:
+					__asm        mov    eax, [ebp-0x20];
+					__asm        and    eax, 0xFFFF;
+					__asm        mov    [ebp-0x38], eax;
+					__asm        jmp    _T2d7;
 
-	__asm        jmp    _T319;
+					__asm        jmp    _T319;
 
-	__asm        jmp    _T33b;
+					__asm        jmp    _T33b;
 
-	__asm        jmp    _T319;
+					__asm        jmp    _T319;
 
-	__asm        jmp    _T30f;
-_T2d7:
-	__asm        cmp    dword ptr [ebp-0x38], 0x806B;
-	__asm        jg     _T33b;
+					__asm        jmp    _T30f;
+				_T2d7:
+					__asm        cmp    dword ptr [ebp-0x38], 0x806B;
+					__asm        jg     _T33b;
 
-	__asm        cmp    dword ptr [ebp-0x38], 0x806A;
-	__asm        jge    _T319;
+					__asm        cmp    dword ptr [ebp-0x38], 0x806A;
+					__asm        jge    _T319;
 
-	__asm        cmp    dword ptr [ebp-0x38], 0x61;
-	__asm        jl     _T33b;
+					__asm        cmp    dword ptr [ebp-0x38], 0x61;
+					__asm        jl     _T33b;
 
-	__asm        cmp    dword ptr [ebp-0x38], 0x6B;
-	__asm        jle    _T319;
+					__asm        cmp    dword ptr [ebp-0x38], 0x6B;
+					__asm        jle    _T319;
 
-	__asm        jmp    _T33b;
+					__asm        jmp    _T33b;
 
-	__asm        jmp    _T33b;
-_T30f:
-	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     _T33b;
-// LINE 128:
-_T319:
-	__asm        mov    eax, x;
-	__asm        dec    eax;
-	__asm        test   al, 1;
-	__asm        je     _T32a;
+					__asm        jmp    _T33b;
+				_T30f:
+					__asm        cmp    dword ptr [ebp-0x24], 0;
+					__asm        je     _T33b;
+				// LINE 128:
+				_T319:
+					__asm        mov    eax, x;
+					__asm        dec    eax;
+					__asm        test   al, 1;
+					__asm        je     _T32a;
 
-	__asm        jmp    _FOR_NEXT_21a;
-// LINE 129:
-_T32a:
-	__asm        mov    eax, y;
-	__asm        dec    eax;
-	__asm        test   al, 1;
-	__asm        je     _T33b;
+					__asm        jmp    _FOR_NEXT_21a;
+				// LINE 129:
+				_T32a:
+					__asm        mov    eax, y;
+					__asm        dec    eax;
+					__asm        test   al, 1;
+					__asm        je     _T33b;
 
-	__asm        jmp    _FOR_NEXT_21a;
-// LINE 132:
-_T33b:
-	__asm        mov    al, reinterpret_cast<uint8_t>(x);
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    ecx, [edx+ecx*4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, yindex;
-	__asm        mov    ebx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx], al;
-// LINE 133:
-	__asm        mov    al, reinterpret_cast<uint8_t>(y);
-	__asm        mov    ecx, x;
-	__asm        mov    edx, this;
-	__asm        mov    ecx, [edx+ecx*4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, yindex;
-	__asm        mov    ebx, edx;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    edx, [ebx+edx*2];
-	__asm        mov    [ecx+edx+1], al;
-// LINE 134:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        and    byte ptr [eax+ecx+2], 0xF0;
-// LINE 135:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        and    byte ptr [eax+ecx+2], 0xF;
-// LINE 137:
-_FOR_3c2:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_3c2;
-_FOR_NEXT_3c2:
-	i++;
-_FOR_COND_3c2:
-	__asm        cmp    i, 4;
-	__asm        jge    _T470;
-// LINE 139:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, i;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    word ptr [eax+ecx*2+8], 0;
-// LINE 140:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, i;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    word ptr [eax+ecx*2+6], 0;
-// LINE 141:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, i;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    byte ptr [eax+ecx*2+4], 0xFF;
-// LINE 142:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, i;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    byte ptr [eax+ecx*2+5], 0xFF;
-// LINE 143:
-	__asm        jmp    _FOR_NEXT_3c2;
-// LINE 145:
-_T470:
-	yindex++;
-// LINE 147:
-// Block end:
-_T473:
-	__asm        jmp    _FOR_NEXT_21a;
-// LINE 148:
-_T478:
-	__asm        jmp    _FOR_NEXT_1fa;
+					__asm        jmp    _FOR_NEXT_21a;
+				// LINE 132:
+				_T33b:
+					__asm        mov    al, reinterpret_cast<uint8_t>(x);
+					__asm        mov    ecx, x;
+					__asm        mov    edx, this;
+					__asm        mov    ecx, [edx+ecx*4];
+					__asm        xor    edx, edx;
+					__asm        mov    dl, yindex;
+					__asm        mov    ebx, edx;
+					__asm        lea    edx, [edx+edx*4];
+					__asm        lea    edx, [edx+edx*4];
+					__asm        lea    edx, [ebx+edx*2];
+					__asm        mov    [ecx+edx], al;
+				// LINE 133:
+					__asm        mov    al, reinterpret_cast<uint8_t>(y);
+					__asm        mov    ecx, x;
+					__asm        mov    edx, this;
+					__asm        mov    ecx, [edx+ecx*4];
+					__asm        xor    edx, edx;
+					__asm        mov    dl, yindex;
+					__asm        mov    ebx, edx;
+					__asm        lea    edx, [edx+edx*4];
+					__asm        lea    edx, [edx+edx*4];
+					__asm        lea    edx, [ebx+edx*2];
+					__asm        mov    [ecx+edx+1], al;
+				// LINE 134:
+					__asm        mov    eax, x;
+					__asm        mov    ecx, this;
+					__asm        mov    eax, [ecx+eax*4];
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, yindex;
+					__asm        mov    edx, ecx;
+					__asm        lea    ecx, [ecx+ecx*4];
+					__asm        lea    ecx, [ecx+ecx*4];
+					__asm        lea    ecx, [edx+ecx*2];
+					__asm        and    byte ptr [eax+ecx+2], 0xF0;
+				// LINE 135:
+					__asm        mov    eax, x;
+					__asm        mov    ecx, this;
+					__asm        mov    eax, [ecx+eax*4];
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, yindex;
+					__asm        mov    edx, ecx;
+					__asm        lea    ecx, [ecx+ecx*4];
+					__asm        lea    ecx, [ecx+ecx*4];
+					__asm        lea    ecx, [edx+ecx*2];
+					__asm        and    byte ptr [eax+ecx+2], 0xF;
+				// LINE 137:
+				_FOR_3c2:
+					for (i = 0x0; (i < 0x4); i++) {
+						// LINE 139:
+							__asm        mov    eax, x;
+							__asm        mov    ecx, this;
+							__asm        mov    eax, [ecx+eax*4];
+							__asm        xor    ecx, ecx;
+							__asm        mov    cl, yindex;
+							__asm        mov    edx, ecx;
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        lea    ecx, [edx+ecx*2];
+							__asm        add    eax, ecx;
+							__asm        mov    ecx, i;
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        mov    word ptr [eax+ecx*2+8], 0;
+						// LINE 140:
+							__asm        mov    eax, x;
+							__asm        mov    ecx, this;
+							__asm        mov    eax, [ecx+eax*4];
+							__asm        xor    ecx, ecx;
+							__asm        mov    cl, yindex;
+							__asm        mov    edx, ecx;
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        lea    ecx, [edx+ecx*2];
+							__asm        add    eax, ecx;
+							__asm        mov    ecx, i;
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        mov    word ptr [eax+ecx*2+6], 0;
+						// LINE 141:
+							__asm        mov    eax, x;
+							__asm        mov    ecx, this;
+							__asm        mov    eax, [ecx+eax*4];
+							__asm        xor    ecx, ecx;
+							__asm        mov    cl, yindex;
+							__asm        mov    edx, ecx;
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        lea    ecx, [edx+ecx*2];
+							__asm        add    eax, ecx;
+							__asm        mov    ecx, i;
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        mov    byte ptr [eax+ecx*2+4], 0xFF;
+						// LINE 142:
+							__asm        mov    eax, x;
+							__asm        mov    ecx, this;
+							__asm        mov    eax, [ecx+eax*4];
+							__asm        xor    ecx, ecx;
+							__asm        mov    cl, yindex;
+							__asm        mov    edx, ecx;
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        lea    ecx, [edx+ecx*2];
+							__asm        add    eax, ecx;
+							__asm        mov    ecx, i;
+							__asm        lea    ecx, [ecx+ecx*4];
+							__asm        mov    byte ptr [eax+ecx*2+5], 0xFF;
+					}
+				// LINE 145:
+				_T470:
+					yindex++;
+				// LINE 147:
+				// Block end:
+				_T473:
+			}
+		// LINE 148:
+		_T478:
+	}
 // LINE 150:
 _T47d:
 	this->RoadGraph::FindDeadEnds();
 // LINE 156:
 _FOR_491:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_491;
-_FOR_NEXT_491:
-	x++;
-_FOR_COND_491:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _FOR_52d;
-// LINE 158:
-_FOR_4aa:
-	yindex = 0x0;
-	__asm        jmp    _FOR_COND_4aa;
-_FOR_NEXT_4aa:
-	yindex++;
-_FOR_COND_4aa:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x200];
-	__asm        xor    eax, eax;
-	__asm        mov    al, yindex;
-	__asm        cmp    edx, eax;
-	__asm        jle    _T51c;
-// LINE 160:
-// Block start:
-	/*bp-0x18*/  /*packed*/ struct RGVertex *pRGV;
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pRGV, eax;
-// LINE 161:
-	__asm        mov    eax, pRGV;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+1];
-	__asm        push   edx;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindEdges;
-// LINE 162:
-// Block end:
-	__asm        jmp    _FOR_NEXT_4aa;
-// LINE 163:
-_T51c:
-	__asm        jmp    _FOR_NEXT_491;
+	for (x = 0x0; (x < 0x80); x++) {
+		// LINE 158:
+		_FOR_4aa:
+			yindex = 0x0;
+			__asm        jmp    _FOR_COND_4aa;
+		_FOR_NEXT_4aa:
+			yindex++;
+		_FOR_COND_4aa:
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+0x200];
+			__asm        xor    eax, eax;
+			__asm        mov    al, yindex;
+			__asm        cmp    edx, eax;
+			__asm        jle    _T51c;
+		// LINE 160:
+		// Block start:
+			/*bp-0x18*/  /*packed*/ struct RGVertex *pRGV;
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [ecx+eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    pRGV, eax;
+		// LINE 161:
+			__asm        mov    eax, pRGV;
+			__asm        push   eax;
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [ecx+eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+1];
+			__asm        push   edx;
+			__asm        mov    eax, x;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::FindEdges;
+		// LINE 162:
+		// Block end:
+			__asm        jmp    _FOR_NEXT_4aa;
+		// LINE 163:
+		_T51c:
+	}
 // LINE 167:
 _FOR_52d:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_52d;
-_FOR_NEXT_52d:
-	x++;
-_FOR_COND_52d:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T5bd;
-// LINE 169:
-_FOR_546:
-	yindex = 0x0;
-	__asm        jmp    _FOR_COND_546;
-_FOR_NEXT_546:
-	yindex++;
-_FOR_COND_546:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x200];
-	__asm        xor    eax, eax;
-	__asm        mov    al, yindex;
-	__asm        cmp    edx, eax;
-	__asm        jle    _T5b8;
-// LINE 171:
-// Block start:
-	/*bp-0x1c*/  /*packed*/ struct RGVertex *pRGV;
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pRGV, eax;
-// LINE 172:
-	__asm        mov    eax, pRGV;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+1];
-	__asm        push   edx;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindRoads;
-// LINE 173:
-// Block end:
-	__asm        jmp    _FOR_NEXT_546;
-// LINE 174:
-_T5b8:
-	__asm        jmp    _FOR_NEXT_52d;
+	for (x = 0x0; (x < 0x80); x++) {
+		// LINE 169:
+		_FOR_546:
+			yindex = 0x0;
+			__asm        jmp    _FOR_COND_546;
+		_FOR_NEXT_546:
+			yindex++;
+		_FOR_COND_546:
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+0x200];
+			__asm        xor    eax, eax;
+			__asm        mov    al, yindex;
+			__asm        cmp    edx, eax;
+			__asm        jle    _T5b8;
+		// LINE 171:
+		// Block start:
+			/*bp-0x1c*/  /*packed*/ struct RGVertex *pRGV;
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [ecx+eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    pRGV, eax;
+		// LINE 172:
+			__asm        mov    eax, pRGV;
+			__asm        push   eax;
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [ecx+eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+1];
+			__asm        push   edx;
+			__asm        mov    eax, x;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::FindRoads;
+		// LINE 173:
+		// Block end:
+			__asm        jmp    _FOR_NEXT_546;
+		// LINE 174:
+		_T5b8:
+	}
 // LINE 191:
 _T5bd:
 	return;
@@ -1065,45 +1015,45 @@ void RoadGraph::PickPlaceOnRoad(/*packed*/ struct Goal *pGoal, int32_t x, int32_
 	loopCounter = 0x0;
 // LINE 350:
 __DO_44:
-	__asm        call   rand;
-	__asm        movsx  eax, ax;
-	__asm        cdq;
-	__asm        xor    eax, edx;
-	__asm        sub    eax, edx;
-	__asm        and    eax, 3;
-	__asm        xor    eax, edx;
-	__asm        sub    eax, edx;
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0xE], eax;
-// LINE 353:
-	__asm        mov    eax, loopCounter;
-	__asm        mov    [ebp-0x24], eax;
-	__asm        inc    loopCounter;
-	__asm        cmp    dword ptr [ebp-0x24], 0x10;
-	__asm        jle    _T92;
-// LINE 354:
-	_assert(0x162, 0x5b8170, 0x5b8194);
-	__asm        jmp    _T92;
+	do {
+		// LINE 350:
+		__DO_44:
+			__asm        call   rand;
+			__asm        movsx  eax, ax;
+			__asm        cdq;
+			__asm        xor    eax, edx;
+			__asm        sub    eax, edx;
+			__asm        and    eax, 3;
+			__asm        xor    eax, edx;
+			__asm        sub    eax, edx;
+			__asm        mov    ecx, pGoal;
+			__asm        mov    [ecx+0xE], eax;
+		// LINE 353:
+			__asm        mov    eax, loopCounter;
+			__asm        mov    [ebp-0x24], eax;
+			__asm        inc    loopCounter;
+			__asm        cmp    dword ptr [ebp-0x24], 0x10;
+			__asm        jle    _T92;
+		// LINE 354:
+			_assert(0x162, 0x5b8170, 0x5b8194);
+			__asm        jmp    _T92;
 
-	__asm        jmp    _T92;
-// LINE 356:
-_T92:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+0xE];
-	__asm        mov    eax, IndexToType[0][eax*4];
-	__asm        mov    tempDir, eax;
-// LINE 357:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        and    al, 0xF;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, al;
-	__asm        and    ecx, tempDir;
-	__asm        mov    validTurn, ecx;
-// LINE 359:
-__DO_WHILE_44:
-	__asm        cmp    validTurn, 0;
-	__asm        je     __DO_44;
+			__asm        jmp    _T92;
+		// LINE 356:
+		_T92:
+			__asm        mov    eax, pGoal;
+			__asm        mov    eax, [eax+0xE];
+			__asm        mov    eax, IndexToType[0][eax*4];
+			__asm        mov    tempDir, eax;
+		// LINE 357:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+2];
+			__asm        and    al, 0xF;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, al;
+			__asm        and    ecx, tempDir;
+			__asm        mov    validTurn, ecx;
+	} while ((validTurn == 0x0));
 // LINE 361:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0xE];
@@ -1170,87 +1120,79 @@ _T13a:
 	pRoad = ((pGoal->elementIndex + pGoal->elementIndex) + pEdge->roadArray);
 // LINE 382:
 _FOR_171:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_171;
-_FOR_NEXT_171:
-	i++;
-_FOR_COND_171:
-	__asm        mov    eax, pGoal;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jle    _T237;
-// LINE 384:
-	__asm        mov    eax, pEdge;
-	__asm        mov    eax, [eax+6];
-	__asm        mov    ecx, i;
-	__asm        mov    al, [eax+ecx*2];
-	__asm        and    al, 3;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, al;
-	__asm        mov    [ebp-0x30], ecx;
-	__asm        jmp    _T20e;
-// LINE 386:
-_T19d:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, pEdge;
-	__asm        mov    ecx, [ecx+6];
-	__asm        mov    edx, i;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx*2+1];
-	__asm        inc    ebx;
-	__asm        sub    eax, ebx;
-	__asm        neg    eax;
-	__asm        sub    y, eax;
-	__asm        jmp    _T232;
-// LINE 387:
-_T1bb:
-	__asm        mov    eax, pEdge;
-	__asm        mov    eax, [eax+6];
-	__asm        mov    ecx, i;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx*2+1];
-	__asm        inc    edx;
-	__asm        add    x, edx;
-	__asm        jmp    _T232;
-// LINE 388:
-_T1d3:
-	__asm        mov    eax, pEdge;
-	__asm        mov    eax, [eax+6];
-	__asm        mov    ecx, i;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx*2+1];
-	__asm        inc    edx;
-	__asm        add    y, edx;
-	__asm        jmp    _T232;
-// LINE 389:
-_T1eb:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, pEdge;
-	__asm        mov    ecx, [ecx+6];
-	__asm        mov    edx, i;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx*2+1];
-	__asm        inc    ebx;
-	__asm        sub    eax, ebx;
-	__asm        neg    eax;
-	__asm        sub    x, eax;
-	__asm        jmp    _T232;
-// LINE 390:
-	__asm        jmp    _T232;
-_T20e:
-	__asm        cmp    dword ptr [ebp-0x30], 3;
-	__asm        ja     _T232;
+	for (i = 0x0; (pGoal->elementIndex > i); i++) {
+		// LINE 384:
+			__asm        mov    eax, pEdge;
+			__asm        mov    eax, [eax+6];
+			__asm        mov    ecx, i;
+			__asm        mov    al, [eax+ecx*2];
+			__asm        and    al, 3;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, al;
+			__asm        mov    [ebp-0x30], ecx;
+			__asm        jmp    _T20e;
+		// LINE 386:
+		_T19d:
+			__asm        xor    eax, eax;
+			__asm        mov    ecx, pEdge;
+			__asm        mov    ecx, [ecx+6];
+			__asm        mov    edx, i;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx*2+1];
+			__asm        inc    ebx;
+			__asm        sub    eax, ebx;
+			__asm        neg    eax;
+			__asm        sub    y, eax;
+			__asm        jmp    _T232;
+		// LINE 387:
+		_T1bb:
+			__asm        mov    eax, pEdge;
+			__asm        mov    eax, [eax+6];
+			__asm        mov    ecx, i;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx*2+1];
+			__asm        inc    edx;
+			__asm        add    x, edx;
+			__asm        jmp    _T232;
+		// LINE 388:
+		_T1d3:
+			__asm        mov    eax, pEdge;
+			__asm        mov    eax, [eax+6];
+			__asm        mov    ecx, i;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx*2+1];
+			__asm        inc    edx;
+			__asm        add    y, edx;
+			__asm        jmp    _T232;
+		// LINE 389:
+		_T1eb:
+			__asm        xor    eax, eax;
+			__asm        mov    ecx, pEdge;
+			__asm        mov    ecx, [ecx+6];
+			__asm        mov    edx, i;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx*2+1];
+			__asm        inc    ebx;
+			__asm        sub    eax, ebx;
+			__asm        neg    eax;
+			__asm        sub    x, eax;
+			__asm        jmp    _T232;
+		// LINE 390:
+			__asm        jmp    _T232;
+		_T20e:
+			__asm        cmp    dword ptr [ebp-0x30], 3;
+			__asm        ja     _T232;
 
-	__asm        mov    eax, [ebp-0x30];
-	__asm        jmp    _Switch_222[0][eax*4];
-// Switch pointers:
-//   _T19d
-//   _T1bb
-//   _T1d3
-//   _T1eb
-// LINE 391:
-_T232:
-	__asm        jmp    _FOR_NEXT_171;
+			__asm        mov    eax, [ebp-0x30];
+			__asm        jmp    _Switch_222[0][eax*4];
+		// Switch pointers:
+		//   _T19d
+		//   _T1bb
+		//   _T1d3
+		//   _T1eb
+		// LINE 391:
+		_T232:
+	}
 // LINE 395:
 _T237:
 	__asm        mov    eax, pRoad;
@@ -2170,134 +2112,138 @@ _T58:
 	returnVal = 0x1;
 // LINE 655:
 _LOOP_83:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(here.y);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
-	__asm        push   eax;
-	__asm        lea    eax, returnDir;
-	__asm        push   eax;
-	__asm        mov    eax, currentDir;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-	__asm        mov    result, eax;
-// LINE 658:
-	__asm        mov    eax, returnDir;
-	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    _Tce;
-// LINE 660:
-_Ta9:
-	here.y--;
-	__asm        jmp    _Tf2;
-// LINE 661:
-_Tb1:
-	here.x++;
-	__asm        jmp    _Tf2;
-// LINE 662:
-_Tb9:
-	here.y++;
-	__asm        jmp    _Tf2;
-// LINE 663:
-_Tc1:
-	here.x--;
-	__asm        jmp    _Tf2;
-// LINE 664:
-	__asm        jmp    _Tf2;
-_Tce:
-	__asm        cmp    dword ptr [ebp-0x20], 3;
-	__asm        ja     _Tf2;
+	for (;;) {
+		// LINE 655:
+		_LOOP_83:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(here.y);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
+			__asm        push   eax;
+			__asm        lea    eax, returnDir;
+			__asm        push   eax;
+			__asm        mov    eax, currentDir;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
+			__asm        mov    result, eax;
+		// LINE 658:
+			__asm        mov    eax, returnDir;
+			__asm        mov    [ebp-0x20], eax;
+			__asm        jmp    _Tce;
+		// LINE 660:
+		_Ta9:
+			here.y--;
+			__asm        jmp    _Tf2;
+		// LINE 661:
+		_Tb1:
+			here.x++;
+			__asm        jmp    _Tf2;
+		// LINE 662:
+		_Tb9:
+			here.y++;
+			__asm        jmp    _Tf2;
+		// LINE 663:
+		_Tc1:
+			here.x--;
+			__asm        jmp    _Tf2;
+		// LINE 664:
+			__asm        jmp    _Tf2;
+		_Tce:
+			__asm        cmp    dword ptr [ebp-0x20], 3;
+			__asm        ja     _Tf2;
 
-	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    _Switch_e2[0][eax*4];
-// Switch pointers:
-//   _Ta9
-//   _Tb1
-//   _Tb9
-//   _Tc1
-// LINE 668:
-_Tf2:
-	__asm        xor    eax, eax;
-	__asm        mov    al, here.x;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destLoc.x;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _T11d;
+			__asm        mov    eax, [ebp-0x20];
+			__asm        jmp    _Switch_e2[0][eax*4];
+		// Switch pointers:
+		//   _Ta9
+		//   _Tb1
+		//   _Tb9
+		//   _Tc1
+		// LINE 668:
+		_Tf2:
+			__asm        xor    eax, eax;
+			__asm        mov    al, here.x;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destLoc.x;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _T11d;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, here.y;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destLoc.y;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _T11d;
-// LINE 670:
-	returnVal = 0x1;
-// LINE 674:
-_T11d:
-	currentDir = returnDir;
-// LINE 677:
-	__asm        cmp    result, 0xFFFFFFFE;
-	__asm        jne    _T1ac;
-// LINE 682:
-KlugeFirstStepIsAnIntersection:
-// Block start:
-	/*bp-0x18*/  int32_t yindex;
-	goal.direction = ((returnDir - 0x2) & 0x3);
-	goal.edgeIndex = goal.direction;
-// LINE 683:
-	__asm        xor    eax, eax;
-	__asm        mov    al, here.y;
-	__asm        push   eax;
-	__asm        xor    eax, eax;
-	__asm        mov    al, here.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, al;
-	__asm        mov    yindex, ecx;
-// LINE 684:
-	__asm        xor    eax, eax;
-	__asm        mov    al, here.x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ecx, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, goal;
-	__asm        mov    [ecx], eax;
-// LINE 685:
-	goal.gridIndex = 0xffffffff;
-// LINE 686:
-	goal.elementIndex = 0x0;
-// LINE 688:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(startLoc.x);
-	__asm        push   eax;
-	__asm        mov    eax, goal;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindPlaceOnRoad;
-// LINE 689:
-	__asm        jmp    _T1d1;
-// LINE 694:
-// Block end:
-_T1ac:
-	__asm        cmp    result, 0xFFFFFFFF;
-	__asm        jne    _T1cc;
-// LINE 696:
-	__asm        mov    eax, goal;
-	__asm        cmp    dword ptr [eax], 0;
-	__asm        jne    _T1c7;
+			__asm        xor    eax, eax;
+			__asm        mov    al, here.y;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destLoc.y;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _T11d;
+		// LINE 670:
+			returnVal = 0x1;
+		// LINE 674:
+		_T11d:
+			currentDir = returnDir;
+		// LINE 677:
+			__asm        cmp    result, 0xFFFFFFFE;
+			__asm        jne    _T1ac;
+		// LINE 682:
+		KlugeFirstStepIsAnIntersection:
+		// Block start:
+			/*bp-0x18*/  int32_t yindex;
+			goal.direction = ((returnDir - 0x2) & 0x3);
+			goal.edgeIndex = goal.direction;
+		// LINE 683:
+			__asm        xor    eax, eax;
+			__asm        mov    al, here.y;
+			__asm        push   eax;
+			__asm        xor    eax, eax;
+			__asm        mov    al, here.x;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::FindYIndexToVertex;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, al;
+			__asm        mov    yindex, ecx;
+		// LINE 684:
+			__asm        xor    eax, eax;
+			__asm        mov    al, here.x;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [ecx+eax*4];
+			__asm        mov    ecx, yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, goal;
+			__asm        mov    [ecx], eax;
+		// LINE 685:
+			goal.gridIndex = 0xffffffff;
+		// LINE 686:
+			goal.elementIndex = 0x0;
+		// LINE 688:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(startLoc.x);
+			__asm        push   eax;
+			__asm        mov    eax, goal;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::FindPlaceOnRoad;
+		// LINE 689:
+			__asm        jmp    _T1d1;
+		// LINE 694:
+		// Block end:
+		_T1ac:
+			__asm        cmp    result, 0xFFFFFFFF;
+			__asm        jne    _T1cc;
+		// LINE 696:
+			__asm        mov    eax, goal;
+			__asm        cmp    dword ptr [eax], 0;
+			__asm        jne    _T1c7;
 
-	__asm        jmp    _T1c7;
-// LINE 697:
-_T1c7:
-	__asm        jmp    _T1d1;
-// LINE 699:
-_T1cc:
-	__asm        jmp    _LOOP_83;
+			__asm        jmp    _T1c7;
+		// LINE 697:
+		_T1c7:
+			__asm        jmp    _T1d1;
+		// LINE 699:
+		_T1cc:
+			__asm        jmp    _LOOP_83;
+	}
 // LINE 701:
 _T1d1:
 	return returnVal;
@@ -2315,430 +2261,424 @@ void RoadGraph::FindDeadEnds() {
 
 // LINE 713:
 _FOR_18:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_18;
-_FOR_NEXT_18:
-	x++;
-_FOR_COND_18:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T4cb;
-// LINE 715:
-// Block start:
-	/*bp-0x14*/  int32_t yindex;
-_FOR_34:
-	yindex = 0x0;
-	__asm        jmp    _FOR_COND_34;
-_FOR_NEXT_34:
-	yindex++;
-_FOR_COND_34:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x200];
-	__asm        cmp    edx, yindex;
-	__asm        jle    _T4c6;
-// LINE 717:
-// Block start:
-	/*bp-0x18*/  /*packed*/ struct RGVertex *pRGV;
-	/*bp-0x1c*/  unsigned short fromTile;
-	__asm        mov    eax, x;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ecx, yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pRGV, eax;
-// LINE 719:
-	__asm        mov    eax, pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        mov    y, ecx;
-// LINE 720:
-	__asm        cmp    x, 0;
-	__asm        jl     _Ta4;
+	for (x = 0x0; (x < 0x80); x++) {
+		// LINE 715:
+		// Block start:
+			/*bp-0x14*/  int32_t yindex;
+		_FOR_34:
+			yindex = 0x0;
+			__asm        jmp    _FOR_COND_34;
+		_FOR_NEXT_34:
+			yindex++;
+		_FOR_COND_34:
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+0x200];
+			__asm        cmp    edx, yindex;
+			__asm        jle    _T4c6;
+		// LINE 717:
+		// Block start:
+			/*bp-0x18*/  /*packed*/ struct RGVertex *pRGV;
+			/*bp-0x1c*/  unsigned short fromTile;
+			__asm        mov    eax, x;
+			__asm        mov    ecx, this;
+			__asm        mov    eax, [ecx+eax*4];
+			__asm        mov    ecx, yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    pRGV, eax;
+		// LINE 719:
+			__asm        mov    eax, pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        mov    y, ecx;
+		// LINE 720:
+			__asm        cmp    x, 0;
+			__asm        jl     _Ta4;
 
-	__asm        cmp    y, 0;
-	__asm        jl     _Ta4;
+			__asm        cmp    y, 0;
+			__asm        jl     _Ta4;
 
-	__asm        cmp    x, 0x80;
-	__asm        jge    _Ta4;
+			__asm        cmp    x, 0x80;
+			__asm        jge    _Ta4;
 
-	__asm        cmp    y, 0x80;
-	__asm        jl     _Taf;
-_Ta4:
-	fromTile = 0x0;
-	__asm        jmp    _Te7;
-_Taf:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BitsMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        and    edx, 2;
-	__asm        movsx  eax, dx;
-	__asm        shl    eax, 0xE;
-	__asm        mov    ecx, x;
-	__asm        mov    ecx, BuildMap[ecx*4];
-	__asm        mov    edx, y;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx];
-	__asm        or     eax, ebx;
-	__asm        mov    fromTile, ax;
-	__asm        jmp    _Te7;
-// LINE 722:
-_Te7:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
-	__asm        and    eax, 0xFFFF;
-	__asm        cmp    eax, 0x69;
-	__asm        jne    _T10b;
-// LINE 724:
-	stepSize = 0x2;
-// LINE 725:
-	Offset = 0x1;
-// LINE 727:
-	__asm        jmp    _T119;
-// LINE 729:
-_T10b:
-	stepSize = 0x1;
-// LINE 730:
-	Offset = 0x0;
-// LINE 734:
-_T119:
-	__asm        mov    eax, Offset;
-	__asm        cmp    y, eax;
-	__asm        jle    _T1fd;
+			__asm        cmp    y, 0x80;
+			__asm        jl     _Taf;
+		_Ta4:
+			fromTile = 0x0;
+			__asm        jmp    _Te7;
+		_Taf:
+			__asm        mov    eax, x;
+			__asm        mov    eax, BitsMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        and    edx, 2;
+			__asm        movsx  eax, dx;
+			__asm        shl    eax, 0xE;
+			__asm        mov    ecx, x;
+			__asm        mov    ecx, BuildMap[ecx*4];
+			__asm        mov    edx, y;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx];
+			__asm        or     eax, ebx;
+			__asm        mov    fromTile, ax;
+			__asm        jmp    _Te7;
+		// LINE 722:
+		_Te7:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
+			__asm        and    eax, 0xFFFF;
+			__asm        cmp    eax, 0x69;
+			__asm        jne    _T10b;
+		// LINE 724:
+			stepSize = 0x2;
+		// LINE 725:
+			Offset = 0x1;
+		// LINE 727:
+			__asm        jmp    _T119;
+		// LINE 729:
+		_T10b:
+			stepSize = 0x1;
+		// LINE 730:
+			Offset = 0x0;
+		// LINE 734:
+		_T119:
+			__asm        mov    eax, Offset;
+			__asm        cmp    y, eax;
+			__asm        jle    _T1fd;
 
-	__asm        cmp    x, 0;
-	__asm        jl     _T155;
+			__asm        cmp    x, 0;
+			__asm        jl     _T155;
 
-	__asm        mov    eax, y;
-	__asm        dec    eax;
-	__asm        js     _T155;
+			__asm        mov    eax, y;
+			__asm        dec    eax;
+			__asm        js     _T155;
 
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T155;
+			__asm        cmp    x, 0x80;
+			__asm        jge    _T155;
 
-	__asm        mov    eax, y;
-	__asm        dec    eax;
-	__asm        cmp    eax, 0x80;
-	__asm        jl     _T160;
-_T155:
-	__asm        mov    word ptr [ebp-0x20], 0;
-	__asm        jmp    _T19a;
-_T160:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BitsMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx-1];
-	__asm        and    edx, 2;
-	__asm        movsx  eax, dx;
-	__asm        shl    eax, 0xE;
-	__asm        mov    ecx, x;
-	__asm        mov    ecx, BuildMap[ecx*4];
-	__asm        mov    edx, y;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx-1];
-	__asm        or     eax, ebx;
-	__asm        mov    [ebp-0x20], ax;
-	__asm        jmp    _T19a;
-_T19a:
-	__asm        push   1;
-	__asm        push   1;
-	__asm        mov    eax, [ebp-0x20];
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
-	__asm        push   eax;
-	__asm        call   DoRoadTilesConnect;
-	__asm        add    esp, 0x10;
-	__asm        test   eax, eax;
-	__asm        je     _T1fd;
+			__asm        mov    eax, y;
+			__asm        dec    eax;
+			__asm        cmp    eax, 0x80;
+			__asm        jl     _T160;
+		_T155:
+			__asm        mov    word ptr [ebp-0x20], 0;
+			__asm        jmp    _T19a;
+		_T160:
+			__asm        mov    eax, x;
+			__asm        mov    eax, BitsMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx-1];
+			__asm        and    edx, 2;
+			__asm        movsx  eax, dx;
+			__asm        shl    eax, 0xE;
+			__asm        mov    ecx, x;
+			__asm        mov    ecx, BuildMap[ecx*4];
+			__asm        mov    edx, y;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx-1];
+			__asm        or     eax, ebx;
+			__asm        mov    [ebp-0x20], ax;
+			__asm        jmp    _T19a;
+		_T19a:
+			__asm        push   1;
+			__asm        push   1;
+			__asm        mov    eax, [ebp-0x20];
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
+			__asm        push   eax;
+			__asm        call   DoRoadTilesConnect;
+			__asm        add    esp, 0x10;
+			__asm        test   eax, eax;
+			__asm        je     _T1fd;
 
-	__asm        mov    eax, pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        dec    ecx;
-	__asm        push   ecx;
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::IsThisADeadEnd;
-	__asm        test   eax, eax;
-	__asm        je     _T1fd;
-// LINE 736:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        shr    al, 4;
-	__asm        and    al, 0xF;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, al;
-	__asm        or     ecx, 1;
-	__asm        shl    cl, 4;
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        and    al, 0xF;
-	__asm        or     cl, al;
-	__asm        mov    eax, pRGV;
-	__asm        mov    [eax+2], cl;
-// LINE 740:
-_T1fd:
-	__asm        mov    eax, 0x7F;
-	__asm        sub    eax, Offset;
-	__asm        cmp    eax, x;
-	__asm        jle    _T2ee;
+			__asm        mov    eax, pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        dec    ecx;
+			__asm        push   ecx;
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax];
+			__asm        push   eax;
+			__asm        push   0;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::IsThisADeadEnd;
+			__asm        test   eax, eax;
+			__asm        je     _T1fd;
+		// LINE 736:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+2];
+			__asm        shr    al, 4;
+			__asm        and    al, 0xF;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, al;
+			__asm        or     ecx, 1;
+			__asm        shl    cl, 4;
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+2];
+			__asm        and    al, 0xF;
+			__asm        or     cl, al;
+			__asm        mov    eax, pRGV;
+			__asm        mov    [eax+2], cl;
+		// LINE 740:
+		_T1fd:
+			__asm        mov    eax, 0x7F;
+			__asm        sub    eax, Offset;
+			__asm        cmp    eax, x;
+			__asm        jle    _T2ee;
 
-	__asm        mov    eax, x;
-	__asm        add    eax, stepSize;
-	__asm        js     _T242;
+			__asm        mov    eax, x;
+			__asm        add    eax, stepSize;
+			__asm        js     _T242;
 
-	__asm        cmp    y, 0;
-	__asm        jl     _T242;
+			__asm        cmp    y, 0;
+			__asm        jl     _T242;
 
-	__asm        mov    eax, x;
-	__asm        add    eax, stepSize;
-	__asm        cmp    eax, 0x80;
-	__asm        jge    _T242;
+			__asm        mov    eax, x;
+			__asm        add    eax, stepSize;
+			__asm        cmp    eax, 0x80;
+			__asm        jge    _T242;
 
-	__asm        cmp    y, 0x80;
-	__asm        jl     _T24d;
-_T242:
-	__asm        mov    word ptr [ebp-0x24], 0;
-	__asm        jmp    _T28b;
-_T24d:
-	__asm        mov    eax, x;
-	__asm        add    eax, stepSize;
-	__asm        mov    eax, BitsMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        and    edx, 2;
-	__asm        movsx  eax, dx;
-	__asm        shl    eax, 0xE;
-	__asm        mov    ecx, x;
-	__asm        add    ecx, stepSize;
-	__asm        mov    ecx, BuildMap[ecx*4];
-	__asm        mov    edx, y;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx];
-	__asm        or     eax, ebx;
-	__asm        mov    [ebp-0x24], ax;
-	__asm        jmp    _T28b;
-_T28b:
-	__asm        push   2;
-	__asm        push   2;
-	__asm        mov    eax, [ebp-0x24];
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
-	__asm        push   eax;
-	__asm        call   DoRoadTilesConnect;
-	__asm        add    esp, 0x10;
-	__asm        test   eax, eax;
-	__asm        je     _T2ee;
+			__asm        cmp    y, 0x80;
+			__asm        jl     _T24d;
+		_T242:
+			__asm        mov    word ptr [ebp-0x24], 0;
+			__asm        jmp    _T28b;
+		_T24d:
+			__asm        mov    eax, x;
+			__asm        add    eax, stepSize;
+			__asm        mov    eax, BitsMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        and    edx, 2;
+			__asm        movsx  eax, dx;
+			__asm        shl    eax, 0xE;
+			__asm        mov    ecx, x;
+			__asm        add    ecx, stepSize;
+			__asm        mov    ecx, BuildMap[ecx*4];
+			__asm        mov    edx, y;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx];
+			__asm        or     eax, ebx;
+			__asm        mov    [ebp-0x24], ax;
+			__asm        jmp    _T28b;
+		_T28b:
+			__asm        push   2;
+			__asm        push   2;
+			__asm        mov    eax, [ebp-0x24];
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
+			__asm        push   eax;
+			__asm        call   DoRoadTilesConnect;
+			__asm        add    esp, 0x10;
+			__asm        test   eax, eax;
+			__asm        je     _T2ee;
 
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+1];
-	__asm        push   eax;
-	__asm        mov    eax, pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        inc    ecx;
-	__asm        push   ecx;
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::IsThisADeadEnd;
-	__asm        test   eax, eax;
-	__asm        je     _T2ee;
-// LINE 742:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        shr    al, 4;
-	__asm        and    al, 0xF;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, al;
-	__asm        or     ecx, 2;
-	__asm        shl    cl, 4;
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        and    al, 0xF;
-	__asm        or     cl, al;
-	__asm        mov    eax, pRGV;
-	__asm        mov    [eax+2], cl;
-// LINE 746:
-_T2ee:
-	__asm        mov    eax, 0x7F;
-	__asm        sub    eax, Offset;
-	__asm        cmp    eax, y;
-	__asm        jle    _T3df;
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+1];
+			__asm        push   eax;
+			__asm        mov    eax, pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        inc    ecx;
+			__asm        push   ecx;
+			__asm        push   1;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::IsThisADeadEnd;
+			__asm        test   eax, eax;
+			__asm        je     _T2ee;
+		// LINE 742:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+2];
+			__asm        shr    al, 4;
+			__asm        and    al, 0xF;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, al;
+			__asm        or     ecx, 2;
+			__asm        shl    cl, 4;
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+2];
+			__asm        and    al, 0xF;
+			__asm        or     cl, al;
+			__asm        mov    eax, pRGV;
+			__asm        mov    [eax+2], cl;
+		// LINE 746:
+		_T2ee:
+			__asm        mov    eax, 0x7F;
+			__asm        sub    eax, Offset;
+			__asm        cmp    eax, y;
+			__asm        jle    _T3df;
 
-	__asm        cmp    x, 0;
-	__asm        jl     _T333;
+			__asm        cmp    x, 0;
+			__asm        jl     _T333;
 
-	__asm        mov    eax, y;
-	__asm        add    eax, stepSize;
-	__asm        js     _T333;
+			__asm        mov    eax, y;
+			__asm        add    eax, stepSize;
+			__asm        js     _T333;
 
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T333;
+			__asm        cmp    x, 0x80;
+			__asm        jge    _T333;
 
-	__asm        mov    eax, y;
-	__asm        add    eax, stepSize;
-	__asm        cmp    eax, 0x80;
-	__asm        jl     _T33e;
-_T333:
-	__asm        mov    word ptr [ebp-0x28], 0;
-	__asm        jmp    _T37c;
-_T33e:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BitsMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        add    ecx, stepSize;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        and    edx, 2;
-	__asm        movsx  eax, dx;
-	__asm        shl    eax, 0xE;
-	__asm        mov    ecx, x;
-	__asm        mov    ecx, BuildMap[ecx*4];
-	__asm        mov    edx, y;
-	__asm        add    edx, stepSize;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx];
-	__asm        or     eax, ebx;
-	__asm        mov    [ebp-0x28], ax;
-	__asm        jmp    _T37c;
-_T37c:
-	__asm        push   4;
-	__asm        push   4;
-	__asm        mov    eax, [ebp-0x28];
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
-	__asm        push   eax;
-	__asm        call   DoRoadTilesConnect;
-	__asm        add    esp, 0x10;
-	__asm        test   eax, eax;
-	__asm        je     _T3df;
+			__asm        mov    eax, y;
+			__asm        add    eax, stepSize;
+			__asm        cmp    eax, 0x80;
+			__asm        jl     _T33e;
+		_T333:
+			__asm        mov    word ptr [ebp-0x28], 0;
+			__asm        jmp    _T37c;
+		_T33e:
+			__asm        mov    eax, x;
+			__asm        mov    eax, BitsMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        add    ecx, stepSize;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        and    edx, 2;
+			__asm        movsx  eax, dx;
+			__asm        shl    eax, 0xE;
+			__asm        mov    ecx, x;
+			__asm        mov    ecx, BuildMap[ecx*4];
+			__asm        mov    edx, y;
+			__asm        add    edx, stepSize;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx];
+			__asm        or     eax, ebx;
+			__asm        mov    [ebp-0x28], ax;
+			__asm        jmp    _T37c;
+		_T37c:
+			__asm        push   4;
+			__asm        push   4;
+			__asm        mov    eax, [ebp-0x28];
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
+			__asm        push   eax;
+			__asm        call   DoRoadTilesConnect;
+			__asm        add    esp, 0x10;
+			__asm        test   eax, eax;
+			__asm        je     _T3df;
 
-	__asm        mov    eax, pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        inc    ecx;
-	__asm        push   ecx;
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax];
-	__asm        push   eax;
-	__asm        push   2;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::IsThisADeadEnd;
-	__asm        test   eax, eax;
-	__asm        je     _T3df;
-// LINE 748:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        shr    al, 4;
-	__asm        and    al, 0xF;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, al;
-	__asm        or     ecx, 4;
-	__asm        shl    cl, 4;
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        and    al, 0xF;
-	__asm        or     cl, al;
-	__asm        mov    eax, pRGV;
-	__asm        mov    [eax+2], cl;
-// LINE 752:
-_T3df:
-	__asm        mov    eax, Offset;
-	__asm        cmp    x, eax;
-	__asm        jle    _T4c1;
+			__asm        mov    eax, pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        inc    ecx;
+			__asm        push   ecx;
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax];
+			__asm        push   eax;
+			__asm        push   2;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::IsThisADeadEnd;
+			__asm        test   eax, eax;
+			__asm        je     _T3df;
+		// LINE 748:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+2];
+			__asm        shr    al, 4;
+			__asm        and    al, 0xF;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, al;
+			__asm        or     ecx, 4;
+			__asm        shl    cl, 4;
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+2];
+			__asm        and    al, 0xF;
+			__asm        or     cl, al;
+			__asm        mov    eax, pRGV;
+			__asm        mov    [eax+2], cl;
+		// LINE 752:
+		_T3df:
+			__asm        mov    eax, Offset;
+			__asm        cmp    x, eax;
+			__asm        jle    _T4c1;
 
-	__asm        mov    eax, x;
-	__asm        dec    eax;
-	__asm        js     _T41b;
+			__asm        mov    eax, x;
+			__asm        dec    eax;
+			__asm        js     _T41b;
 
-	__asm        cmp    y, 0;
-	__asm        jl     _T41b;
+			__asm        cmp    y, 0;
+			__asm        jl     _T41b;
 
-	__asm        mov    eax, x;
-	__asm        dec    eax;
-	__asm        cmp    eax, 0x80;
-	__asm        jge    _T41b;
+			__asm        mov    eax, x;
+			__asm        dec    eax;
+			__asm        cmp    eax, 0x80;
+			__asm        jge    _T41b;
 
-	__asm        cmp    y, 0x80;
-	__asm        jl     _T426;
-_T41b:
-	__asm        mov    word ptr [ebp-0x2C], 0;
-	__asm        jmp    _T45e;
-_T426:
-	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F6C];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        and    edx, 2;
-	__asm        movsx  eax, dx;
-	__asm        shl    eax, 0xE;
-	__asm        mov    ecx, x;
-	__asm        mov    ecx, NeighborFame[ecx*4];
-	__asm        mov    edx, y;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx];
-	__asm        or     eax, ebx;
-	__asm        mov    [ebp-0x2C], ax;
-	__asm        jmp    _T45e;
-_T45e:
-	__asm        push   8;
-	__asm        push   8;
-	__asm        mov    eax, [ebp-0x2C];
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
-	__asm        push   eax;
-	__asm        call   DoRoadTilesConnect;
-	__asm        add    esp, 0x10;
-	__asm        test   eax, eax;
-	__asm        je     _T4c1;
+			__asm        cmp    y, 0x80;
+			__asm        jl     _T426;
+		_T41b:
+			__asm        mov    word ptr [ebp-0x2C], 0;
+			__asm        jmp    _T45e;
+		_T426:
+			__asm        mov    eax, x;
+			__asm        mov    eax, [eax*4+0x638F6C];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        and    edx, 2;
+			__asm        movsx  eax, dx;
+			__asm        shl    eax, 0xE;
+			__asm        mov    ecx, x;
+			__asm        mov    ecx, NeighborFame[ecx*4];
+			__asm        mov    edx, y;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx];
+			__asm        or     eax, ebx;
+			__asm        mov    [ebp-0x2C], ax;
+			__asm        jmp    _T45e;
+		_T45e:
+			__asm        push   8;
+			__asm        push   8;
+			__asm        mov    eax, [ebp-0x2C];
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
+			__asm        push   eax;
+			__asm        call   DoRoadTilesConnect;
+			__asm        add    esp, 0x10;
+			__asm        test   eax, eax;
+			__asm        je     _T4c1;
 
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+1];
-	__asm        push   eax;
-	__asm        mov    eax, pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        dec    ecx;
-	__asm        push   ecx;
-	__asm        push   3;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::IsThisADeadEnd;
-	__asm        test   eax, eax;
-	__asm        je     _T4c1;
-// LINE 754:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        shr    al, 4;
-	__asm        and    al, 0xF;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, al;
-	__asm        or     ecx, 8;
-	__asm        shl    cl, 4;
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+2];
-	__asm        and    al, 0xF;
-	__asm        or     cl, al;
-	__asm        mov    eax, pRGV;
-	__asm        mov    [eax+2], cl;
-// LINE 756:
-// Block end:
-_T4c1:
-	__asm        jmp    _FOR_NEXT_34;
-// LINE 757:
-// Block end:
-_T4c6:
-	__asm        jmp    _FOR_NEXT_18;
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+1];
+			__asm        push   eax;
+			__asm        mov    eax, pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        dec    ecx;
+			__asm        push   ecx;
+			__asm        push   3;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::IsThisADeadEnd;
+			__asm        test   eax, eax;
+			__asm        je     _T4c1;
+		// LINE 754:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+2];
+			__asm        shr    al, 4;
+			__asm        and    al, 0xF;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, al;
+			__asm        or     ecx, 8;
+			__asm        shl    cl, 4;
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+2];
+			__asm        and    al, 0xF;
+			__asm        or     cl, al;
+			__asm        mov    eax, pRGV;
+			__asm        mov    [eax+2], cl;
+		// LINE 756:
+		// Block end:
+		_T4c1:
+			__asm        jmp    _FOR_NEXT_34;
+		// LINE 757:
+		// Block end:
+		_T4c6:
+	}
 // LINE 758:
 _T4cb:
 	return;
@@ -2770,79 +2710,83 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 	return 0x0;
 // LINE 776:
 _LOOP_3c:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-	__asm        push   eax;
-	__asm        lea    eax, returnDir;
-	__asm        push   eax;
-	__asm        mov    eax, currentDir;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-	__asm        mov    returnStatus, eax;
-// LINE 778:
-	__asm        cmp    returnStatus, 0xFFFFFFFF;
-	__asm        jne    _T6b;
-// LINE 779:
-	return 0x1;
-// LINE 781:
-_T6b:
-	__asm        cmp    returnStatus, 0xFFFFFFFE;
-	__asm        jne    _T7c;
-// LINE 782:
-	return 0x0;
-// LINE 785:
-_T7c:
-	__asm        mov    eax, currentDir;
-	__asm        cmp    returnDir, eax;
-	__asm        jne    _T90;
-// LINE 787:
-	repeatCount++;
-// LINE 789:
-	__asm        jmp    _T9d;
-// LINE 791:
-_T90:
-	repeatCount = 0x0;
-// LINE 792:
-	currentDir = returnDir;
-// LINE 795:
-_T9d:
-	__asm        mov    eax, currentDir;
-	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    _Tcd;
-// LINE 797:
-_Ta8:
-	y--;
-	__asm        jmp    _Tf1;
-// LINE 798:
-_Tb0:
-	x++;
-	__asm        jmp    _Tf1;
-// LINE 799:
-_Tb8:
-	y++;
-	__asm        jmp    _Tf1;
-// LINE 800:
-_Tc0:
-	x--;
-	__asm        jmp    _Tf1;
-// LINE 801:
-	__asm        jmp    _Tf1;
-_Tcd:
-	__asm        cmp    dword ptr [ebp-0x18], 3;
-	__asm        ja     _Tf1;
+	for (;;) {
+		// LINE 776:
+		_LOOP_3c:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
+			__asm        push   eax;
+			__asm        lea    eax, returnDir;
+			__asm        push   eax;
+			__asm        mov    eax, currentDir;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
+			__asm        mov    returnStatus, eax;
+		// LINE 778:
+			__asm        cmp    returnStatus, 0xFFFFFFFF;
+			__asm        jne    _T6b;
+		// LINE 779:
+			return 0x1;
+		// LINE 781:
+		_T6b:
+			__asm        cmp    returnStatus, 0xFFFFFFFE;
+			__asm        jne    _T7c;
+		// LINE 782:
+			return 0x0;
+		// LINE 785:
+		_T7c:
+			__asm        mov    eax, currentDir;
+			__asm        cmp    returnDir, eax;
+			__asm        jne    _T90;
+		// LINE 787:
+			repeatCount++;
+		// LINE 789:
+			__asm        jmp    _T9d;
+		// LINE 791:
+		_T90:
+			repeatCount = 0x0;
+		// LINE 792:
+			currentDir = returnDir;
+		// LINE 795:
+		_T9d:
+			__asm        mov    eax, currentDir;
+			__asm        mov    [ebp-0x18], eax;
+			__asm        jmp    _Tcd;
+		// LINE 797:
+		_Ta8:
+			y--;
+			__asm        jmp    _Tf1;
+		// LINE 798:
+		_Tb0:
+			x++;
+			__asm        jmp    _Tf1;
+		// LINE 799:
+		_Tb8:
+			y++;
+			__asm        jmp    _Tf1;
+		// LINE 800:
+		_Tc0:
+			x--;
+			__asm        jmp    _Tf1;
+		// LINE 801:
+			__asm        jmp    _Tf1;
+		_Tcd:
+			__asm        cmp    dword ptr [ebp-0x18], 3;
+			__asm        ja     _Tf1;
 
-	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    _Switch_e1[0][eax*4];
-// Switch pointers:
-//   _Ta8
-//   _Tb0
-//   _Tb8
-//   _Tc0
-// LINE 802:
-_Tf1:
-	__asm        jmp    _LOOP_3c;
+			__asm        mov    eax, [ebp-0x18];
+			__asm        jmp    _Switch_e1[0][eax*4];
+		// Switch pointers:
+		//   _Ta8
+		//   _Tb0
+		//   _Tb8
+		//   _Tc0
+		// LINE 802:
+		_Tf1:
+			__asm        jmp    _LOOP_3c;
+	}
 // LINE 803:
 }
 
@@ -3650,84 +3594,88 @@ _T65:
 	pEdge->numElementsToPath++;
 // LINE 900:
 _LOOP_76:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-	__asm        push   eax;
-	__asm        lea    eax, returnDir;
-	__asm        push   eax;
-	__asm        mov    eax, currentDir;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-	__asm        mov    returnStatus, eax;
-// LINE 901:
-	__asm        cmp    returnStatus, 0xFFFFFFFF;
-	__asm        jne    _Ta0;
-// LINE 902:
-	__asm        jmp    _T13a;
-// LINE 904:
-_Ta0:
-	__asm        cmp    returnStatus, 0xFFFFFFFE;
-	__asm        jne    _Taf;
-// LINE 905:
-	__asm        jmp    _T13a;
-// LINE 907:
-_Taf:
-	__asm        mov    eax, currentDir;
-	__asm        cmp    returnDir, eax;
-	__asm        jne    _Tc3;
-// LINE 909:
-	repeatCount++;
-// LINE 911:
-	__asm        jmp    _Te1;
-// LINE 913:
-_Tc3:
-	repeatCount = 0x0;
-// LINE 914:
-	currentDir = returnDir;
-// LINE 918:
-	__asm        cmp    fDeadEnd, 0;
-	__asm        je     _Te1;
-// LINE 920:
-	pEdge->numElementsToPath++;
-// LINE 924:
-_Te1:
-	__asm        mov    eax, returnDir;
-	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    _T111;
-// LINE 926:
-_Tec:
-	y--;
-	__asm        jmp    _T135;
-// LINE 927:
-_Tf4:
-	x++;
-	__asm        jmp    _T135;
-// LINE 928:
-_Tfc:
-	y++;
-	__asm        jmp    _T135;
-// LINE 929:
-_T104:
-	x--;
-	__asm        jmp    _T135;
-// LINE 930:
-	__asm        jmp    _T135;
-_T111:
-	__asm        cmp    dword ptr [ebp-0x28], 3;
-	__asm        ja     _T135;
+	for (;;) {
+		// LINE 900:
+		_LOOP_76:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
+			__asm        push   eax;
+			__asm        lea    eax, returnDir;
+			__asm        push   eax;
+			__asm        mov    eax, currentDir;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
+			__asm        mov    returnStatus, eax;
+		// LINE 901:
+			__asm        cmp    returnStatus, 0xFFFFFFFF;
+			__asm        jne    _Ta0;
+		// LINE 902:
+			__asm        jmp    _T13a;
+		// LINE 904:
+		_Ta0:
+			__asm        cmp    returnStatus, 0xFFFFFFFE;
+			__asm        jne    _Taf;
+		// LINE 905:
+			__asm        jmp    _T13a;
+		// LINE 907:
+		_Taf:
+			__asm        mov    eax, currentDir;
+			__asm        cmp    returnDir, eax;
+			__asm        jne    _Tc3;
+		// LINE 909:
+			repeatCount++;
+		// LINE 911:
+			__asm        jmp    _Te1;
+		// LINE 913:
+		_Tc3:
+			repeatCount = 0x0;
+		// LINE 914:
+			currentDir = returnDir;
+		// LINE 918:
+			__asm        cmp    fDeadEnd, 0;
+			__asm        je     _Te1;
+		// LINE 920:
+			pEdge->numElementsToPath++;
+		// LINE 924:
+		_Te1:
+			__asm        mov    eax, returnDir;
+			__asm        mov    [ebp-0x28], eax;
+			__asm        jmp    _T111;
+		// LINE 926:
+		_Tec:
+			y--;
+			__asm        jmp    _T135;
+		// LINE 927:
+		_Tf4:
+			x++;
+			__asm        jmp    _T135;
+		// LINE 928:
+		_Tfc:
+			y++;
+			__asm        jmp    _T135;
+		// LINE 929:
+		_T104:
+			x--;
+			__asm        jmp    _T135;
+		// LINE 930:
+			__asm        jmp    _T135;
+		_T111:
+			__asm        cmp    dword ptr [ebp-0x28], 3;
+			__asm        ja     _T135;
 
-	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    _Switch_125[0][eax*4];
-// Switch pointers:
-//   _Tec
-//   _Tf4
-//   _Tfc
-//   _T104
-// LINE 931:
-_T135:
-	__asm        jmp    _LOOP_76;
+			__asm        mov    eax, [ebp-0x28];
+			__asm        jmp    _Switch_125[0][eax*4];
+		// Switch pointers:
+		//   _Tec
+		//   _Tf4
+		//   _Tfc
+		//   _T104
+		// LINE 931:
+		_T135:
+			__asm        jmp    _LOOP_76;
+	}
 // LINE 936:
 _T13a:
 	__asm        cmp    returnStatus, 0xFFFFFFFE;
@@ -3823,273 +3771,277 @@ _T1fe:
 	repeatCount = 0x0;
 // LINE 969:
 _LOOP_218:
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        test   eax, eax;
-	__asm        jl     _T252;
+	for (;;) {
+		// LINE 969:
+		_LOOP_218:
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        test   eax, eax;
+			__asm        jl     _T252;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, y;
-	__asm        test   eax, eax;
-	__asm        jl     _T252;
+			__asm        xor    eax, eax;
+			__asm        mov    al, y;
+			__asm        test   eax, eax;
+			__asm        jl     _T252;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        cmp    eax, 0x80;
-	__asm        jge    _T252;
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        cmp    eax, 0x80;
+			__asm        jge    _T252;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, y;
-	__asm        cmp    eax, 0x80;
-	__asm        jl     _T25d;
-_T252:
-	__asm        mov    word ptr [ebp-0x1C], 0;
-	__asm        jmp    _T29d;
-_T25d:
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        mov    eax, BitsMap[eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        and    edx, 2;
-	__asm        movsx  eax, dx;
-	__asm        shl    eax, 0xE;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, x;
-	__asm        mov    ecx, BuildMap[ecx*4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, y;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx];
-	__asm        or     eax, ebx;
-	__asm        mov    [ebp-0x1C], ax;
-	__asm        jmp    _T29d;
-_T29d:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    _T336;
-_T2ad:
-	__asm        mov    dword ptr [ebp-0x20], 8;
-	__asm        jmp    _T46f;
-_T2b9:
-	__asm        mov    dword ptr [ebp-0x20], 0xA;
-	__asm        jmp    _T46f;
-_T2c5:
-	__asm        mov    dword ptr [ebp-0x20], 8;
-	__asm        jmp    _T46f;
-_T2d1:
-	__asm        mov    dword ptr [ebp-0x20], 4;
-	__asm        jmp    _T46f;
-_T2dd:
-	__asm        mov    dword ptr [ebp-0x20], 8;
-	__asm        jmp    _T46f;
-_T2e9:
-	__asm        mov    dword ptr [ebp-0x20], 8;
-	__asm        jmp    _T46f;
-_T2f5:
-	__asm        mov    dword ptr [ebp-0x20], 0xA;
-	__asm        jmp    _T46f;
-_T301:
-	__asm        mov    dword ptr [ebp-0x20], 8;
-	__asm        jmp    _T46f;
-_T30d:
-	__asm        mov    dword ptr [ebp-0x20], 0xA;
-	__asm        jmp    _T46f;
-_T319:
-	__asm        mov    dword ptr [ebp-0x20], 4;
-	__asm        jmp    _T46f;
-_T325:
-	__asm        mov    dword ptr [ebp-0x20], 0;
-	__asm        jmp    _T46f;
+			__asm        xor    eax, eax;
+			__asm        mov    al, y;
+			__asm        cmp    eax, 0x80;
+			__asm        jl     _T25d;
+		_T252:
+			__asm        mov    word ptr [ebp-0x1C], 0;
+			__asm        jmp    _T29d;
+		_T25d:
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        mov    eax, BitsMap[eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        and    edx, 2;
+			__asm        movsx  eax, dx;
+			__asm        shl    eax, 0xE;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, x;
+			__asm        mov    ecx, BuildMap[ecx*4];
+			__asm        xor    edx, edx;
+			__asm        mov    dl, y;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx];
+			__asm        or     eax, ebx;
+			__asm        mov    [ebp-0x1C], ax;
+			__asm        jmp    _T29d;
+		_T29d:
+			__asm        mov    eax, [ebp-0x1C];
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    [ebp-0x30], eax;
+			__asm        jmp    _T336;
+		_T2ad:
+			__asm        mov    dword ptr [ebp-0x20], 8;
+			__asm        jmp    _T46f;
+		_T2b9:
+			__asm        mov    dword ptr [ebp-0x20], 0xA;
+			__asm        jmp    _T46f;
+		_T2c5:
+			__asm        mov    dword ptr [ebp-0x20], 8;
+			__asm        jmp    _T46f;
+		_T2d1:
+			__asm        mov    dword ptr [ebp-0x20], 4;
+			__asm        jmp    _T46f;
+		_T2dd:
+			__asm        mov    dword ptr [ebp-0x20], 8;
+			__asm        jmp    _T46f;
+		_T2e9:
+			__asm        mov    dword ptr [ebp-0x20], 8;
+			__asm        jmp    _T46f;
+		_T2f5:
+			__asm        mov    dword ptr [ebp-0x20], 0xA;
+			__asm        jmp    _T46f;
+		_T301:
+			__asm        mov    dword ptr [ebp-0x20], 8;
+			__asm        jmp    _T46f;
+		_T30d:
+			__asm        mov    dword ptr [ebp-0x20], 0xA;
+			__asm        jmp    _T46f;
+		_T319:
+			__asm        mov    dword ptr [ebp-0x20], 4;
+			__asm        jmp    _T46f;
+		_T325:
+			__asm        mov    dword ptr [ebp-0x20], 0;
+			__asm        jmp    _T46f;
 
-	__asm        jmp    _T46f;
-_T336:
-	__asm        cmp    dword ptr [ebp-0x30], 0x2B;
-	__asm        jg     _T363;
+			__asm        jmp    _T46f;
+		_T336:
+			__asm        cmp    dword ptr [ebp-0x30], 0x2B;
+			__asm        jg     _T363;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x27;
-	__asm        jge    _T2b9;
+			__asm        cmp    dword ptr [ebp-0x30], 0x27;
+			__asm        jge    _T2b9;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x1D;
-	__asm        jl     _T325;
+			__asm        cmp    dword ptr [ebp-0x30], 0x1D;
+			__asm        jl     _T325;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x26;
-	__asm        jle    _T2ad;
+			__asm        cmp    dword ptr [ebp-0x30], 0x26;
+			__asm        jle    _T2ad;
 
-	__asm        jmp    _T325;
-_T363:
-	__asm        cmp    dword ptr [ebp-0x30], 0x50;
-	__asm        jg     _T390;
+			__asm        jmp    _T325;
+		_T363:
+			__asm        cmp    dword ptr [ebp-0x30], 0x50;
+			__asm        jg     _T390;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x49;
-	__asm        jge    _T2d1;
+			__asm        cmp    dword ptr [ebp-0x30], 0x49;
+			__asm        jge    _T2d1;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x3F;
-	__asm        jl     _T325;
+			__asm        cmp    dword ptr [ebp-0x30], 0x3F;
+			__asm        jl     _T325;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x46;
-	__asm        jle    _T2c5;
+			__asm        cmp    dword ptr [ebp-0x30], 0x46;
+			__asm        jle    _T2c5;
 
-	__asm        jmp    _T325;
-_T390:
-	__asm        cmp    dword ptr [ebp-0x30], 0x59;
-	__asm        jg     _T3bd;
+			__asm        jmp    _T325;
+		_T390:
+			__asm        cmp    dword ptr [ebp-0x30], 0x59;
+			__asm        jg     _T3bd;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x57;
-	__asm        jge    _T2e9;
+			__asm        cmp    dword ptr [ebp-0x30], 0x57;
+			__asm        jge    _T2e9;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x51;
-	__asm        jl     _T325;
+			__asm        cmp    dword ptr [ebp-0x30], 0x51;
+			__asm        jl     _T325;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x56;
-	__asm        jle    _T2dd;
+			__asm        cmp    dword ptr [ebp-0x30], 0x56;
+			__asm        jle    _T2dd;
 
-	__asm        jmp    _T325;
-_T3bd:
-	__asm        cmp    dword ptr [ebp-0x30], 0x68;
-	__asm        jg     _T3ea;
+			__asm        jmp    _T325;
+		_T3bd:
+			__asm        cmp    dword ptr [ebp-0x30], 0x68;
+			__asm        jg     _T3ea;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x61;
-	__asm        jge    _T301;
+			__asm        cmp    dword ptr [ebp-0x30], 0x61;
+			__asm        jge    _T301;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x5D;
-	__asm        jl     _T325;
+			__asm        cmp    dword ptr [ebp-0x30], 0x5D;
+			__asm        jl     _T325;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x60;
-	__asm        jle    _T2f5;
+			__asm        cmp    dword ptr [ebp-0x30], 0x60;
+			__asm        jle    _T2f5;
 
-	__asm        jmp    _T325;
-_T3ea:
-	__asm        cmp    dword ptr [ebp-0x30], 0x8056;
-	__asm        jg     _T427;
+			__asm        jmp    _T325;
+		_T3ea:
+			__asm        cmp    dword ptr [ebp-0x30], 0x8056;
+			__asm        jg     _T427;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x8051;
-	__asm        jge    _T2dd;
+			__asm        cmp    dword ptr [ebp-0x30], 0x8051;
+			__asm        jge    _T2dd;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x69;
-	__asm        je     _T30d;
+			__asm        cmp    dword ptr [ebp-0x30], 0x69;
+			__asm        je     _T30d;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x6A;
-	__asm        jl     _T325;
+			__asm        cmp    dword ptr [ebp-0x30], 0x6A;
+			__asm        jl     _T325;
 
-	__asm        cmp    dword ptr [ebp-0x30], 0x6B;
-	__asm        jle    _T319;
+			__asm        cmp    dword ptr [ebp-0x30], 0x6B;
+			__asm        jle    _T319;
 
-	__asm        jmp    _T325;
-_T427:
-	__asm        sub    dword ptr [ebp-0x30], 0x8057;
-	__asm        cmp    dword ptr [ebp-0x30], 0x14;
-	__asm        ja     _T325;
+			__asm        jmp    _T325;
+		_T427:
+			__asm        sub    dword ptr [ebp-0x30], 0x8057;
+			__asm        cmp    dword ptr [ebp-0x30], 0x14;
+			__asm        ja     _T325;
 
-	__asm        mov    eax, [ebp-0x30];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _SwitchTable_45a[0][eax];
-	__asm        jmp    _Switch_44a[0][ecx*4];
-// Switch pointers:
-//   _T2e9
-//   _T2f5
-//   _T319
-//   _T325
-// Switch table
-//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
-_T46f:
-	__asm        mov    eax, pEdge;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cx, [eax+2];
-	__asm        add    ecx, [ebp-0x20];
-	__asm        mov    eax, pEdge;
-	__asm        mov    [eax+2], cx;
-// LINE 970:
-	__asm        mov    eax, pEdge;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cx, [eax+2];
-	__asm        cmp    ecx, 0x7D00;
-	__asm        jl     _T4b3;
+			__asm        mov    eax, [ebp-0x30];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, _SwitchTable_45a[0][eax];
+			__asm        jmp    _Switch_44a[0][ecx*4];
+		// Switch pointers:
+		//   _T2e9
+		//   _T2f5
+		//   _T319
+		//   _T325
+		// Switch table
+		//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
+		_T46f:
+			__asm        mov    eax, pEdge;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cx, [eax+2];
+			__asm        add    ecx, [ebp-0x20];
+			__asm        mov    eax, pEdge;
+			__asm        mov    [eax+2], cx;
+		// LINE 970:
+			__asm        mov    eax, pEdge;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cx, [eax+2];
+			__asm        cmp    ecx, 0x7D00;
+			__asm        jl     _T4b3;
 
-	_assert(0x3ca, 0x5b81d8, 0x5b81fc);
-	__asm        jmp    _T4b8;
-_T4b3:
-	__asm        jmp    _T4b8;
-// LINE 972:
-_T4b8:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-	__asm        push   eax;
-	__asm        lea    eax, returnDir;
-	__asm        push   eax;
-	__asm        mov    eax, currentDir;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-	__asm        mov    returnStatus, eax;
-// LINE 973:
-	__asm        cmp    returnStatus, 0xFFFFFFFF;
-	__asm        jne    _T4e2;
-// LINE 974:
-	__asm        jmp    _T572;
-// LINE 977:
-_T4e2:
-	__asm        cmp    returnStatus, 0xFFFFFFFE;
-	__asm        jne    _T4f1;
-// LINE 978:
-	__asm        jmp    _T572;
-// LINE 980:
-_T4f1:
-	__asm        mov    eax, currentDir;
-	__asm        cmp    returnDir, eax;
-	__asm        jne    _T505;
-// LINE 982:
-	repeatCount++;
-// LINE 984:
-	__asm        jmp    _T519;
-// LINE 986:
-_T505:
-	repeatCount = 0x0;
-// LINE 987:
-	currentDir = returnDir;
-// LINE 988:
-	pEdge->numElementsToPath++;
-// LINE 991:
-_T519:
-	__asm        mov    eax, currentDir;
-	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    _T549;
-// LINE 993:
-_T524:
-	y--;
-	__asm        jmp    _T56d;
-// LINE 994:
-_T52c:
-	x++;
-	__asm        jmp    _T56d;
-// LINE 995:
-_T534:
-	y++;
-	__asm        jmp    _T56d;
-// LINE 996:
-_T53c:
-	x--;
-	__asm        jmp    _T56d;
-// LINE 997:
-	__asm        jmp    _T56d;
-_T549:
-	__asm        cmp    dword ptr [ebp-0x34], 3;
-	__asm        ja     _T56d;
+			_assert(0x3ca, 0x5b81d8, 0x5b81fc);
+			__asm        jmp    _T4b8;
+		_T4b3:
+			__asm        jmp    _T4b8;
+		// LINE 972:
+		_T4b8:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
+			__asm        push   eax;
+			__asm        lea    eax, returnDir;
+			__asm        push   eax;
+			__asm        mov    eax, currentDir;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
+			__asm        mov    returnStatus, eax;
+		// LINE 973:
+			__asm        cmp    returnStatus, 0xFFFFFFFF;
+			__asm        jne    _T4e2;
+		// LINE 974:
+			__asm        jmp    _T572;
+		// LINE 977:
+		_T4e2:
+			__asm        cmp    returnStatus, 0xFFFFFFFE;
+			__asm        jne    _T4f1;
+		// LINE 978:
+			__asm        jmp    _T572;
+		// LINE 980:
+		_T4f1:
+			__asm        mov    eax, currentDir;
+			__asm        cmp    returnDir, eax;
+			__asm        jne    _T505;
+		// LINE 982:
+			repeatCount++;
+		// LINE 984:
+			__asm        jmp    _T519;
+		// LINE 986:
+		_T505:
+			repeatCount = 0x0;
+		// LINE 987:
+			currentDir = returnDir;
+		// LINE 988:
+			pEdge->numElementsToPath++;
+		// LINE 991:
+		_T519:
+			__asm        mov    eax, currentDir;
+			__asm        mov    [ebp-0x34], eax;
+			__asm        jmp    _T549;
+		// LINE 993:
+		_T524:
+			y--;
+			__asm        jmp    _T56d;
+		// LINE 994:
+		_T52c:
+			x++;
+			__asm        jmp    _T56d;
+		// LINE 995:
+		_T534:
+			y++;
+			__asm        jmp    _T56d;
+		// LINE 996:
+		_T53c:
+			x--;
+			__asm        jmp    _T56d;
+		// LINE 997:
+			__asm        jmp    _T56d;
+		_T549:
+			__asm        cmp    dword ptr [ebp-0x34], 3;
+			__asm        ja     _T56d;
 
-	__asm        mov    eax, [ebp-0x34];
-	__asm        jmp    _Switch_55d[0][eax*4];
-// Switch pointers:
-//   _T524
-//   _T52c
-//   _T534
-//   _T53c
-// LINE 998:
-_T56d:
-	__asm        jmp    _LOOP_218;
+			__asm        mov    eax, [ebp-0x34];
+			__asm        jmp    _Switch_55d[0][eax*4];
+		// Switch pointers:
+		//   _T524
+		//   _T52c
+		//   _T534
+		//   _T53c
+		// LINE 998:
+		_T56d:
+			__asm        jmp    _LOOP_218;
+	}
 // LINE 1007:
 _T572:
 	__asm        cmp    fDeadEnd, 0;
@@ -6819,67 +6771,71 @@ _T34d:
 	__asm        jne    _T3fb;
 // LINE 1300:
 _LOOP_357:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-	__asm        push   eax;
-	__asm        lea    eax, returnDir;
-	__asm        push   eax;
-	__asm        mov    eax, currentDir;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-	__asm        mov    returnStatus, eax;
-// LINE 1301:
-	__asm        cmp    returnStatus, 0xFFFFFFFF;
-	__asm        jne    _T381;
-// LINE 1302:
-	__asm        jmp    _T3ef;
-// LINE 1304:
-_T381:
-	__asm        cmp    returnStatus, 0xFFFFFFFE;
-	__asm        jne    _T390;
-// LINE 1305:
-	__asm        jmp    _T3ef;
-// LINE 1307:
-_T390:
-	currentDir = returnDir;
-// LINE 1308:
-	__asm        mov    eax, currentDir;
-	__asm        mov    [ebp-0x60], eax;
-	__asm        jmp    _T3c6;
-// LINE 1310:
-_T3a1:
-	y--;
-	__asm        jmp    _T3ea;
-// LINE 1311:
-_T3a9:
-	x++;
-	__asm        jmp    _T3ea;
-// LINE 1312:
-_T3b1:
-	y++;
-	__asm        jmp    _T3ea;
-// LINE 1313:
-_T3b9:
-	x--;
-	__asm        jmp    _T3ea;
-// LINE 1314:
-	__asm        jmp    _T3ea;
-_T3c6:
-	__asm        cmp    dword ptr [ebp-0x60], 3;
-	__asm        ja     _T3ea;
+	for (;;) {
+		// LINE 1300:
+		_LOOP_357:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
+			__asm        push   eax;
+			__asm        lea    eax, returnDir;
+			__asm        push   eax;
+			__asm        mov    eax, currentDir;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
+			__asm        mov    returnStatus, eax;
+		// LINE 1301:
+			__asm        cmp    returnStatus, 0xFFFFFFFF;
+			__asm        jne    _T381;
+		// LINE 1302:
+			__asm        jmp    _T3ef;
+		// LINE 1304:
+		_T381:
+			__asm        cmp    returnStatus, 0xFFFFFFFE;
+			__asm        jne    _T390;
+		// LINE 1305:
+			__asm        jmp    _T3ef;
+		// LINE 1307:
+		_T390:
+			currentDir = returnDir;
+		// LINE 1308:
+			__asm        mov    eax, currentDir;
+			__asm        mov    [ebp-0x60], eax;
+			__asm        jmp    _T3c6;
+		// LINE 1310:
+		_T3a1:
+			y--;
+			__asm        jmp    _T3ea;
+		// LINE 1311:
+		_T3a9:
+			x++;
+			__asm        jmp    _T3ea;
+		// LINE 1312:
+		_T3b1:
+			y++;
+			__asm        jmp    _T3ea;
+		// LINE 1313:
+		_T3b9:
+			x--;
+			__asm        jmp    _T3ea;
+		// LINE 1314:
+			__asm        jmp    _T3ea;
+		_T3c6:
+			__asm        cmp    dword ptr [ebp-0x60], 3;
+			__asm        ja     _T3ea;
 
-	__asm        mov    eax, [ebp-0x60];
-	__asm        jmp    _Switch_3da[0][eax*4];
-// Switch pointers:
-//   _T3a1
-//   _T3a9
-//   _T3b1
-//   _T3b9
-// LINE 1315:
-_T3ea:
-	__asm        jmp    _LOOP_357;
+			__asm        mov    eax, [ebp-0x60];
+			__asm        jmp    _Switch_3da[0][eax*4];
+		// Switch pointers:
+		//   _T3a1
+		//   _T3a9
+		//   _T3b1
+		//   _T3b9
+		// LINE 1315:
+		_T3ea:
+			__asm        jmp    _LOOP_357;
+	}
 // LINE 1319:
 _T3ef:
 	currentDir = ((returnDir - 0x2) & 0x3);
@@ -7120,383 +7076,387 @@ _T683:
 	__asm        mov    lastAlt, dx;
 // LINE 1339:
 _LOOP_6bf:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-	__asm        push   eax;
-	__asm        lea    eax, returnDir;
-	__asm        push   eax;
-	__asm        mov    eax, currentDir;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-	__asm        mov    returnStatus, eax;
-// LINE 1341:
-	__asm        cmp    deadEnd, 0;
-	__asm        je     _T799;
-// LINE 1343:
-	__asm        xor    eax, eax;
-	__asm        mov    al, startLoc.x;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, x;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _T71c;
+	for (;;) {
+		// LINE 1339:
+		_LOOP_6bf:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
+			__asm        push   eax;
+			__asm        lea    eax, returnDir;
+			__asm        push   eax;
+			__asm        mov    eax, currentDir;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
+			__asm        mov    returnStatus, eax;
+		// LINE 1341:
+			__asm        cmp    deadEnd, 0;
+			__asm        je     _T799;
+		// LINE 1343:
+			__asm        xor    eax, eax;
+			__asm        mov    al, startLoc.x;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, x;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _T71c;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, startLoc.y;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, y;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _T71c;
+			__asm        xor    eax, eax;
+			__asm        mov    al, startLoc.y;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, y;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _T71c;
 
-	__asm        cmp    fStart, 0;
-	__asm        jne    _T71c;
-// LINE 1345:
-	__asm        jmp    _Taee;
-// LINE 1347:
-	__asm        jmp    _T78d;
-_T71c:
-	__asm        cmp    returnStatus, 0xFFFFFFFF;
-	__asm        jne    _T78d;
-// LINE 1349:
-	decrementFlag = 0x1;
-// LINE 1351:
-	__asm        mov    eax, currentDir;
-	__asm        mov    [ebp-0x6C], eax;
-	__asm        jmp    _T75d;
-// LINE 1353:
-_T738:
-	y--;
-	__asm        jmp    _T781;
-// LINE 1354:
-_T740:
-	x++;
-	__asm        jmp    _T781;
-// LINE 1355:
-_T748:
-	y++;
-	__asm        jmp    _T781;
-// LINE 1356:
-_T750:
-	x--;
-	__asm        jmp    _T781;
-// LINE 1357:
-	__asm        jmp    _T781;
-_T75d:
-	__asm        cmp    dword ptr [ebp-0x6C], 3;
-	__asm        ja     _T781;
+			__asm        cmp    fStart, 0;
+			__asm        jne    _T71c;
+		// LINE 1345:
+			__asm        jmp    _Taee;
+		// LINE 1347:
+			__asm        jmp    _T78d;
+		_T71c:
+			__asm        cmp    returnStatus, 0xFFFFFFFF;
+			__asm        jne    _T78d;
+		// LINE 1349:
+			decrementFlag = 0x1;
+		// LINE 1351:
+			__asm        mov    eax, currentDir;
+			__asm        mov    [ebp-0x6C], eax;
+			__asm        jmp    _T75d;
+		// LINE 1353:
+		_T738:
+			y--;
+			__asm        jmp    _T781;
+		// LINE 1354:
+		_T740:
+			x++;
+			__asm        jmp    _T781;
+		// LINE 1355:
+		_T748:
+			y++;
+			__asm        jmp    _T781;
+		// LINE 1356:
+		_T750:
+			x--;
+			__asm        jmp    _T781;
+		// LINE 1357:
+			__asm        jmp    _T781;
+		_T75d:
+			__asm        cmp    dword ptr [ebp-0x6C], 3;
+			__asm        ja     _T781;
 
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        jmp    _Switch_771[0][eax*4];
-// Switch pointers:
-//   _T738
-//   _T740
-//   _T748
-//   _T750
-// LINE 1359:
-_T781:
-	returnDir = ((returnDir - 0x2) & 0x3);
-// LINE 1362:
-_T78d:
-	fStart = 0x0;
-// LINE 1364:
-	__asm        jmp    _T7a8;
-// LINE 1366:
-_T799:
-	__asm        cmp    returnStatus, 0xFFFFFFFE;
-	__asm        jne    _T7a8;
-// LINE 1367:
-	__asm        jmp    _Taee;
-// LINE 1371:
-_T7a8:
-	__asm        mov    eax, returnDir;
-	__asm        cmp    currentDir, eax;
-	__asm        jne    _T7bf;
-// LINE 1373:
-	__asm        mov    eax, pRoad;
-	__asm        inc    byte ptr [eax+1];
-// LINE 1375:
-	__asm        jmp    _Ta77;
-// LINE 1377:
-_T7bf:
-	currentDir = returnDir;
-// LINE 1378:
-	element--;
-// LINE 1379:
-	__asm        mov    eax, pEdge;
-	__asm        mov    eax, [eax+6];
-	__asm        mov    ecx, element;
-	__asm        lea    eax, [eax+ecx*2];
-	__asm        mov    pRoad, eax;
-// LINE 1381:
-	__asm        cmp    decrementFlag, 0;
-	__asm        je     _T7f4;
-// LINE 1383:
-	__asm        mov    eax, pRoad;
-	__asm        mov    byte ptr [eax+1], 0xFF;
-// LINE 1384:
-	decrementFlag = 0x0;
-// LINE 1386:
-	__asm        jmp    _T7fb;
-// LINE 1387:
-_T7f4:
-	__asm        mov    eax, pRoad;
-	__asm        mov    byte ptr [eax+1], 0;
-// LINE 1389:
-_T7fb:
-	__asm        mov    eax, currentDir;
-	__asm        sub    eax, 2;
-	__asm        and    al, 3;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    cl, [ecx];
-	__asm        and    cl, 0xFC;
-	__asm        or     al, cl;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    [ecx], al;
-// LINE 1392:
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        test   eax, eax;
-	__asm        jl     _T84c;
+			__asm        mov    eax, [ebp-0x6C];
+			__asm        jmp    _Switch_771[0][eax*4];
+		// Switch pointers:
+		//   _T738
+		//   _T740
+		//   _T748
+		//   _T750
+		// LINE 1359:
+		_T781:
+			returnDir = ((returnDir - 0x2) & 0x3);
+		// LINE 1362:
+		_T78d:
+			fStart = 0x0;
+		// LINE 1364:
+			__asm        jmp    _T7a8;
+		// LINE 1366:
+		_T799:
+			__asm        cmp    returnStatus, 0xFFFFFFFE;
+			__asm        jne    _T7a8;
+		// LINE 1367:
+			__asm        jmp    _Taee;
+		// LINE 1371:
+		_T7a8:
+			__asm        mov    eax, returnDir;
+			__asm        cmp    currentDir, eax;
+			__asm        jne    _T7bf;
+		// LINE 1373:
+			__asm        mov    eax, pRoad;
+			__asm        inc    byte ptr [eax+1];
+		// LINE 1375:
+			__asm        jmp    _Ta77;
+		// LINE 1377:
+		_T7bf:
+			currentDir = returnDir;
+		// LINE 1378:
+			element--;
+		// LINE 1379:
+			__asm        mov    eax, pEdge;
+			__asm        mov    eax, [eax+6];
+			__asm        mov    ecx, element;
+			__asm        lea    eax, [eax+ecx*2];
+			__asm        mov    pRoad, eax;
+		// LINE 1381:
+			__asm        cmp    decrementFlag, 0;
+			__asm        je     _T7f4;
+		// LINE 1383:
+			__asm        mov    eax, pRoad;
+			__asm        mov    byte ptr [eax+1], 0xFF;
+		// LINE 1384:
+			decrementFlag = 0x0;
+		// LINE 1386:
+			__asm        jmp    _T7fb;
+		// LINE 1387:
+		_T7f4:
+			__asm        mov    eax, pRoad;
+			__asm        mov    byte ptr [eax+1], 0;
+		// LINE 1389:
+		_T7fb:
+			__asm        mov    eax, currentDir;
+			__asm        sub    eax, 2;
+			__asm        and    al, 3;
+			__asm        mov    ecx, pRoad;
+			__asm        mov    cl, [ecx];
+			__asm        and    cl, 0xFC;
+			__asm        or     al, cl;
+			__asm        mov    ecx, pRoad;
+			__asm        mov    [ecx], al;
+		// LINE 1392:
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        test   eax, eax;
+			__asm        jl     _T84c;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, y;
-	__asm        test   eax, eax;
-	__asm        jl     _T84c;
+			__asm        xor    eax, eax;
+			__asm        mov    al, y;
+			__asm        test   eax, eax;
+			__asm        jl     _T84c;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        cmp    eax, 0x80;
-	__asm        jge    _T84c;
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        cmp    eax, 0x80;
+			__asm        jge    _T84c;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, y;
-	__asm        cmp    eax, 0x80;
-	__asm        jl     _T857;
-_T84c:
-	__asm        mov    word ptr [ebp-0x48], 0;
-	__asm        jmp    _T897;
-_T857:
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        mov    eax, BitsMap[eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        and    edx, 2;
-	__asm        movsx  eax, dx;
-	__asm        shl    eax, 0xE;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, x;
-	__asm        mov    ecx, BuildMap[ecx*4];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, y;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx];
-	__asm        or     eax, ebx;
-	__asm        mov    [ebp-0x48], ax;
-	__asm        jmp    _T897;
-_T897:
-	__asm        mov    eax, [ebp-0x48];
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    [ebp-0x70], eax;
-	__asm        jmp    _T8c4;
-_T8a7:
-	__asm        mov    dword ptr [ebp-0x40], 1;
-	__asm        jmp    _T910;
-_T8b3:
-	__asm        mov    dword ptr [ebp-0x40], 0;
-	__asm        jmp    _T910;
+			__asm        xor    eax, eax;
+			__asm        mov    al, y;
+			__asm        cmp    eax, 0x80;
+			__asm        jl     _T857;
+		_T84c:
+			__asm        mov    word ptr [ebp-0x48], 0;
+			__asm        jmp    _T897;
+		_T857:
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        mov    eax, BitsMap[eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        and    edx, 2;
+			__asm        movsx  eax, dx;
+			__asm        shl    eax, 0xE;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, x;
+			__asm        mov    ecx, BuildMap[ecx*4];
+			__asm        xor    edx, edx;
+			__asm        mov    dl, y;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx];
+			__asm        or     eax, ebx;
+			__asm        mov    [ebp-0x48], ax;
+			__asm        jmp    _T897;
+		_T897:
+			__asm        mov    eax, [ebp-0x48];
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    [ebp-0x70], eax;
+			__asm        jmp    _T8c4;
+		_T8a7:
+			__asm        mov    dword ptr [ebp-0x40], 1;
+			__asm        jmp    _T910;
+		_T8b3:
+			__asm        mov    dword ptr [ebp-0x40], 0;
+			__asm        jmp    _T910;
 
-	__asm        jmp    _T910;
-_T8c4:
-	__asm        cmp    dword ptr [ebp-0x70], 0x6B;
-	__asm        jg     _T8f1;
+			__asm        jmp    _T910;
+		_T8c4:
+			__asm        cmp    dword ptr [ebp-0x70], 0x6B;
+			__asm        jg     _T8f1;
 
-	__asm        cmp    dword ptr [ebp-0x70], 0x61;
-	__asm        jge    _T8a7;
+			__asm        cmp    dword ptr [ebp-0x70], 0x61;
+			__asm        jge    _T8a7;
 
-	__asm        cmp    dword ptr [ebp-0x70], 0x49;
-	__asm        jl     _T8b3;
+			__asm        cmp    dword ptr [ebp-0x70], 0x49;
+			__asm        jl     _T8b3;
 
-	__asm        cmp    dword ptr [ebp-0x70], 0x50;
-	__asm        jle    _T8a7;
+			__asm        cmp    dword ptr [ebp-0x70], 0x50;
+			__asm        jle    _T8a7;
 
-	__asm        jmp    _T8b3;
-_T8f1:
-	__asm        cmp    dword ptr [ebp-0x70], 0x806A;
-	__asm        jl     _T8b3;
+			__asm        jmp    _T8b3;
+		_T8f1:
+			__asm        cmp    dword ptr [ebp-0x70], 0x806A;
+			__asm        jl     _T8b3;
 
-	__asm        cmp    dword ptr [ebp-0x70], 0x806B;
-	__asm        jle    _T8a7;
+			__asm        cmp    dword ptr [ebp-0x70], 0x806B;
+			__asm        jle    _T8a7;
 
-	__asm        jmp    _T8b3;
-_T910:
-	__asm        mov    eax, [ebp-0x40];
-	__asm        and    al, 1;
-	__asm        shl    al, 4;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    cl, [ecx];
-	__asm        and    cl, 0xEF;
-	__asm        or     al, cl;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    [ecx], al;
-// LINE 1393:
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        test   eax, eax;
-	__asm        jl     _T961;
+			__asm        jmp    _T8b3;
+		_T910:
+			__asm        mov    eax, [ebp-0x40];
+			__asm        and    al, 1;
+			__asm        shl    al, 4;
+			__asm        mov    ecx, pRoad;
+			__asm        mov    cl, [ecx];
+			__asm        and    cl, 0xEF;
+			__asm        or     al, cl;
+			__asm        mov    ecx, pRoad;
+			__asm        mov    [ecx], al;
+		// LINE 1393:
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        test   eax, eax;
+			__asm        jl     _T961;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        cmp    eax, 0x80;
-	__asm        jge    _T961;
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        cmp    eax, 0x80;
+			__asm        jge    _T961;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, y;
-	__asm        test   eax, eax;
-	__asm        jl     _T961;
+			__asm        xor    eax, eax;
+			__asm        mov    al, y;
+			__asm        test   eax, eax;
+			__asm        jl     _T961;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, y;
-	__asm        cmp    eax, 0x80;
-	__asm        jl     _T96d;
-_T961:
-	__asm        mov    dword ptr [ebp-0x44], 1;
-	__asm        jmp    _Ta60;
-_T96d:
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        mov    eax, BuildMap[eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        mov    [ebp-0x74], edx;
-	__asm        jmp    _Ta38;
-_T98b:
-	__asm        cmp    currentDir, 3;
-	__asm        jne    _T9a1;
+			__asm        xor    eax, eax;
+			__asm        mov    al, y;
+			__asm        cmp    eax, 0x80;
+			__asm        jl     _T96d;
+		_T961:
+			__asm        mov    dword ptr [ebp-0x44], 1;
+			__asm        jmp    _Ta60;
+		_T96d:
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        mov    eax, BuildMap[eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        mov    [ebp-0x74], edx;
+			__asm        jmp    _Ta38;
+		_T98b:
+			__asm        cmp    currentDir, 3;
+			__asm        jne    _T9a1;
 
-	__asm        mov    dword ptr [ebp-0x44], 2;
-	__asm        jmp    _T9a8;
-_T9a1:
-	__asm        mov    dword ptr [ebp-0x44], 0;
-_T9a8:
-	__asm        jmp    _Ta60;
+			__asm        mov    dword ptr [ebp-0x44], 2;
+			__asm        jmp    _T9a8;
+		_T9a1:
+			__asm        mov    dword ptr [ebp-0x44], 0;
+		_T9a8:
+			__asm        jmp    _Ta60;
 
-	__asm        jmp    _Ta60;
-_T9b2:
-	__asm        cmp    currentDir, 0;
-	__asm        jne    _T9c8;
+			__asm        jmp    _Ta60;
+		_T9b2:
+			__asm        cmp    currentDir, 0;
+			__asm        jne    _T9c8;
 
-	__asm        mov    dword ptr [ebp-0x44], 2;
-	__asm        jmp    _T9cf;
-_T9c8:
-	__asm        mov    dword ptr [ebp-0x44], 0;
-_T9cf:
-	__asm        jmp    _Ta60;
+			__asm        mov    dword ptr [ebp-0x44], 2;
+			__asm        jmp    _T9cf;
+		_T9c8:
+			__asm        mov    dword ptr [ebp-0x44], 0;
+		_T9cf:
+			__asm        jmp    _Ta60;
 
-	__asm        jmp    _Ta60;
-_T9d9:
-	__asm        cmp    currentDir, 1;
-	__asm        jne    _T9ef;
+			__asm        jmp    _Ta60;
+		_T9d9:
+			__asm        cmp    currentDir, 1;
+			__asm        jne    _T9ef;
 
-	__asm        mov    dword ptr [ebp-0x44], 2;
-	__asm        jmp    _T9f6;
-_T9ef:
-	__asm        mov    dword ptr [ebp-0x44], 0;
-_T9f6:
-	__asm        jmp    _Ta60;
+			__asm        mov    dword ptr [ebp-0x44], 2;
+			__asm        jmp    _T9f6;
+		_T9ef:
+			__asm        mov    dword ptr [ebp-0x44], 0;
+		_T9f6:
+			__asm        jmp    _Ta60;
 
-	__asm        jmp    _Ta60;
-_Ta00:
-	__asm        cmp    currentDir, 2;
-	__asm        jne    _Ta16;
+			__asm        jmp    _Ta60;
+		_Ta00:
+			__asm        cmp    currentDir, 2;
+			__asm        jne    _Ta16;
 
-	__asm        mov    dword ptr [ebp-0x44], 2;
-	__asm        jmp    _Ta1d;
-_Ta16:
-	__asm        mov    dword ptr [ebp-0x44], 0;
-_Ta1d:
-	__asm        jmp    _Ta60;
+			__asm        mov    dword ptr [ebp-0x44], 2;
+			__asm        jmp    _Ta1d;
+		_Ta16:
+			__asm        mov    dword ptr [ebp-0x44], 0;
+		_Ta1d:
+			__asm        jmp    _Ta60;
 
-	__asm        jmp    _Ta60;
-_Ta27:
-	__asm        mov    dword ptr [ebp-0x44], 1;
-	__asm        jmp    _Ta60;
+			__asm        jmp    _Ta60;
+		_Ta27:
+			__asm        mov    dword ptr [ebp-0x44], 1;
+			__asm        jmp    _Ta60;
 
-	__asm        jmp    _Ta60;
-_Ta38:
-	__asm        sub    dword ptr [ebp-0x74], 0x1F;
-	__asm        cmp    dword ptr [ebp-0x74], 3;
-	__asm        ja     _Ta27;
+			__asm        jmp    _Ta60;
+		_Ta38:
+			__asm        sub    dword ptr [ebp-0x74], 0x1F;
+			__asm        cmp    dword ptr [ebp-0x74], 3;
+			__asm        ja     _Ta27;
 
-	__asm        mov    eax, [ebp-0x74];
-	__asm        jmp    _Switch_a50[0][eax*4];
-// Switch pointers:
-//   _T98b
-//   _T9b2
-//   _T9d9
-//   _Ta00
-_Ta60:
-	__asm        mov    eax, [ebp-0x44];
-	__asm        and    al, 3;
-	__asm        shl    al, 2;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    cl, [ecx];
-	__asm        and    cl, 0xF3;
-	__asm        or     al, cl;
-	__asm        mov    ecx, pRoad;
-	__asm        mov    [ecx], al;
-// LINE 1396:
-_Ta77:
-	__asm        xor    eax, eax;
-	__asm        mov    al, x;
-	__asm        mov    eax, AltMap[eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [eax+ecx*2];
-	__asm        and    edx, 0x1F;
-	__asm        mov    lastAlt, dx;
-// LINE 1397:
-	__asm        mov    eax, currentDir;
-	__asm        mov    [ebp-0x78], eax;
-	__asm        jmp    _Tac5;
-// LINE 1399:
-_Taa0:
-	y--;
-	__asm        jmp    _Tae9;
-// LINE 1400:
-_Taa8:
-	x++;
-	__asm        jmp    _Tae9;
-// LINE 1401:
-_Tab0:
-	y++;
-	__asm        jmp    _Tae9;
-// LINE 1402:
-_Tab8:
-	x--;
-	__asm        jmp    _Tae9;
-// LINE 1403:
-	__asm        jmp    _Tae9;
-_Tac5:
-	__asm        cmp    dword ptr [ebp-0x78], 3;
-	__asm        ja     _Tae9;
+			__asm        mov    eax, [ebp-0x74];
+			__asm        jmp    _Switch_a50[0][eax*4];
+		// Switch pointers:
+		//   _T98b
+		//   _T9b2
+		//   _T9d9
+		//   _Ta00
+		_Ta60:
+			__asm        mov    eax, [ebp-0x44];
+			__asm        and    al, 3;
+			__asm        shl    al, 2;
+			__asm        mov    ecx, pRoad;
+			__asm        mov    cl, [ecx];
+			__asm        and    cl, 0xF3;
+			__asm        or     al, cl;
+			__asm        mov    ecx, pRoad;
+			__asm        mov    [ecx], al;
+		// LINE 1396:
+		_Ta77:
+			__asm        xor    eax, eax;
+			__asm        mov    al, x;
+			__asm        mov    eax, AltMap[eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dx, [eax+ecx*2];
+			__asm        and    edx, 0x1F;
+			__asm        mov    lastAlt, dx;
+		// LINE 1397:
+			__asm        mov    eax, currentDir;
+			__asm        mov    [ebp-0x78], eax;
+			__asm        jmp    _Tac5;
+		// LINE 1399:
+		_Taa0:
+			y--;
+			__asm        jmp    _Tae9;
+		// LINE 1400:
+		_Taa8:
+			x++;
+			__asm        jmp    _Tae9;
+		// LINE 1401:
+		_Tab0:
+			y++;
+			__asm        jmp    _Tae9;
+		// LINE 1402:
+		_Tab8:
+			x--;
+			__asm        jmp    _Tae9;
+		// LINE 1403:
+			__asm        jmp    _Tae9;
+		_Tac5:
+			__asm        cmp    dword ptr [ebp-0x78], 3;
+			__asm        ja     _Tae9;
 
-	__asm        mov    eax, [ebp-0x78];
-	__asm        jmp    _Switch_ad9[0][eax*4];
-// Switch pointers:
-//   _Taa0
-//   _Taa8
-//   _Tab0
-//   _Tab8
-// LINE 1404:
-_Tae9:
-	__asm        jmp    _LOOP_6bf;
+			__asm        mov    eax, [ebp-0x78];
+			__asm        jmp    _Switch_ad9[0][eax*4];
+		// Switch pointers:
+		//   _Taa0
+		//   _Taa8
+		//   _Tab0
+		//   _Tab8
+		// LINE 1404:
+		_Tae9:
+			__asm        jmp    _LOOP_6bf;
+	}
 // LINE 1406:
 _Taee:
 	return;
@@ -7520,99 +7480,103 @@ void RoadGraph::FindPlaceOnRoad(/*packed*/ struct Goal& goal, /*packed*/ struct 
 	__asm        mov    [ecx+0xD], al;
 // LINE 1417:
 _LOOP_27:
-	__asm        mov    eax, goal;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0xC];
-	__asm        xor    eax, eax;
-	__asm        mov    al, currLoc.x;
-	__asm        cmp    ecx, eax;
-	__asm        jne    _T51;
+	for (;;) {
+		// LINE 1417:
+		_LOOP_27:
+			__asm        mov    eax, goal;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+0xC];
+			__asm        xor    eax, eax;
+			__asm        mov    al, currLoc.x;
+			__asm        cmp    ecx, eax;
+			__asm        jne    _T51;
 
-	__asm        mov    eax, goal;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0xD];
-	__asm        xor    eax, eax;
-	__asm        mov    al, currLoc.y;
-	__asm        cmp    ecx, eax;
-	__asm        je     _T124;
-// LINE 1419:
-_T51:
-	__asm        mov    eax, goal;
-	__asm        mov    eax, [eax+0x12];
-	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    _Tb4;
-// LINE 1421:
-_T5f:
-	__asm        mov    eax, goal;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0xD];
-	__asm        dec    ecx;
-	__asm        mov    eax, goal;
-	__asm        mov    [eax+0xD], cl;
-	__asm        jmp    _Td8;
-// LINE 1422:
-_T73:
-	__asm        mov    eax, goal;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0xC];
-	__asm        inc    ecx;
-	__asm        mov    eax, goal;
-	__asm        mov    [eax+0xC], cl;
-	__asm        jmp    _Td8;
-// LINE 1423:
-_T87:
-	__asm        mov    eax, goal;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0xD];
-	__asm        inc    ecx;
-	__asm        mov    eax, goal;
-	__asm        mov    [eax+0xD], cl;
-	__asm        jmp    _Td8;
-// LINE 1424:
-_T9b:
-	__asm        mov    eax, goal;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0xC];
-	__asm        dec    ecx;
-	__asm        mov    eax, goal;
-	__asm        mov    [eax+0xC], cl;
-	__asm        jmp    _Td8;
-// LINE 1425:
-	__asm        jmp    _Td8;
-_Tb4:
-	__asm        cmp    dword ptr [ebp-0xC], 3;
-	__asm        ja     _Td8;
+			__asm        mov    eax, goal;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+0xD];
+			__asm        xor    eax, eax;
+			__asm        mov    al, currLoc.y;
+			__asm        cmp    ecx, eax;
+			__asm        je     _T124;
+		// LINE 1419:
+		_T51:
+			__asm        mov    eax, goal;
+			__asm        mov    eax, [eax+0x12];
+			__asm        mov    [ebp-0xC], eax;
+			__asm        jmp    _Tb4;
+		// LINE 1421:
+		_T5f:
+			__asm        mov    eax, goal;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+0xD];
+			__asm        dec    ecx;
+			__asm        mov    eax, goal;
+			__asm        mov    [eax+0xD], cl;
+			__asm        jmp    _Td8;
+		// LINE 1422:
+		_T73:
+			__asm        mov    eax, goal;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+0xC];
+			__asm        inc    ecx;
+			__asm        mov    eax, goal;
+			__asm        mov    [eax+0xC], cl;
+			__asm        jmp    _Td8;
+		// LINE 1423:
+		_T87:
+			__asm        mov    eax, goal;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+0xD];
+			__asm        inc    ecx;
+			__asm        mov    eax, goal;
+			__asm        mov    [eax+0xD], cl;
+			__asm        jmp    _Td8;
+		// LINE 1424:
+		_T9b:
+			__asm        mov    eax, goal;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+0xC];
+			__asm        dec    ecx;
+			__asm        mov    eax, goal;
+			__asm        mov    [eax+0xC], cl;
+			__asm        jmp    _Td8;
+		// LINE 1425:
+			__asm        jmp    _Td8;
+		_Tb4:
+			__asm        cmp    dword ptr [ebp-0xC], 3;
+			__asm        ja     _Td8;
 
-	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    _Switch_c8[0][eax*4];
-// Switch pointers:
-//   _T5f
-//   _T73
-//   _T87
-//   _T9b
-// LINE 1427:
-_Td8:
-	__asm        mov    eax, goal;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::GetNextGoal;
-// LINE 1430:
-	__asm        mov    eax, goal;
-	__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFE;
-	__asm        je     _Tfe;
+			__asm        mov    eax, [ebp-0xC];
+			__asm        jmp    _Switch_c8[0][eax*4];
+		// Switch pointers:
+		//   _T5f
+		//   _T73
+		//   _T87
+		//   _T9b
+		// LINE 1427:
+		_Td8:
+			__asm        mov    eax, goal;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   RoadGraph::GetNextGoal;
+		// LINE 1430:
+			__asm        mov    eax, goal;
+			__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFE;
+			__asm        je     _Tfe;
 
-	__asm        mov    eax, goal;
-	__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFF;
-	__asm        jne    _T11f;
-// LINE 1431:
-_Tfe:
-	_assert(0x597, 0x5b823c, 0x5b8260);
-	__asm        jmp    _T11f;
+			__asm        mov    eax, goal;
+			__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFF;
+			__asm        jne    _T11f;
+		// LINE 1431:
+		_Tfe:
+			_assert(0x597, 0x5b823c, 0x5b8260);
+			__asm        jmp    _T11f;
 
-	__asm        jmp    _T11f;
-// LINE 1433:
-_T11f:
-	__asm        jmp    _LOOP_27;
+			__asm        jmp    _T11f;
+		// LINE 1433:
+		_T11f:
+			__asm        jmp    _LOOP_27;
+	}
 // LINE 1435:
 _T124:
 	__asm        mov    eax, goal;

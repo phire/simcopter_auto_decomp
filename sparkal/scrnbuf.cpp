@@ -1088,20 +1088,21 @@ void ScreenBuffer::WaitTillReadyToFlip() {
 
 // LINE 426:
 __DO_0c:
-	__asm        lea    eax, bIsInVerticalBlank;
-	__asm        push   eax;
-	__asm        mov    eax, lpDD;
-	__asm        push   eax;
-	__asm        mov    eax, lpDD;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x44];
-	__asm        mov    hResult, eax;
-// LINE 427:
-	__asm        cmp    bIsInVerticalBlank, 0;
-	__asm        jne    _T37;
-__DO_WHILE_0c:
-	__asm        cmp    hResult, 0;
-	__asm        je     __DO_0c;
+	do {
+		// LINE 426:
+		__DO_0c:
+			__asm        lea    eax, bIsInVerticalBlank;
+			__asm        push   eax;
+			__asm        mov    eax, lpDD;
+			__asm        push   eax;
+			__asm        mov    eax, lpDD;
+			__asm        mov    eax, [eax];
+			__asm        call   dword ptr [eax+0x44];
+			__asm        mov    hResult, eax;
+		// LINE 427:
+			__asm        cmp    bIsInVerticalBlank, 0;
+			__asm        jne    _T37;
+	} while ((hResult == 0x0));
 // LINE 429:
 _T37:
 	return;
@@ -1222,74 +1223,60 @@ _T8f:
 	__asm        jmp    _FOR_113;
 // LINE 547:
 _FOR_a0:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_a0;
-_FOR_NEXT_a0:
-	i++;
-_FOR_COND_a0:
-	__asm        cmp    i, 0xA;
-	__asm        jge    _FOR_113;
-// LINE 548:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x415], 2;
-// LINE 549:
-	__asm        mov    al, reinterpret_cast<uint8_t>(i);
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x418], al;
-// LINE 550:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x417], 0;
-// LINE 551:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x416], 0;
-// LINE 552:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x3D], 2;
-// LINE 553:
-	__asm        mov    eax, i;
-	__asm        add    eax, 0xF6;
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x40], al;
-// LINE 554:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x3F], 0;
-// LINE 555:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x3E], 0;
-// LINE 556:
-	__asm        jmp    _FOR_NEXT_a0;
+	for (i = 0x0; (i < 0xa); i++) {
+		// LINE 548:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x415], 2;
+		// LINE 549:
+			__asm        mov    al, reinterpret_cast<uint8_t>(i);
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x418], al;
+		// LINE 550:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x417], 0;
+		// LINE 551:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x416], 0;
+		// LINE 552:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x3D], 2;
+		// LINE 553:
+			__asm        mov    eax, i;
+			__asm        add    eax, 0xF6;
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x40], al;
+		// LINE 554:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x3F], 0;
+		// LINE 555:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x3E], 0;
+	}
 // LINE 558:
 _FOR_113:
-	i = 0xa;
-	__asm        jmp    _FOR_COND_113;
-_FOR_NEXT_113:
-	i++;
-_FOR_COND_113:
-	__asm        cmp    i, 0xF5;
-	__asm        jg     _T16e;
-// LINE 559:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pColors;
-	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x416], al;
-// LINE 560:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pColors;
-	__asm        mov    al, [ecx+eax*4+1];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x417], al;
-// LINE 561:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pColors;
-	__asm        mov    al, [ecx+eax*4+2];
-	__asm        mov    ecx, i;
-	__asm        mov    [ebp+ecx*4-0x418], al;
-// LINE 562:
-	__asm        mov    eax, i;
-	__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
-// LINE 563:
-	__asm        jmp    _FOR_NEXT_113;
+	for (i = 0xa; (i <= 0xf5); i++) {
+		// LINE 559:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, pColors;
+			__asm        mov    al, [ecx+eax*4];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x416], al;
+		// LINE 560:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, pColors;
+			__asm        mov    al, [ecx+eax*4+1];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x417], al;
+		// LINE 561:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, pColors;
+			__asm        mov    al, [ecx+eax*4+2];
+			__asm        mov    ecx, i;
+			__asm        mov    [ebp+ecx*4-0x418], al;
+		// LINE 562:
+			__asm        mov    eax, i;
+			__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
+	}
 // LINE 564:
 _T16e:
 	__asm        cmp    lpPalette, 0;

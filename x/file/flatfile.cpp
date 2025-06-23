@@ -114,34 +114,28 @@ _T2d:
 
 // LINE 44:
 _FOR_16:
-	srch = FlatFile::sList;
-	__asm        jmp    _FOR_COND_16;
-_FOR_NEXT_16:
-	srch = srch->fNext;
-_FOR_COND_16:
-	__asm        cmp    srch, 0;
-	__asm        je     _T64;
-// LINE 46:
-	__asm        mov    ecx, srch;
-	__asm        call   FlatFile::ValidFile;
-	__asm        movzx  eax, ax;
-	__asm        test   eax, eax;
-	__asm        je     _T5f;
+	for (srch = FlatFile::sList; (srch != 0x0); srch = srch->fNext) {
+		// LINE 46:
+			__asm        mov    ecx, srch;
+			__asm        call   FlatFile::ValidFile;
+			__asm        movzx  eax, ax;
+			__asm        test   eax, eax;
+			__asm        je     _T5f;
 
-	__asm        mov    eax, srch;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        call   PStrCompare;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T5f;
+			__asm        mov    eax, srch;
+			__asm        add    eax, 8;
+			__asm        push   eax;
+			__asm        mov    eax, name;
+			__asm        push   eax;
+			__asm        call   PStrCompare;
+			__asm        add    esp, 8;
+			__asm        test   eax, eax;
+			__asm        jne    _T5f;
 
-	return srch;
-// LINE 47:
-_T5f:
-	__asm        jmp    _FOR_NEXT_16;
+			return srch;
+		// LINE 47:
+		_T5f:
+	}
 // LINE 48:
 _T64:
 	return 0x0;
@@ -579,23 +573,22 @@ void FlatFile::Unlink() {
 	srch = 0x5bddd8;
 // LINE 273:
 __WHILE_13:
-	__asm        mov    eax, srch;
-	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     _T4f;
-// LINE 274:
-	__asm        mov    eax, srch;
-	__asm        mov    ecx, this;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T3f;
-// LINE 275:
-	srch-> = srch->->fNext;
-// LINE 276:
-	return;
-// LINE 278:
-_T3f:
-	srch = (srch-> + 0x4);
-// LINE 279:
-	__asm        jmp    __WHILE_13;
+	while ((srch-> != 0x0)) {
+		// LINE 274:
+			__asm        mov    eax, srch;
+			__asm        mov    ecx, this;
+			__asm        cmp    [eax], ecx;
+			__asm        jne    _T3f;
+		// LINE 275:
+			srch-> = srch->->fNext;
+		// LINE 276:
+			return;
+		// LINE 278:
+		_T3f:
+			srch = (srch-> + 0x4);
+		// LINE 279:
+			__asm        jmp    __WHILE_13;
+	}
 // LINE 280:
 _T4f:
 	doAssert(0x8c085, 0x5bde5c, 0x118, 0x5bde74);
@@ -611,27 +604,27 @@ unsigned short FlatFile::Exclusive() {
 	srch = FlatFile::sList;
 // LINE 286:
 __WHILE_14:
-	__asm        cmp    srch, 0;
-	__asm        je     _T57;
-// LINE 287:
-	__asm        mov    eax, this;
-	__asm        cmp    srch, eax;
-	__asm        je     _T49;
+	while ((srch != 0x0)) {
+		// LINE 287:
+			__asm        mov    eax, this;
+			__asm        cmp    srch, eax;
+			__asm        je     _T49;
 
-	__asm        mov    eax, srch;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   FlatFile::SameFile;
-	__asm        movzx  eax, ax;
-	__asm        test   eax, eax;
-	__asm        je     _T49;
-// LINE 288:
-	return 0x0;
-// LINE 289:
-_T49:
-	srch = srch->fNext;
-// LINE 290:
-	__asm        jmp    __WHILE_14;
+			__asm        mov    eax, srch;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   FlatFile::SameFile;
+			__asm        movzx  eax, ax;
+			__asm        test   eax, eax;
+			__asm        je     _T49;
+		// LINE 288:
+			return 0x0;
+		// LINE 289:
+		_T49:
+			srch = srch->fNext;
+		// LINE 290:
+			__asm        jmp    __WHILE_14;
+	}
 // LINE 291:
 _T57:
 	return 0x1;
@@ -667,17 +660,10 @@ short FlatFile::CheckForLeaks() {
 	total = 0x0;
 // LINE 304:
 _FOR_1c:
-	list = FlatFile::sList;
-	__asm        jmp    _FOR_COND_1c;
-_FOR_NEXT_1c:
-	list = list->fNext;
-_FOR_COND_1c:
-	__asm        cmp    list, 0;
-	__asm        je     _T38;
-// LINE 306:
-	total++;
-// LINE 307:
-	__asm        jmp    _FOR_NEXT_1c;
+	for (list = FlatFile::sList; (list != 0x0); list = list->fNext) {
+		// LINE 306:
+			total++;
+	}
 // LINE 308:
 _T38:
 	return total;

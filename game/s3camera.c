@@ -1284,23 +1284,23 @@ int32_t S3CameraGetBldAlt(/*packed*/ struct Point3d *loc) {
 	stobj = cptr->stptr;
 // LINE 837:
 __WHILE_9d:
-	__asm        cmp    stobj, 0;
-	__asm        je     _Tff;
-// LINE 839:
-	flags = stobj->user1;
-// LINE 845:
-	objy = VRGetObjAlt2(0x0, 0x0, 0x10000, 0x10000, flags, normz, normy, normx, stobj->mesh);
-// LINE 846:
-	__asm        mov    eax, objy;
-	__asm        cmp    maxobjy, eax;
-	__asm        jge    _Tf2;
-// LINE 848:
-	maxobjy = objy;
-// LINE 850:
-_Tf2:
-	stobj = stobj->next;
-// LINE 851:
-	__asm        jmp    __WHILE_9d;
+	while ((stobj != 0x0)) {
+		// LINE 839:
+			flags = stobj->user1;
+		// LINE 845:
+			objy = VRGetObjAlt2(0x0, 0x0, 0x10000, 0x10000, flags, normz, normy, normx, stobj->mesh);
+		// LINE 846:
+			__asm        mov    eax, objy;
+			__asm        cmp    maxobjy, eax;
+			__asm        jge    _Tf2;
+		// LINE 848:
+			maxobjy = objy;
+		// LINE 850:
+		_Tf2:
+			stobj = stobj->next;
+		// LINE 851:
+			__asm        jmp    __WHILE_9d;
+	}
 // LINE 853:
 _Tff:
 	return maxobjy;

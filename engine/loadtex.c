@@ -151,48 +151,40 @@ _Tf8:
 	_close(file);
 // LINE 188:
 _FOR_14a:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_14a;
-_FOR_NEXT_14a:
-	i++;
-_FOR_COND_14a:
-	__asm        mov    eax, i;
-	__asm        cmp    bmp.BmpCount, eax;
-	__asm        jle    _T1b4;
-// LINE 189:
-	bhdr = byteptr;
-// LINE 198:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, i;
-	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    edx, res;
-	__asm        mov    [edx+ecx*4+0x18], eax;
-// LINE 199:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, i;
-	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    edx, res;
-	__asm        mov    [edx+ecx*4+0x1C], eax;
-// LINE 200:
-	__asm        mov    eax, bhdr;
-	__asm        mov    ecx, i;
-	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    edx, res;
-	__asm        mov    [edx+ecx*4+0x20], eax;
-// LINE 201:
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, bhdr;
-	__asm        imul   eax, [ecx];
-	__asm        mov    ecx, bhdr;
-	__asm        mov    ecx, [ecx+4];
-	__asm        lea    eax, [eax+ecx*4];
-	__asm        add    eax, 0xC;
-	__asm        add    byteptr, eax;
-// LINE 202:
-	__asm        jmp    _FOR_NEXT_14a;
+	for (i = 0x0; (bmp.BmpCount > i); i++) {
+		// LINE 189:
+			bhdr = byteptr;
+		// LINE 198:
+			__asm        mov    eax, bhdr;
+			__asm        mov    eax, [eax];
+			__asm        mov    ecx, i;
+			__asm        lea    ecx, [ecx+ecx*2];
+			__asm        mov    edx, res;
+			__asm        mov    [edx+ecx*4+0x18], eax;
+		// LINE 199:
+			__asm        mov    eax, bhdr;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, i;
+			__asm        lea    ecx, [ecx+ecx*2];
+			__asm        mov    edx, res;
+			__asm        mov    [edx+ecx*4+0x1C], eax;
+		// LINE 200:
+			__asm        mov    eax, bhdr;
+			__asm        mov    ecx, i;
+			__asm        lea    ecx, [ecx+ecx*2];
+			__asm        mov    edx, res;
+			__asm        mov    [edx+ecx*4+0x20], eax;
+		// LINE 201:
+			__asm        mov    eax, bhdr;
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, bhdr;
+			__asm        imul   eax, [ecx];
+			__asm        mov    ecx, bhdr;
+			__asm        mov    ecx, [ecx+4];
+			__asm        lea    eax, [eax+ecx*4];
+			__asm        add    eax, 0xC;
+			__asm        add    byteptr, eax;
+	}
 // LINE 206:
 _T1b4:
 	res->res.mem = group;
@@ -353,35 +345,27 @@ _T11c:
 	baseptr = basearg;
 // LINE 346:
 _FOR_12e:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_12e;
-_FOR_NEXT_12e:
-	i++;
-_FOR_COND_12e:
-	__asm        mov    eax, notiles;
-	__asm        cmp    i, eax;
-	__asm        jge    _T18d;
-// LINE 348:
-	__asm        mov    eax, mask;
-	__asm        mov    ecx, i;
-	__asm        mov    edx, bhdr;
-	__asm        mov    [edx+ecx*8+0xC], eax;
-// LINE 349:
-	col = (colmask & i);
-// LINE 350:
-	__asm        mov    eax, i;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(rowshift);
-	__asm        sar    eax, cl;
-	__asm        mov    row, eax;
-// LINE 353:
-	tptr = ((((bhdr->info.width * row) << 0x8) + (bhdr->info.width * col)) + baseptr);
-// LINE 354:
-	__asm        mov    eax, tptr;
-	__asm        mov    ecx, i;
-	__asm        mov    edx, bhdr;
-	__asm        mov    [edx+ecx*8+0x10], eax;
-// LINE 355:
-	__asm        jmp    _FOR_NEXT_12e;
+	for (i = 0x0; (i < notiles); i++) {
+		// LINE 348:
+			__asm        mov    eax, mask;
+			__asm        mov    ecx, i;
+			__asm        mov    edx, bhdr;
+			__asm        mov    [edx+ecx*8+0xC], eax;
+		// LINE 349:
+			col = (colmask & i);
+		// LINE 350:
+			__asm        mov    eax, i;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(rowshift);
+			__asm        sar    eax, cl;
+			__asm        mov    row, eax;
+		// LINE 353:
+			tptr = ((((bhdr->info.width * row) << 0x8) + (bhdr->info.width * col)) + baseptr);
+		// LINE 354:
+			__asm        mov    eax, tptr;
+			__asm        mov    ecx, i;
+			__asm        mov    edx, bhdr;
+			__asm        mov    [edx+ecx*8+0x10], eax;
+	}
 // LINE 357:
 _T18d:
 	return 0x1;

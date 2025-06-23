@@ -232,39 +232,38 @@ _Tab:
 	__asm        jmp    __DO_b0;
 // LINE 102:
 __DO_b0:
-	__asm        mov    eax, DestTop;
-	__asm        push   eax;
-	__asm        mov    eax, Left;
-	__asm        push   eax;
-	__asm        mov    eax, ChunkHeight;
-	__asm        add    eax, Top;
-	__asm        push   eax;
-	__asm        mov    eax, Right;
-	__asm        push   eax;
-	__asm        mov    eax, Top;
-	__asm        push   eax;
-	__asm        mov    eax, Left;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x14];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x14];
-	__asm        call   dword ptr [edx+0x20];
-// LINE 103:
-	ChunkHeight += Step;
-// LINE 104:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, Step;
-	__asm        neg    eax;
-	__asm        sub    DestTop, eax;
-// LINE 105:
-__DO_WHILE_b0:
-	__asm        mov    eax, Top;
-	__asm        cmp    DestTop, eax;
-	__asm        jg     __DO_b0;
+	do {
+		// LINE 102:
+		__DO_b0:
+			__asm        mov    eax, DestTop;
+			__asm        push   eax;
+			__asm        mov    eax, Left;
+			__asm        push   eax;
+			__asm        mov    eax, ChunkHeight;
+			__asm        add    eax, Top;
+			__asm        push   eax;
+			__asm        mov    eax, Right;
+			__asm        push   eax;
+			__asm        mov    eax, Top;
+			__asm        push   eax;
+			__asm        mov    eax, Left;
+			__asm        push   eax;
+			__asm        mov    eax, this;
+			__asm        push   eax;
+			__asm        mov    eax, this;
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx+0x14];
+			__asm        mov    edx, [ecx];
+			__asm        mov    ecx, [eax+0x14];
+			__asm        call   dword ptr [edx+0x20];
+		// LINE 103:
+			ChunkHeight += Step;
+		// LINE 104:
+			__asm        xor    eax, eax;
+			__asm        sub    eax, Step;
+			__asm        neg    eax;
+			__asm        sub    DestTop, eax;
+	} while ((DestTop > Top));
 // LINE 106:
 	__asm        mov    eax, Top;
 	__asm        push   eax;

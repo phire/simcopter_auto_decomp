@@ -1461,6 +1461,12 @@ __DO_3d:
 	__asm        push   eax;
 	__asm        mov    ecx, strm;
 	__asm        call   istream::operator>>;
+// LINE 531:
+__DO_3d:
+	__asm        lea    eax, c;
+	__asm        push   eax;
+	__asm        mov    ecx, strm;
+	__asm        call   istream::operator>>;
 // LINE 532:
 	__asm        mov    eax, strm;
 	__asm        mov    eax, [eax];
@@ -1545,59 +1551,63 @@ static char * ParseMonth(/*unpacked*/ class istream& s) {
 	__asm        call   istream::get;
 // LINE 553:
 _LOOP_28:
-	__asm        mov    eax, s;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, s;
-	__asm        cmp    dword ptr [eax+ecx+8], 0;
-	__asm        jne    _T43;
+	for (;;) {
+		// LINE 553:
+		_LOOP_28:
+			__asm        mov    eax, s;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, s;
+			__asm        cmp    dword ptr [eax+ecx+8], 0;
+			__asm        jne    _T43;
 
-	__asm        jmp    _T48;
-_T43:
-	__asm        jmp    _Tce;
-_T48:
-	__asm        jmp    _T57;
+			__asm        jmp    _T48;
+		_T43:
+			__asm        jmp    _Tce;
+		_T48:
+			__asm        jmp    _T57;
 
-	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     _Tce;
-_T57:
-	__asm        cmp    __mb_cur_max, 1;
-	__asm        jle    _T7e;
+			__asm        cmp    dword ptr [ebp-0x10], 0;
+			__asm        je     _Tce;
+		_T57:
+			__asm        cmp    __mb_cur_max, 1;
+			__asm        jle    _T7e;
 
-	__asm        push   0x103;
-	__asm        movsx  eax, c;
-	__asm        push   eax;
-	__asm        call   _isctype;
-	__asm        add    esp, 8;
-	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    _T97;
-_T7e:
-	__asm        movsx  eax, c;
-	__asm        mov    ecx, _pctype;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        and    edx, 0x103;
-	__asm        mov    [ebp-0xC], edx;
-_T97:
-	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        je     _Tce;
+			__asm        push   0x103;
+			__asm        movsx  eax, c;
+			__asm        push   eax;
+			__asm        call   _isctype;
+			__asm        add    esp, 8;
+			__asm        mov    [ebp-0xC], eax;
+			__asm        jmp    _T97;
+		_T7e:
+			__asm        movsx  eax, c;
+			__asm        mov    ecx, _pctype;
+			__asm        xor    edx, edx;
+			__asm        mov    dx, [ecx+eax*2];
+			__asm        and    edx, 0x103;
+			__asm        mov    [ebp-0xC], edx;
+		_T97:
+			__asm        cmp    dword ptr [ebp-0xC], 0;
+			__asm        je     _Tce;
 
-	__asm        mov    eax, 0x6069A8;
-	__asm        add    eax, 0xA;
-	__asm        cmp    eax, p;
-	__asm        je     _Tce;
-// LINE 554:
-	__asm        mov    al, c;
-	__asm        mov    ecx, p;
-	__asm        mov    [ecx], al;
-	__asm        inc    p;
-// LINE 555:
-	__asm        lea    eax, c;
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   istream::get;
-// LINE 556:
-	__asm        jmp    _LOOP_28;
+			__asm        mov    eax, 0x6069A8;
+			__asm        add    eax, 0xA;
+			__asm        cmp    eax, p;
+			__asm        je     _Tce;
+		// LINE 554:
+			__asm        mov    al, c;
+			__asm        mov    ecx, p;
+			__asm        mov    [ecx], al;
+			__asm        inc    p;
+		// LINE 555:
+			__asm        lea    eax, c;
+			__asm        push   eax;
+			__asm        mov    ecx, s;
+			__asm        call   istream::get;
+		// LINE 556:
+			__asm        jmp    _LOOP_28;
+	}
 // LINE 557:
 _Tce:
 	__asm        mov    eax, s;

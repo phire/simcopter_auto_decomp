@@ -903,140 +903,133 @@ _Td7:
 	return direction;
 // LINE 87:
 _FOR_f5:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_f5;
-_FOR_NEXT_f5:
-	i++;
-_FOR_COND_f5:
-	__asm        cmp    i, 4;
-	__asm        jge    _T26a;
-// LINE 89:
-	__asm        mov    eax, direction;
-	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    _T17e;
-// LINE 91:
-_T10d:
-	__asm        xor    eax, eax;
-	__asm        mov    al, center.y;
-	__asm        sub    eax, 2;
-	__asm        mov    ecx, loc;
-	__asm        mov    [ecx+1], al;
-	__asm        mov    al, center.x;
-	__asm        mov    ecx, loc;
-	__asm        mov    [ecx], al;
-	__asm        jmp    _T1a2;
-// LINE 92:
-_T128:
-	__asm        xor    eax, eax;
-	__asm        mov    al, center.x;
-	__asm        add    eax, 2;
-	__asm        mov    ecx, loc;
-	__asm        mov    [ecx], al;
-	__asm        mov    al, center.y;
-	__asm        mov    ecx, loc;
-	__asm        mov    [ecx+1], al;
-	__asm        jmp    _T1a2;
-// LINE 93:
-_T143:
-	__asm        xor    eax, eax;
-	__asm        mov    al, center.y;
-	__asm        add    eax, 2;
-	__asm        mov    ecx, loc;
-	__asm        mov    [ecx+1], al;
-	__asm        mov    al, center.x;
-	__asm        mov    ecx, loc;
-	__asm        mov    [ecx], al;
-	__asm        jmp    _T1a2;
-// LINE 94:
-_T15e:
-	__asm        xor    eax, eax;
-	__asm        mov    al, center.x;
-	__asm        sub    eax, 2;
-	__asm        mov    ecx, loc;
-	__asm        mov    [ecx], al;
-	__asm        mov    al, center.y;
-	__asm        mov    ecx, loc;
-	__asm        mov    [ecx+1], al;
-	__asm        jmp    _T1a2;
-// LINE 95:
-	__asm        jmp    _T1a2;
-_T17e:
-	__asm        cmp    dword ptr [ebp-0x24], 3;
-	__asm        ja     _T1a2;
+	for (i = 0x0; (i < 0x4); i++) {
+		// LINE 89:
+			__asm        mov    eax, direction;
+			__asm        mov    [ebp-0x24], eax;
+			__asm        jmp    _T17e;
+		// LINE 91:
+		_T10d:
+			__asm        xor    eax, eax;
+			__asm        mov    al, center.y;
+			__asm        sub    eax, 2;
+			__asm        mov    ecx, loc;
+			__asm        mov    [ecx+1], al;
+			__asm        mov    al, center.x;
+			__asm        mov    ecx, loc;
+			__asm        mov    [ecx], al;
+			__asm        jmp    _T1a2;
+		// LINE 92:
+		_T128:
+			__asm        xor    eax, eax;
+			__asm        mov    al, center.x;
+			__asm        add    eax, 2;
+			__asm        mov    ecx, loc;
+			__asm        mov    [ecx], al;
+			__asm        mov    al, center.y;
+			__asm        mov    ecx, loc;
+			__asm        mov    [ecx+1], al;
+			__asm        jmp    _T1a2;
+		// LINE 93:
+		_T143:
+			__asm        xor    eax, eax;
+			__asm        mov    al, center.y;
+			__asm        add    eax, 2;
+			__asm        mov    ecx, loc;
+			__asm        mov    [ecx+1], al;
+			__asm        mov    al, center.x;
+			__asm        mov    ecx, loc;
+			__asm        mov    [ecx], al;
+			__asm        jmp    _T1a2;
+		// LINE 94:
+		_T15e:
+			__asm        xor    eax, eax;
+			__asm        mov    al, center.x;
+			__asm        sub    eax, 2;
+			__asm        mov    ecx, loc;
+			__asm        mov    [ecx], al;
+			__asm        mov    al, center.y;
+			__asm        mov    ecx, loc;
+			__asm        mov    [ecx+1], al;
+			__asm        jmp    _T1a2;
+		// LINE 95:
+			__asm        jmp    _T1a2;
+		_T17e:
+			__asm        cmp    dword ptr [ebp-0x24], 3;
+			__asm        ja     _T1a2;
 
-	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    _Switch_192[0][eax*4];
-// Switch pointers:
-//   _T10d
-//   _T128
-//   _T143
-//   _T15e
-// LINE 97:
-_T1a2:
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        test   ecx, ecx;
-	__asm        jl     _T1e2;
+			__asm        mov    eax, [ebp-0x24];
+			__asm        jmp    _Switch_192[0][eax*4];
+		// Switch pointers:
+		//   _T10d
+		//   _T128
+		//   _T143
+		//   _T15e
+		// LINE 97:
+		_T1a2:
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        test   ecx, ecx;
+			__asm        jl     _T1e2;
 
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        cmp    ecx, 0x7F;
-	__asm        jg     _T1e2;
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        cmp    ecx, 0x7F;
+			__asm        jg     _T1e2;
 
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        test   ecx, ecx;
-	__asm        jl     _T1e2;
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        test   ecx, ecx;
+			__asm        jl     _T1e2;
 
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        cmp    ecx, 0x7F;
-	__asm        jle    _T1ee;
-_T1e2:
-	__asm        mov    dword ptr [ebp-0x1C], 0;
-	__asm        jmp    _T24c;
-_T1ee:
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        mov    eax, BuildMap[ecx*4];
-	__asm        mov    ecx, loc;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+1];
-	__asm        movzx  ax, byte ptr [eax+edx];
-	__asm        mov    [ebp-0x18], ax;
-	__asm        mov    eax, [ebp-0x18];
-	__asm        and    eax, 0xFFFF;
-	__asm        cmp    eax, 0x1D;
-	__asm        jl     _T240;
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        cmp    ecx, 0x7F;
+			__asm        jle    _T1ee;
+		_T1e2:
+			__asm        mov    dword ptr [ebp-0x1C], 0;
+			__asm        jmp    _T24c;
+		_T1ee:
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        mov    eax, BuildMap[ecx*4];
+			__asm        mov    ecx, loc;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [ecx+1];
+			__asm        movzx  ax, byte ptr [eax+edx];
+			__asm        mov    [ebp-0x18], ax;
+			__asm        mov    eax, [ebp-0x18];
+			__asm        and    eax, 0xFFFF;
+			__asm        cmp    eax, 0x1D;
+			__asm        jl     _T240;
 
-	__asm        mov    eax, [ebp-0x18];
-	__asm        and    eax, 0xFFFF;
-	__asm        cmp    eax, 0x2C;
-	__asm        jge    _T240;
+			__asm        mov    eax, [ebp-0x18];
+			__asm        and    eax, 0xFFFF;
+			__asm        cmp    eax, 0x2C;
+			__asm        jge    _T240;
 
-	__asm        mov    dword ptr [ebp-0x1C], 1;
-	__asm        jmp    _T24c;
+			__asm        mov    dword ptr [ebp-0x1C], 1;
+			__asm        jmp    _T24c;
 
-	__asm        jmp    _T24c;
-_T240:
-	__asm        mov    dword ptr [ebp-0x1C], 0;
-	__asm        jmp    _T24c;
-_T24c:
-	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     _T25e;
+			__asm        jmp    _T24c;
+		_T240:
+			__asm        mov    dword ptr [ebp-0x1C], 0;
+			__asm        jmp    _T24c;
+		_T24c:
+			__asm        cmp    dword ptr [ebp-0x1C], 0;
+			__asm        je     _T25e;
 
-	return direction;
-// LINE 99:
-_T25e:
-	__asm        inc    direction;
-	__asm        and    direction, 3;
-// LINE 100:
-	__asm        jmp    _FOR_NEXT_f5;
+			return direction;
+		// LINE 99:
+		_T25e:
+			__asm        inc    direction;
+			__asm        and    direction, 3;
+	}
 // LINE 103:
 _T26a:
 	return 0xff;
@@ -1210,125 +1203,117 @@ void Station::SortStationsByDistanceFromDestination(/*packed*/ struct _GridCoord
 	this->stationHeapSize = 0x0;
 // LINE 134:
 _FOR_22:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_22;
-_FOR_NEXT_22:
-	i++;
-_FOR_COND_22:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jle    _T151;
-// LINE 138:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x58];
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.x;
-	__asm        cmp    edx, eax;
-	__asm        jle    _T78;
-// LINE 139:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x58];
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.x;
-	__asm        sub    edx, eax;
-	__asm        mov    deltax, edx;
-// LINE 140:
-	__asm        jmp    _T96;
-// LINE 141:
-_T78:
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.x;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 5;
-	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx];
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx+0x58];
-	__asm        sub    eax, ebx;
-	__asm        mov    deltax, eax;
-// LINE 145:
-_T96:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x59];
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.y;
-	__asm        cmp    edx, eax;
-	__asm        jle    _Tda;
-// LINE 146:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x59];
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.y;
-	__asm        sub    edx, eax;
-	__asm        mov    deltay, edx;
-// LINE 147:
-	__asm        jmp    _Tf8;
-// LINE 148:
-_Tda:
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.y;
-	__asm        mov    ecx, i;
-	__asm        shl    ecx, 5;
-	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx];
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+edx+0x59];
-	__asm        sub    eax, ebx;
-	__asm        mov    deltay, eax;
-// LINE 151:
-_Tf8:
-	__asm        mov    eax, i;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        cmp    dword ptr [eax+ecx+0x5C], 1;
-	__asm        jge    _T14c;
-// LINE 153:
-	__asm        mov    eax, deltax;
-	__asm        cmp    deltay, eax;
-	__asm        jge    _T12e;
-// LINE 155:
-	station.cost = ((deltay >> 0x1) + deltax);
-// LINE 157:
-	__asm        jmp    _T13a;
-// LINE 159:
-_T12e:
-	station.cost = ((deltax >> 0x1) + deltay);
-// LINE 162:
-_T13a:
-	station.stationID = i;
-// LINE 163:
-	__asm        lea    eax, station.cost;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::StationHeapInsert;
-// LINE 165:
-_T14c:
-	__asm        jmp    _FOR_NEXT_22;
+	for (i = 0x0; (this->quantityOfStations > i); i++) {
+		// LINE 138:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 5;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx];
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+0x58];
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.x;
+			__asm        cmp    edx, eax;
+			__asm        jle    _T78;
+		// LINE 139:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 5;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx];
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+0x58];
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.x;
+			__asm        sub    edx, eax;
+			__asm        mov    deltax, edx;
+		// LINE 140:
+			__asm        jmp    _T96;
+		// LINE 141:
+		_T78:
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.x;
+			__asm        mov    ecx, i;
+			__asm        shl    ecx, 5;
+			__asm        lea    ecx, [ecx+ecx*2];
+			__asm        mov    edx, this;
+			__asm        mov    edx, [edx];
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx+0x58];
+			__asm        sub    eax, ebx;
+			__asm        mov    deltax, eax;
+		// LINE 145:
+		_T96:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 5;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx];
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+0x59];
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.y;
+			__asm        cmp    edx, eax;
+			__asm        jle    _Tda;
+		// LINE 146:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 5;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx];
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx+0x59];
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.y;
+			__asm        sub    edx, eax;
+			__asm        mov    deltay, edx;
+		// LINE 147:
+			__asm        jmp    _Tf8;
+		// LINE 148:
+		_Tda:
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.y;
+			__asm        mov    ecx, i;
+			__asm        shl    ecx, 5;
+			__asm        lea    ecx, [ecx+ecx*2];
+			__asm        mov    edx, this;
+			__asm        mov    edx, [edx];
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx+0x59];
+			__asm        sub    eax, ebx;
+			__asm        mov    deltay, eax;
+		// LINE 151:
+		_Tf8:
+			__asm        mov    eax, i;
+			__asm        shl    eax, 5;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx];
+			__asm        cmp    dword ptr [eax+ecx+0x5C], 1;
+			__asm        jge    _T14c;
+		// LINE 153:
+			__asm        mov    eax, deltax;
+			__asm        cmp    deltay, eax;
+			__asm        jge    _T12e;
+		// LINE 155:
+			station.cost = ((deltay >> 0x1) + deltax);
+		// LINE 157:
+			__asm        jmp    _T13a;
+		// LINE 159:
+		_T12e:
+			station.cost = ((deltax >> 0x1) + deltay);
+		// LINE 162:
+		_T13a:
+			station.stationID = i;
+		// LINE 163:
+			__asm        lea    eax, station.cost;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   Station::StationHeapInsert;
+		// LINE 165:
+		_T14c:
+	}
 // LINE 166:
 _T151:
 	return;
@@ -1345,121 +1330,112 @@ void Station::SortVehiclesByDistanceFromDestination(/*packed*/ struct _GridCoord
 	this->vehicleHeapSize = 0x0;
 // LINE 181:
 _FOR_22:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_22;
-_FOR_NEXT_22:
-	i++;
-_FOR_COND_22:
-	__asm        mov    eax, vehicleListLength;
-	__asm        cmp    i, eax;
-	__asm        jge    _T13c;
-// LINE 184:
-// Block start:
-	/*bp-0x24*/  /*packed*/ struct Point3d DyObjLoc; // 0xc bytes
-	__asm        jmp    _T36;
-_T36:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, vehicleList;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        cmp    dword ptr [eax+0x294], 3;
-	__asm        jle    _T51;
-// LINE 185:
-	__asm        jmp    _FOR_NEXT_22;
-// LINE 187:
-_T51:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, vehicleList;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        add    eax, 0x24;
-	__asm        lea    ecx, DyObjLoc.x;
-	__asm        mov    edx, [eax];
-	__asm        mov    [ecx], edx;
-	__asm        mov    edx, [eax+4];
-	__asm        mov    [ecx+4], edx;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ecx+8], eax;
-// LINE 188:
-	__asm        mov    eax, DyObjLoc.x;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        mov    vehicle.loc.x, al;
-// LINE 189:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, DyObjLoc.z;
-	__asm        sar    eax, 0x16;
-	__asm        mov    vehicle.loc.y, al;
-// LINE 193:
-	__asm        xor    eax, eax;
-	__asm        mov    al, vehicle.loc.x;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destLoc.x;
-	__asm        cmp    eax, ecx;
-	__asm        jle    _Tb2;
-// LINE 194:
-	__asm        xor    eax, eax;
-	__asm        mov    al, vehicle.loc.x;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destLoc.x;
-	__asm        sub    eax, ecx;
-	__asm        mov    deltax, eax;
-// LINE 195:
-	__asm        jmp    _Tc1;
-// LINE 196:
-_Tb2:
-	__asm        xor    eax, eax;
-	__asm        mov    al, destLoc.x;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, vehicle.loc.x;
-	__asm        sub    eax, ecx;
-	__asm        mov    deltax, eax;
-// LINE 200:
-_Tc1:
-	__asm        xor    eax, eax;
-	__asm        mov    al, vehicle.loc.y;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destLoc.y;
-	__asm        cmp    eax, ecx;
-	__asm        jle    _Te7;
-// LINE 201:
-	__asm        xor    eax, eax;
-	__asm        mov    al, vehicle.loc.y;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, destLoc.y;
-	__asm        sub    eax, ecx;
-	__asm        mov    deltay, eax;
-// LINE 202:
-	__asm        jmp    _Tf6;
-// LINE 203:
-_Te7:
-	__asm        xor    eax, eax;
-	__asm        mov    al, destLoc.y;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, vehicle.loc.y;
-	__asm        sub    eax, ecx;
-	__asm        mov    deltay, eax;
-// LINE 206:
-_Tf6:
-	__asm        mov    eax, deltax;
-	__asm        cmp    deltay, eax;
-	__asm        jge    _T113;
-// LINE 208:
-	vehicle.cost = ((deltay >> 0x1) + deltax);
-// LINE 210:
-	__asm        jmp    _T11f;
-// LINE 212:
-_T113:
-	vehicle.cost = ((deltax >> 0x1) + deltay);
-// LINE 215:
-_T11f:
-	vehicle.pVehicle = vehicleList->;
-// LINE 216:
-	__asm        lea    eax, vehicle.cost;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::VehicleHeapInsert;
-// LINE 217:
-// Block end:
-	__asm        jmp    _FOR_NEXT_22;
+	for (i = 0x0; (i < vehicleListLength); i++) {
+		// LINE 184:
+		// Block start:
+			/*bp-0x24*/  /*packed*/ struct Point3d DyObjLoc; // 0xc bytes
+			__asm        jmp    _T36;
+		_T36:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, vehicleList;
+			__asm        mov    eax, [ecx+eax*4];
+			__asm        cmp    dword ptr [eax+0x294], 3;
+			__asm        jle    _T51;
+		// LINE 185:
+			__asm        jmp    _FOR_NEXT_22;
+		// LINE 187:
+		_T51:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, vehicleList;
+			__asm        mov    eax, [ecx+eax*4];
+			__asm        add    eax, 0x24;
+			__asm        lea    ecx, DyObjLoc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
+		// LINE 188:
+			__asm        mov    eax, DyObjLoc.x;
+			__asm        add    eax, 0x20000000;
+			__asm        sar    eax, 0x16;
+			__asm        mov    vehicle.loc.x, al;
+		// LINE 189:
+			__asm        mov    eax, 0x20000000;
+			__asm        sub    eax, DyObjLoc.z;
+			__asm        sar    eax, 0x16;
+			__asm        mov    vehicle.loc.y, al;
+		// LINE 193:
+			__asm        xor    eax, eax;
+			__asm        mov    al, vehicle.loc.x;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destLoc.x;
+			__asm        cmp    eax, ecx;
+			__asm        jle    _Tb2;
+		// LINE 194:
+			__asm        xor    eax, eax;
+			__asm        mov    al, vehicle.loc.x;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destLoc.x;
+			__asm        sub    eax, ecx;
+			__asm        mov    deltax, eax;
+		// LINE 195:
+			__asm        jmp    _Tc1;
+		// LINE 196:
+		_Tb2:
+			__asm        xor    eax, eax;
+			__asm        mov    al, destLoc.x;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, vehicle.loc.x;
+			__asm        sub    eax, ecx;
+			__asm        mov    deltax, eax;
+		// LINE 200:
+		_Tc1:
+			__asm        xor    eax, eax;
+			__asm        mov    al, vehicle.loc.y;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destLoc.y;
+			__asm        cmp    eax, ecx;
+			__asm        jle    _Te7;
+		// LINE 201:
+			__asm        xor    eax, eax;
+			__asm        mov    al, vehicle.loc.y;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, destLoc.y;
+			__asm        sub    eax, ecx;
+			__asm        mov    deltay, eax;
+		// LINE 202:
+			__asm        jmp    _Tf6;
+		// LINE 203:
+		_Te7:
+			__asm        xor    eax, eax;
+			__asm        mov    al, destLoc.y;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, vehicle.loc.y;
+			__asm        sub    eax, ecx;
+			__asm        mov    deltay, eax;
+		// LINE 206:
+		_Tf6:
+			__asm        mov    eax, deltax;
+			__asm        cmp    deltay, eax;
+			__asm        jge    _T113;
+		// LINE 208:
+			vehicle.cost = ((deltay >> 0x1) + deltax);
+		// LINE 210:
+			__asm        jmp    _T11f;
+		// LINE 212:
+		_T113:
+			vehicle.cost = ((deltax >> 0x1) + deltay);
+		// LINE 215:
+		_T11f:
+			vehicle.pVehicle = vehicleList->;
+		// LINE 216:
+			__asm        lea    eax, vehicle.cost;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   Station::VehicleHeapInsert;
+	}
 // LINE 218:
 _T13c:
 	return;
@@ -1472,62 +1448,41 @@ _T13c:
 
 // LINE 227:
 _FOR_18:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_18;
-_FOR_NEXT_18:
-	i++;
-_FOR_COND_18:
-	__asm        mov    eax, vehicleListLength;
-	__asm        cmp    i, eax;
-	__asm        jge    _FOR_59;
-// LINE 229:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, vehicleList;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        test   byte ptr [eax+8], 2;
-	__asm        jne    _T48;
-// LINE 230:
-	return vehicleList->;
-// LINE 231:
-_T48:
-	__asm        jmp    _FOR_NEXT_18;
+	for (i = 0x0; (i < vehicleListLength); i++) {
+		// LINE 229:
+			__asm        mov    eax, i;
+			__asm        mov    ecx, vehicleList;
+			__asm        mov    eax, [ecx+eax*4];
+			__asm        test   byte ptr [eax+8], 2;
+			__asm        jne    _T48;
+		// LINE 230:
+			return vehicleList->;
+		// LINE 231:
+		_T48:
+	}
 // LINE 235:
 _FOR_59:
-	code = 0x2;
-	__asm        jmp    _FOR_COND_59;
-_FOR_NEXT_59:
-	code++;
-_FOR_COND_59:
-	__asm        mov    eax, code;
-	__asm        cmp    responseLevel, eax;
-	__asm        jle    _Tb8;
-// LINE 237:
-_FOR_74:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_74;
-_FOR_NEXT_74:
-	i++;
-_FOR_COND_74:
-	__asm        mov    eax, vehicleListLength;
-	__asm        cmp    i, eax;
-	__asm        jge    _Tb3;
-// LINE 239:
-	__asm        jmp    _T88;
-_T88:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, vehicleList;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ecx, code;
-	__asm        cmp    [eax+0x294], ecx;
-	__asm        jge    _Tae;
-// LINE 240:
-	return vehicleList->;
-// LINE 241:
-_Tae:
-	__asm        jmp    _FOR_NEXT_74;
-// LINE 242:
-_Tb3:
-	__asm        jmp    _FOR_NEXT_59;
+	for (code = 0x2; (responseLevel > code); code++) {
+		// LINE 237:
+		_FOR_74:
+			for (i = 0x0; (i < vehicleListLength); i++) {
+				// LINE 239:
+					__asm        jmp    _T88;
+				_T88:
+					__asm        mov    eax, i;
+					__asm        mov    ecx, vehicleList;
+					__asm        mov    eax, [ecx+eax*4];
+					__asm        mov    ecx, code;
+					__asm        cmp    [eax+0x294], ecx;
+					__asm        jge    _Tae;
+				// LINE 240:
+					return vehicleList->;
+				// LINE 241:
+				_Tae:
+			}
+		// LINE 242:
+		_Tb3:
+	}
 // LINE 244:
 _Tb8:
 	return 0x0;
@@ -2580,142 +2535,141 @@ _T68c:
 	__asm        call   Station::SortVehiclesByDistanceFromDestination;
 // LINE 487:
 __WHILE_6b3:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+0x14], 0;
-	__asm        je     _T85c;
-// LINE 489:
-	__asm        lea    eax, vehicleHeapStruct.cost;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::VehicleHeapRemove;
-// LINE 493:
-	__asm        lea    eax, startGoal2.pRGV;
-	__asm        push   eax;
-	__asm        lea    eax, startGoal1.pRGV;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        mov    eax, vehicleHeapStruct.pVehicle;
-	__asm        mov    ax, [eax+0x7C];
-	__asm        push   eax;
-	__asm        lea    eax, [ebp-0x158];
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::FindIntersections;
-	__asm        lea    edi, result.pRGV;
-	__asm        mov    esi, eax;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-// LINE 495:
-	__asm        cmp    result.pRGV, 0;
-	__asm        jne    _T7c9;
-// LINE 497:
-	__asm        lea    eax, destGoal2.pRGV;
-	__asm        push   eax;
-	__asm        lea    eax, destGoal1.pRGV;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        lea    eax, [ebp-0x184];
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::FindIntersections;
-// LINE 501:
-	__asm        mov    eax, startGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    startVertex.x, al;
-// LINE 502:
-	__asm        mov    eax, startGoal1.pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        push   ecx;
-	__asm        mov    eax, startGoal1.pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        push   ecx;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    startVertex.yindex, al;
-// LINE 504:
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    destVert.x, al;
-// LINE 505:
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        push   ecx;
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        push   ecx;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    destVert.yindex, al;
-// LINE 507:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destVert.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C37F8;
-	__asm        call   ShortestPath::BreadthFirstSearch;
-	__asm        mov    pathFound, eax;
-// LINE 509:
-	__asm        jmp    _T7d0;
-// LINE 511:
-_T7c9:
-	pathFound = 0x1;
-// LINE 516:
-_T7d0:
-	__asm        cmp    pathFound, 0;
-	__asm        je     _T857;
-// LINE 519:
-	__asm        mov    eax, responseLevel;
-	__asm        push   eax;
-	__asm        mov    eax, responseType;
-	__asm        push   eax;
-	__asm        sub    esp, 0x2C;
-	__asm        lea    esi, result.pRGV;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        sub    esp, 0x2C;
-	__asm        lea    esi, destGoal2.pRGV;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        sub    esp, 0x2C;
-	__asm        lea    esi, destGoal1.pRGV;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        sub    esp, 0x2C;
-	__asm        lea    esi, startGoal2.pRGV;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        sub    esp, 0x2C;
-	__asm        lea    esi, startGoal1.pRGV;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        mov    ecx, vehicleHeapStruct.pVehicle;
-	__asm        call   EmergencyVehicleClass::InitializePlacedVehicleForDispatch;
-// LINE 520:
-	__asm        jmp    _T85c;
-// LINE 522:
-_T857:
-	__asm        jmp    __WHILE_6b3;
+	while ((this->vehicleHeapSize != 0x0)) {
+		// LINE 489:
+			__asm        lea    eax, vehicleHeapStruct.cost;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   Station::VehicleHeapRemove;
+		// LINE 493:
+			__asm        lea    eax, startGoal2.pRGV;
+			__asm        push   eax;
+			__asm        lea    eax, startGoal1.pRGV;
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
+			__asm        push   eax;
+			__asm        mov    eax, vehicleHeapStruct.pVehicle;
+			__asm        mov    ax, [eax+0x7C];
+			__asm        push   eax;
+			__asm        lea    eax, [ebp-0x158];
+			__asm        push   eax;
+			__asm        mov    ecx, 0x5C3828;
+			__asm        call   RoadGraph::FindIntersections;
+			__asm        lea    edi, result.pRGV;
+			__asm        mov    esi, eax;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+		// LINE 495:
+			__asm        cmp    result.pRGV, 0;
+			__asm        jne    _T7c9;
+		// LINE 497:
+			__asm        lea    eax, destGoal2.pRGV;
+			__asm        push   eax;
+			__asm        lea    eax, destGoal1.pRGV;
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
+			__asm        push   eax;
+			__asm        lea    eax, [ebp-0x184];
+			__asm        push   eax;
+			__asm        mov    ecx, 0x5C3828;
+			__asm        call   RoadGraph::FindIntersections;
+		// LINE 501:
+			__asm        mov    eax, startGoal1.pRGV;
+			__asm        mov    al, [eax];
+			__asm        mov    startVertex.x, al;
+		// LINE 502:
+			__asm        mov    eax, startGoal1.pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        push   ecx;
+			__asm        mov    eax, startGoal1.pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        push   ecx;
+			__asm        mov    ecx, 0x5C3828;
+			__asm        call   RoadGraph::FindYIndexToVertex;
+			__asm        mov    startVertex.yindex, al;
+		// LINE 504:
+			__asm        mov    eax, destGoal1.pRGV;
+			__asm        mov    al, [eax];
+			__asm        mov    destVert.x, al;
+		// LINE 505:
+			__asm        mov    eax, destGoal1.pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        push   ecx;
+			__asm        mov    eax, destGoal1.pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        push   ecx;
+			__asm        mov    ecx, 0x5C3828;
+			__asm        call   RoadGraph::FindYIndexToVertex;
+			__asm        mov    destVert.yindex, al;
+		// LINE 507:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destVert.x);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
+			__asm        push   eax;
+			__asm        mov    ecx, 0x5C37F8;
+			__asm        call   ShortestPath::BreadthFirstSearch;
+			__asm        mov    pathFound, eax;
+		// LINE 509:
+			__asm        jmp    _T7d0;
+		// LINE 511:
+		_T7c9:
+			pathFound = 0x1;
+		// LINE 516:
+		_T7d0:
+			__asm        cmp    pathFound, 0;
+			__asm        je     _T857;
+		// LINE 519:
+			__asm        mov    eax, responseLevel;
+			__asm        push   eax;
+			__asm        mov    eax, responseType;
+			__asm        push   eax;
+			__asm        sub    esp, 0x2C;
+			__asm        lea    esi, result.pRGV;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
+			__asm        push   eax;
+			__asm        sub    esp, 0x2C;
+			__asm        lea    esi, destGoal2.pRGV;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        sub    esp, 0x2C;
+			__asm        lea    esi, destGoal1.pRGV;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        sub    esp, 0x2C;
+			__asm        lea    esi, startGoal2.pRGV;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        sub    esp, 0x2C;
+			__asm        lea    esi, startGoal1.pRGV;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        mov    ecx, vehicleHeapStruct.pVehicle;
+			__asm        call   EmergencyVehicleClass::InitializePlacedVehicleForDispatch;
+		// LINE 520:
+			__asm        jmp    _T85c;
+		// LINE 522:
+		_T857:
+			__asm        jmp    __WHILE_6b3;
+	}
 // LINE 524:
 _T85c:
 	__asm        jmp    _Ta84;
@@ -2727,182 +2681,181 @@ _T861:
 	__asm        call   Station::SortStationsByDistanceFromDestination;
 // LINE 530:
 __WHILE_873:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        je     _Ta84;
-// LINE 532:
-// Block start:
-	/*bp-0x110*/ /*packed*/ struct _StructStation *sS;
-	__asm        lea    eax, stationHeapStruct.cost;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::StationHeapRemove;
-// LINE 537:
-	__asm        lea    eax, destGoal1.pRGV;
-	__asm        push   eax;
-	__asm        lea    eax, destGoal1.pRGV;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        mov    eax, stationHeapStruct.stationID;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        mov    ax, [eax+ecx+0x5A];
-	__asm        push   eax;
-	__asm        lea    eax, [ebp-0x1B0];
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::FindIntersections;
-	__asm        lea    edi, result.pRGV;
-	__asm        mov    esi, eax;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-// LINE 539:
-	__asm        cmp    result.pRGV, 0;
-	__asm        jne    _T9ac;
-// LINE 541:
-// Block start:
-	/*bp-0x114*/ /*packed*/ struct RGVertex *pRGV;
-	__asm        lea    eax, destGoal2.pRGV;
-	__asm        push   eax;
-	__asm        lea    eax, destGoal1.pRGV;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        lea    eax, [ebp-0x1DC];
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::FindIntersections;
-// LINE 545:
-	__asm        mov    eax, stationHeapStruct.stationID;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        mov    eax, [eax+ecx];
-	__asm        mov    pRGV, eax;
-// LINE 546:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    startVertex.x, al;
-// LINE 547:
-	__asm        mov    eax, pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        push   ecx;
-	__asm        mov    eax, pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        push   ecx;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    startVertex.yindex, al;
-// LINE 549:
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    destVert.x, al;
-// LINE 550:
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        push   ecx;
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        push   ecx;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    destVert.yindex, al;
-// LINE 552:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destVert.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C37F8;
-	__asm        call   ShortestPath::BreadthFirstSearch;
-	__asm        mov    pathFound, eax;
-// LINE 554:
-// Block end:
-	__asm        jmp    _T9b3;
-// LINE 556:
-_T9ac:
-	pathFound = 0x1;
-// LINE 561:
-_T9b3:
-	__asm        mov    eax, stationHeapStruct.stationID;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx];
-	__asm        mov    sS, eax;
-// LINE 562:
-	__asm        cmp    pathFound, 0;
-	__asm        je     _Ta7f;
-// LINE 564:
-	sS->quanVehiclesDispatched++;
-// LINE 567:
-	__asm        mov    eax, responseLevel;
-	__asm        push   eax;
-	__asm        mov    eax, responseType;
-	__asm        push   eax;
-	__asm        sub    esp, 0x2C;
-	__asm        lea    esi, result.pRGV;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        mov    eax, stationHeapStruct.stationID;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        mov    eax, [eax+ecx+0x54];
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        sub    esp, 0x2C;
-	__asm        lea    esi, destGoal2.pRGV;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        sub    esp, 0x2C;
-	__asm        lea    esi, destGoal1.pRGV;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        mov    eax, sS;
-	__asm        mov    ax, [eax+0x5A];
-	__asm        push   eax;
-	__asm        sub    esp, 0x2C;
-	__asm        mov    esi, sS;
-	__asm        add    esi, 0x2A;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        sub    esp, 0x2C;
-	__asm        mov    esi, sS;
-	__asm        mov    edi, esp;
-	__asm        mov    ecx, 0xA;
-	__asm        rep movsd;
-	__asm        movsw;
-	__asm        mov    eax, stationHeapStruct.stationID;
-	__asm        push   eax;
-	__asm        mov    ecx, availableVehicle;
-	__asm        call   EmergencyVehicleClass::InitializeStationVehicleForDispatch;
-// LINE 568:
-	__asm        jmp    _Ta84;
-// LINE 570:
-// Block end:
-_Ta7f:
-	__asm        jmp    __WHILE_873;
+	while ((this->stationHeapSize != 0x0)) {
+		// LINE 532:
+		// Block start:
+			/*bp-0x110*/ /*packed*/ struct _StructStation *sS;
+			__asm        lea    eax, stationHeapStruct.cost;
+			__asm        push   eax;
+			__asm        mov    ecx, this;
+			__asm        call   Station::StationHeapRemove;
+		// LINE 537:
+			__asm        lea    eax, destGoal1.pRGV;
+			__asm        push   eax;
+			__asm        lea    eax, destGoal1.pRGV;
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
+			__asm        push   eax;
+			__asm        mov    eax, stationHeapStruct.stationID;
+			__asm        shl    eax, 5;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    ax, [eax+ecx+0x5A];
+			__asm        push   eax;
+			__asm        lea    eax, [ebp-0x1B0];
+			__asm        push   eax;
+			__asm        mov    ecx, 0x5C3828;
+			__asm        call   RoadGraph::FindIntersections;
+			__asm        lea    edi, result.pRGV;
+			__asm        mov    esi, eax;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+		// LINE 539:
+			__asm        cmp    result.pRGV, 0;
+			__asm        jne    _T9ac;
+		// LINE 541:
+		// Block start:
+			/*bp-0x114*/ /*packed*/ struct RGVertex *pRGV;
+			__asm        lea    eax, destGoal2.pRGV;
+			__asm        push   eax;
+			__asm        lea    eax, destGoal1.pRGV;
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
+			__asm        push   eax;
+			__asm        lea    eax, [ebp-0x1DC];
+			__asm        push   eax;
+			__asm        mov    ecx, 0x5C3828;
+			__asm        call   RoadGraph::FindIntersections;
+		// LINE 545:
+			__asm        mov    eax, stationHeapStruct.stationID;
+			__asm        shl    eax, 5;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    eax, [eax+ecx];
+			__asm        mov    pRGV, eax;
+		// LINE 546:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax];
+			__asm        mov    startVertex.x, al;
+		// LINE 547:
+			__asm        mov    eax, pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        push   ecx;
+			__asm        mov    eax, pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        push   ecx;
+			__asm        mov    ecx, 0x5C3828;
+			__asm        call   RoadGraph::FindYIndexToVertex;
+			__asm        mov    startVertex.yindex, al;
+		// LINE 549:
+			__asm        mov    eax, destGoal1.pRGV;
+			__asm        mov    al, [eax];
+			__asm        mov    destVert.x, al;
+		// LINE 550:
+			__asm        mov    eax, destGoal1.pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        push   ecx;
+			__asm        mov    eax, destGoal1.pRGV;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        push   ecx;
+			__asm        mov    ecx, 0x5C3828;
+			__asm        call   RoadGraph::FindYIndexToVertex;
+			__asm        mov    destVert.yindex, al;
+		// LINE 552:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destVert.x);
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
+			__asm        push   eax;
+			__asm        mov    ecx, 0x5C37F8;
+			__asm        call   ShortestPath::BreadthFirstSearch;
+			__asm        mov    pathFound, eax;
+		// LINE 554:
+		// Block end:
+			__asm        jmp    _T9b3;
+		// LINE 556:
+		_T9ac:
+			pathFound = 0x1;
+		// LINE 561:
+		_T9b3:
+			__asm        mov    eax, stationHeapStruct.stationID;
+			__asm        shl    eax, 5;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, this;
+			__asm        add    eax, [ecx];
+			__asm        mov    sS, eax;
+		// LINE 562:
+			__asm        cmp    pathFound, 0;
+			__asm        je     _Ta7f;
+		// LINE 564:
+			sS->quanVehiclesDispatched++;
+		// LINE 567:
+			__asm        mov    eax, responseLevel;
+			__asm        push   eax;
+			__asm        mov    eax, responseType;
+			__asm        push   eax;
+			__asm        sub    esp, 0x2C;
+			__asm        lea    esi, result.pRGV;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        mov    eax, stationHeapStruct.stationID;
+			__asm        shl    eax, 5;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    eax, [eax+ecx+0x54];
+			__asm        push   eax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
+			__asm        push   eax;
+			__asm        sub    esp, 0x2C;
+			__asm        lea    esi, destGoal2.pRGV;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        sub    esp, 0x2C;
+			__asm        lea    esi, destGoal1.pRGV;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        mov    eax, sS;
+			__asm        mov    ax, [eax+0x5A];
+			__asm        push   eax;
+			__asm        sub    esp, 0x2C;
+			__asm        mov    esi, sS;
+			__asm        add    esi, 0x2A;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        sub    esp, 0x2C;
+			__asm        mov    esi, sS;
+			__asm        mov    edi, esp;
+			__asm        mov    ecx, 0xA;
+			__asm        rep movsd;
+			__asm        movsw;
+			__asm        mov    eax, stationHeapStruct.stationID;
+			__asm        push   eax;
+			__asm        mov    ecx, availableVehicle;
+			__asm        call   EmergencyVehicleClass::InitializeStationVehicleForDispatch;
+		// LINE 568:
+			__asm        jmp    _Ta84;
+		// LINE 570:
+		// Block end:
+		_Ta7f:
+			__asm        jmp    __WHILE_873;
+	}
 // LINE 573:
 _Ta84:
 	__asm        cmp    pathFound, 0;
@@ -3160,142 +3113,117 @@ void Station::Station(unsigned char stationScurkID) {
 	this->quantityOfStations = 0x0;
 // LINE 599:
 _FOR_29:
-	y = 0x0;
-	__asm        jmp    _FOR_COND_29;
-_FOR_NEXT_29:
-	y++;
-_FOR_COND_29:
-	__asm        cmp    y, 0x80;
-	__asm        jge    _FOR_8a;
-// LINE 601:
-_FOR_45:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_45;
-_FOR_NEXT_45:
-	x++;
-_FOR_COND_45:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T79;
-// LINE 603:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BuildMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, y;
-	__asm        shl    ecx, 7;
-	__asm        add    ecx, x;
-	__asm        mov    edx, tempBuildMap;
-	__asm        mov    [ecx+edx], al;
-// LINE 604:
-	__asm        jmp    _FOR_NEXT_45;
-// LINE 605:
-_T79:
-	__asm        jmp    _FOR_NEXT_29;
+	for (y = 0x0; (y < 0x80); y++) {
+		// LINE 601:
+		_FOR_45:
+			for (x = 0x0; (x < 0x80); x++) {
+				// LINE 603:
+					__asm        mov    eax, x;
+					__asm        mov    eax, BuildMap[eax*4];
+					__asm        mov    ecx, y;
+					__asm        mov    al, [eax+ecx];
+					__asm        mov    ecx, y;
+					__asm        shl    ecx, 7;
+					__asm        add    ecx, x;
+					__asm        mov    edx, tempBuildMap;
+					__asm        mov    [ecx+edx], al;
+			}
+		// LINE 605:
+		_T79:
+	}
 // LINE 610:
 _FOR_8a:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_8a;
-_FOR_NEXT_8a:
-	x++;
-_FOR_COND_8a:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T1a8;
-// LINE 612:
-_FOR_a6:
-	y = 0x0;
-	__asm        jmp    _FOR_COND_a6;
-_FOR_NEXT_a6:
-	y++;
-_FOR_COND_a6:
-	__asm        cmp    y, 0x80;
-	__asm        jge    _T1a3;
-// LINE 614:
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        xor    eax, eax;
-	__asm        mov    al, stationScurkID;
-	__asm        cmp    edx, eax;
-	__asm        jne    _T19e;
-// LINE 618:
-// Block start:
-	/*bp-0x18*/  int32_t result;
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        mov    byte ptr [eax+ecx+1], 0;
-// LINE 619:
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        mov    byte ptr [eax+ecx+2], 0;
-// LINE 621:
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        mov    byte ptr [eax+ecx+0x80], 0;
-// LINE 622:
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        mov    byte ptr [eax+ecx+0x81], 0;
-// LINE 623:
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        mov    byte ptr [eax+ecx+0x82], 0;
-// LINE 625:
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        mov    byte ptr [eax+ecx+0x100], 0;
-// LINE 626:
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        mov    byte ptr [eax+ecx+0x101], 0;
-// LINE 627:
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        mov    byte ptr [eax+ecx+0x102], 0;
-// LINE 631:
-	__asm        mov    eax, x;
-	__asm        inc    eax;
-	__asm        mov    workingLoc.x, al;
-// LINE 632:
-	__asm        mov    eax, y;
-	__asm        inc    eax;
-	__asm        mov    workingLoc.y, al;
-// LINE 633:
-	__asm        lea    eax, workingLoc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::FindNearestRoadToStation;
-	__asm        mov    result, eax;
-// LINE 634:
-	__asm        cmp    result, 0xFF;
-	__asm        je     _T19e;
-// LINE 635:
-	this->quantityOfStations++;
-// LINE 637:
-// Block end:
-_T19e:
-	__asm        jmp    _FOR_NEXT_a6;
-// LINE 638:
-_T1a3:
-	__asm        jmp    _FOR_NEXT_8a;
+	for (x = 0x0; (x < 0x80); x++) {
+		// LINE 612:
+		_FOR_a6:
+			for (y = 0x0; (y < 0x80); y++) {
+				// LINE 614:
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [eax+ecx];
+					__asm        xor    eax, eax;
+					__asm        mov    al, stationScurkID;
+					__asm        cmp    edx, eax;
+					__asm        jne    _T19e;
+				// LINE 618:
+				// Block start:
+					/*bp-0x18*/  int32_t result;
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        mov    byte ptr [eax+ecx+1], 0;
+				// LINE 619:
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        mov    byte ptr [eax+ecx+2], 0;
+				// LINE 621:
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        mov    byte ptr [eax+ecx+0x80], 0;
+				// LINE 622:
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        mov    byte ptr [eax+ecx+0x81], 0;
+				// LINE 623:
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        mov    byte ptr [eax+ecx+0x82], 0;
+				// LINE 625:
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        mov    byte ptr [eax+ecx+0x100], 0;
+				// LINE 626:
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        mov    byte ptr [eax+ecx+0x101], 0;
+				// LINE 627:
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        mov    byte ptr [eax+ecx+0x102], 0;
+				// LINE 631:
+					__asm        mov    eax, x;
+					__asm        inc    eax;
+					__asm        mov    workingLoc.x, al;
+				// LINE 632:
+					__asm        mov    eax, y;
+					__asm        inc    eax;
+					__asm        mov    workingLoc.y, al;
+				// LINE 633:
+					__asm        lea    eax, workingLoc.x;
+					__asm        push   eax;
+					__asm        mov    ecx, this;
+					__asm        call   Station::FindNearestRoadToStation;
+					__asm        mov    result, eax;
+				// LINE 634:
+					__asm        cmp    result, 0xFF;
+					__asm        je     _T19e;
+				// LINE 635:
+					this->quantityOfStations++;
+				// LINE 637:
+				// Block end:
+				_T19e:
+			}
+		// LINE 638:
+		_T1a3:
+	}
 // LINE 641:
 _T1a8:
 	__asm        mov    eax, this;
@@ -3313,107 +3241,95 @@ _T1a8:
 	stationIndex = 0x0;
 // LINE 645:
 _FOR_1db:
-	y = 0x0;
-	__asm        jmp    _FOR_COND_1db;
-_FOR_NEXT_1db:
-	y++;
-_FOR_COND_1db:
-	__asm        cmp    y, 0x80;
-	__asm        jge    _T2cc;
-// LINE 647:
-_FOR_1f7:
-	x = 0x0;
-	__asm        jmp    _FOR_COND_1f7;
-_FOR_NEXT_1f7:
-	x++;
-_FOR_COND_1f7:
-	__asm        cmp    x, 0x80;
-	__asm        jge    _T2c7;
-// LINE 649:
-	__asm        mov    eax, y;
-	__asm        shl    eax, 7;
-	__asm        add    eax, x;
-	__asm        mov    ecx, tempBuildMap;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        xor    eax, eax;
-	__asm        mov    al, stationScurkID;
-	__asm        cmp    edx, eax;
-	__asm        jne    _T2c2;
-// LINE 654:
-// Block start:
-	/*bp-0x1c*/  int32_t direction;
-	/*bp-0x20*/  /*packed*/ struct _StructStation *pStation;
-	__asm        mov    eax, x;
-	__asm        inc    eax;
-	__asm        mov    workingLoc.x, al;
-// LINE 655:
-	__asm        mov    eax, y;
-	__asm        inc    eax;
-	__asm        mov    workingLoc.y, al;
-// LINE 658:
-	__asm        lea    eax, workingLoc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::FindNearestRoadToStation;
-	__asm        mov    direction, eax;
-// LINE 661:
-	__asm        cmp    direction, 0xFF;
-	__asm        jne    _T254;
-// LINE 662:
-	__asm        jmp    _FOR_NEXT_1f7;
-// LINE 665:
-_T254:
-	__asm        mov    eax, stationIndex;
-	__asm        shl    eax, 5;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx];
-	__asm        mov    pStation, eax;
-	__asm        inc    stationIndex;
-// LINE 668:
-	__asm        mov    eax, pStation;
-	__asm        add    eax, 0x2A;
-	__asm        push   eax;
-	__asm        mov    eax, pStation;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(workingLoc.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(workingLoc.x);
-	__asm        push   eax;
-	__asm        lea    eax, [ebp-0x4C];
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::FindIntersections;
-// LINE 673:
-	__asm        mov    eax, x;
-	__asm        inc    eax;
-	__asm        mov    ecx, pStation;
-	__asm        mov    [ecx+0x58], al;
-// LINE 674:
-	__asm        mov    eax, y;
-	__asm        inc    eax;
-	__asm        mov    ecx, pStation;
-	__asm        mov    [ecx+0x59], al;
-// LINE 675:
-	__asm        mov    al, workingLoc.x;
-	__asm        mov    ecx, pStation;
-	__asm        mov    [ecx+0x5A], al;
-// LINE 676:
-	__asm        mov    al, workingLoc.y;
-	__asm        mov    ecx, pStation;
-	__asm        mov    [ecx+0x5B], al;
-// LINE 677:
-	pStation->quanVehiclesDispatched = 0x0;
-// LINE 678:
-	pStation->direction = direction;
-// LINE 680:
-// Block end:
-_T2c2:
-	__asm        jmp    _FOR_NEXT_1f7;
-// LINE 681:
-_T2c7:
-	__asm        jmp    _FOR_NEXT_1db;
+	for (y = 0x0; (y < 0x80); y++) {
+		// LINE 647:
+		_FOR_1f7:
+			for (x = 0x0; (x < 0x80); x++) {
+				// LINE 649:
+					__asm        mov    eax, y;
+					__asm        shl    eax, 7;
+					__asm        add    eax, x;
+					__asm        mov    ecx, tempBuildMap;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [eax+ecx];
+					__asm        xor    eax, eax;
+					__asm        mov    al, stationScurkID;
+					__asm        cmp    edx, eax;
+					__asm        jne    _T2c2;
+				// LINE 654:
+				// Block start:
+					/*bp-0x1c*/  int32_t direction;
+					/*bp-0x20*/  /*packed*/ struct _StructStation *pStation;
+					__asm        mov    eax, x;
+					__asm        inc    eax;
+					__asm        mov    workingLoc.x, al;
+				// LINE 655:
+					__asm        mov    eax, y;
+					__asm        inc    eax;
+					__asm        mov    workingLoc.y, al;
+				// LINE 658:
+					__asm        lea    eax, workingLoc.x;
+					__asm        push   eax;
+					__asm        mov    ecx, this;
+					__asm        call   Station::FindNearestRoadToStation;
+					__asm        mov    direction, eax;
+				// LINE 661:
+					__asm        cmp    direction, 0xFF;
+					__asm        jne    _T254;
+				// LINE 662:
+					__asm        jmp    _FOR_NEXT_1f7;
+				// LINE 665:
+				_T254:
+					__asm        mov    eax, stationIndex;
+					__asm        shl    eax, 5;
+					__asm        lea    eax, [eax+eax*2];
+					__asm        mov    ecx, this;
+					__asm        add    eax, [ecx];
+					__asm        mov    pStation, eax;
+					__asm        inc    stationIndex;
+				// LINE 668:
+					__asm        mov    eax, pStation;
+					__asm        add    eax, 0x2A;
+					__asm        push   eax;
+					__asm        mov    eax, pStation;
+					__asm        push   eax;
+					__asm        mov    eax, reinterpret_cast<uint32_t>(workingLoc.x);
+					__asm        push   eax;
+					__asm        mov    eax, reinterpret_cast<uint32_t>(workingLoc.x);
+					__asm        push   eax;
+					__asm        lea    eax, [ebp-0x4C];
+					__asm        push   eax;
+					__asm        mov    ecx, 0x5C3828;
+					__asm        call   RoadGraph::FindIntersections;
+				// LINE 673:
+					__asm        mov    eax, x;
+					__asm        inc    eax;
+					__asm        mov    ecx, pStation;
+					__asm        mov    [ecx+0x58], al;
+				// LINE 674:
+					__asm        mov    eax, y;
+					__asm        inc    eax;
+					__asm        mov    ecx, pStation;
+					__asm        mov    [ecx+0x59], al;
+				// LINE 675:
+					__asm        mov    al, workingLoc.x;
+					__asm        mov    ecx, pStation;
+					__asm        mov    [ecx+0x5A], al;
+				// LINE 676:
+					__asm        mov    al, workingLoc.y;
+					__asm        mov    ecx, pStation;
+					__asm        mov    [ecx+0x5B], al;
+				// LINE 677:
+					pStation->quanVehiclesDispatched = 0x0;
+				// LINE 678:
+					pStation->direction = direction;
+				// LINE 680:
+				// Block end:
+				_T2c2:
+			}
+		// LINE 681:
+		_T2c7:
+	}
 // LINE 683:
 _T2cc:
 	this->stationHeap = S2Alloc((this->quantityOfStations << 0x3), G_citymempool);

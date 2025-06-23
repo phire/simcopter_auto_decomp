@@ -1797,24 +1797,23 @@ _T84:
 	dyptrptr = (cellPointer + 0x10);
 // LINE 952:
 __WHILE_97:
-	__asm        mov    eax, dyptrptr;
-	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     _Td6;
-// LINE 955:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x126;
-	__asm        mov    ecx, dyptrptr;
-	__asm        cmp    eax, [ecx];
-	__asm        jne    _Tc9;
-// LINE 958:
-	dyptrptr-> = this->dispatchIcon.next;
-// LINE 959:
-	return;
-// LINE 961:
-_Tc9:
-	dyptrptr = dyptrptr->;
-// LINE 962:
-	__asm        jmp    __WHILE_97;
+	while ((dyptrptr-> != 0x0)) {
+		// LINE 955:
+			__asm        mov    eax, this;
+			__asm        add    eax, 0x126;
+			__asm        mov    ecx, dyptrptr;
+			__asm        cmp    eax, [ecx];
+			__asm        jne    _Tc9;
+		// LINE 958:
+			dyptrptr-> = this->dispatchIcon.next;
+		// LINE 959:
+			return;
+		// LINE 961:
+		_Tc9:
+			dyptrptr = dyptrptr->;
+		// LINE 962:
+			__asm        jmp    __WHILE_97;
+	}
 // LINE 963:
 _Td6:
 	__asm        mov    eax, dyptrptr;
@@ -2004,60 +2003,64 @@ void EmergencyVehicleClass::BuildPath(/*packed*/ struct _RGIndex startVertex, /*
 	__asm        mov    reinterpret_cast<uint16_t>(index.x), ax;
 // LINE 1412:
 _LOOP_1e:
-	__asm        xor    eax, eax;
-	__asm        mov    al, index.x;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, startVertex.x;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _T42;
+	for (;;) {
+		// LINE 1412:
+		_LOOP_1e:
+			__asm        xor    eax, eax;
+			__asm        mov    al, index.x;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, startVertex.x;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _T42;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, index.yindex;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, startVertex.yindex;
-	__asm        cmp    eax, ecx;
-	__asm        je     _Tc4;
-// LINE 1414:
-_T42:
-	__asm        xor    eax, eax;
-	__asm        mov    al, index.x;
-	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, index.yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pRGV, eax;
-// LINE 1415:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+0x2D];
-	__asm        mov    index.x, al;
-// LINE 1416:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+0x2C];
-	__asm        mov    index.yindex, al;
-// LINE 1417:
-	__asm        xor    eax, eax;
-	__asm        mov    al, index.x;
-	__asm        cmp    eax, 0xFF;
-	__asm        je     _T95;
+			__asm        xor    eax, eax;
+			__asm        mov    al, index.yindex;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, startVertex.yindex;
+			__asm        cmp    eax, ecx;
+			__asm        je     _Tc4;
+		// LINE 1414:
+		_T42:
+			__asm        xor    eax, eax;
+			__asm        mov    al, index.x;
+			__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, index.yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    pRGV, eax;
+		// LINE 1415:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+0x2D];
+			__asm        mov    index.x, al;
+		// LINE 1416:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+0x2C];
+			__asm        mov    index.yindex, al;
+		// LINE 1417:
+			__asm        xor    eax, eax;
+			__asm        mov    al, index.x;
+			__asm        cmp    eax, 0xFF;
+			__asm        je     _T95;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, index.yindex;
-	__asm        cmp    eax, 0xFF;
-	__asm        jne    _Tb1;
-_T95:
-	_assert(0x589, 0x5b85c8, 0x5b85ec);
-	__asm        jmp    _Tb6;
-_Tb1:
-	__asm        jmp    _Tb6;
-// LINE 1418:
-_Tb6:
-	this->dispatchPathLength++;
-// LINE 1424:
-	__asm        jmp    _LOOP_1e;
+			__asm        xor    eax, eax;
+			__asm        mov    al, index.yindex;
+			__asm        cmp    eax, 0xFF;
+			__asm        jne    _Tb1;
+		_T95:
+			_assert(0x589, 0x5b85c8, 0x5b85ec);
+			__asm        jmp    _Tb6;
+		_Tb1:
+			__asm        jmp    _Tb6;
+		// LINE 1418:
+		_Tb6:
+			this->dispatchPathLength++;
+		// LINE 1424:
+			__asm        jmp    _LOOP_1e;
+	}
 // LINE 1432:
 _Tc4:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destVertex.x);
@@ -2071,38 +2074,34 @@ _FOR_e2:
 	__asm        mov    i, ecx;
 	__asm        jmp    _FOR_COND_e2;
 _FOR_NEXT_e2:
-	i--;
-_FOR_COND_e2:
-	__asm        cmp    i, 0;
-	__asm        jl     _T13a;
-// LINE 1436:
-	__asm        xor    eax, eax;
-	__asm        mov    al, index.x;
-	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, index.yindex;
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        add    eax, ecx;
-	__asm        mov    pRGV, eax;
-// LINE 1437:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+0x2D];
-	__asm        mov    index.x, al;
-// LINE 1438:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+0x2C];
-	__asm        mov    index.yindex, al;
-// LINE 1439:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+0x2E];
-	__asm        mov    ecx, i;
-	__asm        mov    edx, this;
-	__asm        mov    [ecx+edx+0x192], al;
-// LINE 1440:
-	__asm        jmp    _FOR_NEXT_e2;
+	for (; (i >= 0x0); i--) {
+		// LINE 1436:
+			__asm        xor    eax, eax;
+			__asm        mov    al, index.x;
+			__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, index.yindex;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [ecx+ecx*4];
+			__asm        lea    ecx, [edx+ecx*2];
+			__asm        add    eax, ecx;
+			__asm        mov    pRGV, eax;
+		// LINE 1437:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+0x2D];
+			__asm        mov    index.x, al;
+		// LINE 1438:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+0x2C];
+			__asm        mov    index.yindex, al;
+		// LINE 1439:
+			__asm        mov    eax, pRGV;
+			__asm        mov    al, [eax+0x2E];
+			__asm        mov    ecx, i;
+			__asm        mov    edx, this;
+			__asm        mov    [ecx+edx+0x192], al;
+	}
 // LINE 1441:
 _T13a:
 	return;
@@ -2132,42 +2131,34 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 	__asm        mov    face, eax;
 // LINE 1463:
 _FOR_3d:
-	count = 0x0;
-	__asm        jmp    _FOR_COND_3d;
-_FOR_NEXT_3d:
-	count++;
-_FOR_COND_3d:
-	__asm        mov    eax, count;
-	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    _T91;
-// LINE 1465:
-	__asm        lea    eax, finfo.Face;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   0x004D6905;
-	__asm        add    esp, 8;
-// LINE 1466:
-	__asm        cmp    finfo.Plotter, 0x19;
-	__asm        jne    _T7d;
-// LINE 1468:
-	__asm        and    finfo.Attribute, 0x7FFFFFFF;
-// LINE 1469:
-	__asm        lea    eax, finfo.Face;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   0x004D6941;
-	__asm        add    esp, 8;
-// LINE 1471:
-_T7d:
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   0x004D85F8;
-	__asm        add    esp, 4;
-	__asm        mov    face, eax;
-// LINE 1472:
-	__asm        jmp    _FOR_NEXT_3d;
+	for (count = 0x0; (oinfo.Faces > count); count++) {
+		// LINE 1465:
+			__asm        lea    eax, finfo.Face;
+			__asm        push   eax;
+			__asm        mov    eax, face;
+			__asm        push   eax;
+			__asm        call   0x004D6905;
+			__asm        add    esp, 8;
+		// LINE 1466:
+			__asm        cmp    finfo.Plotter, 0x19;
+			__asm        jne    _T7d;
+		// LINE 1468:
+			__asm        and    finfo.Attribute, 0x7FFFFFFF;
+		// LINE 1469:
+			__asm        lea    eax, finfo.Face;
+			__asm        push   eax;
+			__asm        mov    eax, face;
+			__asm        push   eax;
+			__asm        call   0x004D6941;
+			__asm        add    esp, 8;
+		// LINE 1471:
+		_T7d:
+			__asm        mov    eax, face;
+			__asm        push   eax;
+			__asm        call   0x004D85F8;
+			__asm        add    esp, 4;
+			__asm        mov    face, eax;
+	}
 // LINE 1473:
 _T91:
 	return;
@@ -2197,42 +2188,34 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 	__asm        mov    face, eax;
 // LINE 1486:
 _FOR_3d:
-	count = 0x0;
-	__asm        jmp    _FOR_COND_3d;
-_FOR_NEXT_3d:
-	count++;
-_FOR_COND_3d:
-	__asm        mov    eax, count;
-	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    _T95;
-// LINE 1488:
-	__asm        lea    eax, finfo.Face;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   0x004D6905;
-	__asm        add    esp, 8;
-// LINE 1489:
-	__asm        cmp    finfo.Plotter, 0x19;
-	__asm        jne    _T81;
-// LINE 1491:
-	finfo.Attribute = (finfo.Attribute | 0x80000000);
-// LINE 1492:
-	__asm        lea    eax, finfo.Face;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   0x004D6941;
-	__asm        add    esp, 8;
-// LINE 1494:
-_T81:
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   0x004D85F8;
-	__asm        add    esp, 4;
-	__asm        mov    face, eax;
-// LINE 1495:
-	__asm        jmp    _FOR_NEXT_3d;
+	for (count = 0x0; (oinfo.Faces > count); count++) {
+		// LINE 1488:
+			__asm        lea    eax, finfo.Face;
+			__asm        push   eax;
+			__asm        mov    eax, face;
+			__asm        push   eax;
+			__asm        call   0x004D6905;
+			__asm        add    esp, 8;
+		// LINE 1489:
+			__asm        cmp    finfo.Plotter, 0x19;
+			__asm        jne    _T81;
+		// LINE 1491:
+			finfo.Attribute = (finfo.Attribute | 0x80000000);
+		// LINE 1492:
+			__asm        lea    eax, finfo.Face;
+			__asm        push   eax;
+			__asm        mov    eax, face;
+			__asm        push   eax;
+			__asm        call   0x004D6941;
+			__asm        add    esp, 8;
+		// LINE 1494:
+		_T81:
+			__asm        mov    eax, face;
+			__asm        push   eax;
+			__asm        call   0x004D85F8;
+			__asm        add    esp, 4;
+			__asm        mov    face, eax;
+	}
 // LINE 1496:
 _T95:
 	return;

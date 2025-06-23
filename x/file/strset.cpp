@@ -274,18 +274,15 @@ _FOR_62:
 	__asm        mov    str, eax;
 	__asm        jmp    _FOR_COND_62;
 _FOR_NEXT_62:
-	cnt--;
-_FOR_COND_62:
-	__asm        movsx  eax, cnt;
-	__asm        cmp    eax, 1;
-	__asm        jle    _T83;
-// LINE 75:
-	__asm        mov    eax, str;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        inc    ecx;
-	__asm        add    str, ecx;
-	__asm        jmp    _FOR_NEXT_62;
+	for (; (reinterpret_cast<int16_t>(cnt) > 0x1); cnt--) {
+		// LINE 75:
+			__asm        mov    eax, str;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        inc    ecx;
+			__asm        add    str, ecx;
+			__asm        jmp    _FOR_NEXT_62;
+	}
 // LINE 76:
 _T83:
 	return str;

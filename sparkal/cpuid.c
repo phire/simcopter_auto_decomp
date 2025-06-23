@@ -173,27 +173,21 @@ unsigned short wincpuidext() {
 	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 183:
 _FOR_75:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_75;
-_FOR_NEXT_75:
-	i++;
-_FOR_COND_75:
-	__asm        cmp    i, 0xC;
-	__asm        jge    _Tab;
-// LINE 185:
-	__asm        mov    eax, i;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax-0x24];
-	__asm        mov    eax, i;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ebp+eax-0x10];
-	__asm        cmp    ecx, edx;
-	__asm        je     _Ta6;
-// LINE 186:
-	clone_flag = 0x1;
-// LINE 187:
-_Ta6:
-	__asm        jmp    _FOR_NEXT_75;
+	for (i = 0x0; (i < 0xc); i++) {
+		// LINE 185:
+			__asm        mov    eax, i;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [ebp+eax-0x24];
+			__asm        mov    eax, i;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [ebp+eax-0x10];
+			__asm        cmp    ecx, edx;
+			__asm        je     _Ta6;
+		// LINE 186:
+			clone_flag = 0x1;
+		// LINE 187:
+		_Ta6:
+	}
 // LINE 191:
 _Tab:
 	__asm        cmp    eax, 1;
@@ -272,27 +266,21 @@ unsigned long wincpufeatures() {
 	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 273:
 _FOR_70:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_70;
-_FOR_NEXT_70:
-	i++;
-_FOR_COND_70:
-	__asm        cmp    i, 0xC;
-	__asm        jge    _Ta6;
-// LINE 275:
-	__asm        mov    eax, i;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax-0x20];
-	__asm        mov    eax, i;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ebp+eax-0xC];
-	__asm        cmp    ecx, edx;
-	__asm        je     _Ta1;
-// LINE 276:
-	clone_flag = 0x1;
-// LINE 277:
-_Ta1:
-	__asm        jmp    _FOR_NEXT_70;
+	for (i = 0x0; (i < 0xc); i++) {
+		// LINE 275:
+			__asm        mov    eax, i;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [ebp+eax-0x20];
+			__asm        mov    eax, i;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [ebp+eax-0xC];
+			__asm        cmp    ecx, edx;
+			__asm        je     _Ta1;
+		// LINE 276:
+			clone_flag = 0x1;
+		// LINE 277:
+		_Ta1:
+	}
 // LINE 281:
 _Ta6:
 	__asm        cmp    eax, 1;
@@ -581,27 +569,21 @@ static unsigned short check_IDProc() {
 	__asm        mov    reinterpret_cast<uint32_t>(vendor_id[8]), ecx;
 // LINE 581:
 _FOR_67:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_67;
-_FOR_NEXT_67:
-	i++;
-_FOR_COND_67:
-	__asm        cmp    i, 0xC;
-	__asm        jge    _T9d;
-// LINE 583:
-	__asm        mov    eax, i;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [ebp+eax-0x28];
-	__asm        mov    eax, i;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ebp+eax-0x14];
-	__asm        cmp    ecx, edx;
-	__asm        je     _T98;
-// LINE 584:
-	clone_flag = 0x1;
-// LINE 585:
-_T98:
-	__asm        jmp    _FOR_NEXT_67;
+	for (i = 0x0; (i < 0xc); i++) {
+		// LINE 583:
+			__asm        mov    eax, i;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [ebp+eax-0x28];
+			__asm        mov    eax, i;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [ebp+eax-0x14];
+			__asm        cmp    ecx, edx;
+			__asm        je     _T98;
+		// LINE 584:
+			clone_flag = 0x1;
+		// LINE 585:
+		_T98:
+	}
 // LINE 589:
 _T9d:
 	__asm        cmp    eax, 1;

@@ -927,38 +927,31 @@ _T57:
 	celloc.y = ((0x20000000 - ed->loc.z) >> 0x16);
 // LINE 424:
 _FOR_a4:
-	j = 0x0;
-	__asm        jmp    _FOR_COND_a4;
-_FOR_NEXT_a4:
-	j++;
-_FOR_COND_a4:
-	__asm        cmp    j, 0xE;
-	__asm        jge    _Tff;
-// LINE 435:
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x30];
-	__asm        push   eax;
-	__asm        push   0x140000;
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        mov    eax, j;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, S_spark_vectors[0].x[eax*4];
-	__asm        push   eax;
-	__asm        mov    eax, ed;
-	__asm        add    eax, 0xC;
-	__asm        push   eax;
-	__asm        lea    eax, celloc.x;
-	__asm        push   eax;
-	__asm        push   9;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
-// LINE 436:
-	__asm        jmp    _FOR_NEXT_a4;
+	for (j = 0x0; (j < 0xe); j++) {
+		// LINE 435:
+			__asm        mov    eax, ed;
+			__asm        mov    eax, [eax+0x30];
+			__asm        push   eax;
+			__asm        push   0x140000;
+			__asm        mov    eax, ed;
+			__asm        mov    eax, [eax+0x20];
+			__asm        push   eax;
+			__asm        mov    eax, ed;
+			__asm        mov    eax, [eax+0x28];
+			__asm        push   eax;
+			__asm        mov    eax, j;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        lea    eax, S_spark_vectors[0].x[eax*4];
+			__asm        push   eax;
+			__asm        mov    eax, ed;
+			__asm        add    eax, 0xC;
+			__asm        push   eax;
+			__asm        lea    eax, celloc.x;
+			__asm        push   eax;
+			__asm        push   9;
+			__asm        call   S3MissileStart;
+			__asm        add    esp, 0x20;
+	}
 // LINE 440:
 _Tff:
 	__asm        mov    eax, ed;
@@ -968,24 +961,23 @@ _Tff:
 	dyptrptr = (ed->cptr + 0x10);
 // LINE 444:
 __WHILE_11e:
-	__asm        mov    eax, dyptrptr;
-	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     _T160;
-// LINE 446:
-	__asm        mov    eax, ed;
-	__asm        mov    ecx, dyptrptr;
-	__asm        mov    ecx, [ecx];
-	__asm        cmp    [eax+0x20], ecx;
-	__asm        jne    _T153;
-// LINE 448:
-	dyptrptr-> = ed->dy2d->next;
-// LINE 449:
-	__asm        jmp    _T160;
-// LINE 451:
-_T153:
-	dyptrptr = dyptrptr->;
-// LINE 452:
-	__asm        jmp    __WHILE_11e;
+	while ((dyptrptr-> != 0x0)) {
+		// LINE 446:
+			__asm        mov    eax, ed;
+			__asm        mov    ecx, dyptrptr;
+			__asm        mov    ecx, [ecx];
+			__asm        cmp    [eax+0x20], ecx;
+			__asm        jne    _T153;
+		// LINE 448:
+			dyptrptr-> = ed->dy2d->next;
+		// LINE 449:
+			__asm        jmp    _T160;
+		// LINE 451:
+		_T153:
+			dyptrptr = dyptrptr->;
+		// LINE 452:
+			__asm        jmp    __WHILE_11e;
+	}
 // LINE 454:
 _T160:
 	ed->flags = (ed->flags & -0x2);
@@ -1080,24 +1072,23 @@ _T25a:
 	dyptrptr = (sd->cptr + 0x10);
 // LINE 485:
 __WHILE_283:
-	__asm        mov    eax, dyptrptr;
-	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     _T2bf;
-// LINE 487:
-	__asm        mov    eax, sd;
-	__asm        mov    ecx, dyptrptr;
-	__asm        mov    ecx, [ecx];
-	__asm        cmp    [eax+4], ecx;
-	__asm        jne    _T2b2;
-// LINE 489:
-	dyptrptr-> = sd->dysmoke->next;
-// LINE 490:
-	__asm        jmp    _T2bf;
-// LINE 492:
-_T2b2:
-	dyptrptr = dyptrptr->;
-// LINE 493:
-	__asm        jmp    __WHILE_283;
+	while ((dyptrptr-> != 0x0)) {
+		// LINE 487:
+			__asm        mov    eax, sd;
+			__asm        mov    ecx, dyptrptr;
+			__asm        mov    ecx, [ecx];
+			__asm        cmp    [eax+4], ecx;
+			__asm        jne    _T2b2;
+		// LINE 489:
+			dyptrptr-> = sd->dysmoke->next;
+		// LINE 490:
+			__asm        jmp    _T2bf;
+		// LINE 492:
+		_T2b2:
+			dyptrptr = dyptrptr->;
+		// LINE 493:
+			__asm        jmp    __WHILE_283;
+	}
 // LINE 495:
 _T2bf:
 	sd->flags = (sd->flags & -0x2);

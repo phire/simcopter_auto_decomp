@@ -813,18 +813,17 @@ _T65:
 	__asm        inc    pCompressedBits;
 // LINE 173:
 __WHILE_c8:
-	__asm        mov    eax, Top;
-	__asm        cmp    ClipTop, eax;
-	__asm        jle    _Te7;
-// LINE 176:
-	__asm        mov    eax, pCompressedBits;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cx, [eax];
-	__asm        add    pCompressedBits, ecx;
-// LINE 177:
-	Top++;
-// LINE 178:
-	__asm        jmp    __WHILE_c8;
+	while ((ClipTop > Top)) {
+		// LINE 176:
+			__asm        mov    eax, pCompressedBits;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cx, [eax];
+			__asm        add    pCompressedBits, ecx;
+		// LINE 177:
+			Top++;
+		// LINE 178:
+			__asm        jmp    __WHILE_c8;
+	}
 // LINE 180:
 _Te7:
 	__asm        mov    eax, Bottom;
@@ -961,152 +960,151 @@ static void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride
 	pSource += 0x2;
 // LINE 330:
 __WHILE_27:
-	__asm        movsx  eax, Height;
-	__asm        test   eax, eax;
-	__asm        je     _T17a;
-// LINE 336:
-// Block start:
-	/*bp-0x10*/  unsigned char data;
-	/*bp-0x14*/  unsigned char token;
-	/*bp-0x18*/  int32_t counter;
-	__asm        mov    eax, pSource;
-	__asm        cmp    pNextSourceLine, eax;
-	__asm        jne    _T66;
-// LINE 340:
-	__asm        mov    eax, pSource;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cx, [eax];
-	__asm        add    ecx, pSource;
-	__asm        mov    pNextSourceLine, ecx;
-// LINE 341:
-	pSource += 0x2;
-// LINE 344:
-	pDestinationEdge += DestStride;
-// LINE 345:
-	pDest = pDestinationEdge;
-// LINE 347:
-	Height--;
-// LINE 349:
-	__asm        jmp    _T175;
-// LINE 352:
-_T66:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    token, al;
-	__asm        inc    pSource;
-// LINE 353:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    data, al;
-	__asm        inc    pSource;
-// LINE 355:
-	__asm        xor    eax, eax;
-	__asm        mov    al, token;
-	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    _T14e;
-// LINE 358:
-_T89:
-	__asm        xor    eax, eax;
-	__asm        mov    al, data;
-	__asm        inc    eax;
-	__asm        mov    counter, eax;
-// LINE 361:
-	memcpy(counter, pSource, pDest);
-// LINE 362:
-	pSource += counter;
-// LINE 363:
-	pDest += counter;
-// LINE 364:
-	__asm        jmp    _T175;
-// LINE 367:
-_Tb7:
-	__asm        xor    eax, eax;
-	__asm        mov    al, data;
-	__asm        inc    eax;
-	__asm        mov    counter, eax;
-// LINE 368:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    data, al;
-	__asm        inc    pSource;
-// LINE 371:
-	__asm        mov    eax, counter;
-	__asm        push   eax;
-	__asm        xor    eax, eax;
-	__asm        mov    al, data;
-	__asm        push   eax;
-	__asm        mov    eax, pDest;
-	__asm        push   eax;
-	__asm        call   memset;
-	__asm        add    esp, 0xC;
-// LINE 372:
-	pDest += counter;
-// LINE 373:
-	__asm        jmp    _T175;
-// LINE 376:
-_Tec:
-	__asm        xor    eax, eax;
-	__asm        mov    al, data;
-	__asm        inc    eax;
-	__asm        add    pDest, eax;
-// LINE 377:
-	__asm        jmp    _T175;
-// LINE 380:
-_Tfa:
-	__asm        xor    eax, eax;
-	__asm        mov    al, data;
-	__asm        inc    eax;
-	__asm        mov    counter, eax;
-// LINE 383:
-__WHILE_103:
-	__asm        mov    eax, counter;
-	__asm        mov    [ebp-0x1C], eax;
-	__asm        dec    counter;
-	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     _T13f;
-// LINE 385:
-	__asm        mov    eax, pSource;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        xor    eax, eax;
-	__asm        mov    al, TransparentColor;
-	__asm        cmp    ecx, eax;
-	__asm        je     _T134;
-// LINE 386:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pDest;
-	__asm        mov    [ecx], al;
-// LINE 388:
-_T134:
-	pDest++;
-// LINE 389:
-	pSource++;
-// LINE 390:
-	__asm        jmp    __WHILE_103;
-// LINE 391:
-_T13f:
-	__asm        jmp    _T175;
-// LINE 395:
-	__asm        jmp    _T175;
-// LINE 396:
-	__asm        jmp    _T175;
-_T14e:
-	__asm        dec    dword ptr [ebp-0x20];
-	__asm        cmp    dword ptr [ebp-0x20], 3;
-	__asm        ja     _T175;
+	while ((reinterpret_cast<int16_t>(Height) != 0x0)) {
+		// LINE 336:
+		// Block start:
+			/*bp-0x10*/  unsigned char data;
+			/*bp-0x14*/  unsigned char token;
+			/*bp-0x18*/  int32_t counter;
+			__asm        mov    eax, pSource;
+			__asm        cmp    pNextSourceLine, eax;
+			__asm        jne    _T66;
+		// LINE 340:
+			__asm        mov    eax, pSource;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cx, [eax];
+			__asm        add    ecx, pSource;
+			__asm        mov    pNextSourceLine, ecx;
+		// LINE 341:
+			pSource += 0x2;
+		// LINE 344:
+			pDestinationEdge += DestStride;
+		// LINE 345:
+			pDest = pDestinationEdge;
+		// LINE 347:
+			Height--;
+		// LINE 349:
+			__asm        jmp    _T175;
+		// LINE 352:
+		_T66:
+			__asm        mov    eax, pSource;
+			__asm        mov    al, [eax];
+			__asm        mov    token, al;
+			__asm        inc    pSource;
+		// LINE 353:
+			__asm        mov    eax, pSource;
+			__asm        mov    al, [eax];
+			__asm        mov    data, al;
+			__asm        inc    pSource;
+		// LINE 355:
+			__asm        xor    eax, eax;
+			__asm        mov    al, token;
+			__asm        mov    [ebp-0x20], eax;
+			__asm        jmp    _T14e;
+		// LINE 358:
+		_T89:
+			__asm        xor    eax, eax;
+			__asm        mov    al, data;
+			__asm        inc    eax;
+			__asm        mov    counter, eax;
+		// LINE 361:
+			memcpy(counter, pSource, pDest);
+		// LINE 362:
+			pSource += counter;
+		// LINE 363:
+			pDest += counter;
+		// LINE 364:
+			__asm        jmp    _T175;
+		// LINE 367:
+		_Tb7:
+			__asm        xor    eax, eax;
+			__asm        mov    al, data;
+			__asm        inc    eax;
+			__asm        mov    counter, eax;
+		// LINE 368:
+			__asm        mov    eax, pSource;
+			__asm        mov    al, [eax];
+			__asm        mov    data, al;
+			__asm        inc    pSource;
+		// LINE 371:
+			__asm        mov    eax, counter;
+			__asm        push   eax;
+			__asm        xor    eax, eax;
+			__asm        mov    al, data;
+			__asm        push   eax;
+			__asm        mov    eax, pDest;
+			__asm        push   eax;
+			__asm        call   memset;
+			__asm        add    esp, 0xC;
+		// LINE 372:
+			pDest += counter;
+		// LINE 373:
+			__asm        jmp    _T175;
+		// LINE 376:
+		_Tec:
+			__asm        xor    eax, eax;
+			__asm        mov    al, data;
+			__asm        inc    eax;
+			__asm        add    pDest, eax;
+		// LINE 377:
+			__asm        jmp    _T175;
+		// LINE 380:
+		_Tfa:
+			__asm        xor    eax, eax;
+			__asm        mov    al, data;
+			__asm        inc    eax;
+			__asm        mov    counter, eax;
+		// LINE 383:
+		__WHILE_103:
+			__asm        mov    eax, counter;
+			__asm        mov    [ebp-0x1C], eax;
+			__asm        dec    counter;
+			__asm        cmp    dword ptr [ebp-0x1C], 0;
+			__asm        je     _T13f;
+		// LINE 385:
+			__asm        mov    eax, pSource;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        xor    eax, eax;
+			__asm        mov    al, TransparentColor;
+			__asm        cmp    ecx, eax;
+			__asm        je     _T134;
+		// LINE 386:
+			__asm        mov    eax, pSource;
+			__asm        mov    al, [eax];
+			__asm        mov    ecx, pDest;
+			__asm        mov    [ecx], al;
+		// LINE 388:
+		_T134:
+			pDest++;
+		// LINE 389:
+			pSource++;
+		// LINE 390:
+			__asm        jmp    __WHILE_103;
+		// LINE 391:
+		_T13f:
+			__asm        jmp    _T175;
+		// LINE 395:
+			__asm        jmp    _T175;
+		// LINE 396:
+			__asm        jmp    _T175;
+		_T14e:
+			__asm        dec    dword ptr [ebp-0x20];
+			__asm        cmp    dword ptr [ebp-0x20], 3;
+			__asm        ja     _T175;
 
-	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    _Switch_165[0][eax*4];
-// Switch pointers:
-//   _T89
-//   _Tb7
-//   _Tec
-//   _Tfa
-// LINE 398:
-// Block end:
-_T175:
-	__asm        jmp    __WHILE_27;
+			__asm        mov    eax, [ebp-0x20];
+			__asm        jmp    _Switch_165[0][eax*4];
+		// Switch pointers:
+		//   _T89
+		//   _Tb7
+		//   _Tec
+		//   _Tfa
+		// LINE 398:
+		// Block end:
+		_T175:
+			__asm        jmp    __WHILE_27;
+	}
 // LINE 399:
 _T17a:
 	return;
@@ -1137,323 +1135,322 @@ static void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, 
 	__asm        mov    PixelCount, ax;
 // LINE 415:
 __WHILE_31:
-	__asm        movsx  eax, Height;
-	__asm        test   eax, eax;
-	__asm        je     _T328;
-// LINE 421:
-// Block start:
-	/*bp-0x14*/  unsigned char data;
-	/*bp-0x18*/  unsigned char token;
-	/*bp-0x1c*/  int32_t counter;
-	__asm        mov    eax, pSource;
-	__asm        cmp    pNextSourceLine, eax;
-	__asm        jne    _T7a;
-// LINE 425:
-	__asm        mov    eax, pSource;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cx, [eax];
-	__asm        add    ecx, pSource;
-	__asm        mov    pNextSourceLine, ecx;
-// LINE 426:
-	pSource += 0x2;
-// LINE 429:
-	pDestinationEdge += DestStride;
-// LINE 430:
-	pDest = pDestinationEdge;
-// LINE 432:
-	Height--;
-// LINE 433:
-	__asm        movsx  eax, LeftClip;
-	__asm        neg    eax;
-	__asm        mov    PixelCount, ax;
-// LINE 435:
-	__asm        jmp    _T323;
-// LINE 439:
-_T7a:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    token, al;
-	__asm        inc    pSource;
-// LINE 440:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    data, al;
-	__asm        inc    pSource;
-// LINE 442:
-	__asm        xor    eax, eax;
-	__asm        mov    al, token;
-	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    _T2e6;
-// LINE 445:
-_T9d:
-	__asm        xor    eax, eax;
-	__asm        mov    al, data;
-	__asm        inc    eax;
-	__asm        mov    counter, eax;
-// LINE 448:
-	__asm        movsx  eax, PixelCount;
-	__asm        test   eax, eax;
-	__asm        jge    __WHILE_fc;
-// LINE 451:
-	__asm        movsx  eax, PixelCount;
-	__asm        neg    eax;
-	__asm        cmp    eax, counter;
-	__asm        jl     _Tde;
-// LINE 454:
-	pSource += counter;
-// LINE 455:
-	__asm        movsx  eax, PixelCount;
-	__asm        add    eax, counter;
-	__asm        mov    PixelCount, ax;
-// LINE 456:
-	counter = 0x0;
-// LINE 458:
-	__asm        jmp    __WHILE_fc;
-// LINE 461:
-_Tde:
-	__asm        movsx  eax, PixelCount;
-	__asm        neg    eax;
-	__asm        add    pSource, eax;
-// LINE 462:
-	__asm        xor    eax, eax;
-	__asm        movsx  ecx, PixelCount;
-	__asm        neg    ecx;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    counter, eax;
-// LINE 463:
-	PixelCount = 0x0;
-// LINE 470:
-__WHILE_fc:
-	__asm        cmp    counter, 0;
-	__asm        je     _T132;
+	while ((reinterpret_cast<int16_t>(Height) != 0x0)) {
+		// LINE 421:
+		// Block start:
+			/*bp-0x14*/  unsigned char data;
+			/*bp-0x18*/  unsigned char token;
+			/*bp-0x1c*/  int32_t counter;
+			__asm        mov    eax, pSource;
+			__asm        cmp    pNextSourceLine, eax;
+			__asm        jne    _T7a;
+		// LINE 425:
+			__asm        mov    eax, pSource;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cx, [eax];
+			__asm        add    ecx, pSource;
+			__asm        mov    pNextSourceLine, ecx;
+		// LINE 426:
+			pSource += 0x2;
+		// LINE 429:
+			pDestinationEdge += DestStride;
+		// LINE 430:
+			pDest = pDestinationEdge;
+		// LINE 432:
+			Height--;
+		// LINE 433:
+			__asm        movsx  eax, LeftClip;
+			__asm        neg    eax;
+			__asm        mov    PixelCount, ax;
+		// LINE 435:
+			__asm        jmp    _T323;
+		// LINE 439:
+		_T7a:
+			__asm        mov    eax, pSource;
+			__asm        mov    al, [eax];
+			__asm        mov    token, al;
+			__asm        inc    pSource;
+		// LINE 440:
+			__asm        mov    eax, pSource;
+			__asm        mov    al, [eax];
+			__asm        mov    data, al;
+			__asm        inc    pSource;
+		// LINE 442:
+			__asm        xor    eax, eax;
+			__asm        mov    al, token;
+			__asm        mov    [ebp-0x20], eax;
+			__asm        jmp    _T2e6;
+		// LINE 445:
+		_T9d:
+			__asm        xor    eax, eax;
+			__asm        mov    al, data;
+			__asm        inc    eax;
+			__asm        mov    counter, eax;
+		// LINE 448:
+			__asm        movsx  eax, PixelCount;
+			__asm        test   eax, eax;
+			__asm        jge    __WHILE_fc;
+		// LINE 451:
+			__asm        movsx  eax, PixelCount;
+			__asm        neg    eax;
+			__asm        cmp    eax, counter;
+			__asm        jl     _Tde;
+		// LINE 454:
+			pSource += counter;
+		// LINE 455:
+			__asm        movsx  eax, PixelCount;
+			__asm        add    eax, counter;
+			__asm        mov    PixelCount, ax;
+		// LINE 456:
+			counter = 0x0;
+		// LINE 458:
+			__asm        jmp    __WHILE_fc;
+		// LINE 461:
+		_Tde:
+			__asm        movsx  eax, PixelCount;
+			__asm        neg    eax;
+			__asm        add    pSource, eax;
+		// LINE 462:
+			__asm        xor    eax, eax;
+			__asm        movsx  ecx, PixelCount;
+			__asm        neg    ecx;
+			__asm        sub    eax, ecx;
+			__asm        neg    eax;
+			__asm        sub    counter, eax;
+		// LINE 463:
+			PixelCount = 0x0;
+		// LINE 470:
+		__WHILE_fc:
+			while ((counter != 0x0)) {
 
-	__asm        movsx  eax, Width;
-	__asm        movsx  ecx, PixelCount;
-	__asm        cmp    eax, ecx;
-	__asm        jle    _T132;
-// LINE 472:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pDest;
-	__asm        mov    [ecx], al;
-	__asm        inc    pSource;
-	__asm        inc    pDest;
-// LINE 473:
-	counter--;
-// LINE 474:
-	PixelCount++;
-// LINE 475:
-	__asm        jmp    __WHILE_fc;
-// LINE 476:
-_T132:
-	__asm        jmp    _T30d;
-// LINE 479:
-_T137:
-	__asm        xor    eax, eax;
-	__asm        mov    al, data;
-	__asm        inc    eax;
-	__asm        mov    counter, eax;
-// LINE 480:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    data, al;
-	__asm        inc    pSource;
-// LINE 482:
-	__asm        movsx  eax, PixelCount;
-	__asm        test   eax, eax;
-	__asm        jge    __WHILE_192;
-// LINE 485:
-	__asm        movsx  eax, PixelCount;
-	__asm        neg    eax;
-	__asm        cmp    eax, counter;
-	__asm        jl     _T17d;
-// LINE 488:
-	__asm        movsx  eax, PixelCount;
-	__asm        add    eax, counter;
-	__asm        mov    PixelCount, ax;
-// LINE 489:
-	counter = 0x0;
-// LINE 491:
-	__asm        jmp    __WHILE_192;
-// LINE 494:
-_T17d:
-	__asm        xor    eax, eax;
-	__asm        movsx  ecx, PixelCount;
-	__asm        neg    ecx;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    counter, eax;
-// LINE 495:
-	PixelCount = 0x0;
-// LINE 501:
-__WHILE_192:
-	__asm        cmp    counter, 0;
-	__asm        je     _T1c3;
+					__asm        movsx  eax, Width;
+					__asm        movsx  ecx, PixelCount;
+					__asm        cmp    eax, ecx;
+					__asm        jle    _T132;
+				// LINE 472:
+					__asm        mov    eax, pSource;
+					__asm        mov    al, [eax];
+					__asm        mov    ecx, pDest;
+					__asm        mov    [ecx], al;
+					__asm        inc    pSource;
+					__asm        inc    pDest;
+				// LINE 473:
+					counter--;
+				// LINE 474:
+					PixelCount++;
+				// LINE 475:
+					__asm        jmp    __WHILE_fc;
+			}
+		// LINE 476:
+		_T132:
+			__asm        jmp    _T30d;
+		// LINE 479:
+		_T137:
+			__asm        xor    eax, eax;
+			__asm        mov    al, data;
+			__asm        inc    eax;
+			__asm        mov    counter, eax;
+		// LINE 480:
+			__asm        mov    eax, pSource;
+			__asm        mov    al, [eax];
+			__asm        mov    data, al;
+			__asm        inc    pSource;
+		// LINE 482:
+			__asm        movsx  eax, PixelCount;
+			__asm        test   eax, eax;
+			__asm        jge    __WHILE_192;
+		// LINE 485:
+			__asm        movsx  eax, PixelCount;
+			__asm        neg    eax;
+			__asm        cmp    eax, counter;
+			__asm        jl     _T17d;
+		// LINE 488:
+			__asm        movsx  eax, PixelCount;
+			__asm        add    eax, counter;
+			__asm        mov    PixelCount, ax;
+		// LINE 489:
+			counter = 0x0;
+		// LINE 491:
+			__asm        jmp    __WHILE_192;
+		// LINE 494:
+		_T17d:
+			__asm        xor    eax, eax;
+			__asm        movsx  ecx, PixelCount;
+			__asm        neg    ecx;
+			__asm        sub    eax, ecx;
+			__asm        neg    eax;
+			__asm        sub    counter, eax;
+		// LINE 495:
+			PixelCount = 0x0;
+		// LINE 501:
+		__WHILE_192:
+			while ((counter != 0x0)) {
 
-	__asm        movsx  eax, Width;
-	__asm        movsx  ecx, PixelCount;
-	__asm        cmp    eax, ecx;
-	__asm        jle    _T1c3;
-// LINE 503:
-	__asm        mov    al, data;
-	__asm        mov    ecx, pDest;
-	__asm        mov    [ecx], al;
-	__asm        inc    pDest;
-// LINE 504:
-	counter--;
-// LINE 505:
-	PixelCount++;
-// LINE 506:
-	__asm        jmp    __WHILE_192;
-// LINE 507:
-_T1c3:
-	__asm        jmp    _T30d;
-// LINE 510:
-_T1c8:
-	__asm        xor    eax, eax;
-	__asm        mov    al, data;
-	__asm        inc    eax;
-	__asm        mov    counter, eax;
-// LINE 511:
-	__asm        movsx  eax, PixelCount;
-	__asm        test   eax, eax;
-	__asm        jge    _T218;
-// LINE 514:
-	__asm        movsx  eax, PixelCount;
-	__asm        neg    eax;
-	__asm        cmp    eax, counter;
-	__asm        jl     _T203;
-// LINE 517:
-	__asm        movsx  eax, PixelCount;
-	__asm        add    eax, counter;
-	__asm        mov    PixelCount, ax;
-// LINE 518:
-	counter = 0x0;
-// LINE 520:
-	__asm        jmp    _T218;
-// LINE 523:
-_T203:
-	__asm        xor    eax, eax;
-	__asm        movsx  ecx, PixelCount;
-	__asm        neg    ecx;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    counter, eax;
-// LINE 524:
-	PixelCount = 0x0;
-// LINE 528:
-_T218:
-	pDest += counter;
-// LINE 529:
-	__asm        movsx  eax, PixelCount;
-	__asm        add    eax, counter;
-	__asm        mov    PixelCount, ax;
-// LINE 530:
-	__asm        jmp    _T30d;
-// LINE 533:
-_T22e:
-	__asm        xor    eax, eax;
-	__asm        mov    al, data;
-	__asm        inc    eax;
-	__asm        mov    counter, eax;
-// LINE 536:
-	__asm        movsx  eax, PixelCount;
-	__asm        test   eax, eax;
-	__asm        jge    __WHILE_28d;
-// LINE 539:
-	__asm        movsx  eax, PixelCount;
-	__asm        neg    eax;
-	__asm        cmp    eax, counter;
-	__asm        jl     _T26f;
-// LINE 542:
-	pSource += counter;
-// LINE 543:
-	__asm        movsx  eax, PixelCount;
-	__asm        add    eax, counter;
-	__asm        mov    PixelCount, ax;
-// LINE 544:
-	counter = 0x0;
-// LINE 546:
-	__asm        jmp    __WHILE_28d;
-// LINE 549:
-_T26f:
-	__asm        movsx  eax, PixelCount;
-	__asm        neg    eax;
-	__asm        add    pSource, eax;
-// LINE 550:
-	__asm        xor    eax, eax;
-	__asm        movsx  ecx, PixelCount;
-	__asm        neg    ecx;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    counter, eax;
-// LINE 551:
-	PixelCount = 0x0;
-// LINE 558:
-__WHILE_28d:
-	__asm        cmp    counter, 0;
-	__asm        je     _T2d7;
+					__asm        movsx  eax, Width;
+					__asm        movsx  ecx, PixelCount;
+					__asm        cmp    eax, ecx;
+					__asm        jle    _T1c3;
+				// LINE 503:
+					__asm        mov    al, data;
+					__asm        mov    ecx, pDest;
+					__asm        mov    [ecx], al;
+					__asm        inc    pDest;
+				// LINE 504:
+					counter--;
+				// LINE 505:
+					PixelCount++;
+				// LINE 506:
+					__asm        jmp    __WHILE_192;
+			}
+		// LINE 507:
+		_T1c3:
+			__asm        jmp    _T30d;
+		// LINE 510:
+		_T1c8:
+			__asm        xor    eax, eax;
+			__asm        mov    al, data;
+			__asm        inc    eax;
+			__asm        mov    counter, eax;
+		// LINE 511:
+			__asm        movsx  eax, PixelCount;
+			__asm        test   eax, eax;
+			__asm        jge    _T218;
+		// LINE 514:
+			__asm        movsx  eax, PixelCount;
+			__asm        neg    eax;
+			__asm        cmp    eax, counter;
+			__asm        jl     _T203;
+		// LINE 517:
+			__asm        movsx  eax, PixelCount;
+			__asm        add    eax, counter;
+			__asm        mov    PixelCount, ax;
+		// LINE 518:
+			counter = 0x0;
+		// LINE 520:
+			__asm        jmp    _T218;
+		// LINE 523:
+		_T203:
+			__asm        xor    eax, eax;
+			__asm        movsx  ecx, PixelCount;
+			__asm        neg    ecx;
+			__asm        sub    eax, ecx;
+			__asm        neg    eax;
+			__asm        sub    counter, eax;
+		// LINE 524:
+			PixelCount = 0x0;
+		// LINE 528:
+		_T218:
+			pDest += counter;
+		// LINE 529:
+			__asm        movsx  eax, PixelCount;
+			__asm        add    eax, counter;
+			__asm        mov    PixelCount, ax;
+		// LINE 530:
+			__asm        jmp    _T30d;
+		// LINE 533:
+		_T22e:
+			__asm        xor    eax, eax;
+			__asm        mov    al, data;
+			__asm        inc    eax;
+			__asm        mov    counter, eax;
+		// LINE 536:
+			__asm        movsx  eax, PixelCount;
+			__asm        test   eax, eax;
+			__asm        jge    __WHILE_28d;
+		// LINE 539:
+			__asm        movsx  eax, PixelCount;
+			__asm        neg    eax;
+			__asm        cmp    eax, counter;
+			__asm        jl     _T26f;
+		// LINE 542:
+			pSource += counter;
+		// LINE 543:
+			__asm        movsx  eax, PixelCount;
+			__asm        add    eax, counter;
+			__asm        mov    PixelCount, ax;
+		// LINE 544:
+			counter = 0x0;
+		// LINE 546:
+			__asm        jmp    __WHILE_28d;
+		// LINE 549:
+		_T26f:
+			__asm        movsx  eax, PixelCount;
+			__asm        neg    eax;
+			__asm        add    pSource, eax;
+		// LINE 550:
+			__asm        xor    eax, eax;
+			__asm        movsx  ecx, PixelCount;
+			__asm        neg    ecx;
+			__asm        sub    eax, ecx;
+			__asm        neg    eax;
+			__asm        sub    counter, eax;
+		// LINE 551:
+			PixelCount = 0x0;
+		// LINE 558:
+		__WHILE_28d:
+			while ((counter != 0x0)) {
 
-	__asm        movsx  eax, Width;
-	__asm        movsx  ecx, PixelCount;
-	__asm        cmp    eax, ecx;
-	__asm        jle    _T2d7;
-// LINE 560:
-	__asm        mov    eax, pSource;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        xor    eax, eax;
-	__asm        mov    al, TransparentColor;
-	__asm        cmp    ecx, eax;
-	__asm        je     _T2c5;
-// LINE 561:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pDest;
-	__asm        mov    [ecx], al;
-// LINE 563:
-_T2c5:
-	pDest++;
-// LINE 564:
-	pSource++;
-// LINE 565:
-	counter--;
-// LINE 566:
-	PixelCount++;
-// LINE 567:
-	__asm        jmp    __WHILE_28d;
-// LINE 568:
-_T2d7:
-	__asm        jmp    _T30d;
-// LINE 572:
-	__asm        jmp    _T30d;
-// LINE 573:
-	__asm        jmp    _T30d;
-_T2e6:
-	__asm        dec    dword ptr [ebp-0x20];
-	__asm        cmp    dword ptr [ebp-0x20], 3;
-	__asm        ja     _T30d;
+					__asm        movsx  eax, Width;
+					__asm        movsx  ecx, PixelCount;
+					__asm        cmp    eax, ecx;
+					__asm        jle    _T2d7;
+				// LINE 560:
+					__asm        mov    eax, pSource;
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, [eax];
+					__asm        xor    eax, eax;
+					__asm        mov    al, TransparentColor;
+					__asm        cmp    ecx, eax;
+					__asm        je     _T2c5;
+				// LINE 561:
+					__asm        mov    eax, pSource;
+					__asm        mov    al, [eax];
+					__asm        mov    ecx, pDest;
+					__asm        mov    [ecx], al;
+				// LINE 563:
+				_T2c5:
+					pDest++;
+				// LINE 564:
+					pSource++;
+				// LINE 565:
+					counter--;
+				// LINE 566:
+					PixelCount++;
+				// LINE 567:
+					__asm        jmp    __WHILE_28d;
+			}
+		// LINE 568:
+		_T2d7:
+			__asm        jmp    _T30d;
+		// LINE 572:
+			__asm        jmp    _T30d;
+		// LINE 573:
+			__asm        jmp    _T30d;
+		_T2e6:
+			__asm        dec    dword ptr [ebp-0x20];
+			__asm        cmp    dword ptr [ebp-0x20], 3;
+			__asm        ja     _T30d;
 
-	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    _Switch_2fd[0][eax*4];
-// Switch pointers:
-//   _T9d
-//   _T137
-//   _T1c8
-//   _T22e
-// LINE 576:
-_T30d:
-	__asm        movsx  eax, Width;
-	__asm        movsx  ecx, PixelCount;
-	__asm        cmp    eax, ecx;
-	__asm        jg     _T323;
-// LINE 577:
-	pSource = pNextSourceLine;
-// LINE 579:
-// Block end:
-_T323:
-	__asm        jmp    __WHILE_31;
+			__asm        mov    eax, [ebp-0x20];
+			__asm        jmp    _Switch_2fd[0][eax*4];
+		// Switch pointers:
+		//   _T9d
+		//   _T137
+		//   _T1c8
+		//   _T22e
+		// LINE 576:
+		_T30d:
+			__asm        movsx  eax, Width;
+			__asm        movsx  ecx, PixelCount;
+			__asm        cmp    eax, ecx;
+			__asm        jg     _T323;
+		// LINE 577:
+			pSource = pNextSourceLine;
+		// LINE 579:
+		// Block end:
+		_T323:
+			__asm        jmp    __WHILE_31;
+	}
 // LINE 580:
 _T328:
 	return;

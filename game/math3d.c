@@ -684,18 +684,18 @@ __RETURN:
 int32_t AngleBounds(int32_t a) {
 // LINE 359:
 __WHILE_06:
-	__asm        cmp    a, 0;
-	__asm        jge    __WHILE_1c;
+	while ((a < 0x0)) {
 
-	a += 0xe100000;
-	__asm        jmp    __WHILE_06;
+			a += 0xe100000;
+			__asm        jmp    __WHILE_06;
+	}
 // LINE 360:
 __WHILE_1c:
-	__asm        cmp    a, 0xE100000;
-	__asm        jle    _T35;
+	while ((a > 0xe100000)) {
 
-	a -= 0xe100000;
-	__asm        jmp    __WHILE_1c;
+			a -= 0xe100000;
+			__asm        jmp    __WHILE_1c;
+	}
 // LINE 361:
 _T35:
 _T4f:
