@@ -6136,8 +6136,6 @@ _LOOP_3ec:
 			__asm        or     dword ptr [eax+8], 0x400;
 		// LINE 2716:
 			currentObject = currentObject->next;
-		// LINE 2717:
-			__asm        jmp    _LOOP_3ec;
 	}
 // LINE 2723:
 _T487:

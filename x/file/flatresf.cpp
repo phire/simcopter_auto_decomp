@@ -1716,7 +1716,6 @@ _FOR_1c:
 	for (srch = ResMap::sMaps; (srch != 0x0); srch = srch-><ResMap+0x00:4>) {
 		// LINE 805:
 			total++;
-			__asm        jmp    _FOR_NEXT_1c;
 	}
 // LINE 806:
 _T37:

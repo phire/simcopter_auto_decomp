@@ -807,7 +807,6 @@ _LOOP_4a:
 			__asm        jmp    _T102;
 		// LINE 299:
 		_T102:
-			__asm        jmp    _LOOP_4a;
 	}
 // LINE 300:
 _T107:
@@ -928,7 +927,6 @@ _LOOP_89:
 			__asm        jmp    _T141;
 		// LINE 342:
 		_T141:
-			__asm        jmp    _LOOP_89;
 	}
 // LINE 343:
 _T146:

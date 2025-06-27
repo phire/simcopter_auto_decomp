@@ -1081,7 +1081,6 @@ _FOR_1ba:
 	for (loop = 0x0; (loop < tempLong); loop++) {
 		// LINE 319:
 			SCXReadPlayer(scxbuf, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>);
-			__asm        jmp    _FOR_NEXT_1ba;
 	}
 // LINE 322:
 _T1e3:

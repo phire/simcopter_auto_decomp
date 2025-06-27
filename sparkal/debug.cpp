@@ -1955,7 +1955,6 @@ _LOOP_84:
 		_T287:
 			__asm        jmp    _T28c;
 		_T28c:
-			__asm        jmp    _LOOP_84;
 	}
 _T291:
 	return;
@@ -2370,7 +2369,6 @@ _LOOP_52:
 			__asm        jmp    _T2e7;
 		// LINE 163:
 		_T2e7:
-			__asm        jmp    _LOOP_52;
 	}
 // LINE 165:
 _T2ec:
@@ -2737,7 +2735,6 @@ _LOOP_d4:
 			scrollStart--;
 		// LINE 211:
 		_T446:
-			__asm        jmp    _LOOP_d4;
 	}
 // LINE 214:
 _T44b:

@@ -909,7 +909,6 @@ _LOOP_99:
 			this->myPreferences.length--;
 			__asm        jmp    _T166;
 		_T166:
-			__asm        jmp    _LOOP_99;
 	}
 _T16b:
 	__asm        jmp    _T170;
@@ -1490,7 +1489,6 @@ _LOOP_4c:
 			this->myPreferences.length--;
 			__asm        jmp    _T119;
 		_T119:
-			__asm        jmp    _LOOP_4c;
 	}
 _T11e:
 	__asm        jmp    _T123;
@@ -1635,7 +1633,6 @@ _LOOP_37:
 			return 0x1;
 		// LINE 337:
 		_T15d:
-			__asm        jmp    _LOOP_37;
 	}
 // LINE 338:
 _T162:
@@ -1725,7 +1722,6 @@ _LOOP_37:
 			return (i.node + 0x8);
 		// LINE 360:
 		_Td0:
-			__asm        jmp    _LOOP_37;
 	}
 // LINE 361:
 _Td5:
@@ -2843,7 +2839,6 @@ _LOOP_39:
 			__asm        jmp    _T154;
 		// LINE 584:
 		_T154:
-			__asm        jmp    _LOOP_39;
 	}
 // LINE 585:
 _T159:
@@ -2995,7 +2990,6 @@ _LOOP_27:
 			__asm        jmp    _Td6;
 		// LINE 624:
 		_Td6:
-			__asm        jmp    _LOOP_27;
 	}
 // LINE 625:
 _Tdb:

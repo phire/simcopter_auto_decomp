@@ -1871,7 +1871,6 @@ _LOOP_ba:
 			__asm        jmp    _T16a;
 		// LINE 235:
 		_T16a:
-			__asm        jmp    _LOOP_ba;
 	}
 // LINE 236:
 _T16f:
@@ -2215,7 +2214,6 @@ _LOOP_d7:
 			__asm        jmp    _T346;
 		// LINE 261:
 		_T346:
-			__asm        jmp    _LOOP_d7;
 	}
 // LINE 262:
 _T34b:

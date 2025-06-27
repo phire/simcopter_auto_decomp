@@ -1883,10 +1883,8 @@ _FOR_NEXT_8ca:
 			__asm        je     __WHILE_9eb;
 		// LINE 113:
 			chCurrentRectangle++;
-			__asm        jmp    __WHILE_9ce;
 		// LINE 113:
 			chCurrentRectangle++;
-			__asm        jmp    __WHILE_9ce;
 		// LINE 114:
 		__WHILE_9eb:
 			__asm        mov    eax, chCurrentRectangle;
@@ -1895,10 +1893,8 @@ _FOR_NEXT_8ca:
 			__asm        jne    _Ta08;
 		// LINE 115:
 			chCurrentRectangle++;
-			__asm        jmp    __WHILE_9eb;
 		// LINE 115:
 			chCurrentRectangle++;
-			__asm        jmp    __WHILE_9eb;
 		// LINE 117:
 		_Ta08:
 	}
@@ -3356,10 +3352,8 @@ __WHILE_12d:
 	__asm        jne    __WHILE_164;
 // LINE 370:
 	nCurrentChars++;
-	__asm        jmp    __WHILE_12d;
 // LINE 370:
 	nCurrentChars++;
-	__asm        jmp    __WHILE_12d;
 // LINE 375:
 __WHILE_164:
 	__asm        mov    eax, nCurrentChars;

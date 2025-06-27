@@ -999,7 +999,6 @@ _LOOP_64:
 			GraphicWindow::listModalWindows.length--;
 			__asm        jmp    _T10d;
 		_T10d:
-			__asm        jmp    _LOOP_64;
 	}
 _T112:
 	__asm        jmp    _T117;
@@ -1348,7 +1347,6 @@ _LOOP_64:
 			GraphicWindow::listFocusWindows.length--;
 			__asm        jmp    _T10d;
 		_T10d:
-			__asm        jmp    _LOOP_64;
 	}
 _T112:
 	__asm        jmp    _T117;
@@ -1697,7 +1695,6 @@ _LOOP_64:
 			GraphicWindow::listValidWindows.length--;
 			__asm        jmp    _T10d;
 		_T10d:
-			__asm        jmp    _LOOP_64;
 	}
 _T112:
 	__asm        jmp    _T117;
@@ -2090,7 +2087,6 @@ _LOOP_5a:
 			this->listWindowsToDelete.length--;
 			__asm        jmp    _T103;
 		_T103:
-			__asm        jmp    _LOOP_5a;
 	}
 _T108:
 	__asm        jmp    _T10d;
@@ -2548,7 +2544,6 @@ _LOOP_4e:
 			__asm        jmp    _Td7;
 		// LINE 174:
 		_Td7:
-			__asm        jmp    _LOOP_4e;
 	}
 // LINE 175:
 _Tdc:
@@ -2637,7 +2632,6 @@ _LOOP_11c:
 			this->listWindowsToDelete.length--;
 			__asm        jmp    _T1c5;
 		_T1c5:
-			__asm        jmp    _LOOP_11c;
 	}
 _T1ca:
 	__asm        jmp    _T1cf;
@@ -2732,7 +2726,6 @@ _LOOP_27:
 			__asm        jmp    _Td8;
 		// LINE 204:
 		_Td8:
-			__asm        jmp    _LOOP_27;
 	}
 // LINE 205:
 _Tdd:
@@ -2829,7 +2822,6 @@ _LOOP_33:
 			__asm        jmp    _Te0;
 		// LINE 230:
 		_Te0:
-			__asm        jmp    _LOOP_33;
 	}
 // LINE 231:
 _Te5:
@@ -2937,7 +2929,6 @@ _LOOP_33:
 			__asm        jmp    _Te0;
 		// LINE 262:
 		_Te0:
-			__asm        jmp    _LOOP_33;
 	}
 // LINE 263:
 _Te5:
@@ -3043,7 +3034,6 @@ _LOOP_33:
 			__asm        jmp    _Tdc;
 		// LINE 289:
 		_Tdc:
-			__asm        jmp    _LOOP_33;
 	}
 // LINE 290:
 _Te1:
@@ -3348,7 +3338,6 @@ _LOOP_37:
 			__asm        cmp    dword ptr [ebp-0x1C], 0;
 			__asm        jne    _T187;
 		_T17d:
-			__asm        jmp    _LOOP_37;
 	}
 
 	__asm        jmp    _T187;
@@ -6571,7 +6560,6 @@ _LOOP_47:
 			__asm        jmp    _Tdf;
 		// LINE 794:
 		_Tdf:
-			__asm        jmp    _LOOP_47;
 	}
 // LINE 797:
 // Block end:
@@ -7129,7 +7117,6 @@ _LOOP_2e:
 			__asm        jmp    _T189;
 		// LINE 849:
 		_T189:
-			__asm        jmp    _LOOP_2e;
 	}
 // LINE 852:
 _T18e:
@@ -7295,7 +7282,6 @@ _LOOP_3e:
 			__asm        jmp    _T1a3;
 		// LINE 880:
 		_T1a3:
-			__asm        jmp    _LOOP_3e;
 	}
 // LINE 881:
 _T1a8:
@@ -7432,7 +7418,6 @@ _LOOP_2e:
 			__asm        jmp    _T133;
 		// LINE 904:
 		_T133:
-			__asm        jmp    _LOOP_2e;
 	}
 // LINE 905:
 _T138:
@@ -7564,7 +7549,6 @@ _LOOP_37:
 			__asm        jmp    _T14e;
 		// LINE 926:
 		_T14e:
-			__asm        jmp    _LOOP_37;
 	}
 // LINE 927:
 _T153:
@@ -7669,7 +7653,6 @@ _LOOP_27:
 			this-><GraphicWindow+0x34:4> += -0x1;
 			__asm        jmp    _Tea;
 		_Tea:
-			__asm        jmp    _LOOP_27;
 	}
 // LINE 940:
 _Tef:
@@ -7752,7 +7735,6 @@ _LOOP_27:
 			__asm        jmp    _Tc3;
 		// LINE 957:
 		_Tc3:
-			__asm        jmp    _LOOP_27;
 	}
 // LINE 958:
 _Tc8:
@@ -7834,7 +7816,6 @@ _LOOP_23:
 			__asm        jmp    _Tbe;
 		// LINE 975:
 		_Tbe:
-			__asm        jmp    _LOOP_23;
 	}
 // LINE 976:
 _Tc3:
@@ -7913,7 +7894,6 @@ _LOOP_23:
 			__asm        jmp    _Tb5;
 		// LINE 990:
 		_Tb5:
-			__asm        jmp    _LOOP_23;
 	}
 // LINE 991:
 _Tba:
@@ -8115,8 +8095,6 @@ _LOOP_39:
 			__asm        mov    eax, [eax];
 			__asm        mov    ecx, gwCurrentChild;
 			__asm        call   dword ptr [eax+0x18];
-		// LINE 1091:
-			__asm        jmp    _LOOP_39;
 	}
 // LINE 1092:
 _Tcc:
@@ -8242,7 +8220,6 @@ _LOOP_1e:
 			__asm        jmp    _T132;
 		// LINE 1129:
 		_T132:
-			__asm        jmp    _LOOP_1e;
 	}
 // LINE 1130:
 _T137:
@@ -8327,7 +8304,6 @@ _LOOP_27:
 			__asm        jmp    _Tc1;
 		// LINE 1141:
 		_Tc1:
-			__asm        jmp    _LOOP_27;
 	}
 // LINE 1142:
 _Tc6:
@@ -8423,7 +8399,6 @@ _LOOP_43:
 			__asm        jmp    _Tec;
 		// LINE 1173:
 		_Tec:
-			__asm        jmp    _LOOP_43;
 	}
 // LINE 1174:
 _Tf1:
@@ -9045,7 +9020,6 @@ _LOOP_32:
 			__asm        jmp    _Tc6;
 		// LINE 1409:
 		_Tc6:
-			__asm        jmp    _LOOP_32;
 	}
 // LINE 1410:
 _Tcb:
@@ -9138,7 +9112,6 @@ _LOOP_3f:
 			__asm        jmp    _Td3;
 		// LINE 1429:
 		_Td3:
-			__asm        jmp    _LOOP_3f;
 	}
 // LINE 1430:
 _Td8:
@@ -9225,7 +9198,6 @@ _LOOP_32:
 			__asm        jmp    _Tc6;
 		// LINE 1448:
 		_Tc6:
-			__asm        jmp    _LOOP_32;
 	}
 // LINE 1449:
 _Tcb:
@@ -9665,7 +9637,6 @@ _LOOP_23:
 			__asm        jmp    _T11c;
 		// LINE 1506:
 		_T11c:
-			__asm        jmp    _LOOP_23;
 	}
 // LINE 1507:
 _T121:
@@ -10005,7 +9976,6 @@ _LOOP_23:
 			__asm        jmp    _T11c;
 		// LINE 1551:
 		_T11c:
-			__asm        jmp    _LOOP_23;
 	}
 // LINE 1552:
 _T121:
@@ -10053,7 +10023,6 @@ __WHILE_56:
 			__asm        je     _T7a;
 		// LINE 1577:
 			gwCurrentTest = gwCurrentTest-><GraphicWindow+0x3c:4>;
-			__asm        jmp    __WHILE_56;
 	}
 // LINE 1578:
 _T7a:
@@ -10238,8 +10207,6 @@ _LOOP_3b:
 			__asm        mov    eax, [eax];
 			__asm        mov    ecx, gwCurrentChild;
 			__asm        call   dword ptr [eax+0x18];
-		// LINE 1674:
-			__asm        jmp    _LOOP_3b;
 	}
 // LINE 1680:
 _Td8:

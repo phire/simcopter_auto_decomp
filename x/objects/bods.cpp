@@ -415,7 +415,6 @@ _LOOP_169:
 		_T22b:
 			__asm        jmp    _T241;
 		_T230:
-			__asm        jmp    _LOOP_169;
 	}
 _T235:
 	__asm        mov    dword ptr [ebp-0x30], 0;
@@ -672,7 +671,6 @@ _LOOP_a6:
 		_T168:
 			__asm        jmp    _T17e;
 		_T16d:
-			__asm        jmp    _LOOP_a6;
 	}
 _T172:
 	__asm        mov    dword ptr [ebp-0x20], 0;
@@ -2008,7 +2006,6 @@ _LOOP_175:
 		_T2ef:
 			__asm        jmp    _T2f4;
 		_T2f4:
-			__asm        jmp    _LOOP_175;
 	}
 _T2f9:
 	__asm        jmp    _T2fe;

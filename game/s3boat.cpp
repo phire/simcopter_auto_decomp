@@ -3882,7 +3882,6 @@ _LOOP_1ce:
 			__asm        jmp    _T3cc;
 		// LINE 2314:
 		_T3c7:
-			__asm        jmp    _LOOP_1ce;
 	}
 // LINE 2317:
 _T3cc:
@@ -4600,7 +4599,6 @@ _LOOP_41:
 			__asm        jmp    _T7c2;
 		// LINE 2495:
 		_T7bd:
-			__asm        jmp    _LOOP_41;
 	}
 // LINE 2498:
 _T7c2:

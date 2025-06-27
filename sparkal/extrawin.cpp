@@ -3565,7 +3565,6 @@ __WHILE_100:
 	while ((lFramesToShift != 0x0)) {
 		// LINE 366:
 			this->AnimationWindow::GotoNextFrame();
-			__asm        jmp    __WHILE_100;
 	}
 // LINE 368:
 _T117:

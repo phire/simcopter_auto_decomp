@@ -976,7 +976,6 @@ _LOOP_3c:
 			__asm        jmp    _T2ad;
 		// LINE 181:
 		_T2ad:
-			__asm        jmp    _LOOP_3c;
 	}
 // LINE 182:
 _T2b2:
@@ -2084,7 +2083,6 @@ _LOOP_a0:
 			__asm        jmp    _T16c;
 		// LINE 599:
 		_T16c:
-			__asm        jmp    _LOOP_a0;
 	}
 // LINE 600:
 _T171:

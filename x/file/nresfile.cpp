@@ -244,7 +244,6 @@ _LOOP_44:
 			__asm        jmp    __RETURN;
 		// LINE 17:
 		_Tf4:
-			__asm        jmp    _LOOP_44;
 	}
 // LINE 20:
 // Block end:
@@ -541,7 +540,6 @@ _LOOP_4d:
 			__asm        jmp    _T148;
 		// LINE 34:
 		_T148:
-			__asm        jmp    _LOOP_4d;
 	}
 // LINE 35:
 _T14d:

@@ -1605,8 +1605,6 @@ _LOOP_28:
 			__asm        push   eax;
 			__asm        mov    ecx, s;
 			__asm        call   istream::get;
-		// LINE 556:
-			__asm        jmp    _LOOP_28;
 	}
 // LINE 557:
 _Tce:

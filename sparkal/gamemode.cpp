@@ -3874,7 +3874,6 @@ _LOOP_2a:
 			__asm        jmp    _T138;
 		// LINE 1153:
 		_T138:
-			__asm        jmp    _LOOP_2a;
 	}
 // LINE 1154:
 _T13d:
@@ -5911,7 +5910,6 @@ _LOOP_64:
 			this->commandSystem.commandShortcuts.length--;
 			__asm        jmp    _T149;
 		_T149:
-			__asm        jmp    _LOOP_64;
 	}
 _T14e:
 	__asm        jmp    _T153;
@@ -6605,7 +6603,6 @@ _LOOP_64:
 			this->commandSystem.commandShortcuts.length--;
 			__asm        jmp    _T149;
 		_T149:
-			__asm        jmp    _LOOP_64;
 	}
 _T14e:
 	__asm        jmp    _T153;
@@ -7299,7 +7296,6 @@ _LOOP_64:
 			this->commandSystem.commandShortcuts.length--;
 			__asm        jmp    _T149;
 		_T149:
-			__asm        jmp    _LOOP_64;
 	}
 _T14e:
 	__asm        jmp    _T153;

@@ -451,8 +451,6 @@ _LOOP_2e:
 		// LINE 358:
 		_T58:
 			cptr += 0x8;
-		// LINE 359:
-			__asm        jmp    _LOOP_2e;
 	}
 // LINE 361:
 }

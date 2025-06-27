@@ -2660,7 +2660,6 @@ _FOR_30:
 					ptr[0] = mptr[0];
 					mptr += 0x4;
 					ptr += 0x4;
-					__asm        jmp    _FOR_NEXT_54;
 			}
 		// LINE 1200:
 		_T7f:

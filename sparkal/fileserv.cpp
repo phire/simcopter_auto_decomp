@@ -1906,7 +1906,6 @@ __WHILE_72:
 					__asm        je     _T676;
 				// LINE 114:
 					i++;
-					__asm        jmp    __WHILE_650;
 			}
 		// LINE 115:
 		_T676:
@@ -2577,7 +2576,6 @@ _LOOP_109:
 			__asm        jmp    _T309;
 		// LINE 179:
 		_T309:
-			__asm        jmp    _LOOP_109;
 	}
 // LINE 180:
 _T30e:

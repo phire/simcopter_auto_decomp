@@ -2056,8 +2056,6 @@ _LOOP_1e:
 		// LINE 1418:
 		_Tb6:
 			this->dispatchPathLength++;
-		// LINE 1424:
-			__asm        jmp    _LOOP_1e;
 	}
 // LINE 1432:
 _Tc4:

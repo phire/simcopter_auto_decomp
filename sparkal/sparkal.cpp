@@ -295,7 +295,6 @@ _LOOP_c6:
 			__asm        jae    _T1a5;
 		// LINE 106:
 		_T1a0:
-			__asm        jmp    _LOOP_c6;
 	}
 // LINE 107:
 _T1a5:

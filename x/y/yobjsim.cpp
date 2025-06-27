@@ -2205,8 +2205,6 @@ _LOOP_12:
 			__asm        and    eax, 7;
 			__asm        mov    ecx, this;
 			__asm        mov    [ecx+0xD0], ax;
-		// LINE 376:
-			__asm        jmp    _LOOP_12;
 	}
 // LINE 377:
 }
@@ -4705,7 +4703,6 @@ _LOOP_b2:
 		_T174:
 			__asm        jmp    _T18a;
 		_T179:
-			__asm        jmp    _LOOP_b2;
 	}
 _T17e:
 	__asm        mov    dword ptr [ebp-0x2C], 0;

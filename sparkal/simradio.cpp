@@ -5069,7 +5069,6 @@ _LOOP_5d:
 			__asm        jmp    _T161;
 		// LINE 422:
 		_T161:
-			__asm        jmp    _LOOP_5d;
 	}
 // LINE 425:
 _T166:
@@ -8476,7 +8475,6 @@ _LOOP_1a6:
 			__asm        jmp    _Td76;
 		// LINE 999:
 		_Td76:
-			__asm        jmp    _LOOP_1a6;
 	}
 // LINE 1002:
 _Td7b:

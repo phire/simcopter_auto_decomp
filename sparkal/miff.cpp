@@ -1015,7 +1015,6 @@ _LOOP_96:
 			lCount++;
 		// LINE 369:
 		_Tb6:
-			__asm        jmp    _LOOP_96;
 	}
 // LINE 370:
 _Tbb:

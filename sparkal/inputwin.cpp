@@ -3827,7 +3827,6 @@ _LOOP_27:
 			__asm        jmp    _Tba;
 		// LINE 182:
 		_Tba:
-			__asm        jmp    _LOOP_27;
 	}
 _Tbf:
 	__asm        mov    eax, this;
@@ -3909,7 +3908,6 @@ _LOOP_eb:
 			__asm        jmp    _T189;
 		// LINE 190:
 		_T189:
-			__asm        jmp    _LOOP_eb;
 	}
 // LINE 191:
 _T18e:
@@ -3999,7 +3997,6 @@ _LOOP_27:
 			__asm        jmp    _Td6;
 		// LINE 209:
 		_Td6:
-			__asm        jmp    _LOOP_27;
 	}
 _Tdb:
 	__asm        mov    eax, this;
@@ -4090,7 +4087,6 @@ _LOOP_107:
 			__asm        jmp    _T1c1;
 		// LINE 219:
 		_T1c1:
-			__asm        jmp    _LOOP_107;
 	}
 // LINE 220:
 _T1c6:
@@ -4566,7 +4562,6 @@ _LOOP_45:
 					__asm        jmp    _T1ee;
 				// LINE 349:
 				_T1ee:
-					__asm        jmp    _LOOP_dd;
 			}
 		// LINE 350:
 		_T1f3:
@@ -4582,7 +4577,6 @@ _LOOP_45:
 			__asm        jmp    _T217;
 		// LINE 351:
 		_T217:
-			__asm        jmp    _LOOP_45;
 	}
 _T21c:
 	__asm        mov    eax, this;
@@ -4749,7 +4743,6 @@ _LOOP_257:
 					__asm        jmp    _T408;
 				// LINE 376:
 				_T408:
-					__asm        jmp    _LOOP_2f7;
 			}
 		// LINE 377:
 		_T40d:
@@ -4765,7 +4758,6 @@ _LOOP_257:
 			__asm        jmp    _T431;
 		// LINE 378:
 		_T431:
-			__asm        jmp    _LOOP_257;
 	}
 // LINE 379:
 _T436:
@@ -5103,7 +5095,6 @@ _LOOP_170:
 			__asm        jmp    _T43c;
 		// LINE 423:
 		_T43c:
-			__asm        jmp    _LOOP_170;
 	}
 _T441:
 	__asm        mov    eax, this;
@@ -5351,7 +5342,6 @@ _LOOP_482:
 			__asm        jmp    _T765;
 		// LINE 447:
 		_T765:
-			__asm        jmp    _LOOP_482;
 	}
 // LINE 448:
 _T76a:
@@ -9633,7 +9623,6 @@ _LOOP_e6:
 			this->myShortcutListConfigurable.length--;
 			__asm        jmp    _T192;
 		_T192:
-			__asm        jmp    _LOOP_e6;
 	}
 _T197:
 	__asm        jmp    _T19c;
@@ -11132,7 +11121,6 @@ _LOOP_5d:
 			__asm        jmp    _T12a;
 		// LINE 1460:
 		_T12a:
-			__asm        jmp    _LOOP_5d;
 	}
 // LINE 1463:
 // Block end:
@@ -11258,7 +11246,6 @@ _LOOP_18a:
 			__asm        jmp    _T273;
 		// LINE 1478:
 		_T273:
-			__asm        jmp    _LOOP_18a;
 	}
 // LINE 1481:
 // Block end:
@@ -11396,7 +11383,6 @@ _LOOP_2a:
 			__asm        jmp    _T164;
 		// LINE 1505:
 		_T164:
-			__asm        jmp    _LOOP_2a;
 	}
 // LINE 1506:
 _T169:
@@ -11762,7 +11748,6 @@ _LOOP_1aa:
 			__asm        dec    dword ptr [eax+4];
 			__asm        jmp    _T28c;
 		_T28c:
-			__asm        jmp    _LOOP_1aa;
 	}
 _T291:
 	__asm        jmp    _T296;
@@ -12159,7 +12144,6 @@ _LOOP_483:
 			__asm        jmp    _T88e;
 		// LINE 1646:
 		_T88e:
-			__asm        jmp    _LOOP_483;
 	}
 // LINE 1649:
 // Block end:
@@ -12364,7 +12348,6 @@ _LOOP_9e6:
 			__asm        jmp    _Tb30;
 		// LINE 1684:
 		_Tb30:
-			__asm        jmp    _LOOP_9e6;
 	}
 // LINE 1687:
 // Block end:
@@ -12465,7 +12448,6 @@ _LOOP_39:
 			__asm        jmp    _T101;
 		// LINE 1707:
 		_T101:
-			__asm        jmp    _LOOP_39;
 	}
 // LINE 1708:
 _T106:
@@ -12646,7 +12628,6 @@ _LOOP_ef:
 			this->myInputDeviceStringIDAssociationList.length--;
 			__asm        jmp    _T1e4;
 		_T1e4:
-			__asm        jmp    _LOOP_ef;
 	}
 _T1e9:
 	__asm        jmp    _T1ee;
@@ -13660,7 +13641,6 @@ _LOOP_2c:
 			__asm        jmp    _T5d7;
 		// LINE 1796:
 		_T5d7:
-			__asm        jmp    _LOOP_2c;
 	}
 // LINE 1797:
 _T5dc:
@@ -15145,7 +15125,6 @@ _LOOP_187:
 			__asm        jmp    _T289;
 		// LINE 2012:
 		_T289:
-			__asm        jmp    _LOOP_187;
 	}
 // LINE 2014:
 _T28e:
@@ -15313,7 +15292,6 @@ _LOOP_2c2:
 					__asm        jmp    _T440;
 				// LINE 2028:
 				_T440:
-					__asm        jmp    _LOOP_36b;
 			}
 		// LINE 2029:
 		_T445:
@@ -15356,7 +15334,6 @@ _LOOP_2c2:
 			__asm        jmp    _T4bc;
 		// LINE 2034:
 		_T4bc:
-			__asm        jmp    _LOOP_2c2;
 	}
 // LINE 2035:
 _T4c1:

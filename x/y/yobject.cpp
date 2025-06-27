@@ -9250,7 +9250,6 @@ _LOOP_187:
 			return 0x0;
 		// LINE 1407:
 		_T301:
-			__asm        jmp    _LOOP_187;
 	}
 // LINE 1408:
 	doAssert(0x8c085, 0x5ba5f4, 0x580, 0x5ba60c);
@@ -15871,8 +15870,6 @@ _LOOP_1c:
 			__asm        movsx  eax, word ptr [ebp-0x18];
 			__asm        cmp    eax, 5;
 			__asm        jge    _T91;
-		// LINE 2622:
-			__asm        jmp    _LOOP_1c;
 	}
 // LINE 2623:
 _T91:
@@ -16253,7 +16250,6 @@ _LOOP_401:
 		_T4c3:
 			__asm        jmp    _T4d9;
 		_T4c8:
-			__asm        jmp    _LOOP_401;
 	}
 _T4cd:
 	__asm        mov    dword ptr [ebp-0x38], 0;

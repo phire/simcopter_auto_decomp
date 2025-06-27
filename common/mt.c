@@ -719,14 +719,12 @@ __WHILE_06:
 	while ((a < 0x0)) {
 
 			a += 0xe100000;
-			__asm        jmp    __WHILE_06;
 	}
 // LINE 386:
 __WHILE_1c:
 	while ((a > 0xe100000)) {
 
 			a -= 0xe100000;
-			__asm        jmp    __WHILE_1c;
 	}
 // LINE 387:
 _T35:

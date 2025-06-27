@@ -6359,7 +6359,6 @@ _LOOP_e5:
 			__asm        jmp    _T141;
 		// LINE 2990:
 		_T13c:
-			__asm        jmp    _LOOP_e5;
 	}
 // LINE 2991:
 _T141:
@@ -6457,7 +6456,6 @@ _LOOP_21c:
 			__asm        jmp    _T27a;
 		// LINE 3038:
 		_T275:
-			__asm        jmp    _LOOP_21c;
 	}
 // LINE 3039:
 _T27a:
@@ -6848,7 +6846,6 @@ _LOOP_501:
 			__asm        fstp   ydist;
 		// LINE 3187:
 		_T79f:
-			__asm        jmp    _LOOP_501;
 	}
 // LINE 3190:
 _T7a4:
@@ -6968,10 +6965,8 @@ _FOR_a7:
 					__asm        jne    _T18c;
 				// LINE 3264:
 					x_last++;
-					__asm        jmp    __WHILE_160;
 				// LINE 3264:
 					x_last++;
-					__asm        jmp    __WHILE_160;
 				// LINE 3265:
 				_T18c:
 					x_last--;
@@ -7084,10 +7079,8 @@ _FOR_a7:
 					__asm        jne    _T322;
 				// LINE 3307:
 					x_last--;
-					__asm        jmp    __WHILE_2f6;
 				// LINE 3307:
 					x_last--;
-					__asm        jmp    __WHILE_2f6;
 				// LINE 3308:
 				_T322:
 					x_last++;
@@ -7180,7 +7173,6 @@ _FOR_a7:
 					__asm        jae    __WHILE_469;
 				// LINE 3347:
 					lcell -= 0x8;
-					__asm        jmp    __WHILE_445;
 			}
 		// LINE 3348:
 		__WHILE_469:
@@ -7191,7 +7183,6 @@ _FOR_a7:
 					__asm        jae    _T48d;
 				// LINE 3349:
 					rcell -= 0x8;
-					__asm        jmp    __WHILE_469;
 			}
 		// LINE 3350:
 		_T48d:
@@ -7314,10 +7305,8 @@ _FOR_a5:
 					__asm        jne    _T18c;
 
 					y_last++;
-					__asm        jmp    __WHILE_160;
 
 					y_last++;
-					__asm        jmp    __WHILE_160;
 				// LINE 3415:
 				_T18c:
 					y_last--;
@@ -7430,10 +7419,8 @@ _FOR_a5:
 					__asm        jne    _T324;
 
 					y_last--;
-					__asm        jmp    __WHILE_2f8;
 
 					y_last--;
-					__asm        jmp    __WHILE_2f8;
 				// LINE 3455:
 				_T324:
 					y_last++;
@@ -7526,7 +7513,6 @@ _FOR_a5:
 					__asm        jae    __WHILE_46a;
 
 					tcell -= 0x8;
-					__asm        jmp    __WHILE_447;
 			}
 		// LINE 3491:
 		__WHILE_46a:
@@ -7537,7 +7523,6 @@ _FOR_a5:
 					__asm        jae    _T48d;
 
 					bcell -= 0x8;
-					__asm        jmp    __WHILE_46a;
 			}
 		// LINE 3492:
 		_T48d:
@@ -7576,7 +7561,6 @@ __WHILE_34:
 			__asm        jae    _T58;
 
 			edge -= 0x8;
-			__asm        jmp    __WHILE_34;
 	}
 // LINE 3533:
 _T58:
@@ -7668,10 +7652,8 @@ _FOR_aa:
 			__asm        jne    _T1b8;
 
 			x++;
-			__asm        jmp    __WHILE_18c;
 
 			x++;
-			__asm        jmp    __WHILE_18c;
 		// LINE 3566:
 		_T1b8:
 			x--;
@@ -7775,10 +7757,8 @@ _FOR_22e:
 			__asm        jne    _T33c;
 
 			x--;
-			__asm        jmp    __WHILE_310;
 
 			x--;
-			__asm        jmp    __WHILE_310;
 		// LINE 3601:
 		_T33c:
 			x++;
@@ -7860,10 +7840,8 @@ __WHILE_433:
 	__asm        jne    _T46a;
 
 	edge->x += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir));
-	__asm        jmp    __WHILE_433;
 
 	edge->x += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir));
-	__asm        jmp    __WHILE_433;
 // LINE 3630:
 _T46a:
 	how_deep--;
@@ -7890,7 +7868,6 @@ __WHILE_19:
 			__asm        jae    _T3c;
 
 			edge -= 0x8;
-			__asm        jmp    __WHILE_19;
 	}
 // LINE 3645:
 _T3c:
@@ -7980,10 +7957,8 @@ _FOR_89:
 			__asm        jne    _T197;
 
 			y++;
-			__asm        jmp    __WHILE_16b;
 
 			y++;
-			__asm        jmp    __WHILE_16b;
 		// LINE 3673:
 		_T197:
 			y--;
@@ -8087,10 +8062,8 @@ _FOR_210:
 			__asm        jne    _T31e;
 
 			y--;
-			__asm        jmp    __WHILE_2f2;
 
 			y--;
-			__asm        jmp    __WHILE_2f2;
 		// LINE 3708:
 		_T31e:
 			y++;
@@ -8172,10 +8145,8 @@ __WHILE_416:
 	__asm        jne    __RETURN;
 
 	edge->y += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir));
-	__asm        jmp    __WHILE_416;
 
 	edge->y += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir));
-	__asm        jmp    __WHILE_416;
 // LINE 3738:
 __RETURN:
 }
@@ -10018,7 +9989,6 @@ _LOOP_53:
 			return;
 		// LINE 4529:
 		_T168:
-			__asm        jmp    _LOOP_53;
 	}
 // LINE 4530:
 }

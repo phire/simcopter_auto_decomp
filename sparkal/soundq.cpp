@@ -1388,7 +1388,6 @@ _LOOP_64:
 			this->mySoundQueueItemList.length--;
 			__asm        jmp    _T10d;
 		_T10d:
-			__asm        jmp    _LOOP_64;
 	}
 _T112:
 	__asm        jmp    _T117;
@@ -1742,7 +1741,6 @@ _LOOP_aa:
 			__asm        jmp    _T2a0;
 		// LINE 215:
 		_T2a0:
-			__asm        jmp    _LOOP_aa;
 	}
 // LINE 217:
 // Block end:

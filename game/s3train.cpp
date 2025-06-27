@@ -7749,7 +7749,6 @@ _LOOP_197:
 			__asm        jmp    _T43a;
 		// LINE 3932:
 		_T435:
-			__asm        jmp    _LOOP_197;
 	}
 // LINE 3935:
 _T43a:
@@ -8148,7 +8147,6 @@ _LOOP_3b:
 			__asm        jmp    _T2de;
 		// LINE 4096:
 		_T2d9:
-			__asm        jmp    _LOOP_3b;
 	}
 // LINE 4099:
 _T2de:

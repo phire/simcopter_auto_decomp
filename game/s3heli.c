@@ -10459,7 +10459,6 @@ _LOOP_7a:
 			return;
 		// LINE 5334:
 		_T234:
-			__asm        jmp    _LOOP_7a;
 	}
 // LINE 5335:
 }

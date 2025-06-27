@@ -977,7 +977,6 @@ _LOOP_68:
 			this->myHotSpots.length--;
 			__asm        jmp    _T189;
 		_T189:
-			__asm        jmp    _LOOP_68;
 	}
 _T18e:
 	__asm        jmp    _T193;
@@ -2807,8 +2806,6 @@ _LOOP_31:
 		// LINE 302:
 		_Tf1:
 			i++;
-		// LINE 303:
-			__asm        jmp    _LOOP_31;
 	}
 // LINE 304:
 _Tf9:

@@ -3624,7 +3624,6 @@ _LOOP_81:
 			__asm        jmp    _T1c3;
 		// LINE 782:
 		_T1c3:
-			__asm        jmp    _LOOP_81;
 	}
 // LINE 783:
 _T1c8:

@@ -186,7 +186,6 @@ _LOOP_92:
 			__asm        jmp    exit;
 		// LINE 155:
 		_T170:
-			__asm        jmp    _LOOP_92;
 	}
 // LINE 158:
 exit:
@@ -1214,7 +1213,6 @@ _FOR_b2:
 	for (i = 0x1; (reinterpret_cast<int16_t>(i) <= 0x3); i++) {
 		// LINE 527:
 			GraphMax[reinterpret_cast<int16_t>(i)] = GraphMax[0];
-			__asm        jmp    _FOR_NEXT_b2;
 	}
 // LINE 528:
 __RETURN:
@@ -3460,7 +3458,6 @@ _FOR_41a:
 		// LINE 1352:
 			MiscInfo[reinterpret_cast<int16_t>(ix)] = ZonePop[reinterpret_cast<int16_t>(i)];
 			ix++;
-			__asm        jmp    _FOR_NEXT_41a;
 	}
 // LINE 1353:
 _FOR_459:
@@ -3977,7 +3974,6 @@ _FOR_e43:
 	for (; (reinterpret_cast<int16_t>(ix) < 0x4b0); ix++) {
 		// LINE 1477:
 			MiscInfo[reinterpret_cast<int16_t>(ix)] = 0x0;
-			__asm        jmp    _FOR_NEXT_e43;
 	}
 // LINE 1479:
 _Te6c:
@@ -5671,10 +5667,8 @@ __WHILE_db:
 	__asm        je     _Tf2;
 // LINE 2294:
 	s--;
-	__asm        jmp    __WHILE_db;
 // LINE 2294:
 	s--;
-	__asm        jmp    __WHILE_db;
 // LINE 2295:
 _Tf2:
 	s[1] = 0x0;

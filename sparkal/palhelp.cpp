@@ -592,7 +592,6 @@ _FOR_151:
 					__asm        cmp    [ebp-0x45C], eax;
 					__asm        jae    _T43d;
 				_T438:
-					__asm        jmp    _LOOP_30a;
 			}
 		// LINE 145:
 		_T43d:
@@ -892,7 +891,6 @@ _FOR_151:
 					__asm        cmp    lDelayTime, eax;
 					__asm        jbe    _T419;
 				_T414:
-					__asm        jmp    _LOOP_2e6;
 			}
 		// LINE 234:
 		_T419:
@@ -1223,7 +1221,6 @@ _FOR_151:
 					__asm        cmp    [ebp-0x460], eax;
 					__asm        jae    _T46c;
 				_T467:
-					__asm        jmp    _LOOP_339;
 			}
 		// LINE 327:
 		_T46c:
@@ -1648,7 +1645,6 @@ _FOR_1c7:
 					__asm        cmp    [ebp-0x70], eax;
 					__asm        jae    _T4b3;
 				_T4ae:
-					__asm        jmp    _LOOP_3d4;
 			}
 		// LINE 442:
 		_T4b3:

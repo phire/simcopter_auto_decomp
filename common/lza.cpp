@@ -329,7 +329,6 @@ _FOR_d8:
 	for (i = 0x1; (i <= 0x3c); i++) {
 
 			InsertNode(forest, (r - i));
-			__asm        jmp    _FOR_NEXT_d8;
 	}
 // LINE 544:
 _Tfd:
@@ -676,7 +675,6 @@ _LOOP_61:
 			forest->match_position = temp;
 		// LINE 254:
 		_T1f1:
-			__asm        jmp    _LOOP_61;
 	}
 // LINE 255:
 _T1f6:
@@ -1074,8 +1072,6 @@ _LOOP_6e:
 			model->low += model->low;
 		// LINE 378:
 			model->high += model->high;
-		// LINE 379:
-			__asm        jmp    _LOOP_6e;
 	}
 // LINE 380:
 _T153:
@@ -1384,8 +1380,6 @@ _LOOP_61:
 			model->low += model->low;
 		// LINE 405:
 			model->high += model->high;
-		// LINE 406:
-			__asm        jmp    _LOOP_61;
 	}
 // LINE 408:
 _T146:
@@ -1902,8 +1896,6 @@ _LOOP_8d:
 			__asm        lea    eax, [eax+ecx*2];
 			__asm        mov    ecx, model;
 			__asm        mov    [ecx+8], eax;
-		// LINE 487:
-			__asm        jmp    _LOOP_8d;
 	}
 // LINE 488:
 _T14a:
@@ -2060,8 +2052,6 @@ _LOOP_8d:
 			__asm        lea    eax, [eax+ecx*2];
 			__asm        mov    ecx, model;
 			__asm        mov    [ecx+8], eax;
-		// LINE 518:
-			__asm        jmp    _LOOP_8d;
 	}
 // LINE 519:
 _T14a:

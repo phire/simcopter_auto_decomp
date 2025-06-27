@@ -3850,7 +3850,6 @@ _LOOP_5d9:
 			__asm        jmp    _Tccd;
 		// LINE 299:
 		_Tccd:
-			__asm        jmp    _LOOP_5d9;
 	}
 // LINE 305:
 _Tcd2:
@@ -4892,7 +4891,6 @@ _LOOP_533:
 			__asm        jmp    _Tb30;
 		// LINE 408:
 		_Tb30:
-			__asm        jmp    _LOOP_533;
 	}
 // LINE 412:
 _Tb35:
@@ -5396,7 +5394,6 @@ _LOOP_26:
 			__asm        jmp    _T161;
 		// LINE 454:
 		_T161:
-			__asm        jmp    _LOOP_26;
 	}
 // LINE 455:
 _T166:
@@ -5707,7 +5704,6 @@ _LOOP_40:
 			return (iterator.node + 0x8);
 		// LINE 503:
 		_T89:
-			__asm        jmp    _LOOP_40;
 	}
 // LINE 504:
 _T8e:
