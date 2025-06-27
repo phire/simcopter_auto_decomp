@@ -585,7 +585,7 @@ _T211:
 //  [0, 0, 0, 1, 2, 2, 3, 4, 4, 5, 15, 15, 6, 6, 6, 15, 7, 15, 8, 9, 9, 10, 15, 15, 15, 15, 15, 15, 15, 15, 11, 15, 12, 13, 13, 14, 14]
 // LINE 104:
 _T29f:
-	s->ostream::operator<<(buf[0], buf1[0])->ostream::operator<<(buf1[0]);
+	s->ostream::operator<<(buf[0])->ostream::operator<<(buf1[0]);
 // LINE 105:
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0x118], eax;
