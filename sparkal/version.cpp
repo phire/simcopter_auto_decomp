@@ -96,12 +96,7 @@ void Version::Version() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3640];
 // LINE 37:
-	__asm        lea    eax, dwVersionInfoHandle;
-	__asm        push   eax;
-	__asm        lea    eax, szFileName[0];
-	__asm        push   eax;
-	__asm        call   _GetFileVersionInfoSizeA@8;
-	__asm        mov    dwVersionInfoSize, eax;
+	dwVersionInfoSize = GetFileVersionInfoSizeA(szFileName[0], dwVersionInfoHandle);
 // LINE 38:
 	__asm        cmp    dwVersionInfoSize, 0;
 	__asm        je     _T120;
@@ -117,7 +112,7 @@ void Version::Version() {
 	__asm        push   eax;
 	__asm        lea    eax, szFileName[0];
 	__asm        push   eax;
-	__asm        call   _GetFileVersionInfoA@16;
+	__asm        call   GetFileVersionInfoA;
 	__asm        test   eax, eax;
 	__asm        je     _T120;
 // LINE 42:
@@ -130,7 +125,7 @@ void Version::Version() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   _VerQueryValueA@16;
+	__asm        call   VerQueryValueA;
 	__asm        test   eax, eax;
 	__asm        jne    _T120;
 // LINE 44:
@@ -206,17 +201,7 @@ _T29:
 	__asm        call   dword ptr ds:[0x6C3858];
 	__asm        add    esp, 0x14;
 // LINE 95:
-	__asm        lea    eax, vSize;
-	__asm        push   eax;
-	__asm        mov    eax, szName;
-	__asm        push   eax;
-	__asm        lea    eax, subBlockName[0];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   _VerQueryValueA@16;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = VerQueryValueA(this->lpFVData, subBlockName[0], szName, vSize);
 // LINE 96:
 	return nReturnValue;
 // LINE 98:
@@ -253,17 +238,7 @@ _T29:
 	__asm        call   dword ptr ds:[0x6C3858];
 	__asm        add    esp, 0x14;
 // LINE 118:
-	__asm        lea    eax, vSize;
-	__asm        push   eax;
-	__asm        mov    eax, szVersion;
-	__asm        push   eax;
-	__asm        lea    eax, subBlockName[0];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   _VerQueryValueA@16;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = VerQueryValueA(this->lpFVData, subBlockName[0], szVersion, vSize);
 // LINE 119:
 	return nReturnValue;
 // LINE 121:
@@ -300,17 +275,7 @@ _T29:
 	__asm        call   dword ptr ds:[0x6C3858];
 	__asm        add    esp, 0x14;
 // LINE 142:
-	__asm        lea    eax, vSize;
-	__asm        push   eax;
-	__asm        mov    eax, szCopyright;
-	__asm        push   eax;
-	__asm        lea    eax, subBlockName[0];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   _VerQueryValueA@16;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = VerQueryValueA(this->lpFVData, subBlockName[0], szCopyright, vSize);
 // LINE 143:
 	return nReturnValue;
 // LINE 145:
@@ -347,17 +312,7 @@ _T29:
 	__asm        call   dword ptr ds:[0x6C3858];
 	__asm        add    esp, 0x14;
 // LINE 165:
-	__asm        lea    eax, vSize;
-	__asm        push   eax;
-	__asm        mov    eax, szVersion;
-	__asm        push   eax;
-	__asm        lea    eax, subBlockName[0];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   _VerQueryValueA@16;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = VerQueryValueA(this->lpFVData, subBlockName[0], szVersion, vSize);
 // LINE 166:
 	return nReturnValue;
 // LINE 168:
@@ -377,16 +332,7 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 	return 0x0;
 // LINE 195:
 _T20:
-	__asm        lea    eax, vSize;
-	__asm        push   eax;
-	__asm        lea    eax, vsFixedFileInfo;
-	__asm        push   eax;
-	__asm        push   0x598658;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   _VerQueryValueA@16;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = VerQueryValueA(this->lpFVData, 0x598658, vsFixedFileInfo, vSize);
 // LINE 196:
 	__asm        cmp    nReturnValue, 0;
 	__asm        jne    _T50;

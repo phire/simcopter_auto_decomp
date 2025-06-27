@@ -436,10 +436,7 @@ void SoundSystem::SoundSystem() {
 	__asm        cmp    SoundSystem::dwMaxWaveFormatExSize, 0;
 	__asm        jne    _T30;
 // LINE 91:
-	__asm        push   0x597E58;
-	__asm        push   0x32;
-	__asm        push   0;
-	__asm        call   _acmMetrics@12;
+	acmMetrics(0x0, 0x32, 0x597e58);
 // LINE 93:
 _T30:
 	this->primarySound = 0x0;
