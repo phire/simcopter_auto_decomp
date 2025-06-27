@@ -2942,10 +2942,34 @@ __WHILE_d1:
 // LINE 1258:
 _T105:
 	y++;
+// LINE 1261:
+_FOR_113:
+	i = x;
+	__asm        jmp    _FOR_COND_113;
 _FOR_NEXT_113:
 	i++;
+_FOR_COND_113:
+	__asm        mov    eax, fd;
+	__asm        mov    eax, [eax+0x98];
+	__asm        mov    eax, [eax];
+	__asm        movsx  eax, word ptr [eax+8];
+	__asm        add    eax, x;
+	__asm        cmp    eax, i;
+	__asm        jle    _T186;
+// LINE 1262:
+_FOR_13c:
+	j = y;
+	__asm        jmp    _FOR_COND_13c;
 _FOR_NEXT_13c:
 	j++;
+_FOR_COND_13c:
+	__asm        mov    eax, fd;
+	__asm        mov    eax, [eax+0x98];
+	__asm        mov    eax, [eax];
+	__asm        movsx  eax, word ptr [eax+8];
+	__asm        add    eax, y;
+	__asm        cmp    eax, j;
+	__asm        jle    _T181;
 // LINE 1264:
 	__asm        mov    eax, i;
 	__asm        mov    eax, BuildMap[eax*4];
@@ -2959,7 +2983,7 @@ _FOR_NEXT_13c:
 // LINE 1266:
 	__asm        jmp    _FOR_NEXT_13c;
 _T181:
-_T181:
+	__asm        jmp    _FOR_NEXT_113;
 // LINE 1268:
 _T186:
 	__asm        jmp    _T1c5;

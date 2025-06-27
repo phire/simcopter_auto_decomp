@@ -253,8 +253,18 @@ public:
 class cCopterAnim * cCopterBody::GetPrivateAnim(unsigned long animName) {
 	/*bp-0x4*/   short count;
 
+// LINE 1943:
+_FOR_17:
+	count = 0x0;
+	__asm        jmp    _FOR_COND_17;
 _FOR_NEXT_17:
 	count++;
+_FOR_COND_17:
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2C];
+	__asm        movsx  ecx, count;
+	__asm        cmp    [eax+0x10], ecx;
+	__asm        jle    _T27a;
 // Block start:
 	/*bp-0x8*/   /*unpacked*/ struct AnimLookup *al;
 	__asm        mov    eax, this;
@@ -434,10 +444,7 @@ _T26d:
 // Block end:
 // Block end:
 _T275:
-// LINE 1950:
-// Block end:
-// Block end:
-_T275:
+	__asm        jmp    _FOR_NEXT_17;
 // LINE 1951:
 _T27a:
 	return 0x0;
@@ -453,8 +460,18 @@ void cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	__asm        jne    _FOR_3d;
 
 	doAssert(0x8c085, 0x5be67c, 0x80e, 0x5be6cc);
+// LINE 2063:
+_FOR_3d:
+	count = 0x0;
+	__asm        jmp    _FOR_COND_3d;
 _FOR_NEXT_3d:
 	count++;
+_FOR_COND_3d:
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x28];
+	__asm        movsx  ecx, count;
+	__asm        cmp    [eax+0x10], ecx;
+	__asm        jle    _T181;
 // Block start:
 	/*bp-0x8*/   /*unpacked*/ struct cCopterBody::Part *part;
 	__asm        mov    eax, this;
@@ -543,9 +560,7 @@ _T172:
 // LINE 2080:
 // Block end:
 _T17c:
-// LINE 2080:
-// Block end:
-_T17c:
+	__asm        jmp    _FOR_NEXT_3d;
 // LINE 2081:
 _T181:
 	return;
@@ -687,8 +702,18 @@ struct cCopterBody::Part * cCopterBody::GetPartByName(unsigned long partname) {
 	/*bp-0x4*/   short count;
 	/*bp-0x8*/   /*unpacked*/ struct cCopterBody::Part *part;
 
+// LINE 2093:
+_FOR_17:
+	count = 0x0;
+	__asm        jmp    _FOR_COND_17;
 _FOR_NEXT_17:
 	count++;
+_FOR_COND_17:
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x28];
+	__asm        movsx  ecx, count;
+	__asm        cmp    [eax+0x10], ecx;
+	__asm        jle    _Te3;
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
@@ -736,8 +761,7 @@ _Tb2:
 	return part;
 // LINE 2097:
 _Tde:
-// LINE 2097:
-_Tde:
+	__asm        jmp    _FOR_NEXT_17;
 // LINE 2098:
 _Te3:
 	return 0x0;

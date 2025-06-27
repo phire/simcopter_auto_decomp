@@ -1213,8 +1213,17 @@ _T239:
 	__asm        jmp    _T2ab;
 _T2ab:
 	nPosition = _tell(fileImage->Handle);
+// LINE 352:
+_FOR_2cc:
+	i = 0x0;
+	__asm        jmp    _FOR_COND_2cc;
 _FOR_NEXT_2cc:
 	i++;
+_FOR_COND_2cc:
+	__asm        mov    eax, biHeader.biHeight;
+	__asm        dec    eax;
+	__asm        cmp    eax, i;
+	__asm        jle    _T34a;
 
 	__asm        mov    eax, biHeader.biWidth;
 	__asm        mov    [ebp-0x470], eax;

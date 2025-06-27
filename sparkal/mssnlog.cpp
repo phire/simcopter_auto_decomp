@@ -2744,8 +2744,18 @@ _T100:
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        cmp    [eax+0x44], ecx;
 	__asm        jae    _T3ec;
+// LINE 331:
+_FOR_12f:
+	i = 0x0;
+	__asm        jmp    _FOR_COND_12f;
 _FOR_NEXT_12f:
 	i++;
+_FOR_COND_12f:
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x48];
+	__asm        dec    eax;
+	__asm        cmp    eax, i;
+	__asm        jle    _T32d;
 // LINE 332:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax*8+8];
@@ -2909,7 +2919,7 @@ _T319:
 _T323:
 	__asm        jmp    _T328;
 _T328:
-_T328:
+	__asm        jmp    _FOR_NEXT_12f;
 // LINE 333:
 _T32d:
 	this->lCurrentDisplayedMessageCount--;
@@ -3054,8 +3064,18 @@ _T27:
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        cmp    [eax+0x48], ecx;
 	__asm        jl     _T369;
+// LINE 363:
+_FOR_4b:
+	i = 0x0;
+	__asm        jmp    _FOR_COND_4b;
 _FOR_NEXT_4b:
 	i++;
+_FOR_COND_4b:
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC];
+	__asm        dec    eax;
+	__asm        cmp    eax, i;
+	__asm        jle    _T178;
 // LINE 364:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax*8+8];
@@ -3137,7 +3157,7 @@ _T161:
 _T16e:
 	__asm        jmp    _T173;
 _T173:
-_T173:
+	__asm        jmp    _FOR_NEXT_4b;
 _T178:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];

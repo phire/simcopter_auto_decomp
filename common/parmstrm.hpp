@@ -761,8 +761,17 @@ __RETURN:
 void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
 	/*bp-0x4*/   int32_t loop;
 
+// LINE 366:
+_FOR_18:
+	loop = 0x0;
+	__asm        jmp    _FOR_COND_18;
 _FOR_NEXT_18:
 	loop++;
+_FOR_COND_18:
+	__asm        mov    eax, this;
+	__asm        movsx  eax, word ptr [eax+0x10];
+	__asm        cmp    eax, loop;
+	__asm        jl     _Tc8;
 // LINE 368:
 	__asm        jmp    _T30;
 _T30:
@@ -1900,20 +1909,21 @@ long cGZXParamBitstream<t_alloc,t_free>::Size() {
 
 // LINE 355:
 	retVal = 0x0;
+// LINE 356:
+_FOR_1f:
+	loop = 0x0;
+	__asm        jmp    _FOR_COND_1f;
 _FOR_NEXT_1f:
 	loop++;
+_FOR_COND_1f:
+	__asm        mov    eax, this;
+	__asm        movsx  eax, word ptr [eax+0x10];
+	__asm        cmp    eax, loop;
+	__asm        je     _T54;
 // LINE 357:
 	__asm        jmp    _T37;
 _T37:
 	__asm        jmp    _T3c;
-_T3c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x16];
-	__asm        mov    ecx, loop;
-	__asm        mov    eax, [eax+ecx*8+4];
-	__asm        add    eax, retVal;
-	__asm        mov    retVal, eax;
-	__asm        jmp    _FOR_NEXT_1f;
 _T3c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x16];

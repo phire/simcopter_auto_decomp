@@ -1199,6 +1199,13 @@ _FOR_96:
 	__asm        jmp    _FOR_COND_96;
 _FOR_NEXT_96:
 	count++;
+_FOR_COND_96:
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x14];
+	__asm        dec    eax;
+	__asm        movsx  ecx, count;
+	__asm        cmp    eax, ecx;
+	__asm        jle    _Tfb;
 // LINE 420:
 	__asm        jmp    _Tb2;
 _Tb2:

@@ -312,8 +312,18 @@ void Behavior::StdTreeSwizzle(/*unpacked*/ struct Behavior::Tree *tree, long siz
 
 // LINE 49:
 	Swizzle2(tree);
+// LINE 50:
+_FOR_20:
+	count = 0x0;
+	__asm        jmp    _FOR_COND_20;
 _FOR_NEXT_20:
 	count++;
+_FOR_COND_20:
+	__asm        mov    eax, tree;
+	__asm        movsx  eax, word ptr [eax];
+	__asm        movsx  ecx, count;
+	__asm        cmp    eax, ecx;
+	__asm        jle    _T7b;
 // LINE 51:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*2];

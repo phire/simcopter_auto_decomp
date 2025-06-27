@@ -3454,8 +3454,17 @@ _T71:
 // LINE 610:
 _T9c:
 	return 0x0;
+// LINE 612:
+_FOR_ae:
+	i = 0x0;
+	__asm        jmp    _FOR_COND_ae;
 _FOR_NEXT_ae:
 	i++;
+_FOR_COND_ae:
+	__asm        movsx  eax, i;
+	__asm        movsx  eax, gszCommandLine[eax];
+	__asm        test   eax, eax;
+	__asm        je     _T212;
 // LINE 614:
 	__asm        movsx  eax, i;
 	__asm        movsx  eax, gszCommandLine[eax];
@@ -3555,8 +3564,7 @@ _T203:
 	return 0x1;
 // LINE 633:
 _T20d:
-// LINE 633:
-_T20d:
+	__asm        jmp    _FOR_NEXT_ae;
 // LINE 634:
 _T212:
 	return 0x0;

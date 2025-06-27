@@ -3523,8 +3523,17 @@ long DigitalSound::Stop() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x48];
 	__asm        jmp    __RETURN;
+// LINE 1419:
+_FOR_43:
+	i = 0x0;
+	__asm        jmp    _FOR_COND_43;
 _FOR_NEXT_43:
 	i++;
+_FOR_COND_43:
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
+	__asm        je     _T80;
 
 	__asm        cmp    i, 8;
 	__asm        jge    _T80;

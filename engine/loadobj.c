@@ -3445,8 +3445,17 @@ _T14e:
 	fh = ptr;
 // LINE 2287:
 	ptr += 0x30;
+// LINE 2288:
+_FOR_177:
+	i = 0x0;
+	__asm        jmp    _FOR_COND_177;
 _FOR_NEXT_177:
 	i++;
+_FOR_COND_177:
+	__asm        mov    eax, nverts;
+	__asm        dec    eax;
+	__asm        cmp    eax, i;
+	__asm        jle    _T205;
 // LINE 2291:
 	iptr = ptr;
 // LINE 2292:

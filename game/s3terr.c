@@ -5423,8 +5423,17 @@ _FOR_2d:
 			x = (citysize + i);
 		// LINE 1551:
 			z = (citysize + i);
+		// LINE 1553:
+		_FOR_53:
+			__asm        jmp    _FOR_COND_53;
 		_FOR_NEXT_53:
 			z--;
+		_FOR_COND_53:
+			__asm        mov    eax, i;
+			__asm        neg    eax;
+			__asm        dec    eax;
+			__asm        cmp    eax, z;
+			__asm        jg     _T1e1;
 		// LINE 1555:
 			__asm        mov    eax, G_tmask;
 			__asm        and    eax, z;
@@ -5543,8 +5552,17 @@ _FOR_2d:
 			x = (citysize + i);
 		// LINE 1564:
 			z = (citysize + i);
+		// LINE 1566:
+		_FOR_1f8:
+			__asm        jmp    _FOR_COND_1f8;
 		_FOR_NEXT_1f8:
 			x--;
+		_FOR_COND_1f8:
+			__asm        mov    eax, i;
+			__asm        neg    eax;
+			__asm        dec    eax;
+			__asm        cmp    eax, x;
+			__asm        jg     _T387;
 		// LINE 1568:
 			__asm        mov    eax, G_tmask;
 			__asm        and    eax, z;

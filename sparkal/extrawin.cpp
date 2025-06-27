@@ -12241,8 +12241,18 @@ _T14b:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
+// LINE 1617:
+_FOR_1ac:
+	i = 0x1;
+	__asm        jmp    _FOR_COND_1ac;
 _FOR_NEXT_1ac:
 	i++;
+_FOR_COND_1ac:
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xB0];
+	__asm        dec    eax;
+	__asm        cmp    eax, i;
+	__asm        jle    _T359;
 // LINE 1618:
 	lCurrentXPosition = this-><PopupMenuExtra+0x20>;
 // LINE 1620:
