@@ -130,7 +130,7 @@ _FOR_12c:
 		// LINE 420:
 			__asm        mov    eax, i;
 			__asm        push   eax;
-			__asm        call   0x004D8821;
+			__asm        call   _VRGetObject;
 			__asm        add    esp, 4;
 			__asm        mov    obj, eax;
 		// LINE 421:
@@ -142,29 +142,16 @@ _FOR_12c:
 			ERexit(msg[0]);
 		// LINE 428:
 		_T17b:
-			__asm        lea    eax, oinfo.Faces;
-			__asm        push   eax;
-			__asm        mov    eax, obj;
-			__asm        push   eax;
-			__asm        call   0x004D8859;
-			__asm        add    esp, 8;
+			_VRGetObjInfo(obj, oinfo.Faces);
 		// LINE 432:
-			__asm        push   0;
-			__asm        mov    eax, obj;
-			__asm        push   eax;
-			__asm        call   0x004D6970;
-			__asm        add    esp, 8;
+			_VRSetObjAtt(obj, 0x0);
 		// LINE 435:
 			__asm        mov    eax, i;
 			__asm        mov    [ebp-0xB0], eax;
 			__asm        jmp    _T1c4;
 		// LINE 509:
 		_T1a7:
-			__asm        push   2;
-			__asm        mov    eax, obj;
-			__asm        push   eax;
-			__asm        call   0x004D6970;
-			__asm        add    esp, 8;
+			_VRSetObjAtt(obj, 0x2);
 		// LINE 510:
 			__asm        jmp    _T327;
 		// LINE 525:
@@ -213,19 +200,14 @@ _FOR_12c:
 		_T327:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
-			__asm        call   0x004D85CD;
+			__asm        call   _VRGetFirstFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 		// LINE 531:
 		_FOR_342:
 			for (j = 0x0; (oinfo.Faces > j); j++) {
 				// LINE 534:
-					__asm        lea    eax, finfo.Face;
-					__asm        push   eax;
-					__asm        mov    eax, face;
-					__asm        push   eax;
-					__asm        call   0x004D6905;
-					__asm        add    esp, 8;
+					_VRGetFaceInfo(face, finfo.Face);
 				// LINE 539:
 					__asm        cmp    finfo.Plotter, 0;
 					__asm        jne    _T372;
@@ -323,18 +305,13 @@ _FOR_12c:
 				//  [0, 17, 17, 17, 1, 17, 17, 17, 17, 17, 17, 2, 2, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 3, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 4, 4, 5, 6, 6, 7, 8, 8, 8, 8, 17, 9, 9, 9, 9, 9, 9, 9, 17, 17, 10, 10, 10, 10, 10, 10, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 11, 11, 17, 17, 17, 17, 12, 12, 12, 12, 12, 12, 12, 17, 17, 17, 17, 17, 17, 17, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 15, 15, 15, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 16]
 				// LINE 667:
 				_T5a5:
-					__asm        lea    eax, finfo.Face;
-					__asm        push   eax;
-					__asm        mov    eax, face;
-					__asm        push   eax;
-					__asm        call   0x004D6941;
-					__asm        add    esp, 8;
+					_VRSetFaceInfo(face, finfo.Face);
 				// LINE 670:
 					VRFaceSetTexColor(face);
 				// LINE 673:
 					__asm        mov    eax, face;
 					__asm        push   eax;
-					__asm        call   0x004D85F8;
+					__asm        call   _VRGetNextFace;
 					__asm        add    esp, 4;
 					__asm        mov    face, eax;
 			}
@@ -350,440 +327,440 @@ __RETURN:
 void S3ObjLinkLowRes() {
 // LINE 708:
 	__asm        push   0x13F;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x128;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 709:
 	__asm        push   0x140;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x129;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 712:
 	__asm        push   0x46;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x2C;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 713:
 	__asm        push   0x47;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x2D;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 714:
 	__asm        push   0x48;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x32;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 715:
 	__asm        push   0x49;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x33;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 716:
 	__asm        push   0x4A;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x34;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 717:
 	__asm        push   0x4B;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x35;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 718:
 	__asm        push   0x4C;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x2E;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 719:
 	__asm        push   0x4D;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x2F;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 720:
 	__asm        push   0x4E;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x30;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 721:
 	__asm        push   0x4F;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x31;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 722:
 	__asm        push   0x50;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x36;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 723:
 	__asm        push   0x51;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x37;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 724:
 	__asm        push   0x52;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x38;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 725:
 	__asm        push   0x53;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x39;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 726:
 	__asm        push   0x54;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x3A;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 730:
 	__asm        push   0x10D;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x10E;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 731:
 	__asm        push   0x10D;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x10F;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 732:
 	__asm        push   0x10D;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x110;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 733:
 	__asm        push   0x10E;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x111;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 734:
 	__asm        push   0x10E;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x112;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 735:
 	__asm        push   0x10F;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x113;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 736:
 	__asm        push   0x145;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x143;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 737:
 	__asm        push   0x146;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x144;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 740:
 	__asm        push   0x130;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x55;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 741:
 	__asm        push   0x131;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x56;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 742:
 	__asm        push   0x132;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x57;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 743:
 	__asm        push   0x133;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x58;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 744:
 	__asm        push   0x134;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x59;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 745:
 	__asm        push   0x135;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x5A;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 746:
 	__asm        push   0x136;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x5B;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 747:
 	__asm        push   0x137;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x5C;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 748:
 	__asm        push   0x138;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x5D;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 749:
 	__asm        push   0x139;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x5E;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 750:
 	__asm        push   0x13A;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x5F;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 751:
 	__asm        push   0x13B;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x60;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 752:
 	__asm        push   0x13C;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x61;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 753:
 	__asm        push   0x13D;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x62;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 754:
 	__asm        push   0x13E;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        push   0x63;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjAssignLowRes;
@@ -1060,7 +1037,7 @@ _Tba:
 	__asm        push   0x5900000;
 	__asm        mov    eax, z;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    scale, eax;
 // LINE 1010:
@@ -8914,7 +8891,7 @@ _FOR_92:
 		// LINE 4169:
 			__asm        mov    eax, i;
 			__asm        push   eax;
-			__asm        call   0x004D8821;
+			__asm        call   _VRGetObject;
 			__asm        add    esp, 4;
 			__asm        mov    obj, eax;
 		// LINE 4170:

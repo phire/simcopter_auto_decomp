@@ -236,7 +236,7 @@ _T3f:
 	__asm        mov    eax, diameter;
 	__asm        mov    [ebp-0x108], eax;
 	__asm        fimul  dword ptr [ebp-0x108];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        sub    eax, 2;
 	__asm        cmp    eax, 1;
 	__asm        jge    _T7c;
@@ -266,7 +266,7 @@ _FOR_b7:
 			__asm        mov    [ebp-0x110], eax;
 			__asm        fidiv  dword ptr [ebp-0x110];
 			__asm        fmul   G_figureShadeSpread;
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        xor    ecx, ecx;
 			__asm        mov    cl, color;
 			__asm        add    eax, ecx;
@@ -296,7 +296,7 @@ _FOR_143:
 			__asm        mov    [ebp-0x118], eax;
 			__asm        fidiv  dword ptr [ebp-0x118];
 			__asm        fmul   G_figureShadeSpread;
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        xor    ecx, ecx;
 			__asm        mov    cl, color;
 			__asm        add    eax, ecx;
@@ -491,7 +491,7 @@ _T480:
 	__asm        je     _T4b0;
 // LINE 259:
 	__asm        fld    bandSize;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        sub    eax, 2;
 	__asm        mov    ditherLimit, eax;
 // LINE 260:
@@ -506,10 +506,10 @@ __WHILE_4c4:
 	while ((i < diameter)) {
 		// LINE 265:
 			__asm        fld    bandSize;
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        mov    ebx, eax;
 			__asm        fld    bandSize;
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        mov    ecx, eax;
 			__asm        mov    eax, i;
 			__asm        cdq;
@@ -739,7 +739,7 @@ _FOR_10a:
 			__asm        fdiv   bSquared;
 			__asm        fsubr  qword ptr ds:[0x5939B0];
 			__asm        fmul   aSquared;
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        mov    eax, g_sqrtTable[eax*4];
 			__asm        mov    offset.x, eax;
 		// LINE 463:
@@ -753,7 +753,7 @@ _FOR_10a:
 			__asm        mov    [ebp-0x74], eax;
 			__asm        fild   dword ptr [ebp-0x74];
 			__asm        fmul   yStride;
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        mov    yScanLine, eax;
 		// LINE 467:
 			yLine = (centerPt.y + offset.y);
@@ -798,7 +798,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, /*unpacked*/ struct Poin
 	__asm        fild   dword ptr [ebp-0x24];
 	__asm        mov    eax, pixLine;
 	__asm        fmul   qword ptr [eax+8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    scaledOffset.x, eax;
 // LINE 537:
 	loBitmapLimit = (faceCenter.x - scaledOffset.x);
@@ -844,7 +844,7 @@ _Ta5:
 	__asm        fild   dword ptr [ebp-0x28];
 	__asm        mov    eax, pixLine;
 	__asm        fdiv   qword ptr [eax+8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, startX;
 	__asm        add    ecx, eax;
 	__asm        mov    end, ecx;
@@ -873,7 +873,7 @@ _T14b:
 	__asm        fild   dword ptr [ebp-0x2C];
 	__asm        mov    eax, pixLine;
 	__asm        fdiv   qword ptr [eax+8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, startX;
 	__asm        add    ecx, eax;
 	__asm        mov    end, ecx;
@@ -916,7 +916,7 @@ _T2f:
 	__asm        fmul   widthOverTwo;
 	__asm        fdiv   qword ptr ds:[0x5939B8];
 	__asm        fsubr  widthOverTwo;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, faceCenter;
 	__asm        mov    [ecx], eax;
 // LINE 594:
@@ -1002,7 +1002,7 @@ _T10a:
 	__asm        fmul   widthOverTwo;
 	__asm        fdiv   qword ptr ds:[0x5939B8];
 	__asm        fsubr  widthOverTwo;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, faceCenter;
 	__asm        mov    [ecx], eax;
 // LINE 627:
@@ -1100,7 +1100,7 @@ _FOR_6d:
 			__asm        mov    al, color;
 			__asm        mov    [ebp-0x84], eax;
 			__asm        fiadd  dword ptr [ebp-0x84];
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        mov    ecx, i;
 			__asm        mov    [ebp+ecx-0x1C], al;
 	}
@@ -1502,7 +1502,7 @@ _FOR_4a:
 			__asm        mov    al, color;
 			__asm        mov    [ebp-0x74], eax;
 			__asm        fiadd  dword ptr [ebp-0x74];
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        mov    ecx, i;
 			__asm        mov    [ebp+ecx-0x1C], al;
 	}
@@ -1910,7 +1910,7 @@ __WHILE_12e:
 // LINE 1031:
 _T161:
 	__asm        fld    curPatOffset;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, pixPtr;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax];
@@ -1948,7 +1948,7 @@ __WHILE_18e:
 _T1c1:
 	__asm        fld    stride2;
 	__asm        fadd   curPatOffset;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, pixPtr;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+eax];
@@ -1958,7 +1958,7 @@ _T1c1:
 	__asm        shl    ebx, 0x10;
 	__asm        fld    stride3;
 	__asm        fadd   curPatOffset;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, pixPtr;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax];
@@ -1969,7 +1969,7 @@ _T1c1:
 	__asm        add    ebx, edx;
 	__asm        fld    stride1;
 	__asm        fadd   curPatOffset;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, pixPtr;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax];
@@ -1979,7 +1979,7 @@ _T1c1:
 	__asm        shl    edx, 8;
 	__asm        add    ebx, edx;
 	__asm        fld    curPatOffset;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, pixPtr;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax];

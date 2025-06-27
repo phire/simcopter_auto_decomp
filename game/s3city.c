@@ -269,11 +269,7 @@ _T1be:
 // LINE 279:
 	S_local_rstart.z = 0x0;
 // LINE 281:
-	__asm        mov    eax, 0x6090A8;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((0x6090a8 + 0x18));
 // LINE 282:
 	S_terr_pos.loc.z = 0x0;
 	S_terr_pos.loc.y = S_terr_pos.loc.z;
@@ -387,10 +383,7 @@ void VRSetBackPlane(int32_t farZ) {
 // LINE 371:
 	G_smokey += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 373:
-	__asm        mov    eax, farZ;
-	__asm        push   eax;
-	__asm        call   0x004D7B70;
-	__asm        add    esp, 4;
+	_VRSetFarClipPlaneZ(farZ);
 // LINE 374:
 	__asm        cmp    G_daynight, 0;
 	__asm        jne    _T90;
@@ -399,10 +392,10 @@ void VRSetBackPlane(int32_t farZ) {
 	__asm        push   0x640000;
 	__asm        mov    eax, farZ;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    fogpct, eax;
 // LINE 377:
@@ -417,10 +410,10 @@ _T90:
 	__asm        push   0x640000;
 	__asm        mov    eax, farZ;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    fogpct, eax;
 // LINE 384:
@@ -435,10 +428,7 @@ _Tcc:
 	i = 0x0;
 // LINE 390:
 _Te0:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   0x004D682B;
-	__asm        add    esp, 4;
+	_VRSetClearClr(i);
 // LINE 393:
 	G_ClearColor = (i & 0xff);
 // LINE 410:
@@ -583,7 +573,7 @@ _FOR_23:
 					__asm        jg     _T199;
 				// LINE 514:
 					__asm        push   0x14F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 515:
@@ -602,7 +592,7 @@ _FOR_23:
 					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 527:
 					__asm        push   0x10D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 528:
@@ -614,7 +604,7 @@ _FOR_23:
 					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 532:
 					__asm        push   0x10E;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 533:
@@ -626,7 +616,7 @@ _FOR_23:
 					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 537:
 					__asm        push   0x10F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 538:
@@ -638,7 +628,7 @@ _FOR_23:
 					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 542:
 					__asm        push   0x110;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 543:
@@ -650,7 +640,7 @@ _FOR_23:
 					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 547:
 					__asm        push   0x111;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 548:
@@ -662,7 +652,7 @@ _FOR_23:
 					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 552:
 					__asm        push   0x112;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 553:
@@ -674,7 +664,7 @@ _FOR_23:
 					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 557:
 					__asm        push   0x113;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 558:
@@ -686,7 +676,7 @@ _FOR_23:
 					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 562:
 					__asm        push   0x143;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 563:
@@ -696,7 +686,7 @@ _FOR_23:
 				// LINE 566:
 				_T356:
 					__asm        push   0x55;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 567:
@@ -708,7 +698,7 @@ _FOR_23:
 				// LINE 571:
 				_T376:
 					__asm        push   0x56;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 572:
@@ -720,7 +710,7 @@ _FOR_23:
 				// LINE 576:
 				_T396:
 					__asm        push   0x57;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 577:
@@ -732,7 +722,7 @@ _FOR_23:
 				// LINE 581:
 				_T3b6:
 					__asm        push   0x58;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 582:
@@ -744,7 +734,7 @@ _FOR_23:
 				// LINE 586:
 				_T3d6:
 					__asm        push   0x59;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 587:
@@ -756,7 +746,7 @@ _FOR_23:
 				// LINE 591:
 				_T3f6:
 					__asm        push   0x5A;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 592:
@@ -768,7 +758,7 @@ _FOR_23:
 				// LINE 596:
 				_T416:
 					__asm        push   0x5B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 597:
@@ -780,7 +770,7 @@ _FOR_23:
 				// LINE 601:
 				_T436:
 					__asm        push   0x5C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 602:
@@ -792,7 +782,7 @@ _FOR_23:
 				// LINE 606:
 				_T456:
 					__asm        push   0x5D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 607:
@@ -804,7 +794,7 @@ _FOR_23:
 				// LINE 611:
 				_T476:
 					__asm        push   0x5E;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 612:
@@ -816,7 +806,7 @@ _FOR_23:
 				// LINE 616:
 				_T496:
 					__asm        push   0x5F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 617:
@@ -828,7 +818,7 @@ _FOR_23:
 				// LINE 621:
 				_T4b6:
 					__asm        push   0x60;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 622:
@@ -840,7 +830,7 @@ _FOR_23:
 				// LINE 626:
 				_T4d6:
 					__asm        push   0x61;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 627:
@@ -852,7 +842,7 @@ _FOR_23:
 				// LINE 631:
 				_T4f6:
 					__asm        push   0x62;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 632:
@@ -864,7 +854,7 @@ _FOR_23:
 				// LINE 636:
 				_T516:
 					__asm        push   0x63;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 637:
@@ -934,7 +924,7 @@ _FOR_23:
 					__asm        je     _T60a;
 				// LINE 662:
 					__asm        push   0x3B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 663:
@@ -944,7 +934,7 @@ _FOR_23:
 				// LINE 667:
 				_T60a:
 					__asm        push   0x1D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 669:
@@ -964,7 +954,7 @@ _FOR_23:
 					__asm        je     _T653;
 				// LINE 674:
 					__asm        push   0x3C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 675:
@@ -974,7 +964,7 @@ _FOR_23:
 				// LINE 679:
 				_T653:
 					__asm        push   0x1E;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 681:
@@ -983,7 +973,7 @@ _FOR_23:
 				// LINE 683:
 				_T665:
 					__asm        push   0x1F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 684:
@@ -993,7 +983,7 @@ _FOR_23:
 				// LINE 687:
 				_T67e:
 					__asm        push   0x20;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 688:
@@ -1003,7 +993,7 @@ _FOR_23:
 				// LINE 691:
 				_T697:
 					__asm        push   0x21;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 692:
@@ -1013,7 +1003,7 @@ _FOR_23:
 				// LINE 695:
 				_T6b0:
 					__asm        push   0x22;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 696:
@@ -1034,7 +1024,7 @@ _FOR_23:
 					__asm        je     _T700;
 				// LINE 702:
 					__asm        push   0x3D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 703:
@@ -1044,7 +1034,7 @@ _FOR_23:
 				// LINE 707:
 				_T700:
 					__asm        push   0x23;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 709:
@@ -1064,7 +1054,7 @@ _FOR_23:
 					__asm        je     _T749;
 				// LINE 714:
 					__asm        push   0x3E;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 715:
@@ -1074,7 +1064,7 @@ _FOR_23:
 				// LINE 719:
 				_T749:
 					__asm        push   0x24;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 721:
@@ -1094,7 +1084,7 @@ _FOR_23:
 					__asm        je     _T792;
 				// LINE 726:
 					__asm        push   0x3F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 727:
@@ -1104,7 +1094,7 @@ _FOR_23:
 				// LINE 731:
 				_T792:
 					__asm        push   0x25;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 733:
@@ -1124,7 +1114,7 @@ _FOR_23:
 					__asm        je     _T7db;
 				// LINE 738:
 					__asm        push   0x40;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 739:
@@ -1134,7 +1124,7 @@ _FOR_23:
 				// LINE 743:
 				_T7db:
 					__asm        push   0x26;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 745:
@@ -1154,7 +1144,7 @@ _FOR_23:
 					__asm        je     _T824;
 				// LINE 750:
 					__asm        push   0x41;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 751:
@@ -1164,7 +1154,7 @@ _FOR_23:
 				// LINE 755:
 				_T824:
 					__asm        push   0x27;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 757:
@@ -1184,7 +1174,7 @@ _FOR_23:
 					__asm        je     _T86d;
 				// LINE 762:
 					__asm        push   0x42;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 763:
@@ -1194,7 +1184,7 @@ _FOR_23:
 				// LINE 767:
 				_T86d:
 					__asm        push   0x28;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 769:
@@ -1214,7 +1204,7 @@ _FOR_23:
 					__asm        je     _T8b6;
 				// LINE 774:
 					__asm        push   0x43;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 775:
@@ -1224,7 +1214,7 @@ _FOR_23:
 				// LINE 779:
 				_T8b6:
 					__asm        push   0x29;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 781:
@@ -1244,7 +1234,7 @@ _FOR_23:
 					__asm        je     _T8ff;
 				// LINE 786:
 					__asm        push   0x44;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 787:
@@ -1254,7 +1244,7 @@ _FOR_23:
 				// LINE 791:
 				_T8ff:
 					__asm        push   0x2A;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 793:
@@ -1274,7 +1264,7 @@ _FOR_23:
 					__asm        je     _T948;
 				// LINE 798:
 					__asm        push   0x45;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 799:
@@ -1284,7 +1274,7 @@ _FOR_23:
 				// LINE 803:
 				_T948:
 					__asm        push   0x2B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 805:
@@ -1293,7 +1283,7 @@ _FOR_23:
 				// LINE 810:
 				_T95a:
 					__asm        push   0x2C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 811:
@@ -1303,7 +1293,7 @@ _FOR_23:
 				// LINE 816:
 				_T973:
 					__asm        push   0x2D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 817:
@@ -1313,7 +1303,7 @@ _FOR_23:
 				// LINE 820:
 				_T98c:
 					__asm        push   0x2E;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 821:
@@ -1323,7 +1313,7 @@ _FOR_23:
 				// LINE 824:
 				_T9a5:
 					__asm        push   0x2F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 825:
@@ -1333,7 +1323,7 @@ _FOR_23:
 				// LINE 828:
 				_T9be:
 					__asm        push   0x30;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 829:
@@ -1343,7 +1333,7 @@ _FOR_23:
 				// LINE 832:
 				_T9d7:
 					__asm        push   0x31;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 833:
@@ -1353,7 +1343,7 @@ _FOR_23:
 				// LINE 836:
 				_T9f0:
 					__asm        push   0x32;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 837:
@@ -1363,7 +1353,7 @@ _FOR_23:
 				// LINE 840:
 				_Ta09:
 					__asm        push   0x33;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 841:
@@ -1373,7 +1363,7 @@ _FOR_23:
 				// LINE 844:
 				_Ta22:
 					__asm        push   0x34;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 845:
@@ -1383,7 +1373,7 @@ _FOR_23:
 				// LINE 848:
 				_Ta3b:
 					__asm        push   0x35;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 849:
@@ -1393,7 +1383,7 @@ _FOR_23:
 				// LINE 852:
 				_Ta54:
 					__asm        push   0x36;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 853:
@@ -1403,7 +1393,7 @@ _FOR_23:
 				// LINE 856:
 				_Ta6d:
 					__asm        push   0x37;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 857:
@@ -1413,7 +1403,7 @@ _FOR_23:
 				// LINE 860:
 				_Ta86:
 					__asm        push   0x38;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 861:
@@ -1423,7 +1413,7 @@ _FOR_23:
 				// LINE 864:
 				_Ta9f:
 					__asm        push   0x39;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 865:
@@ -1433,7 +1423,7 @@ _FOR_23:
 				// LINE 868:
 				_Tab8:
 					__asm        push   0x3A;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 869:
@@ -1452,7 +1442,7 @@ _FOR_23:
 					__asm        je     _Tb04;
 				// LINE 875:
 					__asm        push   0x128;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 876:
@@ -1462,7 +1452,7 @@ _FOR_23:
 				// LINE 880:
 				_Tb04:
 					__asm        push   0x17F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 882:
@@ -1484,7 +1474,7 @@ _FOR_23:
 					__asm        je     _Tb5a;
 				// LINE 888:
 					__asm        push   0x129;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 889:
@@ -1494,7 +1484,7 @@ _FOR_23:
 				// LINE 893:
 				_Tb5a:
 					__asm        push   0x180;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 895:
@@ -1518,7 +1508,7 @@ _FOR_23:
 					__asm        je     _Tbb4;
 				// LINE 903:
 					__asm        push   0x3B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 904:
@@ -1528,13 +1518,13 @@ _FOR_23:
 				// LINE 908:
 				_Tbb4:
 					__asm        push   0x1D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 910:
 				_Tbc1:
 					__asm        push   0x2D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj2, eax;
 				// LINE 911:
@@ -1553,7 +1543,7 @@ _FOR_23:
 					__asm        je     _Tc0a;
 				// LINE 916:
 					__asm        push   0x3C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 917:
@@ -1563,13 +1553,13 @@ _FOR_23:
 				// LINE 921:
 				_Tc0a:
 					__asm        push   0x1E;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 923:
 				_Tc17:
 					__asm        push   0x2C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj2, eax;
 				// LINE 924:
@@ -1577,7 +1567,7 @@ _FOR_23:
 				// LINE 927:
 				_Tc29:
 					__asm        push   0x17D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 928:
@@ -1587,7 +1577,7 @@ _FOR_23:
 				// LINE 931:
 				_Tc45:
 					__asm        push   0x17E;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 932:
@@ -1608,7 +1598,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x64;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 939:
@@ -1629,7 +1619,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x66;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 944:
@@ -1650,7 +1640,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x68;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 949:
@@ -1671,7 +1661,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x6A;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 954:
@@ -1692,7 +1682,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x6C;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 959:
@@ -1713,7 +1703,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x6E;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 964:
@@ -1734,7 +1724,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x70;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 969:
@@ -1755,7 +1745,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x72;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 975:
@@ -1776,7 +1766,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x74;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 980:
@@ -1790,7 +1780,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 985:
 					__asm        push   0xF7;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 986:
@@ -1804,7 +1794,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 991:
 					__asm        push   0xF8;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 992:
@@ -1818,7 +1808,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 997:
 					__asm        push   0xF9;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 998:
@@ -1832,7 +1822,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1003:
 					__asm        push   0xFA;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1004:
@@ -1846,12 +1836,12 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1009:
 					__asm        push   0xF7;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1010:
 					__asm        push   0x2D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj2, eax;
 				// LINE 1011:
@@ -1863,12 +1853,12 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1015:
 					__asm        push   0xF8;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1016:
 					__asm        push   0x2C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj2, eax;
 				// LINE 1017:
@@ -1880,7 +1870,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1021:
 					__asm        push   0xF7;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1022:
@@ -1894,7 +1884,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1028:
 					__asm        push   0xF8;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1029:
@@ -1917,7 +1907,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0xFB;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1036:
@@ -1938,7 +1928,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0xFD;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1041:
@@ -1959,7 +1949,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0xFF;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1046:
@@ -1980,7 +1970,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x101;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1051:
@@ -1990,7 +1980,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1054:
 					__asm        push   0x103;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1056:
@@ -2035,7 +2025,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1064:
 					__asm        push   0x104;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1066:
@@ -2080,7 +2070,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1074:
 					__asm        push   0x105;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1075:
@@ -2090,7 +2080,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1078:
 					__asm        push   0x106;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1079:
@@ -2100,7 +2090,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1082:
 					__asm        push   0x107;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1083:
@@ -2112,7 +2102,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1087:
 					__asm        push   0x108;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1088:
@@ -2124,7 +2114,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1092:
 					__asm        push   0x109;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1093:
@@ -2136,7 +2126,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1097:
 					__asm        push   0x10A;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1098:
@@ -2148,7 +2138,7 @@ _FOR_23:
 					objcount = 0x1;
 				// LINE 1102:
 					__asm        push   0x10B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1103:
@@ -2171,7 +2161,7 @@ _FOR_23:
 					__asm        movsx  eax, i;
 					__asm        add    eax, 0x114;
 					__asm        push   eax;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1110:
@@ -2181,7 +2171,7 @@ _FOR_23:
 				// LINE 1121:
 				_T12df:
 					__asm        push   0x178;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1122:
@@ -2247,7 +2237,7 @@ _FOR_23:
 				// LINE 1143:
 				_T13d4:
 					__asm        push   0x17A;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1144:
@@ -2313,7 +2303,7 @@ _FOR_23:
 				// LINE 1165:
 				_T14c9:
 					__asm        push   0x179;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1166:
@@ -2379,7 +2369,7 @@ _FOR_23:
 				// LINE 1187:
 				_T15be:
 					__asm        push   0x17B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1188:
@@ -2549,7 +2539,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1225:
 					__asm        push   0xAF;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1226:
@@ -2563,7 +2553,7 @@ _FOR_23:
 					flags = 0x0;
 				// LINE 1231:
 					__asm        push   0x144;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1232:
@@ -2573,7 +2563,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1235:
 					__asm        push   0xB0;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1236:
@@ -2585,7 +2575,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1240:
 					__asm        push   0xB1;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1241:
@@ -2597,7 +2587,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1245:
 					__asm        push   0xB2;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1246:
@@ -2609,7 +2599,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1250:
 					__asm        push   0xB3;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1251:
@@ -2621,7 +2611,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1255:
 					__asm        push   0xB4;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1256:
@@ -2633,7 +2623,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1260:
 					__asm        push   0xB5;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1261:
@@ -2645,7 +2635,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1265:
 					__asm        push   0xB6;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1266:
@@ -2657,7 +2647,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1270:
 					__asm        push   0xB7;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1271:
@@ -2669,7 +2659,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1275:
 					__asm        push   0xB8;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1276:
@@ -2681,7 +2671,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1280:
 					__asm        push   0xB9;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1281:
@@ -2693,7 +2683,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1285:
 					__asm        push   0xBA;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1286:
@@ -2705,7 +2695,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1290:
 					__asm        push   0xBB;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1291:
@@ -2717,7 +2707,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1295:
 					__asm        push   0xBC;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1296:
@@ -2729,7 +2719,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1300:
 					__asm        push   0xBD;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1301:
@@ -2741,7 +2731,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1305:
 					__asm        push   0xBE;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1306:
@@ -2753,7 +2743,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1310:
 					__asm        push   0xBF;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1311:
@@ -2767,7 +2757,7 @@ _FOR_23:
 					__asm        or     obj1user, 0x200;
 				// LINE 1316:
 					__asm        push   0xC0;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1317:
@@ -2779,7 +2769,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1321:
 					__asm        push   0xC1;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1322:
@@ -2791,7 +2781,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1326:
 					__asm        push   0x9D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1327:
@@ -2805,7 +2795,7 @@ _FOR_23:
 					__asm        or     obj1user, 0x200;
 				// LINE 1332:
 					__asm        push   0xC2;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1333:
@@ -2817,7 +2807,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1337:
 					__asm        push   0xC3;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1338:
@@ -2829,7 +2819,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1342:
 					__asm        push   0x9E;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1343:
@@ -2841,7 +2831,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1347:
 					__asm        push   5;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1348:
@@ -2853,7 +2843,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1352:
 					__asm        push   0x9F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1353:
@@ -2865,7 +2855,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1357:
 					__asm        push   0xA0;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1358:
@@ -2877,7 +2867,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1362:
 					__asm        push   0xA1;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1363:
@@ -2889,7 +2879,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1367:
 					__asm        push   0xA2;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1368:
@@ -2901,7 +2891,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1372:
 					__asm        push   0xA3;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1373:
@@ -2913,7 +2903,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1377:
 					__asm        push   0xA4;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1378:
@@ -2925,7 +2915,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1382:
 					__asm        push   0xA5;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1383:
@@ -2937,7 +2927,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1387:
 					__asm        push   0x84;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1388:
@@ -2949,7 +2939,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1392:
 					__asm        push   0x85;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1393:
@@ -2961,7 +2951,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1397:
 					__asm        push   0xA7;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1398:
@@ -2973,7 +2963,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1402:
 					__asm        push   0xD1;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1403:
@@ -2985,7 +2975,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1407:
 					__asm        push   0xA8;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1408:
@@ -2997,7 +2987,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1412:
 					__asm        push   0xD2;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1413:
@@ -3009,7 +2999,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1417:
 					__asm        push   0xD3;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1418:
@@ -3021,7 +3011,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1422:
 					__asm        push   0xD4;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1423:
@@ -3033,7 +3023,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1427:
 					__asm        push   0xD5;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1428:
@@ -3047,7 +3037,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1433:
 					__asm        push   0xD6;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1434:
@@ -3061,7 +3051,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1439:
 					__asm        push   0xD7;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1440:
@@ -3073,7 +3063,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1444:
 					__asm        push   0xD8;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1445:
@@ -3087,7 +3077,7 @@ _FOR_23:
 					flags = 0x0;
 				// LINE 1450:
 					__asm        push   0xD9;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1451:
@@ -3099,7 +3089,7 @@ _FOR_23:
 					flags = 0x0;
 				// LINE 1455:
 					__asm        push   0xDA;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1456:
@@ -3109,7 +3099,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1459:
 					__asm        push   0xDB;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1460:
@@ -3123,7 +3113,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1465:
 					__asm        push   0xDC;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1466:
@@ -3135,7 +3125,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1470:
 					__asm        push   0xDD;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1471:
@@ -3147,7 +3137,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1475:
 					__asm        push   0xDE;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1476:
@@ -3159,7 +3149,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1480:
 					__asm        push   0xDF;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1481:
@@ -3171,7 +3161,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1485:
 					__asm        push   0xE0;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1486:
@@ -3185,7 +3175,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1491:
 					__asm        push   0xE1;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1492:
@@ -3197,7 +3187,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1496:
 					__asm        push   0xE2;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1497:
@@ -3209,7 +3199,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1501:
 					__asm        push   0xA9;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1502:
@@ -3221,7 +3211,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1506:
 					__asm        push   0xAA;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1507:
@@ -3233,7 +3223,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1511:
 					__asm        push   0xAB;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1512:
@@ -3245,7 +3235,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1516:
 					__asm        push   0xAC;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1517:
@@ -3257,7 +3247,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1521:
 					__asm        push   0xAD;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1522:
@@ -3269,7 +3259,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1526:
 					__asm        push   0xA6;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1527:
@@ -3281,7 +3271,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1531:
 					__asm        push   0x86;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1532:
@@ -3293,7 +3283,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1536:
 					__asm        push   0x87;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1537:
@@ -3305,7 +3295,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1541:
 					__asm        push   0x88;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1542:
@@ -3317,7 +3307,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1546:
 					__asm        push   0x89;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1547:
@@ -3329,7 +3319,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1551:
 					__asm        push   0x9A;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1552:
@@ -3341,7 +3331,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1556:
 					__asm        push   0x9B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1557:
@@ -3353,7 +3343,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1561:
 					__asm        push   0xCB;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1562:
@@ -3365,7 +3355,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1566:
 					__asm        push   0xCC;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1567:
@@ -3379,7 +3369,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1572:
 					__asm        push   0x9C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1573:
@@ -3393,7 +3383,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1578:
 					__asm        push   0xCD;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1579:
@@ -3422,7 +3412,7 @@ _FOR_23:
 					__asm        je     _T26af;
 				// LINE 1587:
 					__asm        push   0x8A;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1588:
@@ -3430,7 +3420,7 @@ _FOR_23:
 				// LINE 1589:
 				_T26af:
 					__asm        push   0x11B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1590:
@@ -3443,7 +3433,7 @@ _FOR_23:
 					flags = 0x0;
 				// LINE 1594:
 					__asm        push   0x8B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1595:
@@ -3468,7 +3458,7 @@ _FOR_23:
 					__asm        je     _T2730;
 				// LINE 1601:
 					__asm        push   0x8C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1602:
@@ -3476,7 +3466,7 @@ _FOR_23:
 				// LINE 1603:
 				_T2730:
 					__asm        push   0x10C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1604:
@@ -3487,7 +3477,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1607:
 					__asm        push   0x8D;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1608:
@@ -3501,7 +3491,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1613:
 					__asm        push   0x8E;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1614:
@@ -3513,7 +3503,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1618:
 					__asm        push   0x8F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1619:
@@ -3525,7 +3515,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1623:
 					__asm        push   0x90;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1624:
@@ -3537,7 +3527,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1628:
 					__asm        push   0x91;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1629:
@@ -3549,7 +3539,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1633:
 					__asm        push   0x92;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1634:
@@ -3561,7 +3551,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1638:
 					__asm        push   0x93;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1639:
@@ -3589,7 +3579,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1655:
 					__asm        push   0x94;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1656:
@@ -3602,7 +3592,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1661:
 					__asm        push   0x95;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1662:
@@ -3614,7 +3604,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1666:
 					__asm        push   0xE8;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1667:
@@ -3626,7 +3616,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1671:
 					__asm        push   0xE9;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1672:
@@ -3638,7 +3628,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1676:
 					__asm        push   0x96;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1677:
@@ -3650,7 +3640,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1682:
 					__asm        push   0x97;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1683:
@@ -3664,7 +3654,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1688:
 					__asm        push   0xF5;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1689:
@@ -3678,7 +3668,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1694:
 					__asm        push   0xF6;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1695:
@@ -3692,7 +3682,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1700:
 					__asm        push   0x98;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1701:
@@ -3706,7 +3696,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1706:
 					__asm        push   0x99;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1707:
@@ -3720,7 +3710,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1712:
 					__asm        push   6;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1713:
@@ -3732,7 +3722,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1717:
 					__asm        push   7;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1718:
@@ -3744,7 +3734,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1722:
 					__asm        push   8;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1723:
@@ -3756,7 +3746,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1727:
 					__asm        push   9;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1728:
@@ -3768,7 +3758,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1732:
 					__asm        push   0xD0;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1733:
@@ -3780,7 +3770,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1737:
 					__asm        push   0xA;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1738:
@@ -3792,7 +3782,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1742:
 					__asm        push   0xCE;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1743:
@@ -3804,7 +3794,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1747:
 					__asm        push   0xB;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1748:
@@ -3816,7 +3806,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1752:
 					__asm        push   0xCF;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1753:
@@ -3828,7 +3818,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1757:
 					__asm        push   0xC;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1758:
@@ -3840,7 +3830,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1762:
 					__asm        push   0xD;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1763:
@@ -3852,7 +3842,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1767:
 					__asm        push   0xE;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1768:
@@ -3864,7 +3854,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1772:
 					__asm        push   0x80;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1773:
@@ -3876,7 +3866,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1777:
 					__asm        push   0x81;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1778:
@@ -3888,7 +3878,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1782:
 					__asm        push   0xC9;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1783:
@@ -3900,7 +3890,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1787:
 					__asm        push   0xCA;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1788:
@@ -3912,7 +3902,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1792:
 					__asm        push   0xF;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1793:
@@ -3924,7 +3914,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1797:
 					__asm        push   0x10;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1798:
@@ -3936,7 +3926,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1802:
 					__asm        push   0x11;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1803:
@@ -3948,7 +3938,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1807:
 					__asm        push   0x12;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1808:
@@ -3960,7 +3950,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1812:
 					__asm        push   0x13;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1813:
@@ -3972,7 +3962,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1817:
 					__asm        push   0x14;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1818:
@@ -3986,7 +3976,7 @@ _FOR_23:
 					flags = 0x0;
 				// LINE 1823:
 					__asm        push   0xF3;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1825:
@@ -3996,7 +3986,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1828:
 					__asm        push   0xF4;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1829:
@@ -4008,7 +3998,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1833:
 					__asm        push   0x15;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1834:
@@ -4020,7 +4010,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1838:
 					__asm        push   0x16;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1839:
@@ -4032,7 +4022,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1843:
 					__asm        push   0x17;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1844:
@@ -4044,7 +4034,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1848:
 					__asm        push   0xE3;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1849:
@@ -4056,7 +4046,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1853:
 					__asm        push   0x18;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1854:
@@ -4068,7 +4058,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1858:
 					__asm        push   0xC4;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1859:
@@ -4080,7 +4070,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1863:
 					__asm        push   0x19;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1864:
@@ -4092,7 +4082,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1868:
 					__asm        push   0x1A;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1869:
@@ -4104,7 +4094,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1873:
 					__asm        push   0xC5;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1874:
@@ -4116,7 +4106,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1878:
 					__asm        push   0xC6;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1879:
@@ -4128,7 +4118,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1883:
 					__asm        push   0xC7;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1884:
@@ -4140,7 +4130,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1888:
 					__asm        push   0xC8;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1889:
@@ -4152,7 +4142,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1893:
 					__asm        push   0x1B;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1894:
@@ -4164,12 +4154,12 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1898:
 					__asm        push   0x82;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1899:
 					__asm        push   4;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj2, eax;
 				// LINE 1900:
@@ -4179,7 +4169,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1903:
 					__asm        push   0xE4;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1904:
@@ -4191,7 +4181,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1908:
 					__asm        push   0xE5;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1909:
@@ -4201,7 +4191,7 @@ _FOR_23:
 				// LINE 1912:
 				_T32ef:
 					__asm        push   0x16F;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1913:
@@ -4213,7 +4203,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1917:
 					__asm        push   0xE6;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1918:
@@ -4225,7 +4215,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1922:
 					__asm        push   0xE7;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1923:
@@ -4237,7 +4227,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1927:
 					__asm        push   0x1C;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1928:
@@ -4251,7 +4241,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1933:
 					__asm        push   0xEA;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1934:
@@ -4263,7 +4253,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1938:
 					__asm        push   0xEB;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1939:
@@ -4275,7 +4265,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1943:
 					__asm        push   0xEC;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1944:
@@ -4287,7 +4277,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1948:
 					__asm        push   0xED;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1949:
@@ -4299,7 +4289,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1953:
 					__asm        push   0xEE;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1954:
@@ -4311,7 +4301,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1958:
 					__asm        push   0xEF;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1959:
@@ -4323,7 +4313,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1963:
 					__asm        push   0xF0;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1964:
@@ -4335,7 +4325,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1968:
 					__asm        push   0xF1;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1969:
@@ -4347,7 +4337,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1973:
 					__asm        push   0xF2;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1974:
@@ -4359,7 +4349,7 @@ _FOR_23:
 					objcount = 0x2;
 				// LINE 1978:
 					__asm        push   0;
-					__asm        call   0x004D8821;
+					__asm        call   _VRGetObject;
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1979:
@@ -5764,25 +5754,9 @@ void S3CityGrid() {
 // LINE 2447:
 	view_changed = 0x1;
 // LINE 2455:
-	__asm        push   0x609C00;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x44;
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x14;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d((0x6c1210 + 0x14), (0x6c1210 + 0x44), 0x609c00);
 // LINE 2456:
-	__asm        push   0x62A458;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x2C;
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x14;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d((0x6c1210 + 0x14), (0x6c1210 + 0x2c), 0x62a458);
 // LINE 2458:
 	S3CityCheckGridPos();
 // LINE 2461:
@@ -5823,17 +5797,9 @@ _Tb2:
 	__asm        neg    eax;
 	__asm        mov    S_local_rstart.x, eax;
 // LINE 2573:
-	__asm        push   0x6C1370;
-	__asm        push   0x609BF0;
-	__asm        push   0x609098;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x609098, 0x609bf0, 0x6c1370);
 // LINE 2574:
-	__asm        push   0x6C1370;
-	__asm        push   0x62A4C8;
-	__asm        push   0x62A4A8;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x62a4a8, 0x62a4c8, 0x6c1370);
 // LINE 2580:
 	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        mov    ecx, ViewState.view_vect.x;
@@ -6470,7 +6436,7 @@ _T28a:
 	__asm        mov    eax, vec;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    slope, eax;
 // LINE 3047:
@@ -6480,7 +6446,7 @@ _T28a:
 	__asm        mov    eax, vec;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    islope, eax;
 // LINE 3060:
@@ -6517,7 +6483,7 @@ _T32b:
 	__asm        push   eax;
 	__asm        mov    eax, islope;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, x_pos;
 	__asm        add    ecx, eax;
@@ -6556,7 +6522,7 @@ _T3b2:
 	__asm        push   eax;
 	__asm        mov    eax, slope;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, y_pos;
 	__asm        add    ecx, eax;
@@ -6634,7 +6600,7 @@ _T3b2:
 	__asm        push   eax;
 	__asm        mov    eax, islope;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    xstepi, eax;
 // LINE 3126:
@@ -6642,7 +6608,7 @@ _T3b2:
 	__asm        push   eax;
 	__asm        mov    eax, slope;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ystepi, eax;
 // LINE 3134:
@@ -8508,9 +8474,9 @@ _T417:
 // LINE 3906:
 	S3CityDyObjFixup(cptrptr, caddr);
 // LINE 3911:
-	__asm        call   0x004E2090;
+	_VRPositionGrid();
 // LINE 3912:
-	__asm        call   0x004D6AFC;
+	_VRRender();
 // LINE 3913:
 }
 
@@ -8983,14 +8949,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4189:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->mesh, pos.loc.x, 0x3);
 		// LINE 4190:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax];
@@ -9010,15 +8969,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4192:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->next->mesh, pos.loc.x, 0x3);
 		// LINE 4193:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax];
@@ -9040,16 +8991,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4195:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->next->next->mesh, pos.loc.x, 0x3);
 		// LINE 4196:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax];
@@ -9073,17 +9015,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4198:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->next->next->next->mesh, pos.loc.x, 0x3);
 		// LINE 4199:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax];
@@ -9109,18 +9041,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4201:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->next->next->next->next->mesh, pos.loc.x, 0x3);
 		// LINE 4202:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax];
@@ -9148,19 +9069,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4204:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 		// LINE 4205:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax];
@@ -9190,20 +9099,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4207:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 		// LINE 4208:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax];
@@ -9235,21 +9131,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4210:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->next->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 		// LINE 4211:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax];
@@ -9283,22 +9165,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4213:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->next->next->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 		// LINE 4214:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax];
@@ -9334,23 +9201,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4216:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->next->next->next->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 		// LINE 4224:
 		_T9cd:
 			tmpdyobj = dyobj->vnext;
@@ -9585,14 +9436,7 @@ __WHILE_99:
 			__asm        mov    ecx, 0x10;
 			__asm        rep movsd;
 		// LINE 4295:
-			__asm        push   3;
-			__asm        lea    eax, pos.loc.x;
-			__asm        push   eax;
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   0x004D8781;
-			__asm        add    esp, 0xC;
+			_VRPositionObj(dyobj->mesh, pos.loc.x, 0x3);
 		// LINE 4298:
 		_Tccb:
 			dyobj = dyobj->next;
@@ -10073,15 +9917,7 @@ _Tb3:
 	__asm        shl    eax, 0x10;
 	__asm        mov    pos.z, eax;
 // LINE 4774:
-	__asm        mov    eax, 0x59D220;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        lea    eax, vpos.x;
-	__asm        push   eax;
-	__asm        lea    eax, pos.x;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(pos.x, vpos.x, (0x59d220 + 0x18));
 // LINE 4786:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+8];
@@ -10090,7 +9926,7 @@ _Tb3:
 	__asm        shl    eax, 0x11;
 	__asm        mov    wradius, eax;
 // LINE 4789:
-	__asm        call   0x004D7B7D;
+	__asm        call   _VRGetFarClipPlaneZ;
 	__asm        mov    farz, eax;
 // LINE 4790:
 	__asm        mov    eax, vpos.z;
@@ -10106,14 +9942,14 @@ _T127:
 	__asm        push   eax;
 	__asm        mov    eax, VRFrusLeftNorm.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, vpos.z;
 	__asm        push   eax;
 	__asm        mov    eax, VRFrusLeftNorm.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    dotp, ebx;
@@ -10129,14 +9965,14 @@ _T169:
 	__asm        push   eax;
 	__asm        mov    eax, VRFrusRiteNorm.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, vpos.z;
 	__asm        push   eax;
 	__asm        mov    eax, VRFrusRiteNorm.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    dotp, ebx;
@@ -10152,14 +9988,14 @@ _T1ab:
 	__asm        push   eax;
 	__asm        mov    eax, VRFrusTopNorm.y;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, vpos.z;
 	__asm        push   eax;
 	__asm        mov    eax, VRFrusTopNorm.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    dotp, ebx;
@@ -10231,14 +10067,14 @@ _T2a3:
 	__asm        push   eax;
 	__asm        mov    eax, VRFrusBotNorm.y;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, vpos.z;
 	__asm        push   eax;
 	__asm        mov    eax, VRFrusBotNorm.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    dotp, ebx;
@@ -10265,32 +10101,13 @@ void S3CityDrawOverHeadGrid() {
 // LINE 4895:
 	S3MapSet3dRender();
 // LINE 4900:
-	__asm        lea    eax, mat1[0][0];
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4(mat1[0][0]);
 // LINE 4901:
-	__asm        lea    eax, mat1[0][0];
-	__asm        push   eax;
-	__asm        push   0xFC7C0000;
-	__asm        call   0x004D2004;
-	__asm        add    esp, 8;
+	_VRPostXRot(0xfc7c0000, mat1[0][0]);
 // LINE 4902:
-	__asm        lea    eax, mat2[0][0];
-	__asm        push   eax;
-	__asm        lea    eax, mat1[0][0];
-	__asm        push   eax;
-	__asm        push   0x6C1330;
-	__asm        call   0x004D8900;
-	__asm        add    esp, 0xC;
+	_VRConcat4x4(0x6c1330, mat1[0][0], mat2[0][0]);
 // LINE 4906:
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        lea    eax, mat2[0][0];
-	__asm        push   eax;
-	__asm        call   0x004D8C2E;
-	__asm        add    esp, 8;
+	_VRTranspose(mat2[0][0], (0x6c12a0 + 0x38));
 // LINE 4908:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
@@ -10501,27 +10318,19 @@ _T69:
 	__asm        jmp    _Tb5;
 // LINE 4997:
 _T74:
-	__asm        push   1;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x1);
 	__asm        jmp    __RETURN;
 // LINE 4999:
 _T83:
-	__asm        push   2;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x2);
 	__asm        jmp    __RETURN;
 // LINE 5001:
 _T92:
-	__asm        push   3;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x3);
 	__asm        jmp    __RETURN;
 // LINE 5003:
 _Ta1:
-	__asm        push   4;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x4);
 	__asm        jmp    __RETURN;
 // LINE 5004:
 	__asm        jmp    _Tdc;
@@ -10553,27 +10362,19 @@ _Tf5:
 	__asm        jmp    _T14d;
 // LINE 5011:
 _T100:
-	__asm        push   0x168;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x168);
 	__asm        jmp    __RETURN;
 // LINE 5013:
 _T112:
-	__asm        push   0x169;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x169);
 	__asm        jmp    __RETURN;
 // LINE 5015:
 _T124:
-	__asm        push   0x16A;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x16a);
 	__asm        jmp    __RETURN;
 // LINE 5017:
 _T136:
-	__asm        push   0x16B;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x16b);
 	__asm        jmp    __RETURN;
 // LINE 5018:
 	__asm        jmp    _T174;
@@ -10599,27 +10400,19 @@ _T179:
 	__asm        jmp    _T1d1;
 // LINE 5025:
 _T184:
-	__asm        push   0x164;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x164);
 	__asm        jmp    __RETURN;
 // LINE 5027:
 _T196:
-	__asm        push   0x165;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x165);
 	__asm        jmp    __RETURN;
 // LINE 5029:
 _T1a8:
-	__asm        push   0x166;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x166);
 	__asm        jmp    __RETURN;
 // LINE 5031:
 _T1ba:
-	__asm        push   0x167;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x167);
 	__asm        jmp    __RETURN;
 // LINE 5032:
 	__asm        jmp    _T1f8;
@@ -10637,9 +10430,7 @@ _T1d1:
 //   _T1ba
 // LINE 5036:
 _T1f8:
-	__asm        push   0x164;
-	__asm        call   0x004D8821;
-	__asm        add    esp, 4;
+	_VRGetObject(0x164);
 	__asm        jmp    __RETURN;
 // LINE 5037:
 __RETURN:
@@ -10917,7 +10708,7 @@ _T319:
 	sptr->next = 0x0;
 // LINE 5142:
 	__asm        push   0x96;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, sptr;
 	__asm        mov    [ecx+4], eax;
@@ -10933,7 +10724,7 @@ _T319:
 	sptr->next = 0x0;
 // LINE 5149:
 	__asm        push   0x165;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, sptr;
 	__asm        mov    [ecx+4], eax;
@@ -10998,7 +10789,7 @@ _FOR_NEXT_41a:
 			sptr->next = 0x0;
 		// LINE 5175:
 			__asm        push   0x8B;
-			__asm        call   0x004D8821;
+			__asm        call   _VRGetObject;
 			__asm        add    esp, 4;
 			__asm        mov    ecx, sptr;
 			__asm        mov    [ecx+4], eax;
@@ -11074,7 +10865,7 @@ _FOR_NEXT_546:
 			sptr->next = 0x0;
 		// LINE 5205:
 			__asm        push   0x8B;
-			__asm        call   0x004D8821;
+			__asm        call   _VRGetObject;
 			__asm        add    esp, 4;
 			__asm        mov    ecx, sptr;
 			__asm        mov    [ecx+4], eax;
@@ -11150,7 +10941,7 @@ _T65e:
 	sptr->next = 0x0;
 // LINE 5235:
 	__asm        push   0x8B;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, sptr;
 	__asm        mov    [ecx+4], eax;
@@ -11221,7 +11012,7 @@ _T76c:
 	sptr->next = 0x0;
 // LINE 5263:
 	__asm        push   0x8B;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, sptr;
 	__asm        mov    [ecx+4], eax;
@@ -11294,7 +11085,7 @@ _T87c:
 	sptr->next = 0x0;
 // LINE 5291:
 	__asm        push   0x8B;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, sptr;
 	__asm        mov    [ecx+4], eax;
@@ -11365,7 +11156,7 @@ _T98d:
 	sptr->next = 0x0;
 // LINE 5319:
 	__asm        push   0x8B;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, sptr;
 	__asm        mov    [ecx+4], eax;

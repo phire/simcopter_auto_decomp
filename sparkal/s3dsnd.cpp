@@ -4810,10 +4810,10 @@ _T65:
 	__asm        push   0x7800000;
 	__asm        mov    eax, fpDistance;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    lNewVolume, eax;
@@ -5010,15 +5010,7 @@ _T25:
 // LINE 693:
 	positionTemp.z = (loc->z - Viewer.pos.z);
 // LINE 694:
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        lea    eax, positionRelative.x;
-	__asm        push   eax;
-	__asm        lea    eax, positionTemp.x;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(positionTemp.x, positionRelative.x, (0x6c12a0 + 0x38));
 // LINE 698:
 	__asm        mov    eax, positionRelative.x;
 	__asm        mov    [ebp-0x48], eax;
@@ -5036,7 +5028,7 @@ _T25:
 	__asm        faddp;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
 	__asm        fcom   qword ptr ds:[0x58F5D8];
 	__asm        fstp   qword ptr [ebp-0x34];
@@ -5047,12 +5039,12 @@ _T25:
 	__asm        fld    qword ptr [ebp-0x3C];
 	__asm        fdiv   qword ptr [ebp-0x34];
 	__asm        fmul   qword ptr ds:[0x58F5D0];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    positionRelative.x, eax;
 	__asm        fld    qword ptr [ebp-0x44];
 	__asm        fdiv   qword ptr [ebp-0x34];
 	__asm        fmul   qword ptr ds:[0x58F5D0];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    positionRelative.z, eax;
 	__asm        jmp    _Tf5;
 _Te8:
@@ -5061,7 +5053,7 @@ _Te8:
 _Tf5:
 	__asm        fld    qword ptr [ebp-0x34];
 	__asm        fmul   qword ptr ds:[0x58F5D0];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    fpDistance, eax;
 	__asm        jmp    _T10b;
 // LINE 701:
@@ -5070,10 +5062,10 @@ _T10b:
 	__asm        push   0x7800000;
 	__asm        mov    eax, fpDistance;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    lVolume, eax;
@@ -5083,7 +5075,7 @@ _T10b:
 	__asm        mov    eax, positionRelative.x;
 	__asm        push   eax;
 	__asm        push   0x27100000;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        cdq;

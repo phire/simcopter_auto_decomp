@@ -354,7 +354,7 @@ int32_t SmackerBuffer::SetPalette() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        call   0x004C4618;
+	__asm        call   _SmackBufferSetPalette;
 	__asm        add    esp, 4;
 	__asm        movzx  eax, ax;
 	__asm        jmp    __RETURN;
@@ -400,7 +400,7 @@ _T37:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004C4624;
+	__asm        call   _SmackBufferOpen;
 	__asm        add    esp, 0x18;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x34], eax;
@@ -412,29 +412,7 @@ _T37:
 	return 0x0;
 // LINE 143:
 _T84:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    eax, [eax+0x43C];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   0x004C461E;
-	__asm        add    esp, 0x1C;
+	_SmackToBuffer(this->smk, 0x0, 0x0, this->smkbuf->Width, this->smkbuf->Height, this->smkbuf->Buffer, this->smkbuf->Reversed);
 // LINE 145:
 	this->nBufferWidth = this->smk->Width;
 // LINE 146:
@@ -462,14 +440,12 @@ _T29:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
 	__asm        push   eax;
-	__asm        call   0x004C4630;
+	__asm        call   _SmackOpen;
 	__asm        add    esp, 0xC;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x38], eax;
 // LINE 165:
-	__asm        push   0x493E0;
-	__asm        call   0x004C462A;
-	__asm        add    esp, 4;
+	_SmackSimulate(0x493e0);
 // LINE 168:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -487,11 +463,7 @@ void SmackerBuffer::Close() {
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        je     _T32;
 // LINE 180:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        call   0x004C463C;
-	__asm        add    esp, 4;
+	_SmackBufferClose(this->smkbuf);
 // LINE 181:
 	this->smkbuf = 0x0;
 // LINE 183:
@@ -500,11 +472,7 @@ _T32:
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        je     _T58;
 // LINE 184:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   0x004C4636;
-	__asm        add    esp, 4;
+	_SmackClose(this->smk);
 // LINE 185:
 	this->smk = 0x0;
 // LINE 187:
@@ -524,12 +492,7 @@ void SmackerBuffer::Reset() {
 	__asm        jne    _T46;
 // LINE 198:
 _T26:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   0x004C4642;
-	__asm        add    esp, 8;
+	_SmackGoto(this->smk, 0x0);
 	__asm        jmp    _T3c;
 // LINE 199:
 _T3c:
@@ -734,29 +697,7 @@ _Tdf:
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        je     _T125;
 // LINE 338:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        push   eax;
-	__asm        mov    eax, dc;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        call   0x004C464E;
-	__asm        add    esp, 0x20;
+	_SmackBufferBlit(this->smkbuf, dc, this->nDestX, this->nDestY, 0x0, 0x0, this->smk->Width, this->smk->Height);
 // LINE 340:
 _T125:
 	__asm        mov    eax, dc;
@@ -776,7 +717,7 @@ _T140:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        push   eax;
-	__asm        call   0x004C466C;
+	__asm        call   _SmackWait;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    _T2e6;
@@ -790,46 +731,17 @@ _T140:
 	__asm        cmp    dword ptr [eax+0x68], 0;
 	__asm        je     _T1df;
 // LINE 351:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        add    eax, 0x6C;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        call   0x004C4666;
-	__asm        add    esp, 0xC;
+	_SmackBufferNewPalette(this->smkbuf, (this->smk + 0x6c), 0x0);
 // LINE 352:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        cmp    dword ptr [eax+0x2C], 0x100;
 	__asm        jae    _T1df;
 // LINE 354:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    eax, [eax+0x438];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   0x004C4660;
-	__asm        add    esp, 0x10;
+	_SmackColorRemap(this->smk, (this->smkbuf + 0x38), this->smkbuf->MaxPalColors, this->smkbuf->PalType);
 // LINE 357:
 _T1df:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   0x004C465A;
-	__asm        add    esp, 4;
+	_SmackDoFrame(this->smk);
 // LINE 359:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -845,7 +757,7 @@ __WHILE_1fe:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        push   eax;
-	__asm        call   0x004C4654;
+	__asm        call   _SmackToBufferRect;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     _T289;
@@ -877,7 +789,7 @@ __WHILE_1fe:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        call   0x004C464E;
+	__asm        call   _SmackBufferBlit;
 	__asm        add    esp, 0x20;
 	__asm        movzx  eax, ax;
 	__asm        test   eax, eax;
@@ -915,11 +827,7 @@ _T29a:
 	return 0x1;
 // LINE 379:
 _T2d7:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   0x004C4648;
-	__asm        add    esp, 4;
+	_SmackNextFrame(this->smk);
 // LINE 382:
 _T2e6:
 	__asm        jmp    _T2f5;
@@ -1275,14 +1183,12 @@ _T29:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
 	__asm        push   eax;
-	__asm        call   0x004C4630;
+	__asm        call   _SmackOpen;
 	__asm        add    esp, 0xC;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x38], eax;
 // LINE 602:
-	__asm        push   0x493E0;
-	__asm        call   0x004C462A;
-	__asm        add    esp, 4;
+	_SmackSimulate(0x493e0);
 // LINE 607:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x160], 0;
@@ -1389,34 +1295,14 @@ _T8b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        push   eax;
-	__asm        call   0x004C466C;
+	__asm        call   _SmackWait;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    _T152;
 // LINE 666:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x15C];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   0x004C461E;
-	__asm        add    esp, 0x1C;
+	_SmackToBuffer(this->smk, 0x0, 0x0, this->nBufferWidth, this->nBufferHeight, this->bmpDataStart, 0x0);
 // LINE 667:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   0x004C465A;
-	__asm        add    esp, 4;
+	_SmackDoFrame(this->smk);
 // LINE 668:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
@@ -1446,11 +1332,7 @@ _T139:
 	return 0x1;
 // LINE 676:
 _T143:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   0x004C4648;
-	__asm        add    esp, 4;
+	_SmackNextFrame(this->smk);
 // LINE 679:
 _T152:
 	__asm        jmp    _T161;
@@ -1805,7 +1687,7 @@ _T29:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
 	__asm        push   eax;
-	__asm        call   0x004C4630;
+	__asm        call   _SmackOpen;
 	__asm        add    esp, 0xC;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x38], eax;
@@ -1821,9 +1703,7 @@ _T5a:
 // LINE 909:
 	this-><SmackerBackBuffer+0x14c> = this->smk->Height;
 // LINE 912:
-	__asm        push   0x493E0;
-	__asm        call   0x004C462A;
-	__asm        add    esp, 4;
+	_SmackSimulate(0x493e0);
 // LINE 915:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x278], 0;
@@ -2000,7 +1880,7 @@ _T10c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax-0x108];
 	__asm        push   eax;
-	__asm        call   0x004C466C;
+	__asm        call   _SmackWait;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    _T3ba;
@@ -2014,16 +1894,7 @@ _T10c:
 	__asm        cmp    dword ptr [eax+0x68], 0;
 	__asm        je     _T1cc;
 // LINE 1049:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        add    eax, 0x6C;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x10C];
-	__asm        push   eax;
-	__asm        call   0x004C4666;
-	__asm        add    esp, 0xC;
+	_SmackBufferNewPalette(this-><SmackerBackBuffer+0x-10c>, (this-><SmackerBackBuffer+0x-108> + 0x6c), 0x0);
 // LINE 1050:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax-0x10C];
@@ -2045,15 +1916,11 @@ _T10c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax-0x108];
 	__asm        push   eax;
-	__asm        call   0x004C4660;
+	__asm        call   _SmackColorRemap;
 	__asm        add    esp, 0x10;
 // LINE 1055:
 _T1cc:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C465A;
-	__asm        add    esp, 4;
+	_SmackDoFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1057:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax-0x114], 0;
@@ -2089,31 +1956,9 @@ _T27b:
 _T280:
 	__asm        jmp    _T285;
 _T285:
-	__asm        push   0;
-	__asm        mov    eax, pDestImage;
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, pDestImage;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        mov    eax, pDestImage;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        mov    eax, DestTop;
-	__asm        push   eax;
-	__asm        mov    eax, DestLeft;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C461E;
-	__asm        add    esp, 0x1C;
+	_SmackToBuffer(this-><SmackerBackBuffer+0x-108>, DestLeft, DestTop, pDestImage->mStride, pDestImage->mHeight, pDestImage->mpBits, 0x0);
 // LINE 1068:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C465A;
-	__asm        add    esp, 4;
+	_SmackDoFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1069:
 	__asm        mov    eax, pDestImage;
 	__asm        mov    eax, [eax];
@@ -2134,29 +1979,9 @@ _T2e7:
 _T2ec:
 	__asm        jmp    _T2f1;
 _T2f1:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C461E;
-	__asm        add    esp, 0x1C;
+	_SmackToBuffer(this-><SmackerBackBuffer+0x-108>, 0x0, 0x0, reinterpret_cast<uint32_t>(this->colorWindowFill.Blue), this->bBlankAtEndOfVideo, this->nBlankColorIndex, 0x0);
 // LINE 1074:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C465A;
-	__asm        add    esp, 4;
+	_SmackDoFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1075:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2184,11 +2009,7 @@ _T35f:
 	return 0x1;
 // LINE 1087:
 _T3a8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C4648;
-	__asm        add    esp, 4;
+	_SmackNextFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1090:
 _T3ba:
 	__asm        jmp    _T3c9;
@@ -2269,7 +2090,7 @@ _Tfe:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax-0x108];
 	__asm        push   eax;
-	__asm        call   0x004C466C;
+	__asm        call   _SmackWait;
 	__asm        add    esp, 4;
 	__asm        test   eax, eax;
 	__asm        jne    _T3ab;
@@ -2283,16 +2104,7 @@ _Tfe:
 	__asm        cmp    dword ptr [eax+0x68], 0;
 	__asm        je     _T1be;
 // LINE 1140:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        add    eax, 0x6C;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x10C];
-	__asm        push   eax;
-	__asm        call   0x004C4666;
-	__asm        add    esp, 0xC;
+	_SmackBufferNewPalette(this-><SmackerBackBuffer+0x-10c>, (this-><SmackerBackBuffer+0x-108> + 0x6c), 0x0);
 // LINE 1141:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax-0x10C];
@@ -2314,15 +2126,11 @@ _Tfe:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax-0x108];
 	__asm        push   eax;
-	__asm        call   0x004C4660;
+	__asm        call   _SmackColorRemap;
 	__asm        add    esp, 0x10;
 // LINE 1146:
 _T1be:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C465A;
-	__asm        add    esp, 4;
+	_SmackDoFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1148:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax-0x114], 0;
@@ -2358,29 +2166,9 @@ _T26d:
 _T272:
 	__asm        jmp    _T277;
 _T277:
-	__asm        push   0;
-	__asm        mov    eax, pDestImage;
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, pDestImage;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        mov    eax, pDestImage;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C461E;
-	__asm        add    esp, 0x1C;
+	_SmackToBuffer(this-><SmackerBackBuffer+0x-108>, 0x0, 0x0, pDestImage->mStride, pDestImage->mHeight, pDestImage->mpBits, 0x0);
 // LINE 1159:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C465A;
-	__asm        add    esp, 4;
+	_SmackDoFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1160:
 	__asm        mov    eax, pDestImage;
 	__asm        mov    eax, [eax];
@@ -2399,29 +2187,9 @@ _T2c6:
 _T2d5:
 	__asm        jmp    _T2da;
 _T2da:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C461E;
-	__asm        add    esp, 0x1C;
+	_SmackToBuffer(this-><SmackerBackBuffer+0x-108>, 0x0, 0x0, reinterpret_cast<uint32_t>(this->colorWindowFill.Blue), this->bBlankAtEndOfVideo, this->nBlankColorIndex, 0x0);
 // LINE 1165:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C465A;
-	__asm        add    esp, 4;
+	_SmackDoFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1166:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2449,11 +2217,7 @@ _T350:
 	return 0x1;
 // LINE 1179:
 _T399:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax-0x108];
-	__asm        push   eax;
-	__asm        call   0x004C4648;
-	__asm        add    esp, 4;
+	_SmackNextFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1182:
 _T3ab:
 	__asm        jmp    _T3ba;
@@ -2528,7 +2292,7 @@ __WHILE_98:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x38];
 	__asm        push   eax;
-	__asm        call   0x004C4654;
+	__asm        call   _SmackToBufferRect;
 	__asm        add    esp, 8;
 	__asm        test   eax, eax;
 	__asm        je     _T210;

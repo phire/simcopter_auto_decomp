@@ -481,16 +481,11 @@ void VRObjSetShading(int32_t obj) {
 	/*bp-0x44*/  /*packed*/ struct COLOR_SHADE *cptr;
 
 // LINE 399:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(obj, oinfo.Faces);
 // LINE 400:
 	__asm        mov    eax, obj;
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 401:
@@ -531,7 +526,7 @@ _FOR_34:
 			__asm        push   eax;
 			__asm        mov    eax, G_litevect1.z;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    ebx, eax;
 			__asm        mov    eax, fh;
@@ -540,7 +535,7 @@ _FOR_34:
 			__asm        push   eax;
 			__asm        mov    eax, G_litevect1.y;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        add    ebx, eax;
 			__asm        mov    eax, fh;
@@ -549,7 +544,7 @@ _FOR_34:
 			__asm        push   eax;
 			__asm        mov    eax, G_litevect1.x;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        add    ebx, eax;
 			__asm        mov    diffuse, ebx;
@@ -561,7 +556,7 @@ _FOR_34:
 			__asm        push   eax;
 			__asm        mov    eax, diffuse;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    intensity, eax;
 		// LINE 427:
@@ -572,7 +567,7 @@ _FOR_34:
 			__asm        push   eax;
 			__asm        mov    eax, G_litevect2.z;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    ebx, eax;
 			__asm        mov    eax, fh;
@@ -581,7 +576,7 @@ _FOR_34:
 			__asm        push   eax;
 			__asm        mov    eax, G_litevect2.y;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        add    ebx, eax;
 			__asm        mov    eax, fh;
@@ -590,7 +585,7 @@ _FOR_34:
 			__asm        push   eax;
 			__asm        mov    eax, G_litevect2.x;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        add    ebx, eax;
 			__asm        mov    diffuse, ebx;
@@ -602,7 +597,7 @@ _FOR_34:
 			__asm        push   eax;
 			__asm        mov    eax, diffuse;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        add    intensity, eax;
 		// LINE 433:
@@ -628,7 +623,7 @@ _FOR_34:
 			__asm        mov    eax, [eax+4];
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    level, eax;
 		// LINE 442:
@@ -665,7 +660,7 @@ _FOR_34:
 		next_face:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}
@@ -695,13 +690,7 @@ void VRDyObjSetShading(int32_t obj, int32_t *tmat[4][4]) {
 	return;
 // LINE 493:
 _T21:
-	__asm        mov    eax, tmat;
-	__asm        push   eax;
-	__asm        lea    eax, rotlitevect.x;
-	__asm        push   eax;
-	__asm        push   0x5ADD50;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x5add50, rotlitevect.x, tmat);
 // LINE 496:
 	fh = oh->FacePtr;
 // LINE 497:
@@ -740,7 +729,7 @@ _FOR_4b:
 			__asm        push   eax;
 			__asm        mov    eax, rotlitevect.y;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    ebx, eax;
 			__asm        mov    eax, fh;
@@ -749,7 +738,7 @@ _FOR_4b:
 			__asm        push   eax;
 			__asm        mov    eax, rotlitevect.z;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        add    ebx, eax;
 			__asm        mov    eax, fh;
@@ -758,7 +747,7 @@ _FOR_4b:
 			__asm        push   eax;
 			__asm        mov    eax, rotlitevect.x;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        add    ebx, eax;
 			__asm        mov    diffuse, ebx;
@@ -770,7 +759,7 @@ _FOR_4b:
 			__asm        push   eax;
 			__asm        mov    eax, diffuse;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    intensity, eax;
 		// LINE 519:
@@ -796,7 +785,7 @@ _FOR_4b:
 			__asm        mov    eax, [eax+4];
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    level, eax;
 		// LINE 528:
@@ -1012,7 +1001,7 @@ _FOR_1e:
 					__asm        push   eax;
 					__asm        mov    eax, G_litevect1.y;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        mov    ebx, eax;
 					__asm        mov    eax, vn;
@@ -1020,7 +1009,7 @@ _FOR_1e:
 					__asm        push   eax;
 					__asm        mov    eax, G_litevect1.x;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        add    ebx, eax;
 					__asm        mov    eax, vn;
@@ -1028,7 +1017,7 @@ _FOR_1e:
 					__asm        push   eax;
 					__asm        mov    eax, G_litevect1.z;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        add    ebx, eax;
 					__asm        mov    diffuse, ebx;
@@ -1040,7 +1029,7 @@ _FOR_1e:
 					__asm        push   eax;
 					__asm        mov    eax, diffuse;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        mov    intensity, eax;
 				// LINE 657:
@@ -1050,7 +1039,7 @@ _FOR_1e:
 					__asm        push   eax;
 					__asm        mov    eax, G_litevect2.y;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        mov    ebx, eax;
 					__asm        mov    eax, vn;
@@ -1058,7 +1047,7 @@ _FOR_1e:
 					__asm        push   eax;
 					__asm        mov    eax, G_litevect2.x;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        add    ebx, eax;
 					__asm        mov    eax, vn;
@@ -1066,7 +1055,7 @@ _FOR_1e:
 					__asm        push   eax;
 					__asm        mov    eax, G_litevect2.z;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        add    ebx, eax;
 					__asm        mov    diffuse, ebx;
@@ -1078,7 +1067,7 @@ _FOR_1e:
 					__asm        push   eax;
 					__asm        mov    eax, diffuse;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        add    intensity, eax;
 				// LINE 663:
@@ -1104,7 +1093,7 @@ _FOR_1e:
 					__asm        mov    eax, [eax+4];
 					__asm        shl    eax, 0x10;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        mov    level, eax;
 				// LINE 672:

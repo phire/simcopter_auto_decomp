@@ -232,7 +232,7 @@ _L45522:
 _L45521:
 // No fallthrough
 	__asm        mov    eax, 0x5960E0;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;

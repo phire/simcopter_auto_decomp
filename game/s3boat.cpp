@@ -844,14 +844,7 @@ _T90:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 596:
-	__asm        push   3;
-	__asm        lea    eax, position.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x87];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(this->dyObj.mesh, position.loc.x, 0x3);
 // LINE 601:
 // Block end:
 _Te5:
@@ -1116,7 +1109,7 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x13];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x97];
@@ -1129,7 +1122,7 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x17];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x9B];
@@ -1142,7 +1135,7 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1B];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x9F];
@@ -1775,7 +1768,7 @@ void BoatClass::MoveForward() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2B];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    distance, eax;
 // LINE 1261:
@@ -1798,7 +1791,7 @@ _T3c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x13];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x97], eax;
@@ -1808,7 +1801,7 @@ _T3c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1B];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x9F], eax;
@@ -4642,7 +4635,7 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7B];
 	__asm        push   eax;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    object, eax;
 // LINE 2839:
@@ -4670,7 +4663,7 @@ _T5d:
 _T78:
 	__asm        mov    eax, object;
 	__asm        push   eax;
-	__asm        call   0x004D8520;
+	__asm        call   _VRGetObjInstanceMemReq;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, G_dyobjmempool;
@@ -4686,7 +4679,7 @@ _T78:
 	__asm        push   eax;
 	__asm        mov    eax, object;
 	__asm        push   eax;
-	__asm        call   0x004D8570;
+	__asm        call   _VRCreateObjInstance;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x87], eax;
@@ -4695,13 +4688,7 @@ _T78:
 	__asm        cmp    dword ptr [eax+0x87], 0;
 	__asm        je     _Te6;
 // LINE 2868:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x87];
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(this->dyObj.mesh, G_main_mp);
 // LINE 2870:
 	__asm        jmp    _T11e;
 // LINE 2873:
@@ -4741,18 +4728,9 @@ _T155:
 // LINE 2887:
 	this->dyObj.flags = 0x201;
 // LINE 2889:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA3;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((this + 0xa3));
 // LINE 2890:
-	__asm        lea    eax, objectInfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, object;
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(object, objectInfo.Faces);
 // LINE 2891:
 	this->dyObj.radius = objectInfo.Radius;
 // LINE 2892:

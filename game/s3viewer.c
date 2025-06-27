@@ -48,11 +48,7 @@ void S3ViewerInit() {
 // LINE 121:
 	Viewer.r.M = 0x10000;
 // LINE 122:
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((0x6c12a0 + 0x38));
 // LINE 123:
 	Viewer.mode = 0x1;
 // LINE 126:
@@ -74,29 +70,11 @@ void S3ViewerInit() {
 // LINE 136:
 	MTArbRotMat(rotmat[0][0], 0xce40000, 0x59b508);
 // LINE 137:
-	__asm        lea    eax, rotmat[0][0];
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d((0x6c1210 + 0x8), (0x6c1210 + 0x20), rotmat[0][0]);
 // LINE 138:
 	MTArbRotMat(rotmat[0][0], 0x12c0000, 0x59b508);
 // LINE 139:
-	__asm        lea    eax, rotmat[0][0];
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d((0x6c1210 + 0x8), (0x6c1210 + 0x38), rotmat[0][0]);
 // LINE 140:
 	ViewState.heading = 0x0;
 // LINE 141:
@@ -301,12 +279,7 @@ _T1b8:
 // LINE 227:
 	S3CameraRotate();
 // LINE 230:
-	__asm        push   0x6C1370;
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        call   0x004D8C2E;
-	__asm        add    esp, 8;
+	_VRTranspose((0x6c12a0 + 0x38), 0x6c1370);
 // LINE 234:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x78;
@@ -323,35 +296,11 @@ _T1b8:
 // LINE 238:
 	CameraCell.y = ((0x20000000 - ViewState.world_pos.z) >> 0x16);
 // LINE 242:
-	__asm        push   0x6C1370;
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d((0x6c1210 + 0x8), (0x6c12a0 + 0x4), 0x6c1370);
 // LINE 243:
-	__asm        push   0x6C1370;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x2C;
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d((0x6c1210 + 0x20), (0x6c1210 + 0x2c), 0x6c1370);
 // LINE 244:
-	__asm        push   0x6C1370;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x44;
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C1210;
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d((0x6c1210 + 0x38), (0x6c1210 + 0x44), 0x6c1370);
 // LINE 245:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 4;
@@ -382,14 +331,14 @@ _T1b8:
 	__asm        push   eax;
 	__asm        mov    eax, ViewState.view_vect.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, S_last_viewvect.x;
 	__asm        push   eax;
 	__asm        mov    eax, ViewState.view_vect.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    eax, ebx;
 	__asm        cdq;
@@ -693,23 +642,9 @@ void S3ViewerSetView() {
 	__asm        neg    eax;
 	__asm        mov    p.z, eax;
 // LINE 430:
-	__asm        lea    eax, p.x;
-	__asm        push   eax;
-	__asm        lea    eax, matrix[0][0];
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        call   0x004D8B90;
-	__asm        add    esp, 0xC;
+	_VRPreTrans((0x6c12a0 + 0x38), matrix[0][0], p.x);
 // LINE 431:
-	__asm        lea    eax, matrix[0][0];
-	__asm        push   eax;
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 0x78;
-	__asm        push   eax;
-	__asm        call   0x004D6A12;
-	__asm        add    esp, 8;
+	_VRSetView((0x6c12a0 + 0x78), matrix[0][0]);
 // LINE 432:
 }
 
@@ -786,24 +721,12 @@ _Te2:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        jne    _T13d;
 // LINE 468:
-	__asm        push   1;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(G_uheli->dyheli->mesh, 0x1);
 // LINE 469:
 	__asm        cmp    G_artmode, 1;
 	__asm        jne    _T12e;
 // LINE 470:
-	__asm        push   1;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xAC];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(G_uheli->dyrotor->mesh, 0x1);
 // LINE 471:
 _T12e:
 	G_camera_mode = 0x1;
@@ -813,13 +736,7 @@ _T13d:
 	__asm        cmp    G_camera_mode, 1;
 	__asm        jne    __RETURN;
 // LINE 475:
-	__asm        push   0;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(G_uheli->dyheli->mesh, 0x0);
 // LINE 476:
 	G_camera_mode = 0x2;
 // LINE 481:

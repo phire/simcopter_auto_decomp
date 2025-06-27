@@ -517,7 +517,7 @@ _T43:
 	__asm        push   eax;
 	__asm        mov    eax, altdiff;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        sub    ebx, eax;
@@ -526,7 +526,7 @@ _T43:
 	__asm        push   eax;
 	__asm        mov    eax, pitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        add    ebx, eax;
@@ -551,7 +551,7 @@ _Tb3:
 	__asm        push   eax;
 	__asm        mov    eax, cameraHeading;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    start_col, eax;

@@ -1486,7 +1486,7 @@ _L27257:
 _L27256:
 // No fallthrough
 	__asm        mov    eax, 0x5961E0;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
@@ -2129,7 +2129,7 @@ _L27272:
 _L27271:
 // No fallthrough
 	__asm        mov    eax, 0x596208;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;

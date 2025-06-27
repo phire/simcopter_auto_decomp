@@ -28,7 +28,7 @@ _L44596:
 _L44595:
 // No fallthrough
 	__asm        mov    eax, 0x596030;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
@@ -99,7 +99,7 @@ _Tec:
 _L44658:
 // No fallthrough
 	__asm        mov    eax, 0x596058;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -595,7 +595,7 @@ _T4bb:
 	__asm        jmp    __RETURN;
 _L45273:
 	__asm        mov    eax, 0x596080;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -666,7 +666,7 @@ _Tec:
 _L45611:
 // No fallthrough
 	__asm        mov    eax, 0x596110;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;

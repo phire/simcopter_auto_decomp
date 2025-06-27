@@ -83,9 +83,9 @@ int32_t Magnitude(/*packed*/ struct Point3d *V) {
 	__asm        fld    i;
 	__asm        fmul   i;
 	__asm        faddp;
-	__asm        call   0x0056EC1A;
+	__asm        call   __CIsqrt;
 	__asm        fmul   qword ptr ds:[0x5934E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 38:
 __RETURN:
@@ -139,9 +139,9 @@ int32_t Distance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2) {
 	__asm        fld    j;
 	__asm        fmul   j;
 	__asm        faddp;
-	__asm        call   0x0056EC1A;
+	__asm        call   __CIsqrt;
 	__asm        fmul   qword ptr ds:[0x5934E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 59:
 __RETURN:
@@ -183,7 +183,7 @@ int32_t Normalize(/*packed*/ struct Point3d *V) {
 	__asm        fld    i;
 	__asm        fmul   i;
 	__asm        faddp;
-	__asm        call   0x0056EC1A;
+	__asm        call   __CIsqrt;
 // LINE 79:
 	__asm        fcom   qword ptr ds:[0x5934F0];
 	__asm        fstp   r;
@@ -194,21 +194,21 @@ int32_t Normalize(/*packed*/ struct Point3d *V) {
 	__asm        fld    i;
 	__asm        fdiv   r;
 	__asm        fmul   qword ptr ds:[0x5934E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx], eax;
 // LINE 81:
 	__asm        fld    j;
 	__asm        fdiv   r;
 	__asm        fmul   qword ptr ds:[0x5934E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+4], eax;
 // LINE 82:
 	__asm        fld    k;
 	__asm        fdiv   r;
 	__asm        fmul   qword ptr ds:[0x5934E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
 // LINE 84:
@@ -222,7 +222,7 @@ _Tbc:
 _Tdd:
 	__asm        fld    r;
 	__asm        fmul   qword ptr ds:[0x5934E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 88:
 __RETURN:
@@ -243,7 +243,7 @@ void CreatePlane(/*packed*/ struct Plane *plane, /*packed*/ struct Point3d *V, /
 	__asm        mov    eax, plane;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, p;
@@ -252,7 +252,7 @@ void CreatePlane(/*packed*/ struct Plane *plane, /*packed*/ struct Point3d *V, /
 	__asm        mov    eax, plane;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, p;
@@ -261,7 +261,7 @@ void CreatePlane(/*packed*/ struct Plane *plane, /*packed*/ struct Point3d *V, /
 	__asm        mov    eax, plane;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        neg    ebx;
@@ -290,7 +290,7 @@ int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, 
 	__asm        push   eax;
 	__asm        mov    eax, plane.C;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, q;
@@ -298,7 +298,7 @@ int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, 
 	__asm        push   eax;
 	__asm        mov    eax, plane.B;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, q;
@@ -306,7 +306,7 @@ int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, 
 	__asm        push   eax;
 	__asm        mov    eax, plane.A;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        add    ebx, plane.D;
@@ -327,7 +327,7 @@ void CreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2
 	__asm        push   eax;
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx], eax;
@@ -338,7 +338,7 @@ void CreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2
 	__asm        push   eax;
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+4], eax;
@@ -349,7 +349,7 @@ void CreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2
 	__asm        push   eax;
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
@@ -386,7 +386,7 @@ int32_t VectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        push   eax;
 	__asm        mov    eax, m;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    r, eax;
 // LINE 207:
@@ -395,7 +395,7 @@ int32_t VectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx], eax;
@@ -405,7 +405,7 @@ int32_t VectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+4], eax;
@@ -415,7 +415,7 @@ int32_t VectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
@@ -438,7 +438,7 @@ void Apply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_t 
 	__asm        mov    eax, F;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A.x, eax;
 // LINE 235:
@@ -448,7 +448,7 @@ void Apply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_t 
 	__asm        mov    eax, F;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A.y, eax;
 // LINE 236:
@@ -458,7 +458,7 @@ void Apply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_t 
 	__asm        mov    eax, F;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A.z, eax;
 // LINE 241:
@@ -466,7 +466,7 @@ void Apply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_t 
 	__asm        push   eax;
 	__asm        mov    eax, A.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        add    [ecx+8], eax;
@@ -475,7 +475,7 @@ void Apply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_t 
 	__asm        push   eax;
 	__asm        mov    eax, A.y;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        add    [ecx+0xC], eax;
@@ -484,7 +484,7 @@ void Apply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_t 
 	__asm        push   eax;
 	__asm        mov    eax, A.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        add    [ecx+0x10], eax;
@@ -509,7 +509,7 @@ void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	__asm        push   eax;
 	__asm        mov    eax, F;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    a, eax;
 // LINE 269:
@@ -517,7 +517,7 @@ void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	__asm        push   eax;
 	__asm        mov    eax, a;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    f, eax;
 // LINE 270:
@@ -526,7 +526,7 @@ void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	__asm        mov    eax, v;
 	__asm        sub    eax, f;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    j, eax;
 // LINE 271:
@@ -538,7 +538,7 @@ void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+8], eax;
@@ -548,7 +548,7 @@ void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0xC], eax;
@@ -558,7 +558,7 @@ void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x10], eax;
@@ -585,7 +585,7 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 	__asm        push   eax;
 	__asm        mov    eax, F;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A, eax;
 // LINE 311:
@@ -593,7 +593,7 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 	__asm        push   eax;
 	__asm        mov    eax, A;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        add    ecx, eax;
@@ -642,7 +642,7 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        push   eax;
 	__asm        mov    eax, F;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A, eax;
 // LINE 339:
@@ -650,7 +650,7 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        push   eax;
 	__asm        mov    eax, A;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    vf, eax;
 // LINE 340:
@@ -659,19 +659,14 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        mov    eax, absV;
 	__asm        sub    eax, vf;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    j, eax;
 // LINE 341:
 	__asm        cmp    j, 0;
 	__asm        jle    _T79;
 
-	__asm        mov    eax, j;
-	__asm        push   eax;
-	__asm        mov    eax, V;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
+	_FixedMul(V, j);
 	__asm        jmp    __RETURN;
 // LINE 343:
 _T79:

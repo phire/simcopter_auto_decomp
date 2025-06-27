@@ -130,7 +130,7 @@ void S3TerrainInit() {
 // LINE 130:
 	__asm        push   0x400000;
 	__asm        push   0x10000;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    S_recip_celldim, eax;
 // LINE 135:
@@ -869,7 +869,7 @@ _FOR_a76:
 					__asm        push   edx;
 					__asm        mov    eax, k3;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        mov    ebx, eax;
 					__asm        mov    eax, y;
@@ -889,7 +889,7 @@ _FOR_a76:
 					__asm        push   edx;
 					__asm        mov    eax, k2;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        add    ebx, eax;
 					__asm        mov    eax, y;
@@ -907,7 +907,7 @@ _FOR_a76:
 					__asm        push   edx;
 					__asm        mov    eax, k1;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        add    ebx, eax;
 					__asm        sar    ebx, 0x10;
@@ -4795,7 +4795,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 	__asm        mov    eax, G_tdim;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        fidiv  dword ptr [ebp-0x1C];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    delta, eax;
 // LINE 1116:
 	__asm        call   rand;
@@ -5786,14 +5786,14 @@ _T1c:
 	__asm        push   eax;
 	__asm        mov    eax, worldx;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ratio, eax;
 // LINE 1643:
 	__asm        mov    eax, ratio;
 	__asm        push   eax;
 	__asm        push   0x400000;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    hypz, eax;
 // LINE 1644:
@@ -5802,7 +5802,7 @@ _T1c:
 	__asm        mov    eax, alt1;
 	__asm        sub    eax, alt2;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    edx, alt2;
 	__asm        add    edx, eax;
@@ -6004,7 +6004,7 @@ _T35a:
 	__asm        mov    eax, alt1;
 	__asm        sub    eax, alt2;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, alt2;
 	__asm        add    ecx, eax;
@@ -6026,7 +6026,7 @@ _T39a:
 	__asm        mov    eax, sidez;
 	__asm        sub    eax, worldz;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ratio, eax;
 // LINE 1724:
@@ -6035,7 +6035,7 @@ _T39a:
 	__asm        mov    eax, hypalt;
 	__asm        sub    eax, sidealt;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, sidealt;
 	__asm        add    ecx, eax;

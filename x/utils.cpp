@@ -680,7 +680,7 @@ short Round(float val) {
 	__asm        fld    val;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x00575810;
+	__asm        call   _modf;
 	__asm        add    esp, 0xC;
 // LINE 271:
 	__asm        fcom   qword ptr ds:[0x593A18];
@@ -707,7 +707,7 @@ _T43:
 // LINE 278:
 _T63:
 	__asm        fld    dint;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    intval, ax;
 // LINE 279:
 	return intval;

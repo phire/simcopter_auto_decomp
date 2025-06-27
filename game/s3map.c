@@ -2703,9 +2703,7 @@ _T5c:
 // LINE 1232:
 	S_save_width = HALF_WIDTH;
 // LINE 1234:
-	__asm        push   0x5B5208;
-	__asm        call   0x004D6A69;
-	__asm        add    esp, 4;
+	_VRSetWindow(0x5b5208);
 // LINE 1236:
 	__asm        shl    HALF_ASPECT, 1;
 // LINE 1237:
@@ -2737,9 +2735,7 @@ _T29:
 	__asm        rep movsd;
 // LINE 1263:
 _T3a:
-	__asm        push   0x5B5228;
-	__asm        call   0x004D6A69;
-	__asm        add    esp, 4;
+	_VRSetWindow(0x5b5228);
 // LINE 1265:
 	HALF_ASPECT = S_save_aspect;
 // LINE 1266:

@@ -562,7 +562,7 @@ _T2e:
 // LINE 160:
 _T4a:
 	__asm        fld    flt;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 161:
 __RETURN:
@@ -1014,7 +1014,7 @@ _T780:
 	return;
 _L39413:
 	__asm        mov    eax, 0x595FA8;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;

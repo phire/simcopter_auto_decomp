@@ -1377,11 +1377,7 @@ _T59e:
 // LINE 513:
 	this->dispatchIcon.loc.y += 0xa0000;
 // LINE 514:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x14A;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((this + 0x14a));
 // LINE 515:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];
@@ -1581,7 +1577,7 @@ _T2a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDE], eax;
@@ -1593,7 +1589,7 @@ _T4f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDE], eax;
@@ -1640,7 +1636,7 @@ void EmergencyVehicleClass::PositionIcon() {
 	__asm        lea    eax, [edx+edx*4+0x19];
 	__asm        shl    eax, 0x11;
 	__asm        push   eax;
-	__asm        call   0x004D201C;
+	__asm        call   _VRPostYRot;
 	__asm        add    esp, 8;
 // LINE 667:
 	__asm        mov    eax, this;
@@ -1659,14 +1655,7 @@ void EmergencyVehicleClass::PositionIcon() {
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 669:
-	__asm        push   3;
-	__asm        lea    eax, pos.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x12E];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(this->dispatchIcon.mesh, pos.loc.x, 0x3);
 // LINE 670:
 	return;
 }
@@ -2084,47 +2073,31 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 	/*bp-0x4c*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 1461:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(this->autoDynomitor.mesh, oinfo.Faces);
 // LINE 1462:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1463:
 _FOR_3d:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
 		// LINE 1465:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 1466:
 			__asm        cmp    finfo.Plotter, 0x19;
 			__asm        jne    _T7d;
 		// LINE 1468:
 			__asm        and    finfo.Attribute, 0x7FFFFFFF;
 		// LINE 1469:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6941;
-			__asm        add    esp, 8;
+			_VRSetFaceInfo(face, finfo.Face);
 		// LINE 1471:
 		_T7d:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}
@@ -2141,47 +2114,31 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 	/*bp-0x4c*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 1484:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(this->autoDynomitor.mesh, oinfo.Faces);
 // LINE 1485:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 1486:
 _FOR_3d:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
 		// LINE 1488:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 1489:
 			__asm        cmp    finfo.Plotter, 0x19;
 			__asm        jne    _T81;
 		// LINE 1491:
 			finfo.Attribute = (finfo.Attribute | 0x80000000);
 		// LINE 1492:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6941;
-			__asm        add    esp, 8;
+			_VRSetFaceInfo(face, finfo.Face);
 		// LINE 1494:
 		_T81:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}

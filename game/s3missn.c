@@ -257,7 +257,7 @@ _Tc3:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        fild   dword ptr [ebp-0x10];
 	__asm        fmul   fMultiplier;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, citySettingsOut;
 	__asm        mov    [ecx+4], eax;
 // LINE 209:
@@ -266,7 +266,7 @@ _Tc3:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        fild   dword ptr [ebp-0x14];
 	__asm        fmul   fMultiplier;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, citySettingsOut;
 	__asm        mov    [ecx+8], eax;
 // LINE 210:
@@ -275,7 +275,7 @@ _Tc3:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        fild   dword ptr [ebp-0x18];
 	__asm        fmul   fMultiplier;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, citySettingsOut;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 211:
@@ -284,7 +284,7 @@ _Tc3:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        fild   dword ptr [ebp-0x1C];
 	__asm        fmul   fMultiplier;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, citySettingsOut;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 212:
@@ -293,7 +293,7 @@ _Tc3:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        fild   dword ptr [ebp-0x20];
 	__asm        fmul   fMultiplier;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, citySettingsOut;
 	__asm        mov    [ecx+0x14], eax;
 // LINE 213:
@@ -302,7 +302,7 @@ _Tc3:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        fild   dword ptr [ebp-0x24];
 	__asm        fmul   fMultiplier;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, citySettingsOut;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 214:
@@ -311,7 +311,7 @@ _Tc3:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        fild   dword ptr [ebp-0x28];
 	__asm        fmul   fMultiplier;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, citySettingsOut;
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 218:

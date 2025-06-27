@@ -439,7 +439,7 @@ void SoundSystem::SoundSystem() {
 	__asm        push   0x597E58;
 	__asm        push   0x32;
 	__asm        push   0;
-	__asm        call   0x004C4678;
+	__asm        call   _acmMetrics@12;
 // LINE 93:
 _T30:
 	this->primarySound = 0x0;
@@ -512,7 +512,7 @@ _T47:
 	__asm        add    eax, 0x10;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        call   0x004C4672;
+	__asm        call   _DirectSoundCreate@12;
 	__asm        mov    hResult, eax;
 // LINE 146:
 	__asm        cmp    hResult, 0;
@@ -3043,9 +3043,9 @@ _T47:
 	__asm        fild   dword ptr [ebp-0x10];
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    lDistance, eax;
 // LINE 1182:
 	__asm        mov    eax, lDistance;

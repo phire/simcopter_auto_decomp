@@ -92,14 +92,7 @@ void S3CameraMove(/*packed*/ struct Point3d *P) {
 // LINE 129:
 	u_dyobj = GetAvatarDYOBJ();
 // LINE 130:
-	__asm        mov    eax, u_dyobj;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        lea    eax, viewerPos.x;
-	__asm        push   eax;
-	__asm        push   0x5B4DE0;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x5b4de0, viewerPos.x, (u_dyobj + 0x24));
 // LINE 131:
 	Viewer.pos.x = (u_dyobj->loc.x + viewerPos.x);
 // LINE 132:
@@ -134,15 +127,7 @@ _Tfe:
 	__asm        cmp    G_camera_mode, 1;
 	__asm        jne    _T172;
 // LINE 151:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        lea    eax, viewerPos.x;
-	__asm        push   eax;
-	__asm        push   0x5B4DD0;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x5b4dd0, viewerPos.x, (G_uheli->dyheli + 0x24));
 // LINE 152:
 	Viewer.pos.x = (G_uheli->dyheli->loc.x + viewerPos.x);
 // LINE 153:
@@ -157,13 +142,7 @@ _T172:
 // LINE 158:
 	MTCreateDOF4x4(mat[0][0], (G_uheli + 0x100));
 // LINE 161:
-	__asm        lea    eax, mat[0][0];
-	__asm        push   eax;
-	__asm        lea    eax, viewerPos.x;
-	__asm        push   eax;
-	__asm        push   0x5B4DC0;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x5b4dc0, viewerPos.x, mat[0][0]);
 // LINE 162:
 	Viewer.pos.x = (G_uheli->dyheli->loc.x + viewerPos.x);
 // LINE 163:
@@ -279,7 +258,7 @@ _T3b4:
 	__asm        push   eax;
 	__asm        mov    eax, CameraVector.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    CameraDelta.x, eax;
 // LINE 258:
@@ -287,7 +266,7 @@ _T3b4:
 	__asm        push   eax;
 	__asm        mov    eax, CameraVector.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    CameraDelta.z, eax;
 // LINE 260:
@@ -444,7 +423,7 @@ _T118:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x100];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
@@ -457,7 +436,7 @@ _T118:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
@@ -586,7 +565,7 @@ _T66:
 	__asm        push   eax;
 	__asm        mov    eax, WorkVector.z;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    cosineYaw, eax;
 // LINE 450:
@@ -594,7 +573,7 @@ _T66:
 	__asm        push   eax;
 	__asm        mov    eax, WorkVector.x;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    sineYaw, eax;
 // LINE 461:
@@ -603,7 +582,7 @@ _T8c:
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D20B1;
+	__asm        call   _FixedArcTan;
 	__asm        add    esp, 8;
 	__asm        mov    cameraHeading, eax;
 // LINE 465:
@@ -635,7 +614,7 @@ _Tee:
 	__asm        push   eax;
 	__asm        mov    eax, WorkVector.y;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        neg    eax;
 	__asm        mov    sinePitch, eax;
@@ -644,7 +623,7 @@ _Tee:
 	__asm        push   eax;
 	__asm        mov    eax, LengthXZ;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    cosinePitch, eax;
 // LINE 481:
@@ -653,7 +632,7 @@ _T116:
 	__asm        push   eax;
 	__asm        mov    eax, sinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D20B1;
+	__asm        call   _FixedArcTan;
 	__asm        add    esp, 8;
 	__asm        mov    cameraPitch, eax;
 // LINE 485:
@@ -665,19 +644,19 @@ _T116:
 	__asm        push   eax;
 	__asm        mov    eax, sinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    Viewer.matrix[0][0], ebx;
@@ -686,7 +665,7 @@ _T116:
 	__asm        push   eax;
 	__asm        mov    eax, cosinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    Viewer.matrix[0][1], eax;
 // LINE 493:
@@ -694,19 +673,19 @@ _T116:
 	__asm        push   eax;
 	__asm        mov    eax, sinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        neg    eax;
 	__asm        add    ebx, eax;
@@ -718,19 +697,19 @@ _T116:
 	__asm        push   eax;
 	__asm        mov    eax, sinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, sineRoll;
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        neg    eax;
 	__asm        add    ebx, eax;
@@ -740,7 +719,7 @@ _T116:
 	__asm        push   eax;
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    Viewer.matrix[1][1], eax;
 // LINE 500:
@@ -748,19 +727,19 @@ _T116:
 	__asm        push   eax;
 	__asm        mov    eax, sinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, sineRoll;
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    Viewer.matrix[1][2], ebx;
@@ -771,7 +750,7 @@ _T116:
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    Viewer.matrix[2][0], eax;
 // LINE 504:
@@ -783,7 +762,7 @@ _T116:
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    Viewer.matrix[2][2], eax;
 // LINE 506:
@@ -802,15 +781,7 @@ _T116:
 	__asm        jne    __RETURN;
 // LINE 517:
 _T2d7:
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0x114];
-	__asm        sar    eax, 1;
-	__asm        push   eax;
-	__asm        call   0x004D2034;
-	__asm        add    esp, 8;
+	_VRPostZRot((G_uheli->roll >> 0x1), (0x6c12a0 + 0x38));
 // LINE 520:
 __RETURN:
 }
@@ -825,50 +796,29 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	/*bp-0x18*/  int32_t sinePitch;
 
 // LINE 533:
-	__asm        lea    eax, cosineYaw;
-	__asm        push   eax;
-	__asm        lea    eax, sineYaw;
-	__asm        push   eax;
-	__asm        mov    eax, Yaw;
-	__asm        push   eax;
-	__asm        call   0x004D19FC;
-	__asm        add    esp, 0xC;
+	_VRSinCos(Yaw, sineYaw, cosineYaw);
 // LINE 534:
-	__asm        lea    eax, cosinePitch;
-	__asm        push   eax;
-	__asm        lea    eax, sinePitch;
-	__asm        push   eax;
-	__asm        mov    eax, Pitch;
-	__asm        push   eax;
-	__asm        call   0x004D19FC;
-	__asm        add    esp, 0xC;
+	_VRSinCos(Pitch, sinePitch, cosinePitch);
 // LINE 535:
-	__asm        lea    eax, cosineRoll;
-	__asm        push   eax;
-	__asm        lea    eax, sineRoll;
-	__asm        push   eax;
-	__asm        mov    eax, Roll;
-	__asm        push   eax;
-	__asm        call   0x004D19FC;
-	__asm        add    esp, 0xC;
+	_VRSinCos(Roll, sineRoll, cosineRoll);
 // LINE 538:
 	__asm        mov    eax, sineRoll;
 	__asm        push   eax;
 	__asm        mov    eax, sinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, matrix;
@@ -878,7 +828,7 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        push   eax;
 	__asm        mov    eax, cosinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, matrix;
 	__asm        mov    [ecx+4], eax;
@@ -887,19 +837,19 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        push   eax;
 	__asm        mov    eax, sinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        neg    eax;
 	__asm        add    ebx, eax;
@@ -912,19 +862,19 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        push   eax;
 	__asm        mov    eax, sinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, sineRoll;
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        neg    eax;
 	__asm        add    ebx, eax;
@@ -935,7 +885,7 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        push   eax;
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, matrix;
 	__asm        mov    [ecx+0x14], eax;
@@ -944,19 +894,19 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        push   eax;
 	__asm        mov    eax, sinePitch;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, sineRoll;
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, matrix;
@@ -968,7 +918,7 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        push   eax;
 	__asm        mov    eax, sineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, matrix;
 	__asm        mov    [ecx+0x20], eax;
@@ -982,7 +932,7 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        push   eax;
 	__asm        mov    eax, cosineYaw;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, matrix;
 	__asm        mov    [ecx+0x28], eax;
@@ -1047,15 +997,7 @@ _Td6:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T114;
 // LINE 658:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        lea    eax, cameraDelta.x;
-	__asm        push   eax;
-	__asm        push   0x59B518;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x59b518, cameraDelta.x, (G_uheli->dyheli + 0x24));
 // LINE 671:
 	CalcCameraAngles(cameraDelta.x);
 // LINE 673:

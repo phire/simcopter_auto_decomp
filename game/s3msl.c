@@ -301,10 +301,10 @@ void S3MissileInit() {
 
 // LINE 203:
 	__asm        push   0x7C;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D8520;
+	__asm        call   _VRGetObjInstanceMemReq;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 210:
@@ -341,32 +341,25 @@ _FOR_COND_32:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
 	__asm        push   0x7C;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D8570;
+	__asm        call   _VRCreateObjInstance;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+8], eax;
 // LINE 224:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(md->dymissile->mesh, G_main_mp);
 // LINE 225:
 	__asm        jmp    _FOR_NEXT_32;
 // LINE 229:
 _Tee:
 	__asm        push   0xAE;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D8520;
+	__asm        call   _VRGetObjInstanceMemReq;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 236:
@@ -403,32 +396,25 @@ _FOR_COND_11a:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
 	__asm        push   0xAE;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D8570;
+	__asm        call   _VRCreateObjInstance;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+8], eax;
 // LINE 250:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(md->dymissile->mesh, G_main_mp);
 // LINE 251:
 	__asm        jmp    _FOR_NEXT_11a;
 // LINE 254:
 _T1d9:
 	__asm        push   0x147;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D8520;
+	__asm        call   _VRGetObjInstanceMemReq;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 261:
@@ -465,23 +451,16 @@ _FOR_COND_205:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
 	__asm        push   0x147;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D8570;
+	__asm        call   _VRCreateObjInstance;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+8], eax;
 // LINE 275:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(md->dymissile->mesh, G_main_mp);
 // LINE 276:
 	__asm        jmp    _FOR_NEXT_205;
 // LINE 283:
@@ -504,10 +483,10 @@ _FOR_COND_2d7:
 // LINE 289:
 	__asm        mov    eax, j;
 	__asm        push   eax;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D8520;
+	__asm        call   _VRGetObjInstanceMemReq;
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 292:
@@ -534,23 +513,16 @@ _FOR_COND_2d7:
 	__asm        push   eax;
 	__asm        mov    eax, j;
 	__asm        push   eax;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D8570;
+	__asm        call   _VRCreateObjInstance;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+8], eax;
 // LINE 303:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(md->dymissile->mesh, G_main_mp);
 // LINE 304:
 	__asm        jmp    _FOR_NEXT_2d7;
 // LINE 311:
@@ -594,31 +566,13 @@ _FOR_COND_3d4:
 	ERexit(0x5b7344);
 // LINE 333:
 _T47b:
-	__asm        push   2;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(obj, 0x2);
 // LINE 334:
-	__asm        push   0;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(obj, 0x0);
 // LINE 335:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(obj, G_main_mp);
 // LINE 338:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(obj, oinfo.Faces);
 // LINE 339:
 	verts = oinfo.VertsPtr;
 // LINE 342:
@@ -681,24 +635,11 @@ _FOR_COND_527:
 	ERexit(0x5b7360);
 // LINE 378:
 _T5c1:
-	__asm        push   2;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(obj, 0x2);
 // LINE 379:
-	__asm        push   1;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(obj, 0x1);
 // LINE 380:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(obj, G_main_mp);
 // LINE 382:
 	md->dymissile->mesh = obj;
 // LINE 383:
@@ -849,32 +790,20 @@ _T1ac:
 // LINE 488:
 	md->flags = 0x4;
 // LINE 493:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(md->dymissile->mesh, oinfo.Faces);
 // LINE 494:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 495:
 _FOR_1fc:
 	for (i = 0x0; (oinfo.Faces > i); i++) {
 		// LINE 497:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 498:
 			finfo.Plotter = 0x17;
 		// LINE 499:
@@ -897,16 +826,11 @@ _FOR_1fc:
 		_T260:
 			finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 		// LINE 509:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6941;
-			__asm        add    esp, 8;
+			_VRSetFaceInfo(face, finfo.Face);
 		// LINE 510:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}
@@ -959,32 +883,20 @@ _T31b:
 // LINE 538:
 	md->flags = 0x20;
 // LINE 542:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(md->dymissile->mesh, oinfo.Faces);
 // LINE 543:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 544:
 _FOR_36b:
 	for (i = 0x0; (oinfo.Faces > i); i++) {
 		// LINE 546:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 547:
 			finfo.Plotter = 0x1a;
 		// LINE 548:
@@ -992,16 +904,11 @@ _FOR_36b:
 		// LINE 549:
 			finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 		// LINE 550:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6941;
-			__asm        add    esp, 8;
+			_VRSetFaceInfo(face, finfo.Face);
 		// LINE 551:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}
@@ -1045,32 +952,20 @@ _T431:
 // LINE 571:
 	md->flags = 0x40;
 // LINE 575:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(md->dymissile->mesh, oinfo.Faces);
 // LINE 576:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 577:
 _FOR_481:
 	for (i = 0x0; (oinfo.Faces > i); i++) {
 		// LINE 579:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 580:
 			finfo.Plotter = 0x1a;
 		// LINE 581:
@@ -1078,16 +973,11 @@ _FOR_481:
 		// LINE 582:
 			finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 		// LINE 583:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6941;
-			__asm        add    esp, 8;
+			_VRSetFaceInfo(face, finfo.Face);
 		// LINE 584:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}
@@ -1131,32 +1021,20 @@ _T547:
 // LINE 604:
 	md->flags = 0x80;
 // LINE 608:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(md->dymissile->mesh, oinfo.Faces);
 // LINE 609:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 610:
 _FOR_597:
 	for (i = 0x0; (oinfo.Faces > i); i++) {
 		// LINE 612:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 613:
 			finfo.Plotter = 0x1a;
 		// LINE 614:
@@ -1164,16 +1042,11 @@ _FOR_597:
 		// LINE 615:
 			finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 		// LINE 616:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6941;
-			__asm        add    esp, 8;
+			_VRSetFaceInfo(face, finfo.Face);
 		// LINE 617:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}
@@ -1217,32 +1090,20 @@ _T65d:
 // LINE 637:
 	md->flags = 0x200;
 // LINE 641:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(md->dymissile->mesh, oinfo.Faces);
 // LINE 642:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 643:
 _FOR_6ad:
 	for (i = 0x0; (oinfo.Faces > i); i++) {
 		// LINE 645:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 646:
 			finfo.Plotter = 0x1a;
 		// LINE 647:
@@ -1287,16 +1148,11 @@ _FOR_6ad:
 			finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 		// LINE 667:
 		_T762:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6941;
-			__asm        add    esp, 8;
+			_VRSetFaceInfo(face, finfo.Face);
 		// LINE 668:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}
@@ -1414,14 +1270,7 @@ _T906:
 	smoke_size = 0x4;
 // LINE 724:
 _T90d:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(md->dymissile->mesh, oinfo.Faces);
 // LINE 725:
 	md->dymissile->radius = (oinfo.Radius * scale);
 // LINE 727:
@@ -1484,14 +1333,7 @@ _T9fa:
 	smoke_size = 0x4;
 // LINE 757:
 _Ta01:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(md->dymissile->mesh, oinfo.Faces);
 // LINE 758:
 	md->dymissile->radius = (oinfo.Radius * scale);
 // LINE 760:
@@ -1614,24 +1456,14 @@ _Tbc4:
 	__asm        cmp    msl_type, 0xB;
 	__asm        jne    _Tbe8;
 // LINE 814:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((md->dymissile + 0x24));
 // LINE 816:
 	__asm        jmp    _Te79;
 _Tbe8:
 	__asm        cmp    msl_type, 3;
 	__asm        jne    _Tc19;
 // LINE 818:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((md->dymissile + 0x24));
 // LINE 819:
 	md->timetolive = 0x50000;
 // LINE 821:
@@ -1801,15 +1633,7 @@ _Tee5:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 900:
-	__asm        push   1;
-	__asm        lea    eax, pos.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(md->dymissile->mesh, pos.loc.x, 0x1);
 // LINE 902:
 	return md;
 // LINE 904:
@@ -1906,7 +1730,7 @@ _Td4:
 	__asm        mov    eax, edx;
 	__asm        shl    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004D2004;
+	__asm        call   _VRPostXRot;
 	__asm        add    esp, 8;
 // LINE 958:
 	__asm        mov    eax, md;
@@ -1921,7 +1745,7 @@ _Td4:
 	__asm        mov    eax, edx;
 	__asm        shl    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004D201C;
+	__asm        call   _VRPostYRot;
 	__asm        add    esp, 8;
 // LINE 959:
 	__asm        mov    eax, md;
@@ -1936,18 +1760,13 @@ _Td4:
 	__asm        mov    eax, edx;
 	__asm        shl    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004D2034;
+	__asm        call   _VRPostZRot;
 	__asm        add    esp, 8;
 // LINE 961:
 	__asm        jmp    _T4c1;
 // LINE 963:
 _T16d:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((md->dymissile + 0x24));
 // LINE 969:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x38], 1;
@@ -2180,7 +1999,7 @@ _T4c1:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0x28F;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        neg    ebx;
@@ -2193,7 +2012,7 @@ _T4c1:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x10], eax;
@@ -2204,13 +2023,13 @@ _T4c1:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
 	__asm        push   0x280000;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, md;
@@ -2222,7 +2041,7 @@ _T4c1:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
@@ -2234,7 +2053,7 @@ _T4c1:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 1077:
@@ -2243,7 +2062,7 @@ _T4c1:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -2256,7 +2075,7 @@ _T4c1:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -2269,7 +2088,7 @@ _T4c1:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -2354,7 +2173,7 @@ _T75d:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0xC20C;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -2394,7 +2213,7 @@ _T7ee:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0xC20C;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -2485,15 +2304,7 @@ _T90b:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 1164:
-	__asm        push   1;
-	__asm        lea    eax, pos.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(md->dymissile->mesh, pos.loc.x, 0x1);
 // LINE 1166:
 	__asm        jmp    _FOR_NEXT_9d;
 // LINE 1168:
@@ -2626,7 +2437,7 @@ _Tb7f:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0x28F;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        neg    ebx;
@@ -2639,7 +2450,7 @@ _Tb7f:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x10], eax;
@@ -2650,13 +2461,13 @@ _Tb7f:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
 	__asm        push   0x280000;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, md;
@@ -2668,7 +2479,7 @@ _Tb7f:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
@@ -2680,7 +2491,7 @@ _Tb7f:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 1246:
@@ -2689,7 +2500,7 @@ _Tb7f:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -2702,7 +2513,7 @@ _Tb7f:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -2715,7 +2526,7 @@ _Tb7f:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -2850,7 +2661,7 @@ _Tebe:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0xC20C;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -2890,7 +2701,7 @@ _Tf4f:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0xC20C;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -2976,15 +2787,7 @@ _T1039:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 1348:
-	__asm        push   3;
-	__asm        lea    eax, pos.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(md->dymissile->mesh, pos.loc.x, 0x3);
 // LINE 1350:
 	__asm        jmp    _FOR_NEXT_a3c;
 // LINE 1353:
@@ -3087,7 +2890,7 @@ _T1225:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 1398:
@@ -3096,7 +2899,7 @@ _T1225:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -3109,7 +2912,7 @@ _T1225:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -3122,7 +2925,7 @@ _T1225:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -3254,15 +3057,7 @@ _T1434:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 1455:
-	__asm        push   3;
-	__asm        lea    eax, pos.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(md->dymissile->mesh, pos.loc.x, 0x3);
 // LINE 1458:
 	__asm        jmp    _FOR_NEXT_1137;
 // LINE 1463:
@@ -3365,7 +3160,7 @@ _T1620:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 1507:
@@ -3374,7 +3169,7 @@ _T1620:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -3387,7 +3182,7 @@ _T1620:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -3400,7 +3195,7 @@ _T1620:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -3517,15 +3312,7 @@ _T17ed:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 1554:
-	__asm        push   3;
-	__asm        lea    eax, pos.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(md->dymissile->mesh, pos.loc.x, 0x3);
 // LINE 1557:
 	__asm        jmp    _FOR_NEXT_1532;
 // LINE 1562:
@@ -3632,7 +3419,7 @@ _T19d9:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0x51E;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        neg    ebx;
@@ -3645,7 +3432,7 @@ _T19d9:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x10], eax;
@@ -3656,13 +3443,13 @@ _T19d9:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
 	__asm        push   0x280000;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, md;
@@ -3674,7 +3461,7 @@ _T19d9:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
@@ -3692,7 +3479,7 @@ _T1ab4:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0x28F;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        neg    ebx;
@@ -3705,7 +3492,7 @@ _T1ab4:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x10], eax;
@@ -3716,13 +3503,13 @@ _T1ab4:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
 	__asm        push   0x280000;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, md;
@@ -3734,7 +3521,7 @@ _T1ab4:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
@@ -3758,7 +3545,7 @@ _T1ba3:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0xA3C;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        neg    ebx;
@@ -3771,7 +3558,7 @@ _T1bd9:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 1646:
@@ -3780,7 +3567,7 @@ _T1bd9:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -3793,7 +3580,7 @@ _T1bd9:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -3806,7 +3593,7 @@ _T1bd9:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -3923,15 +3710,7 @@ _T1da6:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 1692:
-	__asm        push   3;
-	__asm        lea    eax, pos.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(md->dymissile->mesh, pos.loc.x, 0x3);
 // LINE 1693:
 	__asm        jmp    _FOR_NEXT_18eb;
 // LINE 1698:
@@ -4004,7 +3783,7 @@ _T1f1d:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0x28F;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        neg    ebx;
@@ -4017,7 +3796,7 @@ _T1f1d:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x10], eax;
@@ -4028,13 +3807,13 @@ _T1f1d:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
 	__asm        push   0x280000;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, md;
@@ -4046,7 +3825,7 @@ _T1f1d:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
@@ -4058,7 +3837,7 @@ _T1f1d:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    dist, eax;
 // LINE 1738:
@@ -4067,7 +3846,7 @@ _T1f1d:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -4080,7 +3859,7 @@ _T1f1d:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -4093,7 +3872,7 @@ _T1f1d:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -4146,7 +3925,7 @@ _T1f1d:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0xC20C;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -4174,7 +3953,7 @@ _T214a:
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
 	__asm        push   0xC20C;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0xC], eax;
@@ -4416,7 +4195,7 @@ __WHILE_109:
 			__asm        mov    eax, md;
 			__asm        mov    eax, [eax+0x10];
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    ecx, md;
 			__asm        mov    ecx, [ecx+0x28];
@@ -4429,7 +4208,7 @@ __WHILE_109:
 			__asm        mov    eax, md;
 			__asm        mov    eax, [eax+0x14];
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    ecx, md;
 			__asm        mov    ecx, [ecx+0x28];
@@ -4442,7 +4221,7 @@ __WHILE_109:
 			__asm        mov    eax, md;
 			__asm        mov    eax, [eax+0x18];
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    ecx, md;
 			__asm        mov    ecx, [ecx+0x28];
@@ -4525,21 +4304,9 @@ skip_dynamic_objs:
 __WHILE_45f:
 	while ((stobj != 0x0)) {
 		// LINE 1998:
-			__asm        lea    eax, oinfo.Faces;
-			__asm        push   eax;
-			__asm        mov    eax, stobj;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        call   0x004D8859;
-			__asm        add    esp, 8;
+			_VRGetObjInfo(stobj->mesh, oinfo.Faces);
 		// LINE 1999:
-			__asm        lea    eax, center.x;
-			__asm        push   eax;
-			__asm        mov    eax, stobj;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        call   0x004D88C3;
-			__asm        add    esp, 8;
+			_VRGetObjCenter(stobj->mesh, center.x);
 		// LINE 2002:
 			__asm        lea    eax, cloc.x;
 			__asm        lea    ecx, oloc.x;
@@ -4572,7 +4339,7 @@ __WHILE_45f:
 			__asm        mov    eax, md;
 			__asm        mov    eax, [eax+0x10];
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    ecx, md;
 			__asm        mov    ecx, [ecx+0x28];
@@ -4585,7 +4352,7 @@ __WHILE_45f:
 			__asm        mov    eax, md;
 			__asm        mov    eax, [eax+0x14];
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    ecx, md;
 			__asm        mov    ecx, [ecx+0x28];
@@ -4598,7 +4365,7 @@ __WHILE_45f:
 			__asm        mov    eax, md;
 			__asm        mov    eax, [eax+0x18];
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    ecx, md;
 			__asm        mov    ecx, [ecx+0x28];
@@ -4636,15 +4403,7 @@ __WHILE_45f:
 		// LINE 2040:
 			MTCreateReflection4x4(refmat[0][0], norm);
 		// LINE 2041:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        lea    eax, newvector.x;
-			__asm        push   eax;
-			__asm        mov    eax, md;
-			__asm        add    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   0x004D2094;
-			__asm        add    esp, 0xC;
+			_VRRotateP3d((md + 0x10), newvector.x, refmat[0][0]);
 		// LINE 2042:
 			__asm        lea    eax, newvector.x;
 			__asm        mov    ecx, md;
@@ -4740,10 +4499,7 @@ __WHILE_45f:
 		_FOR_7a0:
 			for (j = 0x0; (j < num_debris); j++) {
 				// LINE 2077:
-					__asm        lea    eax, refmat[0][0];
-					__asm        push   eax;
-					__asm        call   0x004D1FF1;
-					__asm        add    esp, 4;
+					_VRIdentity4x4(refmat[0][0]);
 				// LINE 2078:
 					__asm        lea    eax, refmat[0][0];
 					__asm        push   eax;
@@ -4755,7 +4511,7 @@ __WHILE_45f:
 					__asm        mov    eax, edx;
 					__asm        shl    eax, 0x10;
 					__asm        push   eax;
-					__asm        call   0x004D201C;
+					__asm        call   _VRPostYRot;
 					__asm        add    esp, 8;
 				// LINE 2079:
 					__asm        lea    eax, refmat[0][0];
@@ -4768,16 +4524,10 @@ __WHILE_45f:
 					__asm        lea    eax, [edx+0x2EE];
 					__asm        shl    eax, 0x10;
 					__asm        push   eax;
-					__asm        call   0x004D2004;
+					__asm        call   _VRPostXRot;
 					__asm        add    esp, 8;
 				// LINE 2080:
-					__asm        lea    eax, refmat[0][0];
-					__asm        push   eax;
-					__asm        lea    eax, vec.x;
-					__asm        push   eax;
-					__asm        push   0x59B518;
-					__asm        call   0x004D2094;
-					__asm        add    esp, 0xC;
+					_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
 				// LINE 2091:
 					__asm        mov    eax, md;
 					__asm        mov    eax, [eax+0x40];
@@ -4863,7 +4613,7 @@ _T990:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -4876,7 +4626,7 @@ _T990:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -4889,7 +4639,7 @@ _T990:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, md;
 	__asm        mov    ecx, [ecx+0x28];
@@ -4969,15 +4719,7 @@ _Tb25:
 // LINE 2188:
 	MTCreateReflection4x4(refmat[0][0], 0x59b508);
 // LINE 2189:
-	__asm        lea    eax, refmat[0][0];
-	__asm        push   eax;
-	__asm        lea    eax, newvector.x;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d((md + 0x10), newvector.x, refmat[0][0]);
 // LINE 2190:
 	__asm        lea    eax, newvector.x;
 	__asm        mov    ecx, md;
@@ -5098,7 +4840,7 @@ _T5f:
 	__asm        mov    eax, sv;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, sp;
 	__asm        mov    ecx, [ecx];
@@ -5110,7 +4852,7 @@ _T5f:
 	__asm        mov    eax, sv;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, sp;
 	__asm        mov    ecx, [ecx+4];
@@ -5122,7 +4864,7 @@ _T5f:
 	__asm        mov    eax, sv;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, sp;
 	__asm        mov    ecx, [ecx+8];
@@ -5374,7 +5116,7 @@ _T2ca:
 _T2f7:
 	__asm        fld    newdist;
 	__asm        fmul   qword ptr ds:[0x592FD8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 2587:
 __RETURN:
@@ -5678,12 +5420,7 @@ _FOR_4b:
 			__asm        mov    eax, [eax+8];
 			__asm        mov    [ecx+8], eax;
 		// LINE 2806:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x28];
-			__asm        add    eax, 0x24;
-			__asm        push   eax;
-			__asm        call   0x004D1FF1;
-			__asm        add    esp, 4;
+			_VRIdentity4x4((md->dymissile + 0x24));
 		// LINE 2809:
 			__asm        mov    eax, md;
 			__asm        test   byte ptr [eax], 1;
@@ -5796,12 +5533,7 @@ _FOR_209:
 			__asm        mov    eax, [eax+8];
 			__asm        mov    [ecx+8], eax;
 		// LINE 2852:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x28];
-			__asm        add    eax, 0x24;
-			__asm        push   eax;
-			__asm        call   0x004D1FF1;
-			__asm        add    esp, 4;
+			_VRIdentity4x4((md->dymissile + 0x24));
 		// LINE 2855:
 			__asm        mov    eax, md;
 			__asm        test   byte ptr [eax], 1;

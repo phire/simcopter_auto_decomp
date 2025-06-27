@@ -625,13 +625,13 @@ _T3a:
 // Block start:
 	/*bp-0x30*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
 	__asm        push   0x122;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    object, eax;
 // LINE 136:
 	__asm        mov    eax, object;
 	__asm        push   eax;
-	__asm        call   0x004D8520;
+	__asm        call   _VRGetObjInstanceMemReq;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, G_dyobjmempool;
@@ -647,7 +647,7 @@ _T3a:
 	__asm        push   eax;
 	__asm        mov    eax, object;
 	__asm        push   eax;
-	__asm        call   0x004D8570;
+	__asm        call   _VRCreateObjInstance;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, youveWonABrandNewCar;
 	__asm        mov    [ecx+0x12E], eax;
@@ -656,13 +656,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        je     _Td6;
 // LINE 148:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    eax, [eax+0x12E];
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(youveWonABrandNewCar->dispatchIcon.mesh, G_main_mp);
 // LINE 150:
 	__asm        jmp    _T10e;
 // LINE 153:
@@ -699,22 +693,11 @@ _T145:
 // LINE 170:
 	youveWonABrandNewCar->dispatchIcon.flags = 0x21;
 // LINE 171:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    eax, [eax+0x12E];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(youveWonABrandNewCar->dispatchIcon.mesh, oinfo.Faces);
 // LINE 172:
 	youveWonABrandNewCar->dispatchIcon.radius = oinfo.Radius;
 // LINE 173:
-	__asm        push   0;
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    eax, [eax+0x12E];
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(youveWonABrandNewCar->dispatchIcon.mesh, 0x0);
 // LINE 175:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    ecx, curPoliceCars;

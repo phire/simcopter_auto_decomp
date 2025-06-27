@@ -302,7 +302,7 @@ _FOR_78:
 			__asm        call   atof;
 			__asm        add    esp, 4;
 			__asm        fmul   qword ptr ds:[0x5923E0];
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        mov    ecx, nCt2;
 			__asm        mov    edx, nTweakQueueSlotIdx;
 			__asm        mov    ebx, edx;

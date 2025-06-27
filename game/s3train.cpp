@@ -1019,14 +1019,7 @@ _T94:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 734:
-	__asm        push   3;
-	__asm        lea    eax, position.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xA9];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(this->dyObj1.mesh, position.loc.x, 0x3);
 // LINE 736:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x11D;
@@ -1044,14 +1037,7 @@ _T94:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 740:
-	__asm        push   3;
-	__asm        lea    eax, position.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10D];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(this->dyObj2.mesh, position.loc.x, 0x3);
 // LINE 742:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x181;
@@ -1069,14 +1055,7 @@ _T94:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 746:
-	__asm        push   3;
-	__asm        lea    eax, position.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x171];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(this->dyObj3.mesh, position.loc.x, 0x3);
 // LINE 751:
 // Block end:
 _T175:
@@ -1165,10 +1144,10 @@ _Tde:
 	__asm        push   0x7800000;
 	__asm        mov    eax, dist;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
@@ -1482,7 +1461,7 @@ void TrainClass::TrainCrashMovement() {
 	__asm        mov    eax, [eax+0x2D];
 	__asm        sar    eax, 1;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    distance, eax;
 // LINE 1095:
@@ -1513,7 +1492,7 @@ _T90:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    loc.x, eax;
 // LINE 1101:
@@ -1522,7 +1501,7 @@ _T90:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x19];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    loc.y, eax;
 // LINE 1102:
@@ -1531,7 +1510,7 @@ _T90:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    loc.z, eax;
 // LINE 1105:
@@ -1553,29 +1532,11 @@ _T90:
 // LINE 1113:
 	this->endcar->loc.z += loc.z;
 // LINE 1115:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        push   0x640000;
-	__asm        call   0x004D201C;
-	__asm        add    esp, 8;
+	_VRPostYRot(0x640000, (this->leadcar + 0x24));
 // LINE 1116:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        push   0x500000;
-	__asm        call   0x004D201C;
-	__asm        add    esp, 8;
+	_VRPostYRot(0x500000, (this->midcar + 0x24));
 // LINE 1117:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        push   0x320000;
-	__asm        call   0x004D201C;
-	__asm        add    esp, 8;
+	_VRPostYRot(0x320000, (this->endcar + 0x24));
 // LINE 1119:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, G_AvLoopTime;
@@ -1675,10 +1636,7 @@ _FOR_374:
 			__asm        add    eax, 0x190000;
 			__asm        mov    speed, eax;
 		// LINE 1196:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   0x004D1FF1;
-			__asm        add    esp, 4;
+			_VRIdentity4x4(refmat[0][0]);
 		// LINE 1197:
 			__asm        lea    eax, refmat[0][0];
 			__asm        push   eax;
@@ -1690,7 +1648,7 @@ _FOR_374:
 			__asm        mov    eax, edx;
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D201C;
+			__asm        call   _VRPostYRot;
 			__asm        add    esp, 8;
 		// LINE 1198:
 			__asm        lea    eax, refmat[0][0];
@@ -1703,16 +1661,10 @@ _FOR_374:
 			__asm        lea    eax, [edx+0x2EE];
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D2004;
+			__asm        call   _VRPostXRot;
 			__asm        add    esp, 8;
 		// LINE 1199:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        lea    eax, vec.x;
-			__asm        push   eax;
-			__asm        push   0x59B518;
-			__asm        call   0x004D2094;
-			__asm        add    esp, 0xC;
+			_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
 		// LINE 1210:
 			S3MissileStart(0x4, (this + 0x35), (this->leadcar + 0x18), vec.x, 0x2, this->leadcar, speed, this->missionId);
 	}
@@ -1762,10 +1714,7 @@ _FOR_4ea:
 			__asm        add    eax, 0x190000;
 			__asm        mov    speed, eax;
 		// LINE 1230:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   0x004D1FF1;
-			__asm        add    esp, 4;
+			_VRIdentity4x4(refmat[0][0]);
 		// LINE 1231:
 			__asm        lea    eax, refmat[0][0];
 			__asm        push   eax;
@@ -1777,7 +1726,7 @@ _FOR_4ea:
 			__asm        mov    eax, edx;
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D201C;
+			__asm        call   _VRPostYRot;
 			__asm        add    esp, 8;
 		// LINE 1232:
 			__asm        lea    eax, refmat[0][0];
@@ -1790,16 +1739,10 @@ _FOR_4ea:
 			__asm        lea    eax, [edx+0x2EE];
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D2004;
+			__asm        call   _VRPostXRot;
 			__asm        add    esp, 8;
 		// LINE 1233:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        lea    eax, vec.x;
-			__asm        push   eax;
-			__asm        push   0x59B518;
-			__asm        call   0x004D2094;
-			__asm        add    esp, 0xC;
+			_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
 		// LINE 1244:
 			S3MissileStart(0x4, (this + 0x35), (this->midcar + 0x18), vec.x, 0x2, this->midcar, speed, this->missionId);
 	}
@@ -1849,10 +1792,7 @@ _FOR_660:
 			__asm        add    eax, 0x190000;
 			__asm        mov    speed, eax;
 		// LINE 1264:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   0x004D1FF1;
-			__asm        add    esp, 4;
+			_VRIdentity4x4(refmat[0][0]);
 		// LINE 1265:
 			__asm        lea    eax, refmat[0][0];
 			__asm        push   eax;
@@ -1864,7 +1804,7 @@ _FOR_660:
 			__asm        mov    eax, edx;
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D201C;
+			__asm        call   _VRPostYRot;
 			__asm        add    esp, 8;
 		// LINE 1266:
 			__asm        lea    eax, refmat[0][0];
@@ -1877,16 +1817,10 @@ _FOR_660:
 			__asm        lea    eax, [edx+0x2EE];
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D2004;
+			__asm        call   _VRPostXRot;
 			__asm        add    esp, 8;
 		// LINE 1267:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        lea    eax, vec.x;
-			__asm        push   eax;
-			__asm        push   0x59B518;
-			__asm        call   0x004D2094;
-			__asm        add    esp, 0xC;
+			_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
 		// LINE 1278:
 			S3MissileStart(0x4, (this + 0x35), (this->endcar + 0x18), vec.x, 0x2, this->endcar, speed, this->missionId);
 	}
@@ -2118,24 +2052,9 @@ int32_t TrainClass::FinishedUturn() {
 	return 0x1;
 // LINE 1397:
 _T40:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        push   0x640000;
-	__asm        call   0x004D201C;
-	__asm        add    esp, 8;
+	_VRPostYRot(0x640000, (this->leadcar + 0x24));
 // LINE 1398:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x15;
-	__asm        push   eax;
-	__asm        push   0x59B518;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x59b518, (this + 0x15), (this->leadcar + 0x24));
 // LINE 1400:
 	return 0x0;
 // LINE 1402:
@@ -2172,7 +2091,7 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x1CD];
@@ -2187,7 +2106,7 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x19];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x1CD];
@@ -2202,7 +2121,7 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x1CD];
@@ -4331,7 +4250,7 @@ void TrainClass::MoveForward() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2D];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    distance, eax;
 // LINE 2703:
@@ -4354,7 +4273,7 @@ _T3c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x1CD];
@@ -4365,7 +4284,7 @@ _T3c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x19];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x1CD];
@@ -4376,7 +4295,7 @@ _T3c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x1CD];
@@ -6003,7 +5922,7 @@ void TrainClass::SetTrailingCars() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6023,7 +5942,7 @@ void TrainClass::SetTrailingCars() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x19];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6043,7 +5962,7 @@ void TrainClass::SetTrailingCars() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6063,7 +5982,7 @@ void TrainClass::SetTrailingCars() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6083,7 +6002,7 @@ void TrainClass::SetTrailingCars() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x19];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6103,7 +6022,7 @@ void TrainClass::SetTrailingCars() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6160,7 +6079,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x15];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    loc.x, ebx;
@@ -6175,7 +6094,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x19];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    loc.y, ebx;
@@ -6190,7 +6109,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    loc.z, ebx;
@@ -6210,7 +6129,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        push   eax;
 	__asm        mov    eax, vec.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6224,7 +6143,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        push   eax;
 	__asm        mov    eax, vec.y;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6238,7 +6157,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        push   eax;
 	__asm        mov    eax, vec.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6256,7 +6175,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        push   eax;
 	__asm        mov    eax, vec.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    loc.x, ebx;
@@ -6270,7 +6189,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        push   eax;
 	__asm        mov    eax, vec.y;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    loc.y, ebx;
@@ -6284,7 +6203,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        push   eax;
 	__asm        mov    eax, vec.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    loc.z, ebx;
@@ -6304,7 +6223,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        push   eax;
 	__asm        mov    eax, vec.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6318,7 +6237,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        push   eax;
 	__asm        mov    eax, vec.y;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -6332,7 +6251,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        push   eax;
 	__asm        mov    eax, vec.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
@@ -8137,21 +8056,21 @@ int32_t TrainClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x95];
 	__asm        push   eax;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    object1, eax;
 // LINE 4421:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x99];
 	__asm        push   eax;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    object2, eax;
 // LINE 4422:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x9D];
 	__asm        push   eax;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    object3, eax;
 // LINE 4424:
@@ -8228,30 +8147,13 @@ _T152:
 // LINE 4495:
 	this->dyObj3.flags = 0x81;
 // LINE 4497:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xC5;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((this + 0xc5));
 // LINE 4498:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x129;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((this + 0x129));
 // LINE 4499:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x18D;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((this + 0x18d));
 // LINE 4500:
-	__asm        lea    eax, objectInfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, object1;
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(object1, objectInfo.Faces);
 // LINE 4501:
 	this->dyObj1.radius = objectInfo.Radius;
 // LINE 4502:

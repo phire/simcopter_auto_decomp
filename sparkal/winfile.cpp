@@ -1157,7 +1157,7 @@ unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilte
 // LINE 108:
 	__asm        lea    eax, ofn.lStructSize;
 	__asm        push   eax;
-	__asm        call   0x004C458E;
+	__asm        call   _GetOpenFileNameA@4;
 	__asm        test   eax, eax;
 	__asm        jne    _Tad;
 // LINE 109:
@@ -1611,7 +1611,7 @@ unsigned long GetSaveFilePath(char * pFilePath, char * pSaveTitle, char * pFilte
 // LINE 165:
 	__asm        lea    eax, ofn.lStructSize;
 	__asm        push   eax;
-	__asm        call   0x004C4594;
+	__asm        call   _GetSaveFileNameA@4;
 	__asm        test   eax, eax;
 	__asm        jne    _Tad;
 // LINE 166:

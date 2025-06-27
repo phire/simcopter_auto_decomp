@@ -926,7 +926,7 @@ _L44245:
 	return;
 _L48859:
 	__asm        mov    eax, 0x595CE0;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;

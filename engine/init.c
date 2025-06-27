@@ -21,29 +21,19 @@ struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
 // FUNCTION: COPTER_D 0x0058e3e0
 void VREngineInit() {
 // LINE 48:
-	__asm        push   0x5C2770;
-	__asm        call   0x004D6A69;
-	__asm        add    esp, 4;
+	_VRSetWindow(0x5c2770);
 // LINE 49:
-	__asm        push   0xD555;
-	__asm        call   0x004D6610;
-	__asm        add    esp, 4;
+	_VRSetAspectRatio(0xd555);
 // LINE 50:
 	InitResource();
 // LINE 51:
-	__asm        push   1;
-	__asm        call   0x004D681E;
-	__asm        add    esp, 4;
+	_VRSetClearMode(0x1);
 // LINE 52:
-	__asm        push   0;
-	__asm        call   0x004D682B;
-	__asm        add    esp, 4;
+	_VRSetClearClr(0x0);
 // LINE 53:
-	__asm        push   0;
-	__asm        call   0x004D7B70;
-	__asm        add    esp, 4;
+	_VRSetFarClipPlaneZ(0x0);
 // LINE 54:
-	__asm        call   0x004D69C9;
+	_EngineInit();
 // LINE 56:
 }
 

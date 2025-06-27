@@ -3142,9 +3142,9 @@ _Tdd:
 	__asm        fild   dword ptr [ebp-0x24];
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    nRadiusOfCircle, eax;
 // LINE 226:
 	__asm        jmp    _T14c;

@@ -1728,7 +1728,7 @@ _T2b3:
 	__asm        push   eax;
 	__asm        mov    eax, radius;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    halfradius, eax;
 // LINE 193:
@@ -1817,7 +1817,7 @@ __WHILE_6e:
 			__asm        mov    eax, dyobj;
 			__asm        mov    eax, [eax+0x10];
 			__asm        push   eax;
-			__asm        call   0x004D19DF;
+			__asm        call   _FixedDiv;
 			__asm        add    esp, 8;
 			__asm        push   eax;
 			__asm        mov    eax, dyobj;
@@ -2133,7 +2133,7 @@ _LOOP_12:
 			__asm        push   eax;
 			__asm        mov    eax, dx;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    dx, eax;
 		// LINE 359:
@@ -2142,7 +2142,7 @@ _LOOP_12:
 			__asm        push   eax;
 			__asm        mov    eax, dz;
 			__asm        push   eax;
-			__asm        call   0x004D19BD;
+			__asm        call   _FixedMul;
 			__asm        add    esp, 8;
 			__asm        mov    dz, eax;
 		// LINE 360:
@@ -2206,20 +2206,13 @@ enum cYObject::MoveErrorCode cYObject::TryVectorMove(/*unpacked*/ struct Point3d
 	return 0x7;
 // LINE 384:
 _T20:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x48;
-	__asm        push   eax;
-	__asm        lea    eax, vector.x;
-	__asm        push   eax;
-	__asm        push   0x59B518;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x59b518, vector.x, (this + 0x48));
 // LINE 385:
 	__asm        mov    eax, fwdspeed;
 	__asm        push   eax;
 	__asm        mov    eax, vector.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    Vx, eax;
 // LINE 386:
@@ -2227,7 +2220,7 @@ _T20:
 	__asm        push   eax;
 	__asm        mov    eax, vector.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    Vz, eax;
 // LINE 388:
@@ -2235,7 +2228,7 @@ _T20:
 	__asm        push   eax;
 	__asm        mov    eax, Vx;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    dx, eax;
 // LINE 389:
@@ -2243,7 +2236,7 @@ _T20:
 	__asm        push   eax;
 	__asm        mov    eax, Vz;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    dz, eax;
 // LINE 392:
@@ -2342,7 +2335,7 @@ _T116:
 	__asm        push   0x140000;
 	__asm        mov    eax, ht;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ht, eax;
 // LINE 430:
@@ -2441,7 +2434,7 @@ _T28e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    myrad, eax;
 	__asm        mov    eax, this;
@@ -2458,7 +2451,7 @@ _T28e:
 	__asm        mov    eax, [ebp-0x84];
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    masterrad, eax;
 	__asm        jmp    _T311;
@@ -3572,12 +3565,12 @@ _T3bc:
 	__asm        fstp   overallzloc;
 // LINE 728:
 	__asm        fld    overallxloc;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        shl    eax, 0x10;
 	__asm        mov    overx, eax;
 // LINE 729:
 	__asm        fld    overallzloc;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        shl    eax, 0x10;
 	__asm        mov    overz, eax;
 // LINE 731:
@@ -6390,7 +6383,7 @@ enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(/*unpacked*/ struct T
 
 	__asm        push   0x20000;
 	__asm        push   0x50000;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x34], eax;
@@ -6697,7 +6690,7 @@ _T520:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        push   eax;
-	__asm        call   0x004D8781;
+	__asm        call   _VRPositionObj;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T571;
 _T571:
@@ -6866,10 +6859,7 @@ _Tb5:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1429:
-	__asm        lea    eax, mat[0][0];
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4(mat[0][0]);
 // LINE 1431:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -6881,17 +6871,10 @@ _Tb5:
 	__asm        lea    eax, [edx+0x2EE];
 	__asm        shl    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004D2004;
+	__asm        call   _VRPostXRot;
 	__asm        add    esp, 8;
 // LINE 1432:
-	__asm        lea    eax, mat[0][0];
-	__asm        push   eax;
-	__asm        lea    eax, debrisunitvect.x;
-	__asm        push   eax;
-	__asm        lea    eax, personunitvect.x;
-	__asm        push   eax;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(personunitvect.x, debrisunitvect.x, mat[0][0]);
 // LINE 1433:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x32;
@@ -8659,7 +8642,7 @@ _Te5:
 	__asm        jmp    _T10e;
 _T10e:
 	__asm        fld    res;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    [ecx], ax;
 // LINE 1786:

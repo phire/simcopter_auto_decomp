@@ -1406,7 +1406,7 @@ _T30c:
 // LINE 611:
 _L40603:
 	__asm        mov    eax, 0x595C58;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;

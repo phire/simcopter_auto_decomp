@@ -115,7 +115,7 @@ long DDEnable() {
 	__asm        push   0;
 	__asm        push   0x597264;
 	__asm        push   0;
-	__asm        call   0x004C4612;
+	__asm        call   _DirectDrawCreate@12;
 	__asm        mov    hResult, eax;
 // LINE 35:
 _T27:

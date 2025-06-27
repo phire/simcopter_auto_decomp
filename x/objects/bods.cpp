@@ -883,7 +883,7 @@ _T17d:
 	__asm        mov    eax, part;
 	__asm        fld    dword ptr [eax+0x20];
 	__asm        fmul   scale;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(color);
 	__asm        push   eax;
@@ -912,7 +912,7 @@ _T1b5:
 	__asm        fmul   scale;
 	__asm        fst    drawwidth;
 // LINE 2138:
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(color);
 	__asm        push   eax;
@@ -920,7 +920,7 @@ _T1b5:
 	__asm        fdiv   dword ptr ds:[0x593718];
 	__asm        mov    eax, part;
 	__asm        fmul   dword ptr [eax+0x24];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        push   eax;
 	__asm        mov    eax, ePt.z;
 	__asm        push   eax;
@@ -987,7 +987,7 @@ _T278:
 	__asm        fld    dword ptr [eax+0x1C];
 	__asm        fmul   scale;
 	__asm        fmul   qword ptr ds:[0x593720];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        push   eax;
 	__asm        mov    eax, sPt.z;
 	__asm        push   eax;
@@ -1028,7 +1028,7 @@ _T2da:
 	__asm        mov    eax, part;
 	__asm        fld    dword ptr [eax+0x1C];
 	__asm        fmul   scale;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        push   eax;
 	__asm        mov    eax, sPt.z;
 	__asm        push   eax;
@@ -1138,28 +1138,28 @@ _Tc0:
 	__asm        fld    xOff;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        fstp   sinX;
 // LINE 2197:
 	__asm        fld    xOff;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        fstp   cosX;
 // LINE 2198:
 	__asm        fld    yOff;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        fstp   sinY;
 // LINE 2199:
 	__asm        fld    yOff;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        fstp   cosY;
 // LINE 2213:
@@ -1759,7 +1759,7 @@ _T50f:
 	return;
 _L31438:
 	__asm        mov    eax, 0x596170;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;

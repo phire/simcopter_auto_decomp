@@ -120,27 +120,20 @@ int32_t VRAppInit() {
 	__asm        cmp    G_run_old, 0;
 	__asm        jne    _T64;
 // LINE 191:
-	__asm        call   0x004D7300;
+	_VRInitGridRender();
 // LINE 195:
 _T64:
 	i = 0x3a3a3a3a;
 // LINE 196:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   0x004D682B;
-	__asm        add    esp, 4;
+	_VRSetClearClr(i);
 // LINE 199:
 	G_ClearColor = (i & 0xff);
 // LINE 243:
-	__asm        push   0x598EE0;
-	__asm        call   0x004D6A69;
-	__asm        add    esp, 4;
+	_VRSetWindow(0x598ee0);
 // LINE 244:
 	G_video_mode = 0x10;
 // LINE 247:
-	__asm        push   0x10000;
-	__asm        call   0x004D6610;
-	__asm        add    esp, 4;
+	_VRSetAspectRatio(0x10000);
 // LINE 248:
 	VRFrustSetNormals();
 // LINE 271:
@@ -227,7 +220,7 @@ _FOR_2d5:
 		// LINE 343:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
-			__asm        call   0x004D84F8;
+			__asm        call   _VRGetObjXformMemPoolReq;
 			__asm        add    esp, 4;
 			__asm        mov    maxval, eax;
 		// LINE 344:
@@ -240,7 +233,7 @@ _FOR_2d5:
 		_T33b:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
-			__asm        call   0x004D8506;
+			__asm        call   _VRGetObj2dMemPoolReq;
 			__asm        add    esp, 4;
 			__asm        mov    maxval, eax;
 		// LINE 346:
@@ -263,7 +256,7 @@ _FOR_396:
 		// LINE 353:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
-			__asm        call   0x004D84F8;
+			__asm        call   _VRGetObjXformMemPoolReq;
 			__asm        add    esp, 4;
 			__asm        mov    maxval, eax;
 		// LINE 354:
@@ -276,7 +269,7 @@ _FOR_396:
 		_T3fc:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
-			__asm        call   0x004D8506;
+			__asm        call   _VRGetObj2dMemPoolReq;
 			__asm        add    esp, 4;
 			__asm        mov    maxval, eax;
 		// LINE 356:
@@ -299,7 +292,7 @@ _FOR_457:
 		// LINE 364:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
-			__asm        call   0x004D84F8;
+			__asm        call   _VRGetObjXformMemPoolReq;
 			__asm        add    esp, 4;
 			__asm        mov    maxval, eax;
 		// LINE 365:
@@ -312,7 +305,7 @@ _FOR_457:
 		_T4bd:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
-			__asm        call   0x004D8506;
+			__asm        call   _VRGetObj2dMemPoolReq;
 			__asm        add    esp, 4;
 			__asm        mov    maxval, eax;
 		// LINE 367:

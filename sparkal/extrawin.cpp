@@ -9151,10 +9151,10 @@ long SoundSettingsWindow::ConvertSoundValueToSliderValue(long lSoundValue) {
 	__asm        fstp   qword ptr [esp];
 	__asm        push   0x40000000;
 	__asm        push   0;
-	__asm        call   0x0056F380;
+	__asm        call   _pow;
 	__asm        add    esp, 0x10;
 	__asm        fdivr  qword ptr ds:[0x58FDB0];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 1254:
 __RETURN:
@@ -9169,12 +9169,12 @@ long SoundSettingsWindow::ConvertSliderValueToSoundValue(long lSliderValue) {
 	__asm        fidiv  dword ptr [ebp-4];
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F38A;
+	__asm        call   _log;
 	__asm        add    esp, 8;
 	__asm        fdiv   qword ptr ds:[0x58FDC8];
 	__asm        fmul   qword ptr ds:[0x58FDB8];
 	__asm        fsubr  qword ptr ds:[0x58FDB0];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 1283:
 __RETURN:

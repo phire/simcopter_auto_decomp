@@ -121,28 +121,28 @@ void GetAxis(float XY2Par, float XZ2Par, /*unpacked*/ struct DXZY paraxis, /*unp
 	__asm        fld    XZ2Par;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
 	__asm        fld    XZ2Par;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
 	__asm        fld    XY2Par;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
 	__asm        fld    XY2Par;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
@@ -237,15 +237,15 @@ unsigned short PutInPerspective(/*unpacked*/ struct XZY *xzy, short cH) {
 // LINE 71:
 _T62:
 	__asm        fld    dxzy.x;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, xzy;
 	__asm        mov    [ecx], ax;
 	__asm        fld    dxzy.z;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, xzy;
 	__asm        mov    [ecx+2], ax;
 	__asm        fld    dxzy.y;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, xzy;
 	__asm        mov    [ecx+4], ax;
 // LINE 72:
@@ -286,28 +286,28 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	__asm        fld    psi;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
 	__asm        fld    psi;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
 	__asm        fld    phi;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
 	__asm        fld    phi;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        sub    esp, 4;
 	__asm        fstp   dword ptr [esp];
@@ -516,7 +516,7 @@ _T6b:
 	__asm        je     _T83;
 
 	__asm        fld    transformed.x;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, ptH;
 	__asm        mov    [ecx], ax;
 // LINE 144:
@@ -525,7 +525,7 @@ _T83:
 	__asm        je     _T9b;
 
 	__asm        fld    transformed.z;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, ptV;
 	__asm        mov    [ecx], ax;
 // LINE 145:
@@ -534,7 +534,7 @@ _T9b:
 	__asm        je     _Tb3;
 
 	__asm        fld    transformed.y;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, ptDepth;
 	__asm        mov    [ecx], ax;
 // LINE 146:
@@ -731,7 +731,7 @@ _Ted:
 	__asm        fdiv   rad;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x005757CA;
+	__asm        call   _acos;
 	__asm        add    esp, 8;
 	__asm        fstp   res;
 // LINE 203:
@@ -760,7 +760,7 @@ double GetLength(float x, float z, float y) {
 	__asm        faddp;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
 	__asm        fst    rad;
 // LINE 215:
@@ -770,7 +770,7 @@ double GetLength(float x, float z, float y) {
 	__asm        faddp;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
 	__asm        fst    rad;
 // LINE 216:
@@ -842,13 +842,13 @@ _Td9:
 // LINE 248:
 	__asm        movsx  ebx, centerPt.h;
 	__asm        fld    xdist;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        movsx  eax, ax;
 	__asm        add    ebx, eax;
 	__asm        mov    centerPt.h, bx;
 // LINE 249:
 	__asm        fld    zdist;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        movsx  eax, ax;
 	__asm        movsx  ecx, centerPt.v;
 	__asm        add    eax, ecx;
@@ -980,10 +980,10 @@ void DrawDirectionDisk(/*unpacked*/ struct DXZY start, /*unpacked*/ struct DXZY 
 
 // LINE 274:
 	__asm        fld    start.z;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    startpt.v, ax;
 	__asm        fld    start.x;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    startpt.h, ax;
 // LINE 275:
 	__asm        fld    end.x;
@@ -1003,7 +1003,7 @@ void DrawDirectionDisk(/*unpacked*/ struct DXZY start, /*unpacked*/ struct DXZY 
 	__asm        faddp;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
 	__asm        fstp   rad;
 // LINE 277:
@@ -1014,7 +1014,7 @@ void DrawDirectionDisk(/*unpacked*/ struct DXZY start, /*unpacked*/ struct DXZY 
 	__asm        faddp;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
 	__asm        fstp   rad;
 // LINE 278:
@@ -1179,13 +1179,13 @@ _Tb9:
 	__asm        fld    angleToPhiMovement;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        fstp   qword ptr [ebp-0xA0];
 	__asm        fld    alpha;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr [ebp-0xA0];
 	__asm        fmul   incFromParent.phi;
@@ -1194,13 +1194,13 @@ _Tb9:
 	__asm        fld    alpha;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        fstp   qword ptr [ebp-0xA8];
 	__asm        fld    angleToPsiMovement;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr [ebp-0xA8];
 	__asm        fmul   incFromParent.psi;
@@ -1209,7 +1209,7 @@ _Tb9:
 	__asm        fld    alpha;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        fmul   incFromParent.tau;
 	__asm        fstp   tauComp;
@@ -1224,7 +1224,7 @@ _T1df:
 	__asm        fld    dword ptr [eax];
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        fstp   psiComp;
 // LINE 558:
@@ -1691,13 +1691,13 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	__asm        fld    phi;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        fstp   qword ptr [ebp-0x18];
 	__asm        fld    psi;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr [ebp-0x18];
 	__asm        fmul   radius;
@@ -1707,7 +1707,7 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	__asm        fld    phi;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F32A;
+	__asm        call   _cos;
 	__asm        add    esp, 8;
 	__asm        fmul   radius;
 	__asm        mov    eax, z;
@@ -1716,13 +1716,13 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	__asm        fld    phi;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        fstp   qword ptr [ebp-0x20];
 	__asm        fld    psi;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056F320;
+	__asm        call   _sin;
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr [ebp-0x20];
 	__asm        fmul   radius;
@@ -1779,7 +1779,7 @@ _Ta7:
 	__asm        je     _Tbf;
 // LINE 712:
 	__asm        fld    dpt.x;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, ptH;
 	__asm        mov    [ecx], ax;
 // LINE 713:
@@ -1788,7 +1788,7 @@ _Tbf:
 	__asm        je     _Td7;
 // LINE 714:
 	__asm        fld    dpt.z;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, ptV;
 	__asm        mov    [ecx], ax;
 // LINE 715:
@@ -1797,7 +1797,7 @@ _Td7:
 	__asm        je     _Tef;
 // LINE 716:
 	__asm        fld    dpt.y;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, ptDepth;
 	__asm        mov    [ecx], ax;
 // LINE 717:
@@ -1847,7 +1847,7 @@ _T54:
 	__asm        fsubp;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
 	__asm        fstp   projrad;
 // LINE 751:

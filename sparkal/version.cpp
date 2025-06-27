@@ -100,7 +100,7 @@ void Version::Version() {
 	__asm        push   eax;
 	__asm        lea    eax, szFileName[0];
 	__asm        push   eax;
-	__asm        call   0x004C468A;
+	__asm        call   _GetFileVersionInfoSizeA@8;
 	__asm        mov    dwVersionInfoSize, eax;
 // LINE 38:
 	__asm        cmp    dwVersionInfoSize, 0;
@@ -117,7 +117,7 @@ void Version::Version() {
 	__asm        push   eax;
 	__asm        lea    eax, szFileName[0];
 	__asm        push   eax;
-	__asm        call   0x004C4684;
+	__asm        call   _GetFileVersionInfoA@16;
 	__asm        test   eax, eax;
 	__asm        je     _T120;
 // LINE 42:
@@ -130,7 +130,7 @@ void Version::Version() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004C467E;
+	__asm        call   _VerQueryValueA@16;
 	__asm        test   eax, eax;
 	__asm        jne    _T120;
 // LINE 44:
@@ -215,7 +215,7 @@ _T29:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004C467E;
+	__asm        call   _VerQueryValueA@16;
 	__asm        mov    nReturnValue, eax;
 // LINE 96:
 	return nReturnValue;
@@ -262,7 +262,7 @@ _T29:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004C467E;
+	__asm        call   _VerQueryValueA@16;
 	__asm        mov    nReturnValue, eax;
 // LINE 119:
 	return nReturnValue;
@@ -309,7 +309,7 @@ _T29:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004C467E;
+	__asm        call   _VerQueryValueA@16;
 	__asm        mov    nReturnValue, eax;
 // LINE 143:
 	return nReturnValue;
@@ -356,7 +356,7 @@ _T29:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004C467E;
+	__asm        call   _VerQueryValueA@16;
 	__asm        mov    nReturnValue, eax;
 // LINE 166:
 	return nReturnValue;
@@ -385,7 +385,7 @@ _T20:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004C467E;
+	__asm        call   _VerQueryValueA@16;
 	__asm        mov    nReturnValue, eax;
 // LINE 196:
 	__asm        cmp    nReturnValue, 0;

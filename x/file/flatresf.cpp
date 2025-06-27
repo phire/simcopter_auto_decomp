@@ -595,7 +595,7 @@ _L27084:
 _L27083:
 // No fallthrough
 	__asm        mov    eax, 0x595F30;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -1272,7 +1272,7 @@ _L27094:
 _L27093:
 // No fallthrough
 	__asm        mov    eax, 0x595F58;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -1519,7 +1519,7 @@ _L27102:
 _L27101:
 // No fallthrough
 	__asm        mov    eax, 0x595F80;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;

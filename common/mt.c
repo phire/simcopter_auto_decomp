@@ -99,10 +99,10 @@ int32_t MTMagnitude(/*packed*/ struct Point3d *V) {
 	__asm        faddp;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr ds:[0x5923E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 48:
 __RETURN:
@@ -158,10 +158,10 @@ int32_t MTDistance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2)
 	__asm        faddp;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr ds:[0x5923E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 70:
 __RETURN:
@@ -205,7 +205,7 @@ int32_t MTNormalize(/*packed*/ struct Point3d *V) {
 	__asm        faddp;
 	__asm        sub    esp, 8;
 	__asm        fstp   qword ptr [esp];
-	__asm        call   0x0056EC10;
+	__asm        call   _sqrt;
 	__asm        add    esp, 8;
 // LINE 91:
 	__asm        fcom   qword ptr ds:[0x5923F0];
@@ -217,21 +217,21 @@ int32_t MTNormalize(/*packed*/ struct Point3d *V) {
 	__asm        fld    i;
 	__asm        fdiv   r;
 	__asm        fmul   qword ptr ds:[0x5923E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx], eax;
 // LINE 93:
 	__asm        fld    j;
 	__asm        fdiv   r;
 	__asm        fmul   qword ptr ds:[0x5923E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+4], eax;
 // LINE 94:
 	__asm        fld    k;
 	__asm        fdiv   r;
 	__asm        fmul   qword ptr ds:[0x5923E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
 // LINE 96:
@@ -245,7 +245,7 @@ _Tc5:
 _Te6:
 	__asm        fld    r;
 	__asm        fmul   qword ptr ds:[0x5923E8];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        jmp    __RETURN;
 // LINE 100:
 __RETURN:
@@ -266,7 +266,7 @@ void MTCreatePlane(/*packed*/ struct Plane *plane, /*packed*/ struct Point3d *V,
 	__asm        mov    eax, plane;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, p;
@@ -275,7 +275,7 @@ void MTCreatePlane(/*packed*/ struct Plane *plane, /*packed*/ struct Point3d *V,
 	__asm        mov    eax, plane;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, p;
@@ -284,7 +284,7 @@ void MTCreatePlane(/*packed*/ struct Plane *plane, /*packed*/ struct Point3d *V,
 	__asm        mov    eax, plane;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        neg    ebx;
@@ -313,7 +313,7 @@ int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p
 	__asm        push   eax;
 	__asm        mov    eax, plane.B;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, q;
@@ -321,7 +321,7 @@ int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p
 	__asm        push   eax;
 	__asm        mov    eax, plane.C;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, q;
@@ -329,7 +329,7 @@ int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p
 	__asm        push   eax;
 	__asm        mov    eax, plane.A;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        add    ebx, plane.D;
@@ -350,7 +350,7 @@ void MTCreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *
 	__asm        push   eax;
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx], eax;
@@ -361,7 +361,7 @@ void MTCreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *
 	__asm        push   eax;
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+4], eax;
@@ -372,7 +372,7 @@ void MTCreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *
 	__asm        push   eax;
 	__asm        mov    eax, i;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
@@ -409,7 +409,7 @@ int32_t MTVectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        push   eax;
 	__asm        mov    eax, m;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    r, eax;
 // LINE 224:
@@ -418,7 +418,7 @@ int32_t MTVectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx], eax;
@@ -428,7 +428,7 @@ int32_t MTVectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+4], eax;
@@ -438,7 +438,7 @@ int32_t MTVectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
@@ -461,7 +461,7 @@ void MTApply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_
 	__asm        mov    eax, F;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A.x, eax;
 // LINE 253:
@@ -471,7 +471,7 @@ void MTApply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_
 	__asm        mov    eax, F;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A.y, eax;
 // LINE 254:
@@ -481,7 +481,7 @@ void MTApply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_
 	__asm        mov    eax, F;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A.z, eax;
 // LINE 259:
@@ -489,7 +489,7 @@ void MTApply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_
 	__asm        push   eax;
 	__asm        mov    eax, A.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        add    [ecx+8], eax;
@@ -498,7 +498,7 @@ void MTApply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_
 	__asm        push   eax;
 	__asm        mov    eax, A.y;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        add    [ecx+0xC], eax;
@@ -507,7 +507,7 @@ void MTApply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_
 	__asm        push   eax;
 	__asm        mov    eax, A.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        add    [ecx+0x10], eax;
@@ -541,7 +541,7 @@ _T36:
 	__asm        push   eax;
 	__asm        mov    eax, F;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    a, eax;
 // LINE 292:
@@ -549,7 +549,7 @@ _T36:
 	__asm        push   eax;
 	__asm        mov    eax, a;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    f, eax;
 // LINE 293:
@@ -558,7 +558,7 @@ _T36:
 	__asm        mov    eax, v;
 	__asm        sub    eax, f;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    j, eax;
 // LINE 294:
@@ -570,7 +570,7 @@ _T36:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+8], eax;
@@ -580,7 +580,7 @@ _T36:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0xC], eax;
@@ -590,7 +590,7 @@ _T36:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x10], eax;
@@ -617,7 +617,7 @@ int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax
 	__asm        push   eax;
 	__asm        mov    eax, F;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A, eax;
 // LINE 335:
@@ -625,7 +625,7 @@ int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax
 	__asm        push   eax;
 	__asm        mov    eax, A;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, V;
 	__asm        add    ecx, eax;
@@ -674,7 +674,7 @@ _T1d:
 	__asm        push   eax;
 	__asm        mov    eax, F;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    A, eax;
 // LINE 364:
@@ -682,7 +682,7 @@ _T1d:
 	__asm        push   eax;
 	__asm        mov    eax, A;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    vf, eax;
 // LINE 365:
@@ -691,19 +691,14 @@ _T1d:
 	__asm        mov    eax, absV;
 	__asm        sub    eax, vf;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    j, eax;
 // LINE 366:
 	__asm        cmp    j, 0;
 	__asm        jle    _T87;
 
-	__asm        mov    eax, j;
-	__asm        push   eax;
-	__asm        mov    eax, V;
-	__asm        push   eax;
-	__asm        call   0x004D19BD;
-	__asm        add    esp, 8;
+	_FixedMul(V, j);
 	__asm        jmp    __RETURN;
 // LINE 368:
 _T87:
@@ -750,14 +745,7 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	/*bp-0x30*/  int32_t VzzCos;
 
 // LINE 408:
-	__asm        lea    eax, Cos;
-	__asm        push   eax;
-	__asm        lea    eax, Sin;
-	__asm        push   eax;
-	__asm        mov    eax, Angle;
-	__asm        push   eax;
-	__asm        call   0x004D19FC;
-	__asm        add    esp, 0xC;
+	_VRSinCos(Angle, Sin, Cos);
 // LINE 410:
 	OneMinCos = (0x10000 - Cos);
 // LINE 417:
@@ -769,10 +757,10 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    VxxCos, eax;
 // LINE 418:
@@ -784,10 +772,10 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    VyyCos, eax;
 // LINE 419:
@@ -799,10 +787,10 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    VzzCos, eax;
 // LINE 420:
@@ -814,10 +802,10 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    VxyCos, eax;
 // LINE 421:
@@ -829,10 +817,10 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    VxzCos, eax;
 // LINE 422:
@@ -844,10 +832,10 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    VyzCos, eax;
 // LINE 424:
@@ -856,7 +844,7 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    VxSin, eax;
 // LINE 425:
@@ -865,7 +853,7 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    VySin, eax;
 // LINE 426:
@@ -874,7 +862,7 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    VzSin, eax;
 // LINE 431:
@@ -918,7 +906,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, mat;
@@ -927,7 +915,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, mat;
@@ -936,7 +924,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    factor, ebx;
@@ -944,7 +932,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        push   0x1000;
 	__asm        mov    eax, factor;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 473:
@@ -955,7 +943,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx], eax;
@@ -965,7 +953,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+4], eax;
@@ -975,7 +963,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+8], eax;
@@ -986,7 +974,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, mat;
@@ -995,7 +983,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, mat;
@@ -1004,7 +992,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    factor, ebx;
@@ -1012,7 +1000,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        push   0x1000;
 	__asm        mov    eax, factor;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 484:
@@ -1023,7 +1011,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x10], eax;
@@ -1033,7 +1021,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x14], eax;
@@ -1043,7 +1031,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x18], eax;
@@ -1054,7 +1042,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, mat;
@@ -1063,7 +1051,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, mat;
@@ -1072,7 +1060,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    factor, ebx;
@@ -1080,7 +1068,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        push   0x1000;
 	__asm        mov    eax, factor;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 495:
@@ -1091,7 +1079,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x20], eax;
@@ -1101,7 +1089,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x24], eax;
@@ -1111,7 +1099,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x28], eax;
@@ -1129,7 +1117,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, mat;
@@ -1138,7 +1126,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, mat;
@@ -1147,7 +1135,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    factor, ebx;
@@ -1155,7 +1143,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        push   0x1000;
 	__asm        mov    eax, factor;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 512:
@@ -1166,7 +1154,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx], eax;
@@ -1176,7 +1164,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x10], eax;
@@ -1186,7 +1174,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x20], eax;
@@ -1197,7 +1185,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, mat;
@@ -1206,7 +1194,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, mat;
@@ -1215,7 +1203,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    factor, ebx;
@@ -1223,7 +1211,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        push   0x1000;
 	__asm        mov    eax, factor;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 523:
@@ -1234,7 +1222,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+4], eax;
@@ -1244,7 +1232,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x14], eax;
@@ -1254,7 +1242,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x24];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x24], eax;
@@ -1265,7 +1253,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, mat;
@@ -1274,7 +1262,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, mat;
@@ -1283,7 +1271,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    factor, ebx;
@@ -1291,7 +1279,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        push   0x1000;
 	__asm        mov    eax, factor;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 534:
@@ -1302,7 +1290,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+8], eax;
@@ -1312,7 +1300,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x18], eax;
@@ -1322,7 +1310,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        mov    eax, mat;
 	__asm        mov    eax, [eax+0x28];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x28], eax;
@@ -1338,7 +1326,7 @@ void MTXProduct(/*packed*/ struct Point3d *v1, /*packed*/ struct Point3d *v2, /*
 	__asm        mov    eax, v1;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, v2;
@@ -1347,7 +1335,7 @@ void MTXProduct(/*packed*/ struct Point3d *v1, /*packed*/ struct Point3d *v2, /*
 	__asm        mov    eax, v1;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, vr;
@@ -1359,7 +1347,7 @@ void MTXProduct(/*packed*/ struct Point3d *v1, /*packed*/ struct Point3d *v2, /*
 	__asm        mov    eax, v1;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, v2;
@@ -1368,7 +1356,7 @@ void MTXProduct(/*packed*/ struct Point3d *v1, /*packed*/ struct Point3d *v2, /*
 	__asm        mov    eax, v1;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, vr;
@@ -1380,7 +1368,7 @@ void MTXProduct(/*packed*/ struct Point3d *v1, /*packed*/ struct Point3d *v2, /*
 	__asm        mov    eax, v1;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, v2;
@@ -1389,7 +1377,7 @@ void MTXProduct(/*packed*/ struct Point3d *v1, /*packed*/ struct Point3d *v2, /*
 	__asm        mov    eax, v1;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, vr;
@@ -1507,7 +1495,7 @@ void MTCreateReflection4x4(int32_t *mat[4], /*packed*/ struct Point3d *norm) {
 	__asm        mov    eax, norm;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    eax, eax;
 	__asm        sub    ebx, eax;
@@ -1521,7 +1509,7 @@ void MTCreateReflection4x4(int32_t *mat[4], /*packed*/ struct Point3d *norm) {
 	__asm        mov    eax, norm;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    eax, eax;
 	__asm        sub    ebx, eax;
@@ -1535,7 +1523,7 @@ void MTCreateReflection4x4(int32_t *mat[4], /*packed*/ struct Point3d *norm) {
 	__asm        mov    eax, norm;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    eax, eax;
 	__asm        sub    ebx, eax;
@@ -1548,7 +1536,7 @@ void MTCreateReflection4x4(int32_t *mat[4], /*packed*/ struct Point3d *norm) {
 	__asm        mov    eax, norm;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    eax, eax;
 	__asm        neg    eax;
@@ -1565,7 +1553,7 @@ void MTCreateReflection4x4(int32_t *mat[4], /*packed*/ struct Point3d *norm) {
 	__asm        mov    eax, norm;
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    eax, eax;
 	__asm        neg    eax;
@@ -1582,7 +1570,7 @@ void MTCreateReflection4x4(int32_t *mat[4], /*packed*/ struct Point3d *norm) {
 	__asm        mov    eax, norm;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    eax, eax;
 	__asm        neg    eax;

@@ -229,7 +229,7 @@ _T35d:
 	__asm        sar    eax, 1;
 	__asm        shl    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    z_val, eax;
 // LINE 256:
@@ -240,7 +240,7 @@ _T35d:
 	__asm        sar    eax, 1;
 	__asm        shl    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        neg    eax;
 	__asm        mov    x_start, eax;
@@ -378,11 +378,7 @@ _T644:
 	__asm        cmp    b_FirstTime, 0;
 	__asm        je     _T68a;
 // LINE 352:
-	__asm        mov    eax, 0x666300;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((0x666300 + 0x18));
 // LINE 353:
 	GridPos.loc.z = 0x0;
 	GridPos.loc.y = GridPos.loc.z;

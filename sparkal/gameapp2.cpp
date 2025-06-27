@@ -1434,7 +1434,7 @@ _T5f9:
 	return;
 _L64110:
 	__asm        mov    eax, 0x595C00;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -6869,7 +6869,7 @@ _T239:
 	__asm        mov    [ebp-0x338], eax;
 	__asm        fild   dword ptr [ebp-0x338];
 	__asm        fmul   fScaleFactor;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        cdq;
 	__asm        sub    eax, edx;
 	__asm        sar    eax, 1;
@@ -6894,7 +6894,7 @@ _T2ac:
 	__asm        mov    [ebp-0x33C], eax;
 	__asm        fild   dword ptr [ebp-0x33C];
 	__asm        fmul   fScaleFactor;
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x90];
 	__asm        add    ecx, eax;

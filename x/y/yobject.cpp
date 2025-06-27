@@ -3030,7 +3030,7 @@ _Tf9:
 	return;
 _L54996:
 	__asm        mov    eax, 0x595D38;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -3111,7 +3111,7 @@ _T9d:
 	return;
 _L55021:
 	__asm        mov    eax, 0x595D78;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -3155,7 +3155,7 @@ _T60:
 	return;
 _L55033:
 	__asm        mov    eax, 0x595DA8;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -3806,7 +3806,7 @@ unsigned short cYObject::SearchForPersonSpot(/*unpacked*/ struct _DYOBJ_INST *ma
 	__asm        mov    eax, master;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    fullradius, ax;
@@ -3960,7 +3960,7 @@ _FOR_7a:
 			__asm        mov    eax, this;
 			__asm        mov    eax, [eax+0x34];
 			__asm        push   eax;
-			__asm        call   0x004D19DF;
+			__asm        call   _FixedDiv;
 			__asm        add    esp, 8;
 			__asm        mov    myrad, eax;
 			__asm        jmp    _T28c;
@@ -3981,7 +3981,7 @@ _FOR_7a:
 			__asm        mov    eax, master;
 			__asm        mov    eax, [eax+0x10];
 			__asm        push   eax;
-			__asm        call   0x004D19DF;
+			__asm        call   _FixedDiv;
 			__asm        add    esp, 8;
 			__asm        mov    masterrad, eax;
 			__asm        jmp    _T2c9;
@@ -4196,7 +4196,7 @@ _Tad:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    twiceradius, eax;
 // LINE 325:
@@ -5052,10 +5052,10 @@ _FOR_1c:
 			__asm        fild   dword ptr [ebp-0x1C];
 			__asm        sub    esp, 8;
 			__asm        fstp   qword ptr [esp];
-			__asm        call   0x0056EC10;
+			__asm        call   _sqrt;
 			__asm        add    esp, 8;
 			__asm        fadd   qword ptr ds:[0x593528];
-			__asm        call   0x0056EBE8;
+			__asm        call   __ftol;
 			__asm        mov    ecx, i;
 			__asm        mov    g_sqrtTable[ecx*4], eax;
 			__asm        jmp    _FOR_NEXT_1c;
@@ -5307,7 +5307,7 @@ _T235:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    eax, [eax+0x2C];
 	__asm        push   eax;
-	__asm        call   0x004D8781;
+	__asm        call   _VRPositionObj;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T27d;
 _T27d:
@@ -5414,7 +5414,7 @@ _T138:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax+0x2C];
 	__asm        push   eax;
-	__asm        call   0x004D8781;
+	__asm        call   _VRPositionObj;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T180;
 // LINE 476:
@@ -5742,18 +5742,18 @@ _Tcd:
 	__asm        push   0x140000;
 	__asm        mov    eax, fwdrate;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    fwdrate, eax;
 // LINE 568:
 	__asm        push   0x30000;
 	__asm        push   0x140000;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, fwdmult;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    fwdmult, eax;
 // LINE 571:
@@ -5816,7 +5816,7 @@ _T19c:
 	__asm        push   eax;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x174], eax;
@@ -5834,7 +5834,7 @@ _T1dc:
 	__asm        push   eax;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        neg    ebx;
@@ -5856,7 +5856,7 @@ _T214:
 	__asm        shl    eax, 0x10;
 	__asm        neg    eax;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    tempfix, eax;
 // LINE 587:
@@ -5871,7 +5871,7 @@ _T214:
 	__asm        push   eax;
 	__asm        mov    eax, tempfix;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    tempfix, eax;
 // LINE 589:
@@ -5888,7 +5888,7 @@ _T27e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x174];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x174], eax;
@@ -5926,7 +5926,7 @@ _T2ea:
 	__asm        push   eax;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x178], eax;
@@ -5944,7 +5944,7 @@ _T32e:
 	__asm        push   eax;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sub    ebx, eax;
 	__asm        neg    ebx;
@@ -5974,7 +5974,7 @@ _T393:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x178];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x178], eax;
@@ -6449,7 +6449,7 @@ _Tfe:
 	__asm        mov    eax, li;
 	__asm        mov    eax, [eax+0xC];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, li;
 	__asm        mov    ecx, [ecx+4];
@@ -6460,7 +6460,7 @@ _Tfe:
 	__asm        mov    eax, li;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, li;
 	__asm        mov    ecx, [ecx+8];
@@ -7525,7 +7525,7 @@ _FOR_10c:
 			__asm        lea    eax, [eax+eax*2];
 			__asm        mov    eax, cYObject::sUnitVectorTable[0].x[eax*4];
 			__asm        push   eax;
-			__asm        call   0x004D19DF;
+			__asm        call   _FixedDiv;
 			__asm        add    esp, 8;
 			__asm        movsx  ecx, count;
 			__asm        lea    ecx, [ecx+ecx*2];
@@ -7536,7 +7536,7 @@ _FOR_10c:
 			__asm        lea    eax, [eax+eax*2];
 			__asm        mov    eax, cYObject::sUnitVectorTable[0].z[eax*4];
 			__asm        push   eax;
-			__asm        call   0x004D19DF;
+			__asm        call   _FixedDiv;
 			__asm        add    esp, 8;
 			__asm        movsx  ecx, count;
 			__asm        lea    ecx, [ecx+ecx*2];
@@ -7547,7 +7547,7 @@ _FOR_10c:
 			__asm        lea    eax, [eax+eax*2];
 			__asm        mov    eax, cYObject::sUnitVectorTable[0].y[eax*4];
 			__asm        push   eax;
-			__asm        call   0x004D19DF;
+			__asm        call   _FixedDiv;
 			__asm        add    esp, 8;
 			__asm        movsx  ecx, count;
 			__asm        lea    ecx, [ecx+ecx*2];
@@ -8906,7 +8906,7 @@ _L55486:
 _L55485:
 // No fallthrough
 	__asm        mov    eax, 0x595DD0;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -9907,7 +9907,7 @@ _T1fe:
 
 	__asm        push   0x20000;
 	__asm        push   0x50000;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x34], eax;
@@ -10108,7 +10108,7 @@ _T55c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, loc;
@@ -10568,7 +10568,7 @@ _Tbb9:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, loc;
@@ -10829,7 +10829,7 @@ _T100c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        push   eax;
-	__asm        call   0x004D8781;
+	__asm        call   _VRPositionObj;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T1066;
 _T1066:
@@ -11965,7 +11965,7 @@ _FOR_73:
 			__asm        mov    eax, obj;
 			__asm        mov    eax, [eax+0x2C];
 			__asm        push   eax;
-			__asm        call   0x004D8781;
+			__asm        call   _VRPositionObj;
 			__asm        add    esp, 0xC;
 			__asm        jmp    _T1ab;
 		// LINE 2103:
@@ -12230,7 +12230,7 @@ _FOR_203:
 			__asm        mov    eax, obj;
 			__asm        mov    eax, [eax+0x2C];
 			__asm        push   eax;
-			__asm        call   0x004D8781;
+			__asm        call   _VRPositionObj;
 			__asm        add    esp, 0xC;
 			__asm        jmp    _T60f;
 		// LINE 2124:
@@ -13494,7 +13494,7 @@ _Te3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        push   eax;
-	__asm        call   0x004D8781;
+	__asm        call   _VRPositionObj;
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T12b;
 // LINE 2304:
@@ -15203,13 +15203,13 @@ void cAvatar::ResetView() {
 	__asm        fst    view.z;
 // LINE 2511:
 	__asm        fmul   qword ptr ds:[0x593540];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        push   eax;
 	__asm        fld    view.x;
 	__asm        fmul   qword ptr ds:[0x593540];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        push   eax;
-	__asm        call   0x004D20B1;
+	__asm        call   _FixedArcTan;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        call   MTAngleBounds;
@@ -15235,7 +15235,7 @@ _Tc7:
 	__asm        fdiv   qword ptr ds:[0x593540];
 	__asm        fadd   qword ptr ds:[0x593550];
 	__asm        fdiv   qword ptr ds:[0x593558];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, al;
 	__asm        sub    ebx, ecx;
@@ -15282,11 +15282,7 @@ void cYObject::SetCellAndLoc(/*unpacked*/ struct Point3d loc, unsigned char x, u
 // LINE 2549:
 	this->fCurLocType = cYObject::GetLocType(reinterpret_cast<uint32_t>(loccellx), reinterpret_cast<uint32_t>(loccelly));
 // LINE 2551:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x48;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((this + 0x48));
 // LINE 2552:
 	__asm        lea    eax, loc.x;
 	__asm        mov    ecx, this;
@@ -16288,7 +16284,7 @@ _L56432:
 _L56431:
 // No fallthrough
 	__asm        mov    eax, 0x595E00;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
@@ -16390,7 +16386,7 @@ _L56449:
 _L56448:
 // No fallthrough
 	__asm        mov    eax, 0x595E30;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
@@ -16411,41 +16407,20 @@ void cYObject::InitForEngine(short id) {
 	doAssert(0x5bb770, 0xb1e, 0x5bb75c, 0x8c085);
 // LINE 2848:
 _T47:
-	__asm        push   2;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(this->fDyn.mesh, 0x2);
 // LINE 2849:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(this->fDyn.mesh, 0x0);
 // LINE 2850:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(this->fDyn.mesh, G_main_mp);
 // LINE 2853:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 2855:
-	__asm        lea    eax, finfo.Face;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   0x004D6905;
-	__asm        add    esp, 8;
+	_VRGetFaceInfo(face, finfo.Face);
 // LINE 2856:
 	__asm        cmp    finfo.Plotter, 0x16;
 	__asm        jne    _Tc8;
@@ -16454,12 +16429,7 @@ _T47:
 // LINE 2858:
 	__asm        and    finfo.Attribute, 0x7FFFFFFF;
 // LINE 2859:
-	__asm        lea    eax, finfo.Face;
-	__asm        push   eax;
-	__asm        mov    eax, face;
-	__asm        push   eax;
-	__asm        call   0x004D6941;
-	__asm        add    esp, 8;
+	_VRSetFaceInfo(face, finfo.Face);
 // LINE 2862:
 _Tc8:
 	this->fDyn.flags = 0x8;
@@ -16468,11 +16438,7 @@ _Tc8:
 // LINE 2864:
 	this->fDyn.height = 0x6;
 // LINE 2866:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x48;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((this + 0x48));
 // LINE 2869:
 	return;
 }
@@ -16656,7 +16622,7 @@ _L56468:
 _L56467:
 // No fallthrough
 	__asm        mov    eax, 0x595E58;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
@@ -17302,7 +17268,7 @@ _L56642:
 _L56641:
 // No fallthrough
 	__asm        mov    eax, 0x595E88;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
@@ -17346,13 +17312,13 @@ void cAvatar::RotateMatrixAndYawForEngine() {
 	__asm        push   0xF0000;
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x178];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x17C], eax;
@@ -17374,13 +17340,7 @@ _T60:
 _T7d:
 	S3AngleRotMat(matrix[0][0], this->fUserControl.yaw, 0x0, 0x0);
 // LINE 3111:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x48;
-	__asm        push   eax;
-	__asm        lea    eax, matrix[0][0];
-	__asm        push   eax;
-	__asm        call   0x004D8C2E;
-	__asm        add    esp, 8;
+	_VRTranspose(matrix[0][0], (this + 0x48));
 // LINE 3112:
 	return;
 }
@@ -17649,7 +17609,7 @@ _L55562:
 _L55561:
 // No fallthrough
 	__asm        mov    eax, 0x595EE0;
-	__asm        jmp    near ptr 0x0056F590;
+	__asm        jmp    ___CxxFrameHandler;
 __RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;

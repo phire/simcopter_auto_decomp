@@ -207,9 +207,7 @@ _T11:
 	__asm        cmp    dword ptr [eax+0x4308], 0;
 	__asm        jne    _T6d;
 // LINE 98:
-	__asm        push   0x598EC0;
-	__asm        call   0x004D6A69;
-	__asm        add    esp, 4;
+	_VRSetWindow(0x598ec0);
 // LINE 99:
 	VRFrustSetNormals();
 // LINE 100:
@@ -238,9 +236,7 @@ _T6d:
 	__asm        cmp    eax, 0x64;
 	__asm        jge    _Tdc;
 // LINE 108:
-	__asm        push   0x598EE0;
-	__asm        call   0x004D6A69;
-	__asm        add    esp, 4;
+	_VRSetWindow(0x598ee0);
 // LINE 109:
 	VRFrustSetNormals();
 // LINE 110:
@@ -265,9 +261,7 @@ _Te1:
 	__asm        jl     _T133;
 // LINE 117:
 _Tff:
-	__asm        push   0x598EC0;
-	__asm        call   0x004D6A69;
-	__asm        add    esp, 4;
+	_VRSetWindow(0x598ec0);
 // LINE 118:
 	VRFrustSetNormals();
 // LINE 119:
@@ -283,9 +277,7 @@ _T133:
 	__asm        jmp    _T16c;
 // LINE 127:
 _T138:
-	__asm        push   0x598EE0;
-	__asm        call   0x004D6A69;
-	__asm        add    esp, 4;
+	_VRSetWindow(0x598ee0);
 // LINE 128:
 	VRFrustSetNormals();
 // LINE 129:
@@ -301,9 +293,7 @@ _T16c:
 	__asm        jmp    _T1a5;
 // LINE 135:
 _T171:
-	__asm        push   0x598EE0;
-	__asm        call   0x004D6A69;
-	__asm        add    esp, 4;
+	_VRSetWindow(0x598ee0);
 // LINE 136:
 	VRFrustSetNormals();
 // LINE 137:

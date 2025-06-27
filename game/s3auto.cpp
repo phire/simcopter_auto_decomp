@@ -1540,14 +1540,7 @@ _T21b:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 678:
-	__asm        push   3;
-	__asm        lea    eax, position.loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   0x004D8781;
-	__asm        add    esp, 0xC;
+	_VRPositionObj(this->autoDynomitor.mesh, position.loc.x, 0x3);
 // LINE 680:
 // Block end:
 	__asm        jmp    _T281;
@@ -1596,20 +1589,13 @@ _FOR_46:
 		_FOR_65:
 			for (angle = 0x0; (angle < 0xe100000); angle += 0x640000) {
 				// LINE 760:
-					__asm        lea    eax, rcos;
-					__asm        push   eax;
-					__asm        lea    eax, rsin;
-					__asm        push   eax;
-					__asm        mov    eax, angle;
-					__asm        push   eax;
-					__asm        call   0x004D19FC;
-					__asm        add    esp, 0xC;
+					_VRSinCos(angle, rsin, rcos);
 				// LINE 761:
 					__asm        mov    eax, rcos;
 					__asm        push   eax;
 					__asm        mov    eax, radius;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        mov    ecx, vehicleLoc.x;
 					__asm        add    ecx, eax;
@@ -1619,7 +1605,7 @@ _FOR_46:
 					__asm        push   eax;
 					__asm        mov    eax, radius;
 					__asm        push   eax;
-					__asm        call   0x004D19BD;
+					__asm        call   _FixedMul;
 					__asm        add    esp, 8;
 					__asm        mov    ecx, vehicleLoc.z;
 					__asm        add    ecx, eax;
@@ -1743,7 +1729,7 @@ _Te2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    itterationDist, eax;
 // LINE 838:
@@ -3809,7 +3795,7 @@ _T45:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDE], eax;
@@ -3994,7 +3980,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    object, eax;
 // LINE 1884:
@@ -4019,7 +4005,7 @@ _T53:
 _T6b:
 	__asm        mov    eax, object;
 	__asm        push   eax;
-	__asm        call   0x004D8520;
+	__asm        call   _VRGetObjInstanceMemReq;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        mov    eax, G_dyobjmempool;
@@ -4041,7 +4027,7 @@ _Tb4:
 	__asm        push   eax;
 	__asm        mov    eax, object;
 	__asm        push   eax;
-	__asm        call   0x004D8570;
+	__asm        call   _VRCreateObjInstance;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
@@ -4056,13 +4042,7 @@ _Tf3:
 	__asm        jmp    _Tf8;
 // LINE 1912:
 _Tf8:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(this->autoDynomitor.mesh, G_main_mp);
 // LINE 1916:
 // Block end:
 _T10d:
@@ -4072,12 +4052,7 @@ _T10d:
 // LINE 1917:
 	this->autoDynomitor.flags = 0x11;
 // LINE 1919:
-	__asm        lea    eax, objectInfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, object;
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(object, objectInfo.Faces);
 // LINE 1921:
 	this->autoDynomitor.radius = objectInfo.Radius;
 // LINE 1922:
@@ -5369,7 +5344,7 @@ _T348:
 	__asm        shl    eax, 4;
 	__asm        fld    OT[0].x[eax];
 	__asm        fmul   qword ptr ds:[0x592D90];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    xOffset, eax;
 // LINE 2473:
 	__asm        mov    eax, this;
@@ -5377,7 +5352,7 @@ _T348:
 	__asm        shl    eax, 4;
 	__asm        fld    OT[0].z[eax];
 	__asm        fmul   qword ptr ds:[0x592D90];
-	__asm        call   0x0056EBE8;
+	__asm        call   __ftol;
 	__asm        mov    zOffset, eax;
 // LINE 2474:
 	__asm        mov    eax, this;
@@ -5416,7 +5391,7 @@ _T3df:
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x24], eax;
@@ -5427,7 +5402,7 @@ _T3df:
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x28], eax;
@@ -5438,7 +5413,7 @@ _T3df:
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x2C], eax;
@@ -5463,22 +5438,12 @@ _T466:
 	__asm        test   cl, 0x1F;
 	__asm        je     _T4a5;
 // LINE 2496:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(this->autoDynomitor.mesh, 0x1);
 // LINE 2497:
 	__asm        jmp    _T4b6;
 // LINE 2498:
 _T4a5:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   0x004D6970;
-	__asm        add    esp, 8;
+	_VRSetObjAtt(this->autoDynomitor.mesh, 0x0);
 // LINE 2506:
 _T4b6:
 	__asm        mov    edi, this;
@@ -5577,7 +5542,7 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0xEA];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    PulloverStepSize, eax;
 // LINE 2564:
@@ -5588,7 +5553,7 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    pulloverVector.z, eax;
 // LINE 2566:
@@ -5644,7 +5609,7 @@ _T101:
 	__asm        push   eax;
 	__asm        mov    eax, pulloverVector.x;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    pulloverVector.x, eax;
 // LINE 2590:
@@ -5653,7 +5618,7 @@ _T101:
 	__asm        push   eax;
 	__asm        mov    eax, pulloverVector.z;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    pulloverVector.z, eax;
 // LINE 2592:
@@ -5702,7 +5667,7 @@ _T3c:
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x24];
@@ -5717,7 +5682,7 @@ _T3c:
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x28];
@@ -5732,7 +5697,7 @@ _T3c:
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x2C];
@@ -6428,7 +6393,7 @@ int32_t AutomobileClass::AreCarsHeadOn(/*packed*/ struct Point3d *dirvect) {
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ebx, eax;
 	__asm        mov    eax, dirvect;
@@ -6438,7 +6403,7 @@ int32_t AutomobileClass::AreCarsHeadOn(/*packed*/ struct Point3d *dirvect) {
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax+4];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    eax, dirvect;
@@ -6448,7 +6413,7 @@ int32_t AutomobileClass::AreCarsHeadOn(/*packed*/ struct Point3d *dirvect) {
 	__asm        mov    eax, [eax+0xF2];
 	__asm        mov    eax, [eax];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        add    ebx, eax;
 	__asm        mov    dotp, ebx;
@@ -6805,18 +6770,9 @@ _T1e:
 	return;
 // LINE 3204:
 _T4c:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x30;
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4((this + 0x30));
 // LINE 3205:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x30;
-	__asm        push   eax;
-	__asm        push   0x3840000;
-	__asm        call   0x004D2034;
-	__asm        add    esp, 8;
+	_VRPostZRot(0x3840000, (this + 0x30));
 // LINE 3208:
 	__asm        mov    eax, this;
 	__asm        or     dword ptr [eax+8], 0x100;
@@ -6974,10 +6930,7 @@ _T71:
 // LINE 3312:
 	currpos.y = ((0x20000000 - this->autoDynomitor.loc.z) >> 0x16);
 // LINE 3314:
-	__asm        lea    eax, mat[0][0];
-	__asm        push   eax;
-	__asm        call   0x004D1FF1;
-	__asm        add    esp, 4;
+	_VRIdentity4x4(mat[0][0]);
 // LINE 3315:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -6989,7 +6942,7 @@ _T71:
 	__asm        mov    eax, edx;
 	__asm        shl    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004D201C;
+	__asm        call   _VRPostYRot;
 	__asm        add    esp, 8;
 // LINE 3316:
 	__asm        lea    eax, mat[0][0];
@@ -7002,16 +6955,10 @@ _T71:
 	__asm        lea    eax, [edx+0x28A];
 	__asm        shl    eax, 0x10;
 	__asm        push   eax;
-	__asm        call   0x004D2004;
+	__asm        call   _VRPostXRot;
 	__asm        add    esp, 8;
 // LINE 3317:
-	__asm        lea    eax, mat[0][0];
-	__asm        push   eax;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        push   0x59B518;
-	__asm        call   0x004D2094;
-	__asm        add    esp, 0xC;
+	_VRRotateP3d(0x59b518, vec.x, mat[0][0]);
 // LINE 3328:
 	S3MissileStart(0x4, currpos.x, (this + 0x24), vec.x, 0x1, (this + 0xc), 0x320000, this->missionId);
 // LINE 3334:
@@ -7248,47 +7195,31 @@ void AutomobileClass::TurnOnHeadlight() {
 	/*bp-0x4c*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 3544:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(this->autoDynomitor.mesh, oinfo.Faces);
 // LINE 3545:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 3546:
 _FOR_3d:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
 		// LINE 3548:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 3549:
 			__asm        cmp    finfo.Plotter, 0xB;
 			__asm        jne    _T7d;
 		// LINE 3551:
 			__asm        and    finfo.Attribute, 0x7FFFFFFF;
 		// LINE 3552:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6941;
-			__asm        add    esp, 8;
+			_VRSetFaceInfo(face, finfo.Face);
 		// LINE 3554:
 		_T7d:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}
@@ -7305,47 +7236,31 @@ void AutomobileClass::TurnOffHeadlight() {
 	/*bp-0x4c*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 3567:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(this->autoDynomitor.mesh, oinfo.Faces);
 // LINE 3568:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 3569:
 _FOR_3d:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
 		// LINE 3571:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 3572:
 			__asm        cmp    finfo.Plotter, 0xB;
 			__asm        jne    _T81;
 		// LINE 3574:
 			finfo.Attribute = (finfo.Attribute | 0x80000000);
 		// LINE 3575:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6941;
-			__asm        add    esp, 8;
+			_VRSetFaceInfo(face, finfo.Face);
 		// LINE 3577:
 		_T81:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}
@@ -9954,7 +9869,7 @@ void AutomobileClass::MoveForwardOnHiway() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    distance, eax;
 // LINE 4492:
@@ -9977,7 +9892,7 @@ _T45:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA2];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x24], eax;
@@ -9987,7 +9902,7 @@ _T45:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA6];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x28], eax;
@@ -9997,7 +9912,7 @@ _T45:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xAA];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x2C], eax;
@@ -10579,10 +10494,10 @@ _T61:
 	__asm        push   0x7800000;
 	__asm        mov    eax, dist;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
@@ -10631,10 +10546,10 @@ _T10e:
 	__asm        push   0x7800000;
 	__asm        mov    eax, dist;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
@@ -10683,10 +10598,10 @@ _T1bb:
 	__asm        push   0x7800000;
 	__asm        mov    eax, dist;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
@@ -10735,10 +10650,10 @@ _T268:
 	__asm        push   0x7800000;
 	__asm        mov    eax, dist;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
@@ -10787,10 +10702,10 @@ _T315:
 	__asm        push   0x7800000;
 	__asm        mov    eax, dist;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
@@ -10848,30 +10763,19 @@ void AutomobileClass::ChangeAutoColor() {
 	__asm        add    newbase, eax;
 // LINE 4941:
 _T4c:
-	__asm        lea    eax, oinfo.Faces;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   0x004D8859;
-	__asm        add    esp, 8;
+	_VRGetObjInfo(this->autoDynomitor.mesh, oinfo.Faces);
 // LINE 4942:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
-	__asm        call   0x004D85CD;
+	__asm        call   _VRGetFirstFace;
 	__asm        add    esp, 4;
 	__asm        mov    face, eax;
 // LINE 4943:
 _FOR_7d:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
 		// LINE 4945:
-			__asm        lea    eax, finfo.Face;
-			__asm        push   eax;
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   0x004D6905;
-			__asm        add    esp, 8;
+			_VRGetFaceInfo(face, finfo.Face);
 		// LINE 4946:
 			__asm        cmp    finfo.Plotter, 0xF;
 			__asm        jne    _T29d;
@@ -10968,7 +10872,7 @@ _FOR_7d:
 		_T29d:
 			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   0x004D85F8;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
 	}

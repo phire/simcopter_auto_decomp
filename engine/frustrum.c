@@ -38,7 +38,7 @@ void VRFrustSetNormals() {
 	__asm        push   eax;
 	__asm        mov    eax, swide;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    vect.x, eax;
 // LINE 82:
@@ -74,7 +74,7 @@ void VRFrustSetNormals() {
 	__asm        push   eax;
 	__asm        mov    eax, shigh;
 	__asm        push   eax;
-	__asm        call   0x004D19DF;
+	__asm        call   _FixedDiv;
 	__asm        add    esp, 8;
 	__asm        mov    vect.y, eax;
 // LINE 100:

@@ -211,14 +211,14 @@ void S3FireInit() {
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
 	__asm        push   0x120;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        call   0x004D8859;
+	__asm        call   _VRGetObjInfo;
 	__asm        add    esp, 8;
 // LINE 144:
 	__asm        push   0x120;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRObjGetHeight;
@@ -226,7 +226,7 @@ void S3FireInit() {
 	__asm        mov    height, eax;
 // LINE 147:
 	__asm        push   0x120;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRGetObjDupMemReq;
@@ -269,7 +269,7 @@ _FOR_COND_68:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
 	__asm        push   0x120;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        push   eax;
 	__asm        call   VRCreateObjDuplicate;
@@ -278,14 +278,7 @@ _FOR_COND_68:
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        mov    [ecx+4], eax;
 // LINE 171:
-	__asm        mov    eax, G_main_mp;
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   0x004D84DB;
-	__asm        add    esp, 8;
+	_VRAddObjToMemPool(fd->stptr->mesh, G_main_mp);
 // LINE 174:
 	fd->dyfire.radius = 0x100000;
 // LINE 175:
@@ -378,13 +371,7 @@ _T8f:
 __WHILE_db:
 	while ((stobj != 0x0)) {
 		// LINE 243:
-			__asm        lea    eax, oinfo.Faces;
-			__asm        push   eax;
-			__asm        mov    eax, stobj;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        call   0x004D8859;
-			__asm        add    esp, 8;
+			_VRGetObjInfo(stobj->mesh, oinfo.Faces);
 		// LINE 244:
 			__asm        mov    eax, stobj;
 			__asm        test   byte ptr [eax+8], 4;
@@ -1093,13 +1080,7 @@ __WHILE_77:
 		// LINE 675:
 			fd->timetolive += 0x30000;
 		// LINE 678:
-			__asm        lea    eax, center.x;
-			__asm        push   eax;
-			__asm        mov    eax, stobj;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        call   0x004D88C3;
-			__asm        add    esp, 8;
+			_VRGetObjCenter(stobj->mesh, center.x);
 		// LINE 684:
 			__asm        mov    eax, center.x;
 			__asm        add    eax, radius;
@@ -1135,7 +1116,7 @@ __WHILE_77:
 			__asm        mov    eax, 0x50000;
 			__asm        sub    eax, water_timetolive;
 			__asm        push   eax;
-			__asm        call   0x004D19DF;
+			__asm        call   _FixedDiv;
 			__asm        add    esp, 8;
 			__asm        mov    dfactor, eax;
 		// LINE 697:
@@ -3022,7 +3003,7 @@ __WHILE_1f0:
 			__asm        je     _T21a;
 		// LINE 1282:
 			__asm        push   0x14E;
-			__asm        call   0x004D8821;
+			__asm        call   _VRGetObject;
 			__asm        add    esp, 4;
 			__asm        mov    ecx, stobj;
 			__asm        mov    [ecx+4], eax;
@@ -3057,7 +3038,7 @@ __WHILE_267:
 		// LINE 1309:
 		_T295:
 			__asm        push   0x14F;
-			__asm        call   0x004D8821;
+			__asm        call   _VRGetObject;
 			__asm        add    esp, 4;
 			__asm        mov    ecx, stobj;
 			__asm        mov    [ecx+4], eax;
@@ -3070,7 +3051,7 @@ __WHILE_267:
 		// LINE 1314:
 		_T2c0:
 			__asm        push   0x150;
-			__asm        call   0x004D8821;
+			__asm        call   _VRGetObject;
 			__asm        add    esp, 4;
 			__asm        mov    ecx, stobj;
 			__asm        mov    [ecx+4], eax;
@@ -3083,7 +3064,7 @@ __WHILE_267:
 		// LINE 1319:
 		_T2eb:
 			__asm        push   0x151;
-			__asm        call   0x004D8821;
+			__asm        call   _VRGetObject;
 			__asm        add    esp, 4;
 			__asm        mov    ecx, stobj;
 			__asm        mov    [ecx+4], eax;
@@ -3096,7 +3077,7 @@ __WHILE_267:
 		// LINE 1324:
 		_T316:
 			__asm        push   0x152;
-			__asm        call   0x004D8821;
+			__asm        call   _VRGetObject;
 			__asm        add    esp, 4;
 			__asm        mov    ecx, stobj;
 			__asm        mov    [ecx+4], eax;
@@ -3183,10 +3164,7 @@ _FOR_444:
 			__asm        add    eax, 0x320000;
 			__asm        mov    speed, eax;
 		// LINE 1355:
-			__asm        lea    eax, mat[0][0];
-			__asm        push   eax;
-			__asm        call   0x004D1FF1;
-			__asm        add    esp, 4;
+			_VRIdentity4x4(mat[0][0]);
 		// LINE 1356:
 			__asm        lea    eax, mat[0][0];
 			__asm        push   eax;
@@ -3198,7 +3176,7 @@ _FOR_444:
 			__asm        mov    eax, edx;
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D201C;
+			__asm        call   _VRPostYRot;
 			__asm        add    esp, 8;
 		// LINE 1357:
 			__asm        lea    eax, mat[0][0];
@@ -3211,16 +3189,10 @@ _FOR_444:
 			__asm        lea    eax, [edx+0x28A];
 			__asm        shl    eax, 0x10;
 			__asm        push   eax;
-			__asm        call   0x004D2004;
+			__asm        call   _VRPostXRot;
 			__asm        add    esp, 8;
 		// LINE 1358:
-			__asm        lea    eax, mat[0][0];
-			__asm        push   eax;
-			__asm        lea    eax, vec.x;
-			__asm        push   eax;
-			__asm        push   0x59B518;
-			__asm        call   0x004D2094;
-			__asm        add    esp, 0xC;
+			_VRRotateP3d(0x59b518, vec.x, mat[0][0]);
 		// LINE 1369:
 			__asm        mov    eax, fd;
 			__asm        mov    eax, [eax+0x9C];
@@ -3724,7 +3696,7 @@ _T22d:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x94];
 	__asm        push   eax;
-	__asm        call   0x004D8821;
+	__asm        call   _VRGetObject;
 	__asm        add    esp, 4;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x94], eax;
@@ -3827,7 +3799,7 @@ _FOR_15:
 		// LINE 1741:
 			__asm        mov    eax, lsfire.building;
 			__asm        push   eax;
-			__asm        call   0x004D8629;
+			__asm        call   _VRGetObjectId;
 			__asm        add    esp, 4;
 			__asm        mov    lsfire.building, eax;
 		// LINE 1742:

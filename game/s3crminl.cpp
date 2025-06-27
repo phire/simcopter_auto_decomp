@@ -1009,7 +1009,7 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
 	__asm        push   eax;
-	__asm        call   0x004D19BD;
+	__asm        call   _FixedMul;
 	__asm        add    esp, 8;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xDE], eax;
