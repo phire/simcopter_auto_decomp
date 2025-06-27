@@ -537,11 +537,7 @@ _T2e:
 	__asm        test   eax, eax;
 	__asm        je     _T4c;
 // LINE 233:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::UnlinkFromCell;
+	this->PlaneClass::UnlinkFromCell((this + 0x20));
 // LINE 245:
 _T4c:
 	this->flags[0] = 0x0;
@@ -633,19 +629,8 @@ _T94:
 // FUNCTION: COPTER_D 0x0052b35e
 int32_t PlaneClass::Initialize(int32_t instanceID) {
 // LINE 453:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::InitializeInstance;
-	__asm        jmp    __RETURN;
+	return this->PlaneClass::InitializeInstance(instanceID, this->currentLocation.y, this->currentLocation.x);
 // LINE 454:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052b390
@@ -1184,21 +1169,13 @@ _Tbe:
 	__asm        test   eax, eax;
 	__asm        je     _T124;
 // LINE 910:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::UnlinkFromCell;
+	this->PlaneClass::UnlinkFromCell((this + 0x20));
 // LINE 911:
 	this->currentLocation.x = ((this->dyObj.loc.x + 0x20000000) >> 0x16);
 // LINE 912:
 	this->currentLocation.y = ((0x20000000 - this->dyObj.loc.z) >> 0x16);
 // LINE 913:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::LinkToCell;
+	this->PlaneClass::LinkToCell((this + 0x20));
 // LINE 914:
 	this->PlaneClass::AdjustNextAltitude();
 // LINE 920:
@@ -1683,12 +1660,7 @@ _T1be:
 	this->smokeTime = 0x3333;
 // LINE 1434:
 _T1fd:
-	__asm        mov    eax, lcptr;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::PlaneCollisionCheck;
+	this->PlaneClass::PlaneCollisionCheck(lcptr, dist);
 // LINE 1435:
 	__asm        jmp    _T212;
 _T212:
@@ -1704,12 +1676,7 @@ _T226:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T25b;
 // LINE 1443:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::PlaneCollisionCheck;
+	this->PlaneClass::PlaneCollisionCheck(cptr, dist);
 // LINE 1444:
 	__asm        jmp    _T247;
 _T247:
@@ -1727,11 +1694,7 @@ _T25b:
 // LINE 1458:
 	__asm        jmp    _T26c;
 _T26c:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::UnlinkFromCell;
+	this->PlaneClass::UnlinkFromCell((this + 0x20));
 // LINE 1459:
 	this->currentLocation.x = newpos.x;
 	this->currentLocation.y = newpos.y;
@@ -1740,11 +1703,7 @@ _T26c:
 _T292:
 	__asm        jmp    _T297;
 _T297:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::LinkToCell;
+	this->PlaneClass::LinkToCell((this + 0x20));
 // LINE 1463:
 _T2a6:
 	__asm        lea    eax, newloc.x;
@@ -2994,11 +2953,7 @@ _T2f0:
 _T318:
 	__asm        jmp    _T31d;
 _T31d:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::LinkToCell;
+	this->PlaneClass::LinkToCell((this + 0x20));
 // LINE 2203:
 	this->PlaneClass::AdjustCurrentPosition();
 // LINE 2204:
@@ -3040,11 +2995,7 @@ _T11:
 // LINE 2238:
 	__asm        jmp    _T25;
 _T25:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::UnlinkFromCell;
+	this->PlaneClass::UnlinkFromCell((this + 0x20));
 // LINE 2239:
 	this->flags[1] = 0x0;
 // LINE 2241:
@@ -3152,11 +3103,7 @@ _T144:
 	__asm        cmp    mapy, 0xFFFFFFFF;
 	__asm        je     _T196;
 // LINE 2419:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PlaneClass::LinkToCell;
+	this->PlaneClass::LinkToCell((this + 0x20));
 // LINE 2423:
 	this->PlaneClass::AdjustCurrentPosition();
 // LINE 2424:
@@ -3698,11 +3645,7 @@ _FOR_44:
 			__asm        test   eax, eax;
 			__asm        je     _T192;
 		// LINE 2833:
-			__asm        mov    eax, p;
-			__asm        add    eax, 0x20;
-			__asm        push   eax;
-			__asm        mov    ecx, p;
-			__asm        call   PlaneClass::LinkToCell;
+			p->PlaneClass::LinkToCell((p + 0x20));
 		// LINE 2840:
 		_T192:
 			ret = ReadNextMIFFChunk(0xbc, 0x62b6e8, 0x504c414e, miffReader);

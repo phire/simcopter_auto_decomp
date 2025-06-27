@@ -1430,22 +1430,7 @@ _FOR_4d3:
 			__asm        test   ecx, eax;
 			__asm        je     _T552;
 		// LINE 2280:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(colorIndexShift);
-			__asm        push   eax;
-			__asm        mov    eax, scale;
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(screeny);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(screenx);
-			__asm        push   eax;
-			__asm        mov    eax, part;
-			__asm        push   eax;
-			__asm        mov    eax, yOff;
-			__asm        push   eax;
-			__asm        mov    eax, xOff;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   cCopterBody::DrawSwitch;
+			this->cCopterBody::DrawSwitch(reinterpret_cast<uint32_t>(colorIndexShift), scale, reinterpret_cast<uint32_t>(screeny), reinterpret_cast<uint32_t>(screenx), part, yOff, xOff);
 		// LINE 2281:
 		_T552:
 	}
@@ -1769,9 +1754,7 @@ _L31486:
 // LINE 2296:
 // No fallthrough
 _T50f:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   cCopterBody::ActivateAllPartPointers;
+	this->cCopterBody::ActivateAllPartPointers(0x1);
 // LINE 2297:
 	return;
 _L31438:

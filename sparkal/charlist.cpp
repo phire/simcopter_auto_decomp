@@ -130,10 +130,7 @@ _T37:
 	tempCharData = 0x0;
 // LINE 53:
 _T3e:
-	__asm        mov    eax, tempCharData;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CharList::AddItem;
+	this->CharList::AddItem(tempCharData);
 // LINE 54:
 	return;
 }
@@ -228,11 +225,7 @@ void CharList::DeleteItem(unsigned char chValue) {
 	/*bp-0x4*/   /*packed*/ class CharData *charDataToDelete;
 
 // LINE 103:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(chValue);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CharList::FindCharDataByValue;
-	__asm        mov    charDataToDelete, eax;
+	charDataToDelete = this->CharList::FindCharDataByValue(reinterpret_cast<uint32_t>(chValue));
 // LINE 104:
 	__asm        cmp    charDataToDelete, 0;
 	__asm        jne    _T2a;
@@ -240,10 +233,7 @@ void CharList::DeleteItem(unsigned char chValue) {
 	return;
 // LINE 106:
 _T2a:
-	__asm        mov    eax, charDataToDelete;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CharList::DeleteItem;
+	this->CharList::DeleteItem(charDataToDelete);
 // LINE 107:
 	return;
 }
@@ -253,11 +243,7 @@ void CharList::DeleteItem(int32_t nIndex) {
 	/*bp-0x4*/   /*packed*/ class CharData *charDataToDelete;
 
 // LINE 113:
-	__asm        mov    eax, nIndex;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CharList::FindCharDataByIndex;
-	__asm        mov    charDataToDelete, eax;
+	charDataToDelete = this->CharList::FindCharDataByIndex(nIndex);
 // LINE 114:
 	__asm        cmp    charDataToDelete, 0;
 	__asm        jne    _T2a;
@@ -265,10 +251,7 @@ void CharList::DeleteItem(int32_t nIndex) {
 	return;
 // LINE 116:
 _T2a:
-	__asm        mov    eax, charDataToDelete;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CharList::DeleteItem;
+	this->CharList::DeleteItem(charDataToDelete);
 // LINE 117:
 	return;
 }
@@ -284,11 +267,7 @@ void CharList::DeleteAllItems() {
 _FOR_20:
 	for (i = 0x0; (iEnd > i); i++) {
 		// LINE 124:
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   CharList::DeleteItem;
-			__asm        jmp    _FOR_NEXT_20;
+			this->CharList::DeleteItem(i);
 	}
 // LINE 125:
 _T40:

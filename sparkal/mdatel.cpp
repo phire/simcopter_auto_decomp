@@ -585,14 +585,7 @@ _T211:
 //  [0, 0, 0, 1, 2, 2, 3, 4, 4, 5, 15, 15, 6, 6, 6, 15, 7, 15, 8, 9, 9, 10, 15, 15, 15, 15, 15, 15, 15, 15, 11, 15, 12, 13, 13, 14, 14]
 // LINE 104:
 _T29f:
-	__asm        lea    eax, buf1[0];
-	__asm        push   eax;
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   ostream::operator<<;
-	__asm        mov    ecx, eax;
-	__asm        call   ostream::operator<<;
+	s->ostream::operator<<(buf1[0], buf[0])->ostream::operator<<(buf1[0]);
 // LINE 105:
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0x118], eax;
@@ -623,16 +616,9 @@ void MDateLocalized::MDateLocalized() {
 // FUNCTION: COPTER_D 0x0041fe8b
 void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
 
-	__asm        mov    eax, year;
-	__asm        push   eax;
-	__asm        mov    eax, day;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::MDate;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3D0;
+	this->MDate::MDate(year, day);
+	this->nLanguage = 0x0;
+	this-><MDateLocalized+0x00> = 0x58f3d0;
 // LINE 130:
 	return;
 
@@ -642,18 +628,9 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
 // FUNCTION: COPTER_D 0x0041fec9
 void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t year) {
 
-	__asm        mov    eax, year;
-	__asm        push   eax;
-	__asm        mov    eax, monthName;
-	__asm        push   eax;
-	__asm        mov    eax, day;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::MDate;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3D0;
+	this->MDate::MDate(year, monthName, day);
+	this->nLanguage = 0x0;
+	this-><MDateLocalized+0x00> = 0x58f3d0;
 // LINE 138:
 	__asm        mov    eax, year;
 	__asm        push   eax;
@@ -678,18 +655,9 @@ void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t yea
 // FUNCTION: COPTER_D 0x0041ff30
 void MDateLocalized::MDateLocalized(uint32_t day, uint32_t month, uint32_t year) {
 
-	__asm        mov    eax, year;
-	__asm        push   eax;
-	__asm        mov    eax, month;
-	__asm        push   eax;
-	__asm        mov    eax, day;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::MDate;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3D0;
+	this->MDate::MDate(year, month, day);
+	this->nLanguage = 0x0;
+	this-><MDateLocalized+0x00> = 0x58f3d0;
 // LINE 147:
 	return;
 
@@ -699,12 +667,8 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t month, uint32_t year)
 // FUNCTION: COPTER_D 0x0041ff72
 void MDateLocalized::MDateLocalized(/*unpacked*/ class istream& s) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3E8;
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::ParseFrom;
+	this-><MDateLocalized+0x00> = 0x58f3e8;
+	this->MDate::ParseFrom(s);
 	__asm        jmp    _T26;
 _T26:
 	this->nLanguage = 0x0;
@@ -718,14 +682,9 @@ _T26:
 // FUNCTION: COPTER_D 0x0041ffba
 void MDateLocalized::MDateLocalized(const /*unpacked*/ class MTime& time) {
 
-	__asm        mov    eax, time;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::MDate;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3D0;
+	this->MDate::MDate(time);
+	this->nLanguage = 0x0;
+	this-><MDateLocalized+0x00> = 0x58f3d0;
 // LINE 163:
 	return;
 
@@ -1112,10 +1071,7 @@ _T155:
 //  [0, 0, 0, 1, 2, 2, 3, 3, 4, 4, 5, 6, 7, 16, 16, 8, 8, 8, 16, 9, 16, 10, 10, 11, 11, 16, 16, 16, 16, 16, 16, 16, 16, 12, 12, 13, 14, 14, 15, 15]
 // LINE 403:
 _T1e0:
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   ostream::operator<<;
+	s->ostream::operator<<(buf[0]);
 // LINE 404:
 	return s;
 // LINE 405:

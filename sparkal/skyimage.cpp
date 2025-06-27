@@ -245,18 +245,9 @@ protected:
 // FUNCTION: COPTER_D 0x00495400
 void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nNewBitmapHeight) {
 
-	__asm        push   0;
-	__asm        mov    eax, nNewBitmapHeight;
-	__asm        push   eax;
-	__asm        mov    eax, nNewBitmapWidth;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::CBackBuffer;
-	__asm        mov    eax, nNewSkyType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x13C], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591090;
+	this->CBackBuffer::CBackBuffer(0x0, nNewBitmapHeight, nNewBitmapWidth);
+	this->nSkyType = nNewSkyType;
+	this-><SkyImage+0x00> = 0x591090;
 // LINE 31:
 	this->nBitmapWidth = 0x280;
 // LINE 32:
@@ -324,9 +315,7 @@ void SkyImage::SwitchToProperSkyType() {
 	__asm        cmp    dword ptr [eax+0x13C], 0;
 	__asm        je     _T38;
 // LINE 72:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   SkyImage::SwitchToSkyType;
+	this->SkyImage::SwitchToSkyType(0x0);
 // LINE 73:
 	__asm        jmp    _T5f;
 _T38:
@@ -337,9 +326,7 @@ _T38:
 	__asm        cmp    dword ptr [eax+0x13C], 1;
 	__asm        je     _T5f;
 // LINE 74:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   SkyImage::SwitchToSkyType;
+	this->SkyImage::SwitchToSkyType(0x1);
 // LINE 75:
 _T5f:
 	return;
@@ -655,20 +642,7 @@ _T1dc:
 	__asm        jmp    _T23a;
 // LINE 289:
 _T1e1:
-	__asm        mov    eax, rectSource.bottom;
-	__asm        push   eax;
-	__asm        mov    eax, rectSource.right;
-	__asm        push   eax;
-	__asm        mov    eax, rectSource.top;
-	__asm        push   eax;
-	__asm        mov    eax, rectSource.left;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, pDestImage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::Compose;
+	this->CBackBuffer::Compose(rectSource.bottom, rectSource.right, rectSource.top, rectSource.left, 0x0, 0x0, pDestImage);
 // LINE 292:
 	__asm        cmp    len2, 0;
 	__asm        je     _T23a;
@@ -677,21 +651,7 @@ _T1e1:
 // LINE 294:
 	rectSource.right = len2;
 // LINE 296:
-	__asm        mov    eax, rectSource.bottom;
-	__asm        push   eax;
-	__asm        mov    eax, rectSource.right;
-	__asm        push   eax;
-	__asm        mov    eax, rectSource.top;
-	__asm        push   eax;
-	__asm        mov    eax, rectSource.left;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, len1;
-	__asm        push   eax;
-	__asm        mov    eax, pDestImage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::Compose;
+	this->CBackBuffer::Compose(rectSource.bottom, rectSource.right, rectSource.top, rectSource.left, 0x0, len1, pDestImage);
 // LINE 299:
 _T23a:
 	return 0x1;

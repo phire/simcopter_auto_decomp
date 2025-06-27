@@ -432,25 +432,13 @@ _T15e:
 	__asm        jmp    _T193;
 // LINE 110:
 _T193:
-	__asm        lea    eax, szVideoPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_HOURGLASS_VIDEO_FILE_NAME;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   1;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFile;
+	0x604c00->FileServices::GetPathForFile(szVideoPath[0], SZ_HOURGLASS_VIDEO_FILE_NAME, 0x0, 0x1);
 // LINE 111:
 	tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>->SmackerBackBuffer::SetDirectBlit();
 // LINE 112:
 	__asm        mov    dword ptr [ebp-0x274], 1;
 // LINE 113:
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0xFE000;
-	__asm        lea    eax, szVideoPath[0];
-	__asm        push   eax;
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
-	__asm        call   SmackerBackBuffer::Open;
+	tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>->SmackerBackBuffer::Open(-0x1, 0xfe000, szVideoPath[0]);
 // LINE 114:
 	__asm        jmp    _T1e1;
 _T1e1:

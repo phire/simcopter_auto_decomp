@@ -43,10 +43,7 @@ void NotificationItem::NotificationItem() {
 // FUNCTION: COPTER_D 0x0043e18c
 void NotificationItem::NotificationItem(const /*packed*/ class NotificationItem& newNotificationSink) {
 // LINE 13:
-	__asm        mov    eax, newNotificationSink;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   NotificationItem::operator=;
+	this->NotificationItem::operator=(newNotificationSink);
 // LINE 14:
 	return;
 

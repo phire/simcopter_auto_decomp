@@ -562,10 +562,7 @@ _T5f:
 // LINE 117:
 	GetPathForFile(szPath[0], SZ_COPTER_MAIN_PREFERENCES_FILE_NAME, 0x0, 0x9);
 // LINE 118:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    ecx, gPreferenceManager;
-	__asm        call   PreferenceManager::IPreferenceManager;
+	gPreferenceManager->PreferenceManager::IPreferenceManager(szPath[0]);
 // LINE 119:
 	__asm        push   0x2FFFFFF;
 	__asm        mov    eax, gPreferenceManager;
@@ -796,12 +793,7 @@ _FOR_b9:
 		// LINE 202:
 			szJoystickName[0] = 0x0;
 		// LINE 203:
-			__asm        lea    eax, szJoystickName[0];
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    ecx, 0x604C78;
-			__asm        call   JoystickManager::GetJoystickName;
+			0x604c78->JoystickManager::GetJoystickName(szJoystickName[0], i);
 		// LINE 204:
 			__asm        lea    eax, szJoystickName[0];
 			__asm        push   eax;
@@ -1337,11 +1329,7 @@ _T47c:
 	__asm        mov    ecx, [eax+0x38];
 	__asm        call   dword ptr [edx+0x68];
 // LINE 360:
-	__asm        push   0x20002;
-	__asm        push   0x20;
-	__asm        push   0x7DC;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateMessageBox;
+	this->CGameApp::CreateMessageBox(0x20002, 0x20, 0x7dc);
 // LINE 361:
 	__asm        mov    eax, 0x461D53;
 	__asm        ret;
@@ -1913,11 +1901,7 @@ _T5b9:
 	__asm        call   dword ptr [edx+4];
 // LINE 470:
 _T5f0:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604530;
-	__asm        call   MessageDisplayManager::DisplayCurrentMessages;
+	0x604530->MessageDisplayManager::DisplayCurrentMessages(this-><CGameApp+0x34:4>);
 // LINE 473:
 _T601:
 	__asm        mov    eax, this;
@@ -1975,10 +1959,7 @@ _T76:
 	__asm        cmp    gJoystickManager.nJoystickCount, eax;
 	__asm        jle    _T98;
 // LINE 492:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604C78;
-	__asm        call   JoystickManager::GetCompleteState;
+	0x604c78->JoystickManager::GetCompleteState(i);
 	__asm        jmp    _FOR_NEXT_6e;
 // LINE 494:
 _T98:
@@ -2470,9 +2451,7 @@ _T766:
 	__asm        cmp    dword ptr ds:[0x604498], 0;
 	__asm        je     _T77f;
 // LINE 554:
-	__asm        push   1;
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::SetOn;
+	0x604480->Radio::SetOn(0x1);
 // LINE 555:
 _T77f:
 	__asm        push   0x2E;
@@ -2581,11 +2560,7 @@ _T912:
 	__asm        mov    ecx, [eax+0x38];
 	__asm        call   dword ptr [edx+0x64];
 // LINE 577:
-	__asm        push   1;
-	__asm        push   0x1F;
-	__asm        push   0x7DB;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateMessageBox;
+	this->CGameApp::CreateMessageBox(0x1, 0x1f, 0x7db);
 // LINE 578:
 	return 0x1;
 // LINE 585:
@@ -2596,11 +2571,7 @@ _T97b:
 // LINE 586:
 	this-><CGameApp+0x20:4> = 0x0;
 // LINE 587:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x4174;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x606E78;
-	__asm        call   LogManager::ReadFromMIFF;
+	0x606e78->LogManager::ReadFromMIFF((this + 0x4174));
 // LINE 588:
 	VRAppGameInit((this + 0x4174));
 // LINE 589:
@@ -2634,11 +2605,7 @@ _Ta07:
 	__asm        test   eax, eax;
 	__asm        je     _Ta4b;
 // LINE 602:
-	__asm        push   1;
-	__asm        push   0x1E;
-	__asm        push   0x7DA;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateMessageBox;
+	this->CGameApp::CreateMessageBox(0x1, 0x1e, 0x7da);
 // LINE 604:
 _Ta4b:
 	__asm        cmp    bCheckForCommandLineCheatCodes, 0;
@@ -3242,9 +3209,7 @@ _T2ff:
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
 	__asm        je     _T318;
 // LINE 708:
-	__asm        push   0;
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::SetOn;
+	0x604480->Radio::SetOn(0x0);
 // LINE 709:
 _T318:
 	S3DSStopAllSounds();
@@ -3719,16 +3684,12 @@ _T10f:
 	__asm        cmp    dword ptr [eax+0x4320], 0;
 	__asm        jne    _T138;
 // LINE 814:
-	__asm        push   0xA;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::SetSystemPriorityLevel;
+	this->CGameApp::SetSystemPriorityLevel(0xa);
 // LINE 815:
 	__asm        jmp    _T142;
 // LINE 816:
 _T138:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::SetSystemPriorityLevel;
+	this->CGameApp::SetSystemPriorityLevel(0x0);
 // LINE 818:
 _T142:
 	__asm        mov    eax, this;
@@ -4969,11 +4930,7 @@ _T5c:
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jl     _T82;
 // LINE 1133:
-	__asm        push   0x20002;
-	__asm        push   3;
-	__asm        push   0x7DE;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateMessageBox;
+	this->CGameApp::CreateMessageBox(0x20002, 0x3, 0x7de);
 // LINE 1134:
 	__asm        jmp    _T8f;
 // LINE 1136:
@@ -5262,10 +5219,7 @@ _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 1224:
 _Ta6:
-	__asm        lea    eax, szString[0];
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604530;
-	__asm        call   MessageDisplayManager::AddNewMessage;
+	0x604530->MessageDisplayManager::AddNewMessage(szString[0]);
 // LINE 1225:
 	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x227);
 // LINE 1226:
@@ -5303,10 +5257,7 @@ _T13c:
 	__asm        jmp    _T141;
 // LINE 1227:
 _T141:
-	__asm        lea    eax, szString[0];
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604530;
-	__asm        call   MessageDisplayManager::AddNewMessage;
+	0x604530->MessageDisplayManager::AddNewMessage(szString[0]);
 // LINE 1230:
 	GetPathForFile(szFullPath[0], SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME, 0x0, 0x2);
 // LINE 1231:
@@ -5840,12 +5791,7 @@ _T3ec:
 	__asm        cmp    nCurrentGameMode, 6;
 	__asm        jl     _T43e;
 // LINE 1315:
-	__asm        push   0x20002;
-	__asm        push   0x31;
-	__asm        push   0x7DD;
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::CreateMessageBox;
+	(this - 0x14)->CGameApp::CreateMessageBox(0x20002, 0x31, 0x7dd);
 // LINE 1316:
 	__asm        jmp    _T468;
 // LINE 1317:
@@ -6233,11 +6179,7 @@ _T8a4:
 	__asm        cmp    nResult, 9;
 	__asm        je     _T91f;
 // LINE 1413:
-	__asm        mov    eax, nResult;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DisplayFileOpenError;
+	(this - 0x14)->CGameApp::DisplayFileOpenError(nResult);
 // LINE 1414:
 	this-><CGameApp+0x14:4> = 0x0;
 // LINE 1415:
@@ -6247,12 +6189,7 @@ _T91f:
 	__asm        cmp    nResult, 0;
 	__asm        jne    _T947;
 // LINE 1418:
-	__asm        push   1;
-	__asm        push   0x30;
-	__asm        push   0x7DA;
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::CreateMessageBox;
+	(this - 0x14)->CGameApp::CreateMessageBox(0x1, 0x30, 0x7da);
 // LINE 1419:
 	return 0x1;
 // LINE 1422:
@@ -6260,21 +6197,12 @@ _T947:
 	__asm        jmp    _T9b1;
 // LINE 1423:
 _T94c:
-	__asm        push   0x5C2918;
-	__asm        push   0x5C33E8;
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::SaveUserOrCareerGame;
-	__asm        mov    nResult, eax;
+	nResult = (this - 0x14)->CGameApp::SaveUserOrCareerGame(0x5c2918, 0x5c33e8);
 // LINE 1424:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T993;
 // LINE 1425:
-	__asm        mov    eax, nResult;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DisplayFileOpenError;
+	(this - 0x14)->CGameApp::DisplayFileOpenError(nResult);
 // LINE 1426:
 	this-><CGameApp+0x14:4> = 0x0;
 // LINE 1427:
@@ -6283,12 +6211,7 @@ _T94c:
 	__asm        jmp    _T9b1;
 // LINE 1430:
 _T993:
-	__asm        push   1;
-	__asm        push   0x30;
-	__asm        push   0x7DA;
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::CreateMessageBox;
+	(this - 0x14)->CGameApp::CreateMessageBox(0x1, 0x30, 0x7da);
 // LINE 1431:
 	return 0x1;
 // LINE 1441:
@@ -6528,40 +6451,22 @@ _T278:
 	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 1538:
-	__asm        lea    eax, lFileType;
-	__asm        push   eax;
-	__asm        lea    eax, szFileLoadPath[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::GetLoadFileType;
-	__asm        mov    nResult, eax;
+	nResult = this->CGameApp::GetLoadFileType(lFileType, szFileLoadPath[0]);
 // LINE 1539:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T341;
 // LINE 1540:
-	__asm        mov    eax, nResult;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DisplayFileOpenError;
+	this->CGameApp::DisplayFileOpenError(nResult);
 // LINE 1541:
 	return 0x0;
 // LINE 1545:
 _T341:
-	__asm        mov    eax, lFileType;
-	__asm        push   eax;
-	__asm        lea    eax, szFileLoadPath[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::SetUpLoadGame;
-	__asm        mov    nResult, eax;
+	nResult = this->CGameApp::SetUpLoadGame(lFileType, szFileLoadPath[0]);
 // LINE 1546:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T386;
 // LINE 1547:
-	__asm        mov    eax, nResult;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DisplayFileOpenError;
+	this->CGameApp::DisplayFileOpenError(nResult);
 // LINE 1548:
 	return 0x0;
 // LINE 1551:
@@ -6731,10 +6636,7 @@ _T149:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T188;
 // LINE 1611:
-	__asm        mov    eax, nResult;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DisplayFileOpenError;
+	this->CGameApp::DisplayFileOpenError(nResult);
 // LINE 1612:
 	return 0x0;
 // LINE 1615:
@@ -6742,30 +6644,19 @@ _T188:
 	__asm        jmp    _T1d5;
 // LINE 1616:
 _T18d:
-	__asm        push   0x5C2918;
-	__asm        push   0x5C33E8;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::SaveUserOrCareerGame;
-	__asm        mov    nResult, eax;
+	nResult = this->CGameApp::SaveUserOrCareerGame(0x5c2918, 0x5c33e8);
 // LINE 1617:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T1c4;
 // LINE 1618:
-	__asm        mov    eax, nResult;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DisplayFileOpenError;
+	this->CGameApp::DisplayFileOpenError(nResult);
 // LINE 1619:
 	return 0x0;
 // LINE 1621:
 	__asm        jmp    _T1d5;
 // LINE 1622:
 _T1c4:
-	__asm        push   1;
-	__asm        push   0x30;
-	__asm        push   0x7DA;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateMessageBox;
+	this->CGameApp::CreateMessageBox(0x1, 0x30, 0x7da);
 // LINE 1624:
 _T1d5:
 	return 0x1;
@@ -6783,10 +6674,7 @@ _T1e4:
 	__asm        cmp    nResult, 9;
 	__asm        je     _T225;
 // LINE 1629:
-	__asm        mov    eax, nResult;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DisplayFileOpenError;
+	this->CGameApp::DisplayFileOpenError(nResult);
 // LINE 1630:
 	return 0x0;
 // LINE 1632:
@@ -6795,11 +6683,7 @@ _T225:
 	__asm        cmp    nResult, 9;
 	__asm        je     _T240;
 // LINE 1633:
-	__asm        push   1;
-	__asm        push   0x30;
-	__asm        push   0x7DA;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateMessageBox;
+	this->CGameApp::CreateMessageBox(0x1, 0x30, 0x7da);
 // LINE 1634:
 _T240:
 	return 0x1;
@@ -6816,11 +6700,7 @@ _T24f:
 // LINE 1639:
 	this-><CGameApp+0x28:4> = 0x1;
 // LINE 1640:
-	__asm        push   0x20002;
-	__asm        push   0x31;
-	__asm        push   0x7DD;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateMessageBox;
+	this->CGameApp::CreateMessageBox(0x20002, 0x31, 0x7dd);
 // LINE 1642:
 	__asm        jmp    _T2a5;
 _T287:

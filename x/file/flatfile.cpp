@@ -268,10 +268,7 @@ void FlatFile::OpenFromOtherFile(/*unpacked*/ class FlatFile *other) {
 	/*bp-0x100*/ unsigned char otherName[256]; // 0x100 bytes
 
 // LINE 112:
-	__asm        lea    eax, otherName[0];
-	__asm        push   eax;
-	__asm        mov    ecx, other;
-	__asm        call   FlatFile::GetFileName;
+	other->FlatFile::GetFileName(otherName[0]);
 // LINE 113:
 	__asm        lea    eax, otherName[0];
 	__asm        push   eax;
@@ -491,13 +488,7 @@ long FlatFile::Read4(long * val) {
 // LINE 244:
 	size = 0x4;
 // LINE 245:
-	__asm        lea    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, val;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   FlatFile::ReadBlock;
-	__asm        mov    err, eax;
+	err = this->FlatFile::ReadBlock(size, val);
 // LINE 246:
 	__asm        cmp    err, 0;
 	__asm        jne    _T3c;
@@ -517,13 +508,7 @@ long FlatFile::Read2(short * val) {
 // LINE 252:
 	size = 0x2;
 // LINE 253:
-	__asm        lea    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, val;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   FlatFile::ReadBlock;
-	__asm        mov    err, eax;
+	err = this->FlatFile::ReadBlock(size, val);
 // LINE 254:
 	__asm        cmp    err, 0;
 	__asm        jne    _T3c;
@@ -543,13 +528,7 @@ long FlatFile::Read1(signed char * val) {
 // LINE 260:
 	size = 0x1;
 // LINE 261:
-	__asm        lea    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, val;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   FlatFile::ReadBlock;
-	__asm        mov    err, eax;
+	err = this->FlatFile::ReadBlock(size, val);
 // LINE 262:
 	return err;
 // LINE 263:

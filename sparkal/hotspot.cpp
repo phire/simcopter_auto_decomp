@@ -2780,26 +2780,14 @@ _Ta1:
 	__asm        cmp    dword ptr [eax+4], 2;
 	__asm        jne    _Tc3;
 // LINE 136:
-	__asm        mov    eax, lYPosition;
-	__asm        push   eax;
-	__asm        mov    eax, lXPosition;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   HotSpot::PointInCircle;
-	__asm        jmp    __RETURN;
+	return this->HotSpot::PointInCircle(lYPosition, lXPosition);
 // LINE 137:
 _Tc3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 3;
 	__asm        jne    _Te5;
 // LINE 138:
-	__asm        mov    eax, lYPosition;
-	__asm        push   eax;
-	__asm        mov    eax, lXPosition;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   HotSpot::PointInPolygon;
-	__asm        jmp    __RETURN;
+	return this->HotSpot::PointInPolygon(lYPosition, lXPosition);
 // LINE 139:
 _Te5:
 	return 0x0;
@@ -3351,11 +3339,7 @@ int32_t LoadListFromResource(/*packed*/ class list<HotSpot>& hotSpotList, int32_
 	/*bp-0x34*/  int32_t i;
 
 // LINE 270:
-	__asm        push   1;
-	__asm        mov    eax, nResourceID;
-	__asm        push   eax;
-	__asm        lea    ecx, resourceHangarHotspots<vftable>;
-	__asm        call   ResourceRCData::ResourceRCData;
+	resourceHangarHotspots<vftable>->ResourceRCData::ResourceRCData(0x1, nResourceID);
 // LINE 278:
 	fileImage = resourceHangarHotspots<vftable>->ResourceRCData::DataReference();
 // LINE 279:

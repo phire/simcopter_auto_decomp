@@ -1297,9 +1297,7 @@ void SoundQueue::~SoundQueue() {
 
 	this-><vftable> = 0x58f3f0;
 // LINE 156:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   SoundQueue::DeInitialize;
+	this->SoundQueue::DeInitialize(0x1);
 // LINE 157:
 	__asm        jmp    _T24;
 _T24:

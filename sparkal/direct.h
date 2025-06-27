@@ -6,14 +6,7 @@ int32_t Directory::ReadDirectoryDirectoryEntriesIntoStringList(/*packed*/ class 
 // LINE 201:
 	__asm        or     lFilter, 4;
 // LINE 202:
-	__asm        mov    eax, lFilter;
-	__asm        push   eax;
-	__asm        mov    eax, sDirectoryEntries;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
-	__asm        jmp    __RETURN;
+	return this->Directory::ReadDirectorySpecificEntriesIntoStringList(lFilter, sDirectoryEntries);
 // LINE 203:
-__RETURN:
 }
 

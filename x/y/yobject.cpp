@@ -5173,16 +5173,7 @@ _Tf3:
 // FUNCTION: COPTER_D 0x00545ecb
 void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 // LINE 456:
-	__asm        mov    eax, dz;
-	__asm        push   eax;
-	__asm        mov    eax, dx;
-	__asm        push   eax;
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    ecx, gAvatar;
-	__asm        call   cYObject::SetCellAndLoc;
+	gAvatar->cYObject::SetCellAndLoc(dz, dx, y, x);
 // LINE 457:
 	__asm        mov    eax, gAvatar;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -5325,11 +5316,7 @@ _T27d:
 _T282:
 	gAvatar->fData[9] = 0x0;
 // LINE 460:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        push   eax;
-	__asm        mov    ecx, gAvatar;
-	__asm        call   cYObject::SetMaster;
+	gAvatar->cYObject::SetMaster(G_uheli->dyheli);
 // LINE 461:
 	return;
 }
@@ -5337,9 +5324,7 @@ _T282:
 // FUNCTION: COPTER_D 0x0054617c
 void S3PersonUserAppearNew(/*unpacked*/ struct Point3d *loc, /*unpacked*/ struct Point3d *facingvector) {
 // LINE 465:
-	__asm        push   0;
-	__asm        mov    ecx, gAvatar;
-	__asm        call   cYObject::SetMaster;
+	gAvatar->cYObject::SetMaster(0x0);
 // LINE 466:
 	__asm        mov    eax, gAvatar;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -5351,17 +5336,7 @@ void S3PersonUserAppearNew(/*unpacked*/ struct Point3d *loc, /*unpacked*/ struct
 _T46:
 	gAvatar->cYObject::Unlink();
 // LINE 468:
-	__asm        push   0xFF;
-	__asm        push   0xFF;
-	__asm        mov    eax, loc;
-	__asm        mov    ecx, [eax+8];
-	__asm        push   ecx;
-	__asm        mov    ecx, [eax+4];
-	__asm        push   ecx;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, gAvatar;
-	__asm        call   cYObject::SetCellAndLoc;
+	gAvatar->cYObject::SetCellAndLoc(0xff, 0xff, loc->z, loc->y, loc->x);
 // LINE 470:
 	gAvatar->cYObject::Link();
 // LINE 471:
@@ -5461,10 +5436,7 @@ _T180:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 481:
-	__asm        lea    eax, moveinfo.locType;
-	__asm        push   eax;
-	__asm        mov    ecx, gAvatar;
-	__asm        call   cAvatar::AvatarMove;
+	gAvatar->cAvatar::AvatarMove(moveinfo.locType);
 // LINE 487:
 // Block end:
 _T1c6:
@@ -5640,10 +5612,7 @@ void S3DrawPerson(/*unpacked*/ struct VRBlit *blit) {
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T3b;
 // LINE 534:
-	__asm        mov    eax, blit;
-	__asm        push   eax;
-	__asm        mov    ecx, gAvatar;
-	__asm        call   cYObject::Draw;
+	gAvatar->cYObject::Draw(blit);
 // LINE 536:
 	__asm        jmp    _T137;
 // LINE 537:
@@ -5697,10 +5666,7 @@ _Tf9:
 	doAssert(0x8c085, 0x5b8c44, 0x21b, 0x5b8c58);
 // LINE 540:
 _T12b:
-	__asm        mov    eax, blit;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::Draw;
+	obj->cYObject::Draw(blit);
 // LINE 543:
 // Block end:
 _T137:
@@ -5735,9 +5701,7 @@ void cAvatar::GetControlInput() {
 	__asm        cmp    eax, 0xB;
 	__asm        je     _Tcd;
 // LINE 561:
-	__asm        push   0xB;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonType;
+	this->cYObject::SetPersonType(0xb);
 // LINE 562:
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x104], 0xFFFF;
@@ -5800,9 +5764,7 @@ _T108:
 	__asm        cmp    eax, 1;
 	__asm        je     _T19c;
 // LINE 572:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonType;
+	this->cYObject::SetPersonType(0x1);
 // LINE 573:
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x104], 0xFFFF;
@@ -6363,25 +6325,8 @@ _T79:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 712:
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, onTopOf;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-	__asm        push   eax;
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(treeID);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(scurkID);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::StartScurkAmbientMission;
-	__asm        jmp    __RETURN;
+	return this->cYObject::StartScurkAmbientMission(loc.x, onTopOf, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx), persontype, reinterpret_cast<uint32_t>(treeID), reinterpret_cast<uint32_t>(scurkID));
 // LINE 713:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00546f45
@@ -6389,21 +6334,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 	/*bp-0x4*/   unsigned short ret;
 
 // LINE 719:
-	__asm        mov    eax, loc;
-	__asm        push   eax;
-	__asm        mov    eax, onTopOf;
-	__asm        push   eax;
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::StartMission;
-	__asm        mov    ret, ax;
+	ret = this->cYObject::StartMission(loc, onTopOf, -0x1, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx), 0x0, persontype);
 // LINE 720:
 	__asm        test   reinterpret_cast<uint32_t>(ret), 0xFFFF;
 	__asm        jne    _T59;
@@ -6763,14 +6694,7 @@ _Tae:
 	return;
 // LINE 786:
 _Tcb:
-	__asm        lea    eax, dist;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   5;
-	__asm        push   0xFFFFFFFE;
-	__asm        mov    ecx, gAvatar;
-	__asm        call   cYObject::GetClosest;
-	__asm        mov    medic, eax;
+	medic = gAvatar->cYObject::GetClosest(dist, 0x0, 0x5, -0x2);
 // LINE 787:
 	__asm        cmp    medic, 0;
 	__asm        je     _Tfa;
@@ -8549,10 +8473,7 @@ _T1072:
 	doAssert(0x8c085, 0x5b90b8, 0x4ad, 0x5b90e4);
 // LINE 1198:
 _T10a1:
-	__asm        mov    eax, globalBehaviorFileName;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x636BB8;
-	__asm        call   FlatResFile::Open;
+	0x636bb8->FlatResFile::Open(globalBehaviorFileName);
 // LINE 1199:
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   FlatFile::ValidFile;
@@ -9202,16 +9123,7 @@ _LOOP_187:
 					__asm        test   eax, eax;
 					__asm        je     _T2b8;
 				// LINE 1381:
-					__asm        mov    eax, offsetz;
-					__asm        push   eax;
-					__asm        mov    eax, offsetx;
-					__asm        push   eax;
-					__asm        mov    eax, y;
-					__asm        push   eax;
-					__asm        mov    eax, x;
-					__asm        push   eax;
-					__asm        mov    ecx, this;
-					__asm        call   cYObject::SetCellAndLoc;
+					this->cYObject::SetCellAndLoc(offsetz, offsetx, y, x);
 				// LINE 1391:
 					__asm        movsx  eax, cYObject::sBeamed;
 					__asm        add    eax, 6;
@@ -9719,9 +9631,7 @@ _FOR_2f:
 			__asm        test   reinterpret_cast<uint32_t>(die), 0xFFFF;
 			__asm        je     _T23b;
 		// LINE 1523:
-			__asm        push   0;
-			__asm        mov    ecx, obj;
-			__asm        call   cYObject::SetMaster;
+			obj->cYObject::SetMaster(0x0);
 		// LINE 1524:
 			obj->fDyn.loc.y = (S3PUtilsGetAlt(obj->fDyn.loc.z, obj->fDyn.loc.y, obj->fDyn.loc.x) + 0x30000);
 			__asm        jmp    _T227;
@@ -9743,10 +9653,7 @@ _T240:
 // FUNCTION: COPTER_D 0x0054a5a4
 void cYObject::SetPersonData(enum PersonType persontype, enum MissionType mission, long missionid) {
 // LINE 1534:
-	__asm        mov    eax, mission;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetMissionType;
+	this->cYObject::SetMissionType(mission);
 // LINE 1535:
 	__asm        mov    eax, missionid;
 	__asm        mov    ecx, this;
@@ -9774,10 +9681,7 @@ _T7f:
 	__asm        jmp    _T84;
 // LINE 1536:
 _T84:
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonType;
+	this->cYObject::SetPersonType(persontype);
 // LINE 1537:
 	return;
 }
@@ -10066,21 +9970,9 @@ _T300:
 // LINE 1597:
 // Block start:
 	/*bp-0x1c*/  long testID;
-	__asm        mov    eax, offsetz;
-	__asm        push   eax;
-	__asm        mov    eax, offsetx;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetCellAndLoc;
+	this->cYObject::SetCellAndLoc(offsetz, offsetx, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
 // LINE 1598:
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonType;
+	this->cYObject::SetPersonType(persontype);
 // LINE 1599:
 	testID = this->cYObject::JoinRiot();
 // LINE 1600:
@@ -10110,10 +10002,7 @@ _T3a4:
 // LINE 1609:
 // Block end:
 _T3a9:
-	__asm        mov    eax, mission;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetMissionType;
+	this->cYObject::SetMissionType(mission);
 // LINE 1610:
 	__asm        mov    eax, missionid;
 	__asm        mov    ecx, this;
@@ -10141,30 +10030,14 @@ _T42b:
 	__asm        jmp    _T430;
 // LINE 1611:
 _T430:
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonType;
+	this->cYObject::SetPersonType(persontype);
 // LINE 1612:
 	__asm        cmp    loc, 0;
 	__asm        je     _T486;
 // LINE 1613:
-	__asm        mov    eax, onTopOf;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetMaster;
+	this->cYObject::SetMaster(onTopOf);
 // LINE 1614:
-	__asm        push   0xFF;
-	__asm        push   0xFF;
-	__asm        mov    eax, loc;
-	__asm        mov    ecx, [eax+8];
-	__asm        push   ecx;
-	__asm        mov    ecx, [eax+4];
-	__asm        push   ecx;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetCellAndLoc;
+	this->cYObject::SetCellAndLoc(0xff, 0xff, loc->z, loc->y, loc->x);
 // LINE 1615:
 	ret = 0x1;
 // LINE 1617:
@@ -10271,26 +10144,9 @@ _T5d5:
 	__asm        jmp    _T5e9;
 // LINE 1638:
 _T5e9:
-	__asm        push   0xFF;
-	__asm        push   0xFF;
-	__asm        mov    eax, loc;
-	__asm        mov    ecx, [eax+8];
-	__asm        push   ecx;
-	__asm        mov    ecx, [eax+4];
-	__asm        push   ecx;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetCellAndLoc;
+	this->cYObject::SetCellAndLoc(0xff, 0xff, loc->z, loc->y, loc->x);
 // LINE 1639:
-	__asm        mov    eax, missionid;
-	__asm        push   eax;
-	__asm        mov    eax, mission;
-	__asm        push   eax;
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonData;
+	this->cYObject::SetPersonData(missionid, mission, persontype);
 // LINE 1640:
 	ret = 0x1;
 // LINE 1642:
@@ -10477,25 +10333,9 @@ _FOR_66f:
 			__asm        jmp    _T925;
 		// LINE 1700:
 		_T839:
-			__asm        mov    eax, offsetz;
-			__asm        push   eax;
-			__asm        mov    eax, offsetx;
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   cYObject::SetCellAndLoc;
+			this->cYObject::SetCellAndLoc(offsetz, offsetx, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
 		// LINE 1701:
-			__asm        mov    eax, missionid;
-			__asm        push   eax;
-			__asm        mov    eax, mission;
-			__asm        push   eax;
-			__asm        mov    eax, persontype;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   cYObject::SetPersonData;
+			this->cYObject::SetPersonData(missionid, mission, persontype);
 		// LINE 1704:
 			mp.id = missionid;
 		// LINE 1705:
@@ -10617,25 +10457,9 @@ _T9c0:
 	__asm        test   eax, eax;
 	__asm        je     _Ta36;
 // LINE 1743:
-	__asm        mov    eax, offsetz;
-	__asm        push   eax;
-	__asm        mov    eax, offsetx;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetCellAndLoc;
+	this->cYObject::SetCellAndLoc(offsetz, offsetx, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
 // LINE 1744:
-	__asm        mov    eax, missionid;
-	__asm        push   eax;
-	__asm        mov    eax, mission;
-	__asm        push   eax;
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonData;
+	this->cYObject::SetPersonData(missionid, mission, persontype);
 // LINE 1745:
 	ret = 0x1;
 // LINE 1747:
@@ -10715,11 +10539,7 @@ _Tb3f:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1761:
-	__asm        mov    eax, onTopOf;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetMaster;
-	__asm        mov    setmaster, ax;
+	setmaster = this->cYObject::SetMaster(onTopOf);
 // LINE 1762:
 	__asm        test   reinterpret_cast<uint32_t>(setmaster), 0xFFFF;
 	__asm        jne    _Tb97;
@@ -10727,14 +10547,7 @@ _Tb3f:
 	doAssert(0x8c085, 0x5bac40, 0x6e2, 0x5bac60);
 // LINE 1763:
 _Tb97:
-	__asm        mov    eax, missionid;
-	__asm        push   eax;
-	__asm        mov    eax, mission;
-	__asm        push   eax;
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonData;
+	this->cYObject::SetPersonData(missionid, mission, persontype);
 // LINE 1764:
 	ret = 0x1;
 // LINE 1767:
@@ -10791,26 +10604,9 @@ _Tc3c:
 	__asm        jmp    _Tc50;
 // LINE 1776:
 _Tc50:
-	__asm        push   0xFF;
-	__asm        push   0xFF;
-	__asm        mov    eax, loc;
-	__asm        mov    ecx, [eax+8];
-	__asm        push   ecx;
-	__asm        mov    ecx, [eax+4];
-	__asm        push   ecx;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetCellAndLoc;
+	this->cYObject::SetCellAndLoc(0xff, 0xff, loc->z, loc->y, loc->x);
 // LINE 1777:
-	__asm        mov    eax, missionid;
-	__asm        push   eax;
-	__asm        mov    eax, mission;
-	__asm        push   eax;
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonData;
+	this->cYObject::SetPersonData(missionid, mission, persontype);
 // LINE 1778:
 	ret = 0x1;
 // LINE 1781:
@@ -10859,25 +10655,9 @@ _Td0a:
 	__asm        jmp    _Td1e;
 // LINE 1785:
 _Td1e:
-	__asm        mov    eax, offsetz;
-	__asm        push   eax;
-	__asm        mov    eax, offsetx;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetCellAndLoc;
+	this->cYObject::SetCellAndLoc(offsetz, offsetx, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
 // LINE 1786:
-	__asm        mov    eax, missionid;
-	__asm        push   eax;
-	__asm        mov    eax, mission;
-	__asm        push   eax;
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonData;
+	this->cYObject::SetPersonData(missionid, mission, persontype);
 // LINE 1787:
 	ret = 0x1;
 // LINE 1790:
@@ -11284,9 +11064,7 @@ _T1ce:
 	__asm        jmp    _T249;
 // LINE 1831:
 _T1d3:
-	__asm        push   3;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetMissionType;
+	this->cYObject::SetMissionType(0x3);
 // LINE 1832:
 	__asm        mov    eax, riotMissionID;
 	__asm        mov    ecx, this;
@@ -11638,10 +11416,7 @@ __WHILE_17:
 			__asm        cmp    eax, ecx;
 			__asm        jge    _T1b4;
 		// LINE 1877:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(soundchannel);
-			__asm        push   eax;
-			__asm        mov    ecx, obj;
-			__asm        call   cYObject::SetSoundChannel;
+			obj->cYObject::SetSoundChannel(reinterpret_cast<uint32_t>(soundchannel));
 		// LINE 1878:
 		_FOR_172:
 			__asm        mov    word ptr [ebp-0x1C], 0;
@@ -13604,10 +13379,7 @@ _T133:
 	__asm        jmp    _T15d;
 // LINE 2282:
 _T15d:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   TreeSim::Simulate;
+	this->TreeSim::Simulate(0x0, 0x0);
 // LINE 2283:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -13843,11 +13615,7 @@ _T1aa:
 _T1d3:
 	this->cAvatar::GetControlInput();
 // LINE 2319:
-	__asm        lea    eax, moveinfo.locType;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cAvatar::AvatarMove;
-	__asm        mov    movecode, eax;
+	movecode = this->cAvatar::AvatarMove(moveinfo.locType);
 // LINE 2321:
 	__asm        inc    sCheckTotedCount;
 	__asm        movsx  eax, sCheckTotedCount;
@@ -13898,12 +13666,7 @@ _T23d:
 _T2a5:
 	__asm        jmp    _T2aa;
 _T2aa:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PutTotedMedVicOn;
-	__asm        mov    obj, eax;
+	obj = this->cYObject::PutTotedMedVicOn(G_uheli->dyheli);
 // LINE 2341:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T2e7;
@@ -13911,12 +13674,7 @@ _T2aa:
 	doAssert(0x8c085, 0x5bb408, 0x925, 0x5bb410);
 // LINE 2342:
 _T2e7:
-	__asm        mov    eax, person;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        push   8;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::UpdateMission;
+	this->cYObject::UpdateMission(person->fMissionID, 0x8);
 // LINE 2345:
 	this->fData[17] = 0x1;
 // LINE 2348:
@@ -13983,16 +13741,9 @@ _T3c2:
 	__asm        jmp    _T3c7;
 // LINE 2350:
 _T3c7:
-	__asm        push   0;
-	__asm        push   0xC;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0xc);
 // LINE 2351:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetMaster;
+	this->cYObject::SetMaster(G_uheli->dyheli);
 // LINE 2352:
 	this->fData[9] = 0x0;
 // LINE 2356:
@@ -14075,11 +13826,7 @@ _T516:
 	__asm        jmp    _T523;
 // LINE 2367:
 _T523:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    ecx, person;
-	__asm        call   cYObject::SetMaster;
+	person->cYObject::SetMaster((this + 0x24));
 // LINE 2368:
 	__asm        jmp    _T537;
 _T537:
@@ -14109,11 +13856,7 @@ _T56c:
 
 	doAssert(0x8c085, 0x5bbd3c, 0xce, 0x5bba14);
 _T59f:
-	__asm        push   0x322;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    ecx, person;
-	__asm        call   TreeSim::Gosub;
+	person->TreeSim::Gosub(0x322, 0x0, 0x0);
 	__asm        jmp    _T5bf;
 
 	__asm        jmp    _T5bf;
@@ -14392,10 +14135,7 @@ _T326:
 	__asm        test   eax, eax;
 	__asm        je     _T357;
 
-	__asm        push   0;
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, -0x1);
 // LINE 2418:
 _T357:
 	__asm        jmp    _T680;
@@ -14480,10 +14220,7 @@ _T4d4:
 	__asm        test   eax, eax;
 	__asm        je     _T4f2;
 
-	__asm        push   0;
-	__asm        push   0xE;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0xe);
 // LINE 2422:
 _T4f2:
 	__asm        jmp    _T680;
@@ -14565,10 +14302,7 @@ _T662:
 	__asm        test   eax, eax;
 	__asm        je     _T680;
 
-	__asm        push   0;
-	__asm        push   0xE;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0xe);
 // LINE 2426:
 _T680:
 	__asm        jmp    _T1569;
@@ -14650,10 +14384,7 @@ _T7f0:
 	__asm        test   eax, eax;
 	__asm        je     _T80e;
 
-	__asm        push   0;
-	__asm        push   8;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x8);
 // LINE 2431:
 _T80e:
 	__asm        jmp    _T1569;
@@ -14735,10 +14466,7 @@ _T97e:
 	__asm        test   eax, eax;
 	__asm        je     _T99c;
 
-	__asm        push   0;
-	__asm        push   9;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x9);
 // LINE 2436:
 _T99c:
 	__asm        jmp    _T1569;
@@ -15114,10 +14842,7 @@ _T103f:
 	__asm        test   eax, eax;
 	__asm        je     _T105d;
 
-	__asm        push   0;
-	__asm        push   0xA;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0xa);
 // LINE 2458:
 _T105d:
 	__asm        jmp    _T11b3;
@@ -15128,10 +14853,7 @@ _T1062:
 	__asm        test   eax, eax;
 	__asm        je     _T1080;
 
-	__asm        push   0;
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x1);
 // LINE 2461:
 _T1080:
 	__asm        jmp    _T11b3;
@@ -15142,10 +14864,7 @@ _T1085:
 	__asm        test   eax, eax;
 	__asm        je     _T10a3;
 
-	__asm        push   0;
-	__asm        push   4;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x4);
 // LINE 2464:
 _T10a3:
 	__asm        jmp    _T11b3;
@@ -15156,10 +14875,7 @@ _T10a8:
 	__asm        test   eax, eax;
 	__asm        je     _T10c6;
 
-	__asm        push   0;
-	__asm        push   0xB;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0xb);
 // LINE 2467:
 _T10c6:
 	__asm        jmp    _T11b3;
@@ -15170,10 +14886,7 @@ _T10cb:
 	__asm        test   eax, eax;
 	__asm        je     _T10e9;
 
-	__asm        push   0;
-	__asm        push   2;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x2);
 // LINE 2470:
 _T10e9:
 	__asm        jmp    _T11b3;
@@ -15184,10 +14897,7 @@ _T10ee:
 	__asm        test   eax, eax;
 	__asm        je     _T110c;
 
-	__asm        push   0;
-	__asm        push   0x12;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x12);
 // LINE 2473:
 _T110c:
 	__asm        jmp    _T11b3;
@@ -15198,10 +14908,7 @@ _T1111:
 	__asm        test   eax, eax;
 	__asm        je     _T112f;
 
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x6);
 // LINE 2476:
 _T112f:
 	__asm        jmp    _T11b3;
@@ -15212,10 +14919,7 @@ _T1134:
 	__asm        test   eax, eax;
 	__asm        je     _T1152;
 
-	__asm        push   0;
-	__asm        push   7;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x7);
 // LINE 2479:
 _T1152:
 	__asm        jmp    _T11b3;
@@ -15226,10 +14930,7 @@ _T1157:
 	__asm        test   eax, eax;
 	__asm        je     _T1175;
 
-	__asm        push   0;
-	__asm        push   3;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x3);
 // LINE 2482:
 _T1175:
 	__asm        jmp    _T11b3;
@@ -15331,10 +15032,7 @@ _T1323:
 	__asm        test   eax, eax;
 	__asm        je     _T1341;
 
-	__asm        push   0;
-	__asm        push   9;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0x9);
 // LINE 2488:
 _T1341:
 	__asm        jmp    _T1569;
@@ -15416,10 +15114,7 @@ _T14b1:
 	__asm        test   eax, eax;
 	__asm        je     _T14cf;
 
-	__asm        push   0;
-	__asm        push   0xC;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::PlaySoundA;
+	this->cYObject::PlaySoundA(0x0, 0xc);
 // LINE 2493:
 _T14cf:
 	__asm        jmp    _T1569;
@@ -15435,14 +15130,10 @@ _T14d4:
 	__asm        cmp    dword ptr [eax+0x1C], 0x32444F47;
 	__asm        jne    _T150e;
 
-	__asm        push   0x44675374;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetAnim;
+	this->cYObject::SetAnim(0x44675374);
 	__asm        jmp    _T151b;
 _T150e:
-	__asm        push   0x4E6F4D6F;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetAnim;
+	this->cYObject::SetAnim(0x4e6f4d6f);
 // LINE 2496:
 _T151b:
 	__asm        jmp    _T1569;
@@ -15712,18 +15403,7 @@ _Ta1:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2563:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-	__asm        push   eax;
-	__asm        mov    eax, loc.z;
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetCellAndLoc;
+	this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), loc.z, loc.y, loc.x);
 // LINE 2567:
 	return;
 }
@@ -16956,10 +16636,7 @@ _T120:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xBC], ax;
 // LINE 2911:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(id);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::InitForEngine;
+	this->cYObject::InitForEngine(reinterpret_cast<uint32_t>(id));
 // LINE 2912:
 	__asm        jmp    _T18c;
 _T18c:
@@ -16990,9 +16667,7 @@ void cAvatar::Reset() {
 // LINE 2916:
 	this->cYObject::Reset();
 // LINE 2919:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonType;
+	this->cYObject::SetPersonType(0x1);
 // LINE 2921:
 	this->fFace = 0x0;
 	__asm        jmp    _T2f;
@@ -17040,9 +16715,7 @@ void cYObject::Reset() {
 // LINE 2946:
 	this->fData[0] = SRand(0x8);
 // LINE 2947:
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetPersonType;
+	this->cYObject::SetPersonType(-0x1);
 // LINE 2949:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -17201,9 +16874,7 @@ _T33d:
 // LINE 2954:
 	this->fData[8] = 0x0;
 // LINE 2956:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::SetMissionType;
+	this->cYObject::SetMissionType(0x0);
 // LINE 2957:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C], 0xFFFFFFFF;

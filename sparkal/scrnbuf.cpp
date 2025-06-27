@@ -175,10 +175,7 @@ _T27:
 // LINE 36:
 	rectWindowTemp.bottom = 0x0;
 // LINE 41:
-	__asm        lea    eax, rectWindowTemp.left;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ScreenBuffer::SetWindowRect;
+	this->ScreenBuffer::SetWindowRect(rectWindowTemp.left);
 // LINE 44:
 	this->lpClipper = 0x0;
 // LINE 45:
@@ -243,10 +240,7 @@ _T27:
 	this->bUsingFlipping = 0x0;
 // LINE 89:
 _Tc5:
-	__asm        lea    eax, rectWindowTemp.left;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ScreenBuffer::SetWindowRect;
+	this->ScreenBuffer::SetWindowRect(rectWindowTemp.left);
 // LINE 92:
 	this->lpClipper = 0x0;
 // LINE 93:
@@ -260,10 +254,7 @@ _Tc5:
 // LINE 100:
 	this->ScreenBuffer::CreateSurfaces();
 // LINE 101:
-	__asm        mov    eax, pColors;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ScreenBuffer::UsePalette;
+	this->ScreenBuffer::UsePalette(pColors);
 // LINE 103:
 	return;
 

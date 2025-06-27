@@ -923,10 +923,7 @@ void RadioStation::RadioStation() {
 	this->myRadioStationState.CycleArray.end_of_storage = 0x0;
 	__asm        jmp    _T39;
 _T39:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x20;
-	__asm        call   MTimer::MTimer;
+	(this + 0x20)->MTimer::MTimer(0x1);
 	__asm        jmp    _T4b;
 _T4b:
 	__asm        mov    eax, this;
@@ -1198,10 +1195,7 @@ _T4ad:
 // LINE 71:
 	this->myRadioStationState.bPaused = 0x0;
 // LINE 72:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x20;
-	__asm        call   MTimer::SetResolution;
+	(this + 0x20)->MTimer::SetResolution(0x1);
 // LINE 73:
 	return;
 
@@ -1216,10 +1210,7 @@ void RadioStation::RadioStation(const /*packed*/ class RadioStation& copyRadioSt
 	this->myRadioStationState.CycleArray.end_of_storage = 0x0;
 	__asm        jmp    _T2f;
 _T2f:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x20;
-	__asm        call   MTimer::MTimer;
+	(this + 0x20)->MTimer::MTimer(0x1);
 	__asm        jmp    _T41;
 _T41:
 	__asm        push   0x10;
@@ -1534,67 +1525,27 @@ _T54f:
 	__asm        jmp    _T554;
 // LINE 87:
 _T554:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x48;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x48;
-	__asm        call   basic_string<char>::operator=;
+	(this + 0x48)->basic_string<char>::operator=((copyRadioStation + 0x48));
 // LINE 88:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x50;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x50;
-	__asm        call   list<basic_string<char>>::operator=;
+	(this + 0x50)->list<basic_string<char>>::operator=((copyRadioStation + 0x50));
 // LINE 89:
 	this->musicSelectionListIterator.node = copyRadioStation.musicSelectionListIterator.node;
 // LINE 90:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x5C;
-	__asm        call   basic_string<char>::operator=;
+	(this + 0x5c)->basic_string<char>::operator=((copyRadioStation + 0x5c));
 // LINE 91:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x64;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x64;
-	__asm        call   list<basic_string<char>>::operator=;
+	(this + 0x64)->list<basic_string<char>>::operator=((copyRadioStation + 0x64));
 // LINE 92:
 	this->djSelectionListIterator.node = copyRadioStation.djSelectionListIterator.node;
 // LINE 93:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x70;
-	__asm        call   basic_string<char>::operator=;
+	(this + 0x70)->basic_string<char>::operator=((copyRadioStation + 0x70));
 // LINE 94:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x78;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x78;
-	__asm        call   list<basic_string<char>>::operator=;
+	(this + 0x78)->list<basic_string<char>>::operator=((copyRadioStation + 0x78));
 // LINE 95:
 	this->commercialSelectionListIterator.node = copyRadioStation.commercialSelectionListIterator.node;
 // LINE 96:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x84;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x84;
-	__asm        call   basic_string<char>::operator=;
+	(this + 0x84)->basic_string<char>::operator=((copyRadioStation + 0x84));
 // LINE 97:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x8C;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   list<basic_string<char>>::operator=;
+	(this + 0x8c)->list<basic_string<char>>::operator=((copyRadioStation + 0x8c));
 // LINE 98:
 	this->jingleSelectionListIterator.node = copyRadioStation.jingleSelectionListIterator.node;
 // LINE 99:
@@ -1837,12 +1788,7 @@ _T2ef:
 	__asm        jmp    _T2f4;
 // LINE 117:
 _T2f4:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x50;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x50;
-	__asm        call   list<basic_string<char>>::operator=;
+	(this + 0x50)->list<basic_string<char>>::operator=((copyRadioStation + 0x50));
 // LINE 118:
 	this->musicSelectionListIterator.node = copyRadioStation.musicSelectionListIterator.node;
 // LINE 119:
@@ -1893,12 +1839,7 @@ _T3ac:
 	__asm        jmp    _T3b1;
 // LINE 120:
 _T3b1:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x64;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x64;
-	__asm        call   list<basic_string<char>>::operator=;
+	(this + 0x64)->list<basic_string<char>>::operator=((copyRadioStation + 0x64));
 // LINE 121:
 	this->djSelectionListIterator.node = copyRadioStation.djSelectionListIterator.node;
 // LINE 122:
@@ -1949,12 +1890,7 @@ _T469:
 	__asm        jmp    _T46e;
 // LINE 123:
 _T46e:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x78;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x78;
-	__asm        call   list<basic_string<char>>::operator=;
+	(this + 0x78)->list<basic_string<char>>::operator=((copyRadioStation + 0x78));
 // LINE 124:
 	this->commercialSelectionListIterator.node = copyRadioStation.commercialSelectionListIterator.node;
 // LINE 125:
@@ -2005,12 +1941,7 @@ _T54b:
 	__asm        jmp    _T550;
 // LINE 126:
 _T550:
-	__asm        mov    eax, copyRadioStation;
-	__asm        add    eax, 0x8C;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   list<basic_string<char>>::operator=;
+	(this + 0x8c)->list<basic_string<char>>::operator=((copyRadioStation + 0x8c));
 // LINE 127:
 	this->jingleSelectionListIterator.node = copyRadioStation.jingleSelectionListIterator.node;
 // LINE 128:
@@ -3627,19 +3558,9 @@ _T231:
 	__asm        jmp    _T236;
 // LINE 323:
 _T236:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x48;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ChangeDirectory;
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, (this + 0x48));
 // LINE 324:
-	__asm        push   8;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x50;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, (this + 0x50));
 	__asm        jmp    _T263;
 // LINE 326:
 _T263:
@@ -3713,19 +3634,9 @@ _T343:
 	__asm        jmp    _T348;
 // LINE 327:
 _T348:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ChangeDirectory;
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, (this + 0x5c));
 // LINE 328:
-	__asm        push   8;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x64;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, (this + 0x64));
 	__asm        jmp    _T375;
 // LINE 330:
 _T375:
@@ -3799,19 +3710,9 @@ _T455:
 	__asm        jmp    _T45a;
 // LINE 331:
 _T45a:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ChangeDirectory;
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, (this + 0x70));
 // LINE 332:
-	__asm        push   8;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x78;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, (this + 0x78));
 	__asm        jmp    _T487;
 // LINE 334:
 _T487:
@@ -3885,19 +3786,9 @@ _T570:
 	__asm        jmp    _T575;
 // LINE 335:
 _T575:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x84;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ChangeDirectory;
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, (this + 0x84));
 // LINE 336:
-	__asm        push   8;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x8C;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, (this + 0x8c));
 	__asm        jmp    _T5a6;
 // LINE 337:
 _T5a6:
@@ -6170,12 +6061,7 @@ _T248:
 	__asm        jmp    _T24d;
 // LINE 547:
 _T24d:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x40;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ChangeDirectory;
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x1, (this + 0x40));
 // LINE 549:
 	__asm        jmp    _T266;
 _T266:
@@ -6184,16 +6070,9 @@ _T26b:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     _T30e;
 // LINE 550:
-	__asm        push   0;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::GetNthEntry;
-	__asm        mov    tempDirectoryEntry, eax;
+	tempDirectoryEntry = tempDirectory<Directory+0x00:None>->Directory::GetNthEntry(0x0);
 // LINE 551:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x38;
-	__asm        push   eax;
-	__asm        mov    ecx, tempDirectoryEntry;
-	__asm        call   DirectoryEntry::GetEntryMinusExtension;
+	tempDirectoryEntry->DirectoryEntry::GetEntryMinusExtension((this + 0x38));
 // LINE 552:
 	__asm        mov    dword ptr [ebp-0x38], 1;
 	__asm        jmp    _T2a0;
@@ -7616,31 +7495,15 @@ _Tbd:
 	__asm        lea    ecx, [ebp-0x110];
 	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 932:
-	__asm        push   0;
-	__asm        lea    eax, sStationDirectory.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ChangeDirectory;
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, sStationDirectory.c_str_ptr);
 // LINE 933:
-	__asm        push   0;
-	__asm        lea    eax, radioStationStringList.node;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ReadDirectoryDirectoryEntriesIntoStringList;
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectoryDirectoryEntriesIntoStringList(0x0, radioStationStringList.node);
 // LINE 936:
 	__asm        jmp    _T155;
 _T155:
 	__asm        jmp    _T15a;
 _T15a:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 4;
-	__asm        call   vector<RadioStation>::erase;
+	(this + 0x4)->vector<RadioStation>::erase(this-><Radio+0x08:4>, this-><Radio+0x04:4>);
 // LINE 937:
 	__asm        lea    eax, [ebp-0x114];
 	__asm        push   eax;
@@ -7690,10 +7553,7 @@ _LOOP_1a6:
 		_T20f:
 			__asm        jmp    _T214;
 		_T214:
-			__asm        push   0x5C;
-			__asm        mov    ecx, radioStationStringListIterator.node;
-			__asm        add    ecx, 8;
-			__asm        call   basic_string<char>::operator+=;
+			(radioStationStringListIterator.node + 0x8)->basic_string<char>::operator+=(0x5c);
 		// LINE 946:
 			__asm        jmp    _T226;
 		_T226:
@@ -7830,22 +7690,12 @@ _LOOP_1a6:
 			__asm        jmp    _T429;
 		// LINE 963:
 		_T41a:
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
-			__asm        call   basic_string<char>::remove;
+			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
 		// LINE 965:
 		_T429:
 			__asm        jmp    _T42e;
 		_T42e:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
-			__asm        call   basic_string<char>::data;
-			__asm        push   eax;
-			__asm        lea    ecx, tempRadioStation.sDJDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::append_str;
+			tempRadioStation.sDJDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>, sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>));
 			__asm        jmp    _T451;
 		_T451:
 			__asm        mov    eax, SZ_RADIO_COMMERCIAL_DIRECTORY_NAME;
@@ -8124,22 +7974,12 @@ _LOOP_1a6:
 			__asm        jmp    _T86f;
 		// LINE 976:
 		_T860:
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
-			__asm        call   basic_string<char>::remove;
+			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
 		// LINE 978:
 		_T86f:
 			__asm        jmp    _T874;
 		_T874:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
-			__asm        call   basic_string<char>::data;
-			__asm        push   eax;
-			__asm        lea    ecx, tempRadioStation.sCommercialDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::append_str;
+			tempRadioStation.sCommercialDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>, sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>));
 			__asm        jmp    _T897;
 		_T897:
 			__asm        mov    eax, SZ_RADIO_STATIONS_JINGLE_DIRECTORY_NAME;
@@ -8418,22 +8258,12 @@ _LOOP_1a6:
 			__asm        jmp    _Tcb5;
 		// LINE 989:
 		_Tca6:
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
-			__asm        call   basic_string<char>::remove;
+			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
 		// LINE 991:
 		_Tcb5:
 			__asm        jmp    _Tcba;
 		_Tcba:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
-			__asm        call   basic_string<char>::data;
-			__asm        push   eax;
-			__asm        lea    ecx, tempRadioStation.sJingleDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::append_str;
+			tempRadioStation.sJingleDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>, sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>));
 			__asm        jmp    _Tcdd;
 		// LINE 994:
 		_Tcdd:
@@ -8451,14 +8281,7 @@ _LOOP_1a6:
 		_Td26:
 			__asm        jmp    _Td2b;
 		_Td2b:
-			__asm        lea    eax, tempRadioStation<vftable>;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        add    ecx, 4;
-			__asm        call   vector<RadioStation>::insert_aux;
+			(this + 0x4)->vector<RadioStation>::insert_aux(tempRadioStation<vftable>, this-><Radio+0x08:4>);
 		_Td4a:
 			__asm        jmp    _Td4f;
 		// LINE 998:

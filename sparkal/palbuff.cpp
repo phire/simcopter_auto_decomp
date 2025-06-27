@@ -198,13 +198,8 @@ void PaletteBuffer::PaletteBuffer() {
 	/*bp-0x40*/  char szTypeFaceName[64]; // 0x40 bytes
 
 
-	__asm        push   0;
-	__asm        push   0x1B8;
-	__asm        push   0x258;
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::CBackBuffer;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F5E0;
+	this->CBackBuffer::CBackBuffer(0x0, 0x1b8, 0x258);
+	this-><PaletteBuffer+0x00> = 0x58f5e0;
 // LINE 37:
 	__asm        push   0x400;
 	__asm        call   operator new;
@@ -276,13 +271,8 @@ void PaletteBuffer::PaletteBuffer(/*packed*/ struct SparkalColor *newSparkalColo
 	/*bp-0x40*/  char szTypeFaceName[64]; // 0x40 bytes
 
 
-	__asm        push   0;
-	__asm        push   0x1B8;
-	__asm        push   0x258;
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::CBackBuffer;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F5E0;
+	this->CBackBuffer::CBackBuffer(0x0, 0x1b8, 0x258);
+	this-><PaletteBuffer+0x00> = 0x58f5e0;
 // LINE 55:
 	__asm        push   0x400;
 	__asm        call   operator new;
@@ -317,10 +307,7 @@ _T8d:
 	__asm        cmp    dword ptr [eax+0x134], 0;
 	__asm        je     _Ta9;
 // LINE 57:
-	__asm        mov    eax, newSparkalColors;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PaletteBuffer::SetPalette;
+	this->PaletteBuffer::SetPalette(newSparkalColors);
 // LINE 58:
 _Ta9:
 	LanguageManager::GetTypefaceForLanguage(szTypeFaceName[0], 0x0, 0x0);
@@ -587,25 +574,8 @@ _T15f:
 // FUNCTION: COPTER_D 0x0044774b
 unsigned long PaletteBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 162:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, DestTop;
-	__asm        push   eax;
-	__asm        mov    eax, DestLeft;
-	__asm        push   eax;
-	__asm        mov    eax, pDestImage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CBackBuffer::Compose;
-	__asm        jmp    __RETURN;
+	return this->CBackBuffer::Compose(this->mHeight, this->mWidth, 0x0, 0x0, DestTop, DestLeft, pDestImage);
 // LINE 163:
-__RETURN:
 }
 
 

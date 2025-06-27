@@ -1683,11 +1683,7 @@ _Tf62:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 189:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xA8];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CareerWindow::SetCurrentCitySelection;
+	this->CareerWindow::SetCurrentCitySelection(this->lCities[0]);
 // LINE 191:
 	GraphicWindow::MakeModal(this);
 // LINE 192:
@@ -1805,9 +1801,7 @@ _Tc6:
 	__asm        jmp    _Td2;
 // LINE 205:
 _Td2:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
+	this->GraphicWindow::CreateImage(0x1);
 // LINE 206:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x83C], 0;
@@ -1830,14 +1824,7 @@ _Tf9:
 	__asm        jmp    _T117;
 // LINE 208:
 _T117:
-	__asm        lea    eax, sImagePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sImageFile.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T132;
 // LINE 209:
 _T132:
@@ -2209,12 +2196,7 @@ _T89:
 	__asm        jmp    _T8e;
 // LINE 261:
 _T8e:
-	__asm        lea    eax, rectSources[0][0].left;
-	__asm        push   eax;
-	__asm        lea    eax, ptDestinations[0][0].x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CareerWindow::GetCoordinatesForCitySelections;
+	this->CareerWindow::GetCoordinatesForCitySelections(rectSources[0][0].left, ptDestinations[0][0].x);
 // LINE 262:
 _FOR_b6:
 	for (i = 0x0; (i < 0x3); i++) {
@@ -2419,10 +2401,7 @@ _FOR_18:
 			__asm        jmp    _T11d;
 		// LINE 308:
 		_T107:
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   CareerWindow::SetCurrentCitySelection;
+			this->CareerWindow::SetCurrentCitySelection(i);
 		// LINE 309:
 			return 0x1;
 		// LINE 312:
@@ -2488,10 +2467,7 @@ _FOR_18:
 			__asm        je     _Td0;
 		// LINE 326:
 		_Tba:
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   CareerWindow::SetCurrentCitySelection;
+			this->CareerWindow::SetCurrentCitySelection(i);
 		// LINE 327:
 			return 0x1;
 		// LINE 329:
@@ -2704,39 +2680,17 @@ void CareerWindow::GetCoordinatesForCitySelections(/*packed*/ class MPoint *ptDe
 	__asm        lea    ecx, lowerLeft<vftable>;
 	__asm        call   CareerWindow::CitySelectionFrame::CitySelectionFrame;
 // LINE 389:
-	__asm        mov    eax, ptDestinations;
-	__asm        push   eax;
-	__asm        lea    ecx, upperLeft<vftable>;
-	__asm        call   CareerWindow::CitySelectionFrame::FillDestinationPoints;
+	upperLeft<vftable>->CareerWindow::CitySelectionFrame::FillDestinationPoints(ptDestinations);
 // LINE 390:
-	__asm        mov    eax, ptDestinations;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        lea    ecx, upperRight<vftable>;
-	__asm        call   CareerWindow::CitySelectionFrame::FillDestinationPoints;
+	upperRight<vftable>->CareerWindow::CitySelectionFrame::FillDestinationPoints((ptDestinations + 0x20));
 // LINE 391:
-	__asm        mov    eax, ptDestinations;
-	__asm        add    eax, 0x40;
-	__asm        push   eax;
-	__asm        lea    ecx, lowerLeft<vftable>;
-	__asm        call   CareerWindow::CitySelectionFrame::FillDestinationPoints;
+	lowerLeft<vftable>->CareerWindow::CitySelectionFrame::FillDestinationPoints((ptDestinations + 0x40));
 // LINE 393:
-	__asm        mov    eax, rectSources;
-	__asm        push   eax;
-	__asm        lea    ecx, upperLeft<vftable>;
-	__asm        call   CareerWindow::CitySelectionFrame::FillSourceRects;
+	upperLeft<vftable>->CareerWindow::CitySelectionFrame::FillSourceRects(rectSources);
 // LINE 394:
-	__asm        mov    eax, rectSources;
-	__asm        add    eax, 0x40;
-	__asm        push   eax;
-	__asm        lea    ecx, upperRight<vftable>;
-	__asm        call   CareerWindow::CitySelectionFrame::FillSourceRects;
+	upperRight<vftable>->CareerWindow::CitySelectionFrame::FillSourceRects((rectSources + 0x40));
 // LINE 395:
-	__asm        mov    eax, rectSources;
-	__asm        add    eax, 0x80;
-	__asm        push   eax;
-	__asm        lea    ecx, lowerLeft<vftable>;
-	__asm        call   CareerWindow::CitySelectionFrame::FillSourceRects;
+	lowerLeft<vftable>->CareerWindow::CitySelectionFrame::FillSourceRects((rectSources + 0x80));
 // LINE 396:
 	lowerLeft<vftable> = 0x590ef4;
 	__asm        jmp    _Te2;

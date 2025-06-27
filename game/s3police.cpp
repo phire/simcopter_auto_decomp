@@ -749,18 +749,7 @@ _T1dd:
 // FUNCTION: COPTER_D 0x00537081
 unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
 // LINE 217:
-	__asm        push   5;
-	__asm        push   0x62B9E8;
-	__asm        mov    eax, responseLevel;
-	__asm        push   eax;
-	__asm        mov    eax, responseType;
-	__asm        push   eax;
-	__asm        mov    eax, mapy;
-	__asm        push   eax;
-	__asm        mov    eax, mapx;
-	__asm        push   eax;
-	__asm        mov    ecx, gPoliceStations;
-	__asm        call   Station::DispatchNearestAvailableVehicle;
+	gPoliceStations->Station::DispatchNearestAvailableVehicle(0x5, 0x62b9e8, responseLevel, responseType, mapy, mapx);
 	__asm        jmp    __RETURN;
 // LINE 218:
 __RETURN:
@@ -812,11 +801,7 @@ _T4d:
 	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 263:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x298];
-	__asm        push   eax;
-	__asm        mov    ecx, gPoliceStations;
-	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
+	gPoliceStations->Station::DecrementQuantityOfVehicleDispatched(this->stationID);
 // LINE 267:
 	this->AutomobileClass::PullOut();
 // LINE 268:
@@ -838,12 +823,7 @@ _Td4:
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 277:
-	__asm        lea    eax, badGuyLoc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PoliceCarClass::ScanForBadGuys;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x322], eax;
+	this->pBadGuyDyOb = this->PoliceCarClass::ScanForBadGuys(badGuyLoc.x);
 // LINE 278:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
@@ -907,11 +887,7 @@ _T194:
 	__asm        cmp    ecx, edx;
 	__asm        jne    _T204;
 // LINE 301:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x298];
-	__asm        push   eax;
-	__asm        mov    ecx, gPoliceStations;
-	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
+	gPoliceStations->Station::DecrementQuantityOfVehicleDispatched(this->stationID);
 // LINE 302:
 	this->AutomobileClass::UnPlaceCar();
 // LINE 303:
@@ -944,12 +920,7 @@ _T22b:
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 321:
-	__asm        lea    eax, badGuyLoc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PoliceCarClass::ScanForBadGuys;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x322], eax;
+	this->pBadGuyDyOb = this->PoliceCarClass::ScanForBadGuys(badGuyLoc.x);
 // LINE 322:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
@@ -1225,12 +1196,7 @@ _T5cb:
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 418:
-	__asm        lea    eax, badGuyLoc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PoliceCarClass::ScanForBadGuys;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x322], eax;
+	this->pBadGuyDyOb = this->PoliceCarClass::ScanForBadGuys(badGuyLoc.x);
 // LINE 419:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
@@ -1348,11 +1314,7 @@ _T7ac:
 	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 487:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x298];
-	__asm        push   eax;
-	__asm        mov    ecx, gHospitals;
-	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
+	gHospitals->Station::DecrementQuantityOfVehicleDispatched(this->stationID);
 // LINE 491:
 	this->emergencyState = 0x2;
 // LINE 492:
@@ -1392,12 +1354,7 @@ _T859:
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 510:
-	__asm        lea    eax, badGuyLoc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PoliceCarClass::ScanForBadGuys;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x322], eax;
+	this->pBadGuyDyOb = this->PoliceCarClass::ScanForBadGuys(badGuyLoc.x);
 // LINE 511:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
@@ -1710,28 +1667,14 @@ _T2ce:
 // LINE 602:
 	this->speed = 0x0;
 // LINE 603:
-	__asm        mov    eax, pGoal;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PickTurnDir;
-	__asm        jmp    __RETURN;
+	return this->AutomobileClass::PickTurnDir(pGoal);
 // LINE 605:
 	__asm        jmp    _T36f;
 // LINE 608:
 _T34d:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destVertex.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C37F8;
-	__asm        call   ShortestPath::DepthFirstSearch;
+	0x5c37f8->ShortestPath::DepthFirstSearch(reinterpret_cast<uint32_t>(destVertex.x), reinterpret_cast<uint32_t>(startVertex.x));
 // LINE 609:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destVertex.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::BuildPath;
+	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(destVertex.x), reinterpret_cast<uint32_t>(startVertex.x));
 // LINE 613:
 _T36f:
 	this->dispatchPathIndex = 0x0;
@@ -1768,18 +1711,10 @@ _T3a6:
 	__asm        jmp    _T3eb;
 // LINE 633:
 _T3da:
-	__asm        mov    eax, pGoal;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::PickTurnDir;
-	__asm        jmp    __RETURN;
+	return this->EmergencyVehicleClass::PickTurnDir(pGoal);
 // LINE 636:
 _T3eb:
-	__asm        mov    eax, pGoal;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::PickTurnDir;
-	__asm        jmp    __RETURN;
+	return this->EmergencyVehicleClass::PickTurnDir(pGoal);
 // LINE 637:
 __RETURN:
 }
@@ -1790,9 +1725,7 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	/*bp-0x14*/  /*packed*/ struct _GridCoordinates loc;
 
 // LINE 643:
-	__asm        push   4;
-	__asm        lea    ecx, scan.currDist;
-	__asm        call   SpiralScan::SpiralScan;
+	scan.currDist->SpiralScan::SpiralScan(0x4);
 // LINE 647:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xC0];
@@ -1809,74 +1742,70 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 	__asm        mov    loc.y, al;
 // LINE 653:
 __DO_49:
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.x;
-	__asm        test   eax, eax;
-	__asm        jl     _T7f;
+	do {
+		// LINE 653:
+		__DO_49:
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.x;
+			__asm        test   eax, eax;
+			__asm        jl     _T7f;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.x;
-	__asm        cmp    eax, 0x7F;
-	__asm        jg     _T7f;
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.x;
+			__asm        cmp    eax, 0x7F;
+			__asm        jg     _T7f;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.y;
-	__asm        test   eax, eax;
-	__asm        jl     _T7f;
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.y;
+			__asm        test   eax, eax;
+			__asm        jl     _T7f;
 
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.y;
-	__asm        cmp    eax, 0x7F;
-	__asm        jle    _T8b;
-_T7f:
-	__asm        mov    dword ptr [ebp-0x24], 0;
-	__asm        jmp    _Te4;
-_T8b:
-	__asm        xor    eax, eax;
-	__asm        mov    al, loc.x;
-	__asm        mov    eax, BuildMap[eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, loc.y;
-	__asm        movzx  ax, byte ptr [eax+ecx];
-	__asm        mov    [ebp-0x20], ax;
-	__asm        mov    eax, [ebp-0x20];
-	__asm        and    eax, 0xFFFF;
-	__asm        cmp    eax, 0x1D;
-	__asm        jl     _Td8;
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.y;
+			__asm        cmp    eax, 0x7F;
+			__asm        jle    _T8b;
+		_T7f:
+			__asm        mov    dword ptr [ebp-0x24], 0;
+			__asm        jmp    _Te4;
+		_T8b:
+			__asm        xor    eax, eax;
+			__asm        mov    al, loc.x;
+			__asm        mov    eax, BuildMap[eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, loc.y;
+			__asm        movzx  ax, byte ptr [eax+ecx];
+			__asm        mov    [ebp-0x20], ax;
+			__asm        mov    eax, [ebp-0x20];
+			__asm        and    eax, 0xFFFF;
+			__asm        cmp    eax, 0x1D;
+			__asm        jl     _Td8;
 
-	__asm        mov    eax, [ebp-0x20];
-	__asm        and    eax, 0xFFFF;
-	__asm        cmp    eax, 0x2C;
-	__asm        jge    _Td8;
+			__asm        mov    eax, [ebp-0x20];
+			__asm        and    eax, 0xFFFF;
+			__asm        cmp    eax, 0x2C;
+			__asm        jge    _Td8;
 
-	__asm        mov    dword ptr [ebp-0x24], 1;
-	__asm        jmp    _Te4;
+			__asm        mov    dword ptr [ebp-0x24], 1;
+			__asm        jmp    _Te4;
 
-	__asm        jmp    _Te4;
-_Td8:
-	__asm        mov    dword ptr [ebp-0x24], 0;
-	__asm        jmp    _Te4;
-_Te4:
-	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     __DO_WHILE_49;
-// LINE 655:
-	__asm        mov    ax, reinterpret_cast<uint16_t>(loc.x);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x11C], ax;
-// LINE 656:
-	__asm        mov    dword ptr [ebp-0x18], 1;
-	__asm        jmp    _T108;
-_T108:
-	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    __RETURN;
-// LINE 659:
-__DO_WHILE_49:
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        lea    ecx, scan.currDist;
-	__asm        call   SpiralScan::Next;
-	__asm        test   eax, eax;
-	__asm        jne    __DO_49;
+			__asm        jmp    _Te4;
+		_Td8:
+			__asm        mov    dword ptr [ebp-0x24], 0;
+			__asm        jmp    _Te4;
+		_Te4:
+			__asm        cmp    dword ptr [ebp-0x24], 0;
+			__asm        je     __DO_WHILE_49;
+		// LINE 655:
+			__asm        mov    ax, reinterpret_cast<uint16_t>(loc.x);
+			__asm        mov    ecx, this;
+			__asm        mov    [ecx+0x11C], ax;
+		// LINE 656:
+			__asm        mov    dword ptr [ebp-0x18], 1;
+			__asm        jmp    _T108;
+		_T108:
+			__asm        mov    eax, [ebp-0x18];
+			__asm        jmp    __RETURN;
+	} while ((scan.currDist->SpiralScan::Next(loc.x) != 0x0));
 // LINE 661:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    _T130;
@@ -1926,96 +1855,90 @@ _T61:
 	/*bp-0x18*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 690:
-	__asm        push   3;
-	__asm        lea    ecx, spiral.currDist;
-	__asm        call   SpiralScan::SpiralScan;
+	spiral.currDist->SpiralScan::SpiralScan(0x3);
 // LINE 694:
 __DO_16:
-	__asm        mov    eax, scanLoc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        mov    [ebp-0x2C], ecx;
-	__asm        mov    eax, scanLoc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        mov    [ebp-0x30], ecx;
-// LINE 696:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        and    eax, 0xFF;
-	__asm        shl    eax, 0xA;
-	__asm        mov    ecx, [ebp-0x2C];
-	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
-	__asm        mov    [ebp-0x28], eax;
-	__asm        cmp    dword ptr [ebp-0x28], 0;
-	__asm        jne    _T6f;
+	do {
+		// LINE 694:
+		__DO_16:
+			__asm        mov    eax, scanLoc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        mov    [ebp-0x2C], ecx;
+			__asm        mov    eax, scanLoc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        mov    [ebp-0x30], ecx;
+		// LINE 696:
+			__asm        mov    eax, [ebp-0x30];
+			__asm        and    eax, 0xFF;
+			__asm        shl    eax, 0xA;
+			__asm        mov    ecx, [ebp-0x2C];
+			__asm        and    ecx, 0xFF;
+			__asm        mov    eax, G_omap[0][0][eax+ecx*4];
+			__asm        mov    [ebp-0x28], eax;
+			__asm        cmp    dword ptr [ebp-0x28], 0;
+			__asm        jne    _T6f;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
-	__asm        jmp    _T74;
-_T6f:
-	__asm        jmp    _T74;
-_T74:
-	__asm        jmp    _T79;
-_T79:
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    cptr, eax;
-// LINE 697:
-	dyptr = cptr->dyptr;
-// LINE 701:
-__WHILE_88:
-	while ((dyptr != 0x0)) {
-		// LINE 703:
-			__asm        mov    eax, dyptr;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 8;
-			__asm        je     _Tcd;
+			_assert(0xa0, 0x5b57c4, 0x5b57b8);
+			__asm        jmp    _T74;
+		_T6f:
+			__asm        jmp    _T74;
+		_T74:
+			__asm        jmp    _T79;
+		_T79:
+			__asm        mov    eax, [ebp-0x28];
+			__asm        mov    cptr, eax;
+		// LINE 697:
+			dyptr = cptr->dyptr;
+		// LINE 701:
+		__WHILE_88:
+			while ((dyptr != 0x0)) {
+				// LINE 703:
+					__asm        mov    eax, dyptr;
+					__asm        movsx  eax, word ptr [eax+0xC];
+					__asm        test   al, 8;
+					__asm        je     _Tcd;
 
-			__asm        mov    eax, dyptr;
-			__asm        push   eax;
-			__asm        call   IsThisABadGuy;
-			__asm        add    esp, 4;
-			__asm        test   eax, eax;
-			__asm        je     _Tcd;
-		// LINE 705:
-			__asm        mov    eax, dyptr;
-			__asm        mov    [ebp-0x1C], eax;
-			__asm        jmp    _Tc0;
-		_Tc0:
-			__asm        mov    eax, [ebp-0x1C];
-			__asm        jmp    __RETURN;
-		// LINE 707:
-			__asm        jmp    _T10a;
-		_Tcd:
-			__asm        mov    eax, dyptr;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 0x10;
-			__asm        je     _T10a;
+					__asm        mov    eax, dyptr;
+					__asm        push   eax;
+					__asm        call   IsThisABadGuy;
+					__asm        add    esp, 4;
+					__asm        test   eax, eax;
+					__asm        je     _Tcd;
+				// LINE 705:
+					__asm        mov    eax, dyptr;
+					__asm        mov    [ebp-0x1C], eax;
+					__asm        jmp    _Tc0;
+				_Tc0:
+					__asm        mov    eax, [ebp-0x1C];
+					__asm        jmp    __RETURN;
+				// LINE 707:
+					__asm        jmp    _T10a;
+				_Tcd:
+					__asm        mov    eax, dyptr;
+					__asm        movsx  eax, word ptr [eax+0xC];
+					__asm        test   al, 0x10;
+					__asm        je     _T10a;
 
-			__asm        mov    eax, dyptr;
-			__asm        movsx  eax, word ptr [eax+0xE];
-			__asm        mov    ecx, cars[0][eax*4];
-			__asm        call   AutomobileClass::AmIABadGuy;
-			__asm        test   eax, eax;
-			__asm        je     _T10a;
-		// LINE 709:
-			__asm        mov    eax, dyptr;
-			__asm        mov    [ebp-0x20], eax;
-			__asm        jmp    _T102;
-		_T102:
-			__asm        mov    eax, [ebp-0x20];
-			__asm        jmp    __RETURN;
-		// LINE 712:
-		_T10a:
-			dyptr = dyptr->next;
-	}
-// LINE 715:
-__DO_WHILE_16:
-	__asm        mov    eax, scanLoc;
-	__asm        push   eax;
-	__asm        lea    ecx, spiral.currDist;
-	__asm        call   SpiralScan::Next;
-	__asm        test   eax, eax;
-	__asm        jne    __DO_16;
+					__asm        mov    eax, dyptr;
+					__asm        movsx  eax, word ptr [eax+0xE];
+					__asm        mov    ecx, cars[0][eax*4];
+					__asm        call   AutomobileClass::AmIABadGuy;
+					__asm        test   eax, eax;
+					__asm        je     _T10a;
+				// LINE 709:
+					__asm        mov    eax, dyptr;
+					__asm        mov    [ebp-0x20], eax;
+					__asm        jmp    _T102;
+				_T102:
+					__asm        mov    eax, [ebp-0x20];
+					__asm        jmp    __RETURN;
+				// LINE 712:
+				_T10a:
+					dyptr = dyptr->next;
+			}
+	} while ((spiral.currDist->SpiralScan::Next(scanLoc) != 0x0));
 // LINE 717:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        jmp    _T137;
@@ -2096,10 +2019,7 @@ void PoliceCarClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    [ecx+0x33F], al;
 // LINE 748:
 _Tf7:
-	__asm        mov    eax, sd;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::SetSaveData;
+	this->EmergencyVehicleClass::SetSaveData(sd);
 // LINE 749:
 	return;
 }
@@ -2117,10 +2037,7 @@ void PoliceCarClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	return;
 // LINE 770:
 _T1d:
-	__asm        mov    eax, sd;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::LoadSaveData;
+	this->EmergencyVehicleClass::LoadSaveData(sd);
 // LINE 773:
 	__asm        mov    esi, sd;
 	__asm        mov    edi, this;
@@ -2257,12 +2174,7 @@ _Td8:
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 806:
-	__asm        lea    eax, badGuyLoc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PoliceCarClass::ScanForBadGuys;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x322], eax;
+	this->pBadGuyDyOb = this->PoliceCarClass::ScanForBadGuys(badGuyLoc.x);
 // LINE 807:
 	return;
 }

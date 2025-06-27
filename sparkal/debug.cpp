@@ -2071,13 +2071,7 @@ _Td5:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x3C], eax;
 // LINE 125:
-	__asm        mov    eax, Height;
-	__asm        push   eax;
-	__asm        mov    eax, Width;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   CDebugWindow::OnSize;
+	this->CDebugWindow::OnSize(Height, Width, 0x0);
 // LINE 126:
 	return 0x1;
 // LINE 129:
@@ -3431,10 +3425,7 @@ void CDebugWindow::OnEditChange() {
 	__asm        call   dword ptr ds:[0x6C3858];
 	__asm        add    esp, 0xC;
 // LINE 309:
-	__asm        lea    eax, comBuf[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CDebugWindow::OutputString;
+	this->CDebugWindow::OutputString(comBuf[0]);
 // LINE 310:
 	__asm        push   0x5973F4;
 	__asm        mov    eax, this;
@@ -3789,16 +3780,7 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 	__asm        jmp    _Tc5;
 // LINE 341:
 _T17:
-	__asm        mov    eax, LParam;
-	__asm        shr    eax, 0x10;
-	__asm        and    eax, 0xFFFF;
-	__asm        push   eax;
-	__asm        mov    eax, LParam;
-	__asm        push   eax;
-	__asm        mov    eax, WParam;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CDebugWindow::OnSize;
+	this->CDebugWindow::OnSize(((LParam >> 0x10) & 0xffff), LParam, WParam);
 // LINE 342:
 	__asm        jmp    _T10d;
 // LINE 344:
@@ -3898,15 +3880,7 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 	__asm        cmp    debugWin, 0;
 	__asm        je     _T40;
 // LINE 365:
-	__asm        mov    eax, LParam;
-	__asm        push   eax;
-	__asm        mov    eax, WParam;
-	__asm        push   eax;
-	__asm        mov    eax, Message;
-	__asm        push   eax;
-	__asm        mov    ecx, debugWin;
-	__asm        call   CDebugWindow::InstanceWindowProcedure;
-	__asm        jmp    __RETURN;
+	return debugWin->CDebugWindow::InstanceWindowProcedure(LParam, WParam, Message);
 // LINE 366:
 	__asm        jmp    __RETURN;
 // LINE 367:
@@ -3946,9 +3920,7 @@ _T3f:
 	gDebugWindow = 0x0;
 // LINE 387:
 _T49:
-	__asm        push   0x5973F8;
-	__asm        mov    ecx, gDebugWindow;
-	__asm        call   CDebugWindow::Create;
+	gDebugWindow->CDebugWindow::Create(0x5973f8);
 // LINE 389:
 _T59:
 	return;
@@ -3998,10 +3970,7 @@ void DebugOutput(char * text, ...) {
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T4e;
 // LINE 407:
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        mov    ecx, gDebugWindow;
-	__asm        call   CDebugWindow::OutputString;
+	gDebugWindow->CDebugWindow::OutputString(buf[0]);
 // LINE 408:
 _T4e:
 	return;
@@ -4454,10 +4423,7 @@ void SaveDebugWindow(char * fileName) {
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T22;
 // LINE 425:
-	__asm        mov    eax, fileName;
-	__asm        push   eax;
-	__asm        mov    ecx, gDebugWindow;
-	__asm        call   CDebugWindow::Save;
+	gDebugWindow->CDebugWindow::Save(fileName);
 // LINE 426:
 _T22:
 	return;

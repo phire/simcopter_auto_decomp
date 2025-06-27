@@ -1235,11 +1235,7 @@ void AutomobileClass::~AutomobileClass() {
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T3e;
 // LINE 418:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnlinkFromCell;
+	this->AutomobileClass::UnlinkFromCell((this + 0x7c));
 // LINE 430:
 _T3e:
 	__asm        mov    eax, this;
@@ -1823,11 +1819,7 @@ _T1c9:
 	__asm        cmp    dword ptr [eax+0xC4], 6;
 	__asm        jge    _T214;
 // LINE 860:
-	__asm        mov    eax, carblock;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::StartJam;
+	this->AutomobileClass::StartJam(carblock->missionId);
 // LINE 864:
 _T214:
 	__asm        jmp    _T31a;
@@ -1887,11 +1879,7 @@ _T29c:
 	__asm        cmp    dword ptr [eax+0x10E], 0xFFFFFFFF;
 	__asm        je     _T2f8;
 // LINE 875:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::StartJam;
+	this->AutomobileClass::StartJam(this->missionId);
 // LINE 878:
 _T2f8:
 	__asm        jmp    _T31a;
@@ -1967,11 +1955,7 @@ _T3b5:
 	__asm        cmp    dword ptr [eax+0x10E], 0xFFFFFFFF;
 	__asm        je     _T411;
 // LINE 901:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::StartJam;
+	this->AutomobileClass::StartJam(this->missionId);
 // LINE 904:
 _T411:
 	__asm        jmp    _T433;
@@ -2047,11 +2031,7 @@ _T4ce:
 	__asm        cmp    dword ptr [eax+0x10E], 0xFFFFFFFF;
 	__asm        je     _T52a;
 // LINE 928:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::StartJam;
+	this->AutomobileClass::StartJam(this->missionId);
 // LINE 931:
 _T52a:
 	__asm        jmp    _T54c;
@@ -2176,31 +2156,16 @@ _T6ce:
 	__asm        cmp    dword ptr [eax+0xEA], 0;
 	__asm        jg     _T758;
 // LINE 979:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xD2;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnlinkFromCell;
+	this->AutomobileClass::UnlinkFromCell((this + 0xd2));
 // LINE 980:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xD4;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::LinkToCell;
+	this->AutomobileClass::LinkToCell((this + 0xd4));
 // LINE 981:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0xD4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD2], ax;
 // LINE 983:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xD2;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PickHiwayDir;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::MakeAHiwayTurn;
+	this->AutomobileClass::MakeAHiwayTurn(this->AutomobileClass::PickHiwayDir((this + 0xd2)));
 // LINE 989:
 	this->AutomobileClass::AdjustNextHiwayPosition();
 // LINE 991:
@@ -2225,12 +2190,7 @@ __WHILE_776:
 	}
 // LINE 1032:
 _T7c0:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xEA];
-	__asm        add    eax, itterationDist;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::MoveAuto;
+	this->AutomobileClass::MoveAuto((this->currDist + itterationDist));
 // LINE 1034:
 	this->currDist += itterationDist;
 // LINE 1044:
@@ -2750,9 +2710,7 @@ int32_t AutomobileClass::BeamToLocation(const /*packed*/ struct _GridCoordinates
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(prevGridLoc.x), ax;
 // LINE 1289:
-	__asm        push   9;
-	__asm        lea    ecx, scan.currDist;
-	__asm        call   SpiralScan::SpiralScan;
+	scan.currDist->SpiralScan::SpiralScan(0x9);
 // LINE 1290:
 	foundcell = 0x0;
 // LINE 1291:
@@ -3101,10 +3059,7 @@ _T4ec:
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T50b;
 // LINE 1479:
-	__asm        lea    eax, prevGridLoc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnlinkFromCell;
+	this->AutomobileClass::UnlinkFromCell(prevGridLoc.x);
 // LINE 1483:
 _T50b:
 	__asm        mov    eax, this;
@@ -3137,11 +3092,7 @@ _T53c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD3], al;
 // LINE 1501:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xD2;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::LinkToCell;
+	this->AutomobileClass::LinkToCell((this + 0xd2));
 // LINE 1505:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3655,15 +3606,9 @@ _Td1d:
 	__asm        jmp    __RETURN;
 // LINE 1624:
 _Td28:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::LinkToCell;
+	this->AutomobileClass::LinkToCell((this + 0x7c));
 // LINE 1632:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::MoveAuto;
+	this->AutomobileClass::MoveAuto(0x0);
 // LINE 1635:
 	this->AutomobileClass::DoDiagonalRoadFixup();
 // LINE 1638:
@@ -3707,20 +3652,12 @@ void AutomobileClass::UnPlaceCar() {
 	__asm        test   byte ptr [eax+9], 8;
 	__asm        je     _T50;
 // LINE 1669:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xD2;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnlinkFromCell;
+	this->AutomobileClass::UnlinkFromCell((this + 0xd2));
 // LINE 1670:
 	__asm        jmp    _T5f;
 // LINE 1671:
 _T50:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnlinkFromCell;
+	this->AutomobileClass::UnlinkFromCell((this + 0x7c));
 // LINE 1672:
 _T5f:
 	__asm        mov    eax, this;
@@ -3917,135 +3854,129 @@ void AutomobileClass::PullOverCiviliansInWay() {
 	/*bp-0x18*/  /*packed*/ struct _GridCoordinates scanLoc;
 
 // LINE 1808:
-	__asm        push   1;
-	__asm        lea    ecx, spiral.currDist;
-	__asm        call   SpiralScan::SpiralScan;
+	spiral.currDist->SpiralScan::SpiralScan(0x1);
 // LINE 1810:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(scanLoc.x), ax;
 // LINE 1815:
 __DO_21:
-	__asm        xor    eax, eax;
-	__asm        mov    al, scanLoc.y;
-	__asm        mov    [ebp-0x24], eax;
-	__asm        xor    eax, eax;
-	__asm        mov    al, scanLoc.x;
-	__asm        mov    [ebp-0x28], eax;
-// LINE 1816:
-	__asm        mov    eax, [ebp-0x24];
-	__asm        and    eax, 0xFF;
-	__asm        mov    ecx, [ebp-0x28];
-	__asm        and    ecx, 0xFF;
-	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-	__asm        mov    [ebp-0x20], eax;
-	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jne    _T75;
+	do {
+		// LINE 1815:
+		__DO_21:
+			__asm        xor    eax, eax;
+			__asm        mov    al, scanLoc.y;
+			__asm        mov    [ebp-0x24], eax;
+			__asm        xor    eax, eax;
+			__asm        mov    al, scanLoc.x;
+			__asm        mov    [ebp-0x28], eax;
+		// LINE 1816:
+			__asm        mov    eax, [ebp-0x24];
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, [ebp-0x28];
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+			__asm        mov    [ebp-0x20], eax;
+			__asm        cmp    dword ptr [ebp-0x20], 0;
+			__asm        jne    _T75;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
-	__asm        jmp    _T7a;
-_T75:
-	__asm        jmp    _T7a;
-_T7a:
-	__asm        jmp    _T7f;
-_T7f:
-	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    currentObject, eax;
-// LINE 1819:
-__WHILE_88:
-	while ((currentObject != 0x0)) {
-		// LINE 1822:
-		// Block start:
-			/*bp-0x1c*/  /*packed*/ class AutomobileClass *pCar;
-			__asm        mov    eax, this;
-			__asm        add    eax, 0xC;
-			__asm        cmp    eax, currentObject;
-			__asm        jne    _Tae;
-		// LINE 1824:
-			currentObject = currentObject->next;
-		// LINE 1825:
-			__asm        jmp    __WHILE_88;
-		// LINE 1829:
-		_Tae:
-			__asm        mov    eax, currentObject;
-			__asm        movsx  eax, word ptr [eax+0xE];
-			__asm        mov    eax, cars[0][eax*4];
-			__asm        mov    pCar, eax;
-		// LINE 1831:
-			__asm        mov    eax, currentObject;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 0x10;
-			__asm        je     _T18a;
+			_assert(0xa0, 0x5b57c4, 0x5b57b8);
+			__asm        jmp    _T7a;
+		_T75:
+			__asm        jmp    _T7a;
+		_T7a:
+			__asm        jmp    _T7f;
+		_T7f:
+			__asm        mov    eax, [ebp-0x20];
+			__asm        mov    eax, [eax+0x10];
+			__asm        mov    currentObject, eax;
+		// LINE 1819:
+		__WHILE_88:
+			while ((currentObject != 0x0)) {
+				// LINE 1822:
+				// Block start:
+					/*bp-0x1c*/  /*packed*/ class AutomobileClass *pCar;
+					__asm        mov    eax, this;
+					__asm        add    eax, 0xC;
+					__asm        cmp    eax, currentObject;
+					__asm        jne    _Tae;
+				// LINE 1824:
+					currentObject = currentObject->next;
+				// LINE 1825:
+					__asm        jmp    __WHILE_88;
+				// LINE 1829:
+				_Tae:
+					__asm        mov    eax, currentObject;
+					__asm        movsx  eax, word ptr [eax+0xE];
+					__asm        mov    eax, cars[0][eax*4];
+					__asm        mov    pCar, eax;
+				// LINE 1831:
+					__asm        mov    eax, currentObject;
+					__asm        movsx  eax, word ptr [eax+0xC];
+					__asm        test   al, 0x10;
+					__asm        je     _T18a;
 
-			__asm        mov    ecx, pCar;
-			__asm        call   AutomobileClass::CanIPullOver;
-			__asm        test   eax, eax;
-			__asm        je     _T18a;
-		// LINE 1836:
-			__asm        mov    eax, pCar;
-			__asm        test   byte ptr [eax+9], 0x13;
-			__asm        je     _Tf7;
+					__asm        mov    ecx, pCar;
+					__asm        call   AutomobileClass::CanIPullOver;
+					__asm        test   eax, eax;
+					__asm        je     _T18a;
+				// LINE 1836:
+					__asm        mov    eax, pCar;
+					__asm        test   byte ptr [eax+9], 0x13;
+					__asm        je     _Tf7;
 
-			__asm        mov    dword ptr [ebp-0x2C], 1;
-			__asm        jmp    _T14e;
-		_Tf7:
-			__asm        mov    eax, pCar;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x34], eax;
-			__asm        jmp    _T116;
-		_T105:
-			__asm        mov    dword ptr [ebp-0x2C], 1;
-			__asm        jmp    _T14e;
+					__asm        mov    dword ptr [ebp-0x2C], 1;
+					__asm        jmp    _T14e;
+				_Tf7:
+					__asm        mov    eax, pCar;
+					__asm        mov    eax, [eax+4];
+					__asm        mov    [ebp-0x34], eax;
+					__asm        jmp    _T116;
+				_T105:
+					__asm        mov    dword ptr [ebp-0x2C], 1;
+					__asm        jmp    _T14e;
 
-			__asm        jmp    _T142;
-		_T116:
-			__asm        cmp    dword ptr [ebp-0x34], 0x11C;
-			__asm        jl     _T142;
+					__asm        jmp    _T142;
+				_T116:
+					__asm        cmp    dword ptr [ebp-0x34], 0x11C;
+					__asm        jl     _T142;
 
-			__asm        cmp    dword ptr [ebp-0x34], 0x11F;
-			__asm        jle    _T105;
+					__asm        cmp    dword ptr [ebp-0x34], 0x11F;
+					__asm        jle    _T105;
 
-			__asm        cmp    dword ptr [ebp-0x34], 0x181;
-			__asm        je     _T105;
+					__asm        cmp    dword ptr [ebp-0x34], 0x181;
+					__asm        je     _T105;
 
-			__asm        jmp    _T142;
-		_T142:
-			__asm        mov    dword ptr [ebp-0x2C], 0;
-			__asm        jmp    _T14e;
-		_T14e:
-			__asm        cmp    dword ptr [ebp-0x2C], 0;
-			__asm        je     _T178;
+					__asm        jmp    _T142;
+				_T142:
+					__asm        mov    dword ptr [ebp-0x2C], 0;
+					__asm        jmp    _T14e;
+				_T14e:
+					__asm        cmp    dword ptr [ebp-0x2C], 0;
+					__asm        je     _T178;
 
-			__asm        mov    eax, pCar;
-			__asm        cmp    dword ptr [eax+4], 0x11E;
-			__asm        jne    _T18a;
+					__asm        mov    eax, pCar;
+					__asm        cmp    dword ptr [eax+4], 0x11E;
+					__asm        jne    _T18a;
 
-			__asm        mov    eax, this;
-			__asm        cmp    dword ptr [eax+4], 0x11D;
-			__asm        jne    _T18a;
-		// LINE 1837:
-		_T178:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, pCar;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, pCar;
-			__asm        call   dword ptr [eax+4];
-		// LINE 1840:
-		_T18a:
-			currentObject = currentObject->next;
-	}
-// LINE 1843:
-__DO_WHILE_21:
-	__asm        lea    eax, scanLoc.x;
-	__asm        push   eax;
-	__asm        lea    ecx, spiral.currDist;
-	__asm        call   SpiralScan::Next;
-	__asm        test   eax, eax;
-	__asm        jne    __DO_21;
+					__asm        mov    eax, this;
+					__asm        cmp    dword ptr [eax+4], 0x11D;
+					__asm        jne    _T18a;
+				// LINE 1837:
+				_T178:
+					__asm        mov    eax, this;
+					__asm        mov    eax, [eax+4];
+					__asm        push   eax;
+					__asm        mov    eax, pCar;
+					__asm        mov    eax, [eax];
+					__asm        mov    ecx, pCar;
+					__asm        call   dword ptr [eax+4];
+				// LINE 1840:
+				_T18a:
+					currentObject = currentObject->next;
+			}
+	} while ((spiral.currDist->SpiralScan::Next(scanLoc.x) != 0x0));
 // LINE 1844:
 	__asm        jmp    _T1b0;
 _T1b0:
@@ -4220,13 +4151,8 @@ _T1f8:
 // FUNCTION: COPTER_D 0x00504554
 int32_t AutomobileClass::Initialize(int32_t instanceID) {
 // LINE 1979:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::InitializeInstance;
-	__asm        jmp    __RETURN;
+	return this->AutomobileClass::InitializeInstance(instanceID);
 // LINE 1980:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00504578
@@ -4713,11 +4639,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	return;
 // LINE 2239:
 _T64:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::UnlinkFromCell;
+	this->AutomobileClass::UnlinkFromCell((this + 0x7c));
 // LINE 2241:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x82];
@@ -4874,21 +4796,13 @@ _T221:
 // LINE 2264:
 // Block end:
 _T238:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::LinkToCell;
+	this->AutomobileClass::LinkToCell((this + 0x7c));
 // LINE 2268:
 	this->legOfTurn = 0xa;
 // LINE 2272:
 	this->prevDir = this->goal.direction;
 // LINE 2275:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::GetNextGoal;
+	0x5c3828->RoadGraph::GetNextGoal((this + 0x70));
 // LINE 2283:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7E], 0xFFFFFFFE;
@@ -5533,10 +5447,7 @@ _T3df:
 	__asm        test   byte ptr [eax+8], 0x70;
 	__asm        je     _T466;
 // LINE 2492:
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::DoPullOverStuff;
+	this->AutomobileClass::DoPullOverStuff(dist);
 // LINE 2495:
 _T466:
 	__asm        mov    eax, this;
@@ -5616,11 +5527,7 @@ _T70:
 	__asm        mov    [ecx+0xEE], eax;
 // LINE 2535:
 _T88:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C3828;
-	__asm        call   RoadGraph::SamePlaceOtherDirection;
+	0x5c3828->RoadGraph::SamePlaceOtherDirection((this + 0x70));
 // LINE 2539:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xEE], 0xA;
@@ -6651,34 +6558,22 @@ _T17:
 	__asm        jmp    _T12d;
 // LINE 3034:
 _T1c:
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::IveBeenSpotlighted;
+	this->AutomobileClass::IveBeenSpotlighted(dyhitter);
 // LINE 3035:
 	__asm        jmp    _T12d;
 // LINE 3037:
 _T2d:
-	__asm        mov    eax, xtra_msg;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::IveBeenMegaphoned;
+	this->AutomobileClass::IveBeenMegaphoned(xtra_msg);
 // LINE 3038:
 	__asm        jmp    _T12d;
 // LINE 3040:
 _T3e:
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::StartFire;
+	this->AutomobileClass::StartFire(mission_id);
 // LINE 3041:
 	__asm        jmp    _T12d;
 // LINE 3043:
 _T4f:
-	__asm        mov    eax, dyhitter;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::WaterDouse;
+	this->AutomobileClass::WaterDouse(dyhitter);
 // LINE 3044:
 	__asm        jmp    _T12d;
 // LINE 3046:
@@ -6694,10 +6589,7 @@ _T6a:
 	__asm        test   eax, eax;
 	__asm        jne    _T86;
 // LINE 3051:
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::StartFire;
+	this->AutomobileClass::StartFire(mission_id);
 // LINE 3052:
 _T86:
 	__asm        jmp    _T12d;
@@ -6729,10 +6621,7 @@ _Tae:
 	__asm        test   eax, eax;
 	__asm        jne    _Tca;
 // LINE 3069:
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::StartFire;
+	this->AutomobileClass::StartFire(mission_id);
 // LINE 3070:
 _Tca:
 	__asm        jmp    _T12d;
@@ -6834,10 +6723,7 @@ _T53:
 	return 0x0;
 // LINE 3138:
 _T64:
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    ecx, targcar;
-	__asm        call   AutomobileClass::StartFire;
+	targcar->AutomobileClass::StartFire(mission_id);
 // LINE 3141:
 	celloc->x = ((targcar->autoDynomitor.loc.x + 0x20000000) >> 0x16);
 // LINE 3142:
@@ -6880,10 +6766,7 @@ _T53:
 	return 0x0;
 // LINE 3171:
 _T64:
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        mov    ecx, targcar;
-	__asm        call   AutomobileClass::StartJam;
+	targcar->AutomobileClass::StartJam(mission_id);
 // LINE 3174:
 	celloc->x = ((targcar->autoDynomitor.loc.x + 0x20000000) >> 0x16);
 // LINE 3175:
@@ -10554,11 +10437,7 @@ _T37a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 4720:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xD2;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::LinkToCell;
+	this->AutomobileClass::LinkToCell((this + 0xd2));
 // LINE 4722:
 	__asm        jmp    _T41b;
 // LINE 4723:
@@ -10593,11 +10472,7 @@ _T400:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 4725:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::LinkToCell;
+	this->AutomobileClass::LinkToCell((this + 0x7c));
 // LINE 4727:
 _T41b:
 	return;

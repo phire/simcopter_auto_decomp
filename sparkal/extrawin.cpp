@@ -3412,29 +3412,10 @@ void AnimationWindow::AnimationWindow() {
 // FUNCTION: COPTER_D 0x00451fde
 void AnimationWindow::AnimationWindow(char * szImageFileName, /*packed*/ class MRect& rectNewWindow, long lNewWidthOfSingleFrame, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, long lNewTransparentIndex, enum AnimationWindow::AnimationLoopType nNewAnimationLoopType) {
 
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    eax, szImageFileName;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, lNewWidthOfSingleFrame;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x98], eax;
-	__asm        mov    eax, lNewTransparentIndex;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA0], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58FB58;
+	this->GraphicWindow::GraphicWindow(-0x1, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow, szImageFileName);
+	this->lWidthOfSingleFrame = lNewWidthOfSingleFrame;
+	this->lTransparentIndex = lNewTransparentIndex;
+	this-><AnimationWindow+0x00> = 0x58fb58;
 // LINE 312:
 	this->bRunning = 0x0;
 // LINE 313:
@@ -4705,15 +4686,9 @@ _Tc82:
 	__asm        mov    ecx, [eax+0x98];
 	__asm        call   dword ptr [edx+4];
 // LINE 621:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x98];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->myFogSliderWindow->SliderWindow::SetMinimumValue(0x0);
 // LINE 622:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x98];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->myFogSliderWindow->SliderWindow::SetMaximumValue(0x64);
 // LINE 626:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -5700,10 +5675,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00454163
 int32_t RenderSettingsWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 661:
-	__asm        mov    eax, bResizeWindowToFitImage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
+	this->GraphicWindow::CreateImage(bResizeWindowToFitImage);
 // LINE 662:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x58], 0xFFFFFFFF;
@@ -6135,12 +6107,7 @@ _T107:
 	this->lQuadPixelType = 0x2;
 // LINE 796:
 _T124:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x80];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x94];
-	__asm        call   ButtonGroup::SetSelectionIndex;
+	this->myDisplayResolutionButtonGroup->ButtonGroup::SetSelectionIndex(this->lQuadPixelType);
 // LINE 798:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
@@ -6156,12 +6123,7 @@ _T159:
 	this->lFogCloseness = 0x64;
 // LINE 802:
 _T176:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x84];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x98];
-	__asm        call   SliderWindow::SetValue;
+	this->myFogSliderWindow->SliderWindow::SetValue(this->lFogCloseness);
 // LINE 803:
 	return;
 }
@@ -6351,45 +6313,17 @@ _T303:
 	__asm        jmp    _T30f;
 // LINE 822:
 _T30f:
-	__asm        lea    eax, sBuildingPreviewFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sGroundPreviewFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sSkyPreviewFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RenderSettingsWindow::GetPreviewFileNames;
+	this->RenderSettingsWindow::GetPreviewFileNames(sBuildingPreviewFileName.c_str_ptr, sGroundPreviewFileName.c_str_ptr, sSkyPreviewFileName.c_str_ptr);
 // LINE 823:
-	__asm        lea    eax, sSkyPreviewFilePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sSkyPreviewFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sSkyPreviewFilePath.c_str_ptr, sSkyPreviewFileName.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T347;
 // LINE 824:
 _T347:
-	__asm        lea    eax, sGroundPreviewFilePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sGroundPreviewFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sGroundPreviewFilePath.c_str_ptr, sGroundPreviewFileName.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T368;
 // LINE 825:
 _T368:
-	__asm        lea    eax, sBuildingPreviewFilePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sBuildingPreviewFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sBuildingPreviewFilePath.c_str_ptr, sBuildingPreviewFileName.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T383;
 // LINE 828:
 _T383:
@@ -6573,11 +6507,7 @@ _T652:
 	__asm        mov    ecx, [eax+0xA0];
 	__asm        call   dword ptr [edx+8];
 // LINE 836:
-	__asm        lea    ecx, sGroundPreviewFilePath.c_str_ptr;
-	__asm        call   basic_string<char>::c_str;
-	__asm        push   eax;
-	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::CBackBuffer;
+	tempGroundImage<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(sGroundPreviewFilePath.c_str_ptr->basic_string<char>::c_str());
 // LINE 842:
 	__asm        push   0x42;
 	__asm        mov    eax, this;
@@ -7681,34 +7611,13 @@ _T1e7:
 // FUNCTION: COPTER_D 0x00455bfb
 void SoundSettingsWindow::SoundSettingsWindow(/*packed*/ class MRect& rectNewPosition, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        push   eax;
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewPosition;
-	__asm        push   eax;
-	__asm        mov    eax, SZ_SOUND_WINDOW_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58FCE8;
+	this->GraphicWindow::GraphicWindow(GraphicWindow::colorConstants.nPaletteIndexTransparent, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewPosition, SZ_SOUND_WINDOW_IMAGE_FILE_NAME);
+	this->myMasterVolumeSliderWindow = 0x0;
+	this->myRadioStationSliderWindow = 0x0;
+	this->myRadioVolumeSliderWindow = 0x0;
+	this->myDJCheckBoxWindow = 0x0;
+	this->myCommercialCheckBoxWindow = 0x0;
+	this-><SoundSettingsWindow+0x00> = 0x58fce8;
 // LINE 991:
 	return;
 
@@ -8086,15 +7995,9 @@ _T524:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+4];
 // LINE 1061:
-	__asm        push   0x140;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->myMasterVolumeSliderWindow->SliderWindow::SetMinimumValue(0x140);
 // LINE 1062:
-	__asm        push   0x2710;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->myMasterVolumeSliderWindow->SliderWindow::SetMaximumValue(0x2710);
 // LINE 1083:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -8139,15 +8042,9 @@ _T5fa:
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   dword ptr [edx+4];
 // LINE 1085:
-	__asm        push   0x140;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->myRadioVolumeSliderWindow->SliderWindow::SetMinimumValue(0x140);
 // LINE 1086:
-	__asm        push   0x2710;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->myRadioVolumeSliderWindow->SliderWindow::SetMaximumValue(0x2710);
 // LINE 1090:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -8194,15 +8091,9 @@ _T6d8:
 	__asm        mov    ecx, [eax+0x78];
 	__asm        call   dword ptr [edx+4];
 // LINE 1092:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->myRadioStationSliderWindow->SliderWindow::SetMinimumValue(0x0);
 // LINE 1093:
-	__asm        push   2;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->myRadioStationSliderWindow->SliderWindow::SetMaximumValue(0x2);
 // LINE 1097:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -9032,15 +8923,7 @@ _T45:
 // FUNCTION: COPTER_D 0x00456f66
 int32_t SoundSettingsWindow::SetCurrentVolumeSettings(/*packed*/ struct SoundPreferences& newSoundPreferences) {
 // LINE 1137:
-	__asm        mov    eax, newSoundPreferences;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   SoundSettingsWindow::ConvertSoundValueToSliderValue;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetValue;
+	this->myMasterVolumeSliderWindow->SliderWindow::SetValue(SoundSettingsWindow::ConvertSoundValueToSliderValue(newSoundPreferences.lMasterVolume));
 // LINE 1141:
 	return 0x1;
 // LINE 1142:
@@ -9049,24 +8932,13 @@ int32_t SoundSettingsWindow::SetCurrentVolumeSettings(/*packed*/ struct SoundPre
 // FUNCTION: COPTER_D 0x00456f9d
 int32_t SoundSettingsWindow::SetCurrentRadioSettings(/*packed*/ struct RadioPreferences& newRadioPreferences, long lCurrentStations) {
 // LINE 1151:
-	__asm        mov    eax, newRadioPreferences;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   SoundSettingsWindow::ConvertSoundValueToSliderValue;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetValue;
+	this->myRadioVolumeSliderWindow->SliderWindow::SetValue(SoundSettingsWindow::ConvertSoundValueToSliderValue(newRadioPreferences.lVolume));
 // LINE 1152:
 	__asm        mov    eax, newRadioPreferences;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T40;
 // LINE 1153:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetValue;
+	this->myRadioVolumeSliderWindow->SliderWindow::SetValue(0x0);
 // LINE 1156:
 _T40:
 	__asm        mov    eax, lCurrentStations;
@@ -9076,12 +8948,7 @@ _T40:
 	__asm        mov    ecx, [eax+0x78];
 	__asm        call   SliderWindow::SetMaximumValue;
 // LINE 1157:
-	__asm        mov    eax, newRadioPreferences;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetValue;
+	this->myRadioStationSliderWindow->SliderWindow::SetValue(newRadioPreferences.lCurrentStation);
 // LINE 1160:
 	__asm        mov    eax, newRadioPreferences;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -9318,24 +9185,8 @@ void CitySettingsWindow::CitySettingsWindow(/*packed*/ class MRect& rectNewPosit
 	/*bp-0x4*/   int32_t i;
 
 
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        push   eax;
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewPosition;
-	__asm        push   eax;
-	__asm        mov    eax, SZ_CITY_SETTINGS_WINDOW_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58FDD0;
+	this->GraphicWindow::GraphicWindow(GraphicWindow::colorConstants.nPaletteIndexTransparent, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewPosition, SZ_CITY_SETTINGS_WINDOW_IMAGE_FILE_NAME);
+	this-><CitySettingsWindow+0x00> = 0x58fdd0;
 // LINE 1324:
 _FOR_49:
 	for (i = 0x0; (i < 0x8); i++) {
@@ -9851,15 +9702,9 @@ _T6bd:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+4];
 // LINE 1390:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[0]->SliderWindow::SetMinimumValue(0x0);
 // LINE 1391:
-	__asm        push   3;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[0]->SliderWindow::SetMaximumValue(0x3);
 // LINE 1395:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -9905,15 +9750,9 @@ _T791:
 	__asm        mov    ecx, [eax+0x78];
 	__asm        call   dword ptr [edx+4];
 // LINE 1397:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[1]->SliderWindow::SetMinimumValue(0x0);
 // LINE 1398:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[1]->SliderWindow::SetMaximumValue(0x64);
 // LINE 1402:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -9959,15 +9798,9 @@ _T865:
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   dword ptr [edx+4];
 // LINE 1404:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[2]->SliderWindow::SetMinimumValue(0x0);
 // LINE 1405:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[2]->SliderWindow::SetMaximumValue(0x64);
 // LINE 1409:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -10013,15 +9846,9 @@ _T93f:
 	__asm        mov    ecx, [eax+0x80];
 	__asm        call   dword ptr [edx+4];
 // LINE 1411:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x80];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[3]->SliderWindow::SetMinimumValue(0x0);
 // LINE 1412:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x80];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[3]->SliderWindow::SetMaximumValue(0x64);
 // LINE 1416:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -10067,15 +9894,9 @@ _Ta25:
 	__asm        mov    ecx, [eax+0x84];
 	__asm        call   dword ptr [edx+4];
 // LINE 1418:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x84];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[4]->SliderWindow::SetMinimumValue(0x0);
 // LINE 1419:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x84];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[4]->SliderWindow::SetMaximumValue(0x64);
 // LINE 1423:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -10121,15 +9942,9 @@ _Tb0b:
 	__asm        mov    ecx, [eax+0x88];
 	__asm        call   dword ptr [edx+4];
 // LINE 1425:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x88];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[5]->SliderWindow::SetMinimumValue(0x0);
 // LINE 1426:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x88];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[5]->SliderWindow::SetMaximumValue(0x64);
 // LINE 1430:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -10175,15 +9990,9 @@ _Tbf1:
 	__asm        mov    ecx, [eax+0x8C];
 	__asm        call   dword ptr [edx+4];
 // LINE 1432:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x8C];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[6]->SliderWindow::SetMinimumValue(0x0);
 // LINE 1433:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x8C];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[6]->SliderWindow::SetMaximumValue(0x64);
 // LINE 1437:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -10229,15 +10038,9 @@ _Tcd7:
 	__asm        mov    ecx, [eax+0x90];
 	__asm        call   dword ptr [edx+4];
 // LINE 1439:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x90];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[7]->SliderWindow::SetMinimumValue(0x0);
 // LINE 1440:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x90];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[7]->SliderWindow::SetMaximumValue(0x64);
 // LINE 1443:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -11409,61 +11212,21 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004591f5
 void CitySettingsWindow::SetCurrentCitySettings(/*packed*/ struct tagCitySettings *newCitySettings) {
 // LINE 1470:
-	__asm        mov    eax, newCitySettings;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[0]->SliderWindow::SetValue(newCitySettings->lDifficulty);
 // LINE 1471:
-	__asm        mov    eax, newCitySettings;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[1]->SliderWindow::SetValue(newCitySettings->lMissionFrequencyFire);
 // LINE 1472:
-	__asm        mov    eax, newCitySettings;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[2]->SliderWindow::SetValue(newCitySettings->lMissionFrequencyCrime);
 // LINE 1473:
-	__asm        mov    eax, newCitySettings;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x80];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[3]->SliderWindow::SetValue(newCitySettings->lMissionFrequencyRescue);
 // LINE 1474:
-	__asm        mov    eax, newCitySettings;
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x84];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[4]->SliderWindow::SetValue(newCitySettings->lMissionFrequencyRiot);
 // LINE 1475:
-	__asm        mov    eax, newCitySettings;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x88];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[5]->SliderWindow::SetValue(newCitySettings->lMissionFrequencyTraffic);
 // LINE 1476:
-	__asm        mov    eax, newCitySettings;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x8C];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[6]->SliderWindow::SetValue(newCitySettings->lMissionFrequencyMedEvac);
 // LINE 1477:
-	__asm        mov    eax, newCitySettings;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x90];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[7]->SliderWindow::SetValue(newCitySettings->lMissionFrequencyTransport);
 // LINE 1478:
 	return;
 }
@@ -11633,10 +11396,7 @@ _T98:
 _Taa:
 	this-><PopupMenuExtra+0x00> = 0x58fe98;
 // LINE 1551:
-	__asm        push   0x603AB8;
-	__asm        push   0x603AB0;
-	__asm        mov    ecx, this;
-	__asm        call   ListBoxWindow::SetTextColor;
+	this->ListBoxWindow::SetTextColor(0x603ab8, 0x603ab0);
 // LINE 1552:
 	__asm        cmp    szNewBackgroundImageFileName, 0;
 	__asm        je     _T259;
@@ -12944,15 +12704,7 @@ _T6f:
 	__asm        cmp    dword ptr [eax+0xCC], 0;
 	__asm        jne    _T1fc;
 // LINE 1694:
-	__asm        lea    eax, sImagePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xD0;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, (this + 0xd0), 0x0, 0x6);
 	__asm        jmp    _T9f;
 // LINE 1695:
 _T9f:
@@ -13304,11 +13056,7 @@ _T71:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1759:
-	__asm        lea    eax, rectSelf.left;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x3C];
-	__asm        call   GraphicWindow::FitRectToWindow;
+	this-><PopupMenuExtra+0x3c>->GraphicWindow::FitRectToWindow(rectSelf.left);
 // LINE 1760:
 	__asm        mov    eax, rectSelf.top;
 	__asm        push   eax;
@@ -13371,9 +13119,7 @@ _T8f:
 _Ta1:
 	this-><TooltipWindow+0x00> = 0x58fff8;
 // LINE 1799:
-	__asm        push   0x603AB8;
-	__asm        mov    ecx, this;
-	__asm        call   TextWindow::SetTextColor;
+	this->TextWindow::SetTextColor(0x603ab8);
 // LINE 1800:
 	__asm        cmp    szNewBackgroundImageFileName, 0;
 	__asm        je     _T24b;
@@ -14027,10 +13773,7 @@ int32_t TooltipWindow::Initialize() {
 // FUNCTION: COPTER_D 0x0045b3a5
 void TooltipWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 // LINE 1846:
-	__asm        mov    eax, nNewWindowTitleTextID;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TextWindow::SetWindowTitle;
+	this->TextWindow::SetWindowTitle(nNewWindowTitleTextID);
 // LINE 1847:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -14043,10 +13786,7 @@ void TooltipWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 // FUNCTION: COPTER_D 0x0045b3d7
 void TooltipWindow::SetWindowTitle(/*packed*/ class basic_string<char>& sNewWindowTitle) {
 // LINE 1856:
-	__asm        mov    eax, sNewWindowTitle;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TextWindow::SetWindowTitle;
+	this->TextWindow::SetWindowTitle(sNewWindowTitle);
 // LINE 1857:
 	__asm        push   1;
 	__asm        push   1;
@@ -14354,15 +14094,7 @@ _T6f:
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        jne    _T1ee;
 // LINE 1900:
-	__asm        lea    eax, sImagePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA8;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, (this + 0xa8), 0x0, 0x6);
 	__asm        jmp    _T9f;
 // LINE 1901:
 _T9f:
@@ -17132,34 +16864,9 @@ _T6a:
 // FUNCTION: COPTER_D 0x0045d955
 void MessageBoxWindowEdit::MessageBoxWindowEdit(/*packed*/ class MPoint& ptNewPosition, unsigned long lNewType, unsigned long lNewMessageID, const /*packed*/ class basic_string<char>& sNewInitialEditText, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 
-	__asm        mov    eax, szAnimationImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, szButtonImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, szImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, bNewSelfDeleting;
-	__asm        push   eax;
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, lNewMessageID;
-	__asm        push   eax;
-	__asm        mov    eax, lNewType;
-	__asm        push   eax;
-	__asm        mov    eax, ptNewPosition;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MessageBoxWindow::MessageBoxWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5901F8;
+	this->MessageBoxWindow::MessageBoxWindow(szAnimationImageFileName, szButtonImageFileName, szImageFileName, bNewSelfDeleting, bAddToParentList, myNewOwner, windowNewParent, nNewID, lNewMessageID, lNewType, ptNewPosition);
+	this->myTextEditWindow = 0x0;
+	this-><MessageBoxWindowEdit+0x00> = 0x5901f8;
 // LINE 2246:
 	__asm        push   0xC4;
 	__asm        call   operator new;
@@ -17215,34 +16922,9 @@ _Td1:
 // FUNCTION: COPTER_D 0x0045da55
 void MessageBoxWindowEdit::MessageBoxWindowEdit(/*packed*/ class MPoint& ptNewPosition, unsigned long lNewType, /*packed*/ class basic_string<char>& sNewMessage, const /*packed*/ class basic_string<char>& sNewInitialEditText, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 
-	__asm        mov    eax, szAnimationImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, szButtonImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, szImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, bNewSelfDeleting;
-	__asm        push   eax;
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, sNewMessage;
-	__asm        push   eax;
-	__asm        mov    eax, lNewType;
-	__asm        push   eax;
-	__asm        mov    eax, ptNewPosition;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MessageBoxWindow::MessageBoxWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5901F8;
+	this->MessageBoxWindow::MessageBoxWindow(szAnimationImageFileName, szButtonImageFileName, szImageFileName, bNewSelfDeleting, bAddToParentList, myNewOwner, windowNewParent, nNewID, sNewMessage, lNewType, ptNewPosition);
+	this->myTextEditWindow = 0x0;
+	this-><MessageBoxWindowEdit+0x00> = 0x5901f8;
 // LINE 2275:
 	__asm        push   0xC4;
 	__asm        call   operator new;
@@ -17756,24 +17438,8 @@ void CheckupWindow::CheckupWindow(/*packed*/ class MRect& rectNewPosition, int32
 	/*bp-0x4*/   int32_t i;
 
 
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        push   eax;
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewPosition;
-	__asm        push   eax;
-	__asm        mov    eax, SZ_CHECKUP_WINDOW_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5903A0;
+	this->GraphicWindow::GraphicWindow(GraphicWindow::colorConstants.nPaletteIndexTransparent, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewPosition, SZ_CHECKUP_WINDOW_IMAGE_FILE_NAME);
+	this-><CheckupWindow+0x00> = 0x5903a0;
 // LINE 2421:
 _FOR_49:
 	for (i = 0x0; (i < 0x3); i++) {
@@ -18473,15 +18139,9 @@ _Ta15:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+4];
 // LINE 2499:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[0]->SliderWindow::SetMinimumValue(0x0);
 // LINE 2500:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[0]->SliderWindow::SetMaximumValue(0x64);
 // LINE 2504:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -18527,15 +18187,9 @@ _Tae9:
 	__asm        mov    ecx, [eax+0x78];
 	__asm        call   dword ptr [edx+4];
 // LINE 2506:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[1]->SliderWindow::SetMinimumValue(0x0);
 // LINE 2507:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[1]->SliderWindow::SetMaximumValue(0x64);
 // LINE 2511:
 	__asm        push   0xB4;
 	__asm        call   operator new;
@@ -18581,15 +18235,9 @@ _Tbbd:
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   dword ptr [edx+4];
 // LINE 2513:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->mySliderWindows[2]->SliderWindow::SetMinimumValue(0x0);
 // LINE 2514:
-	__asm        push   0x64;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[2]->SliderWindow::SetMaximumValue(0x64);
 // LINE 2518:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -19677,26 +19325,11 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0045fe23
 void CheckupWindow::SetCurrentSettings(long * lNewSettings) {
 // LINE 2551:
-	__asm        mov    eax, lNewSettings;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[0]->SliderWindow::SetValue(lNewSettings[0]);
 // LINE 2552:
-	__asm        mov    eax, lNewSettings;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[1]->SliderWindow::SetValue(lNewSettings[4]);
 // LINE 2553:
-	__asm        mov    eax, lNewSettings;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[2]->SliderWindow::SetValue(lNewSettings[8]);
 // LINE 2554:
 	this->CheckupWindow::SetTextControlsBasedOnCurrentSliderValues();
 // LINE 2555:
@@ -19728,17 +19361,9 @@ void CheckupWindow::SetAllControlValuesToDefaults() {
 	lValue = 0x0;
 // LINE 2579:
 _T2e:
-	__asm        mov    eax, lValue;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[0]->SliderWindow::SetMaximumValue(lValue);
 // LINE 2580:
-	__asm        mov    eax, lValue;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[0]->SliderWindow::SetValue(lValue);
 // LINE 2582:
 	lValue = S3GetFullRefuelCost(G_uheli);
 // LINE 2583:
@@ -19748,17 +19373,9 @@ _T2e:
 	lValue = 0x0;
 // LINE 2585:
 _T6e:
-	__asm        mov    eax, lValue;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[1]->SliderWindow::SetMaximumValue(lValue);
 // LINE 2586:
-	__asm        mov    eax, lValue;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[1]->SliderWindow::SetValue(lValue);
 // LINE 2588:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 8;
@@ -19766,30 +19383,16 @@ _T6e:
 // LINE 2589:
 	lValue = S3HeliGetEquipmentNewValue(0x3);
 // LINE 2590:
-	__asm        mov    eax, lValue;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[2]->SliderWindow::SetMaximumValue(lValue);
 // LINE 2591:
-	__asm        mov    eax, lValue;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[2]->SliderWindow::SetValue(lValue);
 // LINE 2593:
 	__asm        jmp    _Te5;
 // LINE 2594:
 _Tcb:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->mySliderWindows[2]->SliderWindow::SetMaximumValue(0x0);
 // LINE 2595:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::SetValue;
+	this->mySliderWindows[2]->SliderWindow::SetValue(0x0);
 // LINE 2597:
 _Te5:
 	this->CheckupWindow::SetTextControlsBasedOnCurrentSliderValues();
@@ -19837,10 +19440,7 @@ int32_t CheckupWindow::CanUserAffordCurrentSliderValues() {
 	/*bp-0xc*/   long lSliderValues[3]; // 0xc bytes
 
 // LINE 2623:
-	__asm        lea    eax, lSliderValues[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CheckupWindow::GetCurrentSettings;
+	this->CheckupWindow::GetCurrentSettings(lSliderValues[0]);
 // LINE 2624:
 	__asm        mov    ebx, lSliderValues[1];
 	__asm        add    ebx, lSliderValues[2];

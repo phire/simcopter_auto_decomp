@@ -992,13 +992,7 @@ void RoadGraph::PickPlaceOnRoad(/*packed*/ struct Goal *pGoal, int32_t x, int32_
 	/*bp-0x18*/  enum DirectionTypes tempDir;
 
 // LINE 338:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    yindex, al;
+	yindex = this->RoadGraph::FindYIndexToVertex(y, x);
 // LINE 339:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
@@ -1965,10 +1959,7 @@ _Taa:
 //   _T9a
 // LINE 578:
 _Tce:
-	__asm        mov    eax, pGoal;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::GetNextGoal;
+	this->RoadGraph::GetNextGoal(pGoal);
 // LINE 580:
 	__asm        mov    eax, pGoal;
 	__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFE;
@@ -2115,17 +2106,7 @@ _LOOP_83:
 	for (;;) {
 		// LINE 655:
 		_LOOP_83:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(here.y);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
-			__asm        push   eax;
-			__asm        lea    eax, returnDir;
-			__asm        push   eax;
-			__asm        mov    eax, currentDir;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-			__asm        mov    result, eax;
+			result = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(here.y), reinterpret_cast<uint32_t>(here.x), returnDir, currentDir);
 		// LINE 658:
 			__asm        mov    eax, returnDir;
 			__asm        mov    [ebp-0x20], eax;
@@ -2218,12 +2199,7 @@ _LOOP_83:
 		// LINE 686:
 			goal.elementIndex = 0x0;
 		// LINE 688:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(startLoc.x);
-			__asm        push   eax;
-			__asm        mov    eax, goal;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   RoadGraph::FindPlaceOnRoad;
+			this->RoadGraph::FindPlaceOnRoad(reinterpret_cast<uint32_t>(startLoc.x), goal);
 		// LINE 689:
 			__asm        jmp    _T1d1;
 		// LINE 694:
@@ -2712,17 +2688,7 @@ _LOOP_3c:
 	for (;;) {
 		// LINE 776:
 		_LOOP_3c:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-			__asm        push   eax;
-			__asm        lea    eax, returnDir;
-			__asm        push   eax;
-			__asm        mov    eax, currentDir;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-			__asm        mov    returnStatus, eax;
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
 		// LINE 778:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _T6b;
@@ -3595,17 +3561,7 @@ _LOOP_76:
 	for (;;) {
 		// LINE 900:
 		_LOOP_76:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-			__asm        push   eax;
-			__asm        lea    eax, returnDir;
-			__asm        push   eax;
-			__asm        mov    eax, currentDir;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-			__asm        mov    returnStatus, eax;
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
 		// LINE 901:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _Ta0;
@@ -3963,17 +3919,7 @@ _LOOP_218:
 			__asm        jmp    _T4b8;
 		// LINE 972:
 		_T4b8:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-			__asm        push   eax;
-			__asm        lea    eax, returnDir;
-			__asm        push   eax;
-			__asm        mov    eax, currentDir;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-			__asm        mov    returnStatus, eax;
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
 		// LINE 973:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _T4e2;
@@ -4629,14 +4575,7 @@ _T1c:
 	__asm        test   eax, eax;
 	__asm        je     _T2b8;
 // LINE 1105:
-	__asm        mov    eax, y;
-	__asm        sub    eax, 2;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    yindex, al;
+	yindex = this->RoadGraph::FindYIndexToVertex((y - 0x2), x);
 // LINE 1106:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -5255,14 +5194,7 @@ _T803:
 	__asm        test   eax, eax;
 	__asm        je     _Taa1;
 // LINE 1138:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        sub    eax, 2;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    yindex, al;
+	yindex = this->RoadGraph::FindYIndexToVertex(y, (x - 0x2));
 // LINE 1139:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
@@ -6405,16 +6337,7 @@ _Te7:
 	__asm        test   cl, 2;
 	__asm        je     _T126;
 // LINE 1222:
-	__asm        push   1;
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        add    eax, stepSize;
-	__asm        push   eax;
-	__asm        mov    eax, pRGV;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::MakeRoad;
+	this->RoadGraph::MakeRoad(0x1, y, (x + stepSize), pRGV);
 // LINE 1225:
 _T126:
 	__asm        mov    eax, 0x7F;
@@ -6430,16 +6353,7 @@ _T126:
 	__asm        test   cl, 4;
 	__asm        je     _T165;
 // LINE 1228:
-	__asm        push   2;
-	__asm        mov    eax, y;
-	__asm        add    eax, stepSize;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    eax, pRGV;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::MakeRoad;
+	this->RoadGraph::MakeRoad(0x2, (y + stepSize), x, pRGV);
 // LINE 1231:
 _T165:
 	__asm        mov    eax, Offset;
@@ -6770,17 +6684,7 @@ _LOOP_357:
 	for (;;) {
 		// LINE 1300:
 		_LOOP_357:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-			__asm        push   eax;
-			__asm        lea    eax, returnDir;
-			__asm        push   eax;
-			__asm        mov    eax, currentDir;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-			__asm        mov    returnStatus, eax;
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
 		// LINE 1301:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _T381;
@@ -7074,17 +6978,7 @@ _LOOP_6bf:
 	for (;;) {
 		// LINE 1339:
 		_LOOP_6bf:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(y);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(x);
-			__asm        push   eax;
-			__asm        lea    eax, returnDir;
-			__asm        push   eax;
-			__asm        mov    eax, currentDir;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   RoadGraph::WhatDirAmIConnectedTo;
-			__asm        mov    returnStatus, eax;
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
 		// LINE 1341:
 			__asm        cmp    deadEnd, 0;
 			__asm        je     _T799;
@@ -7549,10 +7443,7 @@ _LOOP_27:
 		//   _T9b
 		// LINE 1427:
 		_Td8:
-			__asm        mov    eax, goal;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   RoadGraph::GetNextGoal;
+			this->RoadGraph::GetNextGoal(goal);
 		// LINE 1430:
 			__asm        mov    eax, goal;
 			__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFE;

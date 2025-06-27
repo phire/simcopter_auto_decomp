@@ -721,13 +721,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004ebc2b
 void S3AddLogEntry(/*packed*/ struct tagLogBase *logData, int32_t bShowUserMessage) {
 // LINE 37:
-	__asm        push   1;
-	__asm        mov    eax, bShowUserMessage;
-	__asm        push   eax;
-	__asm        mov    eax, logData;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x606E78;
-	__asm        call   LogManager::AddLogEntry;
+	0x606e78->LogManager::AddLogEntry(0x1, bShowUserMessage, logData);
 // LINE 38:
 	return;
 }
@@ -1112,18 +1106,11 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 	/*bp-0x14c*/ int32_t nReturnValue;
 
 // LINE 67:
-	__asm        mov    eax, szFilePath;
-	__asm        push   eax;
-	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
-	__asm        call   MIFF::MIFF;
+	tempMIFF<MIFF+0x00>->MIFF::MIFF(szFilePath);
 // LINE 70:
 	tempMIFF<MIFF+0x00>->MIFF::OpenForReading();
 // LINE 71:
-	__asm        lea    eax, tempMIFF<MIFF+0x00>;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   LogManager::ReadFromMIFF;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->LogManager::ReadFromMIFF(tempMIFF<MIFF+0x00>);
 // LINE 72:
 	tempMIFF<MIFF+0x00>->MIFF::Close();
 // LINE 73:
@@ -1143,18 +1130,11 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 	/*bp-0x14c*/ int32_t nReturnValue;
 
 // LINE 82:
-	__asm        mov    eax, szFilePath;
-	__asm        push   eax;
-	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
-	__asm        call   MIFF::MIFF;
+	tempMIFF<MIFF+0x00>->MIFF::MIFF(szFilePath);
 // LINE 85:
 	tempMIFF<MIFF+0x00>->MIFF::OpenForAppending();
 // LINE 86:
-	__asm        lea    eax, tempMIFF<MIFF+0x00>;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   LogManager::WriteToMIFF;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->LogManager::WriteToMIFF(tempMIFF<MIFF+0x00>);
 // LINE 87:
 	tempMIFF<MIFF+0x00>->MIFF::Close();
 // LINE 88:
@@ -1224,10 +1204,7 @@ _T5b:
 	__asm        jmp    __WHILE_17;
 // LINE 113:
 _T85:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   LogManager::ReadCurrentRecordFromMIFF;
+	this->LogManager::ReadCurrentRecordFromMIFF(miffReader);
 // LINE 114:
 	__asm        jmp    __WHILE_17;
 // LINE 115:
@@ -1555,12 +1532,7 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(/*packed*/ class MIFF *miffReader)
 // LINE 190:
 	tempLogString->szLogString = (tempLogString + 0x10);
 // LINE 191:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        lea    eax, chStringBuffer[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   LogManager::AddLogEntry;
+	this->LogManager::AddLogEntry(0x0, 0x0, chStringBuffer[0]);
 // LINE 193:
 // Block end:
 	__asm        jmp    _Ta1;
@@ -1574,12 +1546,7 @@ _T7d:
 	__asm        mov    ecx, miffReader;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 197:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        lea    eax, chBuffer[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   LogManager::AddLogEntry;
+	this->LogManager::AddLogEntry(0x0, 0x0, chBuffer[0]);
 // LINE 199:
 _Ta1:
 	return 0x1;
@@ -1617,9 +1584,7 @@ _T17:
 	__asm        cmp    dword ptr [eax+4], 0x1F4;
 	__asm        jb     _T39;
 // LINE 221:
-	__asm        push   0x64;
-	__asm        mov    ecx, this;
-	__asm        call   LogManager::PurgeNEntries;
+	this->LogManager::PurgeNEntries(0x64);
 // LINE 223:
 _T39:
 	__asm        cmp    bSetTime, 0;
@@ -3336,11 +3301,7 @@ _Ta3:
 	__asm        cmp    bPrintTime, 0;
 	__asm        je     _T393;
 // LINE 373:
-	__asm        push   0;
-	__asm        lea    eax, szTime[0];
-	__asm        push   eax;
-	__asm        lea    ecx, tempTime<vftable>;
-	__asm        call   MTimeLocalized::PrintStringLocalized;
+	tempTime<vftable>->MTimeLocalized::PrintStringLocalized(0x0, szTime[0]);
 // LINE 374:
 	__asm        jmp    _Tc6;
 _Tc6:
@@ -3546,10 +3507,7 @@ _T38e:
 	__asm        jmp    _T39f;
 // LINE 378:
 _T393:
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0;
-	__asm        mov    ecx, sCurrentText;
-	__asm        call   basic_string<char>::remove;
+	sCurrentText->basic_string<char>::remove(-0x1, 0x0);
 // LINE 380:
 _T39f:
 	__asm        mov    eax, logData;

@@ -2467,12 +2467,7 @@ int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, /*p
 	/*bp-0x8*/   /*packed*/ class NotificationItem tempNewNotificationItem; // 0x8 bytes
 
 // LINE 547:
-	__asm        mov    eax, newNotificationSink;
-	__asm        push   eax;
-	__asm        mov    eax, lPreferenceType;
-	__asm        push   eax;
-	__asm        lea    ecx, tempNewNotificationItem.lPreferenceType;
-	__asm        call   NotificationItem::NotificationItem;
+	tempNewNotificationItem.lPreferenceType->NotificationItem::NotificationItem(newNotificationSink, lPreferenceType);
 // LINE 548:
 	__asm        lea    eax, tempNewNotificationItem.lPreferenceType;
 	__asm        push   eax;
@@ -2851,15 +2846,7 @@ long NotificationPreferenceManager::SetPref(long lPrefType, char * chPref, long 
 	/*bp-0x4*/   long lReturnValue;
 
 // LINE 594:
-	__asm        mov    eax, lSizeofPref;
-	__asm        push   eax;
-	__asm        mov    eax, chPref;
-	__asm        push   eax;
-	__asm        mov    eax, lPrefType;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PreferenceManager::SetPref;
-	__asm        mov    lReturnValue, eax;
+	lReturnValue = this->PreferenceManager::SetPref(lSizeofPref, chPref, lPrefType);
 // LINE 595:
 	__asm        cmp    lReturnValue, 0;
 	__asm        je     _T3c;
@@ -2881,11 +2868,7 @@ long NotificationPreferenceManager::SetPref(/*packed*/ class PreferenceItem *pre
 	/*bp-0x4*/   long lReturnValue;
 
 // LINE 605:
-	__asm        mov    eax, prefItemToUse;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PreferenceManager::SetPref;
-	__asm        mov    lReturnValue, eax;
+	lReturnValue = this->PreferenceManager::SetPref(prefItemToUse);
 // LINE 606:
 	__asm        cmp    lReturnValue, 0;
 	__asm        je     _T36;

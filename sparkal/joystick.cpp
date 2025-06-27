@@ -405,15 +405,7 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 	/*bp-0x8*/   int32_t nOneQuarterOfTheRange;
 
 // LINE 191:
-	__asm        mov    eax, bUseCache;
-	__asm        push   eax;
-	__asm        mov    eax, nAxis;
-	__asm        push   eax;
-	__asm        mov    eax, nJoystick;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   JoystickManager::GetPositionQuantitative;
-	__asm        mov    nValue, eax;
+	nValue = this->JoystickManager::GetPositionQuantitative(bUseCache, nAxis, nJoystick);
 // LINE 192:
 	nOneQuarterOfTheRange = ((this->lNormalizedMaximum - this->lNormalizedMinimum) >> 0x2);
 // LINE 193:
@@ -562,12 +554,7 @@ _T12d:
 	return 0x0;
 // LINE 270:
 _T156:
-	__asm        mov    eax, dwResultToUse;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   JoystickManager::Normalize;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->JoystickManager::Normalize(dwResultToUse[0]);
 // LINE 272:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x5C];

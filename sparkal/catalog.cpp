@@ -665,15 +665,7 @@ _T26f:
 	this->sItemCost.c_str_ptr = 0x0;
 	__asm        jmp    _T284;
 _T284:
-	__asm        push   1;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0x10;
-	__asm        mov    eax, SZ_CATALOG_WINDOW_TEXT_NAME;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x166;
-	__asm        call   MFont::MFont;
+	(this + 0x166)->MFont::MFont(0x1, 0x0, 0x0, 0x10, SZ_CATALOG_WINDOW_TEXT_NAME);
 	__asm        jmp    _T2a8;
 _T2a8:
 	this->rectHistoryText.left = 0x46;
@@ -1639,9 +1631,7 @@ _T1455:
 // LINE 110:
 	SetStringFromStringResource(nFullStringID, (this + 0x2ae));
 // LINE 112:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::CreateImage;
+	this->CatalogWindow::CreateImage(0x1);
 // LINE 113:
 	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 114:
@@ -2780,16 +2770,7 @@ _T3b2:
 	__asm        jmp    _T3dc;
 // LINE 187:
 _T3dc:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x64;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x5c), 0x0, 0x6);
 	__asm        jmp    _T403;
 // LINE 188:
 _T403:
@@ -2906,32 +2887,13 @@ _T59d:
 _T5aa:
 	this->lCurrentTab = lNewTab;
 // LINE 191:
-	__asm        lea    eax, sTempTabFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sTempMainGraphicFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetCurrentGraphicsFileNames;
+	this->CatalogWindow::GetCurrentGraphicsFileNames(sTempTabFileName.c_str_ptr, sTempMainGraphicFileName.c_str_ptr);
 // LINE 192:
-	__asm        lea    eax, sTempMainGraphicFilePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sTempMainGraphicFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sTempMainGraphicFilePath.c_str_ptr, sTempMainGraphicFileName.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T5f3;
 // LINE 193:
 _T5f3:
-	__asm        lea    eax, sTempTabFilePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sTempTabFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sTempTabFilePath.c_str_ptr, sTempTabFileName.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T614;
 // LINE 195:
 _T614:
@@ -3016,10 +2978,7 @@ _T71b:
 _T745:
 	__asm        jmp    _T74a;
 _T74a:
-	__asm        mov    eax, sTempMainGraphicFilePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::CBackBuffer;
+	tempHelicopterBuffer<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(sTempMainGraphicFilePath.c_str_ptr);
 // LINE 196:
 	__asm        cmp    sTempTabFilePath.c_str_ptr, 0;
 	__asm        je     _T790;
@@ -3102,10 +3061,7 @@ _T863:
 _T88d:
 	__asm        jmp    _T892;
 _T892:
-	__asm        mov    eax, sTempTabFilePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::CBackBuffer;
+	tempTabBuffer<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(sTempTabFilePath.c_str_ptr);
 // LINE 199:
 	__asm        jmp    _T8a9;
 _T8a9:
@@ -4289,16 +4245,7 @@ _T1aaf:
 	__asm        jmp    _T1ad9;
 // LINE 274:
 _T1ad9:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x64;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x5c), 0x0, 0x6);
 	__asm        jmp    _T1b00;
 // LINE 275:
 _T1b00:
@@ -4415,22 +4362,9 @@ _T1c9a:
 _T1ca7:
 	this->lCurrentTab = lNewTab;
 // LINE 278:
-	__asm        lea    eax, sTempTabFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sTempMainGraphicFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetCurrentGraphicsFileNames;
+	this->CatalogWindow::GetCurrentGraphicsFileNames(sTempTabFileName.c_str_ptr, sTempMainGraphicFileName.c_str_ptr);
 // LINE 279:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x64;
-	__asm        push   eax;
-	__asm        lea    eax, sTempTabFileName.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString((this + 0x64), sTempTabFileName.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T1cf3;
 // LINE 280:
 _T1cf3:
@@ -4526,11 +4460,7 @@ _T1e15:
 _T1e45:
 	__asm        jmp    _T1e4a;
 _T1e4a:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x64];
-	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::CBackBuffer;
+	tempTabBuffer<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(this-><CatalogWindow+0x64>);
 // LINE 283:
 	__asm        jmp    _T1e64;
 _T1e64:
@@ -5291,16 +5221,9 @@ _T2b1e:
 	/*bp-0x6d8*/ /*unpacked*/ class CBackBuffer tempStainImage;
 	GetPathForFile(szFilePath[0], SZ_STAIN_IMAGE_FILE_NAME, 0x0, 0x6);
 // LINE 367:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::CBackBuffer;
+	tempStainImage<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(szFilePath[0]);
 // LINE 368:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::SetTransparentColor;
+	tempStainImage<CBackBuffer+0x00:None>->CBackBuffer::SetTransparentColor(GraphicWindow::colorConstants.nPaletteIndexTransparent, 0x1);
 // LINE 369:
 _FOR_2b8b:
 	for (i = 0x0; (i < 0x3); i++) {
@@ -5356,16 +5279,9 @@ _T2c2c:
 	/*bp-0x80c*/ /*unpacked*/ class CBackBuffer tempPaperClipImage;
 	GetPathForFile(szFilePath[0], SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME, 0x0, 0x6);
 // LINE 378:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::CBackBuffer;
+	tempPaperClipImage<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(szFilePath[0]);
 // LINE 379:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::SetTransparentColor;
+	tempPaperClipImage<CBackBuffer+0x00:None>->CBackBuffer::SetTransparentColor(GraphicWindow::colorConstants.nPaletteIndexTransparent, 0x1);
 // LINE 380:
 _FOR_2c99:
 	for (i = 0x0; (i < 0x3); i++) {
@@ -6663,26 +6579,18 @@ _T136:
 // FUNCTION: COPTER_D 0x0047aaf5
 int32_t CatalogWindow::CreateImage(int32_t __formal) {
 // LINE 530:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
+	this->GraphicWindow::CreateImage(0x1);
 // LINE 531:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0xFFFFFFFF;
 	__asm        jne    _T35;
 // LINE 532:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SwitchGraphicsForTab;
+	this->CatalogWindow::SwitchGraphicsForTab(0x0);
 // LINE 533:
 	__asm        jmp    _T47;
 // LINE 534:
 _T35:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SwitchGraphicsForTab;
+	this->CatalogWindow::SwitchGraphicsForTab(this->lCurrentTab);
 // LINE 535:
 _T47:
 	return this-><CatalogWindow+0x40>;
@@ -6913,10 +6821,7 @@ long CatalogWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        cmp    [eax+0x14E], ecx;
 	__asm        je     _T55;
 // LINE 621:
-	__asm        mov    eax, lTab;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SwitchGraphicsForTab;
+	this->CatalogWindow::SwitchGraphicsForTab(lTab);
 // LINE 622:
 	__asm        push   1;
 	__asm        push   1;
@@ -6937,10 +6842,7 @@ _T55:
 	__asm        test   eax, eax;
 	__asm        je     _T7d;
 // LINE 626:
-	__asm        mov    eax, lEquipment;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SetNewEquipmentSelection;
+	this->CatalogWindow::SetNewEquipmentSelection(lEquipment);
 // LINE 627:
 _T7d:
 	return 0x1;
@@ -7142,28 +7044,12 @@ _T43:
 	__asm        cmp    lMyMessage[0], 1;
 	__asm        jne    _T70;
 // LINE 708:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x152];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetEquipmentFromSelectionIndex;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetEquipmentFromSelectionIndex;
-	__asm        mov    lMyMessage[1], eax;
+	lMyMessage[1] = this->CatalogWindow::GetEquipmentFromSelectionIndex(this->CatalogWindow::GetEquipmentFromSelectionIndex(this->lCurrentEquipmentSelection));
 // LINE 709:
 	__asm        jmp    _T8e;
 // LINE 710:
 _T70:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetHelicopterFromTab;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetHelicopterFromTab;
-	__asm        mov    lMyMessage[1], eax;
+	lMyMessage[1] = this->CatalogWindow::GetHelicopterFromTab(this->CatalogWindow::GetHelicopterFromTab(this->lCurrentTab));
 // LINE 712:
 _T8e:
 	__asm        cmp    lWindowID, 1;
@@ -7299,28 +7185,12 @@ int32_t CatalogWindow::CanUserBuy() {
 	__asm        cmp    dword ptr [eax+0x14E], 8;
 	__asm        jne    _T47;
 // LINE 768:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x152];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetEquipmentFromSelectionIndex;
-	__asm        push   eax;
-	__asm        call   S3HeliGetEquipmentNewValue;
-	__asm        add    esp, 4;
-	__asm        mov    lCurrentValue, eax;
+	lCurrentValue = S3HeliGetEquipmentNewValue(this->CatalogWindow::GetEquipmentFromSelectionIndex(this->lCurrentEquipmentSelection));
 // LINE 769:
 	__asm        jmp    _T65;
 // LINE 770:
 _T47:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetHelicopterFromTab;
-	__asm        push   eax;
-	__asm        call   S3HeliGetNewValue;
-	__asm        add    esp, 4;
-	__asm        mov    lCurrentValue, eax;
+	lCurrentValue = S3HeliGetNewValue(this->CatalogWindow::GetHelicopterFromTab(this->lCurrentTab));
 // LINE 771:
 _T65:
 _T7b:
@@ -7393,12 +7263,7 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 _T2b:
 	lCurrentFunds = GetUserMoney();
 // LINE 811:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x152];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetEquipmentFromSelectionIndex;
-	__asm        mov    lFixedCurrentEquipmentSelection, eax;
+	lFixedCurrentEquipmentSelection = this->CatalogWindow::GetEquipmentFromSelectionIndex(this->lCurrentEquipmentSelection);
 // LINE 812:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 8;
@@ -7421,12 +7286,7 @@ _T8b:
 	__asm        jmp    _Td0;
 // LINE 819:
 _T90:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetHelicopterFromTab;
-	__asm        mov    lCurrentHelicopter, eax;
+	lCurrentHelicopter = this->CatalogWindow::GetHelicopterFromTab(this->lCurrentTab);
 // LINE 820:
 	lCurrentValue = S3HeliGetNewValue(lCurrentHelicopter);
 // LINE 821:
@@ -7445,11 +7305,7 @@ _Td0:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 825:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SwitchGraphicsForTab;
+	this->CatalogWindow::SwitchGraphicsForTab(this->lCurrentTab);
 // LINE 826:
 	return 0x1;
 // LINE 827:
@@ -7476,12 +7332,7 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 _T2b:
 	lCurrentFunds = GetUserMoney();
 // LINE 844:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x152];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetEquipmentFromSelectionIndex;
-	__asm        mov    lFixedCurrentEquipmentSelection, eax;
+	lFixedCurrentEquipmentSelection = this->CatalogWindow::GetEquipmentFromSelectionIndex(this->lCurrentEquipmentSelection);
 // LINE 846:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 8;
@@ -7505,12 +7356,7 @@ _T8d:
 	__asm        jmp    _Td4;
 // LINE 853:
 _T92:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::GetHelicopterFromTab;
-	__asm        mov    lCurrentHelicopter, eax;
+	lCurrentHelicopter = this->CatalogWindow::GetHelicopterFromTab(this->lCurrentTab);
 // LINE 854:
 	lCurrentValue = S3HeliGetCurrentValue(lCurrentHelicopter);
 // LINE 855:
@@ -7526,11 +7372,7 @@ _T92:
 _Td4:
 	ChangeUserMoney(lCurrentValue);
 // LINE 859:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CatalogWindow::SwitchGraphicsForTab;
+	this->CatalogWindow::SwitchGraphicsForTab(this->lCurrentTab);
 // LINE 860:
 	return 0x1;
 // LINE 861:

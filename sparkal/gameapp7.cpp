@@ -4549,25 +4549,7 @@ _Te8:
 	__asm        mov    ecx, myRenderSettingsWindow;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 682:
-	__asm        call   GetRenderBackPlaneValue;
-	__asm        push   eax;
-	__asm        call   ConvertRenderBackPlaneValueToGUI;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4308];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4330];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x432C];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4328];
-	__asm        push   eax;
-	__asm        mov    ecx, myRenderSettingsWindow;
-	__asm        call   RenderSettingsWindow::SetCurrentSettings;
+	myRenderSettingsWindow->RenderSettingsWindow::SetCurrentSettings(ConvertRenderBackPlaneValueToGUI(GetRenderBackPlaneValue()), this-><CGameApp+0x4308:4>, this-><CGameApp+0x4330:4>, this-><CGameApp+0x432c:4>, this-><CGameApp+0x4328:4>);
 // LINE 683:
 	return;
 }
@@ -4613,18 +4595,7 @@ _T5c:
 	__asm        cmp    bUseData, 0;
 	__asm        je     _Td2;
 // LINE 706:
-	__asm        lea    eax, lFogCloseness;
-	__asm        push   eax;
-	__asm        lea    eax, lQuadPixelType;
-	__asm        push   eax;
-	__asm        lea    eax, bShowSkyAndClouds;
-	__asm        push   eax;
-	__asm        lea    eax, bShowGroundTextures;
-	__asm        push   eax;
-	__asm        lea    eax, bShowBuildingTextures;
-	__asm        push   eax;
-	__asm        mov    ecx, windowToDestroy;
-	__asm        call   RenderSettingsWindow::GetCurrentSettings;
+	windowToDestroy->RenderSettingsWindow::GetCurrentSettings(lFogCloseness, lQuadPixelType, bShowSkyAndClouds, bShowGroundTextures, bShowBuildingTextures);
 // LINE 709:
 	G_texobjs = bShowBuildingTextures;
 	this-><CGameApp+0x4328:4> = G_texobjs;
@@ -4777,23 +4748,11 @@ _T166:
 	tempSoundPreferences.lMasterVolume = tempSoundPreferences.lDispatchVolume;
 // LINE 752:
 _T17f:
-	__asm        lea    eax, tempSoundPreferences.lMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, mySoundSettingsWindow;
-	__asm        call   SoundSettingsWindow::SetCurrentVolumeSettings;
+	mySoundSettingsWindow->SoundSettingsWindow::SetCurrentVolumeSettings(tempSoundPreferences.lMasterVolume);
 // LINE 755:
-	__asm        lea    eax, tempRadioPreferences.lVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::GetPreferences;
+	0x604480->Radio::GetPreferences(tempRadioPreferences.lVolume);
 // LINE 760:
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::GetStationCount;
-	__asm        push   eax;
-	__asm        lea    eax, tempRadioPreferences.lVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, mySoundSettingsWindow;
-	__asm        call   SoundSettingsWindow::SetCurrentRadioSettings;
+	mySoundSettingsWindow->SoundSettingsWindow::SetCurrentRadioSettings(0x604480->Radio::GetStationCount(), tempRadioPreferences.lVolume);
 // LINE 761:
 	return;
 }
@@ -4836,10 +4795,7 @@ _T5c:
 	__asm        cmp    bUseData, 0;
 	__asm        je     _Tba;
 // LINE 777:
-	__asm        lea    eax, tempSoundPreferences.lMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, windowToDestroy;
-	__asm        call   SoundSettingsWindow::GetCurrentVolumeSettings;
+	windowToDestroy->SoundSettingsWindow::GetCurrentVolumeSettings(tempSoundPreferences.lMasterVolume);
 // LINE 778:
 	__asm        lea    eax, tempSoundPreferences.lMasterVolume;
 	__asm        push   eax;
@@ -4848,15 +4804,9 @@ _T5c:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 781:
-	__asm        lea    eax, tempRadioPreferences.lVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, windowToDestroy;
-	__asm        call   SoundSettingsWindow::GetCurrentRadioSettings;
+	windowToDestroy->SoundSettingsWindow::GetCurrentRadioSettings(tempRadioPreferences.lVolume);
 // LINE 786:
-	__asm        lea    eax, tempRadioPreferences.lVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604480;
-	__asm        call   Radio::SetPreferences;
+	0x604480->Radio::SetPreferences(tempRadioPreferences.lVolume);
 // LINE 794:
 	__asm        cmp    tempRadioPreferences.bPreferToBeOn, 0;
 	__asm        je     _Tb2;
@@ -4939,10 +4889,7 @@ _Ta1:
 	__asm        mov    ecx, myCitySettingsWindow;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 813:
-	__asm        call   GetCurrentCitySettings;
-	__asm        push   eax;
-	__asm        mov    ecx, myCitySettingsWindow;
-	__asm        call   CitySettingsWindow::SetCurrentCitySettings;
+	myCitySettingsWindow->CitySettingsWindow::SetCurrentCitySettings(GetCurrentCitySettings());
 // LINE 814:
 	return;
 }
@@ -4955,10 +4902,7 @@ void CGameApp::DestroyCitySettingsWindow(/*packed*/ class CitySettingsWindow *wi
 	__asm        cmp    bUseData, 0;
 	__asm        je     _T4a;
 // LINE 827:
-	__asm        call   GetCurrentCitySettings;
-	__asm        push   eax;
-	__asm        mov    ecx, windowToDestroy;
-	__asm        call   CitySettingsWindow::GetCurrentCitySettings;
+	windowToDestroy->CitySettingsWindow::GetCurrentCitySettings(GetCurrentCitySettings());
 // LINE 828:
 	__asm        push   0x24;
 	__asm        call   GetCurrentCitySettings;
@@ -5134,10 +5078,7 @@ void CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDest
 	__asm        cmp    bUseData, 0;
 	__asm        je     _T85;
 // LINE 875:
-	__asm        lea    eax, lSettings[0];
-	__asm        push   eax;
-	__asm        mov    ecx, windowToDestroy;
-	__asm        call   CheckupWindow::GetCurrentSettings;
+	windowToDestroy->CheckupWindow::GetCurrentSettings(lSettings[0]);
 // LINE 878:
 	__asm        mov    eax, lSettings[0];
 	__asm        neg    eax;

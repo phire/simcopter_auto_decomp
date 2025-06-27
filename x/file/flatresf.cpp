@@ -467,12 +467,7 @@ _T335:
 // FUNCTION: COPTER_D 0x00552e51
 long FlatResFile::Open(char * name) {
 // LINE 158:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   FlatFile::Open;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x114], eax;
+	this->fError = this->FlatFile::Open(name);
 // LINE 160:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -495,12 +490,7 @@ _T5f:
 // FUNCTION: COPTER_D 0x00552ec5
 long FlatResFile::Open(unsigned char * name) {
 // LINE 179:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   FlatFile::Open;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x114], eax;
+	this->fError = this->FlatFile::Open(name);
 // LINE 181:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -523,10 +513,7 @@ _T5f:
 // FUNCTION: COPTER_D 0x00552f39
 long ResFile::OpenFromOtherFile(/*unpacked*/ class ResFile *otherFile) {
 // LINE 198:
-	__asm        mov    eax, otherFile;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   FlatFile::OpenFromOtherFile;
+	this->FlatFile::OpenFromOtherFile(otherFile);
 // LINE 199:
 	return 0x0;
 // LINE 200:
@@ -660,12 +647,7 @@ _T3b:
 	return 0x0;
 // LINE 314:
 _T52:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(index);
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::GetIndType;
-	__asm        mov    type, eax;
+	type = this->fMap->ResMap::GetIndType(reinterpret_cast<uint32_t>(index));
 // LINE 316:
 	__asm        cmp    type, 0;
 	__asm        jne    _T7e;
@@ -696,14 +678,8 @@ _T3b:
 	return 0x0;
 // LINE 328:
 _T53:
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::Count;
-	__asm        jmp    __RETURN;
+	return this->fMap->ResMap::Count(type);
 // LINE 329:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055320b
@@ -727,14 +703,7 @@ _T3b:
 	return 0x0;
 // LINE 339:
 _T52:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(id);
-	__asm        push   eax;
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindEntry;
-	__asm        mov    entry, eax;
+	entry = this->fMap->ResMap::FindEntry(reinterpret_cast<uint32_t>(id), type);
 // LINE 341:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T89;
@@ -749,14 +718,7 @@ _T89:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T100;
 // LINE 345:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    eax, entry;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::LoadEntry;
+	this->fMap->ResMap::LoadEntry(0x0, this, entry);
 // LINE 347:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -833,14 +795,7 @@ _T52:
 	__asm        jmp    __RETURN;
 // LINE 368:
 _T75:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindEntry;
-	__asm        mov    entry, eax;
+	entry = this->fMap->ResMap::FindEntry(name, type);
 // LINE 370:
 	__asm        cmp    entry, 0;
 	__asm        jne    _Tac;
@@ -855,14 +810,7 @@ _Tac:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T123;
 // LINE 374:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    eax, entry;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::LoadEntry;
+	this->fMap->ResMap::LoadEntry(0x0, this, entry);
 // LINE 376:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -927,14 +875,7 @@ _T3b:
 	return 0x0;
 // LINE 395:
 _T52:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(index);
-	__asm        push   eax;
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindIndEntry;
-	__asm        mov    entry, eax;
+	entry = this->fMap->ResMap::FindIndEntry(reinterpret_cast<uint32_t>(index), type);
 // LINE 397:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T89;
@@ -949,14 +890,7 @@ _T89:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T100;
 // LINE 401:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    eax, entry;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::LoadEntry;
+	this->fMap->ResMap::LoadEntry(0x0, this, entry);
 // LINE 403:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -1023,12 +957,7 @@ _T41:
 	return;
 // LINE 424:
 _T56:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindEntry;
-	__asm        mov    entry, eax;
+	entry = this->fMap->ResMap::FindEntry(res);
 // LINE 426:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T87;
@@ -1037,13 +966,7 @@ _T56:
 	__asm        jmp    __RETURN;
 // LINE 428:
 _T87:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    eax, entry;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::GetName;
+	this->fMap->ResMap::GetName(name, entry);
 // LINE 429:
 	return;
 __RETURN:
@@ -1072,12 +995,7 @@ _T43:
 	return;
 // LINE 441:
 _T58:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindEntry;
-	__asm        mov    entry, eax;
+	entry = this->fMap->ResMap::FindEntry(res);
 // LINE 443:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T89;
@@ -1117,12 +1035,7 @@ _T3b:
 	return 0x0;
 // LINE 452:
 _T52:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindEntry;
-	__asm        mov    entry, eax;
+	entry = this->fMap->ResMap::FindEntry(res);
 // LINE 454:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T85;
@@ -1133,12 +1046,7 @@ _T52:
 	__asm        jmp    __RETURN;
 // LINE 456:
 _T85:
-	__asm        mov    eax, entry;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindType;
-	__asm        mov    returnType, eax;
+	returnType = this->fMap->ResMap::FindType(entry);
 // LINE 457:
 	__asm        cmp    returnType, 0;
 	__asm        jne    _Tc0;
@@ -1178,12 +1086,7 @@ _T3b:
 	return;
 // LINE 471:
 _T50:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindEntry;
-	__asm        mov    entry, eax;
+	entry = this->fMap->ResMap::FindEntry(res);
 // LINE 473:
 	__asm        cmp    entry, 0;
 	__asm        je     _T7c;
@@ -1228,12 +1131,7 @@ _T3b:
 	return;
 // LINE 499:
 _T50:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindEntry;
-	__asm        mov    entry, eax;
+	entry = this->fMap->ResMap::FindEntry(res);
 // LINE 501:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T81;
@@ -1272,12 +1170,7 @@ _T3b:
 	return;
 // LINE 525:
 _T50:
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::FindEntry;
-	__asm        mov    entry, eax;
+	entry = this->fMap->ResMap::FindEntry(res);
 // LINE 527:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T81;
@@ -1315,14 +1208,7 @@ _T81:
 	return;
 // LINE 537:
 _Tc9:
-	__asm        push   1;
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    eax, entry;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x110];
-	__asm        call   ResMap::LoadEntry;
+	this->fMap->ResMap::LoadEntry(0x1, this, entry);
 // LINE 538:
 	return;
 __RETURN:
@@ -1357,11 +1243,7 @@ _T50:
 // LINE 601:
 // Block start:
 	/*bp-0x20*/  unsigned char * foundStr;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(index);
-	__asm        push   eax;
-	__asm        lea    ecx, tempStrs.fResFile;
-	__asm        call   StringSet::GetString;
-	__asm        mov    foundStr, eax;
+	foundStr = tempStrs.fResFile->StringSet::GetString(reinterpret_cast<uint32_t>(index));
 // LINE 602:
 	__asm        cmp    foundStr, 0;
 	__asm        je     _T92;
@@ -1572,14 +1454,7 @@ _FOR_2b:
 	}
 // LINE 768:
 _T76:
-	__asm        lea    eax, dataLoc;
-	__asm        push   eax;
-	__asm        lea    eax, numTypes;
-	__asm        push   eax;
-	__asm        lea    eax, newMap;
-	__asm        push   eax;
-	__asm        mov    ecx, fromFile;
-	__asm        call   FlatResFile::LoadResMap;
+	fromFile->FlatResFile::LoadResMap(dataLoc, numTypes, newMap);
 // LINE 769:
 	__asm        mov    ecx, fromFile;
 	__asm        call   FlatResFile::GetError;
@@ -1752,10 +1627,7 @@ _T32:
 	__asm        add    eax, [ecx+0x18];
 	__asm        mov    pos, eax;
 // LINE 824:
-	__asm        mov    eax, pos;
-	__asm        push   eax;
-	__asm        mov    ecx, file;
-	__asm        call   FlatFile::SetPos;
+	file->FlatFile::SetPos(pos);
 // LINE 825:
 	__asm        mov    ecx, file;
 	__asm        call   FlatResFile::GetError;
@@ -1770,10 +1642,7 @@ _T32:
 _T6f:
 	pos += 0x4;
 // LINE 827:
-	__asm        lea    eax, size;
-	__asm        push   eax;
-	__asm        mov    ecx, file;
-	__asm        call   FlatFile::Read4;
+	file->FlatFile::Read4(size);
 // LINE 828:
 	__asm        cmp    size, 0x7A1200;
 	__asm        jl     _Ta8;
@@ -1921,10 +1790,7 @@ _T1f8:
 	__asm        jmp    done;
 // LINE 870:
 _T226:
-	__asm        mov    eax, pos;
-	__asm        push   eax;
-	__asm        mov    ecx, file;
-	__asm        call   FlatFile::SetPos;
+	file->FlatFile::SetPos(pos);
 // LINE 871:
 	__asm        mov    ecx, file;
 	__asm        call   FlatResFile::GetError;
@@ -1937,12 +1803,7 @@ _T226:
 	__asm        jmp    done;
 // LINE 872:
 _T251:
-	__asm        lea    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, block;
-	__asm        push   eax;
-	__asm        mov    ecx, file;
-	__asm        call   FlatFile::ReadBlock;
+	file->FlatFile::ReadBlock(size, block);
 // LINE 873:
 	err = file->FlatResFile::GetError();
 // LINE 876:

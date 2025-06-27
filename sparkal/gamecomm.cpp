@@ -734,9 +734,7 @@ _T25:
 _T2a:
 	this->CommandSystem::Initialize();
 // LINE 134:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   CommandSystem::ClearAllCommandsDevice;
+	this->CommandSystem::ClearAllCommandsDevice(0x0);
 // LINE 137:
 _LOOP_3c:
 	for (;;) {
@@ -1043,14 +1041,7 @@ _FOR_9d:
 					__asm        cmp    nCommand, 0;
 					__asm        je     _T14a;
 				// LINE 215:
-					__asm        push   1;
-					__asm        mov    eax, j;
-					__asm        push   eax;
-					__asm        mov    eax, i;
-					__asm        push   eax;
-					__asm        mov    ecx, 0x604C78;
-					__asm        call   JoystickManager::GetPositionQuantitative;
-					__asm        mov    lValue, eax;
+					lValue = 0x604c78->JoystickManager::GetPositionQuantitative(0x1, j, i);
 				// LINE 216:
 					__asm        cmp    lValue, 0;
 					__asm        je     _T14a;
@@ -1094,15 +1085,7 @@ _FOR_9d:
 					__asm        cmp    nCommand, 0;
 					__asm        je     _T1cb;
 				// LINE 223:
-					__asm        push   1;
-					__asm        mov    eax, j;
-					__asm        sub    eax, 6;
-					__asm        push   eax;
-					__asm        mov    eax, i;
-					__asm        push   eax;
-					__asm        mov    ecx, 0x604C78;
-					__asm        call   JoystickManager::GetButtonState;
-					__asm        mov    lValue, eax;
+					lValue = 0x604c78->JoystickManager::GetButtonState(0x1, (j - 0x6), i);
 				// LINE 224:
 					__asm        cmp    lValue, 0;
 					__asm        je     _T1cb;
@@ -1313,10 +1296,7 @@ unsigned long CGameCommander::OnCharacter(long lCharacter) {
 // FUNCTION: COPTER_D 0x0048bddd
 void CGameCommander::ProcessKeyDown(long lKey) {
 // LINE 374:
-	__asm        mov    eax, lKey;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   Keyboard::ProcessKeyDown;
+	0x5c34f0->Keyboard::ProcessKeyDown(lKey);
 // LINE 375:
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   Keyboard::GetCurrentModifierState;
@@ -1336,10 +1316,7 @@ void CGameCommander::ProcessKeyDown(long lKey) {
 // FUNCTION: COPTER_D 0x0048be26
 void CGameCommander::ProcessKeyUp(long lKey) {
 // LINE 386:
-	__asm        mov    eax, lKey;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   Keyboard::ProcessKeyUp;
+	0x5c34f0->Keyboard::ProcessKeyUp(lKey);
 // LINE 387:
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   Keyboard::GetCurrentModifierState;
@@ -1450,11 +1427,7 @@ __WHILE_94:
 			__asm        jmp    _T116;
 		// LINE 442:
 		_T116:
-			__asm        mov    eax, nTempCommand;
-			__asm        push   eax;
-			__asm        mov    ecx, commandSystem;
-			__asm        add    ecx, 0xC8;
-			__asm        call   CharList::AddItem;
+			(commandSystem + 0xc8)->CharList::AddItem(nTempCommand);
 		// LINE 444:
 		_T128:
 			currentCharData = currentCharData->nextCharData;
@@ -1514,11 +1487,7 @@ _T1a8:
 	__asm        jmp    _T1d7;
 // LINE 462:
 _T1d7:
-	__asm        mov    eax, nTempCommand;
-	__asm        push   eax;
-	__asm        mov    ecx, commandSystem;
-	__asm        add    ecx, 0xC8;
-	__asm        call   CharList::AddItem;
+	(commandSystem + 0xc8)->CharList::AddItem(nTempCommand);
 // LINE 466:
 _T1e9:
 	return;
@@ -1614,11 +1583,7 @@ __WHILE_82:
 			__asm        jmp    _T104;
 		// LINE 506:
 		_T104:
-			__asm        mov    eax, nTempCommand;
-			__asm        push   eax;
-			__asm        mov    ecx, commandSystem;
-			__asm        add    ecx, 0xC8;
-			__asm        call   CharList::AddItem;
+			(commandSystem + 0xc8)->CharList::AddItem(nTempCommand);
 		// LINE 508:
 		_T116:
 			currentCharData = currentCharData->nextCharData;
@@ -1661,11 +1626,7 @@ _T162:
 	__asm        jmp    _T191;
 // LINE 517:
 _T191:
-	__asm        mov    eax, nTempCommand;
-	__asm        push   eax;
-	__asm        mov    ecx, commandSystem;
-	__asm        add    ecx, 0xC8;
-	__asm        call   CharList::DeleteItem;
+	(commandSystem + 0xc8)->CharList::DeleteItem(nTempCommand);
 // LINE 520:
 _T1a3:
 	return;
@@ -1697,10 +1658,7 @@ int32_t ReadShortcutPrefsFile(/*packed*/ class list<Shortcut>& shortcutList) {
 // LINE 556:
 	GetPathForFile(szFilePath[0], SZ_SHORTCUT_PREFS_FILE_NAME, 0x0, 0x9);
 // LINE 557:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        lea    ecx, myMIFF<MIFF+0x00>;
-	__asm        call   MIFF::MIFF;
+	myMIFF<MIFF+0x00>->MIFF::MIFF(szFilePath[0]);
 // LINE 558:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::OpenForReading;
@@ -1728,11 +1686,7 @@ __DO_b1:
 	do {
 		// LINE 565:
 		__DO_b1:
-			__asm        push   0x18;
-			__asm        lea    eax, tempShortcut.lDeviceID;
-			__asm        push   eax;
-			__asm        lea    ecx, myMIFF<MIFF+0x00>;
-			__asm        call   MIFF::ReadPresentRecordData;
+			myMIFF<MIFF+0x00>->MIFF::ReadPresentRecordData(0x18, tempShortcut.lDeviceID);
 		// LINE 566:
 			__asm        lea    eax, tempShortcut.lDeviceID;
 			__asm        push   eax;
@@ -1995,10 +1949,7 @@ int32_t WriteShortcutPrefsFile(/*packed*/ class list<Shortcut>& shortcutList) {
 // LINE 591:
 	GetPathForFile(szFilePath[0], SZ_SHORTCUT_PREFS_FILE_NAME, 0x0, 0x9);
 // LINE 592:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        lea    ecx, myMIFF<MIFF+0x00>;
-	__asm        call   MIFF::MIFF;
+	myMIFF<MIFF+0x00>->MIFF::MIFF(szFilePath[0]);
 // LINE 593:
 	__asm        push   1;
 	__asm        push   0x53435554;
@@ -2064,12 +2015,7 @@ _LOOP_a0:
 			__asm        mov    ecx, 6;
 			__asm        rep movsd;
 		// LINE 597:
-			__asm        push   0x18;
-			__asm        lea    eax, tempShortcut.lDeviceID;
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        lea    ecx, myMIFF<MIFF+0x00>;
-			__asm        call   MIFF::WriteDataRecord;
+			myMIFF<MIFF+0x00>->MIFF::WriteDataRecord(0x18, tempShortcut.lDeviceID, 0x0);
 		// LINE 598:
 			__asm        mov    eax, tempShortcutListIterator.node;
 			__asm        mov    [ebp-0x290], eax;

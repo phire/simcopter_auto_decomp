@@ -467,10 +467,7 @@ void CopterGameMode::CopterGameMode(int32_t nNewModeID) {
 // FUNCTION: COPTER_D 0x004bd6b5
 void CopterGameMode::CopterGameMode(const /*packed*/ class CopterGameMode& newGameMode) {
 // LINE 61:
-	__asm        mov    eax, newGameMode;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CopterGameMode::operator=;
+	this->CopterGameMode::operator=(newGameMode);
 // LINE 62:
 	return;
 
@@ -2750,15 +2747,7 @@ _T49:
 	this->pSkyImage = 0x0;
 // LINE 724:
 _T53:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x1C;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0xC];
-	__asm        call   CGameApp::GetFullRenderingWindowSize;
+	this->pGameApp->CGameApp::GetFullRenderingWindowSize((this + 0x1c), (this + 0x18));
 // LINE 725:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3619,15 +3608,7 @@ _T2b:
 // FUNCTION: COPTER_D 0x004bffda
 void GameModePlayData::SetUpRenderWindowSizes() {
 // LINE 1084:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x1C;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0xC];
-	__asm        call   CGameApp::GetFullRenderingWindowSize;
+	this->pGameApp->CGameApp::GetFullRenderingWindowSize((this + 0x1c), (this + 0x18));
 // LINE 1085:
 	this->nShortenedRenderWindowWidth = this->nRenderWindowWidth;
 // LINE 1086:
@@ -5133,12 +5114,7 @@ _T6d:
 	this->pColorTable = 0x0;
 // LINE 1491:
 _T77:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x14];
-	__asm        call   HangarWindow::ReadPalette;
+	this->pHangarWindow->HangarWindow::ReadPalette(this->pColorTable);
 // LINE 1492:
 	return;
 }
@@ -5778,12 +5754,7 @@ _T6d:
 	this->pColorTable = 0x0;
 // LINE 1645:
 _T77:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x14];
-	__asm        call   CatalogWindow::ReadPalette;
+	this->pCatalogWindow->CatalogWindow::ReadPalette(this->pColorTable);
 // LINE 1646:
 	return;
 }
@@ -6471,12 +6442,7 @@ _T6d:
 	this->pColorTable = 0x0;
 // LINE 1770:
 _T77:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x14];
-	__asm        call   MissionLogWindow::ReadPalette;
+	this->pMissionLogWindow->MissionLogWindow::ReadPalette(this->pColorTable);
 // LINE 1771:
 	return;
 }
@@ -7164,12 +7130,7 @@ _T6d:
 	this->pColorTable = 0x0;
 // LINE 1892:
 _T77:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x14];
-	__asm        call   InventoryWindow::ReadPalette;
+	this->pInventoryWindow->InventoryWindow::ReadPalette(this->pColorTable);
 // LINE 1893:
 	return;
 }

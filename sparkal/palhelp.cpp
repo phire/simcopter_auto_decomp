@@ -1821,15 +1821,8 @@ void CopterSparkalPalette::CopterSparkalPalette() {
 // FUNCTION: COPTER_D 0x004979f9
 void CopterSparkalPalette::CopterSparkalPalette(/*packed*/ struct SparkalColor *pNewColors, int32_t bNewOwnColors) {
 
-	__asm        push   0x100;
-	__asm        mov    eax, bNewOwnColors;
-	__asm        push   eax;
-	__asm        mov    eax, pNewColors;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SparkalPalette::SparkalPalette;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591118;
+	this->SparkalPalette::SparkalPalette(0x100, bNewOwnColors, pNewColors);
+	this-><CopterSparkalPalette+0x00> = 0x591118;
 // LINE 544:
 	return;
 

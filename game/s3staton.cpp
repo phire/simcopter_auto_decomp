@@ -799,27 +799,15 @@ _Ta2:
 // FUNCTION: COPTER_D 0x00539d67
 short S3GetNearestStation(/*packed*/ class Station *station, /*packed*/ struct _GridCoordinates gc, /*packed*/ struct _GridCoordinates *result) {
 // LINE 49:
-	__asm        mov    eax, result;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(gc.x);
-	__asm        push   eax;
-	__asm        mov    ecx, station;
-	__asm        call   Station::GetNearestStation;
-	__asm        jmp    __RETURN;
+	return station->Station::GetNearestStation(result, reinterpret_cast<uint32_t>(gc.x));
 // LINE 50:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00539d87
 short S3GetNextNearest(/*packed*/ class Station *station, /*packed*/ struct _GridCoordinates *result) {
 // LINE 57:
-	__asm        mov    eax, result;
-	__asm        push   eax;
-	__asm        mov    ecx, station;
-	__asm        call   Station::GetNextNearest;
-	__asm        jmp    __RETURN;
+	return station->Station::GetNextNearest(result);
 // LINE 58:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00539da3
@@ -1041,9 +1029,7 @@ int32_t Station::FindNearestRoadToEmergency(/*packed*/ struct _GridCoordinates& 
 	/*bp-0x10*/  /*packed*/ class SpiralScan spiral; // 0x10 bytes
 
 // LINE 110:
-	__asm        push   0x80;
-	__asm        lea    ecx, spiral.currDist;
-	__asm        call   SpiralScan::SpiralScan;
+	spiral.currDist->SpiralScan::SpiralScan(0x80);
 // LINE 113:
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
@@ -1109,78 +1095,73 @@ _Td9:
 	__asm        jmp    __RETURN;
 // LINE 116:
 __WHILE_e1:
-	__asm        mov    eax, loc;
-	__asm        push   eax;
-	__asm        lea    ecx, spiral.currDist;
-	__asm        call   SpiralScan::Next;
-	__asm        test   eax, eax;
-	__asm        je     _T1c2;
-// LINE 118:
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        test   ecx, ecx;
-	__asm        jl     _T135;
+	while ((spiral.currDist->SpiralScan::Next(loc) != 0x0)) {
+		// LINE 118:
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        test   ecx, ecx;
+			__asm        jl     _T135;
 
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        cmp    ecx, 0x7F;
-	__asm        jg     _T135;
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        cmp    ecx, 0x7F;
+			__asm        jg     _T135;
 
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        test   ecx, ecx;
-	__asm        jl     _T135;
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        test   ecx, ecx;
+			__asm        jl     _T135;
 
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+1];
-	__asm        cmp    ecx, 0x7F;
-	__asm        jle    _T141;
-_T135:
-	__asm        mov    dword ptr [ebp-0x2C], 0;
-	__asm        jmp    _T19f;
-_T141:
-	__asm        mov    eax, loc;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        mov    eax, BuildMap[ecx*4];
-	__asm        mov    ecx, loc;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+1];
-	__asm        movzx  ax, byte ptr [eax+edx];
-	__asm        mov    [ebp-0x28], ax;
-	__asm        mov    eax, [ebp-0x28];
-	__asm        and    eax, 0xFFFF;
-	__asm        cmp    eax, 0x1D;
-	__asm        jl     _T193;
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax+1];
+			__asm        cmp    ecx, 0x7F;
+			__asm        jle    _T141;
+		_T135:
+			__asm        mov    dword ptr [ebp-0x2C], 0;
+			__asm        jmp    _T19f;
+		_T141:
+			__asm        mov    eax, loc;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        mov    eax, BuildMap[ecx*4];
+			__asm        mov    ecx, loc;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [ecx+1];
+			__asm        movzx  ax, byte ptr [eax+edx];
+			__asm        mov    [ebp-0x28], ax;
+			__asm        mov    eax, [ebp-0x28];
+			__asm        and    eax, 0xFFFF;
+			__asm        cmp    eax, 0x1D;
+			__asm        jl     _T193;
 
-	__asm        mov    eax, [ebp-0x28];
-	__asm        and    eax, 0xFFFF;
-	__asm        cmp    eax, 0x2C;
-	__asm        jge    _T193;
+			__asm        mov    eax, [ebp-0x28];
+			__asm        and    eax, 0xFFFF;
+			__asm        cmp    eax, 0x2C;
+			__asm        jge    _T193;
 
-	__asm        mov    dword ptr [ebp-0x2C], 1;
-	__asm        jmp    _T19f;
+			__asm        mov    dword ptr [ebp-0x2C], 1;
+			__asm        jmp    _T19f;
 
-	__asm        jmp    _T19f;
-_T193:
-	__asm        mov    dword ptr [ebp-0x2C], 0;
-	__asm        jmp    _T19f;
-_T19f:
-	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     _T1bd;
-// LINE 119:
-	__asm        mov    dword ptr [ebp-0x18], 1;
-	__asm        jmp    _T1b5;
-_T1b5:
-	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    __RETURN;
-// LINE 120:
-_T1bd:
-	__asm        jmp    __WHILE_e1;
+			__asm        jmp    _T19f;
+		_T193:
+			__asm        mov    dword ptr [ebp-0x2C], 0;
+			__asm        jmp    _T19f;
+		_T19f:
+			__asm        cmp    dword ptr [ebp-0x2C], 0;
+			__asm        je     _T1bd;
+		// LINE 119:
+			__asm        mov    dword ptr [ebp-0x18], 1;
+			__asm        jmp    _T1b5;
+		_T1b5:
+			__asm        mov    eax, [ebp-0x18];
+			__asm        jmp    __RETURN;
+		// LINE 120:
+		_T1bd:
+	}
 // LINE 122:
 _T1c2:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
@@ -1307,10 +1288,7 @@ _FOR_22:
 		_T13a:
 			station.stationID = i;
 		// LINE 163:
-			__asm        lea    eax, station.cost;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   Station::StationHeapInsert;
+			this->Station::StationHeapInsert(station.cost);
 		// LINE 165:
 		_T14c:
 	}
@@ -1431,10 +1409,7 @@ _FOR_22:
 		_T11f:
 			vehicle.pVehicle = vehicleList->;
 		// LINE 216:
-			__asm        lea    eax, vehicle.cost;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   Station::VehicleHeapInsert;
+			this->Station::VehicleHeapInsert(vehicle.cost);
 	}
 // LINE 218:
 _T13c:
@@ -1967,10 +1942,7 @@ _T18f:
 // FUNCTION: COPTER_D 0x0053aa5f
 short Station::GetNearestStation(/*packed*/ struct _GridCoordinates gc, /*packed*/ struct _GridCoordinates *result) {
 // LINE 385:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(gc.x);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::SortStationsByDistanceFromDestination;
+	this->Station::SortStationsByDistanceFromDestination(reinterpret_cast<uint32_t>(gc.x));
 // LINE 386:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -1978,10 +1950,7 @@ short Station::GetNearestStation(/*packed*/ struct _GridCoordinates gc, /*packed
 // LINE 390:
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _StationHeapStruct removedStruct; // 0x8 bytes
-	__asm        lea    eax, removedStruct.cost;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::StationHeapRemove;
+	this->Station::StationHeapRemove(removedStruct.cost);
 // LINE 391:
 	__asm        mov    ecx, removedStruct.stationID;
 	__asm        shl    ecx, 5;
@@ -2014,10 +1983,7 @@ short Station::GetNextNearest(/*packed*/ struct _GridCoordinates *result) {
 // LINE 408:
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _StationHeapStruct removedStruct; // 0x8 bytes
-	__asm        lea    eax, removedStruct.cost;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::StationHeapRemove;
+	this->Station::StationHeapRemove(removedStruct.cost);
 // LINE 409:
 	__asm        mov    ecx, removedStruct.stationID;
 	__asm        shl    ecx, 5;
@@ -2139,15 +2105,7 @@ _Tca:
 	__asm        mov    al, reinterpret_cast<uint8_t>(mapy);
 	__asm        mov    destLoc.y, al;
 // LINE 454:
-	__asm        mov    eax, vehicleListLength;
-	__asm        push   eax;
-	__asm        mov    eax, vehicleList;
-	__asm        push   eax;
-	__asm        mov    eax, responseLevel;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::FindAvailableVehicle;
-	__asm        mov    availableVehicle, eax;
+	availableVehicle = this->Station::FindAvailableVehicle(vehicleListLength, vehicleList, responseLevel);
 // LINE 457:
 	__asm        cmp    availableVehicle, 0;
 	__asm        jne    _T3b9;
@@ -2271,21 +2229,11 @@ _T2c9:
 	__asm        jmp    _T2ce;
 // LINE 460:
 _T2ce:
-	__asm        push   2;
-	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::SetSoundFile;
+	0x6351d0->DigitalSound::SetSoundFile(0x2, errorMsgSoundFullPath.c_str_ptr);
 // LINE 461:
-	__asm        mov    eax, glMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::SetVolume;
+	0x6351d0->DigitalSound::SetVolume(glMasterVolume);
 // LINE 462:
-	__asm        push   1;
-	__asm        push   0;
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::Play;
+	0x6351d0->DigitalSound::Play(0x1, 0x0);
 // LINE 464:
 	__asm        mov    dword ptr [ebp-0x120], 0x101;
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
@@ -2459,21 +2407,11 @@ _T59c:
 	__asm        jmp    _T5a1;
 // LINE 470:
 _T5a1:
-	__asm        push   2;
-	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::SetSoundFile;
+	0x6351d0->DigitalSound::SetSoundFile(0x2, errorMsgSoundFullPath.c_str_ptr);
 // LINE 471:
-	__asm        mov    eax, glMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::SetVolume;
+	0x6351d0->DigitalSound::SetVolume(glMasterVolume);
 // LINE 472:
-	__asm        push   1;
-	__asm        push   0;
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::Play;
+	0x6351d0->DigitalSound::Play(0x1, 0x0);
 // LINE 474:
 	__asm        mov    dword ptr [ebp-0x12C], 0x103;
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
@@ -2525,22 +2463,12 @@ _T68c:
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T861;
 // LINE 483:
-	__asm        mov    eax, vehicleListLength;
-	__asm        push   eax;
-	__asm        mov    eax, vehicleList;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::SortVehiclesByDistanceFromDestination;
+	this->Station::SortVehiclesByDistanceFromDestination(vehicleListLength, vehicleList, reinterpret_cast<uint32_t>(destLoc.x));
 // LINE 487:
 __WHILE_6b3:
 	while ((this->vehicleHeapSize != 0x0)) {
 		// LINE 489:
-			__asm        lea    eax, vehicleHeapStruct.cost;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   Station::VehicleHeapRemove;
+			this->Station::VehicleHeapRemove(vehicleHeapStruct.cost);
 		// LINE 493:
 			__asm        lea    eax, startGoal2.pRGV;
 			__asm        push   eax;
@@ -2609,13 +2537,7 @@ __WHILE_6b3:
 			__asm        call   RoadGraph::FindYIndexToVertex;
 			__asm        mov    destVert.yindex, al;
 		// LINE 507:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(destVert.x);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
-			__asm        push   eax;
-			__asm        mov    ecx, 0x5C37F8;
-			__asm        call   ShortestPath::BreadthFirstSearch;
-			__asm        mov    pathFound, eax;
+			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(destVert.x), reinterpret_cast<uint32_t>(startVertex.x));
 		// LINE 509:
 			__asm        jmp    _T7d0;
 		// LINE 511:
@@ -2674,20 +2596,14 @@ _T85c:
 	__asm        jmp    _Ta84;
 // LINE 528:
 _T861:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Station::SortStationsByDistanceFromDestination;
+	this->Station::SortStationsByDistanceFromDestination(reinterpret_cast<uint32_t>(destLoc.x));
 // LINE 530:
 __WHILE_873:
 	while ((this->stationHeapSize != 0x0)) {
 		// LINE 532:
 		// Block start:
 			/*bp-0x110*/ /*packed*/ struct _StructStation *sS;
-			__asm        lea    eax, stationHeapStruct.cost;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   Station::StationHeapRemove;
+			this->Station::StationHeapRemove(stationHeapStruct.cost);
 		// LINE 537:
 			__asm        lea    eax, destGoal1.pRGV;
 			__asm        push   eax;
@@ -2770,13 +2686,7 @@ __WHILE_873:
 			__asm        call   RoadGraph::FindYIndexToVertex;
 			__asm        mov    destVert.yindex, al;
 		// LINE 552:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(destVert.x);
-			__asm        push   eax;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
-			__asm        push   eax;
-			__asm        mov    ecx, 0x5C37F8;
-			__asm        call   ShortestPath::BreadthFirstSearch;
-			__asm        mov    pathFound, eax;
+			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(destVert.x), reinterpret_cast<uint32_t>(startVertex.x));
 		// LINE 554:
 		// Block end:
 			__asm        jmp    _T9b3;
@@ -2978,21 +2888,11 @@ _Tc57:
 	__asm        jmp    _Tc5c;
 // LINE 577:
 _Tc5c:
-	__asm        push   2;
-	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::SetSoundFile;
+	0x6351d0->DigitalSound::SetSoundFile(0x2, errorMsgSoundFullPath.c_str_ptr);
 // LINE 578:
-	__asm        mov    eax, glMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::SetVolume;
+	0x6351d0->DigitalSound::SetVolume(glMasterVolume);
 // LINE 579:
-	__asm        push   1;
-	__asm        push   0;
-	__asm        mov    ecx, 0x6351D0;
-	__asm        call   DigitalSound::Play;
+	0x6351d0->DigitalSound::Play(0x1, 0x0);
 // LINE 581:
 	__asm        mov    dword ptr [ebp-0x1E8], 0x105;
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
@@ -3205,11 +3105,7 @@ _FOR_8a:
 					__asm        inc    eax;
 					__asm        mov    workingLoc.y, al;
 				// LINE 633:
-					__asm        lea    eax, workingLoc.x;
-					__asm        push   eax;
-					__asm        mov    ecx, this;
-					__asm        call   Station::FindNearestRoadToStation;
-					__asm        mov    result, eax;
+					result = this->Station::FindNearestRoadToStation(workingLoc.x);
 				// LINE 634:
 					__asm        cmp    result, 0xFF;
 					__asm        je     _T19e;
@@ -3266,11 +3162,7 @@ _FOR_1db:
 					__asm        inc    eax;
 					__asm        mov    workingLoc.y, al;
 				// LINE 658:
-					__asm        lea    eax, workingLoc.x;
-					__asm        push   eax;
-					__asm        mov    ecx, this;
-					__asm        call   Station::FindNearestRoadToStation;
-					__asm        mov    direction, eax;
+					direction = this->Station::FindNearestRoadToStation(workingLoc.x);
 				// LINE 661:
 					__asm        cmp    direction, 0xFF;
 					__asm        jne    _T254;

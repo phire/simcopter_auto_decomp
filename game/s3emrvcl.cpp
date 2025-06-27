@@ -682,12 +682,7 @@ _T28:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destIndex.yindex, al;
 // LINE 275:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destIndex.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(startIndex.x);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::BuildPath;
+	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(destIndex.x), reinterpret_cast<uint32_t>(startIndex.x));
 // LINE 282:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -910,9 +905,7 @@ _T2b0:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 350:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::MoveAuto;
+	this->AutomobileClass::MoveAuto(0x1);
 // LINE 351:
 	this->dispatchPathIndex = 0x0;
 // LINE 352:
@@ -969,12 +962,7 @@ _T34:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destIndex.yindex, al;
 // LINE 383:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destIndex.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(stationIndex.x);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::BuildPath;
+	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(destIndex.x), reinterpret_cast<uint32_t>(stationIndex.x));
 // LINE 388:
 _Ta8:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destLoc.x);
@@ -1244,10 +1232,7 @@ _T3c2:
 _T3e3:
 	this->prevDir = startDir;
 // LINE 477:
-	__asm        lea    eax, stationLoc.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::LinkToCell;
+	this->AutomobileClass::LinkToCell(stationLoc.x);
 // LINE 478:
 	this->currDist = 0x0;
 // LINE 479:
@@ -1279,9 +1264,7 @@ _T3e3:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 483:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::MoveAuto;
+	this->AutomobileClass::MoveAuto(0x1);
 // LINE 484:
 	this->dispatchPathIndex = 0x0;
 // LINE 489:
@@ -1493,13 +1476,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destVertex.yindex, al;
 // LINE 549:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destVertex.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(startVertex.x);
-	__asm        push   eax;
-	__asm        mov    ecx, 0x5C37F8;
-	__asm        call   ShortestPath::BreadthFirstSearch;
-	__asm        mov    pathFound, eax;
+	pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(destVertex.x), reinterpret_cast<uint32_t>(startVertex.x));
 // LINE 550:
 	__asm        cmp    pathFound, 0;
 	__asm        jne    _T133;
@@ -1701,11 +1678,7 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(/*packed*/ struct Goal *pGoal)
 	__asm        cmp    dword ptr [eax+0x294], 1;
 	__asm        jne    _T2d;
 // LINE 677:
-	__asm        mov    eax, pGoal;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PickTurnDir;
-	__asm        jmp    __RETURN;
+	return this->AutomobileClass::PickTurnDir(pGoal);
 // LINE 680:
 _T2d:
 	__asm        mov    eax, this;
@@ -2271,10 +2244,7 @@ void EmergencyVehicleClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        je     _T103;
 // LINE 1534:
 _T103:
-	__asm        mov    eax, sd;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::SetSaveData;
+	this->AutomobileClass::SetSaveData(sd);
 // LINE 1535:
 	return;
 }
@@ -2291,10 +2261,7 @@ void EmergencyVehicleClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) 
 	return;
 // LINE 1554:
 _T1d:
-	__asm        mov    eax, sd;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::LoadSaveData;
+	this->AutomobileClass::LoadSaveData(sd);
 // LINE 1556:
 	__asm        mov    eax, sd;
 	__asm        mov    ax, [eax+0x11E];

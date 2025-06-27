@@ -692,9 +692,7 @@ _T2ee:
 	__asm        jmp    _T2f3;
 // LINE 50:
 _T2f3:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   MissionLogWindow::CreateImage;
+	this->MissionLogWindow::CreateImage(0x1);
 // LINE 51:
 	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 52:
@@ -1502,9 +1500,7 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 	/*bp-0x104*/ char szBackgroundBufferPath[260]; // 0x104 bytes
 
 // LINE 129:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
+	this->GraphicWindow::CreateImage(0x0);
 // LINE 131:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
@@ -2329,12 +2325,7 @@ _T96:
 _Td9:
 	this-><vftable> = 0x5907d0;
 // LINE 292:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0x14;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x24;
-	__asm        call   MFont::SetFontCharacteristics;
+	(this + 0x24)->MFont::SetFontCharacteristics(0x0, 0x0, 0x14);
 // LINE 293:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;

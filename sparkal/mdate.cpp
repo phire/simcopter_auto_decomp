@@ -751,14 +751,7 @@ uint32_t MDate::DayOfMonth() {
 	/*bp-0xc*/   uint32_t m;
 
 // LINE 322:
-	__asm        lea    eax, y;
-	__asm        push   eax;
-	__asm        lea    eax, d;
-	__asm        push   eax;
-	__asm        lea    eax, m;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::Mdy;
+	this->MDate::Mdy(y, d, m);
 // LINE 323:
 	return d;
 // LINE 324:
@@ -1007,14 +1000,7 @@ uint32_t MDate::Month() {
 	/*bp-0xc*/   uint32_t m;
 
 // LINE 421:
-	__asm        lea    eax, y;
-	__asm        push   eax;
-	__asm        lea    eax, d;
-	__asm        push   eax;
-	__asm        lea    eax, m;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::Mdy;
+	this->MDate::Mdy(y, d, m);
 // LINE 422:
 	return m;
 // LINE 423:
@@ -1112,14 +1098,7 @@ uint32_t MDate::Year() {
 	/*bp-0xc*/   uint32_t m;
 
 // LINE 486:
-	__asm        lea    eax, y;
-	__asm        push   eax;
-	__asm        lea    eax, d;
-	__asm        push   eax;
-	__asm        lea    eax, m;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::Mdy;
+	this->MDate::Mdy(y, d, m);
 // LINE 487:
 	return y;
 // LINE 488:
@@ -1208,10 +1187,7 @@ _T36:
 _T45:
 	SkipDelim(s);
 // LINE 583:
-	__asm        lea    eax, m;
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   istream::operator>>;
+	s->istream::operator>>(m);
 // LINE 584:
 	SkipDelim(s);
 // LINE 585:
@@ -1279,18 +1255,12 @@ _T10d:
 // LINE 590:
 	SkipDelim(s);
 // LINE 591:
-	__asm        lea    eax, d;
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   istream::operator>>;
+	s->istream::operator>>(d);
 // LINE 593:
 	__asm        jmp    _T210;
 // LINE 594:
 _T142:
-	__asm        lea    eax, d;
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   istream::operator>>;
+	s->istream::operator>>(d);
 // LINE 595:
 	__asm        jmp    _T153;
 _T153:
@@ -1359,10 +1329,7 @@ _T1f8:
 _T210:
 	SkipDelim(s);
 // LINE 603:
-	__asm        lea    eax, y;
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   istream::operator>>;
+	s->istream::operator>>(y);
 // LINE 605:
 _T228:
 	__asm        mov    eax, s;
@@ -1457,16 +1424,10 @@ _T38:
 	return;
 // LINE 531:
 __DO_3d:
-	__asm        lea    eax, c;
-	__asm        push   eax;
-	__asm        mov    ecx, strm;
-	__asm        call   istream::operator>>;
+	strm->istream::operator>>(c);
 // LINE 531:
 __DO_3d:
-	__asm        lea    eax, c;
-	__asm        push   eax;
-	__asm        mov    ecx, strm;
-	__asm        call   istream::operator>>;
+	strm->istream::operator>>(c);
 // LINE 532:
 	__asm        mov    eax, strm;
 	__asm        mov    eax, [eax];
@@ -1523,10 +1484,7 @@ _Te2:
 	__asm        je     _Tfd;
 // LINE 535:
 _Tf1:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(c);
-	__asm        push   eax;
-	__asm        mov    ecx, strm;
-	__asm        call   istream::putback;
+	strm->istream::putback(reinterpret_cast<uint32_t>(c));
 // LINE 536:
 _Tfd:
 	return;
@@ -1545,10 +1503,7 @@ static char * ParseMonth(/*unpacked*/ class istream& s) {
 // LINE 551:
 	SkipDelim(s);
 // LINE 552:
-	__asm        lea    eax, c;
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   istream::get;
+	s->istream::get(c);
 // LINE 553:
 _LOOP_28:
 	for (;;) {
@@ -1601,10 +1556,7 @@ _LOOP_28:
 			__asm        mov    [ecx], al;
 			__asm        inc    p;
 		// LINE 555:
-			__asm        lea    eax, c;
-			__asm        push   eax;
-			__asm        mov    ecx, s;
-			__asm        call   istream::get;
+			s->istream::get(c);
 	}
 // LINE 557:
 _Tce:
@@ -1625,10 +1577,7 @@ _Tee:
 	__asm        je     _T109;
 // LINE 558:
 _Tfd:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(c);
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   istream::putback;
+	s->istream::putback(reinterpret_cast<uint32_t>(c));
 // LINE 559:
 _T109:
 	p[0] = 0x0;
@@ -1843,10 +1792,7 @@ _T259:
 //   _T1db
 // LINE 658:
 _T287:
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   ostream::operator<<;
+	s->ostream::operator<<(buf[0]);
 // LINE 659:
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0xAC], eax;

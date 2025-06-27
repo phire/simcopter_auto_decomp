@@ -4096,10 +4096,7 @@ _T106c:
 	__asm        cmp    dword ptr [ebp-0x200], 0;
 	__asm        je     _T10d4;
 // LINE 320:
-	__asm        lea    eax, sCurrentDirectory.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-	__asm        call   basic_string<char>::operator=;
+	directoryEntryCurrent.sName.c_str_ptr->basic_string<char>::operator=(sCurrentDirectory.c_str_ptr);
 // LINE 321:
 	directoryEntryCurrent.lType = 0x4;
 // LINE 322:
@@ -5574,14 +5571,7 @@ int32_t Directory::CreateNewEntry(/*packed*/ class basic_string<char>& sName, lo
 	/*bp-0x10*/  /*packed*/ class DirectoryEntry tempDirectoryEntry; // 0x10 bytes
 
 // LINE 487:
-	__asm        mov    eax, lType;
-	__asm        push   eax;
-	__asm        mov    eax, sName;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectoryEntry.directoryParent;
-	__asm        call   DirectoryEntry::DirectoryEntry;
+	tempDirectoryEntry.directoryParent->DirectoryEntry::DirectoryEntry(lType, sName, this);
 // LINE 488:
 	__asm        lea    ecx, tempDirectoryEntry.directoryParent;
 	__asm        call   DirectoryEntry::CreatePhysicalEntry;

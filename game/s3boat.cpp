@@ -640,11 +640,7 @@ _T2e:
 	__asm        test   eax, eax;
 	__asm        je     _T4c;
 // LINE 222:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x33;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::UnlinkFromCell;
+	this->BoatClass::UnlinkFromCell((this + 0x33));
 // LINE 234:
 _T4c:
 	this->flags[0] = 0x0;
@@ -738,19 +734,8 @@ _T98:
 // FUNCTION: COPTER_D 0x00527779
 int32_t BoatClass::Initialize(int32_t instanceID) {
 // LINE 444:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x37];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x33];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::InitializeInstance;
-	__asm        jmp    __RETURN;
+	return this->BoatClass::InitializeInstance(instanceID, this->currentLocation.y, this->currentLocation.x);
 // LINE 445:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005277ab
@@ -1045,17 +1030,9 @@ _T1d7:
 	__asm        test   eax, eax;
 	__asm        je     _T23e;
 // LINE 798:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x33;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::UnlinkFromCell;
+	this->BoatClass::UnlinkFromCell((this + 0x33));
 // LINE 799:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x43;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::LinkToCell;
+	this->BoatClass::LinkToCell((this + 0x43));
 // LINE 800:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x43;
@@ -1176,15 +1153,8 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 // LINE 898:
 	boatLocation.y = ((0x20000000 - this->dyObj.loc.z) >> 0x16);
 // LINE 900:
-	__asm        lea    eax, boatHeading.x;
-	__asm        push   eax;
-	__asm        lea    eax, boatLocation.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::CheckWaterDynamicObjectsAt;
-	__asm        jmp    __RETURN;
+	return this->BoatClass::CheckWaterDynamicObjectsAt(boatHeading.x, boatLocation.x);
 // LINE 901:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00527d76
@@ -3909,11 +3879,7 @@ _T3fa:
 _T42c:
 	__asm        jmp    _T431;
 _T431:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x33;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::LinkToCell;
+	this->BoatClass::LinkToCell((this + 0x33));
 // LINE 2343:
 	__asm        jmp    _T445;
 _T445:
@@ -3952,11 +3918,7 @@ _T11:
 // LINE 2372:
 	__asm        jmp    _T25;
 _T25:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x33;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::UnlinkFromCell;
+	this->BoatClass::UnlinkFromCell((this + 0x33));
 // LINE 2373:
 	this->flags[1] = 0x0;
 // LINE 2375:
@@ -4626,11 +4588,7 @@ _T814:
 // LINE 2515:
 	__asm        jmp    _T82b;
 _T82b:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x33;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::UnlinkFromCell;
+	this->BoatClass::UnlinkFromCell((this + 0x33));
 // LINE 2517:
 	__asm        jmp    _T84f;
 // LINE 2519:
@@ -4645,11 +4603,7 @@ _T84f:
 _T86c:
 	__asm        jmp    _T871;
 _T871:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x33;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::LinkToCell;
+	this->BoatClass::LinkToCell((this + 0x33));
 // LINE 2530:
 	__asm        jmp    _T88b;
 _T88b:
@@ -4861,11 +4815,7 @@ _T261:
 	__asm        cmp    mapy, 0xFFFFFFFF;
 	__asm        je     _T2dc;
 // LINE 2921:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x33;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   BoatClass::LinkToCell;
+	this->BoatClass::LinkToCell((this + 0x33));
 // LINE 2924:
 	__asm        jmp    _T289;
 _T289:
@@ -5264,11 +5214,7 @@ _FOR_44:
 			__asm        test   eax, eax;
 			__asm        je     _T219;
 		// LINE 3240:
-			__asm        mov    eax, b;
-			__asm        add    eax, 0x33;
-			__asm        push   eax;
-			__asm        mov    ecx, b;
-			__asm        call   BoatClass::LinkToCell;
+			b->BoatClass::LinkToCell((b + 0x33));
 		// LINE 3247:
 		_T219:
 			ret = ReadNextMIFFChunk(0xe3, 0x62b5f0, 0x424f4154, miffReader);

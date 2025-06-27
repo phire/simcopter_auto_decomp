@@ -66,13 +66,8 @@ _T24:
 // FUNCTION: COPTER_D 0x00490fd3
 unsigned long __long_random(unsigned long limit) {
 // LINE 27:
-	__asm        mov    eax, limit;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604B18;
-	__asm        call   Random::operator();
-	__asm        jmp    __RETURN;
+	return 0x604b18->Random::operator()(limit);
 // LINE 28:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00490ff1

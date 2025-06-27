@@ -764,32 +764,11 @@ _T2e:
 	__asm        test   eax, eax;
 	__asm        je     _T88;
 // LINE 300:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x35;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnlinkFromCell;
+	this->TrainClass::UnlinkFromCell(this->leadcar, (this + 0x35));
 // LINE 301:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x3D;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnlinkFromCell;
+	this->TrainClass::UnlinkFromCell(this->midcar, (this + 0x3d));
 // LINE 302:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x45;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnlinkFromCell;
+	this->TrainClass::UnlinkFromCell(this->endcar, (this + 0x45));
 // LINE 314:
 _T88:
 	this->flags[0] = 0x0;
@@ -881,19 +860,8 @@ _T94:
 // FUNCTION: COPTER_D 0x0052e22c
 int32_t TrainClass::Initialize(int32_t instanceID) {
 // LINE 547:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x39];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x35];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::InitializeInstance;
-	__asm        jmp    __RETURN;
+	return this->TrainClass::InitializeInstance(instanceID, this->currentLocation1.y, this->currentLocation1.x);
 // LINE 548:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052e25e
@@ -1359,23 +1327,9 @@ _T169:
 // LINE 950:
 // Block start:
 	/*bp-0x18*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x35;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnlinkFromCell;
+	this->TrainClass::UnlinkFromCell(this->leadcar, (this + 0x35));
 // LINE 951:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x55;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::LinkToCell;
+	this->TrainClass::LinkToCell(this->leadcar, (this + 0x55));
 // LINE 952:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x55;
@@ -2260,15 +2214,8 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 // LINE 1461:
 	trainLocation.y = ((0x20000000 - this->leadcar->loc.z) >> 0x16);
 // LINE 1463:
-	__asm        lea    eax, trainHeading.x;
-	__asm        push   eax;
-	__asm        lea    eax, trainLocation.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::CheckDynamicObjectsAt;
-	__asm        jmp    __RETURN;
+	return this->TrainClass::CheckDynamicObjectsAt(trainHeading.x, trainLocation.x);
 // LINE 1464:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052f52f
@@ -6171,23 +6118,9 @@ void TrainClass::SetTrailingCars() {
 // LINE 3302:
 	this->currentLocation3.y = ((0x20000000 - this->endcar->loc.z) >> 0x16);
 // LINE 3304:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x3D;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::LinkToCell;
+	this->TrainClass::LinkToCell(this->midcar, (this + 0x3d));
 // LINE 3305:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x45;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::LinkToCell;
+	this->TrainClass::LinkToCell(this->endcar, (this + 0x45));
 // LINE 3308:
 	__asm        mov    eax, this;
 	__asm        mov    esi, [eax+0x1CD];
@@ -6421,14 +6354,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        je     _T339;
 // LINE 3379:
 _T2f6:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x3D;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnlinkFromCell;
+	this->TrainClass::UnlinkFromCell(this->midcar, (this + 0x3d));
 // LINE 3380:
 	__asm        mov    eax, currloc.x;
 	__asm        mov    ecx, currloc.y;
@@ -6437,14 +6363,7 @@ _T2f6:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 3381:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x3D;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::LinkToCell;
+	this->TrainClass::LinkToCell(this->midcar, (this + 0x3d));
 // LINE 3384:
 _T339:
 	currloc.x = ((this->endcar->loc.x + 0x20000000) >> 0x16);
@@ -6462,14 +6381,7 @@ _T339:
 	__asm        je     _T3c8;
 // LINE 3388:
 _T385:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x45;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnlinkFromCell;
+	this->TrainClass::UnlinkFromCell(this->endcar, (this + 0x45));
 // LINE 3389:
 	__asm        mov    eax, currloc.x;
 	__asm        mov    ecx, currloc.y;
@@ -6478,14 +6390,7 @@ _T385:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 3390:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x45;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::LinkToCell;
+	this->TrainClass::LinkToCell(this->endcar, (this + 0x45));
 // LINE 3394:
 _T3c8:
 	MTCreateDOF4x4(vec.x, (this->endcar + 0x24));
@@ -7782,14 +7687,7 @@ foundCell:
 _T4a5:
 	__asm        jmp    _T4aa;
 _T4aa:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x35;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::LinkToCell;
+	this->TrainClass::LinkToCell(this->leadcar, (this + 0x35));
 // LINE 3963:
 	__asm        jmp    _T4c8;
 _T4c8:
@@ -7863,36 +7761,15 @@ _T11:
 // LINE 3994:
 	__asm        jmp    _T25;
 _T25:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x35;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnlinkFromCell;
+	this->TrainClass::UnlinkFromCell(this->leadcar, (this + 0x35));
 // LINE 3995:
 	__asm        jmp    _T43;
 _T43:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D1];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x3D;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnlinkFromCell;
+	this->TrainClass::UnlinkFromCell(this->midcar, (this + 0x3d));
 // LINE 3996:
 	__asm        jmp    _T61;
 _T61:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1D5];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x45;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::UnlinkFromCell;
+	this->TrainClass::UnlinkFromCell(this->endcar, (this + 0x45));
 // LINE 3997:
 	this->flags[1] = 0x0;
 // LINE 3999:
@@ -8180,14 +8057,7 @@ foundCell:
 _T34b:
 	__asm        jmp    _T350;
 _T350:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x35;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::LinkToCell;
+	this->TrainClass::LinkToCell(this->leadcar, (this + 0x35));
 // LINE 4128:
 	__asm        jmp    _T36e;
 _T36e:
@@ -8456,14 +8326,7 @@ _T152:
 	__asm        cmp    mapy, 0xFFFFFFFF;
 	__asm        je     _T439;
 // LINE 4542:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x35;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   TrainClass::LinkToCell;
+	this->TrainClass::LinkToCell(this->leadcar, (this + 0x35));
 // LINE 4546:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0;
@@ -8977,32 +8840,11 @@ _FOR_44:
 			__asm        test   eax, eax;
 			__asm        je     _T315;
 		// LINE 4900:
-			__asm        mov    eax, t;
-			__asm        mov    eax, [eax+0x1CD];
-			__asm        push   eax;
-			__asm        mov    eax, t;
-			__asm        add    eax, 0x35;
-			__asm        push   eax;
-			__asm        mov    ecx, t;
-			__asm        call   TrainClass::LinkToCell;
+			t->TrainClass::LinkToCell(t->leadcar, (t + 0x35));
 		// LINE 4901:
-			__asm        mov    eax, t;
-			__asm        mov    eax, [eax+0x1D1];
-			__asm        push   eax;
-			__asm        mov    eax, t;
-			__asm        add    eax, 0x3D;
-			__asm        push   eax;
-			__asm        mov    ecx, t;
-			__asm        call   TrainClass::LinkToCell;
+			t->TrainClass::LinkToCell(t->midcar, (t + 0x3d));
 		// LINE 4902:
-			__asm        mov    eax, t;
-			__asm        mov    eax, [eax+0x1D5];
-			__asm        push   eax;
-			__asm        mov    eax, t;
-			__asm        add    eax, 0x45;
-			__asm        push   eax;
-			__asm        mov    ecx, t;
-			__asm        call   TrainClass::LinkToCell;
+			t->TrainClass::LinkToCell(t->endcar, (t + 0x45));
 		// LINE 4909:
 		_T315:
 			ret = ReadNextMIFFChunk(0x1d9, 0x62b7b8, 0x5452414e, miffReader);

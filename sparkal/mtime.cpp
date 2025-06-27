@@ -540,10 +540,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0043c7c8
 static void $E16() {
 
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    ecx, 0x5C3608;
-	__asm        call   MDate::MDate;
+	0x5c3608->MDate::MDate(0x0, 0x0);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -561,10 +558,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0043c7fb
 static void $E19() {
 
-	__asm        push   0;
-	__asm        push   0xC22D;
-	__asm        mov    ecx, 0x5C3618;
-	__asm        call   MDate::MDate;
+	0x5c3618->MDate::MDate(0x0, 0xc22d);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -738,12 +732,7 @@ _Ta9:
 	__asm        jmp    __RETURN;
 // LINE 131:
 _Tde:
-	__asm        mov    eax, year;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        push   0x1E;
-	__asm        lea    ecx, endApril<vftable>;
-	__asm        call   MDate::MDate;
+	endApril<vftable>->MDate::MDate(year, 0x4, 0x1e);
 // LINE 132:
 	__asm        push   2;
 	__asm        push   7;
@@ -767,12 +756,7 @@ class MTime MTime::EndDST(uint32_t year) {
 	/*bp-0xc*/   /*packed*/ class MDate endOctober; // 0xc bytes
 
 // LINE 148:
-	__asm        mov    eax, year;
-	__asm        push   eax;
-	__asm        push   0xA;
-	__asm        push   0x1F;
-	__asm        lea    ecx, endOctober<vftable>;
-	__asm        call   MDate::MDate;
+	endOctober<vftable>->MDate::MDate(year, 0xa, 0x1f);
 // LINE 149:
 	__asm        push   1;
 	__asm        push   7;
@@ -1515,10 +1499,7 @@ _T2dc:
 	__asm        jmp    _T31f;
 // LINE 429:
 _T31f:
-	__asm        lea    eax, buf[0];
-	__asm        push   eax;
-	__asm        mov    ecx, s;
-	__asm        call   ostream::operator<<;
+	s->ostream::operator<<(buf[0]);
 // LINE 430:
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0xDC], eax;

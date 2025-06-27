@@ -820,9 +820,7 @@ _T3fd:
 _T40a:
 	this->HangarWindow::LoadHotSpots();
 // LINE 56:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::CreateImage;
+	this->HangarWindow::CreateImage(0x1);
 // LINE 57:
 	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 58:
@@ -2004,11 +2002,7 @@ _T2d:
 	__asm        cmp    dword ptr [eax+0x102], 0;
 	__asm        je     _T4f;
 // LINE 160:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x102];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::ScrollHangarView;
+	this->HangarWindow::ScrollHangarView(this->nScrollingHangar);
 // LINE 161:
 _T4f:
 	__asm        mov    eax, this;
@@ -2109,13 +2103,7 @@ _T167:
 	__asm        test   eax, eax;
 	__asm        je     _T1a9;
 // LINE 163:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x122;
-	__asm        push   eax;
-	__asm        mov    eax, lHelpID;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::DisplayHelp;
+	this->HangarWindow::DisplayHelp((this + 0x122), lHelpID);
 // LINE 164:
 _T1a9:
 	this->bTestedHotspotsAlready = 0x1;
@@ -2280,9 +2268,7 @@ long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        cmp    lKey, 0x25;
 	__asm        jne    _T2f;
 // LINE 217:
-	__asm        push   0xFFFFFFE8;
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::ScrollHangarView;
+	this->HangarWindow::ScrollHangarView(-0x18);
 // LINE 218:
 	return 0x1;
 // LINE 220:
@@ -2291,9 +2277,7 @@ _T2f:
 	__asm        cmp    lKey, 0x27;
 	__asm        jne    _T4d;
 // LINE 221:
-	__asm        push   0x18;
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::ScrollHangarView;
+	this->HangarWindow::ScrollHangarView(0x18);
 // LINE 222:
 	return 0x1;
 // LINE 224:
@@ -2700,16 +2684,7 @@ _T306:
 	__asm        jmp    _T30b;
 // LINE 284:
 _T30b:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x64;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x5c), 0x0, 0x6);
 	__asm        jmp    _T32c;
 // LINE 285:
 _T32c:
@@ -3245,10 +3220,7 @@ _T20c:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 455:
-	__asm        lea    eax, rectTempChildWindow.left;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::FitRectToWindow;
+	this->GraphicWindow::FitRectToWindow(rectTempChildWindow.left);
 // LINE 458:
 	__asm        jmp    _T2a1;
 _T2a1:
@@ -3293,12 +3265,7 @@ _T309:
 	__asm        cmp    dword ptr [eax+0xFA], 0;
 	__asm        je     _T5b4;
 // LINE 468:
-	__asm        lea    eax, sHelp.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    eax, nHelp;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   HangarWindow::GetSoundFileNameFromHelpID;
+	this->HangarWindow::GetSoundFileNameFromHelpID(sHelp.c_str_ptr, nHelp);
 // LINE 469:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;

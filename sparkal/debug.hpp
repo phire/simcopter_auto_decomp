@@ -6,11 +6,7 @@ void execute(char * data) {
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     _T28;
 // LINE 46:
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x14];
-	__asm        call   CDebugWindow::HandleDebugCommand;
+	this->m_instance->CDebugWindow::HandleDebugCommand(data);
 // LINE 47:
 _T28:
 	return;

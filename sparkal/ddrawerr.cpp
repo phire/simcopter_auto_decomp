@@ -34,12 +34,7 @@ void DirectDrawError::DisplayError(char * szErrorDescription) {
 	/*bp-0x100*/ char szFullErrorDescription[256]; // 0x100 bytes
 
 // LINE 13:
-	__asm        mov    eax, szErrorDescription;
-	__asm        push   eax;
-	__asm        lea    eax, szFullErrorDescription[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   DirectDrawError::MakeErrorString;
+	this->DirectDrawError::MakeErrorString(szErrorDescription, szFullErrorDescription[0]);
 // LINE 18:
 	DebugOutput(szFullErrorDescription[0], 0x5976a8);
 // LINE 22:
@@ -558,12 +553,7 @@ void DirectSoundError::DisplayError(char * szErrorDescription) {
 	/*bp-0x100*/ char szFullErrorDescription[256]; // 0x100 bytes
 
 // LINE 193:
-	__asm        mov    eax, szErrorDescription;
-	__asm        push   eax;
-	__asm        lea    eax, szFullErrorDescription[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   DirectSoundError::MakeErrorString;
+	this->DirectSoundError::MakeErrorString(szErrorDescription, szFullErrorDescription[0]);
 // LINE 198:
 	DebugOutput(szFullErrorDescription[0], 0x597c90);
 // LINE 202:

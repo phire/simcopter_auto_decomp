@@ -341,27 +341,12 @@ _Tf3:
 	__asm        jmp    _Tf8;
 // LINE 189:
 _Tf8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0xC];
-	__asm        call   FlatResFile::Count;
-	__asm        mov    numThings, ax;
+	numThings = this-><cBList<cCopterAnim>+0x0c:4>->FlatResFile::Count(this-><cBList<cCopterAnim>+0x10:4>);
 // LINE 190:
 _FOR_11f:
 	for (count = 0x1; (reinterpret_cast<int16_t>(count) <= reinterpret_cast<int16_t>(numThings)); count++) {
 		// LINE 192:
-			__asm        push   0x55E6F0;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(count);
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x10];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    ecx, [eax+0xC];
-			__asm        call   FlatResFile::GetByIndex;
-			__asm        mov    h, eax;
+			h = this-><cBList<cCopterAnim>+0x0c:4>->FlatResFile::GetByIndex(0x55e6f0, reinterpret_cast<uint32_t>(count), this-><cBList<cCopterAnim>+0x10:4>);
 		// LINE 193:
 			__asm        cmp    h, 0;
 			__asm        jne    _T17d;

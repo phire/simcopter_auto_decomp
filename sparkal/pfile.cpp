@@ -230,14 +230,7 @@ _T93:
 	__asm        cmp    bCreateIfNotFound, 0;
 	__asm        je     _Td1;
 // LINE 55:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(access);
-	__asm        and    eax, 0xFFFF;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   PFile::FileCreate;
+	this->PFile::FileCreate((reinterpret_cast<uint32_t>(access) & 0xffff), (this + 0x4));
 // LINE 56:
 	__asm        jmp    _Td8;
 // LINE 57:

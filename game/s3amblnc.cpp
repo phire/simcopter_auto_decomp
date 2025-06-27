@@ -715,18 +715,7 @@ _T1dd:
 // FUNCTION: COPTER_D 0x00535b14
 unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
 // LINE 251:
-	__asm        push   5;
-	__asm        push   0x62B9B8;
-	__asm        mov    eax, responseLevel;
-	__asm        push   eax;
-	__asm        mov    eax, responseType;
-	__asm        push   eax;
-	__asm        mov    eax, mapy;
-	__asm        push   eax;
-	__asm        mov    eax, mapx;
-	__asm        push   eax;
-	__asm        mov    ecx, gHospitals;
-	__asm        call   Station::DispatchNearestAvailableVehicle;
+	gHospitals->Station::DispatchNearestAvailableVehicle(0x5, 0x62b9b8, responseLevel, responseType, mapy, mapx);
 	__asm        jmp    __RETURN;
 // LINE 252:
 __RETURN:
@@ -837,11 +826,7 @@ _T40:
 	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 307:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x298];
-	__asm        push   eax;
-	__asm        mov    ecx, gHospitals;
-	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
+	gHospitals->Station::DecrementQuantityOfVehicleDispatched(this->stationID);
 // LINE 311:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -874,11 +859,7 @@ _Tb2:
 	__asm        cmp    ecx, edx;
 	__asm        jne    _T122;
 // LINE 322:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x298];
-	__asm        push   eax;
-	__asm        mov    ecx, gHospitals;
-	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
+	gHospitals->Station::DecrementQuantityOfVehicleDispatched(this->stationID);
 // LINE 323:
 	this->AutomobileClass::UnPlaceCar();
 // LINE 324:
@@ -1030,11 +1011,7 @@ _T2d5:
 	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 387:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x298];
-	__asm        push   eax;
-	__asm        mov    ecx, gHospitals;
-	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
+	gHospitals->Station::DecrementQuantityOfVehicleDispatched(this->stationID);
 // LINE 391:
 	this->emergencyState = 0x2;
 // LINE 392:
@@ -1092,10 +1069,7 @@ int32_t AmbulanceClass::AtScene() {
 // FUNCTION: COPTER_D 0x00535ff9
 void AmbulanceClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 // LINE 424:
-	__asm        mov    eax, sd;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::SetSaveData;
+	this->EmergencyVehicleClass::SetSaveData(sd);
 // LINE 425:
 	return;
 }
@@ -1110,10 +1084,7 @@ void AmbulanceClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	return;
 // LINE 445:
 _T1d:
-	__asm        mov    eax, sd;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   EmergencyVehicleClass::LoadSaveData;
+	this->EmergencyVehicleClass::LoadSaveData(sd);
 // LINE 447:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];

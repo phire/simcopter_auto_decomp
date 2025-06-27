@@ -658,12 +658,7 @@ _T129:
 	fileImage = 0x0;
 // LINE 78:
 _T130:
-	__asm        push   0;
-	__asm        push   0x180;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Open;
+	fileImage->PFile::Open(0x0, 0x180, 0x0, 0x0);
 // LINE 79:
 	__asm        mov    eax, fileImage;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -1101,12 +1096,7 @@ _Tbf:
 	fileImage = 0x0;
 // LINE 317:
 _Tc6:
-	__asm        push   0;
-	__asm        push   0x180;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Open;
+	fileImage->PFile::Open(0x0, 0x180, 0x0, 0x0);
 // LINE 318:
 	nFileLength = fileImage->PFile::Length();
 // LINE 319:
@@ -3011,12 +3001,7 @@ _T89:
 	fileImage = 0x0;
 // LINE 1264:
 _T90:
-	__asm        push   0;
-	__asm        push   0x180;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Open;
+	fileImage->PFile::Open(0x0, 0x180, 0x0, 0x0);
 // LINE 1265:
 	__asm        mov    eax, fileImage;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;

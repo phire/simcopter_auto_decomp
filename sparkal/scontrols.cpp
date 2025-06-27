@@ -684,22 +684,8 @@ _T34:
 // FUNCTION: COPTER_D 0x00471847
 void SoundButtonWindow::SoundButtonWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, szImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ButtonWindow::ButtonWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590870;
+	this->ButtonWindow::ButtonWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow);
+	this-><SoundButtonWindow+0x00> = 0x590870;
 // LINE 45:
 	__asm        cmp    SoundButtonWindow::lButtonSoundReferenceCount, 0;
 	__asm        jne    _T4c;
@@ -744,21 +730,12 @@ void SoundButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        cmp    nNewButtonState, 2;
 	__asm        jne    _T43;
 // LINE 67:
-	__asm        mov    eax, glMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x6042C8;
-	__asm        call   DigitalSound::SetVolume;
+	0x6042c8->DigitalSound::SetVolume(glMasterVolume);
 // LINE 68:
-	__asm        push   1;
-	__asm        push   0;
-	__asm        mov    ecx, 0x6042C8;
-	__asm        call   DigitalSound::Play;
+	0x6042c8->DigitalSound::Play(0x1, 0x0);
 // LINE 70:
 _T43:
-	__asm        mov    eax, nNewButtonState;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ButtonWindow::SetState;
+	this->ButtonWindow::SetState(nNewButtonState);
 // LINE 71:
 	return;
 }
@@ -766,24 +743,8 @@ _T43:
 // FUNCTION: COPTER_D 0x00471945
 void SoundRadioButtonWindow::SoundRadioButtonWindow(/*unpacked*/ class ButtonGroup *myNewRadioButtonGroup, /*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, szImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    eax, myNewRadioButtonGroup;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RadioButtonWindow::RadioButtonWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590950;
+	this->RadioButtonWindow::RadioButtonWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow, myNewRadioButtonGroup);
+	this-><SoundRadioButtonWindow+0x00> = 0x590950;
 // LINE 83:
 	__asm        cmp    SoundRadioButtonWindow::lRadioSoundReferenceCount, 0;
 	__asm        jne    _T50;
@@ -827,21 +788,12 @@ void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        je     _T46;
 // LINE 103:
-	__asm        mov    eax, glMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x6043C8;
-	__asm        call   DigitalSound::SetVolume;
+	0x6043c8->DigitalSound::SetVolume(glMasterVolume);
 // LINE 104:
-	__asm        push   1;
-	__asm        push   0;
-	__asm        mov    ecx, 0x6043C8;
-	__asm        call   DigitalSound::Play;
+	0x6043c8->DigitalSound::Play(0x1, 0x0);
 // LINE 106:
 _T46:
-	__asm        mov    eax, nNewButtonState;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RadioButtonWindow::SetState;
+	this->RadioButtonWindow::SetState(nNewButtonState);
 // LINE 107:
 	return;
 }
@@ -868,22 +820,8 @@ _T34:
 // FUNCTION: COPTER_D 0x00471a8c
 void SoundCheckBoxWindow::SoundCheckBoxWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, szImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CheckBoxWindow::CheckBoxWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590A38;
+	this->CheckBoxWindow::CheckBoxWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow);
+	this-><SoundCheckBoxWindow+0x00> = 0x590a38;
 // LINE 127:
 	__asm        cmp    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount, 0;
 	__asm        jne    _T4c;
@@ -927,21 +865,12 @@ void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 	__asm        cmp    [eax+0x74], ecx;
 	__asm        je     _T39;
 // LINE 147:
-	__asm        mov    eax, glMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604348;
-	__asm        call   DigitalSound::SetVolume;
+	0x604348->DigitalSound::SetVolume(glMasterVolume);
 // LINE 148:
-	__asm        push   1;
-	__asm        push   0;
-	__asm        mov    ecx, 0x604348;
-	__asm        call   DigitalSound::Play;
+	0x604348->DigitalSound::Play(0x1, 0x0);
 // LINE 150:
 _T39:
-	__asm        mov    eax, nNewButtonState;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CheckBoxWindow::SetState;
+	this->CheckBoxWindow::SetState(nNewButtonState);
 // LINE 151:
 	return;
 }
@@ -968,24 +897,8 @@ _T34:
 // FUNCTION: COPTER_D 0x00471bcc
 void SoundScrollBarWindow::SoundScrollBarWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
 
-	__asm        mov    eax, szImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, newSliderWindowDirection;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ScrollBarWindow::ScrollBarWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590B18;
+	this->ScrollBarWindow::ScrollBarWindow(szImageFileName, bAddToParentList, myNewOwner, windowNewParent, newSliderWindowDirection, nNewID, rectNewWindow);
+	this-><SoundScrollBarWindow+0x00> = 0x590b18;
 // LINE 171:
 	__asm        cmp    SoundScrollBarWindow::lScrollBarSoundReferenceCount, 0;
 	__asm        jne    _T50;
@@ -1030,15 +943,9 @@ void SoundScrollBarWindow::MoveLinePrevious() {
 	__asm        cmp    [eax+0x80], ecx;
 	__asm        jle    _T3f;
 // LINE 192:
-	__asm        mov    eax, glMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604248;
-	__asm        call   DigitalSound::SetVolume;
+	0x604248->DigitalSound::SetVolume(glMasterVolume);
 // LINE 193:
-	__asm        push   1;
-	__asm        push   0;
-	__asm        mov    ecx, 0x604248;
-	__asm        call   DigitalSound::Play;
+	0x604248->DigitalSound::Play(0x1, 0x0);
 // LINE 195:
 _T3f:
 	this->ScrollBarWindow::MoveLinePrevious();
@@ -1055,15 +962,9 @@ void SoundScrollBarWindow::MoveLineNext() {
 	__asm        cmp    [eax+0x7C], ecx;
 	__asm        jle    _T3f;
 // LINE 206:
-	__asm        mov    eax, glMasterVolume;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604248;
-	__asm        call   DigitalSound::SetVolume;
+	0x604248->DigitalSound::SetVolume(glMasterVolume);
 // LINE 207:
-	__asm        push   1;
-	__asm        push   0;
-	__asm        mov    ecx, 0x604248;
-	__asm        call   DigitalSound::Play;
+	0x604248->DigitalSound::Play(0x1, 0x0);
 // LINE 209:
 _T3f:
 	this->ScrollBarWindow::MoveLineNext();

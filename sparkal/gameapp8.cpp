@@ -330,12 +330,7 @@ _T35:
 	__asm        jmp    _T82;
 // LINE 72:
 _T5e:
-	__asm        mov    eax, szFilePath;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::ValidateCopterSaveGameFile;
-	__asm        mov    ecx, lFileType;
-	__asm        mov    [ecx], eax;
+	lFileType. = this->CGameApp::ValidateCopterSaveGameFile(szFilePath);
 // LINE 73:
 	__asm        mov    eax, lFileType;
 	__asm        cmp    dword ptr [eax], 0;
@@ -379,11 +374,7 @@ _T56:
 	__asm        jne    _T80;
 // LINE 94:
 _T6a:
-	__asm        mov    eax, szLoadGamePath;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::LoadUserOrCareerGame;
-	__asm        jmp    __RETURN;
+	return this->CGameApp::LoadUserOrCareerGame(szLoadGamePath);
 // LINE 96:
 	__asm        jmp    _T9d;
 _T80:
@@ -397,7 +388,6 @@ _T80:
 _T9d:
 	return 0x80000000;
 // LINE 102:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00427691
@@ -427,11 +417,7 @@ unsigned long CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 128:
-	__asm        mov    eax, szGamePath;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x4174;
-	__asm        call   PFile::SetPath;
+	(this + 0x4174)->PFile::SetPath(szGamePath);
 // LINE 129:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -742,11 +728,7 @@ unsigned long CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPat
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 233:
-	__asm        mov    eax, szGamePath;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x4174;
-	__asm        call   PFile::SetPath;
+	(this + 0x4174)->PFile::SetPath(szGamePath);
 // LINE 234:
 	SetUserHasSavedCurrentCity();
 // LINE 236:
@@ -888,11 +870,7 @@ _T254:
 	return 0x7;
 // LINE 274:
 _T2b8:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x4174;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x606E78;
-	__asm        call   LogManager::WriteToMIFF;
+	0x606e78->LogManager::WriteToMIFF((this + 0x4174));
 // LINE 275:
 	VRAppGameSave((this + 0x4174));
 // LINE 277:
@@ -1514,13 +1492,7 @@ _T9dc:
 _Ta07:
 	strcat(SZ_CITY_DATA_FILE_SUFFIX, szCityFileSavePath[0]);
 // LINE 396:
-	__asm        lea    eax, szCityFileSavePath[0];
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::SaveUserOrCareerGame;
-	__asm        mov    nResult, eax;
+	nResult = this->CGameApp::SaveUserOrCareerGame(szCityFileSavePath[0], szGameFileSavePath[0]);
 // LINE 398:
 	__asm        cmp    nResult, 0;
 	__asm        jne    _Tacc;
@@ -1556,10 +1528,7 @@ long CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	/*bp-0x14c*/ /*packed*/ class MIFF myMIFF; // 0x148 bytes
 
 // LINE 422:
-	__asm        mov    eax, szGamePath;
-	__asm        push   eax;
-	__asm        lea    ecx, myMIFF<MIFF+0x00>;
-	__asm        call   MIFF::MIFF;
+	myMIFF<MIFF+0x00>->MIFF::MIFF(szGamePath);
 // LINE 425:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::OpenForReading;
@@ -1658,16 +1627,8 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00428c38
 int32_t CGameApp::DisplayFileOpenError(unsigned long nResult) {
 // LINE 463:
-	__asm        push   1;
-	__asm        mov    eax, nResult;
-	__asm        add    eax, 0x15E;
-	__asm        push   eax;
-	__asm        push   0x7D9;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::CreateMessageBox;
-	__asm        jmp    __RETURN;
+	return this->CGameApp::CreateMessageBox(0x1, (nResult + 0x15e), 0x7d9);
 // LINE 464:
-__RETURN:
 }
 
 

@@ -394,33 +394,11 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, /*unpacked*/ class ResFile *
 	doAssert(0x8c085, 0x5bf788, 0x25, 0x5bf7a0);
 // LINE 38:
 _T7c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x24];
-	__asm        call   FlatResFile::GetResType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x28], eax;
+	this->fType = this->fFile->FlatResFile::GetResType(this->fDataHandle);
 // LINE 52:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x20;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x24];
-	__asm        call   FlatResFile::GetID;
+	this->fFile->FlatResFile::GetID((this + 0x20), this->fDataHandle);
 // LINE 55:
-	__asm        lea    eax, tmpname[0];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x24];
-	__asm        call   FlatResFile::GetName;
+	this->fFile->FlatResFile::GetName(tmpname[0], this->fDataHandle);
 // LINE 56:
 	__asm        xor    eax, eax;
 	__asm        mov    al, tmpname[0];
@@ -448,12 +426,7 @@ _T11f:
 // LINE 68:
 	header = this->fDataPtr;
 // LINE 70:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x24];
-	__asm        call   FlatResFile::Detach;
+	this->fFile->FlatResFile::Detach(this->fDataHandle);
 // LINE 71:
 	__asm        test   reinterpret_cast<uint32_t>(fileOpened), 0xFFFF;
 	__asm        je     _T1c9;
@@ -591,16 +564,9 @@ _Tab:
 _Tbc:
 	this->fResID = 0xffff;
 // LINE 151:
-	__asm        mov    eax, ySize;
-	__asm        push   eax;
-	__asm        mov    eax, xSize;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::SetSizeAndHeaders;
+	this->_cArray::SetSizeAndHeaders(ySize, xSize);
 // LINE 153:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::ClearBytes;
+	this->_cArray::ClearBytes(0x0);
 // LINE 154:
 	return;
 }
@@ -866,12 +832,7 @@ _Te8:
 // FUNCTION: COPTER_D 0x00567e33
 void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 // LINE 320:
-	__asm        mov    eax, newySize;
-	__asm        push   eax;
-	__asm        mov    eax, newxSize;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::SetSize;
+	this->_cArray::SetSize(newySize, newxSize);
 // LINE 321:
 	this->_cArray::FillHeader();
 // LINE 322:
@@ -1459,17 +1420,9 @@ _T4d:
 _T6c:
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 469:
-	__asm        lea    eax, temp<vftable>;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::CopyTo;
+	this->_cArray::CopyTo(temp<vftable>);
 // LINE 471:
-	__asm        mov    eax, newySize;
-	__asm        push   eax;
-	__asm        mov    eax, newxSize;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::SetSizeAndHeaders;
+	this->_cArray::SetSizeAndHeaders(newySize, newxSize);
 // LINE 472:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -1481,10 +1434,7 @@ _T6c:
 	doAssert(0x8c085, 0x5bff7c, 0x1d8, 0x5bffb4);
 // LINE 474:
 _Tc0:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(zeropad);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::ClearBytes;
+	this->_cArray::ClearBytes(reinterpret_cast<uint32_t>(zeropad));
 // LINE 477:
 _FOR_d8:
 	for (xcnt = 0x0; (this->fxSize > xcnt); xcnt++) {
@@ -1657,13 +1607,7 @@ _T92:
 // FUNCTION: COPTER_D 0x00568a68
 void _cArray::CopyFrom(unsigned char * fromName) {
 // LINE 538:
-	__asm        mov    eax, fromName;
-	__asm        push   eax;
-	__asm        call   PStr2Long;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::CopyFrom;
+	this->_cArray::CopyFrom(PStr2Long(fromName));
 // LINE 539:
 	return;
 }
@@ -1675,10 +1619,7 @@ void _cArray::CopyFrom(unsigned long oldname) {
 // LINE 543:
 	src = _cArray::GetArray(-0x1, oldname);
 // LINE 544:
-	__asm        mov    eax, src;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::CopyFrom;
+	this->_cArray::CopyFrom(src);
 // LINE 545:
 	return;
 }
@@ -1800,10 +1741,7 @@ void _cArray::CopyTo(unsigned long oldname) {
 // LINE 581:
 	dest = _cArray::GetArray(-0x1, oldname);
 // LINE 582:
-	__asm        mov    eax, dest;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::CopyTo;
+	this->_cArray::CopyTo(dest);
 // LINE 583:
 	return;
 }
@@ -1811,13 +1749,7 @@ void _cArray::CopyTo(unsigned long oldname) {
 // FUNCTION: COPTER_D 0x00568d3b
 void _cArray::CopyTo(unsigned char * toName) {
 // LINE 587:
-	__asm        mov    eax, toName;
-	__asm        push   eax;
-	__asm        call   PStr2Long;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::CopyTo;
+	this->_cArray::CopyTo(PStr2Long(toName));
 // LINE 588:
 	return;
 }
@@ -2086,11 +2018,7 @@ _T7d:
 // LINE 717:
 	fileOpened = OpenFile(pFile);
 // LINE 721:
-	__asm        mov    eax, rType;
-	__asm        push   eax;
-	__asm        mov    ecx, pFile;
-	__asm        call   FlatResFile::Count;
-	__asm        mov    numArrays, ax;
+	numArrays = pFile->FlatResFile::Count(rType);
 // LINE 722:
 _FOR_ca:
 	for (count = 0x1; (reinterpret_cast<int16_t>(numArrays) >= reinterpret_cast<int16_t>(count)); count++) {
@@ -2099,14 +2027,7 @@ _FOR_ca:
 			/*bp-0x30*/  /*unpacked*/ class _cArray *tmp;
 			/*bp-0x34*/  void * __ptr32 hArray;
 			/*bp-0x38*/  unsigned char * dataPtr;
-			__asm        push   0;
-			__asm        mov    eax, reinterpret_cast<uint32_t>(count);
-			__asm        push   eax;
-			__asm        mov    eax, rType;
-			__asm        push   eax;
-			__asm        mov    ecx, pFile;
-			__asm        call   FlatResFile::GetByIndex;
-			__asm        mov    hArray, eax;
+			hArray = pFile->FlatResFile::GetByIndex(0x0, reinterpret_cast<uint32_t>(count), rType);
 		// LINE 725:
 			__asm        cmp    hArray, 0;
 			__asm        jne    _T119;

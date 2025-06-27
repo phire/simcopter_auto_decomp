@@ -781,9 +781,7 @@ _T679:
 _T69d:
 	this->InventoryWindow::LoadHotSpots();
 // LINE 56:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   InventoryWindow::CreateImage;
+	this->InventoryWindow::CreateImage(0x1);
 // LINE 57:
 	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 58:
@@ -1855,16 +1853,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        cmp    dword ptr [eax+0x7C], 0;
 	__asm        jne    _T17b;
 // LINE 125:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x64;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x5C;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x5c), 0x0, 0x6);
 	__asm        jmp    _T3a;
 // LINE 126:
 _T3a:
@@ -1983,16 +1972,7 @@ _T17b:
 	__asm        cmp    dword ptr [eax+0x80], 0;
 	__asm        jne    _T314;
 // LINE 129:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x64;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x16E;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x16e), 0x0, 0x6);
 	__asm        jmp    _T1ae;
 // LINE 130:
 _T1ae:
@@ -2459,12 +2439,7 @@ _T24d:
 _FOR_296:
 	for (i = 0x0; (i < 0x5); i++) {
 		// LINE 192:
-			__asm        lea    eax, ptText.x;
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetEquipmentTextPosition;
+			this->InventoryWindow::GetEquipmentTextPosition(ptText.x, i);
 		// LINE 195:
 			__asm        jmp    _T2bb;
 		_T2bb:
@@ -2582,14 +2557,7 @@ _FOR_NEXT_59:
 			__asm        test   [eax+0x44], edx;
 			__asm        je     _T30e;
 		// LINE 217:
-			__asm        push   0;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetColumnStartPixel;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x20];
-			__asm        add    ecx, eax;
-			__asm        add    ecx, 3;
-			__asm        mov    rectDestination.left, ecx;
+			rectDestination.left = ((this-><InventoryWindow+0x20> + this->InventoryWindow::GetColumnStartPixel(0x0)) + 0x3);
 		// LINE 218:
 			__asm        push   1;
 			__asm        mov    ecx, this;
@@ -2600,15 +2568,7 @@ _FOR_NEXT_59:
 			__asm        dec    ecx;
 			__asm        mov    rectDestination.right, ecx;
 		// LINE 219:
-			__asm        mov    eax, lCurrentRow;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetRowStartPixel;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x24];
-			__asm        add    ecx, eax;
-			__asm        add    ecx, 2;
-			__asm        mov    rectDestination.top, ecx;
+			rectDestination.top = ((this-><InventoryWindow+0x24> + this->InventoryWindow::GetRowStartPixel(lCurrentRow)) + 0x2);
 		// LINE 220:
 			__asm        mov    eax, lCurrentRow;
 			__asm        inc    eax;
@@ -2671,14 +2631,7 @@ _FOR_NEXT_59:
 			__asm        test   byte ptr [eax+0x48], 4;
 			__asm        je     _T1bc;
 		// LINE 228:
-			__asm        push   1;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetColumnStartPixel;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x20];
-			__asm        add    ecx, eax;
-			__asm        sub    ecx, 4;
-			__asm        mov    rectDestination.left, ecx;
+			rectDestination.left = ((this-><InventoryWindow+0x20> + this->InventoryWindow::GetColumnStartPixel(0x1)) - 0x4);
 		// LINE 231:
 			__asm        mov    eax, lCheckmarkHeight;
 			__asm        push   eax;
@@ -2705,14 +2658,7 @@ _FOR_NEXT_59:
 			__asm        test   byte ptr [eax+0x48], 1;
 			__asm        je     _T25d;
 		// LINE 235:
-			__asm        push   2;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetColumnStartPixel;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x20];
-			__asm        add    ecx, eax;
-			__asm        sub    ecx, 4;
-			__asm        mov    rectDestination.left, ecx;
+			rectDestination.left = ((this-><InventoryWindow+0x20> + this->InventoryWindow::GetColumnStartPixel(0x2)) - 0x4);
 		// LINE 238:
 			__asm        mov    eax, lCheckmarkHeight;
 			__asm        push   eax;
@@ -2734,14 +2680,7 @@ _FOR_NEXT_59:
 			__asm        mov    ecx, [eax+0x80];
 			__asm        call   dword ptr [edx+0xC];
 		// LINE 240:
-			__asm        push   3;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetColumnStartPixel;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x20];
-			__asm        add    ecx, eax;
-			__asm        sub    ecx, 4;
-			__asm        mov    rectDestination.left, ecx;
+			rectDestination.left = ((this-><InventoryWindow+0x20> + this->InventoryWindow::GetColumnStartPixel(0x3)) - 0x4);
 		// LINE 243:
 			__asm        mov    eax, lCheckmarkHeight;
 			__asm        push   eax;
@@ -2768,14 +2707,7 @@ _FOR_NEXT_59:
 			__asm        test   byte ptr [eax+0x48], 2;
 			__asm        je     _T2b4;
 		// LINE 246:
-			__asm        push   4;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetColumnStartPixel;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x20];
-			__asm        add    ecx, eax;
-			__asm        sub    ecx, 4;
-			__asm        mov    rectDestination.left, ecx;
+			rectDestination.left = ((this-><InventoryWindow+0x20> + this->InventoryWindow::GetColumnStartPixel(0x4)) - 0x4);
 		// LINE 249:
 			__asm        mov    eax, lCheckmarkHeight;
 			__asm        push   eax;
@@ -2802,14 +2734,7 @@ _FOR_NEXT_59:
 			__asm        test   byte ptr [eax+0x48], 8;
 			__asm        je     _T30b;
 		// LINE 252:
-			__asm        push   5;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetColumnStartPixel;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x20];
-			__asm        add    ecx, eax;
-			__asm        sub    ecx, 4;
-			__asm        mov    rectDestination.left, ecx;
+			rectDestination.left = ((this-><InventoryWindow+0x20> + this->InventoryWindow::GetColumnStartPixel(0x5)) - 0x4);
 		// LINE 255:
 			__asm        mov    eax, lCheckmarkHeight;
 			__asm        push   eax;
@@ -2929,11 +2854,7 @@ _LOOP_27:
 		// LINE 306:
 			__asm        jmp    _T97;
 		_T97:
-			__asm        mov    eax, rectHotSpot;
-			__asm        push   eax;
-			__asm        mov    ecx, i.node;
-			__asm        add    ecx, 8;
-			__asm        call   HotSpot::GetBoundingRect;
+			(i.node + 0x8)->HotSpot::GetBoundingRect(rectHotSpot);
 		// LINE 307:
 			return 0x1;
 		// LINE 309:

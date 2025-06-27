@@ -934,19 +934,8 @@ _T1bc:
 // FUNCTION: COPTER_D 0x0049172b
 int32_t GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * szPath) {
 // LINE 26:
-	__asm        mov    eax, szPath;
-	__asm        push   eax;
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        mov    eax, nType;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFile;
-	__asm        jmp    __RETURN;
+	return 0x604c00->FileServices::GetPathForFile(szPath, szFile, nLanguage, nType);
 // LINE 27:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00491755
@@ -1287,12 +1276,7 @@ __DO_286:
 			__asm        cmp    nMessageBoxReturnValue, 2;
 			__asm        jne    _T508;
 		// LINE 62:
-			__asm        mov    eax, this;
-			__asm        add    eax, 4;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        add    ecx, 0xC;
-			__asm        call   basic_string<char>::operator=;
+			(this + 0xc)->basic_string<char>::operator=((this + 0x4));
 		// LINE 63:
 			__asm        mov    dword ptr [ebp-0x24], 0;
 			__asm        lea    ecx, sErrorTitle.c_str_ptr;
@@ -2195,12 +2179,7 @@ _T3c4:
 	__asm        jmp    __RETURN;
 // LINE 145:
 _T3cf:
-	__asm        push   0;
-	__asm        push   0x180;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        lea    ecx, tempPFile<vftable>;
-	__asm        call   PFile::Open;
+	tempPFile<vftable>->PFile::Open(0x0, 0x180, 0x0, 0x0);
 // LINE 146:
 	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::Length;
@@ -2340,13 +2319,7 @@ void FileServices::RefreshLocalPathCache(/*packed*/ class basic_string<char>& sD
 	/*bp-0x3c*/  /*unpacked*/ class Directory tempDirectory;
 
 // LINE 165:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, sDirectoryBase;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::Directory;
+	tempDirectory<Directory+0x00:None>->Directory::Directory(0x0, 0x0, 0x0, sDirectoryBase);
 // LINE 166:
 	tempStringListDirectories.length = 0x0;
 	list<basic_string<char>>::number_of_lists++;
@@ -2379,11 +2352,7 @@ _T96:
 	__asm        jmp    _Ta2;
 // LINE 171:
 _Ta2:
-	__asm        push   8;
-	__asm        lea    eax, tempStringListFiles.node;
-	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
-	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, tempStringListFiles.node);
 	__asm        jmp    _Tb5;
 _Tb5:
 	__asm        mov    dword ptr [ebp-0xC0], 0;
@@ -2559,10 +2528,7 @@ _LOOP_109:
 			__asm        jmp    _T2dc;
 		// LINE 177:
 		_T2dc:
-			__asm        lea    eax, sTempDirectory.c_str_ptr;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   FileServices::RefreshLocalPathCache;
+			this->FileServices::RefreshLocalPathCache(sTempDirectory.c_str_ptr);
 		// LINE 178:
 			__asm        mov    eax, tempStringListIterator.node;
 			__asm        mov    [ebp-0x68], eax;
@@ -5134,17 +5100,7 @@ _T13e:
 _T143:
 	szFile = sFile.c_str_ptr;
 // LINE 397:
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        mov    eax, szFile;
-	__asm        push   eax;
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        mov    eax, nType;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   FileServices::GetPathForFile;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->FileServices::GetPathForFile(szPath[0], szFile, nLanguage, nType);
 // LINE 398:
 	__asm        jmp    _T17a;
 _T17a:

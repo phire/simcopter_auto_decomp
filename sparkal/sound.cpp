@@ -2209,10 +2209,7 @@ _T77:
 // FUNCTION: COPTER_D 0x0042f5d5
 /*packed*/ class DigitalSound& DigitalSound::operator=(/*packed*/ class DigitalSound& newSound) {
 // LINE 683:
-	__asm        mov    eax, newSound;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Sound::operator=;
+	this->Sound::operator=(newSound);
 // LINE 684:
 	return this;
 // LINE 685:

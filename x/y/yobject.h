@@ -57,13 +57,7 @@ _T38:
 	__asm        je     _Ta4;
 // LINE 762:
 _T5d:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x90];
-	__asm        call   cCopterBody::GetPrivateAnim;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x98], eax;
+	this->fAnim = this->fBody->cCopterBody::GetPrivateAnim(name);
 // LINE 763:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -157,11 +151,7 @@ _T13c:
 	doAssert(0x8c085, 0x5bbe24, 0x405, 0x5bba14);
 // LINE 1030:
 _T158:
-	__asm        mov    eax, thing;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::SetMaster;
-	__asm        mov    yes, ax;
+	yes = obj->cYObject::SetMaster(thing);
 // LINE 1031:
 	__asm        test   reinterpret_cast<uint32_t>(yes), 0xFFFF;
 	__asm        jne    _T191;
@@ -192,797 +182,398 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00552370
 enum TreeSim::ReturnCode cYObject::sIdle(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iIdle;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iIdle(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552390
 enum TreeSim::ReturnCode cYObject::sSetAnim(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iSetAnim;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iSetAnim(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005523b0
 enum TreeSim::ReturnCode cYObject::sAttr(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iAttr;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iAttr(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005523d0
 enum TreeSim::ReturnCode cYObject::sWalk(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iWalk;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iWalk(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005523f0
 enum TreeSim::ReturnCode cYObject::sSetBody(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iSetBody;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iSetBody(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552410
 enum TreeSim::ReturnCode cYObject::sRandom(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iRandom;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iRandom(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552430
 enum TreeSim::ReturnCode cYObject::sWalkToAndGrabOntoStackObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iWalkToAndGrabOntoStackObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iWalkToAndGrabOntoStackObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552450
 enum TreeSim::ReturnCode cYObject::sUpdateMyMission(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iUpdateMyMission;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iUpdateMyMission(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552470
 enum TreeSim::ReturnCode cYObject::sCheckForTrue(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iCheckForTrue;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iCheckForTrue(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552490
 enum TreeSim::ReturnCode cYObject::sCompareMyLocWith(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iCompareMyLocWith;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iCompareMyLocWith(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005524b0
 enum TreeSim::ReturnCode cYObject::sSelfDecommission(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iSelfDecommission;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iSelfDecommission(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005524d0
 enum TreeSim::ReturnCode cYObject::sGetOffMasterObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iGetOffMasterObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iGetOffMasterObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005524f0
 enum TreeSim::ReturnCode cYObject::sTurnTowardsStackObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iTurnTowardsStackObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iTurnTowardsStackObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552510
 enum TreeSim::ReturnCode cYObject::sIsThisLocType(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iIsThisLocType;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iIsThisLocType(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552530
 enum TreeSim::ReturnCode cYObject::sIsThisLocTypeNeutral(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iIsThisLocTypeNeutral;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iIsThisLocTypeNeutral(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552550
 enum TreeSim::ReturnCode cYObject::sCanJumpOffHere(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iCanJumpOffHere;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iCanJumpOffHere(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552570
 enum TreeSim::ReturnCode cYObject::sCheckForSpotlightInMyCell(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iCheckForSpotlightInMyCell;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iCheckForSpotlightInMyCell(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552590
 enum TreeSim::ReturnCode cYObject::sIncrementRiotVal(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iIncrementRiotVal;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iIncrementRiotVal(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005525b0
 enum TreeSim::ReturnCode cYObject::sGetSurroundingRiotVal(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iGetSurroundingRiotVal;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iGetSurroundingRiotVal(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005525d0
 enum TreeSim::ReturnCode cYObject::sIsThisScurkID(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iIsThisScurkID;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iIsThisScurkID(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005525f0
 enum TreeSim::ReturnCode cYObject::sGosubToInitbhav(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iGosubToInitbhav;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iGosubToInitbhav(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552610
 enum TreeSim::ReturnCode cYObject::sAdjustRadiusForRiotVal(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iAdjustRadiusForRiotVal;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iAdjustRadiusForRiotVal(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552630
 enum TreeSim::ReturnCode cYObject::sJoinRiot(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iJoinRiot;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iJoinRiot(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552650
 enum TreeSim::ReturnCode cYObject::sSetDirection(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iSetDirection;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iSetDirection(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552670
 enum TreeSim::ReturnCode cYObject::sThrowProjectile(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iThrowProjectile;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iThrowProjectile(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552690
 enum TreeSim::ReturnCode cYObject::sTurnFromStackObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iTurnFromStackObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iTurnFromStackObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005526b0
 enum TreeSim::ReturnCode cYObject::sTurnFromLastHitter(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iTurnFromLastHitter;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iTurnFromLastHitter(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005526d0
 enum TreeSim::ReturnCode cYObject::sTurnTowardsLastHitter(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iTurnTowardsLastHitter;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iTurnTowardsLastHitter(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005526f0
 enum TreeSim::ReturnCode cYObject::sGetOutOfRoadEtc(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iGetOutOfRoadEtc;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iGetOutOfRoadEtc(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552710
 enum TreeSim::ReturnCode cYObject::sGenerateMedevacAndSetSelfAsVictim(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iGenerateMedevacAndSetSelfAsVictim;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iGenerateMedevacAndSetSelfAsVictim(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552730
 enum TreeSim::ReturnCode cYObject::sTurnToNearbyFire(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iTurnToNearbyFire;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iTurnToNearbyFire(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552750
 enum TreeSim::ReturnCode cYObject::sDie(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iDie;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iDie(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552770
 enum TreeSim::ReturnCode cYObject::sWalkToStackObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iWalkToStackObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iWalkToStackObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552790
 enum TreeSim::ReturnCode cYObject::sPutObjIntoTreeNum(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iPutObjIntoTreeNum;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iPutObjIntoTreeNum(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005527b0
 enum TreeSim::ReturnCode cYObject::sVisitOz(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iVisitOz;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iVisitOz(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005527d0
 enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimVisible(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iMakeMyMedevacVictimVisible;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iMakeMyMedevacVictimVisible(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005527f0
 enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimInvisible(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iMakeMyMedevacVictimInvisible;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iMakeMyMedevacVictimInvisible(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552810
 enum TreeSim::ReturnCode cYObject::sMakeMeMasterOfStackObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iMakeMeMasterOfStackObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iMakeMeMasterOfStackObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552830
 enum TreeSim::ReturnCode cYObject::sMakeMyStackObjectVisitOz(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iMakeMyStackObjectVisitOz;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iMakeMyStackObjectVisitOz(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552850
 enum TreeSim::ReturnCode cYObject::sPutTotedMedVicOnStackObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iPutTotedMedVicOnStackObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iPutTotedMedVicOnStackObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552870
 enum TreeSim::ReturnCode cYObject::sTakeAnyMedVicOffStackObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iTakeAnyMedVicOffStackObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iTakeAnyMedVicOffStackObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552890
 enum TreeSim::ReturnCode cYObject::sGetOnStackObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iGetOnStackObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iGetOnStackObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005528b0
 enum TreeSim::ReturnCode cYObject::sUpdateStackVictimToted(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iUpdateStackVictimToted;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iUpdateStackVictimToted(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005528d0
 enum TreeSim::ReturnCode cYObject::sGetNumSpacesOnStackObject(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iGetNumSpacesOnStackObject;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iGetNumSpacesOnStackObject(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005528f0
 enum TreeSim::ReturnCode cYObject::sDropToted(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iDropToted;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iDropToted(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552910
 enum TreeSim::ReturnCode cYObject::sUpdateStackVictimPickedUp(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iUpdateStackVictimPickedUp;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iUpdateStackVictimPickedUp(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552930
 enum TreeSim::ReturnCode cYObject::sCloseToHeli(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iCloseToHeli;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iCloseToHeli(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552950
 enum TreeSim::ReturnCode cYObject::sSetMyExpression(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iSetMyExpression;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iSetMyExpression(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552970
 enum TreeSim::ReturnCode cYObject::sGetHeliSpeedPlusDamage(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iGetHeliSpeedPlusDamage;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iGetHeliSpeedPlusDamage(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552990
 enum TreeSim::ReturnCode cYObject::sIsThisCellSafe(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iIsThisCellSafe;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iIsThisCellSafe(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005529b0
 enum TreeSim::ReturnCode cYObject::sPlaySound(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iPlaySound;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iPlaySound(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005529d0
 enum TreeSim::ReturnCode cYObject::sGetOnHeliIfHarnessRaised(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iGetOnHeliIfHarnessRaised;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iGetOnHeliIfHarnessRaised(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005529f0
 enum TreeSim::ReturnCode cYObject::sAmIOnHeli(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iAmIOnHeli;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iAmIOnHeli(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552a10
 enum TreeSim::ReturnCode cYObject::sThrowFieryProjectile(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iThrowFieryProjectile;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iThrowFieryProjectile(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552a30
 enum TreeSim::ReturnCode cYObject::sTellStartingObjectTrueOrFalse(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iTellStartingObjectTrueOrFalse;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iTellStartingObjectTrueOrFalse(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552a50
 enum TreeSim::ReturnCode cYObject::sPutMyCarInStack(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iPutMyCarInStack;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iPutMyCarInStack(node, elem);
 }
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552a70
 enum TreeSim::ReturnCode cYObject::sDoIHaveAMaster(/*unpacked*/ class cYObject *obj, /*unpacked*/ struct TreeSim::StackElem *elem, /*unpacked*/ struct Behavior::Node *node) {
 
-	__asm        mov    eax, node;
-	__asm        push   eax;
-	__asm        mov    eax, elem;
-	__asm        push   eax;
-	__asm        mov    ecx, obj;
-	__asm        call   cYObject::iDoIHaveAMaster;
-	__asm        jmp    __RETURN;
-__RETURN:
+	return obj->cYObject::iDoIHaveAMaster(node, elem);
 }
 

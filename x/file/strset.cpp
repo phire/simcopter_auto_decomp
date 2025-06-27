@@ -129,10 +129,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID) {
 // LINE 13:
 	this->fResFile = file;
 // LINE 15:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(resID);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   StringSet::LoadStrings;
+	this->StringSet::LoadStrings(reinterpret_cast<uint32_t>(resID));
 // LINE 16:
 	return;
 
@@ -144,10 +141,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID, short n
 // LINE 21:
 	this->fResFile = file;
 // LINE 23:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(resID);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   StringSet::LoadStrings;
+	this->StringSet::LoadStrings(reinterpret_cast<uint32_t>(resID));
 // LINE 25:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -177,15 +171,7 @@ void StringSet::LoadStrings(short resID) {
 	doAssert(0x8c085, 0x5bf4bc, 0x21, 0x5bf4cc);
 // LINE 34:
 _T3a:
-	__asm        push   0x565BA0;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(resID);
-	__asm        push   eax;
-	__asm        push   0x53545223;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax];
-	__asm        call   FlatResFile::GetByID;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->fStringHandle = this->fResFile->FlatResFile::GetByID(0x565ba0, reinterpret_cast<uint32_t>(resID), 0x53545223);
 // LINE 36:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -234,12 +220,7 @@ void StringSet::~StringSet() {
 // LINE 59:
 	Memory::HUnlock(this->fStringHandle);
 // LINE 60:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax];
-	__asm        call   FlatResFile::Release;
+	this->fResFile->FlatResFile::Release(this->fStringHandle);
 // LINE 62:
 _T39:
 	return;

@@ -2860,10 +2860,7 @@ _Te4:
 	__asm        jmp    _Tf0;
 // LINE 116:
 _Tf0:
-	__asm        mov    eax, bResizeWindowToFitImage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
+	this->GraphicWindow::CreateImage(bResizeWindowToFitImage);
 // LINE 117:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
@@ -4522,11 +4519,7 @@ _LOOP_45:
 				// LINE 339:
 					__asm        jmp    _T167;
 				_T167:
-					__asm        lea    eax, rectCurrentKey.left;
-					__asm        push   eax;
-					__asm        mov    ecx, tempHotSpotListIterator.node;
-					__asm        add    ecx, 8;
-					__asm        call   HotSpot::GetBoundingRect;
+					(tempHotSpotListIterator.node + 0x8)->HotSpot::GetBoundingRect(rectCurrentKey.left);
 				// LINE 341:
 					rectCurrentKey.left += this-><KeyboardWindow+0x20>;
 				// LINE 342:
@@ -4703,11 +4696,7 @@ _LOOP_257:
 				// LINE 366:
 					__asm        jmp    _T381;
 				_T381:
-					__asm        lea    eax, rectCurrentKey.left;
-					__asm        push   eax;
-					__asm        mov    ecx, tempHotSpotListIterator.node;
-					__asm        add    ecx, 8;
-					__asm        call   HotSpot::GetBoundingRect;
+					(tempHotSpotListIterator.node + 0x8)->HotSpot::GetBoundingRect(rectCurrentKey.left);
 				// LINE 368:
 					rectCurrentKey.left += this-><KeyboardWindow+0x20>;
 				// LINE 369:
@@ -4913,11 +4902,7 @@ _LOOP_170:
 		// LINE 404:
 			__asm        jmp    _T1e9;
 		_T1e9:
-			__asm        lea    eax, rectCurrentKey.left;
-			__asm        push   eax;
-			__asm        mov    ecx, tempHotSpotListIterator.node;
-			__asm        add    ecx, 8;
-			__asm        call   HotSpot::GetBoundingRect;
+			(tempHotSpotListIterator.node + 0x8)->HotSpot::GetBoundingRect(rectCurrentKey.left);
 		// LINE 405:
 			rectCurrentKey.left += this-><KeyboardWindow+0x20>;
 		// LINE 406:
@@ -5160,11 +5145,7 @@ _LOOP_482:
 		// LINE 428:
 			__asm        jmp    _T512;
 		_T512:
-			__asm        lea    eax, rectCurrentKey.left;
-			__asm        push   eax;
-			__asm        mov    ecx, tempHotSpotListIterator.node;
-			__asm        add    ecx, 8;
-			__asm        call   HotSpot::GetBoundingRect;
+			(tempHotSpotListIterator.node + 0x8)->HotSpot::GetBoundingRect(rectCurrentKey.left);
 		// LINE 429:
 			rectCurrentKey.left += this-><KeyboardWindow+0x20>;
 		// LINE 430:
@@ -6014,10 +5995,7 @@ _T81:
 	__asm        jmp    _T8d;
 // LINE 667:
 _T8d:
-	__asm        mov    eax, bResizeWindowToFitImage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
+	this->GraphicWindow::CreateImage(bResizeWindowToFitImage);
 // LINE 668:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1CE], 0;
@@ -7207,18 +7185,7 @@ void JoystickWindow::GetNewJoystickControlStates(long * lNewJoystickControlState
 _FOR_18:
 	for (i = 0x6; (i < 0xe); i++) {
 		// LINE 929:
-			__asm        push   1;
-			__asm        mov    eax, i;
-			__asm        sub    eax, 6;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x74];
-			__asm        push   eax;
-			__asm        mov    ecx, 0x604C78;
-			__asm        call   JoystickManager::GetButtonState;
-			__asm        mov    ecx, i;
-			__asm        mov    edx, lNewJoystickControlStates;
-			__asm        mov    [edx+ecx*4], eax;
+			lNewJoystickControlStates[i] = 0x604c78->JoystickManager::GetButtonState(0x1, (i - 0x6), this->nCurrentJoystick);
 		// LINE 930:
 			__asm        mov    eax, i;
 			__asm        mov    ecx, lNewJoystickControlStates;
@@ -7233,17 +7200,7 @@ _FOR_18:
 _FOR_76:
 	for (i = 0x0; (i < 0x6); i++) {
 		// LINE 934:
-			__asm        push   1;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x74];
-			__asm        push   eax;
-			__asm        mov    ecx, 0x604C78;
-			__asm        call   JoystickManager::GetPositionQualitative;
-			__asm        mov    ecx, i;
-			__asm        mov    edx, lNewJoystickControlStates;
-			__asm        mov    [edx+ecx*4], eax;
+			lNewJoystickControlStates[i] = 0x604c78->JoystickManager::GetPositionQualitative(0x1, i, this->nCurrentJoystick);
 	}
 // LINE 936:
 _Ta8:
@@ -9385,9 +9342,7 @@ _T1247:
 // LINE 1165:
 	this->bInitializing = 0x0;
 // LINE 1166:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1168:
 	GraphicWindow::MakeModal(this);
 // LINE 1169:
@@ -9632,49 +9587,27 @@ _T19c:
 // LINE 1214:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1215:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1216:
 	return 0x1;
 // LINE 1218:
 _T1ce:
-	__asm        mov    eax, pMessageData;
-	__asm        push   eax;
-	__asm        mov    eax, lMessage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::DoKeyboardWindowMessage;
+	this->UserInputWindow::DoKeyboardWindowMessage(pMessageData, lMessage);
 // LINE 1219:
 	return 0x1;
 // LINE 1221:
 _T1e8:
-	__asm        mov    eax, pMessageData;
-	__asm        push   eax;
-	__asm        mov    eax, lMessage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::DoJoystickWindowMessage;
+	this->UserInputWindow::DoJoystickWindowMessage(pMessageData, lMessage);
 // LINE 1222:
 	return 0x1;
 // LINE 1224:
 _T202:
-	__asm        mov    eax, pMessageData;
-	__asm        push   eax;
-	__asm        mov    eax, lMessage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::DoInputDeviceListBoxWindowMessage;
+	this->UserInputWindow::DoInputDeviceListBoxWindowMessage(pMessageData, lMessage);
 // LINE 1225:
 	return 0x1;
 // LINE 1227:
 _T21c:
-	__asm        mov    eax, pMessageData;
-	__asm        push   eax;
-	__asm        mov    eax, lMessage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::DoCommandListBoxWindowMessage;
+	this->UserInputWindow::DoCommandListBoxWindowMessage(pMessageData, lMessage);
 // LINE 1228:
 	return 0x1;
 // LINE 1230:
@@ -9813,13 +9746,7 @@ _T2c:
 // LINE 1263:
 	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1264:
-	__asm        mov    eax, lDevice;
-	__asm        push   eax;
-	__asm        mov    eax, lControl;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::GetKeyUsageType;
-	__asm        mov    tempKeyUsageType, eax;
+	tempKeyUsageType = this->UserInputWindow::GetKeyUsageType(lDevice, lControl);
 // LINE 1266:
 	__asm        cmp    lControl, 0;
 	__asm        jl     _T454;
@@ -9830,14 +9757,7 @@ _T2c:
 	__asm        cmp    tempKeyUsageType, 0;
 	__asm        jne    _T3d4;
 // LINE 1269:
-	__asm        mov    eax, lControl;
-	__asm        push   eax;
-	__asm        mov    eax, lDevice;
-	__asm        push   eax;
-	__asm        mov    eax, lCurrentCommand;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::RemoveJoystickTwinCommand;
+	this->UserInputWindow::RemoveJoystickTwinCommand(lControl, lDevice, lCurrentCommand);
 // LINE 1270:
 	tempShortcut.lDeviceID = lDevice;
 // LINE 1271:
@@ -10065,58 +9985,31 @@ _T396:
 	__asm        jmp    _T39b;
 // LINE 1277:
 _T39b:
-	__asm        mov    eax, lControl;
-	__asm        push   eax;
-	__asm        mov    eax, lDevice;
-	__asm        push   eax;
-	__asm        mov    eax, lCurrentCommand;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::AddJoystickTwinCommand;
+	this->UserInputWindow::AddJoystickTwinCommand(lControl, lDevice, lCurrentCommand);
 // LINE 1278:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1279:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1281:
 	__asm        jmp    _T44f;
 _T3d4:
 	__asm        cmp    tempKeyUsageType, 2;
 	__asm        jne    _T42e;
 // LINE 1282:
-	__asm        mov    eax, lControl;
-	__asm        push   eax;
-	__asm        mov    eax, lDevice;
-	__asm        push   eax;
-	__asm        mov    eax, lCurrentCommand;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::RemoveShortcutFromList;
+	this->UserInputWindow::RemoveShortcutFromList(lControl, lDevice, lCurrentCommand);
 // LINE 1283:
-	__asm        mov    eax, lControl;
-	__asm        push   eax;
-	__asm        mov    eax, lDevice;
-	__asm        push   eax;
-	__asm        mov    eax, lCurrentCommand;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::RemoveJoystickTwinCommand;
+	this->UserInputWindow::RemoveJoystickTwinCommand(lControl, lDevice, lCurrentCommand);
 // LINE 1284:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1285:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1287:
 	__asm        jmp    _T44f;
 _T42e:
 	__asm        cmp    tempKeyUsageType, 3;
 	__asm        jne    _T44f;
 // LINE 1288:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::DisplayError;
+	this->UserInputWindow::DisplayError(0x1);
 // LINE 1289:
 	return 0x1;
 // LINE 1292:
@@ -10355,38 +10248,25 @@ _T808:
 _T80d:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1302:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1304:
 	__asm        jmp    _T893;
 _T82f:
 	__asm        cmp    tempKeyUsageType, 2;
 	__asm        jne    _T872;
 // LINE 1305:
-	__asm        mov    eax, lControl;
-	__asm        push   eax;
-	__asm        mov    eax, lDevice;
-	__asm        push   eax;
-	__asm        mov    eax, lCurrentCommand;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::RemoveShortcutFromList;
+	this->UserInputWindow::RemoveShortcutFromList(lControl, lDevice, lCurrentCommand);
 // LINE 1306:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1307:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1309:
 	__asm        jmp    _T893;
 _T872:
 	__asm        cmp    tempKeyUsageType, 3;
 	__asm        jne    _T893;
 // LINE 1310:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::DisplayError;
+	this->UserInputWindow::DisplayError(0x1);
 // LINE 1311:
 	return 0x1;
 // LINE 1315:
@@ -10645,14 +10525,7 @@ void UserInputWindow::RemoveJoystickTwinCommand(long lCommand, long lDevice, lon
 	__asm        cmp    lTwinCommand, 0;
 	__asm        je     _T39;
 // LINE 1369:
-	__asm        mov    eax, lControl;
-	__asm        push   eax;
-	__asm        mov    eax, lDevice;
-	__asm        push   eax;
-	__asm        mov    eax, lTwinCommand;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::RemoveShortcutFromList;
+	this->UserInputWindow::RemoveShortcutFromList(lControl, lDevice, lTwinCommand);
 // LINE 1370:
 _T39:
 	return;
@@ -10675,19 +10548,12 @@ int32_t UserInputWindow::DoKeyboardWindowMessage(long lMessage, void * __ptr32 p
 	__asm        mov    eax, [eax];
 	__asm        mov    lKey, eax;
 // LINE 1388:
-	__asm        push   0;
-	__asm        mov    eax, lKey;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::GetKeyUsageType;
-	__asm        mov    tempKeyUsageType, eax;
+	tempKeyUsageType = this->UserInputWindow::GetKeyUsageType(0x0, lKey);
 // LINE 1389:
 	__asm        cmp    tempKeyUsageType, 1;
 	__asm        jne    _T61;
 // LINE 1390:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::DisplayError;
+	this->UserInputWindow::DisplayError(0x0);
 // LINE 1391:
 	return 0x1;
 // LINE 1393:
@@ -10928,9 +10794,7 @@ _T38e:
 _T393:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1404:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1405:
 	return 0x1;
 // LINE 1407:
@@ -10941,19 +10805,11 @@ _T3bf:
 // LINE 1408:
 	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1409:
-	__asm        mov    eax, lKey;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, lCurrentCommand;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::RemoveShortcutFromList;
+	this->UserInputWindow::RemoveShortcutFromList(lKey, 0x0, lCurrentCommand);
 // LINE 1410:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1411:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1412:
 	return 0x1;
 // LINE 1414:
@@ -10962,9 +10818,7 @@ _T418:
 	__asm        cmp    tempKeyUsageType, 3;
 	__asm        jne    _T439;
 // LINE 1415:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::DisplayError;
+	this->UserInputWindow::DisplayError(0x1);
 // LINE 1416:
 	return 0x1;
 // LINE 1419:
@@ -10985,12 +10839,7 @@ _T457:
 	__asm        mov    eax, [eax];
 	__asm        mov    lKey, eax;
 // LINE 1424:
-	__asm        lea    eax, lKey;
-	__asm        push   eax;
-	__asm        push   0x10001;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::DoKeyboardWindowMessage;
-	__asm        jmp    __RETURN;
+	return this->UserInputWindow::DoKeyboardWindowMessage(lKey, 0x10001);
 // LINE 1426:
 	__asm        jmp    _T4b7;
 _T48a:
@@ -11009,7 +10858,6 @@ _T4a3:
 _T4b7:
 	return 0x0;
 // LINE 1435:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0040920e
@@ -11395,9 +11243,7 @@ int32_t UserInputWindow::DoInputDeviceListBoxWindowMessage(long lMessage, void *
 	__asm        cmp    lMessage, 0x10001;
 	__asm        jne    _T2d;
 // LINE 1514:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x1);
 // LINE 1515:
 	return 0x1;
 // LINE 1517:
@@ -11412,9 +11258,7 @@ int32_t UserInputWindow::DoCommandListBoxWindowMessage(long lMessage, void * __p
 	__asm        cmp    lMessage, 0x10001;
 	__asm        jne    _T2d;
 // LINE 1526:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1527:
 	return 0x1;
 // LINE 1529:
@@ -12471,10 +12315,7 @@ _T17:
 _T30:
 	GetPathForFile(szFilePath[0], SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME, 0x0, 0x6);
 // LINE 1722:
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        lea    ecx, tempImage<CBackBuffer+0x00:None>;
-	__asm        call   CBackBuffer::CBackBuffer;
+	tempImage<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(szFilePath[0]);
 // LINE 1724:
 	__asm        jmp    _T60;
 _T60:
@@ -12765,12 +12606,7 @@ _T384:
 _FOR_3bd:
 	for (i = 0x0; (i < nJoystickCount); i++) {
 		// LINE 1753:
-			__asm        lea    eax, szJoystickName[0];
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    ecx, 0x604C78;
-			__asm        call   JoystickManager::GetJoystickName;
+			0x604c78->JoystickManager::GetJoystickName(szJoystickName[0], i);
 		// LINE 1754:
 			__asm        jmp    _T3e3;
 		_T3e3:
@@ -13644,9 +13480,7 @@ _LOOP_2c:
 	}
 // LINE 1797:
 _T5dc:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::UpdateDisplay;
+	this->UserInputWindow::UpdateDisplay(0x0);
 // LINE 1798:
 	return;
 }
@@ -13668,30 +13502,11 @@ void UserInputWindow::DisplayError(int32_t nErrorType) {
 // FUNCTION: COPTER_D 0x0040b4b0
 void ControlDisplayWindow::ControlDisplayWindow(/*packed*/ class MRect& rectNewPosition, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        push   eax;
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewPosition;
-	__asm        push   eax;
-	__asm        mov    eax, SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F300;
+	this->GraphicWindow::GraphicWindow(GraphicWindow::colorConstants.nPaletteIndexTransparent, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewPosition, SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME);
+	this->bInitializing = 0x1;
+	this->myCommandListBoxWindow = 0x0;
+	this->myKeysListBoxWindow = 0x0;
+	this-><ControlDisplayWindow+0x00> = 0x58f300;
 // LINE 1854:
 	return;
 
@@ -15187,13 +15002,7 @@ _LOOP_2c2:
 		_T323:
 			__asm        jmp    _T328;
 		_T328:
-			__asm        mov    eax, tempLongSetIterator.node;
-			__asm        mov    eax, [eax+0x10];
-			__asm        push   eax;
-			__asm        lea    eax, sCurrentCommand.c_str_ptr;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   ControlDisplayWindow::GetCommandString;
+			this->ControlDisplayWindow::GetCommandString(tempLongSetIterator.node->value_field, sCurrentCommand.c_str_ptr);
 		// LINE 2017:
 			__asm        mov    eax, addedShortcutList;
 			__asm        mov    eax, [eax];
@@ -15264,18 +15073,7 @@ _LOOP_2c2:
 					__asm        cmp    dword ptr [eax], 0;
 					__asm        jne    _T41c;
 				// LINE 2024:
-					__asm        mov    eax, nKeyCountForCommand;
-					__asm        push   eax;
-					__asm        mov    eax, tempShortcut;
-					__asm        mov    eax, [eax+0xC];
-					__asm        push   eax;
-					__asm        mov    eax, tempShortcut;
-					__asm        mov    eax, [eax+8];
-					__asm        push   eax;
-					__asm        lea    eax, sCurrentKeys.c_str_ptr;
-					__asm        push   eax;
-					__asm        mov    ecx, this;
-					__asm        call   ControlDisplayWindow::AppendKeysString;
+					this->ControlDisplayWindow::AppendKeysString(nKeyCountForCommand, tempShortcut->lModifiers, tempShortcut->lKey, sCurrentKeys.c_str_ptr);
 				// LINE 2025:
 					nKeyCountForCommand += 0x1;
 				// LINE 2027:
@@ -15315,15 +15113,9 @@ _LOOP_2c2:
 			__asm        mov    ecx, [eax+0x7C];
 			__asm        call   dword ptr [edx+0xD4];
 		// LINE 2031:
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        lea    ecx, sCurrentCommand.c_str_ptr;
-			__asm        call   basic_string<char>::remove;
+			sCurrentCommand.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
 		// LINE 2032:
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        lea    ecx, sCurrentKeys.c_str_ptr;
-			__asm        call   basic_string<char>::remove;
+			sCurrentKeys.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
 		// LINE 2033:
 			__asm        mov    eax, tempLongSetIterator.node;
 			__asm        mov    [ebp-0xC8], eax;
@@ -16154,14 +15946,7 @@ _T37c:
 // LINE 2081:
 	__asm        jmp    _T395;
 _T395:
-	__asm        mov    eax, sSeparator.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        lea    ecx, sSeparator.c_str_ptr;
-	__asm        call   basic_string<char>::data;
-	__asm        push   eax;
-	__asm        mov    ecx, sKeys;
-	__asm        call   basic_string<char>::append_str;
+	sKeys->basic_string<char>::append_str(sSeparator.reference-><basic_string_ref<char>+0x04:4>, sSeparator.c_str_ptr->basic_string<char>::data(sSeparator.reference-><basic_string_ref<char>+0x04:4>));
 	__asm        jmp    _T3b2;
 // LINE 2082:
 _T3b2:
@@ -16173,14 +15958,7 @@ _T3b2:
 // LINE 2085:
 	__asm        jmp    _T3e0;
 _T3e0:
-	__asm        mov    eax, sModifier.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        lea    ecx, sModifier.c_str_ptr;
-	__asm        call   basic_string<char>::data;
-	__asm        push   eax;
-	__asm        mov    ecx, sKeys;
-	__asm        call   basic_string<char>::append_str;
+	sKeys->basic_string<char>::append_str(sModifier.reference-><basic_string_ref<char>+0x04:4>, sModifier.c_str_ptr->basic_string<char>::data(sModifier.reference-><basic_string_ref<char>+0x04:4>));
 	__asm        jmp    _T3fd;
 // LINE 2088:
 _T3fd:
@@ -16192,14 +15970,7 @@ _T3fd:
 // LINE 2090:
 	__asm        jmp    _T416;
 _T416:
-	__asm        mov    eax, sSeparator.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        lea    ecx, sSeparator.c_str_ptr;
-	__asm        call   basic_string<char>::data;
-	__asm        push   eax;
-	__asm        mov    ecx, sKeys;
-	__asm        call   basic_string<char>::append_str;
+	sKeys->basic_string<char>::append_str(sSeparator.reference-><basic_string_ref<char>+0x04:4>, sSeparator.c_str_ptr->basic_string<char>::data(sSeparator.reference-><basic_string_ref<char>+0x04:4>));
 	__asm        jmp    _T433;
 // LINE 2091:
 _T433:
@@ -16211,14 +15982,7 @@ _T433:
 // LINE 2094:
 	__asm        jmp    _T461;
 _T461:
-	__asm        mov    eax, sModifier.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        lea    ecx, sModifier.c_str_ptr;
-	__asm        call   basic_string<char>::data;
-	__asm        push   eax;
-	__asm        mov    ecx, sKeys;
-	__asm        call   basic_string<char>::append_str;
+	sKeys->basic_string<char>::append_str(sModifier.reference-><basic_string_ref<char>+0x04:4>, sModifier.c_str_ptr->basic_string<char>::data(sModifier.reference-><basic_string_ref<char>+0x04:4>));
 	__asm        jmp    _T47e;
 // LINE 2097:
 _T47e:
@@ -16227,14 +15991,7 @@ _T47e:
 // LINE 2098:
 	__asm        jmp    _T48d;
 _T48d:
-	__asm        mov    eax, sSeparator.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        lea    ecx, sSeparator.c_str_ptr;
-	__asm        call   basic_string<char>::data;
-	__asm        push   eax;
-	__asm        mov    ecx, sKeys;
-	__asm        call   basic_string<char>::append_str;
+	sKeys->basic_string<char>::append_str(sSeparator.reference-><basic_string_ref<char>+0x04:4>, sSeparator.c_str_ptr->basic_string<char>::data(sSeparator.reference-><basic_string_ref<char>+0x04:4>));
 	__asm        jmp    _T4aa;
 // LINE 2099:
 _T4aa:
@@ -16244,14 +16001,7 @@ _T4aa:
 // LINE 2101:
 	__asm        jmp    _T4d5;
 _T4d5:
-	__asm        mov    eax, sKey.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        lea    ecx, sKey.c_str_ptr;
-	__asm        call   basic_string<char>::data;
-	__asm        push   eax;
-	__asm        mov    ecx, sKeys;
-	__asm        call   basic_string<char>::append_str;
+	sKeys->basic_string<char>::append_str(sKey.reference-><basic_string_ref<char>+0x04:4>, sKey.c_str_ptr->basic_string<char>::data(sKey.reference-><basic_string_ref<char>+0x04:4>));
 	__asm        jmp    _T4f2;
 // LINE 2102:
 _T4f2:

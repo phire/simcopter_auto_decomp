@@ -989,10 +989,7 @@ _T50:
 	__asm        jne    _T79;
 // LINE 398:
 _T6d:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(carModel);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::PullOver;
+	this->AutomobileClass::PullOver(reinterpret_cast<uint32_t>(carModel));
 // LINE 399:
 _T79:
 	return;
@@ -1027,10 +1024,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	/*bp-0x14*/  /*packed*/ struct _GridCoordinates scanLoc;
 
 // LINE 442:
-	__asm        movsx  eax, CriminalEvaderCarClass::maxSearchForBuildingRadius;
-	__asm        push   eax;
-	__asm        lea    ecx, scan.currDist;
-	__asm        call   SpiralScan::SpiralScan;
+	scan.currDist->SpiralScan::SpiralScan(reinterpret_cast<int16_t>(CriminalEvaderCarClass::maxSearchForBuildingRadius));
 // LINE 443:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x7C];
@@ -1039,254 +1033,251 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 // Block start:
 	/*bp-0x18*/  unsigned short tt;
 __DO_27:
-	__asm        xor    eax, eax;
-	__asm        mov    al, scanLoc.x;
-	__asm        mov    eax, BuildMap[eax*4];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, scanLoc.y;
-	__asm        movzx  ax, byte ptr [eax+ecx];
-	__asm        mov    tt, ax;
-// LINE 448:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x11E];
-	__asm        mov    [ebp-0x38], eax;
-	__asm        jmp    _T4b2;
-// LINE 451:
-_T52:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    [ebp-0x3C], eax;
-	__asm        jmp    _T80;
-// LINE 480:
-_T62:
-	__asm        mov    dword ptr [ebp-0x1C], 1;
-	__asm        jmp    _T6e;
-_T6e:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    __RETURN;
-// LINE 481:
-	__asm        jmp    _T153;
-// LINE 482:
-	__asm        jmp    _T153;
-_T80:
-	__asm        sub    dword ptr [ebp-0x3C], 0x70;
-	__asm        cmp    dword ptr [ebp-0x3C], 0x8F;
-	__asm        ja     _T153;
+	do {
+		// LINE 447:
+		// Block start:
+			/*bp-0x18*/  unsigned short tt;
+		__DO_27:
+			__asm        xor    eax, eax;
+			__asm        mov    al, scanLoc.x;
+			__asm        mov    eax, BuildMap[eax*4];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, scanLoc.y;
+			__asm        movzx  ax, byte ptr [eax+ecx];
+			__asm        mov    tt, ax;
+		// LINE 448:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0x11E];
+			__asm        mov    [ebp-0x38], eax;
+			__asm        jmp    _T4b2;
+		// LINE 451:
+		_T52:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    [ebp-0x3C], eax;
+			__asm        jmp    _T80;
+		// LINE 480:
+		_T62:
+			__asm        mov    dword ptr [ebp-0x1C], 1;
+			__asm        jmp    _T6e;
+		_T6e:
+			__asm        mov    eax, [ebp-0x1C];
+			__asm        jmp    __RETURN;
+		// LINE 481:
+			__asm        jmp    _T153;
+		// LINE 482:
+			__asm        jmp    _T153;
+		_T80:
+			__asm        sub    dword ptr [ebp-0x3C], 0x70;
+			__asm        cmp    dword ptr [ebp-0x3C], 0x8F;
+			__asm        ja     _T153;
 
-	__asm        mov    eax, [ebp-0x3C];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _SwitchTable_c3[0][eax];
-	__asm        jmp    _Switch_a3[0][ecx*4];
-// Switch pointers:
-//   _T62
-//   _T62
-//   _T62
-//   _T62
-//   _T62
-//   _T62
-//   _T62
-//   _T153
-// Switch table
-//  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 1, 1, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, 2, 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3, 7, 7, 7, 4, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6]
-// LINE 484:
-_T153:
-	__asm        jmp    __DO_WHILE_27;
-// LINE 487:
-_T158:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    _T186;
-// LINE 510:
-_T168:
-	__asm        mov    dword ptr [ebp-0x20], 1;
-	__asm        jmp    _T174;
-_T174:
-	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    __RETURN;
-// LINE 511:
-	__asm        jmp    _T255;
-// LINE 512:
-	__asm        jmp    _T255;
-_T186:
-	__asm        sub    dword ptr [ebp-0x40], 0x7D;
-	__asm        cmp    dword ptr [ebp-0x40], 0x7A;
-	__asm        ja     _T255;
+			__asm        mov    eax, [ebp-0x3C];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, _SwitchTable_c3[0][eax];
+			__asm        jmp    _Switch_a3[0][ecx*4];
+		// Switch pointers:
+		//   _T62
+		//   _T62
+		//   _T62
+		//   _T62
+		//   _T62
+		//   _T62
+		//   _T62
+		//   _T153
+		// Switch table
+		//  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 1, 1, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, 2, 2, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 3, 7, 7, 7, 4, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6]
+		// LINE 484:
+		_T153:
+			__asm        jmp    __DO_WHILE_27;
+		// LINE 487:
+		_T158:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    [ebp-0x40], eax;
+			__asm        jmp    _T186;
+		// LINE 510:
+		_T168:
+			__asm        mov    dword ptr [ebp-0x20], 1;
+			__asm        jmp    _T174;
+		_T174:
+			__asm        mov    eax, [ebp-0x20];
+			__asm        jmp    __RETURN;
+		// LINE 511:
+			__asm        jmp    _T255;
+		// LINE 512:
+			__asm        jmp    _T255;
+		_T186:
+			__asm        sub    dword ptr [ebp-0x40], 0x7D;
+			__asm        cmp    dword ptr [ebp-0x40], 0x7A;
+			__asm        ja     _T255;
 
-	__asm        mov    eax, [ebp-0x40];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _SwitchTable_1da[0][eax];
-	__asm        jmp    _Switch_1a6[0][ecx*4];
-// Switch pointers:
-//   _T168
-//   _T168
-//   _T168
-//   _T168
-//   _T168
-//   _T168
-//   _T168
-//   _T168
-//   _T168
-//   _T168
-//   _T168
-//   _T168
-//   _T255
-// Switch table
-//  [0, 12, 12, 12, 12, 1, 1, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 2, 2, 12, 3, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 4, 12, 12, 5, 5, 12, 12, 6, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 7, 7, 7, 12, 8, 8, 12, 9, 9, 9, 9, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 10, 12, 11]
-// LINE 513:
-_T255:
-	__asm        jmp    __DO_WHILE_27;
-// LINE 516:
-_T25a:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    [ebp-0x44], eax;
-	__asm        jmp    _T288;
-// LINE 531:
-_T26a:
-	__asm        mov    dword ptr [ebp-0x24], 1;
-	__asm        jmp    _T276;
-_T276:
-	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    __RETURN;
-// LINE 532:
-	__asm        jmp    _T2f0;
-// LINE 533:
-	__asm        jmp    _T2f0;
-_T288:
-	__asm        sub    dword ptr [ebp-0x44], 0x90;
-	__asm        cmp    dword ptr [ebp-0x44], 0x28;
-	__asm        ja     _T2f0;
+			__asm        mov    eax, [ebp-0x40];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, _SwitchTable_1da[0][eax];
+			__asm        jmp    _Switch_1a6[0][ecx*4];
+		// Switch pointers:
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T168
+		//   _T255
+		// Switch table
+		//  [0, 12, 12, 12, 12, 1, 1, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 2, 2, 12, 3, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 4, 12, 12, 5, 5, 12, 12, 6, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 7, 7, 7, 12, 8, 8, 12, 9, 9, 9, 9, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 10, 12, 11]
+		// LINE 513:
+		_T255:
+			__asm        jmp    __DO_WHILE_27;
+		// LINE 516:
+		_T25a:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    [ebp-0x44], eax;
+			__asm        jmp    _T288;
+		// LINE 531:
+		_T26a:
+			__asm        mov    dword ptr [ebp-0x24], 1;
+			__asm        jmp    _T276;
+		_T276:
+			__asm        mov    eax, [ebp-0x24];
+			__asm        jmp    __RETURN;
+		// LINE 532:
+			__asm        jmp    _T2f0;
+		// LINE 533:
+			__asm        jmp    _T2f0;
+		_T288:
+			__asm        sub    dword ptr [ebp-0x44], 0x90;
+			__asm        cmp    dword ptr [ebp-0x44], 0x28;
+			__asm        ja     _T2f0;
 
-	__asm        mov    eax, [ebp-0x44];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _SwitchTable_2c7[0][eax];
-	__asm        jmp    _Switch_2ab[0][ecx*4];
-// Switch pointers:
-//   _T26a
-//   _T26a
-//   _T26a
-//   _T26a
-//   _T26a
-//   _T26a
-//   _T2f0
-// Switch table
-//  [0, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 1, 1, 1, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 2, 2, 6, 3, 6, 4, 6, 6, 6, 5, 5]
-// LINE 534:
-_T2f0:
-	__asm        jmp    __DO_WHILE_27;
-// LINE 537:
-_T2f5:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    [ebp-0x48], eax;
-	__asm        jmp    _T323;
-// LINE 572:
-_T305:
-	__asm        mov    dword ptr [ebp-0x28], 1;
-	__asm        jmp    _T311;
-_T311:
-	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    __RETURN;
-// LINE 573:
-	__asm        jmp    _T3ed;
-// LINE 574:
-	__asm        jmp    _T3ed;
-_T323:
-	__asm        sub    dword ptr [ebp-0x48], 0x80;
-	__asm        cmp    dword ptr [ebp-0x48], 0x72;
-	__asm        ja     _T3ed;
+			__asm        mov    eax, [ebp-0x44];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, _SwitchTable_2c7[0][eax];
+			__asm        jmp    _Switch_2ab[0][ecx*4];
+		// Switch pointers:
+		//   _T26a
+		//   _T26a
+		//   _T26a
+		//   _T26a
+		//   _T26a
+		//   _T26a
+		//   _T2f0
+		// Switch table
+		//  [0, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 1, 1, 1, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 2, 2, 6, 3, 6, 4, 6, 6, 6, 5, 5]
+		// LINE 534:
+		_T2f0:
+			__asm        jmp    __DO_WHILE_27;
+		// LINE 537:
+		_T2f5:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    [ebp-0x48], eax;
+			__asm        jmp    _T323;
+		// LINE 572:
+		_T305:
+			__asm        mov    dword ptr [ebp-0x28], 1;
+			__asm        jmp    _T311;
+		_T311:
+			__asm        mov    eax, [ebp-0x28];
+			__asm        jmp    __RETURN;
+		// LINE 573:
+			__asm        jmp    _T3ed;
+		// LINE 574:
+			__asm        jmp    _T3ed;
+		_T323:
+			__asm        sub    dword ptr [ebp-0x48], 0x80;
+			__asm        cmp    dword ptr [ebp-0x48], 0x72;
+			__asm        ja     _T3ed;
 
-	__asm        mov    eax, [ebp-0x48];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _SwitchTable_37a[0][eax];
-	__asm        jmp    _Switch_346[0][ecx*4];
-// Switch pointers:
-//   _T305
-//   _T305
-//   _T305
-//   _T305
-//   _T305
-//   _T305
-//   _T305
-//   _T305
-//   _T305
-//   _T305
-//   _T305
-//   _T305
-//   _T3ed
-// Switch table
-//  [0, 0, 12, 12, 1, 1, 1, 1, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 2, 12, 3, 3, 3, 12, 12, 12, 4, 4, 4, 4, 4, 4, 4, 4, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 5, 5, 5, 5, 5, 5, 5, 5, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 6, 12, 12, 7, 12, 12, 12, 12, 12, 8, 12, 12, 9, 9, 12, 12, 10, 12, 11]
-// LINE 575:
-_T3ed:
-	__asm        jmp    __DO_WHILE_27;
-// LINE 578:
-_T3f2:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    _T420;
-// LINE 613:
-_T402:
-	__asm        mov    dword ptr [ebp-0x2C], 1;
-	__asm        jmp    _T40e;
-_T40e:
-	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    __RETURN;
-// LINE 614:
-	__asm        jmp    _T4a8;
-// LINE 615:
-	__asm        jmp    _T4a8;
-_T420:
-	__asm        sub    dword ptr [ebp-0x4C], 0xC6;
-	__asm        cmp    dword ptr [ebp-0x4C], 0x34;
-	__asm        ja     _T4a8;
+			__asm        mov    eax, [ebp-0x48];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, _SwitchTable_37a[0][eax];
+			__asm        jmp    _Switch_346[0][ecx*4];
+		// Switch pointers:
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T305
+		//   _T3ed
+		// Switch table
+		//  [0, 0, 12, 12, 1, 1, 1, 1, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 2, 12, 3, 3, 3, 12, 12, 12, 4, 4, 4, 4, 4, 4, 4, 4, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 5, 5, 5, 5, 5, 5, 5, 5, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 6, 12, 12, 7, 12, 12, 12, 12, 12, 8, 12, 12, 9, 9, 12, 12, 10, 12, 11]
+		// LINE 575:
+		_T3ed:
+			__asm        jmp    __DO_WHILE_27;
+		// LINE 578:
+		_T3f2:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(tt);
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    [ebp-0x4C], eax;
+			__asm        jmp    _T420;
+		// LINE 613:
+		_T402:
+			__asm        mov    dword ptr [ebp-0x2C], 1;
+			__asm        jmp    _T40e;
+		_T40e:
+			__asm        mov    eax, [ebp-0x2C];
+			__asm        jmp    __RETURN;
+		// LINE 614:
+			__asm        jmp    _T4a8;
+		// LINE 615:
+			__asm        jmp    _T4a8;
+		_T420:
+			__asm        sub    dword ptr [ebp-0x4C], 0xC6;
+			__asm        cmp    dword ptr [ebp-0x4C], 0x34;
+			__asm        ja     _T4a8;
 
-	__asm        mov    eax, [ebp-0x4C];
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _SwitchTable_473[0][eax];
-	__asm        jmp    _Switch_443[0][ecx*4];
-// Switch pointers:
-//   _T402
-//   _T402
-//   _T402
-//   _T402
-//   _T402
-//   _T402
-//   _T402
-//   _T402
-//   _T402
-//   _T402
-//   _T402
-//   _T4a8
-// Switch table
-//  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 11, 11, 11, 11, 11, 1, 11, 11, 11, 11, 2, 2, 2, 11, 11, 3, 3, 11, 4, 4, 4, 4, 4, 11, 5, 5, 11, 11, 6, 6, 11, 7, 11, 8, 8, 11, 9, 11, 10, 10, 10]
-// LINE 616:
-_T4a8:
-	__asm        jmp    __DO_WHILE_27;
-// LINE 617:
-	__asm        jmp    __DO_WHILE_27;
-_T4b2:
-	__asm        cmp    dword ptr [ebp-0x38], 4;
-	__asm        ja     __DO_WHILE_27;
+			__asm        mov    eax, [ebp-0x4C];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, _SwitchTable_473[0][eax];
+			__asm        jmp    _Switch_443[0][ecx*4];
+		// Switch pointers:
+		//   _T402
+		//   _T402
+		//   _T402
+		//   _T402
+		//   _T402
+		//   _T402
+		//   _T402
+		//   _T402
+		//   _T402
+		//   _T402
+		//   _T402
+		//   _T4a8
+		// Switch table
+		//  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 11, 11, 11, 11, 11, 1, 11, 11, 11, 11, 2, 2, 2, 11, 11, 3, 3, 11, 4, 4, 4, 4, 4, 11, 5, 5, 11, 11, 6, 6, 11, 7, 11, 8, 8, 11, 9, 11, 10, 10, 10]
+		// LINE 616:
+		_T4a8:
+			__asm        jmp    __DO_WHILE_27;
+		// LINE 617:
+			__asm        jmp    __DO_WHILE_27;
+		_T4b2:
+			__asm        cmp    dword ptr [ebp-0x38], 4;
+			__asm        ja     __DO_WHILE_27;
 
-	__asm        mov    eax, [ebp-0x38];
-	__asm        jmp    _Switch_4c6[0][eax*4];
-// Switch pointers:
-//   _T52
-//   _T158
-//   _T25a
-//   _T2f5
-//   _T3f2
-// LINE 619:
-// Block end:
-__DO_WHILE_27:
-	__asm        lea    eax, scanLoc.x;
-	__asm        push   eax;
-	__asm        lea    ecx, scan.currDist;
-	__asm        call   SpiralScan::Next;
-	__asm        test   eax, eax;
-	__asm        jne    __DO_27;
+			__asm        mov    eax, [ebp-0x38];
+			__asm        jmp    _Switch_4c6[0][eax*4];
+		// Switch pointers:
+		//   _T52
+		//   _T158
+		//   _T25a
+		//   _T2f5
+		//   _T3f2
+	} while ((scan.currDist->SpiralScan::Next(scanLoc.x) != 0x0));
 // LINE 621:
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        jmp    _T4fa;
@@ -1332,10 +1323,7 @@ void CriminalEvaderCarClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) 
 // LINE 672:
 	sd->c.timeToBeOnTheRun = this->timeToBeOnTheRun;
 // LINE 675:
-	__asm        mov    eax, sd;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::SetSaveData;
+	this->AutomobileClass::SetSaveData(sd);
 // LINE 676:
 	return;
 }
@@ -1350,10 +1338,7 @@ void CriminalEvaderCarClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd)
 	return;
 // LINE 695:
 _T1d:
-	__asm        mov    eax, sd;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   AutomobileClass::LoadSaveData;
+	this->AutomobileClass::LoadSaveData(sd);
 // LINE 698:
 	this->missionState = sd->c.missionState;
 // LINE 699:

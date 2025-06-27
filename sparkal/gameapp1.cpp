@@ -1315,9 +1315,7 @@ _T389:
 // LINE 120:
 	this->CGameApp::InitializeMemberVariables();
 // LINE 123:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::EnterMode;
+	this->CGameApp::EnterMode(0x0);
 // LINE 124:
 	return;
 
@@ -1481,9 +1479,7 @@ _T1e8:
 _T219:
 	0x604480->Radio::DeInitialize();
 // LINE 170:
-	__asm        push   1;
-	__asm        mov    ecx, 0x604450;
-	__asm        call   SoundQueue::DeInitialize;
+	0x604450->SoundQueue::DeInitialize(0x1);
 // LINE 171:
 	__asm        push   1;
 	__asm        lea    ecx, gSoundQueue[1]<vftable>;
@@ -2606,15 +2602,7 @@ _Tb3f:
 	__asm        lea    ecx, gSoundQueue[1]<vftable>;
 	__asm        call   SoundQueue::Initialize;
 // LINE 346:
-	__asm        lea    eax, szButtonWindowSoundFilePath[0];
-	__asm        push   eax;
-	__asm        mov    eax, SZ_SOUND_BUTTON_WINDOW_SOUND_FILE;
-	__asm        push   eax;
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        push   eax;
-	__asm        push   2;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFile;
+	0x604c00->FileServices::GetPathForFile(szButtonWindowSoundFilePath[0], SZ_SOUND_BUTTON_WINDOW_SOUND_FILE, gDefaultLanguage, 0x2);
 // LINE 347:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2767,11 +2755,7 @@ _Tddc:
 	__asm        mov    ecx, gGameCommander;
 	__asm        call   dword ptr [eax+0x50];
 // LINE 354:
-	__asm        mov    eax, gGameCommander;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x50];
-	__asm        call   CSparkalWindow::SetCommander;
+	this-><CGameApp+0x50:4>->CSparkalWindow::SetCommander(gGameCommander);
 // LINE 355:
 	__asm        mov    eax, gGameCommander;
 	__asm        mov    eax, [eax];
@@ -2968,9 +2952,7 @@ _T152:
 	gDebugWindow = 0x0;
 // LINE 420:
 _T15c:
-	__asm        push   0x599C84;
-	__asm        mov    ecx, gDebugWindow;
-	__asm        call   CDebugWindow::Create;
+	gDebugWindow->CDebugWindow::Create(0x599c84);
 // LINE 421:
 	DebugOutput(0x599c98);
 // LINE 430:
@@ -2988,15 +2970,9 @@ _T15c:
 // LINE 433:
 	this->CGameApp::DisplayDebugSystemInformation();
 // LINE 434:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::SetSystemPriorityLevel;
+	this->CGameApp::SetSystemPriorityLevel(0x0);
 // LINE 435:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4324];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::SetCurrentLanguageUse;
+	this->CGameApp::SetCurrentLanguageUse(this-><CGameApp+0x4324:4>);
 // LINE 436:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3332,10 +3308,7 @@ _T1c1:
 // LINE 548:
 	this-><CGameApp+0x4324:4> = nLanguage;
 // LINE 549:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::SetCurrentLanguageUse;
+	this->CGameApp::SetCurrentLanguageUse(nLanguage);
 // LINE 552:
 _T228:
 	__asm        lea    eax, szCommandValue[0];
@@ -4116,10 +4089,7 @@ void CGameApp::InitializeJoysticks() {
 // LINE 793:
 	0x604c78->JoystickManager::Initialize();
 // LINE 794:
-	__asm        push   0x64;
-	__asm        push   0xFFFFFF9C;
-	__asm        mov    ecx, 0x604C78;
-	__asm        call   JoystickManager::SetNormalizedMinMax;
+	0x604c78->JoystickManager::SetNormalizedMinMax(0x64, -0x64);
 // LINE 795:
 	gJoystickManager.lJoystickThreshold = 0x14;
 	__asm        jmp    _T33;
@@ -4205,12 +4175,7 @@ _FOR_9a:
 		_Td4:
 			chCurrentJoystickName[0] = 0x0;
 		// LINE 834:
-			__asm        lea    eax, chCurrentJoystickName[0];
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    ecx, 0x604C78;
-			__asm        call   JoystickManager::GetJoystickName;
+			0x604c78->JoystickManager::GetJoystickName(chCurrentJoystickName[0], i);
 		// LINE 835:
 			__asm        mov    eax, chLastJoystickName;
 			__asm        push   eax;

@@ -538,12 +538,7 @@ _T85:
 	this-><CGameApp+0x34:4> = 0x0;
 // LINE 222:
 _T8f:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x50];
-	__asm        call   CSparkalWindow::SetBackBuffer;
+	this-><CGameApp+0x50:4>->CSparkalWindow::SetBackBuffer(this-><CGameApp+0x34:4>);
 // LINE 223:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -678,10 +673,7 @@ _T6f:
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        je     _Tcf;
 // LINE 254:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x50];
-	__asm        call   CSparkalWindow::SetBackBuffer;
+	this-><CGameApp+0x50:4>->CSparkalWindow::SetBackBuffer(0x0);
 // LINE 255:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;

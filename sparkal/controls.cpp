@@ -1097,22 +1097,9 @@ _T2d:
 // FUNCTION: COPTER_D 0x004acb00
 void BoxWindow::BoxWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
+	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this->bDrawOutline = 0x1;
+	this->bDrawFill = 0x0;
 	__asm        jmp    _T41;
 _T41:
 	this->nPaletteIndexFill = GraphicWindow::colorConstants.nPaletteIndexWhite;
@@ -1233,18 +1220,7 @@ _T19:
 // FUNCTION: COPTER_D 0x004acce6
 void TextWindow::TextWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
+	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
 	__asm        jmp    _T2d;
 _T2d:
 	this->nWindowTitleTextID = nNewWindowTitleTextID;
@@ -1284,18 +1260,7 @@ _T2d:
 // FUNCTION: COPTER_D 0x004acda2
 void TextWindow::TextWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, const /*packed*/ class basic_string<char>& sNewWindowTitle, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
+	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
 	__asm        jmp    _T2d;
 _T2d:
 	(this + 0x84)->MFont::MFont();
@@ -2342,15 +2307,7 @@ void TextWindow::SetBackgroundDrawing(int32_t bNewDrawOpaqueBackground) {
 // FUNCTION: COPTER_D 0x004adba4
 void TextWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
 // LINE 207:
-	__asm        mov    eax, lNewAttributes;
-	__asm        push   eax;
-	__asm        mov    eax, lNewWidth;
-	__asm        push   eax;
-	__asm        mov    eax, lNewHeight;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x84;
-	__asm        call   MFont::SetFontCharacteristics;
+	(this + 0x84)->MFont::SetFontCharacteristics(lNewAttributes, lNewWidth, lNewHeight);
 // LINE 208:
 	__asm        push   1;
 	__asm        push   1;
@@ -2533,14 +2490,7 @@ int32_t TextWindow::ResizeWindowForExactLineHeights() {
 // LINE 254:
 	lTextWidth = 0x1;
 // LINE 256:
-	__asm        lea    eax, lLineHeight;
-	__asm        push   eax;
-	__asm        lea    eax, lTextWidth;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x84;
-	__asm        call   MFont::GetTextDimensions;
+	(this + 0x84)->MFont::GetTextDimensions(lLineHeight, lTextWidth, 0x0);
 // LINE 257:
 	__asm        jmp    _T3e;
 _T3e:
@@ -2729,24 +2679,10 @@ _T213:
 // FUNCTION: COPTER_D 0x004ae05d
 void ButtonWindow::ButtonWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
+	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this->nButtonState = 0x1;
+	this->bEnabled = 0x1;
+	this->nButtonTextHeight = 0x0;
 	__asm        jmp    _T4b;
 _T4b:
 	this->sizeTextOffset.cx = 0x2;
@@ -3024,10 +2960,7 @@ _T17:
 	__asm        jmp    _T1c;
 // LINE 356:
 _T1c:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->GraphicWindow::CreateImage(0x1);
 // LINE 357:
 	__asm        cmp    nReturnValue, 0;
 	__asm        je     _T6a9;
@@ -4010,22 +3943,8 @@ _T275:
 // FUNCTION: COPTER_D 0x004af0ab
 void CheckBoxWindow::CheckBoxWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, szImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ButtonWindow::ButtonWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591C58;
+	this->ButtonWindow::ButtonWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow);
+	this-><CheckBoxWindow+0x00> = 0x591c58;
 // LINE 553:
 	__asm        cmp    szImageFileName, 0;
 	__asm        je     _T294;
@@ -4629,25 +4548,9 @@ long CheckBoxWindow::DoCursorMove(long __formal, long __formal) {
 // FUNCTION: COPTER_D 0x004af7f7
 void RadioButtonWindow::RadioButtonWindow(/*unpacked*/ class ButtonGroup *myNewRadioButtonGroup, /*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, szImageFileName;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ButtonWindow::ButtonWindow;
-	__asm        mov    eax, myNewRadioButtonGroup;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x94], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591D38;
+	this->ButtonWindow::ButtonWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow);
+	this->myRadioButtonGroup = myNewRadioButtonGroup;
+	this-><RadioButtonWindow+0x00> = 0x591d38;
 // LINE 677:
 	__asm        cmp    szImageFileName, 0;
 	__asm        je     _T2a0;
@@ -5069,11 +4972,7 @@ int32_t RadioButtonWindow::Initialize() {
 	__asm        cmp    dword ptr [eax+0x94], 0;
 	__asm        je     _T2e;
 // LINE 712:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x94];
-	__asm        call   ButtonGroup::AddButton;
+	this->myRadioButtonGroup->ButtonGroup::AddButton(this);
 // LINE 713:
 _T2e:
 	return this->ButtonWindow::Initialize();
@@ -5180,10 +5079,7 @@ void RadioButtonWindow::AddToGroup(/*unpacked*/ class ButtonGroup *myNewRadioBut
 // LINE 760:
 	this->myRadioButtonGroup = myNewRadioButtonGroup;
 // LINE 761:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    ecx, myNewRadioButtonGroup;
-	__asm        call   ButtonGroup::AddButton;
+	myNewRadioButtonGroup->ButtonGroup::AddButton(this);
 // LINE 762:
 	return;
 }
@@ -5195,11 +5091,7 @@ int32_t RadioButtonWindow::RemoveFromGroup() {
 	__asm        cmp    dword ptr [eax+0x94], 0;
 	__asm        je     _T38;
 // LINE 770:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x94];
-	__asm        call   ButtonGroup::RemoveButton;
+	this->myRadioButtonGroup->ButtonGroup::RemoveButton(this);
 // LINE 771:
 	return 0x1;
 // LINE 773:
@@ -5304,11 +5196,7 @@ _T20:
 	__asm        cmp    dword ptr [eax+0x94], 0;
 	__asm        je     _T54;
 // LINE 812:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x94];
-	__asm        call   ButtonGroup::SetSelection;
+	this->myRadioButtonGroup->ButtonGroup::SetSelection(this);
 // LINE 814:
 	__asm        jmp    _T64;
 // LINE 815:
@@ -6855,36 +6743,15 @@ _Tff:
 // FUNCTION: COPTER_D 0x004b1256
 void SliderWindow::SliderWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szThumbImageFileName, char * szBackgroundImageFileName, long lNewThumbLimitIndentation) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, newSliderWindowDirection;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x74], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 8;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x8C], 0;
-	__asm        mov    eax, lNewThumbLimitIndentation;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x90], eax;
+	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this->nSliderWindowDirection = newSliderWindowDirection;
+	this->lSliderMinimumValue = 0x0;
+	this->lSliderMaximumValue = 0x8;
+	this->lSliderCurrentValue = 0x0;
+	this->lMinimumThumbPosition = 0x0;
+	this->lCurrentThumbPosition = 0x0;
+	this->lMaximumThumbPosition = 0x0;
+	this->lThumbLimitIndentation = lNewThumbLimitIndentation;
 	__asm        jmp    _T8a;
 _T8a:
 	__asm        jmp    _T8f;
@@ -7610,10 +7477,7 @@ _T63:
 	__asm        jmp    _T6f;
 // LINE 1188:
 _T6f:
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->GraphicWindow::CreateImage(0x0);
 // LINE 1189:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x58], 0xFFFFFFFF;
@@ -7642,15 +7506,7 @@ _Ta8:
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        jne    _T23b;
 // LINE 1193:
-	__asm        lea    eax, sBackgroundPath.c_str_ptr;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA8;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sBackgroundPath.c_str_ptr, (this + 0xa8), 0x0, 0x6);
 	__asm        jmp    _Teb;
 // LINE 1194:
 _Teb:
@@ -7873,12 +7729,7 @@ _T6b:
 // FUNCTION: COPTER_D 0x004b1ed9
 void SliderWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 // LINE 1220:
-	__asm        mov    eax, nYPosition;
-	__asm        push   eax;
-	__asm        mov    eax, nXPosition;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::MoveWindow;
+	this->GraphicWindow::MoveWindow(nYPosition, nXPosition);
 // LINE 1221:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -7891,12 +7742,7 @@ void SliderWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 // FUNCTION: COPTER_D 0x004b1f0f
 void SliderWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 // LINE 1229:
-	__asm        mov    eax, nNewHeight;
-	__asm        push   eax;
-	__asm        mov    eax, nNewWidth;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::SetWidthAndHeight;
+	this->GraphicWindow::SetWidthAndHeight(nNewHeight, nNewWidth);
 // LINE 1230:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -8186,10 +8032,7 @@ long SliderWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	__asm        test   eax, eax;
 	__asm        je     _T4c;
 // LINE 1297:
-	__asm        mov    eax, lNewValue;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::SetValue;
+	this->SliderWindow::SetValue(lNewValue);
 // LINE 1299:
 _T4c:
 	GraphicWindow::MakeFocus(this);
@@ -8237,10 +8080,7 @@ _T33:
 	__asm        test   eax, eax;
 	__asm        je     _T73;
 // LINE 1313:
-	__asm        mov    eax, lNewValue;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::SetValue;
+	this->SliderWindow::SetValue(lNewValue);
 // LINE 1315:
 _T73:
 	return 0x1;
@@ -8279,10 +8119,7 @@ _T33:
 	__asm        test   eax, eax;
 	__asm        je     _T61;
 // LINE 1328:
-	__asm        mov    eax, lNewValue;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::SetValue;
+	this->SliderWindow::SetValue(lNewValue);
 // LINE 1330:
 _T61:
 	return 0x1;
@@ -10015,10 +9852,7 @@ _T33:
 	__asm        test   eax, eax;
 	__asm        je     _T83;
 // LINE 1764:
-	__asm        mov    eax, lNewValue;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::SetValue;
+	this->SliderWindow::SetValue(lNewValue);
 // LINE 1767:
 _T83:
 	return 0x1;
@@ -10062,10 +9896,7 @@ _T33:
 	__asm        test   eax, eax;
 	__asm        je     _T71;
 // LINE 1782:
-	__asm        mov    eax, lNewValue;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::SetValue;
+	this->SliderWindow::SetValue(lNewValue);
 // LINE 1784:
 _T71:
 	__asm        jmp    _Tdb;
@@ -10135,10 +9966,7 @@ void ScrollBarWindow::MoveLinePrevious() {
 	lNewValue = this->lSliderMinimumValue;
 // LINE 1808:
 _T60:
-	__asm        mov    eax, lNewValue;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::SetValue;
+	this->SliderWindow::SetValue(lNewValue);
 // LINE 1810:
 _T6c:
 	return;
@@ -10175,10 +10003,7 @@ void ScrollBarWindow::MoveLineNext() {
 	lNewValue = this->lSliderMaximumValue;
 // LINE 1826:
 _T62:
-	__asm        mov    eax, lNewValue;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::SetValue;
+	this->SliderWindow::SetValue(lNewValue);
 // LINE 1828:
 _T6e:
 	return;
@@ -10215,10 +10040,7 @@ void ScrollBarWindow::MovePagePrevious() {
 	lNewValue = this->lSliderMinimumValue;
 // LINE 1843:
 _T60:
-	__asm        mov    eax, lNewValue;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::SetValue;
+	this->SliderWindow::SetValue(lNewValue);
 // LINE 1845:
 _T6c:
 	return;
@@ -10255,10 +10077,7 @@ void ScrollBarWindow::MovePageNext() {
 	lNewValue = this->lSliderMaximumValue;
 // LINE 1860:
 _T62:
-	__asm        mov    eax, lNewValue;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::SetValue;
+	this->SliderWindow::SetValue(lNewValue);
 // LINE 1862:
 _T6e:
 	return;
@@ -11232,15 +11051,7 @@ void ListBoxWindow::CalculateAllMetrics() {
 	/*bp-0xc*/   int32_t nReturnValue;
 
 // LINE 2161:
-	__asm        lea    eax, lHeight;
-	__asm        push   eax;
-	__asm        lea    eax, lWidth;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   MFont::GetTextDimensions;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = (this + 0x8c)->MFont::GetTextDimensions(lHeight, lWidth, 0x0);
 // LINE 2162:
 	__asm        cmp    nReturnValue, 0;
 	__asm        je     _T61;
@@ -11266,15 +11077,7 @@ _T61:
 // FUNCTION: COPTER_D 0x004b48d2
 void ListBoxWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
 // LINE 2173:
-	__asm        mov    eax, lNewAttributes;
-	__asm        push   eax;
-	__asm        mov    eax, lNewWidth;
-	__asm        push   eax;
-	__asm        mov    eax, lNewHeight;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   MFont::SetFontCharacteristics;
+	(this + 0x8c)->MFont::SetFontCharacteristics(lNewAttributes, lNewWidth, lNewHeight);
 // LINE 2174:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15315,16 +15118,9 @@ void ListBoxWindow::SetScrollBarValue() {
 	lLinesNotVisible = 0x0;
 // LINE 3020:
 _T47:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0xC0];
-	__asm        call   SliderWindow::SetMinimumValue;
+	this->myVerticalScrollBarWindow->SliderWindow::SetMinimumValue(0x0);
 // LINE 3021:
-	__asm        mov    eax, lLinesNotVisible;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0xC0];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->myVerticalScrollBarWindow->SliderWindow::SetMaximumValue(lLinesNotVisible);
 // LINE 3022:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15418,20 +15214,8 @@ _Tba:
 // FUNCTION: COPTER_D 0x004b7c25
 void PopupMenuWindow::PopupMenuWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ListBoxWindow::ListBoxWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x592220;
+	this->ListBoxWindow::ListBoxWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this-><PopupMenuWindow+0x00> = 0x592220;
 // LINE 3060:
 	return;
 
@@ -15533,15 +15317,8 @@ _Ta0:
 	return 0x1;
 // LINE 3092:
 _Tb5:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(chModifiers);
-	__asm        push   eax;
-	__asm        mov    eax, lKey;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ListBoxWindow::DoKeyDown;
-	__asm        jmp    __RETURN;
+	return this->ListBoxWindow::DoKeyDown(reinterpret_cast<uint32_t>(chModifiers), lKey);
 // LINE 3093:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b7d92
@@ -15608,17 +15385,8 @@ _T9c:
 	return 0x1;
 // LINE 3112:
 _Tb1:
-	__asm        mov    eax, nButton;
-	__asm        push   eax;
-	__asm        mov    eax, nCursorY;
-	__asm        push   eax;
-	__asm        mov    eax, nCursorX;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ListBoxWindow::DoCursorDown;
-	__asm        jmp    __RETURN;
+	return this->ListBoxWindow::DoCursorDown(nButton, nCursorY, nCursorX);
 // LINE 3113:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b7e63
@@ -15689,11 +15457,7 @@ int32_t PopupMenuWindow::RemoveStringAtIndex(long lIndex) {
 // LINE 3150:
 	this->lVisibleLines--;
 // LINE 3151:
-	__asm        mov    eax, lIndex;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ListBoxWindow::RemoveStringAtIndex;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->ListBoxWindow::RemoveStringAtIndex(lIndex);
 // LINE 3152:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15711,13 +15475,7 @@ int32_t PopupMenuWindow::InsertStringAtIndex(long lIndex, /*packed*/ class basic
 // LINE 3163:
 	this->lVisibleLines++;
 // LINE 3164:
-	__asm        mov    eax, sToInsert;
-	__asm        push   eax;
-	__asm        mov    eax, lIndex;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ListBoxWindow::InsertStringAtIndex;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->ListBoxWindow::InsertStringAtIndex(sToInsert, lIndex);
 // LINE 3165:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15948,11 +15706,7 @@ _T22c:
 _T23d:
 	rectNewWindow.bottom = ((this->myStringList.length * this->lLineHeight) + rectNewWindow.top);
 // LINE 3188:
-	__asm        lea    eax, rectNewWindow.left;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x3C];
-	__asm        call   GraphicWindow::FitRectToWindow;
+	this-><PopupMenuWindow+0x3c>->GraphicWindow::FitRectToWindow(rectNewWindow.left);
 // LINE 3189:
 	__asm        lea    eax, rectNewWindow.left;
 	__asm        mov    ecx, this;

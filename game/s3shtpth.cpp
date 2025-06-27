@@ -266,10 +266,7 @@ _T118:
 // LINE 75:
 	scratch.cost = 0x0;
 // LINE 76:
-	__asm        lea    eax, scratch.xCurr;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ShortestPath::PriorityHeapInsert;
+	this->ShortestPath::PriorityHeapInsert(scratch.xCurr);
 // LINE 81:
 __WHILE_143:
 	while ((this->heapSize != 0x0)) {
@@ -277,10 +274,7 @@ __WHILE_143:
 			__asm        cmp    pathFoundFlag, 0;
 			__asm        jne    _T2a8;
 		// LINE 85:
-			__asm        lea    eax, path.xCurr;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   ShortestPath::PriorityHeapRemove;
+			this->ShortestPath::PriorityHeapRemove(path.xCurr);
 		// LINE 87:
 			__asm        xor    eax, eax;
 			__asm        mov    al, path.xCurr;
@@ -393,10 +387,7 @@ __WHILE_143:
 					__asm        mov    al, path.yindexCurr;
 					__asm        mov    scratch.yindexPrev, al;
 				// LINE 124:
-					__asm        lea    eax, scratch.xCurr;
-					__asm        push   eax;
-					__asm        mov    ecx, this;
-					__asm        call   ShortestPath::PriorityHeapInsert;
+					this->ShortestPath::PriorityHeapInsert(scratch.xCurr);
 				// LINE 126:
 				// Block end:
 				_T29e:
@@ -552,18 +543,9 @@ _T129:
 // LINE 184:
 	scratch.xPrev = 0xff;
 // LINE 185:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(currLoc.x);
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ShortestPath::FindDistanceFromDestination;
-	__asm        mov    scratch.cost, eax;
+	scratch.cost = this->ShortestPath::FindDistanceFromDestination(reinterpret_cast<uint32_t>(destLoc.x), reinterpret_cast<uint32_t>(currLoc.x));
 // LINE 186:
-	__asm        lea    eax, scratch.xCurr;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   ShortestPath::PriorityHeapInsert;
+	this->ShortestPath::PriorityHeapInsert(scratch.xCurr);
 // LINE 191:
 __WHILE_192:
 	while ((this->heapSize != 0x0)) {
@@ -571,10 +553,7 @@ __WHILE_192:
 			__asm        cmp    pathFoundFlag, 0;
 			__asm        jne    _T313;
 		// LINE 195:
-			__asm        lea    eax, path.xCurr;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   ShortestPath::PriorityHeapRemove;
+			this->ShortestPath::PriorityHeapRemove(path.xCurr);
 		// LINE 197:
 			__asm        xor    eax, eax;
 			__asm        mov    al, path.xCurr;
@@ -685,13 +664,7 @@ __WHILE_192:
 					__asm        mov    al, [eax];
 					__asm        mov    scratch.yindexCurr, al;
 				// LINE 235:
-					__asm        mov    eax, reinterpret_cast<uint32_t>(destLoc.x);
-					__asm        push   eax;
-					__asm        mov    eax, reinterpret_cast<uint32_t>(currLoc.x);
-					__asm        push   eax;
-					__asm        mov    ecx, this;
-					__asm        call   ShortestPath::FindDistanceFromDestination;
-					__asm        mov    scratch.cost, eax;
+					scratch.cost = this->ShortestPath::FindDistanceFromDestination(reinterpret_cast<uint32_t>(destLoc.x), reinterpret_cast<uint32_t>(currLoc.x));
 				// LINE 236:
 					__asm        mov    al, reinterpret_cast<uint8_t>(i);
 					__asm        mov    scratch.edgeIndexPrev, al;
@@ -702,10 +675,7 @@ __WHILE_192:
 					__asm        mov    al, path.yindexCurr;
 					__asm        mov    scratch.yindexPrev, al;
 				// LINE 239:
-					__asm        lea    eax, scratch.xCurr;
-					__asm        push   eax;
-					__asm        mov    ecx, this;
-					__asm        call   ShortestPath::PriorityHeapInsert;
+					this->ShortestPath::PriorityHeapInsert(scratch.xCurr);
 				// LINE 241:
 				// Block end:
 				_T309:

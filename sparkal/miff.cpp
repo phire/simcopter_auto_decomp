@@ -375,12 +375,7 @@ _T38:
 	__asm        jne    _Tb3;
 // LINE 115:
 _T47:
-	__asm        push   0;
-	__asm        push   0x180;
-	__asm        push   0x8020;
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   PFile::Open;
+	this->PFile::Open(0x0, 0x180, 0x8020, 0x0);
 // LINE 116:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -450,12 +445,7 @@ _T60:
 	__asm        jne    _T85;
 // LINE 145:
 _T6f:
-	__asm        push   0;
-	__asm        push   0x180;
-	__asm        push   0x8002;
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   PFile::Open;
+	this->PFile::Open(0x0, 0x180, 0x8002, 0x0);
 // LINE 147:
 _T85:
 	__asm        mov    eax, this;
@@ -532,12 +522,7 @@ _T60:
 	__asm        jne    _T85;
 // LINE 175:
 _T6f:
-	__asm        push   0;
-	__asm        push   0x180;
-	__asm        push   0x8002;
-	__asm        push   0;
-	__asm        mov    ecx, this;
-	__asm        call   PFile::Open;
+	this->PFile::Open(0x0, 0x180, 0x8002, 0x0);
 // LINE 177:
 _T85:
 	__asm        mov    eax, this;

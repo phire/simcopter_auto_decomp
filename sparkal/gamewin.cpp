@@ -352,10 +352,7 @@ _Td1:
 _T14c:
 	this->GameWindow::CreateSparkalWindow();
 // LINE 68:
-	__asm        mov    eax, pColors;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GameWindow::MakePalette;
+	this->GameWindow::MakePalette(pColors);
 // LINE 70:
 	return;
 
@@ -853,15 +850,7 @@ _T2a9:
 // FUNCTION: COPTER_D 0x004676a1
 void GameWindow::UpdatePalette(long start, long count, /*packed*/ struct SparkalColor *pColor) {
 // LINE 287:
-	__asm        mov    eax, pColor;
-	__asm        push   eax;
-	__asm        mov    eax, count;
-	__asm        push   eax;
-	__asm        mov    eax, start;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x14];
-	__asm        call   CBackBuffer::UpdatePalette;
+	this->mpBackBuffer->CBackBuffer::UpdatePalette(pColor, count, start);
 // LINE 289:
 	return;
 }
@@ -1634,20 +1623,8 @@ _T447:
 	__asm        jmp    _T459;
 // LINE 610:
 _T459:
-	__asm        mov    eax, lParam;
-	__asm        push   eax;
-	__asm        mov    eax, wParam;
-	__asm        push   eax;
-	__asm        mov    eax, Message;
-	__asm        push   eax;
-	__asm        mov    eax, Window;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   CSparkalWindow::MySparkalWindowProc;
-	__asm        jmp    __RETURN;
+	return CSparkalWindow::MySparkalWindowProc(lParam, wParam, Message, Window, this);
 // LINE 611:
-__RETURN:
 }
 
 

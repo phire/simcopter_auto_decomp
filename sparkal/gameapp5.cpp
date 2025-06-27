@@ -464,20 +464,12 @@ void CGameApp::S3PostRender() {
 	__asm        mov    ecx, [eax+0xD8];
 	__asm        call   dword ptr [edx+0x10];
 // LINE 207:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DrawCrosshairs;
+	this->CGameApp::DrawCrosshairs(this-><CGameApp+0x34:4>);
 // LINE 209:
 	__asm        jmp    _Tc3;
 // LINE 210:
 _T94:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DrawCrosshairs;
+	this->CGameApp::DrawCrosshairs(this-><CGameApp+0x34:4>);
 // LINE 211:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;

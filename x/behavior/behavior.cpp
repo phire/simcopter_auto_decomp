@@ -261,23 +261,9 @@ void Behavior::Behavior(/*unpacked*/ class Language *lang, /*unpacked*/ class NR
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 23:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        push   0x42484156;
-	__asm        mov    ecx, globFile;
-	__asm        call   NResFile::GetLoader;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->fGlobalTrees = globFile->NResFile::GetLoader(this->fSwizzler, 0x42484156);
 // LINE 24:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        push   0x42484156;
-	__asm        mov    ecx, privFile;
-	__asm        call   NResFile::GetLoader;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
+	this->fPrivateTrees = privFile->NResFile::GetLoader(this->fSwizzler, 0x42484156);
 // LINE 30:
 	return;
 
@@ -520,12 +506,7 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 	__asm        jmp    _T36;
 // LINE 135:
 _T36:
-	__asm        mov    eax, TheStr;
-	__asm        push   eax;
-	__asm        lea    eax, node.treeID;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   Behavior::GetNodeText;
+	this->Behavior::GetNodeText(TheStr, node.treeID);
 // LINE 136:
 	return;
 }
@@ -580,15 +561,7 @@ _T65:
 	pFile = this->fPrivFile;
 // LINE 163:
 _T71:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(treeID);
-	__asm        push   eax;
-	__asm        push   0x42484156;
-	__asm        mov    ecx, pFile;
-	__asm        call   FlatResFile::GetByID;
-	__asm        mov    tree, eax;
+	tree = pFile->FlatResFile::GetByID(this->fSwizzler, reinterpret_cast<uint32_t>(treeID), 0x42484156);
 // LINE 164:
 	__asm        cmp    tree, 0;
 	__asm        jne    _Tb5;
@@ -598,12 +571,7 @@ _T71:
 // Block start:
 	/*bp-0x108*/ unsigned char resName[256]; // 0x100 bytes
 _Tb5:
-	__asm        lea    eax, resName[0];
-	__asm        push   eax;
-	__asm        mov    eax, tree;
-	__asm        push   eax;
-	__asm        mov    ecx, pFile;
-	__asm        call   FlatResFile::GetName;
+	pFile->FlatResFile::GetName(resName[0], tree);
 // LINE 169:
 	name[0] = 0x0;
 // LINE 172:

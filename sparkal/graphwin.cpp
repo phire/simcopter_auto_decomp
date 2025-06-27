@@ -2387,10 +2387,7 @@ _T2e5:
 	this->nBusyIteratingCount = 0x0;
 // LINE 129:
 _T2ef:
-	__asm        mov    eax, windowToDelete;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindowManager::DeleteWindowAndRemoveItsTraces;
+	this->GraphicWindowManager::DeleteWindowAndRemoveItsTraces(windowToDelete);
 // LINE 130:
 	return 0x1;
 // LINE 131:
@@ -2526,11 +2523,7 @@ _LOOP_4e:
 		_Ta5:
 			__asm        jmp    _Taa;
 		_Taa:
-			__asm        mov    eax, tempGraphicWindowPtrListIterator.node;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   GraphicWindowManager::DeleteWindowAndRemoveItsTraces;
+			this->GraphicWindowManager::DeleteWindowAndRemoveItsTraces(tempGraphicWindowPtrListIterator.node->data);
 		// LINE 173:
 			__asm        mov    eax, tempGraphicWindowPtrListIterator.node;
 			__asm        mov    [ebp-0x4C], eax;
@@ -4155,10 +4148,7 @@ _T472:
 	__asm        jmp    _T477;
 // LINE 466:
 _T477:
-	__asm        mov    eax, copyGraphicWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::operator=;
+	this->GraphicWindow::operator=(copyGraphicWindow);
 // LINE 467:
 	return;
 
@@ -5057,9 +5047,7 @@ _T640:
 _T6d3:
 	this->GraphicWindow::GetImagePath();
 // LINE 526:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
+	this->GraphicWindow::CreateImage(0x1);
 // LINE 527:
 	this->GraphicWindow::SetImageToDrawOnto();
 // LINE 528:
@@ -5160,10 +5148,7 @@ _T111:
 	__asm        je     _T132;
 // LINE 540:
 _T120:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CaptureCursorEnd;
+	this->GraphicWindow::CaptureCursorEnd(this);
 // LINE 541:
 _T132:
 	GraphicWindow::RemoveFocus(this);
@@ -10056,12 +10041,8 @@ void ScreenWindow::ScreenWindow() {
 // FUNCTION: COPTER_D 0x004a794d
 void ScreenWindow::ScreenWindow(const /*packed*/ class ScreenWindow& copyScreenWindow) {
 
-	__asm        mov    eax, copyScreenWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591748;
+	this->GraphicWindow::GraphicWindow(copyScreenWindow);
+	this-><ScreenWindow+0x00> = 0x591748;
 // LINE 1612:
 	this->bufferParent = copyScreenWindow.bufferParent;
 // LINE 1613:
@@ -10073,19 +10054,8 @@ void ScreenWindow::ScreenWindow(const /*packed*/ class ScreenWindow& copyScreenW
 // FUNCTION: COPTER_D 0x004a7989
 void ScreenWindow::ScreenWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class CBackBuffer *bufferNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, rectNewWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::GraphicWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591748;
+	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, 0x0, nNewID, rectNewWindow);
+	this-><ScreenWindow+0x00> = 0x591748;
 // LINE 1625:
 	this-><ScreenWindow+0x50> = 0x0;
 // LINE 1626:
@@ -10115,10 +10085,7 @@ void ScreenWindow::~ScreenWindow() {
 // FUNCTION: COPTER_D 0x004a7a1e
 /*packed*/ class ScreenWindow& ScreenWindow::operator=(const /*packed*/ class ScreenWindow& copyScreenWindow) {
 // LINE 1646:
-	__asm        mov    eax, copyScreenWindow;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::operator=;
+	this->GraphicWindow::operator=(copyScreenWindow);
 // LINE 1647:
 	this->bufferParent = copyScreenWindow.bufferParent;
 // LINE 1649:

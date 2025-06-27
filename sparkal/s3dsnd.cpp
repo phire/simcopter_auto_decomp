@@ -347,13 +347,8 @@ _FOR_15:
 	}
 // LINE 134:
 _T35:
-	__asm        mov    eax, hWnd;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604588;
-	__asm        call   SoundSystem::Initialize;
-	__asm        jmp    __RETURN;
+	return 0x604588->SoundSystem::Initialize(hWnd);
 // LINE 135:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00442002
@@ -4877,15 +4872,7 @@ _T115:
 	lastparam = 0x2;
 // LINE 530:
 _T11c:
-	__asm        mov    eax, lastparam;
-	__asm        push   eax;
-	__asm        mov    eax, midparam;
-	__asm        push   eax;
-	__asm        mov    eax, nSoundIndex;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604600;
-	__asm        call   SoundManager::PlaySoundA;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = 0x604600->SoundManager::PlaySoundA(lastparam, midparam, nSoundIndex);
 // LINE 532:
 	return nReturnValue;
 // LINE 533:
@@ -4894,10 +4881,7 @@ _T11c:
 // FUNCTION: COPTER_D 0x00446e04
 void S3DSStopPlay(int32_t nSoundIndex) {
 // LINE 552:
-	__asm        mov    eax, nSoundIndex;
-	__asm        push   eax;
-	__asm        mov    ecx, 0x604600;
-	__asm        call   SoundManager::StopSound;
+	0x604600->SoundManager::StopSound(nSoundIndex);
 // LINE 553:
 	return;
 }

@@ -2612,24 +2612,10 @@ int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
 // FUNCTION: COPTER_D 0x0049ccbb
 void CopterMainMenu::CopterMainMenu(/*packed*/ struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, newUserMenuWindowDescription;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserMenuWindow::UserMenuWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15A], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15E], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5913E0;
+	this->UserMenuWindow::UserMenuWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, newUserMenuWindowDescription);
+	this->myRatchetImage = 0x0;
+	this->myLightImage = 0x0;
+	this-><CopterMainMenu+0x00> = 0x5913e0;
 // LINE 394:
 	return;
 
@@ -2815,9 +2801,7 @@ _Tcc:
 	__asm        jmp    _Td8;
 // LINE 429:
 _Td8:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
+	this->GraphicWindow::CreateImage(0x1);
 // LINE 430:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x15A], 0;
@@ -2840,14 +2824,7 @@ _T105:
 	__asm        jmp    _T123;
 // LINE 432:
 _T123:
-	__asm        lea    eax, sImagePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sImageFile.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T13e;
 // LINE 433:
 _T13e:
@@ -2971,14 +2948,7 @@ _T287:
 	__asm        jmp    _T2a5;
 // LINE 437:
 _T2a5:
-	__asm        lea    eax, sImagePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sImageFile.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T2c0;
 // LINE 438:
 _T2c0:
@@ -3334,12 +3304,7 @@ _Tff:
 	__asm        jmp    _T104;
 // LINE 479:
 _T104:
-	__asm        lea    eax, rectLightsSource[0].left;
-	__asm        push   eax;
-	__asm        lea    eax, ptLightsDestination[0].x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CopterMainMenu::GetCoordinatesForLights;
+	this->CopterMainMenu::GetCoordinatesForLights(rectLightsSource[0].left, ptLightsDestination[0].x);
 // LINE 480:
 _FOR_129:
 	for (i = 0x0; (i < 0x5); i++) {
@@ -3379,12 +3344,7 @@ _FOR_129:
 	}
 // LINE 485:
 _T1b0:
-	__asm        lea    eax, rectRatchetsSource[0].left;
-	__asm        push   eax;
-	__asm        lea    eax, ptRatchetsDestination[0].x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CopterMainMenu::GetCoordinatesForRatchets;
+	this->CopterMainMenu::GetCoordinatesForRatchets(rectRatchetsSource[0].left, ptRatchetsDestination[0].x);
 // LINE 486:
 _FOR_1cf:
 	for (i = 0x0; (i < 0x5); i++) {
@@ -3586,24 +3546,10 @@ void CopterMainMenu::GetCoordinatesForRatchets(/*packed*/ class MPoint *ptDestin
 // FUNCTION: COPTER_D 0x0049da14
 void CopterPlayMenu::CopterPlayMenu(/*packed*/ struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	__asm        mov    eax, bAddToParentList;
-	__asm        push   eax;
-	__asm        mov    eax, myNewOwner;
-	__asm        push   eax;
-	__asm        mov    eax, windowNewParent;
-	__asm        push   eax;
-	__asm        mov    eax, nNewID;
-	__asm        push   eax;
-	__asm        mov    eax, newUserMenuWindowDescription;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   UserMenuWindow::UserMenuWindow;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x152], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5914C8;
+	this->UserMenuWindow::UserMenuWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, newUserMenuWindowDescription);
+	this->myRatchetImage = 0x0;
+	this->myBackgroundImage = 0x0;
+	this-><CopterPlayMenu+0x00> = 0x5914c8;
 // LINE 605:
 	return;
 
@@ -3701,9 +3647,7 @@ _Tcc:
 	__asm        jmp    _Td8;
 // LINE 634:
 _Td8:
-	__asm        push   1;
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::CreateImage;
+	this->GraphicWindow::CreateImage(0x1);
 // LINE 635:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
@@ -3726,14 +3670,7 @@ _T105:
 	__asm        jmp    _T123;
 // LINE 637:
 _T123:
-	__asm        lea    eax, sImagePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sImageFile.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T13e;
 // LINE 638:
 _T13e:
@@ -3868,14 +3805,7 @@ _T2ac:
 	__asm        jmp    _T2ca;
 // LINE 643:
 _T2ca:
-	__asm        lea    eax, sImagePath.c_str_ptr;
-	__asm        push   eax;
-	__asm        lea    eax, sImageFile.c_str_ptr;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   6;
-	__asm        mov    ecx, 0x604C00;
-	__asm        call   FileServices::GetPathForFileString;
+	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
 	__asm        jmp    _T2e5;
 // LINE 644:
 _T2e5:
@@ -4207,10 +4137,7 @@ _T38:
 	__asm        mov    ecx, [eax+0x156];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 684:
-	__asm        lea    eax, ptDestinationRatchet.x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   CopterPlayMenu::GetCoordinatesForRatchet;
+	this->CopterPlayMenu::GetCoordinatesForRatchet(ptDestinationRatchet.x);
 // LINE 686:
 	__asm        jmp    _T8d;
 _T8d:

@@ -175,10 +175,7 @@ _T69:
 _T78:
 	this-><vftable> = 0x591640;
 // LINE 43:
-	__asm        mov    eax, copyMFont;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MFont::operator=;
+	this->MFont::operator=(copyMFont);
 // LINE 44:
 	return;
 
