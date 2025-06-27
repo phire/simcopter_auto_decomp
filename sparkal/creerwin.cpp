@@ -642,7 +642,7 @@ _T136:
 	tempButtonWindow1 = 0x0;
 // LINE 116:
 _T140:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x51);
+	nFullStringID = LanguageManager::GetFullStringID(0x51, 0x0);
 // LINE 117:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x12A8];
@@ -855,7 +855,7 @@ _T45b:
 	tempButtonWindow2 = 0x0;
 // LINE 125:
 _T465:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x52);
+	nFullStringID = LanguageManager::GetFullStringID(0x52, 0x0);
 // LINE 126:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x22C8];
@@ -1074,7 +1074,7 @@ _T785:
 	tempButtonWindow1 = 0x0;
 // LINE 135:
 _T78f:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x51);
+	nFullStringID = LanguageManager::GetFullStringID(0x51, 0x0);
 // LINE 136:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x32E8];
@@ -1240,7 +1240,7 @@ _T99b:
 _T9df:
 	lCityNameString = (this->lCities[0] + 0xf0);
 // LINE 144:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, lCityNameString);
+	nFullStringID = LanguageManager::GetFullStringID(lCityNameString, 0x0);
 // LINE 145:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x4300];
@@ -1462,7 +1462,7 @@ _Td16:
 	__asm        add    eax, 0x122;
 	__asm        mov    lCityLevelString, eax;
 // LINE 155:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, lCityLevelString);
+	nFullStringID = LanguageManager::GetFullStringID(lCityLevelString, 0x0);
 // LINE 156:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x5318];
@@ -1613,7 +1613,7 @@ _Tf62:
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 169:
-	GetPathForFile(szFullCityVideoFilePath[0], szFullCityVideoFileName[0], 0x0, 0x1);
+	GetPathForFile(0x1, 0x0, szFullCityVideoFileName[0], szFullCityVideoFilePath[0]);
 // LINE 170:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
@@ -1638,7 +1638,7 @@ _Tf62:
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 176:
-	GetPathForFile(szFullCityVideoFilePath[0], szFullCityVideoFileName[0], 0x0, 0x1);
+	GetPathForFile(0x1, 0x0, szFullCityVideoFileName[0], szFullCityVideoFilePath[0]);
 // LINE 177:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
@@ -1663,7 +1663,7 @@ _Tf62:
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 183:
-	GetPathForFile(szFullCityVideoFilePath[0], szFullCityVideoFileName[0], 0x0, 0x1);
+	GetPathForFile(0x1, 0x0, szFullCityVideoFileName[0], szFullCityVideoFilePath[0]);
 // LINE 184:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
@@ -1824,7 +1824,7 @@ _Tf9:
 	__asm        jmp    _T117;
 // LINE 208:
 _T117:
-	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sImageFile.c_str_ptr, sImagePath.c_str_ptr);
 	__asm        jmp    _T132;
 // LINE 209:
 _T132:
@@ -2196,7 +2196,7 @@ _T89:
 	__asm        jmp    _T8e;
 // LINE 261:
 _T8e:
-	this->CareerWindow::GetCoordinatesForCitySelections(rectSources[0][0].left, ptDestinations[0][0].x);
+	this->CareerWindow::GetCoordinatesForCitySelections(ptDestinations[0][0].x, rectSources[0][0].left);
 // LINE 262:
 _FOR_b6:
 	for (i = 0x0; (i < 0x3); i++) {

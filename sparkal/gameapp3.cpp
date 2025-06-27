@@ -663,7 +663,7 @@ _T41:
 	__asm        cmp    GraphicWindow::listValidWindows.length, 0;
 	__asm        je     _T6a;
 
-	_assert(0xfc, 0x598434, 0x59845c);
+	_assert(0x59845c, 0x598434, 0xfc);
 	__asm        jmp    _T6f;
 _T6a:
 	__asm        jmp    _T6f;

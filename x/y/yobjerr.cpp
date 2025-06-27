@@ -1046,27 +1046,27 @@ void cYObject::Error(short errNum) {
 	__asm        jmp    _Tb3;
 // LINE 16:
 _T18:
-	doAssert(0x8c085, 0x5bebac, 0x10, 0x5bebc4);
+	doAssert(0x5bebc4, 0x10, 0x5bebac, 0x8c085);
 // LINE 17:
 	__asm        jmp    _Tff;
 // LINE 20:
 _T36:
-	doAssert(0x8c085, 0x5bebe8, 0x14, 0x5bebfc);
+	doAssert(0x5bebfc, 0x14, 0x5bebe8, 0x8c085);
 // LINE 21:
 	__asm        jmp    _Tff;
 // LINE 24:
 _T54:
-	doAssert(0x8c085, 0x5bec20, 0x18, 0x5bec34);
+	doAssert(0x5bec34, 0x18, 0x5bec20, 0x8c085);
 // LINE 25:
 	__asm        jmp    _Tff;
 // LINE 28:
 _T72:
-	doAssert(0x8c085, 0x5bec58, 0x1c, 0x5bec74);
+	doAssert(0x5bec74, 0x1c, 0x5bec58, 0x8c085);
 // LINE 29:
 	__asm        jmp    _Tff;
 // LINE 32:
 _T90:
-	doAssert(0x8c085, 0x5bec98, 0x20, 0x5becb4);
+	doAssert(0x5becb4, 0x20, 0x5bec98, 0x8c085);
 // LINE 33:
 	__asm        jmp    _Tff;
 // LINE 34:

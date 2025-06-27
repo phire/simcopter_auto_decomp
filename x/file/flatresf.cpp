@@ -231,7 +231,7 @@ void FlatResFile::LoadResMap(void * __ptr32 *newMap, short * numTypes, long * da
 	__asm        test   eax, eax;
 	__asm        jne    _T48;
 
-	doAssert(0x8c085, 0x5bbee0, 0x6b, 0x5bbeec);
+	doAssert(0x5bbeec, 0x6b, 0x5bbee0, 0x8c085);
 // LINE 108:
 _T48:
 	__asm        push   0;
@@ -262,7 +262,7 @@ _T8c:
 	__asm        cmp    res1Off, 0x100;
 	__asm        je     _Tb2;
 
-	doAssert(0x8c085, 0x5bbf14, 0x6f, 0x5bbf30);
+	doAssert(0x5bbf30, 0x6f, 0x5bbf14, 0x8c085);
 // LINE 113:
 _Tb2:
 	__asm        lea    eax, mapLoc;
@@ -285,7 +285,7 @@ _Td5:
 	__asm        cmp    mapLoc, 0x600000;
 	__asm        jl     _T107;
 _Tee:
-	doAssert(0x8c085, 0x5bbf58, 0x72, 0x5bbf68);
+	doAssert(0x5bbf68, 0x72, 0x5bbf58, 0x8c085);
 // LINE 116:
 _T107:
 	__asm        lea    eax, mapLocLess;
@@ -307,7 +307,7 @@ _T12a:
 	__asm        cmp    mapLocLess, 0;
 	__asm        jne    _T156;
 
-	doAssert(0x8c085, 0x5bbf90, 0x75, 0x5bbfac);
+	doAssert(0x5bbfac, 0x75, 0x5bbf90, 0x8c085);
 // LINE 119:
 _T156:
 	__asm        lea    eax, mapSize;
@@ -329,7 +329,7 @@ _T179:
 	__asm        cmp    mapSize, 0x600000;
 	__asm        jl     _T1a9;
 _T190:
-	doAssert(0x8c085, 0x5bbfd4, 0x78, 0x5bbfe8);
+	doAssert(0x5bbfe8, 0x78, 0x5bbfd4, 0x8c085);
 // LINE 122:
 _T1a9:
 	__asm        mov    eax, mapLoc;
@@ -381,7 +381,7 @@ _T222:
 // LINE 132:
 	mapSize -= 0x2;
 // LINE 134:
-	newMap-> = Memory::HAlloc(0x0, mapSize);
+	newMap-> = Memory::HAlloc(mapSize, 0x0);
 // LINE 135:
 	__asm        call   Memory::Error;
 	__asm        mov    err, eax;
@@ -703,7 +703,7 @@ _T3b:
 	return 0x0;
 // LINE 339:
 _T52:
-	entry = this->fMap->ResMap::FindEntry(reinterpret_cast<uint32_t>(id), type);
+	entry = this->fMap->ResMap::FindEntry(type, reinterpret_cast<uint32_t>(id));
 // LINE 341:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T89;
@@ -718,7 +718,7 @@ _T89:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T100;
 // LINE 345:
-	this->fMap->ResMap::LoadEntry(0x0, this, entry);
+	this->fMap->ResMap::LoadEntry(entry, this, 0x0);
 // LINE 347:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -795,7 +795,7 @@ _T52:
 	__asm        jmp    __RETURN;
 // LINE 368:
 _T75:
-	entry = this->fMap->ResMap::FindEntry(name, type);
+	entry = this->fMap->ResMap::FindEntry(type, name);
 // LINE 370:
 	__asm        cmp    entry, 0;
 	__asm        jne    _Tac;
@@ -810,7 +810,7 @@ _Tac:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T123;
 // LINE 374:
-	this->fMap->ResMap::LoadEntry(0x0, this, entry);
+	this->fMap->ResMap::LoadEntry(entry, this, 0x0);
 // LINE 376:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -875,7 +875,7 @@ _T3b:
 	return 0x0;
 // LINE 395:
 _T52:
-	entry = this->fMap->ResMap::FindIndEntry(reinterpret_cast<uint32_t>(index), type);
+	entry = this->fMap->ResMap::FindIndEntry(type, reinterpret_cast<uint32_t>(index));
 // LINE 397:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T89;
@@ -890,7 +890,7 @@ _T89:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T100;
 // LINE 401:
-	this->fMap->ResMap::LoadEntry(0x0, this, entry);
+	this->fMap->ResMap::LoadEntry(entry, this, 0x0);
 // LINE 403:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -966,7 +966,7 @@ _T56:
 	__asm        jmp    __RETURN;
 // LINE 428:
 _T87:
-	this->fMap->ResMap::GetName(name, entry);
+	this->fMap->ResMap::GetName(entry, name);
 // LINE 429:
 	return;
 __RETURN:
@@ -1051,7 +1051,7 @@ _T85:
 	__asm        cmp    returnType, 0;
 	__asm        jne    _Tc0;
 
-	doAssert(0x8c085, 0x5bc010, 0x1c9, 0x5bc028);
+	doAssert(0x5bc028, 0x1c9, 0x5bc010, 0x8c085);
 // LINE 458:
 _Tc0:
 	__asm        cmp    returnType, 0;
@@ -1208,7 +1208,7 @@ _T81:
 	return;
 // LINE 537:
 _Tc9:
-	this->fMap->ResMap::LoadEntry(0x1, this, entry);
+	this->fMap->ResMap::LoadEntry(entry, this, 0x1);
 // LINE 538:
 	return;
 __RETURN:
@@ -1454,7 +1454,7 @@ _FOR_2b:
 	}
 // LINE 768:
 _T76:
-	fromFile->FlatResFile::LoadResMap(dataLoc, numTypes, newMap);
+	fromFile->FlatResFile::LoadResMap(newMap, numTypes, dataLoc);
 // LINE 769:
 	__asm        mov    ecx, fromFile;
 	__asm        call   FlatResFile::GetError;
@@ -1532,7 +1532,7 @@ void ResMap::Release() {
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jg     _T35;
 
-	doAssert(0x8c085, 0x5bc050, 0x312, 0x5bc06c);
+	doAssert(0x5bc06c, 0x312, 0x5bc050, 0x8c085);
 // LINE 787:
 _T35:
 	this-><ResMap+0x1c:4>--;
@@ -1647,7 +1647,7 @@ _T6f:
 	__asm        cmp    size, 0x7A1200;
 	__asm        jl     _Ta8;
 
-	doAssert(0x8c085, 0x5bc094, 0x33c, 0x5bc0c8);
+	doAssert(0x5bc0c8, 0x33c, 0x5bc094, 0x8c085);
 // LINE 829:
 _Ta8:
 	__asm        mov    ecx, file;
@@ -1664,7 +1664,7 @@ _Tc7:
 	__asm        cmp    size, 0;
 	__asm        jge    _Ted;
 
-	doAssert(0x8c085, 0x5bc0f0, 0x341, 0x5bc108);
+	doAssert(0x5bc108, 0x341, 0x5bc0f0, 0x8c085);
 // LINE 835:
 _Ted:
 	__asm        mov    eax, entry;
@@ -1803,7 +1803,7 @@ _T226:
 	__asm        jmp    done;
 // LINE 872:
 _T251:
-	file->FlatFile::ReadBlock(size, block);
+	file->FlatFile::ReadBlock(block, size);
 // LINE 873:
 	err = file->FlatResFile::GetError();
 // LINE 876:

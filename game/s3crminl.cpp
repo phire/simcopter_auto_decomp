@@ -440,7 +440,7 @@ _T26:
 // FUNCTION: COPTER_D 0x005349f0
 int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 // LINE 88:
-	return CriminalEvaderCarClass::StartCriminalMission(y, x, reinterpret_cast<uint32_t>(mType), reinterpret_cast<uint32_t>(mID));
+	return CriminalEvaderCarClass::StartCriminalMission(reinterpret_cast<uint32_t>(mID), reinterpret_cast<uint32_t>(mType), x, y);
 // LINE 89:
 }
 
@@ -670,7 +670,7 @@ _T1d:
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        jne    _T10e;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T113;
 _T10e:
 	__asm        jmp    _T113;
@@ -681,7 +681,7 @@ _T118:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 228:
-	S3ExplosionSmokeStart(0x6, loc.x, this->cptr);
+	S3ExplosionSmokeStart(this->cptr, loc.x, 0x6);
 // LINE 230:
 // Block end:
 _T13c:
@@ -772,7 +772,7 @@ _T20b:
 // Block start:
 	/*bp-0x3c*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 _T258:
-	_assert(0x10d, 0x5b7cc0, 0x5b7ce4);
+	_assert(0x5b7ce4, 0x5b7cc0, 0x10d);
 	__asm        jmp    _T279;
 
 	__asm        jmp    _T279;
@@ -881,7 +881,7 @@ _T36d:
 // Block start:
 	/*bp-0x54*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 _T3da:
-	_assert(0x152, 0x5b7cec, 0x5b7d10);
+	_assert(0x5b7d10, 0x5b7cec, 0x152);
 	__asm        jmp    _T3fb;
 
 	__asm        jmp    _T3fb;

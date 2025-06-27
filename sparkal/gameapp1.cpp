@@ -1775,7 +1775,7 @@ void CGameApp::InitializeMemberVariables() {
 // LINE 233:
 	this-><CGameApp+0x42e8:4> = 0x8;
 // LINE 235:
-	GetCurrentScreenMode(0x0, (this + 0x42ec));
+	GetCurrentScreenMode((this + 0x42ec), 0x0);
 // LINE 237:
 	gameResolution = 0x1;
 // LINE 246:
@@ -1927,7 +1927,7 @@ _T1d1:
 	__asm        lea    ecx, [ebp-0x128];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 275:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x21);
+	nFullStringID = LanguageManager::GetFullStringID(0x21, 0x0);
 // LINE 276:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x11E8];
@@ -1995,7 +1995,7 @@ _T2cf:
 	__asm        jmp    _T2d4;
 // LINE 277:
 _T2d4:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
+	nFullStringID = LanguageManager::GetFullStringID(0x4, 0x0);
 // LINE 278:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x21EC];
@@ -2127,7 +2127,7 @@ _T4b8:
 	__asm        jmp    __RETURN;
 // LINE 284:
 _T4c3:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
+	nFullStringID = LanguageManager::GetFullStringID(0x4, 0x0);
 // LINE 285:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x31F0];
@@ -2441,7 +2441,7 @@ _T91a:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb3f;
 // LINE 330:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x23);
+	nFullStringID = LanguageManager::GetFullStringID(0x23, 0x0);
 // LINE 331:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x41F4];
@@ -2509,7 +2509,7 @@ _Ta25:
 	__asm        jmp    _Ta2a;
 // LINE 332:
 _Ta2a:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
+	nFullStringID = LanguageManager::GetFullStringID(0x4, 0x0);
 // LINE 333:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x51F8];
@@ -2602,7 +2602,7 @@ _Tb3f:
 	__asm        lea    ecx, gSoundQueue[1]<vftable>;
 	__asm        call   SoundQueue::Initialize;
 // LINE 346:
-	0x604c00->FileServices::GetPathForFile(szButtonWindowSoundFilePath[0], SZ_SOUND_BUTTON_WINDOW_SOUND_FILE, gDefaultLanguage, 0x2);
+	0x604c00->FileServices::GetPathForFile(0x2, gDefaultLanguage, SZ_SOUND_BUTTON_WINDOW_SOUND_FILE, szButtonWindowSoundFilePath[0]);
 // LINE 347:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3297,7 +3297,7 @@ _T1c1:
 	__asm        test   eax, eax;
 	__asm        je     _T228;
 // LINE 546:
-	LanguageManager::ConvertNameToID(nLanguage, szCommandValue[0]);
+	LanguageManager::ConvertNameToID(szCommandValue[0], nLanguage);
 // LINE 547:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
@@ -3571,7 +3571,7 @@ void CGameApp::DisplayDebugSystemInformation() {
 	__asm        test   eax, eax;
 	__asm        je     _T5b;
 // LINE 668:
-	sprintf(szVersionInformation, 0x599cb0, szFormattedVersionInformation[0]);
+	sprintf(szFormattedVersionInformation[0], 0x599cb0, szVersionInformation);
 // LINE 669:
 	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 672:
@@ -3583,7 +3583,7 @@ _T5b:
 	__asm        test   eax, eax;
 	__asm        je     _T9c;
 // LINE 673:
-	sprintf(szVersionInformation, 0x599cb4, szFormattedVersionInformation[0]);
+	sprintf(szFormattedVersionInformation[0], 0x599cb4, szVersionInformation);
 // LINE 674:
 	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 677:
@@ -3595,7 +3595,7 @@ _T9c:
 	__asm        test   eax, eax;
 	__asm        je     _Tdd;
 // LINE 678:
-	sprintf(szVersionInformation, 0x599cc4, szFormattedVersionInformation[0]);
+	sprintf(szFormattedVersionInformation[0], 0x599cc4, szVersionInformation);
 // LINE 679:
 	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 682:
@@ -3607,20 +3607,20 @@ _Tdd:
 	__asm        test   eax, eax;
 	__asm        je     _T11e;
 // LINE 683:
-	sprintf(szUnformattedVersionInformation[0], 0x599cd8, szFormattedVersionInformation[0]);
+	sprintf(szFormattedVersionInformation[0], 0x599cd8, szUnformattedVersionInformation[0]);
 // LINE 684:
 	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 687:
 _T11e:
-	strcpy(0x599d78, szUnformattedVersionInformation[0]);
+	strcpy(szUnformattedVersionInformation[0], 0x599d78);
 	__asm        jmp    _T137;
 // LINE 688:
 _T137:
-	sprintf(szUnformattedVersionInformation[0], 0x599ce8, szFormattedVersionInformation[0]);
+	sprintf(szFormattedVersionInformation[0], 0x599ce8, szUnformattedVersionInformation[0]);
 // LINE 689:
 	DebugOutput(szFormattedVersionInformation[0]);
 // LINE 692:
-	DebugOutput(this-><CGameApp+0x42f4:4>, this-><CGameApp+0x42f0:4>, this-><CGameApp+0x42ec:4>, 0x599d00);
+	DebugOutput(0x599d00, this-><CGameApp+0x42ec:4>, this-><CGameApp+0x42f0:4>, this-><CGameApp+0x42f4:4>);
 // LINE 697:
 	tempMemoryStatus.dwLength = 0x20;
 // LINE 698:
@@ -4089,7 +4089,7 @@ void CGameApp::InitializeJoysticks() {
 // LINE 793:
 	0x604c78->JoystickManager::Initialize();
 // LINE 794:
-	0x604c78->JoystickManager::SetNormalizedMinMax(0x64, -0x64);
+	0x604c78->JoystickManager::SetNormalizedMinMax(-0x64, 0x64);
 // LINE 795:
 	gJoystickManager.lJoystickThreshold = 0x14;
 	__asm        jmp    _T33;
@@ -4175,7 +4175,7 @@ _FOR_9a:
 		_Td4:
 			chCurrentJoystickName[0] = 0x0;
 		// LINE 834:
-			0x604c78->JoystickManager::GetJoystickName(chCurrentJoystickName[0], i);
+			0x604c78->JoystickManager::GetJoystickName(i, chCurrentJoystickName[0]);
 		// LINE 835:
 			__asm        mov    eax, chLastJoystickName;
 			__asm        push   eax;

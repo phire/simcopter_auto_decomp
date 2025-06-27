@@ -283,7 +283,7 @@ int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, 
 // LINE 135:
 	Normalize(d.x);
 // LINE 136:
-	CreatePlane(p, V, plane.A);
+	CreatePlane(plane.A, V, p);
 // LINE 141:
 	__asm        mov    eax, q;
 	__asm        mov    eax, [eax+8];

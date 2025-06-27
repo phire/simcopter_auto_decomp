@@ -34,9 +34,9 @@ void DirectDrawError::DisplayError(char * szErrorDescription) {
 	/*bp-0x100*/ char szFullErrorDescription[256]; // 0x100 bytes
 
 // LINE 13:
-	this->DirectDrawError::MakeErrorString(szErrorDescription, szFullErrorDescription[0]);
+	this->DirectDrawError::MakeErrorString(szFullErrorDescription[0], szErrorDescription);
 // LINE 18:
-	DebugOutput(szFullErrorDescription[0], 0x5976a8);
+	DebugOutput(0x5976a8, szFullErrorDescription[0]);
 // LINE 22:
 	return;
 }
@@ -50,252 +50,252 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 	__asm        jmp    _T46a;
 // LINE 31:
 _T19:
-	strcpy(0x5976ac, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5976ac);
 // LINE 32:
 	__asm        jmp    _T7db;
 // LINE 34:
 _T2f:
-	strcpy(0x5976d0, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5976d0);
 // LINE 35:
 	__asm        jmp    _T7db;
 // LINE 37:
 _T45:
-	strcpy(0x5976f4, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5976f4);
 // LINE 38:
 	__asm        jmp    _T7db;
 // LINE 40:
 _T5b:
-	strcpy(0x59770c, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x59770c);
 // LINE 41:
 	__asm        jmp    _T7db;
 // LINE 43:
 _T71:
-	strcpy(0x597728, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597728);
 // LINE 44:
 	__asm        jmp    _T7db;
 // LINE 46:
 _T87:
-	strcpy(0x597744, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597744);
 // LINE 47:
 	__asm        jmp    _T7db;
 // LINE 49:
 _T9d:
-	strcpy(0x597764, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597764);
 // LINE 50:
 	__asm        jmp    _T7db;
 // LINE 52:
 _Tb3:
-	strcpy(0x597780, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597780);
 // LINE 53:
 	__asm        jmp    _T7db;
 // LINE 55:
 _Tc9:
-	strcpy(0x5977a0, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5977a0);
 // LINE 56:
 	__asm        jmp    _T7db;
 // LINE 58:
 _Tdf:
-	strcpy(0x5977c4, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5977c4);
 // LINE 59:
 	__asm        jmp    _T7db;
 // LINE 61:
 _Tf5:
-	strcpy(0x5977e0, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5977e0);
 // LINE 62:
 	__asm        jmp    _T7db;
 // LINE 64:
 _T10b:
-	strcpy(0x5977f8, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5977f8);
 // LINE 65:
 	__asm        jmp    _T7db;
 // LINE 67:
 _T121:
-	strcpy(0x597814, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597814);
 // LINE 68:
 	__asm        jmp    _T7db;
 // LINE 70:
 _T137:
-	strcpy(0x597830, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597830);
 // LINE 71:
 	__asm        jmp    _T7db;
 // LINE 73:
 _T14d:
-	strcpy(0x597850, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597850);
 // LINE 74:
 	__asm        jmp    _T7db;
 // LINE 76:
 _T163:
-	strcpy(0x597870, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597870);
 // LINE 77:
 	__asm        jmp    _T7db;
 // LINE 79:
 _T179:
-	strcpy(0x59788c, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x59788c);
 // LINE 80:
 	__asm        jmp    _T7db;
 // LINE 82:
 _T18f:
-	strcpy(0x5978a4, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5978a4);
 // LINE 83:
 	__asm        jmp    _T7db;
 // LINE 85:
 _T1a5:
-	strcpy(0x5978c0, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5978c0);
 // LINE 86:
 	__asm        jmp    _T7db;
 // LINE 88:
 _T1bb:
-	strcpy(0x5978dc, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5978dc);
 // LINE 89:
 	__asm        jmp    _T7db;
 // LINE 91:
 _T1d1:
-	strcpy(0x5978f8, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5978f8);
 // LINE 92:
 	__asm        jmp    _T7db;
 // LINE 94:
 _T1e7:
-	strcpy(0x597918, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597918);
 // LINE 95:
 	__asm        jmp    _T7db;
 // LINE 97:
 _T1fd:
-	strcpy(0x597934, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597934);
 // LINE 98:
 	__asm        jmp    _T7db;
 // LINE 100:
 _T213:
-	strcpy(0x597954, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597954);
 // LINE 101:
 	__asm        jmp    _T7db;
 // LINE 103:
 _T229:
-	strcpy(0x597978, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597978);
 // LINE 104:
 	__asm        jmp    _T7db;
 // LINE 106:
 _T23f:
-	strcpy(0x597998, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597998);
 // LINE 107:
 	__asm        jmp    _T7db;
 // LINE 109:
 _T255:
-	strcpy(0x5979b4, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5979b4);
 // LINE 110:
 	__asm        jmp    _T7db;
 // LINE 112:
 _T26b:
-	strcpy(0x5979d0, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5979d0);
 // LINE 113:
 	__asm        jmp    _T7db;
 // LINE 115:
 _T281:
-	strcpy(0x5979ec, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x5979ec);
 // LINE 116:
 	__asm        jmp    _T7db;
 // LINE 118:
 _T297:
-	strcpy(0x597a08, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597a08);
 // LINE 119:
 	__asm        jmp    _T7db;
 // LINE 121:
 _T2ad:
-	strcpy(0x597a24, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597a24);
 // LINE 122:
 	__asm        jmp    _T7db;
 // LINE 124:
 _T2c3:
-	strcpy(0x597a48, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597a48);
 // LINE 125:
 	__asm        jmp    _T7db;
 // LINE 127:
 _T2d9:
-	strcpy(0x597a68, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597a68);
 // LINE 128:
 	__asm        jmp    _T7db;
 // LINE 130:
 _T2ef:
-	strcpy(0x597a84, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597a84);
 // LINE 131:
 	__asm        jmp    _T7db;
 // LINE 133:
 _T305:
-	strcpy(0x597aac, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597aac);
 // LINE 134:
 	__asm        jmp    _T7db;
 // LINE 136:
 _T31b:
-	strcpy(0x597ad4, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597ad4);
 // LINE 137:
 	__asm        jmp    _T7db;
 // LINE 139:
 _T331:
-	strcpy(0x597af0, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597af0);
 // LINE 140:
 	__asm        jmp    _T7db;
 // LINE 142:
 _T347:
-	strcpy(0x597b14, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597b14);
 // LINE 143:
 	__asm        jmp    _T7db;
 // LINE 145:
 _T35d:
-	strcpy(0x597b30, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597b30);
 // LINE 146:
 	__asm        jmp    _T7db;
 // LINE 148:
 _T373:
-	strcpy(0x597b54, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597b54);
 // LINE 149:
 	__asm        jmp    _T7db;
 // LINE 151:
 _T389:
-	strcpy(0x597b74, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597b74);
 // LINE 152:
 	__asm        jmp    _T7db;
 // LINE 154:
 _T39f:
-	strcpy(0x597b90, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597b90);
 // LINE 155:
 	__asm        jmp    _T7db;
 // LINE 157:
 _T3b5:
-	strcpy(0x597bac, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597bac);
 // LINE 158:
 	__asm        jmp    _T7db;
 // LINE 160:
 _T3cb:
-	strcpy(0x597bc8, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597bc8);
 // LINE 161:
 	__asm        jmp    _T7db;
 // LINE 163:
 _T3e1:
-	strcpy(0x597bec, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597bec);
 // LINE 164:
 	__asm        jmp    _T7db;
 // LINE 166:
 _T3f7:
-	strcpy(0x597c0c, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597c0c);
 // LINE 167:
 	__asm        jmp    _T7db;
 // LINE 169:
 _T40d:
-	strcpy(0x597c34, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597c34);
 // LINE 170:
 	__asm        jmp    _T7db;
 // LINE 172:
 _T423:
-	strcpy(0x597c54, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597c54);
 // LINE 173:
 	__asm        jmp    _T7db;
 // LINE 175:
 _T439:
-	strcpy(0x597c6c, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597c6c);
 // LINE 176:
 	__asm        jmp    _T7db;
 // LINE 178:
 _T44f:
-	strcpy(0x597c7c, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597c7c);
 // LINE 179:
 	__asm        jmp    _T7db;
 // LINE 180:
@@ -542,7 +542,7 @@ _T7db:
 	__asm        cmp    szErrorDescription, 0;
 	__asm        je     _T7f5;
 // LINE 182:
-	strcat(szErrorDescription, szFullErrorDescription);
+	strcat(szFullErrorDescription, szErrorDescription);
 // LINE 183:
 _T7f5:
 	return;
@@ -553,9 +553,9 @@ void DirectSoundError::DisplayError(char * szErrorDescription) {
 	/*bp-0x100*/ char szFullErrorDescription[256]; // 0x100 bytes
 
 // LINE 193:
-	this->DirectSoundError::MakeErrorString(szErrorDescription, szFullErrorDescription[0]);
+	this->DirectSoundError::MakeErrorString(szFullErrorDescription[0], szErrorDescription);
 // LINE 198:
-	DebugOutput(szFullErrorDescription[0], 0x597c90);
+	DebugOutput(0x597c90, szFullErrorDescription[0]);
 // LINE 202:
 	return;
 }
@@ -569,82 +569,82 @@ void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szE
 	__asm        jmp    _T17e;
 // LINE 212:
 _T19:
-	strcpy(0x597c94, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597c94);
 // LINE 213:
 	__asm        jmp    _T285;
 // LINE 215:
 _T2f:
-	strcpy(0x597cb0, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597cb0);
 // LINE 216:
 	__asm        jmp    _T285;
 // LINE 218:
 _T45:
-	strcpy(0x597cd0, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597cd0);
 // LINE 219:
 	__asm        jmp    _T285;
 // LINE 221:
 _T5b:
-	strcpy(0x597cf0, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597cf0);
 // LINE 222:
 	__asm        jmp    _T285;
 // LINE 224:
 _T71:
-	strcpy(0x597d0c, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597d0c);
 // LINE 225:
 	__asm        jmp    _T285;
 // LINE 227:
 _T87:
-	strcpy(0x597d24, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597d24);
 // LINE 228:
 	__asm        jmp    _T285;
 // LINE 230:
 _T9d:
-	strcpy(0x597d44, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597d44);
 // LINE 231:
 	__asm        jmp    _T285;
 // LINE 233:
 _Tb3:
-	strcpy(0x597d60, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597d60);
 // LINE 234:
 	__asm        jmp    _T285;
 // LINE 236:
 _Tc9:
-	strcpy(0x597d7c, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597d7c);
 // LINE 237:
 	__asm        jmp    _T285;
 // LINE 239:
 _Tdf:
-	strcpy(0x597d98, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597d98);
 // LINE 240:
 	__asm        jmp    _T285;
 // LINE 242:
 _Tf5:
-	strcpy(0x597db4, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597db4);
 // LINE 243:
 	__asm        jmp    _T285;
 // LINE 245:
 _T10b:
-	strcpy(0x597dd8, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597dd8);
 // LINE 246:
 	__asm        jmp    _T285;
 // LINE 248:
 _T121:
-	strcpy(0x597df8, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597df8);
 // LINE 249:
 	__asm        jmp    _T285;
 // LINE 251:
 _T137:
-	strcpy(0x597e14, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597e14);
 // LINE 252:
 	__asm        jmp    _T285;
 // LINE 254:
 _T14d:
-	strcpy(0x597e34, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597e34);
 // LINE 255:
 	__asm        jmp    _T285;
 // LINE 257:
 _T163:
-	strcpy(0x597e44, szFullErrorDescription);
+	strcpy(szFullErrorDescription, 0x597e44);
 // LINE 258:
 	__asm        jmp    _T285;
 // LINE 259:
@@ -725,7 +725,7 @@ _T285:
 	__asm        cmp    szErrorDescription, 0;
 	__asm        je     _T29f;
 // LINE 261:
-	strcat(szErrorDescription, szFullErrorDescription);
+	strcat(szFullErrorDescription, szErrorDescription);
 // LINE 262:
 _T29f:
 	return;

@@ -684,7 +684,7 @@ _T112:
 	__asm        mov    ecx, [eax+0x54];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 314:
-	sprintf((IFlatImage::lTotalMemoryUsage >> 0xa), (Sound::GetTotalMemoryUsage((IFlatImage::lTotalMemoryUsage >> 0xa)) >> 0xa), (G_alloc_max >> 0xa), (G_alloc_used >> 0xa), (G_alloc_curr >> 0xa), 0x59a19c, szBuffer1[0]);
+	sprintf(szBuffer1[0], 0x59a19c, (G_alloc_curr >> 0xa), (G_alloc_used >> 0xa), (G_alloc_max >> 0xa), (Sound::GetTotalMemoryUsage((IFlatImage::lTotalMemoryUsage >> 0xa)) >> 0xa), (IFlatImage::lTotalMemoryUsage >> 0xa));
 // LINE 315:
 	nTextTop += 0xc;
 // LINE 316:
@@ -712,7 +712,7 @@ _T112:
 	__asm        cmp    md, 0;
 	__asm        je     _T292;
 // LINE 321:
-	S3MissionDebugString(szBuffer1[0], md);
+	S3MissionDebugString(md, szBuffer1[0]);
 // LINE 322:
 	nTextTop += 0xc;
 // LINE 323:

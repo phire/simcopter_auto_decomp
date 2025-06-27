@@ -175,7 +175,7 @@ _T39:
 // LINE 114:
 	__asm        jne    _T66;
 
-	doAssert(0x8c085, 0x5bdfe0, 0x72, 0x5bdfec);
+	doAssert(0x5bdfec, 0x72, 0x5bdfe0, 0x8c085);
 // LINE 115:
 _T66:
 	return temp;

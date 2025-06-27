@@ -157,9 +157,9 @@ _T83:
 // FUNCTION: COPTER_D 0x0056269d
 void GetAxes(float XY2Par, float XZ2Par, /*unpacked*/ struct DXZY parmaj, /*unpacked*/ struct DXZY parmin, /*unpacked*/ struct DXZY *maj, /*unpacked*/ struct DXZY *min, float majrad, float minrad) {
 // LINE 52:
-	GetAxis(maj, parmaj.info, parmaj.y, parmaj.z, parmaj.x, XZ2Par, XY2Par);
+	GetAxis(XY2Par, XZ2Par, parmaj.x, parmaj.z, parmaj.y, parmaj.info, maj);
 // LINE 53:
-	GetAxis(min, parmin.info, parmin.y, parmin.z, parmin.x, XZ2Par, XY2Par);
+	GetAxis(XY2Par, XZ2Par, parmin.x, parmin.z, parmin.y, parmin.info, min);
 // LINE 54:
 	return;
 }
@@ -262,7 +262,7 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	/*bp-0x2c*/  /*unpacked*/ struct DXZY dpt; // 0x10 bytes
 
 // LINE 77:
-	doAssert(0x8c085, 0x5becd8, 0x4d, 0x5becf4);
+	doAssert(0x5becf4, 0x4d, 0x5becd8, 0x8c085);
 // LINE 79:
 	x = 0x0;
 	z = 0x0;
@@ -450,7 +450,7 @@ void AxisTransformToScreen(/*unpacked*/ struct DXZY *xAxis, /*unpacked*/ struct 
 	/*bp-0x10*/  /*unpacked*/ struct DXZY tf; // 0x10 bytes
 
 // LINE 121:
-	TransformToAxes(tf.x, dxzy->info, dxzy->y, dxzy->z, dxzy->x, yAxis, zAxis, xAxis);
+	TransformToAxes(xAxis, zAxis, yAxis, dxzy->x, dxzy->z, dxzy->y, dxzy->info, tf.x);
 // LINE 122:
 	__asm        cmp    centeroffset, 0;
 	__asm        je     _T60;
@@ -471,7 +471,7 @@ void AxisTransformToScreen(/*unpacked*/ struct DXZY *xAxis, /*unpacked*/ struct 
 	__asm        fstp   tf.y;
 // LINE 127:
 _T60:
-	PutInPerspective(0x0, tf.x);
+	PutInPerspective(tf.x, 0x0);
 // LINE 128:
 	__asm        lea    eax, tf.x;
 	__asm        mov    ecx, dxzy;
@@ -492,7 +492,7 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 	/*bp-0x10*/  /*unpacked*/ struct DXZY transformed; // 0x10 bytes
 
 // LINE 134:
-	XYIncrementCartesian(transformed.x, dpt.info, dpt.y, dpt.z, dpt.x, cosYangle, sinYangle, cosXangle, sinXangle);
+	XYIncrementCartesian(sinXangle, cosXangle, sinYangle, cosYangle, dpt.x, dpt.z, dpt.y, dpt.info, transformed.x);
 // LINE 136:
 	__asm        fld    transformed.x;
 	__asm        fmul   scale;
@@ -509,7 +509,7 @@ void XYTransformToScreen(float sinXangle, float cosXangle, float sinYangle, floa
 	__asm        test   reinterpret_cast<uint32_t>(perspective), 0xFFFF;
 	__asm        je     _T6b;
 // LINE 141:
-	PutInPerspective(0x0, transformed.x);
+	PutInPerspective(transformed.x, 0x0);
 // LINE 143:
 _T6b:
 	__asm        cmp    ptH, 0;
@@ -545,7 +545,7 @@ _Tb3:
 // FUNCTION: COPTER_D 0x00562b82
 void IncrementXY(/*unpacked*/ struct Polar *inc, /*unpacked*/ struct Polar *partPolar) {
 // LINE 152:
-	doAssert(0x8c085, 0x5bed14, 0x98, 0x5bed3c);
+	doAssert(0x5bed3c, 0x98, 0x5bed14, 0x8c085);
 // LINE 153:
 	__asm        mov    eax, partPolar;
 	__asm        fld    dword ptr [eax];
@@ -697,7 +697,7 @@ _T6b:
 	__asm        test   ah, 1;
 	__asm        jne    _T9b;
 // LINE 193:
-	doAssert(0x8c085, 0x5bed5c, 0xc1, 0x5bed78);
+	doAssert(0x5bed78, 0xc1, 0x5bed5c, 0x8c085);
 // LINE 195:
 _T9b:
 	res = 0x0;
@@ -786,9 +786,9 @@ void DrawDirectionDisk(/*unpacked*/ struct Rect *rect, short latint, short lngin
 	/*bp-0xc*/   float junk;
 
 // LINE 226:
-	PolarIncs2Double(junk, psi, phi, 0xa, reinterpret_cast<uint32_t>(lngincs), reinterpret_cast<uint32_t>(latincs), 0x0, reinterpret_cast<uint32_t>(lngint), reinterpret_cast<uint32_t>(latint));
+	PolarIncs2Double(reinterpret_cast<uint32_t>(latint), reinterpret_cast<uint32_t>(lngint), 0x0, reinterpret_cast<uint32_t>(latincs), reinterpret_cast<uint32_t>(lngincs), 0xa, phi, psi, junk);
 // LINE 227:
-	DrawDirectionDisk(reinterpret_cast<uint32_t>(length), ctr, reinterpret_cast<uint32_t>(polarAngles), psi, phi, rect);
+	DrawDirectionDisk(rect, phi, psi, reinterpret_cast<uint32_t>(polarAngles), ctr, reinterpret_cast<uint32_t>(length));
 // LINE 228:
 	return;
 }
@@ -813,13 +813,13 @@ void DrawDirectionDisk(/*unpacked*/ struct Rect *rect, float phi, float psi, uns
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T54;
 
-	doAssert(0x8c085, 0x5bed98, 0xf0, 0x5bedbc);
+	doAssert(0x5bedbc, 0xf0, 0x5bed98, 0x8c085);
 // LINE 241:
 _T54:
 	__asm        cmp    rect, 0;
 	__asm        je     _T7a;
 
-	doAssert(0x8c085, 0x5beddc, 0xf1, 0x5bedfc);
+	doAssert(0x5bedfc, 0xf1, 0x5beddc, 0x8c085);
 // LINE 242:
 _T7a:
 	__asm        movsx  eax, length;
@@ -830,12 +830,12 @@ _T7a:
 	__asm        test   reinterpret_cast<uint32_t>(polarAngles), 0xFFFF;
 	__asm        je     _Tb9;
 // LINE 244:
-	Polar2Cartesian(ydist, zdist, xdist, psi, phi, rad);
+	Polar2Cartesian(rad, phi, psi, xdist, zdist, ydist);
 // LINE 245:
 	__asm        jmp    _Td9;
 // LINE 246:
 _Tb9:
-	XY2Cartesian(ydist, zdist, xdist, psi, phi, rad);
+	XY2Cartesian(rad, phi, psi, xdist, zdist, ydist);
 // LINE 247:
 _Td9:
 	reinterpret_cast<uint32_t>(centerPt.v) = reinterpret_cast<uint32_t>(ctr->v);
@@ -915,12 +915,12 @@ _T110:
 	__asm        test   reinterpret_cast<uint32_t>(polarAngles), 0xFFFF;
 	__asm        je     _T1d6;
 // LINE 260:
-	Polar2Cartesian(ydist, zdist, xdist, psi, phi, rad);
+	Polar2Cartesian(rad, phi, psi, xdist, zdist, ydist);
 // LINE 261:
 	__asm        jmp    _T1f6;
 // LINE 262:
 _T1d6:
-	XY2Cartesian(ydist, zdist, xdist, psi, phi, rad);
+	XY2Cartesian(rad, phi, psi, xdist, zdist, ydist);
 // LINE 264:
 // Block end:
 _T1f6:
@@ -1091,7 +1091,7 @@ void GetChildIncrement(/*unpacked*/ struct Polar *passedInc, /*unpacked*/ struct
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 // LINE 515:
-	IncrementPhiPsi(resPolar.phi, parentPolar, passedInc);
+	IncrementPhiPsi(passedInc, parentPolar, resPolar.phi);
 // LINE 516:
 	__asm        fld    resPolar.phi;
 	__asm        fsub   startPolar.phi;
@@ -1108,7 +1108,7 @@ void GetChildIncrement(/*unpacked*/ struct Polar *passedInc, /*unpacked*/ struct
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 // LINE 521:
-	IncrementTorque(resPolar.phi, parentPolar, passedInc->tau);
+	IncrementTorque(passedInc->tau, parentPolar, resPolar.phi);
 // LINE 522:
 	__asm        fld    resPolar.phi;
 	__asm        fsub   startPolar.phi;
@@ -1166,7 +1166,7 @@ _Tb9:
 	__asm        fchs;
 	__asm        fstp   tmpinc.phi;
 // LINE 543:
-	IncrementPhiPsi(partPol.phi, parentPolar, tmpinc.phi);
+	IncrementPhiPsi(tmpinc.phi, parentPolar, partPol.phi);
 // LINE 544:
 	angleToPhiMovement = partPol.psi;
 // LINE 545:
@@ -1280,12 +1280,12 @@ void IncrementAngles(float incPhi, float incPsi, float pivotPhi, float pivotPsi,
 	__asm        test   reinterpret_cast<uint32_t>(polarAngles), 0xFFFF;
 	__asm        je     _Tb2;
 // LINE 576:
-	IncrementPhiPsi(polar.phi, pivot.phi, inc.phi);
+	IncrementPhiPsi(inc.phi, pivot.phi, polar.phi);
 // LINE 577:
 	__asm        jmp    _Tc2;
 // LINE 578:
 _Tb2:
-	IncrementXY(polar.phi, inc.phi);
+	IncrementXY(inc.phi, polar.phi);
 // LINE 579:
 _Tc2:
 	phi[0] = polar.phi;
@@ -1309,7 +1309,7 @@ void IncrementPhiPsi(/*unpacked*/ struct Polar *inc, /*unpacked*/ struct Polar *
 	__asm        test   ah, 0x40;
 	__asm        je     _T4a;
 
-	doAssert(0x8c085, 0x5bee1c, 0x248, 0x5bee44);
+	doAssert(0x5bee44, 0x248, 0x5bee1c, 0x8c085);
 // LINE 585:
 _T4a:
 	__asm        mov    eax, inc;
@@ -1324,7 +1324,7 @@ _T4a:
 	__asm        test   ah, 0x40;
 	__asm        je     _T8c;
 
-	doAssert(0x8c085, 0x5bee64, 0x249, 0x5bee8c);
+	doAssert(0x5bee8c, 0x249, 0x5bee64, 0x8c085);
 // LINE 586:
 _T8c:
 	__asm        mov    eax, inc;
@@ -1339,7 +1339,7 @@ _T8c:
 	__asm        test   ah, 0x40;
 	__asm        je     _Tce;
 
-	doAssert(0x8c085, 0x5beeac, 0x24a, 0x5beed4);
+	doAssert(0x5beed4, 0x24a, 0x5beeac, 0x8c085);
 // LINE 588:
 _Tce:
 	__asm        cmp    parentPolar, 0;
@@ -1379,18 +1379,18 @@ _Tec:
 	__asm        fsub   psiToZero;
 	__asm        fstp   tmpPolar.psi;
 // LINE 600:
-	Polar2Cartesian(y, z, x, tmpPolar.psi, tmpPolar.phi, 0x41200000);
+	Polar2Cartesian(0x41200000, tmpPolar.phi, tmpPolar.psi, x, z, y);
 // LINE 603:
-	Cartesian2Polar(tmprad, tmpPolar2.psi, tmpPolar2.phi, z, y, x);
+	Cartesian2Polar(x, y, z, tmpPolar2.phi, tmpPolar2.psi, tmprad);
 // LINE 605:
 	__asm        fld    tmpPolar2.psi;
 	__asm        mov    eax, inc;
 	__asm        fsub   dword ptr [eax];
 	__asm        fstp   tmpPolar2.psi;
 // LINE 607:
-	Polar2Cartesian(y2, z2, x2, tmpPolar2.psi, tmpPolar2.phi, tmprad);
+	Polar2Cartesian(tmprad, tmpPolar2.phi, tmpPolar2.psi, x2, z2, y2);
 // LINE 610:
-	Cartesian2Polar(tmprad2, resPolar.psi, resPolar.phi, z2, y2, x2);
+	Cartesian2Polar(x2, y2, z2, resPolar.phi, resPolar.psi, tmprad2);
 // LINE 612:
 	__asm        fld    resPolar.psi;
 	__asm        fadd   psiToZero;
@@ -1427,7 +1427,7 @@ void FillLatLngTrq(/*unpacked*/ struct Polar *polar, short latincs, short lngInc
 	__asm        test   eax, eax;
 	__asm        jne    _T61;
 // LINE 625:
-	PolarDouble2Incs((polar + 0x14), (polar + 0x10), (polar + 0x12), reinterpret_cast<uint32_t>(trqincs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(latincs), polar->tau, polar->psi, polar->phi);
+	PolarDouble2Incs(polar->phi, polar->psi, polar->tau, reinterpret_cast<uint32_t>(latincs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(trqincs), (polar + 0x12), (polar + 0x10), (polar + 0x14));
 // LINE 627:
 _T61:
 	Keep0to2pi(polar);
@@ -1498,13 +1498,13 @@ void SnapToIncs(/*unpacked*/ struct Polar *polar, short latIncs, short lngIncs, 
 	__asm        mov    ecx, polar;
 	__asm        mov    [ecx+0x12], ax;
 // LINE 641:
-	FillLatLngTrq(reinterpret_cast<uint32_t>(trqIncs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(latIncs), polar);
+	FillLatLngTrq(polar, reinterpret_cast<uint32_t>(latIncs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(trqIncs));
 // LINE 642:
 	polar->tau = 0x0;
 	polar->psi = polar->tau;
 	polar->phi = polar->psi;
 // LINE 643:
-	FillPhiPsiTau(reinterpret_cast<uint32_t>(trqIncs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(latIncs), polar);
+	FillPhiPsiTau(polar, reinterpret_cast<uint32_t>(latIncs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(trqIncs));
 // LINE 644:
 	return;
 }
@@ -1735,7 +1735,7 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 // FUNCTION: COPTER_D 0x00563aec
 void Polar2Cartesian(float radius, /*unpacked*/ struct Polar *polar, /*unpacked*/ struct DXZY *dxzy) {
 // LINE 697:
-	Polar2Cartesian((dxzy + 0x8), (dxzy + 0x4), dxzy, polar->psi, polar->phi, radius);
+	Polar2Cartesian(radius, polar->phi, polar->psi, dxzy, (dxzy + 0x4), (dxzy + 0x8));
 // LINE 698:
 	return;
 }
@@ -1759,20 +1759,20 @@ void PolarTransformToScreen(float phiOff, float psiOff, float scale, /*unpacked*
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 705:
-	Cartesian2Polar(radius, psi, phi, dpt.y, dpt.z, dpt.x);
+	Cartesian2Polar(dpt.x, dpt.z, dpt.y, phi, psi, radius);
 // LINE 706:
-	IncrementAngles(0x1, psi, phi, 0x0, 0x0, psiOff, phiOff);
+	IncrementAngles(phiOff, psiOff, 0x0, 0x0, phi, psi, 0x1);
 // LINE 707:
 	__asm        fld    scale;
 	__asm        fmul   radius;
 	__asm        fstp   radius;
 // LINE 708:
-	Polar2Cartesian(dpt.y, dpt.z, dpt.x, psi, phi, radius);
+	Polar2Cartesian(radius, phi, psi, dpt.x, dpt.z, dpt.y);
 // LINE 709:
 	__asm        test   reinterpret_cast<uint32_t>(perspective), 0xFFFF;
 	__asm        je     _Ta7;
 // LINE 710:
-	PutInPerspective(0x0, dpt.x);
+	PutInPerspective(dpt.x, 0x0);
 // LINE 711:
 _Ta7:
 	__asm        cmp    ptH, 0;
@@ -1895,7 +1895,7 @@ _Tb5:
 // FUNCTION: COPTER_D 0x00563cf6
 void Cartesian2Polar(/*unpacked*/ struct DXZY dxzy, /*unpacked*/ struct Polar *polar, float * radius) {
 // LINE 764:
-	Cartesian2Polar(radius, (polar + 0x4), polar, dxzy.y, dxzy.z, dxzy.x);
+	Cartesian2Polar(dxzy.x, dxzy.z, dxzy.y, polar, (polar + 0x4), radius);
 // LINE 765:
 	polar->tau = 0x0;
 // LINE 766:
@@ -1928,7 +1928,7 @@ void IncrementTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unpac
 	__asm        fchs;
 	__asm        fstp   inc.phi;
 // LINE 944:
-	IncrementPhiPsi(childPolar, parPolar.phi, inc.phi);
+	IncrementPhiPsi(inc.phi, parPolar.phi, childPolar);
 // LINE 945:
 	__asm        fld    parPolar.phi;
 	__asm        fsub   parPhiToZero;
@@ -1942,7 +1942,7 @@ void IncrementTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unpac
 // LINE 948:
 	inc.phi = parPhiToZero;
 // LINE 950:
-	IncrementPhiPsi(childPolar, parPolar.phi, inc.phi);
+	IncrementPhiPsi(inc.phi, parPolar.phi, childPolar);
 // LINE 951:
 	__asm        fld    parPolar.phi;
 	__asm        fadd   parPhiToZero;
@@ -1980,7 +1980,7 @@ void IncrementXYTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unp
 	__asm        fchs;
 	__asm        fstp   inc.phi;
 // LINE 959:
-	IncrementXY(childPolar, inc.phi);
+	IncrementXY(inc.phi, childPolar);
 // LINE 960:
 	__asm        mov    eax, childPolar;
 	__asm        fld    dword ptr [eax+4];
@@ -1991,7 +1991,7 @@ void IncrementXYTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unp
 	inc.psi = parY20;
 	inc.phi = parX20;
 // LINE 962:
-	IncrementXY(childPolar, inc.phi);
+	IncrementXY(inc.phi, childPolar);
 // LINE 963:
 	return;
 }
@@ -1999,7 +1999,7 @@ void IncrementXYTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unp
 // FUNCTION: COPTER_D 0x00563e67
 unsigned short IsPixelFilled(void * __ptr32 h, short x, short y) {
 // LINE 1816:
-	doAssert(0x8c085, 0x5beef4, 0x718, 0x5bef04);
+	doAssert(0x5bef04, 0x718, 0x5beef4, 0x8c085);
 // LINE 1819:
 	return 0x0;
 // LINE 1820:

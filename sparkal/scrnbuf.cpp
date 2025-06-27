@@ -294,7 +294,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 // LINE 136:
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _DDSCAPS ddsBackBufferCaps;
-	memset(0x6c, 0x0, (this + 0x58));
+	memset((this + 0x58), 0x0, 0x6c);
 // LINE 137:
 	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 138:
@@ -379,7 +379,7 @@ _T14b:
 	__asm        jmp    _T39b;
 // LINE 169:
 _T150:
-	memset(0x6c, 0x0, (this + 0x58));
+	memset((this + 0x58), 0x0, 0x6c);
 // LINE 170:
 	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 171:
@@ -419,7 +419,7 @@ _T1d3:
 	return 0x0;
 // LINE 182:
 _T1e7:
-	memset(0x6c, 0x0, (this + 0x58));
+	memset((this + 0x58), 0x0, 0x6c);
 // LINE 183:
 	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 184:

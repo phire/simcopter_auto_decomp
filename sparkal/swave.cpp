@@ -206,7 +206,7 @@ _T132:
 	__asm        jmp    ERROR_READING_WAVE;
 // LINE 110:
 _T15c:
-	memcpy(0x10, pcmWaveFormat.wf.wFormatTag, pwfxInfo);
+	memcpy(pwfxInfo, pcmWaveFormat.wf.wFormatTag, 0x10);
 // LINE 111:
 	__asm        mov    ax, cbExtraAlloc;
 	__asm        mov    ecx, pwfxInfo;

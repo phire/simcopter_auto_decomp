@@ -558,7 +558,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0043c7fb
 static void $E19() {
 
-	0x5c3618->MDate::MDate(0x0, 0xc22d);
+	0x5c3618->MDate::MDate(0xc22d, 0x0);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -732,7 +732,7 @@ _Ta9:
 	__asm        jmp    __RETURN;
 // LINE 131:
 _Tde:
-	endApril<vftable>->MDate::MDate(year, 0x4, 0x1e);
+	endApril<vftable>->MDate::MDate(0x1e, 0x4, year);
 // LINE 132:
 	__asm        push   2;
 	__asm        push   7;
@@ -756,7 +756,7 @@ class MTime MTime::EndDST(uint32_t year) {
 	/*bp-0xc*/   /*packed*/ class MDate endOctober; // 0xc bytes
 
 // LINE 148:
-	endOctober<vftable>->MDate::MDate(year, 0xa, 0x1f);
+	endOctober<vftable>->MDate::MDate(0x1f, 0xa, year);
 // LINE 149:
 	__asm        push   1;
 	__asm        push   7;

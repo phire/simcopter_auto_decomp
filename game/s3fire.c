@@ -258,13 +258,13 @@ _FOR_COND_68:
 // LINE 163:
 	fd->elevation = 0x0;
 // LINE 165:
-	fd->stptr = S2Alloc(0x10, G_dyobjmempool);
+	fd->stptr = S2Alloc(G_dyobjmempool, 0x10);
 // LINE 166:
 	fd->stptr->user1 = 0x1;
 // LINE 167:
 	fd->stptr->user2 = fd;
 // LINE 169:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 170:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -452,7 +452,7 @@ _T170:
 // LINE 263:
 	cfd->fire_count++;
 // LINE 270:
-	VR3dObjLocate((z - fd->loc.z), (y - fd->loc.y), (x - fd->loc.x), fd->stptr->mesh);
+	VR3dObjLocate(fd->stptr->mesh, (x - fd->loc.x), (y - fd->loc.y), (z - fd->loc.z));
 // LINE 272:
 	fd->loc.x = x;
 // LINE 273:
@@ -598,7 +598,7 @@ _T9b:
 // LINE 360:
 	loc.z = (ViewState.world_pos.z - floc.z);
 // LINE 361:
-	dist = MTCheapDist2D((fd + 0x8c), 0x6bf188);
+	dist = MTCheapDist2D(0x6bf188, (fd + 0x8c));
 // LINE 362:
 	__asm        mov    eax, dist;
 	__asm        cmp    mindist, eax;
@@ -655,7 +655,7 @@ _T185:
 	__asm        test   byte ptr [eax], 2;
 	__asm        je     _T1e2;
 // LINE 397:
-	newcoord = VRGetObjZdist(0x20000, -0x1, loc.y, loc.x, fd->building);
+	newcoord = VRGetObjZdist(fd->building, loc.x, loc.y, -0x1, 0x20000);
 // LINE 398:
 	loc.z = newcoord;
 // LINE 400:
@@ -665,7 +665,7 @@ _T1e2:
 	__asm        test   byte ptr [eax], 4;
 	__asm        je     _T21d;
 // LINE 407:
-	newcoord = VRGetObjZdist(0x20000, 0x1, loc.y, loc.x, fd->building);
+	newcoord = VRGetObjZdist(fd->building, loc.x, loc.y, 0x1, 0x20000);
 // LINE 408:
 	loc.z = newcoord;
 // LINE 410:
@@ -675,7 +675,7 @@ _T21d:
 	__asm        test   byte ptr [eax], 8;
 	__asm        je     _T258;
 // LINE 417:
-	newcoord = VRGetObjXdist(0x20000, -0x1, loc.z, loc.y, fd->building);
+	newcoord = VRGetObjXdist(fd->building, loc.y, loc.z, -0x1, 0x20000);
 // LINE 418:
 	loc.x = newcoord;
 // LINE 420:
@@ -685,7 +685,7 @@ _T258:
 	__asm        test   byte ptr [eax], 0x10;
 	__asm        je     _T28e;
 // LINE 427:
-	newcoord = VRGetObjXdist(0x20000, 0x1, loc.z, loc.y, fd->building);
+	newcoord = VRGetObjXdist(fd->building, loc.y, loc.z, 0x1, 0x20000);
 // LINE 428:
 	loc.x = newcoord;
 // LINE 431:
@@ -715,7 +715,7 @@ _T2a7:
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+4], eax;
 // LINE 443:
-	VR3dObjLocate((loc.z - fd->loc.z), (loc.y - fd->loc.y), (loc.x - fd->loc.x), fd->stptr->mesh);
+	VR3dObjLocate(fd->stptr->mesh, (loc.x - fd->loc.x), (loc.y - fd->loc.y), (loc.z - fd->loc.z));
 // LINE 445:
 	__asm        lea    eax, loc.x;
 	__asm        mov    ecx, fd;
@@ -849,7 +849,7 @@ _T508:
 	__asm        jmp    _FOR_NEXT_5d;
 // LINE 517:
 _T50d:
-	S3FireDyObjCollisionCheck(0x6, fd);
+	S3FireDyObjCollisionCheck(fd, 0x6);
 // LINE 520:
 	S_spread_time += G_AvLoopTime;
 // LINE 521:
@@ -892,7 +892,7 @@ _T585:
 	__asm        jmp    _T5b6;
 // LINE 547:
 _T5a8:
-	S3SoundSetPosition(minloc.x, 0xd);
+	S3SoundSetPosition(0xd, minloc.x);
 // LINE 551:
 _T5b6:
 	__asm        jmp    _T5d5;
@@ -901,7 +901,7 @@ _T5bb:
 	__asm        cmp    mindist, 0x32;
 	__asm        jge    _T5d5;
 // LINE 556:
-	S3DSPlay(0x1, minloc.x, 0xd);
+	S3DSPlay(0xd, minloc.x, 0x1);
 // LINE 562:
 _T5d5:
 	return;
@@ -993,7 +993,7 @@ _Te3:
 // LINE 606:
 	cfd->cptr = cptr;
 // LINE 607:
-	S3FireStartCell(0x0, fd->mission_id, celly, cellx, cfd);
+	S3FireStartCell(cfd, cellx, celly, fd->mission_id, 0x0);
 // LINE 608:
 }
 
@@ -1170,7 +1170,7 @@ __WHILE_77:
 			__asm        shl    eax, 0x10;
 			__asm        mov    dloc.z, eax;
 		// LINE 706:
-			S3DSPlay(0x0, dloc.x, 0xf);
+			S3DSPlay(0xf, dloc.x, 0x0);
 		// LINE 710:
 		_T193:
 			__asm        xor    eax, eax;
@@ -2438,7 +2438,7 @@ _Taac:
 	__asm        test   byte ptr [eax], 4;
 	__asm        je     _Taf5;
 // LINE 929:
-	S3MissionStart(0x80010, celly, cellx);
+	S3MissionStart(cellx, celly, 0x80010);
 // LINE 933:
 _Taf5:
 	return 0x1;
@@ -2646,7 +2646,7 @@ _Tef:
 // LINE 1077:
 	MTNormalize(vec.x);
 // LINE 1089:
-	S3MissileStart(-0x1, speed, dytruck, 0x1, vec.x, loc.x, currpos.x, 0x6);
+	S3MissileStart(0x6, currpos.x, loc.x, vec.x, 0x1, dytruck, speed, -0x1);
 // LINE 1093:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -2746,7 +2746,7 @@ _Tf3:
 // LINE 1143:
 	MTNormalize(vec.x);
 // LINE 1155:
-	S3MissileStart(-0x1, speed, dytruck, 0x1, vec.x, loc.x, currpos.x, 0x6);
+	S3MissileStart(0x6, currpos.x, loc.x, vec.x, 0x1, dytruck, speed, -0x1);
 // LINE 1159:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -2785,7 +2785,7 @@ void S3FireTweakInit() {
 // LINE 1183:
 	pvals[5] = 0x5b739c;
 // LINE 1185:
-	TWKEnQueue(0x5b73dc, 0x6, pvals[0]);
+	TWKEnQueue(pvals[0], 0x6, 0x5b73dc);
 // LINE 1186:
 }
 
@@ -3032,12 +3032,12 @@ __WHILE_1f0:
 	}
 // LINE 1288:
 _T227:
-	S3ExplosionSmokeStart(0x1, loc.x, fd->cfd->cptr);
+	S3ExplosionSmokeStart(fd->cfd->cptr, loc.x, 0x1);
 // LINE 1290:
 	return;
 // LINE 1297:
 _T246:
-	S3DSPlay(0x0, loc.x, 0x4);
+	S3DSPlay(0x4, loc.x, 0x0);
 // LINE 1301:
 	stobj = fd->cfd->cptr->stptr;
 // LINE 1302:
@@ -3134,7 +3134,7 @@ __WHILE_267:
 	}
 // LINE 1340:
 _T38b:
-	S3FireDyObjCollisionCheck(0x10, fd);
+	S3FireDyObjCollisionCheck(fd, 0x10);
 // LINE 1342:
 	fd->cfd->cptr->stptr = stobj;
 // LINE 1344:
@@ -3155,7 +3155,7 @@ _T38b:
 	__asm        shl    ecx, 8;
 	__asm        mov    G_texmap[0][eax+ecx], 0xA;
 // LINE 1346:
-	S3ExplosionStart(fd->mission_id, 0x4, 0x0, 0x200000, 0x0, fd->cfd->cptr);
+	S3ExplosionStart(fd->cfd->cptr, 0x0, 0x200000, 0x0, 0x4, fd->mission_id);
 // LINE 1348:
 	loc.y += 0x300000;
 // LINE 1351:
@@ -3408,7 +3408,7 @@ __WHILE_164:
 		// LINE 1483:
 			cfd->cptr = fcptr;
 		// LINE 1484:
-			S3FireStartCell(0x0, fd->mission_id, y, x, cfd);
+			S3FireStartCell(cfd, x, y, fd->mission_id, 0x0);
 		// LINE 1486:
 		_T1be:
 			return fd->mission_id;
@@ -3474,7 +3474,7 @@ __WHILE_60:
 			__asm        cmp    eax, [ecx+0x1C];
 			__asm        jle    _Tc5;
 		// LINE 1534:
-			S3ObjHitDispatch(0x0, fd->mission_id, dyobj, (fd + 0x24), hit_type);
+			S3ObjHitDispatch(hit_type, (fd + 0x24), dyobj, fd->mission_id, 0x0);
 		// LINE 1540:
 		_Tc5:
 			__asm        jmp    next_dyobj;
@@ -3567,7 +3567,7 @@ __WHILE_60:
 			__asm        cmp    eax, ecx;
 			__asm        jge    next_dyobj;
 		// LINE 1574:
-			S3ObjHitDispatch(0x0, fd->mission_id, dyobj, (fd + 0x24), hit_type);
+			S3ObjHitDispatch(hit_type, (fd + 0x24), dyobj, fd->mission_id, 0x0);
 		// LINE 1590:
 		next_dyobj:
 			__asm        mov    eax, dyobj;
@@ -3597,7 +3597,7 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   long i;
 
 // LINE 1626:
-	ret = ReadFirstMIFFChunk(0xa0, 0x62b550, FireMIFFID, miffReader);
+	ret = ReadFirstMIFFChunk(miffReader, FireMIFFID, 0x62b550, 0xa0);
 // LINE 1627:
 	__asm        cmp    ret, 0;
 	__asm        jne    _FOR_45;
@@ -3651,7 +3651,7 @@ _FOR_45:
 			__asm        mov    [edx], ecx;
 			__asm        mov    [edx+4], eax;
 		// LINE 1653:
-			ret = ReadNextMIFFChunk(0xa0, 0x62b550, FireMIFFID, miffReader);
+			ret = ReadNextMIFFChunk(miffReader, FireMIFFID, 0x62b550, 0xa0);
 		// LINE 1654:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T14c;
@@ -3665,7 +3665,7 @@ _FOR_45:
 	}
 // LINE 1662:
 _T151:
-	ret = ReadFirstMIFFChunk(0x8, 0x62b548, CfdMIFFID, miffReader);
+	ret = ReadFirstMIFFChunk(miffReader, CfdMIFFID, 0x62b548, 0x8);
 // LINE 1663:
 	__asm        cmp    ret, 0;
 	__asm        jne    _FOR_18a;
@@ -3679,7 +3679,7 @@ _FOR_18a:
 			__asm        mov    ecx, i;
 			__asm        mov    S_cfdata[0].fire_count[ecx*8], eax;
 		// LINE 1678:
-			ret = ReadNextMIFFChunk(0x8, 0x62b548, CfdMIFFID, miffReader);
+			ret = ReadNextMIFFChunk(miffReader, CfdMIFFID, 0x62b548, 0x8);
 		// LINE 1679:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T1e3;
@@ -3751,7 +3751,7 @@ _T22d:
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx], ax;
 // LINE 1707:
-	VR3dObjLocate((fd->dyfire.loc.z - fd->loc.z), (fd->dyfire.loc.y - fd->loc.y), (fd->dyfire.loc.x - fd->loc.x), fd->stptr->mesh);
+	VR3dObjLocate(fd->stptr->mesh, (fd->dyfire.loc.x - fd->loc.x), (fd->dyfire.loc.y - fd->loc.y), (fd->dyfire.loc.z - fd->loc.z));
 // LINE 1709:
 	__asm        mov    eax, fd;
 	__asm        add    eax, 0x3C;
@@ -3845,7 +3845,7 @@ _FOR_15:
 			__asm        mov    [ecx+8], eax;
 		// LINE 1749:
 		_T92:
-			ret = WriteMIFFChunk(0xa0, 0x62b550, FireMIFFID, miffWriter);
+			ret = WriteMIFFChunk(miffWriter, FireMIFFID, 0x62b550, 0xa0);
 		// LINE 1750:
 			__asm        cmp    ret, 0;
 			__asm        jne    _Tc2;

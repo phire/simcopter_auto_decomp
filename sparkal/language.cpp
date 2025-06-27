@@ -462,7 +462,7 @@ _T14d:
 // LINE 75:
 	LanguageManager::LoadLanguageSystemFonts(nLanguage);
 // LINE 76:
-	LanguageManager::GetLanguageRuntimeLibraryName(nLanguage, sLocale.c_str_ptr);
+	LanguageManager::GetLanguageRuntimeLibraryName(sLocale.c_str_ptr, nLanguage);
 // LINE 77:
 	__asm        cmp    sLocale.c_str_ptr, 0;
 	__asm        je     _T1b5;
@@ -545,7 +545,7 @@ _T255:
 _T270:
 	__asm        jmp    _T275;
 _T275:
-	setlocale(sLocale.c_str_ptr, 0x0);
+	setlocale(0x0, sLocale.c_str_ptr);
 // LINE 78:
 	__asm        mov    dword ptr [ebp-0x10], 1;
 	__asm        mov    eax, sLocale.reference;
@@ -933,7 +933,7 @@ _T31d:
 _T341:
 	__asm        jmp    _T346;
 _T346:
-	strcpy(stringLanguage.c_str_ptr, szLanguageName);
+	strcpy(szLanguageName, stringLanguage.c_str_ptr);
 // LINE 108:
 	__asm        mov    dword ptr [ebp-0x14], 1;
 	__asm        mov    eax, stringLanguage.reference;
@@ -1421,7 +1421,7 @@ _T67:
 	__asm        jmp    _T73;
 // LINE 180:
 _T73:
-	nFullStringID = LanguageManager::GetFullStringID(nLanguageToSwitchTo, 0x1);
+	nFullStringID = LanguageManager::GetFullStringID(0x1, nLanguageToSwitchTo);
 // LINE 181:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x102C];
@@ -2023,7 +2023,7 @@ _T102:
 // FUNCTION: COPTER_D 0x0042ba26
 int32_t LanguageManager::GetLanguageDirectoryName(/*packed*/ class basic_string<char>& sLanguage, int32_t nLanguage) {
 // LINE 314:
-	return LanguageManager::GetLanguageEnglishName(nLanguage, sLanguage);
+	return LanguageManager::GetLanguageEnglishName(sLanguage, nLanguage);
 // LINE 315:
 }
 
@@ -2038,7 +2038,7 @@ int32_t LanguageManager::GetLanguageEnglishName(/*packed*/ class basic_string<ch
 	nLanguage = gDefaultLanguage;
 // LINE 331:
 _T22:
-	nFullStringID = LanguageManager::GetFullStringID(nLanguage, 0x0);
+	nFullStringID = LanguageManager::GetFullStringID(0x0, nLanguage);
 // LINE 332:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1034];
@@ -2542,7 +2542,7 @@ int32_t LanguageManager::GetLanguageLocalName(/*packed*/ class basic_string<char
 	nLanguage = gDefaultLanguage;
 // LINE 353:
 _T22:
-	nFullStringID = LanguageManager::GetFullStringID(nLanguage, 0x1);
+	nFullStringID = LanguageManager::GetFullStringID(0x1, nLanguage);
 // LINE 354:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1034];
@@ -3046,7 +3046,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(/*packed*/ class basic_st
 	nLanguage = gDefaultLanguage;
 // LINE 375:
 _T22:
-	nFullStringID = LanguageManager::GetFullStringID(nLanguage, 0x2);
+	nFullStringID = LanguageManager::GetFullStringID(0x2, nLanguage);
 // LINE 376:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1034];
@@ -3555,7 +3555,7 @@ _T18:
 	__asm        test   eax, eax;
 	__asm        je     _T4c;
 // LINE 400:
-	strcpy(0x597674, szFaceName);
+	strcpy(szFaceName, 0x597674);
 // LINE 401:
 	return 0x1;
 // LINE 403:
@@ -3572,7 +3572,7 @@ _T4c:
 	__asm        jne    _T85;
 // LINE 407:
 _T6a:
-	strcpy(0x59767c, szFaceName);
+	strcpy(szFaceName, 0x59767c);
 // LINE 408:
 	return 0x1;
 // LINE 412:
@@ -3587,7 +3587,7 @@ int32_t LanguageManager::GetFontFilePathForLanguage(int32_t nLanguage, int32_t n
 	__asm        cmp    nLanguage, 0x10;
 	__asm        jne    _T2f;
 // LINE 428:
-	GetPathForFile(szFontFilePath, 0x59768c, 0x0, 0x8);
+	GetPathForFile(0x8, 0x0, 0x59768c, szFontFilePath);
 // LINE 429:
 	return 0x1;
 // LINE 433:
@@ -3623,7 +3623,7 @@ _T2a:
 	__asm        test   eax, eax;
 	__asm        jne    _T9e;
 // LINE 466:
-	LanguageManager::GetFontFilePathForLanguage(szFontPath[0], 0x0, 0x10);
+	LanguageManager::GetFontFilePathForLanguage(0x10, 0x0, szFontPath[0]);
 // LINE 468:
 	__asm        lea    eax, szFontPath[0];
 	__asm        push   eax;
@@ -3671,7 +3671,7 @@ _T2a:
 	__asm        cmp    nLanguage, 0x10;
 	__asm        jne    _T89;
 // LINE 498:
-	LanguageManager::GetFontFilePathForLanguage(szFontPath[0], 0x0, 0x10);
+	LanguageManager::GetFontFilePathForLanguage(0x10, 0x0, szFontPath[0]);
 // LINE 500:
 	__asm        lea    eax, szFontPath[0];
 	__asm        push   eax;

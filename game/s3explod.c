@@ -206,11 +206,11 @@ _FOR_COND_32:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 117:
-	ed->dy2d = S2Alloc(0x64, G_dyobjmempool);
+	ed->dy2d = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 118:
 	ed->dy2d->flags = 0x61;
 // LINE 120:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 121:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -278,13 +278,13 @@ _FOR_COND_176:
 // LINE 144:
 	sd->timetolive = 0x0;
 // LINE 147:
-	sd->dysmoke = S2Alloc(0x64, G_dyobjmempool);
+	sd->dysmoke = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 148:
 	sd->dysmoke->flags = 0x61;
 // LINE 149:
 	sd->dysmoke->radius = 0x200000;
 // LINE 152:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 153:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -319,23 +319,23 @@ _FOR_COND_176:
 	__asm        jmp    _FOR_NEXT_176;
 // LINE 162:
 _T236:
-	S_explseq[0] = VRInt2BmpHdr(0xf, G_restex);
+	S_explseq[0] = VRInt2BmpHdr(G_restex, 0xf);
 // LINE 163:
-	S_explseq[1] = VRInt2BmpHdr(0x10, G_restex);
+	S_explseq[1] = VRInt2BmpHdr(G_restex, 0x10);
 // LINE 164:
-	S_explseq[2] = VRInt2BmpHdr(0x11, G_restex);
+	S_explseq[2] = VRInt2BmpHdr(G_restex, 0x11);
 // LINE 165:
-	S_explseq[3] = VRInt2BmpHdr(0x12, G_restex);
+	S_explseq[3] = VRInt2BmpHdr(G_restex, 0x12);
 // LINE 166:
-	S_explseq[4] = VRInt2BmpHdr(0x19, G_restex);
+	S_explseq[4] = VRInt2BmpHdr(G_restex, 0x19);
 // LINE 167:
-	S_explseq[5] = VRInt2BmpHdr(0x1a, G_restex);
+	S_explseq[5] = VRInt2BmpHdr(G_restex, 0x1a);
 // LINE 168:
-	S_explseq[6] = VRInt2BmpHdr(0x1b, G_restex);
+	S_explseq[6] = VRInt2BmpHdr(G_restex, 0x1b);
 // LINE 169:
-	S_explseq[7] = VRInt2BmpHdr(0x1c, G_restex);
+	S_explseq[7] = VRInt2BmpHdr(G_restex, 0x1c);
 // LINE 170:
-	S_explseq[8] = VRInt2BmpHdr(0x1d, G_restex);
+	S_explseq[8] = VRInt2BmpHdr(G_restex, 0x1d);
 // LINE 173:
 	__asm        mov    eax, 0x59B4F8;
 	__asm        mov    ecx, 0x62A988;
@@ -673,7 +673,7 @@ _T61:
 // LINE 271:
 	ed->scale = scale;
 // LINE 274:
-	VRObjResize2dFace(dim, dim, ed->dy2d->mesh);
+	VRObjResize2dFace(ed->dy2d->mesh, dim, dim);
 // LINE 283:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];

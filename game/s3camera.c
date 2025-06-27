@@ -115,7 +115,7 @@ void S3CameraMove(/*packed*/ struct Point3d *P) {
 	alt = 0x500000;
 // LINE 140:
 _T9c:
-	alt += (S3TerrPrecisionAlt(0x0, Viewer.pos.z, Viewer.pos.x) + 0xa0000);
+	alt += (S3TerrPrecisionAlt(Viewer.pos.x, Viewer.pos.z, 0x0) + 0xa0000);
 // LINE 141:
 	altdiff = (alt - Viewer.pos.y);
 // LINE 142:
@@ -155,7 +155,7 @@ _T172:
 	__asm        cmp    G_camera_mode, 2;
 	__asm        jne    _T1f2;
 // LINE 158:
-	MTCreateDOF4x4((G_uheli + 0x100), mat[0][0]);
+	MTCreateDOF4x4(mat[0][0], (G_uheli + 0x100));
 // LINE 161:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -178,7 +178,7 @@ _T1f2:
 // LINE 170:
 	Viewer.pos.z = G_uheli->dyheli->loc.z;
 // LINE 172:
-	Viewer.pos.y = (S3TerrPrecisionAlt(0x0, Viewer.pos.z, Viewer.pos.x) + 0x3200000);
+	Viewer.pos.y = (S3TerrPrecisionAlt(Viewer.pos.x, Viewer.pos.z, 0x0) + 0x3200000);
 // LINE 174:
 _T238:
 	return;
@@ -297,7 +297,7 @@ _T3b4:
 // LINE 264:
 	alt = S3CameraGetBldAlt((0x6c12a0 + 0x78));
 // LINE 270:
-	alt += (S3TerrPrecisionAlt(0x0, Viewer.pos.z, Viewer.pos.x) + 0xa0000);
+	alt += (S3TerrPrecisionAlt(Viewer.pos.x, Viewer.pos.z, 0x0) + 0xa0000);
 // LINE 271:
 	altdiff = (alt - Viewer.pos.y);
 // LINE 272:
@@ -1101,7 +1101,7 @@ void S3CameraTweakInit() {
 // LINE 728:
 	pvals[2] = 0x5b4df8;
 // LINE 730:
-	TWKEnQueue(0x5b4e04, 0x3, pvals[0]);
+	TWKEnQueue(pvals[0], 0x3, 0x5b4e04);
 // LINE 732:
 }
 
@@ -1288,7 +1288,7 @@ __WHILE_9d:
 		// LINE 839:
 			flags = stobj->user1;
 		// LINE 845:
-			objy = VRGetObjAlt2(0x0, 0x0, 0x10000, 0x10000, flags, normz, normy, normx, stobj->mesh);
+			objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, 0x10000, 0x10000, 0x0, 0x0);
 		// LINE 846:
 			__asm        mov    eax, objy;
 			__asm        cmp    maxobjy, eax;

@@ -682,7 +682,7 @@ _T28:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destIndex.yindex, al;
 // LINE 275:
-	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(destIndex.x), reinterpret_cast<uint32_t>(startIndex.x));
+	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(startIndex.x), reinterpret_cast<uint32_t>(destIndex.x));
 // LINE 282:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -832,7 +832,7 @@ _T20e:
 	__asm        cmp    startGoal2.pRGV, 0;
 	__asm        jne    _T23e;
 
-	_assert(0x145, 0x5b8268, 0x5b828c);
+	_assert(0x5b828c, 0x5b8268, 0x145);
 	__asm        jmp    _T243;
 _T23e:
 	__asm        jmp    _T243;
@@ -865,7 +865,7 @@ _T269:
 	__asm        jmp    _T2b0;
 // LINE 336:
 _T28f:
-	_assert(0x150, 0x5b82b0, 0x5b82d4);
+	_assert(0x5b82d4, 0x5b82b0, 0x150);
 	__asm        jmp    _T2b0;
 
 	__asm        jmp    _T2b0;
@@ -962,7 +962,7 @@ _T34:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destIndex.yindex, al;
 // LINE 383:
-	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(destIndex.x), reinterpret_cast<uint32_t>(stationIndex.x));
+	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(stationIndex.x), reinterpret_cast<uint32_t>(destIndex.x));
 // LINE 388:
 _Ta8:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destLoc.x);
@@ -977,7 +977,7 @@ _Ta8:
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _Tf0;
 
-	_assert(0x189, 0x5b82dc, 0x5b8300);
+	_assert(0x5b8300, 0x5b82dc, 0x189);
 	__asm        jmp    _Tf5;
 _Tf0:
 	__asm        jmp    _Tf5;
@@ -987,7 +987,7 @@ _Tf5:
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T11e;
 
-	_assert(0x18a, 0x5b8318, 0x5b833c);
+	_assert(0x5b833c, 0x5b8318, 0x18a);
 	__asm        jmp    _T123;
 _T11e:
 	__asm        jmp    _T123;
@@ -996,7 +996,7 @@ _T123:
 	__asm        cmp    destGoal1.pRGV, 0;
 	__asm        jne    _T149;
 
-	_assert(0x18b, 0x5b8358, 0x5b837c);
+	_assert(0x5b837c, 0x5b8358, 0x18b);
 	__asm        jmp    _T14e;
 _T149:
 	__asm        jmp    _T14e;
@@ -1005,7 +1005,7 @@ _T14e:
 	__asm        cmp    stationGoal1.pRGV, 0;
 	__asm        jne    _T174;
 
-	_assert(0x18c, 0x5b838c, 0x5b83b0);
+	_assert(0x5b83b0, 0x5b838c, 0x18c);
 	__asm        jmp    _T179;
 _T174:
 	__asm        jmp    _T179;
@@ -1167,7 +1167,7 @@ _T2ff:
 	__asm        cmp    stationGoal2.pRGV, 0;
 	__asm        jne    _T32f;
 
-	_assert(0x1c3, 0x5b83c4, 0x5b83e8);
+	_assert(0x5b83e8, 0x5b83c4, 0x1c3);
 	__asm        jmp    _T334;
 _T32f:
 	__asm        jmp    _T334;
@@ -1224,7 +1224,7 @@ _T39c:
 	__asm        jmp    _T3e3;
 // LINE 471:
 _T3c2:
-	_assert(0x1d7, 0x5b8410, 0x5b8434);
+	_assert(0x5b8434, 0x5b8410, 0x1d7);
 	__asm        jmp    _T3e3;
 
 	__asm        jmp    _T3e3;
@@ -1289,7 +1289,7 @@ _T4b0:
 	__asm        jmp    _T50e;
 // LINE 500:
 _T4bc:
-	_assert(0x1f4, 0x5b843c, 0x5b8460);
+	_assert(0x5b8460, 0x5b843c, 0x1f4);
 	__asm        jmp    _T4dd;
 
 	__asm        jmp    _T4dd;
@@ -1343,7 +1343,7 @@ _T50e:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T594;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T599;
 _T594:
 	__asm        jmp    _T599;
@@ -1476,12 +1476,12 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destVertex.yindex, al;
 // LINE 549:
-	pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(destVertex.x), reinterpret_cast<uint32_t>(startVertex.x));
+	pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVertex.x));
 // LINE 550:
 	__asm        cmp    pathFound, 0;
 	__asm        jne    _T133;
 
-	_assert(0x226, 0x5b8468, 0x5b848c);
+	_assert(0x5b848c, 0x5b8468, 0x226);
 	__asm        jmp    _T138;
 _T133:
 	__asm        jmp    _T138;
@@ -1687,7 +1687,7 @@ _T2d:
 	__asm        cmp    ecx, 0x100;
 	__asm        jl     _T60;
 
-	_assert(0x2a8, 0x5b8498, 0x5b84bc);
+	_assert(0x5b84bc, 0x5b8498, 0x2a8);
 	__asm        jmp    _T65;
 _T60:
 	__asm        jmp    _T65;
@@ -1743,7 +1743,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(/*packed*/ struct _GridCoordinate
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T49;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T4e;
 _T49:
 	__asm        jmp    _T4e;
@@ -1756,7 +1756,7 @@ _T53:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T7f;
 
-	_assert(0x3b2, 0x5b84e0, 0x5b8504);
+	_assert(0x5b8504, 0x5b84e0, 0x3b2);
 	__asm        jmp    _T84;
 _T7f:
 	__asm        jmp    _T84;
@@ -1791,7 +1791,7 @@ _Td6:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _Tfe;
 
-	_assert(0x3c3, 0x5b8510, 0x5b8534);
+	_assert(0x5b8534, 0x5b8510, 0x3c3);
 	__asm        jmp    _T103;
 _Tfe:
 	__asm        jmp    _T103;
@@ -1816,7 +1816,7 @@ void EmergencyVehicleClass::LinkIconToCell(/*packed*/ struct _GridCoordinates po
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T49;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T4e;
 _T49:
 	__asm        jmp    _T4e;
@@ -1829,7 +1829,7 @@ _T53:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T7f;
 
-	_assert(0x3db, 0x5b8540, 0x5b8564);
+	_assert(0x5b8564, 0x5b8540, 0x3db);
 	__asm        jmp    _T84;
 _T7f:
 	__asm        jmp    _T84;
@@ -1906,7 +1906,7 @@ _T3c:
 	__asm        jmp    _T118;
 // LINE 1363:
 _T53:
-	_assert(0x553, 0x5b8570, 0x5b8594);
+	_assert(0x5b8594, 0x5b8570, 0x553);
 	__asm        jmp    _T74;
 
 	__asm        jmp    _T74;
@@ -1915,27 +1915,27 @@ _T74:
 	__asm        jmp    _T140;
 // LINE 1370:
 _T79:
-	FireEngineClass::Dispatch(mapy, mapx, emergencyLevel, emergencyType);
+	FireEngineClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
 // LINE 1371:
 	__asm        jmp    _T140;
 // LINE 1375:
 _T96:
-	AmbulanceClass::Dispatch(mapy, mapx, emergencyLevel, emergencyType);
+	AmbulanceClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
 // LINE 1376:
 	__asm        jmp    _T140;
 // LINE 1381:
 _Tb3:
-	PoliceCarClass::Dispatch(mapy, mapx, emergencyLevel, emergencyType);
+	PoliceCarClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
 // LINE 1382:
 	__asm        jmp    _T140;
 // LINE 1386:
 _Td0:
-	PoliceCarClass::Dispatch(mapy, mapx, emergencyLevel, emergencyType);
+	PoliceCarClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
 // LINE 1387:
 	__asm        jmp    _T140;
 // LINE 1391:
 _Ted:
-	_assert(0x56f, 0x5b859c, 0x5b85c0);
+	_assert(0x5b85c0, 0x5b859c, 0x56f);
 	__asm        jmp    _T10e;
 
 	__asm        jmp    _T10e;
@@ -2022,7 +2022,7 @@ _LOOP_1e:
 			__asm        cmp    eax, 0xFF;
 			__asm        jne    _Tb1;
 		_T95:
-			_assert(0x589, 0x5b85c8, 0x5b85ec);
+			_assert(0x5b85ec, 0x5b85c8, 0x589);
 			__asm        jmp    _Tb6;
 		_Tb1:
 			__asm        jmp    _Tb6;
@@ -2341,7 +2341,7 @@ _T15a:
 	__asm        jmp    _T1b8;
 // LINE 1583:
 _T166:
-	_assert(0x62f, 0x5b8618, 0x5b863c);
+	_assert(0x5b863c, 0x5b8618, 0x62f);
 	__asm        jmp    _T187;
 
 	__asm        jmp    _T187;

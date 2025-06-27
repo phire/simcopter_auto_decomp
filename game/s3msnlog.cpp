@@ -721,7 +721,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004ebc2b
 void S3AddLogEntry(/*packed*/ struct tagLogBase *logData, int32_t bShowUserMessage) {
 // LINE 37:
-	0x606e78->LogManager::AddLogEntry(0x1, bShowUserMessage, logData);
+	0x606e78->LogManager::AddLogEntry(logData, bShowUserMessage, 0x1);
 // LINE 38:
 	return;
 }
@@ -1312,7 +1312,7 @@ _LOOP_43:
 			lStringLength = 0x100;
 		// LINE 137:
 		_T13a:
-			strncpy(lStringLength, tempLogStringSource->szLogString, (tempLogStringDestination + 0x10));
+			strncpy((tempLogStringDestination + 0x10), tempLogStringSource->szLogString, lStringLength);
 		// LINE 140:
 			__asm        mov    eax, lStringLength;
 			__asm        add    eax, 0x10;
@@ -1532,7 +1532,7 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(/*packed*/ class MIFF *miffReader)
 // LINE 190:
 	tempLogString->szLogString = (tempLogString + 0x10);
 // LINE 191:
-	this->LogManager::AddLogEntry(0x0, 0x0, chStringBuffer[0]);
+	this->LogManager::AddLogEntry(chStringBuffer[0], 0x0, 0x0);
 // LINE 193:
 // Block end:
 	__asm        jmp    _Ta1;
@@ -1546,7 +1546,7 @@ _T7d:
 	__asm        mov    ecx, miffReader;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 197:
-	this->LogManager::AddLogEntry(0x0, 0x0, chBuffer[0]);
+	this->LogManager::AddLogEntry(chBuffer[0], 0x0, 0x0);
 // LINE 199:
 _Ta1:
 	return 0x1;
@@ -1955,7 +1955,7 @@ _T4a8:
 	__asm        jmp    _T4b4;
 // LINE 253:
 _T4b4:
-	LogManager::MakeStringFromLogData(0x0, sCurrentText.c_str_ptr, logData);
+	LogManager::MakeStringFromLogData(logData, sCurrentText.c_str_ptr, 0x0);
 // LINE 254:
 	__asm        lea    eax, sCurrentText.c_str_ptr;
 	__asm        push   eax;
@@ -3301,7 +3301,7 @@ _Ta3:
 	__asm        cmp    bPrintTime, 0;
 	__asm        je     _T393;
 // LINE 373:
-	tempTime<vftable>->MTimeLocalized::PrintStringLocalized(0x0, szTime[0]);
+	tempTime<vftable>->MTimeLocalized::PrintStringLocalized(szTime[0], 0x0);
 // LINE 374:
 	__asm        jmp    _Tc6;
 _Tc6:
@@ -3507,7 +3507,7 @@ _T38e:
 	__asm        jmp    _T39f;
 // LINE 378:
 _T393:
-	sCurrentText->basic_string<char>::remove(-0x1, 0x0);
+	sCurrentText->basic_string<char>::remove(0x0, -0x1);
 // LINE 380:
 _T39f:
 	__asm        mov    eax, logData;
@@ -3557,7 +3557,7 @@ _T3fb:
 // LINE 387:
 	nFullStringID = LogManager::GetStringIDFromLogEvent(lME);
 // LINE 388:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, nFullStringID);
+	nFullStringID = LanguageManager::GetFullStringID(nFullStringID, 0x0);
 // LINE 389:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szBuffer[0];
@@ -3623,12 +3623,12 @@ _T4ed:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _T52c;
 // LINE 394:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x216);
+	nFullStringID = LanguageManager::GetFullStringID(0x216, 0x0);
 // LINE 395:
 	__asm        jmp    _T541;
 // LINE 396:
 _T52c:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x217);
+	nFullStringID = LanguageManager::GetFullStringID(0x217, 0x0);
 // LINE 397:
 _T541:
 	__asm        push   0xFFF;
@@ -3680,13 +3680,13 @@ _T5dc:
 	__asm        jmp    _T5e1;
 // LINE 398:
 _T5e1:
-	sprintf((lCEE + 0x10), szBuffer1[0], szBuffer[0]);
+	sprintf(szBuffer[0], szBuffer1[0], (lCEE + 0x10));
 // LINE 400:
 // Block end:
 	__asm        jmp    _T6de;
 // LINE 401:
 _T606:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x215);
+	nFullStringID = LanguageManager::GetFullStringID(0x215, 0x0);
 // LINE 402:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szBuffer1[0];
@@ -3737,7 +3737,7 @@ _T6b6:
 	__asm        jmp    _T6bb;
 // LINE 403:
 _T6bb:
-	sprintf(logData->nMissionID, logData->nType, szBuffer1[0], szBuffer[0]);
+	sprintf(szBuffer[0], szBuffer1[0], logData->nType, logData->nMissionID);
 // LINE 406:
 _T6de:
 	__asm        jmp    _T6e3;

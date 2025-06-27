@@ -301,14 +301,14 @@ _T32:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x98], eax;
 // LINE 46:
-	strcpy(Caption, this->szCaption);
+	strcpy(this->szCaption, Caption);
 // LINE 48:
 	__asm        jmp    _Td1;
 // LINE 49:
 _Ta7:
 	this->szCaption = operator new(0x4);
 // LINE 50:
-	strcpy(0x599314, this->szCaption);
+	strcpy(this->szCaption, 0x599314);
 // LINE 53:
 _Td1:
 	__asm        lea    eax, ClassInfo.style;
@@ -850,7 +850,7 @@ _T2a9:
 // FUNCTION: COPTER_D 0x004676a1
 void GameWindow::UpdatePalette(long start, long count, /*packed*/ struct SparkalColor *pColor) {
 // LINE 287:
-	this->mpBackBuffer->CBackBuffer::UpdatePalette(pColor, count, start);
+	this->mpBackBuffer->CBackBuffer::UpdatePalette(start, count, pColor);
 // LINE 289:
 	return;
 }
@@ -1623,7 +1623,7 @@ _T447:
 	__asm        jmp    _T459;
 // LINE 610:
 _T459:
-	return CSparkalWindow::MySparkalWindowProc(lParam, wParam, Message, Window, this);
+	return CSparkalWindow::MySparkalWindowProc(this, Window, Message, wParam, lParam);
 // LINE 611:
 }
 

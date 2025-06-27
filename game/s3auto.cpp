@@ -849,7 +849,7 @@ _FOR_33:
 			__asm        mov    ax, [eax+0x7C];
 			__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 		// LINE 159:
-			dist = Distance(reinterpret_cast<uint32_t>(there.x), reinterpret_cast<uint32_t>(here.x));
+			dist = Distance(reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(there.x));
 		// LINE 160:
 			__asm        mov    eax, minDist;
 			__asm        cmp    dist, eax;
@@ -894,7 +894,7 @@ _FOR_e1:
 			__asm        mov    ax, [eax+0x7C];
 			__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 		// LINE 180:
-			dist = Distance(reinterpret_cast<uint32_t>(there.x), reinterpret_cast<uint32_t>(here.x));
+			dist = Distance(reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(there.x));
 		// LINE 181:
 			__asm        mov    eax, minDist;
 			__asm        cmp    dist, eax;
@@ -939,7 +939,7 @@ _FOR_18f:
 			__asm        mov    ax, [eax+0x7C];
 			__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 		// LINE 201:
-			dist = Distance(reinterpret_cast<uint32_t>(there.x), reinterpret_cast<uint32_t>(here.x));
+			dist = Distance(reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(there.x));
 		// LINE 202:
 			__asm        mov    eax, minDist;
 			__asm        cmp    dist, eax;
@@ -984,7 +984,7 @@ _FOR_23d:
 			__asm        mov    ax, [eax+0x7C];
 			__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 		// LINE 222:
-			dist = Distance(reinterpret_cast<uint32_t>(there.x), reinterpret_cast<uint32_t>(here.x));
+			dist = Distance(reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(there.x));
 		// LINE 223:
 			__asm        mov    eax, minDist;
 			__asm        cmp    dist, eax;
@@ -1208,7 +1208,7 @@ _T14f:
 	__asm        jmp    _T189;
 // LINE 397:
 _T168:
-	_assert(0x18d, 0x5b52cc, 0x5b52f0);
+	_assert(0x5b52f0, 0x5b52cc, 0x18d);
 	__asm        jmp    _T189;
 
 	__asm        jmp    _T189;
@@ -1251,7 +1251,7 @@ _T3e:
 	__asm        cmp    curAutos, eax;
 	__asm        jg     _T31;
 
-	_assert(0x1c3, 0x5b52f8, 0x5b531c);
+	_assert(0x5b531c, 0x5b52f8, 0x1c3);
 	__asm        jmp    _T36;
 _T31:
 	__asm        jmp    _T36;
@@ -1321,7 +1321,7 @@ _T65:
 	__asm        jmp    _T8c;
 // LINE 494:
 _T8c:
-	_assert(0x1ee, 0x5b5330, 0x5b5354);
+	_assert(0x5b5354, 0x5b5330, 0x1ee);
 	__asm        jmp    _Tad;
 
 	__asm        jmp    _Tad;
@@ -1372,7 +1372,7 @@ void AutomobileClass::Itterate() {
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T35;
 
-	_assert(0x259, 0x5b535c, 0x5b5380);
+	_assert(0x5b5380, 0x5b535c, 0x259);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;
@@ -1625,7 +1625,7 @@ _FOR_46:
 					__asm        add    ecx, eax;
 					__asm        mov    personLoc.z, ecx;
 				// LINE 763:
-					personLoc.y = S3ObjectPrecisionAlt(personLoc.z, personLoc.x);
+					personLoc.y = S3ObjectPrecisionAlt(personLoc.x, personLoc.z);
 				// LINE 766:
 					__asm        lea    eax, personLoc.x;
 					__asm        push   eax;
@@ -2122,7 +2122,7 @@ _T59f:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _T68b;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T690;
 _T68b:
 	__asm        jmp    _T690;
@@ -2133,7 +2133,7 @@ _T695:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 960:
-	S3ExplosionSmokeStart(0x6, loc.x, this->cptr);
+	S3ExplosionSmokeStart(this->cptr, loc.x, 0x6);
 // LINE 963:
 // Block end:
 _T6b9:
@@ -2215,7 +2215,7 @@ void AutomobileClass::UnlinkFromCell(const /*packed*/ struct _GridCoordinates& p
 	__asm        cmp    pCell, 0;
 	__asm        jne    _T4e;
 
-	_assert(0x41f, 0x5b539c, 0x5b53c0);
+	_assert(0x5b53c0, 0x5b539c, 0x41f);
 	__asm        jmp    _T53;
 _T4e:
 	__asm        jmp    _T53;
@@ -2250,7 +2250,7 @@ _Ta0:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _Tc8;
 
-	_assert(0x431, 0x5b53c8, 0x5b53ec);
+	_assert(0x5b53ec, 0x5b53c8, 0x431);
 	__asm        jmp    _Tcd;
 _Tc8:
 	__asm        jmp    _Tcd;
@@ -2278,7 +2278,7 @@ void AutomobileClass::LinkToCell(const /*packed*/ struct _GridCoordinates& point
 	__asm        cmp    pCell, 0;
 	__asm        jne    _T4e;
 
-	_assert(0x43f, 0x5b53f8, 0x5b541c);
+	_assert(0x5b541c, 0x5b53f8, 0x43f);
 	__asm        jmp    _T53;
 _T4e:
 	__asm        jmp    _T53;
@@ -2339,7 +2339,7 @@ _Td5:
 //   _Tb8
 // LINE 1107:
 _Tf9:
-	this->m_cellBaseY = S3ObjectPrecisionAlt(z, x);
+	this->m_cellBaseY = S3ObjectPrecisionAlt(x, z);
 // LINE 1109:
 // Block end:
 _T112:
@@ -2534,7 +2534,7 @@ _T212:
 	__asm        jmp    _T270;
 // LINE 1190:
 _T217:
-	_assert(0x4a6, 0x5b5424, 0x5b5448);
+	_assert(0x5b5448, 0x5b5424, 0x4a6);
 	__asm        jmp    _T238;
 
 	__asm        jmp    _T238;
@@ -2855,7 +2855,7 @@ __DO_42:
 			__asm        cmp    dword ptr [ebp-0xEC], 0;
 			__asm        jne    _T238;
 
-			_assert(0xa0, 0x5b57c4, 0x5b57b8);
+			_assert(0x5b57b8, 0x5b57c4, 0xa0);
 			__asm        jmp    _T23d;
 		_T238:
 			__asm        jmp    _T23d;
@@ -3017,7 +3017,7 @@ __DO_42:
 			__asm        cmp    dword ptr [ebp-0xCC], 0;
 			__asm        jne    _T47a;
 
-			_assert(0xa0, 0x5b57c4, 0x5b57b8);
+			_assert(0x5b57b8, 0x5b57c4, 0xa0);
 			__asm        jmp    _T47f;
 		_T47a:
 			__asm        jmp    _T47f;
@@ -3066,7 +3066,7 @@ _T50b:
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T537;
 
-	_assert(0x5cb, 0x5b5450, 0x5b5474);
+	_assert(0x5b5474, 0x5b5450, 0x5cb);
 	__asm        jmp    _T53c;
 _T537:
 	__asm        jmp    _T53c;
@@ -3191,7 +3191,7 @@ _T6f9:
 	__asm        cmp    ecx, eax;
 	__asm        je     _T745;
 _T729:
-	_assert(0x5eb, 0x5b5490, 0x5b54b4);
+	_assert(0x5b54b4, 0x5b5490, 0x5eb);
 	__asm        jmp    _T74a;
 _T745:
 	__asm        jmp    _T74a;
@@ -3439,7 +3439,7 @@ _Ta6c:
 	__asm        cmp    i, 4;
 	__asm        jl     _Ta95;
 
-	_assert(0x62d, 0x5b54f0, 0x5b5514);
+	_assert(0x5b5514, 0x5b54f0, 0x62d);
 	__asm        jmp    _Ta9a;
 _Ta95:
 	__asm        jmp    _Ta9a;
@@ -3507,7 +3507,7 @@ _Tb35:
 	__asm        cmp    dword ptr [eax+0x96], 2;
 	__asm        jle    _Tbee;
 _Tbd2:
-	_assert(0x63d, 0x5b5518, 0x5b553c);
+	_assert(0x5b553c, 0x5b5518, 0x63d);
 	__asm        jmp    _Tbf3;
 _Tbee:
 	__asm        jmp    _Tbf3;
@@ -3580,7 +3580,7 @@ _Tc8f:
 	__asm        cmp    dword ptr [ebp-0xD8], 0;
 	__asm        jne    _Tcd2;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _Tcd7;
 _Tcd2:
 	__asm        jmp    _Tcd7;
@@ -3726,7 +3726,7 @@ _T82:
 	S3MissionUpdate(mp.op);
 // LINE 1722:
 _Td3:
-	S3DSPlay(0x0, (this + 0x24), 0xf);
+	S3DSPlay(0xf, (this + 0x24), 0x0);
 // LINE 1725:
 	return;
 }
@@ -3783,7 +3783,7 @@ _T67:
 // LINE 1756:
 	S3MissionUpdate(mp.op);
 // LINE 1762:
-	S3DSPlay(0x0, (this + 0x24), 0x8);
+	S3DSPlay(0x8, (this + 0x24), 0x0);
 // LINE 1764:
 	return;
 }
@@ -3881,7 +3881,7 @@ __DO_21:
 			__asm        cmp    dword ptr [ebp-0x20], 0;
 			__asm        jne    _T75;
 
-			_assert(0xa0, 0x5b57c4, 0x5b57b8);
+			_assert(0x5b57b8, 0x5b57c4, 0xa0);
 			__asm        jmp    _T7a;
 		_T75:
 			__asm        jmp    _T7a;
@@ -4001,7 +4001,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	__asm        cmp    object, 0;
 	__asm        jne    _T4e;
 
-	_assert(0x75c, 0x5b5560, 0x5b5584);
+	_assert(0x5b5584, 0x5b5560, 0x75c);
 	__asm        jmp    _T53;
 _T4e:
 	__asm        jmp    _T53;
@@ -4031,7 +4031,7 @@ _T6b:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    _Taf;
 
-	_assert(0x771, 0x5b558c, 0x5b55b0);
+	_assert(0x5b55b0, 0x5b558c, 0x771);
 	__asm        jmp    _Tb4;
 _Taf:
 	__asm        jmp    _Tb4;
@@ -4050,7 +4050,7 @@ _Tb4:
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jne    _Tf3;
 
-	_assert(0x775, 0x5b55c0, 0x5b55e4);
+	_assert(0x5b55e4, 0x5b55c0, 0x775);
 	__asm        jmp    _Tf8;
 _Tf3:
 	__asm        jmp    _Tf8;
@@ -4378,7 +4378,7 @@ _T234:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T28e;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T293;
 _T28e:
 	__asm        jmp    _T293;
@@ -4539,7 +4539,7 @@ int32_t AutomobileClass::CanIPullOut() {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T66;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T6b;
 _T66:
 	__asm        jmp    _T6b;
@@ -4778,7 +4778,7 @@ _T1f6:
 	__asm        jne    _T238;
 // LINE 2256:
 _T200:
-	_assert(0x8d0, 0x5b55f8, 0x5b561c);
+	_assert(0x5b561c, 0x5b55f8, 0x8d0);
 	__asm        jmp    _T221;
 
 	__asm        jmp    _T221;
@@ -4941,7 +4941,7 @@ _T3e0:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    _T4ac;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T4b1;
 _T4ac:
 	__asm        jmp    _T4b1;
@@ -4952,7 +4952,7 @@ _T4b6:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 2332:
-	S3ExplosionSmokeStart(0x6, loc.x, this->cptr);
+	S3ExplosionSmokeStart(this->cptr, loc.x, 0x6);
 // LINE 2338:
 // Block end:
 _T4da:
@@ -5136,7 +5136,7 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T66;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T6b;
 _T66:
 	__asm        jmp    _T6b;
@@ -5775,7 +5775,7 @@ _T3c:
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        jne    _T163;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T168;
 _T163:
 	__asm        jmp    _T168;
@@ -5876,7 +5876,7 @@ _T275:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T2a0;
 // LINE 2667:
-	_assert(0xa6b, 0x5b5624, 0x5b5648);
+	_assert(0x5b5648, 0x5b5624, 0xa6b);
 	__asm        jmp    _T2a0;
 
 	__asm        jmp    _T2a0;
@@ -5980,7 +5980,7 @@ _T396:
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    _T3d3;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T3d8;
 _T3d3:
 	__asm        jmp    _T3d8;
@@ -6259,7 +6259,7 @@ _T6f6:
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        jne    _T733;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T738;
 _T733:
 	__asm        jmp    _T738;
@@ -6272,7 +6272,7 @@ _T73d:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T76e;
 // LINE 2842:
-	_assert(0xb1a, 0x5b5650, 0x5b5674);
+	_assert(0x5b5674, 0x5b5650, 0xb1a);
 	__asm        jmp    _T76e;
 
 	__asm        jmp    _T76e;
@@ -6679,14 +6679,14 @@ void AutoHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, 
 // FUNCTION: COPTER_D 0x0050657f
 int32_t AutoMissionStartFire(long mission_id, /*packed*/ struct Point2d *celloc) {
 // LINE 3098:
-	return AutomobileClass::MissionStartFire(celloc, mission_id);
+	return AutomobileClass::MissionStartFire(mission_id, celloc);
 // LINE 3099:
 }
 
 // FUNCTION: COPTER_D 0x0050659f
 int32_t AutoMissionStartJam(long mission_id, /*packed*/ struct Point2d *celloc) {
 // LINE 3111:
-	return AutomobileClass::MissionStartJam(celloc, mission_id);
+	return AutomobileClass::MissionStartJam(mission_id, celloc);
 // LINE 3112:
 }
 
@@ -6963,7 +6963,7 @@ void AutomobileClass::RunFireState() {
 // LINE 3304:
 	this->fireTime = 0x3333;
 // LINE 3305:
-	S3MissileDebrisFire((this + 0x10a), (this + 0x24), this->cptr);
+	S3MissileDebrisFire(this->cptr, (this + 0x24), (this + 0x10a));
 // LINE 3309:
 _T71:
 	__asm        mov    eax, this;
@@ -7013,7 +7013,7 @@ _T71:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 3328:
-	S3MissileStart(this->missionId, 0x320000, (this + 0xc), 0x1, vec.x, (this + 0x24), currpos.x, 0x4);
+	S3MissileStart(0x4, currpos.x, (this + 0x24), vec.x, 0x1, (this + 0xc), 0x320000, this->missionId);
 // LINE 3334:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10E];
@@ -7049,7 +7049,7 @@ _T71:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 3336:
-	S3DSPlay(0x0, (this + 0x24), 0x4);
+	S3DSPlay(0x4, (this + 0x24), 0x0);
 // LINE 3339:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10E], 0xFFFFFFFF;
@@ -8061,7 +8061,7 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T6c;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T71;
 _T6c:
 	__asm        jmp    _T71;
@@ -8074,7 +8074,7 @@ _T76:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _Ta2;
 
-	_assert(0xee7, 0x5b567c, 0x5b56a0);
+	_assert(0x5b56a0, 0x5b567c, 0xee7);
 	__asm        jmp    _Ta7;
 _Ta2:
 	__asm        jmp    _Ta7;
@@ -8172,7 +8172,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T6c;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T71;
 _T6c:
 	__asm        jmp    _T71;
@@ -8383,7 +8383,7 @@ _T327:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T34d;
 
-	_assert(0xf2a, 0x5b56ac, 0x5b56d0);
+	_assert(0x5b56d0, 0x5b56ac, 0xf2a);
 	__asm        jmp    _T352;
 _T34d:
 	__asm        jmp    _T352;
@@ -8805,7 +8805,7 @@ _T7fb:
 // LINE 4005:
 	this->currDist = MTNormalize((this + 0xa2));
 // LINE 4010:
-	MTCreateDOF4x4((this + 0xa2), (this + 0x30));
+	MTCreateDOF4x4((this + 0x30), (this + 0xa2));
 // LINE 4011:
 	return;
 }
@@ -9711,7 +9711,7 @@ _Tfb:
 	__asm        jmp    _T156;
 // LINE 4308:
 _T108:
-	_assert(0x10d4, 0x5b56dc, 0x5b5700);
+	_assert(0x5b5700, 0x5b56dc, 0x10d4);
 	__asm        jmp    _T129;
 
 	__asm        jmp    _T129;
@@ -9740,7 +9740,7 @@ _T15b:
 	__asm        jmp    _T1e3;
 // LINE 4322:
 _T168:
-	_assert(0x10e2, 0x5b5708, 0x5b572c);
+	_assert(0x5b572c, 0x5b5708, 0x10e2);
 	__asm        jmp    _T189;
 
 	__asm        jmp    _T189;
@@ -9821,7 +9821,7 @@ _T87:
 	__asm        jmp    _Td1;
 // LINE 4369:
 _Tb0:
-	_assert(0x1111, 0x5b5734, 0x5b5758);
+	_assert(0x5b5758, 0x5b5734, 0x1111);
 	__asm        jmp    _Td1;
 
 	__asm        jmp    _Td1;
@@ -9878,7 +9878,7 @@ _T87:
 	__asm        jmp    _Td1;
 // LINE 4415:
 _Tb0:
-	_assert(0x113f, 0x5b5760, 0x5b5784);
+	_assert(0x5b5784, 0x5b5760, 0x113f);
 	__asm        jmp    _Td1;
 
 	__asm        jmp    _Td1;
@@ -9935,7 +9935,7 @@ _T87:
 	__asm        jmp    _Td1;
 // LINE 4466:
 _Tb0:
-	_assert(0x1172, 0x5b578c, 0x5b57b0);
+	_assert(0x5b57b0, 0x5b578c, 0x1172);
 	__asm        jmp    _Td1;
 
 	__asm        jmp    _Td1;
@@ -10025,7 +10025,7 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 4549:
-	ret = ReadFirstMIFFChunk(0x344, 0x608c28, 0x4155544f, miffReader);
+	ret = ReadFirstMIFFChunk(miffReader, 0x4155544f, 0x608c28, 0x344);
 // LINE 4550:
 	__asm        cmp    ret, 0;
 	__asm        jne    _FOR_44;
@@ -10043,7 +10043,7 @@ _FOR_44:
 			__asm        mov    ecx, cars[0][eax*4];
 			__asm        call   dword ptr [edx+0x18];
 		// LINE 4561:
-			ret = ReadNextMIFFChunk(0x344, 0x608c28, 0x4155544f, miffReader);
+			ret = ReadNextMIFFChunk(miffReader, 0x4155544f, 0x608c28, 0x344);
 		// LINE 4563:
 			__asm        cmp    ret, 0;
 			__asm        jne    _Ta8;
@@ -10078,7 +10078,7 @@ _FOR_15:
 			__asm        mov    ecx, cars[0][eax*4];
 			__asm        call   dword ptr [edx+0x14];
 		// LINE 4588:
-			ret = WriteMIFFChunk(0x344, 0x608c28, 0x4155544f, miffWriter);
+			ret = WriteMIFFChunk(miffWriter, 0x4155544f, 0x608c28, 0x344);
 		// LINE 4589:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T6f;
@@ -10426,7 +10426,7 @@ _T1d:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T370;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T375;
 _T370:
 	__asm        jmp    _T375;
@@ -10461,7 +10461,7 @@ _T39c:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    _T3f6;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T3fb;
 _T3f6:
 	__asm        jmp    _T3fb;
@@ -10522,7 +10522,7 @@ _T5c:
 	__asm        test   eax, eax;
 	__asm        jne    _T91;
 // LINE 4755:
-	S3DSPlay(0x0, (this + 0x24), this->hornSoundId);
+	S3DSPlay(this->hornSoundId, (this + 0x24), 0x0);
 // LINE 4759:
 _T91:
 	return;
@@ -10572,7 +10572,7 @@ void S3AutoSoundDriver() {
 	__asm        test   eax, eax;
 	__asm        jne    _T61;
 // LINE 4802:
-	S3DSPlay(0x1, loc.x, 0x12);
+	S3DSPlay(0x12, loc.x, 0x1);
 // LINE 4805:
 _T61:
 	__asm        push   0xF0600000;
@@ -10587,7 +10587,7 @@ _T61:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4807:
-	S3SoundAdjVol(vol_adj, 0x12);
+	S3SoundAdjVol(0x12, vol_adj);
 // LINE 4809:
 	__asm        jmp    _Tb6;
 // LINE 4811:
@@ -10624,7 +10624,7 @@ _Tb6:
 	__asm        test   eax, eax;
 	__asm        jne    _T10e;
 // LINE 4826:
-	S3DSPlay(0x1, loc.x, 0x13);
+	S3DSPlay(0x13, loc.x, 0x1);
 // LINE 4829:
 _T10e:
 	__asm        push   0xF0600000;
@@ -10639,7 +10639,7 @@ _T10e:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4831:
-	S3SoundAdjVol(vol_adj, 0x13);
+	S3SoundAdjVol(0x13, vol_adj);
 // LINE 4833:
 	__asm        jmp    _T163;
 // LINE 4835:
@@ -10676,7 +10676,7 @@ _T163:
 	__asm        test   eax, eax;
 	__asm        jne    _T1bb;
 // LINE 4850:
-	S3DSPlay(0x1, loc.x, 0x11);
+	S3DSPlay(0x11, loc.x, 0x1);
 // LINE 4853:
 _T1bb:
 	__asm        push   0xF0600000;
@@ -10691,7 +10691,7 @@ _T1bb:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4855:
-	S3SoundAdjVol(vol_adj, 0x11);
+	S3SoundAdjVol(0x11, vol_adj);
 // LINE 4857:
 	__asm        jmp    _T210;
 // LINE 4859:
@@ -10728,7 +10728,7 @@ _T210:
 	__asm        test   eax, eax;
 	__asm        jne    _T268;
 // LINE 4874:
-	S3DSPlay(0x1, loc.x, 0x14);
+	S3DSPlay(0x14, loc.x, 0x1);
 // LINE 4877:
 _T268:
 	__asm        push   0xF0600000;
@@ -10743,7 +10743,7 @@ _T268:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4879:
-	S3SoundAdjVol(vol_adj, 0x14);
+	S3SoundAdjVol(0x14, vol_adj);
 // LINE 4881:
 	__asm        jmp    _T2bd;
 // LINE 4883:
@@ -10780,7 +10780,7 @@ _T2bd:
 	__asm        test   eax, eax;
 	__asm        jne    _T315;
 // LINE 4898:
-	S3DSPlay(0x1, loc.x, 0x14);
+	S3DSPlay(0x14, loc.x, 0x1);
 // LINE 4901:
 _T315:
 	__asm        push   0xF0600000;
@@ -10795,7 +10795,7 @@ _T315:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 4903:
-	S3SoundAdjVol(vol_adj, 0x14);
+	S3SoundAdjVol(0x14, vol_adj);
 // LINE 4905:
 	__asm        jmp    _T36a;
 // LINE 4907:
@@ -10891,7 +10891,7 @@ _FOR_7d:
 			__asm        cmp    base, 0x80;
 			__asm        jne    _Tec;
 		// LINE 4959:
-			VRFaceSetColor((newbase + index), face);
+			VRFaceSetColor(face, (newbase + index));
 		// LINE 4960:
 		_Tec:
 			__asm        jmp    _T29d;
@@ -10900,7 +10900,7 @@ _FOR_7d:
 			__asm        cmp    base, 0x80;
 			__asm        jne    _T111;
 		// LINE 4963:
-			VRFaceSetColor((newbase + index), face);
+			VRFaceSetColor(face, (newbase + index));
 		// LINE 4964:
 		_T111:
 			__asm        jmp    _T29d;
@@ -10909,7 +10909,7 @@ _FOR_7d:
 			__asm        cmp    base, 0x50;
 			__asm        jne    _T133;
 		// LINE 4967:
-			VRFaceSetColor((newbase + index), face);
+			VRFaceSetColor(face, (newbase + index));
 		// LINE 4968:
 		_T133:
 			__asm        jmp    _T29d;
@@ -10918,7 +10918,7 @@ _FOR_7d:
 			__asm        cmp    base, 0x50;
 			__asm        jne    _T155;
 		// LINE 4971:
-			VRFaceSetColor((newbase + index), face);
+			VRFaceSetColor(face, (newbase + index));
 		// LINE 4972:
 		_T155:
 			__asm        jmp    _T29d;
@@ -10927,7 +10927,7 @@ _FOR_7d:
 			__asm        cmp    base, 0xA0;
 			__asm        jne    _T17a;
 		// LINE 4975:
-			VRFaceSetColor((newbase + index), face);
+			VRFaceSetColor(face, (newbase + index));
 		// LINE 4976:
 		_T17a:
 			__asm        jmp    _T29d;
@@ -10936,7 +10936,7 @@ _FOR_7d:
 			__asm        cmp    base, 0x30;
 			__asm        jne    _T19c;
 		// LINE 4979:
-			VRFaceSetColor((newbase + index), face);
+			VRFaceSetColor(face, (newbase + index));
 		// LINE 4980:
 		_T19c:
 			__asm        jmp    _T29d;

@@ -363,7 +363,7 @@ _T30:
 	__asm        test   eax, eax;
 	__asm        jne    _T5c;
 // LINE 20:
-	doAssert(0x8c085, 0x5bf754, 0x14, 0x5bf768);
+	doAssert(0x5bf768, 0x14, 0x5bf754, 0x8c085);
 // LINE 21:
 _T5c:
 	return 0x1;
@@ -391,21 +391,21 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, /*unpacked*/ class ResFile *
 // LINE 37:
 	__asm        jmp    _T7c;
 
-	doAssert(0x8c085, 0x5bf788, 0x25, 0x5bf7a0);
+	doAssert(0x5bf7a0, 0x25, 0x5bf788, 0x8c085);
 // LINE 38:
 _T7c:
 	this->fType = this->fFile->FlatResFile::GetResType(this->fDataHandle);
 // LINE 52:
-	this->fFile->FlatResFile::GetID((this + 0x20), this->fDataHandle);
+	this->fFile->FlatResFile::GetID(this->fDataHandle, (this + 0x20));
 // LINE 55:
-	this->fFile->FlatResFile::GetName(tmpname[0], this->fDataHandle);
+	this->fFile->FlatResFile::GetName(this->fDataHandle, tmpname[0]);
 // LINE 56:
 	__asm        xor    eax, eax;
 	__asm        mov    al, tmpname[0];
 	__asm        test   eax, eax;
 	__asm        jg     _T107;
 
-	doAssert(0x8c085, 0x5bf7c0, 0x38, 0x5bf7ec);
+	doAssert(0x5bf7ec, 0x38, 0x5bf7c0, 0x8c085);
 // LINE 57:
 _T107:
 	__asm        xor    eax, eax;
@@ -416,7 +416,7 @@ _T107:
 	tmpname[0] = 0xf;
 // LINE 61:
 _T11f:
-	Memory::BlockMove(0x10, (this + 0x3c), tmpname[0]);
+	Memory::BlockMove(tmpname[0], (this + 0x3c), 0x10);
 // LINE 62:
 	this->fTinyName = PStr2Long((this + 0x3c));
 // LINE 63:
@@ -451,7 +451,7 @@ _T1c9:
 	__asm        cmp    [eax+0x18], ecx;
 	__asm        je     _T218;
 
-	doAssert(0x8c085, 0x5bf80c, 0x4d, 0x5bf848);
+	doAssert(0x5bf848, 0x4d, 0x5bf80c, 0x8c085);
 // LINE 79:
 _T218:
 	__asm        mov    eax, header;
@@ -482,7 +482,7 @@ _T218:
 	__asm        cmp    eax, [ecx+0x1C];
 	__asm        jbe    _T2b6;
 
-	doAssert(0x8c085, 0x5bf868, 0x54, 0x5bf87c);
+	doAssert(0x5bf87c, 0x54, 0x5bf868, 0x8c085);
 // LINE 89:
 _T2b6:
 	this->_cArray::SetXPointers();
@@ -506,14 +506,14 @@ _FOR_2da:
 					__asm        cmp    eax, [ecx+4];
 					__asm        je     _T353;
 
-					doAssert(0x8c085, 0x5bf89c, 0x60, 0x5bf8d4);
+					doAssert(0x5bf8d4, 0x60, 0x5bf89c, 0x8c085);
 				// LINE 97:
 				_T353:
 					data = this->fData->;
 				// LINE 98:
 					data += (this->fEntrySize * ycount);
 				// LINE 99:
-					Swizzler(this->fEntrySize, data);
+					Swizzler(data, this->fEntrySize);
 			}
 		// LINE 101:
 		_T39d:
@@ -533,7 +533,7 @@ void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char 
 	__asm        cmp    rType, 0;
 	__asm        je     _T39;
 _T20:
-	doAssert(0x8c085, 0x5bf8f4, 0x7b, 0x5bf944);
+	doAssert(0x5bf944, 0x7b, 0x5bf8f4, 0x8c085);
 // LINE 127:
 _T39:
 	this->fFile = pFile;
@@ -548,7 +548,7 @@ _T39:
 	__asm        cmp    name, 0;
 	__asm        je     _Tab;
 // LINE 135:
-	Memory::BlockMove(0x10, (this + 0x3c), name);
+	Memory::BlockMove(name, (this + 0x3c), 0x10);
 // LINE 136:
 	this->fTinyName = PStr2Long((this + 0x3c));
 // LINE 139:
@@ -564,7 +564,7 @@ _Tab:
 _Tbc:
 	this->fResID = 0xffff;
 // LINE 151:
-	this->_cArray::SetSizeAndHeaders(ySize, xSize);
+	this->_cArray::SetSizeAndHeaders(xSize, ySize);
 // LINE 153:
 	this->_cArray::ClearBytes(0x0);
 // LINE 154:
@@ -607,7 +607,7 @@ _FOR_5f:
 			__asm        cmp    dword ptr [eax+0x4C], 0;
 			__asm        jne    _Tb4;
 
-			doAssert(0x8c085, 0x5bf964, 0xad, 0x5bf97c);
+			doAssert(0x5bf97c, 0xad, 0x5bf964, 0x8c085);
 		// LINE 174:
 		_Tb4:
 			__asm        mov    eax, cnt;
@@ -626,7 +626,7 @@ _FOR_5f:
 			__asm        test   reinterpret_cast<uint32_t>(bFound), 0xFFFF;
 			__asm        je     _T10b;
 
-			doAssert(0x8c085, 0x5bf99c, 0xb0, 0x5bf9d8);
+			doAssert(0x5bf9d8, 0xb0, 0x5bf99c, 0x8c085);
 		// LINE 179:
 		_T10b:
 			_cArray::sArrayTable-> = 0x0;
@@ -654,7 +654,7 @@ void _cArray::MakeTable() {
 	__asm        cmp    _cArray::sArrayTable, 0;
 	__asm        jne    _FOR_5d;
 
-	doAssert(0x8c085, 0x5bf9f8, 0xc5, 0x5bfa18);
+	doAssert(0x5bfa18, 0xc5, 0x5bf9f8, 0x8c085);
 // LINE 198:
 _FOR_5d:
 	for (count = 0x0; (count < 0x400); count++) {
@@ -706,7 +706,7 @@ void _cArray::CheckIntoTable() {
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    _T42;
 
-	doAssert(0x8c085, 0x5bfa38, 0xfa, 0x5bfa60);
+	doAssert(0x5bfa60, 0xfa, 0x5bfa38, 0x8c085);
 // LINE 252:
 _T42:
 	_cArray::MakeTable();
@@ -729,7 +729,7 @@ _FOR_5a:
 			__asm        cmp    [eax+0x4C], ecx;
 			__asm        jne    _Tb4;
 
-			doAssert(0x8c085, 0x5bfa80, 0x100, 0x5bfaa0);
+			doAssert(0x5bfaa0, 0x100, 0x5bfa80, 0x8c085);
 		// LINE 257:
 		_Tb4:
 			__asm        cmp    foundcount, 0xFFFFFFFF;
@@ -749,7 +749,7 @@ _Tdc:
 	__asm        cmp    foundcount, 0xFFFFFFFF;
 	__asm        jne    _T102;
 
-	doAssert(0x8c085, 0x5bfac0, 0x105, 0x5bfaf4);
+	doAssert(0x5bfaf4, 0x105, 0x5bfac0, 0x8c085);
 // LINE 262:
 _T102:
 	_cArray::sArrayTable-> = this;
@@ -772,12 +772,12 @@ void _cArray::FillHeader() {
 	__asm        cmp    [eax+0x1C], ecx;
 	__asm        jbe    _T49;
 
-	doAssert(0x8c085, 0x5bfb14, 0x132, 0x5bfb30);
+	doAssert(0x5bfb30, 0x132, 0x5bfb14, 0x8c085);
 // LINE 308:
 _T49:
 	__asm        jmp    _T6a;
 
-	doAssert(0x8c085, 0x5bfb50, 0x134, 0x5bfb68);
+	doAssert(0x5bfb68, 0x134, 0x5bfb50, 0x8c085);
 // LINE 309:
 _T6a:
 	__asm        mov    eax, this;
@@ -794,7 +794,7 @@ _T6a:
 	__asm        cmp    eax, [ecx+0x1C];
 	__asm        je     _Tb2;
 
-	doAssert(0x8c085, 0x5bfb88, 0x135, 0x5bfba8);
+	doAssert(0x5bfba8, 0x135, 0x5bfb88, 0x8c085);
 // LINE 310:
 _Tb2:
 	__asm        mov    eax, this;
@@ -806,7 +806,7 @@ _Tb2:
 	__asm        test   eax, eax;
 	__asm        jne    _Te8;
 
-	doAssert(0x8c085, 0x5bfbc8, 0x136, 0x5bfbdc);
+	doAssert(0x5bfbdc, 0x136, 0x5bfbc8, 0x8c085);
 // LINE 312:
 _Te8:
 	header = this->fDataPtr;
@@ -832,7 +832,7 @@ _Te8:
 // FUNCTION: COPTER_D 0x00567e33
 void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 // LINE 320:
-	this->_cArray::SetSize(newySize, newxSize);
+	this->_cArray::SetSize(newxSize, newySize);
 // LINE 321:
 	this->_cArray::FillHeader();
 // LINE 322:
@@ -873,7 +873,7 @@ _T2b:
 	__asm        cmp    [eax+0x1C], ecx;
 	__asm        jbe    _T71;
 
-	doAssert(0x8c085, 0x5bfbfc, 0x150, 0x5bfc04);
+	doAssert(0x5bfc04, 0x150, 0x5bfbfc, 0x8c085);
 // LINE 337:
 _T71:
 	end = (this->fDataHandleSize + this->fDataPtr);
@@ -886,7 +886,7 @@ _T71:
 	__asm        cmp    [eax], ecx;
 	__asm        je     _Tbf;
 
-	doAssert(0x8c085, 0x5bfc24, 0x155, 0x5bfc58);
+	doAssert(0x5bfc58, 0x155, 0x5bfc24, 0x8c085);
 // LINE 342:
 _Tbf:
 	numBytes = ((this->fxSize * this->fEntrySize) * this->fySize);
@@ -897,7 +897,7 @@ _Tbf:
 	__asm        cmp    numBytes, 0x7A1200;
 	__asm        jl     _FOR_115;
 _Ted:
-	doAssert(0x8c085, 0x5bfc78, 0x157, 0x5bfc9c);
+	doAssert(0x5bfc9c, 0x157, 0x5bfc78, 0x8c085);
 // LINE 344:
 _FOR_115:
 	for (cnt = 0x0; (numBytes > cnt); cnt++) {
@@ -914,7 +914,7 @@ _FOR_115:
 			__asm        jbe    _T15f;
 		// LINE 348:
 		_T143:
-			doAssert(0x8c085, 0x5bfcbc, 0x15c, 0x5bfcd8);
+			doAssert(0x5bfcd8, 0x15c, 0x5bfcbc, 0x8c085);
 		// LINE 350:
 		_T15f:
 			__asm        mov    al, zeropad;
@@ -961,7 +961,7 @@ short _cArray::InsertRow(short afterwhich) {
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _T72;
 _T56:
-	doAssert(0x8c085, 0x5bfcf8, 0x16d, 0x5bfd00);
+	doAssert(0x5bfd00, 0x16d, 0x5bfcf8, 0x8c085);
 // LINE 367:
 _T72:
 	__asm        movsx  eax, afterwhich;
@@ -1002,13 +1002,13 @@ _FOR_NEXT_a8:
 		_Td7:
 			moveto = this->fData->;
 		// LINE 375:
-			Memory::BlockMove((this->fEntrySize * this->fySize), moveto, movefrom);
+			Memory::BlockMove(movefrom, moveto, (this->fEntrySize * this->fySize));
 		// LINE 378:
 			__asm        movsx  eax, count;
 			__asm        test   eax, eax;
 			__asm        jge    _T12d;
 
-			doAssert(0x8c085, 0x5bfd20, 0x17a, 0x5bfd28);
+			doAssert(0x5bfd28, 0x17a, 0x5bfd20, 0x8c085);
 		// LINE 379:
 		_T12d:
 	}
@@ -1052,7 +1052,7 @@ short _cArray::InsertColumn(short afterwhich) {
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _T72;
 _T56:
-	doAssert(0x8c085, 0x5bfd48, 0x188, 0x5bfd50);
+	doAssert(0x5bfd50, 0x188, 0x5bfd48, 0x8c085);
 // LINE 394:
 _T72:
 	__asm        movsx  eax, afterwhich;
@@ -1086,7 +1086,7 @@ _FOR_96:
 					__asm        test   eax, eax;
 					__asm        jge    _Tf6;
 
-					doAssert(0x8c085, 0x5bfd70, 0x18f, 0x5bfd78);
+					doAssert(0x5bfd78, 0x18f, 0x5bfd70, 0x8c085);
 				// LINE 400:
 				_Tf6:
 					__asm        jmp    _Tfb;
@@ -1105,7 +1105,7 @@ _FOR_96:
 				_T11c:
 					moveto = (this->fData-> + (this->fEntrySize * reinterpret_cast<int16_t>(ycount)));
 				// LINE 402:
-					Memory::BlockMove(this->fEntrySize, moveto, movefrom);
+					Memory::BlockMove(movefrom, moveto, this->fEntrySize);
 			}
 		// LINE 404:
 		// Block end:
@@ -1133,7 +1133,7 @@ short _cArray::DeleteRow(short which) {
 	__asm        cmp    oldxsize, 0;
 	__asm        jg     _T44;
 
-	doAssert(0x8c085, 0x5bfd98, 0x19f, 0x5bfda8);
+	doAssert(0x5bfda8, 0x19f, 0x5bfd98, 0x8c085);
 // LINE 417:
 _T44:
 	__asm        mov    eax, this;
@@ -1145,7 +1145,7 @@ _T44:
 	__asm        test   eax, eax;
 	__asm        jge    _T7c;
 _T60:
-	doAssert(0x8c085, 0x5bfdc8, 0x1a1, 0x5bfddc);
+	doAssert(0x5bfddc, 0x1a1, 0x5bfdc8, 0x8c085);
 // LINE 418:
 _T7c:
 	__asm        mov    eax, this;
@@ -1180,7 +1180,7 @@ _Tb2:
 _Tc8:
 	moveto = this->fData->;
 // LINE 422:
-	Memory::BlockMove((this->fEntrySize * this->fySize), moveto, movefrom);
+	Memory::BlockMove(movefrom, moveto, (this->fEntrySize * this->fySize));
 // LINE 423:
 	__asm        jmp    _FOR_NEXT_96;
 // LINE 426:
@@ -1200,7 +1200,7 @@ _Tfb:
 	__asm        test   eax, eax;
 	__asm        jne    _T13b;
 
-	doAssert(0x8c085, 0x5bfdfc, 0x1aa, 0x5bfe04);
+	doAssert(0x5bfe04, 0x1aa, 0x5bfdfc, 0x8c085);
 // LINE 427:
 _T13b:
 	__asm        mov    eax, this;
@@ -1208,7 +1208,7 @@ _T13b:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _T166;
 
-	doAssert(0x8c085, 0x5bfe24, 0x1ab, 0x5bfe2c);
+	doAssert(0x5bfe2c, 0x1ab, 0x5bfe24, 0x8c085);
 // LINE 428:
 _T166:
 	__asm        mov    eax, this;
@@ -1217,7 +1217,7 @@ _T166:
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        je     _T192;
 
-	doAssert(0x8c085, 0x5bfe4c, 0x1ac, 0x5bfe54);
+	doAssert(0x5bfe54, 0x1ac, 0x5bfe4c, 0x8c085);
 // LINE 429:
 _T192:
 	return reinterpret_cast<uint16_t>(this->fxSize);
@@ -1240,7 +1240,7 @@ short _cArray::DeleteColumn(short which) {
 	__asm        cmp    oldysize, 0;
 	__asm        jg     _T44;
 
-	doAssert(0x8c085, 0x5bfe74, 0x1b6, 0x5bfe84);
+	doAssert(0x5bfe84, 0x1b6, 0x5bfe74, 0x8c085);
 // LINE 440:
 _T44:
 	__asm        movsx  eax, which;
@@ -1252,7 +1252,7 @@ _T44:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jg     _FOR_87;
 _T60:
-	doAssert(0x8c085, 0x5bfea4, 0x1b8, 0x5bfebc);
+	doAssert(0x5bfebc, 0x1b8, 0x5bfea4, 0x8c085);
 // LINE 441:
 _FOR_87:
 	for (xcount = 0x0; (this->fxSize > reinterpret_cast<int16_t>(xcount)); xcount++) {
@@ -1288,7 +1288,7 @@ _FOR_87:
 					__asm        add    eax, [edx+ecx*4];
 					__asm        mov    nextone, eax;
 				// LINE 446:
-					Memory::BlockMove(this->fEntrySize, thisone, nextone);
+					Memory::BlockMove(nextone, thisone, this->fEntrySize);
 				// LINE 448:
 				_T129:
 			}
@@ -1334,7 +1334,7 @@ _FOR_87:
 			__asm        test   eax, eax;
 			__asm        jne    _T1c7;
 
-			doAssert(0x8c085, 0x5bfedc, 0x1c5, 0x5bfee4);
+			doAssert(0x5bfee4, 0x1c5, 0x5bfedc, 0x8c085);
 		// LINE 456:
 		// Block end:
 		// Block end:
@@ -1356,7 +1356,7 @@ _T1cc:
 	__asm        test   eax, eax;
 	__asm        jne    _T20c;
 
-	doAssert(0x8c085, 0x5bff04, 0x1c9, 0x5bff0c);
+	doAssert(0x5bff0c, 0x1c9, 0x5bff04, 0x8c085);
 // LINE 458:
 _T20c:
 	__asm        mov    eax, this;
@@ -1365,7 +1365,7 @@ _T20c:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _T238;
 
-	doAssert(0x8c085, 0x5bff2c, 0x1ca, 0x5bff34);
+	doAssert(0x5bff34, 0x1ca, 0x5bff2c, 0x8c085);
 // LINE 459:
 _T238:
 	__asm        mov    eax, this;
@@ -1373,7 +1373,7 @@ _T238:
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        je     _T263;
 
-	doAssert(0x8c085, 0x5bff54, 0x1cb, 0x5bff5c);
+	doAssert(0x5bff5c, 0x1cb, 0x5bff54, 0x8c085);
 // LINE 460:
 _T263:
 	return reinterpret_cast<uint16_t>(this->fySize);
@@ -1422,7 +1422,7 @@ _T6c:
 // LINE 469:
 	this->_cArray::CopyTo(temp<vftable>);
 // LINE 471:
-	this->_cArray::SetSizeAndHeaders(newySize, newxSize);
+	this->_cArray::SetSizeAndHeaders(newxSize, newySize);
 // LINE 472:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -1431,7 +1431,7 @@ _T6c:
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     _Tc0;
 
-	doAssert(0x8c085, 0x5bff7c, 0x1d8, 0x5bffb4);
+	doAssert(0x5bffb4, 0x1d8, 0x5bff7c, 0x8c085);
 // LINE 474:
 _Tc0:
 	this->_cArray::ClearBytes(reinterpret_cast<uint32_t>(zeropad));
@@ -1458,7 +1458,7 @@ _FOR_d8:
 					__asm        cmp    dword ptr [eax+0x18], 0;
 					__asm        je     _T177;
 				// LINE 484:
-					Memory::BlockMove(this->fEntrySize, dest, src);
+					Memory::BlockMove(src, dest, this->fEntrySize);
 				// LINE 485:
 				_T177:
 					__asm        jmp    _T181;
@@ -1528,7 +1528,7 @@ _T69:
 // LINE 503:
 	__asm        jmp    _T9c;
 
-	doAssert(0x8c085, 0x5bffd4, 0x1f7, 0x5bffec);
+	doAssert(0x5bffec, 0x1f7, 0x5bffd4, 0x8c085);
 // LINE 504:
 _T9c:
 	__asm        mov    eax, this;
@@ -1548,16 +1548,16 @@ _T9c:
 	__asm        cmp    dword ptr [eax+0x1C], 0x7A1200;
 	__asm        jb     _Tee;
 
-	doAssert(0x8c085, 0x5c000c, 0x1f9, 0x5c0024);
+	doAssert(0x5c0024, 0x1f9, 0x5c000c, 0x8c085);
 // LINE 506:
 _Tee:
-	this->fDataHandle = Memory::HAlloc(0x0, this->fDataHandleSize);
+	this->fDataHandle = Memory::HAlloc(this->fDataHandleSize, 0x0);
 // LINE 507:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T12e;
 
-	doAssert(0x8c085, 0x5c0044, 0x1fb, 0x5c0054);
+	doAssert(0x5c0054, 0x1fb, 0x5c0044, 0x8c085);
 // LINE 509:
 _T12e:
 	this->fDataPtr = Memory::Stash(this->fDataHandle);
@@ -1617,7 +1617,7 @@ void _cArray::CopyFrom(unsigned long oldname) {
 	/*bp-0x4*/   /*unpacked*/ class _cArray *src;
 
 // LINE 543:
-	src = _cArray::GetArray(-0x1, oldname);
+	src = _cArray::GetArray(oldname, -0x1);
 // LINE 544:
 	this->_cArray::CopyFrom(src);
 // LINE 545:
@@ -1632,7 +1632,7 @@ void _cArray::CopyFrom(/*unpacked*/ class _cArray *src) {
 	__asm        cmp    src, 0;
 	__asm        jne    _T32;
 
-	doAssert(0x8c085, 0x5c0074, 0x225, 0x5c0098);
+	doAssert(0x5c0098, 0x225, 0x5c0074, 0x8c085);
 // LINE 550:
 _T32:
 	__asm        mov    eax, this;
@@ -1641,7 +1641,7 @@ _T32:
 	__asm        cmp    [eax+0x18], ecx;
 	__asm        je     _T60;
 
-	doAssert(0x8c085, 0x5c00b8, 0x226, 0x5c00e0);
+	doAssert(0x5c00e0, 0x226, 0x5c00b8, 0x8c085);
 // LINE 551:
 _T60:
 	__asm        mov    eax, this;
@@ -1656,7 +1656,7 @@ _T60:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _Ta0;
 _T84:
-	doAssert(0x8c085, 0x5c0100, 0x227, 0x5c0124);
+	doAssert(0x5c0124, 0x227, 0x5c0100, 0x8c085);
 // LINE 553:
 _Ta0:
 	howmuch = ((this->fxSize * this->fEntrySize) * this->fySize);
@@ -1667,13 +1667,13 @@ _Ta0:
 	__asm        cmp    howmuch, 0x7A1200;
 	__asm        jl     _Tea;
 _Tce:
-	doAssert(0x8c085, 0x5c0144, 0x22a, 0x5c0160);
+	doAssert(0x5c0160, 0x22a, 0x5c0144, 0x8c085);
 // LINE 555:
 _Tea:
 	__asm        cmp    howmuch, 0;
 	__asm        je     _T112;
 // LINE 556:
-	Memory::BlockMove(howmuch, this->fData->, src->fData->);
+	Memory::BlockMove(src->fData->, this->fData->, howmuch);
 // LINE 557:
 _T112:
 	return;
@@ -1687,7 +1687,7 @@ void _cArray::CopyTo(/*unpacked*/ class _cArray *dest) {
 	__asm        cmp    dest, 0;
 	__asm        jne    _T32;
 
-	doAssert(0x8c085, 0x5c0180, 0x239, 0x5c01a4);
+	doAssert(0x5c01a4, 0x239, 0x5c0180, 0x8c085);
 // LINE 570:
 _T32:
 	__asm        mov    eax, dest;
@@ -1696,7 +1696,7 @@ _T32:
 	__asm        cmp    [eax+0x18], ecx;
 	__asm        je     _T60;
 
-	doAssert(0x8c085, 0x5c01c4, 0x23a, 0x5c01ec);
+	doAssert(0x5c01ec, 0x23a, 0x5c01c4, 0x8c085);
 // LINE 571:
 _T60:
 	__asm        mov    eax, this;
@@ -1711,7 +1711,7 @@ _T60:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        je     _Ta0;
 _T84:
-	doAssert(0x8c085, 0x5c020c, 0x23b, 0x5c022c);
+	doAssert(0x5c022c, 0x23b, 0x5c020c, 0x8c085);
 // LINE 573:
 _Ta0:
 	howmuch = ((this->fxSize * this->fySize) * this->fEntrySize);
@@ -1722,13 +1722,13 @@ _Ta0:
 	__asm        cmp    howmuch, 0x7A1200;
 	__asm        jl     _Tea;
 _Tce:
-	doAssert(0x8c085, 0x5c024c, 0x23e, 0x5c0278);
+	doAssert(0x5c0278, 0x23e, 0x5c024c, 0x8c085);
 // LINE 575:
 _Tea:
 	__asm        cmp    howmuch, 0;
 	__asm        je     _T112;
 // LINE 576:
-	Memory::BlockMove(howmuch, dest->fData->, this->fData->);
+	Memory::BlockMove(this->fData->, dest->fData->, howmuch);
 // LINE 577:
 _T112:
 	return;
@@ -1739,7 +1739,7 @@ void _cArray::CopyTo(unsigned long oldname) {
 	/*bp-0x4*/   /*unpacked*/ class _cArray *dest;
 
 // LINE 581:
-	dest = _cArray::GetArray(-0x1, oldname);
+	dest = _cArray::GetArray(oldname, -0x1);
 // LINE 582:
 	this->_cArray::CopyTo(dest);
 // LINE 583:
@@ -1757,7 +1757,7 @@ void _cArray::CopyTo(unsigned char * toName) {
 // FUNCTION: COPTER_D 0x00568d68
 void _cArray::GetName(unsigned char * name) {
 // LINE 592:
-	Memory::BlockMove(0x10, name, (this + 0x3c));
+	Memory::BlockMove((this + 0x3c), name, 0x10);
 // LINE 593:
 	return;
 }
@@ -1790,7 +1790,7 @@ _FOR_19:
 			__asm        cmp    dword ptr [eax+0x4C], 0;
 			__asm        jne    _T73;
 
-			doAssert(0x8c085, 0x5c0298, 0x266, 0x5c02b0);
+			doAssert(0x5c02b0, 0x266, 0x5c0298, 0x8c085);
 		// LINE 615:
 		_T73:
 			__asm        movsx  eax, numChars;
@@ -1838,7 +1838,7 @@ _FOR_19:
 			__asm        cmp    eax, 0x20;
 			__asm        jb     _T12c;
 		_T110:
-			doAssert(0x8c085, 0x5c02d0, 0x26c, 0x5c02f8);
+			doAssert(0x5c02f8, 0x26c, 0x5c02d0, 0x8c085);
 		// LINE 621:
 		_T12c:
 			__asm        movsx  eax, cnt;
@@ -1994,7 +1994,7 @@ void _cArray::LoadAllArrays(/*unpacked*/ class ResFile *pFile, unsigned long rTy
 	__asm        cmp    pFile, 0;
 	__asm        jne    _T44;
 
-	doAssert(0x8c085, 0x5c0318, 0x2c2, 0x5c0338);
+	doAssert(0x5c0338, 0x2c2, 0x5c0318, 0x8c085);
 // LINE 712:
 _T44:
 	foundcount = _cArray::GetLoadedIndex(0x0, 0x0);
@@ -2003,7 +2003,7 @@ _T44:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T7d;
 
-	doAssert(0x8c085, 0x5c0358, 0x2c9, 0x5c0378);
+	doAssert(0x5c0378, 0x2c9, 0x5c0358, 0x8c085);
 // LINE 714:
 _T7d:
 	ft.file = pFile;
@@ -2027,12 +2027,12 @@ _FOR_ca:
 			/*bp-0x30*/  /*unpacked*/ class _cArray *tmp;
 			/*bp-0x34*/  void * __ptr32 hArray;
 			/*bp-0x38*/  unsigned char * dataPtr;
-			hArray = pFile->FlatResFile::GetByIndex(0x0, reinterpret_cast<uint32_t>(count), rType);
+			hArray = pFile->FlatResFile::GetByIndex(rType, reinterpret_cast<uint32_t>(count), 0x0);
 		// LINE 725:
 			__asm        cmp    hArray, 0;
 			__asm        jne    _T119;
 
-			doAssert(0x8c085, 0x5c0398, 0x2d5, 0x5c03c8);
+			doAssert(0x5c03c8, 0x2d5, 0x5c0398, 0x8c085);
 		// LINE 727:
 		_T119:
 			dataPtr = Memory::HLock(hArray);
@@ -2050,7 +2050,7 @@ _FOR_ca:
 			__asm        cmp    eax, ecx;
 			__asm        je     _T170;
 
-			doAssert(0x8c085, 0x5c03e8, 0x2db, 0x5c0420);
+			doAssert(0x5c0420, 0x2db, 0x5c03e8, 0x8c085);
 		// LINE 733:
 		_T170:
 			Memory::HUnlock(hArray);
@@ -2093,7 +2093,7 @@ _FOR_ca:
 			__asm        cmp    [eax+0x28], ecx;
 			__asm        je     _T210;
 
-			doAssert(0x8c085, 0x5c0440, 0x2e1, 0x5c044c);
+			doAssert(0x5c044c, 0x2e1, 0x5c0440, 0x8c085);
 		// LINE 738:
 		_T210:
 			__asm        mov    eax, tmp;
@@ -2103,7 +2103,7 @@ _FOR_ca:
 			__asm        cmp    eax, [ecx+4];
 			__asm        je     _T241;
 
-			doAssert(0x8c085, 0x5c046c, 0x2e2, 0x5c04a4);
+			doAssert(0x5c04a4, 0x2e2, 0x5c046c, 0x8c085);
 		// LINE 755:
 		// Block end:
 		_T241:
@@ -2170,7 +2170,7 @@ _FOR_26:
 			__asm        cmp    eax, 0xFFFFFFFF;
 			__asm        je     _T9c;
 
-			doAssert(0x8c085, 0x5c04c4, 0x311, 0x5c04ec);
+			doAssert(0x5c04ec, 0x311, 0x5c04c4, 0x8c085);
 		// LINE 787:
 		_T9c:
 			__asm        mov    ax, cnt;

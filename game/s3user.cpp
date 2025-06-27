@@ -278,7 +278,7 @@ char * GetCurrentCityPath() {
 // FUNCTION: COPTER_D 0x004290e8
 void SetCurrentCityPath(char * szNewCurrentCityPath) {
 // LINE 178:
-	strcpy(szNewCurrentCityPath, 0x5c2918);
+	strcpy(0x5c2918, szNewCurrentCityPath);
 // LINE 179:
 	return;
 }
@@ -319,26 +319,26 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00429170
 void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * szCityFileName) {
 // LINE 215:
-	strcpy(szCityFileNameBase, szCityFileName);
+	strcpy(szCityFileName, szCityFileNameBase);
 // LINE 217:
 	__asm        cmp    nCityFileType, 1;
 	__asm        jne    _T37;
 // LINE 218:
-	strcat(SZ_CITY_DATA_SUFFIX, szCityFileName);
+	strcat(szCityFileName, SZ_CITY_DATA_SUFFIX);
 // LINE 219:
 	__asm        jmp    _T74;
 _T37:
 	__asm        cmp    nCityFileType, 2;
 	__asm        jne    _T58;
 // LINE 220:
-	strcat(SZ_CITY_SMALL_VIDEO_SUFFIX, szCityFileName);
+	strcat(szCityFileName, SZ_CITY_SMALL_VIDEO_SUFFIX);
 // LINE 221:
 	__asm        jmp    _T74;
 _T58:
 	__asm        cmp    nCityFileType, 3;
 	__asm        jne    _T74;
 // LINE 222:
-	strcat(SZ_CITY_BIG_VIDEO_SUFFIX, szCityFileName);
+	strcat(szCityFileName, SZ_CITY_BIG_VIDEO_SUFFIX);
 // LINE 223:
 _T74:
 	return;
@@ -437,7 +437,7 @@ _FOR_1c:
 		// LINE 283:
 			pvals[8] = (currentCareerCityInfo + 0x24);
 		// LINE 284:
-			TWKEnQueue(currentCareerCityInfo->chCityFileNameBase, 0x9, pvals[0]);
+			TWKEnQueue(pvals[0], 0x9, currentCareerCityInfo->chCityFileNameBase);
 	}
 // LINE 286:
 _Ta5:
@@ -469,7 +469,7 @@ _T27:
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 308:
-	GetPathForFile(0x5c2918, szFullCityFileName[0], 0x0, 0x5);
+	GetPathForFile(0x5, 0x0, szFullCityFileName[0], 0x5c2918);
 // LINE 310:
 	gCurrentCareerCityInfo.lCurrentCities[0] = 0x0;
 // LINE 311:
@@ -571,7 +571,7 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	/*bp-0x4*/   char * chPrefData;
 
 // LINE 348:
-	strcpy(szUserCityPath, 0x5c2918);
+	strcpy(0x5c2918, szUserCityPath);
 // LINE 349:
 	__asm        mov    edi, 0x5C2A20;
 	__asm        lea    esi, gAllCareerCities[0].citySettings.lDifficulty;
@@ -711,7 +711,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 399:
-	GetPathForFile(0x5c2918, szFullCityFileName[0], 0x0, 0x5);
+	GetPathForFile(0x5, 0x0, szFullCityFileName[0], 0x5c2918);
 // LINE 401:
 	__asm        mov    eax, lOriginalIndex;
 	__asm        shl    eax, 3;

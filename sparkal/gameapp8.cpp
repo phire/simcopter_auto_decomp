@@ -584,13 +584,13 @@ _T2dc:
 	return 0x2;
 // LINE 173:
 _T301:
-	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szGamePath);
+	_splitpath(szGamePath, szSplitPathDrive[0], szSplitPathDirectory[0], szSplitPathFilename[0], szSplitPathExtension[0]);
 // LINE 174:
-	strcpy(szSplitPathDrive[0], szCityPath[0]);
+	strcpy(szCityPath[0], szSplitPathDrive[0]);
 // LINE 175:
-	strcat(szSplitPathDirectory[0], szCityPath[0]);
+	strcat(szCityPath[0], szSplitPathDirectory[0]);
 // LINE 176:
-	strcat(szCityFile[0], szCityPath[0]);
+	strcat(szCityPath[0], szCityFile[0]);
 // LINE 177:
 	__asm        lea    eax, szCityPath[0];
 	__asm        push   eax;
@@ -651,7 +651,7 @@ _T3e2:
 	G_daynight = savedCitySettings.lDaytime;
 // LINE 196:
 _T455:
-	strcpy(szCityPath[0], 0x5c2918);
+	strcpy(0x5c2918, szCityPath[0]);
 // LINE 199:
 	lSavedCityFileChecksum = 0x0;
 // LINE 200:
@@ -760,11 +760,11 @@ _T7a:
 	return 0x7;
 // LINE 244:
 _Tb8:
-	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szCityPath);
+	_splitpath(szCityPath, szSplitPathDrive[0], szSplitPathDirectory[0], szSplitPathFilename[0], szSplitPathExtension[0]);
 // LINE 245:
-	strcpy(szSplitPathFilename[0], szCityFile[0]);
+	strcpy(szCityFile[0], szSplitPathFilename[0]);
 // LINE 246:
-	strcat(szSplitPathExtension[0], szCityFile[0]);
+	strcat(szCityFile[0], szSplitPathExtension[0]);
 // LINE 247:
 	__asm        lea    eax, szCityFile[0];
 	__asm        push   eax;
@@ -909,9 +909,9 @@ _T31e:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 288:
-	strcpy(szGamePath, 0x5c33e8);
+	strcpy(0x5c33e8, szGamePath);
 // LINE 289:
-	strcpy(szCityPath, 0x5c2918);
+	strcpy(0x5c2918, szCityPath);
 // LINE 291:
 	return 0x0;
 // LINE 292:
@@ -934,7 +934,7 @@ unsigned long CGameApp::DoSaveGameAs() {
 	/*bp-0x720*/ unsigned long nResult;
 
 // LINE 326:
-	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], 0x5c2918);
+	_splitpath(0x5c2918, szSplitPathDrive[0], szSplitPathDirectory[0], szSplitPathFilename[0], szSplitPathExtension[0]);
 // LINE 328:
 	__asm        push   0x7EEEEEE;
 	__asm        mov    eax, gPreferenceManager;
@@ -1100,16 +1100,16 @@ _T2c2:
 	__asm        cmp    dword ptr [ebp-0x774], 0;
 	__asm        je     _T30c;
 // LINE 331:
-	strcpy(chPrefData, szGameFileSavePath[0]);
+	strcpy(szGameFileSavePath[0], chPrefData);
 // LINE 332:
-	strcat(szSplitPathFilename[0], szGameFileSavePath[0]);
+	strcat(szGameFileSavePath[0], szSplitPathFilename[0]);
 // LINE 334:
 	__asm        jmp    _T80a;
 // LINE 340:
 _T30c:
-	strcpy(gszAppDirectory, szGameFileSavePath[0]);
+	strcpy(szGameFileSavePath[0], gszAppDirectory);
 // LINE 341:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x32);
+	nFullStringID = LanguageManager::GetFullStringID(0x32, 0x0);
 // LINE 342:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szNewDirectory[0];
@@ -1145,7 +1145,7 @@ _T3ac:
 	__asm        jmp    _T3b1;
 // LINE 343:
 _T3b1:
-	strcat(szNewDirectory[0], szGameFileSavePath[0]);
+	strcat(szGameFileSavePath[0], szNewDirectory[0]);
 // LINE 344:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1405,7 +1405,7 @@ _T7ef:
 	__asm        jmp    _T7f4;
 // LINE 346:
 _T7f4:
-	strcat(szSplitPathFilename[0], szGameFileSavePath[0]);
+	strcat(szGameFileSavePath[0], szSplitPathFilename[0]);
 // LINE 354:
 _T80a:
 	__asm        cmp    gCurrentCityType, 2;
@@ -1423,11 +1423,11 @@ _T830:
 	nFullFilterID = 0x2b;
 // LINE 362:
 _T844:
-	nFullTitleID = LanguageManager::GetFullStringID(0x0, nFullTitleID);
+	nFullTitleID = LanguageManager::GetFullStringID(nFullTitleID, 0x0);
 // LINE 363:
-	nFullFilterID = LanguageManager::GetFullStringID(0x0, nFullFilterID);
+	nFullFilterID = LanguageManager::GetFullStringID(nFullFilterID, 0x0);
 // LINE 365:
-	nResult = GetSaveFilePath(0x0, nFullFilterID, nFullTitleID, szGameFileSavePath[0]);
+	nResult = GetSaveFilePath(szGameFileSavePath[0], nFullTitleID, nFullFilterID, 0x0);
 // LINE 366:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T8ae;
@@ -1435,13 +1435,13 @@ _T844:
 	return 0x9;
 // LINE 373:
 _T8ae:
-	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szGameFileSavePath[0]);
+	_splitpath(szGameFileSavePath[0], szSplitPathDrive[0], szSplitPathDirectory[0], szSplitPathFilename[0], szSplitPathExtension[0]);
 // LINE 376:
-	strcpy(szSplitPathDrive[0], szGameFileSavePath[0]);
+	strcpy(szGameFileSavePath[0], szSplitPathDrive[0]);
 // LINE 377:
-	strcat(szSplitPathDirectory[0], szGameFileSavePath[0]);
+	strcat(szGameFileSavePath[0], szSplitPathDirectory[0]);
 // LINE 378:
-	strcat(szSplitPathFilename[0], szGameFileSavePath[0]);
+	strcat(szGameFileSavePath[0], szSplitPathFilename[0]);
 // LINE 380:
 	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T99a;
@@ -1459,12 +1459,12 @@ _T8ae:
 	__asm        test   eax, eax;
 	__asm        je     _T96a;
 // LINE 382:
-	strcat(szSplitPathExtension[0], szGameFileSavePath[0]);
+	strcat(szGameFileSavePath[0], szSplitPathExtension[0]);
 // LINE 383:
 _T96a:
-	strcpy(szGameFileSavePath[0], szCityFileSavePath[0]);
+	strcpy(szCityFileSavePath[0], szGameFileSavePath[0]);
 // LINE 384:
-	strcat(SZ_CAREER_DATA_FILE_SUFFIX, szGameFileSavePath[0]);
+	strcat(szGameFileSavePath[0], SZ_CAREER_DATA_FILE_SUFFIX);
 // LINE 386:
 	__asm        jmp    _Ta07;
 // LINE 387:
@@ -1482,26 +1482,26 @@ _T99a:
 	__asm        test   eax, eax;
 	__asm        je     _T9dc;
 // LINE 388:
-	strcat(szSplitPathExtension[0], szGameFileSavePath[0]);
+	strcat(szGameFileSavePath[0], szSplitPathExtension[0]);
 // LINE 389:
 _T9dc:
-	strcpy(szGameFileSavePath[0], szCityFileSavePath[0]);
+	strcpy(szCityFileSavePath[0], szGameFileSavePath[0]);
 // LINE 390:
-	strcat(SZ_USER_DATA_FILE_SUFFIX, szGameFileSavePath[0]);
+	strcat(szGameFileSavePath[0], SZ_USER_DATA_FILE_SUFFIX);
 // LINE 394:
 _Ta07:
-	strcat(SZ_CITY_DATA_FILE_SUFFIX, szCityFileSavePath[0]);
+	strcat(szCityFileSavePath[0], SZ_CITY_DATA_FILE_SUFFIX);
 // LINE 396:
-	nResult = this->CGameApp::SaveUserOrCareerGame(szCityFileSavePath[0], szGameFileSavePath[0]);
+	nResult = this->CGameApp::SaveUserOrCareerGame(szGameFileSavePath[0], szCityFileSavePath[0]);
 // LINE 398:
 	__asm        cmp    nResult, 0;
 	__asm        jne    _Tacc;
 // LINE 399:
-	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szGameFileSavePath[0]);
+	_splitpath(szGameFileSavePath[0], szSplitPathDrive[0], szSplitPathDirectory[0], szSplitPathFilename[0], szSplitPathExtension[0]);
 // LINE 400:
-	strcpy(szSplitPathDrive[0], szSplitPathFullDirectory[0]);
+	strcpy(szSplitPathFullDirectory[0], szSplitPathDrive[0]);
 // LINE 401:
-	strcat(szSplitPathDirectory[0], szSplitPathFullDirectory[0]);
+	strcat(szSplitPathFullDirectory[0], szSplitPathDirectory[0]);
 // LINE 402:
 	__asm        lea    eax, szSplitPathFullDirectory[0];
 	__asm        push   eax;
@@ -1627,7 +1627,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00428c38
 int32_t CGameApp::DisplayFileOpenError(unsigned long nResult) {
 // LINE 463:
-	return this->CGameApp::CreateMessageBox(0x1, (nResult + 0x15e), 0x7d9);
+	return this->CGameApp::CreateMessageBox(0x7d9, (nResult + 0x15e), 0x1);
 // LINE 464:
 }
 

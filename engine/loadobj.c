@@ -206,7 +206,7 @@ struct FPoint3d{ // packed(0x18 bytes) TI: 0x2f28
 	/*bp-0xc*/   int32_t i;
 
 // LINE 152:
-	res = S2Alloc(((objs << 0x2) + 0x18), G_currmempool);
+	res = S2Alloc(G_currmempool, ((objs << 0x2) + 0x18));
 // LINE 153:
 	__asm        cmp    res, 0;
 	__asm        jne    _T3f;
@@ -633,9 +633,9 @@ _FOR_NEXT_18d:
 		_T385:
 			dataptr += (reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3);
 		// LINE 608:
-			faceptr->Barrys = S2Alloc((reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3), barrymempool);
+			faceptr->Barrys = S2Alloc(barrymempool, (reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3));
 		// LINE 609:
-			memcpy((reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3), faceptr->MapVerts, faceptr->Barrys);
+			memcpy(faceptr->Barrys, faceptr->MapVerts, (reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3));
 		// LINE 617:
 			faceptr->Normal = dataptr;
 		// LINE 618:
@@ -663,7 +663,7 @@ _FOR_NEXT_18d:
 			__asm        add    eax, [ecx+8];
 			__asm        mov    vlst, eax;
 		// LINE 622:
-			FaceCalcNormal(faceptr->Normal, vlst, v1, v0);
+			FaceCalcNormal(v0, v1, vlst, faceptr->Normal);
 		// LINE 627:
 			__asm        mov    eax, faceptr;
 			__asm        mov    eax, [eax+0x2C];
@@ -859,7 +859,7 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t *dymat[4][4], /*packed*/ struct Point
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 743:
-	return VRGetObjAlt(0x0, 0x0, dim, flags, tloc.z, tloc.y, tloc.x, obj);
+	return VRGetObjAlt(obj, tloc.x, tloc.y, tloc.z, flags, dim, 0x0, 0x0);
 // LINE 744:
 }
 
@@ -2620,7 +2620,7 @@ _T2a:
 	/*bp-0x8*/   unsigned short FaceIndex;
 
 // LINE 1803:
-	ReadResource(0x2, FaceIndex);
+	ReadResource(FaceIndex, 0x2);
 // LINE 1810:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(FaceIndex);
 	__asm        and    eax, 0xFFFF;
@@ -2644,7 +2644,7 @@ _T2a:
 	__asm        mov    edx, Tree;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 1815:
-	ReadResource(0x10, ((((((reinterpret_cast<uint32_t>(ThisIndex) & 0xffff) << 0x3) - (reinterpret_cast<uint32_t>(ThisIndex) & 0xffff)) << 0x2) + Tree) + 0x4));
+	ReadResource(((((((reinterpret_cast<uint32_t>(ThisIndex) & 0xffff) << 0x3) - (reinterpret_cast<uint32_t>(ThisIndex) & 0xffff)) << 0x2) + Tree) + 0x4), 0x10);
 // LINE 1827:
 	__asm        call   ReadTree;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(ThisIndex);
@@ -3300,7 +3300,7 @@ _FOR_7b:
 	}
 // LINE 2185:
 _T23f:
-	VRObjSetGouraudShade(vnorms, obj);
+	VRObjSetGouraudShade(obj, vnorms);
 // LINE 2189:
 	free(vnorms);
 // LINE 2190:
@@ -3388,7 +3388,7 @@ _T5f:
 	return 0x0;
 // LINE 2254:
 _T84:
-	memset(ObjDataSize, 0x0, dataptr);
+	memset(dataptr, 0x0, ObjDataSize);
 // LINE 2256:
 	ptr = dataptr;
 // LINE 2259:
@@ -3547,7 +3547,7 @@ _T5d:
 	return 0x0;
 // LINE 2359:
 _T82:
-	memset(ObjDataSize, 0x0, dataptr);
+	memset(dataptr, 0x0, ObjDataSize);
 // LINE 2361:
 	ptr = dataptr;
 // LINE 2364:
@@ -3688,7 +3688,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 	return 0x0;
 // LINE 2468:
 _T40:
-	memcpy(0x90, oh, to);
+	memcpy(to, oh, 0x90);
 // LINE 2469:
 	to += 0x90;
 // LINE 2471:
@@ -3720,19 +3720,19 @@ _T40:
 _FOR_b2:
 	for (i = 0x0; (oh->NFaces > i); i++) {
 		// LINE 2485:
-			memcpy(0x30, fh, to);
+			memcpy(to, fh, 0x30);
 		// LINE 2486:
 			fh2 = to;
 		// LINE 2487:
 			to += 0x30;
 		// LINE 2490:
-			memcpy((fh->Nverts << 0x2), fh->PlyVerts, to);
+			memcpy(to, fh->PlyVerts, (fh->Nverts << 0x2));
 		// LINE 2491:
 			fh2->PlyVerts = to;
 		// LINE 2492:
 			to += (fh->Nverts << 0x2);
 		// LINE 2495:
-			memcpy((fh->Nverts << 0x3), fh->MapVerts, to);
+			memcpy(to, fh->MapVerts, (fh->Nverts << 0x3));
 		// LINE 2496:
 			fh2->MapVerts = to;
 		// LINE 2497:

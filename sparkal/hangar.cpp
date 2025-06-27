@@ -1186,7 +1186,7 @@ _T22e:
 	tempButtonWindow = 0x0;
 // LINE 89:
 _T235:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x7d);
+	nFullStringID = LanguageManager::GetFullStringID(0x7d, 0x0);
 // LINE 90:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1094];
@@ -1299,7 +1299,7 @@ _T3a3:
 	tempButtonWindow = 0x0;
 // LINE 95:
 _T3aa:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x7e);
+	nFullStringID = LanguageManager::GetFullStringID(0x7e, 0x0);
 // LINE 96:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2098];
@@ -1487,7 +1487,7 @@ _T63a:
 	tempButtonWindow = 0x0;
 // LINE 101:
 _T641:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x7f);
+	nFullStringID = LanguageManager::GetFullStringID(0x7f, 0x0);
 // LINE 102:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x30B0];
@@ -1600,7 +1600,7 @@ _T7af:
 	tempButtonWindow = 0x0;
 // LINE 107:
 _T7b6:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x80);
+	nFullStringID = LanguageManager::GetFullStringID(0x80, 0x0);
 // LINE 108:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x40B4];
@@ -1818,7 +1818,7 @@ _T10a:
 _T10f:
 _T134:
 _T136:
-	return (CBackBuffer::GetPaletteFromImage(pColorTable, this-><HangarWindow+0x64>) != 0x0);
+	return (CBackBuffer::GetPaletteFromImage(this-><HangarWindow+0x64>, pColorTable) != 0x0);
 // LINE 123:
 }
 
@@ -2103,7 +2103,7 @@ _T167:
 	__asm        test   eax, eax;
 	__asm        je     _T1a9;
 // LINE 163:
-	this->HangarWindow::DisplayHelp((this + 0x122), lHelpID);
+	this->HangarWindow::DisplayHelp(lHelpID, (this + 0x122));
 // LINE 164:
 _T1a9:
 	this->bTestedHotspotsAlready = 0x1;
@@ -2684,7 +2684,7 @@ _T306:
 	__asm        jmp    _T30b;
 // LINE 284:
 _T30b:
-	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x5c), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0x5c), (this + 0x64));
 	__asm        jmp    _T32c;
 // LINE 285:
 _T32c:
@@ -3110,7 +3110,7 @@ _T10a:
 	__asm        cmp    dword ptr [eax+0xF6], 0;
 	__asm        je     _T309;
 // LINE 447:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, (nHelp + 0x64));
+	nFullStringID = LanguageManager::GetFullStringID((nHelp + 0x64), 0x0);
 // LINE 448:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x108C];
@@ -3265,7 +3265,7 @@ _T309:
 	__asm        cmp    dword ptr [eax+0xFA], 0;
 	__asm        je     _T5b4;
 // LINE 468:
-	this->HangarWindow::GetSoundFileNameFromHelpID(sHelp.c_str_ptr, nHelp);
+	this->HangarWindow::GetSoundFileNameFromHelpID(nHelp, sHelp.c_str_ptr);
 // LINE 469:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -3674,7 +3674,7 @@ _T198:
 // FUNCTION: COPTER_D 0x0047474e
 void HangarWindow::LoadHotSpots() {
 // LINE 505:
-	LoadListFromResource(0x6a, (this + 0x116));
+	LoadListFromResource((this + 0x116), 0x6a);
 // LINE 506:
 	return;
 }

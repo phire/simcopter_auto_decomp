@@ -10,7 +10,7 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 	__asm        cmp    eax, size;
 	__asm        jle    _T38;
 
-	doAssert(0x8c085, 0x5be230, 0xe4, 0x5be258);
+	doAssert(0x5be258, 0xe4, 0x5be230, 0x8c085);
 // LINE 230:
 _T38:
 	Swizzle4(val);
@@ -59,7 +59,7 @@ unsigned short cBBase::CanDestroy() {
 // FUNCTION: COPTER_D 0x0055f280
 void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 
-	doAssert(0x8c085, 0x5be37c, 0x1c, 0x5be258);
+	doAssert(0x5be258, 0x1c, 0x5be37c, 0x8c085);
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -136,7 +136,7 @@ _T27:
 	__asm        cmp    h, 0;
 	__asm        jne    _Ta4;
 
-	doAssert(0x8c085, 0x5be3ac, 0x3e, 0x5be258);
+	doAssert(0x5be258, 0x3e, 0x5be3ac, 0x8c085);
 _Ta4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -208,7 +208,7 @@ __WHILE_100:
 	__asm        test   eax, eax;
 	__asm        jge    _T178;
 
-	doAssert(0x8c085, 0x59a24c, 0x32, 0x59a254);
+	doAssert(0x59a254, 0x32, 0x59a24c, 0x8c085);
 _T178:
 	__asm        jmp    _T192;
 _T17d:

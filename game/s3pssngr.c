@@ -248,7 +248,7 @@ int32_t HeliPassengerSetExpression(/*packed*/ struct tagHeliPassengerData *heliP
 	/*bp-0x4*/   int32_t i;
 
 // LINE 160:
-	i = HeliPassengerGetIndexInHeli(id, heliPassengerData);
+	i = HeliPassengerGetIndexInHeli(heliPassengerData, id);
 // LINE 162:
 	__asm        cmp    i, 0xFFFFFFFF;
 	__asm        je     _T43;
@@ -272,7 +272,7 @@ int32_t HeliPassengerRemove(/*packed*/ struct tagHeliPassengerData *heliPassenge
 	/*bp-0x4*/   int32_t i;
 
 // LINE 174:
-	i = HeliPassengerGetIndexInHeli(id, heliPassengerData);
+	i = HeliPassengerGetIndexInHeli(heliPassengerData, id);
 // LINE 176:
 	__asm        cmp    i, 0xFFFFFFFF;
 	__asm        je     _Tb8;
@@ -354,7 +354,7 @@ _FOR_3e:
 			__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
 			__asm        je     _T9f;
 		// LINE 225:
-			nSeat = FindFreeSeatForPassenger(bSeats[0], heliPassengerData->lRowWidth, heliPassengerData->lSeatsTotal, 0x1);
+			nSeat = FindFreeSeatForPassenger(0x1, heliPassengerData->lSeatsTotal, heliPassengerData->lRowWidth, bSeats[0]);
 		// LINE 226:
 			__asm        mov    eax, nSeat;
 			__asm        mov    dword ptr [ebp+eax*4-0x40], 1;

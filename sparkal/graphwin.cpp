@@ -8623,7 +8623,7 @@ _T134:
 _T164:
 	__asm        jmp    _T169;
 _T169:
-	GetPathForFile(szFullImagePath[0], this-><GraphicWindow+0x5c:4>, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, this-><GraphicWindow+0x5c:4>, szFullImagePath[0]);
 // LINE 1357:
 	__asm        jmp    _T18b;
 _T18b:
@@ -10054,7 +10054,7 @@ void ScreenWindow::ScreenWindow(const /*packed*/ class ScreenWindow& copyScreenW
 // FUNCTION: COPTER_D 0x004a7989
 void ScreenWindow::ScreenWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class CBackBuffer *bufferNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, 0x0, nNewID, rectNewWindow);
+	this->GraphicWindow::GraphicWindow(rectNewWindow, nNewID, 0x0, myNewOwner, bAddToParentList);
 	this-><ScreenWindow+0x00> = 0x591748;
 // LINE 1625:
 	this-><ScreenWindow+0x50> = 0x0;

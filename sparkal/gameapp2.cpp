@@ -560,7 +560,7 @@ _T5f:
 	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _T1b9;
 // LINE 117:
-	GetPathForFile(szPath[0], SZ_COPTER_MAIN_PREFERENCES_FILE_NAME, 0x0, 0x9);
+	GetPathForFile(0x9, 0x0, SZ_COPTER_MAIN_PREFERENCES_FILE_NAME, szPath[0]);
 // LINE 118:
 	gPreferenceManager->PreferenceManager::IPreferenceManager(szPath[0]);
 // LINE 119:
@@ -793,7 +793,7 @@ _FOR_b9:
 		// LINE 202:
 			szJoystickName[0] = 0x0;
 		// LINE 203:
-			0x604c78->JoystickManager::GetJoystickName(szJoystickName[0], i);
+			0x604c78->JoystickManager::GetJoystickName(i, szJoystickName[0]);
 		// LINE 204:
 			__asm        lea    eax, szJoystickName[0];
 			__asm        push   eax;
@@ -1018,7 +1018,7 @@ _T24e:
 	__asm        cmp    IFlatImage::lTotalLockCount, 0;
 	__asm        je     _T26e;
 // LINE 253:
-	DebugOutput(IFlatImage::lTotalLockCount, 0x5992d8);
+	DebugOutput(0x5992d8, IFlatImage::lTotalLockCount);
 // LINE 256:
 _T26e:
 	return 0x0;
@@ -1063,7 +1063,7 @@ _T73:
 // Block start:
 	/*bp-0x118*/ char szPath[260]; // 0x104 bytes
 _T8d:
-	GetPathForFile(szPath[0], SZ_SMACKER_INTRO_FILE_NAME, 0x0, 0x1);
+	GetPathForFile(0x1, 0x0, SZ_SMACKER_INTRO_FILE_NAME, szPath[0]);
 // LINE 278:
 	__asm        mov    dword ptr [ebp-0x124], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x120], 1;
@@ -1329,7 +1329,7 @@ _T47c:
 	__asm        mov    ecx, [eax+0x38];
 	__asm        call   dword ptr [edx+0x68];
 // LINE 360:
-	this->CGameApp::CreateMessageBox(0x20002, 0x20, 0x7dc);
+	this->CGameApp::CreateMessageBox(0x7dc, 0x20, 0x20002);
 // LINE 361:
 	__asm        mov    eax, 0x461D53;
 	__asm        ret;
@@ -2560,7 +2560,7 @@ _T912:
 	__asm        mov    ecx, [eax+0x38];
 	__asm        call   dword ptr [edx+0x64];
 // LINE 577:
-	this->CGameApp::CreateMessageBox(0x1, 0x1f, 0x7db);
+	this->CGameApp::CreateMessageBox(0x7db, 0x1f, 0x1);
 // LINE 578:
 	return 0x1;
 // LINE 585:
@@ -2605,7 +2605,7 @@ _Ta07:
 	__asm        test   eax, eax;
 	__asm        je     _Ta4b;
 // LINE 602:
-	this->CGameApp::CreateMessageBox(0x1, 0x1e, 0x7da);
+	this->CGameApp::CreateMessageBox(0x7da, 0x1e, 0x1);
 // LINE 604:
 _Ta4b:
 	__asm        cmp    bCheckForCommandLineCheatCodes, 0;
@@ -4930,7 +4930,7 @@ _T5c:
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jl     _T82;
 // LINE 1133:
-	this->CGameApp::CreateMessageBox(0x20002, 0x3, 0x7de);
+	this->CGameApp::CreateMessageBox(0x7de, 0x3, 0x20002);
 // LINE 1134:
 	__asm        jmp    _T8f;
 // LINE 1136:
@@ -5183,7 +5183,7 @@ void CGameApp::NotifyUserOfGraduation() {
 
 	__asm        mov    dword ptr [ebp-0x19C], 0;
 // LINE 1222:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x226);
+	nFullStringID = LanguageManager::GetFullStringID(0x226, 0x0);
 // LINE 1223:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szString[0];
@@ -5221,7 +5221,7 @@ _Ta1:
 _Ta6:
 	0x604530->MessageDisplayManager::AddNewMessage(szString[0]);
 // LINE 1225:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x227);
+	nFullStringID = LanguageManager::GetFullStringID(0x227, 0x0);
 // LINE 1226:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szString[0];
@@ -5259,7 +5259,7 @@ _T13c:
 _T141:
 	0x604530->MessageDisplayManager::AddNewMessage(szString[0]);
 // LINE 1230:
-	GetPathForFile(szFullPath[0], SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME, 0x0, 0x2);
+	GetPathForFile(0x2, 0x0, SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME, szFullPath[0]);
 // LINE 1231:
 	__asm        push   0x7A;
 	__asm        call   operator new;
@@ -5791,7 +5791,7 @@ _T3ec:
 	__asm        cmp    nCurrentGameMode, 6;
 	__asm        jl     _T43e;
 // LINE 1315:
-	(this - 0x14)->CGameApp::CreateMessageBox(0x20002, 0x31, 0x7dd);
+	(this - 0x14)->CGameApp::CreateMessageBox(0x7dd, 0x31, 0x20002);
 // LINE 1316:
 	__asm        jmp    _T468;
 // LINE 1317:
@@ -6189,7 +6189,7 @@ _T91f:
 	__asm        cmp    nResult, 0;
 	__asm        jne    _T947;
 // LINE 1418:
-	(this - 0x14)->CGameApp::CreateMessageBox(0x1, 0x30, 0x7da);
+	(this - 0x14)->CGameApp::CreateMessageBox(0x7da, 0x30, 0x1);
 // LINE 1419:
 	return 0x1;
 // LINE 1422:
@@ -6197,7 +6197,7 @@ _T947:
 	__asm        jmp    _T9b1;
 // LINE 1423:
 _T94c:
-	nResult = (this - 0x14)->CGameApp::SaveUserOrCareerGame(0x5c2918, 0x5c33e8);
+	nResult = (this - 0x14)->CGameApp::SaveUserOrCareerGame(0x5c33e8, 0x5c2918);
 // LINE 1424:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T993;
@@ -6211,7 +6211,7 @@ _T94c:
 	__asm        jmp    _T9b1;
 // LINE 1430:
 _T993:
-	(this - 0x14)->CGameApp::CreateMessageBox(0x1, 0x30, 0x7da);
+	(this - 0x14)->CGameApp::CreateMessageBox(0x7da, 0x30, 0x1);
 // LINE 1431:
 	return 0x1;
 // LINE 1441:
@@ -6301,7 +6301,7 @@ _T58:
 // LINE 1475:
 // Block start:
 	/*bp-0x510*/ char szFilePath[260]; // 0x104 bytes
-	GetPathForFile(szFilePath[0], 0x5992f0, 0x0, 0x4);
+	GetPathForFile(0x4, 0x0, 0x5992f0, szFilePath[0]);
 // LINE 1476:
 	SetUpNewUserCity(szFilePath[0]);
 // LINE 1477:
@@ -6419,11 +6419,11 @@ _T1f1:
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 1522:
-	nFullTitleID = LanguageManager::GetFullStringID(0x0, nFullTitleID);
+	nFullTitleID = LanguageManager::GetFullStringID(nFullTitleID, 0x0);
 // LINE 1523:
-	nFullFilterID = LanguageManager::GetFullStringID(0x0, nFullFilterID);
+	nFullFilterID = LanguageManager::GetFullStringID(nFullFilterID, 0x0);
 // LINE 1524:
-	nResult = GetLoadFilePath(chPrefData, nFullFilterID, nFullTitleID, szFileLoadPath[0]);
+	nResult = GetLoadFilePath(szFileLoadPath[0], nFullTitleID, nFullFilterID, chPrefData);
 // LINE 1525:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T278;
@@ -6431,11 +6431,11 @@ _T1f1:
 	return 0x0;
 // LINE 1530:
 _T278:
-	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], szFileLoadPath[0]);
+	_splitpath(szFileLoadPath[0], szSplitPathDrive[0], szSplitPathDirectory[0], szSplitPathFilename[0], szSplitPathExtension[0]);
 // LINE 1531:
-	strcpy(szSplitPathDrive[0], szSplitPathFullDirectory[0]);
+	strcpy(szSplitPathFullDirectory[0], szSplitPathDrive[0]);
 // LINE 1532:
-	strcat(szSplitPathDirectory[0], szSplitPathFullDirectory[0]);
+	strcat(szSplitPathFullDirectory[0], szSplitPathDirectory[0]);
 // LINE 1533:
 	__asm        lea    eax, szSplitPathFullDirectory[0];
 	__asm        push   eax;
@@ -6451,7 +6451,7 @@ _T278:
 	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 1538:
-	nResult = this->CGameApp::GetLoadFileType(lFileType, szFileLoadPath[0]);
+	nResult = this->CGameApp::GetLoadFileType(szFileLoadPath[0], lFileType);
 // LINE 1539:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T341;
@@ -6461,7 +6461,7 @@ _T278:
 	return 0x0;
 // LINE 1545:
 _T341:
-	nResult = this->CGameApp::SetUpLoadGame(lFileType, szFileLoadPath[0]);
+	nResult = this->CGameApp::SetUpLoadGame(szFileLoadPath[0], lFileType);
 // LINE 1546:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T386;
@@ -6644,7 +6644,7 @@ _T188:
 	__asm        jmp    _T1d5;
 // LINE 1616:
 _T18d:
-	nResult = this->CGameApp::SaveUserOrCareerGame(0x5c2918, 0x5c33e8);
+	nResult = this->CGameApp::SaveUserOrCareerGame(0x5c33e8, 0x5c2918);
 // LINE 1617:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T1c4;
@@ -6656,7 +6656,7 @@ _T18d:
 	__asm        jmp    _T1d5;
 // LINE 1622:
 _T1c4:
-	this->CGameApp::CreateMessageBox(0x1, 0x30, 0x7da);
+	this->CGameApp::CreateMessageBox(0x7da, 0x30, 0x1);
 // LINE 1624:
 _T1d5:
 	return 0x1;
@@ -6683,7 +6683,7 @@ _T225:
 	__asm        cmp    nResult, 9;
 	__asm        je     _T240;
 // LINE 1633:
-	this->CGameApp::CreateMessageBox(0x1, 0x30, 0x7da);
+	this->CGameApp::CreateMessageBox(0x7da, 0x30, 0x1);
 // LINE 1634:
 _T240:
 	return 0x1;
@@ -6700,7 +6700,7 @@ _T24f:
 // LINE 1639:
 	this-><CGameApp+0x28:4> = 0x1;
 // LINE 1640:
-	this->CGameApp::CreateMessageBox(0x20002, 0x31, 0x7dd);
+	this->CGameApp::CreateMessageBox(0x7dd, 0x31, 0x20002);
 // LINE 1642:
 	__asm        jmp    _T2a5;
 _T287:
@@ -6745,7 +6745,7 @@ int32_t CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	__asm        call   MakeCityFileName;
 	__asm        add    esp, 0xC;
 // LINE 1667:
-	GetPathForFile(szFullCityVideoFilePath[0], szFullCityVideoFileName[0], 0x0, 0x1);
+	GetPathForFile(0x1, 0x0, szFullCityVideoFileName[0], szFullCityVideoFilePath[0]);
 // LINE 1669:
 	__asm        mov    dword ptr [ebp-0x214], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x210], 1;
@@ -6973,7 +6973,7 @@ int32_t CGameApp::StartVideoForMainMenu() {
 	/*bp-0x104*/ char szMainMenuVideoPath[260]; // 0x104 bytes
 
 // LINE 1717:
-	GetPathForFile(szMainMenuVideoPath[0], SZ_MAIN_MENU_VIDEO_FILE_NAME, 0x0, 0x1);
+	GetPathForFile(0x1, 0x0, SZ_MAIN_MENU_VIDEO_FILE_NAME, szMainMenuVideoPath[0]);
 // LINE 1719:
 	__asm        mov    dword ptr [ebp-0x110], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x10C], 1;

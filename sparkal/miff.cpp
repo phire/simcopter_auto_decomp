@@ -276,7 +276,7 @@ void MIFF::MIFF(char * szFileOrPath) {
 	__asm        cmp    szFileOrPath, 0;
 	__asm        je     _T5b;
 
-	strcpy(szFileOrPath, (this + 0x4));
+	strcpy((this + 0x4), szFileOrPath);
 	__asm        jmp    _T62;
 _T5b:
 	this->szFilePath[0] = 0x0;
@@ -375,7 +375,7 @@ _T38:
 	__asm        jne    _Tb3;
 // LINE 115:
 _T47:
-	this->PFile::Open(0x0, 0x180, 0x8020, 0x0);
+	this->PFile::Open(0x0, 0x8020, 0x180, 0x0);
 // LINE 116:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -445,7 +445,7 @@ _T60:
 	__asm        jne    _T85;
 // LINE 145:
 _T6f:
-	this->PFile::Open(0x0, 0x180, 0x8002, 0x0);
+	this->PFile::Open(0x0, 0x8002, 0x180, 0x0);
 // LINE 147:
 _T85:
 	__asm        mov    eax, this;
@@ -522,7 +522,7 @@ _T60:
 	__asm        jne    _T85;
 // LINE 175:
 _T6f:
-	this->PFile::Open(0x0, 0x180, 0x8002, 0x0);
+	this->PFile::Open(0x0, 0x8002, 0x180, 0x0);
 // LINE 177:
 _T85:
 	__asm        mov    eax, this;
@@ -559,7 +559,7 @@ _Tae:
 _Tdd:
 	this->lReadWriteMode = 0x2;
 // LINE 182:
-	_lseek(0x2, 0x0, this->Handle);
+	_lseek(this->Handle, 0x0, 0x2);
 	__asm        jmp    _T105;
 // LINE 183:
 _T105:
@@ -662,11 +662,11 @@ _T26:
 	__asm        je     _T7c;
 // LINE 224:
 _T35:
-	_lseek(0x0, 0x0, this->Handle);
+	_lseek(this->Handle, 0x0, 0x0);
 	__asm        jmp    _T50;
 // LINE 225:
 _T50:
-	_read(0x1c, (this + 0x12c), this->Handle);
+	_read(this->Handle, (this + 0x12c), 0x1c);
 	__asm        jmp    _T72;
 // LINE 226:
 _T72:
@@ -874,13 +874,13 @@ long MIFF::ReadRecordHeader() {
 	/*bp-0x4*/   long lBytesRead;
 
 // LINE 314:
-	_read(0x4, (this + 0x114), this->Handle);
+	_read(this->Handle, (this + 0x114), 0x4);
 	__asm        jmp    _T2e;
 // LINE 315:
 _T2e:
 	__asm        jmp    _T33;
 _T33:
-	lBytesRead = _read(0x4, (this + 0x118), this->Handle);
+	lBytesRead = _read(this->Handle, (this + 0x118), 0x4);
 // LINE 316:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x118], 0;
@@ -1045,7 +1045,7 @@ _T45:
 	return 0x0;
 // LINE 393:
 _T4c:
-	_lseek(0x0, 0x1c, this->Handle);
+	_lseek(this->Handle, 0x1c, 0x0);
 	__asm        jmp    _T67;
 // LINE 394:
 _T67:
@@ -1160,7 +1160,7 @@ _T111:
 	__asm        cmp    [eax+0x110], ecx;
 	__asm        jg     _T153;
 // LINE 442:
-	_lseek(0x0, lSavedPreviousStart, this->Handle);
+	_lseek(this->Handle, lSavedPreviousStart, 0x0);
 	__asm        jmp    _T14c;
 // LINE 443:
 _T14c:
@@ -1174,7 +1174,7 @@ _T153:
 	__asm        test   eax, eax;
 	__asm        jne    _T18a;
 // LINE 447:
-	_lseek(0x0, lSavedPreviousStart, this->Handle);
+	_lseek(this->Handle, lSavedPreviousStart, 0x0);
 	__asm        jmp    _T183;
 // LINE 448:
 _T183:
@@ -1424,7 +1424,7 @@ _T4c:
 _T62:
 	__asm        mov    lActualBytesToRead, eax;
 // LINE 607:
-	_lseek(0x1, 0x8, this->Handle);
+	_lseek(this->Handle, 0x8, 0x1);
 	__asm        jmp    _T80;
 // LINE 609:
 _T80:
@@ -1511,13 +1511,13 @@ _T4c:
 // LINE 656:
 	this->bFileEndWritten = 0x0;
 // LINE 657:
-	_lseek(0x0, 0x0, this->Handle);
+	_lseek(this->Handle, 0x0, 0x0);
 	__asm        jmp    _Tcc;
 // LINE 658:
 _Tcc:
 	__asm        jmp    _Td1;
 _Td1:
-	lReturnValue = _write(0x1c, (this + 0x12c), this->Handle);
+	lReturnValue = _write(this->Handle, (this + 0x12c), 0x1c);
 // LINE 659:
 	__asm        cmp    lReturnValue, 0xFFFFFFFF;
 	__asm        je     _T105;
@@ -1568,7 +1568,7 @@ _T4c:
 // LINE 685:
 	__asm        jmp    _T70;
 _T70:
-	lReturnValue = _write(lAmountOfDataToWrite, miffRecordToWrite, this->Handle);
+	lReturnValue = _write(this->Handle, miffRecordToWrite, lAmountOfDataToWrite);
 // LINE 690:
 	__asm        cmp    lReturnValue, 0xFFFFFFFF;
 	__asm        je     _Ta1;
@@ -1615,17 +1615,17 @@ _T4e:
 _T55:
 	this->bFileEndWritten = 0x0;
 // LINE 711:
-	_write(0x4, lRecordType, this->Handle);
+	_write(this->Handle, lRecordType, 0x4);
 	__asm        jmp    _T7f;
 // LINE 712:
 _T7f:
-	_write(0x4, lRecordLength, this->Handle);
+	_write(this->Handle, lRecordLength, 0x4);
 	__asm        jmp    _T9c;
 // LINE 715:
 _T9c:
 	__asm        jmp    _Ta1;
 _Ta1:
-	lReturnValue = _write(lDataLength, ptrData, this->Handle);
+	lReturnValue = _write(this->Handle, ptrData, lDataLength);
 // LINE 721:
 	__asm        cmp    lReturnValue, 0xFFFFFFFF;
 	__asm        je     _Td2;
@@ -1651,23 +1651,23 @@ long MIFF::WriteEnd() {
 	__asm        jmp    _T26;
 // LINE 741:
 _T26:
-	_chsize(lPresentPosition, this->Handle);
+	_chsize(this->Handle, lPresentPosition);
 	__asm        jmp    _T41;
 // LINE 742:
 _T41:
 	lFileLength = this->PFile::Length();
 // LINE 743:
-	_lseek(0x0, 0x14, this->Handle);
+	_lseek(this->Handle, 0x14, 0x0);
 	__asm        jmp    _T67;
 // LINE 744:
 _T67:
-	_write(0x4, lFileLength, this->Handle);
+	_write(this->Handle, lFileLength, 0x4);
 	__asm        jmp    _T84;
 // LINE 745:
 _T84:
 	this->bFileEndWritten = 0x1;
 // LINE 746:
-	_lseek(0x2, 0x0, this->Handle);
+	_lseek(this->Handle, 0x0, 0x2);
 	__asm        jmp    _Tac;
 // LINE 747:
 _Tac:

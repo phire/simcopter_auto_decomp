@@ -1127,7 +1127,7 @@ int32_t InventoryWindow::Initialize() {
 _FOR_30:
 	for (i = 0x0; (i < 0x9); i++) {
 		// LINE 88:
-			nFullStringID = LanguageManager::GetFullStringID(0x0, (i + 0x190));
+			nFullStringID = LanguageManager::GetFullStringID((i + 0x190), 0x0);
 		// LINE 89:
 			__asm        push   0xFFF;
 			__asm        lea    eax, [ebp-0x100C];
@@ -1289,7 +1289,7 @@ _FOR_30:
 	}
 // LINE 92:
 _T2bd:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1a4);
+	nFullStringID = LanguageManager::GetFullStringID(0x1a4, 0x0);
 // LINE 93:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2024];
@@ -1440,7 +1440,7 @@ _T50f:
 	__asm        jmp    _T514;
 // LINE 95:
 _T514:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1a5);
+	nFullStringID = LanguageManager::GetFullStringID(0x1a5, 0x0);
 // LINE 96:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x303C];
@@ -1511,7 +1511,7 @@ _T617:
 	__asm        jmp    _T61c;
 // LINE 98:
 _T61c:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1a6);
+	nFullStringID = LanguageManager::GetFullStringID(0x1a6, 0x0);
 // LINE 99:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x4040];
@@ -1664,7 +1664,7 @@ _T86e:
 _FOR_87f:
 	for (i = 0x0; (i < 0x5); i++) {
 		// LINE 102:
-			nFullStringID = LanguageManager::GetFullStringID(0x0, (i + 0x19a));
+			nFullStringID = LanguageManager::GetFullStringID((i + 0x19a), 0x0);
 		// LINE 103:
 			__asm        push   0xFFF;
 			__asm        lea    eax, [ebp-0x5058];
@@ -1842,7 +1842,7 @@ _T10a:
 _T10f:
 _T134:
 _T136:
-	return (CBackBuffer::GetPaletteFromImage(pColorTable, this-><InventoryWindow+0x64>) != 0x0);
+	return (CBackBuffer::GetPaletteFromImage(this-><InventoryWindow+0x64>, pColorTable) != 0x0);
 // LINE 114:
 }
 
@@ -1853,7 +1853,7 @@ int32_t InventoryWindow::CreateImage(int32_t __formal) {
 	__asm        cmp    dword ptr [eax+0x7C], 0;
 	__asm        jne    _T17b;
 // LINE 125:
-	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x5c), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0x5c), (this + 0x64));
 	__asm        jmp    _T3a;
 // LINE 126:
 _T3a:
@@ -1972,7 +1972,7 @@ _T17b:
 	__asm        cmp    dword ptr [eax+0x80], 0;
 	__asm        jne    _T314;
 // LINE 129:
-	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x16e), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0x16e), (this + 0x64));
 	__asm        jmp    _T1ae;
 // LINE 130:
 _T1ae:
@@ -2439,7 +2439,7 @@ _T24d:
 _FOR_296:
 	for (i = 0x0; (i < 0x5); i++) {
 		// LINE 192:
-			this->InventoryWindow::GetEquipmentTextPosition(ptText.x, i);
+			this->InventoryWindow::GetEquipmentTextPosition(i, ptText.x);
 		// LINE 195:
 			__asm        jmp    _T2bb;
 		_T2bb:

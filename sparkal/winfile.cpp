@@ -1038,7 +1038,7 @@ _T416:
 	__asm        jmp    __RETURN;
 // LINE 70:
 _T41e:
-	FixResourceFilterString(0x3f, sFilter.c_str_ptr);
+	FixResourceFilterString(sFilter.c_str_ptr, 0x3f);
 // LINE 72:
 	__asm        mov    eax, pInitialDirectory;
 	__asm        push   eax;
@@ -1492,7 +1492,7 @@ _T416:
 	__asm        jmp    __RETURN;
 // LINE 128:
 _T41e:
-	FixResourceFilterString(0x3f, sFilter.c_str_ptr);
+	FixResourceFilterString(sFilter.c_str_ptr, 0x3f);
 // LINE 130:
 	__asm        mov    eax, pInitialDirectory;
 	__asm        push   eax;

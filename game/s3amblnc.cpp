@@ -637,7 +637,7 @@ _Td6:
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        jne    _T102;
 
-	_assert(0x8d, 0x5b7d1c, 0x5b7d40);
+	_assert(0x5b7d40, 0x5b7d1c, 0x8d);
 	__asm        jmp    _T107;
 _T102:
 	__asm        jmp    _T107;
@@ -652,7 +652,7 @@ _T113:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    _T139;
 
-	_assert(0x95, 0x5b7d68, 0x5b7d8c);
+	_assert(0x5b7d8c, 0x5b7d68, 0x95);
 	__asm        jmp    _T13e;
 _T139:
 	__asm        jmp    _T13e;
@@ -715,7 +715,7 @@ _T1dd:
 // FUNCTION: COPTER_D 0x00535b14
 unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
 // LINE 251:
-	gHospitals->Station::DispatchNearestAvailableVehicle(0x5, 0x62b9b8, responseLevel, responseType, mapy, mapx);
+	gHospitals->Station::DispatchNearestAvailableVehicle(mapx, mapy, responseType, responseLevel, 0x62b9b8, 0x5);
 	__asm        jmp    __RETURN;
 // LINE 252:
 __RETURN:
@@ -1032,7 +1032,7 @@ _T354:
 	__asm        jmp    _T3af;
 // LINE 401:
 _T359:
-	_assert(0x191, 0x5b7d9c, 0x5b7dc0);
+	_assert(0x5b7dc0, 0x5b7d9c, 0x191);
 	__asm        jmp    _T37a;
 
 	__asm        jmp    _T37a;

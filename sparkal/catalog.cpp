@@ -665,7 +665,7 @@ _T26f:
 	this->sItemCost.c_str_ptr = 0x0;
 	__asm        jmp    _T284;
 _T284:
-	(this + 0x166)->MFont::MFont(0x1, 0x0, 0x0, 0x10, SZ_CATALOG_WINDOW_TEXT_NAME);
+	(this + 0x166)->MFont::MFont(SZ_CATALOG_WINDOW_TEXT_NAME, 0x10, 0x0, 0x0, 0x1);
 	__asm        jmp    _T2a8;
 _T2a8:
 	this->rectHistoryText.left = 0x46;
@@ -1315,7 +1315,7 @@ _FOR_fc0:
 	}
 // LINE 87:
 _T1035:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1ae);
+	nFullStringID = LanguageManager::GetFullStringID(0x1ae, 0x0);
 // LINE 88:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1168];
@@ -1386,7 +1386,7 @@ _T1138:
 	__asm        jmp    _T113d;
 // LINE 89:
 _T113d:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1af);
+	nFullStringID = LanguageManager::GetFullStringID(0x1af, 0x0);
 // LINE 90:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x216C];
@@ -1457,7 +1457,7 @@ _T1240:
 	__asm        jmp    _T1245;
 // LINE 91:
 _T1245:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b0);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b0, 0x0);
 // LINE 92:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x3170];
@@ -1528,7 +1528,7 @@ _T1348:
 	__asm        jmp    _T134d;
 // LINE 93:
 _T134d:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b1);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b1, 0x0);
 // LINE 94:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x4174];
@@ -1599,37 +1599,37 @@ _T1450:
 	__asm        jmp    _T1455;
 // LINE 95:
 _T1455:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b2);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b2, 0x0);
 // LINE 96:
-	SetStringFromStringResource(nFullStringID, (this + 0x256));
+	SetStringFromStringResource((this + 0x256), nFullStringID);
 // LINE 97:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b3);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b3, 0x0);
 // LINE 98:
-	SetStringFromStringResource(nFullStringID, (this + 0x27e));
+	SetStringFromStringResource((this + 0x27e), nFullStringID);
 // LINE 99:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b4);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b4, 0x0);
 // LINE 100:
-	SetStringFromStringResource(nFullStringID, (this + 0x286));
+	SetStringFromStringResource((this + 0x286), nFullStringID);
 // LINE 101:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b5);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b5, 0x0);
 // LINE 102:
-	SetStringFromStringResource(nFullStringID, (this + 0x28e));
+	SetStringFromStringResource((this + 0x28e), nFullStringID);
 // LINE 103:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b6);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b6, 0x0);
 // LINE 104:
-	SetStringFromStringResource(nFullStringID, (this + 0x296));
+	SetStringFromStringResource((this + 0x296), nFullStringID);
 // LINE 105:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b7);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b7, 0x0);
 // LINE 106:
-	SetStringFromStringResource(nFullStringID, (this + 0x29e));
+	SetStringFromStringResource((this + 0x29e), nFullStringID);
 // LINE 107:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b8);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b8, 0x0);
 // LINE 108:
-	SetStringFromStringResource(nFullStringID, (this + 0x2a6));
+	SetStringFromStringResource((this + 0x2a6), nFullStringID);
 // LINE 109:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b9);
+	nFullStringID = LanguageManager::GetFullStringID(0x1b9, 0x0);
 // LINE 110:
-	SetStringFromStringResource(nFullStringID, (this + 0x2ae));
+	SetStringFromStringResource((this + 0x2ae), nFullStringID);
 // LINE 112:
 	this->CatalogWindow::CreateImage(0x1);
 // LINE 113:
@@ -2078,7 +2078,7 @@ _Tf9:
 	this->buttonWindowBuy = 0x0;
 // LINE 140:
 _T109:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1ba);
+	nFullStringID = LanguageManager::GetFullStringID(0x1ba, 0x0);
 // LINE 141:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1060];
@@ -2196,7 +2196,7 @@ _T2a9:
 	this->buttonWindowSell = 0x0;
 // LINE 147:
 _T2b9:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1bb);
+	nFullStringID = LanguageManager::GetFullStringID(0x1bb, 0x0);
 // LINE 148:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2064];
@@ -2389,7 +2389,7 @@ _T57b:
 	this->buttonWindowDone = 0x0;
 // LINE 154:
 _T58b:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1bc);
+	nFullStringID = LanguageManager::GetFullStringID(0x1bc, 0x0);
 // LINE 155:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x307C];
@@ -2770,7 +2770,7 @@ _T3b2:
 	__asm        jmp    _T3dc;
 // LINE 187:
 _T3dc:
-	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x5c), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0x5c), (this + 0x64));
 	__asm        jmp    _T403;
 // LINE 188:
 _T403:
@@ -2887,13 +2887,13 @@ _T59d:
 _T5aa:
 	this->lCurrentTab = lNewTab;
 // LINE 191:
-	this->CatalogWindow::GetCurrentGraphicsFileNames(sTempTabFileName.c_str_ptr, sTempMainGraphicFileName.c_str_ptr);
+	this->CatalogWindow::GetCurrentGraphicsFileNames(sTempMainGraphicFileName.c_str_ptr, sTempTabFileName.c_str_ptr);
 // LINE 192:
-	0x604c00->FileServices::GetPathForFileString(sTempMainGraphicFilePath.c_str_ptr, sTempMainGraphicFileName.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sTempMainGraphicFileName.c_str_ptr, sTempMainGraphicFilePath.c_str_ptr);
 	__asm        jmp    _T5f3;
 // LINE 193:
 _T5f3:
-	0x604c00->FileServices::GetPathForFileString(sTempTabFilePath.c_str_ptr, sTempTabFileName.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sTempTabFileName.c_str_ptr, sTempTabFilePath.c_str_ptr);
 	__asm        jmp    _T614;
 // LINE 195:
 _T614:
@@ -3107,7 +3107,7 @@ _T8f9:
 	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 205:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, (this->lCurrentTab + 0x1cc));
+	nFullStringID = LanguageManager::GetFullStringID((this->lCurrentTab + 0x1cc), 0x0);
 // LINE 206:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1954];
@@ -3258,7 +3258,7 @@ _Tb9c:
 	__asm        jmp    _Tba1;
 // LINE 207:
 _Tba1:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, (this->lCurrentTab + 0x1d6));
+	nFullStringID = LanguageManager::GetFullStringID((this->lCurrentTab + 0x1d6), 0x0);
 // LINE 208:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x296C];
@@ -3409,7 +3409,7 @@ _Te09:
 	__asm        jmp    _Te0e;
 // LINE 209:
 _Te0e:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, (this->lCurrentTab + 0x1e0));
+	nFullStringID = LanguageManager::GetFullStringID((this->lCurrentTab + 0x1e0), 0x0);
 // LINE 210:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x3984];
@@ -4245,7 +4245,7 @@ _T1aaf:
 	__asm        jmp    _T1ad9;
 // LINE 274:
 _T1ad9:
-	0x604c00->FileServices::GetPathForFileString((this + 0x64), (this + 0x5c), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0x5c), (this + 0x64));
 	__asm        jmp    _T1b00;
 // LINE 275:
 _T1b00:
@@ -4362,9 +4362,9 @@ _T1c9a:
 _T1ca7:
 	this->lCurrentTab = lNewTab;
 // LINE 278:
-	this->CatalogWindow::GetCurrentGraphicsFileNames(sTempTabFileName.c_str_ptr, sTempMainGraphicFileName.c_str_ptr);
+	this->CatalogWindow::GetCurrentGraphicsFileNames(sTempMainGraphicFileName.c_str_ptr, sTempTabFileName.c_str_ptr);
 // LINE 279:
-	0x604c00->FileServices::GetPathForFileString((this + 0x64), sTempTabFileName.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sTempTabFileName.c_str_ptr, (this + 0x64));
 	__asm        jmp    _T1cf3;
 // LINE 280:
 _T1cf3:
@@ -4601,7 +4601,7 @@ _T20fa:
 _FOR_2136:
 	for (i = 0x0; (i < 0x5); i++) {
 		// LINE 301:
-			nFullStringID = LanguageManager::GetFullStringID(0x0, (i + 0x1ea));
+			nFullStringID = LanguageManager::GetFullStringID((i + 0x1ea), 0x0);
 		// LINE 302:
 			__asm        push   0xFFF;
 			__asm        lea    eax, [ebp-0x499C];
@@ -5219,11 +5219,11 @@ _T2b1e:
 // LINE 366:
 // Block start:
 	/*bp-0x6d8*/ /*unpacked*/ class CBackBuffer tempStainImage;
-	GetPathForFile(szFilePath[0], SZ_STAIN_IMAGE_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_STAIN_IMAGE_FILE_NAME, szFilePath[0]);
 // LINE 367:
 	tempStainImage<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(szFilePath[0]);
 // LINE 368:
-	tempStainImage<CBackBuffer+0x00:None>->CBackBuffer::SetTransparentColor(GraphicWindow::colorConstants.nPaletteIndexTransparent, 0x1);
+	tempStainImage<CBackBuffer+0x00:None>->CBackBuffer::SetTransparentColor(0x1, GraphicWindow::colorConstants.nPaletteIndexTransparent);
 // LINE 369:
 _FOR_2b8b:
 	for (i = 0x0; (i < 0x3); i++) {
@@ -5277,11 +5277,11 @@ _T2c2c:
 // LINE 377:
 // Block start:
 	/*bp-0x80c*/ /*unpacked*/ class CBackBuffer tempPaperClipImage;
-	GetPathForFile(szFilePath[0], SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME, szFilePath[0]);
 // LINE 378:
 	tempPaperClipImage<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(szFilePath[0]);
 // LINE 379:
-	tempPaperClipImage<CBackBuffer+0x00:None>->CBackBuffer::SetTransparentColor(GraphicWindow::colorConstants.nPaletteIndexTransparent, 0x1);
+	tempPaperClipImage<CBackBuffer+0x00:None>->CBackBuffer::SetTransparentColor(0x1, GraphicWindow::colorConstants.nPaletteIndexTransparent);
 // LINE 380:
 _FOR_2c99:
 	for (i = 0x0; (i < 0x3); i++) {
@@ -6572,7 +6572,7 @@ _T10a:
 _T10f:
 _T134:
 _T136:
-	return (CBackBuffer::GetPaletteFromImage(pColorTable, this-><CatalogWindow+0x64>) != 0x0);
+	return (CBackBuffer::GetPaletteFromImage(this-><CatalogWindow+0x64>, pColorTable) != 0x0);
 // LINE 523:
 }
 

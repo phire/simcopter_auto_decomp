@@ -639,18 +639,18 @@ _FOR_69b:
 			__asm        dec    eax;
 			__asm        mov    lineY, eax;
 		// LINE 318:
-			DrawHorzLine(reinterpret_cast<uint32_t>(color), lineY, endX, startX);
+			DrawHorzLine(startX, endX, lineY, reinterpret_cast<uint32_t>(color));
 		// LINE 320:
 			lineY = (centerPt.y - (radius - i));
 		// LINE 321:
-			DrawHorzLine(reinterpret_cast<uint32_t>(color), lineY, endX, startX);
+			DrawHorzLine(startX, endX, lineY, reinterpret_cast<uint32_t>(color));
 	}
 // LINE 324:
 _T76c:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
 	__asm        je     __RETURN;
 // LINE 325:
-	DrawHorzLine(reinterpret_cast<uint32_t>(color), centerPt.y, (centerPt.x + radius), (centerPt.x - radius));
+	DrawHorzLine((centerPt.x - radius), (centerPt.x + radius), centerPt.y, reinterpret_cast<uint32_t>(color));
 // LINE 328:
 __RETURN:
 }
@@ -684,22 +684,22 @@ _T1f:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T48;
 
-	doAssert(0x8c085, 0x5bef68, 0x1a9, 0x5bef90);
+	doAssert(0x5bef90, 0x1a9, 0x5bef68, 0x8c085);
 // LINE 431:
 _T48:
-	bhdr = VRInt2BmpHdr(reinterpret_cast<int16_t>(facenum), G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, reinterpret_cast<int16_t>(facenum));
 // LINE 432:
 	__asm        cmp    bhdr, 0;
 	__asm        jne    _T84;
 
-	doAssert(0x8c085, 0x5befb8, 0x1b0, 0x5befdc);
+	doAssert(0x5befdc, 0x1b0, 0x5befb8, 0x8c085);
 // LINE 434:
 _T84:
 	pixPtr = bhdr;
 // LINE 435:
 	pixPtr += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 440:
-	FindFaceQuadrant2(faceCenter.x, psi, bhdr);
+	FindFaceQuadrant2(bhdr, psi, faceCenter.x);
 // LINE 444:
 	faceCenter.y = 0xc;
 // LINE 447:
@@ -760,19 +760,19 @@ _FOR_10a:
 		// LINE 469:
 			pixLine.ptr = (((faceCenter.y - yScanLine) * pixLine.width) + pixPtr);
 		// LINE 470:
-			DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, yLine, endX, startX);
+			DrawLineOnFace(startX, endX, yLine, offset.x, offset.y, offset.z, faceCenter.x, faceCenter.y, faceCenter.z, pixLine.width);
 		// LINE 473:
 			yLine = (centerPt.y - offset.y);
 		// LINE 474:
 			pixLine.ptr = (((faceCenter.y + yScanLine) * pixLine.width) + pixPtr);
 		// LINE 475:
-			DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, yLine, endX, startX);
+			DrawLineOnFace(startX, endX, yLine, offset.x, offset.y, offset.z, faceCenter.x, faceCenter.y, faceCenter.z, pixLine.width);
 	}
 // LINE 478:
 _T20f:
 	pixLine.ptr = ((faceCenter.y * pixLine.width) + pixPtr);
 // LINE 479:
-	DrawLineOnFace(pixLine.width, faceCenter.z, faceCenter.y, faceCenter.x, offset.z, offset.y, offset.x, centerPt.y, endX, startX);
+	DrawLineOnFace(startX, endX, centerPt.y, offset.x, offset.y, offset.z, faceCenter.x, faceCenter.y, faceCenter.z, pixLine.width);
 // LINE 482:
 }
 
@@ -815,7 +815,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, /*unpacked*/ struct Poin
 // LINE 543:
 	ptr = ((faceCenter.x - scaledOffset.x) + pixLine->ptr);
 // LINE 544:
-	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, endX, startX);
+	DrawHorzLinePat(startX, endX, yLine, ptr, 0x0, reinterpret_cast<uint32_t>(pixLine->xStride), *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4));
 // LINE 546:
 	return;
 _T83:
@@ -849,7 +849,7 @@ _Ta5:
 	__asm        add    ecx, eax;
 	__asm        mov    end, ecx;
 // LINE 556:
-	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, end, begin);
+	DrawHorzLinePat(begin, end, yLine, ptr, 0x0, reinterpret_cast<uint32_t>(pixLine->xStride), *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4));
 // LINE 558:
 	ptr = pixLine->ptr;
 // LINE 559:
@@ -857,7 +857,7 @@ _Ta5:
 // LINE 560:
 	end = endX;
 // LINE 561:
-	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, end, begin);
+	DrawHorzLinePat(begin, end, yLine, ptr, 0x0, reinterpret_cast<uint32_t>(pixLine->xStride), *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4));
 // LINE 563:
 	return;
 // LINE 565:
@@ -878,7 +878,7 @@ _T14b:
 	__asm        add    ecx, eax;
 	__asm        mov    end, ecx;
 // LINE 568:
-	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, end, begin);
+	DrawHorzLinePat(begin, end, yLine, ptr, 0x0, reinterpret_cast<uint32_t>(pixLine->xStride), *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4));
 // LINE 570:
 	ptr = pixLine->ptr;
 // LINE 571:
@@ -886,7 +886,7 @@ _T14b:
 // LINE 572:
 	end = endX;
 // LINE 573:
-	DrawHorzLinePat(*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4), reinterpret_cast<uint32_t>(pixLine->xStride), 0x0, ptr, yLine, end, begin);
+	DrawHorzLinePat(begin, end, yLine, ptr, 0x0, reinterpret_cast<uint32_t>(pixLine->xStride), *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pixLine->xStride) + 4));
 // LINE 576:
 }
 
@@ -942,7 +942,7 @@ void FindFaceQuadrant2(/*unpacked*/ struct VRBmpHdr *bhdr, float psi, /*unpacked
 	__asm        test   ah, 0x40;
 	__asm        jne    _T4a;
 
-	doAssert(0x8c085, 0x5bf004, 0x25d, 0x5bf014);
+	doAssert(0x5bf014, 0x25d, 0x5bf004, 0x8c085);
 // LINE 610:
 _T4a:
 	__asm        fld    psi;
@@ -957,7 +957,7 @@ _T4a:
 	__asm        test   ah, 1;
 	__asm        jne    _T8e;
 _T72:
-	doAssert(0x8c085, 0x5bf03c, 0x262, 0x5bf050);
+	doAssert(0x5bf050, 0x262, 0x5bf03c, 0x8c085);
 // LINE 611:
 _T8e:
 	__asm        fld    psi;
@@ -1010,14 +1010,14 @@ _T10a:
 	__asm        cmp    dword ptr [eax], 0x34;
 	__asm        jl     _T14b;
 
-	doAssert(0x8c085, 0x5bf078, 0x273, 0x5bf0a8);
+	doAssert(0x5bf0a8, 0x273, 0x5bf078, 0x8c085);
 // LINE 628:
 _T14b:
 	__asm        mov    eax, faceCenter;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jge    _T173;
 
-	doAssert(0x8c085, 0x5bf0d0, 0x274, 0x5bf100);
+	doAssert(0x5bf100, 0x274, 0x5bf0d0, 0x8c085);
 // LINE 630:
 _T173:
 	return;
@@ -1089,7 +1089,7 @@ _FOR_6d:
 			__asm        cmp    i, 0x1A;
 			__asm        jl     _Tb1;
 
-			doAssert(0x8c085, 0x5bf128, 0x2a8, 0x5bf174);
+			doAssert(0x5bf174, 0x2a8, 0x5bf128, 0x8c085);
 		// LINE 681:
 		_Tb1:
 			__asm        mov    eax, i;
@@ -1491,7 +1491,7 @@ _FOR_4a:
 			__asm        cmp    i, 0x1A;
 			__asm        jl     _T8e;
 
-			doAssert(0x8c085, 0x5bf1c4, 0x35a, 0x5bf1e0);
+			doAssert(0x5bf1e0, 0x35a, 0x5bf1c4, 0x8c085);
 		// LINE 859:
 		_T8e:
 			__asm        mov    eax, i;
@@ -1693,7 +1693,7 @@ _FOR_2a2:
 		// LINE 932:
 			return;
 		// LINE 933:
-			doAssert(0x8c085, 0x5bf208, 0x3a5, 0x5bf234);
+			doAssert(0x5bf234, 0x3a5, 0x5bf208, 0x8c085);
 		// LINE 935:
 		_T2fb:
 			__asm        cmp    fourByteWrites, 0;
@@ -1701,7 +1701,7 @@ _FOR_2a2:
 		// LINE 936:
 			return;
 		// LINE 937:
-			doAssert(0x8c085, 0x5bf25c, 0x3a9, 0x5bf288);
+			doAssert(0x5bf288, 0x3a9, 0x5bf25c, 0x8c085);
 		// LINE 940:
 		__WHILE_326:
 			__asm        mov    eax, oneByteWrites;
@@ -1880,7 +1880,7 @@ _Ta6:
 // LINE 1019:
 	return;
 // LINE 1020:
-	doAssert(0x8c085, 0x5bf2c8, 0x3fc, 0x5bf2fc);
+	doAssert(0x5bf2fc, 0x3fc, 0x5bf2c8, 0x8c085);
 // LINE 1022:
 _T103:
 	__asm        cmp    fourByteWrites, 0;
@@ -1888,7 +1888,7 @@ _T103:
 // LINE 1023:
 	return;
 // LINE 1024:
-	doAssert(0x8c085, 0x5bf324, 0x400, 0x5bf35c);
+	doAssert(0x5bf35c, 0x400, 0x5bf324, 0x8c085);
 // LINE 1027:
 __WHILE_12e:
 	__asm        mov    eax, oneByteWrites;
@@ -2080,7 +2080,7 @@ _T65:
 // LINE 1100:
 	return;
 // LINE 1101:
-	doAssert(0x8c085, 0x5bf3a4, 0x44d, 0x5bf3d4);
+	doAssert(0x5bf3d4, 0x44d, 0x5bf3a4, 0x8c085);
 // LINE 1103:
 _Te8:
 	__asm        cmp    fourByteWrites, 0;
@@ -2088,7 +2088,7 @@ _Te8:
 // LINE 1104:
 	return;
 // LINE 1105:
-	doAssert(0x8c085, 0x5bf3fc, 0x451, 0x5bf430);
+	doAssert(0x5bf430, 0x451, 0x5bf3fc, 0x8c085);
 // LINE 1108:
 __WHILE_113:
 	__asm        mov    eax, oneByteWrites;

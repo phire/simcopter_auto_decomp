@@ -2760,11 +2760,11 @@ int32_t KeyboardWindow::Initialize() {
 // LINE 90:
 	this->GraphicWindow::Initialize();
 // LINE 91:
-	LoadListFromResource((gDefaultLanguage + 0xc8), (this + 0x74));
+	LoadListFromResource((this + 0x74), (gDefaultLanguage + 0xc8));
 // LINE 92:
-	LoadListFromResource((gDefaultLanguage + 0x12c), (this + 0x7c));
+	LoadListFromResource((this + 0x7c), (gDefaultLanguage + 0x12c));
 // LINE 93:
-	LoadListFromResource((gDefaultLanguage + 0x190), (this + 0x84));
+	LoadListFromResource((this + 0x84), (gDefaultLanguage + 0x190));
 // LINE 94:
 	this->bNumLockLastSetting = Keyboard::IsToggleKeySet(0x90);
 // LINE 95:
@@ -3270,7 +3270,7 @@ int32_t KeyboardWindow::ConvertKeyToString(int32_t nLanguage, long lKey, /*packe
 	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 165:
-	nFullStringID = LanguageManager::GetFullStringID(nLanguage, (lKey + 0x2bc));
+	nFullStringID = LanguageManager::GetFullStringID((lKey + 0x2bc), nLanguage);
 // LINE 166:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1004];
@@ -4805,7 +4805,7 @@ _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 395:
 _Ta6:
-	LanguageManager::GetTypefaceForLanguage(szTypeface[0], 0x2, 0x0);
+	LanguageManager::GetTypefaceForLanguage(0x0, 0x2, szTypeface[0]);
 // LINE 396:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA0], 0;
@@ -7185,7 +7185,7 @@ void JoystickWindow::GetNewJoystickControlStates(long * lNewJoystickControlState
 _FOR_18:
 	for (i = 0x6; (i < 0xe); i++) {
 		// LINE 929:
-			lNewJoystickControlStates[i] = 0x604c78->JoystickManager::GetButtonState(0x1, (i - 0x6), this->nCurrentJoystick);
+			lNewJoystickControlStates[i] = 0x604c78->JoystickManager::GetButtonState(this->nCurrentJoystick, (i - 0x6), 0x1);
 		// LINE 930:
 			__asm        mov    eax, i;
 			__asm        mov    ecx, lNewJoystickControlStates;
@@ -7200,7 +7200,7 @@ _FOR_18:
 _FOR_76:
 	for (i = 0x0; (i < 0x6); i++) {
 		// LINE 934:
-			lNewJoystickControlStates[i] = 0x604c78->JoystickManager::GetPositionQualitative(0x1, i, this->nCurrentJoystick);
+			lNewJoystickControlStates[i] = 0x604c78->JoystickManager::GetPositionQualitative(this->nCurrentJoystick, i, 0x1);
 	}
 // LINE 936:
 _Ta8:
@@ -8341,7 +8341,7 @@ _T37e:
 	__asm        mov    ecx, [eax+0x80];
 	__asm        call   dword ptr [edx+0x12C];
 // LINE 1121:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x6);
+	nFullStringID = LanguageManager::GetFullStringID(0x6, 0x0);
 // LINE 1122:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x10DC];
@@ -8607,7 +8607,7 @@ _T83b:
 	tempButtonWindow = 0x0;
 // LINE 1133:
 _T842:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x14);
+	nFullStringID = LanguageManager::GetFullStringID(0x14, 0x0);
 // LINE 1134:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x20FC];
@@ -8819,7 +8819,7 @@ _Tb44:
 	tempButtonWindow = 0x0;
 // LINE 1141:
 _Tb4b:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x15);
+	nFullStringID = LanguageManager::GetFullStringID(0x15, 0x0);
 // LINE 1142:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x311C];
@@ -9031,7 +9031,7 @@ _Te4d:
 	tempButtonWindow = 0x0;
 // LINE 1149:
 _Te54:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x8);
+	nFullStringID = LanguageManager::GetFullStringID(0x8, 0x0);
 // LINE 1150:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x413C];
@@ -9243,7 +9243,7 @@ _T1156:
 	tempButtonWindow = 0x0;
 // LINE 1157:
 _T115d:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x5);
+	nFullStringID = LanguageManager::GetFullStringID(0x5, 0x0);
 // LINE 1158:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x515C];
@@ -9592,22 +9592,22 @@ _T19c:
 	return 0x1;
 // LINE 1218:
 _T1ce:
-	this->UserInputWindow::DoKeyboardWindowMessage(pMessageData, lMessage);
+	this->UserInputWindow::DoKeyboardWindowMessage(lMessage, pMessageData);
 // LINE 1219:
 	return 0x1;
 // LINE 1221:
 _T1e8:
-	this->UserInputWindow::DoJoystickWindowMessage(pMessageData, lMessage);
+	this->UserInputWindow::DoJoystickWindowMessage(lMessage, pMessageData);
 // LINE 1222:
 	return 0x1;
 // LINE 1224:
 _T202:
-	this->UserInputWindow::DoInputDeviceListBoxWindowMessage(pMessageData, lMessage);
+	this->UserInputWindow::DoInputDeviceListBoxWindowMessage(lMessage, pMessageData);
 // LINE 1225:
 	return 0x1;
 // LINE 1227:
 _T21c:
-	this->UserInputWindow::DoCommandListBoxWindowMessage(pMessageData, lMessage);
+	this->UserInputWindow::DoCommandListBoxWindowMessage(lMessage, pMessageData);
 // LINE 1228:
 	return 0x1;
 // LINE 1230:
@@ -9746,7 +9746,7 @@ _T2c:
 // LINE 1263:
 	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1264:
-	tempKeyUsageType = this->UserInputWindow::GetKeyUsageType(lDevice, lControl);
+	tempKeyUsageType = this->UserInputWindow::GetKeyUsageType(lControl, lDevice);
 // LINE 1266:
 	__asm        cmp    lControl, 0;
 	__asm        jl     _T454;
@@ -9757,7 +9757,7 @@ _T2c:
 	__asm        cmp    tempKeyUsageType, 0;
 	__asm        jne    _T3d4;
 // LINE 1269:
-	this->UserInputWindow::RemoveJoystickTwinCommand(lControl, lDevice, lCurrentCommand);
+	this->UserInputWindow::RemoveJoystickTwinCommand(lCurrentCommand, lDevice, lControl);
 // LINE 1270:
 	tempShortcut.lDeviceID = lDevice;
 // LINE 1271:
@@ -9985,7 +9985,7 @@ _T396:
 	__asm        jmp    _T39b;
 // LINE 1277:
 _T39b:
-	this->UserInputWindow::AddJoystickTwinCommand(lControl, lDevice, lCurrentCommand);
+	this->UserInputWindow::AddJoystickTwinCommand(lCurrentCommand, lDevice, lControl);
 // LINE 1278:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1279:
@@ -9996,9 +9996,9 @@ _T3d4:
 	__asm        cmp    tempKeyUsageType, 2;
 	__asm        jne    _T42e;
 // LINE 1282:
-	this->UserInputWindow::RemoveShortcutFromList(lControl, lDevice, lCurrentCommand);
+	this->UserInputWindow::RemoveShortcutFromList(lCurrentCommand, lDevice, lControl);
 // LINE 1283:
-	this->UserInputWindow::RemoveJoystickTwinCommand(lControl, lDevice, lCurrentCommand);
+	this->UserInputWindow::RemoveJoystickTwinCommand(lCurrentCommand, lDevice, lControl);
 // LINE 1284:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1285:
@@ -10255,7 +10255,7 @@ _T82f:
 	__asm        cmp    tempKeyUsageType, 2;
 	__asm        jne    _T872;
 // LINE 1305:
-	this->UserInputWindow::RemoveShortcutFromList(lControl, lDevice, lCurrentCommand);
+	this->UserInputWindow::RemoveShortcutFromList(lCurrentCommand, lDevice, lControl);
 // LINE 1306:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1307:
@@ -10525,7 +10525,7 @@ void UserInputWindow::RemoveJoystickTwinCommand(long lCommand, long lDevice, lon
 	__asm        cmp    lTwinCommand, 0;
 	__asm        je     _T39;
 // LINE 1369:
-	this->UserInputWindow::RemoveShortcutFromList(lControl, lDevice, lTwinCommand);
+	this->UserInputWindow::RemoveShortcutFromList(lTwinCommand, lDevice, lControl);
 // LINE 1370:
 _T39:
 	return;
@@ -10548,7 +10548,7 @@ int32_t UserInputWindow::DoKeyboardWindowMessage(long lMessage, void * __ptr32 p
 	__asm        mov    eax, [eax];
 	__asm        mov    lKey, eax;
 // LINE 1388:
-	tempKeyUsageType = this->UserInputWindow::GetKeyUsageType(0x0, lKey);
+	tempKeyUsageType = this->UserInputWindow::GetKeyUsageType(lKey, 0x0);
 // LINE 1389:
 	__asm        cmp    tempKeyUsageType, 1;
 	__asm        jne    _T61;
@@ -10564,7 +10564,7 @@ _T61:
 // LINE 1394:
 	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1395:
-	GetPushAndIgnoreSettingsForCommand(lIgnoreModifiers, lPush, lCurrentCommand);
+	GetPushAndIgnoreSettingsForCommand(lCurrentCommand, lPush, lIgnoreModifiers);
 // LINE 1396:
 	tempShortcut.lDeviceID = 0x0;
 // LINE 1397:
@@ -10805,7 +10805,7 @@ _T3bf:
 // LINE 1408:
 	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1409:
-	this->UserInputWindow::RemoveShortcutFromList(lKey, 0x0, lCurrentCommand);
+	this->UserInputWindow::RemoveShortcutFromList(lCurrentCommand, 0x0, lKey);
 // LINE 1410:
 	this->bCommandsHaveChanged = 0x1;
 // LINE 1411:
@@ -10839,7 +10839,7 @@ _T457:
 	__asm        mov    eax, [eax];
 	__asm        mov    lKey, eax;
 // LINE 1424:
-	return this->UserInputWindow::DoKeyboardWindowMessage(lKey, 0x10001);
+	return this->UserInputWindow::DoKeyboardWindowMessage(0x10001, lKey);
 // LINE 1426:
 	__asm        jmp    _T4b7;
 _T48a:
@@ -12313,7 +12313,7 @@ _T17:
 	__asm        jmp    _T30;
 // LINE 1720:
 _T30:
-	GetPathForFile(szFilePath[0], SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME, szFilePath[0]);
 // LINE 1722:
 	tempImage<CBackBuffer+0x00:None>->CBackBuffer::CBackBuffer(szFilePath[0]);
 // LINE 1724:
@@ -12474,7 +12474,7 @@ _T1e9:
 	__asm        jmp    _T1ee;
 // LINE 1744:
 _T1ee:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x9);
+	nFullStringID = LanguageManager::GetFullStringID(0x9, 0x0);
 // LINE 1745:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x10D4];
@@ -12606,7 +12606,7 @@ _T384:
 _FOR_3bd:
 	for (i = 0x0; (i < nJoystickCount); i++) {
 		// LINE 1753:
-			0x604c78->JoystickManager::GetJoystickName(szJoystickName[0], i);
+			0x604c78->JoystickManager::GetJoystickName(i, szJoystickName[0]);
 		// LINE 1754:
 			__asm        jmp    _T3e3;
 		_T3e3:
@@ -12759,7 +12759,7 @@ _T6d:
 _FOR_85:
 	for (i = 0x2; (i < 0x21); i++) {
 		// LINE 1773:
-			nFullStringID = LanguageManager::GetFullStringID(0x0, (i + 0x96));
+			nFullStringID = LanguageManager::GetFullStringID((i + 0x96), 0x0);
 		// LINE 1774:
 			__asm        push   0xFFF;
 			__asm        lea    eax, [ebp-0x1060];
@@ -13502,7 +13502,7 @@ void UserInputWindow::DisplayError(int32_t nErrorType) {
 // FUNCTION: COPTER_D 0x0040b4b0
 void ControlDisplayWindow::ControlDisplayWindow(/*packed*/ class MRect& rectNewPosition, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->GraphicWindow::GraphicWindow(GraphicWindow::colorConstants.nPaletteIndexTransparent, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewPosition, SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME);
+	this->GraphicWindow::GraphicWindow(SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME, rectNewPosition, nNewID, windowNewParent, myNewOwner, bAddToParentList, GraphicWindow::colorConstants.nPaletteIndexTransparent);
 	this->bInitializing = 0x1;
 	this->myCommandListBoxWindow = 0x0;
 	this->myKeysListBoxWindow = 0x0;
@@ -13552,7 +13552,7 @@ _T85:
 _T91:
 	this->GraphicWindow::Initialize();
 // LINE 1871:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xdc);
+	nFullStringID = LanguageManager::GetFullStringID(0xdc, 0x0);
 // LINE 1872:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x10BC];
@@ -13768,7 +13768,7 @@ _T35e:
 	__asm        mov    ecx, tempTextWindow;
 	__asm        call   dword ptr [eax+0x3C];
 // LINE 1880:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xdf);
+	nFullStringID = LanguageManager::GetFullStringID(0xdf, 0x0);
 // LINE 1881:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x20D4];
@@ -13974,7 +13974,7 @@ _T61b:
 	__asm        mov    ecx, tempTextWindow;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1888:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe0);
+	nFullStringID = LanguageManager::GetFullStringID(0xe0, 0x0);
 // LINE 1889:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x30EC];
@@ -14362,7 +14362,7 @@ _Tafd:
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   dword ptr [edx+0x12C];
 // LINE 1913:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xdd);
+	nFullStringID = LanguageManager::GetFullStringID(0xdd, 0x0);
 // LINE 1914:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x4104];
@@ -15002,7 +15002,7 @@ _LOOP_2c2:
 		_T323:
 			__asm        jmp    _T328;
 		_T328:
-			this->ControlDisplayWindow::GetCommandString(tempLongSetIterator.node->value_field, sCurrentCommand.c_str_ptr);
+			this->ControlDisplayWindow::GetCommandString(sCurrentCommand.c_str_ptr, tempLongSetIterator.node->value_field);
 		// LINE 2017:
 			__asm        mov    eax, addedShortcutList;
 			__asm        mov    eax, [eax];
@@ -15073,7 +15073,7 @@ _LOOP_2c2:
 					__asm        cmp    dword ptr [eax], 0;
 					__asm        jne    _T41c;
 				// LINE 2024:
-					this->ControlDisplayWindow::AppendKeysString(nKeyCountForCommand, tempShortcut->lModifiers, tempShortcut->lKey, sCurrentKeys.c_str_ptr);
+					this->ControlDisplayWindow::AppendKeysString(sCurrentKeys.c_str_ptr, tempShortcut->lKey, tempShortcut->lModifiers, nKeyCountForCommand);
 				// LINE 2025:
 					nKeyCountForCommand += 0x1;
 				// LINE 2027:
@@ -15113,9 +15113,9 @@ _LOOP_2c2:
 			__asm        mov    ecx, [eax+0x7C];
 			__asm        call   dword ptr [edx+0xD4];
 		// LINE 2031:
-			sCurrentCommand.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
+			sCurrentCommand.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
 		// LINE 2032:
-			sCurrentKeys.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
+			sCurrentKeys.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
 		// LINE 2033:
 			__asm        mov    eax, tempLongSetIterator.node;
 			__asm        mov    [ebp-0xC8], eax;
@@ -15193,7 +15193,7 @@ void ControlDisplayWindow::GetCommandString(/*packed*/ class basic_string<char>&
 	/*bp-0x4*/   uint32_t nFullStringID;
 
 // LINE 2046:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, (lCommand + 0x96));
+	nFullStringID = LanguageManager::GetFullStringID((lCommand + 0x96), 0x0);
 // LINE 2047:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1004];
@@ -15735,7 +15735,7 @@ _Tc4:
 	__asm        cmp    nKeyIndex, 0;
 	__asm        je     _T208;
 // LINE 2062:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe1);
+	nFullStringID = LanguageManager::GetFullStringID(0xe1, 0x0);
 // LINE 2063:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x104C];
@@ -15831,7 +15831,7 @@ _T1f0:
 	__asm        jmp    _T208;
 // LINE 2068:
 _T208:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe2);
+	nFullStringID = LanguageManager::GetFullStringID(0xe2, 0x0);
 // LINE 2069:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2050];
@@ -15906,9 +15906,9 @@ _T2f5:
 // LINE 2073:
 	bAtLeastOneModifierFoundAlready = 0x1;
 // LINE 2074:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe3);
+	nFullStringID = LanguageManager::GetFullStringID(0xe3, 0x0);
 // LINE 2075:
-	SetStringFromStringResource(nFullStringID, sModifier.c_str_ptr);
+	SetStringFromStringResource(sModifier.c_str_ptr, nFullStringID);
 // LINE 2076:
 	__asm        jmp    _T334;
 _T334:
@@ -15946,19 +15946,19 @@ _T37c:
 // LINE 2081:
 	__asm        jmp    _T395;
 _T395:
-	sKeys->basic_string<char>::append_str(sSeparator.reference-><basic_string_ref<char>+0x04:4>, sSeparator.c_str_ptr->basic_string<char>::data(sSeparator.reference-><basic_string_ref<char>+0x04:4>));
+	sKeys->basic_string<char>::append_str(sSeparator.c_str_ptr->basic_string<char>::data(sSeparator.reference-><basic_string_ref<char>+0x04:4>), sSeparator.reference-><basic_string_ref<char>+0x04:4>);
 	__asm        jmp    _T3b2;
 // LINE 2082:
 _T3b2:
 	bAtLeastOneModifierFoundAlready = 0x1;
 // LINE 2083:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe4);
+	nFullStringID = LanguageManager::GetFullStringID(0xe4, 0x0);
 // LINE 2084:
-	SetStringFromStringResource(nFullStringID, sModifier.c_str_ptr);
+	SetStringFromStringResource(sModifier.c_str_ptr, nFullStringID);
 // LINE 2085:
 	__asm        jmp    _T3e0;
 _T3e0:
-	sKeys->basic_string<char>::append_str(sModifier.reference-><basic_string_ref<char>+0x04:4>, sModifier.c_str_ptr->basic_string<char>::data(sModifier.reference-><basic_string_ref<char>+0x04:4>));
+	sKeys->basic_string<char>::append_str(sModifier.c_str_ptr->basic_string<char>::data(sModifier.reference-><basic_string_ref<char>+0x04:4>), sModifier.reference-><basic_string_ref<char>+0x04:4>);
 	__asm        jmp    _T3fd;
 // LINE 2088:
 _T3fd:
@@ -15970,19 +15970,19 @@ _T3fd:
 // LINE 2090:
 	__asm        jmp    _T416;
 _T416:
-	sKeys->basic_string<char>::append_str(sSeparator.reference-><basic_string_ref<char>+0x04:4>, sSeparator.c_str_ptr->basic_string<char>::data(sSeparator.reference-><basic_string_ref<char>+0x04:4>));
+	sKeys->basic_string<char>::append_str(sSeparator.c_str_ptr->basic_string<char>::data(sSeparator.reference-><basic_string_ref<char>+0x04:4>), sSeparator.reference-><basic_string_ref<char>+0x04:4>);
 	__asm        jmp    _T433;
 // LINE 2091:
 _T433:
 	bAtLeastOneModifierFoundAlready = 0x1;
 // LINE 2092:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe5);
+	nFullStringID = LanguageManager::GetFullStringID(0xe5, 0x0);
 // LINE 2093:
-	SetStringFromStringResource(nFullStringID, sModifier.c_str_ptr);
+	SetStringFromStringResource(sModifier.c_str_ptr, nFullStringID);
 // LINE 2094:
 	__asm        jmp    _T461;
 _T461:
-	sKeys->basic_string<char>::append_str(sModifier.reference-><basic_string_ref<char>+0x04:4>, sModifier.c_str_ptr->basic_string<char>::data(sModifier.reference-><basic_string_ref<char>+0x04:4>));
+	sKeys->basic_string<char>::append_str(sModifier.c_str_ptr->basic_string<char>::data(sModifier.reference-><basic_string_ref<char>+0x04:4>), sModifier.reference-><basic_string_ref<char>+0x04:4>);
 	__asm        jmp    _T47e;
 // LINE 2097:
 _T47e:
@@ -15991,17 +15991,17 @@ _T47e:
 // LINE 2098:
 	__asm        jmp    _T48d;
 _T48d:
-	sKeys->basic_string<char>::append_str(sSeparator.reference-><basic_string_ref<char>+0x04:4>, sSeparator.c_str_ptr->basic_string<char>::data(sSeparator.reference-><basic_string_ref<char>+0x04:4>));
+	sKeys->basic_string<char>::append_str(sSeparator.c_str_ptr->basic_string<char>::data(sSeparator.reference-><basic_string_ref<char>+0x04:4>), sSeparator.reference-><basic_string_ref<char>+0x04:4>);
 	__asm        jmp    _T4aa;
 // LINE 2099:
 _T4aa:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, (lKey + 0x2bc));
+	nFullStringID = LanguageManager::GetFullStringID((lKey + 0x2bc), 0x0);
 // LINE 2100:
-	SetStringFromStringResource(nFullStringID, sKey.c_str_ptr);
+	SetStringFromStringResource(sKey.c_str_ptr, nFullStringID);
 // LINE 2101:
 	__asm        jmp    _T4d5;
 _T4d5:
-	sKeys->basic_string<char>::append_str(sKey.reference-><basic_string_ref<char>+0x04:4>, sKey.c_str_ptr->basic_string<char>::data(sKey.reference-><basic_string_ref<char>+0x04:4>));
+	sKeys->basic_string<char>::append_str(sKey.c_str_ptr->basic_string<char>::data(sKey.reference-><basic_string_ref<char>+0x04:4>), sKey.reference-><basic_string_ref<char>+0x04:4>);
 	__asm        jmp    _T4f2;
 // LINE 2102:
 _T4f2:

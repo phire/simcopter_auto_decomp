@@ -541,7 +541,7 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 // LINE 76:
 	tree = treevoid;
 // LINE 77:
-	Behavior::StdTreeSwizzle(0x560a02, size, tree);
+	Behavior::StdTreeSwizzle(tree, size, 0x560a02);
 // LINE 79:
 	return;
 }

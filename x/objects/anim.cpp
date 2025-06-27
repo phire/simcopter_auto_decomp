@@ -94,17 +94,17 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        cmp    cCopterAnim::fsList, 0;
 	__asm        jne    _T47;
 
-	doAssert(0x8c085, 0x5bf6d8, 0x26, 0x5bf6e0);
+	doAssert(0x5bf6e0, 0x26, 0x5bf6d8, 0x8c085);
 // LINE 39:
 _T47:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jne    _T6d;
 
-	doAssert(0x8c085, 0x5bf704, 0x27, 0x5bf728);
+	doAssert(0x5bf728, 0x27, 0x5bf704, 0x8c085);
 // LINE 43:
 _T6d:
-	Memory::BlockMove(0x10, tmp[0], (this + 0xc));
+	Memory::BlockMove((this + 0xc), tmp[0], 0x10);
 // LINE 44:
 	__asm        mov    tmp[4], 0x69;
 	__asm        mov    ax, expectondisk;
@@ -143,7 +143,7 @@ _Tef:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        jne    _T115;
 
-	doAssert(0x8c085, 0x5beb8c, 0x11e, 0x5be4f0);
+	doAssert(0x5be4f0, 0x11e, 0x5beb8c, 0x8c085);
 _T115:
 	__asm        jmp    _T11a;
 _T11a:
@@ -155,21 +155,21 @@ _T11a:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T153;
 
-	doAssert(0x8c085, 0x5beb58, 0x131, 0x5be4f0);
+	doAssert(0x5be4f0, 0x131, 0x5beb58, 0x8c085);
 _T153:
 	__asm        jmp    _T17e;
 _T158:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     _T17e;
 
-	doAssert(0x8c085, 0x5beb1c, 0x132, 0x5be4f0);
+	doAssert(0x5be4f0, 0x132, 0x5beb1c, 0x8c085);
 _T17e:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T26c;
 
 	__asm        jmp    _T1a9;
 
-	doAssert(0x8c085, 0x5beaf0, 0x134, 0x5be4f0);
+	doAssert(0x5be4f0, 0x134, 0x5beaf0, 0x8c085);
 _T1a9:
 	__asm        push   0x50;
 	__asm        call   operator new;
@@ -236,7 +236,7 @@ _T26c:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T292;
 
-	doAssert(0x8c085, 0x5bead4, 0x137, 0x5be4f0);
+	doAssert(0x5be4f0, 0x137, 0x5bead4, 0x8c085);
 _T292:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, this;

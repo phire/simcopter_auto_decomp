@@ -261,9 +261,9 @@ void Behavior::Behavior(/*unpacked*/ class Language *lang, /*unpacked*/ class NR
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 23:
-	this->fGlobalTrees = globFile->NResFile::GetLoader(this->fSwizzler, 0x42484156);
+	this->fGlobalTrees = globFile->NResFile::GetLoader(0x42484156, this->fSwizzler);
 // LINE 24:
-	this->fPrivateTrees = privFile->NResFile::GetLoader(this->fSwizzler, 0x42484156);
+	this->fPrivateTrees = privFile->NResFile::GetLoader(0x42484156, this->fSwizzler);
 // LINE 30:
 	return;
 
@@ -456,7 +456,7 @@ _T13a:
 	__asm        cmp    tree, 0;
 	__asm        jne    _T15d;
 
-	doAssert(0x8c085, 0x5be510, 0x51, 0x5be528);
+	doAssert(0x5be528, 0x51, 0x5be510, 0x8c085);
 // LINE 82:
 _T15d:
 	__asm        mov    eax, tree;
@@ -465,7 +465,7 @@ _T15d:
 	__asm        cmp    eax, ecx;
 	__asm        jg     _T188;
 
-	doAssert(0x8c085, 0x5be554, 0x52, 0x5be574);
+	doAssert(0x5be574, 0x52, 0x5be554, 0x8c085);
 // LINE 84:
 _T188:
 	__asm        movsx  eax, nodeNum;
@@ -506,7 +506,7 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 	__asm        jmp    _T36;
 // LINE 135:
 _T36:
-	this->Behavior::GetNodeText(TheStr, node.treeID);
+	this->Behavior::GetNodeText(node.treeID, TheStr);
 // LINE 136:
 	return;
 }
@@ -561,21 +561,21 @@ _T65:
 	pFile = this->fPrivFile;
 // LINE 163:
 _T71:
-	tree = pFile->FlatResFile::GetByID(this->fSwizzler, reinterpret_cast<uint32_t>(treeID), 0x42484156);
+	tree = pFile->FlatResFile::GetByID(0x42484156, reinterpret_cast<uint32_t>(treeID), this->fSwizzler);
 // LINE 164:
 	__asm        cmp    tree, 0;
 	__asm        jne    _Tb5;
 
-	doAssert(0x8c085, 0x5be5a0, 0xa4, 0x5be5cc);
+	doAssert(0x5be5cc, 0xa4, 0x5be5a0, 0x8c085);
 // LINE 168:
 // Block start:
 	/*bp-0x108*/ unsigned char resName[256]; // 0x100 bytes
 _Tb5:
-	pFile->FlatResFile::GetName(resName[0], tree);
+	pFile->FlatResFile::GetName(tree, resName[0]);
 // LINE 169:
 	name[0] = 0x0;
 // LINE 172:
-	ConcatPStr(0x100, name, resName[0]);
+	ConcatPStr(resName[0], name, 0x100);
 // LINE 174:
 // Block end:
 	return;
@@ -801,7 +801,7 @@ _T56:
 _T7a:
 	EmptyPStr(name);
 // LINE 259:
-	ConcatCPStr(0x100, name, str);
+	ConcatCPStr(str, name, 0x100);
 // LINE 260:
 	return;
 }

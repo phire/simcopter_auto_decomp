@@ -763,7 +763,7 @@ _T8d:
 _T99:
 	szVersionInformation = 0x0;
 // LINE 118:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
+	nFullStringID = LanguageManager::GetFullStringID(0x4, 0x0);
 // LINE 119:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x12AC];
@@ -899,9 +899,9 @@ _T251:
 _T275:
 	__asm        jmp    _T27a;
 _T27a:
-	strcpy(sMessage.c_str_ptr, szFormattedVersionInformation[0]);
+	strcpy(szFormattedVersionInformation[0], sMessage.c_str_ptr);
 // LINE 121:
-	strcat(0x598828, szFormattedVersionInformation[0]);
+	strcat(szFormattedVersionInformation[0], 0x598828);
 // LINE 124:
 	__asm        lea    eax, szVersionInformation;
 	__asm        push   eax;
@@ -910,7 +910,7 @@ _T27a:
 	__asm        test   eax, eax;
 	__asm        je     _T3da;
 // LINE 125:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x175);
+	nFullStringID = LanguageManager::GetFullStringID(0x175, 0x0);
 // LINE 126:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x22B0];
@@ -978,9 +978,9 @@ _T3a0:
 	__asm        jmp    _T3a5;
 // LINE 127:
 _T3a5:
-	sprintf(szVersionInformation, sMessage.c_str_ptr->basic_string<char>::c_str(szVersionInformation), szUnformattedVersionInformation[0]);
+	sprintf(szUnformattedVersionInformation[0], sMessage.c_str_ptr->basic_string<char>::c_str(szVersionInformation), szVersionInformation);
 // LINE 128:
-	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
+	strcat(szFormattedVersionInformation[0], szUnformattedVersionInformation[0]);
 // LINE 131:
 _T3da:
 	__asm        lea    eax, szVersionInformation;
@@ -990,7 +990,7 @@ _T3da:
 	__asm        test   eax, eax;
 	__asm        je     _T513;
 // LINE 132:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x176);
+	nFullStringID = LanguageManager::GetFullStringID(0x176, 0x0);
 // LINE 133:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x32B4];
@@ -1058,14 +1058,14 @@ _T4d9:
 	__asm        jmp    _T4de;
 // LINE 134:
 _T4de:
-	sprintf(szVersionInformation, sMessage.c_str_ptr->basic_string<char>::c_str(szVersionInformation), szUnformattedVersionInformation[0]);
+	sprintf(szUnformattedVersionInformation[0], sMessage.c_str_ptr->basic_string<char>::c_str(szVersionInformation), szVersionInformation);
 // LINE 135:
-	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
+	strcat(szFormattedVersionInformation[0], szUnformattedVersionInformation[0]);
 // LINE 140:
 _T513:
 	lSystemType = Version::GetSystemType();
 // LINE 141:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, (lSystemType + 0x177));
+	nFullStringID = LanguageManager::GetFullStringID((lSystemType + 0x177), 0x0);
 // LINE 142:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x42B8];
@@ -1149,9 +1149,9 @@ _T60c:
 	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 145:
-	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
+	strcat(szFormattedVersionInformation[0], szUnformattedVersionInformation[0]);
 // LINE 146:
-	strcat(0x59882c, szFormattedVersionInformation[0]);
+	strcat(szFormattedVersionInformation[0], 0x59882c);
 // LINE 149:
 	lPhysicalMemory = 0x0;
 // LINE 152:
@@ -1167,7 +1167,7 @@ _T60c:
 	__asm        div    ecx;
 	__asm        mov    lPhysicalMemory, eax;
 // LINE 156:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x174);
+	nFullStringID = LanguageManager::GetFullStringID(0x174, 0x0);
 // LINE 157:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x52BC];
@@ -1235,13 +1235,13 @@ _T779:
 	__asm        jmp    _T77e;
 // LINE 158:
 _T77e:
-	sprintf(lPhysicalMemory, sMessage.c_str_ptr->basic_string<char>::c_str(lPhysicalMemory), szUnformattedVersionInformation[0]);
+	sprintf(szUnformattedVersionInformation[0], sMessage.c_str_ptr->basic_string<char>::c_str(lPhysicalMemory), lPhysicalMemory);
 // LINE 159:
-	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
+	strcat(szFormattedVersionInformation[0], szUnformattedVersionInformation[0]);
 // LINE 162:
 	lCPUVersion = Version::GetCPUVersion();
 // LINE 163:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, (lCPUVersion + 0x168));
+	nFullStringID = LanguageManager::GetFullStringID((lCPUVersion + 0x168), 0x0);
 // LINE 164:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x62C0];
@@ -1309,14 +1309,14 @@ _T8ad:
 	__asm        jmp    _T8b2;
 // LINE 165:
 _T8b2:
-	strcat(sMessage.c_str_ptr->basic_string<char>::c_str(), szFormattedVersionInformation[0]);
+	strcat(szFormattedVersionInformation[0], sMessage.c_str_ptr->basic_string<char>::c_str());
 // LINE 168:
 	lCPUSpeed = Version::GetCPUSpeed();
 // LINE 169:
 	__asm        cmp    lCPUSpeed, 0;
 	__asm        je     _Ta04;
 // LINE 170:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x173);
+	nFullStringID = LanguageManager::GetFullStringID(0x173, 0x0);
 // LINE 171:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x72C4];
@@ -1384,9 +1384,9 @@ _T9ca:
 	__asm        jmp    _T9cf;
 // LINE 172:
 _T9cf:
-	sprintf(lCPUSpeed, sMessage.c_str_ptr->basic_string<char>::c_str(lCPUSpeed), szUnformattedVersionInformation[0]);
+	sprintf(szUnformattedVersionInformation[0], sMessage.c_str_ptr->basic_string<char>::c_str(lCPUSpeed), lCPUSpeed);
 // LINE 173:
-	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
+	strcat(szFormattedVersionInformation[0], szUnformattedVersionInformation[0]);
 // LINE 178:
 _Ta04:
 	__asm        push   0x10;
@@ -1912,7 +1912,7 @@ _T6d:
 	__asm        jmp    _T79;
 // LINE 284:
 _T79:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, nStringID);
+	nFullStringID = LanguageManager::GetFullStringID(nStringID, 0x0);
 // LINE 285:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x102C];
@@ -2774,7 +2774,7 @@ _T250:
 	/*bp-0x18*/  /*packed*/ struct Point2d *position2d;
 	position2d = S3HeliGetFreePad();
 // LINE 399:
-	S3PersonUserAppear(0x50000, 0x50000, position2d->y, position2d->x);
+	S3PersonUserAppear(position2d->x, position2d->y, 0x50000, 0x50000);
 // LINE 400:
 	szCheatSoundFileName = szCheatOn;
 // LINE 401:
@@ -2802,7 +2802,7 @@ _T2c6:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T32a;
 // LINE 406:
-	S3PersonUserAppear(0x50000, 0x50000, G_uheli->currpos.y, G_uheli->currpos.x);
+	S3PersonUserAppear(G_uheli->currpos.x, G_uheli->currpos.y, 0x50000, 0x50000);
 // LINE 407:
 	szCheatSoundFileName = szCheatOn;
 // LINE 408:
@@ -3490,7 +3490,7 @@ _Tc80:
 // Block start:
 	/*bp-0x138*/ char szFullPath[260]; // 0x104 bytes
 	/*bp-0x13c*/ /*packed*/ class DigitalSound *tempCheatCodeSound;
-	GetPathForFile(szFullPath[0], szCheatSoundFileName, 0x0, 0x2);
+	GetPathForFile(0x2, 0x0, szCheatSoundFileName, szFullPath[0]);
 // LINE 485:
 	__asm        push   0x7A;
 	__asm        call   operator new;
@@ -3902,7 +3902,7 @@ _T51:
 	__asm        jmp    _Ta4;
 // LINE 534:
 _Ta4:
-	LanguageManager::GetTypefaceForLanguage(szTypeFaceName[0], 0x0, 0x0);
+	LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeFaceName[0]);
 // LINE 535:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -4549,7 +4549,7 @@ _Te8:
 	__asm        mov    ecx, myRenderSettingsWindow;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 682:
-	myRenderSettingsWindow->RenderSettingsWindow::SetCurrentSettings(ConvertRenderBackPlaneValueToGUI(GetRenderBackPlaneValue()), this-><CGameApp+0x4308:4>, this-><CGameApp+0x4330:4>, this-><CGameApp+0x432c:4>, this-><CGameApp+0x4328:4>);
+	myRenderSettingsWindow->RenderSettingsWindow::SetCurrentSettings(this-><CGameApp+0x4328:4>, this-><CGameApp+0x432c:4>, this-><CGameApp+0x4330:4>, this-><CGameApp+0x4308:4>, ConvertRenderBackPlaneValueToGUI(GetRenderBackPlaneValue()));
 // LINE 683:
 	return;
 }
@@ -4595,7 +4595,7 @@ _T5c:
 	__asm        cmp    bUseData, 0;
 	__asm        je     _Td2;
 // LINE 706:
-	windowToDestroy->RenderSettingsWindow::GetCurrentSettings(lFogCloseness, lQuadPixelType, bShowSkyAndClouds, bShowGroundTextures, bShowBuildingTextures);
+	windowToDestroy->RenderSettingsWindow::GetCurrentSettings(bShowBuildingTextures, bShowGroundTextures, bShowSkyAndClouds, lQuadPixelType, lFogCloseness);
 // LINE 709:
 	G_texobjs = bShowBuildingTextures;
 	this-><CGameApp+0x4328:4> = G_texobjs;
@@ -4752,7 +4752,7 @@ _T17f:
 // LINE 755:
 	0x604480->Radio::GetPreferences(tempRadioPreferences.lVolume);
 // LINE 760:
-	mySoundSettingsWindow->SoundSettingsWindow::SetCurrentRadioSettings(0x604480->Radio::GetStationCount(), tempRadioPreferences.lVolume);
+	mySoundSettingsWindow->SoundSettingsWindow::SetCurrentRadioSettings(tempRadioPreferences.lVolume, 0x604480->Radio::GetStationCount());
 // LINE 761:
 	return;
 }
@@ -5086,7 +5086,7 @@ void CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDest
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 879:
-	S3HeliPurchaseRepairs(lSettings[0], G_uheli);
+	S3HeliPurchaseRepairs(G_uheli, lSettings[0]);
 // LINE 881:
 	__asm        mov    eax, lSettings[1];
 	__asm        neg    eax;
@@ -5094,7 +5094,7 @@ void CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDest
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 882:
-	S3HeliPurchaseFuel(lSettings[1], G_uheli);
+	S3HeliPurchaseFuel(G_uheli, lSettings[1]);
 // LINE 884:
 	__asm        mov    eax, lSettings[2];
 	__asm        neg    eax;

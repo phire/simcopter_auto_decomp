@@ -637,7 +637,7 @@ _Td6:
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        jne    _T102;
 
-	_assert(0x91, 0x5b7dcc, 0x5b7df0);
+	_assert(0x5b7df0, 0x5b7dcc, 0x91);
 	__asm        jmp    _T107;
 _T102:
 	__asm        jmp    _T107;
@@ -652,7 +652,7 @@ _T113:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    _T139;
 
-	_assert(0x99, 0x5b7e18, 0x5b7e3c);
+	_assert(0x5b7e3c, 0x5b7e18, 0x99);
 	__asm        jmp    _T13e;
 _T139:
 	__asm        jmp    _T13e;
@@ -717,7 +717,7 @@ _T1ea:
 // FUNCTION: COPTER_D 0x00536381
 int32_t FireEngineClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
 // LINE 211:
-	return gFireStations->Station::DispatchNearestAvailableVehicle(0x5, 0x62b9d0, responseLevel, responseType, mapy, mapx);
+	return gFireStations->Station::DispatchNearestAvailableVehicle(mapx, mapy, responseType, responseLevel, 0x62b9d0, 0x5);
 // LINE 212:
 }
 
@@ -966,7 +966,7 @@ _T28d:
 	__asm        jmp    _T2e0;
 // LINE 345:
 _T292:
-	_assert(0x159, 0x5b7e4c, 0x5b7e70);
+	_assert(0x5b7e70, 0x5b7e4c, 0x159);
 	__asm        jmp    _T2b3;
 
 	__asm        jmp    _T2b3;
@@ -1133,7 +1133,7 @@ __WHILE_3f:
 			__asm        cmp    dword ptr [ebp-0x38], 0;
 			__asm        jne    _Ta7;
 
-			_assert(0xa0, 0x5b57c4, 0x5b57b8);
+			_assert(0x5b57b8, 0x5b57c4, 0xa0);
 			__asm        jmp    _Tac;
 		_Ta7:
 			__asm        jmp    _Tac;
@@ -1299,7 +1299,7 @@ _Ta8:
 	__asm        cmp    dword ptr [eax+0x2A8], 0;
 	__asm        jne    _Td4;
 
-	_assert(0x212, 0x5b7e78, 0x5b7e9c);
+	_assert(0x5b7e9c, 0x5b7e78, 0x212);
 	__asm        jmp    _Td9;
 _Td4:
 	__asm        jmp    _Td9;

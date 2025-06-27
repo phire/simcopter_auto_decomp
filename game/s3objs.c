@@ -89,31 +89,31 @@ void S3ObjInit() {
 	/*bp-0xac*/  char msg[80]; // 0x50 bytes
 
 // LINE 390:
-	bhdr = VRInt2BmpHdr(0x33, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0x33);
 // LINE 391:
 	G_blueshad = bhdr;
 // LINE 392:
 	G_blueshad += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 394:
-	bhdr = VRInt2BmpHdr(0x34, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0x34);
 // LINE 395:
 	G_fireshad = bhdr;
 // LINE 396:
 	G_fireshad += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 398:
-	bhdr = VRInt2BmpHdr(0x32, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0x32);
 // LINE 399:
 	G_smokshad = bhdr;
 // LINE 400:
 	G_smokshad += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 402:
-	bhdr = VRInt2BmpHdr(0x1, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0x1);
 // LINE 403:
 	G_lightshad = bhdr;
 // LINE 404:
 	G_lightshad += ((bhdr->info.height << 0x2) + 0xc);
 // LINE 406:
-	bhdr = VRInt2BmpHdr(0x29, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0x29);
 // LINE 407:
 	G_darkshad = bhdr;
 // LINE 408:
@@ -137,7 +137,7 @@ _FOR_12c:
 			__asm        cmp    obj, 0;
 			__asm        jne    _T17b;
 		// LINE 423:
-			sprintf(i, 0x5b72a4, msg[0]);
+			sprintf(msg[0], 0x5b72a4, i);
 		// LINE 424:
 			ERexit(msg[0]);
 		// LINE 428:
@@ -7893,7 +7893,7 @@ _T1d:
 	__asm        test   al, 4;
 	__asm        je     _T52;
 // LINE 3713:
-	S3HeliHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	S3HeliHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3714:
 	return;
 // LINE 3716:
@@ -7904,7 +7904,7 @@ _T52:
 	__asm        test   al, 8;
 	__asm        je     _T87;
 // LINE 3718:
-	PersonHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	PersonHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3719:
 	return;
 // LINE 3721:
@@ -7915,7 +7915,7 @@ _T87:
 	__asm        test   al, 0x10;
 	__asm        je     _Tbc;
 // LINE 3723:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3724:
 	return;
 // LINE 3726:
@@ -7935,7 +7935,7 @@ _Td7:
 	__asm        test   ah, 1;
 	__asm        je     _T10d;
 // LINE 3730:
-	PlaneHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	PlaneHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3731:
 	return;
 // LINE 3733:
@@ -7985,7 +7985,7 @@ _T16f:
 	__asm        jmp    _T1f3;
 // LINE 3756:
 _T174:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3757:
 	__asm        jmp    _T1f3;
 // LINE 3759:
@@ -8040,7 +8040,7 @@ _T212:
 	__asm        jmp    _T296;
 // LINE 3779:
 _T217:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3780:
 	__asm        jmp    _T296;
 // LINE 3782:
@@ -8095,7 +8095,7 @@ _T2b5:
 	__asm        jmp    _T339;
 // LINE 3802:
 _T2ba:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3803:
 	__asm        jmp    _T339;
 // LINE 3805:
@@ -8150,7 +8150,7 @@ _T358:
 	__asm        jmp    _T3dc;
 // LINE 3825:
 _T35d:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3826:
 	__asm        jmp    _T3dc;
 // LINE 3828:
@@ -8213,7 +8213,7 @@ _T417:
 	__asm        jmp    _T49b;
 // LINE 3850:
 _T41c:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3851:
 	__asm        jmp    _T49b;
 // LINE 3853:
@@ -8268,7 +8268,7 @@ _T4ba:
 	__asm        jmp    _T53e;
 // LINE 3873:
 _T4bf:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3874:
 	__asm        jmp    _T53e;
 // LINE 3876:
@@ -8323,7 +8323,7 @@ _T55d:
 	__asm        jmp    _T5e1;
 // LINE 3896:
 _T562:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3897:
 	__asm        jmp    _T5e1;
 // LINE 3899:
@@ -8378,7 +8378,7 @@ _T600:
 	__asm        jmp    _T684;
 // LINE 3919:
 _T605:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3920:
 	__asm        jmp    _T684;
 // LINE 3922:
@@ -8433,7 +8433,7 @@ _T6a3:
 	__asm        jmp    _T727;
 // LINE 3942:
 _T6a8:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3943:
 	__asm        jmp    _T727;
 // LINE 3945:
@@ -8488,7 +8488,7 @@ _T746:
 	__asm        jmp    _T7ca;
 // LINE 3965:
 _T74b:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3966:
 	__asm        jmp    _T7ca;
 // LINE 3968:
@@ -8543,7 +8543,7 @@ _T7e9:
 	__asm        jmp    _T86d;
 // LINE 3988:
 _T7ee:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 3989:
 	__asm        jmp    _T86d;
 // LINE 3991:
@@ -8598,7 +8598,7 @@ _T88c:
 	__asm        jmp    _T910;
 // LINE 4011:
 _T891:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 4012:
 	__asm        jmp    _T910;
 // LINE 4014:
@@ -8653,7 +8653,7 @@ _T92f:
 	__asm        jmp    _T9b3;
 // LINE 4034:
 _T934:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 4035:
 	__asm        jmp    _T9b3;
 // LINE 4037:
@@ -8708,7 +8708,7 @@ _T9d2:
 	__asm        jmp    _Ta56;
 // LINE 4057:
 _T9d7:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 4058:
 	__asm        jmp    _Ta56;
 // LINE 4060:
@@ -8763,7 +8763,7 @@ _Ta75:
 	__asm        jmp    _Taf9;
 // LINE 4080:
 _Ta7a:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 4081:
 	__asm        jmp    _Taf9;
 // LINE 4083:
@@ -8818,7 +8818,7 @@ _Tb18:
 	__asm        jmp    _Tb9c;
 // LINE 4103:
 _Tb1d:
-	AutoHitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	AutoHitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 4104:
 	__asm        jmp    _Tb9c;
 // LINE 4106:
@@ -8895,12 +8895,12 @@ void S3ObjSetFlatShading() {
 	__asm        cmp    G_daynight, 0;
 	__asm        jne    _T37;
 // LINE 4152:
-	VRSetIntensities(0xcccc, 0x4ccc, 0x6666, 0x1999);
+	VRSetIntensities(0x1999, 0x6666, 0x4ccc, 0xcccc);
 // LINE 4154:
 	__asm        jmp    _T53;
 // LINE 4156:
 _T37:
-	VRSetIntensities(0x4ccc, 0x1999, 0x3333, 0x1999);
+	VRSetIntensities(0x1999, 0x3333, 0x1999, 0x4ccc);
 // LINE 4160:
 _T53:
 	objcount = VRGetResObjectCnt(G_resgeo1);

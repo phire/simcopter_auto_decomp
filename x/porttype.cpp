@@ -364,7 +364,7 @@ static void CleanUpPort() {
 	__asm        cmp    gPort.dc, 0;
 	__asm        jne    _T39;
 
-	doAssert(0x8c085, 0x5bf640, 0x57, 0x5bf664);
+	doAssert(0x5bf664, 0x57, 0x5bf640, 0x8c085);
 // LINE 88:
 _T39:
 	__asm        mov    eax, gPort.dc;
@@ -440,7 +440,7 @@ void EraseRect(/*unpacked*/ struct tagRECT *rect) {
 	__asm        cmp    gPort.dc, 0;
 	__asm        jne    _T32;
 
-	doAssert(0x8c085, 0x5bf684, 0x88, 0x5bf68c);
+	doAssert(0x5bf68c, 0x88, 0x5bf684, 0x8c085);
 // LINE 138:
 _T32:
 	__asm        mov    eax, rect;
@@ -514,7 +514,7 @@ void FrameRect(/*unpacked*/ struct Rect *rect) {
 	__asm        cmp    gPort.dc, 0;
 	__asm        jne    _T32;
 
-	doAssert(0x8c085, 0x5bf6ac, 0x9a, 0x5bf6b4);
+	doAssert(0x5bf6b4, 0x9a, 0x5bf6ac, 0x8c085);
 // LINE 156:
 _T32:
 	__asm        mov    eax, rect;

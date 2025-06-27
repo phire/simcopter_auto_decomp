@@ -2780,14 +2780,14 @@ _Ta1:
 	__asm        cmp    dword ptr [eax+4], 2;
 	__asm        jne    _Tc3;
 // LINE 136:
-	return this->HotSpot::PointInCircle(lYPosition, lXPosition);
+	return this->HotSpot::PointInCircle(lXPosition, lYPosition);
 // LINE 137:
 _Tc3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 3;
 	__asm        jne    _Te5;
 // LINE 138:
-	return this->HotSpot::PointInPolygon(lYPosition, lXPosition);
+	return this->HotSpot::PointInPolygon(lXPosition, lYPosition);
 // LINE 139:
 _Te5:
 	return 0x0;
@@ -3339,7 +3339,7 @@ int32_t LoadListFromResource(/*packed*/ class list<HotSpot>& hotSpotList, int32_
 	/*bp-0x34*/  int32_t i;
 
 // LINE 270:
-	resourceHangarHotspots<vftable>->ResourceRCData::ResourceRCData(0x1, nResourceID);
+	resourceHangarHotspots<vftable>->ResourceRCData::ResourceRCData(nResourceID, 0x1);
 // LINE 278:
 	fileImage = resourceHangarHotspots<vftable>->ResourceRCData::DataReference();
 // LINE 279:

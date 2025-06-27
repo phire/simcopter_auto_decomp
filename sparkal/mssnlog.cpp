@@ -785,7 +785,7 @@ _Tf0:
 	tempButtonWindow = 0x0;
 // LINE 76:
 _Tf7:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x212);
+	nFullStringID = LanguageManager::GetFullStringID(0x212, 0x0);
 // LINE 77:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x107C];
@@ -973,7 +973,7 @@ _T38c:
 	tempButtonWindow = 0x0;
 // LINE 84:
 _T393:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x213);
+	nFullStringID = LanguageManager::GetFullStringID(0x213, 0x0);
 // LINE 85:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2094];
@@ -1086,7 +1086,7 @@ _T506:
 	tempButtonWindow = 0x0;
 // LINE 92:
 _T50d:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x214);
+	nFullStringID = LanguageManager::GetFullStringID(0x214, 0x0);
 // LINE 93:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x3098];
@@ -1491,7 +1491,7 @@ _T10a:
 _T10f:
 _T134:
 _T136:
-	return (CBackBuffer::GetPaletteFromImage(pColorTable, this-><MissionLogWindow+0x64>) != 0x0);
+	return (CBackBuffer::GetPaletteFromImage(this-><MissionLogWindow+0x64>, pColorTable) != 0x0);
 // LINE 120:
 }
 
@@ -1506,7 +1506,7 @@ int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T95;
 // LINE 132:
-	GetPathForFile(szBackgroundBufferPath[0], SZ_MISSION_LOG_WINDOW_BACKGROUND_IMAGE_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_MISSION_LOG_WINDOW_BACKGROUND_IMAGE_FILE_NAME, szBackgroundBufferPath[0]);
 // LINE 133:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -1843,7 +1843,7 @@ _LOOP_ba:
 		_T118:
 			__asm        jmp    _T11d;
 		_T11d:
-			LogManager::MakeStringFromLogData(0x1, sCurrentText.c_str_ptr, iterator.node->data);
+			LogManager::MakeStringFromLogData(iterator.node->data, sCurrentText.c_str_ptr, 0x1);
 		// LINE 233:
 			__asm        push   0xFFFFFFFF;
 			__asm        lea    eax, sCurrentText.c_str_ptr;
@@ -2186,7 +2186,7 @@ _LOOP_d7:
 		_T2ee:
 			__asm        jmp    _T2f3;
 		_T2f3:
-			LogManager::MakeStringFromLogData(0x1, sCurrentText.c_str_ptr, iterator.node->data);
+			LogManager::MakeStringFromLogData(iterator.node->data, sCurrentText.c_str_ptr, 0x1);
 		// LINE 259:
 			__asm        push   0xFFFFFFFF;
 			__asm        lea    eax, sCurrentText.c_str_ptr;
@@ -2325,7 +2325,7 @@ _T96:
 _Td9:
 	this-><vftable> = 0x5907d0;
 // LINE 292:
-	(this + 0x24)->MFont::SetFontCharacteristics(0x0, 0x0, 0x14);
+	(this + 0x24)->MFont::SetFontCharacteristics(0x14, 0x0, 0x0);
 // LINE 293:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;

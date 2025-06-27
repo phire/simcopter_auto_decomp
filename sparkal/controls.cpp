@@ -1097,7 +1097,7 @@ _T2d:
 // FUNCTION: COPTER_D 0x004acb00
 void BoxWindow::BoxWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this->GraphicWindow::GraphicWindow(rectNewWindow, nNewID, windowNewParent, myNewOwner, bAddToParentList);
 	this->bDrawOutline = 0x1;
 	this->bDrawFill = 0x0;
 	__asm        jmp    _T41;
@@ -1220,7 +1220,7 @@ _T19:
 // FUNCTION: COPTER_D 0x004acce6
 void TextWindow::TextWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this->GraphicWindow::GraphicWindow(rectNewWindow, nNewID, windowNewParent, myNewOwner, bAddToParentList);
 	__asm        jmp    _T2d;
 _T2d:
 	this->nWindowTitleTextID = nNewWindowTitleTextID;
@@ -1260,7 +1260,7 @@ _T2d:
 // FUNCTION: COPTER_D 0x004acda2
 void TextWindow::TextWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, const /*packed*/ class basic_string<char>& sNewWindowTitle, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this->GraphicWindow::GraphicWindow(rectNewWindow, nNewID, windowNewParent, myNewOwner, bAddToParentList);
 	__asm        jmp    _T2d;
 _T2d:
 	(this + 0x84)->MFont::MFont();
@@ -1454,7 +1454,7 @@ void TextWindow::LoadStrings() {
 	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 152:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, this->nWindowTitleTextID);
+	nFullStringID = LanguageManager::GetFullStringID(this->nWindowTitleTextID, 0x0);
 // LINE 153:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1004];
@@ -2307,7 +2307,7 @@ void TextWindow::SetBackgroundDrawing(int32_t bNewDrawOpaqueBackground) {
 // FUNCTION: COPTER_D 0x004adba4
 void TextWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
 // LINE 207:
-	(this + 0x84)->MFont::SetFontCharacteristics(lNewAttributes, lNewWidth, lNewHeight);
+	(this + 0x84)->MFont::SetFontCharacteristics(lNewHeight, lNewWidth, lNewAttributes);
 // LINE 208:
 	__asm        push   1;
 	__asm        push   1;
@@ -2490,7 +2490,7 @@ int32_t TextWindow::ResizeWindowForExactLineHeights() {
 // LINE 254:
 	lTextWidth = 0x1;
 // LINE 256:
-	(this + 0x84)->MFont::GetTextDimensions(lLineHeight, lTextWidth, 0x0);
+	(this + 0x84)->MFont::GetTextDimensions(0x0, lTextWidth, lLineHeight);
 // LINE 257:
 	__asm        jmp    _T3e;
 _T3e:
@@ -2679,7 +2679,7 @@ _T213:
 // FUNCTION: COPTER_D 0x004ae05d
 void ButtonWindow::ButtonWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this->GraphicWindow::GraphicWindow(rectNewWindow, nNewID, windowNewParent, myNewOwner, bAddToParentList);
 	this->nButtonState = 0x1;
 	this->bEnabled = 0x1;
 	this->nButtonTextHeight = 0x0;
@@ -3000,7 +3000,7 @@ _Tbc:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T6a9;
 // LINE 365:
-	LanguageManager::GetTypefaceForLanguage(szTypeface[0], 0x0, 0x0);
+	LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeface[0]);
 // LINE 366:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -3943,7 +3943,7 @@ _T275:
 // FUNCTION: COPTER_D 0x004af0ab
 void CheckBoxWindow::CheckBoxWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->ButtonWindow::ButtonWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow);
+	this->ButtonWindow::ButtonWindow(rectNewWindow, nNewID, windowNewParent, szImageFileName, myNewOwner, bAddToParentList);
 	this-><CheckBoxWindow+0x00> = 0x591c58;
 // LINE 553:
 	__asm        cmp    szImageFileName, 0;
@@ -4548,7 +4548,7 @@ long CheckBoxWindow::DoCursorMove(long __formal, long __formal) {
 // FUNCTION: COPTER_D 0x004af7f7
 void RadioButtonWindow::RadioButtonWindow(/*unpacked*/ class ButtonGroup *myNewRadioButtonGroup, /*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->ButtonWindow::ButtonWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow);
+	this->ButtonWindow::ButtonWindow(rectNewWindow, nNewID, windowNewParent, szImageFileName, myNewOwner, bAddToParentList);
 	this->myRadioButtonGroup = myNewRadioButtonGroup;
 	this-><RadioButtonWindow+0x00> = 0x591d38;
 // LINE 677:
@@ -6743,7 +6743,7 @@ _Tff:
 // FUNCTION: COPTER_D 0x004b1256
 void SliderWindow::SliderWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szThumbImageFileName, char * szBackgroundImageFileName, long lNewThumbLimitIndentation) {
 
-	this->GraphicWindow::GraphicWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this->GraphicWindow::GraphicWindow(rectNewWindow, nNewID, windowNewParent, myNewOwner, bAddToParentList);
 	this->nSliderWindowDirection = newSliderWindowDirection;
 	this->lSliderMinimumValue = 0x0;
 	this->lSliderMaximumValue = 0x8;
@@ -7506,7 +7506,7 @@ _Ta8:
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        jne    _T23b;
 // LINE 1193:
-	0x604c00->FileServices::GetPathForFileString(sBackgroundPath.c_str_ptr, (this + 0xa8), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0xa8), sBackgroundPath.c_str_ptr);
 	__asm        jmp    _Teb;
 // LINE 1194:
 _Teb:
@@ -7729,7 +7729,7 @@ _T6b:
 // FUNCTION: COPTER_D 0x004b1ed9
 void SliderWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 // LINE 1220:
-	this->GraphicWindow::MoveWindow(nYPosition, nXPosition);
+	this->GraphicWindow::MoveWindow(nXPosition, nYPosition);
 // LINE 1221:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -7742,7 +7742,7 @@ void SliderWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 // FUNCTION: COPTER_D 0x004b1f0f
 void SliderWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 // LINE 1229:
-	this->GraphicWindow::SetWidthAndHeight(nNewHeight, nNewWidth);
+	this->GraphicWindow::SetWidthAndHeight(nNewWidth, nNewHeight);
 // LINE 1230:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -11051,7 +11051,7 @@ void ListBoxWindow::CalculateAllMetrics() {
 	/*bp-0xc*/   int32_t nReturnValue;
 
 // LINE 2161:
-	nReturnValue = (this + 0x8c)->MFont::GetTextDimensions(lHeight, lWidth, 0x0);
+	nReturnValue = (this + 0x8c)->MFont::GetTextDimensions(0x0, lWidth, lHeight);
 // LINE 2162:
 	__asm        cmp    nReturnValue, 0;
 	__asm        je     _T61;
@@ -11077,7 +11077,7 @@ _T61:
 // FUNCTION: COPTER_D 0x004b48d2
 void ListBoxWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
 // LINE 2173:
-	(this + 0x8c)->MFont::SetFontCharacteristics(lNewAttributes, lNewWidth, lNewHeight);
+	(this + 0x8c)->MFont::SetFontCharacteristics(lNewHeight, lNewWidth, lNewAttributes);
 // LINE 2174:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -12145,7 +12145,7 @@ _T6d:
 	__asm        jmp    _T79;
 // LINE 2434:
 _T79:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, lResourceIndex);
+	nFullStringID = LanguageManager::GetFullStringID(lResourceIndex, 0x0);
 // LINE 2435:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x102C];
@@ -15214,7 +15214,7 @@ _Tba:
 // FUNCTION: COPTER_D 0x004b7c25
 void PopupMenuWindow::PopupMenuWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->ListBoxWindow::ListBoxWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow);
+	this->ListBoxWindow::ListBoxWindow(rectNewWindow, nNewID, windowNewParent, myNewOwner, bAddToParentList);
 	this-><PopupMenuWindow+0x00> = 0x592220;
 // LINE 3060:
 	return;
@@ -15317,7 +15317,7 @@ _Ta0:
 	return 0x1;
 // LINE 3092:
 _Tb5:
-	return this->ListBoxWindow::DoKeyDown(reinterpret_cast<uint32_t>(chModifiers), lKey);
+	return this->ListBoxWindow::DoKeyDown(lKey, reinterpret_cast<uint32_t>(chModifiers));
 // LINE 3093:
 }
 
@@ -15385,7 +15385,7 @@ _T9c:
 	return 0x1;
 // LINE 3112:
 _Tb1:
-	return this->ListBoxWindow::DoCursorDown(nButton, nCursorY, nCursorX);
+	return this->ListBoxWindow::DoCursorDown(nCursorX, nCursorY, nButton);
 // LINE 3113:
 }
 
@@ -15475,7 +15475,7 @@ int32_t PopupMenuWindow::InsertStringAtIndex(long lIndex, /*packed*/ class basic
 // LINE 3163:
 	this->lVisibleLines++;
 // LINE 3164:
-	nReturnValue = this->ListBoxWindow::InsertStringAtIndex(sToInsert, lIndex);
+	nReturnValue = this->ListBoxWindow::InsertStringAtIndex(lIndex, sToInsert);
 // LINE 3165:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];

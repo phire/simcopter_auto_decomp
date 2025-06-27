@@ -138,13 +138,13 @@ _T38:
 	__asm        test   eax, eax;
 	__asm        jne    _Tad;
 // LINE 220:
-	_assert(0xdc, 0x5b59f8, 0x5b5a18);
+	_assert(0x5b5a18, 0x5b59f8, 0xdc);
 	__asm        jmp    _T72;
 
 	__asm        jmp    _T72;
 // LINE 221:
 _T72:
-	GetPathForFile(szFilePath[0], 0x5b5a1c, 0x0, 0x4);
+	GetPathForFile(0x4, 0x0, 0x5b5a1c, szFilePath[0]);
 // LINE 222:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -313,9 +313,9 @@ _T1be:
 	__asm        call   VRSetBackPlane;
 	__asm        add    esp, 4;
 // LINE 307:
-	MTArbRotMat(0x59b508, 0xc4e0000, 0x62a458);
+	MTArbRotMat(0x62a458, 0xc4e0000, 0x59b508);
 // LINE 308:
-	MTArbRotMat(0x59b508, 0x1c20000, 0x609c00);
+	MTArbRotMat(0x609c00, 0x1c20000, 0x59b508);
 // LINE 312:
 	tempLogCityEnterExit.nType = 0x2;
 // LINE 313:
@@ -326,7 +326,7 @@ _T1be:
 	__asm        cmp    CityNameString, 0;
 	__asm        je     _T3dd;
 // LINE 316:
-	strncpy(0x20, CityNameString, tempLogCityEnterExit.szCity[0]);
+	strncpy(tempLogCityEnterExit.szCity[0], CityNameString, 0x20);
 // LINE 317:
 	__asm        jmp    _T3e8;
 // LINE 318:
@@ -335,7 +335,7 @@ _T3dd:
 	__asm        mov    tempLogCityEnterExit.szCity[0], al;
 // LINE 319:
 _T3e8:
-	S3AddLogEntry(0x0, tempLogCityEnterExit.nType);
+	S3AddLogEntry(tempLogCityEnterExit.nType, 0x0);
 // LINE 321:
 	return 0x0;
 // LINE 322:
@@ -355,7 +355,7 @@ void S3CityDeInit() {
 	__asm        cmp    CityNameString, 0;
 	__asm        je     _T44;
 // LINE 342:
-	strncpy(0x20, CityNameString, tempLogCityEnterExit.szCity[0]);
+	strncpy(tempLogCityEnterExit.szCity[0], CityNameString, 0x20);
 // LINE 343:
 	__asm        jmp    _T4c;
 // LINE 344:
@@ -364,7 +364,7 @@ _T44:
 	__asm        mov    tempLogCityEnterExit.szCity[0], al;
 // LINE 345:
 _T4c:
-	S3AddLogEntry(0x0, tempLogCityEnterExit.nType);
+	S3AddLogEntry(tempLogCityEnterExit.nType, 0x0);
 // LINE 348:
 	__asm        cmp    S_S2CityAlloc_Count, 0;
 	__asm        jle    __RETURN;
@@ -381,7 +381,7 @@ void VRSetBackPlane(int32_t farZ) {
 	/*bp-0xc*/   int32_t fogpct;
 
 // LINE 369:
-	bhdr = VRInt2BmpHdr(0x1, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0x1);
 // LINE 370:
 	G_smokey = bhdr;
 // LINE 371:
@@ -406,7 +406,7 @@ void VRSetBackPlane(int32_t farZ) {
 	__asm        add    esp, 8;
 	__asm        mov    fogpct, eax;
 // LINE 377:
-	bhdr = VRInt2BmpHdr(0x1, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0x1);
 // LINE 378:
 	i = 0x3a3a3a3a;
 // LINE 380:
@@ -424,7 +424,7 @@ _T90:
 	__asm        add    esp, 8;
 	__asm        mov    fogpct, eax;
 // LINE 384:
-	bhdr = VRInt2BmpHdr(0x29, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0x29);
 // LINE 385:
 	i = 0x31313131;
 // LINE 387:
@@ -516,7 +516,7 @@ _FOR_23:
 					__asm        cmp    dl, 8;
 					__asm        jne    _Tc3;
 				// LINE 479:
-					S3CityCreateHeliBase(y, x);
+					S3CityCreateHeliBase(x, y);
 				// LINE 480:
 					__asm        cmp    G_helibase_found, 1;
 					__asm        jne    _Tc3;
@@ -545,7 +545,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    size, ax;
 				// LINE 501:
-					alt = GetAltitude(y, x);
+					alt = GetAltitude(x, y);
 				// LINE 503:
 					__asm        mov    eax, x;
 					__asm        mov    eax, TerrainMap[eax*4];
@@ -599,7 +599,7 @@ _FOR_23:
 					__asm        jmp    _T545;
 				// LINE 526:
 				_T1ae:
-					alt = S3CityLowestTerrAlt(reinterpret_cast<int16_t>(size), y, x);
+					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 527:
 					__asm        push   0x10D;
 					__asm        call   0x004D8821;
@@ -611,7 +611,7 @@ _FOR_23:
 					__asm        jmp    _T5b9;
 				// LINE 531:
 				_T1e3:
-					alt = S3CityLowestTerrAlt(reinterpret_cast<int16_t>(size), y, x);
+					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 532:
 					__asm        push   0x10E;
 					__asm        call   0x004D8821;
@@ -623,7 +623,7 @@ _FOR_23:
 					__asm        jmp    _T5b9;
 				// LINE 536:
 				_T218:
-					alt = S3CityLowestTerrAlt(reinterpret_cast<int16_t>(size), y, x);
+					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 537:
 					__asm        push   0x10F;
 					__asm        call   0x004D8821;
@@ -635,7 +635,7 @@ _FOR_23:
 					__asm        jmp    _T5b9;
 				// LINE 541:
 				_T24d:
-					alt = S3CityLowestTerrAlt(reinterpret_cast<int16_t>(size), y, x);
+					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 542:
 					__asm        push   0x110;
 					__asm        call   0x004D8821;
@@ -647,7 +647,7 @@ _FOR_23:
 					__asm        jmp    _T5b9;
 				// LINE 546:
 				_T282:
-					alt = S3CityLowestTerrAlt(reinterpret_cast<int16_t>(size), y, x);
+					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 547:
 					__asm        push   0x111;
 					__asm        call   0x004D8821;
@@ -659,7 +659,7 @@ _FOR_23:
 					__asm        jmp    _T5b9;
 				// LINE 551:
 				_T2b7:
-					alt = S3CityLowestTerrAlt(reinterpret_cast<int16_t>(size), y, x);
+					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 552:
 					__asm        push   0x112;
 					__asm        call   0x004D8821;
@@ -671,7 +671,7 @@ _FOR_23:
 					__asm        jmp    _T5b9;
 				// LINE 556:
 				_T2ec:
-					alt = S3CityLowestTerrAlt(reinterpret_cast<int16_t>(size), y, x);
+					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 557:
 					__asm        push   0x113;
 					__asm        call   0x004D8821;
@@ -683,7 +683,7 @@ _FOR_23:
 					__asm        jmp    _T5b9;
 				// LINE 561:
 				_T321:
-					alt = S3CityLowestTerrAlt(reinterpret_cast<int16_t>(size), y, x);
+					alt = S3CityLowestTerrAlt(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 562:
 					__asm        push   0x143;
 					__asm        call   0x004D8821;
@@ -2185,9 +2185,9 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1122:
-					cptr = S2Alloc(0x18, G_citymempool);
+					cptr = S2Alloc(G_citymempool, 0x18);
 				// LINE 1123:
-					sptr = S2Alloc(0x10, G_citymempool);
+					sptr = S2Alloc(G_citymempool, 0x10);
 				// LINE 1124:
 					__asm        mov    eax, cptr;
 					__asm        mov    ecx, x;
@@ -2251,9 +2251,9 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1144:
-					cptr = S2Alloc(0x18, G_citymempool);
+					cptr = S2Alloc(G_citymempool, 0x18);
 				// LINE 1145:
-					sptr = S2Alloc(0x10, G_citymempool);
+					sptr = S2Alloc(G_citymempool, 0x10);
 				// LINE 1146:
 					__asm        mov    eax, cptr;
 					__asm        mov    ecx, x;
@@ -2317,9 +2317,9 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1166:
-					cptr = S2Alloc(0x18, G_citymempool);
+					cptr = S2Alloc(G_citymempool, 0x18);
 				// LINE 1167:
-					sptr = S2Alloc(0x10, G_citymempool);
+					sptr = S2Alloc(G_citymempool, 0x10);
 				// LINE 1168:
 					__asm        mov    eax, cptr;
 					__asm        mov    ecx, y;
@@ -2383,9 +2383,9 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1188:
-					cptr = S2Alloc(0x18, G_citymempool);
+					cptr = S2Alloc(G_citymempool, 0x18);
 				// LINE 1189:
-					sptr = S2Alloc(0x10, G_citymempool);
+					sptr = S2Alloc(G_citymempool, 0x10);
 				// LINE 1190:
 					__asm        mov    eax, cptr;
 					__asm        mov    ecx, y;
@@ -2553,7 +2553,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1226:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1227:
 					__asm        jmp    _T3814;
 				// LINE 1229:
@@ -2577,7 +2577,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1236:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1237:
 					__asm        jmp    _T3814;
 				// LINE 1239:
@@ -2589,7 +2589,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1241:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1242:
 					__asm        jmp    _T3814;
 				// LINE 1244:
@@ -2601,7 +2601,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1246:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1247:
 					__asm        jmp    _T3814;
 				// LINE 1249:
@@ -2613,7 +2613,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1251:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1252:
 					__asm        jmp    _T3814;
 				// LINE 1254:
@@ -2625,7 +2625,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1256:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1257:
 					__asm        jmp    _T3814;
 				// LINE 1259:
@@ -2637,7 +2637,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1261:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1262:
 					__asm        jmp    _T3814;
 				// LINE 1264:
@@ -2649,7 +2649,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1266:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1267:
 					__asm        jmp    _T3814;
 				// LINE 1269:
@@ -2661,7 +2661,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1271:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1272:
 					__asm        jmp    _T3814;
 				// LINE 1274:
@@ -2673,7 +2673,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1276:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1277:
 					__asm        jmp    _T3814;
 				// LINE 1279:
@@ -2685,7 +2685,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1281:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1282:
 					__asm        jmp    _T3814;
 				// LINE 1284:
@@ -2697,7 +2697,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1286:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1287:
 					__asm        jmp    _T3814;
 				// LINE 1289:
@@ -2709,7 +2709,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1291:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1292:
 					__asm        jmp    _T3814;
 				// LINE 1294:
@@ -2721,7 +2721,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1296:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1297:
 					__asm        jmp    _T3814;
 				// LINE 1299:
@@ -2733,7 +2733,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1301:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1302:
 					__asm        jmp    _T3814;
 				// LINE 1304:
@@ -2745,7 +2745,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1306:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1307:
 					__asm        jmp    _T3814;
 				// LINE 1309:
@@ -2757,7 +2757,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1311:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1312:
 					__asm        jmp    _T3814;
 				// LINE 1314:
@@ -2771,7 +2771,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1317:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1318:
 					__asm        jmp    _T3814;
 				// LINE 1320:
@@ -2783,7 +2783,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1322:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1323:
 					__asm        jmp    _T3814;
 				// LINE 1325:
@@ -2795,7 +2795,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1327:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1328:
 					__asm        jmp    _T3814;
 				// LINE 1330:
@@ -2809,7 +2809,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1333:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1334:
 					__asm        jmp    _T3814;
 				// LINE 1336:
@@ -2821,7 +2821,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1338:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1339:
 					__asm        jmp    _T3814;
 				// LINE 1341:
@@ -2833,7 +2833,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1343:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1344:
 					__asm        jmp    _T3814;
 				// LINE 1346:
@@ -2845,7 +2845,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1348:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1349:
 					__asm        jmp    _T3814;
 				// LINE 1351:
@@ -2857,7 +2857,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1353:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1354:
 					__asm        jmp    _T3814;
 				// LINE 1356:
@@ -2869,7 +2869,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1358:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1359:
 					__asm        jmp    _T3814;
 				// LINE 1361:
@@ -2881,7 +2881,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1363:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1364:
 					__asm        jmp    _T3814;
 				// LINE 1366:
@@ -2893,7 +2893,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1368:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1369:
 					__asm        jmp    _T3814;
 				// LINE 1371:
@@ -2905,7 +2905,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1373:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1374:
 					__asm        jmp    _T3814;
 				// LINE 1376:
@@ -2917,7 +2917,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1378:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1379:
 					__asm        jmp    _T3814;
 				// LINE 1381:
@@ -2929,7 +2929,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1383:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1384:
 					__asm        jmp    _T3814;
 				// LINE 1386:
@@ -2941,7 +2941,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1388:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1389:
 					__asm        jmp    _T3814;
 				// LINE 1391:
@@ -2953,7 +2953,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1393:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1394:
 					__asm        jmp    _T3814;
 				// LINE 1396:
@@ -2965,7 +2965,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1398:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1399:
 					__asm        jmp    _T3814;
 				// LINE 1401:
@@ -2977,7 +2977,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1403:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1404:
 					__asm        jmp    _T3814;
 				// LINE 1406:
@@ -2989,7 +2989,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1408:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1409:
 					__asm        jmp    _T3814;
 				// LINE 1411:
@@ -3001,7 +3001,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1413:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1414:
 					__asm        jmp    _T3814;
 				// LINE 1416:
@@ -3013,7 +3013,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1418:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1419:
 					__asm        jmp    _T3814;
 				// LINE 1421:
@@ -3025,7 +3025,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1423:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1424:
 					__asm        jmp    _T3814;
 				// LINE 1426:
@@ -3037,7 +3037,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1428:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1429:
 					__asm        or     obj1user, 0x200;
 				// LINE 1430:
@@ -3051,7 +3051,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1434:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1435:
 					__asm        or     obj1user, 0x200;
 				// LINE 1436:
@@ -3065,7 +3065,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1440:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1441:
 					__asm        jmp    _T3814;
 				// LINE 1443:
@@ -3077,7 +3077,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1445:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1446:
 					__asm        jmp    _T3814;
 				// LINE 1448:
@@ -3113,7 +3113,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1460:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1461:
 					__asm        or     obj1user, 0x200;
 				// LINE 1462:
@@ -3127,7 +3127,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1466:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1467:
 					__asm        jmp    _T3814;
 				// LINE 1469:
@@ -3139,7 +3139,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1471:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1472:
 					__asm        jmp    _T3814;
 				// LINE 1474:
@@ -3151,7 +3151,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1476:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1477:
 					__asm        jmp    _T3814;
 				// LINE 1479:
@@ -3163,7 +3163,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1481:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1482:
 					__asm        jmp    _T3814;
 				// LINE 1484:
@@ -3175,7 +3175,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1486:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1487:
 					__asm        or     obj1user, 0x200;
 				// LINE 1488:
@@ -3189,7 +3189,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1492:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1493:
 					__asm        jmp    _T3814;
 				// LINE 1495:
@@ -3201,7 +3201,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1497:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1498:
 					__asm        jmp    _T3814;
 				// LINE 1500:
@@ -3213,7 +3213,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1502:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1503:
 					__asm        jmp    _T3814;
 				// LINE 1505:
@@ -3225,7 +3225,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1507:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1508:
 					__asm        jmp    _T3814;
 				// LINE 1510:
@@ -3237,7 +3237,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1512:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1513:
 					__asm        jmp    _T3814;
 				// LINE 1515:
@@ -3249,7 +3249,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1517:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1518:
 					__asm        jmp    _T3814;
 				// LINE 1520:
@@ -3261,7 +3261,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1522:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1523:
 					__asm        jmp    _T3814;
 				// LINE 1525:
@@ -3273,7 +3273,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1527:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1528:
 					__asm        jmp    _T3814;
 				// LINE 1530:
@@ -3285,7 +3285,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1532:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1533:
 					__asm        jmp    _T3814;
 				// LINE 1535:
@@ -3297,7 +3297,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1537:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1538:
 					__asm        jmp    _T3814;
 				// LINE 1540:
@@ -3309,7 +3309,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1542:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1543:
 					__asm        jmp    _T3814;
 				// LINE 1545:
@@ -3321,7 +3321,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1547:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1548:
 					__asm        jmp    _T3814;
 				// LINE 1550:
@@ -3333,7 +3333,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1552:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1553:
 					__asm        jmp    _T3814;
 				// LINE 1555:
@@ -3345,7 +3345,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1557:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1558:
 					__asm        jmp    _T3814;
 				// LINE 1560:
@@ -3357,7 +3357,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1562:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1563:
 					__asm        jmp    _T3814;
 				// LINE 1565:
@@ -3369,7 +3369,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1567:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1568:
 					__asm        or     obj1user, 0x200;
 				// LINE 1569:
@@ -3383,7 +3383,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1573:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1574:
 					__asm        or     obj1user, 0x200;
 				// LINE 1575:
@@ -3397,7 +3397,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1579:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1580:
 					__asm        or     obj1user, 0x200;
 				// LINE 1581:
@@ -3491,7 +3491,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1608:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1609:
 					__asm        or     obj1user, 0x200;
 				// LINE 1610:
@@ -3505,7 +3505,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1614:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1615:
 					__asm        jmp    _T3814;
 				// LINE 1617:
@@ -3517,7 +3517,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1619:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1620:
 					__asm        jmp    _T3814;
 				// LINE 1622:
@@ -3529,7 +3529,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1624:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1625:
 					__asm        jmp    _T3814;
 				// LINE 1627:
@@ -3541,7 +3541,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1629:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1630:
 					__asm        jmp    _T3814;
 				// LINE 1632:
@@ -3553,7 +3553,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1634:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1635:
 					__asm        jmp    _T3814;
 				// LINE 1637:
@@ -3565,7 +3565,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1639:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1640:
 					__asm        jmp    _T3814;
 				// LINE 1644:
@@ -3575,7 +3575,7 @@ _FOR_23:
 				// LINE 1646:
 					objcount = 0x1;
 				// LINE 1647:
-					obj = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1648:
 					G_apachebase_found = 0x1;
 				// LINE 1649:
@@ -3593,7 +3593,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1656:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1658:
 				_T2932:
 					__asm        jmp    _T3814;
@@ -3606,7 +3606,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1662:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1663:
 					__asm        jmp    _T3814;
 				// LINE 1665:
@@ -3618,7 +3618,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1667:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1668:
 					__asm        jmp    _T3814;
 				// LINE 1670:
@@ -3630,7 +3630,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1672:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1673:
 					__asm        jmp    _T3814;
 				// LINE 1675:
@@ -3642,7 +3642,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1677:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1678:
 					__asm        jmp    _T3814;
 				// LINE 1681:
@@ -3656,7 +3656,7 @@ _FOR_23:
 				// LINE 1683:
 					__asm        or     obj1user, 0x200;
 				// LINE 1684:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1685:
 					__asm        jmp    _T3814;
 				// LINE 1687:
@@ -3670,7 +3670,7 @@ _FOR_23:
 				// LINE 1689:
 					__asm        or     obj1user, 0x200;
 				// LINE 1690:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1691:
 					__asm        jmp    _T3814;
 				// LINE 1693:
@@ -3684,7 +3684,7 @@ _FOR_23:
 				// LINE 1695:
 					__asm        or     obj1user, 0x200;
 				// LINE 1696:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1697:
 					__asm        jmp    _T3814;
 				// LINE 1699:
@@ -3698,7 +3698,7 @@ _FOR_23:
 				// LINE 1701:
 					__asm        or     obj1user, 0x200;
 				// LINE 1702:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1703:
 					__asm        jmp    _T3814;
 				// LINE 1705:
@@ -3712,7 +3712,7 @@ _FOR_23:
 				// LINE 1707:
 					__asm        or     obj1user, 0x200;
 				// LINE 1708:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1709:
 					__asm        jmp    _T3814;
 				// LINE 1711:
@@ -3724,7 +3724,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1713:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1714:
 					__asm        jmp    _T3814;
 				// LINE 1716:
@@ -3736,7 +3736,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1718:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1719:
 					__asm        jmp    _T3814;
 				// LINE 1721:
@@ -3748,7 +3748,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1723:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1724:
 					__asm        jmp    _T3814;
 				// LINE 1726:
@@ -3760,7 +3760,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1728:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1729:
 					__asm        jmp    _T3814;
 				// LINE 1731:
@@ -3772,7 +3772,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1733:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1734:
 					__asm        jmp    _T3814;
 				// LINE 1736:
@@ -3784,7 +3784,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1738:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1739:
 					__asm        jmp    _T3814;
 				// LINE 1741:
@@ -3796,7 +3796,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1743:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1744:
 					__asm        jmp    _T3814;
 				// LINE 1746:
@@ -3808,7 +3808,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1748:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1749:
 					__asm        jmp    _T3814;
 				// LINE 1751:
@@ -3820,7 +3820,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1753:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1754:
 					__asm        jmp    _T3814;
 				// LINE 1756:
@@ -3832,7 +3832,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1758:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1759:
 					__asm        jmp    _T3814;
 				// LINE 1761:
@@ -3844,7 +3844,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1763:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1764:
 					__asm        jmp    _T3814;
 				// LINE 1766:
@@ -3856,7 +3856,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1768:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1769:
 					__asm        jmp    _T3814;
 				// LINE 1771:
@@ -3868,7 +3868,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1773:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1774:
 					__asm        jmp    _T3814;
 				// LINE 1776:
@@ -3880,7 +3880,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1778:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1779:
 					__asm        jmp    _T3814;
 				// LINE 1781:
@@ -3892,7 +3892,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1783:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1784:
 					__asm        jmp    _T3814;
 				// LINE 1786:
@@ -3904,7 +3904,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1788:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1789:
 					__asm        jmp    _T3814;
 				// LINE 1791:
@@ -3916,7 +3916,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1793:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1794:
 					__asm        jmp    _T3814;
 				// LINE 1796:
@@ -3928,7 +3928,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1798:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1799:
 					__asm        jmp    _T3814;
 				// LINE 1801:
@@ -3940,7 +3940,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1803:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1804:
 					__asm        jmp    _T3814;
 				// LINE 1806:
@@ -3952,7 +3952,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1808:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1809:
 					__asm        jmp    _T3814;
 				// LINE 1811:
@@ -3964,7 +3964,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1813:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1814:
 					__asm        jmp    _T3814;
 				// LINE 1816:
@@ -3976,7 +3976,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1818:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1819:
 					__asm        jmp    _T3814;
 				// LINE 1821:
@@ -4000,7 +4000,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1829:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1830:
 					__asm        jmp    _T3814;
 				// LINE 1832:
@@ -4012,7 +4012,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1834:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1835:
 					__asm        jmp    _T3814;
 				// LINE 1837:
@@ -4024,7 +4024,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1839:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1840:
 					__asm        jmp    _T3814;
 				// LINE 1842:
@@ -4036,7 +4036,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1844:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1845:
 					__asm        jmp    _T3814;
 				// LINE 1847:
@@ -4048,7 +4048,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1849:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1850:
 					__asm        jmp    _T3814;
 				// LINE 1852:
@@ -4060,7 +4060,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1854:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1855:
 					__asm        jmp    _T3814;
 				// LINE 1857:
@@ -4072,7 +4072,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1859:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1860:
 					__asm        jmp    _T3814;
 				// LINE 1862:
@@ -4084,7 +4084,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1864:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1865:
 					__asm        jmp    _T3814;
 				// LINE 1867:
@@ -4096,7 +4096,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1869:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1870:
 					__asm        jmp    _T3814;
 				// LINE 1872:
@@ -4108,7 +4108,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1874:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1875:
 					__asm        jmp    _T3814;
 				// LINE 1877:
@@ -4120,7 +4120,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1879:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1880:
 					__asm        jmp    _T3814;
 				// LINE 1882:
@@ -4132,7 +4132,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1884:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1885:
 					__asm        jmp    _T3814;
 				// LINE 1887:
@@ -4144,7 +4144,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1889:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1890:
 					__asm        jmp    _T3814;
 				// LINE 1892:
@@ -4156,7 +4156,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1894:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1895:
 					__asm        jmp    _T3814;
 				// LINE 1897:
@@ -4183,7 +4183,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1904:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1905:
 					__asm        jmp    _T3814;
 				// LINE 1907:
@@ -4195,7 +4195,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1909:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1910:
 					__asm        jmp    _T3814;
 				// LINE 1912:
@@ -4217,7 +4217,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1918:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1919:
 					__asm        jmp    _T3814;
 				// LINE 1921:
@@ -4229,7 +4229,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1923:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1924:
 					__asm        jmp    _T3814;
 				// LINE 1926:
@@ -4241,7 +4241,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1928:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1929:
 					__asm        or     obj1user, 0x200;
 				// LINE 1930:
@@ -4255,7 +4255,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1934:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1935:
 					__asm        jmp    _T3814;
 				// LINE 1937:
@@ -4267,7 +4267,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1939:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1940:
 					__asm        jmp    _T3814;
 				// LINE 1942:
@@ -4279,7 +4279,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1944:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1945:
 					__asm        jmp    _T3814;
 				// LINE 1947:
@@ -4291,7 +4291,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1949:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1950:
 					__asm        jmp    _T3814;
 				// LINE 1952:
@@ -4303,7 +4303,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1954:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1955:
 					__asm        jmp    _T3814;
 				// LINE 1957:
@@ -4315,7 +4315,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1959:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1960:
 					__asm        jmp    _T3814;
 				// LINE 1962:
@@ -4327,7 +4327,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1964:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1965:
 					__asm        jmp    _T3814;
 				// LINE 1967:
@@ -4339,7 +4339,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1969:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1970:
 					__asm        jmp    _T3814;
 				// LINE 1972:
@@ -4351,7 +4351,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1974:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1975:
 					__asm        jmp    _T3814;
 				// LINE 1977:
@@ -4363,7 +4363,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1979:
-					obj2 = S3CityGetBase(reinterpret_cast<int16_t>(size), y, x);
+					obj2 = S3CityGetBase(x, y, reinterpret_cast<int16_t>(size));
 				// LINE 1980:
 					__asm        jmp    _T3814;
 				// LINE 1982:
@@ -4524,9 +4524,9 @@ _FOR_23:
 				//   _T2af3
 				// LINE 2017:
 				_T3814:
-					cptr = S2Alloc(0x18, G_citymempool);
+					cptr = S2Alloc(G_citymempool, 0x18);
 				// LINE 2018:
-					sptr = S2Alloc(0x10, G_citymempool);
+					sptr = S2Alloc(G_citymempool, 0x10);
 				// LINE 2021:
 					__asm        movsx  eax, size;
 					__asm        mov    [ebp-0x50], eax;
@@ -4963,7 +4963,7 @@ _FOR_23:
 					__asm        cmp    G_artmode, 0;
 					__asm        jne    _T3e3d;
 				// LINE 2102:
-					sptr->next = S2Alloc(0x10, G_citymempool);
+					sptr->next = S2Alloc(G_citymempool, 0x10);
 				// LINE 2103:
 					sptr = sptr->next;
 				// LINE 2104:
@@ -5091,7 +5091,7 @@ _FOR_3e53:
 					}
 				// LINE 2165:
 				_T3fce:
-					cptr = S2Alloc(0x18, G_citymempool);
+					cptr = S2Alloc(G_citymempool, 0x18);
 				// LINE 2167:
 					__asm        movsx  eax, size;
 					__asm        mov    [ebp-0x54], eax;
@@ -5489,7 +5489,7 @@ _FOR_3e53:
 				//   _T4275
 				// LINE 2234:
 				_T4514:
-					alt = GetAltitude(y, x);
+					alt = GetAltitude(x, y);
 				// LINE 2236:
 					__asm        mov    eax, x;
 					__asm        mov    eax, TerrainMap[eax*4];
@@ -5552,7 +5552,7 @@ _FOR_45dd:
 		_FOR_45fa:
 			for (y = 0x0; (y < 0x80); y += 0x10) {
 				// LINE 2268:
-					cptr = S2Alloc(0x18, G_citymempool);
+					cptr = S2Alloc(G_citymempool, 0x18);
 				// LINE 2269:
 					__asm        cmp    cptr, 0;
 					__asm        jne    _FOR_4640;
@@ -5644,12 +5644,12 @@ _FOR_474f:
 					__asm        cmp    G_helibase_found, 0;
 					__asm        jne    _T47b9;
 				// LINE 2301:
-					S3CityCreateHeliBase(y, x);
+					S3CityCreateHeliBase(x, y);
 				// LINE 2302:
 					__asm        jmp    _FOR_NEXT_476c;
 				// LINE 2305:
 				_T47b9:
-					cptr = S2Alloc(0x18, G_citymempool);
+					cptr = S2Alloc(G_citymempool, 0x18);
 				// LINE 2306:
 					__asm        cmp    cptr, 0;
 					__asm        jne    _FOR_47ee;
@@ -5798,7 +5798,7 @@ void S3CityGrid() {
 // LINE 2467:
 	spiral_dist = ((G_alt >> 0x5) + 0x5);
 // LINE 2468:
-	S3CitySpiralScan(spiral_dist, S_curr_pos.y, S_curr_pos.x);
+	S3CitySpiralScan(S_curr_pos.x, S_curr_pos.y, spiral_dist);
 // LINE 2469:
 	return;
 // LINE 2473:
@@ -5895,9 +5895,9 @@ _T21f:
 	S_facesort = 0x62a4b8;
 // LINE 2724:
 _T229:
-	S3CityGetCells(0x62a498, 0x609bf0, 0x62a4a0, 0x609108, (0x6c1210 + 0x2c));
+	S3CityGetCells((0x6c1210 + 0x2c), 0x609108, 0x62a4a0, 0x609bf0, 0x62a498);
 // LINE 2725:
-	S3CityGetCells(0x62a498, 0x62a4c8, 0x609104, 0x629c50, (0x6c1210 + 0x44));
+	S3CityGetCells((0x6c1210 + 0x44), 0x629c50, 0x609104, 0x62a4c8, 0x62a498);
 // LINE 2733:
 	__asm        mov    eax, ViewState.world_pos.x;
 	__asm        add    eax, 0x20000000;
@@ -6975,7 +6975,7 @@ _FOR_a7:
 					__asm        cmp    x_pos, eax;
 					__asm        jle    _T1be;
 				// LINE 3269:
-					city_subscan_horiz(fovcell, lend, lcell, y_dir, 0x1, x);
+					city_subscan_horiz(x, 0x1, y_dir, lcell, lend, fovcell);
 				// LINE 3271:
 					__asm        jmp    _T1c4;
 				// LINE 3273:
@@ -7089,7 +7089,7 @@ _FOR_a7:
 					__asm        cmp    x_pos, eax;
 					__asm        jge    _T354;
 				// LINE 3312:
-					city_subscan_horiz(fovcell, rend, rcell, y_dir, -0x1, x);
+					city_subscan_horiz(x, -0x1, y_dir, rcell, rend, fovcell);
 				// LINE 3314:
 					__asm        jmp    _T35a;
 				// LINE 3316:
@@ -7315,7 +7315,7 @@ _FOR_a5:
 					__asm        cmp    y_last, eax;
 					__asm        jge    _T1be;
 				// LINE 3419:
-					city_subscan_vert(fovcell, tend, tcell, 0x1, x_dir, y);
+					city_subscan_vert(y, x_dir, 0x1, tcell, tend, fovcell);
 				// LINE 3421:
 					__asm        jmp    _T1c4;
 				// LINE 3423:
@@ -7429,7 +7429,7 @@ _FOR_a5:
 					__asm        cmp    y_last, eax;
 					__asm        jle    _T356;
 				// LINE 3459:
-					city_subscan_vert(fovcell, bend, bcell, -0x1, x_dir, y);
+					city_subscan_vert(y, x_dir, -0x1, bcell, bend, fovcell);
 				// LINE 3461:
 					__asm        jmp    _T35c;
 				// LINE 3463:
@@ -7623,7 +7623,7 @@ _FOR_aa:
 			__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 			__asm        jne    _T1c0;
 		// LINE 3558:
-			city_subscan_horiz(fovcell, endedge, edge, y_dir, x_dir, x);
+			city_subscan_horiz(x, x_dir, y_dir, edge, endedge, fovcell);
 		// LINE 3560:
 			fovcell->x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x));
 		// LINE 3561:
@@ -7728,7 +7728,7 @@ _FOR_22e:
 			__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 			__asm        jne    _T344;
 		// LINE 3593:
-			city_subscan_horiz(fovcell, endedge, edge, y_dir, x_dir, x);
+			city_subscan_horiz(x, x_dir, y_dir, edge, endedge, fovcell);
 		// LINE 3595:
 			fovcell->x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x));
 		// LINE 3596:
@@ -7820,7 +7820,7 @@ _T388:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T41c;
 // LINE 3621:
-	city_subscan_horiz(fovcell, endedge, edge, y_dir, x_dir, cellpos);
+	city_subscan_horiz(cellpos, x_dir, y_dir, edge, endedge, fovcell);
 // LINE 3624:
 _T41c:
 	curr_fovcell-> = fovcell;
@@ -7928,7 +7928,7 @@ _FOR_89:
 			__asm        cmp    G_omap[0][0][eax+ecx*4], edx;
 			__asm        jne    _T19f;
 		// LINE 3665:
-			city_subscan_vert(fovcell, endedge, edge, y_dir, x_dir, y);
+			city_subscan_vert(y, x_dir, y_dir, edge, endedge, fovcell);
 		// LINE 3667:
 			fovcell->x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x));
 		// LINE 3668:
@@ -8033,7 +8033,7 @@ _FOR_210:
 			__asm        cmp    G_omap[0][0][eax+ecx*4], edx;
 			__asm        jne    _T326;
 		// LINE 3700:
-			city_subscan_vert(fovcell, endedge, edge, y_dir, x_dir, y);
+			city_subscan_vert(y, x_dir, y_dir, edge, endedge, fovcell);
 		// LINE 3702:
 			fovcell->x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x));
 		// LINE 3703:
@@ -8125,7 +8125,7 @@ _T36a:
 	__asm        cmp    G_omap[0][0][eax+ecx*4], edx;
 	__asm        jne    _T3fe;
 // LINE 3729:
-	city_subscan_vert(fovcell, endedge, edge, y_dir, x_dir, cellpos);
+	city_subscan_vert(cellpos, x_dir, y_dir, edge, endedge, fovcell);
 // LINE 3732:
 _T3fe:
 	curr_fovcell-> = fovcell;
@@ -8263,7 +8263,7 @@ _FOR_55:
 			__asm        cmp    G_texterr, 1;
 			__asm        jne    _T18a;
 		// LINE 3807:
-			texid = VRInt2BmpHdr(texid, G_restex);
+			texid = VRInt2BmpHdr(G_restex, texid);
 		// LINE 3808:
 			deltac = 0x0;
 		// LINE 3810:
@@ -8506,7 +8506,7 @@ _T417:
 // LINE 3905:
 	caddr -= 0x4;
 // LINE 3906:
-	S3CityDyObjFixup(caddr, cptrptr);
+	S3CityDyObjFixup(cptrptr, caddr);
 // LINE 3911:
 	__asm        call   0x004E2090;
 // LINE 3912:
@@ -8604,7 +8604,7 @@ __WHILE_99:
 			__asm        cmp    [eax+0x14], ecx;
 			__asm        jne    _T114;
 
-			_assert(0xfd0, 0x5b5b9c, 0x5b5bbc);
+			_assert(0x5b5bbc, 0x5b5b9c, 0xfd0);
 			__asm        jmp    _T119;
 		_T114:
 			__asm        jmp    _T119;
@@ -8757,7 +8757,7 @@ __WHILE_99:
 			__asm        cmp    [eax+0x14], ecx;
 			__asm        jne    _T374;
 
-			_assert(0x1008, 0x5b5bd4, 0x5b5bf4);
+			_assert(0x5b5bf4, 0x5b5bd4, 0x1008);
 			__asm        jmp    _T379;
 		_T374:
 			__asm        jmp    _T379;
@@ -8817,7 +8817,7 @@ __WHILE_99:
 			__asm        cmp    [eax+0x14], ecx;
 			__asm        jne    _T430;
 
-			_assert(0x101c, 0x5b5c0c, 0x5b5c2c);
+			_assert(0x5b5c2c, 0x5b5c0c, 0x101c);
 			__asm        jmp    _T435;
 		_T430:
 			__asm        jmp    _T435;
@@ -8877,7 +8877,7 @@ __WHILE_99:
 			__asm        cmp    [eax+0x14], ecx;
 			__asm        jne    _T4ec;
 
-			_assert(0x1030, 0x5b5c44, 0x5b5c64);
+			_assert(0x5b5c64, 0x5b5c44, 0x1030);
 			__asm        jmp    _T4f1;
 		_T4ec:
 			__asm        jmp    _T4f1;
@@ -8937,7 +8937,7 @@ __WHILE_99:
 			__asm        cmp    [eax+0x14], ecx;
 			__asm        jne    _T5a8;
 
-			_assert(0x1044, 0x5b5c7c, 0x5b5c9c);
+			_assert(0x5b5c9c, 0x5b5c7c, 0x1044);
 			__asm        jmp    _T5ad;
 		_T5a8:
 			__asm        jmp    _T5ad;
@@ -10310,7 +10310,7 @@ void S3CityDrawOverHeadGrid() {
 // LINE 4914:
 	y = ((0x20000000 - Viewer.pos.z) >> 0x16);
 // LINE 4917:
-	S3CitySpiralScan(0x5, y, x);
+	S3CitySpiralScan(x, y, 0x5);
 // LINE 4920:
 	S3CityDrawGrid();
 // LINE 4923:
@@ -10810,9 +10810,9 @@ _T1e8:
 	__asm        mov    ax, [eax+ecx];
 	__asm        mov    alt, ax;
 // LINE 5111:
-	cptr = S2Alloc(0x18, G_citymempool);
+	cptr = S2Alloc(G_citymempool, 0x18);
 // LINE 5112:
-	sptr = S2Alloc(0x10, G_citymempool);
+	sptr = S2Alloc(G_citymempool, 0x10);
 // LINE 5113:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, x;
@@ -10926,7 +10926,7 @@ _T319:
 // LINE 5144:
 	sptr->user2 = 0x0;
 // LINE 5146:
-	sptr->next = S2Alloc(0x10, G_citymempool);
+	sptr->next = S2Alloc(G_citymempool, 0x10);
 // LINE 5147:
 	sptr = sptr->next;
 // LINE 5148:
@@ -10949,9 +10949,9 @@ _FOR_41a:
 _FOR_NEXT_41a:
 	for (; ((x + 0x4) > px); px++) {
 		// LINE 5158:
-			cptr = S2Alloc(0x18, G_citymempool);
+			cptr = S2Alloc(G_citymempool, 0x18);
 		// LINE 5159:
-			sptr = S2Alloc(0x10, G_citymempool);
+			sptr = S2Alloc(G_citymempool, 0x10);
 		// LINE 5160:
 			__asm        mov    eax, cptr;
 			__asm        mov    ecx, py;
@@ -11025,9 +11025,9 @@ _FOR_546:
 _FOR_NEXT_546:
 	for (; ((x + 0x4) > px); px++) {
 		// LINE 5188:
-			cptr = S2Alloc(0x18, G_citymempool);
+			cptr = S2Alloc(G_citymempool, 0x18);
 		// LINE 5189:
-			sptr = S2Alloc(0x10, G_citymempool);
+			sptr = S2Alloc(G_citymempool, 0x10);
 		// LINE 5190:
 			__asm        mov    eax, cptr;
 			__asm        mov    ecx, py;
@@ -11101,9 +11101,9 @@ _T65e:
 	__asm        inc    eax;
 	__asm        mov    py, eax;
 // LINE 5218:
-	cptr = S2Alloc(0x18, G_citymempool);
+	cptr = S2Alloc(G_citymempool, 0x18);
 // LINE 5219:
-	sptr = S2Alloc(0x10, G_citymempool);
+	sptr = S2Alloc(G_citymempool, 0x10);
 // LINE 5220:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, py;
@@ -11172,9 +11172,9 @@ _T76c:
 // LINE 5245:
 	py = (y + 0x2);
 // LINE 5246:
-	cptr = S2Alloc(0x18, G_citymempool);
+	cptr = S2Alloc(G_citymempool, 0x18);
 // LINE 5247:
-	sptr = S2Alloc(0x10, G_citymempool);
+	sptr = S2Alloc(G_citymempool, 0x10);
 // LINE 5248:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, py;
@@ -11245,9 +11245,9 @@ _T87c:
 	__asm        inc    eax;
 	__asm        mov    py, eax;
 // LINE 5274:
-	cptr = S2Alloc(0x18, G_citymempool);
+	cptr = S2Alloc(G_citymempool, 0x18);
 // LINE 5275:
-	sptr = S2Alloc(0x10, G_citymempool);
+	sptr = S2Alloc(G_citymempool, 0x10);
 // LINE 5276:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, py;
@@ -11316,9 +11316,9 @@ _T98d:
 // LINE 5301:
 	py = (y + 0x2);
 // LINE 5302:
-	cptr = S2Alloc(0x18, G_citymempool);
+	cptr = S2Alloc(G_citymempool, 0x18);
 // LINE 5303:
-	sptr = S2Alloc(0x10, G_citymempool);
+	sptr = S2Alloc(G_citymempool, 0x10);
 // LINE 5304:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, py;
@@ -11406,7 +11406,7 @@ _FOR_abf:
 					__asm        jmp    _FOR_NEXT_add;
 				// LINE 5338:
 				_Tb0d:
-					cptr = S2Alloc(0x18, G_citymempool);
+					cptr = S2Alloc(G_citymempool, 0x18);
 				// LINE 5339:
 					__asm        mov    eax, cptr;
 					__asm        mov    ecx, py;

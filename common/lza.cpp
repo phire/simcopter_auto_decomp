@@ -173,7 +173,7 @@ _Ta1:
 	__asm        jmp    CompressDone;
 // LINE 693:
 _T15e:
-	retVal = Encode(state, forest, model);
+	retVal = Encode(model, forest, state);
 // LINE 695:
 	__asm        movsx  eax, retVal;
 	__asm        test   eax, eax;
@@ -328,11 +328,11 @@ _Tc3:
 _FOR_d8:
 	for (i = 0x1; (i <= 0x3c); i++) {
 
-			InsertNode(forest, (r - i));
+			InsertNode((r - i), forest);
 	}
 // LINE 544:
 _Tfd:
-	InsertNode(forest, r);
+	InsertNode(r, forest);
 // LINE 546:
 __DO_10d:
 	do {
@@ -428,7 +428,7 @@ __DO_10d:
 					__asm        mov    al, tempByte;
 					__asm        mov    c, eax;
 				// LINE 563:
-					DeleteNode(forest, s);
+					DeleteNode(s, forest);
 				// LINE 564:
 					__asm        mov    al, reinterpret_cast<uint8_t>(c);
 					__asm        mov    ecx, s;
@@ -454,7 +454,7 @@ __DO_10d:
 					__asm        and    eax, 0xFFF;
 					__asm        mov    r, eax;
 				// LINE 568:
-					InsertNode(forest, r);
+					InsertNode(r, forest);
 			}
 		// LINE 570:
 		_T28f:
@@ -468,7 +468,7 @@ __DO_10d:
 			__asm        cmp    last_match_length, eax;
 			__asm        jle    __DO_WHILE_10d;
 		// LINE 572:
-			DeleteNode(forest, s);
+			DeleteNode(s, forest);
 		// LINE 573:
 			__asm        mov    eax, s;
 			__asm        inc    eax;
@@ -483,13 +483,13 @@ __DO_10d:
 			__asm        dec    len;
 			__asm        je     _T2ee;
 
-			InsertNode(forest, r);
+			InsertNode(r, forest);
 		// LINE 576:
 		_T2ee:
 			__asm        jmp    __WHILE_298;
 	} while ((len > 0x0));
 // LINE 582:
-	EncodeEnd(state, model);
+	EncodeEnd(model, state);
 // LINE 588:
 	return 0x0;
 // LINE 589:
@@ -1075,7 +1075,7 @@ _LOOP_6e:
 	}
 // LINE 380:
 _T153:
-	UpdateModel(model, sym);
+	UpdateModel(sym, model);
 // LINE 382:
 	return 0x0;
 // LINE 383:
@@ -1440,7 +1440,7 @@ static short FlushBitBuffer(/*packed*/ struct tCompressState *dest) {
 _FOR_15:
 	for (i = 0x0; (i < 0x7); i++) {
 		// LINE 150:
-			retVal = PutBit(dest, 0x0);
+			retVal = PutBit(0x0, dest);
 		// LINE 151:
 			__asm        movsx  eax, retVal;
 			__asm        test   eax, eax;
@@ -1524,7 +1524,7 @@ _T84:
 // LINE 765:
 	state->getMask = 0x0;
 // LINE 767:
-	retVal = Decode(state, forest, model);
+	retVal = Decode(model, forest, state);
 // LINE 770:
 ExpandDone:
 	__asm        mov    eax, model;
@@ -1598,7 +1598,7 @@ _T34:
 	return 0x0;
 // LINE 601:
 _T49:
-	StartDecode(state, model);
+	StartDecode(model, state);
 // LINE 602:
 	StartModel(model);
 // LINE 603:
@@ -1618,7 +1618,7 @@ _T90:
 __WHILE_9e:
 	while ((state->textsize > count)) {
 		// LINE 606:
-			c = DecodeChar(state, model);
+			c = DecodeChar(model, state);
 		// LINE 607:
 			__asm        cmp    c, 0x100;
 			__asm        jge    _T119;
@@ -1904,7 +1904,7 @@ _T14a:
 	__asm        mov    eax, [ecx+eax*4+0x4F8];
 	__asm        mov    ch, eax;
 // LINE 489:
-	UpdateModel(model, sym);
+	UpdateModel(sym, model);
 // LINE 490:
 	return ch;
 // LINE 491:

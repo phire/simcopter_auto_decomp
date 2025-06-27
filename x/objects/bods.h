@@ -51,7 +51,7 @@ _T92:
 	__asm        test   eax, eax;
 	__asm        jne    _Tce;
 
-	doAssert(0x8c085, 0x5be320, 0xaa, 0x5be258);
+	doAssert(0x5be258, 0xaa, 0x5be320, 0x8c085);
 _Tce:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
@@ -60,7 +60,7 @@ _Tce:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _Tff;
 
-	doAssert(0x8c085, 0x5be310, 0xab, 0x5be258);
+	doAssert(0x5be258, 0xab, 0x5be310, 0x8c085);
 _Tff:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax];
@@ -105,7 +105,7 @@ _Tff:
 	__asm        cmp    ebx, eax;
 	__asm        je     _T19c;
 _T180:
-	doAssert(0x8c085, 0x5be2fc, 0xb1, 0x5be258);
+	doAssert(0x5be258, 0xb1, 0x5be2fc, 0x8c085);
 _T19c:
 	__asm        mov    eax, thing;
 	__asm        add    eax, 0x20;
@@ -164,7 +164,7 @@ _T1ff:
 	__asm        test   ecx, ecx;
 	__asm        jne    _T265;
 _T249:
-	doAssert(0x8c085, 0x5be2d4, 0xbc, 0x5be258);
+	doAssert(0x5be258, 0xbc, 0x5be2d4, 0x8c085);
 _T265:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax+4];

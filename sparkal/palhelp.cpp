@@ -1241,7 +1241,7 @@ _T487:
 // FUNCTION: COPTER_D 0x004972e7
 void SparkalPalette::FadeToPalette(/*packed*/ struct SparkalColor colorStart, long lFadeTime, long lSteps) {
 // LINE 361:
-	SparkalPalette::FadeToPalette(lSteps, lFadeTime, this->pColors, reinterpret_cast<uint32_t>(colorStart.Blue));
+	SparkalPalette::FadeToPalette(reinterpret_cast<uint32_t>(colorStart.Blue), this->pColors, lFadeTime, lSteps);
 // LINE 362:
 	return;
 }
@@ -1821,7 +1821,7 @@ void CopterSparkalPalette::CopterSparkalPalette() {
 // FUNCTION: COPTER_D 0x004979f9
 void CopterSparkalPalette::CopterSparkalPalette(/*packed*/ struct SparkalColor *pNewColors, int32_t bNewOwnColors) {
 
-	this->SparkalPalette::SparkalPalette(0x100, bNewOwnColors, pNewColors);
+	this->SparkalPalette::SparkalPalette(pNewColors, bNewOwnColors, 0x100);
 	this-><CopterSparkalPalette+0x00> = 0x591118;
 // LINE 544:
 	return;

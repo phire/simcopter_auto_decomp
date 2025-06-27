@@ -934,7 +934,7 @@ _T1bc:
 // FUNCTION: COPTER_D 0x0049172b
 int32_t GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * szPath) {
 // LINE 26:
-	return 0x604c00->FileServices::GetPathForFile(szPath, szFile, nLanguage, nType);
+	return 0x604c00->FileServices::GetPathForFile(nType, nLanguage, szFile, szPath);
 // LINE 27:
 }
 
@@ -1126,7 +1126,7 @@ __DO_286:
 	do {
 		// LINE 56:
 		__DO_286:
-			nFullStringID = LanguageManager::GetFullStringID(0x0, 0x24);
+			nFullStringID = LanguageManager::GetFullStringID(0x24, 0x0);
 		// LINE 57:
 			__asm        push   0xFFF;
 			__asm        lea    eax, [ebp-0x106C];
@@ -1194,7 +1194,7 @@ __DO_286:
 			__asm        jmp    _T370;
 		// LINE 58:
 		_T370:
-			nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
+			nFullStringID = LanguageManager::GetFullStringID(0x4, 0x0);
 		// LINE 59:
 			__asm        push   0xFFF;
 			__asm        lea    eax, [ebp-0x2070];
@@ -2179,7 +2179,7 @@ _T3c4:
 	__asm        jmp    __RETURN;
 // LINE 145:
 _T3cf:
-	tempPFile<vftable>->PFile::Open(0x0, 0x180, 0x0, 0x0);
+	tempPFile<vftable>->PFile::Open(0x0, 0x0, 0x180, 0x0);
 // LINE 146:
 	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::Length;
@@ -2319,7 +2319,7 @@ void FileServices::RefreshLocalPathCache(/*packed*/ class basic_string<char>& sD
 	/*bp-0x3c*/  /*unpacked*/ class Directory tempDirectory;
 
 // LINE 165:
-	tempDirectory<Directory+0x00:None>->Directory::Directory(0x0, 0x0, 0x0, sDirectoryBase);
+	tempDirectory<Directory+0x00:None>->Directory::Directory(sDirectoryBase, 0x0, 0x0, 0x0);
 // LINE 166:
 	tempStringListDirectories.length = 0x0;
 	list<basic_string<char>>::number_of_lists++;
@@ -2352,7 +2352,7 @@ _T96:
 	__asm        jmp    _Ta2;
 // LINE 171:
 _Ta2:
-	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, tempStringListFiles.node);
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(tempStringListFiles.node, 0x8);
 	__asm        jmp    _Tb5;
 _Tb5:
 	__asm        mov    dword ptr [ebp-0xC0], 0;
@@ -2757,7 +2757,7 @@ _Te1:
 _T106:
 	lTotalStringLength = (this->sDirs[2].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 226:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 227:
 	__asm        mov    dword ptr [ebp-0xDC], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0xD8], 0;
@@ -2870,7 +2870,7 @@ _T28d:
 _T2b2:
 	lTotalStringLength = (this->sDirs[2].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 232:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 234:
 _T2d7:
 	return 0x1;
@@ -2951,7 +2951,7 @@ _T3a3:
 _T3c8:
 	lTotalStringLength = (this->sDirs[10].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 241:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 242:
 	__asm        mov    dword ptr [ebp-0x1F4], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x1F0], 0;
@@ -3064,7 +3064,7 @@ _T54f:
 _T574:
 	lTotalStringLength = (this->sDirs[10].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 247:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 249:
 _T599:
 	return 0x1;
@@ -3145,7 +3145,7 @@ _T665:
 _T68a:
 	lTotalStringLength = (this->sDirs[4].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 256:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 257:
 	__asm        mov    dword ptr [ebp-0x30C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x308], 0;
@@ -3258,7 +3258,7 @@ _T811:
 _T836:
 	lTotalStringLength = (this->sDirs[4].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 262:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 264:
 _T85b:
 	return 0x1;
@@ -3339,7 +3339,7 @@ _T927:
 _T94c:
 	lTotalStringLength = (this->sDirs[5].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 271:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 272:
 	__asm        mov    dword ptr [ebp-0x424], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x420], 0;
@@ -3452,7 +3452,7 @@ _Tad3:
 _Taf8:
 	lTotalStringLength = (this->sDirs[5].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 277:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 279:
 _Tb1d:
 	return 0x1;
@@ -3533,7 +3533,7 @@ _Tbe9:
 _Tc0e:
 	lTotalStringLength = (this->sDirs[6].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 286:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 287:
 	__asm        mov    dword ptr [ebp-0x53C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x538], 0;
@@ -3646,7 +3646,7 @@ _Td95:
 _Tdba:
 	lTotalStringLength = (this->sDirs[6].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 292:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 294:
 _Tddf:
 	return 0x1;
@@ -3727,7 +3727,7 @@ _Teab:
 _Ted0:
 	lTotalStringLength = (this->sDirs[7].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 301:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 302:
 	__asm        mov    dword ptr [ebp-0x654], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x650], 0;
@@ -3840,7 +3840,7 @@ _T1057:
 _T107c:
 	lTotalStringLength = (this->sDirs[7].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 307:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 309:
 _T10a1:
 	return 0x1;
@@ -3921,7 +3921,7 @@ _T116d:
 _T1192:
 	lTotalStringLength = (this->sDirs[8].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 316:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 317:
 	__asm        mov    dword ptr [ebp-0x76C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x768], 0;
@@ -4034,7 +4034,7 @@ _T1319:
 _T133e:
 	lTotalStringLength = (this->sDirs[8].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 322:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 324:
 _T1363:
 	return 0x1;
@@ -4115,7 +4115,7 @@ _T143e:
 _T1466:
 	lTotalStringLength = (this->sDirs[1].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 331:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 332:
 	__asm        mov    dword ptr [ebp-0x884], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x880], 0;
@@ -4228,7 +4228,7 @@ _T15fc:
 _T1624:
 	lTotalStringLength = (this->sDirs[1].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 337:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 339:
 _T1649:
 	return 0x1;
@@ -4309,7 +4309,7 @@ _T1724:
 _T174c:
 	lTotalStringLength = (this->sDirs[11].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 346:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 347:
 	__asm        mov    dword ptr [ebp-0x99C], 0xFFFFFFFF;
 	__asm        mov    dword ptr [ebp-0x998], 0;
@@ -4422,7 +4422,7 @@ _T18e2:
 _T190a:
 	lTotalStringLength = (this->sDirs[11].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 352:
-	strcpy(szFile, (lTotalStringLength + szPath));
+	strcpy((lTotalStringLength + szPath), szFile);
 // LINE 354:
 _T192f:
 	return 0x1;
@@ -4952,7 +4952,7 @@ _T2049:
 // LINE 375:
 	__asm        jmp    _T206e;
 _T206e:
-	strcpy(szFile, (this->sLocalDirectoryBase.reference-><basic_string_ref<char>+0x04:4> + szPath));
+	strcpy((this->sLocalDirectoryBase.reference-><basic_string_ref<char>+0x04:4> + szPath), szFile);
 // LINE 376:
 	return 0x1;
 // LINE 378:
@@ -4992,7 +4992,7 @@ _T20e0:
 // LINE 380:
 	__asm        jmp    _T2105;
 _T2105:
-	strcpy(szFile, (this->sLocalDirectoryBase.reference-><basic_string_ref<char>+0x04:4> + szPath));
+	strcpy((this->sLocalDirectoryBase.reference-><basic_string_ref<char>+0x04:4> + szPath), szFile);
 // LINE 381:
 	return 0x1;
 // LINE 383:
@@ -5100,7 +5100,7 @@ _T13e:
 _T143:
 	szFile = sFile.c_str_ptr;
 // LINE 397:
-	nReturnValue = this->FileServices::GetPathForFile(szPath[0], szFile, nLanguage, nType);
+	nReturnValue = this->FileServices::GetPathForFile(nType, nLanguage, szFile, szPath[0]);
 // LINE 398:
 	__asm        jmp    _T17a;
 _T17a:

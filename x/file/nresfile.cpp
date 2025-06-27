@@ -570,7 +570,7 @@ __WHILE_152:
 			__asm        test   eax, eax;
 			__asm        jge    _T1d0;
 
-			doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
+			doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
 		_T1d0:
 	}
 _T1d5:
@@ -579,7 +579,7 @@ _T1d5:
 	__asm        test   eax, eax;
 	__asm        je     _T200;
 
-	doAssert(0x8c085, 0x59a24c, 0x28, 0x59a254);
+	doAssert(0x59a254, 0x28, 0x59a24c, 0x8c085);
 _T200:
 	__asm        jmp    _T205;
 _T205:
@@ -588,7 +588,7 @@ _T205:
 	__asm        test   eax, eax;
 	__asm        je     _T230;
 
-	doAssert(0x8c085, 0x59a274, 0x17, 0x59a254);
+	doAssert(0x59a254, 0x17, 0x59a274, 0x8c085);
 _T230:
 	__asm        jmp    _T235;
 _T235:

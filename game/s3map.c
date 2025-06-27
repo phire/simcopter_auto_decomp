@@ -137,7 +137,7 @@ void S3MapInit() {
 // LINE 213:
 	S_borderdimy = (S_bordermax.y - S_bordermin.y);
 // LINE 215:
-	S_borderbuf = S2AllocMem(((S_borderdimy * S_borderdimx) + 0x200), 0x5b529c, MainPoolIndex);
+	S_borderbuf = S2AllocMem(MainPoolIndex, 0x5b529c, ((S_borderdimy * S_borderdimx) + 0x200));
 // LINE 216:
 	__asm        cmp    S_borderbuf, 0;
 	__asm        jne    _Tf9;
@@ -171,7 +171,7 @@ _Tf9:
 	mwindow.WindowHigh = S_mapdimy;
 	mwindow.RenderHigh = mwindow.WindowHigh;
 // LINE 228:
-	bhdr = VRInt2BmpHdr(0x3, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0x3);
 // LINE 229:
 	ptr = bhdr;
 // LINE 230:
@@ -192,7 +192,7 @@ _FOR_1ad:
 	}
 // LINE 245:
 _T1d4:
-	bhdr = VRInt2BmpHdr(0xc, G_restex);
+	bhdr = VRInt2BmpHdr(G_restex, 0xc);
 // LINE 246:
 	ptr = bhdr;
 // LINE 247:
@@ -2209,9 +2209,9 @@ _T176a:
 //   _Te6f
 // LINE 949:
 _T178e:
-	S3MapDrawPosLines(posy, posx);
+	S3MapDrawPosLines(posx, posy);
 // LINE 950:
-	S3MapDrawMissionIcons(posy, posx);
+	S3MapDrawMissionIcons(posx, posy);
 // LINE 951:
 	S3MapDrawCarIcons();
 // LINE 952:
@@ -2248,7 +2248,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 	__asm        cmp    maploc, 0;
 	__asm        je     _Te6;
 // LINE 990:
-	S3MapGetDxDy(dfy, dfx, maploc->y, maploc->x, posy, posx);
+	S3MapGetDxDy(posx, posy, maploc->x, maploc->y, dfx, dfy);
 // LINE 993:
 	__asm        mov    eax, dfx;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
@@ -2286,7 +2286,7 @@ _Tb1:
 	__asm        sub    ecx, eax;
 	__asm        mov    i, ecx;
 // LINE 999:
-	S3MapDrawLine(desticon, i, dfy, dfx);
+	S3MapDrawLine(dfx, dfy, i, desticon);
 // LINE 1001:
 	__asm        jmp    _T19a;
 // LINE 1003:
@@ -2296,7 +2296,7 @@ _Te6:
 	__asm        cmp    maploc, 0;
 	__asm        je     _T19a;
 // LINE 1006:
-	S3MapGetDxDy(dfy, dfx, maploc->y, maploc->x, posy, posx);
+	S3MapGetDxDy(posx, posy, maploc->x, maploc->y, dfx, dfy);
 // LINE 1009:
 	__asm        mov    eax, dfx;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
@@ -2334,7 +2334,7 @@ _T16a:
 	__asm        sub    ecx, eax;
 	__asm        mov    i, ecx;
 // LINE 1015:
-	S3MapDrawLine(desticon, i, dfy, dfx);
+	S3MapDrawLine(dfx, dfy, i, desticon);
 // LINE 1019:
 _T19a:
 	maploc = S3MissionGetCurrPickupLoc();
@@ -2342,7 +2342,7 @@ _T19a:
 	__asm        cmp    maploc, 0;
 	__asm        je     _T24e;
 // LINE 1022:
-	S3MapGetDxDy(dfy, dfx, maploc->y, maploc->x, posy, posx);
+	S3MapGetDxDy(posx, posy, maploc->x, maploc->y, dfx, dfy);
 // LINE 1025:
 	__asm        mov    eax, dfx;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
@@ -2380,7 +2380,7 @@ _T21e:
 	__asm        sub    ecx, eax;
 	__asm        mov    i, ecx;
 // LINE 1031:
-	S3MapDrawLine(desticon, i, dfy, dfx);
+	S3MapDrawLine(dfx, dfy, i, desticon);
 // LINE 1037:
 _T24e:
 	__asm        cmp    G_camera_mode, 3;
@@ -2595,7 +2595,7 @@ _FOR_144:
 	}
 // LINE 1146:
 _T1d1:
-	S3MapBlitIcon(ypos, xpos, icon_id);
+	S3MapBlitIcon(icon_id, xpos, ypos);
 // LINE 1148:
 }
 
@@ -3169,7 +3169,7 @@ _FOR_1d:
 			__asm        jmp    _FOR_NEXT_1d;
 		// LINE 1521:
 		_T6e:
-			S3MapGetMissionIcons(pickicon, desticon, md->type);
+			S3MapGetMissionIcons(md->type, desticon, pickicon);
 		// LINE 1523:
 			__asm        mov    eax, md;
 			__asm        cmp    dword ptr [eax+0x30], 0xFFFFFFFF;
@@ -3471,9 +3471,9 @@ _FOR_15:
 			__asm        jmp    _T18b;
 		// LINE 1680:
 		_T1bf:
-			S3MapDrawDispatchLine(color, dy, dx, ci->top, ci->left);
+			S3MapDrawDispatchLine(ci->left, ci->top, dx, dy, color);
 		// LINE 1682:
-			S3MapBlitDIcon(ci->top, ci->left, ci->car_type);
+			S3MapBlitDIcon(ci->car_type, ci->left, ci->top);
 	}
 // LINE 1684:
 __RETURN:
@@ -3742,7 +3742,7 @@ _T4e:
 // LINE 1843:
 	to.y = y2;
 // LINE 1846:
-	dist1 = MTCheapDist2D(to.x, from.x);
+	dist1 = MTCheapDist2D(from.x, to.x);
 // LINE 1850:
 	__asm        cmp    x1, 0x7F;
 	__asm        jle    _T8a;
@@ -3756,7 +3756,7 @@ _T8a:
 	from.y -= 0x100;
 // LINE 1854:
 _T9b:
-	dist2 = MTCheapDist2D(to.x, from.x);
+	dist2 = MTCheapDist2D(from.x, to.x);
 // LINE 1857:
 	__asm        mov    eax, dist1;
 	__asm        cmp    dist2, eax;

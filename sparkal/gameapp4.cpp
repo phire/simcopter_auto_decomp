@@ -432,13 +432,13 @@ _T15e:
 	__asm        jmp    _T193;
 // LINE 110:
 _T193:
-	0x604c00->FileServices::GetPathForFile(szVideoPath[0], SZ_HOURGLASS_VIDEO_FILE_NAME, 0x0, 0x1);
+	0x604c00->FileServices::GetPathForFile(0x1, 0x0, SZ_HOURGLASS_VIDEO_FILE_NAME, szVideoPath[0]);
 // LINE 111:
 	tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>->SmackerBackBuffer::SetDirectBlit();
 // LINE 112:
 	__asm        mov    dword ptr [ebp-0x274], 1;
 // LINE 113:
-	tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>->SmackerBackBuffer::Open(-0x1, 0xfe000, szVideoPath[0]);
+	tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>->SmackerBackBuffer::Open(szVideoPath[0], 0xfe000, -0x1);
 // LINE 114:
 	__asm        jmp    _T1e1;
 _T1e1:
@@ -486,7 +486,7 @@ _T230:
 // LINE 120:
 	tempVRAppInitThreadStruct.nCurrentPercentageComplete = 0x0;
 // LINE 122:
-	hAppInitThread = _beginthread(tempVRAppInitThreadStruct.nReturnValue, 0x0, 0x4bc3db);
+	hAppInitThread = _beginthread(0x4bc3db, 0x0, tempVRAppInitThreadStruct.nReturnValue);
 // LINE 127:
 	__asm        mov    byte ptr [ebp-0x4B8], 0;
 	__asm        mov    byte ptr [ebp-0x4B7], 0;
@@ -531,7 +531,7 @@ __WHILE_2c5:
 		// LINE 132:
 			__asm        shl    lCurrentInitializationFlag, 1;
 		// LINE 133:
-			lFullStringIndex = LanguageManager::GetFullStringID(0x0, (lCurrentInitializationIndex + 0x289));
+			lFullStringIndex = LanguageManager::GetFullStringID((lCurrentInitializationIndex + 0x289), 0x0);
 		// LINE 134:
 			__asm        push   0xFFF;
 			__asm        lea    eax, [ebp-0x1510];

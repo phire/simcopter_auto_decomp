@@ -3394,13 +3394,13 @@ _T25:
 	__asm        cmp    eax, 0x64;
 	__asm        jl     _T5a;
 _T3e:
-	doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+	doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 _T5a:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
 	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T88;
 
-	doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+	doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 _T88:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
 	__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -3414,7 +3414,7 @@ _Ta1:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Tc7;
 
-	doAssert(0x8c085, 0x5b86b8, 0xad, 0x5b86e0);
+	doAssert(0x5b86e0, 0xad, 0x5b86b8, 0x8c085);
 // LINE 174:
 _Tc7:
 	__asm        mov    eax, obj;
@@ -3422,7 +3422,7 @@ _Tc7:
 	__asm        test   eax, eax;
 	__asm        je     _Tf5;
 
-	doAssert(0x8c085, 0x5b8704, 0xae, 0x5b8734);
+	doAssert(0x5b8734, 0xae, 0x5b8704, 0x8c085);
 // LINE 176:
 _Tf5:
 	__asm        mov    ecx, obj;
@@ -3435,7 +3435,7 @@ _Tf5:
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        jne    _T134;
 
-	doAssert(0x8c085, 0x5bb998, 0x41e, 0x5bba14);
+	doAssert(0x5bba14, 0x41e, 0x5bb998, 0x8c085);
 _T134:
 	__asm        push   0;
 	__asm        mov    ecx, obj;
@@ -3444,9 +3444,9 @@ _T134:
 	__asm        test   dword ptr [ebp-0xC], 0xFFFF;
 	__asm        jne    _T16b;
 
-	doAssert(0x8c085, 0x5bb978, 0x420, 0x5bba14);
+	doAssert(0x5bba14, 0x420, 0x5bb978, 0x8c085);
 _T16b:
-	obj->fDyn.loc.y = (S3PUtilsGetAlt(obj->fDyn.loc.z, obj->fDyn.loc.y, obj->fDyn.loc.x) + 0x30000);
+	obj->fDyn.loc.y = (S3PUtilsGetAlt(obj->fDyn.loc.x, obj->fDyn.loc.y, obj->fDyn.loc.z) + 0x30000);
 	__asm        jmp    _T198;
 _T198:
 	__asm        jmp    _T1b9;
@@ -3584,13 +3584,13 @@ _FOR_1b:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T7d;
 		_T61:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T7d:
 			__asm        movsx  eax, count;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _Tab;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_Tab:
 			__asm        movsx  eax, count;
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -3642,7 +3642,7 @@ _T12c:
 	__asm        cmp    foundobj, 0;
 	__asm        jne    _T152;
 // LINE 240:
-	doAssert(0x8c085, 0x5b8758, 0xf0, 0x5b877c);
+	doAssert(0x5b877c, 0xf0, 0x5b8758, 0x8c085);
 // LINE 242:
 _T152:
 	__asm        mov    eax, dyn;
@@ -3666,13 +3666,13 @@ _T17f:
 	__asm        cmp    eax, 0x64;
 	__asm        jl     _T1b4;
 _T198:
-	doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+	doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 _T1b4:
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T1e2;
 
-	doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+	doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 _T1e2:
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        mov    ecx, foundobj;
@@ -3685,7 +3685,7 @@ _T1e2:
 	__asm        cmp    foundobj, eax;
 	__asm        je     _T223;
 _T207:
-	doAssert(0x8c085, 0x5b87a0, 0xf2, 0x5b87d4);
+	doAssert(0x5b87d4, 0xf2, 0x5b87a0, 0x8c085);
 _T223:
 	__asm        mov    eax, dyn;
 	__asm        mov    ax, [eax+0xE];
@@ -3706,13 +3706,13 @@ _T247:
 	__asm        cmp    eax, 0x64;
 	__asm        jl     _T27c;
 _T260:
-	doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+	doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 _T27c:
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T2aa;
 
-	doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+	doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 _T2aa:
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -3856,7 +3856,7 @@ _FOR_7a:
 			__asm        cmp    eax, ecx;
 			__asm        jle    _Td7;
 
-			doAssert(0x8c085, 0x5b87f8, 0x10c, 0x5b8830);
+			doAssert(0x5b8830, 0x10c, 0x5b87f8, 0x8c085);
 		// LINE 269:
 		_Td7:
 			__asm        movsx  eax, radius;
@@ -3907,7 +3907,7 @@ _FOR_7a:
 			__asm        cmp    eax, ecx;
 			__asm        jl     _T18d;
 
-			doAssert(0x8c085, 0x59a24c, 0x44a, 0x5bba14);
+			doAssert(0x5bba14, 0x44a, 0x59a24c, 0x8c085);
 		_T18d:
 			__asm        jmp    _T192;
 		_T192:
@@ -3921,7 +3921,7 @@ _FOR_7a:
 			__asm        cmp    eax, ecx;
 			__asm        jl     _T1c9;
 
-			doAssert(0x8c085, 0x59a24c, 0x44b, 0x5bba14);
+			doAssert(0x5bba14, 0x44b, 0x59a24c, 0x8c085);
 		_T1c9:
 			__asm        jmp    _T1ce;
 		// LINE 270:
@@ -3944,9 +3944,9 @@ _FOR_7a:
 		// LINE 273:
 			newloc.z += offsetz;
 		// LINE 278:
-			objheight = VRGetDyObjAlt(this->fDyn.radius, offset.x, (master + 0x24), master->mesh);
+			objheight = VRGetDyObjAlt(master->mesh, (master + 0x24), offset.x, this->fDyn.radius);
 		// LINE 280:
-			groundheight = S3PUtilsGetAlt(newloc.z, newloc.y, newloc.x);
+			groundheight = S3PUtilsGetAlt(newloc.x, newloc.y, newloc.z);
 		// LINE 282:
 			newloc.y = ((groundheight + objheight) + 0x30000);
 		// LINE 284:
@@ -4026,7 +4026,7 @@ _FOR_7a:
 			__asm        test   eax, eax;
 			__asm        jne    _T337;
 		// LINE 289:
-			doAssert(0x8c085, 0x5b8854, 0x121, 0x5b8884);
+			doAssert(0x5b8884, 0x121, 0x5b8854, 0x8c085);
 		// LINE 291:
 		_T337:
 			__asm        push   0;
@@ -4168,7 +4168,7 @@ unsigned short cYObject::SearchForPersonSpot(/*unpacked*/ struct _CELL_INFO *cpt
 	__asm        cmp    eax, 0x14;
 	__asm        jl     _T5b;
 _T3f:
-	doAssert(0x8c085, 0x5b88a8, 0x140, 0x5b88d4);
+	doAssert(0x5b88d4, 0x140, 0x5b88a8, 0x8c085);
 // LINE 321:
 _T5b:
 	__asm        movsx  eax, halfwidth;
@@ -4187,7 +4187,7 @@ _T5b:
 	__asm        cmp    eax, 0x80;
 	__asm        jge    _Tad;
 
-	doAssert(0x8c085, 0x5b88f8, 0x141, 0x5b8908);
+	doAssert(0x5b8908, 0x141, 0x5b88f8, 0x8c085);
 // LINE 323:
 _Tad:
 	ret = 0x0;
@@ -4331,7 +4331,7 @@ _FOR_e6:
 			__asm        cmp    eax, ecx;
 			__asm        jl     _T2aa;
 
-			doAssert(0x8c085, 0x59a24c, 0x44a, 0x5bba14);
+			doAssert(0x5bba14, 0x44a, 0x59a24c, 0x8c085);
 		_T2aa:
 			__asm        jmp    _T2af;
 		_T2af:
@@ -4345,7 +4345,7 @@ _FOR_e6:
 			__asm        cmp    eax, ecx;
 			__asm        jl     _T2e9;
 
-			doAssert(0x8c085, 0x59a24c, 0x44b, 0x5bba14);
+			doAssert(0x5bba14, 0x44b, 0x59a24c, 0x8c085);
 		_T2e9:
 			__asm        jmp    _T2ee;
 		_T2ee:
@@ -4524,7 +4524,7 @@ _FOR_464:
 			__asm        cmp    eax, ecx;
 			__asm        jl     _T542;
 
-			doAssert(0x8c085, 0x59a24c, 0x44a, 0x5bba14);
+			doAssert(0x5bba14, 0x44a, 0x59a24c, 0x8c085);
 		_T542:
 			__asm        jmp    _T547;
 		_T547:
@@ -4538,7 +4538,7 @@ _FOR_464:
 			__asm        cmp    eax, ecx;
 			__asm        jl     _T581;
 
-			doAssert(0x8c085, 0x59a24c, 0x44b, 0x5bba14);
+			doAssert(0x5bba14, 0x44b, 0x59a24c, 0x8c085);
 		_T581:
 			__asm        jmp    _T586;
 		_T586:
@@ -4717,7 +4717,7 @@ _FOR_6fc:
 			__asm        cmp    eax, ecx;
 			__asm        jl     _T7da;
 
-			doAssert(0x8c085, 0x59a24c, 0x44a, 0x5bba14);
+			doAssert(0x5bba14, 0x44a, 0x59a24c, 0x8c085);
 		_T7da:
 			__asm        jmp    _T7df;
 		_T7df:
@@ -4731,7 +4731,7 @@ _FOR_6fc:
 			__asm        cmp    eax, ecx;
 			__asm        jl     _T819;
 
-			doAssert(0x8c085, 0x59a24c, 0x44b, 0x5bba14);
+			doAssert(0x5bba14, 0x44b, 0x59a24c, 0x8c085);
 		_T819:
 			__asm        jmp    _T81e;
 		_T81e:
@@ -4825,7 +4825,7 @@ _T924:
 // LINE 376:
 // Block end:
 _T929:
-	doAssert(0x8c085, 0x5b892c, 0x178, 0x5b8940);
+	doAssert(0x5b8940, 0x178, 0x5b892c, 0x8c085);
 // LINE 377:
 	__asm        jmp    _T974;
 _T94a:
@@ -4953,7 +4953,7 @@ _Tab3:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _Tb0b;
 _Taef:
-	doAssert(0x8c085, 0x5bba34, 0x18a, 0x5bba14);
+	doAssert(0x5bba14, 0x18a, 0x5bba34, 0x8c085);
 _Tb0b:
 	__asm        mov    ax, [ebp-0x16C];
 	__asm        mov    centerscurk, ax;
@@ -4992,7 +4992,7 @@ _Tb58:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _Tbb0;
 _Tb94:
-	doAssert(0x8c085, 0x5bba34, 0x18a, 0x5bba14);
+	doAssert(0x5bba14, 0x18a, 0x5bba34, 0x8c085);
 _Tbb0:
 	__asm        mov    ax, [ebp-0x170];
 	__asm        mov    offscurk, ax;
@@ -5006,21 +5006,21 @@ _Tbc0:
 // LINE 391:
 // Block start:
 	/*bp-0xa0*/  char str[80]; // 0x50 bytes
-	sprintf(offcelly, offcellx, reinterpret_cast<int16_t>(offscurk), centcelly, centcellx, reinterpret_cast<int16_t>(centerscurk), 0x5b8964, str[0]);
+	sprintf(str[0], 0x5b8964, reinterpret_cast<int16_t>(centerscurk), centcellx, centcelly, reinterpret_cast<int16_t>(offscurk), offcellx, offcelly);
 // LINE 392:
-	doAssert(0x8c085, str[0], 0x188, 0x5b89a8);
+	doAssert(0x5b89a8, 0x188, str[0], 0x8c085);
 // LINE 395:
 // Block end:
 _Tc1c:
-	cellcenterloctype = cYObject::GetLocType(centcelly, centcellx);
+	cellcenterloctype = cYObject::GetLocType(centcellx, centcelly);
 // LINE 396:
-	celloffsetloctype = cYObject::GetLocType(offcelly, offcellx);
+	celloffsetloctype = cYObject::GetLocType(offcellx, offcelly);
 // LINE 397:
 	__asm        mov    eax, cellcenterloctype;
 	__asm        cmp    celloffsetloctype, eax;
 	__asm        je     _Tc6a;
 
-	doAssert(0x8c085, 0x5b89cc, 0x18d, 0x5b8a08);
+	doAssert(0x5b8a08, 0x18d, 0x5b89cc, 0x8c085);
 // LINE 400:
 // Block end:
 _Tc6a:
@@ -5132,13 +5132,13 @@ _FOR_14:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T76;
 		_T5a:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T76:
 			__asm        movsx  eax, count;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _Ta4;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_Ta4:
 			__asm        movsx  eax, count;
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -5152,7 +5152,7 @@ _FOR_14:
 			__asm        cmp    obj, 0;
 			__asm        jne    _Te3;
 
-			doAssert(0x8c085, 0x5b8a2c, 0x1c0, 0x5b8a50);
+			doAssert(0x5b8a50, 0x1c0, 0x5b8a2c, 0x8c085);
 		// LINE 449:
 		_Te3:
 			__asm        mov    eax, obj;
@@ -5173,14 +5173,14 @@ _Tf3:
 // FUNCTION: COPTER_D 0x00545ecb
 void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 // LINE 456:
-	gAvatar->cYObject::SetCellAndLoc(dz, dx, y, x);
+	gAvatar->cYObject::SetCellAndLoc(x, y, dx, dz);
 // LINE 457:
 	__asm        mov    eax, gAvatar;
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
 	__asm        je     _T54;
 
-	doAssert(0x8c085, 0x5b8a74, 0x1c9, 0x5b8ab8);
+	doAssert(0x5b8ab8, 0x1c9, 0x5b8a74, 0x8c085);
 _T54:
 	__asm        mov    eax, gAvatar;
 	__asm        mov    [ebp-0x64], eax;
@@ -5190,7 +5190,7 @@ _T54:
 	__asm        test   eax, eax;
 	__asm        je     _T8a;
 
-	doAssert(0x8c085, 0x5bba9c, 0x2d3, 0x5bba14);
+	doAssert(0x5bba14, 0x2d3, 0x5bba9c, 0x8c085);
 _T8a:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    ax, [eax+0x10A];
@@ -5229,7 +5229,7 @@ _T101:
 	__asm        cmp    eax, 0x64;
 	__asm        jle    _T136;
 
-	doAssert(0x8c085, 0x5bba7c, 0x2d9, 0x5bba14);
+	doAssert(0x5bba14, 0x2d9, 0x5bba7c, 0x8c085);
 _T136:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        xor    ecx, ecx;
@@ -5243,7 +5243,7 @@ _T136:
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     _T17a;
 
-	doAssert(0x8c085, 0x5bbad4, 0x22e, 0x5bba14);
+	doAssert(0x5bba14, 0x22e, 0x5bbad4, 0x8c085);
 _T17a:
 	__asm        jmp    _T1af;
 _T17f:
@@ -5253,7 +5253,7 @@ _T17f:
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    _T1af;
 
-	doAssert(0x8c085, 0x5bbabc, 0x231, 0x5bba14);
+	doAssert(0x5bba14, 0x231, 0x5bbabc, 0x8c085);
 _T1af:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        xor    ecx, ecx;
@@ -5270,7 +5270,7 @@ _T1cd:
 	__asm        test   dword ptr [ebp-0x60], 0xFFFF;
 	__asm        jne    _T1fb;
 _T1df:
-	doAssert(0x8c085, 0x5bba54, 0x2da, 0x5bba14);
+	doAssert(0x5bba14, 0x2da, 0x5bba54, 0x8c085);
 _T1fb:
 	__asm        mov    ecx, [ebp-0x64];
 	__asm        call   cYObject::Link;
@@ -5282,7 +5282,7 @@ _T208:
 	__asm        test   ecx, ecx;
 	__asm        jne    _T235;
 
-	doAssert(0x8c085, 0x5bbaec, 0x1f8, 0x5bba14);
+	doAssert(0x5bba14, 0x1f8, 0x5bbaec, 0x8c085);
 _T235:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        add    eax, 0x3C;
@@ -5331,12 +5331,12 @@ void S3PersonUserAppearNew(/*unpacked*/ struct Point3d *loc, /*unpacked*/ struct
 	__asm        test   eax, eax;
 	__asm        jne    _T46;
 
-	doAssert(0x8c085, 0x5b8adc, 0x1d2, 0x5b8b0c);
+	doAssert(0x5b8b0c, 0x1d2, 0x5b8adc, 0x8c085);
 // LINE 467:
 _T46:
 	gAvatar->cYObject::Unlink();
 // LINE 468:
-	gAvatar->cYObject::SetCellAndLoc(0xff, 0xff, loc->z, loc->y, loc->x);
+	gAvatar->cYObject::SetCellAndLoc(loc->x, loc->y, loc->z, 0xff, 0xff);
 // LINE 470:
 	gAvatar->cYObject::Link();
 // LINE 471:
@@ -5389,7 +5389,7 @@ _T10b:
 	__asm        test   ecx, ecx;
 	__asm        jne    _T138;
 
-	doAssert(0x8c085, 0x5bbaec, 0x1f8, 0x5bba14);
+	doAssert(0x5bba14, 0x1f8, 0x5bbaec, 0x8c085);
 _T138:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        add    eax, 0x3C;
@@ -5515,7 +5515,7 @@ _T9e:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 492:
-	S3PersonUserAppearNew(0x0, loc.x);
+	S3PersonUserAppearNew(loc.x, 0x0);
 // LINE 493:
 	return;
 }
@@ -5551,7 +5551,7 @@ unsigned char GetAvatarCellX() {
 	__asm        cmp    gAvatar, 0;
 	__asm        jne    _T2f;
 
-	doAssert(0x8c085, 0x5b8b30, 0x1fb, 0x5b8b40);
+	doAssert(0x5b8b40, 0x1fb, 0x5b8b30, 0x8c085);
 // LINE 508:
 _T2f:
 	return gAvatar->fCellX;
@@ -5564,7 +5564,7 @@ unsigned char GetAvatarCellY() {
 	__asm        cmp    gAvatar, 0;
 	__asm        jne    _T2f;
 
-	doAssert(0x8c085, 0x5b8b64, 0x201, 0x5b8b74);
+	doAssert(0x5b8b74, 0x201, 0x5b8b64, 0x8c085);
 // LINE 514:
 _T2f:
 	return gAvatar->fCellY;
@@ -5577,7 +5577,7 @@ _T2f:
 	__asm        cmp    gAvatar, 0;
 	__asm        jne    _T2f;
 
-	doAssert(0x8c085, 0x5b8b98, 0x207, 0x5b8bb4);
+	doAssert(0x5b8bb4, 0x207, 0x5b8b98, 0x8c085);
 // LINE 520:
 _T2f:
 	return (gAvatar + 0x24);
@@ -5590,7 +5590,7 @@ _T2f:
 	__asm        cmp    gAvatar, 0;
 	__asm        jne    _T2f;
 
-	doAssert(0x8c085, 0x5b8bd8, 0x20d, 0x5b8bf4);
+	doAssert(0x5b8bf4, 0x20d, 0x5b8bd8, 0x8c085);
 // LINE 526:
 _T2f:
 	return (gAvatar + 0x168);
@@ -5634,13 +5634,13 @@ _T57:
 	__asm        cmp    eax, 0x64;
 	__asm        jl     _T8c;
 _T70:
-	doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+	doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 _T8c:
 	__asm        movsx  eax, id;
 	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Tba;
 
-	doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+	doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 _Tba:
 	__asm        movsx  eax, id;
 	__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -5654,7 +5654,7 @@ _Td3:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Tf9;
 
-	doAssert(0x8c085, 0x5b8c18, 0x21a, 0x5b8c20);
+	doAssert(0x5b8c20, 0x21a, 0x5b8c18, 0x8c085);
 // LINE 539:
 _Tf9:
 	__asm        mov    eax, obj;
@@ -5663,7 +5663,7 @@ _Tf9:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T12b;
 
-	doAssert(0x8c085, 0x5b8c44, 0x21b, 0x5b8c58);
+	doAssert(0x5b8c58, 0x21b, 0x5b8c44, 0x8c085);
 // LINE 540:
 _T12b:
 	obj->cYObject::Draw(blit);
@@ -6036,7 +6036,7 @@ _T39:
 	__asm        cmp    eax, 2;
 	__asm        jl     _T7e;
 _T62:
-	doAssert(0x8c085, 0x5b8c7c, 0x270, 0x5b8cb4);
+	doAssert(0x5b8cb4, 0x270, 0x5b8c7c, 0x8c085);
 // LINE 635:
 _T7e:
 	return;
@@ -6175,7 +6175,7 @@ _T46:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _T95;
 _T79:
-	doAssert(0x8c085, 0x5bba34, 0x18a, 0x5bba14);
+	doAssert(0x5bba14, 0x18a, 0x5bba34, 0x8c085);
 _T95:
 	__asm        mov    ax, [ebp-0x10];
 	__asm        mov    scurkID, ax;
@@ -6201,13 +6201,13 @@ _FOR_ad:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T10f;
 		_Tf3:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T10f:
 			__asm        movsx  eax, count;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _T13d;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_T13d:
 			__asm        movsx  eax, count;
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -6325,7 +6325,7 @@ _T79:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 712:
-	return this->cYObject::StartScurkAmbientMission(loc.x, onTopOf, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx), persontype, reinterpret_cast<uint32_t>(treeID), reinterpret_cast<uint32_t>(scurkID));
+	return this->cYObject::StartScurkAmbientMission(reinterpret_cast<uint32_t>(scurkID), reinterpret_cast<uint32_t>(treeID), persontype, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), onTopOf, loc.x);
 // LINE 713:
 }
 
@@ -6334,12 +6334,12 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 	/*bp-0x4*/   unsigned short ret;
 
 // LINE 719:
-	ret = this->cYObject::StartMission(loc, onTopOf, -0x1, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx), 0x0, persontype);
+	ret = this->cYObject::StartMission(persontype, 0x0, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), -0x1, onTopOf, loc);
 // LINE 720:
 	__asm        test   reinterpret_cast<uint32_t>(ret), 0xFFFF;
 	__asm        jne    _T59;
 
-	doAssert(0x8c085, 0x5b8cd8, 0x2d0, 0x5b8d10);
+	doAssert(0x5b8d10, 0x2d0, 0x5b8cd8, 0x8c085);
 // LINE 721:
 _T59:
 	__asm        mov    eax, this;
@@ -6357,7 +6357,7 @@ _T59:
 	__asm        test   eax, eax;
 	__asm        je     _Tac;
 _T90:
-	doAssert(0x8c085, 0x5b8d34, 0x2d1, 0x5b8d3c);
+	doAssert(0x5b8d3c, 0x2d1, 0x5b8d34, 0x8c085);
 // LINE 722:
 _Tac:
 	__asm        mov    ax, scurkID;
@@ -6395,7 +6395,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        cmp    onTopOf, 0;
 	__asm        je     _T2f;
 
-	doAssert(0x8c085, 0x5b8d60, 0x2dc, 0x5b8d8c);
+	doAssert(0x5b8d8c, 0x2dc, 0x5b8d60, 0x8c085);
 // LINE 733:
 _T2f:
 	__asm        movsx  eax, cellx;
@@ -6430,7 +6430,7 @@ _T6c:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _Tbb;
 _T9f:
-	doAssert(0x8c085, 0x5bba34, 0x18a, 0x5bba14);
+	doAssert(0x5bba14, 0x18a, 0x5bba34, 0x8c085);
 _Tbb:
 	__asm        mov    ax, [ebp-0x14];
 	__asm        mov    id, ax;
@@ -6442,7 +6442,7 @@ _Tc8:
 	__asm        cmp    li, 0;
 	__asm        jne    _Tfe;
 
-	doAssert(0x8c085, 0x5b8db0, 0x2df, 0x5b8db8);
+	doAssert(0x5b8db8, 0x2df, 0x5b8db0, 0x8c085);
 // LINE 736:
 _Tfe:
 	__asm        push   0x30000;
@@ -6467,7 +6467,7 @@ _Tfe:
 	__asm        add    ecx, eax;
 	__asm        mov    offsetz, ecx;
 // LINE 740:
-	cYObject::StartForScurkID(offsetz, offsetx, onTopOf, reinterpret_cast<uint32_t>(missionid), reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx), missiontype, persontype);
+	cYObject::StartForScurkID(persontype, missiontype, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(missionid), onTopOf, offsetx, offsetz);
 // LINE 741:
 	return;
 }
@@ -6483,7 +6483,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 	__asm        cmp    onTopOf, 0;
 	__asm        je     _T2f;
 
-	doAssert(0x8c085, 0x5b8ddc, 0x2ec, 0x5b8e04);
+	doAssert(0x5b8e04, 0x2ec, 0x5b8ddc, 0x8c085);
 // LINE 750:
 _T2f:
 	__asm        movsx  eax, cellx;
@@ -6518,7 +6518,7 @@ _T6c:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _Tbb;
 _T9f:
-	doAssert(0x8c085, 0x5bba34, 0x18a, 0x5bba14);
+	doAssert(0x5bba14, 0x18a, 0x5bba34, 0x8c085);
 _Tbb:
 	__asm        mov    ax, [ebp-0x44];
 	__asm        mov    id, ax;
@@ -6574,13 +6574,13 @@ _T135:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 763:
-	ret = StartPerson(loc.x, onTopOf, reinterpret_cast<int16_t>(missionid), reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx), missiontype, persontype);
+	ret = StartPerson(persontype, missiontype, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), reinterpret_cast<int16_t>(missionid), onTopOf, loc.x);
 // LINE 764:
 	__asm        movsx  eax, ret;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T1b8;
 // LINE 765:
-	doAssert(0x8c085, 0x5b8e28, 0x2fd, 0x5b8e58);
+	doAssert(0x5b8e58, 0x2fd, 0x5b8e28, 0x8c085);
 // LINE 766:
 	return;
 // LINE 769:
@@ -6600,13 +6600,13 @@ _T1d4:
 	__asm        cmp    eax, 0x64;
 	__asm        jl     _T209;
 _T1ed:
-	doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+	doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 _T209:
 	__asm        movsx  eax, ret;
 	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T237;
 
-	doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+	doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 _T237:
 	__asm        movsx  eax, ret;
 	__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -6620,7 +6620,7 @@ _T250:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T276;
 
-	doAssert(0x8c085, 0x5b8e7c, 0x302, 0x5b8e84);
+	doAssert(0x5b8e84, 0x302, 0x5b8e7c, 0x8c085);
 // LINE 771:
 _T276:
 	__asm        mov    ax, id;
@@ -6667,7 +6667,7 @@ _T46:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _T95;
 _T79:
-	doAssert(0x8c085, 0x5bba34, 0x18a, 0x5bba14);
+	doAssert(0x5bba14, 0x18a, 0x5bba34, 0x8c085);
 _T95:
 	__asm        mov    ax, [ebp-0x1C];
 	__asm        mov    scurkID, ax;
@@ -6694,7 +6694,7 @@ _Tae:
 	return;
 // LINE 786:
 _Tcb:
-	medic = gAvatar->cYObject::GetClosest(dist, 0x0, 0x5, -0x2);
+	medic = gAvatar->cYObject::GetClosest(-0x2, 0x5, 0x0, dist);
 // LINE 787:
 	__asm        cmp    medic, 0;
 	__asm        je     _Tfa;
@@ -6704,7 +6704,7 @@ _Tcb:
 	__asm        jle    _T112;
 // LINE 788:
 _Tfa:
-	cYObject::StartForScurkID(0x0, -0x1, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx), 0x5, 0xc);
+	cYObject::StartForScurkID(0xc, 0x5, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), -0x1, 0x0);
 // LINE 789:
 _T112:
 	__asm        jmp    _T4ed;
@@ -6723,7 +6723,7 @@ _T117:
 	return;
 // LINE 794:
 _T134:
-	cYObject::StartForScurkID(0x0, -0x1, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx), 0x7, 0xe);
+	cYObject::StartForScurkID(0xe, 0x7, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), -0x1, 0x0);
 // LINE 795:
 	__asm        jmp    _T4ed;
 // LINE 798:
@@ -6757,7 +6757,7 @@ _T195:
 	__asm        je     _T1c0;
 // LINE 801:
 _T1a4:
-	doAssert(0x8c085, 0x5b8ea8, 0x321, 0x5b8ee8);
+	doAssert(0x5b8ee8, 0x321, 0x5b8ea8, 0x8c085);
 // LINE 805:
 _T1c0:
 	__asm        jmp    _T4ed;
@@ -7097,13 +7097,13 @@ _T71:
 _FOR_f1:
 	for (count = 0x0; (reinterpret_cast<int16_t>(count) < reinterpret_cast<int16_t>(rectdiam)); count++) {
 		// LINE 861:
-			cYObject::StartScurkPeople((reinterpret_cast<int16_t>(r.top) + reinterpret_cast<int16_t>(count)), reinterpret_cast<uint32_t>(r.left));
+			cYObject::StartScurkPeople(reinterpret_cast<uint32_t>(r.left), (reinterpret_cast<int16_t>(r.top) + reinterpret_cast<int16_t>(count)));
 		// LINE 862:
-			cYObject::StartScurkPeople((reinterpret_cast<int16_t>(r.bottom) - reinterpret_cast<int16_t>(count)), reinterpret_cast<uint32_t>(r.right));
+			cYObject::StartScurkPeople(reinterpret_cast<uint32_t>(r.right), (reinterpret_cast<int16_t>(r.bottom) - reinterpret_cast<int16_t>(count)));
 		// LINE 863:
-			cYObject::StartScurkPeople(reinterpret_cast<uint32_t>(r.top), (reinterpret_cast<int16_t>(r.right) - reinterpret_cast<int16_t>(count)));
+			cYObject::StartScurkPeople((reinterpret_cast<int16_t>(r.right) - reinterpret_cast<int16_t>(count)), reinterpret_cast<uint32_t>(r.top));
 		// LINE 864:
-			cYObject::StartScurkPeople(reinterpret_cast<uint32_t>(r.bottom), (reinterpret_cast<int16_t>(r.left) + reinterpret_cast<int16_t>(count)));
+			cYObject::StartScurkPeople((reinterpret_cast<int16_t>(r.left) + reinterpret_cast<int16_t>(count)), reinterpret_cast<uint32_t>(r.bottom));
 		// LINE 865:
 			__asm        movsx  eax, cYObject::sAmbientAbsoluteMax;
 			__asm        movsx  ecx, cYObject::sNumAmbientAwake;
@@ -7142,7 +7142,7 @@ __WHILE_0f:
 			__asm        mov    ax, cYObject::sNumAmbientAwake;
 			__asm        mov    lastnumawake, ax;
 		// LINE 875:
-			id = StartPerson(0x0, 0x0, -0x1, -0x1, -0x1, 0x0, -0x1);
+			id = StartPerson(-0x1, 0x0, -0x1, -0x1, -0x1, 0x0, 0x0);
 			__asm        jmp    _T67;
 		// LINE 876:
 		_T67:
@@ -7158,7 +7158,7 @@ __WHILE_0f:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _Ta9;
 		_T8d:
-			doAssert(0x8c085, 0x5b8f0c, 0x36d, 0x5b8f3c);
+			doAssert(0x5b8f3c, 0x36d, 0x5b8f0c, 0x8c085);
 		// LINE 878:
 		_Ta9:
 			__asm        movsx  eax, lastnumawake;
@@ -7167,7 +7167,7 @@ __WHILE_0f:
 			__asm        cmp    eax, ecx;
 			__asm        je     _Td9;
 
-			doAssert(0x8c085, 0x5b8f60, 0x36e, 0x5b8f68);
+			doAssert(0x5b8f68, 0x36e, 0x5b8f60, 0x8c085);
 		// LINE 879:
 		_Td9:
 			__asm        movsx  eax, id;
@@ -7187,13 +7187,13 @@ __WHILE_0f:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T12f;
 		_T113:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T12f:
 			__asm        movsx  eax, id;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _T15d;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_T15d:
 			__asm        movsx  eax, id;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
@@ -7204,7 +7204,7 @@ __WHILE_0f:
 			__asm        cmp    dword ptr [ebp-0x14], 0;
 			__asm        jne    _T19a;
 		_T17e:
-			doAssert(0x8c085, 0x5b8f8c, 0x36f, 0x5b8fa8);
+			doAssert(0x5b8fa8, 0x36f, 0x5b8f8c, 0x8c085);
 		// LINE 884:
 		// Block end:
 		_T19a:
@@ -7273,13 +7273,13 @@ _FOR_1b:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T7d;
 		_T61:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T7d:
 			__asm        movsx  eax, count;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _Tab;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_Tab:
 			__asm        movsx  eax, count;
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -7293,7 +7293,7 @@ _FOR_1b:
 			__asm        cmp    test, 0;
 			__asm        jne    _Tea;
 
-			doAssert(0x8c085, 0x5b8fcc, 0x386, 0x5b8fd4);
+			doAssert(0x5b8fd4, 0x386, 0x5b8fcc, 0x8c085);
 		// LINE 903:
 		_Tea:
 			__asm        mov    eax, test;
@@ -7332,7 +7332,7 @@ void MakeAllPeople() {
 	__asm        call   SetSRandSeed;
 	__asm        add    esp, 4;
 // LINE 919:
-	GetPathForFile(peoplepath[0], 0x5b8ff8, 0x0, 0xa);
+	GetPathForFile(0xa, 0x0, 0x5b8ff8, peoplepath[0]);
 // LINE 920:
 	cYObject::InitObjects(peoplepath[0]);
 // LINE 921:
@@ -7411,13 +7411,13 @@ _FOR_2a:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _Taa;
 		_T8e:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_Taa:
 			__asm        movsx  eax, reinterpret_cast<uint16_t>(newnum);
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _Td8;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_Td8:
 			__asm        movsx  eax, reinterpret_cast<uint16_t>(newnum);
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -7431,7 +7431,7 @@ _FOR_2a:
 			__asm        cmp    personobj, 0;
 			__asm        jne    _T117;
 
-			doAssert(0x8c085, 0x5b9004, 0x3bb, 0x5b9010);
+			doAssert(0x5b9010, 0x3bb, 0x5b9004, 0x8c085);
 		// LINE 956:
 		_T117:
 			__asm        mov    eax, personobj;
@@ -7439,7 +7439,7 @@ _FOR_2a:
 			__asm        cmp    eax, newnum;
 			__asm        je     _T146;
 
-			doAssert(0x8c085, 0x5b9034, 0x3bc, 0x5b903c);
+			doAssert(0x5b903c, 0x3bc, 0x5b9034, 0x8c085);
 		// LINE 957:
 		_T146:
 			__asm        mov    eax, personobj;
@@ -7447,14 +7447,14 @@ _FOR_2a:
 			__asm        cmp    eax, newnum;
 			__asm        je     _T175;
 
-			doAssert(0x8c085, 0x5b9060, 0x3bd, 0x5b9068);
+			doAssert(0x5b9068, 0x3bd, 0x5b9060, 0x8c085);
 		// LINE 959:
 		_T175:
 			__asm        mov    eax, pindex;
 			__asm        cmp    newnum, eax;
 			__asm        je     _T19d;
 
-			doAssert(0x8c085, 0x5b908c, 0x3bf, 0x5b9094);
+			doAssert(0x5b9094, 0x3bf, 0x5b908c, 0x8c085);
 		// LINE 960:
 		// Block end:
 		_T19d:
@@ -7665,7 +7665,7 @@ _FOR_324:
 			__asm        cmp    eax, 0x14;
 			__asm        jl     _T36a;
 		_T34e:
-			doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+			doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 		_T36a:
 			__asm        movsx  eax, count;
 			__asm        mov    cYObject::sHitRxnTree[eax*2], 0xFFFF;
@@ -7677,7 +7677,7 @@ _FOR_324:
 _T382:
 	__asm        jmp    _T3a3;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T3a3:
 	cYObject::sHitRxnTree[1] = 0x384;
 	__asm        jmp    _T3b1;
@@ -7685,7 +7685,7 @@ _T3a3:
 _T3b1:
 	__asm        jmp    _T3d2;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T3d2:
 	cYObject::sHitRxnTree[2] = 0x385;
 	__asm        jmp    _T3e0;
@@ -7693,7 +7693,7 @@ _T3d2:
 _T3e0:
 	__asm        jmp    _T401;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T401:
 	cYObject::sHitRxnTree[0] = 0x386;
 	__asm        jmp    _T40f;
@@ -7701,7 +7701,7 @@ _T401:
 _T40f:
 	__asm        jmp    _T430;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T430:
 	cYObject::sHitRxnTree[3] = 0x387;
 	__asm        jmp    _T43e;
@@ -7709,7 +7709,7 @@ _T430:
 _T43e:
 	__asm        jmp    _T45f;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T45f:
 	cYObject::sHitRxnTree[4] = 0x388;
 	__asm        jmp    _T46d;
@@ -7717,7 +7717,7 @@ _T45f:
 _T46d:
 	__asm        jmp    _T48e;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T48e:
 	cYObject::sHitRxnTree[5] = 0x389;
 	__asm        jmp    _T49c;
@@ -7725,7 +7725,7 @@ _T48e:
 _T49c:
 	__asm        jmp    _T4bd;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T4bd:
 	cYObject::sHitRxnTree[6] = 0x387;
 	__asm        jmp    _T4cb;
@@ -7733,7 +7733,7 @@ _T4bd:
 _T4cb:
 	__asm        jmp    _T4ec;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T4ec:
 	cYObject::sHitRxnTree[7] = 0x38a;
 	__asm        jmp    _T4fa;
@@ -7741,7 +7741,7 @@ _T4ec:
 _T4fa:
 	__asm        jmp    _T51b;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T51b:
 	cYObject::sHitRxnTree[8] = 0x38a;
 	__asm        jmp    _T529;
@@ -7749,7 +7749,7 @@ _T51b:
 _T529:
 	__asm        jmp    _T54a;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T54a:
 	cYObject::sHitRxnTree[9] = 0x387;
 	__asm        jmp    _T558;
@@ -7757,7 +7757,7 @@ _T54a:
 _T558:
 	__asm        jmp    _T579;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T579:
 	cYObject::sHitRxnTree[10] = 0x387;
 	__asm        jmp    _T587;
@@ -7765,7 +7765,7 @@ _T579:
 _T587:
 	__asm        jmp    _T5a8;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T5a8:
 	cYObject::sHitRxnTree[11] = 0x38a;
 	__asm        jmp    _T5b6;
@@ -7773,7 +7773,7 @@ _T5a8:
 _T5b6:
 	__asm        jmp    _T5d7;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T5d7:
 	cYObject::sHitRxnTree[12] = 0x38a;
 	__asm        jmp    _T5e5;
@@ -7781,7 +7781,7 @@ _T5d7:
 _T5e5:
 	__asm        jmp    _T606;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T606:
 	cYObject::sHitRxnTree[13] = 0xffff;
 	__asm        jmp    _T614;
@@ -7789,7 +7789,7 @@ _T606:
 _T614:
 	__asm        jmp    _T635;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T635:
 	cYObject::sHitRxnTree[14] = 0x386;
 	__asm        jmp    _T643;
@@ -7797,7 +7797,7 @@ _T635:
 _T643:
 	__asm        jmp    _T664;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T664:
 	cYObject::sHitRxnTree[15] = 0x386;
 	__asm        jmp    _T672;
@@ -7805,7 +7805,7 @@ _T664:
 _T672:
 	__asm        jmp    _T693;
 
-	doAssert(0x8c085, 0x5bbb18, 0x129, 0x5bba14);
+	doAssert(0x5bba14, 0x129, 0x5bbb18, 0x8c085);
 _T693:
 	cYObject::sHitRxnTree[16] = 0x387;
 	__asm        jmp    _FOR_6ac;
@@ -8470,7 +8470,7 @@ _T1072:
 	__asm        cmp    globalBehaviorFileName, 0;
 	__asm        jne    _T10a1;
 
-	doAssert(0x8c085, 0x5b90b8, 0x4ad, 0x5b90e4);
+	doAssert(0x5b90e4, 0x4ad, 0x5b90b8, 0x8c085);
 // LINE 1198:
 _T10a1:
 	0x636bb8->FlatResFile::Open(globalBehaviorFileName);
@@ -8481,7 +8481,7 @@ _T10a1:
 	__asm        test   eax, eax;
 	__asm        jne    _T10e0;
 
-	doAssert(0x8c085, 0x5b9108, 0x4af, 0x5b9130);
+	doAssert(0x5b9130, 0x4af, 0x5b9108, 0x8c085);
 // LINE 1200:
 _T10e0:
 	__asm        mov    ecx, 0x636BB8;
@@ -8547,343 +8547,343 @@ _FOR_11a7:
 _T11cc:
 	__asm        jmp    _T11ed;
 
-	doAssert(0x8c085, 0x5b9178, 0x4ba, 0x5b91b0);
+	doAssert(0x5b91b0, 0x4ba, 0x5b9178, 0x8c085);
 _T11ed:
 	cYObject::PrimProcs[0] = 0x552370;
 // LINE 1211:
 	__asm        jmp    _T1218;
 
-	doAssert(0x8c085, 0x5b91d4, 0x4bb, 0x5b920c);
+	doAssert(0x5b920c, 0x4bb, 0x5b91d4, 0x8c085);
 _T1218:
 	cYObject::PrimProcs[1] = 0x552390;
 // LINE 1212:
 	__asm        jmp    _T1243;
 
-	doAssert(0x8c085, 0x5b9230, 0x4bc, 0x5b9268);
+	doAssert(0x5b9268, 0x4bc, 0x5b9230, 0x8c085);
 _T1243:
 	cYObject::PrimProcs[2] = 0x5523b0;
 // LINE 1214:
 	__asm        jmp    _T126e;
 
-	doAssert(0x8c085, 0x5b928c, 0x4be, 0x5b92c4);
+	doAssert(0x5b92c4, 0x4be, 0x5b928c, 0x8c085);
 _T126e:
 	cYObject::PrimProcs[4] = 0x5523d0;
 // LINE 1215:
 	__asm        jmp    _T1299;
 
-	doAssert(0x8c085, 0x5b92e8, 0x4bf, 0x5b9320);
+	doAssert(0x5b9320, 0x4bf, 0x5b92e8, 0x8c085);
 _T1299:
 	cYObject::PrimProcs[6] = 0x5523f0;
 // LINE 1216:
 	__asm        jmp    _T12c4;
 
-	doAssert(0x8c085, 0x5b9344, 0x4c0, 0x5b937c);
+	doAssert(0x5b937c, 0x4c0, 0x5b9344, 0x8c085);
 _T12c4:
 	cYObject::PrimProcs[7] = 0x552410;
 // LINE 1221:
 	__asm        jmp    _T12ef;
 
-	doAssert(0x8c085, 0x5b93a0, 0x4c5, 0x5b93d8);
+	doAssert(0x5b93d8, 0x4c5, 0x5b93a0, 0x8c085);
 _T12ef:
 	cYObject::PrimProcs[12] = 0x552430;
 // LINE 1222:
 	__asm        jmp    _T131a;
 
-	doAssert(0x8c085, 0x5b93fc, 0x4c6, 0x5b9434);
+	doAssert(0x5b9434, 0x4c6, 0x5b93fc, 0x8c085);
 _T131a:
 	cYObject::PrimProcs[13] = 0x552450;
 // LINE 1223:
 	__asm        jmp    _T1345;
 
-	doAssert(0x8c085, 0x5b9458, 0x4c7, 0x5b9490);
+	doAssert(0x5b9490, 0x4c7, 0x5b9458, 0x8c085);
 _T1345:
 	cYObject::PrimProcs[14] = 0x552470;
 // LINE 1224:
 	__asm        jmp    _T1370;
 
-	doAssert(0x8c085, 0x5b94b4, 0x4c8, 0x5b94ec);
+	doAssert(0x5b94ec, 0x4c8, 0x5b94b4, 0x8c085);
 _T1370:
 	cYObject::PrimProcs[15] = 0x552490;
 // LINE 1225:
 	__asm        jmp    _T139b;
 
-	doAssert(0x8c085, 0x5b9510, 0x4c9, 0x5b9548);
+	doAssert(0x5b9548, 0x4c9, 0x5b9510, 0x8c085);
 _T139b:
 	cYObject::PrimProcs[16] = 0x5524b0;
 // LINE 1226:
 	__asm        jmp    _T13c6;
 
-	doAssert(0x8c085, 0x5b956c, 0x4ca, 0x5b95a4);
+	doAssert(0x5b95a4, 0x4ca, 0x5b956c, 0x8c085);
 _T13c6:
 	cYObject::PrimProcs[17] = 0x5524d0;
 // LINE 1227:
 	__asm        jmp    _T13f1;
 
-	doAssert(0x8c085, 0x5b95c8, 0x4cb, 0x5b9600);
+	doAssert(0x5b9600, 0x4cb, 0x5b95c8, 0x8c085);
 _T13f1:
 	cYObject::PrimProcs[18] = 0x5524f0;
 // LINE 1228:
 	__asm        jmp    _T141c;
 
-	doAssert(0x8c085, 0x5b9624, 0x4cc, 0x5b965c);
+	doAssert(0x5b965c, 0x4cc, 0x5b9624, 0x8c085);
 _T141c:
 	cYObject::PrimProcs[19] = 0x552510;
 // LINE 1229:
 	__asm        jmp    _T1447;
 
-	doAssert(0x8c085, 0x5b9680, 0x4cd, 0x5b96b8);
+	doAssert(0x5b96b8, 0x4cd, 0x5b9680, 0x8c085);
 _T1447:
 	cYObject::PrimProcs[20] = 0x552530;
 // LINE 1230:
 	__asm        jmp    _T1472;
 
-	doAssert(0x8c085, 0x5b96dc, 0x4ce, 0x5b9714);
+	doAssert(0x5b9714, 0x4ce, 0x5b96dc, 0x8c085);
 _T1472:
 	cYObject::PrimProcs[21] = 0x552550;
 // LINE 1231:
 	__asm        jmp    _T149d;
 
-	doAssert(0x8c085, 0x5b9738, 0x4cf, 0x5b9770);
+	doAssert(0x5b9770, 0x4cf, 0x5b9738, 0x8c085);
 _T149d:
 	cYObject::PrimProcs[22] = 0x552570;
 // LINE 1232:
 	__asm        jmp    _T14c8;
 
-	doAssert(0x8c085, 0x5b9794, 0x4d0, 0x5b97cc);
+	doAssert(0x5b97cc, 0x4d0, 0x5b9794, 0x8c085);
 _T14c8:
 	cYObject::PrimProcs[23] = 0x552590;
 // LINE 1233:
 	__asm        jmp    _T14f3;
 
-	doAssert(0x8c085, 0x5b97f0, 0x4d1, 0x5b9828);
+	doAssert(0x5b9828, 0x4d1, 0x5b97f0, 0x8c085);
 _T14f3:
 	cYObject::PrimProcs[24] = 0x5525b0;
 // LINE 1234:
 	__asm        jmp    _T151e;
 
-	doAssert(0x8c085, 0x5b984c, 0x4d2, 0x5b9884);
+	doAssert(0x5b9884, 0x4d2, 0x5b984c, 0x8c085);
 _T151e:
 	cYObject::PrimProcs[25] = 0x5525d0;
 // LINE 1235:
 	__asm        jmp    _T1549;
 
-	doAssert(0x8c085, 0x5b98a8, 0x4d3, 0x5b98e0);
+	doAssert(0x5b98e0, 0x4d3, 0x5b98a8, 0x8c085);
 _T1549:
 	cYObject::PrimProcs[26] = 0x5525f0;
 // LINE 1236:
 	__asm        jmp    _T1574;
 
-	doAssert(0x8c085, 0x5b9904, 0x4d4, 0x5b993c);
+	doAssert(0x5b993c, 0x4d4, 0x5b9904, 0x8c085);
 _T1574:
 	cYObject::PrimProcs[27] = 0x552610;
 // LINE 1237:
 	__asm        jmp    _T159f;
 
-	doAssert(0x8c085, 0x5b9960, 0x4d5, 0x5b9998);
+	doAssert(0x5b9998, 0x4d5, 0x5b9960, 0x8c085);
 _T159f:
 	cYObject::PrimProcs[28] = 0x552630;
 // LINE 1238:
 	__asm        jmp    _T15ca;
 
-	doAssert(0x8c085, 0x5b99bc, 0x4d6, 0x5b99f4);
+	doAssert(0x5b99f4, 0x4d6, 0x5b99bc, 0x8c085);
 _T15ca:
 	cYObject::PrimProcs[29] = 0x552650;
 // LINE 1239:
 	__asm        jmp    _T15f5;
 
-	doAssert(0x8c085, 0x5b9a18, 0x4d7, 0x5b9a50);
+	doAssert(0x5b9a50, 0x4d7, 0x5b9a18, 0x8c085);
 _T15f5:
 	cYObject::PrimProcs[30] = 0x552670;
 // LINE 1240:
 	__asm        jmp    _T1620;
 
-	doAssert(0x8c085, 0x5b9a74, 0x4d8, 0x5b9aac);
+	doAssert(0x5b9aac, 0x4d8, 0x5b9a74, 0x8c085);
 _T1620:
 	cYObject::PrimProcs[31] = 0x552690;
 // LINE 1241:
 	__asm        jmp    _T164b;
 
-	doAssert(0x8c085, 0x5b9ad0, 0x4d9, 0x5b9b08);
+	doAssert(0x5b9b08, 0x4d9, 0x5b9ad0, 0x8c085);
 _T164b:
 	cYObject::PrimProcs[32] = 0x5526b0;
 // LINE 1242:
 	__asm        jmp    _T1676;
 
-	doAssert(0x8c085, 0x5b9b2c, 0x4da, 0x5b9b64);
+	doAssert(0x5b9b64, 0x4da, 0x5b9b2c, 0x8c085);
 _T1676:
 	cYObject::PrimProcs[33] = 0x5526d0;
 // LINE 1243:
 	__asm        jmp    _T16a1;
 
-	doAssert(0x8c085, 0x5b9b88, 0x4db, 0x5b9bc0);
+	doAssert(0x5b9bc0, 0x4db, 0x5b9b88, 0x8c085);
 _T16a1:
 	cYObject::PrimProcs[34] = 0x5526f0;
 // LINE 1244:
 	__asm        jmp    _T16cc;
 
-	doAssert(0x8c085, 0x5b9be4, 0x4dc, 0x5b9c1c);
+	doAssert(0x5b9c1c, 0x4dc, 0x5b9be4, 0x8c085);
 _T16cc:
 	cYObject::PrimProcs[35] = 0x552710;
 // LINE 1245:
 	__asm        jmp    _T16f7;
 
-	doAssert(0x8c085, 0x5b9c40, 0x4dd, 0x5b9c78);
+	doAssert(0x5b9c78, 0x4dd, 0x5b9c40, 0x8c085);
 _T16f7:
 	cYObject::PrimProcs[36] = 0x552730;
 // LINE 1246:
 	__asm        jmp    _T1722;
 
-	doAssert(0x8c085, 0x5b9c9c, 0x4de, 0x5b9cd4);
+	doAssert(0x5b9cd4, 0x4de, 0x5b9c9c, 0x8c085);
 _T1722:
 	cYObject::PrimProcs[37] = 0x552750;
 // LINE 1247:
 	__asm        jmp    _T174d;
 
-	doAssert(0x8c085, 0x5b9cf8, 0x4df, 0x5b9d30);
+	doAssert(0x5b9d30, 0x4df, 0x5b9cf8, 0x8c085);
 _T174d:
 	cYObject::PrimProcs[38] = 0x552770;
 // LINE 1248:
 	__asm        jmp    _T1778;
 
-	doAssert(0x8c085, 0x5b9d54, 0x4e0, 0x5b9d8c);
+	doAssert(0x5b9d8c, 0x4e0, 0x5b9d54, 0x8c085);
 _T1778:
 	cYObject::PrimProcs[39] = 0x552790;
 // LINE 1249:
 	__asm        jmp    _T17a3;
 
-	doAssert(0x8c085, 0x5b9db0, 0x4e1, 0x5b9de8);
+	doAssert(0x5b9de8, 0x4e1, 0x5b9db0, 0x8c085);
 _T17a3:
 	cYObject::PrimProcs[40] = 0x5527b0;
 // LINE 1251:
 	__asm        jmp    _T17ce;
 
-	doAssert(0x8c085, 0x5b9e0c, 0x4e3, 0x5b9e44);
+	doAssert(0x5b9e44, 0x4e3, 0x5b9e0c, 0x8c085);
 _T17ce:
 	cYObject::PrimProcs[42] = 0x5527d0;
 // LINE 1252:
 	__asm        jmp    _T17f9;
 
-	doAssert(0x8c085, 0x5b9e68, 0x4e4, 0x5b9ea0);
+	doAssert(0x5b9ea0, 0x4e4, 0x5b9e68, 0x8c085);
 _T17f9:
 	cYObject::PrimProcs[43] = 0x5527f0;
 // LINE 1253:
 	__asm        jmp    _T1824;
 
-	doAssert(0x8c085, 0x5b9ec4, 0x4e5, 0x5b9efc);
+	doAssert(0x5b9efc, 0x4e5, 0x5b9ec4, 0x8c085);
 _T1824:
 	cYObject::PrimProcs[44] = 0x552810;
 // LINE 1254:
 	__asm        jmp    _T184f;
 
-	doAssert(0x8c085, 0x5b9f20, 0x4e6, 0x5b9f58);
+	doAssert(0x5b9f58, 0x4e6, 0x5b9f20, 0x8c085);
 _T184f:
 	cYObject::PrimProcs[45] = 0x552830;
 // LINE 1255:
 	__asm        jmp    _T187a;
 
-	doAssert(0x8c085, 0x5b9f7c, 0x4e7, 0x5b9fb4);
+	doAssert(0x5b9fb4, 0x4e7, 0x5b9f7c, 0x8c085);
 _T187a:
 	cYObject::PrimProcs[46] = 0x552850;
 // LINE 1256:
 	__asm        jmp    _T18a5;
 
-	doAssert(0x8c085, 0x5b9fd8, 0x4e8, 0x5ba010);
+	doAssert(0x5ba010, 0x4e8, 0x5b9fd8, 0x8c085);
 _T18a5:
 	cYObject::PrimProcs[47] = 0x552870;
 // LINE 1257:
 	__asm        jmp    _T18d0;
 
-	doAssert(0x8c085, 0x5ba034, 0x4e9, 0x5ba06c);
+	doAssert(0x5ba06c, 0x4e9, 0x5ba034, 0x8c085);
 _T18d0:
 	cYObject::PrimProcs[48] = 0x552890;
 // LINE 1258:
 	__asm        jmp    _T18fb;
 
-	doAssert(0x8c085, 0x5ba090, 0x4ea, 0x5ba0c8);
+	doAssert(0x5ba0c8, 0x4ea, 0x5ba090, 0x8c085);
 _T18fb:
 	cYObject::PrimProcs[49] = 0x5528b0;
 // LINE 1259:
 	__asm        jmp    _T1926;
 
-	doAssert(0x8c085, 0x5ba0ec, 0x4eb, 0x5ba124);
+	doAssert(0x5ba124, 0x4eb, 0x5ba0ec, 0x8c085);
 _T1926:
 	cYObject::PrimProcs[50] = 0x5528d0;
 // LINE 1260:
 	__asm        jmp    _T1951;
 
-	doAssert(0x8c085, 0x5ba148, 0x4ec, 0x5ba180);
+	doAssert(0x5ba180, 0x4ec, 0x5ba148, 0x8c085);
 _T1951:
 	cYObject::PrimProcs[51] = 0x5528f0;
 // LINE 1261:
 	__asm        jmp    _T197c;
 
-	doAssert(0x8c085, 0x5ba1a4, 0x4ed, 0x5ba1dc);
+	doAssert(0x5ba1dc, 0x4ed, 0x5ba1a4, 0x8c085);
 _T197c:
 	cYObject::PrimProcs[52] = 0x552910;
 // LINE 1262:
 	__asm        jmp    _T19a7;
 
-	doAssert(0x8c085, 0x5ba200, 0x4ee, 0x5ba238);
+	doAssert(0x5ba238, 0x4ee, 0x5ba200, 0x8c085);
 _T19a7:
 	cYObject::PrimProcs[53] = 0x552930;
 // LINE 1263:
 	__asm        jmp    _T19d2;
 
-	doAssert(0x8c085, 0x5ba25c, 0x4ef, 0x5ba294);
+	doAssert(0x5ba294, 0x4ef, 0x5ba25c, 0x8c085);
 _T19d2:
 	cYObject::PrimProcs[54] = 0x552950;
 // LINE 1264:
 	__asm        jmp    _T19fd;
 
-	doAssert(0x8c085, 0x5ba2b8, 0x4f0, 0x5ba2f0);
+	doAssert(0x5ba2f0, 0x4f0, 0x5ba2b8, 0x8c085);
 _T19fd:
 	cYObject::PrimProcs[55] = 0x552970;
 // LINE 1265:
 	__asm        jmp    _T1a28;
 
-	doAssert(0x8c085, 0x5ba314, 0x4f1, 0x5ba34c);
+	doAssert(0x5ba34c, 0x4f1, 0x5ba314, 0x8c085);
 _T1a28:
 	cYObject::PrimProcs[56] = 0x552990;
 // LINE 1266:
 	__asm        jmp    _T1a53;
 
-	doAssert(0x8c085, 0x5ba370, 0x4f2, 0x5ba3a8);
+	doAssert(0x5ba3a8, 0x4f2, 0x5ba370, 0x8c085);
 _T1a53:
 	cYObject::PrimProcs[57] = 0x5529b0;
 // LINE 1267:
 	__asm        jmp    _T1a7e;
 
-	doAssert(0x8c085, 0x5ba3cc, 0x4f3, 0x5ba404);
+	doAssert(0x5ba404, 0x4f3, 0x5ba3cc, 0x8c085);
 _T1a7e:
 	cYObject::PrimProcs[58] = 0x5529d0;
 // LINE 1268:
 	__asm        jmp    _T1aa9;
 
-	doAssert(0x8c085, 0x5ba428, 0x4f4, 0x5ba460);
+	doAssert(0x5ba460, 0x4f4, 0x5ba428, 0x8c085);
 _T1aa9:
 	cYObject::PrimProcs[59] = 0x5529f0;
 // LINE 1269:
 	__asm        jmp    _T1ad4;
 
-	doAssert(0x8c085, 0x5ba484, 0x4f5, 0x5ba4bc);
+	doAssert(0x5ba4bc, 0x4f5, 0x5ba484, 0x8c085);
 _T1ad4:
 	cYObject::PrimProcs[60] = 0x552a10;
 // LINE 1270:
 	__asm        jmp    _T1aff;
 
-	doAssert(0x8c085, 0x5ba4e0, 0x4f6, 0x5ba518);
+	doAssert(0x5ba518, 0x4f6, 0x5ba4e0, 0x8c085);
 _T1aff:
 	cYObject::PrimProcs[61] = 0x552a30;
 // LINE 1271:
 	__asm        jmp    _T1b2a;
 
-	doAssert(0x8c085, 0x5ba53c, 0x4f7, 0x5ba574);
+	doAssert(0x5ba574, 0x4f7, 0x5ba53c, 0x8c085);
 _T1b2a:
 	cYObject::PrimProcs[62] = 0x552a50;
 // LINE 1272:
 	__asm        jmp    _T1b55;
 
-	doAssert(0x8c085, 0x5ba598, 0x4f8, 0x5ba5d0);
+	doAssert(0x5ba5d0, 0x4f8, 0x5ba598, 0x8c085);
 _T1b55:
 	cYObject::PrimProcs[63] = 0x552a70;
 // LINE 1275:
@@ -9123,7 +9123,7 @@ _LOOP_187:
 					__asm        test   eax, eax;
 					__asm        je     _T2b8;
 				// LINE 1381:
-					this->cYObject::SetCellAndLoc(offsetz, offsetx, y, x);
+					this->cYObject::SetCellAndLoc(x, y, offsetx, offsetz);
 				// LINE 1391:
 					__asm        movsx  eax, cYObject::sBeamed;
 					__asm        add    eax, 6;
@@ -9164,7 +9164,7 @@ _LOOP_187:
 		_T301:
 	}
 // LINE 1408:
-	doAssert(0x8c085, 0x5ba5f4, 0x580, 0x5ba60c);
+	doAssert(0x5ba60c, 0x580, 0x5ba5f4, 0x8c085);
 // LINE 1409:
 }
 
@@ -9176,7 +9176,7 @@ unsigned short cYObject::OutOfCameraRange() {
 	__asm        test   eax, eax;
 	__asm        je     _T3a;
 
-	doAssert(0x8c085, 0x5ba630, 0x586, 0x5ba664);
+	doAssert(0x5ba664, 0x586, 0x5ba630, 0x8c085);
 // LINE 1418:
 _T3a:
 	__asm        mov    eax, this;
@@ -9468,13 +9468,13 @@ _FOR_14:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T76;
 		_T5a:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T76:
 			__asm        movsx  eax, count;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _Ta4;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_Ta4:
 			__asm        movsx  eax, count;
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -9488,7 +9488,7 @@ _FOR_14:
 			__asm        cmp    obj, 0;
 			__asm        jne    _Te3;
 
-			doAssert(0x8c085, 0x5ba688, 0x5c7, 0x5ba690);
+			doAssert(0x5ba690, 0x5c7, 0x5ba688, 0x8c085);
 		// LINE 1480:
 		_Te3:
 			__asm        mov    eax, obj;
@@ -9545,13 +9545,13 @@ _FOR_2f:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T91;
 		_T75:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T91:
 			__asm        movsx  eax, count;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _Tbf;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_Tbf:
 			__asm        movsx  eax, count;
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -9565,7 +9565,7 @@ _FOR_2f:
 			__asm        cmp    obj, 0;
 			__asm        jne    _Tfe;
 
-			doAssert(0x8c085, 0x5ba6b4, 0x5dd, 0x5ba6bc);
+			doAssert(0x5ba6bc, 0x5dd, 0x5ba6b4, 0x8c085);
 		// LINE 1502:
 		_Tfe:
 			__asm        mov    eax, obj;
@@ -9588,7 +9588,7 @@ _FOR_2f:
 			__asm        jmp    _T1ca;
 		// LINE 1506:
 		_T137:
-			doAssert(0x8c085, 0x5ba6e0, 0x5e2, 0x5ba714);
+			doAssert(0x5ba714, 0x5e2, 0x5ba6e0, 0x8c085);
 		// LINE 1507:
 			__asm        jmp    _T1e3;
 		// LINE 1515:
@@ -9615,7 +9615,7 @@ _FOR_2f:
 			__asm        jmp    _T1e3;
 		// LINE 1519:
 		_T1a9:
-			doAssert(0x8c085, 0x5ba738, 0x5ef, 0x5ba764);
+			doAssert(0x5ba764, 0x5ef, 0x5ba738, 0x8c085);
 		// LINE 1520:
 			__asm        jmp    _T1e3;
 		_T1ca:
@@ -9633,7 +9633,7 @@ _FOR_2f:
 		// LINE 1523:
 			obj->cYObject::SetMaster(0x0);
 		// LINE 1524:
-			obj->fDyn.loc.y = (S3PUtilsGetAlt(obj->fDyn.loc.z, obj->fDyn.loc.y, obj->fDyn.loc.x) + 0x30000);
+			obj->fDyn.loc.y = (S3PUtilsGetAlt(obj->fDyn.loc.x, obj->fDyn.loc.y, obj->fDyn.loc.z) + 0x30000);
 			__asm        jmp    _T227;
 		// LINE 1525:
 		_T227:
@@ -9676,7 +9676,7 @@ void cYObject::SetPersonData(enum PersonType persontype, enum MissionType missio
 	__asm        cmp    eax, 7;
 	__asm        je     _T7f;
 
-	doAssert(0x8c085, 0x5bbb34, 0x2bd, 0x5bba14);
+	doAssert(0x5bba14, 0x2bd, 0x5bbb34, 0x8c085);
 _T7f:
 	__asm        jmp    _T84;
 // LINE 1536:
@@ -9735,7 +9735,7 @@ _T61:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _Tb0;
 _T94:
-	doAssert(0x8c085, 0x5bba34, 0x18a, 0x5bba14);
+	doAssert(0x5bba14, 0x18a, 0x5bba34, 0x8c085);
 _Tb0:
 	__asm        mov    ax, [ebp-0x18];
 	__asm        mov    scurkID, ax;
@@ -9766,7 +9766,7 @@ _Tf0:
 	/*bp-0x10*/  enum cYObject::LocationType loctype;
 	/*bp-0x14*/  short count;
 _Tfb:
-	loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
+	loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly));
 // LINE 1551:
 _FOR_119:
 	for (count = 0x0; (reinterpret_cast<int16_t>(count) < 0xa); count++) {
@@ -9810,7 +9810,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T52;
 _T36:
-	doAssert(0x8c085, 0x5ba788, 0x624, 0x5ba7b0);
+	doAssert(0x5ba7b0, 0x624, 0x5ba788, 0x8c085);
 // LINE 1574:
 _T52:
 	__asm        mov    eax, this;
@@ -9818,7 +9818,7 @@ _T52:
 	__asm        test   eax, eax;
 	__asm        je     _T83;
 
-	doAssert(0x8c085, 0x5ba7d4, 0x626, 0x5ba808);
+	doAssert(0x5ba808, 0x626, 0x5ba7d4, 0x8c085);
 // LINE 1575:
 _T83:
 	__asm        jmp    _T88;
@@ -9829,7 +9829,7 @@ _T88:
 	__asm        test   ecx, ecx;
 	__asm        je     _Tb8;
 
-	doAssert(0x8c085, 0x5ba82c, 0x627, 0x5ba858);
+	doAssert(0x5ba858, 0x627, 0x5ba82c, 0x8c085);
 // LINE 1576:
 _Tb8:
 	ret = 0xffff;
@@ -9838,7 +9838,7 @@ _Tb8:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Ted;
 
-	doAssert(0x8c085, 0x5ba87c, 0x629, 0x5ba890);
+	doAssert(0x5ba890, 0x629, 0x5ba87c, 0x8c085);
 // LINE 1578:
 _Ted:
 	__asm        mov    eax, this;
@@ -9849,7 +9849,7 @@ _Ted:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T12f;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T12f:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -9870,7 +9870,7 @@ _T15b:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T1ac;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T1ac:
 	__asm        jmp    _T1b1;
 // LINE 1580:
@@ -9893,7 +9893,7 @@ _T1ce:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     _T1fe;
 _T1e2:
-	doAssert(0x8c085, 0x5ba8b4, 0x62f, 0x5ba8c8);
+	doAssert(0x5ba8c8, 0x62f, 0x5ba8b4, 0x8c085);
 // LINE 1585:
 _T1fe:
 	foundplace = 0x0;
@@ -9922,7 +9922,7 @@ _FOR_266:
 		// LINE 1589:
 		// Block start:
 			/*bp-0x18*/  enum cYObject::LocationType loctype;
-			loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
+			loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly));
 		// LINE 1591:
 			__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 			__asm        push   eax;
@@ -9970,7 +9970,7 @@ _T300:
 // LINE 1597:
 // Block start:
 	/*bp-0x1c*/  long testID;
-	this->cYObject::SetCellAndLoc(offsetz, offsetx, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
+	this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), offsetx, offsetz);
 // LINE 1598:
 	this->cYObject::SetPersonType(persontype);
 // LINE 1599:
@@ -9979,14 +9979,14 @@ _T300:
 	__asm        cmp    testID, 0xFFFFFFFF;
 	__asm        jne    _T36b;
 
-	doAssert(0x8c085, 0x5ba8ec, 0x640, 0x5ba910);
+	doAssert(0x5ba910, 0x640, 0x5ba8ec, 0x8c085);
 // LINE 1601:
 _T36b:
 	__asm        mov    eax, testID;
 	__asm        cmp    missionid, eax;
 	__asm        je     _T393;
 
-	doAssert(0x8c085, 0x5ba934, 0x641, 0x5ba978);
+	doAssert(0x5ba978, 0x641, 0x5ba934, 0x8c085);
 // LINE 1602:
 _T393:
 	ret = 0x1;
@@ -10025,7 +10025,7 @@ _T3a9:
 	__asm        cmp    eax, 7;
 	__asm        je     _T42b;
 
-	doAssert(0x8c085, 0x5bbb34, 0x2bd, 0x5bba14);
+	doAssert(0x5bba14, 0x2bd, 0x5bbb34, 0x8c085);
 _T42b:
 	__asm        jmp    _T430;
 // LINE 1611:
@@ -10037,7 +10037,7 @@ _T430:
 // LINE 1613:
 	this->cYObject::SetMaster(onTopOf);
 // LINE 1614:
-	this->cYObject::SetCellAndLoc(0xff, 0xff, loc->z, loc->y, loc->x);
+	this->cYObject::SetCellAndLoc(loc->x, loc->y, loc->z, 0xff, 0xff);
 // LINE 1615:
 	ret = 0x1;
 // LINE 1617:
@@ -10088,7 +10088,7 @@ _T50b:
 	__asm        cmp    missionid, 0xFFFFFFFF;
 	__asm        je     _T531;
 
-	doAssert(0x8c085, 0x5ba99c, 0x65c, 0x5ba9cc);
+	doAssert(0x5ba9cc, 0x65c, 0x5ba99c, 0x8c085);
 // LINE 1629:
 _T531:
 	__asm        jmp    _Td96;
@@ -10097,7 +10097,7 @@ _T536:
 	__asm        cmp    loc, 0;
 	__asm        jne    _T55c;
 
-	doAssert(0x8c085, 0x5ba9f0, 0x660, 0x5baa0c);
+	doAssert(0x5baa0c, 0x660, 0x5ba9f0, 0x8c085);
 // LINE 1634:
 _T55c:
 	ret = 0x0;
@@ -10144,9 +10144,9 @@ _T5d5:
 	__asm        jmp    _T5e9;
 // LINE 1638:
 _T5e9:
-	this->cYObject::SetCellAndLoc(0xff, 0xff, loc->z, loc->y, loc->x);
+	this->cYObject::SetCellAndLoc(loc->x, loc->y, loc->z, 0xff, 0xff);
 // LINE 1639:
-	this->cYObject::SetPersonData(missionid, mission, persontype);
+	this->cYObject::SetPersonData(persontype, mission, missionid);
 // LINE 1640:
 	ret = 0x1;
 // LINE 1642:
@@ -10164,7 +10164,7 @@ _T62e:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     _T65e;
 _T642:
-	doAssert(0x8c085, 0x5baa30, 0x66e, 0x5baa74);
+	doAssert(0x5baa74, 0x66e, 0x5baa30, 0x8c085);
 // LINE 1648:
 _T65e:
 	ret = 0x0;
@@ -10174,7 +10174,7 @@ _FOR_66f:
 		// LINE 1650:
 		// Block start:
 			/*bp-0x2c*/  enum cYObject::LocationType loctype;
-			loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
+			loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly));
 		// LINE 1653:
 			__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 			__asm        push   eax;
@@ -10243,7 +10243,7 @@ _FOR_66f:
 				// LINE 1663:
 				// Block start:
 					/*bp-0x58*/  enum cYObject::LocationType loctype2;
-					loctype2 = cYObject::GetLocType(reinterpret_cast<uint32_t>(destcelly), reinterpret_cast<uint32_t>(destcellx));
+					loctype2 = cYObject::GetLocType(reinterpret_cast<uint32_t>(destcellx), reinterpret_cast<uint32_t>(destcelly));
 				// LINE 1665:
 					__asm        jmp    _T76e;
 				_T76e:
@@ -10333,9 +10333,9 @@ _FOR_66f:
 			__asm        jmp    _T925;
 		// LINE 1700:
 		_T839:
-			this->cYObject::SetCellAndLoc(offsetz, offsetx, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
+			this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), offsetx, offsetz);
 		// LINE 1701:
-			this->cYObject::SetPersonData(missionid, mission, persontype);
+			this->cYObject::SetPersonData(persontype, mission, missionid);
 		// LINE 1704:
 			mp.id = missionid;
 		// LINE 1705:
@@ -10424,19 +10424,19 @@ _T92a:
 	__asm        test   al, 0x20;
 	__asm        jne    _T974;
 
-	doAssert(0x8c085, 0x5baa98, 0x6ca, 0x5baac0);
+	doAssert(0x5baac0, 0x6ca, 0x5baa98, 0x8c085);
 // LINE 1739:
 _T974:
 	__asm        cmp    loc, 0;
 	__asm        je     _T99a;
 
-	doAssert(0x8c085, 0x5baae4, 0x6cb, 0x5bab2c);
+	doAssert(0x5bab2c, 0x6cb, 0x5baae4, 0x8c085);
 // LINE 1740:
 _T99a:
 	__asm        cmp    onTopOf, 0;
 	__asm        je     _T9c0;
 
-	doAssert(0x8c085, 0x5bab50, 0x6cc, 0x5bab74);
+	doAssert(0x5bab74, 0x6cc, 0x5bab50, 0x8c085);
 // LINE 1742:
 _T9c0:
 	__asm        push   2;
@@ -10457,9 +10457,9 @@ _T9c0:
 	__asm        test   eax, eax;
 	__asm        je     _Ta36;
 // LINE 1743:
-	this->cYObject::SetCellAndLoc(offsetz, offsetx, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
+	this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), offsetx, offsetz);
 // LINE 1744:
-	this->cYObject::SetPersonData(missionid, mission, persontype);
+	this->cYObject::SetPersonData(persontype, mission, missionid);
 // LINE 1745:
 	ret = 0x1;
 // LINE 1747:
@@ -10480,7 +10480,7 @@ _Ta3b:
 	__asm        cmp    onTopOf, 0;
 	__asm        jne    _Ta71;
 _Ta55:
-	doAssert(0x8c085, 0x5bab98, 0x6d7, 0x5baba4);
+	doAssert(0x5baba4, 0x6d7, 0x5bab98, 0x8c085);
 // LINE 1753:
 _Ta71:
 	mycellx = ((onTopOf->loc.x + 0x20000000) >> 0x16);
@@ -10495,7 +10495,7 @@ _Ta71:
 	__asm        cmp    eax, mycelly;
 	__asm        je     _Tac9;
 _Taad:
-	doAssert(0x8c085, 0x5babc8, 0x6db, 0x5bac1c);
+	doAssert(0x5bac1c, 0x6db, 0x5babc8, 0x8c085);
 // LINE 1758:
 _Tac9:
 	__asm        lea    eax, pos.x;
@@ -10518,7 +10518,7 @@ _Taec:
 	__asm        test   ecx, ecx;
 	__asm        je     _Tb1c;
 
-	doAssert(0x8c085, 0x5bbbb8, 0x210, 0x5bba14);
+	doAssert(0x5bba14, 0x210, 0x5bbbb8, 0x8c085);
 _Tb1c:
 	__asm        mov    al, reinterpret_cast<uint8_t>(cellx);
 	__asm        mov    ecx, this;
@@ -10544,10 +10544,10 @@ _Tb3f:
 	__asm        test   reinterpret_cast<uint32_t>(setmaster), 0xFFFF;
 	__asm        jne    _Tb97;
 
-	doAssert(0x8c085, 0x5bac40, 0x6e2, 0x5bac60);
+	doAssert(0x5bac60, 0x6e2, 0x5bac40, 0x8c085);
 // LINE 1763:
 _Tb97:
-	this->cYObject::SetPersonData(missionid, mission, persontype);
+	this->cYObject::SetPersonData(persontype, mission, missionid);
 // LINE 1764:
 	ret = 0x1;
 // LINE 1767:
@@ -10604,9 +10604,9 @@ _Tc3c:
 	__asm        jmp    _Tc50;
 // LINE 1776:
 _Tc50:
-	this->cYObject::SetCellAndLoc(0xff, 0xff, loc->z, loc->y, loc->x);
+	this->cYObject::SetCellAndLoc(loc->x, loc->y, loc->z, 0xff, 0xff);
 // LINE 1777:
-	this->cYObject::SetPersonData(missionid, mission, persontype);
+	this->cYObject::SetPersonData(persontype, mission, missionid);
 // LINE 1778:
 	ret = 0x1;
 // LINE 1781:
@@ -10655,9 +10655,9 @@ _Td0a:
 	__asm        jmp    _Td1e;
 // LINE 1785:
 _Td1e:
-	this->cYObject::SetCellAndLoc(offsetz, offsetx, reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
+	this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), offsetx, offsetz);
 // LINE 1786:
-	this->cYObject::SetPersonData(missionid, mission, persontype);
+	this->cYObject::SetPersonData(persontype, mission, missionid);
 // LINE 1787:
 	ret = 0x1;
 // LINE 1790:
@@ -10690,7 +10690,7 @@ _Td96:
 	__asm        cmp    eax, 1;
 	__asm        je     _Tdcb;
 
-	doAssert(0x8c085, 0x5bac84, 0x701, 0x5bac94);
+	doAssert(0x5bac94, 0x701, 0x5bac84, 0x8c085);
 // LINE 1794:
 _Tdcb:
 	__asm        movsx  eax, ret;
@@ -10713,7 +10713,7 @@ _Te03:
 	__asm        test   eax, eax;
 	__asm        je     _Te34;
 
-	doAssert(0x8c085, 0x5bba9c, 0x2d3, 0x5bba14);
+	doAssert(0x5bba14, 0x2d3, 0x5bba9c, 0x8c085);
 _Te34:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x10A];
@@ -10752,7 +10752,7 @@ _Tec3:
 	__asm        cmp    eax, 0x64;
 	__asm        jle    _Tef8;
 
-	doAssert(0x8c085, 0x5bba7c, 0x2d9, 0x5bba14);
+	doAssert(0x5bba14, 0x2d9, 0x5bba7c, 0x8c085);
 _Tef8:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -10766,7 +10766,7 @@ _Tef8:
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     _Tf42;
 
-	doAssert(0x8c085, 0x5bbad4, 0x22e, 0x5bba14);
+	doAssert(0x5bba14, 0x22e, 0x5bbad4, 0x8c085);
 _Tf42:
 	__asm        jmp    _Tf7a;
 _Tf47:
@@ -10776,7 +10776,7 @@ _Tf47:
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    _Tf7a;
 
-	doAssert(0x8c085, 0x5bbabc, 0x231, 0x5bba14);
+	doAssert(0x5bba14, 0x231, 0x5bbabc, 0x8c085);
 _Tf7a:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -10793,7 +10793,7 @@ _Tf9b:
 	__asm        test   dword ptr [ebp-0xE4], 0xFFFF;
 	__asm        jne    _Tfcc;
 _Tfb0:
-	doAssert(0x8c085, 0x5bba54, 0x2da, 0x5bba14);
+	doAssert(0x5bba14, 0x2da, 0x5bba54, 0x8c085);
 _Tfcc:
 	this->cYObject::Link();
 	__asm        jmp    _Tfdc;
@@ -10804,7 +10804,7 @@ _Tfdc:
 	__asm        test   ecx, ecx;
 	__asm        jne    _T100c;
 
-	doAssert(0x8c085, 0x5bbaec, 0x1f8, 0x5bba14);
+	doAssert(0x5bba14, 0x1f8, 0x5bbaec, 0x8c085);
 _T100c:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
@@ -10848,7 +10848,7 @@ void cYObject::ResetToAmbient() {
 	__asm        test   eax, eax;
 	__asm        jne    _T3a;
 
-	doAssert(0x8c085, 0x5bacb8, 0x70e, 0x5bace8);
+	doAssert(0x5bace8, 0x70e, 0x5bacb8, 0x8c085);
 // LINE 1807:
 _T3a:
 	__asm        mov    eax, this;
@@ -10856,7 +10856,7 @@ _T3a:
 	__asm        test   eax, eax;
 	__asm        jne    _T68;
 
-	doAssert(0x8c085, 0x5bad0c, 0x70f, 0x5bad50);
+	doAssert(0x5bad50, 0x70f, 0x5bad0c, 0x8c085);
 // LINE 1808:
 _T68:
 	__asm        mov    eax, this;
@@ -10864,7 +10864,7 @@ _T68:
 	__asm        test   eax, eax;
 	__asm        jne    _T96;
 
-	doAssert(0x8c085, 0x5bbbf0, 0x2c2, 0x5bba14);
+	doAssert(0x5bba14, 0x2c2, 0x5bbbf0, 0x8c085);
 _T96:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
@@ -10905,7 +10905,7 @@ _Td3:
 	__asm        cmp    eax, 7;
 	__asm        je     _T147;
 
-	doAssert(0x8c085, 0x5bbb34, 0x2bd, 0x5bba14);
+	doAssert(0x5bba14, 0x2bd, 0x5bbb34, 0x8c085);
 _T147:
 	__asm        jmp    _T14c;
 _T14c:
@@ -10955,7 +10955,7 @@ long cYObject::JoinRiot() {
 	__asm        test   eax, eax;
 	__asm        jg     _T3a;
 
-	doAssert(0x8c085, 0x5bad74, 0x718, 0x5bada0);
+	doAssert(0x5bada0, 0x718, 0x5bad74, 0x8c085);
 // LINE 1818:
 _T3a:
 	__asm        push   0x1000;
@@ -10990,7 +10990,7 @@ _T3a:
 	__asm        test   eax, eax;
 	__asm        jne    _Tbd;
 
-	doAssert(0x8c085, 0x5bbbf0, 0x2c2, 0x5bba14);
+	doAssert(0x5bba14, 0x2c2, 0x5bbbf0, 0x8c085);
 _Tbd:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
@@ -11035,7 +11035,7 @@ _Tfa:
 	__asm        cmp    eax, 7;
 	__asm        je     _T177;
 
-	doAssert(0x8c085, 0x5bbb34, 0x2bd, 0x5bba14);
+	doAssert(0x5bba14, 0x2bd, 0x5bbb34, 0x8c085);
 _T177:
 	__asm        jmp    _T17c;
 _T17c:
@@ -11087,7 +11087,7 @@ _T1d3:
 	__asm        cmp    eax, 7;
 	__asm        je     _T244;
 
-	doAssert(0x8c085, 0x5bbb34, 0x2bd, 0x5bba14);
+	doAssert(0x5bba14, 0x2bd, 0x5bbb34, 0x8c085);
 _T244:
 	__asm        jmp    _T249;
 // LINE 1835:
@@ -11127,13 +11127,13 @@ __WHILE_0f:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T79;
 		_T5d:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T79:
 			__asm        movsx  eax, word ptr [ebp-0x18];
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _Ta7;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_Ta7:
 			__asm        movsx  eax, word ptr [ebp-0x18];
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -11157,7 +11157,7 @@ __WHILE_0f:
 			__asm        test   eax, eax;
 			__asm        jne    _T101;
 
-			doAssert(0x8c085, 0x5badc4, 0x736, 0x5badf4);
+			doAssert(0x5badf4, 0x736, 0x5badc4, 0x8c085);
 		// LINE 1847:
 		_T101:
 			__asm        mov    eax, CameraCell.x;
@@ -11308,7 +11308,7 @@ _T2ba:
 	__asm        add    esp, 8;
 	__asm        mov    nextsoundchannel, ax;
 // LINE 1860:
-	cYObject::DistributeSoundChannels(reinterpret_cast<uint32_t>(nextsoundchannel), 0x2);
+	cYObject::DistributeSoundChannels(0x2, reinterpret_cast<uint32_t>(nextsoundchannel));
 // LINE 1861:
 	return;
 }
@@ -11350,13 +11350,13 @@ __WHILE_17:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T8e;
 		_T72:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T8e:
 			__asm        movsx  eax, word ptr [ebp-0x18];
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _Tbc;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_Tbc:
 			__asm        movsx  eax, word ptr [ebp-0x18];
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -11462,7 +11462,7 @@ void cYObject::SetSoundChannel(short soundchannel) {
 	__asm        cmp    eax, 0xF;
 	__asm        jl     _T41;
 _T25:
-	doAssert(0x8c085, 0x5bae18, 0x760, 0x5bae38);
+	doAssert(0x5bae38, 0x760, 0x5bae18, 0x8c085);
 // LINE 1889:
 _T41:
 	__asm        mov    eax, this;
@@ -11470,7 +11470,7 @@ _T41:
 	__asm        test   eax, eax;
 	__asm        jne    _T6f;
 
-	doAssert(0x8c085, 0x5bae5c, 0x761, 0x5bae80);
+	doAssert(0x5bae80, 0x761, 0x5bae5c, 0x8c085);
 // LINE 1890:
 _T6f:
 	__asm        movsx  eax, soundchannel;
@@ -11478,7 +11478,7 @@ _T6f:
 	__asm        test   eax, eax;
 	__asm        je     _T9f;
 
-	doAssert(0x8c085, 0x5baea4, 0x762, 0x5baed0);
+	doAssert(0x5baed0, 0x762, 0x5baea4, 0x8c085);
 // LINE 1891:
 _T9f:
 	__asm        mov    eax, this;
@@ -11486,7 +11486,7 @@ _T9f:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     _Tce;
 
-	doAssert(0x8c085, 0x5baef4, 0x763, 0x5baf1c);
+	doAssert(0x5baf1c, 0x763, 0x5baef4, 0x8c085);
 // LINE 1892:
 _Tce:
 	__asm        movsx  eax, soundchannel;
@@ -11568,7 +11568,7 @@ _Tbc:
 	__asm        cmp    theSound, 0;
 	__asm        jne    _Tf0;
 
-	doAssert(0x8c085, 0x5baf40, 0x774, 0x5baf48);
+	doAssert(0x5baf48, 0x774, 0x5baf40, 0x8c085);
 // LINE 1909:
 _Tf0:
 	__asm        mov    eax, this;
@@ -11807,7 +11807,7 @@ _T37d:
 	__asm        jmp    _T42e;
 // LINE 2007:
 _T3a6:
-	doAssert(0x8c085, 0x5bb07c, 0x7d7, 0x5bb098);
+	doAssert(0x5bb098, 0x7d7, 0x5bb07c, 0x8c085);
 // LINE 2008:
 	__asm        jmp    _T42e;
 _T3c7:
@@ -11848,11 +11848,11 @@ _T42e:
 	__asm        or     flags, 1;
 // LINE 2012:
 _T446:
-	S3DSSetFile(soundfile, reinterpret_cast<int16_t>(actualSoundChannel));
+	S3DSSetFile(reinterpret_cast<int16_t>(actualSoundChannel), soundfile);
 // LINE 2013:
-	success = S3DSPlay(flags, (this + 0x3c), reinterpret_cast<int16_t>(actualSoundChannel));
+	success = S3DSPlay(reinterpret_cast<int16_t>(actualSoundChannel), (this + 0x3c), flags);
 // LINE 2014:
-	S3SoundAdjFreq(reinterpret_cast<int16_t>(freqadj), reinterpret_cast<int16_t>(actualSoundChannel));
+	S3SoundAdjFreq(reinterpret_cast<int16_t>(actualSoundChannel), reinterpret_cast<int16_t>(freqadj));
 // LINE 2022:
 	return 0x1;
 // LINE 2023:
@@ -11910,13 +11910,13 @@ _FOR_73:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _Td5;
 		_Tb9:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_Td5:
 			__asm        movsx  eax, count;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _T103;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_T103:
 			__asm        movsx  eax, count;
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -11940,7 +11940,7 @@ _FOR_73:
 			__asm        test   ecx, ecx;
 			__asm        jne    _T163;
 
-			doAssert(0x8c085, 0x5bbaec, 0x1f8, 0x5bba14);
+			doAssert(0x5bba14, 0x1f8, 0x5bbaec, 0x8c085);
 		_T163:
 			__asm        mov    eax, obj;
 			__asm        add    eax, 0x3C;
@@ -12015,13 +12015,13 @@ _FOR_203:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T265;
 		_T249:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T265:
 			__asm        movsx  eax, count;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _T293;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_T293:
 			__asm        movsx  eax, count;
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -12056,7 +12056,7 @@ _FOR_203:
 			__asm        test   eax, eax;
 			__asm        jne    _T321;
 
-			doAssert(0x8c085, 0x5bbc88, 0x2e4, 0x5bba14);
+			doAssert(0x5bba14, 0x2e4, 0x5bbc88, 0x8c085);
 		_T321:
 			__asm        jmp    _T326;
 		_T326:
@@ -12066,7 +12066,7 @@ _FOR_203:
 			__asm        test   ecx, ecx;
 			__asm        jne    _T353;
 
-			doAssert(0x8c085, 0x5bbc5c, 0x2e5, 0x5bba14);
+			doAssert(0x5bba14, 0x2e5, 0x5bbc5c, 0x8c085);
 		_T353:
 			__asm        mov    eax, obj;
 			__asm        xor    ecx, ecx;
@@ -12080,7 +12080,7 @@ _FOR_203:
 			__asm        cmp    ecx, 0xFFFFFFFF;
 			__asm        je     _T397;
 
-			doAssert(0x8c085, 0x5bbad4, 0x22e, 0x5bba14);
+			doAssert(0x5bba14, 0x22e, 0x5bbad4, 0x8c085);
 		_T397:
 			__asm        jmp    _T3cc;
 		_T39c:
@@ -12090,7 +12090,7 @@ _FOR_203:
 			__asm        cmp    ecx, 0xFFFFFFFF;
 			__asm        jne    _T3cc;
 
-			doAssert(0x8c085, 0x5bbabc, 0x231, 0x5bba14);
+			doAssert(0x5bba14, 0x231, 0x5bbabc, 0x8c085);
 		_T3cc:
 			__asm        mov    eax, obj;
 			__asm        xor    ecx, ecx;
@@ -12107,7 +12107,7 @@ _FOR_203:
 			__asm        test   dword ptr [ebp-0xE0], 0xFFFF;
 			__asm        jne    _T41b;
 		_T3ff:
-			doAssert(0x8c085, 0x5bbc3c, 0x2e6, 0x5bba14);
+			doAssert(0x5bba14, 0x2e6, 0x5bbc3c, 0x8c085);
 		_T41b:
 			__asm        mov    eax, obj;
 			__asm        movsx  eax, word ptr [eax+0x102];
@@ -12188,7 +12188,7 @@ _FOR_203:
 			__asm        test   eax, eax;
 			__asm        jge    _T57a;
 		_T55e:
-			doAssert(0x8c085, 0x5bbc24, 0x2ec, 0x5bba14);
+			doAssert(0x5bba14, 0x2ec, 0x5bbc24, 0x8c085);
 		_T57a:
 			obj->cYObject::Unlink();
 			__asm        jmp    _T587;
@@ -12205,7 +12205,7 @@ _FOR_203:
 			__asm        test   ecx, ecx;
 			__asm        jne    _T5be;
 
-			doAssert(0x8c085, 0x5bbaec, 0x1f8, 0x5bba14);
+			doAssert(0x5bba14, 0x1f8, 0x5bbaec, 0x8c085);
 		_T5be:
 			__asm        mov    eax, obj;
 			__asm        add    eax, 0x3C;
@@ -12289,7 +12289,7 @@ unsigned short cYObject::AddToHeli() {
 	return 0x0;
 // LINE 2151:
 _T5b:
-	HeliPassengerAdd(tempPassengerInfo.lPassengerFace, (G_uheli + 0x1c4));
+	HeliPassengerAdd((G_uheli + 0x1c4), tempPassengerInfo.lPassengerFace);
 // LINE 2152:
 	this->fData[9] = 0x0;
 // LINE 2153:
@@ -12315,7 +12315,7 @@ void cYObject::RemoveFromHeli() {
 	__asm        cmp    yes, 0;
 	__asm        jne    _T53;
 
-	doAssert(0x8c085, 0x5bb0bc, 0x870, 0x5bb0e8);
+	doAssert(0x5bb0e8, 0x870, 0x5bb0bc, 0x8c085);
 // LINE 2161:
 _T53:
 	this->fData[9] = 0x1;
@@ -12348,13 +12348,13 @@ _FOR_17:
 			__asm        cmp    eax, 0x64;
 			__asm        jl     _T79;
 		_T5d:
-			doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+			doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 		_T79:
 			__asm        movsx  eax, count;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        jne    _Ta7;
 
-			doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+			doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 		_Ta7:
 			__asm        movsx  eax, count;
 			__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -12368,7 +12368,7 @@ _FOR_17:
 			__asm        cmp    obj, 0;
 			__asm        jne    _Te6;
 
-			doAssert(0x8c085, 0x5bb10c, 0x878, 0x5bb130);
+			doAssert(0x5bb130, 0x878, 0x5bb10c, 0x8c085);
 		// LINE 2169:
 		_Te6:
 			__asm        jmp    _Teb;
@@ -12406,7 +12406,7 @@ unsigned short cYObject::SetMaster(/*unpacked*/ struct _DYOBJ_INST *obj) {
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     _T50;
 
-	doAssert(0x8c085, 0x5bbad4, 0x22e, 0x5bba14);
+	doAssert(0x5bba14, 0x22e, 0x5bbad4, 0x8c085);
 _T50:
 	__asm        jmp    _T85;
 _T55:
@@ -12416,7 +12416,7 @@ _T55:
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    _T85;
 
-	doAssert(0x8c085, 0x5bbabc, 0x231, 0x5bba14);
+	doAssert(0x5bba14, 0x231, 0x5bbabc, 0x8c085);
 _T85:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -12433,7 +12433,7 @@ _Ta3:
 	__asm        test   dword ptr [ebp-8], 0xFFFF;
 	__asm        jne    _Td1;
 _Tb5:
-	doAssert(0x8c085, 0x5bb154, 0x881, 0x5bb180);
+	doAssert(0x5bb180, 0x881, 0x5bb154, 0x8c085);
 // LINE 2181:
 _Td1:
 	__asm        mov    eax, this;
@@ -12988,7 +12988,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        mov    ecx, celly;
 	__asm        mov    [ecx], eax;
 // LINE 2246:
-	loctype = cYObject::GetLocType(celly[0], cellx[0]);
+	loctype = cYObject::GetLocType(cellx[0], celly[0]);
 // LINE 2251:
 _FOR_86:
 	__asm        mov    word ptr [ebp-0x68], 0;
@@ -13200,7 +13200,7 @@ _T27b:
 	__asm        cmp    newcptr, eax;
 	__asm        je     _T305;
 
-	doAssert(0x8c085, 0x5bb1a4, 0x8dc, 0x5bb1c8);
+	doAssert(0x5bb1c8, 0x8dc, 0x5bb1a4, 0x8c085);
 _T305:
 	__asm        mov    eax, celly;
 	__asm        mov    eax, [eax];
@@ -13241,7 +13241,7 @@ _T354:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _T3a3;
 _T387:
-	doAssert(0x8c085, 0x5bba34, 0x18a, 0x5bba14);
+	doAssert(0x5bba14, 0x18a, 0x5bba34, 0x8c085);
 _T3a3:
 	__asm        mov    ax, [ebp-0x78];
 	__asm        mov    scurkID1, ax;
@@ -13280,7 +13280,7 @@ _T3ed:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _T445;
 _T429:
-	doAssert(0x8c085, 0x5bba34, 0x18a, 0x5bba14);
+	doAssert(0x5bba14, 0x18a, 0x5bba34, 0x8c085);
 _T445:
 	__asm        mov    ax, [ebp-0x84];
 	__asm        mov    scurkID2, ax;
@@ -13292,7 +13292,7 @@ _T455:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T481;
 
-	doAssert(0x8c085, 0x5bb1ec, 0x8df, 0x5bb228);
+	doAssert(0x5bb228, 0x8df, 0x5bb1ec, 0x8c085);
 // LINE 2273:
 _T481:
 	return 0x1;
@@ -13307,7 +13307,7 @@ void cYObject::Simulate() {
 	__asm        test   eax, eax;
 	__asm        jne    _T3a;
 
-	doAssert(0x8c085, 0x5bb24c, 0x8e6, 0x5bb26c);
+	doAssert(0x5bb26c, 0x8e6, 0x5bb24c, 0x8c085);
 // LINE 2280:
 _T3a:
 	__asm        mov    eax, this;
@@ -13322,13 +13322,13 @@ _T4f:
 	__asm        test   ecx, ecx;
 	__asm        jne    _T7c;
 
-	doAssert(0x8c085, 0x5bbd20, 0x262, 0x5bba14);
+	doAssert(0x5bba14, 0x262, 0x5bbd20, 0x8c085);
 _T7c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        jne    _Ta8;
 
-	doAssert(0x8c085, 0x5bbcfc, 0x263, 0x5bba14);
+	doAssert(0x5bba14, 0x263, 0x5bbcfc, 0x8c085);
 _Ta8:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x130];
@@ -13363,7 +13363,7 @@ _Ta8:
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T133;
 
-	doAssert(0x8c085, 0x5bbccc, 0x268, 0x5bba14);
+	doAssert(0x5bba14, 0x268, 0x5bbccc, 0x8c085);
 _T133:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x130];
@@ -13385,7 +13385,7 @@ _T15d:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T19a;
 
-	doAssert(0x8c085, 0x5bbcac, 0x27f, 0x5bba14);
+	doAssert(0x5bba14, 0x27f, 0x5bbcac, 0x8c085);
 	__asm        jmp    _T1e1;
 _T19a:
 	this->fData[6]++;
@@ -13430,10 +13430,10 @@ _T30:
 	__asm        cmp    moveinfo, 0;
 	__asm        jne    _T56;
 
-	doAssert(0x8c085, 0x5bb290, 0x8f7, 0x5bb2b4);
+	doAssert(0x5bb2b4, 0x8f7, 0x5bb290, 0x8c085);
 // LINE 2296:
 _T56:
-	Memory::BlockFill(0x10, 0x0, moveinfo);
+	Memory::BlockFill(moveinfo, 0x0, 0x10);
 // LINE 2297:
 	__asm        mov    eax, moveinfo;
 	__asm        push   eax;
@@ -13469,7 +13469,7 @@ _Tb6:
 	__asm        test   ecx, ecx;
 	__asm        jne    _Te3;
 
-	doAssert(0x8c085, 0x5bbaec, 0x1f8, 0x5bba14);
+	doAssert(0x5bba14, 0x1f8, 0x5bbaec, 0x8c085);
 _Te3:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x3C;
@@ -13520,7 +13520,7 @@ void cAvatar::Simulate() {
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T47;
 
-	doAssert(0x8c085, 0x5bb2d8, 0x906, 0x5bb30c);
+	doAssert(0x5bb30c, 0x906, 0x5bb2d8, 0x8c085);
 // LINE 2311:
 _T47:
 	__asm        jmp    _T4c;
@@ -13535,7 +13535,7 @@ _T4c:
 	__asm        cmp    [eax+0xA4], ecx;
 	__asm        je     _T92;
 _T76:
-	doAssert(0x8c085, 0x5bb330, 0x908, 0x5bb338);
+	doAssert(0x5bb338, 0x908, 0x5bb330, 0x8c085);
 // LINE 2313:
 _T92:
 	__asm        jmp    _T97;
@@ -13546,13 +13546,13 @@ _T97:
 	__asm        test   ecx, ecx;
 	__asm        jne    _Tc4;
 
-	doAssert(0x8c085, 0x5bbd20, 0x262, 0x5bba14);
+	doAssert(0x5bba14, 0x262, 0x5bbd20, 0x8c085);
 _Tc4:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        jne    _Tf0;
 
-	doAssert(0x8c085, 0x5bbcfc, 0x263, 0x5bba14);
+	doAssert(0x5bba14, 0x263, 0x5bbcfc, 0x8c085);
 _Tf0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x130];
@@ -13587,7 +13587,7 @@ _Tf0:
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     _T17b;
 
-	doAssert(0x8c085, 0x5bbccc, 0x268, 0x5bba14);
+	doAssert(0x5bba14, 0x268, 0x5bbccc, 0x8c085);
 _T17b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x130];
@@ -13610,7 +13610,7 @@ _T1aa:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T1d3;
 
-	doAssert(0x8c085, 0x5bb35c, 0x90c, 0x5bb394);
+	doAssert(0x5bb394, 0x90c, 0x5bb35c, 0x8c085);
 // LINE 2317:
 _T1d3:
 	this->cAvatar::GetControlInput();
@@ -13661,7 +13661,7 @@ _T23d:
 	__asm        cmp    eax, 6;
 	__asm        je     _T2a5;
 
-	doAssert(0x8c085, 0x5bb3b8, 0x922, 0x5bb3e4);
+	doAssert(0x5bb3e4, 0x922, 0x5bb3b8, 0x8c085);
 // LINE 2340:
 _T2a5:
 	__asm        jmp    _T2aa;
@@ -13671,10 +13671,10 @@ _T2aa:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T2e7;
 
-	doAssert(0x8c085, 0x5bb408, 0x925, 0x5bb410);
+	doAssert(0x5bb410, 0x925, 0x5bb408, 0x8c085);
 // LINE 2342:
 _T2e7:
-	this->cYObject::UpdateMission(person->fMissionID, 0x8);
+	this->cYObject::UpdateMission(0x8, person->fMissionID);
 // LINE 2345:
 	this->fData[17] = 0x1;
 // LINE 2348:
@@ -13741,7 +13741,7 @@ _T3c2:
 	__asm        jmp    _T3c7;
 // LINE 2350:
 _T3c7:
-	this->cYObject::PlaySoundA(0x0, 0xc);
+	this->cYObject::PlaySoundA(0xc, 0x0);
 // LINE 2351:
 	this->cYObject::SetMaster(G_uheli->dyheli);
 // LINE 2352:
@@ -13769,7 +13769,7 @@ _T41f:
 	__asm        cmp    person, 0;
 	__asm        jne    _T45e;
 
-	doAssert(0x8c085, 0x5bb434, 0x93c, 0x5bb448);
+	doAssert(0x5bb448, 0x93c, 0x5bb434, 0x8c085);
 // LINE 2365:
 _T45e:
 	__asm        mov    eax, person;
@@ -13812,7 +13812,7 @@ _T4cc:
 	__asm        test   ecx, ecx;
 	__asm        je     _T4f9;
 
-	doAssert(0x8c085, 0x5bbbb8, 0x210, 0x5bba14);
+	doAssert(0x5bba14, 0x210, 0x5bbbb8, 0x8c085);
 _T4f9:
 	__asm        mov    al, [ebp-0x4C];
 	__asm        mov    ecx, person;
@@ -13854,9 +13854,9 @@ _T56c:
 	__asm        cmp    eax, ecx;
 	__asm        jg     _T59f;
 
-	doAssert(0x8c085, 0x5bbd3c, 0xce, 0x5bba14);
+	doAssert(0x5bba14, 0xce, 0x5bbd3c, 0x8c085);
 _T59f:
-	person->TreeSim::Gosub(0x322, 0x0, 0x0);
+	person->TreeSim::Gosub(0x0, 0x0, 0x322);
 	__asm        jmp    _T5bf;
 
 	__asm        jmp    _T5bf;
@@ -13868,7 +13868,7 @@ _T5bf:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T5eb;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T5eb:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -13889,7 +13889,7 @@ _T611:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T659;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T659:
 	__asm        jmp    _T65e;
 // LINE 2370:
@@ -13936,7 +13936,7 @@ _T6df:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T710;
 
-	doAssert(0x8c085, 0x5bbcac, 0x27f, 0x5bba14);
+	doAssert(0x5bba14, 0x27f, 0x5bbcac, 0x8c085);
 	__asm        jmp    _T757;
 _T710:
 	this->fData[6]++;
@@ -13973,7 +13973,7 @@ _T17:
 	__asm        test   eax, eax;
 	__asm        je     _T3f;
 
-	doAssert(0x8c085, 0x5bb46c, 0x968, 0x5bb474);
+	doAssert(0x5bb474, 0x968, 0x5bb46c, 0x8c085);
 // LINE 2409:
 _T3f:
 	__asm        mov    eax, this;
@@ -13990,7 +13990,7 @@ _T3f:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T93;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T93:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14011,7 +14011,7 @@ _Tb9:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T101;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T101:
 	__asm        jmp    _T106;
 _T106:
@@ -14021,7 +14021,7 @@ _T10b:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T137;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T137:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14042,7 +14042,7 @@ _T15d:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T1a5;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T1a5:
 	__asm        jmp    _T1aa;
 // LINE 2410:
@@ -14068,7 +14068,7 @@ _T1af:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T20f;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T20f:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14089,7 +14089,7 @@ _T235:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T27d;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T27d:
 	__asm        jmp    _T282;
 _T282:
@@ -14099,7 +14099,7 @@ _T287:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T2b3;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T2b3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14120,7 +14120,7 @@ _T2d9:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T321;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T321:
 	__asm        jmp    _T326;
 // LINE 2415:
@@ -14135,7 +14135,7 @@ _T326:
 	__asm        test   eax, eax;
 	__asm        je     _T357;
 
-	this->cYObject::PlaySoundA(0x0, -0x1);
+	this->cYObject::PlaySoundA(-0x1, 0x0);
 // LINE 2418:
 _T357:
 	__asm        jmp    _T680;
@@ -14158,7 +14158,7 @@ _T35c:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T3bd;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T3bd:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14179,7 +14179,7 @@ _T3e3:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T42b;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T42b:
 	__asm        jmp    _T430;
 _T430:
@@ -14189,7 +14189,7 @@ _T435:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T461;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T461:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14210,7 +14210,7 @@ _T487:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T4cf;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T4cf:
 	__asm        jmp    _T4d4;
 // LINE 2420:
@@ -14220,7 +14220,7 @@ _T4d4:
 	__asm        test   eax, eax;
 	__asm        je     _T4f2;
 
-	this->cYObject::PlaySoundA(0x0, 0xe);
+	this->cYObject::PlaySoundA(0xe, 0x0);
 // LINE 2422:
 _T4f2:
 	__asm        jmp    _T680;
@@ -14240,7 +14240,7 @@ _T4f7:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T54b;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T54b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14261,7 +14261,7 @@ _T571:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T5b9;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T5b9:
 	__asm        jmp    _T5be;
 _T5be:
@@ -14271,7 +14271,7 @@ _T5c3:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T5ef;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T5ef:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14292,7 +14292,7 @@ _T615:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T65d;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T65d:
 	__asm        jmp    _T662;
 // LINE 2424:
@@ -14302,7 +14302,7 @@ _T662:
 	__asm        test   eax, eax;
 	__asm        je     _T680;
 
-	this->cYObject::PlaySoundA(0x0, 0xe);
+	this->cYObject::PlaySoundA(0xe, 0x0);
 // LINE 2426:
 _T680:
 	__asm        jmp    _T1569;
@@ -14322,7 +14322,7 @@ _T685:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T6d9;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T6d9:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14343,7 +14343,7 @@ _T6ff:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T747;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T747:
 	__asm        jmp    _T74c;
 _T74c:
@@ -14353,7 +14353,7 @@ _T751:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T77d;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T77d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14374,7 +14374,7 @@ _T7a3:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T7eb;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T7eb:
 	__asm        jmp    _T7f0;
 // LINE 2430:
@@ -14384,7 +14384,7 @@ _T7f0:
 	__asm        test   eax, eax;
 	__asm        je     _T80e;
 
-	this->cYObject::PlaySoundA(0x0, 0x8);
+	this->cYObject::PlaySoundA(0x8, 0x0);
 // LINE 2431:
 _T80e:
 	__asm        jmp    _T1569;
@@ -14404,7 +14404,7 @@ _T813:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T867;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T867:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14425,7 +14425,7 @@ _T88d:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T8d5;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T8d5:
 	__asm        jmp    _T8da;
 _T8da:
@@ -14435,7 +14435,7 @@ _T8df:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T90b;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T90b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14456,7 +14456,7 @@ _T931:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T979;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T979:
 	__asm        jmp    _T97e;
 // LINE 2435:
@@ -14466,7 +14466,7 @@ _T97e:
 	__asm        test   eax, eax;
 	__asm        je     _T99c;
 
-	this->cYObject::PlaySoundA(0x0, 0x9);
+	this->cYObject::PlaySoundA(0x9, 0x0);
 // LINE 2436:
 _T99c:
 	__asm        jmp    _T1569;
@@ -14479,7 +14479,7 @@ _T9a1:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T9d4;
 _T9b8:
-	doAssert(0x8c085, 0x5bb498, 0x986, 0x5bb4c4);
+	doAssert(0x5bb4c4, 0x986, 0x5bb498, 0x8c085);
 _T9d4:
 	__asm        mov    eax, moveinfo;
 	__asm        mov    eax, [eax+8];
@@ -14534,7 +14534,7 @@ _Ta42:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Ta96;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _Ta96:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14555,7 +14555,7 @@ _Tabc:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Tb04;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _Tb04:
 	__asm        jmp    _Tb09;
 _Tb09:
@@ -14565,7 +14565,7 @@ _Tb0e:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Tb3a;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _Tb3a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14586,7 +14586,7 @@ _Tb60:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Tba8;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _Tba8:
 	__asm        jmp    _Tbad;
 // LINE 2444:
@@ -14608,7 +14608,7 @@ _Tbb2:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Tc06;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _Tc06:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14629,7 +14629,7 @@ _Tc2c:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Tc74;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _Tc74:
 	__asm        jmp    _Tc79;
 _Tc79:
@@ -14639,7 +14639,7 @@ _Tc7e:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Tcaa;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _Tcaa:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14660,7 +14660,7 @@ _Tcd0:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Td18;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _Td18:
 	__asm        jmp    _Td1d;
 // LINE 2447:
@@ -14682,7 +14682,7 @@ _Td22:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Td76;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _Td76:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14703,7 +14703,7 @@ _Td9c:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Tde4;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _Tde4:
 	__asm        jmp    _Tde9;
 _Tde9:
@@ -14713,7 +14713,7 @@ _Tdee:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Te1a;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _Te1a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14734,7 +14734,7 @@ _Te40:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Te88;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _Te88:
 	__asm        jmp    _Te8d;
 // LINE 2450:
@@ -14756,7 +14756,7 @@ _Te92:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Tee6;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _Tee6:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14777,7 +14777,7 @@ _Tf0c:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Tf54;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _Tf54:
 	__asm        jmp    _Tf59;
 _Tf59:
@@ -14787,7 +14787,7 @@ _Tf5e:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Tf8a;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _Tf8a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14808,7 +14808,7 @@ _Tfb0:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Tff8;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _Tff8:
 	__asm        jmp    _Tffd;
 // LINE 2453:
@@ -14842,7 +14842,7 @@ _T103f:
 	__asm        test   eax, eax;
 	__asm        je     _T105d;
 
-	this->cYObject::PlaySoundA(0x0, 0xa);
+	this->cYObject::PlaySoundA(0xa, 0x0);
 // LINE 2458:
 _T105d:
 	__asm        jmp    _T11b3;
@@ -14853,7 +14853,7 @@ _T1062:
 	__asm        test   eax, eax;
 	__asm        je     _T1080;
 
-	this->cYObject::PlaySoundA(0x0, 0x1);
+	this->cYObject::PlaySoundA(0x1, 0x0);
 // LINE 2461:
 _T1080:
 	__asm        jmp    _T11b3;
@@ -14864,7 +14864,7 @@ _T1085:
 	__asm        test   eax, eax;
 	__asm        je     _T10a3;
 
-	this->cYObject::PlaySoundA(0x0, 0x4);
+	this->cYObject::PlaySoundA(0x4, 0x0);
 // LINE 2464:
 _T10a3:
 	__asm        jmp    _T11b3;
@@ -14875,7 +14875,7 @@ _T10a8:
 	__asm        test   eax, eax;
 	__asm        je     _T10c6;
 
-	this->cYObject::PlaySoundA(0x0, 0xb);
+	this->cYObject::PlaySoundA(0xb, 0x0);
 // LINE 2467:
 _T10c6:
 	__asm        jmp    _T11b3;
@@ -14886,7 +14886,7 @@ _T10cb:
 	__asm        test   eax, eax;
 	__asm        je     _T10e9;
 
-	this->cYObject::PlaySoundA(0x0, 0x2);
+	this->cYObject::PlaySoundA(0x2, 0x0);
 // LINE 2470:
 _T10e9:
 	__asm        jmp    _T11b3;
@@ -14897,7 +14897,7 @@ _T10ee:
 	__asm        test   eax, eax;
 	__asm        je     _T110c;
 
-	this->cYObject::PlaySoundA(0x0, 0x12);
+	this->cYObject::PlaySoundA(0x12, 0x0);
 // LINE 2473:
 _T110c:
 	__asm        jmp    _T11b3;
@@ -14908,7 +14908,7 @@ _T1111:
 	__asm        test   eax, eax;
 	__asm        je     _T112f;
 
-	this->cYObject::PlaySoundA(0x0, 0x6);
+	this->cYObject::PlaySoundA(0x6, 0x0);
 // LINE 2476:
 _T112f:
 	__asm        jmp    _T11b3;
@@ -14919,7 +14919,7 @@ _T1134:
 	__asm        test   eax, eax;
 	__asm        je     _T1152;
 
-	this->cYObject::PlaySoundA(0x0, 0x7);
+	this->cYObject::PlaySoundA(0x7, 0x0);
 // LINE 2479:
 _T1152:
 	__asm        jmp    _T11b3;
@@ -14930,7 +14930,7 @@ _T1157:
 	__asm        test   eax, eax;
 	__asm        je     _T1175;
 
-	this->cYObject::PlaySoundA(0x0, 0x3);
+	this->cYObject::PlaySoundA(0x3, 0x0);
 // LINE 2482:
 _T1175:
 	__asm        jmp    _T11b3;
@@ -14970,7 +14970,7 @@ _T11b8:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T120c;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T120c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -14991,7 +14991,7 @@ _T1232:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T127a;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T127a:
 	__asm        jmp    _T127f;
 _T127f:
@@ -15001,7 +15001,7 @@ _T1284:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T12b0;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T12b0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -15022,7 +15022,7 @@ _T12d6:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T131e;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T131e:
 	__asm        jmp    _T1323;
 // LINE 2487:
@@ -15032,7 +15032,7 @@ _T1323:
 	__asm        test   eax, eax;
 	__asm        je     _T1341;
 
-	this->cYObject::PlaySoundA(0x0, 0x9);
+	this->cYObject::PlaySoundA(0x9, 0x0);
 // LINE 2488:
 _T1341:
 	__asm        jmp    _T1569;
@@ -15052,7 +15052,7 @@ _T1346:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T139a;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T139a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -15073,7 +15073,7 @@ _T13c0:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T1408;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T1408:
 	__asm        jmp    _T140d;
 _T140d:
@@ -15083,7 +15083,7 @@ _T1412:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T143e;
 
-	doAssert(0x8c085, 0x5bbb9c, 0x2f8, 0x5bba14);
+	doAssert(0x5bba14, 0x2f8, 0x5bbb9c, 0x8c085);
 _T143e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;
@@ -15104,7 +15104,7 @@ _T1464:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T14ac;
 
-	doAssert(0x8c085, 0x5bbb74, 0x2fb, 0x5bba14);
+	doAssert(0x5bba14, 0x2fb, 0x5bbb74, 0x8c085);
 _T14ac:
 	__asm        jmp    _T14b1;
 // LINE 2492:
@@ -15114,7 +15114,7 @@ _T14b1:
 	__asm        test   eax, eax;
 	__asm        je     _T14cf;
 
-	this->cYObject::PlaySoundA(0x0, 0xc);
+	this->cYObject::PlaySoundA(0xc, 0x0);
 // LINE 2493:
 _T14cf:
 	__asm        jmp    _T1569;
@@ -15280,7 +15280,7 @@ void cYObject::SetCellAndLoc(/*unpacked*/ struct Point3d loc, unsigned char x, u
 	__asm        sar    eax, 0x16;
 	__asm        mov    loccelly, ax;
 // LINE 2549:
-	this->fCurLocType = cYObject::GetLocType(reinterpret_cast<uint32_t>(loccelly), reinterpret_cast<uint32_t>(loccellx));
+	this->fCurLocType = cYObject::GetLocType(reinterpret_cast<uint32_t>(loccellx), reinterpret_cast<uint32_t>(loccelly));
 // LINE 2551:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x48;
@@ -15302,10 +15302,10 @@ void cYObject::SetCellAndLoc(/*unpacked*/ struct Point3d loc, unsigned char x, u
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        je     _T97;
 
-	doAssert(0x8c085, 0x5bb4e8, 0x9f9, 0x5bb520);
+	doAssert(0x5bb520, 0x9f9, 0x5bb4e8, 0x8c085);
 // LINE 2554:
 _T97:
-	this->fDyn.loc.y = (S3PUtilsGetAlt(this->fDyn.loc.z, this->fDyn.loc.y, this->fDyn.loc.x) + 0x30000);
+	this->fDyn.loc.y = (S3PUtilsGetAlt(this->fDyn.loc.x, this->fDyn.loc.y, this->fDyn.loc.z) + 0x30000);
 	__asm        jmp    _Tc4;
 // LINE 2555:
 _Tc4:
@@ -15317,7 +15317,7 @@ _Tc9:
 	__asm        test   ecx, ecx;
 	__asm        je     _Tf6;
 
-	doAssert(0x8c085, 0x5bbbb8, 0x210, 0x5bba14);
+	doAssert(0x5bba14, 0x210, 0x5bbbb8, 0x8c085);
 _Tf6:
 	__asm        mov    al, reinterpret_cast<uint8_t>(loccellx);
 	__asm        mov    ecx, this;
@@ -15403,7 +15403,7 @@ _Ta1:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2563:
-	this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), loc.z, loc.y, loc.x);
+	this->cYObject::SetCellAndLoc(loc.x, loc.y, loc.z, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
 // LINE 2567:
 	return;
 }
@@ -15416,7 +15416,7 @@ void cYObject::SetMissionType(enum MissionType type) {
 	__asm        test   eax, eax;
 	__asm        je     _T3a;
 
-	doAssert(0x8c085, 0x5bb544, 0xa0b, 0x5bb588);
+	doAssert(0x5bb588, 0xa0b, 0x5bb544, 0x8c085);
 // LINE 2572:
 _T3a:
 	this->fData[9] = 0x1;
@@ -15785,7 +15785,7 @@ _T2c7:
 	__asm        jmp    _T365;
 // LINE 2723:
 _T2e8:
-	doAssert(0x8c085, 0x5bb5ac, 0xaa3, 0x5bb5c0);
+	doAssert(0x5bb5c0, 0xaa3, 0x5bb5ac, 0x8c085);
 // LINE 2724:
 	__asm        jmp    _T365;
 _T309:
@@ -15828,7 +15828,7 @@ _T365:
 	__asm        cmp    dword ptr [ebp-0x1C], 0x20;
 	__asm        jb     _T3af;
 _T396:
-	doAssert(0x8c085, 0x5bbd7c, 0x6d, 0x5bbda4);
+	doAssert(0x5bbda4, 0x6d, 0x5bbd7c, 0x8c085);
 _T3af:
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        je     _T3c7;
@@ -15942,7 +15942,7 @@ _T4d9:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T511;
 
-	doAssert(0x8c085, 0x5bbd68, 0x27a, 0x5bba14);
+	doAssert(0x5bba14, 0x27a, 0x5bbd68, 0x8c085);
 _T511:
 	__asm        jmp    _T516;
 // LINE 2727:
@@ -15951,7 +15951,7 @@ _T516:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T542;
 
-	doAssert(0x8c085, 0x5bb5e4, 0xaa7, 0x5bb5f8);
+	doAssert(0x5bb5f8, 0xaa7, 0x5bb5e4, 0x8c085);
 // LINE 2729:
 _T542:
 	__asm        mov    eax, this;
@@ -16086,7 +16086,7 @@ _T11:
 	__asm        test   ecx, ecx;
 	__asm        je     _T3e;
 
-	doAssert(0x8c085, 0x5bb61c, 0xadc, 0x5bb638);
+	doAssert(0x5bb638, 0xadc, 0x5bb61c, 0x8c085);
 // LINE 2782:
 _T3e:
 	__asm        mov    eax, this;
@@ -16101,7 +16101,7 @@ _T3e:
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     _T82;
 
-	doAssert(0x8c085, 0x5bbad4, 0x22e, 0x5bba14);
+	doAssert(0x5bba14, 0x22e, 0x5bbad4, 0x8c085);
 _T82:
 	__asm        jmp    _Tb7;
 _T87:
@@ -16111,7 +16111,7 @@ _T87:
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    _Tb7;
 
-	doAssert(0x8c085, 0x5bbabc, 0x231, 0x5bba14);
+	doAssert(0x5bba14, 0x231, 0x5bbabc, 0x8c085);
 _Tb7:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -16128,7 +16128,7 @@ _Td5:
 	__asm        test   dword ptr [ebp-8], 0xFFFF;
 	__asm        jne    _T103;
 _Te7:
-	doAssert(0x8c085, 0x5bb65c, 0xade, 0x5bb67c);
+	doAssert(0x5bb67c, 0xade, 0x5bb65c, 0x8c085);
 // LINE 2783:
 _T103:
 	__asm        mov    eax, this;
@@ -16164,7 +16164,7 @@ _T11:
 	__asm        test   ecx, ecx;
 	__asm        jne    _T3e;
 
-	doAssert(0x8c085, 0x5bb6a0, 0xaee, 0x5bb6bc);
+	doAssert(0x5bb6bc, 0xaee, 0x5bb6a0, 0x8c085);
 // LINE 2799:
 _T3e:
 	__asm        mov    eax, this;
@@ -16305,7 +16305,7 @@ short cYObject::MakeNewObject(short type, /*unpacked*/ struct Point3d loc, /*unp
 	__asm        test   eax, eax;
 	__asm        jne    _FOR_55;
 
-	doAssert(0x8c085, 0x5bb6e0, 0xb0a, 0x5bb6f8);
+	doAssert(0x5bb6f8, 0xb0a, 0x5bb6e0, 0x8c085);
 // LINE 2828:
 _FOR_55:
 	for (id = 0x0; (reinterpret_cast<int16_t>(id) < 0x64); id++) {
@@ -16376,7 +16376,7 @@ _Tf7:
 	__asm        jmp    _T136;
 // LINE 2838:
 _T11a:
-	doAssert(0x8c085, 0x5bb71c, 0xb16, 0x5bb738);
+	doAssert(0x5bb738, 0xb16, 0x5bb71c, 0x8c085);
 // LINE 2840:
 _T136:
 	return id;
@@ -16402,13 +16402,13 @@ void cYObject::InitForEngine(short id) {
 	/*bp-0x24*/  /*unpacked*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 2845:
-	this->fDyn.mesh = VRObjCreatePoint(0x16, 0x1);
+	this->fDyn.mesh = VRObjCreatePoint(0x1, 0x16);
 // LINE 2846:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        jne    _T47;
 
-	doAssert(0x8c085, 0x5bb75c, 0xb1e, 0x5bb770);
+	doAssert(0x5bb770, 0xb1e, 0x5bb75c, 0x8c085);
 // LINE 2848:
 _T47:
 	__asm        push   2;
@@ -16497,13 +16497,13 @@ _T25:
 	__asm        cmp    eax, 0x64;
 	__asm        jl     _T5a;
 _T3e:
-	doAssert(0x8c085, 0x5bb9f4, 0x204, 0x5bba14);
+	doAssert(0x5bba14, 0x204, 0x5bb9f4, 0x8c085);
 _T5a:
 	__asm        movsx  eax, id;
 	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T88;
 
-	doAssert(0x8c085, 0x5bb9d0, 0x205, 0x5bba14);
+	doAssert(0x5bba14, 0x205, 0x5bb9d0, 0x8c085);
 _T88:
 	__asm        movsx  eax, id;
 	__asm        mov    eax, cYObject::sObjects[0][eax*4];
@@ -16517,7 +16517,7 @@ _Ta1:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Tc7;
 
-	doAssert(0x8c085, 0x5bb794, 0xb3a, 0x5bb7b4);
+	doAssert(0x5bb7b4, 0xb3a, 0x5bb794, 0x8c085);
 // LINE 2875:
 _Tc7:
 	__asm        cmp    obj, 0;
@@ -16727,7 +16727,7 @@ void cYObject::Reset() {
 	__asm        test   eax, eax;
 	__asm        jne    _Tef;
 
-	doAssert(0x8c085, 0x5bbc88, 0x2e4, 0x5bba14);
+	doAssert(0x5bba14, 0x2e4, 0x5bbc88, 0x8c085);
 _Tef:
 	__asm        jmp    _Tf4;
 _Tf4:
@@ -16737,7 +16737,7 @@ _Tf4:
 	__asm        test   ecx, ecx;
 	__asm        jne    _T121;
 
-	doAssert(0x8c085, 0x5bbc5c, 0x2e5, 0x5bba14);
+	doAssert(0x5bba14, 0x2e5, 0x5bbc5c, 0x8c085);
 _T121:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -16751,7 +16751,7 @@ _T121:
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        je     _T165;
 
-	doAssert(0x8c085, 0x5bbad4, 0x22e, 0x5bba14);
+	doAssert(0x5bba14, 0x22e, 0x5bbad4, 0x8c085);
 _T165:
 	__asm        jmp    _T19a;
 _T16a:
@@ -16761,7 +16761,7 @@ _T16a:
 	__asm        cmp    ecx, 0xFFFFFFFF;
 	__asm        jne    _T19a;
 
-	doAssert(0x8c085, 0x5bbabc, 0x231, 0x5bba14);
+	doAssert(0x5bba14, 0x231, 0x5bbabc, 0x8c085);
 _T19a:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -16778,7 +16778,7 @@ _T1b8:
 	__asm        test   dword ptr [ebp-0x10], 0xFFFF;
 	__asm        jne    _T1e6;
 _T1ca:
-	doAssert(0x8c085, 0x5bbc3c, 0x2e6, 0x5bba14);
+	doAssert(0x5bba14, 0x2e6, 0x5bbc3c, 0x8c085);
 _T1e6:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
@@ -16859,7 +16859,7 @@ _T2f6:
 	__asm        test   eax, eax;
 	__asm        jge    _T330;
 _T314:
-	doAssert(0x8c085, 0x5bbc24, 0x2ec, 0x5bba14);
+	doAssert(0x5bba14, 0x2ec, 0x5bbc24, 0x8c085);
 _T330:
 	this->cYObject::Unlink();
 	__asm        jmp    _T33d;
@@ -16893,7 +16893,7 @@ _T33d:
 	__asm        cmp    eax, 7;
 	__asm        je     _T3d1;
 
-	doAssert(0x8c085, 0x5bbb34, 0x2bd, 0x5bba14);
+	doAssert(0x5bba14, 0x2bd, 0x5bbb34, 0x8c085);
 _T3d1:
 	__asm        jmp    _T3d6;
 // LINE 2958:
@@ -16924,7 +16924,7 @@ void cYObject::Draw(/*unpacked*/ struct VRBlit *blit) {
 	__asm        test   eax, eax;
 	__asm        jne    _T43;
 
-	doAssert(0x8c085, 0x5bb7d8, 0xb98, 0x5bb7fc);
+	doAssert(0x5bb7fc, 0xb98, 0x5bb7d8, 0x8c085);
 // LINE 2969:
 _T43:
 	__asm        mov    eax, this;
@@ -16948,7 +16948,7 @@ _T7b:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _Taa;
 
-	doAssert(0x8c085, 0x5bb820, 0xba2, 0x5bb840);
+	doAssert(0x5bb840, 0xba2, 0x5bb820, 0x8c085);
 // LINE 2979:
 _Taa:
 	__asm        mov    eax, this;
@@ -17077,7 +17077,7 @@ _T293:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T2dd;
 
-	doAssert(0x8c085, 0x5bb864, 0xbd0, 0x5bb888);
+	doAssert(0x5bb888, 0xbd0, 0x5bb864, 0x8c085);
 // LINE 3025:
 _T2dd:
 	__asm        mov    eax, this;
@@ -17085,7 +17085,7 @@ _T2dd:
 	__asm        cmp    eax, 0xB;
 	__asm        jl     _T30f;
 
-	doAssert(0x8c085, 0x5bb8ac, 0xbd1, 0x5bb8b4);
+	doAssert(0x5bb8b4, 0xbd1, 0x5bb8ac, 0x8c085);
 _T30f:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x9C];
@@ -17163,14 +17163,14 @@ _T347:
 	__asm        jmp    _T434;
 // LINE 3039:
 _T41f:
-	sprintf(text[0], 0x5bb8e8, bdi.text[0]);
+	sprintf(bdi.text[0], 0x5bb8e8, text[0]);
 // LINE 3040:
 _T434:
 	__asm        movsx  eax, gBodyDebugInfoIndex;
 	__asm        cmp    eax, 0x64;
 	__asm        jl     _T460;
 
-	doAssert(0x8c085, 0x5bb8ec, 0xbe0, 0x5bb8f4);
+	doAssert(0x5bb8f4, 0xbe0, 0x5bb8ec, 0x8c085);
 // LINE 3041:
 _T460:
 	__asm        lea    esi, bdi.screenx;
@@ -17270,7 +17270,7 @@ _T98:
 	__asm        test   reinterpret_cast<uint32_t>(found), 0xFFFF;
 	__asm        jne    _Tc1;
 
-	doAssert(0x8c085, 0x5bb918, 0xc00, 0x5bb944);
+	doAssert(0x5bb944, 0xc00, 0x5bb918, 0x8c085);
 // LINE 3073:
 _Tc1:
 	__asm        jmp    _Tc6;
@@ -17327,7 +17327,7 @@ void S3PersonTweakInit() {
 // LINE 3089:
 	pvals[6] = 0x5b86a4;
 // LINE 3091:
-	TWKEnQueue(0x5bb968, 0x7, pvals[0]);
+	TWKEnQueue(pvals[0], 0x7, 0x5bb968);
 // LINE 3092:
 	return;
 }
@@ -17372,7 +17372,7 @@ _T60:
 	this->fUserControl.yaw += 0xe100000;
 // LINE 3110:
 _T7d:
-	S3AngleRotMat(0x0, 0x0, this->fUserControl.yaw, matrix[0][0]);
+	S3AngleRotMat(matrix[0][0], this->fUserControl.yaw, 0x0, 0x0);
 // LINE 3111:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x48;
@@ -17514,7 +17514,7 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 	__asm        cmp    cptr, 0;
 	__asm        jne    _T59;
 
-	return S3TerrPrecisionAlt(0x0, z, x);
+	return S3TerrPrecisionAlt(x, z, 0x0);
 // LINE 3163:
 _T59:
 	__asm        mov    eax, x;
@@ -17549,7 +17549,7 @@ __WHILE_a6:
 		// LINE 3172:
 			color = 0x200;
 		// LINE 3173:
-			objy = VRGetObjAlt(0x0, 0x0, 0x0, color, normz, normy, normx, stobj->mesh);
+			objy = VRGetObjAlt(stobj->mesh, normx, normy, normz, color, 0x0, 0x0, 0x0);
 		// LINE 3174:
 			__asm        mov    eax, objy;
 			__asm        cmp    maxobjy, eax;
@@ -17565,7 +17565,7 @@ _Tfe:
 	__asm        cmp    maxobjy, 0;
 	__asm        jne    _T122;
 // LINE 3183:
-	alt = S3TerrPrecisionAlt(0x0, z, x);
+	alt = S3TerrPrecisionAlt(x, z, 0x0);
 // LINE 3184:
 	__asm        jmp    _T132;
 // LINE 3185:

@@ -564,7 +564,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0052b29e
 /*packed*/ class PlaneClass* PlaneClass::CreateInstance(int32_t instanceID) {
 // LINE 290:
-	return PlaneClass::CreateInstance(instanceID, -0x1, -0x1);
+	return PlaneClass::CreateInstance(-0x1, -0x1, instanceID);
 // LINE 328:
 }
 
@@ -629,7 +629,7 @@ _T94:
 // FUNCTION: COPTER_D 0x0052b35e
 int32_t PlaneClass::Initialize(int32_t instanceID) {
 // LINE 453:
-	return this->PlaneClass::InitializeInstance(instanceID, this->currentLocation.y, this->currentLocation.x);
+	return this->PlaneClass::InitializeInstance(this->currentLocation.x, this->currentLocation.y, instanceID);
 // LINE 454:
 }
 
@@ -851,7 +851,7 @@ _T13b:
 	__asm        test   eax, eax;
 	__asm        jne    _T166;
 
-	_assert(0x29b, 0x5b76a0, 0x5b76c4);
+	_assert(0x5b76c4, 0x5b76a0, 0x29b);
 	__asm        jmp    _T16b;
 _T166:
 	__asm        jmp    _T16b;
@@ -956,7 +956,7 @@ _T88:
 	__asm        test   eax, eax;
 	__asm        jne    _Tf3;
 // LINE 776:
-	S3DSPlay(0x1, (this + 0x70), 0x1c);
+	S3DSPlay(0x1c, (this + 0x70), 0x1);
 // LINE 780:
 _Tf3:
 	__asm        push   0xF0600000;
@@ -971,7 +971,7 @@ _Tf3:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 783:
-	S3SoundAdjVol(vol_adj, 0x1c);
+	S3SoundAdjVol(0x1c, vol_adj);
 // LINE 785:
 	__asm        jmp    _T12b;
 _T12b:
@@ -986,10 +986,10 @@ _T12b:
 	__asm        test   eax, eax;
 	__asm        jne    _T15f;
 // LINE 789:
-	S3DSPlay(0x1, (this + 0x70), 0x1b);
+	S3DSPlay(0x1b, (this + 0x70), 0x1);
 // LINE 791:
 _T15f:
-	S3SoundAdjVol(vol_adj, 0x1b);
+	S3SoundAdjVol(0x1b, vol_adj);
 // LINE 793:
 	__asm        jmp    _T18f;
 // LINE 795:
@@ -1063,7 +1063,7 @@ _T209:
 	__asm        test   eax, eax;
 	__asm        jne    _T274;
 // LINE 835:
-	S3DSPlay(0x1, (this + 0x70), 0x29);
+	S3DSPlay(0x29, (this + 0x70), 0x1);
 // LINE 839:
 _T274:
 	__asm        push   0xF0600000;
@@ -1078,7 +1078,7 @@ _T274:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 842:
-	S3SoundAdjVol(vol_adj, 0x29);
+	S3SoundAdjVol(0x29, vol_adj);
 // LINE 844:
 	__asm        jmp    _T2c9;
 // LINE 846:
@@ -1337,7 +1337,7 @@ _Tc6:
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    _T15c;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T161;
 _T15c:
 	__asm        jmp    _T161;
@@ -1378,7 +1378,7 @@ _T166:
 	__asm        test   al, 1;
 	__asm        je     _T1e8;
 // LINE 1238:
-	MTCreateDOF4x4((this + 0x8), (this + 0x7c));
+	MTCreateDOF4x4((this + 0x7c), (this + 0x8));
 // LINE 1241:
 _T1e8:
 	this->flags[2] = 0x0;
@@ -1401,7 +1401,7 @@ _T215:
 	__asm        jne    _T243;
 // LINE 1249:
 _T229:
-	S3DSPlay(0x0, (0x6c1210 + 0x5c), 0x1d);
+	S3DSPlay(0x1d, (0x6c1210 + 0x5c), 0x0);
 // LINE 1251:
 	__asm        jmp    _T243;
 // LINE 1258:
@@ -1615,7 +1615,7 @@ _Ta0:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T160;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T165;
 _T160:
 	__asm        jmp    _T165;
@@ -1635,7 +1635,7 @@ _T16a:
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T1b4;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T1b9;
 _T1b4:
 	__asm        jmp    _T1b9;
@@ -1655,12 +1655,12 @@ _T1be:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jge    _T1fd;
 // LINE 1429:
-	S3ExplosionSmokeStart(0x1, newloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, newloc.x, 0x1);
 // LINE 1430:
 	this->smokeTime = 0x3333;
 // LINE 1434:
 _T1fd:
-	this->PlaneClass::PlaneCollisionCheck(lcptr, dist);
+	this->PlaneClass::PlaneCollisionCheck(dist, lcptr);
 // LINE 1435:
 	__asm        jmp    _T212;
 _T212:
@@ -1676,7 +1676,7 @@ _T226:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T25b;
 // LINE 1443:
-	this->PlaneClass::PlaneCollisionCheck(cptr, dist);
+	this->PlaneClass::PlaneCollisionCheck(dist, cptr);
 // LINE 1444:
 	__asm        jmp    _T247;
 _T247:
@@ -1796,12 +1796,12 @@ __WHILE_64:
 		// LINE 1508:
 			oloc.z += center.z;
 		// LINE 1514:
-			newdist = S3MissileSphereHit(oinfo.Radius, oloc.x, dist, (this + 0x8), (this + 0x70));
+			newdist = S3MissileSphereHit((this + 0x70), (this + 0x8), dist, oloc.x, oinfo.Radius);
 		// LINE 1518:
 			__asm        cmp    newdist, 0;
 			__asm        jle    _T147;
 		// LINE 1525:
-			newdist = VRStObjPolyHit(norm, stobj->mesh, cloc.x, dist, (this + 0x8), (this + 0x70));
+			newdist = VRStObjPolyHit((this + 0x70), (this + 0x8), dist, cloc.x, stobj->mesh, norm);
 		// LINE 1528:
 		_T147:
 			__asm        cmp    newdist, 0;
@@ -1867,9 +1867,9 @@ __WHILE_64:
 			__asm        neg    eax;
 			__asm        sub    loc.z, eax;
 		// LINE 1540:
-			S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
+			S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, this->missionId);
 		// LINE 1542:
-			S3DSPlay(0x0, sloc.x, 0x1a);
+			S3DSPlay(0x1a, sloc.x, 0x0);
 		// LINE 1545:
 			this->PlaneClass::UnPlacePlane();
 		// LINE 1546:
@@ -1895,12 +1895,12 @@ __WHILE_64:
 			__asm        test   eax, eax;
 			__asm        jne    _T2cb;
 		// LINE 1556:
-			new_mission_id = S3MissionStart(0x1, celloc.y, celloc.x);
+			new_mission_id = S3MissionStart(celloc.x, celloc.y, 0x1);
 		// LINE 1558:
 			__asm        jmp    _T2e4;
 		// LINE 1560:
 		_T2cb:
-			new_mission_id = S3FireAddToNearest(celloc.x, cptr);
+			new_mission_id = S3FireAddToNearest(cptr, celloc.x);
 		// LINE 1564:
 		_T2e4:
 			__asm        cmp    new_mission_id, 0xFFFFFFFF;
@@ -1977,7 +1977,7 @@ __WHILE_64:
 					__asm        call   0x004D2094;
 					__asm        add    esp, 0xC;
 				// LINE 1592:
-					S3MissileStart(this->missionId, speed, (this + 0x58), 0x8, vec.x, sloc.x, celloc.x, 0x4);
+					S3MissileStart(0x4, celloc.x, sloc.x, vec.x, 0x8, (this + 0x58), speed, this->missionId);
 			}
 		// LINE 1595:
 		_T444:
@@ -2045,7 +2045,7 @@ __WHILE_64:
 					__asm        call   0x004D2094;
 					__asm        add    esp, 0xC;
 				// LINE 1616:
-					S3MissileStart(this->missionId, speed, (this + 0x58), 0x8, vec.x, sloc.x, celloc.x, 0x4);
+					S3MissileStart(0x4, celloc.x, sloc.x, vec.x, 0x8, (this + 0x58), speed, this->missionId);
 			}
 		// LINE 1621:
 		_T55b:
@@ -2077,7 +2077,7 @@ __WHILE_64:
 	}
 // LINE 1647:
 _T5e3:
-	newdist = S3MissileGroundHit(cloc.x, dist, (this + 0x8), (this + 0x70));
+	newdist = S3MissileGroundHit((this + 0x70), (this + 0x8), dist, cloc.x);
 // LINE 1648:
 	__asm        cmp    newdist, 0;
 	__asm        jle    _T878;
@@ -2142,9 +2142,9 @@ _T5e3:
 	__asm        neg    eax;
 	__asm        sub    loc.z, eax;
 // LINE 1662:
-	S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
+	S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, this->missionId);
 // LINE 1664:
-	S3DSPlay(0x0, sloc.x, 0x1a);
+	S3DSPlay(0x1a, sloc.x, 0x0);
 // LINE 1667:
 	this->PlaneClass::UnPlacePlane();
 // LINE 1668:
@@ -2211,7 +2211,7 @@ _FOR_754:
 			__asm        call   0x004D2094;
 			__asm        add    esp, 0xC;
 		// LINE 1728:
-			S3MissileStart(this->missionId, speed, (this + 0x58), 0x8, vec.x, sloc.x, celloc.x, 0x4);
+			S3MissileStart(0x4, celloc.x, sloc.x, vec.x, 0x8, (this + 0x58), speed, this->missionId);
 	}
 // LINE 1733:
 _T83c:
@@ -2291,7 +2291,7 @@ void PlaneClass::UnlinkFromCell(const /*packed*/ struct Point2d& point) {
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T55;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -2304,7 +2304,7 @@ _T5f:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
 
-	_assert(0x728, 0x5b76dc, 0x5b7700);
+	_assert(0x5b7700, 0x5b76dc, 0x728);
 	__asm        jmp    _T90;
 _T8b:
 	__asm        jmp    _T90;
@@ -2339,7 +2339,7 @@ _Tdd:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T105;
 
-	_assert(0x73e, 0x5b770c, 0x5b7730);
+	_assert(0x5b7730, 0x5b770c, 0x73e);
 	__asm        jmp    _T10a;
 _T105:
 	__asm        jmp    _T10a;
@@ -2366,7 +2366,7 @@ void PlaneClass::LinkToCell(const /*packed*/ struct Point2d& point) {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T55;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -2382,7 +2382,7 @@ _T5f:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    _T93;
 
-	_assert(0x758, 0x5b773c, 0x5b7760);
+	_assert(0x5b7760, 0x5b773c, 0x758);
 	__asm        jmp    _T98;
 _T93:
 	__asm        jmp    _T98;
@@ -2413,7 +2413,7 @@ void PlaneClass::AdjustCurrentPosition() {
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T56;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T5b;
 _T56:
 	__asm        jmp    _T5b;
@@ -2426,7 +2426,7 @@ _T60:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8c;
 
-	_assert(0x773, 0x5b7780, 0x5b77a4);
+	_assert(0x5b77a4, 0x5b7780, 0x773);
 	__asm        jmp    _T91;
 _T8c:
 	__asm        jmp    _T91;
@@ -2483,7 +2483,7 @@ void PlaneClass::AdjustNextPosition() {
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        jne    _T55;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -2496,7 +2496,7 @@ _T5f:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
 
-	_assert(0x79c, 0x5b77b0, 0x5b77d4);
+	_assert(0x5b77d4, 0x5b77b0, 0x79c);
 	__asm        jmp    _T90;
 _T8b:
 	__asm        jmp    _T90;
@@ -2555,7 +2555,7 @@ _T90:
 	__asm        test   al, 1;
 	__asm        je     _T13a;
 // LINE 1965:
-	MTCreateDOF4x4((this + 0x8), (this + 0x7c));
+	MTCreateDOF4x4((this + 0x7c), (this + 0x8));
 // LINE 1967:
 _T13a:
 	return;
@@ -2653,7 +2653,7 @@ _Tb2:
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        jne    _T138;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T13d;
 _T138:
 	__asm        jmp    _T13d;
@@ -3021,7 +3021,7 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        cmp    object, 0;
 	__asm        jne    _T5a;
 // LINE 2300:
-	_assert(0x8fc, 0x5b77e0, 0x5b7804);
+	_assert(0x5b7804, 0x5b77e0, 0x8fc);
 	__asm        jmp    _T53;
 
 	__asm        jmp    _T53;
@@ -3169,7 +3169,7 @@ _T34:
 // LINE 2494:
 	this->smokeTime = 0xb40000;
 // LINE 2504:
-	S3MissileStart(-0x1, 0x12c0000, (this + 0x58), 0x1, vec.x, (this + 0x70), (this + 0x20), 0xb);
+	S3MissileStart(0xb, (this + 0x20), (this + 0x70), vec.x, 0x1, (this + 0x58), 0x12c0000, -0x1);
 // LINE 2506:
 _T9b:
 	return;
@@ -3407,7 +3407,7 @@ _T24c:
 // FUNCTION: COPTER_D 0x0052d975
 void PlaneHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, /*packed*/ struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
 // LINE 2708:
-	PlaneClass::HitDispatch(xtra_msg, mission_id, dyhittee, dyhitter, hitter_type);
+	PlaneClass::HitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 2709:
 	return;
 }
@@ -3547,7 +3547,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   int32_t i;
 
 // LINE 2805:
-	ret = ReadFirstMIFFChunk(0xbc, 0x62b6e8, 0x504c414e, miffReader);
+	ret = ReadFirstMIFFChunk(miffReader, 0x504c414e, 0x62b6e8, 0xbc);
 // LINE 2806:
 	__asm        cmp    ret, 0;
 	__asm        jne    _FOR_44;
@@ -3648,7 +3648,7 @@ _FOR_44:
 			p->PlaneClass::LinkToCell((p + 0x20));
 		// LINE 2840:
 		_T192:
-			ret = ReadNextMIFFChunk(0xbc, 0x62b6e8, 0x504c414e, miffReader);
+			ret = ReadNextMIFFChunk(miffReader, 0x504c414e, 0x62b6e8, 0xbc);
 		// LINE 2842:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T1cb;

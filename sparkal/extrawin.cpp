@@ -2230,7 +2230,7 @@ _T3d0:
 	tempButtonWindow = 0x0;
 // LINE 122:
 _T3d7:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, nButtonStringID[0]);
+	nFullStringID = LanguageManager::GetFullStringID(nButtonStringID[0], 0x0);
 // LINE 123:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1090];
@@ -2531,7 +2531,7 @@ _T823:
 	tempButtonWindow = 0x0;
 // LINE 131:
 _T82a:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, nButtonStringID[1]);
+	nFullStringID = LanguageManager::GetFullStringID(nButtonStringID[1], 0x0);
 // LINE 132:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x20A8];
@@ -2911,7 +2911,7 @@ _T41:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T478;
 // LINE 239:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, this->lMessageID);
+	nFullStringID = LanguageManager::GetFullStringID(this->lMessageID, 0x0);
 // LINE 240:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1060];
@@ -3187,7 +3187,7 @@ _T473:
 	__asm        jmp    _T478;
 // LINE 242:
 _T478:
-	LanguageManager::GetTypefaceForLanguage(szTypeface[0], 0x0, 0x0);
+	LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeface[0]);
 // LINE 243:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -3412,7 +3412,7 @@ void AnimationWindow::AnimationWindow() {
 // FUNCTION: COPTER_D 0x00451fde
 void AnimationWindow::AnimationWindow(char * szImageFileName, /*packed*/ class MRect& rectNewWindow, long lNewWidthOfSingleFrame, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, long lNewTransparentIndex, enum AnimationWindow::AnimationLoopType nNewAnimationLoopType) {
 
-	this->GraphicWindow::GraphicWindow(-0x1, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewWindow, szImageFileName);
+	this->GraphicWindow::GraphicWindow(szImageFileName, rectNewWindow, nNewID, windowNewParent, myNewOwner, bAddToParentList, -0x1);
 	this->lWidthOfSingleFrame = lNewWidthOfSingleFrame;
 	this->lTransparentIndex = lNewTransparentIndex;
 	this-><AnimationWindow+0x00> = 0x58fb58;
@@ -4722,7 +4722,7 @@ _Td45:
 	tempButtonWindow = 0x0;
 // LINE 627:
 _Td4c:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x51);
+	nFullStringID = LanguageManager::GetFullStringID(0x51, 0x0);
 // LINE 628:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x11C8];
@@ -5154,7 +5154,7 @@ _T137a:
 	tempButtonWindow = 0x0;
 // LINE 635:
 _T1381:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x52);
+	nFullStringID = LanguageManager::GetFullStringID(0x52, 0x0);
 // LINE 636:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2224];
@@ -6313,17 +6313,17 @@ _T303:
 	__asm        jmp    _T30f;
 // LINE 822:
 _T30f:
-	this->RenderSettingsWindow::GetPreviewFileNames(sBuildingPreviewFileName.c_str_ptr, sGroundPreviewFileName.c_str_ptr, sSkyPreviewFileName.c_str_ptr);
+	this->RenderSettingsWindow::GetPreviewFileNames(sSkyPreviewFileName.c_str_ptr, sGroundPreviewFileName.c_str_ptr, sBuildingPreviewFileName.c_str_ptr);
 // LINE 823:
-	0x604c00->FileServices::GetPathForFileString(sSkyPreviewFilePath.c_str_ptr, sSkyPreviewFileName.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sSkyPreviewFileName.c_str_ptr, sSkyPreviewFilePath.c_str_ptr);
 	__asm        jmp    _T347;
 // LINE 824:
 _T347:
-	0x604c00->FileServices::GetPathForFileString(sGroundPreviewFilePath.c_str_ptr, sGroundPreviewFileName.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sGroundPreviewFileName.c_str_ptr, sGroundPreviewFilePath.c_str_ptr);
 	__asm        jmp    _T368;
 // LINE 825:
 _T368:
-	0x604c00->FileServices::GetPathForFileString(sBuildingPreviewFilePath.c_str_ptr, sBuildingPreviewFileName.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sBuildingPreviewFileName.c_str_ptr, sBuildingPreviewFilePath.c_str_ptr);
 	__asm        jmp    _T383;
 // LINE 828:
 _T383:
@@ -7611,7 +7611,7 @@ _T1e7:
 // FUNCTION: COPTER_D 0x00455bfb
 void SoundSettingsWindow::SoundSettingsWindow(/*packed*/ class MRect& rectNewPosition, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->GraphicWindow::GraphicWindow(GraphicWindow::colorConstants.nPaletteIndexTransparent, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewPosition, SZ_SOUND_WINDOW_IMAGE_FILE_NAME);
+	this->GraphicWindow::GraphicWindow(SZ_SOUND_WINDOW_IMAGE_FILE_NAME, rectNewPosition, nNewID, windowNewParent, myNewOwner, bAddToParentList, GraphicWindow::colorConstants.nPaletteIndexTransparent);
 	this->myMasterVolumeSliderWindow = 0x0;
 	this->myRadioStationSliderWindow = 0x0;
 	this->myRadioVolumeSliderWindow = 0x0;
@@ -8127,7 +8127,7 @@ _T78f:
 	tempButtonWindow1 = 0x0;
 // LINE 1098:
 _T796:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x8d);
+	nFullStringID = LanguageManager::GetFullStringID(0x8d, 0x0);
 // LINE 1099:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x110C];
@@ -8508,7 +8508,7 @@ _Td0b:
 	tempButtonWindow2 = 0x0;
 // LINE 1106:
 _Td12:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x8e);
+	nFullStringID = LanguageManager::GetFullStringID(0x8e, 0x0);
 // LINE 1107:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2154];
@@ -9185,7 +9185,7 @@ void CitySettingsWindow::CitySettingsWindow(/*packed*/ class MRect& rectNewPosit
 	/*bp-0x4*/   int32_t i;
 
 
-	this->GraphicWindow::GraphicWindow(GraphicWindow::colorConstants.nPaletteIndexTransparent, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewPosition, SZ_CITY_SETTINGS_WINDOW_IMAGE_FILE_NAME);
+	this->GraphicWindow::GraphicWindow(SZ_CITY_SETTINGS_WINDOW_IMAGE_FILE_NAME, rectNewPosition, nNewID, windowNewParent, myNewOwner, bAddToParentList, GraphicWindow::colorConstants.nPaletteIndexTransparent);
 	this-><CitySettingsWindow+0x00> = 0x58fdd0;
 // LINE 1324:
 _FOR_49:
@@ -10074,7 +10074,7 @@ _Td9a:
 	tempButtonWindow = 0x0;
 // LINE 1444:
 _Tda1:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x14b);
+	nFullStringID = LanguageManager::GetFullStringID(0x14b, 0x0);
 // LINE 1445:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x119C];
@@ -10646,7 +10646,7 @@ _T160a:
 	tempButtonWindow = 0x0;
 // LINE 1451:
 _T1611:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x14c);
+	nFullStringID = LanguageManager::GetFullStringID(0x14c, 0x0);
 // LINE 1452:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2218];
@@ -11396,7 +11396,7 @@ _T98:
 _Taa:
 	this-><PopupMenuExtra+0x00> = 0x58fe98;
 // LINE 1551:
-	this->ListBoxWindow::SetTextColor(0x603ab8, 0x603ab0);
+	this->ListBoxWindow::SetTextColor(0x603ab0, 0x603ab8);
 // LINE 1552:
 	__asm        cmp    szNewBackgroundImageFileName, 0;
 	__asm        je     _T259;
@@ -12704,7 +12704,7 @@ _T6f:
 	__asm        cmp    dword ptr [eax+0xCC], 0;
 	__asm        jne    _T1fc;
 // LINE 1694:
-	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, (this + 0xd0), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0xd0), sImagePath.c_str_ptr);
 	__asm        jmp    _T9f;
 // LINE 1695:
 _T9f:
@@ -14094,7 +14094,7 @@ _T6f:
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        jne    _T1ee;
 // LINE 1900:
-	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, (this + 0xa8), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0xa8), sImagePath.c_str_ptr);
 	__asm        jmp    _T9f;
 // LINE 1901:
 _T9f:
@@ -15240,7 +15240,7 @@ _T15f:
 _T18f:
 	__asm        jmp    _T194;
 _T194:
-	GetPathForFile(szFullPath[0], this-><BoneheadTextEditWindow+0x5c>, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, this-><BoneheadTextEditWindow+0x5c>, szFullPath[0]);
 // LINE 2034:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -16864,7 +16864,7 @@ _T6a:
 // FUNCTION: COPTER_D 0x0045d955
 void MessageBoxWindowEdit::MessageBoxWindowEdit(/*packed*/ class MPoint& ptNewPosition, unsigned long lNewType, unsigned long lNewMessageID, const /*packed*/ class basic_string<char>& sNewInitialEditText, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 
-	this->MessageBoxWindow::MessageBoxWindow(szAnimationImageFileName, szButtonImageFileName, szImageFileName, bNewSelfDeleting, bAddToParentList, myNewOwner, windowNewParent, nNewID, lNewMessageID, lNewType, ptNewPosition);
+	this->MessageBoxWindow::MessageBoxWindow(ptNewPosition, lNewType, lNewMessageID, nNewID, windowNewParent, myNewOwner, bAddToParentList, bNewSelfDeleting, szImageFileName, szButtonImageFileName, szAnimationImageFileName);
 	this->myTextEditWindow = 0x0;
 	this-><MessageBoxWindowEdit+0x00> = 0x5901f8;
 // LINE 2246:
@@ -16922,7 +16922,7 @@ _Td1:
 // FUNCTION: COPTER_D 0x0045da55
 void MessageBoxWindowEdit::MessageBoxWindowEdit(/*packed*/ class MPoint& ptNewPosition, unsigned long lNewType, /*packed*/ class basic_string<char>& sNewMessage, const /*packed*/ class basic_string<char>& sNewInitialEditText, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 
-	this->MessageBoxWindow::MessageBoxWindow(szAnimationImageFileName, szButtonImageFileName, szImageFileName, bNewSelfDeleting, bAddToParentList, myNewOwner, windowNewParent, nNewID, sNewMessage, lNewType, ptNewPosition);
+	this->MessageBoxWindow::MessageBoxWindow(ptNewPosition, lNewType, sNewMessage, nNewID, windowNewParent, myNewOwner, bAddToParentList, bNewSelfDeleting, szImageFileName, szButtonImageFileName, szAnimationImageFileName);
 	this->myTextEditWindow = 0x0;
 	this-><MessageBoxWindowEdit+0x00> = 0x5901f8;
 // LINE 2275:
@@ -17438,7 +17438,7 @@ void CheckupWindow::CheckupWindow(/*packed*/ class MRect& rectNewPosition, int32
 	/*bp-0x4*/   int32_t i;
 
 
-	this->GraphicWindow::GraphicWindow(GraphicWindow::colorConstants.nPaletteIndexTransparent, bAddToParentList, myNewOwner, windowNewParent, nNewID, rectNewPosition, SZ_CHECKUP_WINDOW_IMAGE_FILE_NAME);
+	this->GraphicWindow::GraphicWindow(SZ_CHECKUP_WINDOW_IMAGE_FILE_NAME, rectNewPosition, nNewID, windowNewParent, myNewOwner, bAddToParentList, GraphicWindow::colorConstants.nPaletteIndexTransparent);
 	this-><CheckupWindow+0x00> = 0x5903a0;
 // LINE 2421:
 _FOR_49:
@@ -18271,7 +18271,7 @@ _Tc74:
 	tempButtonWindow = 0x0;
 // LINE 2519:
 _Tc7b:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x24a);
+	nFullStringID = LanguageManager::GetFullStringID(0x24a, 0x0);
 // LINE 2520:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1174];
@@ -18789,7 +18789,7 @@ _T1405:
 	tempButtonWindow = 0x0;
 // LINE 2527:
 _T140c:
-	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x24b);
+	nFullStringID = LanguageManager::GetFullStringID(0x24b, 0x0);
 // LINE 2528:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x21E4];
@@ -19504,7 +19504,7 @@ _T5e:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2642:
-	sprintf(GetUserMoney(), 0x599270, szCurrentText[0]);
+	sprintf(szCurrentText[0], 0x599270, GetUserMoney());
 // LINE 2643:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -19597,7 +19597,7 @@ _T1a9:
 // LINE 2647:
 	lCurrentValue = ((lSliderValues[1] + lSliderValues[2]) + lSliderValues[0]);
 // LINE 2648:
-	sprintf(lCurrentValue, 0x599274, szCurrentText[0]);
+	sprintf(szCurrentText[0], 0x599274, lCurrentValue);
 // LINE 2649:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -19712,7 +19712,7 @@ _T361:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2657:
-	sprintf(lSliderValues[0], 0x599278, szCurrentText[0]);
+	sprintf(szCurrentText[0], 0x599278, lSliderValues[0]);
 // LINE 2658:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -19848,7 +19848,7 @@ _T55c:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2662:
-	sprintf(lSliderValues[1], 0x59927c, szCurrentText[0]);
+	sprintf(szCurrentText[0], 0x59927c, lSliderValues[1]);
 // LINE 2663:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -19939,7 +19939,7 @@ _T6ab:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2667:
-	sprintf(lSliderValues[2], 0x599280, szCurrentText[0]);
+	sprintf(szCurrentText[0], 0x599280, lSliderValues[2]);
 // LINE 2668:
 	__asm        push   0x10;
 	__asm        call   operator new;

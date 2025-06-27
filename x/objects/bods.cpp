@@ -278,7 +278,7 @@ _FOR_COND_17:
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     _T68;
 
-	doAssert(0x8c085, 0x5be4b8, 0x1a4, 0x5be4f0);
+	doAssert(0x5be4f0, 0x1a4, 0x5be4b8, 0x8c085);
 _T68:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -293,7 +293,7 @@ _T68:
 	__asm        test   eax, eax;
 	__asm        jge    _Tad;
 _T91:
-	doAssert(0x8c085, 0x5be49c, 0x1a6, 0x5be4f0);
+	doAssert(0x5be4f0, 0x1a6, 0x5be49c, 0x8c085);
 _Tad:
 	__asm        jmp    _Tb2;
 _Tb2:
@@ -323,7 +323,7 @@ _Tb2:
 	__asm        cmp    dword ptr [ebp-0x14], 0x20;
 	__asm        jb     _T117;
 _Tfe:
-	doAssert(0x8c085, 0x5bbd7c, 0x6d, 0x5be1ec);
+	doAssert(0x5be1ec, 0x6d, 0x5bbd7c, 0x8c085);
 _T117:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        je     _T12f;
@@ -436,7 +436,7 @@ _T241:
 	__asm        cmp    privanim, 0;
 	__asm        jne    _T26d;
 
-	doAssert(0x8c085, 0x5be638, 0x79b, 0x5be658);
+	doAssert(0x5be658, 0x79b, 0x5be638, 0x8c085);
 // LINE 1948:
 _T26d:
 	return privanim;
@@ -459,7 +459,7 @@ void cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	__asm        cmp    this, 0;
 	__asm        jne    _FOR_3d;
 
-	doAssert(0x8c085, 0x5be67c, 0x80e, 0x5be6cc);
+	doAssert(0x5be6cc, 0x80e, 0x5be67c, 0x8c085);
 // LINE 2063:
 _FOR_3d:
 	count = 0x0;
@@ -485,7 +485,7 @@ _FOR_COND_3d:
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     _T8e;
 
-	doAssert(0x8c085, 0x5be4b8, 0x1a4, 0x5be4f0);
+	doAssert(0x5be4f0, 0x1a4, 0x5be4b8, 0x8c085);
 _T8e:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -500,7 +500,7 @@ _T8e:
 	__asm        test   eax, eax;
 	__asm        jge    _Td3;
 _Tb7:
-	doAssert(0x8c085, 0x5be49c, 0x1a6, 0x5be4f0);
+	doAssert(0x5be4f0, 0x1a6, 0x5be49c, 0x8c085);
 _Td3:
 	__asm        jmp    _Td8;
 _Td8:
@@ -514,7 +514,7 @@ _Td8:
 // LINE 2065:
 	__asm        jmp    _T10e;
 
-	doAssert(0x8c085, 0x5be6f0, 0x811, 0x5be71c);
+	doAssert(0x5be71c, 0x811, 0x5be6f0, 0x8c085);
 // LINE 2066:
 _T10e:
 	__asm        test   reinterpret_cast<uint32_t>(activated), 0xFFFF;
@@ -584,7 +584,7 @@ class cCopterBody * cCopterBody::GetCopterBody(unsigned char * name) {
 	__asm        cmp    dword ptr [ebp-4], 0x20;
 	__asm        jb     _T54;
 _T3b:
-	doAssert(0x8c085, 0x5bbd7c, 0x6d, 0x5be1ec);
+	doAssert(0x5be1ec, 0x6d, 0x5bbd7c, 0x8c085);
 _T54:
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        je     _T6c;
@@ -726,7 +726,7 @@ _FOR_COND_17:
 	__asm        cmp    eax, [ecx+4];
 	__asm        je     _T68;
 
-	doAssert(0x8c085, 0x5be4b8, 0x1a4, 0x5be4f0);
+	doAssert(0x5be4f0, 0x1a4, 0x5be4b8, 0x8c085);
 _T68:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -741,7 +741,7 @@ _T68:
 	__asm        test   eax, eax;
 	__asm        jge    _Tad;
 _T91:
-	doAssert(0x8c085, 0x5be49c, 0x1a6, 0x5be4f0);
+	doAssert(0x5be4f0, 0x1a6, 0x5be49c, 0x8c085);
 _Tad:
 	__asm        jmp    _Tb2;
 _Tb2:
@@ -781,7 +781,7 @@ void cCopterBody::DrawSwitch(float phiOff, float psiOff, /*unpacked*/ struct cCo
 	__asm        cmp    part, 0;
 	__asm        jne    _T32;
 
-	doAssert(0x8c085, 0x5be740, 0x837, 0x5be774);
+	doAssert(0x5be774, 0x837, 0x5be740, 0x8c085);
 // LINE 2104:
 _T32:
 	__asm        mov    eax, part;
@@ -802,7 +802,7 @@ _T32:
 	__asm        cmp    eax, 0xC8;
 	__asm        jl     _T8a;
 _T6e:
-	doAssert(0x8c085, 0x5be798, 0x839, 0x5be7b8);
+	doAssert(0x5be7b8, 0x839, 0x5be798, 0x8c085);
 // LINE 2106:
 _T8a:
 	reinterpret_cast<uint32_t>(cpt.v) = reinterpret_cast<uint32_t>(transinfo.startPoint.v);
@@ -871,7 +871,7 @@ _T127:
 	__asm        cmp    eax, 0x100;
 	__asm        jl     _T16f;
 _T153:
-	doAssert(0x8c085, 0x5be7dc, 0x852, 0x5be7f0);
+	doAssert(0x5be7f0, 0x852, 0x5be7dc, 0x8c085);
 // LINE 2131:
 _T16f:
 	__asm        mov    eax, part;
@@ -941,7 +941,7 @@ _T1b5:
 // LINE 2142:
 // Block end:
 _T205:
-	MyPixel(reinterpret_cast<uint32_t>(color), sPt.y, sPt.x);
+	MyPixel(sPt.x, sPt.y, reinterpret_cast<uint32_t>(color));
 // LINE 2143:
 	__asm        jmp    _T384;
 // LINE 2149:
@@ -1009,7 +1009,7 @@ _T2ae:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T2da;
 
-	doAssert(0x8c085, 0x5be814, 0x872, 0x5be834);
+	doAssert(0x5be834, 0x872, 0x5be814, 0x8c085);
 // LINE 2164:
 _T2da:
 	__asm        fld    transinfo.info;
@@ -1043,7 +1043,7 @@ _T2da:
 // LINE 2173:
 // Block end:
 _T32a:
-	doAssert(0x8c085, 0x5be858, 0x87d, 0x5be884);
+	doAssert(0x5be884, 0x87d, 0x5be858, 0x8c085);
 // LINE 2174:
 	__asm        jmp    _T384;
 // LINE 2175:
@@ -1180,7 +1180,7 @@ _FOR_122:
 			__asm        cmp    eax, [ecx+4];
 			__asm        je     _T179;
 
-			doAssert(0x8c085, 0x5be4b8, 0x1a4, 0x5be4f0);
+			doAssert(0x5be4f0, 0x1a4, 0x5be4b8, 0x8c085);
 		_T179:
 			__asm        mov    eax, [ebp-0xA0];
 			__asm        cmp    dword ptr [eax+0x14], 0;
@@ -1195,7 +1195,7 @@ _FOR_122:
 			__asm        test   eax, eax;
 			__asm        jge    _T1c4;
 		_T1a8:
-			doAssert(0x8c085, 0x5be49c, 0x1a6, 0x5be4f0);
+			doAssert(0x5be4f0, 0x1a6, 0x5be49c, 0x8c085);
 		_T1c4:
 			__asm        jmp    _T1c9;
 		_T1c9:
@@ -1235,7 +1235,7 @@ _FOR_122:
 			__asm        test   eax, eax;
 			__asm        jge    _T240;
 		_T224:
-			doAssert(0x8c085, 0x5be8a8, 0x8aa, 0x5be8b0);
+			doAssert(0x5be8b0, 0x8aa, 0x5be8a8, 0x8c085);
 		// LINE 2219:
 		_T240:
 			partinfo = ((reinterpret_cast<int16_t>(count) << 0x3) + privpartinfos);
@@ -1337,7 +1337,7 @@ _FOR_122:
 			__asm        test   reinterpret_cast<uint32_t>(parentendtransformed), 0xFFFF;
 			__asm        jne    _T3af;
 		// LINE 2240:
-			XYTransformToScreen(0x1, (transinfo + 0x8), transinfo, (transinfo + 0x2), start.info, start.y, start.z, start.x, scale, cosY, sinY, cosX, sinX);
+			XYTransformToScreen(sinX, cosX, sinY, cosY, scale, start.x, start.z, start.y, start.info, (transinfo + 0x2), transinfo, (transinfo + 0x8), 0x1);
 		// LINE 2241:
 			transinfo->bStartTransformed = 0x1;
 		// LINE 2243:
@@ -1376,7 +1376,7 @@ _FOR_122:
 			__asm        cmp    eax, 0xD;
 			__asm        je     _T45e;
 		// LINE 2258:
-			XYTransformToScreen(0x1, (transinfo + 0xa), (transinfo + 0x4), (transinfo + 0x6), end.info, end.y, end.z, end.x, scale, cosY, sinY, cosX, sinX);
+			XYTransformToScreen(sinX, cosX, sinY, cosY, scale, end.x, end.z, end.y, end.info, (transinfo + 0x6), (transinfo + 0x4), (transinfo + 0xa), 0x1);
 		// LINE 2259:
 			transinfo->bEndTransformed = 0x1;
 		// LINE 2263:
@@ -1409,7 +1409,7 @@ _T4a6:
 	__asm        cmp    drawordercount, 0;
 	__asm        je     _FOR_4d3;
 // LINE 2272:
-	qsort(0x5623cd, 0x4, drawordercount, 0x638670);
+	qsort(0x638670, drawordercount, 0x4, 0x5623cd);
 // LINE 2276:
 _FOR_4d3:
 	for (orderID = 0x0; (reinterpret_cast<int16_t>(orderID) < drawordercount); orderID++) {
@@ -1421,7 +1421,7 @@ _FOR_4d3:
 			__asm        cmp    part, 0;
 			__asm        jne    _T518;
 
-			doAssert(0x8c085, 0x5be8d4, 0x8e6, 0x5be8f4);
+			doAssert(0x5be8f4, 0x8e6, 0x5be8d4, 0x8c085);
 		// LINE 2279:
 		_T518:
 			__asm        mov    eax, part;
@@ -1430,7 +1430,7 @@ _FOR_4d3:
 			__asm        test   ecx, eax;
 			__asm        je     _T552;
 		// LINE 2280:
-			this->cCopterBody::DrawSwitch(reinterpret_cast<uint32_t>(colorIndexShift), scale, reinterpret_cast<uint32_t>(screeny), reinterpret_cast<uint32_t>(screenx), part, yOff, xOff);
+			this->cCopterBody::DrawSwitch(xOff, yOff, part, reinterpret_cast<uint32_t>(screenx), reinterpret_cast<uint32_t>(screeny), scale, reinterpret_cast<uint32_t>(colorIndexShift));
 		// LINE 2281:
 		_T552:
 	}
@@ -1449,10 +1449,10 @@ void cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	__asm        cmp    cCopterBody::fsList, 0;
 	__asm        jne    _T50;
 
-	doAssert(0x8c085, 0x5be918, 0x8ee, 0x5be920);
+	doAssert(0x5be920, 0x8ee, 0x5be918, 0x8c085);
 // LINE 2290:
 _T50:
-	Memory::BlockMove(0x10, tmp[0], (this + 0xc));
+	Memory::BlockMove((this + 0xc), tmp[0], 0x10);
 // LINE 2291:
 	__asm        mov    tmp[4], 0x63;
 	__asm        mov    ax, expectondisk;
@@ -1491,7 +1491,7 @@ _Td5:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        jne    _Tfb;
 
-	doAssert(0x8c085, 0x5beb8c, 0x11e, 0x5be4f0);
+	doAssert(0x5be4f0, 0x11e, 0x5beb8c, 0x8c085);
 _Tfb:
 	__asm        jmp    _T100;
 _T100:
@@ -1503,21 +1503,21 @@ _T100:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T139;
 
-	doAssert(0x8c085, 0x5beb58, 0x131, 0x5be4f0);
+	doAssert(0x5be4f0, 0x131, 0x5beb58, 0x8c085);
 _T139:
 	__asm        jmp    _T164;
 _T13e:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     _T164;
 
-	doAssert(0x8c085, 0x5beb1c, 0x132, 0x5be4f0);
+	doAssert(0x5be4f0, 0x132, 0x5beb1c, 0x8c085);
 _T164:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T252;
 
 	__asm        jmp    _T18f;
 
-	doAssert(0x8c085, 0x5beaf0, 0x134, 0x5be4f0);
+	doAssert(0x5be4f0, 0x134, 0x5beaf0, 0x8c085);
 _T18f:
 	__asm        push   0x50;
 	__asm        call   operator new;
@@ -1584,7 +1584,7 @@ _T252:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T278;
 
-	doAssert(0x8c085, 0x5bead4, 0x137, 0x5be4f0);
+	doAssert(0x5be4f0, 0x137, 0x5bead4, 0x8c085);
 _T278:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ecx, this;
@@ -1642,7 +1642,7 @@ _T31b:
 	__asm        cmp    dword ptr [ebp-0x70], 0;
 	__asm        jne    _T341;
 
-	doAssert(0x8c085, 0x5beb8c, 0x11e, 0x5be4f0);
+	doAssert(0x5be4f0, 0x11e, 0x5beb8c, 0x8c085);
 _T341:
 	__asm        jmp    _T346;
 _T346:
@@ -1654,21 +1654,21 @@ _T346:
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        jne    _T382;
 
-	doAssert(0x8c085, 0x5beb58, 0x131, 0x5be4f0);
+	doAssert(0x5be4f0, 0x131, 0x5beb58, 0x8c085);
 _T382:
 	__asm        jmp    _T3ad;
 _T387:
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     _T3ad;
 
-	doAssert(0x8c085, 0x5beb1c, 0x132, 0x5be4f0);
+	doAssert(0x5be4f0, 0x132, 0x5beb1c, 0x8c085);
 _T3ad:
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        jne    _T4bc;
 
 	__asm        jmp    _T3d8;
 
-	doAssert(0x8c085, 0x5beaf0, 0x134, 0x5be4f0);
+	doAssert(0x5be4f0, 0x134, 0x5beaf0, 0x8c085);
 _T3d8:
 	__asm        push   0x50;
 	__asm        call   operator new;
@@ -1735,7 +1735,7 @@ _T4bc:
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        jne    _T4e2;
 
-	doAssert(0x8c085, 0x5bead4, 0x137, 0x5be4f0);
+	doAssert(0x5be4f0, 0x137, 0x5bead4, 0x8c085);
 _T4e2:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    ecx, this;
@@ -1810,7 +1810,7 @@ _T5d:
 	__asm        cmp    eax, 0x3E8;
 	__asm        jle    _T94;
 
-	doAssert(0x8c085, 0x5be944, 0x902, 0x5be970);
+	doAssert(0x5be970, 0x902, 0x5be944, 0x8c085);
 // LINE 2307:
 _T94:
 	__asm        jmp    __WHILE_31;
@@ -1839,7 +1839,7 @@ _Tc7:
 	__asm        cmp    eax, 0x3E8;
 	__asm        jle    _Tfe;
 
-	doAssert(0x8c085, 0x5be994, 0x907, 0x5be9c0);
+	doAssert(0x5be9c0, 0x907, 0x5be994, 0x8c085);
 // LINE 2312:
 _Tfe:
 	__asm        jmp    __WHILE_9f;
@@ -1868,7 +1868,7 @@ _T131:
 	__asm        cmp    eax, 0x3E8;
 	__asm        jle    _T168;
 
-	doAssert(0x8c085, 0x5be9e4, 0x90c, 0x5bea10);
+	doAssert(0x5bea10, 0x90c, 0x5be9e4, 0x8c085);
 // LINE 2317:
 _T168:
 	__asm        jmp    __WHILE_109;
@@ -1979,7 +1979,7 @@ _LOOP_175:
 			__asm        test   eax, eax;
 			__asm        jge    _T2ad;
 
-			doAssert(0x8c085, 0x59a24c, 0x32, 0x59a254);
+			doAssert(0x59a254, 0x32, 0x59a24c, 0x8c085);
 		_T2ad:
 			__asm        jmp    _T2c7;
 		_T2b2:
@@ -2061,7 +2061,7 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 	__asm        cmp    size, 0x28;
 	__asm        je     _T35;
 
-	doAssert(0x8c085, 0x5bea34, 0x91f, 0x5bea60);
+	doAssert(0x5bea60, 0x91f, 0x5bea34, 0x8c085);
 // LINE 2336:
 _T35:
 	part = val;
@@ -2087,7 +2087,7 @@ void SwizzleAnimLookup(void * __ptr32 val, long size) {
 	__asm        cmp    size, 8;
 	__asm        je     _T2f;
 
-	doAssert(0x8c085, 0x5bea84, 0x92c, 0x5beab0);
+	doAssert(0x5beab0, 0x92c, 0x5bea84, 0x8c085);
 // LINE 2349:
 _T2f:
 	al = val;

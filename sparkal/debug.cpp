@@ -2071,7 +2071,7 @@ _Td5:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x3C], eax;
 // LINE 125:
-	this->CDebugWindow::OnSize(Height, Width, 0x0);
+	this->CDebugWindow::OnSize(0x0, Width, Height);
 // LINE 126:
 	return 0x1;
 // LINE 129:
@@ -2111,7 +2111,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 	/*bp-0x14*/  /*packed*/ struct _iobuf *file;
 
 // LINE 153:
-	file = fopen(0x5973e8, filePath);
+	file = fopen(filePath, 0x5973e8);
 // LINE 154:
 	__asm        cmp    file, 0;
 	__asm        jne    _T31;
@@ -2326,7 +2326,7 @@ _LOOP_52:
 			__asm        call   fwrite;
 			__asm        add    esp, 0x10;
 		// LINE 161:
-			fwrite(file, 0x1, 0x2, 0x5973ec);
+			fwrite(0x5973ec, 0x2, 0x1, file);
 		// LINE 162:
 			__asm        lea    eax, it.current;
 			__asm        lea    ecx, [ebp-0x50];
@@ -3780,7 +3780,7 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 	__asm        jmp    _Tc5;
 // LINE 341:
 _T17:
-	this->CDebugWindow::OnSize(((LParam >> 0x10) & 0xffff), LParam, WParam);
+	this->CDebugWindow::OnSize(WParam, LParam, ((LParam >> 0x10) & 0xffff));
 // LINE 342:
 	__asm        jmp    _T10d;
 // LINE 344:
@@ -3880,7 +3880,7 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 	__asm        cmp    debugWin, 0;
 	__asm        je     _T40;
 // LINE 365:
-	return debugWin->CDebugWindow::InstanceWindowProcedure(LParam, WParam, Message);
+	return debugWin->CDebugWindow::InstanceWindowProcedure(Message, WParam, LParam);
 // LINE 366:
 	__asm        jmp    __RETURN;
 // LINE 367:
@@ -3965,7 +3965,7 @@ void DebugOutput(char * text, ...) {
 	__asm        lea    eax, [ebp+0xC];
 	__asm        mov    Marker, eax;
 // LINE 405:
-	vsprintf(Marker, text, buf[0]);
+	vsprintf(buf[0], text, Marker);
 // LINE 406:
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T4e;

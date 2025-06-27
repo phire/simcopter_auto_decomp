@@ -36,7 +36,7 @@ __WHILE_12:
 			__asm        test   eax, eax;
 			__asm        jge    _T8a;
 
-			doAssert(0x8c085, 0x59a24c, 0x32, 0x59a254);
+			doAssert(0x59a254, 0x32, 0x59a24c, 0x8c085);
 		// LINE 51:
 		_T8a:
 			return;
@@ -95,7 +95,7 @@ __WHILE_0c:
 			__asm        test   eax, eax;
 			__asm        jge    _T74;
 
-			doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
+			doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
 		_T74:
 	}
 _T79:
@@ -104,7 +104,7 @@ _T79:
 	__asm        test   eax, eax;
 	__asm        je     _Ta1;
 
-	doAssert(0x8c085, 0x59a24c, 0x28, 0x59a254);
+	doAssert(0x59a254, 0x28, 0x59a24c, 0x8c085);
 _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 23:
@@ -114,7 +114,7 @@ _Ta6:
 	__asm        test   eax, eax;
 	__asm        je     _Tce;
 
-	doAssert(0x8c085, 0x59a274, 0x17, 0x59a254);
+	doAssert(0x59a254, 0x17, 0x59a274, 0x8c085);
 // LINE 24:
 _Tce:
 	return;
@@ -150,7 +150,7 @@ __WHILE_0c:
 			__asm        test   eax, eax;
 			__asm        jge    _T74;
 
-			doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
+			doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
 		_T74:
 	}
 _T79:
@@ -159,7 +159,7 @@ _T79:
 	__asm        test   eax, eax;
 	__asm        je     _Ta1;
 
-	doAssert(0x8c085, 0x59a24c, 0x28, 0x59a254);
+	doAssert(0x59a254, 0x28, 0x59a24c, 0x8c085);
 _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 23:
@@ -169,7 +169,7 @@ _Ta6:
 	__asm        test   eax, eax;
 	__asm        je     _Tce;
 
-	doAssert(0x8c085, 0x59a274, 0x17, 0x59a254);
+	doAssert(0x59a254, 0x17, 0x59a274, 0x8c085);
 // LINE 24:
 _Tce:
 	return;
@@ -221,7 +221,7 @@ __WHILE_0c:
 			__asm        test   eax, eax;
 			__asm        jge    _T74;
 
-			doAssert(0x8c085, 0x59a24c, 0x26, 0x59a254);
+			doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
 		_T74:
 	}
 _T79:
@@ -230,7 +230,7 @@ _T79:
 	__asm        test   eax, eax;
 	__asm        je     _Ta1;
 
-	doAssert(0x8c085, 0x59a24c, 0x28, 0x59a254);
+	doAssert(0x59a254, 0x28, 0x59a24c, 0x8c085);
 _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 23:
@@ -240,7 +240,7 @@ _Ta6:
 	__asm        test   eax, eax;
 	__asm        je     _Tce;
 
-	doAssert(0x8c085, 0x59a274, 0x17, 0x59a254);
+	doAssert(0x59a254, 0x17, 0x59a274, 0x8c085);
 // LINE 24:
 _Tce:
 	return;

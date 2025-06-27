@@ -72,7 +72,7 @@ void S3ViewerInit() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 136:
-	MTArbRotMat(0x59b508, 0xce40000, rotmat[0][0]);
+	MTArbRotMat(rotmat[0][0], 0xce40000, 0x59b508);
 // LINE 137:
 	__asm        lea    eax, rotmat[0][0];
 	__asm        push   eax;
@@ -85,7 +85,7 @@ void S3ViewerInit() {
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 138:
-	MTArbRotMat(0x59b508, 0x12c0000, rotmat[0][0]);
+	MTArbRotMat(rotmat[0][0], 0x12c0000, 0x59b508);
 // LINE 139:
 	__asm        lea    eax, rotmat[0][0];
 	__asm        push   eax;
@@ -292,7 +292,7 @@ _T194:
 	__asm        je     _T1b8;
 // LINE 213:
 _T1a8:
-	S3HeliRotateSpotLite(roty, rotx);
+	S3HeliRotateSpotLite(rotx, roty);
 // LINE 223:
 _T1b8:
 	GetIdealCameraPos(IdealCameraPos.x);
@@ -368,7 +368,7 @@ _T1b8:
 // LINE 247:
 	MTNormalize((0x6c1210 + 0x14));
 // LINE 248:
-	MTCreateDOF4x4((0x6c1210 + 0x14), 0x6c1330);
+	MTCreateDOF4x4(0x6c1330, (0x6c1210 + 0x14));
 // LINE 251:
 	vec.x = (ViewState.world_pos.x - S_last_viewpos.x);
 // LINE 252:

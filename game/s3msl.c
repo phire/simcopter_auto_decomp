@@ -325,7 +325,7 @@ _FOR_COND_32:
 // LINE 215:
 	md->speed = 0x0;
 // LINE 217:
-	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
+	md->dymissile = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 218:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -336,7 +336,7 @@ _FOR_COND_32:
 // LINE 220:
 	md->dymissile->radius = 0x60000;
 // LINE 222:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 223:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -387,7 +387,7 @@ _FOR_COND_11a:
 // LINE 241:
 	md->speed = 0x0;
 // LINE 243:
-	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
+	md->dymissile = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 244:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -398,7 +398,7 @@ _FOR_COND_11a:
 // LINE 246:
 	md->dymissile->radius = 0x60000;
 // LINE 248:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 249:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -449,7 +449,7 @@ _FOR_COND_205:
 // LINE 266:
 	md->speed = 0x0;
 // LINE 268:
-	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
+	md->dymissile = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 269:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -460,7 +460,7 @@ _FOR_COND_205:
 // LINE 271:
 	md->dymissile->radius = 0x30000;
 // LINE 273:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 274:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -517,7 +517,7 @@ _FOR_COND_2d7:
 // LINE 294:
 	md->speed = 0x0;
 // LINE 296:
-	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
+	md->dymissile = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 297:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -528,7 +528,7 @@ _FOR_COND_2d7:
 // LINE 299:
 	md->dymissile->radius = 0x30000;
 // LINE 301:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 302:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -573,7 +573,7 @@ _FOR_COND_3d4:
 // LINE 317:
 	md->speed = 0x0;
 // LINE 319:
-	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
+	md->dymissile = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 320:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -586,7 +586,7 @@ _FOR_COND_3d4:
 // LINE 323:
 	md->dymissile->radius = 0x140000;
 // LINE 326:
-	obj = VRObjCreatePoint(0x17, 0x3);
+	obj = VRObjCreatePoint(0x3, 0x17);
 // LINE 327:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T47b;
@@ -662,7 +662,7 @@ _FOR_COND_527:
 // LINE 363:
 	md->speed = 0x0;
 // LINE 365:
-	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
+	md->dymissile = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 366:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -673,7 +673,7 @@ _FOR_COND_527:
 // LINE 368:
 	md->dymissile->radius = 0x10000;
 // LINE 371:
-	obj = VRObjCreatePoint(0x17, 0x1);
+	obj = VRObjCreatePoint(0x1, 0x17);
 // LINE 372:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T5c1;
@@ -760,7 +760,7 @@ _T77:
 	return 0x0;
 // LINE 435:
 _T88:
-	S3DSPlay(0x0, loc, 0x6);
+	S3DSPlay(0x6, loc, 0x0);
 // LINE 438:
 	smoke_size = 0x1;
 // LINE 440:
@@ -798,7 +798,7 @@ _Tf8:
 	return 0x0;
 // LINE 457:
 _T109:
-	S3DSPlay(0x0, loc, 0x2a);
+	S3DSPlay(0x2a, loc, 0x0);
 // LINE 460:
 	smoke_size = 0x1;
 // LINE 462:
@@ -842,7 +842,7 @@ _T18a:
 	__asm        test   eax, eax;
 	__asm        jne    _T1ac;
 // LINE 483:
-	S3DSPlay(0x1, loc, 0x5);
+	S3DSPlay(0x5, loc, 0x1);
 // LINE 486:
 _T1ac:
 	smoke_size = 0x4;
@@ -952,7 +952,7 @@ _T2f9:
 	__asm        test   eax, eax;
 	__asm        jne    _T31b;
 // LINE 533:
-	S3DSPlay(0x1, loc, 0x25);
+	S3DSPlay(0x25, loc, 0x1);
 // LINE 536:
 _T31b:
 	smoke_size = 0x8;
@@ -1346,7 +1346,7 @@ _T7fd:
 _T80e:
 	md->gas_on = 0x0;
 // LINE 694:
-	S3DSPlay(0x0, loc, 0x17);
+	S3DSPlay(0x17, loc, 0x0);
 // LINE 696:
 	smoke_size = 0x4;
 // LINE 698:
@@ -1607,7 +1607,7 @@ _Tab6:
 	__asm        cmp    msl_type, 1;
 	__asm        jne    _Tbc4;
 // LINE 810:
-	MTCreateDOF4x4(vect, (md->dymissile + 0x24));
+	MTCreateDOF4x4((md->dymissile + 0x24), vect);
 // LINE 812:
 	__asm        jmp    _Te79;
 _Tbc4:
@@ -1640,7 +1640,7 @@ _Tc19:
 	__asm        cmp    msl_type, 4;
 	__asm        jne    _Tc4e;
 // LINE 823:
-	MTCreateDOF4x4(vect, (md->dymissile + 0x24));
+	MTCreateDOF4x4((md->dymissile + 0x24), vect);
 // LINE 824:
 	md->timetolive = 0x1e0000;
 // LINE 826:
@@ -1649,7 +1649,7 @@ _Tc4e:
 	__asm        cmp    msl_type, 0xA;
 	__asm        jne    _Tc83;
 // LINE 828:
-	MTCreateDOF4x4(vect, (md->dymissile + 0x24));
+	MTCreateDOF4x4((md->dymissile + 0x24), vect);
 // LINE 829:
 	md->timetolive = 0x40000;
 // LINE 831:
@@ -1658,7 +1658,7 @@ _Tc83:
 	__asm        cmp    msl_type, 5;
 	__asm        jne    _Td1c;
 // LINE 833:
-	MTCreateDOF4x4(vect, (md->dymissile + 0x24));
+	MTCreateDOF4x4((md->dymissile + 0x24), vect);
 // LINE 835:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -1684,7 +1684,7 @@ _Td1c:
 	__asm        cmp    msl_type, 6;
 	__asm        jne    _Td51;
 // LINE 843:
-	MTCreateDOF4x4(vect, (md->dymissile + 0x24));
+	MTCreateDOF4x4((md->dymissile + 0x24), vect);
 // LINE 844:
 	md->timetolive = 0x50000;
 // LINE 846:
@@ -1693,7 +1693,7 @@ _Td51:
 	__asm        cmp    msl_type, 7;
 	__asm        jne    _Td86;
 // LINE 848:
-	MTCreateDOF4x4(vect, (md->dymissile + 0x24));
+	MTCreateDOF4x4((md->dymissile + 0x24), vect);
 // LINE 849:
 	md->timetolive = 0x1cccc;
 // LINE 851:
@@ -1702,7 +1702,7 @@ _Td86:
 	__asm        cmp    msl_type, 9;
 	__asm        jne    _Tdc7;
 // LINE 853:
-	MTCreateDOF4x4(vect, (md->dymissile + 0x24));
+	MTCreateDOF4x4((md->dymissile + 0x24), vect);
 // LINE 854:
 	md->timetolive = 0xe666;
 // LINE 855:
@@ -1715,14 +1715,14 @@ _Tdc7:
 	__asm        cmp    msl_type, 8;
 	__asm        jne    _Tdfc;
 // LINE 859:
-	MTCreateDOF4x4(vect, (md->dymissile + 0x24));
+	MTCreateDOF4x4((md->dymissile + 0x24), vect);
 // LINE 860:
 	md->timetolive = 0x60000;
 // LINE 862:
 	__asm        jmp    _Te79;
 // LINE 864:
 _Tdfc:
-	MTCreateDOF4x4(vect, (md->dymissile + 0x24));
+	MTCreateDOF4x4((md->dymissile + 0x24), vect);
 // LINE 866:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -1770,7 +1770,7 @@ _Te94:
 	__asm        add    eax, eax;
 	__asm        add    sloc.z, eax;
 // LINE 886:
-	S3ExplosionSmokeStart(smoke_size, sloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, sloc.x, smoke_size);
 // LINE 891:
 _Tee5:
 	md->smoketime = 0x8000;
@@ -1981,7 +1981,7 @@ _T16d:
 // LINE 978:
 	md->smoketime = 0x3333;
 // LINE 979:
-	S3MissileDebrisFire((md + 0x34), (md->dymissile + 0x18), cptr);
+	S3MissileDebrisFire(cptr, (md->dymissile + 0x18), (md + 0x34));
 // LINE 982:
 _T222:
 	__asm        mov    eax, md;
@@ -2055,7 +2055,7 @@ _T2f4:
 	__asm        test   eax, eax;
 	__asm        jne    _T324;
 // LINE 1004:
-	S3MissionStart(0x1, md->celloc.y, md->celloc.x);
+	S3MissionStart(md->celloc.x, md->celloc.y, 0x1);
 // LINE 1006:
 	__asm        jmp    _T383;
 // LINE 1009:
@@ -2317,16 +2317,16 @@ _T4c1:
 	__asm        cmp    dword ptr [eax+0x44], 2;
 	__asm        jle    _T6f8;
 // LINE 1093:
-	S3ExplosionSmokeStart(0x1, newloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, newloc.x, 0x1);
 // LINE 1094:
-	S3ExplosionSmokeStart(0x5, newloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, newloc.x, 0x5);
 // LINE 1096:
 	__asm        jmp    _T71c;
 // LINE 1098:
 _T6f8:
-	S3ExplosionSmokeStart(0x4, newloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, newloc.x, 0x4);
 // LINE 1099:
-	S3ExplosionSmokeStart(0x5, newloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, newloc.x, 0x5);
 // LINE 1101:
 _T71c:
 	md->smoketime = 0x8000;
@@ -2363,7 +2363,7 @@ _T75d:
 	__asm        cmp    dword ptr [eax+0xC], 0x140000;
 	__asm        jle    _T7a9;
 // LINE 1116:
-	S3DSPlay(0x0, (md->dymissile + 0x18), 0x16);
+	S3DSPlay(0x16, (md->dymissile + 0x18), 0x0);
 // LINE 1119:
 _T7a9:
 	__asm        jmp    _T83a;
@@ -2403,7 +2403,7 @@ _T7ee:
 	__asm        cmp    dword ptr [eax+0xC], 0x140000;
 	__asm        jle    _T83a;
 // LINE 1131:
-	S3DSPlay(0x0, (md->dymissile + 0x18), 0x16);
+	S3DSPlay(0x16, (md->dymissile + 0x18), 0x0);
 // LINE 1137:
 _T83a:
 	__asm        mov    eax, lcptr;
@@ -2435,7 +2435,7 @@ _T891:
 	cptr->dyptr = md->dymissile;
 // LINE 1156:
 _T8b1:
-	alt = S3TerrPrecisionAlt(0x0, newloc.z, newloc.x);
+	alt = S3TerrPrecisionAlt(newloc.x, newloc.z, 0x0);
 // LINE 1157:
 	__asm        mov    eax, alt;
 	__asm        cmp    newloc.y, eax;
@@ -2618,7 +2618,7 @@ _Tb3f:
 // LINE 1228:
 	md->smoketime = 0x0;
 // LINE 1230:
-	S3DSPlay(0x0, (md->dymissile + 0x18), 0x18);
+	S3DSPlay(0x18, (md->dymissile + 0x18), 0x0);
 // LINE 1236:
 _Tb7f:
 	__asm        xor    ebx, ebx;
@@ -2759,7 +2759,7 @@ _Tb7f:
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        jne    _Td91;
 // LINE 1263:
-	S3ExplosionSmokeStart(0x4, newloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, newloc.x, 0x4);
 // LINE 1264:
 	md->smoketime = 0x8000;
 // LINE 1266:
@@ -2807,7 +2807,7 @@ _Td91:
 	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    tmpcptr, eax;
 // LINE 1273:
-	S3ExplosionSmokeStart(0x9, tmploc.x, tmpcptr);
+	S3ExplosionSmokeStart(tmpcptr, tmploc.x, 0x9);
 // LINE 1274:
 	md->smoketime = 0x4ccc;
 // LINE 1278:
@@ -2821,7 +2821,7 @@ __WHILE_e40:
 			__asm        test   al, 8;
 			__asm        je     _Te7d;
 		// LINE 1283:
-			S3ObjHitDispatch(0x0, md->mission_id, dyobj, md->dymissile, 0x5);
+			S3ObjHitDispatch(0x5, md->dymissile, dyobj, md->mission_id, 0x0);
 		// LINE 1285:
 		_Te7d:
 			dyobj = dyobj->next;
@@ -2859,7 +2859,7 @@ _Tebe:
 	__asm        cmp    dword ptr [eax+0xC], 0x140000;
 	__asm        jle    _Tf0a;
 // LINE 1303:
-	S3DSPlay(0x0, (md->dymissile + 0x18), 0x16);
+	S3DSPlay(0x16, (md->dymissile + 0x18), 0x0);
 // LINE 1306:
 _Tf0a:
 	__asm        jmp    _Tf9b;
@@ -2899,7 +2899,7 @@ _Tf4f:
 	__asm        cmp    dword ptr [eax+0xC], 0x140000;
 	__asm        jle    _Tf9b;
 // LINE 1318:
-	S3DSPlay(0x0, (md->dymissile + 0x18), 0x16);
+	S3DSPlay(0x16, (md->dymissile + 0x18), 0x0);
 // LINE 1324:
 _Tf9b:
 	__asm        mov    eax, lcptr;
@@ -2931,7 +2931,7 @@ _Tff2:
 	cptr->dyptr = md->dymissile;
 // LINE 1342:
 _T1012:
-	alt = S3TerrPrecisionAlt(0x0, newloc.z, newloc.x);
+	alt = S3TerrPrecisionAlt(newloc.x, newloc.z, 0x0);
 // LINE 1343:
 	__asm        mov    eax, alt;
 	__asm        cmp    newloc.y, eax;
@@ -3162,12 +3162,12 @@ _T1225:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jge    _T135b;
 // LINE 1413:
-	S3ExplosionSmokeStart(0x4, newloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, newloc.x, 0x4);
 // LINE 1414:
 	md->smoketime = 0x3333;
 // LINE 1418:
 _T135b:
-	S3MissileCollisionCheck(lcptr, dist, md);
+	S3MissileCollisionCheck(md, dist, lcptr);
 // LINE 1419:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -3180,7 +3180,7 @@ _T1386:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T13bd;
 // LINE 1427:
-	S3MissileCollisionCheck(cptr, dist, md);
+	S3MissileCollisionCheck(md, dist, cptr);
 // LINE 1428:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -3430,7 +3430,7 @@ _T1620:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1517:
-	S3MissileCollisionCheck(lcptr, dist, md);
+	S3MissileCollisionCheck(md, dist, lcptr);
 // LINE 1518:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -3443,7 +3443,7 @@ _T173f:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T1776;
 // LINE 1526:
-	S3MissileCollisionCheck(cptr, dist, md);
+	S3MissileCollisionCheck(md, dist, cptr);
 // LINE 1527:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -3836,7 +3836,7 @@ _T1bd9:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1656:
-	S3MissileCollisionCheck(lcptr, dist, md);
+	S3MissileCollisionCheck(md, dist, lcptr);
 // LINE 1657:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -3849,7 +3849,7 @@ _T1cf8:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T1d2f;
 // LINE 1664:
-	S3MissileCollisionCheck(cptr, dist, md);
+	S3MissileCollisionCheck(md, dist, cptr);
 // LINE 1665:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 1;
@@ -4182,7 +4182,7 @@ _T214a:
 	md->gas_on = 0x1;
 // LINE 1769:
 _T21a3:
-	alt = S3TerrPrecisionAlt(0x0, newloc.z, newloc.x);
+	alt = S3TerrPrecisionAlt(newloc.x, newloc.z, 0x0);
 // LINE 1770:
 	__asm        mov    eax, alt;
 	__asm        cmp    newloc.y, eax;
@@ -4400,12 +4400,12 @@ __WHILE_109:
 			__asm        test   ah, 0x10;
 			__asm        je     _T251;
 		// LINE 1914:
-			newdist = S3MissileSphereHit((dyobj->radius + 0xf0000), (dyobj + 0x18), dist, (md + 0x10), (md->dymissile + 0x18));
+			newdist = S3MissileSphereHit((md->dymissile + 0x18), (md + 0x10), dist, (dyobj + 0x18), (dyobj->radius + 0xf0000));
 		// LINE 1916:
 			__asm        jmp    _T282;
 		// LINE 1923:
 		_T251:
-			newdist = S3MissileSphereHit(dyobj->radius, (dyobj + 0x18), dist, (md + 0x10), (md->dymissile + 0x18));
+			newdist = S3MissileSphereHit((md->dymissile + 0x18), (md + 0x10), dist, (dyobj + 0x18), dyobj->radius);
 		// LINE 1926:
 		_T282:
 			__asm        cmp    newdist, 0;
@@ -4478,9 +4478,9 @@ __WHILE_109:
 			__asm        test   dword ptr [eax], 0x802;
 			__asm        je     _T392;
 		// LINE 1941:
-			S3ExplosionStart(md->mission_id, 0x4, loc.z, loc.y, loc.x, cptr);
+			S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, md->mission_id);
 		// LINE 1942:
-			S3DSPlay(0x0, sloc.x, 0x7);
+			S3DSPlay(0x7, sloc.x, 0x0);
 		// LINE 1944:
 			__asm        jmp    _T3d8;
 		_T392:
@@ -4488,12 +4488,12 @@ __WHILE_109:
 			__asm        test   byte ptr [eax], 4;
 			__asm        je     _T3d8;
 		// LINE 1946:
-			S3ExplosionStart(md->mission_id, 0x1, loc.z, loc.y, loc.x, cptr);
+			S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x1, md->mission_id);
 		// LINE 1947:
-			S3DSPlay(0x0, sloc.x, 0x7);
+			S3DSPlay(0x7, sloc.x, 0x0);
 		// LINE 1951:
 		_T3d8:
-			S3ObjHitDispatch(0x0, md->mission_id, dyobj, md->dymissile, hit_type);
+			S3ObjHitDispatch(hit_type, md->dymissile, dyobj, md->mission_id, 0x0);
 		// LINE 1972:
 			__asm        mov    eax, md;
 			__asm        test   byte ptr [eax], 6;
@@ -4556,12 +4556,12 @@ __WHILE_45f:
 		// LINE 2005:
 			oloc.z += center.z;
 		// LINE 2011:
-			newdist = S3MissileSphereHit(oinfo.Radius, oloc.x, dist, (md + 0x10), (md->dymissile + 0x18));
+			newdist = S3MissileSphereHit((md->dymissile + 0x18), (md + 0x10), dist, oloc.x, oinfo.Radius);
 		// LINE 2015:
 			__asm        cmp    newdist, 0;
 			__asm        jl     _T53c;
 		// LINE 2022:
-			newdist = VRStObjPolyHit(norm, stobj->mesh, cloc.x, dist, (md + 0x10), (md->dymissile + 0x18));
+			newdist = VRStObjPolyHit((md->dymissile + 0x18), (md + 0x10), dist, cloc.x, stobj->mesh, norm);
 		// LINE 2025:
 		_T53c:
 			__asm        cmp    newdist, 0;
@@ -4634,7 +4634,7 @@ __WHILE_45f:
 			__asm        test   dword ptr [eax], 0x798;
 			__asm        je     _T65e;
 		// LINE 2040:
-			MTCreateReflection4x4(norm, refmat[0][0]);
+			MTCreateReflection4x4(refmat[0][0], norm);
 		// LINE 2041:
 			__asm        lea    eax, refmat[0][0];
 			__asm        push   eax;
@@ -4685,7 +4685,7 @@ __WHILE_45f:
 			__asm        test   eax, eax;
 			__asm        jne    _T6d2;
 		// LINE 2053:
-			md->mission_id = S3MissionStart(0x1, celloc.y, celloc.x);
+			md->mission_id = S3MissionStart(celloc.x, celloc.y, 0x1);
 		// LINE 2056:
 		_T6d2:
 			__asm        jmp    _T72f;
@@ -4722,9 +4722,9 @@ __WHILE_45f:
 			__asm        add    esp, 0x14;
 		// LINE 2067:
 		_T72f:
-			S3ExplosionStart(md->mission_id, 0x4, loc.z, loc.y, loc.x, cptr);
+			S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, md->mission_id);
 		// LINE 2069:
-			S3DSPlay(0x0, sloc.x, 0x7);
+			S3DSPlay(0x7, sloc.x, 0x0);
 		// LINE 2071:
 			md->flags = (md->flags & -0x2);
 		// LINE 2074:
@@ -4809,9 +4809,9 @@ __WHILE_45f:
 			__asm        test   dword ptr [eax], 0x802;
 			__asm        je     _T8c1;
 		// LINE 2099:
-			S3ExplosionStart(md->mission_id, 0x4, loc.z, loc.y, loc.x, cptr);
+			S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, md->mission_id);
 		// LINE 2101:
-			S3DSPlay(0x0, sloc.x, 0x7);
+			S3DSPlay(0x7, sloc.x, 0x0);
 		// LINE 2104:
 			__asm        jmp    _T96c;
 		_T8c1:
@@ -4823,24 +4823,24 @@ __WHILE_45f:
 			__asm        cmp    dword ptr [eax+4], 0x20000;
 			__asm        jge    _T8f4;
 		// LINE 2107:
-			S3ExplosionSmokeStart(0x8, sloc.x, cptr);
+			S3ExplosionSmokeStart(cptr, sloc.x, 0x8);
 		// LINE 2108:
 			__asm        jmp    _T906;
 		// LINE 2109:
 		_T8f4:
-			S3ExplosionSmokeStart(0x9, sloc.x, cptr);
+			S3ExplosionSmokeStart(cptr, sloc.x, 0x9);
 		// LINE 2110:
 		_T906:
-			S3FireDouse(md->timetolive, sloc.x, cptr);
+			S3FireDouse(cptr, sloc.x, md->timetolive);
 		// LINE 2112:
-			S3DSPlay(0x0, sloc.x, 0xa);
+			S3DSPlay(0xa, sloc.x, 0x0);
 		// LINE 2115:
 			__asm        jmp    _T96c;
 		// LINE 2117:
 		_T932:
-			S3ExplosionStart(md->mission_id, 0x0, loc.z, loc.y, loc.x, cptr);
+			S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x0, md->mission_id);
 		// LINE 2119:
-			S3DSPlay(0x0, sloc.x, 0x9);
+			S3DSPlay(0x9, sloc.x, 0x0);
 		// LINE 2122:
 		_T96c:
 			md->flags = (md->flags & -0x2);
@@ -4853,7 +4853,7 @@ __WHILE_45f:
 	}
 // LINE 2157:
 _T990:
-	newdist = S3MissileGroundHit(cloc.x, dist, (md + 0x10), (md->dymissile + 0x18));
+	newdist = S3MissileGroundHit((md->dymissile + 0x18), (md + 0x10), dist, cloc.x);
 // LINE 2158:
 	__asm        cmp    newdist, 0;
 	__asm        jle    _Td1a;
@@ -4946,13 +4946,13 @@ _Tad6:
 	__asm        test   dword ptr [eax], 0x380;
 	__asm        jne    _Tb25;
 // LINE 2174:
-	S3ExplosionSmokeStart(0x8, sloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, sloc.x, 0x8);
 // LINE 2176:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 0x80;
 	__asm        jne    _Tb13;
 // LINE 2177:
-	S3DSPlay(0x0, sloc.x, 0xf);
+	S3DSPlay(0xf, sloc.x, 0x0);
 // LINE 2179:
 _Tb13:
 	md->flags = (md->flags & -0x2);
@@ -4967,7 +4967,7 @@ _Tb25:
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jge    _Tb8e;
 // LINE 2188:
-	MTCreateReflection4x4(0x59b508, refmat[0][0]);
+	MTCreateReflection4x4(refmat[0][0], 0x59b508);
 // LINE 2189:
 	__asm        lea    eax, refmat[0][0];
 	__asm        push   eax;
@@ -5014,14 +5014,14 @@ _Tb93:
 	__asm        test   eax, eax;
 	__asm        jne    _Tbff;
 // LINE 2201:
-	md->mission_id = S3MissionStart(0x1, celloc.y, celloc.x);
+	md->mission_id = S3MissionStart(celloc.x, celloc.y, 0x1);
 // LINE 2203:
 	__asm        jmp    _Tbff;
 // LINE 2208:
 _Tbff:
-	S3ExplosionStart(md->mission_id, 0x4, loc.z, loc.y, loc.x, cptr);
+	S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, md->mission_id);
 // LINE 2210:
-	S3DSPlay(0x0, sloc.x, 0x7);
+	S3DSPlay(0x7, sloc.x, 0x0);
 // LINE 2212:
 	md->flags = (md->flags & -0x2);
 // LINE 2214:
@@ -5035,26 +5035,26 @@ _Tc4b:
 	__asm        cmp    dword ptr [eax+4], 0x20000;
 	__asm        jge    _Tc7e;
 // LINE 2217:
-	S3ExplosionSmokeStart(0x8, sloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, sloc.x, 0x8);
 // LINE 2218:
 	__asm        jmp    _Tc90;
 // LINE 2219:
 _Tc7e:
-	S3ExplosionSmokeStart(0x9, sloc.x, cptr);
+	S3ExplosionSmokeStart(cptr, sloc.x, 0x9);
 // LINE 2220:
 _Tc90:
-	S3FireDouse(md->timetolive, sloc.x, cptr);
+	S3FireDouse(cptr, sloc.x, md->timetolive);
 // LINE 2222:
-	S3DSPlay(0x0, sloc.x, 0xa);
+	S3DSPlay(0xa, sloc.x, 0x0);
 // LINE 2224:
 	md->flags = (md->flags & -0x2);
 // LINE 2226:
 	__asm        jmp    _Td10;
 // LINE 2228:
 _Tcc9:
-	S3ExplosionStart(md->mission_id, 0x0, loc.z, loc.y, loc.x, cptr);
+	S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x0, md->mission_id);
 // LINE 2230:
-	S3DSPlay(0x0, sloc.x, 0x9);
+	S3DSPlay(0x9, sloc.x, 0x0);
 // LINE 2232:
 	md->flags = (md->flags & -0x2);
 // LINE 2235:
@@ -5073,7 +5073,7 @@ int32_t S3MissileGroundHit(/*packed*/ struct Point3d *sp, /*packed*/ struct Poin
 	/*bp-0x14*/  int32_t alt;
 
 // LINE 2262:
-	alt = S3TerrPrecisionAlt(0x0, sp->z, sp->x);
+	alt = S3TerrPrecisionAlt(sp->x, sp->z, 0x0);
 // LINE 2263:
 	__asm        mov    eax, sp;
 	__asm        mov    eax, [eax+4];
@@ -5129,7 +5129,7 @@ _T5f:
 	__asm        add    ecx, eax;
 	__asm        mov    endp.z, ecx;
 // LINE 2278:
-	alt2 = S3TerrPrecisionAlt(0x0, endp.z, endp.x);
+	alt2 = S3TerrPrecisionAlt(endp.x, endp.z, 0x0);
 // LINE 2283:
 	__asm        mov    eax, endp.y;
 	__asm        sub    eax, 0x40000;
@@ -5565,7 +5565,7 @@ _Tbc:
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+0xC], ax;
 // LINE 2734:
-	S3DSPlay(0x0, (md->dymissile + 0x18), 0xf);
+	S3DSPlay(0xf, (md->dymissile + 0x18), 0x0);
 // LINE 2736:
 }
 
@@ -5614,7 +5614,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0x10*/  /*packed*/ struct _MISSILE_DATA *md;
 
 // LINE 2785:
-	ret = ReadFirstMIFFChunk(0x48, 0x62a530, tgMIFFID, miffReader);
+	ret = ReadFirstMIFFChunk(miffReader, tgMIFFID, 0x62a530, 0x48);
 // LINE 2786:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T36;
@@ -5718,7 +5718,7 @@ _FOR_4b:
 			S_num_active_teargas++;
 		// LINE 2822:
 		_T18b:
-			ret = ReadNextMIFFChunk(0x48, 0x62a530, tgMIFFID, miffReader);
+			ret = ReadNextMIFFChunk(miffReader, tgMIFFID, 0x62a530, 0x48);
 		// LINE 2823:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T1c2;
@@ -5732,7 +5732,7 @@ _FOR_4b:
 	}
 // LINE 2831:
 _T1c7:
-	ret = ReadFirstMIFFChunk(0x48, 0x62a530, dbMIFFID, miffReader);
+	ret = ReadFirstMIFFChunk(miffReader, dbMIFFID, 0x62a530, 0x48);
 // LINE 2832:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T1f4;
@@ -5836,7 +5836,7 @@ _FOR_209:
 			S_num_active_debris++;
 		// LINE 2868:
 		_T349:
-			ret = ReadNextMIFFChunk(0x48, 0x62a530, dbMIFFID, miffReader);
+			ret = ReadNextMIFFChunk(miffReader, dbMIFFID, 0x62a530, 0x48);
 		// LINE 2869:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T380;
@@ -5881,7 +5881,7 @@ _FOR_15:
 			__asm        mov    eax, [eax+8];
 			__asm        mov    [ecx+8], eax;
 		// LINE 2890:
-			ret = WriteMIFFChunk(0x48, 0x62a530, tgMIFFID, miffWriter);
+			ret = WriteMIFFChunk(miffWriter, tgMIFFID, 0x62a530, 0x48);
 		// LINE 2891:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T88;
@@ -5912,7 +5912,7 @@ _FOR_99:
 			__asm        mov    eax, [eax+8];
 			__asm        mov    [ecx+8], eax;
 		// LINE 2906:
-			ret = WriteMIFFChunk(0x48, 0x62a530, dbMIFFID, miffWriter);
+			ret = WriteMIFFChunk(miffWriter, dbMIFFID, 0x62a530, 0x48);
 		// LINE 2907:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T10c;

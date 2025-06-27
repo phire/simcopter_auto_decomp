@@ -203,7 +203,7 @@ _T46:
 	__asm        test   eax, eax;
 	__asm        je     _T76;
 // LINE 45:
-	strcpy(name, (this + 0x4));
+	strcpy((this + 0x4), name);
 // LINE 46:
 	__asm        jmp    _T7d;
 // LINE 47:
@@ -230,7 +230,7 @@ _T93:
 	__asm        cmp    bCreateIfNotFound, 0;
 	__asm        je     _Td1;
 // LINE 55:
-	this->PFile::FileCreate((reinterpret_cast<uint32_t>(access) & 0xffff), (this + 0x4));
+	this->PFile::FileCreate((this + 0x4), (reinterpret_cast<uint32_t>(access) & 0xffff));
 // LINE 56:
 	__asm        jmp    _Td8;
 // LINE 57:
@@ -250,7 +250,7 @@ _Tdd:
 	__asm        mov    access, ax;
 // LINE 64:
 _Tf6:
-	this->Handle = _sopen((reinterpret_cast<uint32_t>(access) & 0xf0), (reinterpret_cast<uint32_t>(access) & 0xfe0f), (this + 0x4));
+	this->Handle = _sopen((this + 0x4), (reinterpret_cast<uint32_t>(access) & 0xfe0f), (reinterpret_cast<uint32_t>(access) & 0xf0));
 // LINE 66:
 _T120:
 	__asm        mov    eax, this;
@@ -372,7 +372,7 @@ _T3c:
 	__asm        test   eax, eax;
 	__asm        je     _T6c;
 // LINE 119:
-	strcpy(name, (this + 0x4));
+	strcpy((this + 0x4), name);
 // LINE 120:
 	__asm        jmp    _T73;
 // LINE 121:
@@ -399,7 +399,7 @@ _T89:
 	return 0x0;
 // LINE 127:
 _Ta7:
-	this->Handle = _creat(nAccessMode, (this + 0x4));
+	this->Handle = _creat((this + 0x4), nAccessMode);
 // LINE 129:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -475,7 +475,7 @@ _T35:
 	return 0x0;
 // LINE 164:
 _T3c:
-	strcpy(szPath, (this + 0x4));
+	strcpy((this + 0x4), szPath);
 // LINE 165:
 	return 0x1;
 // LINE 166:
@@ -505,7 +505,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        cmp    name, 0;
 	__asm        je     _T5e;
 
-	strcpy(name, tempPFile.szFilePath[0]);
+	strcpy(tempPFile.szFilePath[0], name);
 	__asm        jmp    _T65;
 _T5e:
 	tempPFile.szFilePath[0] = 0x0;
@@ -548,7 +548,7 @@ _FOR_c3:
 		_Tf7:
 			__asm        jmp    _Tfc;
 		_Tfc:
-			lUsedBlockSize = _read(lUsedBlockSize, chBuffer, tempPFile.Handle);
+			lUsedBlockSize = _read(tempPFile.Handle, chBuffer, lUsedBlockSize);
 		// LINE 199:
 		_FOR_122:
 			for (lIndex = 0x0; (lUsedBlockSize > lIndex); lIndex++) {
@@ -583,7 +583,7 @@ _FOR_190:
 _FOR_NEXT_190:
 	for (; (lFileLength > lIndex); lIndex++) {
 		// LINE 207:
-			_read(0x1, chValue, tempPFile.Handle);
+			_read(tempPFile.Handle, chValue, 0x1);
 			__asm        jmp    _T1bf;
 		// LINE 208:
 		_T1bf:

@@ -799,7 +799,7 @@ _Ta2:
 // FUNCTION: COPTER_D 0x00539d67
 short S3GetNearestStation(/*packed*/ class Station *station, /*packed*/ struct _GridCoordinates gc, /*packed*/ struct _GridCoordinates *result) {
 // LINE 49:
-	return station->Station::GetNearestStation(result, reinterpret_cast<uint32_t>(gc.x));
+	return station->Station::GetNearestStation(reinterpret_cast<uint32_t>(gc.x), result);
 // LINE 50:
 }
 
@@ -2018,7 +2018,7 @@ void Station::DecrementQuantityOfVehicleDispatched(int32_t stationID) {
 	__asm        cmp    dword ptr [eax+ecx+0x5C], 0;
 	__asm        jne    _T41;
 
-	_assert(0x1a7, 0x5b8078, 0x5b809c);
+	_assert(0x5b809c, 0x5b8078, 0x1a7);
 	__asm        jmp    _T46;
 _T41:
 	__asm        jmp    _T46;
@@ -2105,7 +2105,7 @@ _Tca:
 	__asm        mov    al, reinterpret_cast<uint8_t>(mapy);
 	__asm        mov    destLoc.y, al;
 // LINE 454:
-	availableVehicle = this->Station::FindAvailableVehicle(vehicleListLength, vehicleList, responseLevel);
+	availableVehicle = this->Station::FindAvailableVehicle(responseLevel, vehicleList, vehicleListLength);
 // LINE 457:
 	__asm        cmp    availableVehicle, 0;
 	__asm        jne    _T3b9;
@@ -2229,11 +2229,11 @@ _T2c9:
 	__asm        jmp    _T2ce;
 // LINE 460:
 _T2ce:
-	0x6351d0->DigitalSound::SetSoundFile(0x2, errorMsgSoundFullPath.c_str_ptr);
+	0x6351d0->DigitalSound::SetSoundFile(errorMsgSoundFullPath.c_str_ptr, 0x2);
 // LINE 461:
 	0x6351d0->DigitalSound::SetVolume(glMasterVolume);
 // LINE 462:
-	0x6351d0->DigitalSound::Play(0x1, 0x0);
+	0x6351d0->DigitalSound::Play(0x0, 0x1);
 // LINE 464:
 	__asm        mov    dword ptr [ebp-0x120], 0x101;
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
@@ -2407,11 +2407,11 @@ _T59c:
 	__asm        jmp    _T5a1;
 // LINE 470:
 _T5a1:
-	0x6351d0->DigitalSound::SetSoundFile(0x2, errorMsgSoundFullPath.c_str_ptr);
+	0x6351d0->DigitalSound::SetSoundFile(errorMsgSoundFullPath.c_str_ptr, 0x2);
 // LINE 471:
 	0x6351d0->DigitalSound::SetVolume(glMasterVolume);
 // LINE 472:
-	0x6351d0->DigitalSound::Play(0x1, 0x0);
+	0x6351d0->DigitalSound::Play(0x0, 0x1);
 // LINE 474:
 	__asm        mov    dword ptr [ebp-0x12C], 0x103;
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
@@ -2463,7 +2463,7 @@ _T68c:
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T861;
 // LINE 483:
-	this->Station::SortVehiclesByDistanceFromDestination(vehicleListLength, vehicleList, reinterpret_cast<uint32_t>(destLoc.x));
+	this->Station::SortVehiclesByDistanceFromDestination(reinterpret_cast<uint32_t>(destLoc.x), vehicleList, vehicleListLength);
 // LINE 487:
 __WHILE_6b3:
 	while ((this->vehicleHeapSize != 0x0)) {
@@ -2537,7 +2537,7 @@ __WHILE_6b3:
 			__asm        call   RoadGraph::FindYIndexToVertex;
 			__asm        mov    destVert.yindex, al;
 		// LINE 507:
-			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(destVert.x), reinterpret_cast<uint32_t>(startVertex.x));
+			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVert.x));
 		// LINE 509:
 			__asm        jmp    _T7d0;
 		// LINE 511:
@@ -2686,7 +2686,7 @@ __WHILE_873:
 			__asm        call   RoadGraph::FindYIndexToVertex;
 			__asm        mov    destVert.yindex, al;
 		// LINE 552:
-			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(destVert.x), reinterpret_cast<uint32_t>(startVertex.x));
+			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVert.x));
 		// LINE 554:
 		// Block end:
 			__asm        jmp    _T9b3;
@@ -2888,11 +2888,11 @@ _Tc57:
 	__asm        jmp    _Tc5c;
 // LINE 577:
 _Tc5c:
-	0x6351d0->DigitalSound::SetSoundFile(0x2, errorMsgSoundFullPath.c_str_ptr);
+	0x6351d0->DigitalSound::SetSoundFile(errorMsgSoundFullPath.c_str_ptr, 0x2);
 // LINE 578:
 	0x6351d0->DigitalSound::SetVolume(glMasterVolume);
 // LINE 579:
-	0x6351d0->DigitalSound::Play(0x1, 0x0);
+	0x6351d0->DigitalSound::Play(0x0, 0x1);
 // LINE 581:
 	__asm        mov    dword ptr [ebp-0x1E8], 0x105;
 	__asm        mov    eax, errorMsgSoundFullPath.reference;
@@ -3222,7 +3222,7 @@ _FOR_1db:
 	}
 // LINE 683:
 _T2cc:
-	this->stationHeap = S2Alloc((this->quantityOfStations << 0x3), G_citymempool);
+	this->stationHeap = S2Alloc(G_citymempool, (this->quantityOfStations << 0x3));
 // LINE 686:
 	__asm        xor    eax, eax;
 	__asm        mov    al, stationScurkID;

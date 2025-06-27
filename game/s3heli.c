@@ -625,25 +625,25 @@ _T2ee:
 _T326:
 	hd->flags = 0x0;
 // LINE 564:
-	hd->dyheli = S2Alloc(0x64, G_dyobjmempool);
+	hd->dyheli = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 566:
-	hd->dybucket = S2Alloc(0x64, G_dyobjmempool);
+	hd->dybucket = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 568:
-	hd->dyshadow = S2Alloc(0x64, G_dyobjmempool);
+	hd->dyshadow = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 570:
-	hd->dyspot = S2Alloc(0x64, G_dyobjmempool);
+	hd->dyspot = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 572:
-	hd->dyrotor = S2Alloc(0x64, G_dyobjmempool);
+	hd->dyrotor = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 574:
-	hd->dyrotortl = S2Alloc(0x64, G_dyobjmempool);
+	hd->dyrotortl = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 576:
-	hd->dyrotshadow = S2Alloc(0x64, G_dyobjmempool);
+	hd->dyrotshadow = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 578:
-	hd->dybracket = S2Alloc(0x64, G_dyobjmempool);
+	hd->dybracket = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 580:
-	hd->dyrope = S2Alloc(0x64, G_dyobjmempool);
+	hd->dyrope = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 582:
-	hd->dycannon = S2Alloc(0x64, G_dyobjmempool);
+	hd->dycannon = S2Alloc(G_dyobjmempool, 0x64);
 // LINE 591:
 	__asm        mov    eax, htd;
 	__asm        cmp    dword ptr [eax], 0;
@@ -655,7 +655,7 @@ _T326:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 594:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 595:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -682,7 +682,7 @@ _T326:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 599:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 600:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -709,7 +709,7 @@ _T326:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 604:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 605:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -736,7 +736,7 @@ _T326:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 609:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 610:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -780,7 +780,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 628:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 629:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -813,7 +813,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 634:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 635:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -842,7 +842,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 639:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 640:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -873,7 +873,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 644:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 645:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -904,7 +904,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 650:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 651:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -935,7 +935,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 655:
-	mem = S2Alloc(size, G_dyobjmempool);
+	mem = S2Alloc(G_dyobjmempool, size);
 // LINE 656:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -1018,13 +1018,13 @@ _T898:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 675:
-	S_spotlevels[0] = VRInt2BmpHdr(0x8, G_restex);
+	S_spotlevels[0] = VRInt2BmpHdr(G_restex, 0x8);
 // LINE 676:
-	S_spotlevels[1] = VRInt2BmpHdr(0x9, G_restex);
+	S_spotlevels[1] = VRInt2BmpHdr(G_restex, 0x9);
 // LINE 677:
-	S_spotlevels[2] = VRInt2BmpHdr(0xa, G_restex);
+	S_spotlevels[2] = VRInt2BmpHdr(G_restex, 0xa);
 // LINE 678:
-	S_spotlevels[3] = VRInt2BmpHdr(0xb, G_restex);
+	S_spotlevels[3] = VRInt2BmpHdr(G_restex, 0xb);
 // LINE 684:
 _T9c4:
 	__asm        mov    eax, hdindex;
@@ -1193,7 +1193,7 @@ _T9c4:
 // LINE 753:
 	hd->dycannon->radius = oinfo.Radius;
 // LINE 760:
-	obj = VRObjCreateRope(RopeSeg, 0x78, 0x14);
+	obj = VRObjCreateRope(0x14, 0x78, RopeSeg);
 // LINE 761:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Tcb1;
@@ -1274,7 +1274,7 @@ _Tcb1:
 // LINE 801:
 	htd->num_initialized++;
 // LINE 804:
-	HeliPassengerInit(hd->type, (hd + 0x1c4));
+	HeliPassengerInit((hd + 0x1c4), hd->type);
 // LINE 805:
 }
 
@@ -1413,7 +1413,7 @@ _T61:
 // LINE 874:
 	MTNormalize((hd + 0x184));
 // LINE 875:
-	MTCreateDOF4x4Y((hd + 0x184), (hd->dybucket + 0x24));
+	MTCreateDOF4x4Y((hd->dybucket + 0x24), (hd + 0x184));
 // LINE 880:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -1613,7 +1613,7 @@ _T61:
 // LINE 949:
 	hd->vector.z = 0x10000;
 // LINE 952:
-	S_shadbmp = VRInt2BmpHdr(0x6, G_restex);
+	S_shadbmp = VRInt2BmpHdr(G_restex, 0x6);
 // LINE 954:
 	__asm        mov    eax, hd;
 	__asm        add    eax, 0xE0;
@@ -1928,7 +1928,7 @@ _T1f4:
 // LINE 1089:
 	freepad = S3HeliGetFreePad();
 // LINE 1090:
-	S3PersonUserAppear(0x50000, 0x50000, freepad->y, freepad->x);
+	S3PersonUserAppear(freepad->x, freepad->y, 0x50000, 0x50000);
 // LINE 1091:
 	G_camera_mode = 0x3;
 // LINE 1092:
@@ -1959,7 +1959,7 @@ _T2ac:
 // LINE 1108:
 	hd->damage = htd->max_damage;
 // LINE 1119:
-	hd->crash_traj = S3MissileStart(-0x1, hd->fwd_speed, hd->dyheli, 0x1, (hd + 0x100), (hd->dyheli + 0x18), (hd + 0x18), 0x8);
+	hd->crash_traj = S3MissileStart(0x8, (hd + 0x18), (hd->dyheli + 0x18), (hd + 0x100), 0x1, hd->dyheli, hd->fwd_speed, -0x1);
 // LINE 1122:
 _T33a:
 	__asm        mov    eax, hd;
@@ -2142,7 +2142,7 @@ _T56b:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    lcptr, eax;
 // LINE 1191:
-	S3HeliUnlink(lcptr, hd);
+	S3HeliUnlink(hd, lcptr);
 // LINE 1193:
 	hd->dyheli->next->next->next->next->next->next->next->next->next->next = cptr->dyptr;
 // LINE 1194:
@@ -2252,7 +2252,7 @@ _T5f3:
 // LINE 1216:
 	S3HeliMainRotor(hd);
 // LINE 1217:
-	S3HeliRopeAndBucket(cptr, hd);
+	S3HeliRopeAndBucket(hd, cptr);
 // LINE 1229:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -2281,13 +2281,13 @@ _T5f3:
 	__asm        sub    eax, ecx;
 	__asm        mov    normy, eax;
 // LINE 1233:
-	S3HeliDropWater(cptr, hd->buildalt, hd);
+	S3HeliDropWater(hd, hd->buildalt, cptr);
 // LINE 1234:
-	S3HeliSimDust(hd->buildalt, hd);
+	S3HeliSimDust(hd, hd->buildalt);
 // LINE 1235:
-	S3HeliSetShadow(hd->shad_color, hd->buildalt, (hd->buildalt - hd->terralt), hd);
+	S3HeliSetShadow(hd, (hd->buildalt - hd->terralt), hd->buildalt, hd->shad_color);
 // LINE 1236:
-	S3HeliSetSpotlite(hd->shad_color, hd->buildalt, (hd->buildalt - hd->terralt), hd);
+	S3HeliSetSpotlite(hd, (hd->buildalt - hd->terralt), hd->buildalt, hd->shad_color);
 // LINE 1239:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
@@ -2377,7 +2377,7 @@ _T8d0:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1279:
 _T976:
-	S3ExplosionSmokeStart(0x9, (hd->dyheli + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x9);
 // LINE 1281:
 	__asm        push   0xF;
 	__asm        call   S3SoundIsPlaying;
@@ -2385,7 +2385,7 @@ _T976:
 	__asm        test   eax, eax;
 	__asm        jne    _T9bf;
 // LINE 1282:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0xf);
+	S3DSPlay(0xf, (hd->dyheli + 0x18), 0x0);
 // LINE 1284:
 _T9bf:
 	__asm        mov    ebx, 1;
@@ -2449,9 +2449,9 @@ _Ta22:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1299:
 _Taa1:
-	S3ExplosionSmokeStart(0x1, (hd->dyheli + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x1);
 // LINE 1301:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x1);
+	S3DSPlay(0x1, (hd->dyheli + 0x18), 0x0);
 // LINE 1303:
 	__asm        mov    ebx, 1;
 	__asm        call   rand;
@@ -2526,7 +2526,7 @@ _Tbae:
 	hd->dyheli->loc.y = hd->terralt;
 // LINE 1324:
 _Tbde:
-	MTCreateDOF4x4((hd + 0x100), tmpmatrix[0][0]);
+	MTCreateDOF4x4(tmpmatrix[0][0], (hd + 0x100));
 // LINE 1325:
 	__asm        lea    eax, matrix[0][0];
 	__asm        push   eax;
@@ -2574,7 +2574,7 @@ _Tbde:
 // LINE 1339:
 	alt = hd->dyheli->loc.y;
 // LINE 1341:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x1);
+	S3DSPlay(0x1, (hd->dyheli + 0x18), 0x0);
 // LINE 1345:
 	__asm        cmp    G_camera_mode, 1;
 	__asm        jne    _Td14;
@@ -2657,9 +2657,9 @@ _Td62:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 1369:
 _Tdb6:
-	S3ExplosionStart(-0x1, 0x1, normz, normy, normx, cptr);
+	S3ExplosionStart(cptr, normx, normy, normz, 0x1, -0x1);
 // LINE 1371:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x1);
+	S3DSPlay(0x1, (hd->dyheli + 0x18), 0x0);
 // LINE 1373:
 	__asm        mov    ebx, 1;
 	__asm        call   rand;
@@ -2773,7 +2773,7 @@ _Tf2b:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 1415:
-	S3MissileStart(-0x1, speed, hd->dyheli, 0x1, vec.x, loc.x, (hd + 0x18), hd->fireprojectile);
+	S3MissileStart(hd->fireprojectile, (hd + 0x18), loc.x, vec.x, 0x1, hd->dyheli, speed, -0x1);
 // LINE 1425:
 // Block end:
 __RETURN:
@@ -3079,7 +3079,7 @@ _T96:
 	hd->pitch = 0x0;
 // LINE 1558:
 _Tfd:
-	deflectangle = S3HeliGetDeflection(alt, dist, newvect.x, hd);
+	deflectangle = S3HeliGetDeflection(hd, newvect.x, dist, alt);
 // LINE 1559:
 	__asm        cmp    deflectangle, 0;
 	__asm        jle    _T188;
@@ -3232,7 +3232,7 @@ _T68:
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1640:
-	MTCreateDOF4x4((hd + 0x100), (hd->dyshadow + 0x24));
+	MTCreateDOF4x4((hd->dyshadow + 0x24), (hd + 0x100));
 // LINE 1641:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xB4];
@@ -3402,7 +3402,7 @@ _Ta8:
 	__asm        sar    pitchrate, 1;
 // LINE 1723:
 _Td5:
-	lJoystickLeftRightValue = GetJoystickValueEither(0x7, 0x6);
+	lJoystickLeftRightValue = GetJoystickValueEither(0x6, 0x7);
 // LINE 1724:
 	__asm        push   0x1A;
 	__asm        call   GetJoystickValue;
@@ -4300,7 +4300,7 @@ _T11e:
 // LINE 1967:
 	hd->slide = 0x0;
 // LINE 1968:
-	S3AngleRotMat(hd->roll, hd->pitch, hd->yaw, matrix[0][0]);
+	S3AngleRotMat(matrix[0][0], hd->yaw, hd->pitch, hd->roll);
 // LINE 1969:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -4593,7 +4593,7 @@ _T54d:
 	hd->roll = hd->slide;
 // LINE 2077:
 _T56b:
-	S3AngleRotMat(hd->roll, hd->pitch, hd->yaw, matrix[0][0]);
+	S3AngleRotMat(matrix[0][0], hd->yaw, hd->pitch, hd->roll);
 // LINE 2078:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -5285,7 +5285,7 @@ _T506:
 	__asm        test   eax, eax;
 	__asm        jne    _T58d;
 // LINE 2322:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x3);
+	S3DSPlay(0x3, (hd->dyheli + 0x18), 0x0);
 // LINE 2324:
 _T58d:
 	__asm        mov    eax, hd;
@@ -5368,12 +5368,12 @@ _T5cb:
 	__asm        cmp    dword ptr [eax+0x320], 0;
 	__asm        jle    _T6b9;
 // LINE 2346:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x2);
+	S3DSPlay(0x2, (hd->dyheli + 0x18), 0x0);
 // LINE 2347:
 	__asm        jmp    _T6d2;
 // LINE 2348:
 _T6b9:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x16);
+	S3DSPlay(0x16, (hd->dyheli + 0x18), 0x0);
 // LINE 2350:
 _T6d2:
 	hd->dyheli->loc.y = (hd->terralt + 0x13333);
@@ -5460,12 +5460,12 @@ _T70f:
 	__asm        cmp    dword ptr [eax+0x320], 0;
 	__asm        jle    _T82e;
 // LINE 2372:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x2);
+	S3DSPlay(0x2, (hd->dyheli + 0x18), 0x0);
 // LINE 2373:
 	__asm        jmp    _T847;
 // LINE 2374:
 _T82e:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x16);
+	S3DSPlay(0x16, (hd->dyheli + 0x18), 0x0);
 // LINE 2376:
 _T847:
 	hd->state = 0x0;
@@ -5944,7 +5944,7 @@ void S3HeliRopeAndBucket(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct _CE
 	__asm        test   eax, eax;
 	__asm        jne    _T68;
 // LINE 2550:
-	S3DSPlay(0x1, (hd->dyheli + 0x18), 0x15);
+	S3DSPlay(0x15, (hd->dyheli + 0x18), 0x1);
 // LINE 2553:
 _T68:
 	hd->rinfo.bucketdown--;
@@ -6009,10 +6009,10 @@ _T124:
 	__asm        test   eax, eax;
 	__asm        jne    _T16c;
 // LINE 2579:
-	S3DSPlay(0x1, (hd->dyheli + 0x18), 0x15);
+	S3DSPlay(0x15, (hd->dyheli + 0x18), 0x1);
 // LINE 2581:
 _T16c:
-	S3SoundAdjFreq(0xa0, 0x15);
+	S3SoundAdjFreq(0x15, 0xa0);
 // LINE 2584:
 _T17b:
 	hd->rinfo.bucketdown++;
@@ -6137,9 +6137,9 @@ _T2c8:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 2633:
-	galt = S3TerrPrecisionAlt(0x0, pos.loc.z, pos.loc.x);
+	galt = S3TerrPrecisionAlt(pos.loc.x, pos.loc.z, 0x0);
 // LINE 2634:
-	S3HeliRopeNextFrame(cptr, galt, hd);
+	S3HeliRopeNextFrame(hd, galt, cptr);
 // LINE 2636:
 	hd->rinfo.lastbuckloc.x = hd->dybucket->loc.x;
 // LINE 2637:
@@ -6203,7 +6203,7 @@ _T495:
 // LINE 2660:
 	hd->winfo.load = htd->max_load;
 // LINE 2661:
-	S3ExplosionSmokeStart(0x3, (hd->dybucket + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dybucket + 0x18), 0x3);
 // LINE 2663:
 	__asm        jmp    _T548;
 // LINE 2666:
@@ -6214,12 +6214,12 @@ _T4e7:
 	__asm        test   eax, eax;
 	__asm        jne    _T512;
 // LINE 2667:
-	S3DSPlay(0x0, (hd->dybucket + 0x18), 0xa);
+	S3DSPlay(0xa, (hd->dybucket + 0x18), 0x0);
 // LINE 2669:
 _T512:
-	S3ExplosionSmokeStart(0x8, (hd->dybucket + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dybucket + 0x18), 0x8);
 // LINE 2670:
-	S3ExplosionSmokeStart(0x3, (hd->dybucket + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dybucket + 0x18), 0x3);
 // LINE 2675:
 _T548:
 	__asm        mov    eax, hd;
@@ -6252,7 +6252,7 @@ _T548:
 _T613:
 	hd->rinfo.throwfactor = (hd->rinfo.throwfactor * S_htwk_water_throwfact);
 // LINE 2687:
-	MTCreateDOF4x4Y((hd + 0x184), (hd->dybucket + 0x24));
+	MTCreateDOF4x4Y((hd->dybucket + 0x24), (hd + 0x184));
 // LINE 2688:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xBC];
@@ -6388,7 +6388,7 @@ _T5e:
 	__asm        add    esp, 8;
 	__asm        add    loc.z, eax;
 // LINE 2739:
-	S3MissileStart(-0x1, 0xf0000, hd->dybucket, 0x1, vec.x, loc.x, (hd + 0x18), 0x6);
+	S3MissileStart(0x6, (hd + 0x18), loc.x, vec.x, 0x1, hd->dybucket, 0xf0000, -0x1);
 // LINE 2742:
 _T17c:
 	return;
@@ -6507,7 +6507,7 @@ _T8a:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 2783:
-	S3ExplosionSmokeStart(0x8, loc.x, cptr);
+	S3ExplosionSmokeStart(cptr, loc.x, 0x8);
 // LINE 2800:
 _T173:
 	return;
@@ -6894,7 +6894,7 @@ __WHILE_2b4:
 		// LINE 2984:
 			flags = stobj->user1;
 		// LINE 2985:
-			objy = VRGetObjAlt2(0x0, 0x0, RopeDim, RopeDim, flags, normz, normy, normx, stobj->mesh);
+			objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, RopeDim, RopeDim, 0x0, 0x0);
 		// LINE 2986:
 			__asm        mov    eax, objy;
 			__asm        cmp    maxobjy, eax;
@@ -6940,7 +6940,7 @@ __WHILE_344:
 		// LINE 3011:
 			oloc.z = (ploc.z - dyobj->loc.z);
 		// LINE 3016:
-			objy = VRGetDyObjAlt(RopeDim, oloc.x, (dyobj + 0x24), dyobj->mesh);
+			objy = VRGetDyObjAlt(dyobj->mesh, (dyobj + 0x24), oloc.x, RopeDim);
 		// LINE 3017:
 			__asm        mov    eax, objy;
 			__asm        cmp    maxobjy, eax;
@@ -7061,7 +7061,7 @@ int32_t GetCopterTerAlt(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x4*/   int32_t alt;
 
 // LINE 3327:
-	alt = S3TerrPrecisionAlt((hd + 0x13c), hd->dyheli->loc.z, hd->dyheli->loc.x);
+	alt = S3TerrPrecisionAlt(hd->dyheli->loc.x, hd->dyheli->loc.z, (hd + 0x13c));
 // LINE 3329:
 	return alt;
 // LINE 3331:
@@ -7132,7 +7132,7 @@ __WHILE_9c:
 		// LINE 3357:
 			flags = stobj->user1;
 		// LINE 3363:
-			objy = VRGetObjAlt2(landable, vec.x, hd->dyheli->height, hd->dyheli->radius, flags, normz, normy, normx, stobj->mesh);
+			objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, hd->dyheli->radius, hd->dyheli->height, vec.x, landable);
 		// LINE 3364:
 			__asm        mov    eax, objy;
 			__asm        cmp    maxobjy, eax;
@@ -7162,7 +7162,7 @@ _T146:
 	__asm        cmp    maxobjy, 0;
 	__asm        jne    _T17c;
 // LINE 3378:
-	alt = S3TerrPrecisionAlt(0x0, hd->dyheli->loc.z, hd->dyheli->loc.x);
+	alt = S3TerrPrecisionAlt(hd->dyheli->loc.x, hd->dyheli->loc.z, 0x0);
 // LINE 3379:
 	__asm        jmp    _T18c;
 // LINE 3380:
@@ -7918,10 +7918,10 @@ _T1cd:
 	__asm        test   eax, eax;
 	__asm        jne    _T1f8;
 // LINE 3911:
-	S3DSPlay(0x1, (hd->dyheli + 0x18), 0x0);
+	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x1);
 // LINE 3914:
 _T1f8:
-	S3SoundAdjFreq((hd->heli_p.Vmag >> 0xc), 0x0);
+	S3SoundAdjFreq(0x0, (hd->heli_p.Vmag >> 0xc));
 // LINE 3919:
 	__asm        push   0xF0600000;
 	__asm        push   0x7800000;
@@ -7935,7 +7935,7 @@ _T1f8:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 3921:
-	S3SoundAdjVol(vol_adj, 0x0);
+	S3SoundAdjVol(0x0, vol_adj);
 // LINE 3924:
 	__asm        jmp    _T2f3;
 // LINE 3927:
@@ -7959,7 +7959,7 @@ _T269:
 	__asm        cmp    dword ptr [eax+0x320], 0;
 	__asm        jle    _T2a9;
 // LINE 3938:
-	S3DSPlay(0x1, (hd->dyheli + 0x18), 0x0);
+	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x1);
 // LINE 3939:
 	__asm        jmp    _T2ae;
 // LINE 3940:
@@ -7985,7 +7985,7 @@ _T2ae:
 	__asm        sar    eax, 2;
 	__asm        mov    vol_adj, eax;
 // LINE 3947:
-	S3SoundAdjVol(vol_adj, 0x0);
+	S3SoundAdjVol(0x0, vol_adj);
 // LINE 3952:
 _T2f3:
 	return;
@@ -8026,7 +8026,7 @@ _T1e:
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 3988:
-	MTCreateDOF4x4((hd + 0x100), (hd->dyspot + 0x24));
+	MTCreateDOF4x4((hd->dyspot + 0x24), (hd + 0x100));
 // LINE 3989:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xC0];
@@ -8086,7 +8086,7 @@ _FOR_d1:
 			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 			__asm        mov    ncptr, eax;
 		// LINE 4008:
-			dist = S3HeliSpotDistance(cptr, 0x200000, svec.x, loc.x);
+			dist = S3HeliSpotDistance(loc.x, svec.x, 0x200000, cptr);
 		// LINE 4010:
 			__asm        cmp    dist, 0;
 			__asm        jle    _T173;
@@ -8100,7 +8100,7 @@ _FOR_d1:
 			__asm        cmp    ncptr, eax;
 			__asm        je     _T19b;
 		// LINE 4018:
-			dist = S3HeliSpotDistance(ncptr, 0x200000, svec.x, loc.x);
+			dist = S3HeliSpotDistance(loc.x, svec.x, 0x200000, ncptr);
 		// LINE 4019:
 		_T19b:
 			__asm        cmp    dist, 0;
@@ -8303,7 +8303,7 @@ _T3e6:
 // LINE 4106:
 	S_spotloc.y = ((0x20000000 - hd->dyspot->loc.z) >> 0x16);
 // LINE 4109:
-	S3HeliHitSpiral(spotlevel, -0x1, hd->dyspot, 0x6bf1b8, 0x1);
+	S3HeliHitSpiral(0x1, 0x6bf1b8, hd->dyspot, -0x1, spotlevel);
 // LINE 4112:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    __RETURN;
@@ -8391,12 +8391,12 @@ __WHILE_39:
 		// LINE 4168:
 			oloc.z += center.z;
 		// LINE 4174:
-			newdist = S3MissileSphereHit(oinfo.Radius, oloc.x, dist, spotvec, spotloc);
+			newdist = S3MissileSphereHit(spotloc, spotvec, dist, oloc.x, oinfo.Radius);
 		// LINE 4178:
 			__asm        cmp    newdist, 0;
 			__asm        jle    _Tde;
 		// LINE 4185:
-			newdist = VRStObjPolyHit(0x0, stobj->mesh, cloc.x, dist, spotvec, spotloc);
+			newdist = VRStObjPolyHit(spotloc, spotvec, dist, cloc.x, stobj->mesh, 0x0);
 		// LINE 4188:
 		_Tde:
 			__asm        cmp    newdist, 0;
@@ -8409,7 +8409,7 @@ __WHILE_39:
 	}
 // LINE 4203:
 _Tfd:
-	newdist = S3MissileGroundHit(cloc.x, dist, spotvec, spotloc);
+	newdist = S3MissileGroundHit(spotloc, spotvec, dist, cloc.x);
 // LINE 4204:
 	__asm        cmp    newdist, 0;
 	__asm        jle    _T12a;
@@ -8546,7 +8546,7 @@ void S3HeliTurbulence(/*packed*/ struct _HELI_DATA *hd) {
 	__asm        sub    eax, ecx;
 	__asm        mov    loc.z, eax;
 // LINE 4306:
-	firealt = S3FireGetAltitude(loc.x, cptr);
+	firealt = S3FireGetAltitude(cptr, loc.x);
 // LINE 4307:
 	__asm        cmp    firealt, 0;
 	__asm        je     _Tf9;
@@ -8633,7 +8633,7 @@ _T16a:
 	__asm        mov    ecx, hd;
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 4346:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x10);
+	S3DSPlay(0x10, (hd->dyheli + 0x18), 0x0);
 // LINE 4353:
 _T216:
 	__asm        cmp    firealt, 0xFFD00000;
@@ -8827,7 +8827,7 @@ _T81:
 	__asm        cmp    dword ptr [eax+0x16C], 0x10000;
 	__asm        jle    _Tb4;
 // LINE 4430:
-	S3ExplosionSmokeStart(0x5, (hd->dyheli + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x5);
 // LINE 4431:
 	__asm        jmp    _T148;
 _Tb4:
@@ -8835,7 +8835,7 @@ _Tb4:
 	__asm        cmp    dword ptr [eax+0x16C], 0xE666;
 	__asm        jle    _Te7;
 // LINE 4432:
-	S3ExplosionSmokeStart(0x4, (hd->dyheli + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x4);
 // LINE 4433:
 	__asm        jmp    _T148;
 _Te7:
@@ -8843,7 +8843,7 @@ _Te7:
 	__asm        cmp    dword ptr [eax+0x16C], 0x1999;
 	__asm        jge    _T11a;
 // LINE 4434:
-	S3ExplosionSmokeStart(0x2, (hd->dyheli + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x2);
 // LINE 4435:
 	__asm        jmp    _T148;
 _T11a:
@@ -8851,7 +8851,7 @@ _T11a:
 	__asm        cmp    dword ptr [eax+0x16C], 0x3333;
 	__asm        jge    _T148;
 // LINE 4436:
-	S3ExplosionSmokeStart(0x1, (hd->dyheli + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x1);
 // LINE 4439:
 _T148:
 	__asm        mov    eax, hd;
@@ -8998,7 +8998,7 @@ _T247:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 4478:
-	S3MissileStart(-0x1, speed, hd->dyheli, 0x3, vec.x, loc.x, (hd + 0x18), 0x4);
+	S3MissileStart(0x4, (hd + 0x18), loc.x, vec.x, 0x3, hd->dyheli, speed, -0x1);
 // LINE 4485:
 _T320:
 	__asm        push   0xFFFFFFFF;
@@ -9030,7 +9030,7 @@ _T320:
 	__asm        cmp    scale, 0;
 	__asm        jle    _T385;
 // LINE 4490:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x4);
+	S3DSPlay(0x4, (hd->dyheli + 0x18), 0x0);
 // LINE 4494:
 _T385:
 	return;
@@ -9079,7 +9079,7 @@ _T3c8:
 	__asm        test   eax, eax;
 	__asm        jne    _T42a;
 // LINE 4523:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0xe);
+	S3DSPlay(0xe, (hd->dyheli + 0x18), 0x0);
 // LINE 4525:
 _T42a:
 	hd->smokeseq = 0x0;
@@ -9088,7 +9088,7 @@ _T437:
 	return;
 // LINE 4530:
 _T43c:
-	S3ExplosionSmokeStart(0x1, (hd->dyheli + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x1);
 // LINE 4532:
 }
 
@@ -9138,7 +9138,7 @@ void S3HeliTweakInit() {
 // LINE 4575:
 	pvals[13] = (htd + 0x40);
 // LINE 4577:
-	TWKEnQueue(0x5b4cc4, 0xe, pvals[0]);
+	TWKEnQueue(pvals[0], 0xe, 0x5b4cc4);
 // LINE 4579:
 	htd = (0x5b4978 + 0x58);
 // LINE 4581:
@@ -9170,7 +9170,7 @@ void S3HeliTweakInit() {
 // LINE 4594:
 	pvals[13] = (htd + 0x40);
 // LINE 4596:
-	TWKEnQueue(0x5b4cd0, 0xe, pvals[0]);
+	TWKEnQueue(pvals[0], 0xe, 0x5b4cd0);
 // LINE 4598:
 	htd = (0x5b4978 + 0xb0);
 // LINE 4600:
@@ -9202,7 +9202,7 @@ void S3HeliTweakInit() {
 // LINE 4613:
 	pvals[13] = (htd + 0x40);
 // LINE 4615:
-	TWKEnQueue(0x5b4cdc, 0xe, pvals[0]);
+	TWKEnQueue(pvals[0], 0xe, 0x5b4cdc);
 // LINE 4617:
 	htd = (0x5b4978 + 0x108);
 // LINE 4619:
@@ -9234,7 +9234,7 @@ void S3HeliTweakInit() {
 // LINE 4632:
 	pvals[13] = (htd + 0x40);
 // LINE 4634:
-	TWKEnQueue(0x5b4ce4, 0xe, pvals[0]);
+	TWKEnQueue(pvals[0], 0xe, 0x5b4ce4);
 // LINE 4636:
 	htd = (0x5b4978 + 0x160);
 // LINE 4638:
@@ -9266,7 +9266,7 @@ void S3HeliTweakInit() {
 // LINE 4651:
 	pvals[13] = (htd + 0x40);
 // LINE 4653:
-	TWKEnQueue(0x5b4cf0, 0xe, pvals[0]);
+	TWKEnQueue(pvals[0], 0xe, 0x5b4cf0);
 // LINE 4655:
 	htd = (0x5b4978 + 0x1b8);
 // LINE 4657:
@@ -9298,7 +9298,7 @@ void S3HeliTweakInit() {
 // LINE 4670:
 	pvals[13] = (htd + 0x40);
 // LINE 4672:
-	TWKEnQueue(0x5b4d00, 0xe, pvals[0]);
+	TWKEnQueue(pvals[0], 0xe, 0x5b4d00);
 // LINE 4674:
 	htd = (0x5b4978 + 0x210);
 // LINE 4676:
@@ -9330,7 +9330,7 @@ void S3HeliTweakInit() {
 // LINE 4689:
 	pvals[13] = (htd + 0x40);
 // LINE 4691:
-	TWKEnQueue(0x5b4d08, 0xe, pvals[0]);
+	TWKEnQueue(pvals[0], 0xe, 0x5b4d08);
 // LINE 4693:
 	htd = (0x5b4978 + 0x268);
 // LINE 4695:
@@ -9362,7 +9362,7 @@ void S3HeliTweakInit() {
 // LINE 4708:
 	pvals[13] = (htd + 0x40);
 // LINE 4710:
-	TWKEnQueue(0x5b4d10, 0xe, pvals[0]);
+	TWKEnQueue(pvals[0], 0xe, 0x5b4d10);
 // LINE 4712:
 	htd = (0x5b4978 + 0x2c0);
 // LINE 4714:
@@ -9394,7 +9394,7 @@ void S3HeliTweakInit() {
 // LINE 4727:
 	pvals[13] = (htd + 0x40);
 // LINE 4729:
-	TWKEnQueue(0x5b4d1c, 0xe, pvals[0]);
+	TWKEnQueue(pvals[0], 0xe, 0x5b4d1c);
 // LINE 4731:
 	pvals[0] = 0x5b48c4;
 // LINE 4732:
@@ -9406,7 +9406,7 @@ void S3HeliTweakInit() {
 // LINE 4735:
 	pvals[4] = 0x5b48d0;
 // LINE 4737:
-	TWKEnQueue(0x5b4d24, 0x5, pvals[0]);
+	TWKEnQueue(pvals[0], 0x5, 0x5b4d24);
 // LINE 4739:
 	pvals[0] = 0x5b48d4;
 // LINE 4740:
@@ -9420,7 +9420,7 @@ void S3HeliTweakInit() {
 // LINE 4744:
 	pvals[5] = 0x5b48e8;
 // LINE 4746:
-	TWKEnQueue(0x5b4d34, 0x6, pvals[0]);
+	TWKEnQueue(pvals[0], 0x6, 0x5b4d34);
 // LINE 4748:
 	pvals[0] = 0x5b48ec;
 // LINE 4749:
@@ -9430,7 +9430,7 @@ void S3HeliTweakInit() {
 // LINE 4751:
 	pvals[3] = 0x5b48f8;
 // LINE 4753:
-	TWKEnQueue(0x5b4d44, 0x4, pvals[0]);
+	TWKEnQueue(pvals[0], 0x4, 0x5b4d44);
 // LINE 4754:
 }
 
@@ -9642,7 +9642,7 @@ void S3HeliCommand(int32_t nCommand) {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _Tc0;
 // LINE 4893:
-	S3DSPlay(0x0, (G_uheli->dyheli + 0x18), 0x2b);
+	S3DSPlay(0x2b, (G_uheli->dyheli + 0x18), 0x0);
 // LINE 4894:
 	S3HeliUserExit();
 // LINE 4895:
@@ -9674,7 +9674,7 @@ void S3HeliCommand(int32_t nCommand) {
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 4900:
-	S3DSPlay(0x0, (G_uheli->dyheli + 0x18), 0x2c);
+	S3DSPlay(0x2c, (G_uheli->dyheli + 0x18), 0x0);
 // LINE 4901:
 	return;
 // LINE 4904:
@@ -9684,28 +9684,28 @@ _Tc5:
 	__asm        cmp    nCommand, 0x15;
 	__asm        jne    _T10f;
 // LINE 4906:
-	DispatchEmergencyVehicle(((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16), ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), 0x4, 0x1);
+	DispatchEmergencyVehicle(0x1, 0x4, ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), ((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16));
 // LINE 4908:
 	return;
 _T10f:
 	__asm        cmp    nCommand, 0x16;
 	__asm        jne    _T159;
 // LINE 4910:
-	DispatchEmergencyVehicle(((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16), ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), 0x4, 0x2);
+	DispatchEmergencyVehicle(0x2, 0x4, ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), ((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16));
 // LINE 4912:
 	return;
 _T159:
 	__asm        cmp    nCommand, 0x17;
 	__asm        jne    _T1a3;
 // LINE 4914:
-	DispatchEmergencyVehicle(((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16), ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), 0x4, 0x4);
+	DispatchEmergencyVehicle(0x4, 0x4, ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), ((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16));
 // LINE 4916:
 	return;
 _T1a3:
 	__asm        cmp    nCommand, 0x18;
 	__asm        jne    __RETURN;
 // LINE 4918:
-	DispatchEmergencyVehicle(((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16), ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), 0x3, 0x3);
+	DispatchEmergencyVehicle(0x3, 0x3, ((G_uheli->dyspot->loc.x + 0x20000000) >> 0x16), ((0x20000000 - G_uheli->dyspot->loc.z) >> 0x16));
 // LINE 4928:
 __RETURN:
 }
@@ -9761,9 +9761,9 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 	__asm        call   S3DSSetFile;
 	__asm        add    esp, 8;
 // LINE 4939:
-	S3DSPlay(0x0, (G_uheli->dyheli + 0x18), 0xc);
+	S3DSPlay(0xc, (G_uheli->dyheli + 0x18), 0x0);
 // LINE 4943:
-	S3HeliHitSpiral(nMessageType, -0x1, G_uheli->dyheli, (G_uheli + 0x18), 0x2);
+	S3HeliHitSpiral(0x2, (G_uheli + 0x18), G_uheli->dyheli, -0x1, nMessageType);
 // LINE 4944:
 }
 
@@ -9830,14 +9830,14 @@ _T9f:
 	__asm        jmp    _T4b8;
 // LINE 4984:
 _Tb0:
-	S3HeliUnlink(cptr, hd);
+	S3HeliUnlink(hd, cptr);
 // LINE 4985:
 	hd->crash_seq++;
 // LINE 4986:
 	__asm        jmp    _T4e0;
 // LINE 4989:
 _Tce:
-	S3ExplosionSmokeStart(0x1, (hd->dyheli + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x1);
 // LINE 4991:
 _FOR_f5:
 	for (i = 0x0; (i < 0x5); i++) {
@@ -9891,7 +9891,7 @@ _FOR_f5:
 			__asm        call   0x004D2094;
 			__asm        add    esp, 0xC;
 		// LINE 5008:
-			S3MissileStart(-0x1, speed, hd->dyheli, 0x3, vec.x, loc.x, (hd + 0x18), 0x4);
+			S3MissileStart(0x4, (hd + 0x18), loc.x, vec.x, 0x3, hd->dyheli, speed, -0x1);
 	}
 // LINE 5015:
 _T1b8:
@@ -9920,7 +9920,7 @@ _T1b8:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 5018:
-	S3DSPlay(0x0, (hd->dyheli + 0x18), 0x7);
+	S3DSPlay(0x7, (hd->dyheli + 0x18), 0x0);
 // LINE 5022:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
@@ -9945,7 +9945,7 @@ _T1b8:
 	__asm        test   eax, eax;
 	__asm        jne    _T26c;
 // LINE 5029:
-	S3DSPlay(0x1, 0x607258, 0x26);
+	S3DSPlay(0x26, 0x607258, 0x1);
 // LINE 5032:
 _T26c:
 	hd->crash_timer = 0x30000;
@@ -9971,7 +9971,7 @@ _T299:
 	__asm        neg    ebx;
 	__asm        sub    S_sound_loc.x, ebx;
 // LINE 5046:
-	S3SoundSetPosition(0x607258, 0x26);
+	S3SoundSetPosition(0x26, 0x607258);
 // LINE 5049:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, G_AvLoopTime;
@@ -9983,12 +9983,12 @@ _T299:
 	__asm        cmp    dword ptr [eax+0x16C], 0x10000;
 	__asm        jle    _T304;
 // LINE 5052:
-	S3ExplosionSmokeStart(0x1, loc.x, cptr);
+	S3ExplosionSmokeStart(cptr, loc.x, 0x1);
 // LINE 5054:
 	__asm        jmp    _T316;
 // LINE 5056:
 _T304:
-	S3ExplosionSmokeStart(0x4, loc.x, cptr);
+	S3ExplosionSmokeStart(cptr, loc.x, 0x4);
 // LINE 5059:
 _T316:
 	__asm        mov    eax, hd;
@@ -10013,7 +10013,7 @@ _T341:
 	__asm        neg    ebx;
 	__asm        sub    S_sound_loc.x, ebx;
 // LINE 5068:
-	S3SoundSetPosition(0x607258, 0x26);
+	S3SoundSetPosition(0x26, 0x607258);
 // LINE 5071:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, G_AvLoopTime;
@@ -10230,7 +10230,7 @@ __WHILE_3d:
 			__asm        cmp    eax, loc.z;
 			__asm        jge    next_dyobj;
 		// LINE 5170:
-			S3ObjHitDispatch(0x0, -0x1, dyobj, hd->dyheli, 0xc);
+			S3ObjHitDispatch(0xc, hd->dyheli, dyobj, -0x1, 0x0);
 		// LINE 5177:
 			__asm        mov    eax, dyobj;
 			__asm        movsx  eax, word ptr [eax+0xC];
@@ -10428,7 +10428,7 @@ _LOOP_7a:
 							__asm        jmp    next_dyobj;
 						// LINE 5315:
 						_T1bd:
-							S3ObjHitDispatch(xtra_msg, mission_id, dyobj, dyhitter, hit_type);
+							S3ObjHitDispatch(hit_type, dyhitter, dyobj, mission_id, xtra_msg);
 						// LINE 5319:
 						next_dyobj:
 							__asm        mov    eax, dyobj;
@@ -10751,7 +10751,7 @@ _T6a:
 	__asm        mov    ecx, up;
 	__asm        or     [ecx+0x44], eax;
 // LINE 5546:
-	S3HeliGenInit(freepad->y, freepad->x, hd);
+	S3HeliGenInit(hd, freepad->x, freepad->y);
 // LINE 5547:
 }
 
@@ -10791,7 +10791,7 @@ _FOR_3b:
 			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 			__asm        mov    cptr, eax;
 		// LINE 5574:
-			S3HeliUnlink(cptr, hd);
+			S3HeliUnlink(hd, cptr);
 		// LINE 5575:
 			__asm        mov    eax, i;
 			__asm        mov    G_helis[0][eax*4], 0;
@@ -11028,7 +11028,7 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   /*packed*/ struct _HELI_DATA *hd;
 
 // LINE 5702:
-	ret = ReadFirstMIFFChunk(0x32c, 0x606eb0, HeliMIFFID, miffReader);
+	ret = ReadFirstMIFFChunk(miffReader, HeliMIFFID, 0x606eb0, 0x32c);
 // LINE 5703:
 	__asm        cmp    ret, 0;
 	__asm        jne    _FOR_45;
@@ -11061,7 +11061,7 @@ _FOR_45:
 			__asm        mov    ecx, 0x57;
 			__asm        rep movsd;
 		// LINE 5723:
-			ret = ReadNextMIFFChunk(0x32c, 0x606eb0, HeliMIFFID, miffReader);
+			ret = ReadNextMIFFChunk(miffReader, HeliMIFFID, 0x606eb0, 0x32c);
 		// LINE 5724:
 			__asm        cmp    ret, 0;
 			__asm        jne    _Tf4;
@@ -11177,7 +11177,7 @@ _FOR_3d:
 					__asm        add    ecx, eax;
 					__asm        mov    personLoc.z, ecx;
 				// LINE 5775:
-					personLoc.y = S3ObjectPrecisionAlt(personLoc.z, personLoc.x);
+					personLoc.y = S3ObjectPrecisionAlt(personLoc.x, personLoc.z);
 				// LINE 5781:
 					__asm        mov    eax, G_uheli;
 					__asm        mov    eax, [eax+0x154];
@@ -11191,7 +11191,7 @@ _FOR_3d:
 					__asm        cmp    eax, personLoc.y;
 					__asm        jl     _T115;
 				// LINE 5784:
-					S3PersonUserAppearNew((G_uheli + 0x100), personLoc.x);
+					S3PersonUserAppearNew(personLoc.x, (G_uheli + 0x100));
 				// LINE 5785:
 					return;
 				// LINE 5788:

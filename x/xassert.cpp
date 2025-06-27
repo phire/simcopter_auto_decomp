@@ -22,16 +22,16 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	/*bp-0x204*/ char descBuff[256]; // 0x100 bytes
 
 // LINE 46:
-	strncpy(0xaf, failureDescription, descBuff[0]);
+	strncpy(descBuff[0], failureDescription, 0xaf);
 // LINE 47:
 	descBuff[175] = 0x0;
 // LINE 50:
-	sprintf(descBuff[0], lineNum, fileName, 0x5bc5fc, message[0]);
+	sprintf(message[0], 0x5bc5fc, fileName, lineNum, descBuff[0]);
 // LINE 51:
 	__asm        cmp    tackonNumber, 0x8C085;
 	__asm        je     _T7a;
 // LINE 52:
-	sprintf(tackonNumber, message[0], 0x5bc620, message[0]);
+	sprintf(message[0], 0x5bc620, message[0], tackonNumber);
 // LINE 67:
 _T7a:
 	__asm        push   2;

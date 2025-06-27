@@ -146,21 +146,21 @@ _T64:
 // LINE 271:
 	__asm        or     G_InitializationProgress, 4;
 // LINE 276:
-	GetPathForFile(szFilePath[0], 0x5b47a4, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, 0x5b47a4, szFilePath[0]);
 // LINE 277:
-	G_restex = VRLoadResource(0x5b47b0, 0x3, szFilePath[0]);
+	G_restex = VRLoadResource(szFilePath[0], 0x3, 0x5b47b0);
 // LINE 279:
-	GetPathForFile(szFilePath[0], 0x5b47b4, 0x0, 0x7);
+	GetPathForFile(0x7, 0x0, 0x5b47b4, szFilePath[0]);
 // LINE 280:
-	G_resgeo1 = VRLoadResource(0x5b47c0, 0x1, szFilePath[0]);
+	G_resgeo1 = VRLoadResource(szFilePath[0], 0x1, 0x5b47c0);
 // LINE 282:
-	GetPathForFile(szFilePath[0], 0x5b47c8, 0x0, 0x7);
+	GetPathForFile(0x7, 0x0, 0x5b47c8, szFilePath[0]);
 // LINE 283:
-	G_resgeo2 = VRLoadResource(0x5b47d4, 0x1, szFilePath[0]);
+	G_resgeo2 = VRLoadResource(szFilePath[0], 0x1, 0x5b47d4);
 // LINE 285:
-	GetPathForFile(szFilePath[0], 0x5b47dc, 0x0, 0x7);
+	GetPathForFile(0x7, 0x0, 0x5b47dc, szFilePath[0]);
 // LINE 286:
-	G_resgeo3 = VRLoadResource(0x5b47e8, 0x1, szFilePath[0]);
+	G_resgeo3 = VRLoadResource(szFilePath[0], 0x1, 0x5b47e8);
 // LINE 305:
 	__asm        cmp    G_restex, 0;
 	__asm        je     _T1bd;
@@ -178,7 +178,7 @@ _T1bd:
 	ERexit(0x5b47f0);
 // LINE 311:
 _T1ca:
-	GetPathForFile(szFilePath[0], 0x5b480c, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, 0x5b480c, szFilePath[0]);
 // LINE 312:
 	__asm        push   0x14;
 	__asm        push   0x1F1F;
@@ -194,13 +194,13 @@ _T1ca:
 	ERexit(0x5b4818);
 // LINE 319:
 _T214:
-	VRSetBmpToTiled(0x0, 0x2, 0x1f1f, G_restex);
+	VRSetBmpToTiled(G_restex, 0x1f1f, 0x2, 0x0);
 // LINE 320:
-	VRSetBmpToTiled(0x0, 0x27, 0x1f1f, G_restex);
+	VRSetBmpToTiled(G_restex, 0x1f1f, 0x27, 0x0);
 // LINE 321:
-	VRSetBmpToTiled(0x0, 0x28, 0x1f1f, G_restex);
+	VRSetBmpToTiled(G_restex, 0x1f1f, 0x28, 0x0);
 // LINE 322:
-	VRSetBmpToTiled(0x0, 0xd, 0x1f1f, G_restex);
+	VRSetBmpToTiled(G_restex, 0x1f1f, 0xd, 0x0);
 // LINE 324:
 	__asm        or     G_InitializationProgress, 8;
 // LINE 326:
@@ -223,7 +223,7 @@ _T29c:
 _FOR_2d5:
 	for (j = 0x0; (j < i); j++) {
 		// LINE 342:
-			obj = VRGetResObject(j, G_resgeo1);
+			obj = VRGetResObject(G_resgeo1, j);
 		// LINE 343:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
@@ -259,7 +259,7 @@ _T373:
 _FOR_396:
 	for (j = 0x0; (j < i); j++) {
 		// LINE 352:
-			obj = VRGetResObject(j, G_resgeo2);
+			obj = VRGetResObject(G_resgeo2, j);
 		// LINE 353:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
@@ -295,7 +295,7 @@ _T434:
 _FOR_457:
 	for (j = 0x0; (j < i); j++) {
 		// LINE 363:
-			obj = VRGetResObject(j, G_resgeo3);
+			obj = VRGetResObject(G_resgeo3, j);
 		// LINE 364:
 			__asm        mov    eax, obj;
 			__asm        push   eax;
@@ -328,7 +328,7 @@ _FOR_457:
 _T4f5:
 	__asm        shl    mem2d, 3;
 // LINE 374:
-	G_main_mp = VRCreateMemPool(mem2d, memxf);
+	G_main_mp = VRCreateMemPool(memxf, mem2d);
 // LINE 375:
 	__asm        cmp    G_main_mp, 0;
 	__asm        jne    _T531;
@@ -336,11 +336,11 @@ _T4f5:
 	ERexit(0x5b485c);
 // LINE 379:
 _T531:
-	VRAssignMemPoolToRes(G_main_mp, G_resgeo1);
+	VRAssignMemPoolToRes(G_resgeo1, G_main_mp);
 // LINE 380:
-	VRAssignMemPoolToRes(G_main_mp, G_resgeo2);
+	VRAssignMemPoolToRes(G_resgeo2, G_main_mp);
 // LINE 381:
-	VRAssignMemPoolToRes(G_main_mp, G_resgeo3);
+	VRAssignMemPoolToRes(G_resgeo3, G_main_mp);
 // LINE 383:
 	__asm        or     G_InitializationProgress, 0x10;
 // LINE 384:
@@ -350,11 +350,11 @@ _T531:
 // LINE 387:
 	S3ObjInit();
 // LINE 393:
-	VRAssignTextureResToGroup(G_restex, G_resgeo1);
+	VRAssignTextureResToGroup(G_resgeo1, G_restex);
 // LINE 394:
-	VRAssignTextureResToGroup(G_restex, G_resgeo2);
+	VRAssignTextureResToGroup(G_resgeo2, G_restex);
 // LINE 395:
-	VRAssignTextureResToGroup(G_restex, G_resgeo3);
+	VRAssignTextureResToGroup(G_resgeo3, G_restex);
 // LINE 398:
 	VRResFreeBarrys(G_resgeo1);
 // LINE 399:
@@ -633,14 +633,14 @@ _T12b:
 // LINE 629:
 	S3ViewerInit();
 // LINE 632:
-	S3PersonUserStart(0x140000, 0x140000, G_helibase.pad1.y, G_helibase.pad1.x);
+	S3PersonUserStart(G_helibase.pad1.x, G_helibase.pad1.y, 0x140000, 0x140000);
 // LINE 633:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T194;
 // LINE 635:
 	G_uheli->flags = 0x0;
 // LINE 638:
-	S3PersonUserAppear(0x140000, 0x140000, G_helibase.pad1.y, G_helibase.pad1.x);
+	S3PersonUserAppear(G_helibase.pad1.x, G_helibase.pad1.y, 0x140000, 0x140000);
 // LINE 640:
 	__asm        jmp    _T1a0;
 // LINE 643:
@@ -818,12 +818,12 @@ void VRAppNextFrame() {
 // LINE 809:
 	S3CityDrawOverHeadGrid();
 // LINE 810:
-	S3MapDrawPosLines(G_uheli->currpos.y, G_uheli->currpos.x);
+	S3MapDrawPosLines(G_uheli->currpos.x, G_uheli->currpos.y);
 // LINE 812:
 	__asm        jmp    _T93;
 // LINE 813:
 _T79:
-	S3MapRender(G_uheli->currpos.y, G_uheli->currpos.x);
+	S3MapRender(G_uheli->currpos.x, G_uheli->currpos.y);
 // LINE 815:
 _T93:
 	__asm        jmp    _Tb4;

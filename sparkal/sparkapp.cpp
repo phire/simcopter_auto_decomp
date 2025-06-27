@@ -236,7 +236,7 @@ _T3b:
 	__asm        test   eax, eax;
 	__asm        jne    _T74;
 
-	_assert(0x194, 0x597444, 0x597424);
+	_assert(0x597424, 0x597444, 0x194);
 	__asm        jmp    _T79;
 _T74:
 	__asm        jmp    _T79;
@@ -245,7 +245,7 @@ _T79:
 	__asm        mov    word ptr [ebp-0xC], 0;
 	__asm        jmp    _Ta7;
 
-	_assert(0x169, 0x597444, 0x597430);
+	_assert(0x597430, 0x597444, 0x169);
 	__asm        jmp    _Tac;
 _Ta7:
 	__asm        jmp    _Tac;
@@ -278,7 +278,7 @@ _Tf8:
 	__asm        cmp    CRLECompressedImage::RLEGraphicsPool, 0;
 	__asm        jne    _T114;
 // LINE 37:
-	GUIReportError(0x1, 0x80000001);
+	GUIReportError(0x80000001, 0x1);
 // LINE 38:
 _T114:
 	return;
@@ -297,7 +297,7 @@ void CSparkalApp::~CSparkalApp() {
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T43;
 
-	_assert(0x1b5, 0x597444, 0x597468);
+	_assert(0x597468, 0x597444, 0x1b5);
 	__asm        jmp    _T48;
 _T43:
 	__asm        jmp    _T48;
@@ -306,7 +306,7 @@ _T48:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T74;
 
-	_assert(0x173, 0x597444, 0x597474);
+	_assert(0x597474, 0x597444, 0x173);
 	__asm        jmp    _T79;
 _T74:
 	__asm        jmp    _T79;

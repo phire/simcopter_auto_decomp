@@ -1017,7 +1017,7 @@ _T6f:
 	__asm        cmp    dword ptr [eax+0x84], 0;
 	__asm        jne    _T1ce;
 // LINE 147:
-	0x604c00->FileServices::GetPathForFileString(sCompassPath.c_str_ptr, (this + 0x88), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0x88), sCompassPath.c_str_ptr);
 	__asm        jmp    _Tab;
 // LINE 148:
 _Tab:
@@ -3144,7 +3144,7 @@ _Td0:
 	__asm        cmp    dword ptr [eax+0x80], 0;
 	__asm        jne    _T174;
 // LINE 558:
-	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_DAMAGE_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_DIAL_WINDOW_DAMAGE_FILE_NAME, szFullPath[0]);
 // LINE 559:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3179,7 +3179,7 @@ _T174:
 	__asm        cmp    dword ptr [eax+0x84], 0;
 	__asm        jne    _T1f3;
 // LINE 563:
-	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_FUEL_LIGHT_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_DIAL_WINDOW_FUEL_LIGHT_FILE_NAME, szFullPath[0]);
 // LINE 564:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3203,7 +3203,7 @@ _T1f3:
 	__asm        cmp    dword ptr [eax+0x88], 0;
 	__asm        jne    _T272;
 // LINE 567:
-	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_MANA_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_DIAL_WINDOW_MANA_FILE_NAME, szFullPath[0]);
 // LINE 568:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3227,7 +3227,7 @@ _T272:
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T2fd;
 // LINE 571:
-	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_MONEY_FONT_FILE_NAME, 0x0, 0x8);
+	GetPathForFile(0x8, 0x0, SZ_DIAL_WINDOW_MONEY_FONT_FILE_NAME, szFullPath[0]);
 // LINE 572:
 	__asm        push   0x54;
 	__asm        call   operator new;
@@ -3260,7 +3260,7 @@ _T2fd:
 	__asm        cmp    dword ptr [eax+0x8C], 0;
 	__asm        jne    _T37c;
 // LINE 576:
-	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_ALTITUDE_NBR_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_DIAL_WINDOW_ALTITUDE_NBR_FILE_NAME, szFullPath[0]);
 // LINE 577:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3284,7 +3284,7 @@ _T37c:
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        jne    _T420;
 // LINE 580:
-	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_BOOT_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_DIAL_WINDOW_BOOT_FILE_NAME, szFullPath[0]);
 // LINE 581:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3319,7 +3319,7 @@ _T420:
 	__asm        cmp    dword ptr [eax+0x94], 0;
 	__asm        jne    _T49f;
 // LINE 585:
-	GetPathForFile(szFullPath[0], SZ_DIAL_WINDOW_BOOT_BACK_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_DIAL_WINDOW_BOOT_BACK_FILE_NAME, szFullPath[0]);
 // LINE 586:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -4214,9 +4214,9 @@ _Ta7d:
 _Taa4:
 	this->lCurrentMoney = GetUserMoney();
 // LINE 729:
-	lStringLength = sprintf(this->lCurrentMoney, 0x59906c, szMoneyString[0]);
+	lStringLength = sprintf(szMoneyString[0], 0x59906c, this->lCurrentMoney);
 // LINE 731:
-	this->myMoneyGuageFont->BitmappedFont::DrawTextLineFormatNoClip(0x8, lStringLength, szMoneyString[0], (this + 0x170), this->mySecondImage);
+	this->myMoneyGuageFont->BitmappedFont::DrawTextLineFormatNoClip(this->mySecondImage, (this + 0x170), szMoneyString[0], lStringLength, 0x8);
 // LINE 734:
 _Tb04:
 	__asm        mov    eax, this;
@@ -5150,7 +5150,7 @@ _Ta2:
 	__asm        cmp    dword ptr [eax+0xA0], 0;
 	__asm        jne    _T222;
 // LINE 959:
-	0x604c00->FileServices::GetPathForFileString(sPassengerPath.c_str_ptr, (this + 0xa4), 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, (this + 0xa4), sPassengerPath.c_str_ptr);
 	__asm        jmp    _Td2;
 // LINE 960:
 _Td2:
@@ -5620,7 +5620,7 @@ _T27f:
 _T284:
 	tempHeliPassengerData = (G_uheli + 0x1c4);
 // LINE 1036:
-	lPassengerIndex = HeliPassengerGetIndexInHeli(this->lPassengerDraggedID, tempHeliPassengerData);
+	lPassengerIndex = HeliPassengerGetIndexInHeli(tempHeliPassengerData, this->lPassengerDraggedID);
 // LINE 1037:
 	__asm        jmp    _T2af;
 _T2af:
@@ -5865,7 +5865,7 @@ _FOR_62:
 			__asm        cmp    [eax+ecx+0x28], edx;
 			__asm        jne    _T170;
 		// LINE 1087:
-			this->PassengerWindow::GetRectOfPassengerGraphic(rectSource.left, 0x0, -0x1);
+			this->PassengerWindow::GetRectOfPassengerGraphic(-0x1, 0x0, rectSource.left);
 		// LINE 1089:
 		_T170:
 			__asm        mov    eax, rectSource.bottom;
@@ -5896,7 +5896,7 @@ _FOR_62:
 	}
 // LINE 1096:
 _T1b6:
-	this->PassengerWindow::GetRectOfPassengerGraphic(rectSource.left, 0x0, -0x1);
+	this->PassengerWindow::GetRectOfPassengerGraphic(-0x1, 0x0, rectSource.left);
 // LINE 1097:
 _FOR_1d2:
 	for (nCurrentSeat = 0x0; (tempHeliPassengerData->lSeatsTotal > nCurrentSeat); nCurrentSeat++) {
@@ -6577,7 +6577,7 @@ _T20b:
 _T244:
 	this-><MapWindow+0x58> = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 1316:
-	(this + 0x8c)->MFont::SetFontCharacteristics(0x0, 0x0, 0xc);
+	(this + 0x8c)->MFont::SetFontCharacteristics(0xc, 0x0, 0x0);
 // LINE 1317:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -6671,7 +6671,7 @@ _T91:
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        jne    _T107;
 // LINE 1367:
-	GetPathForFile(szFullPath[0], SZ_MAP_WINDOW_BUTTON_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_MAP_WINDOW_BUTTON_FILE_NAME, szFullPath[0]);
 // LINE 1368:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -7119,7 +7119,7 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 	__asm        cmp    S_bordermax.y, eax;
 	__asm        jl     _Tb6;
 // LINE 1492:
-	this->nCurrentAutoID = S3MapCursorDown((nCursorY - S_bordermin.y), (nCursorX - S_bordermin.x));
+	this->nCurrentAutoID = S3MapCursorDown((nCursorX - S_bordermin.x), (nCursorY - S_bordermin.y));
 // LINE 1493:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;
@@ -7540,7 +7540,7 @@ int32_t MapWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lW
 	__asm        cmp    lMessageData, 1;
 	__asm        jne    _T49;
 // LINE 1563:
-	AutomobileClass::S3AutoMessage(0x1, this->nCurrentAutoID);
+	AutomobileClass::S3AutoMessage(this->nCurrentAutoID, 0x1);
 // LINE 1565:
 _T49:
 	return 0x1;
@@ -7904,7 +7904,7 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        cmp    dword ptr [eax+0xBC], 0;
 	__asm        jne    _Ta1;
 // LINE 1722:
-	GetPathForFile(szPath[0], SZ_BUCKET_WATER_GUAGE_IMAGE, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_BUCKET_WATER_GUAGE_IMAGE, szPath[0]);
 // LINE 1723:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -7932,7 +7932,7 @@ _Ta1:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _Te2;
 // LINE 1728:
-	GetPathForFile(szPath[0], SZ_EQUIPMENT_BUTTON_IMAGE_0, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_EQUIPMENT_BUTTON_IMAGE_0, szPath[0]);
 // LINE 1729:
 	__asm        jmp    _T129;
 _Te2:
@@ -7940,12 +7940,12 @@ _Te2:
 	__asm        cmp    dword ptr [eax+4], 2;
 	__asm        jne    _T110;
 // LINE 1730:
-	GetPathForFile(szPath[0], SZ_EQUIPMENT_BUTTON_IMAGE_2, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_EQUIPMENT_BUTTON_IMAGE_2, szPath[0]);
 // LINE 1731:
 	__asm        jmp    _T129;
 // LINE 1732:
 _T110:
-	GetPathForFile(szPath[0], SZ_EQUIPMENT_BUTTON_IMAGE_1, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_EQUIPMENT_BUTTON_IMAGE_1, szPath[0]);
 // LINE 1733:
 _T129:
 	__asm        push   0x134;

@@ -37,7 +37,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 // LINE 40:
 	gszCommandLine[0] = 0x0;
 // LINE 41:
-	strncpy(0x80, CommandLine, 0x5c2848);
+	strncpy(0x5c2848, CommandLine, 0x80);
 // LINE 43:
 	__asm        lea    eax, TimerFrequency<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;

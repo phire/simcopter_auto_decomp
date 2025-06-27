@@ -450,7 +450,7 @@ _T30:
 // LINE 96:
 	this->bSoundEnabled = 0x0;
 // LINE 99:
-	memset(0x60, 0x0, (this + 0x14));
+	memset((this + 0x14), 0x0, 0x60);
 // LINE 100:
 	this->dsCapabilities.dwSize = 0x60;
 // LINE 104:
@@ -2569,7 +2569,7 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 	/*bp-0x14*/  /*packed*/ struct _DSBUFFERDESC dsBufferDescription; // 0x14 bytes
 
 // LINE 843:
-	memset(0x14, 0x0, dsBufferDescription.dwSize);
+	memset(dsBufferDescription.dwSize, 0x0, 0x14);
 // LINE 844:
 	dsBufferDescription.dwSize = 0x14;
 // LINE 845:
@@ -3950,7 +3950,7 @@ _T2a6:
 	__asm        mov    ecx, [ecx+0x72];
 	__asm        mov    [ecx+0x2C], eax;
 // LINE 1550:
-	memset(0x14, 0x0, dsBufferDescription.dwSize);
+	memset(dsBufferDescription.dwSize, 0x0, 0x14);
 // LINE 1551:
 	dsBufferDescription.dwSize = 0x14;
 // LINE 1552:
@@ -4122,7 +4122,7 @@ _T122:
 _T143:
 	__asm        jmp    _T148;
 _T148:
-	nError = WaveOpenFile((this->lpStreamBufferInfo + 0x18), (this + 0x40), this->lpStreamBufferInfo, this->sSoundFile.c_str_ptr);
+	nError = WaveOpenFile(this->sSoundFile.c_str_ptr, this->lpStreamBufferInfo, (this + 0x40), (this->lpStreamBufferInfo + 0x18));
 // LINE 1607:
 	__asm        cmp    nError, 0;
 	__asm        je     _T183;
@@ -4130,7 +4130,7 @@ _T148:
 	return 0x0;
 // LINE 1612:
 _T183:
-	nError = WaveStartDataRead((this->lpStreamBufferInfo + 0x18), (this->lpStreamBufferInfo + 0x4), this->lpStreamBufferInfo);
+	nError = WaveStartDataRead(this->lpStreamBufferInfo, (this->lpStreamBufferInfo + 0x4), (this->lpStreamBufferInfo + 0x18));
 // LINE 1613:
 	__asm        cmp    nError, 0;
 	__asm        je     _T1c9;
@@ -4186,7 +4186,7 @@ _T24e:
 	__asm        cmp    dwLength1, 0;
 	__asm        je     _T39d;
 // LINE 1636:
-	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpWrite1, dwLength1, this->lpStreamBufferInfo->hmmio);
+	nError = WaveReadFile(this->lpStreamBufferInfo->hmmio, dwLength1, lpWrite1, (this->lpStreamBufferInfo + 0x4), nActualBytesRead);
 // LINE 1637:
 	__asm        cmp    nError, 0;
 	__asm        je     _T2c2;
@@ -4234,9 +4234,9 @@ __DO_2e1:
 			__asm        neg    eax;
 			__asm        sub    dwLength1, eax;
 		// LINE 1659:
-			WaveStartDataRead((this->lpStreamBufferInfo + 0x18), (this->lpStreamBufferInfo + 0x4), this->lpStreamBufferInfo);
+			WaveStartDataRead(this->lpStreamBufferInfo, (this->lpStreamBufferInfo + 0x4), (this->lpStreamBufferInfo + 0x18));
 		// LINE 1661:
-			WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpTemp, dwLength1, this->lpStreamBufferInfo->hmmio);
+			WaveReadFile(this->lpStreamBufferInfo->hmmio, dwLength1, lpTemp, (this->lpStreamBufferInfo + 0x4), nActualBytesRead);
 	} while ((nActualBytesRead < dwLength1));
 // LINE 1664:
 // Block end:
@@ -4724,7 +4724,7 @@ _T287:
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        jne    _T448;
 // LINE 1909:
-	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpWrite1, dwLength1, this->lpStreamBufferInfo->hmmio);
+	nError = WaveReadFile(this->lpStreamBufferInfo->hmmio, dwLength1, lpWrite1, (this->lpStreamBufferInfo + 0x4), nActualBytesRead);
 // LINE 1910:
 	__asm        cmp    nError, 0;
 	__asm        je     _T319;
@@ -4837,9 +4837,9 @@ __DO_3d7:
 			__asm        neg    eax;
 			__asm        sub    dwLength1, eax;
 		// LINE 1949:
-			nError = WaveStartDataRead((this->lpStreamBufferInfo + 0x18), (this->lpStreamBufferInfo + 0x4), this->lpStreamBufferInfo);
+			nError = WaveStartDataRead(this->lpStreamBufferInfo, (this->lpStreamBufferInfo + 0x4), (this->lpStreamBufferInfo + 0x18));
 		// LINE 1951:
-			nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpTemp, dwLength1, this->lpStreamBufferInfo->hmmio);
+			nError = WaveReadFile(this->lpStreamBufferInfo->hmmio, dwLength1, lpTemp, (this->lpStreamBufferInfo + 0x4), nActualBytesRead);
 	} while ((dwLength1 > nActualBytesRead));
 // LINE 1961:
 _T443:
@@ -4877,7 +4877,7 @@ _T489:
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        jne    _T679;
 // LINE 1968:
-	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpWrite2, dwLength2, this->lpStreamBufferInfo->hmmio);
+	nError = WaveReadFile(this->lpStreamBufferInfo->hmmio, dwLength2, lpWrite2, (this->lpStreamBufferInfo + 0x4), nActualBytesRead);
 // LINE 1969:
 	__asm        cmp    nError, 0;
 	__asm        je     _T51b;
@@ -4924,7 +4924,7 @@ _T51b:
 	__asm        cmp    ecx, 8;
 	__asm        jne    _T566;
 // LINE 1979:
-	memset((dwLength2 - nActualBytesRead), 0x80, (nActualBytesRead + lpWrite2));
+	memset((nActualBytesRead + lpWrite2), 0x80, (dwLength2 - nActualBytesRead));
 // LINE 1980:
 	__asm        jmp    _T590;
 _T566:
@@ -4934,7 +4934,7 @@ _T566:
 	__asm        cmp    ecx, 0x10;
 	__asm        jne    _T590;
 // LINE 1981:
-	memset((dwLength2 - nActualBytesRead), 0x0, (nActualBytesRead + lpWrite2));
+	memset((nActualBytesRead + lpWrite2), 0x0, (dwLength2 - nActualBytesRead));
 // LINE 1985:
 _T590:
 	this->lpStreamBufferInfo->bFoundEnd = 0x1;
@@ -4992,9 +4992,9 @@ __DO_608:
 			__asm        neg    eax;
 			__asm        sub    dwLength2, eax;
 		// LINE 2008:
-			nError = WaveStartDataRead((this->lpStreamBufferInfo + 0x18), (this->lpStreamBufferInfo + 0x4), this->lpStreamBufferInfo);
+			nError = WaveStartDataRead(this->lpStreamBufferInfo, (this->lpStreamBufferInfo + 0x4), (this->lpStreamBufferInfo + 0x18));
 		// LINE 2011:
-			nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpTemp, dwLength2, this->lpStreamBufferInfo->hmmio);
+			nError = WaveReadFile(this->lpStreamBufferInfo->hmmio, dwLength2, lpTemp, (this->lpStreamBufferInfo + 0x4), nActualBytesRead);
 	} while ((dwLength2 > nActualBytesRead));
 // LINE 2016:
 _T674:

@@ -588,9 +588,9 @@ _T94:
 	this->pColorTable = 0x0;
 // LINE 175:
 _Ta1:
-	GetPathForFile(szPath[0], SZ_MAIN_MENU_IMAGE_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_MAIN_MENU_IMAGE_FILE_NAME, szPath[0]);
 // LINE 176:
-	CBackBuffer::GetPaletteFromImage(this->pColorTable, szPath[0]);
+	CBackBuffer::GetPaletteFromImage(szPath[0], this->pColorTable);
 // LINE 177:
 	return;
 }
@@ -954,9 +954,9 @@ _T94:
 	this->pColorTable = 0x0;
 // LINE 279:
 _Ta1:
-	GetPathForFile(szPath[0], SZ_CAREER_PALETTE_IMAGE_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_CAREER_PALETTE_IMAGE_FILE_NAME, szPath[0]);
 // LINE 280:
-	CBackBuffer::GetPaletteFromImage(this->pColorTable, szPath[0]);
+	CBackBuffer::GetPaletteFromImage(szPath[0], this->pColorTable);
 // LINE 281:
 	return;
 }
@@ -1232,9 +1232,9 @@ _Ta1:
 	__asm        cmp    S_pal, 0;
 	__asm        jne    _Tf6;
 // LINE 419:
-	GetPathForFile(szPath[0], SZ_VR_APP_PALETTE_FILE_NAME, 0x0, 0x7);
+	GetPathForFile(0x7, 0x0, SZ_VR_APP_PALETTE_FILE_NAME, szPath[0]);
 // LINE 420:
-	G_respal = VRLoadResource(SZ_VR_APP_PALETTE_CHUNK_TYPE, 0x4, szPath[0]);
+	G_respal = VRLoadResource(szPath[0], 0x4, SZ_VR_APP_PALETTE_CHUNK_TYPE);
 // LINE 421:
 	S_pal = VRGetPalFromResource(G_respal);
 // LINE 424:
@@ -2747,7 +2747,7 @@ _T49:
 	this->pSkyImage = 0x0;
 // LINE 724:
 _T53:
-	this->pGameApp->CGameApp::GetFullRenderingWindowSize((this + 0x1c), (this + 0x18));
+	this->pGameApp->CGameApp::GetFullRenderingWindowSize((this + 0x18), (this + 0x1c));
 // LINE 725:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -3608,7 +3608,7 @@ _T2b:
 // FUNCTION: COPTER_D 0x004bffda
 void GameModePlayData::SetUpRenderWindowSizes() {
 // LINE 1084:
-	this->pGameApp->CGameApp::GetFullRenderingWindowSize((this + 0x1c), (this + 0x18));
+	this->pGameApp->CGameApp::GetFullRenderingWindowSize((this + 0x18), (this + 0x1c));
 // LINE 1085:
 	this->nShortenedRenderWindowWidth = this->nRenderWindowWidth;
 // LINE 1086:

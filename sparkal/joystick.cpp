@@ -405,7 +405,7 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 	/*bp-0x8*/   int32_t nOneQuarterOfTheRange;
 
 // LINE 191:
-	nValue = this->JoystickManager::GetPositionQuantitative(bUseCache, nAxis, nJoystick);
+	nValue = this->JoystickManager::GetPositionQuantitative(nJoystick, nAxis, bUseCache);
 // LINE 192:
 	nOneQuarterOfTheRange = ((this->lNormalizedMaximum - this->lNormalizedMinimum) >> 0x2);
 // LINE 193:

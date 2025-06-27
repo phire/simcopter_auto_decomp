@@ -598,7 +598,7 @@ _T31:
 	__asm        cmp    imageFileName, 0;
 	__asm        jne    _T6f;
 
-	_assert(0x46, 0x599498, 0x5994c0);
+	_assert(0x5994c0, 0x599498, 0x46);
 	__asm        jmp    _T74;
 _T6f:
 	__asm        jmp    _T74;
@@ -618,7 +618,7 @@ _T74:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 73:
-	strcpy(imageFileName, this->szFilePath);
+	strcpy(this->szFilePath, imageFileName);
 // LINE 77:
 	__asm        push   0x110;
 	__asm        call   operator new;
@@ -658,7 +658,7 @@ _T129:
 	fileImage = 0x0;
 // LINE 78:
 _T130:
-	fileImage->PFile::Open(0x0, 0x180, 0x0, 0x0);
+	fileImage->PFile::Open(0x0, 0x0, 0x180, 0x0);
 // LINE 79:
 	__asm        mov    eax, fileImage;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -697,11 +697,11 @@ _T1b1:
 	return;
 // LINE 86:
 _T1b6:
-	_read(0xe, bfHeader.bfType, fileImage->Handle);
+	_read(fileImage->Handle, bfHeader.bfType, 0xe);
 	__asm        jmp    _T1d3;
 // LINE 87:
 _T1d3:
-	_read(0x28, biHeader.biSize, fileImage->Handle);
+	_read(fileImage->Handle, biHeader.biSize, 0x28);
 	__asm        jmp    _T1f0;
 // LINE 88:
 _T1f0:
@@ -734,7 +734,7 @@ _T1f0:
 	__asm        jmp    _T25d;
 // LINE 99:
 _T25d:
-	memset(0x6c, 0x0, (this + 0x58));
+	memset((this + 0x58), 0x0, 0x6c);
 // LINE 100:
 	this->mDDdesc.dwSize = 0x6c;
 // LINE 102:
@@ -804,7 +804,7 @@ _T31:
 // LINE 161:
 	this->CBackBuffer::InitializeMemberVariables();
 // LINE 165:
-	memset(0x6c, 0x0, (this + 0x58));
+	memset((this + 0x58), 0x0, 0x6c);
 // LINE 166:
 	this->mDDdesc.dwSize = 0x6c;
 // LINE 167:
@@ -920,9 +920,9 @@ void CBackBuffer::InitializeMemberVariables() {
 // LINE 237:
 	this->rectDirectDrawBuffer.bottom = 0x0;
 // LINE 238:
-	memset(0x6c, 0x0, (this + 0x58));
+	memset((this + 0x58), 0x0, 0x6c);
 // LINE 239:
-	memset(0x64, 0x0, (this + 0xc4));
+	memset((this + 0xc4), 0x0, 0x64);
 // LINE 240:
 	this->hPen = 0x0;
 // LINE 241:
@@ -1096,7 +1096,7 @@ _Tbf:
 	fileImage = 0x0;
 // LINE 317:
 _Tc6:
-	fileImage->PFile::Open(0x0, 0x180, 0x0, 0x0);
+	fileImage->PFile::Open(0x0, 0x0, 0x180, 0x0);
 // LINE 318:
 	nFileLength = fileImage->PFile::Length();
 // LINE 319:
@@ -1138,11 +1138,11 @@ _T16b:
 	return 0x80000006;
 // LINE 327:
 _T175:
-	nBytesRead = _read(0xe, bfHeader.bfType, fileImage->Handle);
+	nBytesRead = _read(fileImage->Handle, bfHeader.bfType, 0xe);
 	__asm        jmp    _T195;
 // LINE 328:
 _T195:
-	nBytesRead = _read(0x28, biHeader.biSize, fileImage->Handle);
+	nBytesRead = _read(fileImage->Handle, biHeader.biSize, 0x28);
 	__asm        jmp    _T1b8;
 // LINE 329:
 _T1b8:
@@ -1798,7 +1798,7 @@ _Tc1:
 	__asm        cmp    dword ptr [eax+0x128], 0;
 	__asm        jne    _T146;
 // LINE 564:
-	DebugOutput(0x5995b8, 0x5995f0);
+	DebugOutput(0x5995f0, 0x5995b8);
 // LINE 565:
 	return 0x80000000;
 // LINE 570:
@@ -3001,7 +3001,7 @@ _T89:
 	fileImage = 0x0;
 // LINE 1264:
 _T90:
-	fileImage->PFile::Open(0x0, 0x180, 0x0, 0x0);
+	fileImage->PFile::Open(0x0, 0x0, 0x180, 0x0);
 // LINE 1265:
 	__asm        mov    eax, fileImage;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -3037,11 +3037,11 @@ _Tfb:
 	return 0x80000000;
 // LINE 1271:
 _T105:
-	_read(0xe, bfHeader.bfType, fileImage->Handle);
+	_read(fileImage->Handle, bfHeader.bfType, 0xe);
 	__asm        jmp    _T122;
 // LINE 1272:
 _T122:
-	_read(0x28, biHeader.biSize, fileImage->Handle);
+	_read(fileImage->Handle, biHeader.biSize, 0x28);
 	__asm        jmp    _T13f;
 // LINE 1278:
 _T13f:
@@ -3336,7 +3336,7 @@ __WHILE_82:
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     _Tba;
 // LINE 1480:
-	memset(length, this->nColorIndexCurrent, address);
+	memset(address, this->nColorIndexCurrent, length);
 // LINE 1481:
 	address += this->mStride;
 // LINE 1482:
@@ -3372,7 +3372,7 @@ __WHILE_109:
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        je     _T141;
 // LINE 1496:
-	memset(nThickness, this->nColorIndexCurrent, address);
+	memset(address, this->nColorIndexCurrent, nThickness);
 // LINE 1497:
 	address += this->mStride;
 // LINE 1498:
@@ -3542,7 +3542,7 @@ _FOR_2c5:
 			__asm        cmp    dword ptr [ebp-0x58], 0;
 			__asm        je     _T36d;
 		// LINE 1589:
-			memset(nThickness, this->nColorIndexCurrent, address);
+			memset(address, this->nColorIndexCurrent, nThickness);
 		// LINE 1590:
 			__asm        cmp    yinc2, 0xFFFFFFFF;
 			__asm        jne    _T35f;
@@ -3893,7 +3893,7 @@ __WHILE_3db:
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        je     _T419;
 // LINE 1653:
-	memset(length, this->nColorIndexCurrent, address);
+	memset(address, this->nColorIndexCurrent, length);
 // LINE 1654:
 	address += this->mStride;
 // LINE 1655:
@@ -3929,7 +3929,7 @@ __WHILE_46e:
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
 	__asm        je     _T4ac;
 // LINE 1669:
-	memset(nThickness, this->nColorIndexCurrent, address);
+	memset(address, this->nColorIndexCurrent, nThickness);
 // LINE 1670:
 	address += this->mStride;
 // LINE 1671:
@@ -4133,7 +4133,7 @@ __WHILE_64d:
 			__asm        cmp    dword ptr [ebp-0x70], 0;
 			__asm        je     _T735;
 		// LINE 1779:
-			memset(nThickness, this->nColorIndexCurrent, address);
+			memset(address, this->nColorIndexCurrent, nThickness);
 		// LINE 1780:
 			__asm        cmp    yinc2, 0xFFFFFFFF;
 			__asm        jne    _T724;
@@ -4257,7 +4257,7 @@ __WHILE_770:
 			__asm        mov    nPixels, eax;
 		// LINE 1828:
 		_T85a:
-			memset(nPixels, this->nColorIndexCurrent, address);
+			memset(address, this->nColorIndexCurrent, nPixels);
 		// LINE 1830:
 			__asm        jmp    _T8b6;
 		// LINE 1832:
@@ -4273,7 +4273,7 @@ __WHILE_770:
 			nPixels = nThickness;
 		// LINE 1833:
 		_T89c:
-			memset(nPixels, this->nColorIndexCurrent, address);
+			memset(address, this->nColorIndexCurrent, nPixels);
 		// LINE 1837:
 		// Block end:
 		_T8b6:

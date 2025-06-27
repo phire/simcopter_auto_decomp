@@ -146,7 +146,7 @@ _Tf8:
 	__asm        add    esp, 0xC;
 	__asm        add    r, eax;
 // LINE 185:
-	_read((s - r), byteptr, file);
+	_read(file, byteptr, (s - r));
 // LINE 186:
 	_close(file);
 // LINE 188:
@@ -442,7 +442,7 @@ _Tb4:
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 // LINE 459:
-	_read(0xc, alignptr, file);
+	_read(file, alignptr, 0xc);
 // LINE 462:
 	bhdr = alignptr;
 // LINE 471:
@@ -462,9 +462,9 @@ _T105:
 	return 0x0;
 // LINE 479:
 _T122:
-	_read(0x400, alignptr, file);
+	_read(file, alignptr, 0x400);
 // LINE 482:
-	r = _read(0x10000, alignptr, file);
+	r = _read(file, alignptr, 0x10000);
 // LINE 483:
 	__asm        cmp    r, 0x10000;
 	__asm        je     _T179;
@@ -478,7 +478,7 @@ _T122:
 _T179:
 	_close(file);
 // LINE 493:
-	VRSetBmpToTiled(alignptr, bmpid, mask, res);
+	VRSetBmpToTiled(res, mask, bmpid, alignptr);
 // LINE 495:
 	return 0x1;
 // LINE 496:

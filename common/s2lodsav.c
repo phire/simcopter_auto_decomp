@@ -79,11 +79,11 @@ int32_t S2CityValidate(char * filepath) {
 	return 0x0;
 // LINE 119:
 _T2e:
-	fseek(0x2, 0x0, filNum);
+	fseek(filNum, 0x0, 0x2);
 // LINE 120:
 	lFileLength = ftell(filNum);
 // LINE 121:
-	fseek(0x0, 0x0, filNum);
+	fseek(filNum, 0x0, 0x0);
 // LINE 123:
 	__asm        lea    eax, lCityDataChunkLength;
 	__asm        push   eax;
@@ -388,14 +388,14 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 	/*bp-0xc*/   /*packed*/ struct _iobuf *fp;
 
 // LINE 273:
-	fp = fopen(0x59b000, szFilePath);
+	fp = fopen(szFilePath, 0x59b000);
 // LINE 275:
-	strcpy(0x59b004, buf[0]);
+	strcpy(buf[0], 0x59b004);
 // LINE 276:
 	__asm        cmp    fp, 0;
 	__asm        je     _T5c;
 // LINE 277:
-	fread(fp, 0x4, 0x1, buf[0]);
+	fread(buf[0], 0x1, 0x4, fp);
 // LINE 278:
 	fclose(fp);
 // LINE 279:
@@ -553,7 +553,7 @@ __WHILE_b6:
 			__asm        jmp    badread;
 		// LINE 338:
 		_T1b8:
-			swizzle_shorts(size, AltMap[0]);
+			swizzle_shorts(AltMap[0], size);
 		// LINE 340:
 			__asm        jmp    _T7ca;
 		_T1cf:
@@ -725,7 +725,7 @@ __WHILE_b6:
 			__asm        jmp    badread;
 		// LINE 370:
 		_T3e7:
-			swizzle_Micro(0x4b0, MicroRecord);
+			swizzle_Micro(MicroRecord, 0x4b0);
 		// LINE 372:
 			__asm        jmp    _T7ca;
 		_T3ff:
@@ -991,7 +991,7 @@ __WHILE_b6:
 			__asm        jmp    badread;
 		// LINE 417:
 		_T73e:
-			swizzle_buffer(0xd00, GraphData[0]);
+			swizzle_buffer(GraphData[0], 0xd00);
 		// LINE 419:
 			__asm        jmp    _T7ca;
 		_T756:
@@ -1052,12 +1052,12 @@ _T7f6:
 	__asm        test   eax, eax;
 	__asm        jne    _T82c;
 // LINE 436:
-	S2CityMakeCityNameFromFilePath(CityNameString, filePath);
+	S2CityMakeCityNameFromFilePath(filePath, CityNameString);
 // LINE 437:
 	__asm        jmp    _T84f;
 // LINE 438:
 _T82c:
-	CopyPString(tempCityName[0], CityNameString);
+	CopyPString(CityNameString, tempCityName[0]);
 // LINE 439:
 	PStringToCString(CityNameString);
 // LINE 442:
@@ -1065,7 +1065,7 @@ _T84f:
 	__asm        jmp    _T866;
 // LINE 443:
 _T854:
-	S2CityMakeCityNameFromFilePath(CityNameString, filePath);
+	S2CityMakeCityNameFromFilePath(filePath, CityNameString);
 // LINE 446:
 _T866:
 	graph_kludge();
@@ -1227,7 +1227,7 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 	/*bp-0x308*/ char szSplitPathFilename[256]; // 0x100 bytes
 
 // LINE 549:
-	_splitpath(szSplitPathExtension[0], szSplitPathFilename[0], szSplitPathDirectory[0], szSplitPathDrive[0], filePath);
+	_splitpath(filePath, szSplitPathDrive[0], szSplitPathDirectory[0], szSplitPathFilename[0], szSplitPathExtension[0]);
 // LINE 551:
 	__asm        lea    eax, szSplitPathFilename[0];
 	__asm        push   eax;
@@ -1241,14 +1241,14 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 	stringLength = 0x1f;
 // LINE 554:
 _T60:
-	strcpy(szSplitPathFilename[0], cityName);
+	strcpy(cityName, szSplitPathFilename[0]);
 // LINE 555:
 }
 
 // FUNCTION: COPTER_D 0x004c55d7
 void S2CityMakeFileNameFromCityName(char * cityName, char * fileName) {
 // LINE 569:
-	strcpy(cityName, fileName);
+	strcpy(fileName, cityName);
 // LINE 570:
 }
 
@@ -1351,7 +1351,7 @@ static unsigned short S2CityMiscRead(/*packed*/ struct _iobuf *filNum, long size
 	return 0x0;
 // LINE 637:
 _T37:
-	swizzle_buffer(size, MiscInfo);
+	swizzle_buffer(MiscInfo, size);
 // LINE 639:
 	__asm        mov    ecx, MiscInfo;
 	__asm        cmp    dword ptr [ecx], 0x122;
@@ -2384,7 +2384,7 @@ _T2f:
 _T4d:
 	WriteLength = 0x4;
 // LINE 989:
-	strncpy(0x20, CityNameString, tempCityNameString[0]);
+	strncpy(tempCityNameString[0], CityNameString, 0x20);
 // LINE 990:
 	CStringToPString(tempCityNameString[0]);
 // LINE 991:
@@ -2758,7 +2758,7 @@ _T47b:
 	__asm        jmp    badwrite;
 // LINE 1043:
 _T4b0:
-	S2CityWriteHeader(WriteLength, filNum);
+	S2CityWriteHeader(filNum, WriteLength);
 // LINE 1046:
 	fclose(filNum);
 // LINE 1048:
@@ -2888,7 +2888,7 @@ _T45:
 _T87:
 	size = swizzle_long(size);
 // LINE 1126:
-	swizzle_shorts(size, data);
+	swizzle_shorts(data, size);
 // LINE 1129:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -2902,12 +2902,12 @@ _T87:
 	__asm        test   eax, eax;
 	__asm        jne    _Tdc;
 // LINE 1130:
-	swizzle_shorts(size, data);
+	swizzle_shorts(data, size);
 // LINE 1131:
 	return 0x0;
 // LINE 1134:
 _Tdc:
-	swizzle_shorts(size, data);
+	swizzle_shorts(data, size);
 // LINE 1136:
 	WriteLength += (size + 0x8);
 // LINE 1137:
@@ -3038,7 +3038,7 @@ _T3e:
 	__asm        jne    _T7f;
 // LINE 1207:
 _T6a:
-	swizzle_buffer(count, data);
+	swizzle_buffer(data, count);
 // LINE 1209:
 	__asm        jmp    _Ta5;
 _T7f:
@@ -3048,7 +3048,7 @@ _T7f:
 	__asm        cmp    eax, head;
 	__asm        jne    _Ta5;
 // LINE 1210:
-	swizzle_Micro(count, data);
+	swizzle_Micro(data, count);
 // LINE 1214:
 _Ta5:
 	dp = 0x0;
@@ -3200,7 +3200,7 @@ _T215:
 	__asm        cmp    eax, head;
 	__asm        jne    _T240;
 // LINE 1250:
-	swizzle_Micro(count, data);
+	swizzle_Micro(data, count);
 // LINE 1252:
 	__asm        jmp    _T266;
 _T240:
@@ -3210,7 +3210,7 @@ _T240:
 	__asm        cmp    eax, head;
 	__asm        jne    _T266;
 // LINE 1253:
-	swizzle_buffer(count, data);
+	swizzle_buffer(data, count);
 // LINE 1257:
 _T266:
 	WriteLength += (tp + 0x8);
@@ -3977,7 +3977,7 @@ _FOR_e43:
 	}
 // LINE 1479:
 _Te6c:
-	return S2CityGameWriteCompressed(0x12c0, MiscInfo, 0x59b1e4, stol(0x12c0, MiscInfo, 0x59b1e4), filNum);
+	return S2CityGameWriteCompressed(filNum, stol(0x59b1e4, MiscInfo, 0x12c0), 0x59b1e4, MiscInfo, 0x12c0);
 // LINE 1480:
 }
 
@@ -5278,7 +5278,7 @@ short check_root(char * pathname) {
 	return 0xffff;
 // LINE 2075:
 _T31:
-	get_path_at_start(pathonly[0], pathname);
+	get_path_at_start(pathname, pathonly[0]);
 // LINE 2078:
 	__asm        lea    eax, pathonly[0];
 	__asm        push   eax;
@@ -5412,7 +5412,7 @@ _T86:
 	__asm        sub    eax, ref;
 	__asm        mov    off, ax;
 // LINE 2143:
-	strcpy(ref, ret);
+	strcpy(ret, ref);
 // LINE 2144:
 	__asm        movsx  eax, off;
 	__asm        mov    ecx, ret;
@@ -5441,7 +5441,7 @@ void do_uppercase(char * ref, char * res) {
 	return;
 // LINE 2170:
 _T30:
-	strcpy(ref, res);
+	strcpy(res, ref);
 // LINE 2171:
 	s = res;
 // LINE 2173:
@@ -5536,7 +5536,7 @@ _T89:
 	return;
 // LINE 2217:
 _T9c:
-	strcpy(s, ret);
+	strcpy(ret, s);
 // LINE 2218:
 }
 
@@ -5592,7 +5592,7 @@ void check_extension(char * pathname, char * ext) {
 // LINE 2271:
 	nameonly[0] = 0x0;
 // LINE 2272:
-	get_name_at_end(nameonly[0], pathname);
+	get_name_at_end(pathname, nameonly[0]);
 // LINE 2274:
 	__asm        lea    eax, nameonly[0];
 	__asm        push   eax;
@@ -5603,9 +5603,9 @@ void check_extension(char * pathname, char * ext) {
 	__asm        test   eax, eax;
 	__asm        jne    _T5f;
 // LINE 2275:
-	strcat(0x59b394, pathname);
+	strcat(pathname, 0x59b394);
 // LINE 2276:
-	strcat(ext, pathname);
+	strcat(pathname, ext);
 // LINE 2277:
 	return;
 // LINE 2280:
@@ -5673,16 +5673,16 @@ __WHILE_db:
 _Tf2:
 	s[1] = 0x0;
 // LINE 2296:
-	strcat(ext, pathname);
+	strcat(pathname, ext);
 // LINE 2297:
 	return;
 // LINE 2299:
 	return;
 // LINE 2300:
 _T113:
-	strcat(0x59b3a0, pathname);
+	strcat(pathname, 0x59b3a0);
 // LINE 2301:
-	strcat(ext, pathname);
+	strcat(pathname, ext);
 // LINE 2303:
 }
 
@@ -5691,7 +5691,7 @@ short check_file_exist(char * filename) {
 	/*bp-0x4*/   /*packed*/ struct _iobuf *fileNum;
 
 // LINE 2321:
-	fileNum = fopen(0x59b3a4, filename);
+	fileNum = fopen(filename, 0x59b3a4);
 // LINE 2322:
 	__asm        cmp    fileNum, 0;
 	__asm        jne    _T2f;
@@ -5846,7 +5846,7 @@ __WHILE_42:
 _T192:
 	r[0] = 0x0;
 // LINE 2370:
-	strcpy(temp[0], ref);
+	strcpy(ref, temp[0]);
 // LINE 2371:
 }
 
@@ -5901,7 +5901,7 @@ __WHILE_42:
 _T84:
 	r[0] = 0x0;
 // LINE 2404:
-	strcpy(temp[0], ref);
+	strcpy(ref, temp[0]);
 // LINE 2405:
 }
 

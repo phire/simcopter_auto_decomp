@@ -198,7 +198,7 @@ void PaletteBuffer::PaletteBuffer() {
 	/*bp-0x40*/  char szTypeFaceName[64]; // 0x40 bytes
 
 
-	this->CBackBuffer::CBackBuffer(0x0, 0x1b8, 0x258);
+	this->CBackBuffer::CBackBuffer(0x258, 0x1b8, 0x0);
 	this-><PaletteBuffer+0x00> = 0x58f5e0;
 // LINE 37:
 	__asm        push   0x400;
@@ -232,7 +232,7 @@ _T80:
 _T8d:
 	this->PaletteBuffer::SetPalette();
 // LINE 39:
-	LanguageManager::GetTypefaceForLanguage(szTypeFaceName[0], 0x0, 0x0);
+	LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeFaceName[0]);
 // LINE 40:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -271,7 +271,7 @@ void PaletteBuffer::PaletteBuffer(/*packed*/ struct SparkalColor *newSparkalColo
 	/*bp-0x40*/  char szTypeFaceName[64]; // 0x40 bytes
 
 
-	this->CBackBuffer::CBackBuffer(0x0, 0x1b8, 0x258);
+	this->CBackBuffer::CBackBuffer(0x258, 0x1b8, 0x0);
 	this-><PaletteBuffer+0x00> = 0x58f5e0;
 // LINE 55:
 	__asm        push   0x400;
@@ -310,7 +310,7 @@ _T8d:
 	this->PaletteBuffer::SetPalette(newSparkalColors);
 // LINE 58:
 _Ta9:
-	LanguageManager::GetTypefaceForLanguage(szTypeFaceName[0], 0x0, 0x0);
+	LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeFaceName[0]);
 // LINE 59:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -574,7 +574,7 @@ _T15f:
 // FUNCTION: COPTER_D 0x0044774b
 unsigned long PaletteBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 162:
-	return this->CBackBuffer::Compose(this->mHeight, this->mWidth, 0x0, 0x0, DestTop, DestLeft, pDestImage);
+	return this->CBackBuffer::Compose(pDestImage, DestLeft, DestTop, 0x0, 0x0, this->mWidth, this->mHeight);
 // LINE 163:
 }
 

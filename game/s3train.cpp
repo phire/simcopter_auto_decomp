@@ -672,7 +672,7 @@ _T3e:
 	__asm        jmp    _T15b;
 // LINE 221:
 _T13a:
-	_assert(0xdd, 0x5b783c, 0x5b7860);
+	_assert(0x5b7860, 0x5b783c, 0xdd);
 	__asm        jmp    _T15b;
 
 	__asm        jmp    _T15b;
@@ -764,11 +764,11 @@ _T2e:
 	__asm        test   eax, eax;
 	__asm        je     _T88;
 // LINE 300:
-	this->TrainClass::UnlinkFromCell(this->leadcar, (this + 0x35));
+	this->TrainClass::UnlinkFromCell((this + 0x35), this->leadcar);
 // LINE 301:
-	this->TrainClass::UnlinkFromCell(this->midcar, (this + 0x3d));
+	this->TrainClass::UnlinkFromCell((this + 0x3d), this->midcar);
 // LINE 302:
-	this->TrainClass::UnlinkFromCell(this->endcar, (this + 0x45));
+	this->TrainClass::UnlinkFromCell((this + 0x45), this->endcar);
 // LINE 314:
 _T88:
 	this->flags[0] = 0x0;
@@ -795,7 +795,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0052e16c
 /*packed*/ class TrainClass* TrainClass::CreateInstance(int32_t instanceID) {
 // LINE 362:
-	return TrainClass::CreateInstance(instanceID, -0x1, -0x1);
+	return TrainClass::CreateInstance(-0x1, -0x1, instanceID);
 // LINE 422:
 }
 
@@ -860,7 +860,7 @@ _T94:
 // FUNCTION: COPTER_D 0x0052e22c
 int32_t TrainClass::Initialize(int32_t instanceID) {
 // LINE 547:
-	return this->TrainClass::InitializeInstance(instanceID, this->currentLocation1.y, this->currentLocation1.x);
+	return this->TrainClass::InitializeInstance(this->currentLocation1.x, this->currentLocation1.y, instanceID);
 // LINE 548:
 }
 
@@ -1092,7 +1092,7 @@ _T187:
 	__asm        test   eax, eax;
 	__asm        jne    _T1b2;
 
-	_assert(0x2f5, 0x5b7868, 0x5b788c);
+	_assert(0x5b788c, 0x5b7868, 0x2f5);
 	__asm        jmp    _T1b7;
 _T1b2:
 	__asm        jmp    _T1b7;
@@ -1158,7 +1158,7 @@ _T68:
 	__asm        test   eax, eax;
 	__asm        jne    _Tde;
 // LINE 802:
-	S3DSPlay(0x1, (this + 0xb9), 0x19);
+	S3DSPlay(0x19, (this + 0xb9), 0x1);
 // LINE 806:
 _Tde:
 	__asm        push   0xF0600000;
@@ -1173,7 +1173,7 @@ _Tde:
 	__asm        sar    eax, 0x10;
 	__asm        mov    vol_adj, eax;
 // LINE 809:
-	S3SoundAdjVol(vol_adj, 0x19);
+	S3SoundAdjVol(0x19, vol_adj);
 // LINE 812:
 	__asm        jmp    _T133;
 // LINE 814:
@@ -1327,9 +1327,9 @@ _T169:
 // LINE 950:
 // Block start:
 	/*bp-0x18*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
-	this->TrainClass::UnlinkFromCell(this->leadcar, (this + 0x35));
+	this->TrainClass::UnlinkFromCell((this + 0x35), this->leadcar);
 // LINE 951:
-	this->TrainClass::LinkToCell(this->leadcar, (this + 0x55));
+	this->TrainClass::LinkToCell((this + 0x55), this->leadcar);
 // LINE 952:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x55;
@@ -1498,7 +1498,7 @@ void TrainClass::TrainCrashMovement() {
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        jne    _T86;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T8b;
 _T86:
 	__asm        jmp    _T8b;
@@ -1596,17 +1596,17 @@ _T90:
 	__asm        jmp    _T293;
 // LINE 1128:
 _T220:
-	S3ExplosionSmokeStart(0x1, (this->leadcar + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (this->leadcar + 0x18), 0x1);
 // LINE 1129:
 	__asm        jmp    _T2bf;
 // LINE 1131:
 _T243:
-	S3ExplosionSmokeStart(0x1, (this->midcar + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (this->midcar + 0x18), 0x1);
 // LINE 1132:
 	__asm        jmp    _T2bf;
 // LINE 1134:
 _T266:
-	S3ExplosionSmokeStart(0x1, (this->endcar + 0x18), cptr);
+	S3ExplosionSmokeStart(cptr, (this->endcar + 0x18), 0x1);
 // LINE 1135:
 	__asm        jmp    _T2bf;
 // LINE 1137:
@@ -1656,9 +1656,9 @@ _T2c4:
 	__asm        sub    eax, ecx;
 	__asm        mov    loc.z, eax;
 // LINE 1147:
-	S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
+	S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, this->missionId);
 // LINE 1149:
-	S3DSPlay(0x0, (this->leadcar + 0x18), 0x1a);
+	S3DSPlay(0x1a, (this->leadcar + 0x18), 0x0);
 // LINE 1192:
 	num_debris = 0x3;
 // LINE 1193:
@@ -1714,7 +1714,7 @@ _FOR_374:
 			__asm        call   0x004D2094;
 			__asm        add    esp, 0xC;
 		// LINE 1210:
-			S3MissileStart(this->missionId, speed, this->leadcar, 0x2, vec.x, (this->leadcar + 0x18), (this + 0x35), 0x4);
+			S3MissileStart(0x4, (this + 0x35), (this->leadcar + 0x18), vec.x, 0x2, this->leadcar, speed, this->missionId);
 	}
 // LINE 1214:
 _T456:
@@ -1745,7 +1745,7 @@ _T456:
 	__asm        sub    eax, ecx;
 	__asm        mov    loc.z, eax;
 // LINE 1217:
-	S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
+	S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, this->missionId);
 // LINE 1226:
 	num_debris = 0x3;
 // LINE 1227:
@@ -1801,7 +1801,7 @@ _FOR_4ea:
 			__asm        call   0x004D2094;
 			__asm        add    esp, 0xC;
 		// LINE 1244:
-			S3MissileStart(this->missionId, speed, this->midcar, 0x2, vec.x, (this->midcar + 0x18), (this + 0x35), 0x4);
+			S3MissileStart(0x4, (this + 0x35), (this->midcar + 0x18), vec.x, 0x2, this->midcar, speed, this->missionId);
 	}
 // LINE 1248:
 _T5cc:
@@ -1832,7 +1832,7 @@ _T5cc:
 	__asm        sub    eax, ecx;
 	__asm        mov    loc.z, eax;
 // LINE 1251:
-	S3ExplosionStart(this->missionId, 0x4, loc.z, loc.y, loc.x, cptr);
+	S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, this->missionId);
 // LINE 1260:
 	num_debris = 0x3;
 // LINE 1261:
@@ -1888,7 +1888,7 @@ _FOR_660:
 			__asm        call   0x004D2094;
 			__asm        add    esp, 0xC;
 		// LINE 1278:
-			S3MissileStart(this->missionId, speed, this->endcar, 0x2, vec.x, (this->endcar + 0x18), (this + 0x35), 0x4);
+			S3MissileStart(0x4, (this + 0x35), (this->endcar + 0x18), vec.x, 0x2, this->endcar, speed, this->missionId);
 	}
 // LINE 1281:
 _T742:
@@ -2093,7 +2093,7 @@ _T1f2:
 	__asm        jmp    _T23c;
 // LINE 1365:
 _T21b:
-	_assert(0x555, 0x5b78a4, 0x5b78c8);
+	_assert(0x5b78c8, 0x5b78a4, 0x555);
 	__asm        jmp    _T23c;
 
 	__asm        jmp    _T23c;
@@ -2214,7 +2214,7 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 // LINE 1461:
 	trainLocation.y = ((0x20000000 - this->leadcar->loc.z) >> 0x16);
 // LINE 1463:
-	return this->TrainClass::CheckDynamicObjectsAt(trainHeading.x, trainLocation.x);
+	return this->TrainClass::CheckDynamicObjectsAt(trainLocation.x, trainHeading.x);
 // LINE 1464:
 }
 
@@ -2302,7 +2302,7 @@ _Td6:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T120;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T125;
 _T120:
 	__asm        jmp    _T125;
@@ -2454,7 +2454,7 @@ _T2ae:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T2f8;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T2fd;
 _T2f8:
 	__asm        jmp    _T2fd;
@@ -3382,7 +3382,7 @@ _T82e:
 	__asm        jmp    _T93e;
 // LINE 2175:
 _T833:
-	_assert(0x87f, 0x5b78d0, 0x5b78f4);
+	_assert(0x5b78f4, 0x5b78d0, 0x87f);
 	__asm        jmp    _T854;
 
 	__asm        jmp    _T854;
@@ -4243,7 +4243,7 @@ _T1261:
 	__asm        jmp    _T1371;
 // LINE 2633:
 _T1266:
-	_assert(0xa49, 0x5b78fc, 0x5b7920);
+	_assert(0x5b7920, 0x5b78fc, 0xa49);
 	__asm        jmp    _T1287;
 
 	__asm        jmp    _T1287;
@@ -4639,7 +4639,7 @@ void TrainClass::UnlinkFromCell(const /*packed*/ struct Point2d& point, /*packed
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T55;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -4652,7 +4652,7 @@ _T5f:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
 
-	_assert(0xb03, 0x5b7928, 0x5b794c);
+	_assert(0x5b794c, 0x5b7928, 0xb03);
 	__asm        jmp    _T90;
 _T8b:
 	__asm        jmp    _T90;
@@ -4686,7 +4686,7 @@ _Td9:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T101;
 
-	_assert(0xb19, 0x5b7958, 0x5b797c);
+	_assert(0x5b797c, 0x5b7958, 0xb19);
 	__asm        jmp    _T106;
 _T101:
 	__asm        jmp    _T106;
@@ -4713,7 +4713,7 @@ void TrainClass::LinkToCell(const /*packed*/ struct Point2d& point, /*packed*/ s
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T55;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -4728,7 +4728,7 @@ _T5f:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    _T90;
 
-	_assert(0xb33, 0x5b7988, 0x5b79ac);
+	_assert(0x5b79ac, 0x5b7988, 0xb33);
 	__asm        jmp    _T95;
 _T90:
 	__asm        jmp    _T95;
@@ -5601,7 +5601,7 @@ _T9d1:
 	__asm        jmp    _T9fe;
 // LINE 3073:
 _T9d6:
-	_assert(0xc01, 0x5b79c8, 0x5b79ec);
+	_assert(0x5b79ec, 0x5b79c8, 0xc01);
 	__asm        jmp    _T9f7;
 
 	__asm        jmp    _T9f7;
@@ -5833,7 +5833,7 @@ _Tfb:
 	__asm        jmp    _T156;
 // LINE 3217:
 _T108:
-	_assert(0xc91, 0x5b79f4, 0x5b7a18);
+	_assert(0x5b7a18, 0x5b79f4, 0xc91);
 	__asm        jmp    _T129;
 
 	__asm        jmp    _T129;
@@ -5857,7 +5857,7 @@ _T156:
 	__asm        jmp    _T1b5;
 // LINE 3226:
 _T15b:
-	_assert(0xc9a, 0x5b7a20, 0x5b7a44);
+	_assert(0x5b7a44, 0x5b7a20, 0xc9a);
 	__asm        jmp    _T17c;
 
 	__asm        jmp    _T17c;
@@ -6118,9 +6118,9 @@ void TrainClass::SetTrailingCars() {
 // LINE 3302:
 	this->currentLocation3.y = ((0x20000000 - this->endcar->loc.z) >> 0x16);
 // LINE 3304:
-	this->TrainClass::LinkToCell(this->midcar, (this + 0x3d));
+	this->TrainClass::LinkToCell((this + 0x3d), this->midcar);
 // LINE 3305:
-	this->TrainClass::LinkToCell(this->endcar, (this + 0x45));
+	this->TrainClass::LinkToCell((this + 0x45), this->endcar);
 // LINE 3308:
 	__asm        mov    eax, this;
 	__asm        mov    esi, [eax+0x1CD];
@@ -6245,7 +6245,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        mov    eax, [eax+0x1D1];
 	__asm        mov    [eax+0x20], ebx;
 // LINE 3352:
-	MTCreateDOF4x4(vec.x, (this->midcar + 0x24));
+	MTCreateDOF4x4((this->midcar + 0x24), vec.x);
 // LINE 3357:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1D1];
@@ -6354,7 +6354,7 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        je     _T339;
 // LINE 3379:
 _T2f6:
-	this->TrainClass::UnlinkFromCell(this->midcar, (this + 0x3d));
+	this->TrainClass::UnlinkFromCell((this + 0x3d), this->midcar);
 // LINE 3380:
 	__asm        mov    eax, currloc.x;
 	__asm        mov    ecx, currloc.y;
@@ -6363,7 +6363,7 @@ _T2f6:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 3381:
-	this->TrainClass::LinkToCell(this->midcar, (this + 0x3d));
+	this->TrainClass::LinkToCell((this + 0x3d), this->midcar);
 // LINE 3384:
 _T339:
 	currloc.x = ((this->endcar->loc.x + 0x20000000) >> 0x16);
@@ -6381,7 +6381,7 @@ _T339:
 	__asm        je     _T3c8;
 // LINE 3388:
 _T385:
-	this->TrainClass::UnlinkFromCell(this->endcar, (this + 0x45));
+	this->TrainClass::UnlinkFromCell((this + 0x45), this->endcar);
 // LINE 3389:
 	__asm        mov    eax, currloc.x;
 	__asm        mov    ecx, currloc.y;
@@ -6390,10 +6390,10 @@ _T385:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 3390:
-	this->TrainClass::LinkToCell(this->endcar, (this + 0x45));
+	this->TrainClass::LinkToCell((this + 0x45), this->endcar);
 // LINE 3394:
 _T3c8:
-	MTCreateDOF4x4(vec.x, (this->endcar + 0x24));
+	MTCreateDOF4x4((this->endcar + 0x24), vec.x);
 // LINE 3395:
 	return;
 }
@@ -6415,7 +6415,7 @@ void TrainClass::AdjustCurrentPosition() {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T56;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T5b;
 _T56:
 	__asm        jmp    _T5b;
@@ -6428,7 +6428,7 @@ _T60:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8c;
 
-	_assert(0xd5a, 0x5b7a4c, 0x5b7a70);
+	_assert(0x5b7a70, 0x5b7a4c, 0xd5a);
 	__asm        jmp    _T91;
 _T8c:
 	__asm        jmp    _T91;
@@ -6539,7 +6539,7 @@ void TrainClass::AdjustNextPosition() {
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T56;
 
-	_assert(0xd0, 0x5b780c, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b780c, 0xd0);
 	__asm        jmp    _T5b;
 _T56:
 	__asm        jmp    _T5b;
@@ -6634,7 +6634,7 @@ _T178:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T19e;
 
-	_assert(0xd94, 0x5b7a7c, 0x5b7aa0);
+	_assert(0x5b7aa0, 0x5b7a7c, 0xd94);
 	__asm        jmp    _T1a3;
 _T19e:
 	__asm        jmp    _T1a3;
@@ -6991,7 +6991,7 @@ _T56a:
 	__asm        test   al, 1;
 	__asm        je     _T5ef;
 // LINE 3634:
-	MTCreateDOF4x4((this + 0x15), (this->leadcar + 0x24));
+	MTCreateDOF4x4((this->leadcar + 0x24), (this + 0x15));
 // LINE 3637:
 // Block end:
 _T5ef:
@@ -7092,7 +7092,7 @@ _Tc8:
 	__asm        jmp    _T120;
 // LINE 3685:
 _Tff:
-	_assert(0xe65, 0x5b7aac, 0x5b7ad0);
+	_assert(0x5b7ad0, 0x5b7aac, 0xe65);
 	__asm        jmp    _T120;
 
 	__asm        jmp    _T120;
@@ -7195,7 +7195,7 @@ _Tca:
 	__asm        jmp    _T120;
 // LINE 3735:
 _Tff:
-	_assert(0xe97, 0x5b7ad8, 0x5b7afc);
+	_assert(0x5b7afc, 0x5b7ad8, 0xe97);
 	__asm        jmp    _T120;
 
 	__asm        jmp    _T120;
@@ -7298,7 +7298,7 @@ _Tca:
 	__asm        jmp    _T120;
 // LINE 3790:
 _Tff:
-	_assert(0xece, 0x5b7b04, 0x5b7b28);
+	_assert(0x5b7b28, 0x5b7b04, 0xece);
 	__asm        jmp    _T120;
 
 	__asm        jmp    _T120;
@@ -7617,7 +7617,7 @@ _LOOP_197:
 					__asm        cmp    dword ptr [ebp-0x48], 0;
 					__asm        jne    _T3dd;
 
-					_assert(0xd0, 0x5b780c, 0x5b57b8);
+					_assert(0x5b57b8, 0x5b780c, 0xd0);
 					__asm        jmp    _T3e2;
 				_T3dd:
 					__asm        jmp    _T3e2;
@@ -7687,7 +7687,7 @@ foundCell:
 _T4a5:
 	__asm        jmp    _T4aa;
 _T4aa:
-	this->TrainClass::LinkToCell(this->leadcar, (this + 0x35));
+	this->TrainClass::LinkToCell((this + 0x35), this->leadcar);
 // LINE 3963:
 	__asm        jmp    _T4c8;
 _T4c8:
@@ -7761,15 +7761,15 @@ _T11:
 // LINE 3994:
 	__asm        jmp    _T25;
 _T25:
-	this->TrainClass::UnlinkFromCell(this->leadcar, (this + 0x35));
+	this->TrainClass::UnlinkFromCell((this + 0x35), this->leadcar);
 // LINE 3995:
 	__asm        jmp    _T43;
 _T43:
-	this->TrainClass::UnlinkFromCell(this->midcar, (this + 0x3d));
+	this->TrainClass::UnlinkFromCell((this + 0x3d), this->midcar);
 // LINE 3996:
 	__asm        jmp    _T61;
 _T61:
-	this->TrainClass::UnlinkFromCell(this->endcar, (this + 0x45));
+	this->TrainClass::UnlinkFromCell((this + 0x45), this->endcar);
 // LINE 3997:
 	this->flags[1] = 0x0;
 // LINE 3999:
@@ -7987,7 +7987,7 @@ _LOOP_3b:
 					__asm        cmp    dword ptr [ebp-0x3C], 0;
 					__asm        jne    _T281;
 
-					_assert(0xd0, 0x5b780c, 0x5b57b8);
+					_assert(0x5b57b8, 0x5b780c, 0xd0);
 					__asm        jmp    _T286;
 				_T281:
 					__asm        jmp    _T286;
@@ -8057,7 +8057,7 @@ foundCell:
 _T34b:
 	__asm        jmp    _T350;
 _T350:
-	this->TrainClass::LinkToCell(this->leadcar, (this + 0x35));
+	this->TrainClass::LinkToCell((this + 0x35), this->leadcar);
 // LINE 4128:
 	__asm        jmp    _T36e;
 _T36e:
@@ -8168,7 +8168,7 @@ _T90:
 	__asm        cmp    object1, 0;
 	__asm        jne    _Tb6;
 
-	_assert(0x114b, 0x5b7b30, 0x5b7b54);
+	_assert(0x5b7b54, 0x5b7b30, 0x114b);
 	__asm        jmp    _Tbb;
 _Tb6:
 	__asm        jmp    _Tbb;
@@ -8177,7 +8177,7 @@ _Tbb:
 	__asm        cmp    object2, 0;
 	__asm        jne    _Te1;
 
-	_assert(0x114c, 0x5b7b5c, 0x5b7b80);
+	_assert(0x5b7b80, 0x5b7b5c, 0x114c);
 	__asm        jmp    _Te6;
 _Te1:
 	__asm        jmp    _Te6;
@@ -8186,7 +8186,7 @@ _Te6:
 	__asm        cmp    object3, 0;
 	__asm        jne    _T10c;
 
-	_assert(0x114d, 0x5b7b88, 0x5b7bac);
+	_assert(0x5b7bac, 0x5b7b88, 0x114d);
 	__asm        jmp    _T111;
 _T10c:
 	__asm        jmp    _T111;
@@ -8326,7 +8326,7 @@ _T152:
 	__asm        cmp    mapy, 0xFFFFFFFF;
 	__asm        je     _T439;
 // LINE 4542:
-	this->TrainClass::LinkToCell(this->leadcar, (this + 0x35));
+	this->TrainClass::LinkToCell((this + 0x35), this->leadcar);
 // LINE 4546:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0;
@@ -8444,7 +8444,7 @@ int32_t S3TrainCrashWhenReady(long mission_id) {
 // FUNCTION: COPTER_D 0x00534365
 int32_t S3TrainStartRescue(long mission_id, int32_t timetolive) {
 // LINE 4710:
-	return TrainClass::FindTrainForRescue(timetolive, mission_id);
+	return TrainClass::FindTrainForRescue(mission_id, timetolive);
 // LINE 4711:
 }
 
@@ -8639,7 +8639,7 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   int32_t i;
 
 // LINE 4858:
-	ret = ReadFirstMIFFChunk(0x1d9, 0x62b7b8, 0x5452414e, miffReader);
+	ret = ReadFirstMIFFChunk(miffReader, 0x5452414e, 0x62b7b8, 0x1d9);
 // LINE 4859:
 	__asm        cmp    ret, 0;
 	__asm        jne    _FOR_44;
@@ -8840,14 +8840,14 @@ _FOR_44:
 			__asm        test   eax, eax;
 			__asm        je     _T315;
 		// LINE 4900:
-			t->TrainClass::LinkToCell(t->leadcar, (t + 0x35));
+			t->TrainClass::LinkToCell((t + 0x35), t->leadcar);
 		// LINE 4901:
-			t->TrainClass::LinkToCell(t->midcar, (t + 0x3d));
+			t->TrainClass::LinkToCell((t + 0x3d), t->midcar);
 		// LINE 4902:
-			t->TrainClass::LinkToCell(t->endcar, (t + 0x45));
+			t->TrainClass::LinkToCell((t + 0x45), t->endcar);
 		// LINE 4909:
 		_T315:
-			ret = ReadNextMIFFChunk(0x1d9, 0x62b7b8, 0x5452414e, miffReader);
+			ret = ReadNextMIFFChunk(miffReader, 0x5452414e, 0x62b7b8, 0x1d9);
 		// LINE 4911:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T34e;

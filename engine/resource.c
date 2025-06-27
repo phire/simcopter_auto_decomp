@@ -38,7 +38,7 @@ struct Chunk{ // packed(0x8 bytes) TI: 0x2ee9
 // FUNCTION: COPTER_D 0x004d52c0
 void InitResource() {
 // LINE 93:
-	strcpy(0x59c230, 0x6663f0);
+	strcpy(0x6663f0, 0x59c230);
 // LINE 94:
 	ResourceFilePtr = 0x0;
 // LINE 95:
@@ -912,7 +912,7 @@ _Tac:
 	return 0x0;
 // LINE 815:
 _Tca:
-	ResourceDir = S2Alloc((ResourceDirHdr.Count << 0x3), ResFileMemPool);
+	ResourceDir = S2Alloc(ResFileMemPool, (ResourceDirHdr.Count << 0x3));
 // LINE 816:
 	__asm        cmp    ResourceDir, 0;
 	__asm        jne    _T104;
@@ -972,7 +972,7 @@ _T3f:
 	return 0x0;
 // LINE 884:
 _T7d:
-	strcpy(name, 0x6663f0);
+	strcpy(0x6663f0, name);
 // LINE 885:
 	return 0x1;
 // LINE 887:

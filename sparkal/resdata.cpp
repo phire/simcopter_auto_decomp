@@ -101,7 +101,7 @@ void ResourceRCData::ResourceRCData(/*packed*/ class ResourceRCData& resData) {
 // LINE 61:
 	this->chData = operator new(nAllocationSize);
 // LINE 62:
-	memcpy(nAllocationSize, resData.chData, this->chData);
+	memcpy(this->chData, resData.chData, nAllocationSize);
 // LINE 63:
 	this->bWeOwnTheData = 0x1;
 // LINE 65:
@@ -150,7 +150,7 @@ _T20:
 // LINE 91:
 	this->chData = operator new(nAllocationSize);
 // LINE 92:
-	memcpy(nAllocationSize, resData.chData, this->chData);
+	memcpy(this->chData, resData.chData, nAllocationSize);
 // LINE 93:
 	this->bWeOwnTheData = 0x1;
 // LINE 96:

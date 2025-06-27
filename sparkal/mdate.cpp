@@ -369,7 +369,7 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 	this->PrintOption = 0x0;
 	this-><vftable> = 0x58f3e8;
 // LINE 128:
-	this->Julnum = MDate::Jday(year, day, month);
+	this->Julnum = MDate::Jday(month, day, year);
 // LINE 129:
 	return;
 
@@ -751,7 +751,7 @@ uint32_t MDate::DayOfMonth() {
 	/*bp-0xc*/   uint32_t m;
 
 // LINE 322:
-	this->MDate::Mdy(y, d, m);
+	this->MDate::Mdy(m, d, y);
 // LINE 323:
 	return d;
 // LINE 324:
@@ -1000,7 +1000,7 @@ uint32_t MDate::Month() {
 	/*bp-0xc*/   uint32_t m;
 
 // LINE 421:
-	this->MDate::Mdy(y, d, m);
+	this->MDate::Mdy(m, d, y);
 // LINE 422:
 	return m;
 // LINE 423:
@@ -1098,7 +1098,7 @@ uint32_t MDate::Year() {
 	/*bp-0xc*/   uint32_t m;
 
 // LINE 486:
-	this->MDate::Mdy(y, d, m);
+	this->MDate::Mdy(m, d, y);
 // LINE 487:
 	return y;
 // LINE 488:
@@ -1348,7 +1348,7 @@ _T248:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T276;
 _T257:
-	this->Julnum = MDate::Jday(y, d, m);
+	this->Julnum = MDate::Jday(m, d, y);
 	__asm        jmp    _T280;
 _T276:
 	this->Julnum = 0x0;

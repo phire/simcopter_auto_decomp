@@ -118,7 +118,7 @@ unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDest, lon
 	__asm        cmp    pDest, 0;
 	__asm        jne    _T2f;
 
-	_assert(0x27, 0x599da8, 0x599dd0);
+	_assert(0x599dd0, 0x599da8, 0x27);
 	__asm        jmp    _T34;
 _T2f:
 	__asm        jmp    _T34;
@@ -138,7 +138,7 @@ _T34:
 	__asm        cmp    DestHeight, eax;
 	__asm        jge    _T6d;
 
-	_assert(0x2e, 0x599dd8, 0x599e00);
+	_assert(0x599e00, 0x599dd8, 0x2e);
 	__asm        jmp    _T72;
 _T6d:
 	__asm        jmp    _T72;
@@ -148,7 +148,7 @@ _T72:
 	__asm        cmp    DestWidth, eax;
 	__asm        jge    _T97;
 
-	_assert(0x2f, 0x599e1c, 0x599e44);
+	_assert(0x599e44, 0x599e1c, 0x2f);
 	__asm        jmp    _T9c;
 _T97:
 	__asm        jmp    _T9c;
@@ -326,7 +326,7 @@ unsigned long IFlatImage::Compose(/*packed*/ class IFlatImage *pDest, long DestL
 	__asm        cmp    pDest, 0;
 	__asm        jne    _T32;
 
-	_assert(0x86, 0x599e60, 0x599e88);
+	_assert(0x599e88, 0x599e60, 0x86);
 	__asm        jmp    _T37;
 _T32:
 	__asm        jmp    _T37;
@@ -437,7 +437,7 @@ __WHILE_15a:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T195;
 // LINE 179:
-	memcpy(Width, pSource, pDestBits);
+	memcpy(pDestBits, pSource, Width);
 // LINE 180:
 	pDestBits += DestStride;
 // LINE 181:
@@ -540,7 +540,7 @@ __WHILE_e5:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        je     _T11a;
 // LINE 232:
-	memset(Width, nPaletteIndex, pBits);
+	memset(pBits, nPaletteIndex, Width);
 // LINE 233:
 	pBits += this->mStride;
 // LINE 234:
@@ -588,7 +588,7 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 	__asm        cmp    dword ptr [ebp-0x18], 0;
 	__asm        jne    _T93;
 _T77:
-	_assert(0x12a, 0x597444, 0x59a090);
+	_assert(0x59a090, 0x597444, 0x12a);
 	__asm        jmp    _T98;
 _T93:
 	__asm        jmp    _T98;
@@ -624,7 +624,7 @@ _Tc2:
 	__asm        add    eax, 0x10;
 	__asm        jne    _T110;
 _Tf4:
-	_assert(0x147, 0x597444, 0x59a068);
+	_assert(0x59a068, 0x597444, 0x147);
 	__asm        jmp    _T115;
 _T110:
 	__asm        jmp    _T115;
@@ -668,7 +668,7 @@ _T13d:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T1a2;
 
-	_assert(0x151, 0x597444, 0x59a080);
+	_assert(0x59a080, 0x597444, 0x151);
 	__asm        jmp    _T1a7;
 _T1a2:
 	__asm        jmp    _T1a7;
@@ -696,7 +696,7 @@ void CFlatImage::CFlatImage(/*packed*/ class IFlatImage *pImage, long SrcLeft, l
 	__asm        cmp    pImage, 0;
 	__asm        jne    _T43;
 
-	_assert(0x117, 0x599e90, 0x599eb8);
+	_assert(0x599eb8, 0x599e90, 0x117);
 	__asm        jmp    _T48;
 _T43:
 	__asm        jmp    _T48;
@@ -706,7 +706,7 @@ _T48:
 	__asm        cmp    SrcRight, eax;
 	__asm        jg     _T70;
 
-	_assert(0x118, 0x599ec0, 0x599ee8);
+	_assert(0x599ee8, 0x599ec0, 0x118);
 	__asm        jmp    _T75;
 _T70:
 	__asm        jmp    _T75;
@@ -716,7 +716,7 @@ _T75:
 	__asm        cmp    SrcBottom, eax;
 	__asm        jg     _T9d;
 
-	_assert(0x119, 0x599efc, 0x599f24);
+	_assert(0x599f24, 0x599efc, 0x119);
 	__asm        jmp    _Ta2;
 _T9d:
 	__asm        jmp    _Ta2;
@@ -734,7 +734,7 @@ _Tbf:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jle    _Ted;
 
-	_assert(0x11d, 0x599f38, 0x599f60);
+	_assert(0x599f60, 0x599f38, 0x11d);
 	__asm        jmp    _Tf2;
 _Ted:
 	__asm        jmp    _Tf2;
@@ -748,7 +748,7 @@ _Tf7:
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        jge    _T125;
 
-	_assert(0x11e, 0x599f80, 0x599fa8);
+	_assert(0x599fa8, 0x599f80, 0x11e);
 	__asm        jmp    _T12a;
 _T125:
 	__asm        jmp    _T12a;
@@ -774,7 +774,7 @@ _T12a:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        jne    _T184;
 _T168:
-	_assert(0x12a, 0x597444, 0x59a090);
+	_assert(0x59a090, 0x597444, 0x12a);
 	__asm        jmp    _T189;
 _T184:
 	__asm        jmp    _T189;
@@ -810,7 +810,7 @@ _T1b3:
 	__asm        add    eax, 0x10;
 	__asm        jne    _T201;
 _T1e5:
-	_assert(0x147, 0x597444, 0x59a068);
+	_assert(0x59a068, 0x597444, 0x147);
 	__asm        jmp    _T206;
 _T201:
 	__asm        jmp    _T206;
@@ -869,7 +869,7 @@ __WHILE_28c:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T2ca;
 // LINE 306:
-	memcpy(this-><CFlatImage+0x08>, pSource, pBits);
+	memcpy(pBits, pSource, this-><CFlatImage+0x08>);
 // LINE 307:
 	pBits += this-><CFlatImage+0x14>;
 // LINE 308:
@@ -890,7 +890,7 @@ _T2cf:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T304;
 
-	_assert(0x151, 0x597444, 0x59a080);
+	_assert(0x59a080, 0x597444, 0x151);
 	__asm        jmp    _T309;
 _T304:
 	__asm        jmp    _T309;
@@ -913,7 +913,7 @@ _T31d:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T352;
 
-	_assert(0x134, 0x597444, 0x59a080);
+	_assert(0x59a080, 0x597444, 0x134);
 	__asm        jmp    _T357;
 _T352:
 	__asm        jmp    _T357;
@@ -953,7 +953,7 @@ void CFlatImage::~CFlatImage() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T3e;
 
-	_assert(0x151, 0x599fc8, 0x599ff0);
+	_assert(0x599ff0, 0x599fc8, 0x151);
 	__asm        jmp    _T43;
 _T3e:
 	__asm        jmp    _T43;
@@ -970,7 +970,7 @@ _T43:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T85;
 
-	_assert(0x134, 0x597444, 0x59a080);
+	_assert(0x59a080, 0x597444, 0x134);
 	__asm        jmp    _T8a;
 _T85:
 	__asm        jmp    _T8a;
@@ -1003,7 +1003,7 @@ unsigned long CFlatImage::Lock() {
 	__asm        add    eax, 0x10;
 	__asm        jne    _T5a;
 _T3e:
-	_assert(0x147, 0x597444, 0x59a068);
+	_assert(0x59a068, 0x597444, 0x147);
 	__asm        jmp    _T5f;
 _T5a:
 	__asm        jmp    _T5f;
@@ -1045,7 +1045,7 @@ unsigned long CFlatImage::Unlock() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        ja     _T35;
 
-	_assert(0x16c, 0x59a000, 0x59a028);
+	_assert(0x59a028, 0x59a000, 0x16c);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;
@@ -1055,7 +1055,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T63;
 
-	_assert(0x16d, 0x59a038, 0x59a060);
+	_assert(0x59a060, 0x59a038, 0x16d);
 	__asm        jmp    _T68;
 _T63:
 	__asm        jmp    _T68;
@@ -1085,7 +1085,7 @@ _T68:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _Td7;
 
-	_assert(0x151, 0x597444, 0x59a080);
+	_assert(0x59a080, 0x597444, 0x151);
 	__asm        jmp    _Tdc;
 _Td7:
 	__asm        jmp    _Tdc;

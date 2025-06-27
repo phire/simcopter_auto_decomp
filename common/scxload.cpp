@@ -388,7 +388,7 @@ _T97:
 	this->m_file = 0x0;
 // LINE 98:
 _Ta1:
-	return this->m_file->PFile::Open(0x0, 0x180, 0x0, filePath);
+	return this->m_file->PFile::Open(filePath, 0x0, 0x180, 0x0);
 // LINE 99:
 }
 
@@ -634,7 +634,7 @@ void SCXReadGraphData(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 // FUNCTION: COPTER_D 0x004cbc9e
 void SCXReadPlayer(/*packed*/ class cGZXBitstream *AStream, unsigned char * data) {
 // LINE 197:
-	SCXReadBudget(scxbuf, AStream);
+	SCXReadBudget(AStream, scxbuf);
 // LINE 198:
 	__asm        push   0x108;
 	__asm        mov    eax, data;
@@ -684,7 +684,7 @@ void SCXReadPlayer(/*packed*/ class cGZXBitstream *AStream, unsigned char * data
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 204:
-	SCXReadGraphData(scxbuf, AStream);
+	SCXReadGraphData(AStream, scxbuf);
 // LINE 205:
 	return;
 }
@@ -961,7 +961,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        jmp    __RETURN;
 // LINE 306:
 _T6a:
-	fileStream<cLZAPFileBitStream+0x00>->cLZAPFileBitStream::Read(0x2c, header.type[0]);
+	fileStream<cLZAPFileBitStream+0x00>->cLZAPFileBitStream::Read(header.type[0], 0x2c);
 // LINE 308:
 	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(0xffff);
 // LINE 309:
@@ -1065,13 +1065,13 @@ _T1a9:
 _FOR_1ba:
 	for (loop = 0x0; (loop < tempLong); loop++) {
 		// LINE 319:
-			SCXReadPlayer(scxbuf, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>);
+			SCXReadPlayer(memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>, scxbuf);
 	}
 // LINE 322:
 _T1e3:
-	SCXReadBudget(budgetList, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>);
+	SCXReadBudget(memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>, budgetList);
 // LINE 325:
-	SCXReadNeighbors(scxbuf, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>);
+	SCXReadNeighbors(memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>, scxbuf);
 // LINE 328:
 	__asm        mov    eax, scxbuf;
 	__asm        push   eax;
@@ -2352,39 +2352,39 @@ _Tfa0:
 	__asm        jmp    _Tfa5;
 // LINE 383:
 _Tfa5:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x400, PoliceMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(PoliceMap[0], 0x400);
 // LINE 384:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x400, FireMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(FireMap[0], 0x400);
 // LINE 385:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x400, PopMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(PopMap[0], 0x400);
 // LINE 386:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x400, ROGMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(ROGMap[0], 0x400);
 // LINE 389:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4000, BitsMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(BitsMap[0], 0x4000);
 // LINE 390:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4000, BuildMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(BuildMap[0], 0x4000);
 // LINE 391:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4000, scxbuf);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(scxbuf, 0x4000);
 // LINE 392:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4000, ZoneMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(ZoneMap[0], 0x4000);
 // LINE 393:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4000, TerrainMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(TerrainMap[0], 0x4000);
 // LINE 394:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4000, UnderMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(UnderMap[0], 0x4000);
 // LINE 395:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4000, TextMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(TextMap[0], 0x4000);
 // LINE 396:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x8000, AltMap[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(AltMap[0], 0x8000);
 // LINE 400:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 401:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 404:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 405:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 409:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x400, scxTileCount[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(scxTileCount[0], 0x400);
 // LINE 410:
 _FOR_10ed:
 	for (loop = 0x0; (loop < 0x100); loop++) {
@@ -2398,27 +2398,27 @@ _FOR_10ed:
 	}
 // LINE 414:
 _T1119:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 415:
 	__asm        mov    eax, tempLong;
 	__asm        mov    NationalTax, ax;
 // LINE 418:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 419:
 	__asm        mov    eax, tempLong;
 	__asm        mov    NationalTrend, ax;
 // LINE 422:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, 0x638f60);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x638f60, 0x4);
 // LINE 425:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, 0x63930c);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x63930c, 0x4);
 // LINE 428:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x50, PopRatio);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(PopRatio, 0x50);
 // LINE 431:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x50, EducateRatio);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(EducateRatio, 0x50);
 // LINE 434:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x50, HealthRatio);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(HealthRatio, 0x50);
 // LINE 437:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 438:
 	__asm        mov    eax, tempLong;
 	__asm        mov    GlobalSeaLevel, ax;
@@ -2440,7 +2440,7 @@ _FOR_11ca:
 _FOR_1202:
 	for (loop = 0x0; (loop < 0x96); loop++) {
 		// LINE 454:
-			memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x9, SCXMicroRecord.type);
+			memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(SCXMicroRecord.type, 0x9);
 		// LINE 455:
 			__asm        mov    al, SCXMicroRecord.type;
 			__asm        mov    ecx, loop;
@@ -2469,66 +2469,66 @@ _FOR_1202:
 	}
 // LINE 463:
 _T128c:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x1, 0x639ab2);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x639ab2, 0x1);
 // LINE 464:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x1, 0x638eda);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x638eda, 0x1);
 // LINE 465:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x1, 0x63a6c0);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x63a6c0, 0x1);
 // LINE 466:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x1, 0x63924a);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x63924a, 0x1);
 // LINE 470:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 471:
 	__asm        mov    eax, tempLong;
 	__asm        mov    IndustryConnect, ax;
 // LINE 474:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 475:
 	__asm        mov    eax, tempLong;
 	__asm        mov    CommerceConnect, ax;
 // LINE 478:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 479:
 	__asm        mov    eax, tempLong;
 	__asm        mov    SubwayCnt, ax;
 // LINE 482:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 483:
 	__asm        mov    eax, tempLong;
 	__asm        mov    CityCentX, ax;
 // LINE 484:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 485:
 	__asm        mov    eax, tempLong;
 	__asm        mov    CityCentY, ax;
 // LINE 488:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, 0x639234);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x639234, 0x4);
 // LINE 491:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, 0x639dd8);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x639dd8, 0x4);
 // LINE 494:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, 0x639aa0);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x639aa0, 0x4);
 // LINE 497:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 498:
 	__asm        mov    eax, tempLong;
 	__asm        mov    PolluteBonus, ax;
 // LINE 501:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 502:
 	__asm        mov    eax, tempLong;
 	__asm        mov    IndustryBonus, ax;
 // LINE 505:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 506:
 	__asm        mov    eax, tempLong;
 	__asm        mov    PoliceBonus, ax;
 // LINE 509:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x4, tempLong);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(tempLong, 0x4);
 // LINE 510:
 	__asm        mov    eax, tempLong;
 	__asm        mov    SewerBonus, ax;
 // LINE 514:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x2c, scxInd[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(scxInd[0], 0x2c);
 // LINE 515:
 _FOR_1417:
 	for (loop = 0x0; (loop < 0xb); loop++) {
@@ -2542,7 +2542,7 @@ _FOR_1417:
 	}
 // LINE 519:
 _T1440:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x2c, scxInd[0]);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(scxInd[0], 0x2c);
 // LINE 520:
 _FOR_145d:
 	for (loop = 0x0; (loop < 0xb); loop++) {
@@ -2556,7 +2556,7 @@ _FOR_145d:
 	}
 // LINE 524:
 _T1486:
-	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(0x40, GraphMax);
+	memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(GraphMax, 0x40);
 // LINE 525:
 _FOR_14a2:
 	for (loop = 0x0; (loop < 0x10); loop++) {

@@ -274,7 +274,7 @@ void TreeSim::TreeSim(short maxStackSize, short startTreeID, /*unpacked*/ class 
 	__asm        test   eax, eax;
 	__asm        jg     _T51;
 
-	doAssert(0x8c085, 0x5bde9c, 0xd, 0x5bdea8);
+	doAssert(0x5bdea8, 0xd, 0x5bde9c, 0x8c085);
 // LINE 14:
 _T51:
 	__asm        mov    eax, this;
@@ -289,7 +289,7 @@ _T51:
 // LINE 15:
 	this->fStackSize = 0x0;
 // LINE 16:
-	this->TreeSim::Reset(reinterpret_cast<uint32_t>(startTreeID), startBehavior);
+	this->TreeSim::Reset(startBehavior, reinterpret_cast<uint32_t>(startTreeID));
 // LINE 17:
 	return;
 
@@ -313,7 +313,7 @@ void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 	__asm        test   eax, eax;
 	__asm        jg     _T51;
 
-	doAssert(0x8c085, 0x5bded0, 0x1a, 0x5bdedc);
+	doAssert(0x5bdedc, 0x1a, 0x5bded0, 0x8c085);
 // LINE 27:
 _T51:
 	__asm        mov    eax, this;
@@ -357,7 +357,7 @@ void TreeSim::Reset(/*unpacked*/ class Behavior *startBehavior, short startTreeI
 	__asm        test   eax, eax;
 	__asm        jg     _T41;
 _T28:
-	doAssert(0x8c085, 0x5bdf04, 0x2c, 0x5bdf10);
+	doAssert(0x5bdf10, 0x2c, 0x5bdf04, 0x8c085);
 // LINE 45:
 _T41:
 	this->fStackSize = 0x1;
@@ -775,7 +775,7 @@ __DO_23:
 		_T1bd:
 			done = 0x1;
 		// LINE 168:
-			doAssert(0x8c085, 0x5bdf38, 0xa8, 0x5bdf48);
+			doAssert(0x5bdf48, 0xa8, 0x5bdf38, 0x8c085);
 		// LINE 169:
 			__asm        jmp    _T214;
 		// LINE 170:
@@ -950,7 +950,7 @@ void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
 	__asm        test   eax, eax;
 	__asm        jg     _T37;
 
-	doAssert(0x8c085, 0x5bdf70, 0xf0, 0x5bdf7c);
+	doAssert(0x5bdf7c, 0xf0, 0x5bdf70, 0x8c085);
 // LINE 241:
 _T37:
 	__asm        mov    eax, this;
@@ -960,7 +960,7 @@ _T37:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T69;
 
-	doAssert(0x8c085, 0x5bdfa4, 0xf1, 0x5bdfb4);
+	doAssert(0x5bdfb4, 0xf1, 0x5bdfa4, 0x8c085);
 // LINE 243:
 _T69:
 	__asm        mov    eax, this;
@@ -1051,7 +1051,7 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        mov    ecx, [ecx+0x14];
 	__asm        mov    [ecx+0xA], ax;
 // LINE 280:
-	ret = this->TreeSim::Simulate(reinterpret_cast<uint32_t>(bOnceOnly), ticks);
+	ret = this->TreeSim::Simulate(ticks, reinterpret_cast<uint32_t>(bOnceOnly));
 // LINE 282:
 	this->fExt->fStack = savestack;
 // LINE 283:

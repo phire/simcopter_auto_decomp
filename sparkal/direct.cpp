@@ -5571,7 +5571,7 @@ int32_t Directory::CreateNewEntry(/*packed*/ class basic_string<char>& sName, lo
 	/*bp-0x10*/  /*packed*/ class DirectoryEntry tempDirectoryEntry; // 0x10 bytes
 
 // LINE 487:
-	tempDirectoryEntry.directoryParent->DirectoryEntry::DirectoryEntry(lType, sName, this);
+	tempDirectoryEntry.directoryParent->DirectoryEntry::DirectoryEntry(this, sName, lType);
 // LINE 488:
 	__asm        lea    ecx, tempDirectoryEntry.directoryParent;
 	__asm        call   DirectoryEntry::CreatePhysicalEntry;

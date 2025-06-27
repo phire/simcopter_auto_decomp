@@ -850,7 +850,7 @@ IntersectionKludge:
 	__asm        cmp    ecx, edx;
 	__asm        je     _T1d8;
 
-	_assert(0x11c, 0x5b80f0, 0x5b8114);
+	_assert(0x5b8114, 0x5b80f0, 0x11c);
 	__asm        jmp    _T1dd;
 _T1d8:
 	__asm        jmp    _T1dd;
@@ -865,7 +865,7 @@ _T1dd:
 	__asm        cmp    ecx, edx;
 	__asm        je     _T211;
 
-	_assert(0x11d, 0x5b8130, 0x5b8154);
+	_assert(0x5b8154, 0x5b8130, 0x11d);
 	__asm        jmp    _T216;
 _T211:
 	__asm        jmp    _T216;
@@ -992,7 +992,7 @@ void RoadGraph::PickPlaceOnRoad(/*packed*/ struct Goal *pGoal, int32_t x, int32_
 	/*bp-0x18*/  enum DirectionTypes tempDir;
 
 // LINE 338:
-	yindex = this->RoadGraph::FindYIndexToVertex(y, x);
+	yindex = this->RoadGraph::FindYIndexToVertex(x, y);
 // LINE 339:
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
@@ -1029,7 +1029,7 @@ __DO_44:
 			__asm        cmp    dword ptr [ebp-0x24], 0x10;
 			__asm        jle    _T92;
 		// LINE 354:
-			_assert(0x162, 0x5b8170, 0x5b8194);
+			_assert(0x5b8194, 0x5b8170, 0x162);
 			__asm        jmp    _T92;
 
 			__asm        jmp    _T92;
@@ -2037,7 +2037,7 @@ _T69:
 	__asm        cmp    edx, eax;
 	__asm        jg     _Ta1;
 
-	_assert(0x25b, 0x5b819c, 0x5b81c0);
+	_assert(0x5b81c0, 0x5b819c, 0x25b);
 	__asm        jmp    _Ta6;
 _Ta1:
 	__asm        jmp    _Ta6;
@@ -2106,7 +2106,7 @@ _LOOP_83:
 	for (;;) {
 		// LINE 655:
 		_LOOP_83:
-			result = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(here.y), reinterpret_cast<uint32_t>(here.x), returnDir, currentDir);
+			result = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(here.y));
 		// LINE 658:
 			__asm        mov    eax, returnDir;
 			__asm        mov    [ebp-0x20], eax;
@@ -2199,7 +2199,7 @@ _LOOP_83:
 		// LINE 686:
 			goal.elementIndex = 0x0;
 		// LINE 688:
-			this->RoadGraph::FindPlaceOnRoad(reinterpret_cast<uint32_t>(startLoc.x), goal);
+			this->RoadGraph::FindPlaceOnRoad(goal, reinterpret_cast<uint32_t>(startLoc.x));
 		// LINE 689:
 			__asm        jmp    _T1d1;
 		// LINE 694:
@@ -2688,7 +2688,7 @@ _LOOP_3c:
 	for (;;) {
 		// LINE 776:
 		_LOOP_3c:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
 		// LINE 778:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _T6b;
@@ -3561,7 +3561,7 @@ _LOOP_76:
 	for (;;) {
 		// LINE 900:
 		_LOOP_76:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
 		// LINE 901:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _Ta0;
@@ -3913,13 +3913,13 @@ _LOOP_218:
 			__asm        cmp    ecx, 0x7D00;
 			__asm        jl     _T4b3;
 
-			_assert(0x3ca, 0x5b81d8, 0x5b81fc);
+			_assert(0x5b81fc, 0x5b81d8, 0x3ca);
 			__asm        jmp    _T4b8;
 		_T4b3:
 			__asm        jmp    _T4b8;
 		// LINE 972:
 		_T4b8:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
 		// LINE 973:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _T4e2;
@@ -4575,7 +4575,7 @@ _T1c:
 	__asm        test   eax, eax;
 	__asm        je     _T2b8;
 // LINE 1105:
-	yindex = this->RoadGraph::FindYIndexToVertex((y - 0x2), x);
+	yindex = this->RoadGraph::FindYIndexToVertex(x, (y - 0x2));
 // LINE 1106:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -5194,7 +5194,7 @@ _T803:
 	__asm        test   eax, eax;
 	__asm        je     _Taa1;
 // LINE 1138:
-	yindex = this->RoadGraph::FindYIndexToVertex(y, (x - 0x2));
+	yindex = this->RoadGraph::FindYIndexToVertex((x - 0x2), y);
 // LINE 1139:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
@@ -6203,7 +6203,7 @@ _T1519:
 	__asm        jmp    _T15ab;
 // LINE 1190:
 _T151e:
-	_assert(0x4a6, 0x5b8210, 0x5b8234);
+	_assert(0x5b8234, 0x5b8210, 0x4a6);
 	__asm        jmp    _T153f;
 
 	__asm        jmp    _T153f;
@@ -6337,7 +6337,7 @@ _Te7:
 	__asm        test   cl, 2;
 	__asm        je     _T126;
 // LINE 1222:
-	this->RoadGraph::MakeRoad(0x1, y, (x + stepSize), pRGV);
+	this->RoadGraph::MakeRoad(pRGV, (x + stepSize), y, 0x1);
 // LINE 1225:
 _T126:
 	__asm        mov    eax, 0x7F;
@@ -6353,7 +6353,7 @@ _T126:
 	__asm        test   cl, 4;
 	__asm        je     _T165;
 // LINE 1228:
-	this->RoadGraph::MakeRoad(0x2, (y + stepSize), x, pRGV);
+	this->RoadGraph::MakeRoad(pRGV, x, (y + stepSize), 0x2);
 // LINE 1231:
 _T165:
 	__asm        mov    eax, Offset;
@@ -6684,7 +6684,7 @@ _LOOP_357:
 	for (;;) {
 		// LINE 1300:
 		_LOOP_357:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
 		// LINE 1301:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _T381;
@@ -6978,7 +6978,7 @@ _LOOP_6bf:
 	for (;;) {
 		// LINE 1339:
 		_LOOP_6bf:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x), returnDir, currentDir);
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
 		// LINE 1341:
 			__asm        cmp    deadEnd, 0;
 			__asm        je     _T799;
@@ -7454,7 +7454,7 @@ _LOOP_27:
 			__asm        jne    _T11f;
 		// LINE 1431:
 		_Tfe:
-			_assert(0x597, 0x5b823c, 0x5b8260);
+			_assert(0x5b8260, 0x5b823c, 0x597);
 			__asm        jmp    _T11f;
 
 			__asm        jmp    _T11f;

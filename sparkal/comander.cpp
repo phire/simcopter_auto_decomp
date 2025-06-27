@@ -163,7 +163,7 @@ unsigned long CDefaultCommander::OnWindowActivate() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T32;
 
-	_assert(0x51, 0x59a29c, 0x59a2c4);
+	_assert(0x59a2c4, 0x59a29c, 0x51);
 	__asm        jmp    _T37;
 _T32:
 	__asm        jmp    _T37;

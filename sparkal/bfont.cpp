@@ -1444,7 +1444,7 @@ _T305:
 _T335:
 	__asm        jmp    _T33a;
 _T33a:
-	this->BitmappedFont::GetIniFileLong((this + 0x20), this->sFontInfoFilePath.c_str_ptr, 0x599354, 0x59935c);
+	this->BitmappedFont::GetIniFileLong(0x59935c, 0x599354, this->sFontInfoFilePath.c_str_ptr, (this + 0x20));
 // LINE 93:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1538,7 +1538,7 @@ _T485:
 _T4b5:
 	__asm        jmp    _T4ba;
 _T4ba:
-	this->BitmappedFont::GetIniFileLong((this + 0x24), this->sFontInfoFilePath.c_str_ptr, 0x599364, 0x59936c);
+	this->BitmappedFont::GetIniFileLong(0x59936c, 0x599364, this->sFontInfoFilePath.c_str_ptr, (this + 0x24));
 // LINE 94:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1632,7 +1632,7 @@ _T605:
 _T635:
 	__asm        jmp    _T63a;
 _T63a:
-	this->BitmappedFont::GetIniFileLong((this + 0x18), this->sFontInfoFilePath.c_str_ptr, 0x599378, 0x599384);
+	this->BitmappedFont::GetIniFileLong(0x599384, 0x599378, this->sFontInfoFilePath.c_str_ptr, (this + 0x18));
 // LINE 95:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1712,15 +1712,15 @@ _T757:
 _T787:
 	__asm        jmp    _T78c;
 _T78c:
-	this->BitmappedFont::GetIniFileLong((this + 0x1c), this->sFontInfoFilePath.c_str_ptr, 0x599390, 0x5993a0);
+	this->BitmappedFont::GetIniFileLong(0x5993a0, 0x599390, this->sFontInfoFilePath.c_str_ptr, (this + 0x1c));
 // LINE 96:
-	this->BitmappedFont::GetIniFileLong((this + 0x28), (this + 0x4)->basic_string<char>::c_str((this + 0x28)), 0x5993ac, 0x5993bc);
+	this->BitmappedFont::GetIniFileLong(0x5993bc, 0x5993ac, (this + 0x4)->basic_string<char>::c_str((this + 0x28)), (this + 0x28));
 // LINE 97:
-	this->BitmappedFont::GetIniFileLong((this + 0x2c), (this + 0x4)->basic_string<char>::c_str((this + 0x2c)), 0x5993c8, 0x5993d8);
+	this->BitmappedFont::GetIniFileLong(0x5993d8, 0x5993c8, (this + 0x4)->basic_string<char>::c_str((this + 0x2c)), (this + 0x2c));
 // LINE 98:
-	this->BitmappedFont::GetIniFileString(0x1000, chRectangleBuffer[0], (this + 0x4)->basic_string<char>::c_str(0x1000, chRectangleBuffer[0]), 0x5993e4, 0x5993f0);
+	this->BitmappedFont::GetIniFileString(0x5993f0, 0x5993e4, (this + 0x4)->basic_string<char>::c_str(chRectangleBuffer[0], 0x1000), chRectangleBuffer[0], 0x1000);
 // LINE 99:
-	this->BitmappedFont::GetIniFileString(0x100, szBitmapFile[0], (this + 0x4)->basic_string<char>::c_str(0x100, szBitmapFile[0]), 0x5993fc, 0x599410);
+	this->BitmappedFont::GetIniFileString(0x599410, 0x5993fc, (this + 0x4)->basic_string<char>::c_str(szBitmapFile[0], 0x100), szBitmapFile[0], 0x100);
 // LINE 100:
 	__asm        jmp    _T876;
 _T876:
@@ -1746,7 +1746,7 @@ _FOR_8ca:
 _FOR_NEXT_8ca:
 	for (; (iEnd > i); i++) {
 		// LINE 106:
-			sscanf(rectTemp.bottom, rectTemp.right, rectTemp.top, rectTemp.left, 0x59941c, chCurrentRectangle);
+			sscanf(chCurrentRectangle, 0x59941c, rectTemp.left, rectTemp.top, rectTemp.right, rectTemp.bottom);
 		// LINE 107:
 			__asm        mov    eax, this;
 			__asm        mov    ecx, this;
@@ -1783,7 +1783,7 @@ _FOR_NEXT_8ca:
 		_T992:
 			__asm        jmp    _T997;
 		_T997:
-			(this + 0x30)->vector<MRect>::insert_aux(rectTemp.left, this->rectCharacterCells.finish);
+			(this + 0x30)->vector<MRect>::insert_aux(this->rectCharacterCells.finish, rectTemp.left);
 		_T9b6:
 			__asm        jmp    _T9bb;
 		// LINE 109:
@@ -2759,7 +2759,7 @@ _T29b:
 _T2cb:
 	__asm        jmp    _T2d0;
 _T2d0:
-	this->BitmappedFont::GetPathForBitmapFile(szBitmapFilePath[0], this->sFontBitmapFile.c_str_ptr, this->sFontInfoFilePath.c_str_ptr);
+	this->BitmappedFont::GetPathForBitmapFile(this->sFontInfoFilePath.c_str_ptr, this->sFontBitmapFile.c_str_ptr, szBitmapFilePath[0]);
 // LINE 196:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -2931,7 +2931,7 @@ long BitmappedFont::GetStringVisibleWidth(char * chText, const unsigned long nSt
 	/*bp-0x8*/   char * chTextEnd;
 
 // LINE 252:
-	lWidth = this->BitmappedFont::GetStringWidth(nStringLength, chText);
+	lWidth = this->BitmappedFont::GetStringWidth(chText, nStringLength);
 // LINE 253:
 	__asm        mov    eax, nStringLength;
 	__asm        dec    eax;
@@ -3062,7 +3062,7 @@ long BitmappedFont::CalculateNumberOfLines(char * chText, const unsigned long nS
 __WHILE_1c:
 	while ((chText < chTextEnd)) {
 		// LINE 284:
-			lCurrentLineStringLength = this->BitmappedFont::CalculateCharsToFitInWidth(nWidth, chText);
+			lCurrentLineStringLength = this->BitmappedFont::CalculateCharsToFitInWidth(chText, nWidth);
 		// LINE 285:
 			chText += lCurrentLineStringLength;
 		// LINE 286:
@@ -3665,9 +3665,9 @@ _T3e:
 __WHILE_52:
 	while ((lRectHeight > lCurrentYPosition)) {
 		// LINE 437:
-			lCurrentLineStringLength = this->BitmappedFont::CalculateCharsToFitInWidth(lRectWidth, chText);
+			lCurrentLineStringLength = this->BitmappedFont::CalculateCharsToFitInWidth(chText, lRectWidth);
 		// LINE 438:
-			this->BitmappedFont::DrawTextLine(lCurrentLineStringLength, chText, lCurrentYPosition, lCurrentXPosition, destination);
+			this->BitmappedFont::DrawTextLine(destination, lCurrentXPosition, lCurrentYPosition, chText, lCurrentLineStringLength);
 		// LINE 439:
 			lCurrentYPosition += lCharacterHeight;
 		// LINE 440:
@@ -3706,9 +3706,9 @@ _T3e:
 __WHILE_52:
 	while ((lCurrentYPosition < lRectHeight)) {
 		// LINE 463:
-			lCurrentLineStringLength = this->BitmappedFont::CalculateCharsToFitInWidth(lRectWidth, chText);
+			lCurrentLineStringLength = this->BitmappedFont::CalculateCharsToFitInWidth(chText, lRectWidth);
 		// LINE 464:
-			this->BitmappedFont::DrawTextLineNoClip(lCurrentLineStringLength, chText, lCurrentYPosition, lCurrentXPosition, destination);
+			this->BitmappedFont::DrawTextLineNoClip(destination, lCurrentXPosition, lCurrentYPosition, chText, lCurrentLineStringLength);
 		// LINE 465:
 			lCurrentYPosition += lCharacterHeight;
 		// LINE 466:
@@ -3728,7 +3728,7 @@ void BitmappedFont::DrawTextLineFormat(/*packed*/ class CBackBuffer *destination
 	__asm        test   reinterpret_cast<uint8_t>(nFormat), 1;
 	__asm        je     _T7d;
 // LINE 487:
-	nVisibleStringWidth = this->BitmappedFont::GetStringVisibleWidth(nVisibleStringLength, nStringLength, chText);
+	nVisibleStringWidth = this->BitmappedFont::GetStringVisibleWidth(chText, nStringLength, nVisibleStringLength);
 // LINE 488:
 	__asm        cmp    nVisibleStringLength, 0;
 	__asm        je     _T78;
@@ -3767,23 +3767,23 @@ _T7d:
 	__asm        test   reinterpret_cast<uint8_t>(nFormat), 8;
 	__asm        je     _Td2;
 // LINE 494:
-	nVisibleStringWidth = this->BitmappedFont::GetStringVisibleWidth(nVisibleStringLength, nStringLength, chText);
+	nVisibleStringWidth = this->BitmappedFont::GetStringVisibleWidth(chText, nStringLength, nVisibleStringLength);
 // LINE 495:
 	__asm        cmp    nVisibleStringLength, 0;
 	__asm        je     _Tcd;
 // LINE 498:
-	this->BitmappedFont::DrawTextLine(nVisibleStringLength, chText, rectLine.top, (rectLine.right - nVisibleStringWidth), destination);
+	this->BitmappedFont::DrawTextLine(destination, (rectLine.right - nVisibleStringWidth), rectLine.top, chText, nVisibleStringLength);
 // LINE 500:
 _Tcd:
 	__asm        jmp    _T111;
 // LINE 501:
 _Td2:
-	this->BitmappedFont::GetStringVisibleWidth(nVisibleStringLength, nStringLength, chText);
+	this->BitmappedFont::GetStringVisibleWidth(chText, nStringLength, nVisibleStringLength);
 // LINE 502:
 	__asm        cmp    nVisibleStringLength, 0;
 	__asm        je     _T111;
 // LINE 503:
-	this->BitmappedFont::DrawTextLine(nStringLength, chText, rectLine.top, rectLine.left, destination);
+	this->BitmappedFont::DrawTextLine(destination, rectLine.left, rectLine.top, chText, nStringLength);
 // LINE 505:
 _T111:
 	return;
@@ -3798,7 +3798,7 @@ void BitmappedFont::DrawTextLineFormatNoClip(/*packed*/ class CBackBuffer *desti
 	__asm        test   reinterpret_cast<uint8_t>(nFormat), 1;
 	__asm        je     _T7d;
 // LINE 524:
-	nVisibleStringWidth = this->BitmappedFont::GetStringVisibleWidth(nVisibleStringLength, nStringLength, chText);
+	nVisibleStringWidth = this->BitmappedFont::GetStringVisibleWidth(chText, nStringLength, nVisibleStringLength);
 // LINE 525:
 	__asm        cmp    nVisibleStringLength, 0;
 	__asm        je     _T78;
@@ -3837,23 +3837,23 @@ _T7d:
 	__asm        test   reinterpret_cast<uint8_t>(nFormat), 8;
 	__asm        je     _Td2;
 // LINE 531:
-	nVisibleStringWidth = this->BitmappedFont::GetStringVisibleWidth(nVisibleStringLength, nStringLength, chText);
+	nVisibleStringWidth = this->BitmappedFont::GetStringVisibleWidth(chText, nStringLength, nVisibleStringLength);
 // LINE 532:
 	__asm        cmp    nVisibleStringLength, 0;
 	__asm        je     _Tcd;
 // LINE 535:
-	this->BitmappedFont::DrawTextLineNoClip(nVisibleStringLength, chText, rectLine.top, (rectLine.right - nVisibleStringWidth), destination);
+	this->BitmappedFont::DrawTextLineNoClip(destination, (rectLine.right - nVisibleStringWidth), rectLine.top, chText, nVisibleStringLength);
 // LINE 537:
 _Tcd:
 	__asm        jmp    _T111;
 // LINE 538:
 _Td2:
-	this->BitmappedFont::GetStringVisibleWidth(nVisibleStringLength, nStringLength, chText);
+	this->BitmappedFont::GetStringVisibleWidth(chText, nStringLength, nVisibleStringLength);
 // LINE 539:
 	__asm        cmp    nVisibleStringLength, 0;
 	__asm        je     _T111;
 // LINE 540:
-	this->BitmappedFont::DrawTextLineNoClip(nStringLength, chText, rectLine.top, rectLine.left, destination);
+	this->BitmappedFont::DrawTextLineNoClip(destination, rectLine.left, rectLine.top, chText, nStringLength);
 // LINE 542:
 _T111:
 	return;
@@ -4097,13 +4097,13 @@ int32_t BitmappedFont::GetPathForBitmapFile(char * chFontInfoPath, char * chBitm
 	/*bp-0x304*/ char szFileExtension[256]; // 0x100 bytes
 
 // LINE 684:
-	_splitpath(szFileExtension[0], szFileName[0], szDirectory[0], szDrive[0], chFontInfoPath);
+	_splitpath(chFontInfoPath, szDrive[0], szDirectory[0], szFileName[0], szFileExtension[0]);
 // LINE 685:
-	strcpy(szDrive[0], chBitmapPath);
+	strcpy(chBitmapPath, szDrive[0]);
 // LINE 686:
-	strcat(szDirectory[0], chBitmapPath);
+	strcat(chBitmapPath, szDirectory[0]);
 // LINE 687:
-	strcat(chBitmapFile, chBitmapPath);
+	strcat(chBitmapPath, chBitmapFile);
 // LINE 689:
 	return 0x1;
 // LINE 690:

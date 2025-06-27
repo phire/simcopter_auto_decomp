@@ -177,7 +177,7 @@ short S3TerrainInitMap() {
 // LINE 173:
 	G_tshift = 0x8;
 // LINE 176:
-	G_tmap = S2AllocMem(((G_tdim * G_tdim) + (G_tdim * G_tdim)), 0x5b5d68, G_citymempool);
+	G_tmap = S2AllocMem(G_citymempool, 0x5b5d68, ((G_tdim * G_tdim) + (G_tdim * G_tdim)));
 // LINE 177:
 	__asm        cmp    G_tmap, 0;
 	__asm        jne    _T7c;
@@ -203,7 +203,7 @@ _FOR_ad:
 		_FOR_c9:
 			for (y = 0x0; (y < 0x80); y++) {
 				// LINE 193:
-					alt = GetAltitude(y, x);
+					alt = GetAltitude(x, y);
 				// LINE 195:
 					__asm        mov    eax, x;
 					__asm        mov    eax, TerrainMap[eax*4];
@@ -822,7 +822,7 @@ _FOR_9c5:
 _Ta28:
 	srand(clock());
 // LINE 344:
-	do_map_square(G_tdim, 0x0, 0x0);
+	do_map_square(0x0, 0x0, G_tdim);
 // LINE 349:
 	__asm        cmp    G_fract_blurr, 1;
 	__asm        jne    _Tbc2;
@@ -1753,7 +1753,7 @@ _FOR_1606:
 		//  [0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 		// LINE 562:
 		_T16be:
-			alt = GetAltitude(y, x);
+			alt = GetAltitude(x, y);
 		// LINE 563:
 			__asm        mov    eax, x;
 			__asm        mov    eax, TerrainMap[eax*4];
@@ -4763,13 +4763,13 @@ _Ta75:
 	__asm        mov    [edx+ecx], ax;
 // LINE 1095:
 _Tb01:
-	do_map_square(reinterpret_cast<uint32_t>(midp), reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(x));
+	do_map_square(reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(midp));
 // LINE 1096:
-	do_map_square(reinterpret_cast<uint32_t>(midp), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), reinterpret_cast<uint32_t>(x));
+	do_map_square(reinterpret_cast<uint32_t>(x), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), reinterpret_cast<uint32_t>(midp));
 // LINE 1097:
-	do_map_square(reinterpret_cast<uint32_t>(midp), reinterpret_cast<uint32_t>(y), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)));
+	do_map_square(((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)), reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(midp));
 // LINE 1098:
-	do_map_square(reinterpret_cast<uint32_t>(midp), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)));
+	do_map_square(((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), reinterpret_cast<uint32_t>(midp));
 // LINE 1100:
 }
 
@@ -4848,7 +4848,7 @@ _FOR_39:
 					__asm        cmp    GridVerts, eax;
 					__asm        jbe    _T99;
 
-					_assert(0x482, 0x5b5d90, 0x5b5db0);
+					_assert(0x5b5db0, 0x5b5d90, 0x482);
 					__asm        jmp    _T9e;
 				_T99:
 					__asm        jmp    _T9e;
@@ -4858,7 +4858,7 @@ _FOR_39:
 					__asm        cmp    GridVertsEnd, eax;
 					__asm        ja     _Tc9;
 
-					_assert(0x483, 0x5b5dd0, 0x5b5df0);
+					_assert(0x5b5df0, 0x5b5dd0, 0x483);
 					__asm        jmp    _Tce;
 				_Tc9:
 					__asm        jmp    _Tce;
@@ -5173,7 +5173,7 @@ _T3dd:
 	__asm        cmp    v, eax;
 	__asm        jae    _T429;
 
-	_assert(0x4ed, 0x5b5e14, 0x5b5e34);
+	_assert(0x5b5e34, 0x5b5e14, 0x4ed);
 	__asm        jmp    _T42e;
 _T429:
 	__asm        jmp    _T42e;
@@ -5183,7 +5183,7 @@ _T42e:
 	__asm        cmp    v, eax;
 	__asm        jb     _T458;
 
-	_assert(0x4ee, 0x5b5e44, 0x5b5e64);
+	_assert(0x5b5e64, 0x5b5e44, 0x4ee);
 	__asm        jmp    _T45d;
 _T458:
 	__asm        jmp    _T45d;
@@ -6104,7 +6104,7 @@ __WHILE_79:
 		// LINE 1844:
 			flags = stobj->user1;
 		// LINE 1850:
-			objy = VRGetObjAlt2(0x0, 0x0, 0x5, 0x3, flags, normz, normy, normx, stobj->mesh);
+			objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, 0x3, 0x5, 0x0, 0x0);
 		// LINE 1852:
 			__asm        mov    eax, objy;
 			__asm        cmp    maxobjy, eax;
@@ -6120,7 +6120,7 @@ _Td5:
 	__asm        cmp    maxobjy, 0;
 	__asm        jne    _Tf9;
 // LINE 1861:
-	alt = S3TerrPrecisionAlt(0x0, cityy, cityx);
+	alt = S3TerrPrecisionAlt(cityx, cityy, 0x0);
 // LINE 1862:
 	__asm        jmp    _T109;
 // LINE 1863:

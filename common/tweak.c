@@ -48,7 +48,7 @@ _FOR_43:
 	}
 // LINE 52:
 _T79:
-	strcpy(pszSection, (((((g_nNextTWKQueueSlot << 0x8) - g_nNextTWKQueueSlot) - g_nNextTWKQueueSlot) + 0x63a860) + 0xcc));
+	strcpy((((((g_nNextTWKQueueSlot << 0x8) - g_nNextTWKQueueSlot) - g_nNextTWKQueueSlot) + 0x63a860) + 0xcc), pszSection);
 // LINE 53:
 	__asm        mov    eax, nNumValues;
 	__asm        mov    ecx, g_nNextTWKQueueSlot;
@@ -74,7 +74,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 // LINE 77:
 	g_nNextTWKErrorSlot = 0x0;
 // LINE 78:
-	GetPathForFile(szFullPath[0], pszTWKFile, 0x0, 0xb);
+	GetPathForFile(0xb, 0x0, pszTWKFile, szFullPath[0]);
 // LINE 80:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -144,7 +144,7 @@ _T128:
 	__asm        cmp    g_nNextTWKQueueSlot, eax;
 	__asm        je     _T173;
 // LINE 93:
-	TWKReadSection(nCt, szSection[0], szTemp[0]);
+	TWKReadSection(szTemp[0], szSection[0], nCt);
 // LINE 95:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -191,7 +191,7 @@ void TWKReadAllFiles(char * pszTWKFile) {
 	/*bp-0x23c*/ char * pszSection;
 
 // LINE 170:
-	GetPathForFile(szFullPath[0], pszTWKFile, 0x0, 0xb);
+	GetPathForFile(0xb, 0x0, pszTWKFile, szFullPath[0]);
 // LINE 171:
 _FOR_32:
 	for (nCt = 0x0; (g_nNextTWKQueueSlot > nCt); nCt++) {
@@ -225,7 +225,7 @@ _FOR_32:
 			pszFile = pszTWKFile;
 		// LINE 184:
 		_Tc3:
-			TWKReadSection(nCt, pszSection, pszFile);
+			TWKReadSection(pszFile, pszSection, nCt);
 	}
 // LINE 191:
 __RETURN:
@@ -241,9 +241,9 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	/*bp-0x164*/ char szKey[50]; // 0x32 bytes
 
 // LINE 211:
-	sprintf(0x59b484, 0x59b48c, szKey[0]);
+	sprintf(szKey[0], 0x59b48c, 0x59b484);
 // LINE 212:
-	GetPathForFile(szFullPath[0], pszFile, 0x0, 0xb);
+	GetPathForFile(0xb, 0x0, pszFile, szFullPath[0]);
 // LINE 213:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -261,7 +261,7 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 _FOR_78:
 	for (nCt2 = 0x0; (nNumCtrl > nCt2); nCt2++) {
 		// LINE 217:
-			sprintf(0x59b490, nCt2, 0x59b498, 0x59b4a0, szKey[0]);
+			sprintf(szKey[0], 0x59b4a0, 0x59b498, nCt2, 0x59b490);
 		// LINE 219:
 			__asm        lea    eax, szFullPath[0];
 			__asm        push   eax;
@@ -275,7 +275,7 @@ _FOR_78:
 			__asm        push   eax;
 			__asm        call   dword ptr ds:[0x6C3618];
 		// LINE 220:
-			sprintf(0x59b4bc, nCt2, 0x59b4c8, 0x59b4d0, szKey[0]);
+			sprintf(szKey[0], 0x59b4d0, 0x59b4c8, nCt2, 0x59b4bc);
 		// LINE 222:
 			__asm        lea    eax, szFullPath[0];
 			__asm        push   eax;

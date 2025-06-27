@@ -1041,7 +1041,7 @@ _FOR_9d:
 					__asm        cmp    nCommand, 0;
 					__asm        je     _T14a;
 				// LINE 215:
-					lValue = 0x604c78->JoystickManager::GetPositionQuantitative(0x1, j, i);
+					lValue = 0x604c78->JoystickManager::GetPositionQuantitative(i, j, 0x1);
 				// LINE 216:
 					__asm        cmp    lValue, 0;
 					__asm        je     _T14a;
@@ -1085,7 +1085,7 @@ _FOR_9d:
 					__asm        cmp    nCommand, 0;
 					__asm        je     _T1cb;
 				// LINE 223:
-					lValue = 0x604c78->JoystickManager::GetButtonState(0x1, (j - 0x6), i);
+					lValue = 0x604c78->JoystickManager::GetButtonState(i, (j - 0x6), 0x1);
 				// LINE 224:
 					__asm        cmp    lValue, 0;
 					__asm        je     _T1cb;
@@ -1656,7 +1656,7 @@ int32_t ReadShortcutPrefsFile(/*packed*/ class list<Shortcut>& shortcutList) {
 	__asm        stosw;
 	__asm        stosb;
 // LINE 556:
-	GetPathForFile(szFilePath[0], SZ_SHORTCUT_PREFS_FILE_NAME, 0x0, 0x9);
+	GetPathForFile(0x9, 0x0, SZ_SHORTCUT_PREFS_FILE_NAME, szFilePath[0]);
 // LINE 557:
 	myMIFF<MIFF+0x00>->MIFF::MIFF(szFilePath[0]);
 // LINE 558:
@@ -1686,7 +1686,7 @@ __DO_b1:
 	do {
 		// LINE 565:
 		__DO_b1:
-			myMIFF<MIFF+0x00>->MIFF::ReadPresentRecordData(0x18, tempShortcut.lDeviceID);
+			myMIFF<MIFF+0x00>->MIFF::ReadPresentRecordData(tempShortcut.lDeviceID, 0x18);
 		// LINE 566:
 			__asm        lea    eax, tempShortcut.lDeviceID;
 			__asm        push   eax;
@@ -1947,7 +1947,7 @@ int32_t WriteShortcutPrefsFile(/*packed*/ class list<Shortcut>& shortcutList) {
 // LINE 589:
 	nReturnValue = 0x0;
 // LINE 591:
-	GetPathForFile(szFilePath[0], SZ_SHORTCUT_PREFS_FILE_NAME, 0x0, 0x9);
+	GetPathForFile(0x9, 0x0, SZ_SHORTCUT_PREFS_FILE_NAME, szFilePath[0]);
 // LINE 592:
 	myMIFF<MIFF+0x00>->MIFF::MIFF(szFilePath[0]);
 // LINE 593:
@@ -2015,7 +2015,7 @@ _LOOP_a0:
 			__asm        mov    ecx, 6;
 			__asm        rep movsd;
 		// LINE 597:
-			myMIFF<MIFF+0x00>->MIFF::WriteDataRecord(0x18, tempShortcut.lDeviceID, 0x0);
+			myMIFF<MIFF+0x00>->MIFF::WriteDataRecord(0x0, tempShortcut.lDeviceID, 0x18);
 		// LINE 598:
 			__asm        mov    eax, tempShortcutListIterator.node;
 			__asm        mov    [ebp-0x290], eax;
@@ -2067,7 +2067,7 @@ void MakeDefaultConfigurableShortcuts(/*packed*/ class list<Shortcut>& shortcutL
 // LINE 620:
 	tempShortcut.lModifiers = 0x0;
 // LINE 622:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 623:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2095,7 +2095,7 @@ _T6d:
 // LINE 627:
 	tempShortcut.lModifiers = 0x0;
 // LINE 629:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 630:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2123,7 +2123,7 @@ _Tc7:
 // LINE 634:
 	tempShortcut.lModifiers = 0x0;
 // LINE 636:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 637:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2151,7 +2151,7 @@ _T121:
 // LINE 641:
 	tempShortcut.lModifiers = 0x0;
 // LINE 643:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 644:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2179,7 +2179,7 @@ _T17b:
 // LINE 648:
 	tempShortcut.lModifiers = 0x0;
 // LINE 650:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 651:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2207,7 +2207,7 @@ _T1d5:
 // LINE 655:
 	tempShortcut.lModifiers = 0x0;
 // LINE 657:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 658:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2235,7 +2235,7 @@ _T22f:
 // LINE 662:
 	tempShortcut.lModifiers = 0x0;
 // LINE 664:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 665:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2263,7 +2263,7 @@ _T289:
 // LINE 669:
 	tempShortcut.lModifiers = 0x0;
 // LINE 671:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 672:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2291,7 +2291,7 @@ _T2e3:
 // LINE 676:
 	tempShortcut.lModifiers = 0x0;
 // LINE 678:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 679:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2319,7 +2319,7 @@ _T346:
 // LINE 683:
 	tempShortcut.lModifiers = 0x0;
 // LINE 685:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 686:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2347,7 +2347,7 @@ _T3af:
 // LINE 690:
 	tempShortcut.lModifiers = 0x0;
 // LINE 692:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 693:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2375,7 +2375,7 @@ _T418:
 // LINE 697:
 	tempShortcut.lModifiers = 0x0;
 // LINE 699:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 700:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2403,7 +2403,7 @@ _T481:
 // LINE 704:
 	tempShortcut.lModifiers = 0x0;
 // LINE 706:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 707:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2431,7 +2431,7 @@ _T4ea:
 // LINE 711:
 	tempShortcut.lModifiers = 0x0;
 // LINE 713:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 714:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2459,7 +2459,7 @@ _T553:
 // LINE 718:
 	tempShortcut.lModifiers = 0x0;
 // LINE 720:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 721:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2487,7 +2487,7 @@ _T5bc:
 // LINE 725:
 	tempShortcut.lModifiers = 0x0;
 // LINE 727:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 728:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2515,7 +2515,7 @@ _T625:
 // LINE 732:
 	tempShortcut.lModifiers = 0x0;
 // LINE 734:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 735:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2543,7 +2543,7 @@ _T68e:
 // LINE 739:
 	tempShortcut.lModifiers = 0x0;
 // LINE 741:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 742:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2571,7 +2571,7 @@ _T6f7:
 // LINE 746:
 	tempShortcut.lModifiers = 0x0;
 // LINE 748:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 749:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2599,7 +2599,7 @@ _T760:
 // LINE 753:
 	tempShortcut.lModifiers = 0x0;
 // LINE 755:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 756:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2664,7 +2664,7 @@ _T865:
 // LINE 760:
 	tempShortcut.lModifiers = 0x0;
 // LINE 762:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 763:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2692,7 +2692,7 @@ _T8ce:
 // LINE 767:
 	tempShortcut.lModifiers = 0x0;
 // LINE 769:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 770:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2757,7 +2757,7 @@ _T9d3:
 // LINE 774:
 	tempShortcut.lModifiers = 0x0;
 // LINE 776:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 777:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2822,7 +2822,7 @@ _Tad8:
 // LINE 781:
 	tempShortcut.lModifiers = 0x0;
 // LINE 783:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 784:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2850,7 +2850,7 @@ _Tb41:
 // LINE 788:
 	tempShortcut.lModifiers = 0x0;
 // LINE 790:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 791:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2915,7 +2915,7 @@ _Tc46:
 // LINE 795:
 	tempShortcut.lModifiers = 0x0;
 // LINE 797:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 798:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -2980,7 +2980,7 @@ _Td4b:
 // LINE 802:
 	tempShortcut.lModifiers = 0x0;
 // LINE 804:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 805:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3008,7 +3008,7 @@ _Tdb4:
 // LINE 809:
 	tempShortcut.lModifiers = 0x0;
 // LINE 811:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 812:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3073,7 +3073,7 @@ _Teb9:
 // LINE 816:
 	tempShortcut.lModifiers = 0x0;
 // LINE 818:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 819:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3101,7 +3101,7 @@ _Tf22:
 // LINE 823:
 	tempShortcut.lModifiers = 0x0;
 // LINE 825:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 826:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3166,7 +3166,7 @@ _T1027:
 // LINE 830:
 	tempShortcut.lModifiers = 0x0;
 // LINE 832:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 833:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3231,7 +3231,7 @@ _T112c:
 // LINE 837:
 	tempShortcut.lModifiers = 0x0;
 // LINE 839:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 840:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3259,7 +3259,7 @@ _T1195:
 // LINE 844:
 	tempShortcut.lModifiers = 0x0;
 // LINE 846:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 847:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3324,7 +3324,7 @@ _T129a:
 // LINE 851:
 	tempShortcut.lModifiers = 0x0;
 // LINE 853:
-	GetPushAndIgnoreSettingsForCommand(tempShortcut.lIgnoreModifiers, tempShortcut.lPush, tempShortcut.lCommand);
+	GetPushAndIgnoreSettingsForCommand(tempShortcut.lCommand, tempShortcut.lPush, tempShortcut.lIgnoreModifiers);
 // LINE 854:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3981,7 +3981,7 @@ void DeleteShortcutPrefsFile() {
 	__asm        stosw;
 	__asm        stosb;
 // LINE 971:
-	GetPathForFile(szFilePath[0], SZ_SHORTCUT_PREFS_FILE_NAME, 0x0, 0x9);
+	GetPathForFile(0x9, 0x0, SZ_SHORTCUT_PREFS_FILE_NAME, szFilePath[0]);
 // LINE 972:
 	remove(szFilePath[0]);
 	__asm        jmp    _T56;
@@ -4057,7 +4057,7 @@ _T9b:
 	return 0x0;
 // LINE 1005:
 _Tb9:
-	GetPushAndIgnoreSettingsForCommand((shortcutToValidate + 0x14), (shortcutToValidate + 0x10), shortcutToValidate.lCommand);
+	GetPushAndIgnoreSettingsForCommand(shortcutToValidate.lCommand, (shortcutToValidate + 0x10), (shortcutToValidate + 0x14));
 // LINE 1006:
 	return 0x1;
 // LINE 1007:

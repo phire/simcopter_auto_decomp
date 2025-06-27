@@ -150,7 +150,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID, short n
 	__asm        cmp    eax, ecx;
 	__asm        je     _T4e;
 // LINE 26:
-	doAssert(0x8c085, 0x5bf478, 0x1a, 0x5bf498);
+	doAssert(0x5bf498, 0x1a, 0x5bf478, 0x8c085);
 // LINE 28:
 _T4e:
 	return;
@@ -168,10 +168,10 @@ void StringSet::LoadStrings(short resID) {
 	__asm        test   eax, eax;
 	__asm        jne    _T3a;
 
-	doAssert(0x8c085, 0x5bf4bc, 0x21, 0x5bf4cc);
+	doAssert(0x5bf4cc, 0x21, 0x5bf4bc, 0x8c085);
 // LINE 34:
 _T3a:
-	this->fStringHandle = this->fResFile->FlatResFile::GetByID(0x565ba0, reinterpret_cast<uint32_t>(resID), 0x53545223);
+	this->fStringHandle = this->fResFile->FlatResFile::GetByID(0x53545223, reinterpret_cast<uint32_t>(resID), 0x565ba0);
 // LINE 36:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -183,7 +183,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _Ta0;
 
-	doAssert(0x8c085, 0x5bf4f0, 0x27, 0x5bf510);
+	doAssert(0x5bf510, 0x27, 0x5bf4f0, 0x8c085);
 // LINE 42:
 _Ta0:
 	__asm        mov    eax, this;
@@ -242,7 +242,7 @@ unsigned char * StringSet::GetString(short which) {
 	__asm        jge    _FOR_62;
 // LINE 67:
 _T29:
-	doAssert(0x8c085, 0x5bf534, 0x43, 0x5bf54c);
+	doAssert(0x5bf54c, 0x43, 0x5bf534, 0x8c085);
 // LINE 68:
 	return 0x0;
 // LINE 74:

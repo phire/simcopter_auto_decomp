@@ -147,7 +147,7 @@ long FlatFile::Open(char * name) {
 	/*bp-0x100*/ unsigned char pstrbuff[256]; // 0x100 bytes
 
 // LINE 54:
-	Memory::BlockMove(0x100, pstrbuff[0], name);
+	Memory::BlockMove(name, pstrbuff[0], 0x100);
 // LINE 55:
 	CtoPstr(pstrbuff[0]);
 // LINE 56:
@@ -209,17 +209,17 @@ _FOR_COND_5e:
 	__asm        cmp    edx, 0x3A;
 	__asm        jne    _Ta8;
 // LINE 75:
-	doAssert(0x8c085, 0x5bdde0, 0x4b, 0x5bddec);
+	doAssert(0x5bddec, 0x4b, 0x5bdde0, 0x8c085);
 // LINE 77:
 _Ta8:
 	__asm        jmp    _FOR_NEXT_5e;
 // LINE 80:
 _Tad:
-	Memory::BlockMove(0x100, cstrbuff[0], name);
+	Memory::BlockMove(name, cstrbuff[0], 0x100);
 // LINE 81:
 	PtoCstr(cstrbuff[0]);
 // LINE 82:
-	this->fFile = fopen(0x5bde14, cstrbuff[0]);
+	this->fFile = fopen(cstrbuff[0], 0x5bde14);
 // LINE 83:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0;
@@ -256,7 +256,7 @@ _T16c:
 	__asm        jmp    _T1b0;
 // LINE 104:
 _T195:
-	Memory::BlockMove(0x100, (this + 0x8), name);
+	Memory::BlockMove(name, (this + 0x8), 0x100);
 // LINE 107:
 _T1b0:
 	return err;
@@ -291,7 +291,7 @@ long FlatFile::Close() {
 	__asm        test   eax, eax;
 	__asm        jne    _T38;
 
-	doAssert(0x8c085, 0x5bde18, 0x76, 0x5bde34);
+	doAssert(0x5bde34, 0x76, 0x5bde18, 0x8c085);
 // LINE 131:
 _T38:
 	__asm        mov    eax, this;
@@ -355,7 +355,7 @@ long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 	return 0xffffffcf;
 // LINE 172:
 _T29:
-	actualSize = fread(this->fFile, blockSize[0], 0x1, buffer);
+	actualSize = fread(buffer, 0x1, blockSize[0], this->fFile);
 // LINE 173:
 	__asm        mov    eax, blockSize;
 	__asm        mov    ecx, actualSize;
@@ -488,7 +488,7 @@ long FlatFile::Read4(long * val) {
 // LINE 244:
 	size = 0x4;
 // LINE 245:
-	err = this->FlatFile::ReadBlock(size, val);
+	err = this->FlatFile::ReadBlock(val, size);
 // LINE 246:
 	__asm        cmp    err, 0;
 	__asm        jne    _T3c;
@@ -508,7 +508,7 @@ long FlatFile::Read2(short * val) {
 // LINE 252:
 	size = 0x2;
 // LINE 253:
-	err = this->FlatFile::ReadBlock(size, val);
+	err = this->FlatFile::ReadBlock(val, size);
 // LINE 254:
 	__asm        cmp    err, 0;
 	__asm        jne    _T3c;
@@ -528,7 +528,7 @@ long FlatFile::Read1(signed char * val) {
 // LINE 260:
 	size = 0x1;
 // LINE 261:
-	err = this->FlatFile::ReadBlock(size, val);
+	err = this->FlatFile::ReadBlock(val, size);
 // LINE 262:
 	return err;
 // LINE 263:
@@ -568,7 +568,7 @@ __WHILE_13:
 	}
 // LINE 280:
 _T4f:
-	doAssert(0x8c085, 0x5bde5c, 0x118, 0x5bde74);
+	doAssert(0x5bde74, 0x118, 0x5bde5c, 0x8c085);
 // LINE 281:
 	return;
 }

@@ -606,7 +606,7 @@ _Te9:
 	__asm        jmp    _T10f;
 // LINE 189:
 _Tee:
-	_assert(0xbd, 0x5b73f4, 0x5b7418);
+	_assert(0x5b7418, 0x5b73f4, 0xbd);
 	__asm        jmp    _T10f;
 
 	__asm        jmp    _T10f;
@@ -667,7 +667,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x005276b5
 /*packed*/ class BoatClass* BoatClass::CreateInstance(int32_t instanceID) {
 // LINE 282:
-	return BoatClass::CreateInstance(instanceID, -0x1, -0x1);
+	return BoatClass::CreateInstance(-0x1, -0x1, instanceID);
 // LINE 319:
 }
 
@@ -734,7 +734,7 @@ _T98:
 // FUNCTION: COPTER_D 0x00527779
 int32_t BoatClass::Initialize(int32_t instanceID) {
 // LINE 444:
-	return this->BoatClass::InitializeInstance(instanceID, this->currentLocation.y, this->currentLocation.x);
+	return this->BoatClass::InitializeInstance(this->currentLocation.x, this->currentLocation.y, instanceID);
 // LINE 445:
 }
 
@@ -865,7 +865,7 @@ _Tef:
 	__asm        test   eax, eax;
 	__asm        jne    _T11a;
 
-	_assert(0x25d, 0x5b7420, 0x5b7444);
+	_assert(0x5b7444, 0x5b7420, 0x25d);
 	__asm        jmp    _T11f;
 _T11a:
 	__asm        jmp    _T11f;
@@ -931,7 +931,7 @@ _T39:
 	__asm        cmp    dword ptr [eax+0x7B], 0x163;
 	__asm        jne    _T146;
 // LINE 700:
-	this->dyObj.loc.y = S3TerrPrecisionAlt(0x0, this->dyObj.loc.z, this->dyObj.loc.x);
+	this->dyObj.loc.y = S3TerrPrecisionAlt(this->dyObj.loc.x, this->dyObj.loc.z, 0x0);
 // LINE 703:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, LoopTime;
@@ -957,7 +957,7 @@ _T39:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    _Td7;
 
-	_assert(0xba, 0x5b7668, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b7668, 0xba);
 	__asm        jmp    _Tdc;
 _Td7:
 	__asm        jmp    _Tdc;
@@ -967,11 +967,11 @@ _Te1:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    cptr, eax;
 // LINE 709:
-	S3ExplosionSmokeStart(0x9, (this + 0x97), cptr);
+	S3ExplosionSmokeStart(cptr, (this + 0x97), 0x9);
 // LINE 710:
-	S3ExplosionSmokeStart(0x0, (this + 0x97), cptr);
+	S3ExplosionSmokeStart(cptr, (this + 0x97), 0x0);
 // LINE 711:
-	S3DSPlay(0x0, (this + 0x97), 0xf);
+	S3DSPlay(0xf, (this + 0x97), 0x0);
 // LINE 714:
 	KillMissionPeople(this->missionId);
 // LINE 715:
@@ -1019,7 +1019,7 @@ _T159:
 	__asm        neg    eax;
 	__asm        mov    sprayvect.z, eax;
 // LINE 748:
-	S3MissileStart(-0x1, 0x140000, (this + 0x7f), 0x1, sprayvect.x, (this + 0x97), (this + 0x33), 0x7);
+	S3MissileStart(0x7, (this + 0x33), (this + 0x97), sprayvect.x, 0x1, (this + 0x7f), 0x140000, -0x1);
 // LINE 750:
 	this->sprayTimer = 0xe666;
 // LINE 795:
@@ -1153,7 +1153,7 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 // LINE 898:
 	boatLocation.y = ((0x20000000 - this->dyObj.loc.z) >> 0x16);
 // LINE 900:
-	return this->BoatClass::CheckWaterDynamicObjectsAt(boatHeading.x, boatLocation.x);
+	return this->BoatClass::CheckWaterDynamicObjectsAt(boatLocation.x, boatHeading.x);
 // LINE 901:
 }
 
@@ -1196,7 +1196,7 @@ _T48:
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T92;
 
-	_assert(0xba, 0x5b7668, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b7668, 0xba);
 	__asm        jmp    _T97;
 _T92:
 	__asm        jmp    _T97;
@@ -1326,7 +1326,7 @@ _T1d5:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T21f;
 
-	_assert(0xba, 0x5b7668, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b7668, 0xba);
 	__asm        jmp    _T224;
 _T21f:
 	__asm        jmp    _T224;
@@ -1813,7 +1813,7 @@ _T3c:
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x9F], eax;
 // LINE 1272:
-	this->dyObj.loc.y = S3TerrPrecisionAlt(0x0, this->dyObj.loc.z, this->dyObj.loc.x);
+	this->dyObj.loc.y = S3TerrPrecisionAlt(this->dyObj.loc.x, this->dyObj.loc.z, 0x0);
 // LINE 1275:
 	__asm        jmp    _Tad;
 _Tad:
@@ -1969,7 +1969,7 @@ void BoatClass::UnlinkFromCell(const /*packed*/ struct Point2d& point) {
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T55;
 
-	_assert(0xba, 0x5b7668, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b7668, 0xba);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -1982,7 +1982,7 @@ _T5f:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
 
-	_assert(0x55f, 0x5b7458, 0x5b747c);
+	_assert(0x5b747c, 0x5b7458, 0x55f);
 	__asm        jmp    _T90;
 _T8b:
 	__asm        jmp    _T90;
@@ -2017,7 +2017,7 @@ _Tdd:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T105;
 
-	_assert(0x575, 0x5b7488, 0x5b74ac);
+	_assert(0x5b74ac, 0x5b7488, 0x575);
 	__asm        jmp    _T10a;
 _T105:
 	__asm        jmp    _T10a;
@@ -2044,7 +2044,7 @@ void BoatClass::LinkToCell(const /*packed*/ struct Point2d& point) {
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T55;
 
-	_assert(0xba, 0x5b7668, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b7668, 0xba);
 	__asm        jmp    _T5a;
 _T55:
 	__asm        jmp    _T5a;
@@ -2060,7 +2060,7 @@ _T5f:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    _T93;
 
-	_assert(0x58f, 0x5b74b8, 0x5b74dc);
+	_assert(0x5b74dc, 0x5b74b8, 0x58f);
 	__asm        jmp    _T98;
 _T93:
 	__asm        jmp    _T98;
@@ -2131,7 +2131,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const /*packed*/ 
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
 	__asm        jne    _Tb6;
 
-	_assert(0xba, 0x5b7668, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b7668, 0xba);
 	__asm        jmp    _Tbb;
 _Tb6:
 	__asm        jmp    _Tbb;
@@ -2153,7 +2153,7 @@ _Tc0:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        jne    _T110;
 
-	_assert(0xba, 0x5b7668, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b7668, 0xba);
 	__asm        jmp    _T115;
 _T110:
 	__asm        jmp    _T115;
@@ -2175,7 +2175,7 @@ _T11a:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        jne    _T16a;
 
-	_assert(0xba, 0x5b7668, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b7668, 0xba);
 	__asm        jmp    _T16f;
 _T16a:
 	__asm        jmp    _T16f;
@@ -2197,7 +2197,7 @@ _T174:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _T1c4;
 
-	_assert(0xba, 0x5b7668, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b7668, 0xba);
 	__asm        jmp    _T1c9;
 _T1c4:
 	__asm        jmp    _T1c9;
@@ -2958,7 +2958,7 @@ _Tfb:
 	__asm        jmp    _T156;
 // LINE 1753:
 _T108:
-	_assert(0x6d9, 0x5b74fc, 0x5b7520);
+	_assert(0x5b7520, 0x5b74fc, 0x6d9);
 	__asm        jmp    _T129;
 
 	__asm        jmp    _T129;
@@ -2982,7 +2982,7 @@ _T156:
 	__asm        jmp    _T1b5;
 // LINE 1762:
 _T15b:
-	_assert(0x6e2, 0x5b7528, 0x5b754c);
+	_assert(0x5b754c, 0x5b7528, 0x6e2);
 	__asm        jmp    _T17c;
 
 	__asm        jmp    _T17c;
@@ -3188,7 +3188,7 @@ _T79:
 	__asm        test   al, 1;
 	__asm        je     _T112;
 // LINE 1871:
-	MTCreateDOF4x4((this + 0x13), (this + 0xa3));
+	MTCreateDOF4x4((this + 0xa3), (this + 0x13));
 // LINE 1873:
 _T112:
 	return;
@@ -3288,7 +3288,7 @@ _Tc6:
 	__asm        jmp    _T11f;
 // LINE 1921:
 _Tfe:
-	_assert(0x781, 0x5b7554, 0x5b7578);
+	_assert(0x5b7578, 0x5b7554, 0x781);
 	__asm        jmp    _T11f;
 
 	__asm        jmp    _T11f;
@@ -3391,7 +3391,7 @@ _Tc6:
 	__asm        jmp    _T11f;
 // LINE 1971:
 _Tfe:
-	_assert(0x7b3, 0x5b7580, 0x5b75a4);
+	_assert(0x5b75a4, 0x5b7580, 0x7b3);
 	__asm        jmp    _T11f;
 
 	__asm        jmp    _T11f;
@@ -3494,7 +3494,7 @@ _Tc6:
 	__asm        jmp    _T11f;
 // LINE 2026:
 _Tfe:
-	_assert(0x7ea, 0x5b75ac, 0x5b75d0);
+	_assert(0x5b75d0, 0x5b75ac, 0x7ea);
 	__asm        jmp    _T11f;
 
 	__asm        jmp    _T11f;
@@ -3811,7 +3811,7 @@ _LOOP_1ce:
 					__asm        cmp    dword ptr [ebp-0x54], 0;
 					__asm        jne    _T362;
 
-					_assert(0xba, 0x5b7668, 0x5b57b8);
+					_assert(0x5b57b8, 0x5b7668, 0xba);
 					__asm        jmp    _T367;
 				_T362:
 					__asm        jmp    _T367;
@@ -4460,7 +4460,7 @@ _LOOP_41:
 					__asm        cmp    dword ptr [ebp-0x90], 0;
 					__asm        jne    _T681;
 
-					_assert(0xba, 0x5b7668, 0x5b57b8);
+					_assert(0x5b57b8, 0x5b7668, 0xba);
 					__asm        jmp    _T686;
 				_T681:
 					__asm        jmp    _T686;
@@ -4524,7 +4524,7 @@ _LOOP_41:
 					__asm        cmp    dword ptr [ebp-0x94], 0;
 					__asm        jne    _T762;
 
-					_assert(0xba, 0x5b7668, 0x5b57b8);
+					_assert(0x5b57b8, 0x5b7668, 0xba);
 					__asm        jmp    _T767;
 				_T762:
 					__asm        jmp    _T767;
@@ -4649,7 +4649,7 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 	__asm        cmp    object, 0;
 	__asm        jne    _T5d;
 // LINE 2842:
-	_assert(0xb1a, 0x5b75d8, 0x5b75fc);
+	_assert(0x5b75fc, 0x5b75d8, 0xb1a);
 	__asm        jmp    _T56;
 
 	__asm        jmp    _T56;
@@ -4710,7 +4710,7 @@ _Te6:
 	__asm        cmp    dword ptr [eax+0x87], 0;
 	__asm        jne    _T112;
 
-	_assert(0xb39, 0x5b7604, 0x5b7628);
+	_assert(0x5b7628, 0x5b7604, 0xb39);
 	__asm        jmp    _T117;
 _T112:
 	__asm        jmp    _T117;
@@ -4725,7 +4725,7 @@ _T123:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    _T149;
 
-	_assert(0xb40, 0x5b7634, 0x5b7658);
+	_assert(0x5b7658, 0x5b7634, 0xb40);
 	__asm        jmp    _T14e;
 _T149:
 	__asm        jmp    _T14e;
@@ -5037,7 +5037,7 @@ _T2c:
 // FUNCTION: COPTER_D 0x0052ad37
 /*packed*/ struct _DYOBJ_INST* StartCapsizedBoat(long mission_id, int32_t timetolive) {
 // LINE 3148:
-	return BoatClass::StartCapsizedBoat(timetolive, mission_id);
+	return BoatClass::StartCapsizedBoat(mission_id, timetolive);
 // LINE 3149:
 }
 
@@ -5069,7 +5069,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   int32_t i;
 
 // LINE 3207:
-	ret = ReadFirstMIFFChunk(0xe3, 0x62b5f0, 0x424f4154, miffReader);
+	ret = ReadFirstMIFFChunk(miffReader, 0x424f4154, 0x62b5f0, 0xe3);
 // LINE 3208:
 	__asm        cmp    ret, 0;
 	__asm        jne    _FOR_44;
@@ -5217,7 +5217,7 @@ _FOR_44:
 			b->BoatClass::LinkToCell((b + 0x33));
 		// LINE 3247:
 		_T219:
-			ret = ReadNextMIFFChunk(0xe3, 0x62b5f0, 0x424f4154, miffReader);
+			ret = ReadNextMIFFChunk(miffReader, 0x424f4154, 0x62b5f0, 0xe3);
 		// LINE 3249:
 			__asm        cmp    ret, 0;
 			__asm        jne    _T252;

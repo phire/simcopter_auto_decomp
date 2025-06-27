@@ -226,7 +226,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        cmp    Step, 0;
 	__asm        jne    _Tab;
 
-	_assert(0x63, 0x59836c, 0x598394);
+	_assert(0x598394, 0x59836c, 0x63);
 	__asm        jmp    __DO_b0;
 _Tab:
 	__asm        jmp    __DO_b0;

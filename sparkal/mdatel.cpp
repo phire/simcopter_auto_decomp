@@ -542,17 +542,17 @@ _T194:
 	__asm        jmp    _T211;
 // LINE 85:
 _T1a5:
-	sprintf(mm, hh, 0x5972b8, buf1[0]);
+	sprintf(buf1[0], 0x5972b8, hh, mm);
 // LINE 86:
 	__asm        jmp    _T29f;
 // LINE 96:
 _T1c9:
-	sprintf(mm, hh, 0x5972c0, buf1[0]);
+	sprintf(buf1[0], 0x5972c0, hh, mm);
 // LINE 97:
 	__asm        jmp    _T29f;
 // LINE 100:
 _T1ed:
-	sprintf(mm, hh, 0x5972c8, buf1[0]);
+	sprintf(buf1[0], 0x5972c8, hh, mm);
 // LINE 101:
 	__asm        jmp    _T29f;
 _T211:
@@ -585,7 +585,7 @@ _T211:
 //  [0, 0, 0, 1, 2, 2, 3, 4, 4, 5, 15, 15, 6, 6, 6, 15, 7, 15, 8, 9, 9, 10, 15, 15, 15, 15, 15, 15, 15, 15, 11, 15, 12, 13, 13, 14, 14]
 // LINE 104:
 _T29f:
-	s->ostream::operator<<(buf1[0], buf[0])->ostream::operator<<(buf1[0]);
+	s->ostream::operator<<(buf[0], buf1[0])->ostream::operator<<(buf1[0]);
 // LINE 105:
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0x118], eax;
@@ -616,7 +616,7 @@ void MDateLocalized::MDateLocalized() {
 // FUNCTION: COPTER_D 0x0041fe8b
 void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
 
-	this->MDate::MDate(year, day);
+	this->MDate::MDate(day, year);
 	this->nLanguage = 0x0;
 	this-><MDateLocalized+0x00> = 0x58f3d0;
 // LINE 130:
@@ -628,7 +628,7 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
 // FUNCTION: COPTER_D 0x0041fec9
 void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t year) {
 
-	this->MDate::MDate(year, monthName, day);
+	this->MDate::MDate(day, monthName, year);
 	this->nLanguage = 0x0;
 	this-><MDateLocalized+0x00> = 0x58f3d0;
 // LINE 138:
@@ -655,7 +655,7 @@ void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t yea
 // FUNCTION: COPTER_D 0x0041ff30
 void MDateLocalized::MDateLocalized(uint32_t day, uint32_t month, uint32_t year) {
 
-	this->MDate::MDate(year, month, day);
+	this->MDate::MDate(day, month, year);
 	this->nLanguage = 0x0;
 	this-><MDateLocalized+0x00> = 0x58f3d0;
 // LINE 147:
@@ -706,7 +706,7 @@ _T1f:
 	nLanguageToUse = gDefaultLanguage;
 // LINE 176:
 _T31:
-	return MDateLocalized::DayNameLocalized(nLanguageToUse, szDayName, this->MDate::WeekDay(nLanguageToUse, szDayName));
+	return MDateLocalized::DayNameLocalized(this->MDate::WeekDay(szDayName, nLanguageToUse), szDayName, nLanguageToUse);
 // LINE 177:
 }
 
@@ -725,7 +725,7 @@ _T1f:
 	nLanguageToUse = gDefaultLanguage;
 // LINE 189:
 _T31:
-	return MDateLocalized::MonthNameLocalized(nLanguageToUse, szMonthName, this->MDate::Month(nLanguageToUse, szMonthName));
+	return MDateLocalized::MonthNameLocalized(this->MDate::Month(szMonthName, nLanguageToUse), szMonthName, nLanguageToUse);
 // LINE 190:
 }
 
@@ -806,7 +806,7 @@ _T1f:
 	nLanguageToUse = gDefaultLanguage;
 // LINE 227:
 _T31:
-	day = MDateLocalized::DayOfWeekLocalized(nLanguageToUse, dayName);
+	day = MDateLocalized::DayOfWeekLocalized(dayName, nLanguageToUse);
 // LINE 228:
 	__asm        cmp    day, 0;
 	__asm        je     _T66;
@@ -906,7 +906,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 // LINE 288:
 	weekDayNumber--;
 // LINE 289:
-	nFullStringID = LanguageManager::GetFullStringID(nLanguageToUse, (weekDayNumber + 0x1f4));
+	nFullStringID = LanguageManager::GetFullStringID((weekDayNumber + 0x1f4), nLanguageToUse);
 // LINE 290:
 	__asm        push   0xFFF;
 	__asm        mov    eax, szDayName;
@@ -953,7 +953,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 // LINE 308:
 	monthNumber--;
 // LINE 309:
-	nFullStringID = LanguageManager::GetFullStringID(nLanguageToUse, (monthNumber + 0x1fe));
+	nFullStringID = LanguageManager::GetFullStringID((monthNumber + 0x1fe), nLanguageToUse);
 // LINE 310:
 	__asm        push   0xFFF;
 	__asm        mov    eax, szMonthName;
@@ -1012,32 +1012,32 @@ _T24:
 	__asm        jmp    _T155;
 // LINE 340:
 _T2f:
-	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits()), d->MDate::Month(d->MDate::YearLastTwoDigits(), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits())), 0x5972d0, buf[0]);
+	sprintf(buf[0], 0x5972d0, d->MDate::Month(d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits()), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits());
 // LINE 341:
 	__asm        jmp    _T1e0;
 // LINE 356:
 _T60:
-	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits())), 0x5972dc, buf[0]);
+	sprintf(buf[0], 0x5972dc, d->MDate::DayOfMonth(d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits()), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits());
 // LINE 357:
 	__asm        jmp    _T1e0;
 // LINE 366:
 _T91:
-	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits())), 0x5972e8, buf[0]);
+	sprintf(buf[0], 0x5972e8, d->MDate::DayOfMonth(d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits()), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits());
 // LINE 367:
 	__asm        jmp    _T1e0;
 // LINE 382:
 _Tc2:
-	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits())), 0x5972f4, buf[0]);
+	sprintf(buf[0], 0x5972f4, d->MDate::DayOfMonth(d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits()), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits());
 // LINE 383:
 	__asm        jmp    _T1e0;
 // LINE 393:
 _Tf3:
-	sprintf(d->MDate::DayOfMonth(), d->MDate::Month(d->MDate::DayOfMonth()), d->MDate::YearLastTwoDigits(d->MDate::DayOfMonth(), d->MDate::Month(d->MDate::DayOfMonth())), 0x597300, buf[0]);
+	sprintf(buf[0], 0x597300, d->MDate::YearLastTwoDigits(d->MDate::Month(d->MDate::DayOfMonth()), d->MDate::DayOfMonth()), d->MDate::Month(d->MDate::DayOfMonth()), d->MDate::DayOfMonth());
 // LINE 394:
 	__asm        jmp    _T1e0;
 // LINE 401:
 _T124:
-	sprintf(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::DayOfMonth(d->MDate::YearLastTwoDigits(), d->MDate::Month(d->MDate::YearLastTwoDigits())), 0x59730c, buf[0]);
+	sprintf(buf[0], 0x59730c, d->MDate::DayOfMonth(d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits()), d->MDate::Month(d->MDate::YearLastTwoDigits()), d->MDate::YearLastTwoDigits());
 // LINE 402:
 	__asm        jmp    _T1e0;
 _T155:

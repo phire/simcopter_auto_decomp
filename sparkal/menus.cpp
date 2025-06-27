@@ -1195,7 +1195,7 @@ _T17:
 	__asm        jmp    _T1c;
 // LINE 93:
 _T1c:
-	GetPathForFile(szFullSoundPath[0], SZ_MENU_SELECTION_SOUND, 0x0, 0x2);
+	GetPathForFile(0x2, 0x0, SZ_MENU_SELECTION_SOUND, szFullSoundPath[0]);
 // LINE 94:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2612,7 +2612,7 @@ int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
 // FUNCTION: COPTER_D 0x0049ccbb
 void CopterMainMenu::CopterMainMenu(/*packed*/ struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->UserMenuWindow::UserMenuWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, newUserMenuWindowDescription);
+	this->UserMenuWindow::UserMenuWindow(newUserMenuWindowDescription, nNewID, windowNewParent, myNewOwner, bAddToParentList);
 	this->myRatchetImage = 0x0;
 	this->myLightImage = 0x0;
 	this-><CopterMainMenu+0x00> = 0x5913e0;
@@ -2824,7 +2824,7 @@ _T105:
 	__asm        jmp    _T123;
 // LINE 432:
 _T123:
-	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sImageFile.c_str_ptr, sImagePath.c_str_ptr);
 	__asm        jmp    _T13e;
 // LINE 433:
 _T13e:
@@ -2948,7 +2948,7 @@ _T287:
 	__asm        jmp    _T2a5;
 // LINE 437:
 _T2a5:
-	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sImageFile.c_str_ptr, sImagePath.c_str_ptr);
 	__asm        jmp    _T2c0;
 // LINE 438:
 _T2c0:
@@ -3304,7 +3304,7 @@ _Tff:
 	__asm        jmp    _T104;
 // LINE 479:
 _T104:
-	this->CopterMainMenu::GetCoordinatesForLights(rectLightsSource[0].left, ptLightsDestination[0].x);
+	this->CopterMainMenu::GetCoordinatesForLights(ptLightsDestination[0].x, rectLightsSource[0].left);
 // LINE 480:
 _FOR_129:
 	for (i = 0x0; (i < 0x5); i++) {
@@ -3344,7 +3344,7 @@ _FOR_129:
 	}
 // LINE 485:
 _T1b0:
-	this->CopterMainMenu::GetCoordinatesForRatchets(rectRatchetsSource[0].left, ptRatchetsDestination[0].x);
+	this->CopterMainMenu::GetCoordinatesForRatchets(ptRatchetsDestination[0].x, rectRatchetsSource[0].left);
 // LINE 486:
 _FOR_1cf:
 	for (i = 0x0; (i < 0x5); i++) {
@@ -3546,7 +3546,7 @@ void CopterMainMenu::GetCoordinatesForRatchets(/*packed*/ class MPoint *ptDestin
 // FUNCTION: COPTER_D 0x0049da14
 void CopterPlayMenu::CopterPlayMenu(/*packed*/ struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->UserMenuWindow::UserMenuWindow(bAddToParentList, myNewOwner, windowNewParent, nNewID, newUserMenuWindowDescription);
+	this->UserMenuWindow::UserMenuWindow(newUserMenuWindowDescription, nNewID, windowNewParent, myNewOwner, bAddToParentList);
 	this->myRatchetImage = 0x0;
 	this->myBackgroundImage = 0x0;
 	this-><CopterPlayMenu+0x00> = 0x5914c8;
@@ -3670,7 +3670,7 @@ _T105:
 	__asm        jmp    _T123;
 // LINE 637:
 _T123:
-	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sImageFile.c_str_ptr, sImagePath.c_str_ptr);
 	__asm        jmp    _T13e;
 // LINE 638:
 _T13e:
@@ -3805,7 +3805,7 @@ _T2ac:
 	__asm        jmp    _T2ca;
 // LINE 643:
 _T2ca:
-	0x604c00->FileServices::GetPathForFileString(sImagePath.c_str_ptr, sImageFile.c_str_ptr, 0x0, 0x6);
+	0x604c00->FileServices::GetPathForFileString(0x6, 0x0, sImageFile.c_str_ptr, sImagePath.c_str_ptr);
 	__asm        jmp    _T2e5;
 // LINE 644:
 _T2e5:

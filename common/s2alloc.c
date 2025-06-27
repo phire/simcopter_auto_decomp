@@ -103,7 +103,7 @@ static /*packed*/ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	__asm        jne    _T59;
 // LINE 243:
 _T39:
-	fprintf(0x59b53c, (0x5c0bf8 + 0x40));
+	fprintf((0x5c0bf8 + 0x40), 0x59b53c);
 // LINE 244:
 	exit(0x1);
 // LINE 246:
@@ -160,7 +160,7 @@ _T54:
 	return 0xffffffff;
 // LINE 308:
 _T68:
-	lastPool = S2AllocInit(poolsize, index);
+	lastPool = S2AllocInit(index, poolsize);
 // LINE 310:
 	__asm        mov    eax, index;
 	__asm        mov    eax, root[0][eax*4];
@@ -254,7 +254,7 @@ _Te9:
 // FUNCTION: COPTER_D 0x004cb5ab
 char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short protMem) {
 // LINE 399:
-	return S2AllocMem(size, name, index);
+	return S2AllocMem(index, name, size);
 // LINE 400:
 }
 
@@ -263,7 +263,7 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 	/*bp-0x4*/   char * ptr;
 
 // LINE 416:
-	ptr = S2Alloc(size, index);
+	ptr = S2Alloc(index, size);
 // LINE 423:
 	return ptr;
 // LINE 424:

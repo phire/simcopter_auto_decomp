@@ -86,7 +86,7 @@ void S3PrintScreen() {
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 58:
-	S3BufferPrint(chPalette, fname[0]);
+	S3BufferPrint(fname[0], chPalette);
 // LINE 59:
 }
 
@@ -146,25 +146,25 @@ _T4b:
 	__asm        mov    eax, xdim;
 	__asm        mov    pcx.bytes_per_line, ax;
 // LINE 99:
-	hFileOut = fopen(0x599444, fname);
+	hFileOut = fopen(fname, 0x599444);
 // LINE 100:
 	__asm        cmp    hFileOut, 0;
 	__asm        je     __RETURN;
 // LINE 101:
-	fwrite(hFileOut, 0x1, 0x80, 0x603dc8);
+	fwrite(0x603dc8, 0x80, 0x1, hFileOut);
 // LINE 103:
 	ptr = buffer1;
 // LINE 104:
 _FOR_f3:
 	for (y = 0x0; (ydim > y); y++) {
 		// LINE 106:
-			S3WritePCXLine(xdim, ptr, hFileOut);
+			S3WritePCXLine(hFileOut, ptr, xdim);
 		// LINE 107:
 			ptr += pitch;
 	}
 // LINE 109:
 _T121:
-	fputc(hFileOut, 0xc);
+	fputc(0xc, hFileOut);
 // LINE 111:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3850];
@@ -202,7 +202,7 @@ _FOR_16e:
 	}
 // LINE 120:
 _T1bf:
-	fwrite(hFileOut, 0x1, 0x300, 0x603ac0);
+	fwrite(0x603ac0, 0x300, 0x1, hFileOut);
 // LINE 124:
 	fclose(hFileOut);
 // LINE 127:

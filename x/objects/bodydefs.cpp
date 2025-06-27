@@ -470,7 +470,7 @@ void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
 	__asm        cmp    size, 8;
 	__asm        je     _T2c;
 
-	doAssert(0x8c085, 0x5be00c, 0x6f, 0x5be038);
+	doAssert(0x5be038, 0x6f, 0x5be00c, 0x8c085);
 // LINE 112:
 _T2c:
 	pinfo = val;
@@ -558,7 +558,7 @@ signed char Float_2_Byte(float flt) {
 	__asm        test   ah, 0x41;
 	__asm        je     _T4a;
 _T2e:
-	doAssert(0x8c085, 0x5be060, 0x9d, 0x5be084);
+	doAssert(0x5be084, 0x9d, 0x5be060, 0x8c085);
 // LINE 160:
 _T4a:
 	__asm        fld    flt;
@@ -576,7 +576,7 @@ void SwizzlePoint(void * __ptr32 val, long size) {
 	__asm        cmp    size, 4;
 	__asm        je     _T2f;
 
-	doAssert(0x8c085, 0x5be0ac, 0xa7, 0x5be0d4);
+	doAssert(0x5be0d4, 0xa7, 0x5be0ac, 0x8c085);
 // LINE 168:
 _T2f:
 	pt = val;
@@ -595,9 +595,9 @@ void InitBodiesAndAnimations() {
 
 	// Function registers exception cleanup function at 0x0055e286
 // LINE 199:
-	GetPathForFile(animpath[0], 0x5be0fc, 0x0, 0xa);
+	GetPathForFile(0xa, 0x0, 0x5be0fc, animpath[0]);
 // LINE 200:
-	CToPString(privname[0], animpath[0]);
+	CToPString(animpath[0], privname[0]);
 // LINE 203:
 	__asm        push   0x14;
 	__asm        call   operator new;
@@ -703,7 +703,7 @@ _T1eb:
 	__asm        test   eax, eax;
 	__asm        je     _T236;
 
-	doAssert(0x8c085, 0x5be1bc, 0xa5, 0x5be1ec);
+	doAssert(0x5be1ec, 0xa5, 0x5be1bc, 0x8c085);
 _T236:
 	__asm        lea    eax, privname[0];
 	__asm        push   eax;
@@ -720,7 +720,7 @@ _T236:
 	__asm        test   eax, eax;
 	__asm        jne    _T289;
 
-	doAssert(0x8c085, 0x5be1a8, 0xa7, 0x5be1ec);
+	doAssert(0x5be1ec, 0xa7, 0x5be1a8, 0x8c085);
 _T289:
 	__asm        mov    eax, [ebp-0x214];
 	__asm        mov    ecx, [eax+0xC];
@@ -767,7 +767,7 @@ _T310:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _T347;
 
-	doAssert(0x8c085, 0x5be188, 0xb5, 0x5be1ec);
+	doAssert(0x5be1ec, 0xb5, 0x5be188, 0x8c085);
 _T347:
 	__asm        mov    eax, [ebp-0x268];
 	__asm        mov    eax, [eax+0xC];
@@ -782,13 +782,13 @@ _T347:
 	__asm        test   eax, eax;
 	__asm        jne    _T395;
 
-	doAssert(0x8c085, 0x5be1a8, 0xb7, 0x5be1ec);
+	doAssert(0x5be1ec, 0xb7, 0x5be1a8, 0x8c085);
 _T395:
 	__asm        mov    eax, [ebp-0x268];
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T3c1;
 
-	doAssert(0x8c085, 0x5be168, 0xb8, 0x5be1ec);
+	doAssert(0x5be1ec, 0xb8, 0x5be168, 0x8c085);
 _T3c1:
 	__asm        mov    eax, [ebp-0x268];
 	__asm        mov    eax, [eax+0xC];
@@ -843,7 +843,7 @@ _FOR_COND_442:
 	__asm        cmp    dword ptr [ebp-0x25C], 0;
 	__asm        jne    _T4b2;
 
-	doAssert(0x8c085, 0x5be148, 0xc1, 0x5be1ec);
+	doAssert(0x5be1ec, 0xc1, 0x5be148, 0x8c085);
 _T4b2:
 	__asm        mov    eax, [ebp-0x25C];
 	__asm        push   eax;
@@ -924,7 +924,7 @@ _T5cc:
 	__asm        test   eax, eax;
 	__asm        je     _T617;
 
-	doAssert(0x8c085, 0x5be1bc, 0xa5, 0x5be1ec);
+	doAssert(0x5be1ec, 0xa5, 0x5be1bc, 0x8c085);
 _T617:
 	__asm        lea    eax, privname[0];
 	__asm        push   eax;
@@ -941,7 +941,7 @@ _T617:
 	__asm        test   eax, eax;
 	__asm        jne    _T66a;
 
-	doAssert(0x8c085, 0x5be1a8, 0xa7, 0x5be1ec);
+	doAssert(0x5be1ec, 0xa7, 0x5be1a8, 0x8c085);
 _T66a:
 	__asm        mov    eax, [ebp-0x238];
 	__asm        mov    ecx, [eax+0xC];
@@ -1008,7 +1008,7 @@ _T6f1:
 // LINE 220:
 	__asm        jmp    _T780;
 
-	doAssert(0x8c085, 0x5be108, 0xdc, 0x5be120);
+	doAssert(0x5be120, 0xdc, 0x5be108, 0x8c085);
 // LINE 225:
 _T780:
 	return;
@@ -1126,7 +1126,7 @@ _T11d:
 	__asm        cmp    eax, [ebp-0x34];
 	__asm        je     _T146;
 
-	doAssert(0x8c085, 0x59a24c, 0x3d, 0x59a254);
+	doAssert(0x59a254, 0x3d, 0x59a24c, 0x8c085);
 _T146:
 	__asm        jmp    _T14b;
 _T14b:
@@ -1135,7 +1135,7 @@ _T14b:
 	__asm        test   eax, eax;
 	__asm        je     _T173;
 
-	doAssert(0x8c085, 0x5be210, 0x32, 0x5be1ec);
+	doAssert(0x5be1ec, 0x32, 0x5be210, 0x8c085);
 _T173:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax+0xC];
@@ -1276,7 +1276,7 @@ _T2ef:
 	__asm        cmp    eax, [ebp-0x6C];
 	__asm        je     _T318;
 
-	doAssert(0x8c085, 0x59a24c, 0x3d, 0x59a254);
+	doAssert(0x59a254, 0x3d, 0x59a24c, 0x8c085);
 _T318:
 	__asm        jmp    _T31d;
 _T31d:
@@ -1285,7 +1285,7 @@ _T31d:
 	__asm        test   eax, eax;
 	__asm        je     _T345;
 
-	doAssert(0x8c085, 0x5be210, 0x32, 0x5be1ec);
+	doAssert(0x5be1ec, 0x32, 0x5be210, 0x8c085);
 _T345:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax+0xC];

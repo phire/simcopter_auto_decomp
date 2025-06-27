@@ -684,7 +684,7 @@ _T34:
 // FUNCTION: COPTER_D 0x00471847
 void SoundButtonWindow::SoundButtonWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->ButtonWindow::ButtonWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow);
+	this->ButtonWindow::ButtonWindow(rectNewWindow, nNewID, windowNewParent, szImageFileName, myNewOwner, bAddToParentList);
 	this-><SoundButtonWindow+0x00> = 0x590870;
 // LINE 45:
 	__asm        cmp    SoundButtonWindow::lButtonSoundReferenceCount, 0;
@@ -732,7 +732,7 @@ void SoundButtonWindow::SetState(int32_t nNewButtonState) {
 // LINE 67:
 	0x6042c8->DigitalSound::SetVolume(glMasterVolume);
 // LINE 68:
-	0x6042c8->DigitalSound::Play(0x1, 0x0);
+	0x6042c8->DigitalSound::Play(0x0, 0x1);
 // LINE 70:
 _T43:
 	this->ButtonWindow::SetState(nNewButtonState);
@@ -743,7 +743,7 @@ _T43:
 // FUNCTION: COPTER_D 0x00471945
 void SoundRadioButtonWindow::SoundRadioButtonWindow(/*unpacked*/ class ButtonGroup *myNewRadioButtonGroup, /*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->RadioButtonWindow::RadioButtonWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow, myNewRadioButtonGroup);
+	this->RadioButtonWindow::RadioButtonWindow(myNewRadioButtonGroup, rectNewWindow, nNewID, windowNewParent, szImageFileName, myNewOwner, bAddToParentList);
 	this-><SoundRadioButtonWindow+0x00> = 0x590950;
 // LINE 83:
 	__asm        cmp    SoundRadioButtonWindow::lRadioSoundReferenceCount, 0;
@@ -790,7 +790,7 @@ void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 // LINE 103:
 	0x6043c8->DigitalSound::SetVolume(glMasterVolume);
 // LINE 104:
-	0x6043c8->DigitalSound::Play(0x1, 0x0);
+	0x6043c8->DigitalSound::Play(0x0, 0x1);
 // LINE 106:
 _T46:
 	this->RadioButtonWindow::SetState(nNewButtonState);
@@ -820,7 +820,7 @@ _T34:
 // FUNCTION: COPTER_D 0x00471a8c
 void SoundCheckBoxWindow::SoundCheckBoxWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, char * szImageFileName, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
-	this->CheckBoxWindow::CheckBoxWindow(bAddToParentList, myNewOwner, szImageFileName, windowNewParent, nNewID, rectNewWindow);
+	this->CheckBoxWindow::CheckBoxWindow(rectNewWindow, nNewID, windowNewParent, szImageFileName, myNewOwner, bAddToParentList);
 	this-><SoundCheckBoxWindow+0x00> = 0x590a38;
 // LINE 127:
 	__asm        cmp    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount, 0;
@@ -867,7 +867,7 @@ void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 // LINE 147:
 	0x604348->DigitalSound::SetVolume(glMasterVolume);
 // LINE 148:
-	0x604348->DigitalSound::Play(0x1, 0x0);
+	0x604348->DigitalSound::Play(0x0, 0x1);
 // LINE 150:
 _T39:
 	this->CheckBoxWindow::SetState(nNewButtonState);
@@ -897,7 +897,7 @@ _T34:
 // FUNCTION: COPTER_D 0x00471bcc
 void SoundScrollBarWindow::SoundScrollBarWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
 
-	this->ScrollBarWindow::ScrollBarWindow(szImageFileName, bAddToParentList, myNewOwner, windowNewParent, newSliderWindowDirection, nNewID, rectNewWindow);
+	this->ScrollBarWindow::ScrollBarWindow(rectNewWindow, nNewID, newSliderWindowDirection, windowNewParent, myNewOwner, bAddToParentList, szImageFileName);
 	this-><SoundScrollBarWindow+0x00> = 0x590b18;
 // LINE 171:
 	__asm        cmp    SoundScrollBarWindow::lScrollBarSoundReferenceCount, 0;
@@ -945,7 +945,7 @@ void SoundScrollBarWindow::MoveLinePrevious() {
 // LINE 192:
 	0x604248->DigitalSound::SetVolume(glMasterVolume);
 // LINE 193:
-	0x604248->DigitalSound::Play(0x1, 0x0);
+	0x604248->DigitalSound::Play(0x0, 0x1);
 // LINE 195:
 _T3f:
 	this->ScrollBarWindow::MoveLinePrevious();
@@ -964,7 +964,7 @@ void SoundScrollBarWindow::MoveLineNext() {
 // LINE 206:
 	0x604248->DigitalSound::SetVolume(glMasterVolume);
 // LINE 207:
-	0x604248->DigitalSound::Play(0x1, 0x0);
+	0x604248->DigitalSound::Play(0x0, 0x1);
 // LINE 209:
 _T3f:
 	this->ScrollBarWindow::MoveLineNext();

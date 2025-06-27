@@ -3558,9 +3558,9 @@ _T231:
 	__asm        jmp    _T236;
 // LINE 323:
 _T236:
-	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, (this + 0x48));
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory((this + 0x48), 0x0);
 // LINE 324:
-	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, (this + 0x50));
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList((this + 0x50), 0x8);
 	__asm        jmp    _T263;
 // LINE 326:
 _T263:
@@ -3634,9 +3634,9 @@ _T343:
 	__asm        jmp    _T348;
 // LINE 327:
 _T348:
-	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, (this + 0x5c));
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory((this + 0x5c), 0x0);
 // LINE 328:
-	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, (this + 0x64));
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList((this + 0x64), 0x8);
 	__asm        jmp    _T375;
 // LINE 330:
 _T375:
@@ -3710,9 +3710,9 @@ _T455:
 	__asm        jmp    _T45a;
 // LINE 331:
 _T45a:
-	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, (this + 0x70));
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory((this + 0x70), 0x0);
 // LINE 332:
-	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, (this + 0x78));
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList((this + 0x78), 0x8);
 	__asm        jmp    _T487;
 // LINE 334:
 _T487:
@@ -3786,9 +3786,9 @@ _T570:
 	__asm        jmp    _T575;
 // LINE 335:
 _T575:
-	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, (this + 0x84));
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory((this + 0x84), 0x0);
 // LINE 336:
-	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList(0x8, (this + 0x8c));
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectorySpecificEntriesIntoStringList((this + 0x8c), 0x8);
 	__asm        jmp    _T5a6;
 // LINE 337:
 _T5a6:
@@ -6061,7 +6061,7 @@ _T248:
 	__asm        jmp    _T24d;
 // LINE 547:
 _T24d:
-	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x1, (this + 0x40));
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory((this + 0x40), 0x1);
 // LINE 549:
 	__asm        jmp    _T266;
 _T266:
@@ -6223,7 +6223,7 @@ _Tfc:
 	__asm        jmp    _T108;
 // LINE 569:
 _T108:
-	Directory::SplitDirectoryPath(sStationDirectoryName.c_str_ptr, sStationDirectoryParent.c_str_ptr, (this + 0x40));
+	Directory::SplitDirectoryPath((this + 0x40), sStationDirectoryParent.c_str_ptr, sStationDirectoryName.c_str_ptr);
 // LINE 570:
 _FOR_12e:
 	for (i = 0x0; (i < 0x9); i++) {
@@ -7495,15 +7495,15 @@ _Tbd:
 	__asm        lea    ecx, [ebp-0x110];
 	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 932:
-	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(0x0, sStationDirectory.c_str_ptr);
+	tempDirectory<Directory+0x00:None>->Directory::ChangeDirectory(sStationDirectory.c_str_ptr, 0x0);
 // LINE 933:
-	tempDirectory<Directory+0x00:None>->Directory::ReadDirectoryDirectoryEntriesIntoStringList(0x0, radioStationStringList.node);
+	tempDirectory<Directory+0x00:None>->Directory::ReadDirectoryDirectoryEntriesIntoStringList(radioStationStringList.node, 0x0);
 // LINE 936:
 	__asm        jmp    _T155;
 _T155:
 	__asm        jmp    _T15a;
 _T15a:
-	(this + 0x4)->vector<RadioStation>::erase(this-><Radio+0x08:4>, this-><Radio+0x04:4>);
+	(this + 0x4)->vector<RadioStation>::erase(this-><Radio+0x04:4>, this-><Radio+0x08:4>);
 // LINE 937:
 	__asm        lea    eax, [ebp-0x114];
 	__asm        push   eax;
@@ -7635,7 +7635,7 @@ _LOOP_1a6:
 			__asm        jmp    _T341;
 		// LINE 957:
 		_T341:
-			LanguageManager::GetLanguageDirectoryName(0x0, sCurrentLanguage.c_str_ptr);
+			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x0);
 		// LINE 958:
 			__asm        lea    eax, sCurrentLanguage.c_str_ptr;
 			__asm        push   eax;
@@ -7685,17 +7685,17 @@ _LOOP_1a6:
 			__asm        test   eax, eax;
 			__asm        je     _T41a;
 		// LINE 961:
-			LanguageManager::GetLanguageDirectoryName(0x1, sCurrentLanguage.c_str_ptr);
+			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x1);
 		// LINE 962:
 			__asm        jmp    _T429;
 		// LINE 963:
 		_T41a:
-			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
+			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
 		// LINE 965:
 		_T429:
 			__asm        jmp    _T42e;
 		_T42e:
-			tempRadioStation.sDJDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>, sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>));
+			tempRadioStation.sDJDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>), sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>);
 			__asm        jmp    _T451;
 		_T451:
 			__asm        mov    eax, SZ_RADIO_COMMERCIAL_DIRECTORY_NAME;
@@ -7819,7 +7819,7 @@ _LOOP_1a6:
 			__asm        jmp    _T60c;
 		// LINE 970:
 		_T60c:
-			LanguageManager::GetLanguageDirectoryName(0x0, sCurrentLanguage.c_str_ptr);
+			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x0);
 		// LINE 971:
 			__asm        jmp    _T622;
 		_T622:
@@ -7969,17 +7969,17 @@ _LOOP_1a6:
 			__asm        test   eax, eax;
 			__asm        je     _T860;
 		// LINE 974:
-			LanguageManager::GetLanguageDirectoryName(0x1, sCurrentLanguage.c_str_ptr);
+			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x1);
 		// LINE 975:
 			__asm        jmp    _T86f;
 		// LINE 976:
 		_T860:
-			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
+			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
 		// LINE 978:
 		_T86f:
 			__asm        jmp    _T874;
 		_T874:
-			tempRadioStation.sCommercialDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>, sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>));
+			tempRadioStation.sCommercialDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>), sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>);
 			__asm        jmp    _T897;
 		_T897:
 			__asm        mov    eax, SZ_RADIO_STATIONS_JINGLE_DIRECTORY_NAME;
@@ -8103,7 +8103,7 @@ _LOOP_1a6:
 			__asm        jmp    _Ta52;
 		// LINE 983:
 		_Ta52:
-			LanguageManager::GetLanguageDirectoryName(0x0, sCurrentLanguage.c_str_ptr);
+			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x0);
 		// LINE 984:
 			__asm        jmp    _Ta68;
 		_Ta68:
@@ -8253,17 +8253,17 @@ _LOOP_1a6:
 			__asm        test   eax, eax;
 			__asm        je     _Tca6;
 		// LINE 987:
-			LanguageManager::GetLanguageDirectoryName(0x1, sCurrentLanguage.c_str_ptr);
+			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x1);
 		// LINE 988:
 			__asm        jmp    _Tcb5;
 		// LINE 989:
 		_Tca6:
-			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(-0x1, 0x0);
+			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
 		// LINE 991:
 		_Tcb5:
 			__asm        jmp    _Tcba;
 		_Tcba:
-			tempRadioStation.sJingleDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>, sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>));
+			tempRadioStation.sJingleDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>), sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>);
 			__asm        jmp    _Tcdd;
 		// LINE 994:
 		_Tcdd:
@@ -8275,13 +8275,13 @@ _LOOP_1a6:
 			__asm        cmp    [eax+0xC], ecx;
 			__asm        je     _Td26;
 
-			construct(tempRadioStation<vftable>, this-><Radio+0x08:4>);
+			construct(this-><Radio+0x08:4>, tempRadioStation<vftable>);
 			this-><Radio+0x08:4> += 0x98;
 			__asm        jmp    _Td4a;
 		_Td26:
 			__asm        jmp    _Td2b;
 		_Td2b:
-			(this + 0x4)->vector<RadioStation>::insert_aux(tempRadioStation<vftable>, this-><Radio+0x08:4>);
+			(this + 0x4)->vector<RadioStation>::insert_aux(this-><Radio+0x08:4>, tempRadioStation<vftable>);
 		_Td4a:
 			__asm        jmp    _Td4f;
 		// LINE 998:

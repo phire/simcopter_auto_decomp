@@ -671,7 +671,7 @@ _Td6:
 	__asm        cmp    dword ptr [eax+0x12E], 0;
 	__asm        jne    _T102;
 
-	_assert(0x99, 0x5b7eb4, 0x5b7ed8);
+	_assert(0x5b7ed8, 0x5b7eb4, 0x99);
 	__asm        jmp    _T107;
 _T102:
 	__asm        jmp    _T107;
@@ -686,7 +686,7 @@ _T113:
 	__asm        cmp    objectMemory, 0;
 	__asm        jne    _T139;
 
-	_assert(0xa1, 0x5b7f00, 0x5b7f24);
+	_assert(0x5b7f24, 0x5b7f00, 0xa1);
 	__asm        jmp    _T13e;
 _T139:
 	__asm        jmp    _T13e;
@@ -749,7 +749,7 @@ _T1dd:
 // FUNCTION: COPTER_D 0x00537081
 unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
 // LINE 217:
-	gPoliceStations->Station::DispatchNearestAvailableVehicle(0x5, 0x62b9e8, responseLevel, responseType, mapy, mapx);
+	gPoliceStations->Station::DispatchNearestAvailableVehicle(mapx, mapy, responseType, responseLevel, 0x62b9e8, 0x5);
 	__asm        jmp    __RETURN;
 // LINE 218:
 __RETURN:
@@ -987,7 +987,7 @@ _T2a0:
 	__asm        jmp    _T379;
 // LINE 346:
 _T33b:
-	_assert(0x15a, 0x5b7f34, 0x5b7f58);
+	_assert(0x5b7f58, 0x5b7f34, 0x15a);
 	__asm        jmp    _T35c;
 
 	__asm        jmp    _T35c;
@@ -1067,7 +1067,7 @@ _T41d:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _T491;
 
-	_assert(0xa0, 0x5b57c4, 0x5b57b8);
+	_assert(0x5b57b8, 0x5b57c4, 0xa0);
 	__asm        jmp    _T496;
 _T491:
 	__asm        jmp    _T496;
@@ -1394,7 +1394,7 @@ _T910:
 	__asm        jmp    _T96f;
 // LINE 532:
 _T915:
-	_assert(0x214, 0x5b7f60, 0x5b7f84);
+	_assert(0x5b7f84, 0x5b7f60, 0x214);
 	__asm        jmp    _T936;
 
 	__asm        jmp    _T936;
@@ -1480,7 +1480,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(/*packed*/ struct Goal *pGoal) {
 	__asm        cmp    dword ptr [eax+0x2CA], 0;
 	__asm        jne    _Tc8;
 
-	_assert(0x234, 0x5b7f8c, 0x5b7fb0);
+	_assert(0x5b7fb0, 0x5b7f8c, 0x234);
 	__asm        jmp    _Tcd;
 _Tc8:
 	__asm        jmp    _Tcd;
@@ -1504,7 +1504,7 @@ _Ted:
 	__asm        cmp    dword ptr [eax+0x2F4], 0;
 	__asm        jne    _T129;
 
-	_assert(0x239, 0x5b7fc0, 0x5b7fe4);
+	_assert(0x5b7fe4, 0x5b7fc0, 0x239);
 	__asm        jmp    _T12e;
 _T129:
 	__asm        jmp    _T12e;
@@ -1626,7 +1626,7 @@ _T28d:
 	__asm        cmp    dword ptr [eax+0x2F4], 0;
 	__asm        jne    _T2ce;
 
-	_assert(0x251, 0x5b7ff4, 0x5b8018);
+	_assert(0x5b8018, 0x5b7ff4, 0x251);
 	__asm        jmp    _T2ce;
 
 	__asm        jmp    _T2ce;
@@ -1672,9 +1672,9 @@ _T2ce:
 	__asm        jmp    _T36f;
 // LINE 608:
 _T34d:
-	0x5c37f8->ShortestPath::DepthFirstSearch(reinterpret_cast<uint32_t>(destVertex.x), reinterpret_cast<uint32_t>(startVertex.x));
+	0x5c37f8->ShortestPath::DepthFirstSearch(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVertex.x));
 // LINE 609:
-	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(destVertex.x), reinterpret_cast<uint32_t>(startVertex.x));
+	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVertex.x));
 // LINE 613:
 _T36f:
 	this->dispatchPathIndex = 0x0;
@@ -1827,7 +1827,7 @@ int32_t PoliceCarClass::AtScene() {
 	__asm        jmp    _T61;
 // LINE 675:
 _T22:
-	_assert(0x2a3, 0x5b8020, 0x5b8044);
+	_assert(0x5b8044, 0x5b8020, 0x2a3);
 	__asm        jmp    _T43;
 
 	__asm        jmp    _T43;
@@ -1880,7 +1880,7 @@ __DO_16:
 			__asm        cmp    dword ptr [ebp-0x28], 0;
 			__asm        jne    _T6f;
 
-			_assert(0xa0, 0x5b57c4, 0x5b57b8);
+			_assert(0x5b57b8, 0x5b57c4, 0xa0);
 			__asm        jmp    _T74;
 		_T6f:
 			__asm        jmp    _T74;

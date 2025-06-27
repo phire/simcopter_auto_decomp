@@ -125,7 +125,7 @@ int32_t VRCreateTexColors(/*packed*/ struct VRResource *res, int32_t create_new)
 	__asm        cmp    create_new, 1;
 	__asm        jne    _T40;
 // LINE 129:
-	hdr->bmpcolors = S2Alloc((hdr->count << 0x2), res->mempoolid);
+	hdr->bmpcolors = S2Alloc(res->mempoolid, (hdr->count << 0x2));
 // LINE 132:
 _T40:
 	__asm        mov    eax, hdr;
@@ -139,7 +139,7 @@ _T40:
 _FOR_6d:
 	for (i = 0x0; (hdr->count > i); i++) {
 		// LINE 143:
-			bhdr = VRInt2BmpHdr(i, res);
+			bhdr = VRInt2BmpHdr(res, i);
 		// LINE 146:
 			__asm        mov    eax, bhdr;
 			__asm        movsx  eax, word ptr [eax+8];
@@ -167,7 +167,7 @@ _FOR_6d:
 		// LINE 153:
 			tptr += ((bhdr->info.height << 0x2) + 0xc);
 		// LINE 154:
-			memset(0x400, 0x0, 0x606a78);
+			memset(0x606a78, 0x0, 0x400);
 		// LINE 156:
 		_FOR_fc:
 			for (j = 0x0; ((bhdr->info.height * bhdr->info.width) > j); j++) {
@@ -237,7 +237,7 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, /*packed*/ struct VRBmpHdr *bh
 	__asm        cmp    create_new, 1;
 	__asm        jne    _T64;
 // LINE 207:
-	bmpcolors = S2Alloc((notiles << 0x2), res->mempoolid);
+	bmpcolors = S2Alloc(res->mempoolid, (notiles << 0x2));
 // LINE 208:
 	tabentry[0] = bmpcolors;
 // LINE 209:
@@ -263,7 +263,7 @@ _FOR_78:
 			__asm        mov    eax, tptr;
 			__asm        mov    ltptr, eax;
 		// LINE 228:
-			memset(0x400, 0x0, 0x606a78);
+			memset(0x606a78, 0x0, 0x400);
 		// LINE 231:
 		_FOR_ba:
 			for (j = 0x0; (bhdr->info.height > j); j++) {
@@ -953,7 +953,7 @@ _Ta4:
 // LINE 598:
 	VRFaceSetTexColor(face);
 // LINE 599:
-	fh->Bitmap = VRInt2BmpHdr(fh->Bitmap, res);
+	fh->Bitmap = VRInt2BmpHdr(res, fh->Bitmap);
 // LINE 600:
 }
 
@@ -1138,7 +1138,7 @@ void VRObjSetTranslucent(int32_t obj, /*packed*/ struct VRResource *res, int32_t
 // LINE 699:
 	oh = obj;
 // LINE 705:
-	bhdr = VRInt2BmpHdr(bitmap, res);
+	bhdr = VRInt2BmpHdr(res, bitmap);
 // LINE 708:
 	fh = oh->FacePtr;
 // LINE 709:

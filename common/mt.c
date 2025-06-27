@@ -306,7 +306,7 @@ int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p
 // LINE 149:
 	MTNormalize(d.x);
 // LINE 150:
-	MTCreatePlane(p, V, plane.A);
+	MTCreatePlane(plane.A, V, p);
 // LINE 155:
 	__asm        mov    eax, q;
 	__asm        mov    eax, [eax+4];
@@ -1414,7 +1414,7 @@ void MTCreateDOF4x4(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 // LINE 582:
 	MTNormalize(xv.x);
 // LINE 589:
-	MTXProduct(yv.x, dv, xv.x);
+	MTXProduct(xv.x, dv, yv.x);
 // LINE 590:
 	MTNormalize(yv.x);
 // LINE 596:
@@ -1464,7 +1464,7 @@ void MTCreateDOF4x4Y(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 // LINE 642:
 	MTNormalize(xv.x);
 // LINE 649:
-	MTXProduct(zv.x, xv.x, dv);
+	MTXProduct(dv, xv.x, zv.x);
 // LINE 650:
 	MTNormalize(zv.x);
 // LINE 656:

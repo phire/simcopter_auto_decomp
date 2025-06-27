@@ -711,7 +711,7 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 	__asm        cmp    pHeight, 0;
 	__asm        jne    _T3c;
 _T20:
-	_assert(0x115, 0x599af0, 0x599b18);
+	_assert(0x599b18, 0x599af0, 0x115);
 	__asm        jmp    _T41;
 _T3c:
 	__asm        jmp    _T41;
@@ -871,7 +871,7 @@ unsigned long CSparkalWindow::DrawBufferText(const const char *pText, unsigned l
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        jne    _T35;
 
-	_assert(0x175, 0x599b2c, 0x599b54);
+	_assert(0x599b54, 0x599b2c, 0x175);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;
@@ -1053,7 +1053,7 @@ unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        jne    _T35;
 
-	_assert(0x1cf, 0x599b5c, 0x599b84);
+	_assert(0x599b84, 0x599b5c, 0x1cf);
 	__asm        jmp    _T3a;
 _T35:
 	__asm        jmp    _T3a;

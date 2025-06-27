@@ -6,7 +6,7 @@ int32_t Directory::ReadDirectoryDirectoryEntriesIntoStringList(/*packed*/ class 
 // LINE 201:
 	__asm        or     lFilter, 4;
 // LINE 202:
-	return this->Directory::ReadDirectorySpecificEntriesIntoStringList(lFilter, sDirectoryEntries);
+	return this->Directory::ReadDirectorySpecificEntriesIntoStringList(sDirectoryEntries, lFilter);
 // LINE 203:
 }
 

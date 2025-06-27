@@ -124,11 +124,11 @@ _T6a:
 // LINE 200:
 	VRFreeGridObj();
 // LINE 201:
-	GridRotate = S2AllocMem1(0x0, (GridNVerts << 0x4), 0x59d2dc, S_gridmempool);
+	GridRotate = S2AllocMem1(S_gridmempool, 0x59d2dc, (GridNVerts << 0x4), 0x0);
 // LINE 202:
 	GridRotateEnd = ((GridNVerts << 0x4) + GridRotate);
 // LINE 203:
-	GridProject = S2AllocMem1(0x0, goff, 0x59d2e4, S_gridmempool);
+	GridProject = S2AllocMem1(S_gridmempool, 0x59d2e4, goff, 0x0);
 // LINE 204:
 	GridProjectEnd = (goff + GridProject);
 // LINE 206:
@@ -150,27 +150,27 @@ _T6a:
 	__asm        add    eax, GridVerts;
 	__asm        mov    GridVertsEnd, eax;
 // LINE 208:
-	GridSortFaces = S2AllocMem1(0x0, (GridNFaces << 0x2), 0x59d2fc, S_gridmempool);
+	GridSortFaces = S2AllocMem1(S_gridmempool, 0x59d2fc, (GridNFaces << 0x2), 0x0);
 // LINE 209:
 	GridSortFacesEnd = ((GridNFaces << 0x2) + GridSortFaces);
 // LINE 210:
-	GridFaces = S2AllocMem1(0x0, (GridFaceSize * GridNFaces), 0x59d308, S_gridmempool);
+	GridFaces = S2AllocMem1(S_gridmempool, 0x59d308, (GridFaceSize * GridNFaces), 0x0);
 // LINE 211:
 	GridFacesEnd = ((GridFaceSize * GridNFaces) + GridFaces);
 // LINE 213:
-	WhereIsIt = S2AllocMem1(0x0, (GridNVerts << 0x2), 0x59d314, S_gridmempool);
+	WhereIsIt = S2AllocMem1(S_gridmempool, 0x59d314, (GridNVerts << 0x2), 0x0);
 // LINE 214:
 	WhereIsItEnd = ((GridNVerts << 0x2) + WhereIsIt);
 // LINE 215:
-	IsRotated = S2AllocMem1(0x0, GridNVerts, 0x59d320, S_gridmempool);
+	IsRotated = S2AllocMem1(S_gridmempool, 0x59d320, GridNVerts, 0x0);
 // LINE 216:
 	IsRotatedEnd = (GridNVerts + IsRotated);
 // LINE 218:
-	GridSortCells = S2AllocMem1(0x0, (((G_ViewSize * G_ViewSize) << 0x2) >> 0x1), 0x59d32c, S_gridmempool);
+	GridSortCells = S2AllocMem1(S_gridmempool, 0x59d32c, (((G_ViewSize * G_ViewSize) << 0x2) >> 0x1), 0x0);
 // LINE 219:
 	GridSortCellsEnd = ((((G_ViewSize * G_ViewSize) << 0x2) >> 0x1) + GridSortCells);
 // LINE 220:
-	GridCellAddrs = S2AllocMem1(0x0, (((G_ViewSize * G_ViewSize) << 0x2) >> 0x1), 0x59d338, S_gridmempool);
+	GridCellAddrs = S2AllocMem1(S_gridmempool, 0x59d338, (((G_ViewSize * G_ViewSize) << 0x2) >> 0x1), 0x0);
 // LINE 221:
 	GridCellAddrsEnd = ((((G_ViewSize * G_ViewSize) << 0x2) >> 0x1) + GridCellAddrs);
 // LINE 225:

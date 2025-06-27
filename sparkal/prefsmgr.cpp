@@ -376,7 +376,7 @@ void PreferenceItem::PreferenceItem(const /*packed*/ class PreferenceItem& P1) {
 	this->lPreferenceType = this->lPreferenceDataLength;
 // LINE 41:
 _T66:
-	memcpy(this->lPreferenceDataLength, P1.chPreferenceData, this->chPreferenceData);
+	memcpy(this->chPreferenceData, P1.chPreferenceData, this->lPreferenceDataLength);
 // LINE 43:
 	__asm        jmp    _T92;
 // LINE 44:
@@ -431,7 +431,7 @@ _T34:
 	this->lPreferenceType = this->lPreferenceDataLength;
 // LINE 73:
 _T66:
-	memcpy(this->lPreferenceDataLength, P2.chPreferenceData, this->chPreferenceData);
+	memcpy(this->chPreferenceData, P2.chPreferenceData, this->lPreferenceDataLength);
 // LINE 75:
 	__asm        jmp    _T92;
 // LINE 76:
@@ -509,7 +509,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _Ta1;
 // LINE 139:
-	memcpy(this->lPreferenceDataLength, this->chPreferenceData, prefItemReturn->chPreferenceData);
+	memcpy(prefItemReturn->chPreferenceData, this->chPreferenceData, this->lPreferenceDataLength);
 // LINE 141:
 	__asm        jmp    _Tdc;
 // LINE 142:
@@ -1797,7 +1797,7 @@ char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
 // LINE 428:
 	chDataCopy = operator new(prefItemTemp->lPreferenceDataLength);
 // LINE 430:
-	memcpy(prefItemTemp->lPreferenceDataLength, prefItemTemp->chPreferenceData, chDataCopy);
+	memcpy(chDataCopy, prefItemTemp->chPreferenceData, prefItemTemp->lPreferenceDataLength);
 // LINE 433:
 	return chDataCopy;
 // LINE 435:
@@ -1885,7 +1885,7 @@ _Ta9:
 	return 0x0;
 // LINE 484:
 _Tb0:
-	memcpy(lSizeofPref, chPref, prefItemToSet->chPreferenceData);
+	memcpy(prefItemToSet->chPreferenceData, chPref, lSizeofPref);
 // LINE 488:
 	__asm        mov    eax, lPrefType;
 	__asm        push   eax;
@@ -2467,7 +2467,7 @@ int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, /*p
 	/*bp-0x8*/   /*packed*/ class NotificationItem tempNewNotificationItem; // 0x8 bytes
 
 // LINE 547:
-	tempNewNotificationItem.lPreferenceType->NotificationItem::NotificationItem(newNotificationSink, lPreferenceType);
+	tempNewNotificationItem.lPreferenceType->NotificationItem::NotificationItem(lPreferenceType, newNotificationSink);
 // LINE 548:
 	__asm        lea    eax, tempNewNotificationItem.lPreferenceType;
 	__asm        push   eax;
@@ -2846,7 +2846,7 @@ long NotificationPreferenceManager::SetPref(long lPrefType, char * chPref, long 
 	/*bp-0x4*/   long lReturnValue;
 
 // LINE 594:
-	lReturnValue = this->PreferenceManager::SetPref(lSizeofPref, chPref, lPrefType);
+	lReturnValue = this->PreferenceManager::SetPref(lPrefType, chPref, lSizeofPref);
 // LINE 595:
 	__asm        cmp    lReturnValue, 0;
 	__asm        je     _T3c;

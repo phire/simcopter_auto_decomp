@@ -245,7 +245,7 @@ protected:
 // FUNCTION: COPTER_D 0x00495400
 void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nNewBitmapHeight) {
 
-	this->CBackBuffer::CBackBuffer(0x0, nNewBitmapHeight, nNewBitmapWidth);
+	this->CBackBuffer::CBackBuffer(nNewBitmapWidth, nNewBitmapHeight, 0x0);
 	this->nSkyType = nNewSkyType;
 	this-><SkyImage+0x00> = 0x591090;
 // LINE 31:
@@ -346,15 +346,15 @@ int32_t SkyImage::LoadImageA() {
 	__asm        cmp    dword ptr [eax+0x13C], 0;
 	__asm        jne    _T43;
 // LINE 103:
-	GetPathForFile(szFullSkyImagePath[0], SZ_SKY_DAY_IMAGE_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_SKY_DAY_IMAGE_FILE_NAME, szFullSkyImagePath[0]);
 // LINE 104:
 	__asm        jmp    _T5c;
 // LINE 105:
 _T43:
-	GetPathForFile(szFullSkyImagePath[0], SZ_SKY_NIGHT_IMAGE_FILE_NAME, 0x0, 0x6);
+	GetPathForFile(0x6, 0x0, SZ_SKY_NIGHT_IMAGE_FILE_NAME, szFullSkyImagePath[0]);
 // LINE 107:
 _T5c:
-	vrResource = VRLoadResource(0x59a13c, 0x3, szFullSkyImagePath[0]);
+	vrResource = VRLoadResource(szFullSkyImagePath[0], 0x3, 0x59a13c);
 // LINE 108:
 	__asm        cmp    vrResource, 0;
 	__asm        jne    _T8c;
@@ -362,7 +362,7 @@ _T5c:
 	return 0x0;
 // LINE 112:
 _T8c:
-	bmpHeader = VRInt2BmpHdr(0x0, vrResource);
+	bmpHeader = VRInt2BmpHdr(vrResource, 0x0);
 // LINE 113:
 	pSourceImage = bmpHeader;
 // LINE 114:
@@ -382,7 +382,7 @@ _Td2:
 _FOR_f0:
 	for (i = 0x0; (this->nBitmapHeight > i); i++) {
 		// LINE 120:
-			memcpy(this->nBitmapWidth, pSourceImage, pDestinationImage);
+			memcpy(pDestinationImage, pSourceImage, this->nBitmapWidth);
 		// LINE 121:
 			__asm        jmp    _T133;
 		_T133:
@@ -406,73 +406,73 @@ _T173:
 	__asm        cmp    G_restex, 0;
 	__asm        je     _T354;
 // LINE 136:
-	bmpHeader = VRInt2BmpHdr(0x2, G_restex);
+	bmpHeader = VRInt2BmpHdr(G_restex, 0x2);
 // LINE 137:
 	pDestinationImage = bmpHeader;
 // LINE 138:
 	pDestinationImage += 0x40c;
 // LINE 141:
-	bmpHeader = VRInt2BmpHdr(0x1, vrResource);
+	bmpHeader = VRInt2BmpHdr(vrResource, 0x1);
 // LINE 142:
 	pSourceImage = bmpHeader;
 // LINE 143:
 	pSourceImage += 0x40c;
 // LINE 146:
-	memcpy(0x10000, pSourceImage, pDestinationImage);
+	memcpy(pDestinationImage, pSourceImage, 0x10000);
 // LINE 149:
-	bmpHeader = VRInt2BmpHdr(0x27, G_restex);
+	bmpHeader = VRInt2BmpHdr(G_restex, 0x27);
 // LINE 150:
 	pDestinationImage = bmpHeader;
 // LINE 151:
 	pDestinationImage += 0x40c;
 // LINE 154:
-	bmpHeader = VRInt2BmpHdr(0x2, vrResource);
+	bmpHeader = VRInt2BmpHdr(vrResource, 0x2);
 // LINE 155:
 	pSourceImage = bmpHeader;
 // LINE 156:
 	pSourceImage += 0x40c;
 // LINE 159:
-	memcpy(0x10000, pSourceImage, pDestinationImage);
+	memcpy(pDestinationImage, pSourceImage, 0x10000);
 // LINE 162:
-	bmpHeader = VRInt2BmpHdr(0x28, G_restex);
+	bmpHeader = VRInt2BmpHdr(G_restex, 0x28);
 // LINE 163:
 	pDestinationImage = bmpHeader;
 // LINE 164:
 	pDestinationImage += 0x40c;
 // LINE 167:
-	bmpHeader = VRInt2BmpHdr(0x3, vrResource);
+	bmpHeader = VRInt2BmpHdr(vrResource, 0x3);
 // LINE 168:
 	pSourceImage = bmpHeader;
 // LINE 169:
 	pSourceImage += 0x40c;
 // LINE 172:
-	memcpy(0x10000, pSourceImage, pDestinationImage);
+	memcpy(pDestinationImage, pSourceImage, 0x10000);
 // LINE 176:
-	bmpHeader = VRInt2BmpHdr(0x14, G_restex);
+	bmpHeader = VRInt2BmpHdr(G_restex, 0x14);
 // LINE 177:
 	pDestinationImage = bmpHeader-><VRBmpHdr+0x10>;
 // LINE 180:
-	bmpHeader = VRInt2BmpHdr(0x4, vrResource);
+	bmpHeader = VRInt2BmpHdr(vrResource, 0x4);
 // LINE 181:
 	pSourceImage = bmpHeader;
 // LINE 182:
 	pSourceImage += 0x40c;
 // LINE 185:
-	memcpy(0x10000, pSourceImage, pDestinationImage);
+	memcpy(pDestinationImage, pSourceImage, 0x10000);
 // LINE 188:
-	bmpHeader = VRInt2BmpHdr(0xd, G_restex);
+	bmpHeader = VRInt2BmpHdr(G_restex, 0xd);
 // LINE 189:
 	pDestinationImage = bmpHeader;
 // LINE 190:
 	pDestinationImage += 0x40c;
 // LINE 193:
-	bmpHeader = VRInt2BmpHdr(0x5, vrResource);
+	bmpHeader = VRInt2BmpHdr(vrResource, 0x5);
 // LINE 194:
 	pSourceImage = bmpHeader;
 // LINE 195:
 	pSourceImage += 0x40c;
 // LINE 198:
-	memcpy(0x10000, pSourceImage, pDestinationImage);
+	memcpy(pDestinationImage, pSourceImage, 0x10000);
 // LINE 203:
 _T354:
 	VRUnLoadResource(vrResource);
@@ -642,7 +642,7 @@ _T1dc:
 	__asm        jmp    _T23a;
 // LINE 289:
 _T1e1:
-	this->CBackBuffer::Compose(rectSource.bottom, rectSource.right, rectSource.top, rectSource.left, 0x0, 0x0, pDestImage);
+	this->CBackBuffer::Compose(pDestImage, 0x0, 0x0, rectSource.left, rectSource.top, rectSource.right, rectSource.bottom);
 // LINE 292:
 	__asm        cmp    len2, 0;
 	__asm        je     _T23a;
@@ -651,7 +651,7 @@ _T1e1:
 // LINE 294:
 	rectSource.right = len2;
 // LINE 296:
-	this->CBackBuffer::Compose(rectSource.bottom, rectSource.right, rectSource.top, rectSource.left, 0x0, len1, pDestImage);
+	this->CBackBuffer::Compose(pDestImage, len1, 0x0, rectSource.left, rectSource.top, rectSource.right, rectSource.bottom);
 // LINE 299:
 _T23a:
 	return 0x1;
