@@ -2931,12 +2931,8 @@ _T983:
 
 	doAssert(0x5bba14, 0x210, 0x5bbbb8, 0x8c085);
 _T9b3:
-	__asm        mov    al, ncellx;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], al;
-	__asm        mov    al, ncelly;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x89], al;
+	this->fCellX = ncellx;
+	this->fCellY = ncelly;
 	__asm        jmp    _T9d6;
 _T9d6:
 	this->cYObject::Link();

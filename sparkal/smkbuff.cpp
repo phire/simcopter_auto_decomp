@@ -237,16 +237,9 @@ _T11:
 // LINE 43:
 	this->nBlankColorIndex = 0x0;
 // LINE 44:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x14], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x14];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x15], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x15];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x16], al;
+	this->colorWindowFill.Blue = 0x0;
+	this->colorWindowFill.Green = this->colorWindowFill.Blue;
+	this->colorWindowFill.Red = this->colorWindowFill.Green;
 // LINE 45:
 	this->myWindow = 0x0;
 // LINE 46:

@@ -1502,10 +1502,8 @@ _LOOP_28:
 			__asm        cmp    eax, p;
 			__asm        je     _Tce;
 		// LINE 554:
-			__asm        mov    al, c;
-			__asm        mov    ecx, p;
-			__asm        mov    [ecx], al;
-			__asm        inc    p;
+			p[0] = c;
+			p++;
 		// LINE 555:
 			s->istream::get(c);
 	}

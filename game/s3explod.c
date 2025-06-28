@@ -521,10 +521,7 @@ _T52:
 	return;
 // LINE 258:
 _T61:
-	__asm        mov    eax, 4;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(scale);
-	__asm        shl    eax, cl;
-	__asm        mov    dim, eax;
+	dim = (0x4 << reinterpret_cast<uint8_t>(scale));
 // LINE 261:
 	__asm        mov    eax, ed;
 	__asm        or     dword ptr [eax], 1;

@@ -226,9 +226,7 @@ void CtoPstr(char * cstr) {
 _T2e:
 	Memory::BlockMove(cstr, (cstr + 1), reinterpret_cast<int16_t>(len));
 // LINE 56:
-	__asm        mov    al, reinterpret_cast<uint8_t>(len);
-	__asm        mov    ecx, cstr;
-	__asm        mov    [ecx], al;
+	cstr[0] = reinterpret_cast<uint8_t>(len);
 // LINE 57:
 	return;
 }

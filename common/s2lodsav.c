@@ -358,25 +358,13 @@ static long stol(char * tag) {
 // LINE 249:
 	s = buildval;
 // LINE 251:
-	__asm        mov    eax, tag;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, s;
-	__asm        mov    [ecx], al;
+	s[0] = tag[0];
 // LINE 252:
-	__asm        mov    eax, tag;
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, s;
-	__asm        mov    [ecx+1], al;
+	s[1] = tag[1];
 // LINE 253:
-	__asm        mov    eax, tag;
-	__asm        mov    al, [eax+2];
-	__asm        mov    ecx, s;
-	__asm        mov    [ecx+2], al;
+	s[2] = tag[2];
 // LINE 254:
-	__asm        mov    eax, tag;
-	__asm        mov    al, [eax+3];
-	__asm        mov    ecx, s;
-	__asm        mov    [ecx+3], al;
+	s[3] = tag[3];
 // LINE 256:
 	return swizzle_long(buildval);
 // LINE 257:
@@ -4075,18 +4063,11 @@ short swizzle_short(short svalue) {
 // LINE 1585:
 	byteptr = svalue;
 // LINE 1587:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax+1];
-	__asm        mov    cval, al;
+	cval = byteptr[1];
 // LINE 1588:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx+1], al;
+	byteptr[1] = byteptr[0];
 // LINE 1589:
-	__asm        mov    al, cval;
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx], al;
+	byteptr[0] = cval;
 // LINE 1591:
 	return svalue;
 // LINE 1592:
@@ -4125,31 +4106,17 @@ long swizzle_long(long lvalue) {
 // LINE 1636:
 	byteptr = lvalue;
 // LINE 1638:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax+3];
-	__asm        mov    cval, al;
+	cval = byteptr[3];
 // LINE 1639:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx+3], al;
+	byteptr[3] = byteptr[0];
 // LINE 1640:
-	__asm        mov    al, cval;
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx], al;
+	byteptr[0] = cval;
 // LINE 1642:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax+2];
-	__asm        mov    cval, al;
+	cval = byteptr[2];
 // LINE 1643:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx+2], al;
+	byteptr[2] = byteptr[1];
 // LINE 1644:
-	__asm        mov    al, cval;
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx+1], al;
+	byteptr[1] = cval;
 // LINE 1647:
 	return lvalue;
 // LINE 1648:
@@ -5117,9 +5084,7 @@ void PStringToCString(char * string) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 1980:
-	__asm        mov    eax, string;
-	__asm        mov    al, [eax];
-	__asm        mov    sizePString, al;
+	sizePString = string[0];
 // LINE 1983:
 _FOR_1d:
 	for (i = 0x0; (reinterpret_cast<int16_t>(sizePString) > i); i++) {
@@ -5170,9 +5135,7 @@ _FOR_38:
 	}
 // LINE 2002:
 _T5d:
-	__asm        mov    al, reinterpret_cast<uint8_t>(sizeCString);
-	__asm        mov    ecx, string;
-	__asm        mov    [ecx], al;
+	string[0] = reinterpret_cast<uint8_t>(sizeCString);
 // LINE 2003:
 }
 
@@ -5187,10 +5150,7 @@ void CopyPString(char * stringDestination, char * stringSource) {
 	__asm        inc    eax;
 	__asm        mov    iEnd, eax;
 // LINE 2014:
-	__asm        mov    eax, stringSource;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, stringDestination;
-	__asm        mov    [ecx], al;
+	stringDestination[0] = stringSource[0];
 // LINE 2015:
 _FOR_29:
 	for (i = 0x1; (iEnd > i); i++) {
@@ -5797,12 +5757,9 @@ __WHILE_42:
 			__asm        cmp    eax, 0x5F;
 			__asm        je     _T183;
 		// LINE 2364:
-			__asm        mov    eax, s;
-			__asm        mov    al, [eax];
-			__asm        mov    ecx, r;
-			__asm        mov    [ecx], al;
-			__asm        inc    s;
-			__asm        inc    r;
+			r[0] = s[0];
+			s++;
+			r++;
 		// LINE 2365:
 			__asm        jmp    _T186;
 		// LINE 2366:
@@ -5852,12 +5809,9 @@ __WHILE_42:
 			__asm        cmp    eax, 0x20;
 			__asm        je     _T75;
 		// LINE 2398:
-			__asm        mov    eax, s;
-			__asm        mov    al, [eax];
-			__asm        mov    ecx, r;
-			__asm        mov    [ecx], al;
-			__asm        inc    s;
-			__asm        inc    r;
+			r[0] = s[0];
+			s++;
+			r++;
 		// LINE 2399:
 			__asm        jmp    _T78;
 		// LINE 2400:

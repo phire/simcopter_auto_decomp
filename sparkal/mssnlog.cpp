@@ -1309,11 +1309,9 @@ _T7af:
 	__asm        jmp    _T820;
 // LINE 103:
 _T820:
-	__asm        mov    tempSparkalColor.Blue, 0;
-	__asm        mov    al, tempSparkalColor.Blue;
-	__asm        mov    tempSparkalColor.Green, al;
-	__asm        mov    al, tempSparkalColor.Green;
-	__asm        mov    tempSparkalColor.Red, al;
+	tempSparkalColor.Blue = 0x0;
+	tempSparkalColor.Green = tempSparkalColor.Blue;
+	tempSparkalColor.Red = tempSparkalColor.Green;
 // LINE 104:
 	__asm        lea    eax, tempSparkalColor.Blue;
 	__asm        push   eax;

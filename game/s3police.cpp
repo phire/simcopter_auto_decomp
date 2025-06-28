@@ -1417,8 +1417,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(/*packed*/ struct Goal *pGoal) {
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(startLoc.x), ax;
 // LINE 555:
-	__asm        mov    al, startLoc.x;
-	__asm        mov    startVertex.x, al;
+	startVertex.x = startLoc.x;
 // LINE 556:
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
@@ -1607,10 +1606,7 @@ _T28d:
 	__asm        jmp    _T2ce;
 // LINE 595:
 _T2ce:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2A0];
-	__asm        mov    al, [eax];
-	__asm        mov    destVertex.x, al;
+	destVertex.x = this->currDestGoal.pRGV->x;
 // LINE 596:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A0];
@@ -1957,41 +1953,17 @@ void PoliceCarClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _Tf7;
 // LINE 739:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2A0];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x2E6], al;
+	sd->p.currpRGVFixup.x = this->currDestGoal.pRGV->x;
 // LINE 740:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2A0];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x2E7], al;
+	sd->p.currpRGVFixup.y = this->currDestGoal.pRGV->y;
 // LINE 741:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2CA];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x312], al;
+	sd->p.dest1pRGVFixup.x = this->destGoal1.pRGV->x;
 // LINE 742:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2CA];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x313], al;
+	sd->p.dest1pRGVFixup.y = this->destGoal1.pRGV->y;
 // LINE 743:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2F4];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x33E], al;
+	sd->p.dest2pRGVFixup.x = this->destGoal2.pRGV->x;
 // LINE 744:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2F4];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x33F], al;
+	sd->p.dest2pRGVFixup.y = this->destGoal2.pRGV->y;
 // LINE 748:
 _Tf7:
 	this->EmergencyVehicleClass::SetSaveData(sd);

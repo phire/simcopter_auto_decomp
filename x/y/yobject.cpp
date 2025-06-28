@@ -10494,12 +10494,8 @@ _Taec:
 
 	doAssert(0x5bba14, 0x210, 0x5bbbb8, 0x8c085);
 _Tb1c:
-	__asm        mov    al, reinterpret_cast<uint8_t>(cellx);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], al;
-	__asm        mov    al, reinterpret_cast<uint8_t>(celly);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x89], al;
+	this->fCellX = reinterpret_cast<uint8_t>(cellx);
+	this->fCellY = reinterpret_cast<uint8_t>(celly);
 	__asm        jmp    _Tb3f;
 // LINE 1760:
 _Tb3f:
@@ -15289,12 +15285,8 @@ _Tc9:
 
 	doAssert(0x5bba14, 0x210, 0x5bbbb8, 0x8c085);
 _Tf6:
-	__asm        mov    al, reinterpret_cast<uint8_t>(loccellx);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], al;
-	__asm        mov    al, reinterpret_cast<uint8_t>(loccelly);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x89], al;
+	this->fCellX = reinterpret_cast<uint8_t>(loccellx);
+	this->fCellY = reinterpret_cast<uint8_t>(loccelly);
 	__asm        jmp    _T113;
 // LINE 2556:
 _T113:

@@ -2099,11 +2099,9 @@ _T96:
 	__asm        add    esp, 4;
 // LINE 450:
 _Tca:
-	__asm        mov    al, reinterpret_cast<uint8_t>(mapx);
-	__asm        mov    destLoc.x, al;
+	destLoc.x = reinterpret_cast<uint8_t>(mapx);
 // LINE 451:
-	__asm        mov    al, reinterpret_cast<uint8_t>(mapy);
-	__asm        mov    destLoc.y, al;
+	destLoc.y = reinterpret_cast<uint8_t>(mapy);
 // LINE 454:
 	availableVehicle = this->Station::FindAvailableVehicle(responseLevel, vehicleList, vehicleListLength);
 // LINE 457:
@@ -2505,9 +2503,7 @@ __WHILE_6b3:
 			__asm        mov    ecx, 0x5C3828;
 			__asm        call   RoadGraph::FindIntersections;
 		// LINE 501:
-			__asm        mov    eax, startGoal1.pRGV;
-			__asm        mov    al, [eax];
-			__asm        mov    startVertex.x, al;
+			startVertex.x = startGoal1.pRGV->x;
 		// LINE 502:
 			__asm        mov    eax, startGoal1.pRGV;
 			__asm        xor    ecx, ecx;
@@ -2521,9 +2517,7 @@ __WHILE_6b3:
 			__asm        call   RoadGraph::FindYIndexToVertex;
 			__asm        mov    startVertex.yindex, al;
 		// LINE 504:
-			__asm        mov    eax, destGoal1.pRGV;
-			__asm        mov    al, [eax];
-			__asm        mov    destVert.x, al;
+			destVert.x = destGoal1.pRGV->x;
 		// LINE 505:
 			__asm        mov    eax, destGoal1.pRGV;
 			__asm        xor    ecx, ecx;
@@ -2654,9 +2648,7 @@ __WHILE_873:
 			__asm        mov    eax, [eax+ecx];
 			__asm        mov    pRGV, eax;
 		// LINE 546:
-			__asm        mov    eax, pRGV;
-			__asm        mov    al, [eax];
-			__asm        mov    startVertex.x, al;
+			startVertex.x = pRGV->x;
 		// LINE 547:
 			__asm        mov    eax, pRGV;
 			__asm        xor    ecx, ecx;
@@ -2670,9 +2662,7 @@ __WHILE_873:
 			__asm        call   RoadGraph::FindYIndexToVertex;
 			__asm        mov    startVertex.yindex, al;
 		// LINE 549:
-			__asm        mov    eax, destGoal1.pRGV;
-			__asm        mov    al, [eax];
-			__asm        mov    destVert.x, al;
+			destVert.x = destGoal1.pRGV->x;
 		// LINE 550:
 			__asm        mov    eax, destGoal1.pRGV;
 			__asm        xor    ecx, ecx;
@@ -3202,13 +3192,9 @@ _FOR_1db:
 					__asm        mov    ecx, pStation;
 					__asm        mov    [ecx+0x59], al;
 				// LINE 675:
-					__asm        mov    al, workingLoc.x;
-					__asm        mov    ecx, pStation;
-					__asm        mov    [ecx+0x5A], al;
+					pStation->nearestRoadTile.x = workingLoc.x;
 				// LINE 676:
-					__asm        mov    al, workingLoc.y;
-					__asm        mov    ecx, pStation;
-					__asm        mov    [ecx+0x5B], al;
+					pStation->nearestRoadTile.y = workingLoc.y;
 				// LINE 677:
 					pStation->quanVehiclesDispatched = 0x0;
 				// LINE 678:

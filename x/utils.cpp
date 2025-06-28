@@ -130,8 +130,7 @@ _T7d:
 	count++;
 // LINE 80:
 _T96:
-	__asm        mov    al, count;
-	__asm        mov    digit, al;
+	digit = count;
 // LINE 81:
 __WHILE_9c:
 	__asm        xor    eax, eax;
@@ -327,9 +326,7 @@ _Ta6:
 	__asm        jmp    __WHILE_e9;
 // LINE 138:
 _Tda:
-	__asm        mov    al, reinterpret_cast<uint8_t>(power);
-	__asm        mov    ecx, str;
-	__asm        mov    [ecx], al;
+	str[0] = reinterpret_cast<uint8_t>(power);
 // LINE 139:
 	power = 0x1;
 // LINE 142:
@@ -512,9 +509,7 @@ _T6c:
 	__asm        jmp    __WHILE_33;
 // LINE 195:
 _T7f:
-	__asm        mov    al, reinterpret_cast<uint8_t>(power);
-	__asm        mov    ecx, str;
-	__asm        mov    [ecx], al;
+	str[0] = reinterpret_cast<uint8_t>(power);
 // LINE 196:
 	power = 0x1;
 // LINE 197:
@@ -577,9 +572,7 @@ void Long2PStr(unsigned long namelet, unsigned char * name) {
 	__asm        mov    ecx, name;
 	__asm        mov    [ecx+3], ah;
 // LINE 219:
-	__asm        mov    al, reinterpret_cast<uint8_t>(namelet);
-	__asm        mov    ecx, name;
-	__asm        mov    [ecx+4], al;
+	name[4] = reinterpret_cast<uint8_t>(namelet);
 // LINE 220:
 	return;
 }

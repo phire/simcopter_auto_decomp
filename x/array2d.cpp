@@ -917,9 +917,7 @@ _FOR_115:
 			doAssert(0x5bfcd8, 0x15c, 0x5bfcbc, 0x8c085);
 		// LINE 350:
 		_T15f:
-			__asm        mov    al, zeropad;
-			__asm        mov    ecx, fillPtr;
-			__asm        mov    [ecx], al;
+			fillPtr[0] = zeropad;
 		// LINE 351:
 			fillPtr++;
 	}

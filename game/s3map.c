@@ -2452,9 +2452,7 @@ _FOR_a2:
 			__asm        test   eax, eax;
 			__asm        je     _Tc5;
 
-			__asm        mov    al, col;
-			__asm        mov    ecx, writeBuffer;
-			__asm        mov    [ecx], al;
+			writeBuffer[0] = col;
 		// LINE 1113:
 		_Tc5:
 			error += dy;
@@ -2504,9 +2502,7 @@ _FOR_144:
 			__asm        test   eax, eax;
 			__asm        je     _T167;
 
-			__asm        mov    al, col;
-			__asm        mov    ecx, writeBuffer;
-			__asm        mov    [ecx], al;
+			writeBuffer[0] = col;
 		// LINE 1132:
 		_T167:
 			error += dx;
@@ -2866,12 +2862,9 @@ _FOR_d1:
 					__asm        test   eax, eax;
 					__asm        je     _T122;
 				// LINE 1409:
-					__asm        mov    eax, iptr;
-					__asm        mov    al, [eax];
-					__asm        mov    ecx, bufptr;
-					__asm        mov    [ecx], al;
-					__asm        inc    iptr;
-					__asm        inc    bufptr;
+					bufptr[0] = iptr[0];
+					iptr++;
+					bufptr++;
 				// LINE 1411:
 					__asm        jmp    _T128;
 				// LINE 1413:
@@ -3122,23 +3115,7 @@ _FOR_1d:
 			__asm        cmp    dword ptr [eax+0x30], 0xFFFFFFFF;
 			__asm        je     _Tc9;
 		// LINE 1528:
-			__asm        mov    eax, desticon;
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x34];
-			__asm        sub    eax, posy;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-			__asm        shl    eax, cl;
-			__asm        push   eax;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x30];
-			__asm        sub    eax, posx;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-			__asm        shl    eax, cl;
-			__asm        push   eax;
-			__asm        call   S3MapDrawLine;
-			__asm        add    esp, 0x10;
+			S3MapDrawLine(((md->destmaploc.x - posx) << reinterpret_cast<uint8_t>(S_mapzoom)), ((md->destmaploc.y - posy) << reinterpret_cast<uint8_t>(S_mapzoom)), 0x0, desticon);
 		// LINE 1530:
 			__asm        jmp    _T108;
 		// LINE 1532:
@@ -3147,46 +3124,14 @@ _FOR_1d:
 			__asm        cmp    dword ptr [eax+0x28], 0xFFFFFFFF;
 			__asm        je     _T108;
 		// LINE 1537:
-			__asm        mov    eax, desticon;
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        sub    eax, posy;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-			__asm        shl    eax, cl;
-			__asm        push   eax;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x28];
-			__asm        sub    eax, posx;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-			__asm        shl    eax, cl;
-			__asm        push   eax;
-			__asm        call   S3MapDrawLine;
-			__asm        add    esp, 0x10;
+			S3MapDrawLine(((md->maploc.x - posx) << reinterpret_cast<uint8_t>(S_mapzoom)), ((md->maploc.y - posy) << reinterpret_cast<uint8_t>(S_mapzoom)), 0x0, desticon);
 		// LINE 1541:
 		_T108:
 			__asm        mov    eax, md;
 			__asm        cmp    dword ptr [eax+0x38], 0xFFFFFFFF;
 			__asm        je     _T147;
 		// LINE 1546:
-			__asm        mov    eax, pickicon;
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x3C];
-			__asm        sub    eax, posy;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-			__asm        shl    eax, cl;
-			__asm        push   eax;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x38];
-			__asm        sub    eax, posx;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-			__asm        shl    eax, cl;
-			__asm        push   eax;
-			__asm        call   S3MapDrawLine;
-			__asm        add    esp, 0x10;
+			S3MapDrawLine(((md->pickuploc.x - posx) << reinterpret_cast<uint8_t>(S_mapzoom)), ((md->pickuploc.y - posy) << reinterpret_cast<uint8_t>(S_mapzoom)), 0x0, pickicon);
 		// LINE 1548:
 		_T147:
 	}
@@ -3461,12 +3406,9 @@ _FOR_53:
 					__asm        test   eax, eax;
 					__asm        je     _Ta4;
 				// LINE 1719:
-					__asm        mov    eax, iptr;
-					__asm        mov    al, [eax];
-					__asm        mov    ecx, bufptr;
-					__asm        mov    [ecx], al;
-					__asm        inc    iptr;
-					__asm        inc    bufptr;
+					bufptr[0] = iptr[0];
+					iptr++;
+					bufptr++;
 				// LINE 1721:
 					__asm        jmp    _Taa;
 				// LINE 1723:
@@ -3542,9 +3484,7 @@ _FOR_99:
 			__asm        test   eax, eax;
 			__asm        je     _Tbc;
 
-			__asm        mov    al, col;
-			__asm        mov    ecx, writeBuffer;
-			__asm        mov    [ecx], al;
+			writeBuffer[0] = col;
 		// LINE 1778:
 		_Tbc:
 			error += dy;
@@ -3594,9 +3534,7 @@ _FOR_13d:
 			__asm        test   eax, eax;
 			__asm        je     _T160;
 
-			__asm        mov    al, col;
-			__asm        mov    ecx, writeBuffer;
-			__asm        mov    [ecx], al;
+			writeBuffer[0] = col;
 		// LINE 1797:
 		_T160:
 			error += dx;
@@ -3652,19 +3590,9 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	__asm        cmp    y1, 0x80;
 	__asm        jge    _T4e;
 // LINE 1834:
-	__asm        mov    eax, x2;
-	__asm        sub    eax, x1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dx;
-	__asm        mov    [ecx], eax;
+	dx[0] = ((x2 - x1) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1835:
-	__asm        mov    eax, y2;
-	__asm        sub    eax, y1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dy;
-	__asm        mov    [ecx], eax;
+	dy[0] = ((y2 - y1) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1836:
 	return;
 // LINE 1840:
@@ -3697,36 +3625,16 @@ _T9b:
 	__asm        cmp    dist2, eax;
 	__asm        jge    _Te5;
 // LINE 1859:
-	__asm        mov    eax, x2;
-	__asm        sub    eax, from.x;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dx;
-	__asm        mov    [ecx], eax;
+	dx[0] = ((x2 - from.x) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1860:
-	__asm        mov    eax, y2;
-	__asm        sub    eax, from.y;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dy;
-	__asm        mov    [ecx], eax;
+	dy[0] = ((y2 - from.y) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1862:
 	return;
 // LINE 1864:
 _Te5:
-	__asm        mov    eax, x2;
-	__asm        sub    eax, x1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dx;
-	__asm        mov    [ecx], eax;
+	dx[0] = ((x2 - x1) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1865:
-	__asm        mov    eax, y2;
-	__asm        sub    eax, y1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(S_mapzoom);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, dy;
-	__asm        mov    [ecx], eax;
+	dy[0] = ((y2 - y1) << reinterpret_cast<uint8_t>(S_mapzoom));
 // LINE 1867:
 }
 

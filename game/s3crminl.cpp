@@ -532,11 +532,9 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 	/*bp-0x20*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 159:
-	__asm        mov    al, reinterpret_cast<uint8_t>(x);
-	__asm        mov    startLoc.x, al;
+	startLoc.x = reinterpret_cast<uint8_t>(x);
 // LINE 160:
-	__asm        mov    al, reinterpret_cast<uint8_t>(y);
-	__asm        mov    startLoc.y, al;
+	startLoc.y = reinterpret_cast<uint8_t>(y);
 // LINE 165:
 _FOR_21:
 	for (i = 0x0; (i < 0x5); i++) {

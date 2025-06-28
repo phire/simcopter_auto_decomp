@@ -1236,13 +1236,9 @@ _T2a3:
 // LINE 408:
 	pGoal->gridIndex = 0x0;
 // LINE 409:
-	__asm        mov    al, reinterpret_cast<uint8_t>(x);
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0xC], al;
+	pGoal->gridLoc.x = reinterpret_cast<uint8_t>(x);
 // LINE 410:
-	__asm        mov    al, reinterpret_cast<uint8_t>(y);
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0xD], al;
+	pGoal->gridLoc.y = reinterpret_cast<uint8_t>(y);
 // LINE 411:
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+2];
@@ -1367,13 +1363,9 @@ _T91:
 // LINE 437:
 	goal1.gridIndex = 0xffffffff;
 // LINE 438:
-	__asm        mov    al, startLoc.x;
-	__asm        mov    ecx, goal1;
-	__asm        mov    [ecx+0xC], al;
+	goal1.gridLoc.x = startLoc.x;
 // LINE 439:
-	__asm        mov    al, startLoc.y;
-	__asm        mov    ecx, goal1;
-	__asm        mov    [ecx+0xD], al;
+	goal1.gridLoc.y = startLoc.y;
 // LINE 440:
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+2];
@@ -2062,11 +2054,9 @@ int32_t RoadGraph::FindIntersection(/*packed*/ struct Goal& goal, unsigned char 
 // LINE 634:
 	returnVal = 0x0;
 // LINE 636:
-	__asm        mov    al, x;
-	__asm        mov    here.x, al;
+	here.x = x;
 // LINE 637:
-	__asm        mov    al, y;
-	__asm        mov    here.y, al;
+	here.y = y;
 // LINE 639:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -3543,9 +3533,7 @@ void RoadGraph::FindNumRoadElements(/*packed*/ struct RGVertex *pRGV, /*packed*/
 	__asm        mov    ecx, pEdge;
 	__asm        mov    [ecx], al;
 // LINE 890:
-	__asm        mov    al, x;
-	__asm        mov    ecx, pEdge;
-	__asm        mov    [ecx+1], al;
+	pEdge->x = x;
 // LINE 891:
 	pEdge->numElementsToPath = 0x0;
 // LINE 892:
@@ -3637,11 +3625,9 @@ _T13a:
 // Block start:
 	/*bp-0x14*/  unsigned char tempx;
 	/*bp-0x18*/  unsigned char tempy;
-	__asm        mov    al, x;
-	__asm        mov    tempx, al;
+	tempx = x;
 // LINE 941:
-	__asm        mov    al, y;
-	__asm        mov    tempy, al;
+	tempy = y;
 // LINE 943:
 	__asm        mov    eax, returnDir;
 	__asm        mov    [ebp-0x2C], eax;
@@ -3688,9 +3674,7 @@ _T1a4:
 	__asm        mov    ecx, pEdge;
 	__asm        mov    [ecx], al;
 // LINE 952:
-	__asm        mov    al, tempx;
-	__asm        mov    ecx, pEdge;
-	__asm        mov    [ecx+1], al;
+	pEdge->x = tempx;
 // LINE 954:
 // Block end:
 	__asm        jmp    _T1fe;
@@ -3698,10 +3682,7 @@ _T1cb:
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
 	__asm        jne    _T1fe;
 // LINE 956:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pEdge;
-	__asm        mov    [ecx+1], al;
+	pEdge->x = pRGV->x;
 // LINE 957:
 	__asm        mov    eax, pRGV;
 	__asm        xor    ecx, ecx;
@@ -6368,11 +6349,9 @@ void RoadGraph::MakeRoad(/*packed*/ struct RGVertex *pRGV, unsigned char x, unsi
 	return;
 // LINE 1270:
 _T5e:
-	__asm        mov    al, x;
-	__asm        mov    startLoc.x, al;
+	startLoc.x = x;
 // LINE 1271:
-	__asm        mov    al, y;
-	__asm        mov    startLoc.y, al;
+	startLoc.y = y;
 // LINE 1275:
 	__asm        mov    eax, currentDir;
 	__asm        lea    eax, [eax+eax*4];
@@ -7295,17 +7274,9 @@ void RoadGraph::FindPlaceOnRoad(/*packed*/ struct Goal& goal, /*packed*/ struct 
 	/*bp-0x4*/   /*packed*/ struct Road *pRoad;
 
 // LINE 1414:
-	__asm        mov    eax, goal;
-	__asm        mov    eax, [eax];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, goal;
-	__asm        mov    [ecx+0xC], al;
+	goal.gridLoc.x = goal.pRGV->x;
 // LINE 1415:
-	__asm        mov    eax, goal;
-	__asm        mov    eax, [eax];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, goal;
-	__asm        mov    [ecx+0xD], al;
+	goal.gridLoc.y = goal.pRGV->y;
 // LINE 1417:
 _LOOP_27:
 	for (;;) {

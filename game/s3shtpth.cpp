@@ -190,13 +190,9 @@ int32_t ShortestPath::BreadthFirstSearch(/*packed*/ struct _RGIndex startVertex,
 // LINE 42:
 	pRGV->edgeIndexPrev = 0xff;
 // LINE 43:
-	__asm        mov    al, destVertex.yindex;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2C], al;
+	pRGV->yindexPrev = destVertex.yindex;
 // LINE 44:
-	__asm        mov    al, destVertex.x;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2D], al;
+	pRGV->xPrev = destVertex.x;
 // LINE 45:
 	return 0x1;
 // LINE 49:
@@ -252,11 +248,9 @@ _FOR_a6:
 	}
 // LINE 70:
 _T118:
-	__asm        mov    al, startVertex.yindex;
-	__asm        mov    scratch.yindexCurr, al;
+	scratch.yindexCurr = startVertex.yindex;
 // LINE 71:
-	__asm        mov    al, startVertex.x;
-	__asm        mov    scratch.xCurr, al;
+	scratch.xCurr = startVertex.x;
 // LINE 72:
 	scratch.edgeIndexPrev = 0xff;
 // LINE 73:
@@ -292,17 +286,11 @@ __WHILE_143:
 			__asm        cmp    dword ptr [eax+0x2F], 0;
 			__asm        jne    _T2a3;
 		// LINE 92:
-			__asm        mov    al, path.xPrev;
-			__asm        mov    ecx, pRGV;
-			__asm        mov    [ecx+0x2D], al;
+			pRGV->xPrev = path.xPrev;
 		// LINE 93:
-			__asm        mov    al, path.yindexPrev;
-			__asm        mov    ecx, pRGV;
-			__asm        mov    [ecx+0x2C], al;
+			pRGV->yindexPrev = path.yindexPrev;
 		// LINE 94:
-			__asm        mov    al, path.edgeIndexPrev;
-			__asm        mov    ecx, pRGV;
-			__asm        mov    [ecx+0x2E], al;
+			pRGV->edgeIndexPrev = path.edgeIndexPrev;
 		// LINE 95:
 			pRGV->STVisited = 0x1;
 		// LINE 99:
@@ -364,13 +352,9 @@ __WHILE_143:
 					__asm        cmp    dword ptr [eax+ecx+0x2F], 0;
 					__asm        jne    _T29e;
 				// LINE 118:
-					__asm        mov    eax, pEdge;
-					__asm        mov    al, [eax+1];
-					__asm        mov    scratch.xCurr, al;
+					scratch.xCurr = pEdge->x;
 				// LINE 119:
-					__asm        mov    eax, pEdge;
-					__asm        mov    al, [eax];
-					__asm        mov    scratch.yindexCurr, al;
+					scratch.yindexCurr = pEdge->yindex;
 				// LINE 120:
 					__asm        mov    eax, pEdge;
 					__asm        xor    ecx, ecx;
@@ -378,14 +362,11 @@ __WHILE_143:
 					__asm        add    ecx, path.cost;
 					__asm        mov    scratch.cost, ecx;
 				// LINE 121:
-					__asm        mov    al, reinterpret_cast<uint8_t>(i);
-					__asm        mov    scratch.edgeIndexPrev, al;
+					scratch.edgeIndexPrev = reinterpret_cast<uint8_t>(i);
 				// LINE 122:
-					__asm        mov    al, path.xCurr;
-					__asm        mov    scratch.xPrev, al;
+					scratch.xPrev = path.xCurr;
 				// LINE 123:
-					__asm        mov    al, path.yindexCurr;
-					__asm        mov    scratch.yindexPrev, al;
+					scratch.yindexPrev = path.yindexCurr;
 				// LINE 124:
 					this->ShortestPath::PriorityHeapInsert(scratch.xCurr);
 				// LINE 126:
@@ -425,13 +406,9 @@ int32_t ShortestPath::DepthFirstSearch(/*packed*/ struct _RGIndex startVertex, /
 	__asm        add    eax, ecx;
 	__asm        mov    pRGV, eax;
 // LINE 142:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    destLoc.x, al;
+	destLoc.x = pRGV->x;
 // LINE 143:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+1];
-	__asm        mov    destLoc.y, al;
+	destLoc.y = pRGV->y;
 // LINE 146:
 	__asm        xor    eax, eax;
 	__asm        mov    al, destVertex.x;
@@ -449,13 +426,9 @@ int32_t ShortestPath::DepthFirstSearch(/*packed*/ struct _RGIndex startVertex, /
 // LINE 148:
 	pRGV->edgeIndexPrev = 0xff;
 // LINE 149:
-	__asm        mov    al, destVertex.yindex;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2C], al;
+	pRGV->yindexPrev = destVertex.yindex;
 // LINE 150:
-	__asm        mov    al, destVertex.x;
-	__asm        mov    ecx, pRGV;
-	__asm        mov    [ecx+0x2D], al;
+	pRGV->xPrev = destVertex.x;
 // LINE 151:
 	return 0x1;
 // LINE 155:
@@ -523,19 +496,13 @@ _T129:
 	__asm        add    eax, ecx;
 	__asm        mov    pRGV, eax;
 // LINE 177:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    currLoc.x, al;
+	currLoc.x = pRGV->x;
 // LINE 178:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax+1];
-	__asm        mov    currLoc.y, al;
+	currLoc.y = pRGV->y;
 // LINE 180:
-	__asm        mov    al, startVertex.x;
-	__asm        mov    scratch.xCurr, al;
+	scratch.xCurr = startVertex.x;
 // LINE 181:
-	__asm        mov    al, startVertex.yindex;
-	__asm        mov    scratch.yindexCurr, al;
+	scratch.yindexCurr = startVertex.yindex;
 // LINE 182:
 	scratch.edgeIndexPrev = 0xff;
 // LINE 183:
@@ -571,17 +538,11 @@ __WHILE_192:
 			__asm        cmp    dword ptr [eax+0x2F], 0;
 			__asm        jne    _T30e;
 		// LINE 203:
-			__asm        mov    al, path.xPrev;
-			__asm        mov    ecx, pRGV;
-			__asm        mov    [ecx+0x2D], al;
+			pRGV->xPrev = path.xPrev;
 		// LINE 204:
-			__asm        mov    al, path.yindexPrev;
-			__asm        mov    ecx, pRGV;
-			__asm        mov    [ecx+0x2C], al;
+			pRGV->yindexPrev = path.yindexPrev;
 		// LINE 205:
-			__asm        mov    al, path.edgeIndexPrev;
-			__asm        mov    ecx, pRGV;
-			__asm        mov    [ecx+0x2E], al;
+			pRGV->edgeIndexPrev = path.edgeIndexPrev;
 		// LINE 206:
 			pRGV->STVisited = 0x1;
 		// LINE 210:
@@ -648,32 +609,21 @@ __WHILE_192:
 					__asm        cmp    dword ptr [eax+0x2F], 0;
 					__asm        jne    _T309;
 				// LINE 230:
-					__asm        mov    eax, pCurrRGV;
-					__asm        mov    al, [eax];
-					__asm        mov    currLoc.x, al;
+					currLoc.x = pCurrRGV->x;
 				// LINE 231:
-					__asm        mov    eax, pCurrRGV;
-					__asm        mov    al, [eax+1];
-					__asm        mov    currLoc.y, al;
+					currLoc.y = pCurrRGV->y;
 				// LINE 233:
-					__asm        mov    eax, pEdge;
-					__asm        mov    al, [eax+1];
-					__asm        mov    scratch.xCurr, al;
+					scratch.xCurr = pEdge->x;
 				// LINE 234:
-					__asm        mov    eax, pEdge;
-					__asm        mov    al, [eax];
-					__asm        mov    scratch.yindexCurr, al;
+					scratch.yindexCurr = pEdge->yindex;
 				// LINE 235:
 					scratch.cost = this->ShortestPath::FindDistanceFromDestination(currLoc.x, destLoc.x);
 				// LINE 236:
-					__asm        mov    al, reinterpret_cast<uint8_t>(i);
-					__asm        mov    scratch.edgeIndexPrev, al;
+					scratch.edgeIndexPrev = reinterpret_cast<uint8_t>(i);
 				// LINE 237:
-					__asm        mov    al, path.xCurr;
-					__asm        mov    scratch.xPrev, al;
+					scratch.xPrev = path.xCurr;
 				// LINE 238:
-					__asm        mov    al, path.yindexCurr;
-					__asm        mov    scratch.yindexPrev, al;
+					scratch.yindexPrev = path.yindexCurr;
 				// LINE 239:
 					this->ShortestPath::PriorityHeapInsert(scratch.xCurr);
 				// LINE 241:

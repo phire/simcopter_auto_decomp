@@ -821,11 +821,9 @@ __RETURN:
 // LINE 142:
 	minDist = 0x7d00;
 // LINE 147:
-	__asm        mov    al, reinterpret_cast<uint8_t>(cellx);
-	__asm        mov    there.x, al;
+	there.x = reinterpret_cast<uint8_t>(cellx);
 // LINE 148:
-	__asm        mov    al, reinterpret_cast<uint8_t>(celly);
-	__asm        mov    there.y, al;
+	there.y = reinterpret_cast<uint8_t>(celly);
 // LINE 150:
 	__asm        mov    eax, cartype;
 	__asm        mov    [ebp-0x1C], eax;
@@ -3050,13 +3048,9 @@ _T53c:
 // LINE 1494:
 	this->hiwaydir = 0x0;
 // LINE 1496:
-	__asm        mov    al, scanLoc.x;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xD2], al;
+	this->currentLocation.x = scanLoc.x;
 // LINE 1497:
-	__asm        mov    al, scanLoc.y;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xD3], al;
+	this->currentLocation.y = scanLoc.y;
 // LINE 1501:
 	this->AutomobileClass::LinkToCell((this + 0xd2));
 // LINE 1505:
@@ -8688,10 +8682,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(/*packed*/
 	/*bp-0x18*/  unsigned short southTile;
 
 // LINE 4045:
-	__asm        mov    eax, point;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xD6], al;
+	this->northCell.x = point.x;
 // LINE 4046:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -8700,10 +8691,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(/*packed*/
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0xD7], cl;
 // LINE 4047:
-	__asm        mov    eax, point;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xD8], al;
+	this->southCell.x = point.x;
 // LINE 4048:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -8719,10 +8707,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(/*packed*/
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0xDA], cl;
 // LINE 4050:
-	__asm        mov    eax, point;
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xDB], al;
+	this->eastCell.y = point.y;
 // LINE 4051:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -8731,10 +8716,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(/*packed*/
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0xDC], cl;
 // LINE 4052:
-	__asm        mov    eax, point;
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xDD], al;
+	this->westCell.y = point.y;
 // LINE 4055:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -10068,17 +10050,9 @@ void AutomobileClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T2ff;
 // LINE 4641:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x92], al;
+	sd->goalpRGVFixup.x = this->goal.pRGV->x;
 // LINE 4642:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x93], al;
+	sd->goalpRGVFixup.y = this->goal.pRGV->y;
 // LINE 4643:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF2];

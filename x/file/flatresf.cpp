@@ -2330,21 +2330,15 @@ void ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
 // LINE 1088:
 	bptr = dataLoc;
 // LINE 1089:
-	__asm        mov    eax, bptr;
-	__asm        mov    al, [eax];
-	__asm        mov    hiWord, al;
+	hiWord = bptr[0];
 // LINE 1091:
 	bptr++;
 // LINE 1092:
-	__asm        mov    eax, bptr;
-	__asm        mov    al, [eax];
-	__asm        mov    midWord, al;
+	midWord = bptr[0];
 // LINE 1094:
 	bptr++;
 // LINE 1095:
-	__asm        mov    eax, bptr;
-	__asm        mov    al, [eax];
-	__asm        mov    loWord, al;
+	loWord = bptr[0];
 // LINE 1097:
 	__asm        xor    eax, eax;
 	__asm        mov    al, midWord;

@@ -880,15 +880,11 @@ __WHILE_12:
 			__asm        test   reinterpret_cast<uint32_t>(success), 0xFFFF;
 			__asm        je     _Ta0;
 
-			__asm        mov    eax, node;
-			__asm        mov    al, [eax+2];
-			__asm        mov    trans, al;
+			trans = node->trueTrans;
 		// LINE 212:
 			__asm        jmp    _Ta9;
 		_Ta0:
-			__asm        mov    eax, node;
-			__asm        mov    al, [eax+3];
-			__asm        mov    trans, al;
+			trans = node->falseTrans;
 		// LINE 214:
 		_Ta9:
 			__asm        movsx  eax, trans;

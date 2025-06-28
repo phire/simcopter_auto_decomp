@@ -652,9 +652,7 @@ _T28:
 // LINE 271:
 // Block start:
 	/*bp-0xc*/   /*packed*/ struct Edge *pEdge;
-	__asm        mov    eax, startGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    startIndex.x, al;
+	startIndex.x = startGoal1.pRGV->x;
 // LINE 272:
 	__asm        mov    eax, startGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -667,9 +665,7 @@ _T28:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startIndex.yindex, al;
 // LINE 273:
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    destIndex.x, al;
+	destIndex.x = destGoal1.pRGV->x;
 // LINE 274:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -932,9 +928,7 @@ _T34:
 	__asm        cmp    result.pRGV, 0;
 	__asm        jne    _Ta8;
 // LINE 379:
-	__asm        mov    eax, stationGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    stationIndex.x, al;
+	stationIndex.x = stationGoal1.pRGV->x;
 // LINE 380:
 	__asm        mov    eax, stationGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -947,9 +941,7 @@ _T34:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    stationIndex.yindex, al;
 // LINE 381:
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    destIndex.x, al;
+	destIndex.x = destGoal1.pRGV->x;
 // LINE 382:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -1440,9 +1432,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        mov    ecx, 0x5C3828;
 	__asm        call   RoadGraph::FindIntersections;
 // LINE 544:
-	__asm        mov    eax, startGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    startVertex.x, al;
+	startVertex.x = startGoal1.pRGV->x;
 // LINE 545:
 	__asm        mov    eax, startGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -1456,9 +1446,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startVertex.yindex, al;
 // LINE 546:
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    destVertex.x, al;
+	destVertex.x = destGoal1.pRGV->x;
 // LINE 547:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -1993,13 +1981,9 @@ _LOOP_1e:
 			__asm        add    eax, ecx;
 			__asm        mov    pRGV, eax;
 		// LINE 1415:
-			__asm        mov    eax, pRGV;
-			__asm        mov    al, [eax+0x2D];
-			__asm        mov    index.x, al;
+			index.x = pRGV->xPrev;
 		// LINE 1416:
-			__asm        mov    eax, pRGV;
-			__asm        mov    al, [eax+0x2C];
-			__asm        mov    index.yindex, al;
+			index.yindex = pRGV->yindexPrev;
 		// LINE 1417:
 			__asm        xor    eax, eax;
 			__asm        mov    al, index.x;
@@ -2046,13 +2030,9 @@ _FOR_NEXT_e2:
 			__asm        add    eax, ecx;
 			__asm        mov    pRGV, eax;
 		// LINE 1437:
-			__asm        mov    eax, pRGV;
-			__asm        mov    al, [eax+0x2D];
-			__asm        mov    index.x, al;
+			index.x = pRGV->xPrev;
 		// LINE 1438:
-			__asm        mov    eax, pRGV;
-			__asm        mov    al, [eax+0x2C];
-			__asm        mov    index.yindex, al;
+			index.yindex = pRGV->yindexPrev;
 		// LINE 1439:
 			__asm        mov    eax, pRGV;
 			__asm        mov    al, [eax+0x2E];
@@ -2180,15 +2160,9 @@ void EmergencyVehicleClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    ecx, 0x40;
 	__asm        rep movsd;
 // LINE 1515:
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x292];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x296], al;
+	sd->e.dispatchPathIndex = this->dispatchPathIndex;
 // LINE 1516:
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x293];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x297], al;
+	sd->e.dispatchPathLength = this->dispatchPathLength;
 // LINE 1517:
 	sd->e.emergencyState = this->emergencyState;
 // LINE 1518:
@@ -2243,15 +2217,9 @@ _T1d:
 	__asm        mov    ecx, 0x40;
 	__asm        rep movsd;
 // LINE 1562:
-	__asm        mov    eax, sd;
-	__asm        mov    al, [eax+0x296];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x292], al;
+	this->dispatchPathIndex = sd->e.dispatchPathIndex;
 // LINE 1563:
-	__asm        mov    eax, sd;
-	__asm        mov    al, [eax+0x297];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x293], al;
+	this->dispatchPathLength = sd->e.dispatchPathLength;
 // LINE 1564:
 	this->emergencyState = sd->e.emergencyState;
 // LINE 1565:

@@ -5094,10 +5094,7 @@ _T64:
 	return;
 // LINE 2651:
 _T9e:
-	__asm        mov    eax, blit;
-	__asm        mov    al, [eax+0xC];
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = reinterpret_cast<uint8_t>(blit->user1);
 // LINE 2653:
 }
 

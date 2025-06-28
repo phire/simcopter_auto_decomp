@@ -124,9 +124,7 @@ _T45:
 	return;
 // LINE 153:
 _T7b:
-	__asm        mov    al, color;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = color;
 // LINE 155:
 	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    __RETURN;
@@ -145,9 +143,7 @@ _T7b:
 	return;
 // LINE 159:
 _Tb3:
-	__asm        mov    al, color;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = color;
 // LINE 160:
 	ptr += (Pbufwidth - 1);
 // LINE 161:
@@ -163,9 +159,7 @@ _Tb3:
 	return;
 // LINE 162:
 _Te4:
-	__asm        mov    al, color;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = color;
 // LINE 163:
 	ptr++;
 // LINE 164:
@@ -181,9 +175,7 @@ _Te4:
 	return;
 // LINE 165:
 _T10f:
-	__asm        mov    al, color;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = color;
 // LINE 169:
 __RETURN:
 }
@@ -2069,10 +2061,8 @@ __WHILE_113:
 	return;
 // LINE 1112:
 _T146:
-	__asm        mov    al, color;
-	__asm        mov    ecx, writeBuffer;
-	__asm        mov    [ecx], al;
-	__asm        inc    writeBuffer;
+	writeBuffer[0] = color;
+	writeBuffer++;
 // LINE 1113:
 	__asm        jmp    __WHILE_113;
 // LINE 1115:

@@ -872,27 +872,13 @@ void CBackBuffer::InitializeMemberVariables() {
 // LINE 219:
 	this->mFont = 0x0;
 // LINE 222:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x38], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x38];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x39], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x39];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3A], al;
+	this->colorFontCurrent.Blue = 0x0;
+	this->colorFontCurrent.Green = this->colorFontCurrent.Blue;
+	this->colorFontCurrent.Red = this->colorFontCurrent.Green;
 // LINE 225:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x3C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x3C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3D], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x3D];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3E], al;
+	this->colorCurrent.Blue = 0x0;
+	this->colorCurrent.Green = this->colorCurrent.Blue;
+	this->colorCurrent.Red = this->colorCurrent.Green;
 // LINE 226:
 	this->nColorIndexFontCurrent = 0x0;
 // LINE 227:
@@ -1135,10 +1121,7 @@ _T1bd:
 	__asm        cmp    biHeader.biClrUsed, 0;
 	__asm        jne    _T1fd;
 // LINE 336:
-	__asm        mov    eax, 1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(biHeader.biBitCount);
-	__asm        shl    eax, cl;
-	__asm        mov    biHeader.biClrUsed, eax;
+	biHeader.biClrUsed = (0x1 << reinterpret_cast<uint8_t>(biHeader.biBitCount));
 // LINE 338:
 _T1fd:
 	__asm        mov    eax, biHeader.biClrUsed;
@@ -2999,10 +2982,7 @@ _T13f:
 	__asm        cmp    biHeader.biClrUsed, 0;
 	__asm        jne    _T156;
 // LINE 1279:
-	__asm        mov    eax, 1;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(biHeader.biBitCount);
-	__asm        shl    eax, cl;
-	__asm        mov    biHeader.biClrUsed, eax;
+	biHeader.biClrUsed = (0x1 << reinterpret_cast<uint8_t>(biHeader.biBitCount));
 // LINE 1280:
 _T156:
 	__asm        cmp    biHeader.biClrUsed, 0x100;

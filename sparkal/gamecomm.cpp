@@ -780,21 +780,15 @@ _LOOP_3c:
 		// LINE 139:
 			__asm        jmp    _Tad;
 		_Tad:
-			__asm        mov    eax, tempShortcutListIterator.node;
-			__asm        mov    al, [eax+0x10];
-			__asm        mov    chCurrentChar, al;
+			chCurrentChar = reinterpret_cast<uint8_t>(tempShortcutListIterator.node->data.lKey);
 		// LINE 140:
 			__asm        jmp    _Tbb;
 		_Tbb:
-			__asm        mov    eax, tempShortcutListIterator.node;
-			__asm        mov    al, [eax+0xC];
-			__asm        mov    chCurrentCommand, al;
+			chCurrentCommand = reinterpret_cast<uint8_t>(tempShortcutListIterator.node->data.lCommand);
 		// LINE 141:
 			__asm        jmp    _Tc9;
 		_Tc9:
-			__asm        mov    eax, tempShortcutListIterator.node;
-			__asm        mov    al, [eax+0x14];
-			__asm        mov    chCurrentModifiers, al;
+			chCurrentModifiers = reinterpret_cast<uint8_t>(tempShortcutListIterator.node->data.lModifiers);
 		// LINE 143:
 			__asm        xor    eax, eax;
 			__asm        mov    al, chCurrentCommand;

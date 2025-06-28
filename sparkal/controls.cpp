@@ -1078,16 +1078,9 @@ _T2d:
 	this->nPaletteIndexFill = GraphicWindow::colorConstants.nPaletteIndexWhite;
 	this-><BoxWindow+0x00> = 0x5919c0;
 // LINE 29:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7D], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7D];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7E], al;
+	this->colorOutline.Blue = 0x0;
+	this->colorOutline.Green = this->colorOutline.Blue;
+	this->colorOutline.Red = this->colorOutline.Green;
 // LINE 30:
 	return;
 
@@ -1105,16 +1098,9 @@ _T41:
 	this->nPaletteIndexFill = GraphicWindow::colorConstants.nPaletteIndexWhite;
 	this-><BoxWindow+0x00> = 0x5919c0;
 // LINE 44:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7D], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7D];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7E], al;
+	this->colorOutline.Blue = 0x0;
+	this->colorOutline.Green = this->colorOutline.Blue;
+	this->colorOutline.Red = this->colorOutline.Green;
 // LINE 45:
 	return;
 
@@ -1188,17 +1174,9 @@ _T19:
 // LINE 96:
 	this->bDrawOpaqueBackground = 0x0;
 // LINE 99:
-	__asm        mov    al, reinterpret_cast<uint8_t>(GraphicWindow::colorConstants.nPaletteIndexBlack);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x79], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x79];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7A], al;
+	this->colorFont.Blue = reinterpret_cast<uint8_t>(GraphicWindow::colorConstants.nPaletteIndexBlack);
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 100:
 	this->nBackgroundPaletteIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 101:
@@ -1229,16 +1207,9 @@ _T2d:
 // LINE 114:
 	this->bDrawOpaqueBackground = 0x0;
 // LINE 117:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x78], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x79], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x79];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7A], al;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 118:
 	this->nBackgroundPaletteIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 119:
@@ -1268,16 +1239,9 @@ _T2d:
 // LINE 132:
 	this->bDrawOpaqueBackground = 0x0;
 // LINE 135:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x78], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x79], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x79];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7A], al;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 136:
 	this->nBackgroundPaletteIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 137:
@@ -10671,27 +10635,13 @@ _T261:
 	(this + 0x8c)->MFont::MFont();
 	this-><ListBoxWindow+0x00> = 0x5920c8;
 // LINE 2079:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7D], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7D];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7E], al;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 2082:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x80], 0xFF;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x80];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x81], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x81];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x82], al;
+	this->colorFontHighlighted.Blue = 0xff;
+	this->colorFontHighlighted.Green = this->colorFontHighlighted.Blue;
+	this->colorFontHighlighted.Red = this->colorFontHighlighted.Green;
 // LINE 2083:
 	this->nBackgroundIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 2084:
@@ -10926,27 +10876,13 @@ _T275:
 	(this + 0x8c)->MFont::MFont();
 	this-><ListBoxWindow+0x00> = 0x5920c8;
 // LINE 2108:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7D], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7D];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7E], al;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 2111:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x80], 0xFF;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x80];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x81], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x81];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x82], al;
+	this->colorFontHighlighted.Blue = 0xff;
+	this->colorFontHighlighted.Green = this->colorFontHighlighted.Blue;
+	this->colorFontHighlighted.Red = this->colorFontHighlighted.Green;
 // LINE 2112:
 	this->nBackgroundIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 2113:
