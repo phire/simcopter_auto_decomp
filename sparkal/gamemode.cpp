@@ -569,14 +569,16 @@ void GameModeMainMenuData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-0x10C], 0x100;
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    [ebp-0x110], eax;
+	{
 __WHILE_58:
-	__asm        dec    dword ptr [ebp-0x10C];
-	__asm        js     _T7b;
+		__asm        dec    dword ptr [ebp-0x10C];
+		__asm        js     _T7b;
 
-	__asm        mov    ecx, [ebp-0x110];
-	__asm        call   SparkalColor::SparkalColor;
-	__asm        add    dword ptr [ebp-0x110], 4;
-	__asm        jmp    __WHILE_58;
+		__asm        mov    ecx, [ebp-0x110];
+		__asm        call   SparkalColor::SparkalColor;
+		__asm        add    dword ptr [ebp-0x110], 4;
+		__asm        jmp    __WHILE_58;
+	}
 _T7b:
 	__asm        jmp    _T80;
 _T80:
@@ -935,14 +937,16 @@ void GameModePickCareerCityData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-0x10C], 0x100;
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    [ebp-0x110], eax;
+	{
 __WHILE_58:
-	__asm        dec    dword ptr [ebp-0x10C];
-	__asm        js     _T7b;
+		__asm        dec    dword ptr [ebp-0x10C];
+		__asm        js     _T7b;
 
-	__asm        mov    ecx, [ebp-0x110];
-	__asm        call   SparkalColor::SparkalColor;
-	__asm        add    dword ptr [ebp-0x110], 4;
-	__asm        jmp    __WHILE_58;
+		__asm        mov    ecx, [ebp-0x110];
+		__asm        call   SparkalColor::SparkalColor;
+		__asm        add    dword ptr [ebp-0x110], 4;
+		__asm        jmp    __WHILE_58;
+	}
 _T7b:
 	__asm        jmp    _T80;
 _T80:
@@ -1210,14 +1214,16 @@ void GameModePlayData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-0x114], 0x100;
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    [ebp-0x118], eax;
+	{
 __WHILE_58:
-	__asm        dec    dword ptr [ebp-0x114];
-	__asm        js     _T7b;
+		__asm        dec    dword ptr [ebp-0x114];
+		__asm        js     _T7b;
 
-	__asm        mov    ecx, [ebp-0x118];
-	__asm        call   SparkalColor::SparkalColor;
-	__asm        add    dword ptr [ebp-0x118], 4;
-	__asm        jmp    __WHILE_58;
+		__asm        mov    ecx, [ebp-0x118];
+		__asm        call   SparkalColor::SparkalColor;
+		__asm        add    dword ptr [ebp-0x118], 4;
+		__asm        jmp    __WHILE_58;
+	}
 _T7b:
 	__asm        jmp    _T80;
 _T80:
@@ -5095,14 +5101,16 @@ void GameModeHangarData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-8], 0x100;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0xC], eax;
+	{
 __WHILE_40:
-	__asm        dec    dword ptr [ebp-8];
-	__asm        js     _T5a;
+		__asm        dec    dword ptr [ebp-8];
+		__asm        js     _T5a;
 
-	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   SparkalColor::SparkalColor;
-	__asm        add    dword ptr [ebp-0xC], 4;
-	__asm        jmp    __WHILE_40;
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        call   SparkalColor::SparkalColor;
+		__asm        add    dword ptr [ebp-0xC], 4;
+		__asm        jmp    __WHILE_40;
+	}
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:
@@ -5735,14 +5743,16 @@ void GameModeCatalogData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-8], 0x100;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0xC], eax;
+	{
 __WHILE_40:
-	__asm        dec    dword ptr [ebp-8];
-	__asm        js     _T5a;
+		__asm        dec    dword ptr [ebp-8];
+		__asm        js     _T5a;
 
-	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   SparkalColor::SparkalColor;
-	__asm        add    dword ptr [ebp-0xC], 4;
-	__asm        jmp    __WHILE_40;
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        call   SparkalColor::SparkalColor;
+		__asm        add    dword ptr [ebp-0xC], 4;
+		__asm        jmp    __WHILE_40;
+	}
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:
@@ -6423,14 +6433,16 @@ void GameModeMissionLogData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-8], 0x100;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0xC], eax;
+	{
 __WHILE_40:
-	__asm        dec    dword ptr [ebp-8];
-	__asm        js     _T5a;
+		__asm        dec    dword ptr [ebp-8];
+		__asm        js     _T5a;
 
-	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   SparkalColor::SparkalColor;
-	__asm        add    dword ptr [ebp-0xC], 4;
-	__asm        jmp    __WHILE_40;
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        call   SparkalColor::SparkalColor;
+		__asm        add    dword ptr [ebp-0xC], 4;
+		__asm        jmp    __WHILE_40;
+	}
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:
@@ -7111,14 +7123,16 @@ void GameModeInventoryData::CreatePalette() {
 	__asm        mov    dword ptr [ebp-8], 0x100;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0xC], eax;
+	{
 __WHILE_40:
-	__asm        dec    dword ptr [ebp-8];
-	__asm        js     _T5a;
+		__asm        dec    dword ptr [ebp-8];
+		__asm        js     _T5a;
 
-	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   SparkalColor::SparkalColor;
-	__asm        add    dword ptr [ebp-0xC], 4;
-	__asm        jmp    __WHILE_40;
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        call   SparkalColor::SparkalColor;
+		__asm        add    dword ptr [ebp-0xC], 4;
+		__asm        jmp    __WHILE_40;
+	}
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:

@@ -822,34 +822,36 @@ _FOR_442:
 	__asm        mov    [ebp-0x254], ax;
 	__asm        mov    word ptr [ebp-0x258], 1;
 	__asm        jmp    _FOR_COND_442;
+	{
 _FOR_NEXT_442:
-	__asm        inc    word ptr [ebp-0x258];
+		__asm        inc    word ptr [ebp-0x258];
 _FOR_COND_442:
-	__asm        movsx  eax, word ptr [ebp-0x254];
-	__asm        movsx  ecx, word ptr [ebp-0x258];
-	__asm        cmp    eax, ecx;
-	__asm        jl     _T4c6;
+		__asm        movsx  eax, word ptr [ebp-0x254];
+		__asm        movsx  ecx, word ptr [ebp-0x258];
+		__asm        cmp    eax, ecx;
+		__asm        jl     _T4c6;
 
-	__asm        push   0x55E6F0;
-	__asm        mov    eax, [ebp-0x258];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x268];
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x268];
-	__asm        mov    ecx, [eax+0xC];
-	__asm        call   FlatResFile::GetByIndex;
-	__asm        mov    [ebp-0x25C], eax;
-	__asm        cmp    dword ptr [ebp-0x25C], 0;
-	__asm        jne    _T4b2;
+		__asm        push   0x55E6F0;
+		__asm        mov    eax, [ebp-0x258];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x268];
+		__asm        mov    eax, [eax+0x10];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x268];
+		__asm        mov    ecx, [eax+0xC];
+		__asm        call   FlatResFile::GetByIndex;
+		__asm        mov    [ebp-0x25C], eax;
+		__asm        cmp    dword ptr [ebp-0x25C], 0;
+		__asm        jne    _T4b2;
 
-	doAssert(0x5be1ec, 0xc1, 0x5be148, 0x8c085);
+		doAssert(0x5be1ec, 0xc1, 0x5be148, 0x8c085);
 _T4b2:
-	__asm        mov    eax, [ebp-0x25C];
-	__asm        push   eax;
-	__asm        call   cCopterBody::MakeNew;
-	__asm        add    esp, 4;
-	__asm        jmp    _FOR_NEXT_442;
+		__asm        mov    eax, [ebp-0x25C];
+		__asm        push   eax;
+		__asm        call   cCopterBody::MakeNew;
+		__asm        add    esp, 4;
+		__asm        jmp    _FOR_NEXT_442;
+	}
 _T4c6:
 	__asm        test   dword ptr [ebp-0x260], 0xFFFF;
 	__asm        je     _T4ed;
@@ -1110,16 +1112,18 @@ _FOR_102:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _FOR_COND_102;
+	{
 _FOR_NEXT_102:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ebp-0x30], eax;
+		__asm        mov    eax, [ebp-0x30];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x30], eax;
 _FOR_COND_102:
-	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     _T11d;
+		__asm        cmp    dword ptr [ebp-0x30], 0;
+		__asm        je     _T11d;
 
-	__asm        inc    dword ptr [ebp-0x34];
-	__asm        jmp    _FOR_NEXT_102;
+		__asm        inc    dword ptr [ebp-0x34];
+		__asm        jmp    _FOR_NEXT_102;
+	}
 _T11d:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        movsx  eax, word ptr [eax+8];
@@ -1260,16 +1264,18 @@ _FOR_2d4:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    _FOR_COND_2d4;
+	{
 _FOR_NEXT_2d4:
-	__asm        mov    eax, [ebp-0x68];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ebp-0x68], eax;
+		__asm        mov    eax, [ebp-0x68];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x68], eax;
 _FOR_COND_2d4:
-	__asm        cmp    dword ptr [ebp-0x68], 0;
-	__asm        je     _T2ef;
+		__asm        cmp    dword ptr [ebp-0x68], 0;
+		__asm        je     _T2ef;
 
-	__asm        inc    dword ptr [ebp-0x6C];
-	__asm        jmp    _FOR_NEXT_2d4;
+		__asm        inc    dword ptr [ebp-0x6C];
+		__asm        jmp    _FOR_NEXT_2d4;
+	}
 _T2ef:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        movsx  eax, word ptr [eax+8];

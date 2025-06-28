@@ -431,14 +431,16 @@ void CareerWindow::CareerWindow(/*packed*/ class MRect& rectNewPosition, int32_t
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x78;
 	__asm        mov    [ebp-8], eax;
+	{
 __WHILE_40:
-	__asm        dec    dword ptr [ebp-4];
-	__asm        js     _T5a;
+		__asm        dec    dword ptr [ebp-4];
+		__asm        js     _T5a;
 
-	__asm        mov    ecx, [ebp-8];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-8], 0x10;
-	__asm        jmp    __WHILE_40;
+		__asm        mov    ecx, [ebp-8];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-8], 0x10;
+		__asm        jmp    __WHILE_40;
+	}
 _T5a:
 	__asm        jmp    _T5f;
 _T5f:
@@ -449,14 +451,16 @@ _T5f:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xBC;
 	__asm        mov    [ebp-0x10], eax;
+	{
 __WHILE_7d:
-	__asm        dec    dword ptr [ebp-0xC];
-	__asm        js     _T9a;
+		__asm        dec    dword ptr [ebp-0xC];
+		__asm        js     _T9a;
 
-	__asm        mov    ecx, [ebp-0x10];
-	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
-	__asm        add    dword ptr [ebp-0x10], 0x27C;
-	__asm        jmp    __WHILE_7d;
+		__asm        mov    ecx, [ebp-0x10];
+		__asm        call   SmackerBackBuffer::SmackerBackBuffer;
+		__asm        add    dword ptr [ebp-0x10], 0x27C;
+		__asm        jmp    __WHILE_7d;
+	}
 _T9a:
 	__asm        jmp    _T9f;
 _T9f:
@@ -547,14 +551,16 @@ _T22:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        add    eax, ecx;
 	__asm        add    [ebp-8], eax;
+	{
 __WHILE_46:
-	__asm        dec    dword ptr [ebp-4];
-	__asm        js     _T63;
+		__asm        dec    dword ptr [ebp-4];
+		__asm        js     _T63;
 
-	__asm        sub    dword ptr [ebp-8], 0x27C;
-	__asm        mov    ecx, [ebp-8];
-	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
-	__asm        jmp    __WHILE_46;
+		__asm        sub    dword ptr [ebp-8], 0x27C;
+		__asm        mov    ecx, [ebp-8];
+		__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
+		__asm        jmp    __WHILE_46;
+	}
 _T63:
 	return;
 
@@ -2162,30 +2168,34 @@ void CareerWindow::DrawCitySelection() {
 	__asm        mov    dword ptr [ebp-0x12C], 0xC;
 	__asm        lea    eax, ptDestinations[0][0].x;
 	__asm        mov    [ebp-0x130], eax;
+	{
 // LINE 257:
 __WHILE_28:
-	__asm        dec    dword ptr [ebp-0x12C];
-	__asm        js     _T4b;
+		__asm        dec    dword ptr [ebp-0x12C];
+		__asm        js     _T4b;
 
-	__asm        mov    ecx, [ebp-0x130];
-	__asm        call   MPoint::MPoint;
-	__asm        add    dword ptr [ebp-0x130], 8;
-	__asm        jmp    __WHILE_28;
+		__asm        mov    ecx, [ebp-0x130];
+		__asm        call   MPoint::MPoint;
+		__asm        add    dword ptr [ebp-0x130], 8;
+		__asm        jmp    __WHILE_28;
+	}
 _T4b:
 	__asm        jmp    _T50;
 _T50:
 	__asm        mov    dword ptr [ebp-0x134], 0xC;
 	__asm        lea    eax, rectSources[0][0].left;
 	__asm        mov    [ebp-0x138], eax;
+	{
 // LINE 258:
 __WHILE_66:
-	__asm        dec    dword ptr [ebp-0x134];
-	__asm        js     _T89;
+		__asm        dec    dword ptr [ebp-0x134];
+		__asm        js     _T89;
 
-	__asm        mov    ecx, [ebp-0x138];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x138], 0x10;
-	__asm        jmp    __WHILE_66;
+		__asm        mov    ecx, [ebp-0x138];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x138], 0x10;
+		__asm        jmp    __WHILE_66;
+	}
 _T89:
 	__asm        jmp    _T8e;
 // LINE 261:
@@ -2714,14 +2724,16 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
 	__asm        mov    [ebp-0xC8], eax;
+	{
 __WHILE_4f:
-	__asm        dec    dword ptr [ebp-0xC4];
-	__asm        js     _T72;
+		__asm        dec    dword ptr [ebp-0xC4];
+		__asm        js     _T72;
 
-	__asm        mov    ecx, [ebp-0xC8];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0xC8], 0x10;
-	__asm        jmp    __WHILE_4f;
+		__asm        mov    ecx, [ebp-0xC8];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0xC8], 0x10;
+		__asm        jmp    __WHILE_4f;
+	}
 _T72:
 	__asm        jmp    _T77;
 _T77:

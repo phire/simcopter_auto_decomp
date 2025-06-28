@@ -1044,30 +1044,32 @@ _Tfa:
 		__asm        mov    al, data;
 		__asm        inc    eax;
 		__asm        mov    counter, eax;
+		{
 // LINE 383:
 __WHILE_103:
-		__asm        mov    eax, counter;
-		__asm        mov    [ebp-0x1C], eax;
-		__asm        dec    counter;
-		__asm        cmp    dword ptr [ebp-0x1C], 0;
-		__asm        je     _T13f;
+			__asm        mov    eax, counter;
+			__asm        mov    [ebp-0x1C], eax;
+			__asm        dec    counter;
+			__asm        cmp    dword ptr [ebp-0x1C], 0;
+			__asm        je     _T13f;
 // LINE 385:
-		__asm        mov    eax, pSource;
-		__asm        xor    ecx, ecx;
-		__asm        mov    cl, [eax];
-		__asm        xor    eax, eax;
-		__asm        mov    al, TransparentColor;
-		__asm        cmp    ecx, eax;
-		__asm        je     _T134;
+			__asm        mov    eax, pSource;
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, [eax];
+			__asm        xor    eax, eax;
+			__asm        mov    al, TransparentColor;
+			__asm        cmp    ecx, eax;
+			__asm        je     _T134;
 // LINE 386:
-		pDest[0] = pSource[0];
+			pDest[0] = pSource[0];
 // LINE 388:
 _T134:
-		pDest++;
+			pDest++;
 // LINE 389:
-		pSource++;
+			pSource++;
 // LINE 390:
-		__asm        jmp    __WHILE_103;
+			__asm        jmp    __WHILE_103;
+		}
 // LINE 391:
 _T13f:
 		__asm        jmp    _T175;

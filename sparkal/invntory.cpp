@@ -552,14 +552,16 @@ _T310:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xFE;
 	__asm        mov    [ebp-0x1C], eax;
+	{
 __WHILE_353:
-	__asm        dec    dword ptr [ebp-0x18];
-	__asm        js     _T36d;
+		__asm        dec    dword ptr [ebp-0x18];
+		__asm        js     _T36d;
 
-	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   basic_string<char>::basic_string<char>;
-	__asm        add    dword ptr [ebp-0x1C], 8;
-	__asm        jmp    __WHILE_353;
+		__asm        mov    ecx, [ebp-0x1C];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        add    dword ptr [ebp-0x1C], 8;
+		__asm        jmp    __WHILE_353;
+	}
 _T36d:
 	__asm        jmp    _T372;
 _T372:
@@ -567,14 +569,16 @@ _T372:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x146;
 	__asm        mov    [ebp-0x24], eax;
+	{
 __WHILE_387:
-	__asm        dec    dword ptr [ebp-0x20];
-	__asm        js     _T3a1;
+		__asm        dec    dword ptr [ebp-0x20];
+		__asm        js     _T3a1;
 
-	__asm        mov    ecx, [ebp-0x24];
-	__asm        call   basic_string<char>::basic_string<char>;
-	__asm        add    dword ptr [ebp-0x24], 8;
-	__asm        jmp    __WHILE_387;
+		__asm        mov    ecx, [ebp-0x24];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        add    dword ptr [ebp-0x24], 8;
+		__asm        jmp    __WHILE_387;
+	}
 _T3a1:
 	__asm        jmp    _T3a6;
 _T3a6:
@@ -1000,14 +1004,16 @@ _T2a8:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x48], eax;
+	{
 __WHILE_2c3:
-	__asm        dec    dword ptr [ebp-0x44];
-	__asm        js     _T2dd;
+		__asm        dec    dword ptr [ebp-0x44];
+		__asm        js     _T2dd;
 
-	__asm        sub    dword ptr [ebp-0x48], 8;
-	__asm        mov    ecx, [ebp-0x48];
-	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    __WHILE_2c3;
+		__asm        sub    dword ptr [ebp-0x48], 8;
+		__asm        mov    ecx, [ebp-0x48];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    __WHILE_2c3;
+	}
 _T2dd:
 	__asm        jmp    _T2e2;
 _T2e2:
@@ -1018,14 +1024,16 @@ _T2e2:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x50], eax;
+	{
 __WHILE_2fd:
-	__asm        dec    dword ptr [ebp-0x4C];
-	__asm        js     _T317;
+		__asm        dec    dword ptr [ebp-0x4C];
+		__asm        js     _T317;
 
-	__asm        sub    dword ptr [ebp-0x50], 8;
-	__asm        mov    ecx, [ebp-0x50];
-	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    __WHILE_2fd;
+		__asm        sub    dword ptr [ebp-0x50], 8;
+		__asm        mov    ecx, [ebp-0x50];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    __WHILE_2fd;
+	}
 _T317:
 	__asm        jmp    _T31c;
 _T31c:
@@ -2241,15 +2249,17 @@ void InventoryWindow::DrawTitleText() {
 	__asm        mov    dword ptr [ebp-0x60], 3;
 	__asm        lea    eax, rectText[0].left;
 	__asm        mov    [ebp-0x64], eax;
+	{
 // LINE 175:
 __WHILE_1f:
-	__asm        dec    dword ptr [ebp-0x60];
-	__asm        js     _T39;
+		__asm        dec    dword ptr [ebp-0x60];
+		__asm        js     _T39;
 
-	__asm        mov    ecx, [ebp-0x64];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x64], 0x10;
-	__asm        jmp    __WHILE_1f;
+		__asm        mov    ecx, [ebp-0x64];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x64], 0x10;
+		__asm        jmp    __WHILE_1f;
+	}
 _T39:
 	__asm        jmp    _T3e;
 // LINE 176:

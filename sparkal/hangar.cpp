@@ -921,17 +921,19 @@ _Tef:
 		__asm        mov    eax, [ebp-0x34];
 		__asm        mov    eax, [eax+0x10];
 		__asm        mov    [ebp-0x30], eax;
+		{
 __WHILE_101:
-		__asm        mov    eax, [ebp-0x2C];
-		__asm        cmp    [ebp-0x30], eax;
-		__asm        je     _T122;
+			__asm        mov    eax, [ebp-0x2C];
+			__asm        cmp    [ebp-0x30], eax;
+			__asm        je     _T122;
 
-		__asm        mov    eax, [ebp-0x30];
-		__asm        push   eax;
-		__asm        call   destroy;
-		__asm        add    esp, 4;
-		__asm        add    dword ptr [ebp-0x30], 8;
-		__asm        jmp    __WHILE_101;
+			__asm        mov    eax, [ebp-0x30];
+			__asm        push   eax;
+			__asm        call   destroy;
+			__asm        add    esp, 4;
+			__asm        add    dword ptr [ebp-0x30], 8;
+			__asm        jmp    __WHILE_101;
+		}
 _T122:
 		__asm        jmp    _T127;
 _T127:

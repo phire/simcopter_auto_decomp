@@ -6436,30 +6436,32 @@ _T449:
 _FOR_45e:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        jmp    _FOR_COND_45e;
+	{
 _FOR_NEXT_45e:
-	__asm        inc    dword ptr [ebp-0x3C];
+		__asm        inc    dword ptr [ebp-0x3C];
 _FOR_COND_45e:
-	__asm        cmp    dword ptr [ebp-0x3C], 1;
-	__asm        jae    _T49e;
+		__asm        cmp    dword ptr [ebp-0x3C], 1;
+		__asm        jae    _T49e;
 
-	__asm        jmp    _T470;
+		__asm        jmp    _T470;
 _T470:
-	__asm        jmp    _T475;
+		__asm        jmp    _T475;
 _T475:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xC];
-	__asm        add    eax, [ecx];
-	__asm        add    eax, [ebp-0x3C];
-	__asm        mov    [ebp-0x48], eax;
-	__asm        mov    al, [ebp-0x6C];
-	__asm        mov    ecx, [ebp-0x48];
-	__asm        mov    [ecx], al;
-	__asm        jmp    _T499;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0xC];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0xC];
+		__asm        add    eax, [ecx];
+		__asm        add    eax, [ebp-0x3C];
+		__asm        mov    [ebp-0x48], eax;
+		__asm        mov    al, [ebp-0x6C];
+		__asm        mov    ecx, [ebp-0x48];
+		__asm        mov    [ecx], al;
+		__asm        jmp    _T499;
 _T499:
-	__asm        jmp    _FOR_NEXT_45e;
+		__asm        jmp    _FOR_NEXT_45e;
+	}
 _T49e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];

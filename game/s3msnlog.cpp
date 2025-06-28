@@ -1158,55 +1158,57 @@ int32_t LogManager::ReadFromMIFF(/*packed*/ class MIFF *miffReader) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, miffReader;
 	__asm        call   dword ptr [eax+0x44];
+	{
 // LINE 104:
 __WHILE_17:
-	__asm        push   0x434C4F47;
-	__asm        mov    eax, miffReader;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, miffReader;
-	__asm        call   dword ptr [eax+0x54];
-	__asm        test   eax, eax;
-	__asm        je     _T96;
+		__asm        push   0x434C4F47;
+		__asm        mov    eax, miffReader;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, miffReader;
+		__asm        call   dword ptr [eax+0x54];
+		__asm        test   eax, eax;
+		__asm        je     _T96;
 // LINE 105:
-	__asm        mov    eax, miffReader;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, miffReader;
-	__asm        call   dword ptr [eax+0x18];
-	__asm        mov    lPresentRecordDataLength, eax;
+		__asm        mov    eax, miffReader;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, miffReader;
+		__asm        call   dword ptr [eax+0x18];
+		__asm        mov    lPresentRecordDataLength, eax;
 // LINE 106:
-	__asm        cmp    lPresentRecordDataLength, 0xC;
-	__asm        jge    _T4c;
+		__asm        cmp    lPresentRecordDataLength, 0xC;
+		__asm        jge    _T4c;
 // LINE 107:
-	__asm        jmp    __WHILE_17;
+		__asm        jmp    __WHILE_17;
 // LINE 108:
 _T4c:
-	__asm        cmp    lPresentRecordDataLength, 0x38;
-	__asm        jle    _T5b;
+		__asm        cmp    lPresentRecordDataLength, 0x38;
+		__asm        jle    _T5b;
 // LINE 109:
-	__asm        jmp    __WHILE_17;
+		__asm        jmp    __WHILE_17;
 // LINE 110:
 _T5b:
-	__asm        push   0xC;
-	__asm        lea    eax, tempLogBase.nType;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, miffReader;
-	__asm        call   dword ptr [eax+0x40];
+		__asm        push   0xC;
+		__asm        lea    eax, tempLogBase.nType;
+		__asm        push   eax;
+		__asm        mov    eax, miffReader;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, miffReader;
+		__asm        call   dword ptr [eax+0x40];
 // LINE 111:
-	__asm        lea    eax, tempLogBase.nType;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   LogManager::ValidateLogEntry;
-	__asm        test   eax, eax;
-	__asm        jne    _T85;
+		__asm        lea    eax, tempLogBase.nType;
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   LogManager::ValidateLogEntry;
+		__asm        test   eax, eax;
+		__asm        jne    _T85;
 // LINE 112:
-	__asm        jmp    __WHILE_17;
+		__asm        jmp    __WHILE_17;
 // LINE 113:
 _T85:
-	this->LogManager::ReadCurrentRecordFromMIFF(miffReader);
+		this->LogManager::ReadCurrentRecordFromMIFF(miffReader);
 // LINE 114:
-	__asm        jmp    __WHILE_17;
+		__asm        jmp    __WHILE_17;
+	}
 // LINE 115:
 _T96:
 	return 0x1;

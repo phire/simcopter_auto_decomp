@@ -568,36 +568,40 @@ void IncrementXY(/*unpacked*/ struct Polar *inc, /*unpacked*/ struct Polar *part
 
 // FUNCTION: COPTER_D 0x00562bdb
 void Keep0to2pi(float * radians) {
+	{
 // LINE 160:
 __WHILE_06:
-	__asm        mov    eax, radians;
-	__asm        fld    dword ptr [eax];
-	__asm        fcomp  qword ptr ds:[0x593758];
-	__asm        fnstsw ax;
-	__asm        test   ah, 1;
-	__asm        jne    __WHILE_31;
+		__asm        mov    eax, radians;
+		__asm        fld    dword ptr [eax];
+		__asm        fcomp  qword ptr ds:[0x593758];
+		__asm        fnstsw ax;
+		__asm        test   ah, 1;
+		__asm        jne    __WHILE_31;
 // LINE 161:
-	__asm        mov    eax, radians;
-	__asm        fld    dword ptr [eax];
-	__asm        fsub   dword ptr ds:[0x593760];
-	__asm        mov    eax, radians;
-	__asm        fstp   dword ptr [eax];
-	__asm        jmp    __WHILE_06;
+		__asm        mov    eax, radians;
+		__asm        fld    dword ptr [eax];
+		__asm        fsub   dword ptr ds:[0x593760];
+		__asm        mov    eax, radians;
+		__asm        fstp   dword ptr [eax];
+		__asm        jmp    __WHILE_06;
+	}
+	{
 // LINE 162:
 __WHILE_31:
-	__asm        mov    eax, radians;
-	__asm        fld    dword ptr [eax];
-	__asm        fcomp  dword ptr ds:[0x593750];
-	__asm        fnstsw ax;
-	__asm        test   ah, 1;
-	__asm        je     _T5c;
+		__asm        mov    eax, radians;
+		__asm        fld    dword ptr [eax];
+		__asm        fcomp  dword ptr ds:[0x593750];
+		__asm        fnstsw ax;
+		__asm        test   ah, 1;
+		__asm        je     _T5c;
 // LINE 163:
-	__asm        mov    eax, radians;
-	__asm        fld    dword ptr [eax];
-	__asm        fadd   dword ptr ds:[0x593760];
-	__asm        mov    eax, radians;
-	__asm        fstp   dword ptr [eax];
-	__asm        jmp    __WHILE_31;
+		__asm        mov    eax, radians;
+		__asm        fld    dword ptr [eax];
+		__asm        fadd   dword ptr ds:[0x593760];
+		__asm        mov    eax, radians;
+		__asm        fstp   dword ptr [eax];
+		__asm        jmp    __WHILE_31;
+	}
 // LINE 164:
 _T5c:
 	return;

@@ -407,84 +407,86 @@ _T24:
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    eax, [eax+ecx+0x10];
 	__asm        mov    curBeh, eax;
+	{
 // LINE 65:
 __WHILE_42:
-	__asm        movsx  eax, stackSize;
-	__asm        test   eax, eax;
-	__asm        jl     _T115;
+		__asm        movsx  eax, stackSize;
+		__asm        test   eax, eax;
+		__asm        jl     _T115;
 // LINE 66:
-	__asm        movsx  eax, stackSize;
-	__asm        test   eax, eax;
-	__asm        jl     _T6d;
+		__asm        movsx  eax, stackSize;
+		__asm        test   eax, eax;
+		__asm        jl     _T6d;
 
-	__asm        mov    eax, this;
-	__asm        movsx  eax, word ptr [eax+8];
-	__asm        movsx  ecx, stackSize;
-	__asm        cmp    eax, ecx;
-	__asm        jg     _T87;
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+8];
+		__asm        movsx  ecx, stackSize;
+		__asm        cmp    eax, ecx;
+		__asm        jg     _T87;
 _T6d:
-	__asm        mov    eax, 0x10;
-	__asm        mov    ecx, curBeh;
-	__asm        cmp    [eax], ecx;
-	__asm        je     _T10c;
+		__asm        mov    eax, 0x10;
+		__asm        mov    ecx, curBeh;
+		__asm        cmp    [eax], ecx;
+		__asm        je     _T10c;
 
-	__asm        jmp    _Tb8;
+		__asm        jmp    _Tb8;
 
-	__asm        jmp    _Ta9;
+		__asm        jmp    _Ta9;
 _T87:
-	__asm        movsx  eax, stackSize;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    edx, curBeh;
-	__asm        cmp    [eax+ecx+0x10], edx;
-	__asm        je     _T10c;
+		__asm        movsx  eax, stackSize;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+4];
+		__asm        mov    edx, curBeh;
+		__asm        cmp    [eax+ecx+0x10], edx;
+		__asm        je     _T10c;
 
-	__asm        jmp    _Tb8;
+		__asm        jmp    _Tb8;
 _Ta9:
-	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    ecx, curBeh;
-	__asm        cmp    [eax+0x10], ecx;
-	__asm        je     _T10c;
+		__asm        mov    eax, [ebp-0xC];
+		__asm        mov    ecx, curBeh;
+		__asm        cmp    [eax+0x10], ecx;
+		__asm        je     _T10c;
 // LINE 67:
 _Tb8:
-	__asm        movsx  eax, stackSize;
-	__asm        inc    eax;
-	__asm        movsx  eax, ax;
-	__asm        test   eax, eax;
-	__asm        jl     _Tdf;
+		__asm        movsx  eax, stackSize;
+		__asm        inc    eax;
+		__asm        movsx  eax, ax;
+		__asm        test   eax, eax;
+		__asm        jl     _Tdf;
 
-	__asm        movsx  eax, stackSize;
-	__asm        inc    eax;
-	__asm        movsx  eax, ax;
-	__asm        mov    ecx, this;
-	__asm        movsx  ecx, word ptr [ecx+8];
-	__asm        cmp    eax, ecx;
-	__asm        jl     _Teb;
+		__asm        movsx  eax, stackSize;
+		__asm        inc    eax;
+		__asm        movsx  eax, ax;
+		__asm        mov    ecx, this;
+		__asm        movsx  ecx, word ptr [ecx+8];
+		__asm        cmp    eax, ecx;
+		__asm        jl     _Teb;
 _Tdf:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T107;
+		__asm        xor    eax, eax;
+		__asm        jmp    _T107;
 
-	__asm        jmp    _T104;
+		__asm        jmp    _T104;
 _Teb:
-	__asm        movsx  eax, stackSize;
-	__asm        inc    eax;
-	__asm        movsx  eax, ax;
-	__asm        shl    eax, 2;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+4];
-	__asm        jmp    _T107;
+		__asm        movsx  eax, stackSize;
+		__asm        inc    eax;
+		__asm        movsx  eax, ax;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+4];
+		__asm        jmp    _T107;
 _T104:
-	__asm        mov    eax, [ebp-0x10];
+		__asm        mov    eax, [ebp-0x10];
 _T107:
-	__asm        jmp    __RETURN;
+		__asm        jmp    __RETURN;
 // LINE 68:
 _T10c:
-	stackSize--;
+		stackSize--;
 // LINE 69:
-	__asm        jmp    __WHILE_42;
+		__asm        jmp    __WHILE_42;
+	}
 // LINE 70:
 _T115:
 	__asm        mov    eax, this;

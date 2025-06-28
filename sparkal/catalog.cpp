@@ -594,14 +594,16 @@ _T107:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x98;
 	__asm        mov    [ebp-0x114], eax;
+	{
 __WHILE_122:
-	__asm        dec    dword ptr [ebp-0x110];
-	__asm        js     _T145;
+		__asm        dec    dword ptr [ebp-0x110];
+		__asm        js     _T145;
 
-	__asm        mov    ecx, [ebp-0x114];
-	__asm        call   MPoint::MPoint;
-	__asm        add    dword ptr [ebp-0x114], 8;
-	__asm        jmp    __WHILE_122;
+		__asm        mov    ecx, [ebp-0x114];
+		__asm        call   MPoint::MPoint;
+		__asm        add    dword ptr [ebp-0x114], 8;
+		__asm        jmp    __WHILE_122;
+	}
 _T145:
 	__asm        jmp    _T14a;
 _T14a:
@@ -609,14 +611,16 @@ _T14a:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xBC;
 	__asm        mov    [ebp-0x11C], eax;
+	{
 __WHILE_165:
-	__asm        dec    dword ptr [ebp-0x118];
-	__asm        js     _T188;
+		__asm        dec    dword ptr [ebp-0x118];
+		__asm        js     _T188;
 
-	__asm        mov    ecx, [ebp-0x11C];
-	__asm        call   MPoint::MPoint;
-	__asm        add    dword ptr [ebp-0x11C], 8;
-	__asm        jmp    __WHILE_165;
+		__asm        mov    ecx, [ebp-0x11C];
+		__asm        call   MPoint::MPoint;
+		__asm        add    dword ptr [ebp-0x11C], 8;
+		__asm        jmp    __WHILE_165;
+	}
 _T188:
 	__asm        jmp    _T18d;
 _T18d:
@@ -2657,45 +2661,51 @@ _T226:
 	__asm        mov    dword ptr [ebp-0x8C8], 5;
 	__asm        lea    eax, sEquipmentDescriptions[0].c_str_ptr;
 	__asm        mov    [ebp-0x8CC], eax;
+	{
 // LINE 175:
 __WHILE_23c:
-	__asm        dec    dword ptr [ebp-0x8C8];
-	__asm        js     _T25f;
+		__asm        dec    dword ptr [ebp-0x8C8];
+		__asm        js     _T25f;
 
-	__asm        mov    ecx, [ebp-0x8CC];
-	__asm        call   basic_string<char>::basic_string<char>;
-	__asm        add    dword ptr [ebp-0x8CC], 8;
-	__asm        jmp    __WHILE_23c;
+		__asm        mov    ecx, [ebp-0x8CC];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        add    dword ptr [ebp-0x8CC], 8;
+		__asm        jmp    __WHILE_23c;
+	}
 _T25f:
 	__asm        jmp    _T264;
 _T264:
 	__asm        mov    dword ptr [ebp-0x8D0], 5;
 	__asm        lea    eax, rectEquipmentDescriptions[0].left;
 	__asm        mov    [ebp-0x8D4], eax;
+	{
 // LINE 176:
 __WHILE_27a:
-	__asm        dec    dword ptr [ebp-0x8D0];
-	__asm        js     _T29d;
+		__asm        dec    dword ptr [ebp-0x8D0];
+		__asm        js     _T29d;
 
-	__asm        mov    ecx, [ebp-0x8D4];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x8D4], 0x10;
-	__asm        jmp    __WHILE_27a;
+		__asm        mov    ecx, [ebp-0x8D4];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x8D4], 0x10;
+		__asm        jmp    __WHILE_27a;
+	}
 _T29d:
 	__asm        jmp    _T2a2;
 _T2a2:
 	__asm        mov    dword ptr [ebp-0x8D8], 5;
 	__asm        lea    eax, rectEquipmentDescriptionTitles[0].left;
 	__asm        mov    [ebp-0x8DC], eax;
+	{
 // LINE 177:
 __WHILE_2b8:
-	__asm        dec    dword ptr [ebp-0x8D8];
-	__asm        js     _T2db;
+		__asm        dec    dword ptr [ebp-0x8D8];
+		__asm        js     _T2db;
 
-	__asm        mov    ecx, [ebp-0x8DC];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x8DC], 0x10;
-	__asm        jmp    __WHILE_2b8;
+		__asm        mov    ecx, [ebp-0x8DC];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x8DC], 0x10;
+		__asm        jmp    __WHILE_2b8;
+	}
 _T2db:
 	__asm        jmp    _T2e0;
 // LINE 178:
@@ -5319,14 +5329,16 @@ _T2d3a:
 	__asm        mov    eax, [ebp-0x950];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x954], eax;
+	{
 __WHILE_2d5f:
-	__asm        dec    dword ptr [ebp-0x950];
-	__asm        js     _T2d82;
+		__asm        dec    dword ptr [ebp-0x950];
+		__asm        js     _T2d82;
 
-	__asm        sub    dword ptr [ebp-0x954], 8;
-	__asm        mov    ecx, [ebp-0x954];
-	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    __WHILE_2d5f;
+		__asm        sub    dword ptr [ebp-0x954], 8;
+		__asm        mov    ecx, [ebp-0x954];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    __WHILE_2d5f;
+	}
 _T2d82:
 	__asm        jmp    _T2d87;
 _T2d87:

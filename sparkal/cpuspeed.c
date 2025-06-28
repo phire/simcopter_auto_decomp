@@ -170,137 +170,139 @@ _T143:
 
 	__asm        cmp    manual, 0;
 	__asm        jne    _T2fb;
+	{
 // LINE 183:
 __DO_157:
-	tries++;
+		tries++;
 // LINE 186:
-	freq3 = freq2;
+		freq3 = freq2;
 // LINE 187:
-	freq2 = freq;
+		freq2 = freq;
 // LINE 190:
-	__asm        lea    eax, t0<_LARGE_INTEGER+0x00:None>;
-	__asm        push   eax;
-	__asm        call   dword ptr ds:[0x6C365C];
+		__asm        lea    eax, t0<_LARGE_INTEGER+0x00:None>;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C365C];
 // LINE 194:
-	t1<_LARGE_INTEGER+0x00:4> = t0<_LARGE_INTEGER+0x00:4>;
+		t1<_LARGE_INTEGER+0x00:4> = t0<_LARGE_INTEGER+0x00:4>;
 // LINE 195:
-	t1<_LARGE_INTEGER+0x04:4> = t0<_LARGE_INTEGER+0x04:4>;
+		t1<_LARGE_INTEGER+0x04:4> = t0<_LARGE_INTEGER+0x04:4>;
 // LINE 197:
 __WHILE_17c:
-	while (((t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>) < 0x32)) {
+		while (((t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>) < 0x32)) {
 // LINE 203:
-		__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
-		__asm        push   eax;
-		__asm        call   dword ptr ds:[0x6C365C];
-	}
+			__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+		}
 // LINE 208:
 _T19a:
-	__asm        rdtsc;
+		__asm        rdtsc;
 // LINE 212:
-	__asm        mov    stamp0, eax;
+		__asm        mov    stamp0, eax;
 // LINE 215:
-	t0<_LARGE_INTEGER+0x00:4> = t1<_LARGE_INTEGER+0x00:4>;
+		t0<_LARGE_INTEGER+0x00:4> = t1<_LARGE_INTEGER+0x00:4>;
 // LINE 216:
-	t0<_LARGE_INTEGER+0x04:4> = t1<_LARGE_INTEGER+0x04:4>;
+		t0<_LARGE_INTEGER+0x04:4> = t1<_LARGE_INTEGER+0x04:4>;
 // LINE 218:
 __WHILE_1ab:
-	while (((t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>) < 0x3e8)) {
+		while (((t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>) < 0x3e8)) {
 // LINE 225:
-		__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
-		__asm        push   eax;
-		__asm        call   dword ptr ds:[0x6C365C];
-	}
+			__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
+			__asm        push   eax;
+			__asm        call   dword ptr ds:[0x6C365C];
+		}
 // LINE 230:
 _T1cb:
-	__asm        rdtsc;
+		__asm        rdtsc;
 // LINE 234:
-	__asm        mov    stamp1, eax;
+		__asm        mov    stamp1, eax;
 // LINE 237:
-	cycles = (stamp1 - stamp0);
+		cycles = (stamp1 - stamp0);
 // LINE 243:
-	ticks = (t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>);
+		ticks = (t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>);
 // LINE 257:
-	__asm        mov    eax, ticks;
-	__asm        mov    ecx, eax;
-	__asm        shl    eax, 5;
-	__asm        sub    eax, ecx;
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        shl    eax, 5;
-	__asm        mov    ticks, eax;
+		__asm        mov    eax, ticks;
+		__asm        mov    ecx, eax;
+		__asm        shl    eax, 5;
+		__asm        sub    eax, ecx;
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*4];
+		__asm        shl    eax, 5;
+		__asm        mov    ticks, eax;
 // LINE 261:
-	__asm        mov    ecx, 0xA;
-	__asm        mov    eax, count_freq<_LARGE_INTEGER+0x00:4>;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    ecx, eax;
-	__asm        mov    eax, ticks;
-	__asm        sub    edx, edx;
-	__asm        div    ecx;
-	__asm        mov    ticks, eax;
+		__asm        mov    ecx, 0xA;
+		__asm        mov    eax, count_freq<_LARGE_INTEGER+0x00:4>;
+		__asm        sub    edx, edx;
+		__asm        div    ecx;
+		__asm        mov    ecx, eax;
+		__asm        mov    eax, ticks;
+		__asm        sub    edx, edx;
+		__asm        div    ecx;
+		__asm        mov    ticks, eax;
 // LINE 267:
-	__asm        mov    eax, ticks;
-	__asm        sub    edx, edx;
-	__asm        div    count_freq<_LARGE_INTEGER+0x00:4>;
-	__asm        mov    eax, count_freq<_LARGE_INTEGER+0x00:4>;
-	__asm        shr    eax, 1;
-	__asm        cmp    edx, eax;
-	__asm        jbe    _T22c;
+		__asm        mov    eax, ticks;
+		__asm        sub    edx, edx;
+		__asm        div    count_freq<_LARGE_INTEGER+0x00:4>;
+		__asm        mov    eax, count_freq<_LARGE_INTEGER+0x00:4>;
+		__asm        shr    eax, 1;
+		__asm        cmp    edx, eax;
+		__asm        jbe    _T22c;
 // LINE 269:
-	ticks++;
+		ticks++;
 // LINE 271:
 _T22c:
-	__asm        mov    eax, cycles;
-	__asm        sub    edx, edx;
-	__asm        div    ticks;
-	__asm        mov    freq, eax;
+		__asm        mov    eax, cycles;
+		__asm        sub    edx, edx;
+		__asm        div    ticks;
+		__asm        mov    freq, eax;
 // LINE 273:
-	__asm        mov    eax, cycles;
-	__asm        sub    edx, edx;
-	__asm        div    ticks;
-	__asm        mov    eax, ticks;
-	__asm        shr    eax, 1;
-	__asm        cmp    edx, eax;
-	__asm        jbe    _T250;
+		__asm        mov    eax, cycles;
+		__asm        sub    edx, edx;
+		__asm        div    ticks;
+		__asm        mov    eax, ticks;
+		__asm        shr    eax, 1;
+		__asm        cmp    edx, eax;
+		__asm        jbe    _T250;
 // LINE 274:
-	freq++;
+		freq++;
 // LINE 276:
 _T250:
-	total = ((freq2 + freq3) + freq);
+		total = ((freq2 + freq3) + freq);
 // LINE 285:
-	__asm        cmp    tries, 3;
-	__asm        jl     __DO_157;
+		__asm        cmp    tries, 3;
+		__asm        jl     __DO_157;
 
-	__asm        cmp    tries, 0x14;
-	__asm        jge    _T2c1;
+		__asm        cmp    tries, 0x14;
+		__asm        jge    _T2c1;
 
-	__asm        mov    eax, freq;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        sub    eax, total;
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        cmp    eax, 3;
-	__asm        jg     __DO_157;
+		__asm        mov    eax, freq;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        sub    eax, total;
+		__asm        push   eax;
+		__asm        call   abs;
+		__asm        add    esp, 4;
+		__asm        cmp    eax, 3;
+		__asm        jg     __DO_157;
 
-	__asm        mov    eax, freq2;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        sub    eax, total;
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        cmp    eax, 3;
-	__asm        jg     __DO_157;
+		__asm        mov    eax, freq2;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        sub    eax, total;
+		__asm        push   eax;
+		__asm        call   abs;
+		__asm        add    esp, 4;
+		__asm        cmp    eax, 3;
+		__asm        jg     __DO_157;
 __DO_WHILE_157:
-	__asm        mov    eax, freq3;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        sub    eax, total;
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        cmp    eax, 3;
-	__asm        jg     __DO_157;
+		__asm        mov    eax, freq3;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        sub    eax, total;
+		__asm        push   eax;
+		__asm        call   abs;
+		__asm        add    esp, 4;
+		__asm        cmp    eax, 3;
+		__asm        jg     __DO_157;
+	}
 // LINE 290:
 _T2c1:
 	__asm        mov    eax, total;
@@ -517,34 +519,36 @@ static unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        jne    _T14d;
 // LINE 442:
 	speeds = i386Speeds[0];
+	{
 // LINE 444:
 __WHILE_f9:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        test   edx, edx;
-	__asm        je     _T140;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        test   edx, edx;
+		__asm        je     _T140;
 // LINE 445:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        add    edx, 2;
-	__asm        cmp    edx, freq;
-	__asm        jl     _T138;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        add    edx, 2;
+		__asm        cmp    edx, freq;
+		__asm        jl     _T138;
 // LINE 446:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        mov    eax, edx;
-	__asm        jmp    __RETURN;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        mov    eax, edx;
+		__asm        jmp    __RETURN;
 // LINE 451:
 _T138:
-	ptr++;
+		ptr++;
 // LINE 452:
-	__asm        jmp    __WHILE_f9;
+		__asm        jmp    __WHILE_f9;
+	}
 // LINE 454:
 _T140:
 	return freq;
@@ -557,34 +561,36 @@ _T14d:
 	__asm        jne    _T1b8;
 // LINE 460:
 	speeds = i486Speeds[0];
+	{
 // LINE 462:
 __WHILE_164:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        test   edx, edx;
-	__asm        je     _T1ab;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        test   edx, edx;
+		__asm        je     _T1ab;
 // LINE 463:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        add    edx, 4;
-	__asm        cmp    edx, freq;
-	__asm        jl     _T1a3;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        add    edx, 4;
+		__asm        cmp    edx, freq;
+		__asm        jl     _T1a3;
 // LINE 464:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        mov    eax, edx;
-	__asm        jmp    __RETURN;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        mov    eax, edx;
+		__asm        jmp    __RETURN;
 // LINE 469:
 _T1a3:
-	ptr++;
+		ptr++;
 // LINE 470:
-	__asm        jmp    __WHILE_164;
+		__asm        jmp    __WHILE_164;
+	}
 // LINE 472:
 _T1ab:
 	return freq;
@@ -597,34 +603,36 @@ _T1b8:
 	__asm        jne    _T223;
 // LINE 478:
 	speeds = iPentiumSpeeds[0];
+	{
 // LINE 480:
 __WHILE_1cf:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        test   edx, edx;
-	__asm        je     _T216;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        test   edx, edx;
+		__asm        je     _T216;
 // LINE 481:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        add    edx, 5;
-	__asm        cmp    edx, freq;
-	__asm        jl     _T20e;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        add    edx, 5;
+		__asm        cmp    edx, freq;
+		__asm        jl     _T20e;
 // LINE 482:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        mov    eax, edx;
-	__asm        jmp    __RETURN;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        mov    eax, edx;
+		__asm        jmp    __RETURN;
 // LINE 487:
 _T20e:
-	ptr++;
+		ptr++;
 // LINE 488:
-	__asm        jmp    __WHILE_1cf;
+		__asm        jmp    __WHILE_1cf;
+	}
 // LINE 490:
 _T216:
 	return freq;
@@ -637,34 +645,36 @@ _T223:
 	__asm        jne    _T28e;
 // LINE 496:
 	speeds = iPentiumProSpeeds[0];
+	{
 // LINE 498:
 __WHILE_23a:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        test   edx, edx;
-	__asm        je     _T281;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        test   edx, edx;
+		__asm        je     _T281;
 // LINE 499:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        add    edx, 5;
-	__asm        cmp    edx, freq;
-	__asm        jl     _T279;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        add    edx, 5;
+		__asm        cmp    edx, freq;
+		__asm        jl     _T279;
 // LINE 500:
-	__asm        mov    eax, ptr;
-	__asm        mov    ecx, speeds;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        mov    eax, edx;
-	__asm        jmp    __RETURN;
+		__asm        mov    eax, ptr;
+		__asm        mov    ecx, speeds;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        mov    eax, edx;
+		__asm        jmp    __RETURN;
 // LINE 505:
 _T279:
-	ptr++;
+		ptr++;
 // LINE 506:
-	__asm        jmp    __WHILE_23a;
+		__asm        jmp    __WHILE_23a;
+	}
 // LINE 508:
 _T281:
 	return freq;

@@ -6880,19 +6880,21 @@ _FOR_c9:
 			__asm        jne    _T20e;
 // LINE 3262:
 			x_last = x;
+			{
 // LINE 3263:
 __WHILE_160:
-			__asm        mov    eax, y;
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, x_last;
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    edx, cptr;
-			__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
-			__asm        jne    _T18c;
+				__asm        mov    eax, y;
+				__asm        and    eax, 0xFF;
+				__asm        mov    ecx, x_last;
+				__asm        and    ecx, 0xFF;
+				__asm        shl    ecx, 0xA;
+				__asm        mov    edx, cptr;
+				__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
+				__asm        jne    _T18c;
 // LINE 3264:
-			x_last++;
-			__asm        jmp    __WHILE_160;
+				x_last++;
+				__asm        jmp    __WHILE_160;
+			}
 // LINE 3265:
 _T18c:
 			x_last--;
@@ -6993,19 +6995,21 @@ _FOR_25f:
 			__asm        jne    _T3a4;
 // LINE 3305:
 			x_last = x;
+			{
 // LINE 3306:
 __WHILE_2f6:
-			__asm        mov    eax, y;
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, x_last;
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    edx, cptr;
-			__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
-			__asm        jne    _T322;
+				__asm        mov    eax, y;
+				__asm        and    eax, 0xFF;
+				__asm        mov    ecx, x_last;
+				__asm        and    ecx, 0xFF;
+				__asm        shl    ecx, 0xA;
+				__asm        mov    edx, cptr;
+				__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
+				__asm        jne    _T322;
 // LINE 3307:
-			x_last--;
-			__asm        jmp    __WHILE_2f6;
+				x_last--;
+				__asm        jmp    __WHILE_2f6;
+			}
 // LINE 3308:
 _T322:
 			x_last++;
@@ -7218,19 +7222,21 @@ _FOR_c8:
 			__asm        jne    _T20e;
 // LINE 3413:
 			y_last = y;
+			{
 // LINE 3414:
 __WHILE_160:
-			__asm        mov    eax, y_last;
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, x;
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    edx, cptr;
-			__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
-			__asm        jne    _T18c;
+				__asm        mov    eax, y_last;
+				__asm        and    eax, 0xFF;
+				__asm        mov    ecx, x;
+				__asm        and    ecx, 0xFF;
+				__asm        shl    ecx, 0xA;
+				__asm        mov    edx, cptr;
+				__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
+				__asm        jne    _T18c;
 
-			y_last++;
-			__asm        jmp    __WHILE_160;
+				y_last++;
+				__asm        jmp    __WHILE_160;
+			}
 // LINE 3415:
 _T18c:
 			y_last--;
@@ -7331,19 +7337,21 @@ _FOR_260:
 			__asm        jne    _T3a6;
 // LINE 3453:
 			y_last = y;
+			{
 // LINE 3454:
 __WHILE_2f8:
-			__asm        mov    eax, y_last;
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, x;
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    edx, cptr;
-			__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
-			__asm        jne    _T324;
+				__asm        mov    eax, y_last;
+				__asm        and    eax, 0xFF;
+				__asm        mov    ecx, x;
+				__asm        and    ecx, 0xFF;
+				__asm        shl    ecx, 0xA;
+				__asm        mov    edx, cptr;
+				__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
+				__asm        jne    _T324;
 
-			y_last--;
-			__asm        jmp    __WHILE_2f8;
+				y_last--;
+				__asm        jmp    __WHILE_2f8;
+			}
 // LINE 3455:
 _T324:
 			y_last++;
@@ -7563,19 +7571,21 @@ _FOR_aa:
 		__asm        jl     __WHILE_18c;
 
 		ERexit(0x5b5b1c);
+		{
 // LINE 3565:
 __WHILE_18c:
-		__asm        mov    eax, y;
-		__asm        and    eax, 0xFF;
-		__asm        mov    ecx, x;
-		__asm        and    ecx, 0xFF;
-		__asm        shl    ecx, 0xA;
-		__asm        mov    edx, cptr;
-		__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
-		__asm        jne    _T1b8;
+			__asm        mov    eax, y;
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        mov    edx, cptr;
+			__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
+			__asm        jne    _T1b8;
 
-		x++;
-		__asm        jmp    __WHILE_18c;
+			x++;
+			__asm        jmp    __WHILE_18c;
+		}
 // LINE 3566:
 _T1b8:
 		x--;
@@ -7667,19 +7677,21 @@ _FOR_22e:
 		__asm        jl     __WHILE_310;
 
 		ERexit(0x5b5b3c);
+		{
 // LINE 3600:
 __WHILE_310:
-		__asm        mov    eax, y;
-		__asm        and    eax, 0xFF;
-		__asm        mov    ecx, x;
-		__asm        and    ecx, 0xFF;
-		__asm        shl    ecx, 0xA;
-		__asm        mov    edx, cptr;
-		__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
-		__asm        jne    _T33c;
+			__asm        mov    eax, y;
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        mov    edx, cptr;
+			__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
+			__asm        jne    _T33c;
 
-		x--;
-		__asm        jmp    __WHILE_310;
+			x--;
+			__asm        jmp    __WHILE_310;
+		}
 // LINE 3601:
 _T33c:
 		x++;
@@ -7747,21 +7759,23 @@ _T41c:
 	curr_fovcell-> = fovcell;
 // LINE 3627:
 	edge->x = (reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir)) + reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(cellpos)));
+	{
 // LINE 3628:
 __WHILE_433:
-	__asm        mov    eax, edge;
-	__asm        mov    eax, [eax+4];
-	__asm        and    eax, 0xFF;
-	__asm        mov    ecx, edge;
-	__asm        mov    ecx, [ecx];
-	__asm        and    ecx, 0xFF;
-	__asm        shl    ecx, 0xA;
-	__asm        mov    edx, cptr;
-	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
-	__asm        jne    _T46a;
+		__asm        mov    eax, edge;
+		__asm        mov    eax, [eax+4];
+		__asm        and    eax, 0xFF;
+		__asm        mov    ecx, edge;
+		__asm        mov    ecx, [ecx];
+		__asm        and    ecx, 0xFF;
+		__asm        shl    ecx, 0xA;
+		__asm        mov    edx, cptr;
+		__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
+		__asm        jne    _T46a;
 
-	edge->x += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir));
-	__asm        jmp    __WHILE_433;
+		edge->x += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir));
+		__asm        jmp    __WHILE_433;
+	}
 // LINE 3630:
 _T46a:
 	how_deep--;
@@ -7865,19 +7879,21 @@ _FOR_89:
 		__asm        jl     __WHILE_16b;
 
 		ERexit(0x5b5b5c);
+		{
 // LINE 3672:
 __WHILE_16b:
-		__asm        mov    eax, x;
-		__asm        and    eax, 0xFF;
-		__asm        shl    eax, 0xA;
-		__asm        mov    ecx, y;
-		__asm        and    ecx, 0xFF;
-		__asm        mov    edx, cptr;
-		__asm        cmp    G_omap[0][0][eax+ecx*4], edx;
-		__asm        jne    _T197;
+			__asm        mov    eax, x;
+			__asm        and    eax, 0xFF;
+			__asm        shl    eax, 0xA;
+			__asm        mov    ecx, y;
+			__asm        and    ecx, 0xFF;
+			__asm        mov    edx, cptr;
+			__asm        cmp    G_omap[0][0][eax+ecx*4], edx;
+			__asm        jne    _T197;
 
-		y++;
-		__asm        jmp    __WHILE_16b;
+			y++;
+			__asm        jmp    __WHILE_16b;
+		}
 // LINE 3673:
 _T197:
 		y--;
@@ -7969,19 +7985,21 @@ _FOR_210:
 		__asm        jl     __WHILE_2f2;
 
 		ERexit(0x5b5b7c);
+		{
 // LINE 3707:
 __WHILE_2f2:
-		__asm        mov    eax, x;
-		__asm        and    eax, 0xFF;
-		__asm        shl    eax, 0xA;
-		__asm        mov    ecx, y;
-		__asm        and    ecx, 0xFF;
-		__asm        mov    edx, cptr;
-		__asm        cmp    G_omap[0][0][eax+ecx*4], edx;
-		__asm        jne    _T31e;
+			__asm        mov    eax, x;
+			__asm        and    eax, 0xFF;
+			__asm        shl    eax, 0xA;
+			__asm        mov    ecx, y;
+			__asm        and    ecx, 0xFF;
+			__asm        mov    edx, cptr;
+			__asm        cmp    G_omap[0][0][eax+ecx*4], edx;
+			__asm        jne    _T31e;
 
-		y--;
-		__asm        jmp    __WHILE_2f2;
+			y--;
+			__asm        jmp    __WHILE_2f2;
+		}
 // LINE 3708:
 _T31e:
 		y++;
@@ -8049,21 +8067,23 @@ _T3fe:
 	curr_fovcell-> = fovcell;
 // LINE 3735:
 	edge->y = (reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir)) + reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(cellpos)));
+	{
 // LINE 3736:
 __WHILE_416:
-	__asm        mov    eax, edge;
-	__asm        mov    eax, [eax+4];
-	__asm        and    eax, 0xFF;
-	__asm        mov    ecx, edge;
-	__asm        mov    ecx, [ecx];
-	__asm        and    ecx, 0xFF;
-	__asm        shl    ecx, 0xA;
-	__asm        mov    edx, cptr;
-	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
-	__asm        jne    __RETURN;
+		__asm        mov    eax, edge;
+		__asm        mov    eax, [eax+4];
+		__asm        and    eax, 0xFF;
+		__asm        mov    ecx, edge;
+		__asm        mov    ecx, [ecx];
+		__asm        and    ecx, 0xFF;
+		__asm        shl    ecx, 0xA;
+		__asm        mov    edx, cptr;
+		__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
+		__asm        jne    __RETURN;
 
-	edge->y += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir));
-	__asm        jmp    __WHILE_416;
+		edge->y += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir));
+		__asm        jmp    __WHILE_416;
+	}
 // LINE 3738:
 __RETURN:
 }
@@ -8459,942 +8479,946 @@ _FOR_27:
 	cptrptr1 = endcptrptr;
 	caddr1 = endcaddr;
 	__asm        jmp    _FOR_COND_27;
+	{
 _FOR_NEXT_27:
-	i++;
-	cptrptr1 -= 0x4;
-	caddr1 -= 0x4;
+		i++;
+		cptrptr1 -= 0x4;
+		caddr1 -= 0x4;
 _FOR_COND_27:
-	__asm        mov    eax, GridNSortCells;
-	__asm        cmp    i, eax;
-	__asm        jge    __RETURN;
+		__asm        mov    eax, GridNSortCells;
+		__asm        cmp    i, eax;
+		__asm        jge    __RETURN;
 // LINE 3973:
-	__asm        mov    eax, cptrptr1;
-	__asm        mov    eax, [eax];
-	__asm        movsx  eax, word ptr [eax];
-	__asm        test   al, 4;
-	__asm        je     _T5b;
+		__asm        mov    eax, cptrptr1;
+		__asm        mov    eax, [eax];
+		__asm        movsx  eax, word ptr [eax];
+		__asm        test   al, 4;
+		__asm        je     _T5b;
 // LINE 3974:
-	__asm        jmp    _FOR_NEXT_27;
+		__asm        jmp    _FOR_NEXT_27;
 // LINE 3977:
 _T5b:
-	__asm        mov    eax, cptrptr1;
-	__asm        mov    eax, [eax];
-	__asm        movsx  eax, word ptr [eax];
-	__asm        or     eax, 4;
-	__asm        mov    ecx, cptrptr1;
-	__asm        mov    ecx, [ecx];
-	__asm        mov    [ecx], ax;
-// LINE 3980:
-	__asm        mov    eax, cptrptr1;
-	__asm        mov    eax, [eax];
-	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        jne    _T8b;
-// LINE 3981:
-	__asm        jmp    _FOR_NEXT_27;
-// LINE 3987:
-_T8b:
-	dyobj = cptrptr1->->dyptr;
-// LINE 3988:
-__WHILE_99:
-	while ((dyobj != 0x0)) {
-// LINE 3991:
-		dyobj->vnext = 0x0;
-// LINE 3992:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    [ecx+0xC], ax;
-// LINE 4044:
-		__asm        cmp    S_used_spiralscan, 1;
-		__asm        jne    _T144;
-
-		__asm        mov    eax, G_uheli;
-		__asm        mov    ecx, dyobj;
-		__asm        cmp    [eax+0xA4], ecx;
-		__asm        jne    _T144;
-// LINE 4047:
-		cptr1 = endcptrptr->;
-// LINE 4048:
-		__asm        mov    eax, cptr1;
-		__asm        mov    ecx, dyobj;
-		__asm        cmp    [eax+0x14], ecx;
-		__asm        jne    _T114;
-
-		_assert(0x5b5bbc, 0x5b5b9c, 0xfd0);
-		__asm        jmp    _T119;
-_T114:
-		__asm        jmp    _T119;
-// LINE 4049:
-_T119:
-		dyobj->vnext = cptr1->vwptr;
-// LINE 4050:
-		cptr1->vwptr = dyobj;
-// LINE 4051:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    [ecx+0xC], ax;
-// LINE 4052:
-		__asm        jmp    next_dyobj;
-// LINE 4056:
-_T144:
-		rad = dyobj->radius;
-// LINE 4057:
-		x = (((dyobj->loc.x - rad) + 0x20000000) >> 0x16);
-// LINE 4058:
-		y = (((0x20000000 - dyobj->loc.z) - rad) >> 0x16);
-// LINE 4059:
-		__asm        mov    eax, y;
-		__asm        and    eax, 0xFF;
-		__asm        mov    ecx, x;
-		__asm        and    ecx, 0xFF;
-		__asm        shl    ecx, 0xA;
-		__asm        lea    eax, [ecx+eax*4];
-		__asm        add    eax, 0x67ED30;
-		__asm        mov    cadd1, eax;
-// LINE 4060:
-		cptr1 = cadd1->;
-// LINE 4061:
-		x = (((dyobj->loc.x + rad) + 0x20000000) >> 0x16);
-// LINE 4062:
-		y = (((0x20000000 - dyobj->loc.z) - rad) >> 0x16);
-// LINE 4063:
-		__asm        mov    eax, y;
-		__asm        and    eax, 0xFF;
-		__asm        mov    ecx, x;
-		__asm        and    ecx, 0xFF;
-		__asm        shl    ecx, 0xA;
-		__asm        lea    eax, [ecx+eax*4];
-		__asm        add    eax, 0x67ED30;
-		__asm        mov    cadd2, eax;
-// LINE 4064:
-		cptr2 = cadd2->;
-// LINE 4065:
-		x = (((dyobj->loc.x - rad) + 0x20000000) >> 0x16);
-// LINE 4066:
-		y = (((0x20000000 - dyobj->loc.z) + rad) >> 0x16);
-// LINE 4067:
-		__asm        mov    eax, y;
-		__asm        and    eax, 0xFF;
-		__asm        mov    ecx, x;
-		__asm        and    ecx, 0xFF;
-		__asm        shl    ecx, 0xA;
-		__asm        lea    eax, [ecx+eax*4];
-		__asm        add    eax, 0x67ED30;
-		__asm        mov    cadd3, eax;
-// LINE 4068:
-		cptr3 = cadd3->;
-// LINE 4069:
-		x = (((dyobj->loc.x + rad) + 0x20000000) >> 0x16);
-// LINE 4070:
-		y = (((0x20000000 - dyobj->loc.z) + rad) >> 0x16);
-// LINE 4071:
-		__asm        mov    eax, y;
-		__asm        and    eax, 0xFF;
-		__asm        mov    ecx, x;
-		__asm        and    ecx, 0xFF;
-		__asm        shl    ecx, 0xA;
-		__asm        lea    eax, [ecx+eax*4];
-		__asm        add    eax, 0x67ED30;
-		__asm        mov    cadd4, eax;
-// LINE 4072:
-		cptr4 = cadd4->;
-// LINE 4075:
-		__asm        mov    eax, cptr1;
-		__asm        cmp    cptr2, eax;
-		__asm        jne    _FOR_2c3;
-
-		__asm        mov    eax, cptr2;
-		__asm        cmp    cptr3, eax;
-		__asm        jne    _FOR_2c3;
-
-		__asm        mov    eax, cptr3;
-		__asm        cmp    cptr4, eax;
-		__asm        jne    _FOR_2c3;
-// LINE 4079:
-		__asm        jmp    next_dyobj;
-// LINE 4086:
-_FOR_2c3:
-		cptrptr2 = endcptrptr;
-		caddr2 = endcaddr;
-		__asm        jmp    _FOR_COND_2c3;
-_FOR_NEXT_2c3:
-		cptrptr2 -= 0x4;
-		caddr2 -= 0x4;
-_FOR_COND_2c3:
 		__asm        mov    eax, cptrptr1;
-		__asm        cmp    cptrptr2, eax;
-		__asm        jbe    next_dyobj;
-// LINE 4088:
-		__asm        mov    eax, cptrptr2;
+		__asm        mov    eax, [eax];
+		__asm        movsx  eax, word ptr [eax];
+		__asm        or     eax, 4;
 		__asm        mov    ecx, cptrptr1;
 		__asm        mov    ecx, [ecx];
-		__asm        cmp    [eax], ecx;
-		__asm        je     _T5d8;
+		__asm        mov    [ecx], ax;
+// LINE 3980:
+		__asm        mov    eax, cptrptr1;
+		__asm        mov    eax, [eax];
+		__asm        cmp    dword ptr [eax+0x10], 0;
+		__asm        jne    _T8b;
+// LINE 3981:
+		__asm        jmp    _FOR_NEXT_27;
+// LINE 3987:
+_T8b:
+		dyobj = cptrptr1->->dyptr;
+// LINE 3988:
+__WHILE_99:
+		while ((dyobj != 0x0)) {
+// LINE 3991:
+			dyobj->vnext = 0x0;
+// LINE 3992:
+			__asm        mov    eax, dyobj;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    [ecx+0xC], ax;
+// LINE 4044:
+			__asm        cmp    S_used_spiralscan, 1;
+			__asm        jne    _T144;
+
+			__asm        mov    eax, G_uheli;
+			__asm        mov    ecx, dyobj;
+			__asm        cmp    [eax+0xA4], ecx;
+			__asm        jne    _T144;
+// LINE 4047:
+			cptr1 = endcptrptr->;
+// LINE 4048:
+			__asm        mov    eax, cptr1;
+			__asm        mov    ecx, dyobj;
+			__asm        cmp    [eax+0x14], ecx;
+			__asm        jne    _T114;
+
+			_assert(0x5b5bbc, 0x5b5b9c, 0xfd0);
+			__asm        jmp    _T119;
+_T114:
+			__asm        jmp    _T119;
+// LINE 4049:
+_T119:
+			dyobj->vnext = cptr1->vwptr;
+// LINE 4050:
+			cptr1->vwptr = dyobj;
+// LINE 4051:
+			__asm        mov    eax, dyobj;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    [ecx+0xC], ax;
+// LINE 4052:
+			__asm        jmp    next_dyobj;
+// LINE 4056:
+_T144:
+			rad = dyobj->radius;
+// LINE 4057:
+			x = (((dyobj->loc.x - rad) + 0x20000000) >> 0x16);
+// LINE 4058:
+			y = (((0x20000000 - dyobj->loc.z) - rad) >> 0x16);
+// LINE 4059:
+			__asm        mov    eax, y;
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        add    eax, 0x67ED30;
+			__asm        mov    cadd1, eax;
+// LINE 4060:
+			cptr1 = cadd1->;
+// LINE 4061:
+			x = (((dyobj->loc.x + rad) + 0x20000000) >> 0x16);
+// LINE 4062:
+			y = (((0x20000000 - dyobj->loc.z) - rad) >> 0x16);
+// LINE 4063:
+			__asm        mov    eax, y;
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        add    eax, 0x67ED30;
+			__asm        mov    cadd2, eax;
+// LINE 4064:
+			cptr2 = cadd2->;
+// LINE 4065:
+			x = (((dyobj->loc.x - rad) + 0x20000000) >> 0x16);
+// LINE 4066:
+			y = (((0x20000000 - dyobj->loc.z) + rad) >> 0x16);
+// LINE 4067:
+			__asm        mov    eax, y;
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        add    eax, 0x67ED30;
+			__asm        mov    cadd3, eax;
+// LINE 4068:
+			cptr3 = cadd3->;
+// LINE 4069:
+			x = (((dyobj->loc.x + rad) + 0x20000000) >> 0x16);
+// LINE 4070:
+			y = (((0x20000000 - dyobj->loc.z) + rad) >> 0x16);
+// LINE 4071:
+			__asm        mov    eax, y;
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        lea    eax, [ecx+eax*4];
+			__asm        add    eax, 0x67ED30;
+			__asm        mov    cadd4, eax;
+// LINE 4072:
+			cptr4 = cadd4->;
+// LINE 4075:
+			__asm        mov    eax, cptr1;
+			__asm        cmp    cptr2, eax;
+			__asm        jne    _FOR_2c3;
+
+			__asm        mov    eax, cptr2;
+			__asm        cmp    cptr3, eax;
+			__asm        jne    _FOR_2c3;
+
+			__asm        mov    eax, cptr3;
+			__asm        cmp    cptr4, eax;
+			__asm        jne    _FOR_2c3;
+// LINE 4079:
+			__asm        jmp    next_dyobj;
+// LINE 4086:
+_FOR_2c3:
+			cptrptr2 = endcptrptr;
+			caddr2 = endcaddr;
+			__asm        jmp    _FOR_COND_2c3;
+			{
+_FOR_NEXT_2c3:
+				cptrptr2 -= 0x4;
+				caddr2 -= 0x4;
+_FOR_COND_2c3:
+				__asm        mov    eax, cptrptr1;
+				__asm        cmp    cptrptr2, eax;
+				__asm        jbe    next_dyobj;
+// LINE 4088:
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    ecx, cptrptr1;
+				__asm        mov    ecx, [ecx];
+				__asm        cmp    [eax], ecx;
+				__asm        je     _T5d8;
 // LINE 4090:
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    ecx, cptr1;
-		__asm        cmp    [eax], ecx;
-		__asm        jne    _T3a9;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    ecx, cptr1;
+				__asm        cmp    [eax], ecx;
+				__asm        jne    _T3a9;
 // LINE 4097:
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xA];
-		__asm        cmp    eax, 1;
-		__asm        jle    _T349;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    eax, [eax];
+				__asm        movsx  eax, word ptr [eax+0xA];
+				__asm        cmp    eax, 1;
+				__asm        jle    _T349;
 
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax];
-		__asm        test   al, 1;
-		__asm        jne    _T349;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    eax, [eax];
+				__asm        movsx  eax, word ptr [eax];
+				__asm        test   al, 1;
+				__asm        jne    _T349;
 
-		__asm        lea    eax, cptr1;
-		__asm        push   eax;
-		__asm        mov    eax, cadd1;
-		__asm        push   eax;
-		__asm        mov    eax, caddr1;
-		__asm        push   eax;
-		__asm        mov    eax, caddr2;
-		__asm        push   eax;
-		__asm        call   S3CityCellInFront;
-		__asm        add    esp, 0x10;
-		__asm        test   eax, eax;
-		__asm        jne    _T349;
+				__asm        lea    eax, cptr1;
+				__asm        push   eax;
+				__asm        mov    eax, cadd1;
+				__asm        push   eax;
+				__asm        mov    eax, caddr1;
+				__asm        push   eax;
+				__asm        mov    eax, caddr2;
+				__asm        push   eax;
+				__asm        call   S3CityCellInFront;
+				__asm        add    esp, 0x10;
+				__asm        test   eax, eax;
+				__asm        jne    _T349;
 // LINE 4099:
-		cptr1 = 0x0;
+				cptr1 = 0x0;
 // LINE 4100:
-		__asm        jmp    _FOR_NEXT_2c3;
+				__asm        jmp    _FOR_NEXT_2c3;
 // LINE 4104:
 _T349:
-		__asm        mov    eax, cptr1;
-		__asm        mov    ecx, dyobj;
-		__asm        cmp    [eax+0x14], ecx;
-		__asm        jne    _T374;
+				__asm        mov    eax, cptr1;
+				__asm        mov    ecx, dyobj;
+				__asm        cmp    [eax+0x14], ecx;
+				__asm        jne    _T374;
 
-		_assert(0x5b5bf4, 0x5b5bd4, 0x1008);
-		__asm        jmp    _T379;
+				_assert(0x5b5bf4, 0x5b5bd4, 0x1008);
+				__asm        jmp    _T379;
 _T374:
-		__asm        jmp    _T379;
+				__asm        jmp    _T379;
 // LINE 4105:
 _T379:
-		dyobj->vnext = cptr1->vwptr;
+				dyobj->vnext = cptr1->vwptr;
 // LINE 4106:
-		cptr1->vwptr = dyobj;
+				cptr1->vwptr = dyobj;
 // LINE 4107:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    [ecx+0xC], ax;
+				__asm        mov    eax, dyobj;
+				__asm        movsx  eax, word ptr [eax+0xC];
+				__asm        or     eax, 2;
+				__asm        mov    ecx, dyobj;
+				__asm        mov    [ecx+0xC], ax;
 // LINE 4108:
-		__asm        jmp    next_dyobj;
+				__asm        jmp    next_dyobj;
 // LINE 4110:
-		__asm        jmp    _T5d8;
+				__asm        jmp    _T5d8;
 _T3a9:
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    ecx, cptr2;
-		__asm        cmp    [eax], ecx;
-		__asm        jne    _T465;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    ecx, cptr2;
+				__asm        cmp    [eax], ecx;
+				__asm        jne    _T465;
 // LINE 4117:
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xA];
-		__asm        cmp    eax, 1;
-		__asm        jle    _T405;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    eax, [eax];
+				__asm        movsx  eax, word ptr [eax+0xA];
+				__asm        cmp    eax, 1;
+				__asm        jle    _T405;
 
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax];
-		__asm        test   al, 1;
-		__asm        jne    _T405;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    eax, [eax];
+				__asm        movsx  eax, word ptr [eax];
+				__asm        test   al, 1;
+				__asm        jne    _T405;
 
-		__asm        lea    eax, cptr2;
-		__asm        push   eax;
-		__asm        mov    eax, cadd2;
-		__asm        push   eax;
-		__asm        mov    eax, caddr1;
-		__asm        push   eax;
-		__asm        mov    eax, caddr2;
-		__asm        push   eax;
-		__asm        call   S3CityCellInFront;
-		__asm        add    esp, 0x10;
-		__asm        test   eax, eax;
-		__asm        jne    _T405;
+				__asm        lea    eax, cptr2;
+				__asm        push   eax;
+				__asm        mov    eax, cadd2;
+				__asm        push   eax;
+				__asm        mov    eax, caddr1;
+				__asm        push   eax;
+				__asm        mov    eax, caddr2;
+				__asm        push   eax;
+				__asm        call   S3CityCellInFront;
+				__asm        add    esp, 0x10;
+				__asm        test   eax, eax;
+				__asm        jne    _T405;
 // LINE 4119:
-		cptr2 = 0x0;
+				cptr2 = 0x0;
 // LINE 4120:
-		__asm        jmp    _FOR_NEXT_2c3;
+				__asm        jmp    _FOR_NEXT_2c3;
 // LINE 4124:
 _T405:
-		__asm        mov    eax, cptr2;
-		__asm        mov    ecx, dyobj;
-		__asm        cmp    [eax+0x14], ecx;
-		__asm        jne    _T430;
+				__asm        mov    eax, cptr2;
+				__asm        mov    ecx, dyobj;
+				__asm        cmp    [eax+0x14], ecx;
+				__asm        jne    _T430;
 
-		_assert(0x5b5c2c, 0x5b5c0c, 0x101c);
-		__asm        jmp    _T435;
+				_assert(0x5b5c2c, 0x5b5c0c, 0x101c);
+				__asm        jmp    _T435;
 _T430:
-		__asm        jmp    _T435;
+				__asm        jmp    _T435;
 // LINE 4125:
 _T435:
-		dyobj->vnext = cptr2->vwptr;
+				dyobj->vnext = cptr2->vwptr;
 // LINE 4126:
-		cptr2->vwptr = dyobj;
+				cptr2->vwptr = dyobj;
 // LINE 4127:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    [ecx+0xC], ax;
+				__asm        mov    eax, dyobj;
+				__asm        movsx  eax, word ptr [eax+0xC];
+				__asm        or     eax, 2;
+				__asm        mov    ecx, dyobj;
+				__asm        mov    [ecx+0xC], ax;
 // LINE 4128:
-		__asm        jmp    next_dyobj;
+				__asm        jmp    next_dyobj;
 // LINE 4130:
-		__asm        jmp    _T5d8;
+				__asm        jmp    _T5d8;
 _T465:
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    ecx, cptr3;
-		__asm        cmp    [eax], ecx;
-		__asm        jne    _T521;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    ecx, cptr3;
+				__asm        cmp    [eax], ecx;
+				__asm        jne    _T521;
 // LINE 4137:
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xA];
-		__asm        cmp    eax, 1;
-		__asm        jle    _T4c1;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    eax, [eax];
+				__asm        movsx  eax, word ptr [eax+0xA];
+				__asm        cmp    eax, 1;
+				__asm        jle    _T4c1;
 
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax];
-		__asm        test   al, 1;
-		__asm        jne    _T4c1;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    eax, [eax];
+				__asm        movsx  eax, word ptr [eax];
+				__asm        test   al, 1;
+				__asm        jne    _T4c1;
 
-		__asm        lea    eax, cptr3;
-		__asm        push   eax;
-		__asm        mov    eax, cadd3;
-		__asm        push   eax;
-		__asm        mov    eax, caddr1;
-		__asm        push   eax;
-		__asm        mov    eax, caddr2;
-		__asm        push   eax;
-		__asm        call   S3CityCellInFront;
-		__asm        add    esp, 0x10;
-		__asm        test   eax, eax;
-		__asm        jne    _T4c1;
+				__asm        lea    eax, cptr3;
+				__asm        push   eax;
+				__asm        mov    eax, cadd3;
+				__asm        push   eax;
+				__asm        mov    eax, caddr1;
+				__asm        push   eax;
+				__asm        mov    eax, caddr2;
+				__asm        push   eax;
+				__asm        call   S3CityCellInFront;
+				__asm        add    esp, 0x10;
+				__asm        test   eax, eax;
+				__asm        jne    _T4c1;
 // LINE 4139:
-		cptr3 = 0x0;
+				cptr3 = 0x0;
 // LINE 4140:
-		__asm        jmp    _FOR_NEXT_2c3;
+				__asm        jmp    _FOR_NEXT_2c3;
 // LINE 4144:
 _T4c1:
-		__asm        mov    eax, cptr3;
-		__asm        mov    ecx, dyobj;
-		__asm        cmp    [eax+0x14], ecx;
-		__asm        jne    _T4ec;
+				__asm        mov    eax, cptr3;
+				__asm        mov    ecx, dyobj;
+				__asm        cmp    [eax+0x14], ecx;
+				__asm        jne    _T4ec;
 
-		_assert(0x5b5c64, 0x5b5c44, 0x1030);
-		__asm        jmp    _T4f1;
+				_assert(0x5b5c64, 0x5b5c44, 0x1030);
+				__asm        jmp    _T4f1;
 _T4ec:
-		__asm        jmp    _T4f1;
+				__asm        jmp    _T4f1;
 // LINE 4145:
 _T4f1:
-		dyobj->vnext = cptr3->vwptr;
+				dyobj->vnext = cptr3->vwptr;
 // LINE 4146:
-		cptr3->vwptr = dyobj;
+				cptr3->vwptr = dyobj;
 // LINE 4147:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    [ecx+0xC], ax;
+				__asm        mov    eax, dyobj;
+				__asm        movsx  eax, word ptr [eax+0xC];
+				__asm        or     eax, 2;
+				__asm        mov    ecx, dyobj;
+				__asm        mov    [ecx+0xC], ax;
 // LINE 4148:
-		__asm        jmp    next_dyobj;
+				__asm        jmp    next_dyobj;
 // LINE 4150:
-		__asm        jmp    _T5d8;
+				__asm        jmp    _T5d8;
 _T521:
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    ecx, cptr4;
-		__asm        cmp    [eax], ecx;
-		__asm        jne    _T5d8;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    ecx, cptr4;
+				__asm        cmp    [eax], ecx;
+				__asm        jne    _T5d8;
 // LINE 4157:
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xA];
-		__asm        cmp    eax, 1;
-		__asm        jle    _T57d;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    eax, [eax];
+				__asm        movsx  eax, word ptr [eax+0xA];
+				__asm        cmp    eax, 1;
+				__asm        jle    _T57d;
 
-		__asm        mov    eax, cptrptr2;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax];
-		__asm        test   al, 1;
-		__asm        jne    _T57d;
+				__asm        mov    eax, cptrptr2;
+				__asm        mov    eax, [eax];
+				__asm        movsx  eax, word ptr [eax];
+				__asm        test   al, 1;
+				__asm        jne    _T57d;
 
-		__asm        lea    eax, cptr4;
-		__asm        push   eax;
-		__asm        mov    eax, cadd4;
-		__asm        push   eax;
-		__asm        mov    eax, caddr1;
-		__asm        push   eax;
-		__asm        mov    eax, caddr2;
-		__asm        push   eax;
-		__asm        call   S3CityCellInFront;
-		__asm        add    esp, 0x10;
-		__asm        test   eax, eax;
-		__asm        jne    _T57d;
+				__asm        lea    eax, cptr4;
+				__asm        push   eax;
+				__asm        mov    eax, cadd4;
+				__asm        push   eax;
+				__asm        mov    eax, caddr1;
+				__asm        push   eax;
+				__asm        mov    eax, caddr2;
+				__asm        push   eax;
+				__asm        call   S3CityCellInFront;
+				__asm        add    esp, 0x10;
+				__asm        test   eax, eax;
+				__asm        jne    _T57d;
 // LINE 4159:
-		cptr4 = 0x0;
+				cptr4 = 0x0;
 // LINE 4160:
-		__asm        jmp    _FOR_NEXT_2c3;
+				__asm        jmp    _FOR_NEXT_2c3;
 // LINE 4164:
 _T57d:
-		__asm        mov    eax, cptr4;
-		__asm        mov    ecx, dyobj;
-		__asm        cmp    [eax+0x14], ecx;
-		__asm        jne    _T5a8;
+				__asm        mov    eax, cptr4;
+				__asm        mov    ecx, dyobj;
+				__asm        cmp    [eax+0x14], ecx;
+				__asm        jne    _T5a8;
 
-		_assert(0x5b5c9c, 0x5b5c7c, 0x1044);
-		__asm        jmp    _T5ad;
+				_assert(0x5b5c9c, 0x5b5c7c, 0x1044);
+				__asm        jmp    _T5ad;
 _T5a8:
-		__asm        jmp    _T5ad;
+				__asm        jmp    _T5ad;
 // LINE 4165:
 _T5ad:
-		dyobj->vnext = cptr4->vwptr;
+				dyobj->vnext = cptr4->vwptr;
 // LINE 4166:
-		cptr4->vwptr = dyobj;
+				cptr4->vwptr = dyobj;
 // LINE 4167:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    [ecx+0xC], ax;
+				__asm        mov    eax, dyobj;
+				__asm        movsx  eax, word ptr [eax+0xC];
+				__asm        or     eax, 2;
+				__asm        mov    ecx, dyobj;
+				__asm        mov    [ecx+0xC], ax;
 // LINE 4168:
-		__asm        jmp    next_dyobj;
+				__asm        jmp    next_dyobj;
 // LINE 4171:
 _T5d8:
-		__asm        jmp    _FOR_NEXT_2c3;
+				__asm        jmp    _FOR_NEXT_2c3;
+			}
 // LINE 4181:
 next_dyobj:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        test   al, 4;
-		__asm        je     _Tc77;
+			__asm        mov    eax, dyobj;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 4;
+			__asm        je     _Tc77;
 // LINE 4185:
-		__asm        cmp    S_inmapmode, 1;
-		__asm        jne    _T9cd;
+			__asm        cmp    S_inmapmode, 1;
+			__asm        jne    _T9cd;
 // LINE 4187:
-		__asm        mov    eax, dyobj;
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4188:
-		__asm        mov    esi, dyobj;
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    esi, dyobj;
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4189:
-		_VRPositionObj(dyobj->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->mesh, pos.loc.x, 0x3);
 // LINE 4190:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4191:
-		__asm        mov    eax, dyobj;
-		__asm        mov    esi, [eax];
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    eax, dyobj;
+			__asm        mov    esi, [eax];
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4192:
-		_VRPositionObj(dyobj->next->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->next->mesh, pos.loc.x, 0x3);
 // LINE 4193:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4194:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    esi, [eax];
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    esi, [eax];
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4195:
-		_VRPositionObj(dyobj->next->next->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->next->next->mesh, pos.loc.x, 0x3);
 // LINE 4196:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4197:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    esi, [eax];
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    esi, [eax];
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4198:
-		_VRPositionObj(dyobj->next->next->next->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->next->next->next->mesh, pos.loc.x, 0x3);
 // LINE 4199:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4200:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    esi, [eax];
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    esi, [eax];
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4201:
-		_VRPositionObj(dyobj->next->next->next->next->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->next->next->next->next->mesh, pos.loc.x, 0x3);
 // LINE 4202:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4203:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    esi, [eax];
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    esi, [eax];
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4204:
-		_VRPositionObj(dyobj->next->next->next->next->next->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 // LINE 4205:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4206:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    esi, [eax];
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    esi, [eax];
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4207:
-		_VRPositionObj(dyobj->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 // LINE 4208:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4209:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    esi, [eax];
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    esi, [eax];
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4210:
-		_VRPositionObj(dyobj->next->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->next->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 // LINE 4211:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4212:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    esi, [eax];
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    esi, [eax];
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4213:
-		_VRPositionObj(dyobj->next->next->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->next->next->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 // LINE 4214:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4215:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    eax, [eax];
-		__asm        mov    esi, [eax];
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    eax, [eax];
+			__asm        mov    esi, [eax];
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4216:
-		_VRPositionObj(dyobj->next->next->next->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->next->next->next->next->next->next->next->next->next->mesh, pos.loc.x, 0x3);
 // LINE 4224:
 _T9cd:
-		tmpdyobj = dyobj->vnext;
+			tmpdyobj = dyobj->vnext;
 // LINE 4226:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        test   al, 2;
-		__asm        je     _Tb5b;
+			__asm        mov    eax, dyobj;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 2;
+			__asm        je     _Tb5b;
 // LINE 4228:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4229:
-		dyobj->vnext = dyobj->next;
+			dyobj->vnext = dyobj->next;
 // LINE 4231:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4232:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4233:
-		dyobj->vnext = dyobj->next;
+			dyobj->vnext = dyobj->next;
 // LINE 4235:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4236:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4237:
-		dyobj->vnext = dyobj->next;
+			dyobj->vnext = dyobj->next;
 // LINE 4239:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4240:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4241:
-		dyobj->vnext = dyobj->next;
+			dyobj->vnext = dyobj->next;
 // LINE 4243:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4244:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4245:
-		dyobj->vnext = dyobj->next;
+			dyobj->vnext = dyobj->next;
 // LINE 4247:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4248:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4249:
-		dyobj->vnext = dyobj->next;
+			dyobj->vnext = dyobj->next;
 // LINE 4251:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4252:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4253:
-		dyobj->vnext = dyobj->next;
+			dyobj->vnext = dyobj->next;
 // LINE 4255:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4256:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4257:
-		dyobj->vnext = dyobj->next;
+			dyobj->vnext = dyobj->next;
 // LINE 4259:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4260:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        or     eax, 2;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        or     eax, 2;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4261:
-		dyobj->vnext = dyobj->next;
+			dyobj->vnext = dyobj->next;
 // LINE 4263:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4264:
-		dyobj->vnext = tmpdyobj;
+			dyobj->vnext = tmpdyobj;
 // LINE 4266:
-		__asm        jmp    _Tc72;
+			__asm        jmp    _Tc72;
 // LINE 4268:
 _Tb5b:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4269:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4270:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4271:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4272:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4273:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4274:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4275:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4276:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4277:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4278:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4279:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4280:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4281:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4282:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4283:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4284:
-		__asm        mov    eax, dyobj;
-		__asm        mov    eax, [eax];
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        and    eax, 0xFFFD;
-		__asm        mov    ecx, dyobj;
-		__asm        mov    ecx, [ecx];
-		__asm        mov    [ecx+0xC], ax;
+			__asm        mov    eax, dyobj;
+			__asm        mov    eax, [eax];
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        and    eax, 0xFFFD;
+			__asm        mov    ecx, dyobj;
+			__asm        mov    ecx, [ecx];
+			__asm        mov    [ecx+0xC], ax;
 // LINE 4285:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 4291:
 _Tc72:
-		__asm        jmp    _Tccb;
+			__asm        jmp    _Tccb;
 _Tc77:
-		__asm        cmp    S_inmapmode, 1;
-		__asm        jne    _Tccb;
+			__asm        cmp    S_inmapmode, 1;
+			__asm        jne    _Tccb;
 // LINE 4293:
-		__asm        mov    eax, dyobj;
-		__asm        add    eax, 0x18;
-		__asm        lea    ecx, pos.loc.x;
-		__asm        mov    edx, [eax];
-		__asm        mov    [ecx], edx;
-		__asm        mov    edx, [eax+4];
-		__asm        mov    [ecx+4], edx;
-		__asm        mov    eax, [eax+8];
-		__asm        mov    [ecx+8], eax;
+			__asm        mov    eax, dyobj;
+			__asm        add    eax, 0x18;
+			__asm        lea    ecx, pos.loc.x;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
 // LINE 4294:
-		__asm        mov    esi, dyobj;
-		__asm        lea    edi, pos.matrix[0][0];
-		__asm        add    esi, 0x24;
-		__asm        mov    ecx, 0x10;
-		__asm        rep movsd;
+			__asm        mov    esi, dyobj;
+			__asm        lea    edi, pos.matrix[0][0];
+			__asm        add    esi, 0x24;
+			__asm        mov    ecx, 0x10;
+			__asm        rep movsd;
 // LINE 4295:
-		_VRPositionObj(dyobj->mesh, pos.loc.x, 0x3);
+			_VRPositionObj(dyobj->mesh, pos.loc.x, 0x3);
 // LINE 4298:
 _Tccb:
-		dyobj = dyobj->next;
-	}
+			dyobj = dyobj->next;
+		}
 // LINE 4300:
 _Tcd8:
-	__asm        jmp    _FOR_NEXT_27;
+		__asm        jmp    _FOR_NEXT_27;
+	}
 // LINE 4301:
 __RETURN:
 }

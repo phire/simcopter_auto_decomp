@@ -3175,42 +3175,44 @@ _T91:
 _FOR_a2:
 	i = 0x0;
 	__asm        jmp    _FOR_COND_a2;
+	{
 _FOR_NEXT_a2:
-	i++;
+		i++;
 _FOR_COND_a2:
-	__asm        mov    eax, S_mstatics.curr_mission;
-	__asm        mov    ecx, 0x6072B8;
-	__asm        add    ecx, 0x38;
-	__asm        sub    eax, ecx;
-	__asm        mov    ecx, 0xD4;
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        cmp    eax, i;
-	__asm        jle    __RETURN;
+		__asm        mov    eax, S_mstatics.curr_mission;
+		__asm        mov    ecx, 0x6072B8;
+		__asm        add    ecx, 0x38;
+		__asm        sub    eax, ecx;
+		__asm        mov    ecx, 0xD4;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        cmp    eax, i;
+		__asm        jle    __RETURN;
 // LINE 1618:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
 // LINE 1619:
-	__asm        mov    eax, md;
-	__asm        test   byte ptr [eax+0x4C], 1;
-	__asm        je     _T107;
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x4C], 1;
+		__asm        je     _T107;
 
-	__asm        mov    eax, md;
-	__asm        cmp    dword ptr [eax+0x54], 2;
-	__asm        je     _T107;
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x54], 2;
+		__asm        je     _T107;
 // LINE 1621:
-	S_mstatics.curr_mission = md;
+		S_mstatics.curr_mission = md;
 // LINE 1622:
-	return;
+		return;
 // LINE 1624:
 _T107:
-	__asm        jmp    _FOR_NEXT_a2;
+		__asm        jmp    _FOR_NEXT_a2;
+	}
 // LINE 1625:
 __RETURN:
 }
@@ -3269,42 +3271,44 @@ _T91:
 _FOR_a2:
 	i = 0x1e;
 	__asm        jmp    _FOR_COND_a2;
+	{
 _FOR_NEXT_a2:
-	i--;
+		i--;
 _FOR_COND_a2:
-	__asm        mov    eax, S_mstatics.curr_mission;
-	__asm        mov    ecx, 0x6072B8;
-	__asm        add    ecx, 0x38;
-	__asm        sub    eax, ecx;
-	__asm        mov    ecx, 0xD4;
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        cmp    eax, i;
-	__asm        jge    __RETURN;
+		__asm        mov    eax, S_mstatics.curr_mission;
+		__asm        mov    ecx, 0x6072B8;
+		__asm        add    ecx, 0x38;
+		__asm        sub    eax, ecx;
+		__asm        mov    ecx, 0xD4;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        cmp    eax, i;
+		__asm        jge    __RETURN;
 // LINE 1653:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
 // LINE 1654:
-	__asm        mov    eax, md;
-	__asm        test   byte ptr [eax+0x4C], 1;
-	__asm        je     _T107;
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x4C], 1;
+		__asm        je     _T107;
 
-	__asm        mov    eax, md;
-	__asm        cmp    dword ptr [eax+0x54], 2;
-	__asm        je     _T107;
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x54], 2;
+		__asm        je     _T107;
 // LINE 1656:
-	S_mstatics.curr_mission = md;
+		S_mstatics.curr_mission = md;
 // LINE 1657:
-	return;
+		return;
 // LINE 1659:
 _T107:
-	__asm        jmp    _FOR_NEXT_a2;
+		__asm        jmp    _FOR_NEXT_a2;
+	}
 // LINE 1660:
 __RETURN:
 }

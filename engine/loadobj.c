@@ -2455,22 +2455,24 @@ _FOR_24:
 	i = 0x0;
 	vert = oh->VertsPtr;
 	__asm        jmp    _FOR_COND_24;
+	{
 _FOR_NEXT_24:
-	i++;
-	vert += 0xc;
+		i++;
+		vert += 0xc;
 _FOR_COND_24:
-	__asm        mov    eax, oh;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jle    _T59;
+		__asm        mov    eax, oh;
+		__asm        mov    ecx, i;
+		__asm        cmp    [eax+4], ecx;
+		__asm        jle    _T59;
 // LINE 1691:
-	vert->x += x;
+		vert->x += x;
 // LINE 1692:
-	vert->y += y;
+		vert->y += y;
 // LINE 1693:
-	vert->z += z;
+		vert->z += z;
 // LINE 1694:
-	__asm        jmp    _FOR_NEXT_24;
+		__asm        jmp    _FOR_NEXT_24;
+	}
 // LINE 1697:
 _T59:
 	oh->CenterOrg.x += x;
@@ -2497,24 +2499,26 @@ _FOR_2b:
 	i = 0x0;
 	vert = oh->VertsPtr;
 	__asm        jmp    _FOR_COND_2b;
+	{
 _FOR_NEXT_2b:
-	i++;
-	vert += 0xc;
+		i++;
+		vert += 0xc;
 _FOR_COND_2b:
-	__asm        mov    eax, oh;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jle    _T5e;
+		__asm        mov    eax, oh;
+		__asm        mov    ecx, i;
+		__asm        cmp    [eax+4], ecx;
+		__asm        jle    _T5e;
 // LINE 1720:
-	__asm        mov    eax, vert;
-	__asm        mov    ecx, maxy;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jle    _T59;
+		__asm        mov    eax, vert;
+		__asm        mov    ecx, maxy;
+		__asm        cmp    [eax+4], ecx;
+		__asm        jle    _T59;
 // LINE 1721:
-	maxy = vert->y;
+		maxy = vert->y;
 // LINE 1722:
 _T59:
-	__asm        jmp    _FOR_NEXT_2b;
+		__asm        jmp    _FOR_NEXT_2b;
+	}
 // LINE 1724:
 _T5e:
 	return maxy;
@@ -3735,295 +3739,297 @@ int32_t VRStObjPolyHit(/*packed*/ struct Point3d *sloc, /*packed*/ struct Point3
 _FOR_4f:
 	i = 0x0;
 	__asm        jmp    _FOR_COND_4f;
+	{
 _FOR_NEXT_4f:
-	i++;
-	fh = fh->NextFace;
+		i++;
+		fh = fh->NextFace;
 _FOR_COND_4f:
-	__asm        mov    eax, oh;
-	__asm        mov    ecx, i;
-	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    _T387;
+		__asm        mov    eax, oh;
+		__asm        mov    ecx, i;
+		__asm        cmp    [eax+0x10], ecx;
+		__asm        jle    _T387;
 // LINE 2552:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, svec;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        mov    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, svec;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, svec;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        neg    ebx;
-	__asm        mov    dotp1, ebx;
+		__asm        mov    eax, fh;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, svec;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ebx, eax;
+		__asm        mov    eax, fh;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        mov    eax, svec;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    eax, fh;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, svec;
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        neg    ebx;
+		__asm        mov    dotp1, ebx;
 // LINE 2557:
-	__asm        cmp    dotp1, 0xFFFFFAE2;
-	__asm        jl     _Tcf;
+		__asm        cmp    dotp1, 0xFFFFFAE2;
+		__asm        jl     _Tcf;
 // LINE 2558:
-	__asm        jmp    _FOR_NEXT_4f;
+		__asm        jmp    _FOR_NEXT_4f;
 // LINE 2562:
 _Tcf:
-	v0 = fh->Normal->p;
+		v0 = fh->Normal->p;
 // LINE 2565:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, v0;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        mov    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, v0;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, v0;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    dotp2, ebx;
+		__asm        mov    eax, fh;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, v0;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ebx, eax;
+		__asm        mov    eax, fh;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        mov    eax, v0;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    eax, fh;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, v0;
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    dotp2, ebx;
 // LINE 2570:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        mov    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, loc.z;
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        add    ebx, eax;
-	__asm        neg    ebx;
-	__asm        mov    dotp3, ebx;
+		__asm        mov    eax, fh;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, loc.y;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ebx, eax;
+		__asm        mov    eax, fh;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        mov    eax, loc.z;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    eax, fh;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, loc.x;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        neg    ebx;
+		__asm        mov    dotp3, ebx;
 // LINE 2574:
-	__asm        mov    eax, dotp1;
-	__asm        push   eax;
-	__asm        mov    eax, dotp3;
-	__asm        add    eax, dotp2;
-	__asm        push   eax;
-	__asm        call   _FixedDiv;
-	__asm        add    esp, 8;
-	__asm        neg    eax;
-	__asm        mov    tval, eax;
+		__asm        mov    eax, dotp1;
+		__asm        push   eax;
+		__asm        mov    eax, dotp3;
+		__asm        add    eax, dotp2;
+		__asm        push   eax;
+		__asm        call   _FixedDiv;
+		__asm        add    esp, 8;
+		__asm        neg    eax;
+		__asm        mov    tval, eax;
 // LINE 2577:
-	__asm        mov    eax, dist;
-	__asm        add    eax, 0x50000;
-	__asm        cmp    eax, tval;
-	__asm        jge    _T1a7;
+		__asm        mov    eax, dist;
+		__asm        add    eax, 0x50000;
+		__asm        cmp    eax, tval;
+		__asm        jge    _T1a7;
 // LINE 2578:
-	__asm        jmp    _FOR_NEXT_4f;
+		__asm        jmp    _FOR_NEXT_4f;
 // LINE 2581:
 _T1a7:
-	__asm        mov    eax, svec;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, tval;
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, loc.x;
-	__asm        add    ecx, eax;
-	__asm        mov    iloc.x, ecx;
+		__asm        mov    eax, svec;
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, tval;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ecx, loc.x;
+		__asm        add    ecx, eax;
+		__asm        mov    iloc.x, ecx;
 // LINE 2582:
-	__asm        mov    eax, svec;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, tval;
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, loc.y;
-	__asm        add    ecx, eax;
-	__asm        mov    iloc.y, ecx;
+		__asm        mov    eax, svec;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, tval;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ecx, loc.y;
+		__asm        add    ecx, eax;
+		__asm        mov    iloc.y, ecx;
 // LINE 2583:
-	__asm        mov    eax, svec;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, tval;
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, loc.z;
-	__asm        add    ecx, eax;
-	__asm        mov    iloc.z, ecx;
+		__asm        mov    eax, svec;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        mov    eax, tval;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ecx, loc.z;
+		__asm        add    ecx, eax;
+		__asm        mov    iloc.z, ecx;
 // LINE 2587:
-	minz = 0x7ff80000;
-	miny = minz;
-	minx = miny;
+		minz = 0x7ff80000;
+		miny = minz;
+		minx = miny;
 // LINE 2588:
-	maxz = 0x80080000;
-	maxy = maxz;
-	maxx = maxy;
+		maxz = 0x80080000;
+		maxy = maxz;
+		maxx = maxy;
 // LINE 2593:
-	vertno = fh->PlyVerts;
+		vertno = fh->PlyVerts;
 // LINE 2594:
 _FOR_232:
-	for (j = 0x0; (fh->Nverts > j); j++) {
+		for (j = 0x0; (fh->Nverts > j); j++) {
 // LINE 2600:
-		__asm        mov    eax, vertno;
-		__asm        mov    eax, [eax];
-		__asm        shr    eax, 4;
-		__asm        lea    eax, [eax+eax*2];
-		__asm        shl    eax, 2;
-		__asm        mov    ecx, oh;
-		__asm        add    eax, [ecx+8];
-		__asm        mov    v0, eax;
+			__asm        mov    eax, vertno;
+			__asm        mov    eax, [eax];
+			__asm        shr    eax, 4;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        shl    eax, 2;
+			__asm        mov    ecx, oh;
+			__asm        add    eax, [ecx+8];
+			__asm        mov    v0, eax;
 // LINE 2604:
-		vertno += 0x4;
+			vertno += 0x4;
 // LINE 2607:
-		__asm        mov    eax, v0;
-		__asm        mov    ecx, minx;
-		__asm        cmp    [eax], ecx;
-		__asm        jge    _T275;
+			__asm        mov    eax, v0;
+			__asm        mov    ecx, minx;
+			__asm        cmp    [eax], ecx;
+			__asm        jge    _T275;
 
-		minx = v0->x;
+			minx = v0->x;
 // LINE 2608:
 _T275:
-		__asm        mov    eax, v0;
-		__asm        mov    ecx, miny;
-		__asm        cmp    [eax+4], ecx;
-		__asm        jge    _T28d;
+			__asm        mov    eax, v0;
+			__asm        mov    ecx, miny;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jge    _T28d;
 
-		miny = v0->y;
+			miny = v0->y;
 // LINE 2609:
 _T28d:
-		__asm        mov    eax, v0;
-		__asm        mov    ecx, minz;
-		__asm        cmp    [eax+8], ecx;
-		__asm        jge    _T2a5;
+			__asm        mov    eax, v0;
+			__asm        mov    ecx, minz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jge    _T2a5;
 
-		minz = v0->z;
+			minz = v0->z;
 // LINE 2610:
 _T2a5:
-		__asm        mov    eax, v0;
-		__asm        mov    ecx, maxx;
-		__asm        cmp    [eax], ecx;
-		__asm        jle    _T2bb;
+			__asm        mov    eax, v0;
+			__asm        mov    ecx, maxx;
+			__asm        cmp    [eax], ecx;
+			__asm        jle    _T2bb;
 
-		maxx = v0->x;
+			maxx = v0->x;
 // LINE 2611:
 _T2bb:
-		__asm        mov    eax, v0;
-		__asm        mov    ecx, maxy;
-		__asm        cmp    [eax+4], ecx;
-		__asm        jle    _T2d3;
+			__asm        mov    eax, v0;
+			__asm        mov    ecx, maxy;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jle    _T2d3;
 
-		maxy = v0->y;
+			maxy = v0->y;
 // LINE 2612:
 _T2d3:
-		__asm        mov    eax, v0;
-		__asm        mov    ecx, maxz;
-		__asm        cmp    [eax+8], ecx;
-		__asm        jle    _T2eb;
+			__asm        mov    eax, v0;
+			__asm        mov    ecx, maxz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jle    _T2eb;
 
-		maxz = v0->z;
+			maxz = v0->z;
 // LINE 2613:
 _T2eb:
-	}
+		}
 // LINE 2617:
 _T2f0:
-	__asm        mov    eax, maxz;
-	__asm        add    eax, 0x20000;
-	__asm        cmp    iloc.z, eax;
-	__asm        jg     _T312;
+		__asm        mov    eax, maxz;
+		__asm        add    eax, 0x20000;
+		__asm        cmp    iloc.z, eax;
+		__asm        jg     _T312;
 
-	__asm        mov    eax, minz;
-	__asm        sub    eax, 0x20000;
-	__asm        cmp    iloc.z, eax;
-	__asm        jge    _T317;
+		__asm        mov    eax, minz;
+		__asm        sub    eax, 0x20000;
+		__asm        cmp    iloc.z, eax;
+		__asm        jge    _T317;
 // LINE 2618:
 _T312:
-	__asm        jmp    _FOR_NEXT_4f;
+		__asm        jmp    _FOR_NEXT_4f;
 // LINE 2619:
 _T317:
-	__asm        mov    eax, maxy;
-	__asm        add    eax, 0x20000;
-	__asm        cmp    iloc.y, eax;
-	__asm        jg     _T339;
+		__asm        mov    eax, maxy;
+		__asm        add    eax, 0x20000;
+		__asm        cmp    iloc.y, eax;
+		__asm        jg     _T339;
 
-	__asm        mov    eax, miny;
-	__asm        sub    eax, 0x20000;
-	__asm        cmp    iloc.y, eax;
-	__asm        jge    _T33e;
+		__asm        mov    eax, miny;
+		__asm        sub    eax, 0x20000;
+		__asm        cmp    iloc.y, eax;
+		__asm        jge    _T33e;
 // LINE 2620:
 _T339:
-	__asm        jmp    _FOR_NEXT_4f;
+		__asm        jmp    _FOR_NEXT_4f;
 // LINE 2621:
 _T33e:
-	__asm        mov    eax, maxx;
-	__asm        add    eax, 0x20000;
-	__asm        cmp    iloc.x, eax;
-	__asm        jg     _T360;
+		__asm        mov    eax, maxx;
+		__asm        add    eax, 0x20000;
+		__asm        cmp    iloc.x, eax;
+		__asm        jg     _T360;
 
-	__asm        mov    eax, minx;
-	__asm        sub    eax, 0x20000;
-	__asm        cmp    eax, iloc.x;
-	__asm        jle    _T365;
+		__asm        mov    eax, minx;
+		__asm        sub    eax, 0x20000;
+		__asm        cmp    eax, iloc.x;
+		__asm        jle    _T365;
 // LINE 2622:
 _T360:
-	__asm        jmp    _FOR_NEXT_4f;
+		__asm        jmp    _FOR_NEXT_4f;
 // LINE 2626:
 _T365:
-	__asm        cmp    nptrptr, 0;
-	__asm        je     _T37a;
+		__asm        cmp    nptrptr, 0;
+		__asm        je     _T37a;
 // LINE 2627:
-	nptrptr-> = fh->Normal;
+		nptrptr-> = fh->Normal;
 // LINE 2629:
 _T37a:
-	return tval;
+		return tval;
 // LINE 2631:
-	__asm        jmp    _FOR_NEXT_4f;
+		__asm        jmp    _FOR_NEXT_4f;
+	}
 // LINE 2635:
 _T387:
 	return 0xffffffff;

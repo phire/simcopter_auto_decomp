@@ -1312,26 +1312,28 @@ _FOR_67:
 	typeCnt = 0x0;
 	total = 0x0;
 	__asm        jmp    _FOR_COND_67;
+	{
 _FOR_NEXT_67:
-	typeCnt++;
-	typeList += 0x8;
+		typeCnt++;
+		typeList += 0x8;
 _FOR_COND_67:
-	__asm        mov    eax, this;
-	__asm        movsx  eax, word ptr [eax+6];
-	__asm        movsx  ecx, typeCnt;
-	__asm        cmp    eax, ecx;
-	__asm        jle    _Ta5;
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+6];
+		__asm        movsx  ecx, typeCnt;
+		__asm        cmp    eax, ecx;
+		__asm        jle    _Ta5;
 // LINE 693:
 ResMap::SwapTypeHead(typeList);
 // LINE 694:
-	__asm        mov    eax, typeList;
-	__asm        movsx  eax, word ptr [eax+4];
-	__asm        movsx  ecx, total;
-	__asm        add    eax, ecx;
-	__asm        inc    eax;
-	__asm        mov    total, ax;
+		__asm        mov    eax, typeList;
+		__asm        movsx  eax, word ptr [eax+4];
+		__asm        movsx  ecx, total;
+		__asm        add    eax, ecx;
+		__asm        inc    eax;
+		__asm        mov    total, ax;
 // LINE 695:
-	__asm        jmp    _FOR_NEXT_67;
+		__asm        jmp    _FOR_NEXT_67;
+	}
 // LINE 697:
 _Ta5:
 	this-><ResMap+0x10:4> = (typeList - this-><ResMap+0x0c:4>);
@@ -1341,21 +1343,23 @@ _Ta5:
 _FOR_cb:
 	resCnt = 0x0;
 	__asm        jmp    _FOR_COND_cb;
+	{
 _FOR_NEXT_cb:
-	resCnt++;
-	resList += 0xc;
+		resCnt++;
+		resList += 0xc;
 _FOR_COND_cb:
-	__asm        movsx  eax, resCnt;
-	__asm        movsx  ecx, total;
-	__asm        cmp    eax, ecx;
-	__asm        jge    _Tfe;
+		__asm        movsx  eax, resCnt;
+		__asm        movsx  ecx, total;
+		__asm        cmp    eax, ecx;
+		__asm        jge    _Tfe;
 // LINE 703:
 ResMap::SwapResEntry(resList);
 // LINE 704:
-	__asm        mov    eax, resList;
-	__asm        mov    dword ptr [eax+8], 0;
+		__asm        mov    eax, resList;
+		__asm        mov    dword ptr [eax+8], 0;
 // LINE 705:
-	__asm        jmp    _FOR_NEXT_cb;
+		__asm        jmp    _FOR_NEXT_cb;
+	}
 // LINE 721:
 _Tfe:
 	this-><ResMap+0x14:4> = (resList - this-><ResMap+0x0c:4>);
@@ -1884,25 +1888,27 @@ short ResMap::Count(unsigned long type) {
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
+	{
 // LINE 899:
 __WHILE_20:
-	__asm        movsx  eax, cnt;
-	__asm        test   eax, eax;
-	__asm        jle    _T4c;
+		__asm        movsx  eax, cnt;
+		__asm        test   eax, eax;
+		__asm        jle    _T4c;
 // LINE 901:
-	__asm        mov    eax, typeList;
-	__asm        mov    ecx, type;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T3f;
+		__asm        mov    eax, typeList;
+		__asm        mov    ecx, type;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T3f;
 
-	__asm        jmp    _T4c;
+		__asm        jmp    _T4c;
 // LINE 902:
 _T3f:
-	typeList += 0x8;
+		typeList += 0x8;
 // LINE 903:
-	cnt--;
+		cnt--;
 // LINE 904:
-	__asm        jmp    __WHILE_20;
+		__asm        jmp    __WHILE_20;
+	}
 // LINE 905:
 _T4c:
 	__asm        movsx  eax, cnt;
@@ -1935,46 +1941,48 @@ unsigned long ResMap::FindType(/*unpacked*/ struct ResMap::Entry *entry) {
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
+	{
 // LINE 919:
 __WHILE_27:
-	__asm        movsx  eax, cnt;
-	__asm        test   eax, eax;
-	__asm        jle    _T8b;
+		__asm        movsx  eax, cnt;
+		__asm        test   eax, eax;
+		__asm        jle    _T8b;
 // LINE 921:
-// Block start:
-	/*bp-0x14*/  /*unpacked*/ struct ResMap::Entry *entryList;
-	__asm        mov    eax, typeList;
-	__asm        movsx  eax, word ptr [eax+6];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xC];
-	__asm        sub    eax, 2;
-	__asm        mov    entryList, eax;
+	// Block start:
+		/*bp-0x14*/  /*unpacked*/ struct ResMap::Entry *entryList;
+		__asm        mov    eax, typeList;
+		__asm        movsx  eax, word ptr [eax+6];
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+0xC];
+		__asm        sub    eax, 2;
+		__asm        mov    entryList, eax;
 // LINE 922:
-	__asm        mov    eax, typeList;
-	__asm        movsx  eax, word ptr [eax+4];
-	__asm        inc    eax;
-	__asm        mov    numEntries, ax;
+		__asm        mov    eax, typeList;
+		__asm        movsx  eax, word ptr [eax+4];
+		__asm        inc    eax;
+		__asm        mov    numEntries, ax;
 // LINE 924:
-	__asm        mov    eax, entryList;
-	__asm        cmp    entry, eax;
-	__asm        jb     _T7e;
+		__asm        mov    eax, entryList;
+		__asm        cmp    entry, eax;
+		__asm        jb     _T7e;
 
-	__asm        movsx  eax, numEntries;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        shl    eax, 2;
-	__asm        add    eax, entryList;
-	__asm        cmp    eax, entry;
-	__asm        jbe    _T7e;
+		__asm        movsx  eax, numEntries;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        add    eax, entryList;
+		__asm        cmp    eax, entry;
+		__asm        jbe    _T7e;
 // LINE 925:
-	return typeList->type;
+		return typeList->type;
 // LINE 927:
 _T7e:
-	typeList += 0x8;
+		typeList += 0x8;
 // LINE 928:
-	cnt--;
+		cnt--;
 // LINE 929:
-// Block end:
-	__asm        jmp    __WHILE_27;
+	// Block end:
+		__asm        jmp    __WHILE_27;
+	}
 // LINE 930:
 _T8b:
 	return 0x0;
@@ -2028,25 +2036,27 @@ struct ResMap::Entry * ResMap::FindEntry(unsigned long type, short id) {
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
+	{
 // LINE 953:
 __WHILE_27:
-	__asm        movsx  eax, cnt;
-	__asm        test   eax, eax;
-	__asm        jle    _T53;
+		__asm        movsx  eax, cnt;
+		__asm        test   eax, eax;
+		__asm        jle    _T53;
 // LINE 955:
-	__asm        mov    eax, typeList;
-	__asm        mov    ecx, type;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T46;
+		__asm        mov    eax, typeList;
+		__asm        mov    ecx, type;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T46;
 
-	__asm        jmp    _T53;
+		__asm        jmp    _T53;
 // LINE 956:
 _T46:
-	typeList += 0x8;
+		typeList += 0x8;
 // LINE 957:
-	cnt--;
+		cnt--;
 // LINE 958:
-	__asm        jmp    __WHILE_27;
+		__asm        jmp    __WHILE_27;
+	}
 // LINE 959:
 _T53:
 	__asm        movsx  eax, cnt;
@@ -2066,27 +2076,29 @@ _T53:
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        inc    eax;
 	__asm        mov    cnt, ax;
+	{
 // LINE 963:
 __WHILE_7e:
-	__asm        movsx  eax, cnt;
-	__asm        test   eax, eax;
-	__asm        jle    _Tb4;
+		__asm        movsx  eax, cnt;
+		__asm        test   eax, eax;
+		__asm        jle    _Tb4;
 // LINE 965:
-	__asm        mov    eax, entryList;
-	__asm        movsx  eax, word ptr [eax];
-	__asm        movsx  ecx, id;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _Ta7;
+		__asm        mov    eax, entryList;
+		__asm        movsx  eax, word ptr [eax];
+		__asm        movsx  ecx, id;
+		__asm        cmp    eax, ecx;
+		__asm        jne    _Ta7;
 
-	found = entryList;
-	__asm        jmp    _Tb4;
+		found = entryList;
+		__asm        jmp    _Tb4;
 // LINE 966:
 _Ta7:
-	entryList += 0xc;
+		entryList += 0xc;
 // LINE 967:
-	cnt--;
+		cnt--;
 // LINE 968:
-	__asm        jmp    __WHILE_7e;
+		__asm        jmp    __WHILE_7e;
+	}
 // LINE 971:
 // Block end:
 _Tb4:
@@ -2108,25 +2120,27 @@ struct ResMap::Entry * ResMap::FindEntry(unsigned long type, unsigned char * nam
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
+	{
 // LINE 981:
 __WHILE_27:
-	__asm        movsx  eax, cnt;
-	__asm        test   eax, eax;
-	__asm        jle    _T53;
+		__asm        movsx  eax, cnt;
+		__asm        test   eax, eax;
+		__asm        jle    _T53;
 // LINE 983:
-	__asm        mov    eax, typeList;
-	__asm        mov    ecx, type;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T46;
+		__asm        mov    eax, typeList;
+		__asm        mov    ecx, type;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T46;
 
-	__asm        jmp    _T53;
+		__asm        jmp    _T53;
 // LINE 984:
 _T46:
-	typeList += 0x8;
+		typeList += 0x8;
 // LINE 985:
-	cnt--;
+		cnt--;
 // LINE 986:
-	__asm        jmp    __WHILE_27;
+		__asm        jmp    __WHILE_27;
+	}
 // LINE 987:
 _T53:
 	__asm        movsx  eax, cnt;
@@ -2149,40 +2163,42 @@ _T53:
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        inc    eax;
 	__asm        mov    cnt, ax;
+	{
 // LINE 992:
 __WHILE_8d:
-	__asm        movsx  eax, cnt;
-	__asm        test   eax, eax;
-	__asm        jle    _Tea;
+		__asm        movsx  eax, cnt;
+		__asm        test   eax, eax;
+		__asm        jle    _Tea;
 // LINE 994:
-	__asm        cmp    entryList, 0;
-	__asm        je     _Tdd;
+		__asm        cmp    entryList, 0;
+		__asm        je     _Tdd;
 
-	__asm        mov    eax, entryList;
-	__asm        movsx  eax, word ptr [eax+2];
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        je     _Tdd;
+		__asm        mov    eax, entryList;
+		__asm        movsx  eax, word ptr [eax+2];
+		__asm        cmp    eax, 0xFFFFFFFF;
+		__asm        je     _Tdd;
 // LINE 996:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    eax, entryList;
-	__asm        movsx  eax, word ptr [eax+2];
-	__asm        add    eax, namePtr;
-	__asm        push   eax;
-	__asm        call   PStrCompare;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _Tdd;
+		__asm        mov    eax, name;
+		__asm        push   eax;
+		__asm        mov    eax, entryList;
+		__asm        movsx  eax, word ptr [eax+2];
+		__asm        add    eax, namePtr;
+		__asm        push   eax;
+		__asm        call   PStrCompare;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        jne    _Tdd;
 
-	found = entryList;
-	__asm        jmp    _Tea;
+		found = entryList;
+		__asm        jmp    _Tea;
 // LINE 998:
 _Tdd:
-	entryList += 0xc;
+		entryList += 0xc;
 // LINE 999:
-	cnt--;
+		cnt--;
 // LINE 1000:
-	__asm        jmp    __WHILE_8d;
+		__asm        jmp    __WHILE_8d;
+	}
 // LINE 1003:
 // Block end:
 _Tea:
@@ -2204,25 +2220,27 @@ struct ResMap::Entry * ResMap::FindIndEntry(unsigned long type, short index) {
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+6];
 	__asm        mov    cnt, ax;
+	{
 // LINE 1013:
 __WHILE_27:
-	__asm        movsx  eax, cnt;
-	__asm        test   eax, eax;
-	__asm        jle    _T53;
+		__asm        movsx  eax, cnt;
+		__asm        test   eax, eax;
+		__asm        jle    _T53;
 // LINE 1015:
-	__asm        mov    eax, typeList;
-	__asm        mov    ecx, type;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T46;
+		__asm        mov    eax, typeList;
+		__asm        mov    ecx, type;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T46;
 
-	__asm        jmp    _T53;
+		__asm        jmp    _T53;
 // LINE 1016:
 _T46:
-	typeList += 0x8;
+		typeList += 0x8;
 // LINE 1017:
-	cnt--;
+		cnt--;
 // LINE 1018:
-	__asm        jmp    __WHILE_27;
+		__asm        jmp    __WHILE_27;
+	}
 // LINE 1019:
 _T53:
 	__asm        movsx  eax, cnt;

@@ -292,70 +292,72 @@ _FOR_17c:
 	__asm        dec    eax;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _FOR_COND_17c;
+	{
 _FOR_NEXT_17c:
-	__asm        dec    dword ptr [ebp-0x20];
+		__asm        dec    dword ptr [ebp-0x20];
 _FOR_COND_17c:
-	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jl     _T239;
+		__asm        cmp    dword ptr [ebp-0x20], 0;
+		__asm        jl     _T239;
 
-	__asm        mov    eax, swizzler;
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x20];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    eax, type;
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ecx, [eax+8];
-	__asm        call   FlatResFile::GetByIndex;
-	__asm        mov    [ebp-0x24], eax;
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ecx, [ebp-0x10];
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    edx, [ebp-0x20];
-	__asm        lea    edx, [edx+edx*2];
-	__asm        mov    [ecx+edx*4+4], eax;
-	__asm        cmp    dword ptr [ebp-0x24], 0;
-	__asm        je     _T20d;
+		__asm        mov    eax, swizzler;
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x20];
+		__asm        inc    eax;
+		__asm        push   eax;
+		__asm        mov    eax, type;
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    ecx, [eax+8];
+		__asm        call   FlatResFile::GetByIndex;
+		__asm        mov    [ebp-0x24], eax;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        mov    ecx, [ebp-0x10];
+		__asm        mov    ecx, [ecx+4];
+		__asm        mov    edx, [ebp-0x20];
+		__asm        lea    edx, [edx+edx*2];
+		__asm        mov    [ecx+edx*4+4], eax;
+		__asm        cmp    dword ptr [ebp-0x24], 0;
+		__asm        je     _T20d;
 
-	__asm        mov    eax, [ebp-0x24];
-	__asm        push   eax;
-	__asm        call   Memory::Stash;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, [ebp-0x10];
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    edx, [ebp-0x20];
-	__asm        lea    edx, [edx+edx*2];
-	__asm        mov    [ecx+edx*4+8], eax;
-	__asm        lea    eax, [ebp-0x28];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x24];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    ecx, [eax+8];
-	__asm        call   FlatResFile::GetID;
-	__asm        movsx  eax, word ptr [ebp-0x28];
-	__asm        mov    ecx, [ebp-0x10];
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    edx, [ebp-0x20];
-	__asm        lea    edx, [edx+edx*2];
-	__asm        mov    [ecx+edx*4], eax;
-	__asm        jmp    _T208;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        push   eax;
+		__asm        call   Memory::Stash;
+		__asm        add    esp, 4;
+		__asm        mov    ecx, [ebp-0x10];
+		__asm        mov    ecx, [ecx+4];
+		__asm        mov    edx, [ebp-0x20];
+		__asm        lea    edx, [edx+edx*2];
+		__asm        mov    [ecx+edx*4+8], eax;
+		__asm        lea    eax, [ebp-0x28];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    ecx, [eax+8];
+		__asm        call   FlatResFile::GetID;
+		__asm        movsx  eax, word ptr [ebp-0x28];
+		__asm        mov    ecx, [ebp-0x10];
+		__asm        mov    ecx, [ecx+4];
+		__asm        mov    edx, [ebp-0x20];
+		__asm        lea    edx, [edx+edx*2];
+		__asm        mov    [ecx+edx*4], eax;
+		__asm        jmp    _T208;
 _T208:
-	__asm        jmp    _T234;
+		__asm        jmp    _T234;
 _T20d:
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, [ebp-0x20];
-	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    dword ptr [eax+ecx*4+8], 0;
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, [ebp-0x20];
-	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    dword ptr [eax+ecx*4], 0;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x20];
+		__asm        lea    ecx, [ecx+ecx*2];
+		__asm        mov    dword ptr [eax+ecx*4+8], 0;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x20];
+		__asm        lea    ecx, [ecx+ecx*2];
+		__asm        mov    dword ptr [eax+ecx*4], 0;
 _T234:
-	__asm        jmp    _FOR_NEXT_17c;
+		__asm        jmp    _FOR_NEXT_17c;
+	}
 _T239:
 	__asm        jmp    _T23e;
 _T23e:
@@ -375,22 +377,24 @@ _FOR_270:
 	__asm        mov    eax, [eax+0x11A];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _FOR_COND_270;
+	{
 _FOR_NEXT_270:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ebp-0x30], eax;
+		__asm        mov    eax, [ebp-0x30];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x30], eax;
 _FOR_COND_270:
-	__asm        cmp    dword ptr [ebp-0x30], 0;
-	__asm        je     _T29b;
+		__asm        cmp    dword ptr [ebp-0x30], 0;
+		__asm        je     _T29b;
 
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    ecx, loader;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T296;
+		__asm        mov    eax, [ebp-0x30];
+		__asm        mov    ecx, loader;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T296;
 
-	__asm        jmp    _T2b2;
+		__asm        jmp    _T2b2;
 _T296:
-	__asm        jmp    _FOR_NEXT_270;
+		__asm        jmp    _FOR_NEXT_270;
+	}
 _T29b:
 	__asm        jmp    _T2b7;
 
@@ -503,22 +507,24 @@ _FOR_e4:
 		__asm        dec    eax;
 		__asm        mov    [ebp-0x18], eax;
 		__asm        jmp    _FOR_COND_e4;
+		{
 _FOR_NEXT_e4:
-		__asm        dec    dword ptr [ebp-0x18];
+			__asm        dec    dword ptr [ebp-0x18];
 _FOR_COND_e4:
-		__asm        cmp    dword ptr [ebp-0x18], 0;
-		__asm        jl     _T112;
+			__asm        cmp    dword ptr [ebp-0x18], 0;
+			__asm        jl     _T112;
 
-		__asm        mov    eax, [ebp-0xC];
-		__asm        mov    eax, [eax+4];
-		__asm        mov    ecx, [ebp-0x18];
-		__asm        lea    ecx, [ecx+ecx*2];
-		__asm        mov    eax, [eax+ecx*4+4];
-		__asm        push   eax;
-		__asm        mov    eax, [ebp-0xC];
-		__asm        mov    ecx, [eax+8];
-		__asm        call   FlatResFile::Release;
-		__asm        jmp    _FOR_NEXT_e4;
+			__asm        mov    eax, [ebp-0xC];
+			__asm        mov    eax, [eax+4];
+			__asm        mov    ecx, [ebp-0x18];
+			__asm        lea    ecx, [ecx+ecx*2];
+			__asm        mov    eax, [eax+ecx*4+4];
+			__asm        push   eax;
+			__asm        mov    eax, [ebp-0xC];
+			__asm        mov    ecx, [eax+8];
+			__asm        call   FlatResFile::Release;
+			__asm        jmp    _FOR_NEXT_e4;
+		}
 _T112:
 		__asm        mov    eax, [ebp-0xC];
 		__asm        mov    eax, [eax+4];

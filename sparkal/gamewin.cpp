@@ -564,18 +564,20 @@ unsigned long GameWindow::Draw() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     _T4e;
+	{
 // LINE 173:
 __WHILE_19:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x14];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x14];
-	__asm        call   dword ptr [edx+4];
-	__asm        test   eax, eax;
-	__asm        je     _T37;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x14];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x14];
+		__asm        call   dword ptr [edx+4];
+		__asm        test   eax, eax;
+		__asm        je     _T37;
 
-	__asm        jmp    __WHILE_19;
+		__asm        jmp    __WHILE_19;
+	}
 // LINE 174:
 _T37:
 	__asm        push   0;
@@ -599,18 +601,20 @@ unsigned long GameWindow::SwapBuffer() {
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        je     _T4e;
+	{
 // LINE 186:
 __WHILE_19:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x14];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x14];
-	__asm        call   dword ptr [edx+4];
-	__asm        test   eax, eax;
-	__asm        je     _T37;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x14];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x14];
+		__asm        call   dword ptr [edx+4];
+		__asm        test   eax, eax;
+		__asm        je     _T37;
 
-	__asm        jmp    __WHILE_19;
+		__asm        jmp    __WHILE_19;
+	}
 // LINE 187:
 _T37:
 	__asm        push   0;

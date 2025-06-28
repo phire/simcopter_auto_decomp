@@ -2560,24 +2560,26 @@ _T30:
 	__asm        jne    __WHILE_4f;
 // LINE 1047:
 	return 0x0;
+	{
 // LINE 1050:
 __WHILE_4f:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, pOurSurface;
-	__asm        push   eax;
-	__asm        mov    eax, pOurSurface;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x64];
-	__asm        mov    ddrval, eax;
-	__asm        cmp    ddrval, 0x8876021C;
-	__asm        jne    _T7d;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        mov    eax, this;
+		__asm        add    eax, 0x58;
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        mov    eax, pOurSurface;
+		__asm        push   eax;
+		__asm        mov    eax, pOurSurface;
+		__asm        mov    eax, [eax];
+		__asm        call   dword ptr [eax+0x64];
+		__asm        mov    ddrval, eax;
+		__asm        cmp    ddrval, 0x8876021C;
+		__asm        jne    _T7d;
 
-	__asm        jmp    __WHILE_4f;
+		__asm        jmp    __WHILE_4f;
+	}
 // LINE 1051:
 _T7d:
 	__asm        cmp    ddrval, 0;
@@ -3256,19 +3258,21 @@ _T5c:
 	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1477:
 	i = nThickness;
+	{
 // LINE 1478:
 __WHILE_82:
-	__asm        mov    eax, i;
-	__asm        mov    [ebp-0x50], eax;
-	__asm        dec    i;
-	__asm        cmp    dword ptr [ebp-0x50], 0;
-	__asm        je     _Tba;
+		__asm        mov    eax, i;
+		__asm        mov    [ebp-0x50], eax;
+		__asm        dec    i;
+		__asm        cmp    dword ptr [ebp-0x50], 0;
+		__asm        je     _Tba;
 // LINE 1480:
-	memset(address, this->nColorIndexCurrent, length);
+		memset(address, this->nColorIndexCurrent, length);
 // LINE 1481:
-	address += this->mStride;
+		address += this->mStride;
 // LINE 1482:
-	__asm        jmp    __WHILE_82;
+		__asm        jmp    __WHILE_82;
+	}
 // LINE 1486:
 _Tba:
 	__asm        jmp    _T3a5;
@@ -3289,19 +3293,21 @@ _Te9:
 	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1493:
 	i = ((nEndY - nStartY) + 1);
+	{
 // LINE 1494:
 __WHILE_109:
-	__asm        mov    eax, i;
-	__asm        mov    [ebp-0x54], eax;
-	__asm        dec    i;
-	__asm        cmp    dword ptr [ebp-0x54], 0;
-	__asm        je     _T141;
+		__asm        mov    eax, i;
+		__asm        mov    [ebp-0x54], eax;
+		__asm        dec    i;
+		__asm        cmp    dword ptr [ebp-0x54], 0;
+		__asm        je     _T141;
 // LINE 1496:
-	memset(address, this->nColorIndexCurrent, nThickness);
+		memset(address, this->nColorIndexCurrent, nThickness);
 // LINE 1497:
-	address += this->mStride;
+		address += this->mStride;
 // LINE 1498:
-	__asm        jmp    __WHILE_109;
+		__asm        jmp    __WHILE_109;
+	}
 // LINE 1501:
 _T141:
 	__asm        jmp    _T3a5;
@@ -3443,28 +3449,30 @@ _T2fd:
 // LINE 1586:
 _T313:
 		j = nThickness;
+		{
 // LINE 1587:
 __WHILE_319:
-		__asm        mov    eax, j;
-		__asm        mov    [ebp-0x58], eax;
-		__asm        dec    j;
-		__asm        cmp    dword ptr [ebp-0x58], 0;
-		__asm        je     _T36d;
+			__asm        mov    eax, j;
+			__asm        mov    [ebp-0x58], eax;
+			__asm        dec    j;
+			__asm        cmp    dword ptr [ebp-0x58], 0;
+			__asm        je     _T36d;
 // LINE 1589:
-		memset(address, this->nColorIndexCurrent, nThickness);
+			memset(address, this->nColorIndexCurrent, nThickness);
 // LINE 1590:
-		__asm        cmp    yinc2, 0xFFFFFFFF;
-		__asm        jne    _T35f;
+			__asm        cmp    yinc2, 0xFFFFFFFF;
+			__asm        jne    _T35f;
 // LINE 1591:
-		address -= this->mStride;
+			address -= this->mStride;
 // LINE 1592:
-		__asm        jmp    _T368;
+			__asm        jmp    _T368;
 // LINE 1593:
 _T35f:
-		address += this->mStride;
+			address += this->mStride;
 // LINE 1594:
 _T368:
-		__asm        jmp    __WHILE_319;
+			__asm        jmp    __WHILE_319;
+		}
 // LINE 1596:
 _T36d:
 		__asm        cmp    d, 0;
@@ -3582,183 +3590,185 @@ _T109:
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0x90], eax;
 	__asm        jmp    __DO_11a;
+	{
 __DO_11a:
-	__asm        mov    eax, [ebp-0x90];
-	__asm        or     eax, [ebp-0x88];
-	__asm        jne    _T13f;
+		__asm        mov    eax, [ebp-0x90];
+		__asm        or     eax, [ebp-0x88];
+		__asm        jne    _T13f;
 
-	__asm        mov    dword ptr [ebp-0x7C], 1;
-	__asm        mov    dword ptr [ebp-0x80], 1;
-	__asm        jmp    __DO_WHILE_11a;
+		__asm        mov    dword ptr [ebp-0x7C], 1;
+		__asm        mov    dword ptr [ebp-0x80], 1;
+		__asm        jmp    __DO_WHILE_11a;
 _T13f:
-	__asm        mov    eax, [ebp-0x90];
-	__asm        test   [ebp-0x88], eax;
-	__asm        je     _T15d;
+		__asm        mov    eax, [ebp-0x90];
+		__asm        test   [ebp-0x88], eax;
+		__asm        je     _T15d;
 
-	__asm        mov    dword ptr [ebp-0x80], 1;
-	__asm        jmp    __DO_WHILE_11a;
+		__asm        mov    dword ptr [ebp-0x80], 1;
+		__asm        jmp    __DO_WHILE_11a;
 _T15d:
-	__asm        cmp    dword ptr [ebp-0x88], 0;
-	__asm        je     _T178;
+		__asm        cmp    dword ptr [ebp-0x88], 0;
+		__asm        je     _T178;
 
-	__asm        mov    eax, [ebp-0x88];
-	__asm        mov    [ebp-0x78], eax;
-	__asm        jmp    _T181;
+		__asm        mov    eax, [ebp-0x88];
+		__asm        mov    [ebp-0x78], eax;
+		__asm        jmp    _T181;
 _T178:
-	__asm        mov    eax, [ebp-0x90];
-	__asm        mov    [ebp-0x78], eax;
+		__asm        mov    eax, [ebp-0x90];
+		__asm        mov    [ebp-0x78], eax;
 _T181:
-	__asm        test   byte ptr [ebp-0x78], 1;
-	__asm        je     _T1bc;
+		__asm        test   byte ptr [ebp-0x78], 1;
+		__asm        je     _T1bc;
 
-	__asm        mov    eax, nEndX;
-	__asm        sub    eax, nStartX;
-	__asm        xor    ecx, ecx;
-	__asm        sub    ecx, nStartY;
-	__asm        imul   eax, ecx;
-	__asm        mov    ecx, nEndY;
-	__asm        sub    ecx, nStartY;
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        mov    ecx, nStartX;
-	__asm        add    ecx, eax;
-	__asm        mov    [ebp-0x84], ecx;
-	__asm        mov    dword ptr [ebp-0x8C], 0;
-	__asm        jmp    _T26c;
+		__asm        mov    eax, nEndX;
+		__asm        sub    eax, nStartX;
+		__asm        xor    ecx, ecx;
+		__asm        sub    ecx, nStartY;
+		__asm        imul   eax, ecx;
+		__asm        mov    ecx, nEndY;
+		__asm        sub    ecx, nStartY;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    ecx, nStartX;
+		__asm        add    ecx, eax;
+		__asm        mov    [ebp-0x84], ecx;
+		__asm        mov    dword ptr [ebp-0x8C], 0;
+		__asm        jmp    _T26c;
 _T1bc:
-	__asm        test   byte ptr [ebp-0x78], 2;
-	__asm        je     _T1f9;
+		__asm        test   byte ptr [ebp-0x78], 2;
+		__asm        je     _T1f9;
 
-	__asm        mov    eax, bufferHeight;
-	__asm        dec    eax;
-	__asm        sub    eax, nStartY;
-	__asm        mov    ecx, nEndX;
-	__asm        sub    ecx, nStartX;
-	__asm        imul   eax, ecx;
-	__asm        mov    ecx, nEndY;
-	__asm        sub    ecx, nStartY;
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        mov    ecx, nStartX;
-	__asm        add    ecx, eax;
-	__asm        mov    [ebp-0x84], ecx;
-	__asm        mov    eax, bufferHeight;
-	__asm        dec    eax;
-	__asm        mov    [ebp-0x8C], eax;
-	__asm        jmp    _T26c;
+		__asm        mov    eax, bufferHeight;
+		__asm        dec    eax;
+		__asm        sub    eax, nStartY;
+		__asm        mov    ecx, nEndX;
+		__asm        sub    ecx, nStartX;
+		__asm        imul   eax, ecx;
+		__asm        mov    ecx, nEndY;
+		__asm        sub    ecx, nStartY;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    ecx, nStartX;
+		__asm        add    ecx, eax;
+		__asm        mov    [ebp-0x84], ecx;
+		__asm        mov    eax, bufferHeight;
+		__asm        dec    eax;
+		__asm        mov    [ebp-0x8C], eax;
+		__asm        jmp    _T26c;
 _T1f9:
-	__asm        test   byte ptr [ebp-0x78], 8;
-	__asm        je     _T236;
+		__asm        test   byte ptr [ebp-0x78], 8;
+		__asm        je     _T236;
 
-	__asm        mov    eax, bufferWidth;
-	__asm        dec    eax;
-	__asm        sub    eax, nStartX;
-	__asm        mov    ecx, nEndY;
-	__asm        sub    ecx, nStartY;
-	__asm        imul   eax, ecx;
-	__asm        mov    ecx, nEndX;
-	__asm        sub    ecx, nStartX;
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        mov    ecx, nStartY;
-	__asm        add    ecx, eax;
-	__asm        mov    [ebp-0x8C], ecx;
-	__asm        mov    eax, bufferWidth;
-	__asm        dec    eax;
-	__asm        mov    [ebp-0x84], eax;
-	__asm        jmp    _T26c;
+		__asm        mov    eax, bufferWidth;
+		__asm        dec    eax;
+		__asm        sub    eax, nStartX;
+		__asm        mov    ecx, nEndY;
+		__asm        sub    ecx, nStartY;
+		__asm        imul   eax, ecx;
+		__asm        mov    ecx, nEndX;
+		__asm        sub    ecx, nStartX;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    ecx, nStartY;
+		__asm        add    ecx, eax;
+		__asm        mov    [ebp-0x8C], ecx;
+		__asm        mov    eax, bufferWidth;
+		__asm        dec    eax;
+		__asm        mov    [ebp-0x84], eax;
+		__asm        jmp    _T26c;
 _T236:
-	__asm        test   byte ptr [ebp-0x78], 4;
-	__asm        je     _T26c;
+		__asm        test   byte ptr [ebp-0x78], 4;
+		__asm        je     _T26c;
 
-	__asm        mov    eax, nEndY;
-	__asm        sub    eax, nStartY;
-	__asm        xor    ecx, ecx;
-	__asm        sub    ecx, nStartX;
-	__asm        imul   eax, ecx;
-	__asm        mov    ecx, nEndX;
-	__asm        sub    ecx, nStartX;
-	__asm        cdq;
-	__asm        idiv   ecx;
-	__asm        mov    ecx, nStartY;
-	__asm        add    ecx, eax;
-	__asm        mov    [ebp-0x8C], ecx;
-	__asm        mov    dword ptr [ebp-0x84], 0;
+		__asm        mov    eax, nEndY;
+		__asm        sub    eax, nStartY;
+		__asm        xor    ecx, ecx;
+		__asm        sub    ecx, nStartX;
+		__asm        imul   eax, ecx;
+		__asm        mov    ecx, nEndX;
+		__asm        sub    ecx, nStartX;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    ecx, nStartY;
+		__asm        add    ecx, eax;
+		__asm        mov    [ebp-0x8C], ecx;
+		__asm        mov    dword ptr [ebp-0x84], 0;
 _T26c:
-	__asm        mov    eax, [ebp-0x88];
-	__asm        cmp    [ebp-0x78], eax;
-	__asm        jne    _T2f6;
+		__asm        mov    eax, [ebp-0x88];
+		__asm        cmp    [ebp-0x78], eax;
+		__asm        jne    _T2f6;
 
-	__asm        mov    eax, [ebp-0x84];
-	__asm        mov    nStartX, eax;
-	__asm        mov    eax, [ebp-0x8C];
-	__asm        mov    nStartY, eax;
-	__asm        mov    dword ptr [ebp-0x9C], 0;
-	__asm        cmp    nStartX, 0;
-	__asm        jge    _T2a8;
+		__asm        mov    eax, [ebp-0x84];
+		__asm        mov    nStartX, eax;
+		__asm        mov    eax, [ebp-0x8C];
+		__asm        mov    nStartY, eax;
+		__asm        mov    dword ptr [ebp-0x9C], 0;
+		__asm        cmp    nStartX, 0;
+		__asm        jge    _T2a8;
 
-	__asm        add    dword ptr [ebp-0x9C], 4;
+		__asm        add    dword ptr [ebp-0x9C], 4;
 _T2a8:
-	__asm        mov    eax, bufferWidth;
-	__asm        dec    eax;
-	__asm        cmp    eax, nStartX;
-	__asm        jge    _T2bc;
+		__asm        mov    eax, bufferWidth;
+		__asm        dec    eax;
+		__asm        cmp    eax, nStartX;
+		__asm        jge    _T2bc;
 
-	__asm        add    dword ptr [ebp-0x9C], 8;
+		__asm        add    dword ptr [ebp-0x9C], 8;
 _T2bc:
-	__asm        cmp    nStartY, 0;
-	__asm        jge    _T2cc;
+		__asm        cmp    nStartY, 0;
+		__asm        jge    _T2cc;
 
-	__asm        inc    dword ptr [ebp-0x9C];
+		__asm        inc    dword ptr [ebp-0x9C];
 _T2cc:
-	__asm        mov    eax, bufferHeight;
-	__asm        dec    eax;
-	__asm        cmp    eax, nStartY;
-	__asm        jge    _T2e0;
+		__asm        mov    eax, bufferHeight;
+		__asm        dec    eax;
+		__asm        cmp    eax, nStartY;
+		__asm        jge    _T2e0;
 
-	__asm        add    dword ptr [ebp-0x9C], 2;
+		__asm        add    dword ptr [ebp-0x9C], 2;
 _T2e0:
-	__asm        mov    eax, [ebp-0x9C];
-	__asm        mov    [ebp-0x88], eax;
-	__asm        jmp    _T2f1;
+		__asm        mov    eax, [ebp-0x9C];
+		__asm        mov    [ebp-0x88], eax;
+		__asm        jmp    _T2f1;
 _T2f1:
-	__asm        jmp    __DO_WHILE_11a;
+		__asm        jmp    __DO_WHILE_11a;
 _T2f6:
-	__asm        mov    eax, [ebp-0x84];
-	__asm        mov    nEndX, eax;
-	__asm        mov    eax, [ebp-0x8C];
-	__asm        mov    nEndY, eax;
-	__asm        mov    dword ptr [ebp-0xA0], 0;
-	__asm        cmp    nEndX, 0;
-	__asm        jge    _T323;
+		__asm        mov    eax, [ebp-0x84];
+		__asm        mov    nEndX, eax;
+		__asm        mov    eax, [ebp-0x8C];
+		__asm        mov    nEndY, eax;
+		__asm        mov    dword ptr [ebp-0xA0], 0;
+		__asm        cmp    nEndX, 0;
+		__asm        jge    _T323;
 
-	__asm        add    dword ptr [ebp-0xA0], 4;
+		__asm        add    dword ptr [ebp-0xA0], 4;
 _T323:
-	__asm        mov    eax, bufferWidth;
-	__asm        dec    eax;
-	__asm        cmp    eax, nEndX;
-	__asm        jge    _T337;
+		__asm        mov    eax, bufferWidth;
+		__asm        dec    eax;
+		__asm        cmp    eax, nEndX;
+		__asm        jge    _T337;
 
-	__asm        add    dword ptr [ebp-0xA0], 8;
+		__asm        add    dword ptr [ebp-0xA0], 8;
 _T337:
-	__asm        cmp    nEndY, 0;
-	__asm        jge    _T347;
+		__asm        cmp    nEndY, 0;
+		__asm        jge    _T347;
 
-	__asm        inc    dword ptr [ebp-0xA0];
+		__asm        inc    dword ptr [ebp-0xA0];
 _T347:
-	__asm        mov    eax, bufferHeight;
-	__asm        dec    eax;
-	__asm        cmp    eax, nEndY;
-	__asm        jge    _T35b;
+		__asm        mov    eax, bufferHeight;
+		__asm        dec    eax;
+		__asm        cmp    eax, nEndY;
+		__asm        jge    _T35b;
 
-	__asm        add    dword ptr [ebp-0xA0], 2;
+		__asm        add    dword ptr [ebp-0xA0], 2;
 _T35b:
-	__asm        mov    eax, [ebp-0xA0];
-	__asm        mov    [ebp-0x90], eax;
-	__asm        jmp    __DO_WHILE_11a;
+		__asm        mov    eax, [ebp-0xA0];
+		__asm        mov    [ebp-0x90], eax;
+		__asm        jmp    __DO_WHILE_11a;
 __DO_WHILE_11a:
-	__asm        cmp    dword ptr [ebp-0x80], 0;
-	__asm        je     __DO_11a;
+		__asm        cmp    dword ptr [ebp-0x80], 0;
+		__asm        je     __DO_11a;
+	}
 
 	__asm        jmp    _T37b;
 _T37b:
@@ -3783,19 +3793,21 @@ _T3af:
 	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1650:
 	i = nThickness;
+	{
 // LINE 1651:
 __WHILE_3db:
-	__asm        mov    eax, i;
-	__asm        mov    [ebp-0x68], eax;
-	__asm        dec    i;
-	__asm        cmp    dword ptr [ebp-0x68], 0;
-	__asm        je     _T419;
+		__asm        mov    eax, i;
+		__asm        mov    [ebp-0x68], eax;
+		__asm        dec    i;
+		__asm        cmp    dword ptr [ebp-0x68], 0;
+		__asm        je     _T419;
 // LINE 1653:
-	memset(address, this->nColorIndexCurrent, length);
+		memset(address, this->nColorIndexCurrent, length);
 // LINE 1654:
-	address += this->mStride;
+		address += this->mStride;
 // LINE 1655:
-	__asm        jmp    __WHILE_3db;
+		__asm        jmp    __WHILE_3db;
+	}
 // LINE 1659:
 _T419:
 	__asm        jmp    _T921;
@@ -3816,19 +3828,21 @@ _T448:
 	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1666:
 	i = ((nEndY - nStartY) + 1);
+	{
 // LINE 1667:
 __WHILE_46e:
-	__asm        mov    eax, i;
-	__asm        mov    [ebp-0x6C], eax;
-	__asm        dec    i;
-	__asm        cmp    dword ptr [ebp-0x6C], 0;
-	__asm        je     _T4ac;
+		__asm        mov    eax, i;
+		__asm        mov    [ebp-0x6C], eax;
+		__asm        dec    i;
+		__asm        cmp    dword ptr [ebp-0x6C], 0;
+		__asm        je     _T4ac;
 // LINE 1669:
-	memset(address, this->nColorIndexCurrent, nThickness);
+		memset(address, this->nColorIndexCurrent, nThickness);
 // LINE 1670:
-	address += this->mStride;
+		address += this->mStride;
 // LINE 1671:
-	__asm        jmp    __WHILE_46e;
+		__asm        jmp    __WHILE_46e;
+	}
 // LINE 1674:
 _T4ac:
 	__asm        jmp    _T921;
@@ -4000,28 +4014,30 @@ _T6b6:
 // LINE 1776:
 _T6d2:
 		j = nThickness;
+		{
 // LINE 1777:
 __WHILE_6d8:
-		__asm        mov    eax, j;
-		__asm        mov    [ebp-0x70], eax;
-		__asm        dec    j;
-		__asm        cmp    dword ptr [ebp-0x70], 0;
-		__asm        je     _T735;
+			__asm        mov    eax, j;
+			__asm        mov    [ebp-0x70], eax;
+			__asm        dec    j;
+			__asm        cmp    dword ptr [ebp-0x70], 0;
+			__asm        je     _T735;
 // LINE 1779:
-		memset(address, this->nColorIndexCurrent, nThickness);
+			memset(address, this->nColorIndexCurrent, nThickness);
 // LINE 1780:
-		__asm        cmp    yinc2, 0xFFFFFFFF;
-		__asm        jne    _T724;
+			__asm        cmp    yinc2, 0xFFFFFFFF;
+			__asm        jne    _T724;
 // LINE 1781:
-		address -= this->mStride;
+			address -= this->mStride;
 // LINE 1782:
-		__asm        jmp    _T730;
+			__asm        jmp    _T730;
 // LINE 1783:
 _T724:
-		address += this->mStride;
+			address += this->mStride;
 // LINE 1784:
 _T730:
-		__asm        jmp    __WHILE_6d8;
+			__asm        jmp    __WHILE_6d8;
+		}
 // LINE 1786:
 _T735:
 		__asm        cmp    d, 0;
@@ -4093,71 +4109,73 @@ _T7e1:
 		bufferEnd = ((this->mStride * bufferHeight) + this->mpBits);
 // LINE 1816:
 		j = nThickness;
+		{
 // LINE 1818:
 __WHILE_800:
-		__asm        mov    eax, j;
-		__asm        mov    [ebp-0x74], eax;
-		__asm        dec    j;
-		__asm        cmp    dword ptr [ebp-0x74], 0;
-		__asm        je     _T8e6;
+			__asm        mov    eax, j;
+			__asm        mov    [ebp-0x74], eax;
+			__asm        dec    j;
+			__asm        cmp    dword ptr [ebp-0x74], 0;
+			__asm        je     _T8e6;
 // LINE 1822:
-		__asm        mov    eax, this;
-		__asm        mov    ecx, address;
-		__asm        cmp    [eax+0x10], ecx;
-		__asm        ja     _T8b6;
+			__asm        mov    eax, this;
+			__asm        mov    ecx, address;
+			__asm        cmp    [eax+0x10], ecx;
+			__asm        ja     _T8b6;
 
-		__asm        mov    eax, bufferEnd;
-		__asm        cmp    address, eax;
-		__asm        jae    _T8b6;
+			__asm        mov    eax, bufferEnd;
+			__asm        cmp    address, eax;
+			__asm        jae    _T8b6;
 // LINE 1825:
-	// Block start:
-		/*bp-0x64*/  int32_t nPixels;
-		__asm        cmp    xinc2, 0xFFFFFFFF;
-		__asm        jne    _T879;
+		// Block start:
+			/*bp-0x64*/  int32_t nPixels;
+			__asm        cmp    xinc2, 0xFFFFFFFF;
+			__asm        jne    _T879;
 // LINE 1827:
-		__asm        mov    eax, nThickness;
-		__asm        dec    eax;
-		__asm        cmp    eax, x;
-		__asm        jg     _T853;
+			__asm        mov    eax, nThickness;
+			__asm        dec    eax;
+			__asm        cmp    eax, x;
+			__asm        jg     _T853;
 
-		nPixels = nThickness;
-		__asm        jmp    _T85a;
+			nPixels = nThickness;
+			__asm        jmp    _T85a;
 _T853:
-		nPixels = (x + 1);
+			nPixels = (x + 1);
 // LINE 1828:
 _T85a:
-		memset(address, this->nColorIndexCurrent, nPixels);
+			memset(address, this->nColorIndexCurrent, nPixels);
 // LINE 1830:
-		__asm        jmp    _T8b6;
+			__asm        jmp    _T8b6;
 // LINE 1832:
 _T879:
-		__asm        mov    eax, bufferWidth;
-		__asm        sub    eax, nThickness;
-		__asm        cmp    eax, x;
-		__asm        jge    _T896;
+			__asm        mov    eax, bufferWidth;
+			__asm        sub    eax, nThickness;
+			__asm        cmp    eax, x;
+			__asm        jge    _T896;
 
-		nPixels = (bufferWidth - x);
-		__asm        jmp    _T89c;
+			nPixels = (bufferWidth - x);
+			__asm        jmp    _T89c;
 _T896:
-		nPixels = nThickness;
+			nPixels = nThickness;
 // LINE 1833:
 _T89c:
-		memset(address, this->nColorIndexCurrent, nPixels);
+			memset(address, this->nColorIndexCurrent, nPixels);
 // LINE 1837:
-	// Block end:
+		// Block end:
 _T8b6:
-		__asm        cmp    yinc2, 0xFFFFFFFF;
-		__asm        jne    _T8d5;
+			__asm        cmp    yinc2, 0xFFFFFFFF;
+			__asm        jne    _T8d5;
 // LINE 1838:
-		address -= this->mStride;
+			address -= this->mStride;
 // LINE 1839:
-		__asm        jmp    _T8e1;
+			__asm        jmp    _T8e1;
 // LINE 1840:
 _T8d5:
-		address += this->mStride;
+			address += this->mStride;
 // LINE 1841:
 _T8e1:
-		__asm        jmp    __WHILE_800;
+			__asm        jmp    __WHILE_800;
+		}
 // LINE 1843:
 _T8e6:
 		__asm        cmp    d, 0;

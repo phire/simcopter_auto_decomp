@@ -53,90 +53,92 @@ void SpiralScan::SpiralScan(int32_t radius) {
 
 // FUNCTION: COPTER_D 0x00542e03
 int32_t SpiralScan::Next(/*packed*/ struct _GridCoordinates& currLoc) {
+	{
 // LINE 21:
 __DO_0c:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xC];
-	__asm        cmp    [eax+8], ecx;
-	__asm        jle    _T25;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0xC];
+		__asm        cmp    [eax+8], ecx;
+		__asm        jle    _T25;
 // LINE 23:
-	return 0x0;
+		return 0x0;
 // LINE 27:
 _T25:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        cmp    [eax+8], ecx;
-	__asm        jg     _T74;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx];
+		__asm        cmp    [eax+8], ecx;
+		__asm        jg     _T74;
 // LINE 29:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
-	__asm        mov    eax, this;
-	__asm        add    eax, 4;
-	__asm        mov    [ebp-4], eax;
-	__asm        mov    eax, [ebp-4];
-	__asm        and    dword ptr [eax], 3;
+		__asm        mov    eax, this;
+		__asm        inc    dword ptr [eax+4];
+		__asm        mov    eax, this;
+		__asm        add    eax, 4;
+		__asm        mov    [ebp-4], eax;
+		__asm        mov    eax, [ebp-4];
+		__asm        and    dword ptr [eax], 3;
 // LINE 30:
-	this->currDist = 0x0;
+		this->currDist = 0x0;
 // LINE 32:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     _T6e;
+		__asm        mov    eax, this;
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        je     _T6e;
 
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+4], 2;
-	__asm        jne    _T74;
+		__asm        mov    eax, this;
+		__asm        cmp    dword ptr [eax+4], 2;
+		__asm        jne    _T74;
 // LINE 33:
 _T6e:
-	this->currDia++;
+		this->currDia++;
 // LINE 37:
 _T74:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    _Tb1;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0xC], eax;
+		__asm        jmp    _Tb1;
 // LINE 39:
 _T82:
-	currLoc.y--;
-	__asm        jmp    _Td5;
+		currLoc.y--;
+		__asm        jmp    _Td5;
 // LINE 40:
 _T8d:
-	currLoc.x++;
-	__asm        jmp    _Td5;
+		currLoc.x++;
+		__asm        jmp    _Td5;
 // LINE 41:
 _T97:
-	currLoc.y++;
-	__asm        jmp    _Td5;
+		currLoc.y++;
+		__asm        jmp    _Td5;
 // LINE 42:
 _Ta2:
-	currLoc.x--;
-	__asm        jmp    _Td5;
+		currLoc.x--;
+		__asm        jmp    _Td5;
 // LINE 43:
-	__asm        jmp    _Td5;
+		__asm        jmp    _Td5;
 _Tb1:
-	__asm        cmp    dword ptr [ebp-0xC], 3;
-	__asm        ja     _Td5;
+		__asm        cmp    dword ptr [ebp-0xC], 3;
+		__asm        ja     _Td5;
 
-	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    _Switch_c5[0][eax*4];
-	// Switch pointers:
-	//   _T82
-	//   _T8d
-	//   _T97
-	//   _Ta2
+		__asm        mov    eax, [ebp-0xC];
+		__asm        jmp    _Switch_c5[0][eax*4];
+		// Switch pointers:
+		//   _T82
+		//   _T8d
+		//   _T97
+		//   _Ta2
 // LINE 44:
 _Td5:
-	this->currDist++;
+		this->currDist++;
 // LINE 46:
 __DO_WHILE_0c:
-	__asm        mov    eax, currLoc;
-	__asm        mov    ax, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   SpiralScan::InCityGridLimits;
-	__asm        test   eax, eax;
-	__asm        je     __DO_0c;
+		__asm        mov    eax, currLoc;
+		__asm        mov    ax, [eax];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   SpiralScan::InCityGridLimits;
+		__asm        test   eax, eax;
+		__asm        je     __DO_0c;
+	}
 // LINE 48:
 	return 0x1;
 // LINE 49:

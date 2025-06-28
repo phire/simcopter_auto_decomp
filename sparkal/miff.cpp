@@ -1227,26 +1227,28 @@ long MIFF::GoToFirstRecordOfGivenType(long lRecordType) {
 	__asm        jne    __WHILE_35;
 // LINE 494:
 	return 0x1;
+	{
 // LINE 496:
 __WHILE_35:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        call   dword ptr [eax+0x48];
-	__asm        test   eax, eax;
-	__asm        je     _T6b;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x48];
+		__asm        test   eax, eax;
+		__asm        je     _T6b;
 // LINE 497:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        call   dword ptr [eax+0x14];
-	__asm        cmp    eax, lRecordType;
-	__asm        jne    _T66;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x14];
+		__asm        cmp    eax, lRecordType;
+		__asm        jne    _T66;
 // LINE 498:
-	return 0x1;
+		return 0x1;
 // LINE 499:
 _T66:
-	__asm        jmp    __WHILE_35;
+		__asm        jmp    __WHILE_35;
+	}
 // LINE 500:
 _T6b:
 	return 0x0;
@@ -1255,26 +1257,28 @@ _T6b:
 
 // FUNCTION: COPTER_D 0x004ac3ab
 long MIFF::GoToNextRecordOfGivenType(long lRecordType) {
+	{
 // LINE 515:
 __WHILE_0c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        call   dword ptr [eax+0x48];
-	__asm        test   eax, eax;
-	__asm        je     _T42;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x48];
+		__asm        test   eax, eax;
+		__asm        je     _T42;
 // LINE 516:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        call   dword ptr [eax+0x14];
-	__asm        cmp    eax, lRecordType;
-	__asm        jne    _T3d;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x14];
+		__asm        cmp    eax, lRecordType;
+		__asm        jne    _T3d;
 // LINE 517:
-	return 0x1;
+		return 0x1;
 // LINE 518:
 _T3d:
-	__asm        jmp    __WHILE_0c;
+		__asm        jmp    __WHILE_0c;
+	}
 // LINE 519:
 _T42:
 	return 0x0;

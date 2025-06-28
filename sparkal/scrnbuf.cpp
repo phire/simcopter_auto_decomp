@@ -679,26 +679,28 @@ _T8a:
 	ddbltfx.dwSize = 0x64;
 // LINE 295:
 	ddbltfx.dwFillColor = nClearPaletteIndex;
+	{
 // LINE 300:
 __WHILE_97:
-	__asm        lea    eax, ddbltfx.dwSize;
-	__asm        push   eax;
-	__asm        push   0x1000400;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x14];
-	__asm        mov    hResult, eax;
-	__asm        cmp    hResult, 0x8876021C;
-	__asm        jne    _Tcd;
+		__asm        lea    eax, ddbltfx.dwSize;
+		__asm        push   eax;
+		__asm        push   0x1000400;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x50];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x50];
+		__asm        mov    eax, [eax];
+		__asm        call   dword ptr [eax+0x14];
+		__asm        mov    hResult, eax;
+		__asm        cmp    hResult, 0x8876021C;
+		__asm        jne    _Tcd;
 
-	__asm        jmp    __WHILE_97;
+		__asm        jmp    __WHILE_97;
+	}
 // LINE 301:
 _Tcd:
 	__asm        push   1;
@@ -714,26 +716,28 @@ _Tcd:
 	ddbltfx.dwSize = 0x64;
 // LINE 303:
 	ddbltfx.dwFillColor = nClearPaletteIndex;
+	{
 // LINE 308:
 __WHILE_f0:
-	__asm        lea    eax, ddbltfx.dwSize;
-	__asm        push   eax;
-	__asm        push   0x1000400;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x14];
-	__asm        mov    hResult, eax;
-	__asm        cmp    hResult, 0x8876021C;
-	__asm        jne    _T126;
+		__asm        lea    eax, ddbltfx.dwSize;
+		__asm        push   eax;
+		__asm        push   0x1000400;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x50];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x50];
+		__asm        mov    eax, [eax];
+		__asm        call   dword ptr [eax+0x14];
+		__asm        mov    hResult, eax;
+		__asm        cmp    hResult, 0x8876021C;
+		__asm        jne    _T126;
 
-	__asm        jmp    __WHILE_f0;
+		__asm        jmp    __WHILE_f0;
+	}
 // LINE 310:
 _T126:
 	__asm        jmp    _T2ac;
@@ -808,26 +812,28 @@ _T1e1:
 	ddbltfx.dwSize = 0x64;
 // LINE 328:
 	ddbltfx.dwFillColor = nClearPaletteIndex;
+	{
 // LINE 333:
 __WHILE_1ee:
-	__asm        lea    eax, ddbltfx.dwSize;
-	__asm        push   eax;
-	__asm        push   0x1000400;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x14];
-	__asm        mov    hResult, eax;
-	__asm        cmp    hResult, 0x8876021C;
-	__asm        jne    _T224;
+		__asm        lea    eax, ddbltfx.dwSize;
+		__asm        push   eax;
+		__asm        push   0x1000400;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x4C];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x4C];
+		__asm        mov    eax, [eax];
+		__asm        call   dword ptr [eax+0x14];
+		__asm        mov    hResult, eax;
+		__asm        cmp    hResult, 0x8876021C;
+		__asm        jne    _T224;
 
-	__asm        jmp    __WHILE_1ee;
+		__asm        jmp    __WHILE_1ee;
+	}
 // LINE 334:
 _T224:
 	__asm        cmp    hResult, 0;
@@ -842,26 +848,28 @@ _T239:
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 336:
 	return 0x0;
+	{
 // LINE 342:
 __WHILE_24d:
-	__asm        lea    eax, ddbltfx.dwSize;
-	__asm        push   eax;
-	__asm        push   0x1000400;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x14];
-	__asm        mov    hResult, eax;
-	__asm        cmp    hResult, 0x8876021C;
-	__asm        jne    _T283;
+		__asm        lea    eax, ddbltfx.dwSize;
+		__asm        push   eax;
+		__asm        push   0x1000400;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x50];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x50];
+		__asm        mov    eax, [eax];
+		__asm        call   dword ptr [eax+0x14];
+		__asm        mov    hResult, eax;
+		__asm        cmp    hResult, 0x8876021C;
+		__asm        jne    _T283;
 
-	__asm        jmp    __WHILE_24d;
+		__asm        jmp    __WHILE_24d;
+	}
 // LINE 343:
 _T283:
 	__asm        cmp    hResult, 0;

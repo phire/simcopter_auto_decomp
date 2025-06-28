@@ -1315,85 +1315,89 @@ _FOR_335:
 		__asm        jge    __WHILE_393;
 
 		return;
+		{
 // LINE 791:
 __WHILE_393:
-		__asm        mov    eax, oneByteWrites;
-		__asm        mov    [ebp-0x74], eax;
-		__asm        dec    oneByteWrites;
-		__asm        cmp    dword ptr [ebp-0x74], 0;
-		__asm        je     _T3dd;
+			__asm        mov    eax, oneByteWrites;
+			__asm        mov    [ebp-0x74], eax;
+			__asm        dec    oneByteWrites;
+			__asm        cmp    dword ptr [ebp-0x74], 0;
+			__asm        je     _T3dd;
 // LINE 794:
-		__asm        push   0x5BF19C;
-		__asm        push   1;
-		__asm        mov    eax, writeBufferTmp;
-		__asm        push   eax;
-		__asm        call   Check_Pointer;
-		__asm        add    esp, 0xC;
-		__asm        test   eax, eax;
-		__asm        jne    _T3c6;
+			__asm        push   0x5BF19C;
+			__asm        push   1;
+			__asm        mov    eax, writeBufferTmp;
+			__asm        push   eax;
+			__asm        call   Check_Pointer;
+			__asm        add    esp, 0xC;
+			__asm        test   eax, eax;
+			__asm        jne    _T3c6;
 
-		return;
+			return;
 // LINE 795:
 _T3c6:
-		__asm        mov    eax, cInc;
-		__asm        mov    al, [ebp+eax-0x1C];
-		__asm        mov    ecx, writeBufferTmp;
-		__asm        mov    [ecx], al;
-		__asm        inc    cInc;
-		__asm        inc    writeBufferTmp;
+			__asm        mov    eax, cInc;
+			__asm        mov    al, [ebp+eax-0x1C];
+			__asm        mov    ecx, writeBufferTmp;
+			__asm        mov    [ecx], al;
+			__asm        inc    cInc;
+			__asm        inc    writeBufferTmp;
 // LINE 796:
-		__asm        jmp    __WHILE_393;
+			__asm        jmp    __WHILE_393;
+		}
 // LINE 798:
 _T3dd:
 		__asm        cmp    fourByteWrites, 0;
 		__asm        jge    __WHILE_3ec;
 
 		return;
+		{
 // LINE 800:
 __WHILE_3ec:
-		__asm        mov    eax, fourByteWrites;
-		__asm        mov    [ebp-0x78], eax;
-		__asm        dec    fourByteWrites;
-		__asm        cmp    dword ptr [ebp-0x78], 0;
-		__asm        je     _T466;
+			__asm        mov    eax, fourByteWrites;
+			__asm        mov    [ebp-0x78], eax;
+			__asm        dec    fourByteWrites;
+			__asm        cmp    dword ptr [ebp-0x78], 0;
+			__asm        je     _T466;
 // LINE 802:
-		__asm        push   0x5BF1B0;
-		__asm        push   4;
-		__asm        mov    eax, writeBufferTmp;
-		__asm        push   eax;
-		__asm        call   Check_Pointer;
-		__asm        add    esp, 0xC;
-		__asm        test   eax, eax;
-		__asm        jne    _T41f;
+			__asm        push   0x5BF1B0;
+			__asm        push   4;
+			__asm        mov    eax, writeBufferTmp;
+			__asm        push   eax;
+			__asm        call   Check_Pointer;
+			__asm        add    esp, 0xC;
+			__asm        test   eax, eax;
+			__asm        jne    _T41f;
 
-		return;
+			return;
 // LINE 803:
 _T41f:
-		__asm        mov    eax, cInc;
-		__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
-		__asm        shl    eax, 0x10;
-		__asm        mov    ecx, cInc;
-		__asm        movsx  ecx, byte ptr [ebp+ecx-0x19];
-		__asm        shl    ecx, 0x18;
-		__asm        add    eax, ecx;
-		__asm        mov    ecx, cInc;
-		__asm        movsx  ecx, byte ptr [ebp+ecx-0x1B];
-		__asm        shl    ecx, 8;
-		__asm        add    eax, ecx;
-		__asm        mov    ecx, cInc;
-		__asm        movsx  ecx, byte ptr [ebp+ecx-0x1C];
-		__asm        add    eax, ecx;
-		__asm        mov    longColor, eax;
+			__asm        mov    eax, cInc;
+			__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
+			__asm        shl    eax, 0x10;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x19];
+			__asm        shl    ecx, 0x18;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x1B];
+			__asm        shl    ecx, 8;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x1C];
+			__asm        add    eax, ecx;
+			__asm        mov    longColor, eax;
 // LINE 804:
-		__asm        mov    eax, longColor;
-		__asm        mov    ecx, writeBufferTmp;
-		__asm        mov    [ecx], eax;
+			__asm        mov    eax, longColor;
+			__asm        mov    ecx, writeBufferTmp;
+			__asm        mov    [ecx], eax;
 // LINE 805:
-		writeBufferTmp += 0x4;
+			writeBufferTmp += 0x4;
 // LINE 806:
-		cInc += 0x4;
+			cInc += 0x4;
 // LINE 807:
-		__asm        jmp    __WHILE_3ec;
+			__asm        jmp    __WHILE_3ec;
+		}
 // LINE 809:
 _T466:
 		error += dx;
@@ -1663,79 +1667,83 @@ _T2fb:
 		return;
 // LINE 937:
 		doAssert(0x5bf288, 0x3a9, 0x5bf25c, 0x8c085);
+		{
 // LINE 940:
 __WHILE_326:
-		__asm        mov    eax, oneByteWrites;
-		__asm        mov    [ebp-0x64], eax;
-		__asm        dec    oneByteWrites;
-		__asm        cmp    dword ptr [ebp-0x64], 0;
-		__asm        je     __WHILE_370;
+			__asm        mov    eax, oneByteWrites;
+			__asm        mov    [ebp-0x64], eax;
+			__asm        dec    oneByteWrites;
+			__asm        cmp    dword ptr [ebp-0x64], 0;
+			__asm        je     __WHILE_370;
 // LINE 943:
-		__asm        push   0x5BF2B0;
-		__asm        push   1;
-		__asm        mov    eax, writeBufferTmp;
-		__asm        push   eax;
-		__asm        call   Check_Pointer;
-		__asm        add    esp, 0xC;
-		__asm        test   eax, eax;
-		__asm        jne    _T359;
+			__asm        push   0x5BF2B0;
+			__asm        push   1;
+			__asm        mov    eax, writeBufferTmp;
+			__asm        push   eax;
+			__asm        call   Check_Pointer;
+			__asm        add    esp, 0xC;
+			__asm        test   eax, eax;
+			__asm        jne    _T359;
 
-		return;
+			return;
 // LINE 944:
 _T359:
-		__asm        mov    eax, cInc;
-		__asm        mov    al, [ebp+eax-0x1C];
-		__asm        mov    ecx, writeBufferTmp;
-		__asm        mov    [ecx], al;
-		__asm        inc    cInc;
-		__asm        inc    writeBufferTmp;
+			__asm        mov    eax, cInc;
+			__asm        mov    al, [ebp+eax-0x1C];
+			__asm        mov    ecx, writeBufferTmp;
+			__asm        mov    [ecx], al;
+			__asm        inc    cInc;
+			__asm        inc    writeBufferTmp;
 // LINE 945:
-		__asm        jmp    __WHILE_326;
+			__asm        jmp    __WHILE_326;
+		}
+		{
 // LINE 947:
 __WHILE_370:
-		__asm        mov    eax, fourByteWrites;
-		__asm        mov    [ebp-0x68], eax;
-		__asm        dec    fourByteWrites;
-		__asm        cmp    dword ptr [ebp-0x68], 0;
-		__asm        je     _T3ea;
+			__asm        mov    eax, fourByteWrites;
+			__asm        mov    [ebp-0x68], eax;
+			__asm        dec    fourByteWrites;
+			__asm        cmp    dword ptr [ebp-0x68], 0;
+			__asm        je     _T3ea;
 // LINE 949:
-		__asm        push   0x5BF2BC;
-		__asm        push   4;
-		__asm        mov    eax, writeBufferTmp;
-		__asm        push   eax;
-		__asm        call   Check_Pointer;
-		__asm        add    esp, 0xC;
-		__asm        test   eax, eax;
-		__asm        jne    _T3a3;
+			__asm        push   0x5BF2BC;
+			__asm        push   4;
+			__asm        mov    eax, writeBufferTmp;
+			__asm        push   eax;
+			__asm        call   Check_Pointer;
+			__asm        add    esp, 0xC;
+			__asm        test   eax, eax;
+			__asm        jne    _T3a3;
 
-		return;
+			return;
 // LINE 950:
 _T3a3:
-		__asm        mov    eax, cInc;
-		__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
-		__asm        shl    eax, 0x10;
-		__asm        mov    ecx, cInc;
-		__asm        movsx  ecx, byte ptr [ebp+ecx-0x19];
-		__asm        shl    ecx, 0x18;
-		__asm        add    eax, ecx;
-		__asm        mov    ecx, cInc;
-		__asm        movsx  ecx, byte ptr [ebp+ecx-0x1B];
-		__asm        shl    ecx, 8;
-		__asm        add    eax, ecx;
-		__asm        mov    ecx, cInc;
-		__asm        movsx  ecx, byte ptr [ebp+ecx-0x1C];
-		__asm        add    eax, ecx;
-		__asm        mov    longColor, eax;
+			__asm        mov    eax, cInc;
+			__asm        movsx  eax, byte ptr [ebp+eax-0x1A];
+			__asm        shl    eax, 0x10;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x19];
+			__asm        shl    ecx, 0x18;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x1B];
+			__asm        shl    ecx, 8;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, cInc;
+			__asm        movsx  ecx, byte ptr [ebp+ecx-0x1C];
+			__asm        add    eax, ecx;
+			__asm        mov    longColor, eax;
 // LINE 951:
-		__asm        mov    eax, longColor;
-		__asm        mov    ecx, writeBufferTmp;
-		__asm        mov    [ecx], eax;
+			__asm        mov    eax, longColor;
+			__asm        mov    ecx, writeBufferTmp;
+			__asm        mov    [ecx], eax;
 // LINE 952:
-		writeBufferTmp += 0x4;
+			writeBufferTmp += 0x4;
 // LINE 953:
-		cInc += 0x4;
+			cInc += 0x4;
 // LINE 954:
-		__asm        jmp    __WHILE_370;
+			__asm        jmp    __WHILE_370;
+		}
 // LINE 956:
 _T3ea:
 		error += dx;
@@ -1844,117 +1852,121 @@ _T103:
 	return;
 // LINE 1024:
 	doAssert(0x5bf35c, 0x400, 0x5bf324, 0x8c085);
+	{
 // LINE 1027:
 __WHILE_12e:
-	__asm        mov    eax, oneByteWrites;
-	__asm        mov    [ebp-0x40], eax;
-	__asm        dec    oneByteWrites;
-	__asm        cmp    dword ptr [ebp-0x40], 0;
-	__asm        je     __WHILE_18e;
+		__asm        mov    eax, oneByteWrites;
+		__asm        mov    [ebp-0x40], eax;
+		__asm        dec    oneByteWrites;
+		__asm        cmp    dword ptr [ebp-0x40], 0;
+		__asm        je     __WHILE_18e;
 // LINE 1030:
-	__asm        push   0x5BF384;
-	__asm        push   1;
-	__asm        mov    eax, writeBuffer;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T161;
+		__asm        push   0x5BF384;
+		__asm        push   1;
+		__asm        mov    eax, writeBuffer;
+		__asm        push   eax;
+		__asm        call   Check_Pointer;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jne    _T161;
 
-	return;
+		return;
 // LINE 1031:
 _T161:
-	__asm        fld    curPatOffset;
-	__asm        call   __ftol;
-	__asm        mov    ecx, pixPtr;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+eax];
-	__asm        xor    eax, eax;
-	__asm        mov    al, colorShift;
-	__asm        add    edx, eax;
-	__asm        mov    eax, writeBuffer;
-	__asm        mov    [eax], dl;
-	__asm        inc    writeBuffer;
+		__asm        fld    curPatOffset;
+		__asm        call   __ftol;
+		__asm        mov    ecx, pixPtr;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [ecx+eax];
+		__asm        xor    eax, eax;
+		__asm        mov    al, colorShift;
+		__asm        add    edx, eax;
+		__asm        mov    eax, writeBuffer;
+		__asm        mov    [eax], dl;
+		__asm        inc    writeBuffer;
 // LINE 1032:
-	__asm        fld    stride1;
-	__asm        fadd   curPatOffset;
-	__asm        fstp   curPatOffset;
+		__asm        fld    stride1;
+		__asm        fadd   curPatOffset;
+		__asm        fstp   curPatOffset;
 // LINE 1033:
-	__asm        jmp    __WHILE_12e;
+		__asm        jmp    __WHILE_12e;
+	}
+	{
 // LINE 1036:
 __WHILE_18e:
-	__asm        mov    eax, fourByteWrites;
-	__asm        mov    [ebp-0x44], eax;
-	__asm        dec    fourByteWrites;
-	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        je     __RETURN;
+		__asm        mov    eax, fourByteWrites;
+		__asm        mov    [ebp-0x44], eax;
+		__asm        dec    fourByteWrites;
+		__asm        cmp    dword ptr [ebp-0x44], 0;
+		__asm        je     __RETURN;
 // LINE 1038:
-	__asm        push   0x5BF394;
-	__asm        push   4;
-	__asm        mov    eax, writeBuffer;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T1c1;
+		__asm        push   0x5BF394;
+		__asm        push   4;
+		__asm        mov    eax, writeBuffer;
+		__asm        push   eax;
+		__asm        call   Check_Pointer;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jne    _T1c1;
 
-	return;
+		return;
 // LINE 1042:
 _T1c1:
-	__asm        fld    stride2;
-	__asm        fadd   curPatOffset;
-	__asm        call   __ftol;
-	__asm        mov    ecx, pixPtr;
-	__asm        xor    ebx, ebx;
-	__asm        mov    bl, [ecx+eax];
-	__asm        xor    eax, eax;
-	__asm        mov    al, colorShift;
-	__asm        add    ebx, eax;
-	__asm        shl    ebx, 0x10;
-	__asm        fld    stride3;
-	__asm        fadd   curPatOffset;
-	__asm        call   __ftol;
-	__asm        mov    ecx, pixPtr;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+eax];
-	__asm        xor    eax, eax;
-	__asm        mov    al, colorShift;
-	__asm        add    edx, eax;
-	__asm        shl    edx, 0x18;
-	__asm        add    ebx, edx;
-	__asm        fld    stride1;
-	__asm        fadd   curPatOffset;
-	__asm        call   __ftol;
-	__asm        mov    ecx, pixPtr;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+eax];
-	__asm        xor    eax, eax;
-	__asm        mov    al, colorShift;
-	__asm        add    edx, eax;
-	__asm        shl    edx, 8;
-	__asm        add    ebx, edx;
-	__asm        fld    curPatOffset;
-	__asm        call   __ftol;
-	__asm        mov    ecx, pixPtr;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx+eax];
-	__asm        add    ebx, edx;
-	__asm        xor    eax, eax;
-	__asm        mov    al, colorShift;
-	__asm        add    ebx, eax;
-	__asm        mov    longColor, ebx;
+		__asm        fld    stride2;
+		__asm        fadd   curPatOffset;
+		__asm        call   __ftol;
+		__asm        mov    ecx, pixPtr;
+		__asm        xor    ebx, ebx;
+		__asm        mov    bl, [ecx+eax];
+		__asm        xor    eax, eax;
+		__asm        mov    al, colorShift;
+		__asm        add    ebx, eax;
+		__asm        shl    ebx, 0x10;
+		__asm        fld    stride3;
+		__asm        fadd   curPatOffset;
+		__asm        call   __ftol;
+		__asm        mov    ecx, pixPtr;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [ecx+eax];
+		__asm        xor    eax, eax;
+		__asm        mov    al, colorShift;
+		__asm        add    edx, eax;
+		__asm        shl    edx, 0x18;
+		__asm        add    ebx, edx;
+		__asm        fld    stride1;
+		__asm        fadd   curPatOffset;
+		__asm        call   __ftol;
+		__asm        mov    ecx, pixPtr;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [ecx+eax];
+		__asm        xor    eax, eax;
+		__asm        mov    al, colorShift;
+		__asm        add    edx, eax;
+		__asm        shl    edx, 8;
+		__asm        add    ebx, edx;
+		__asm        fld    curPatOffset;
+		__asm        call   __ftol;
+		__asm        mov    ecx, pixPtr;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [ecx+eax];
+		__asm        add    ebx, edx;
+		__asm        xor    eax, eax;
+		__asm        mov    al, colorShift;
+		__asm        add    ebx, eax;
+		__asm        mov    longColor, ebx;
 // LINE 1044:
-	__asm        mov    eax, longColor;
-	__asm        mov    ecx, writeBuffer;
-	__asm        mov    [ecx], eax;
+		__asm        mov    eax, longColor;
+		__asm        mov    ecx, writeBuffer;
+		__asm        mov    [ecx], eax;
 // LINE 1045:
-	writeBuffer += 0x4;
+		writeBuffer += 0x4;
 // LINE 1046:
-	__asm        fld    stride4;
-	__asm        fadd   curPatOffset;
-	__asm        fstp   curPatOffset;
+		__asm        fld    stride4;
+		__asm        fadd   curPatOffset;
+		__asm        fstp   curPatOffset;
 // LINE 1047:
-	__asm        jmp    __WHILE_18e;
+		__asm        jmp    __WHILE_18e;
+	}
 // LINE 1050:
 __RETURN:
 }
@@ -2041,57 +2053,61 @@ _Te8:
 	return;
 // LINE 1105:
 	doAssert(0x5bf430, 0x451, 0x5bf3fc, 0x8c085);
+	{
 // LINE 1108:
 __WHILE_113:
-	__asm        mov    eax, oneByteWrites;
-	__asm        mov    [ebp-0x18], eax;
-	__asm        dec    oneByteWrites;
-	__asm        cmp    dword ptr [ebp-0x18], 0;
-	__asm        je     __WHILE_156;
+		__asm        mov    eax, oneByteWrites;
+		__asm        mov    [ebp-0x18], eax;
+		__asm        dec    oneByteWrites;
+		__asm        cmp    dword ptr [ebp-0x18], 0;
+		__asm        je     __WHILE_156;
 // LINE 1111:
-	__asm        push   0x5BF458;
-	__asm        push   1;
-	__asm        mov    eax, writeBuffer;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T146;
+		__asm        push   0x5BF458;
+		__asm        push   1;
+		__asm        mov    eax, writeBuffer;
+		__asm        push   eax;
+		__asm        call   Check_Pointer;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jne    _T146;
 
-	return;
+		return;
 // LINE 1112:
 _T146:
-	writeBuffer[0] = color;
-	writeBuffer++;
+		writeBuffer[0] = color;
+		writeBuffer++;
 // LINE 1113:
-	__asm        jmp    __WHILE_113;
+		__asm        jmp    __WHILE_113;
+	}
+	{
 // LINE 1115:
 __WHILE_156:
-	__asm        mov    eax, fourByteWrites;
-	__asm        mov    [ebp-0x1C], eax;
-	__asm        dec    fourByteWrites;
-	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     __RETURN;
+		__asm        mov    eax, fourByteWrites;
+		__asm        mov    [ebp-0x1C], eax;
+		__asm        dec    fourByteWrites;
+		__asm        cmp    dword ptr [ebp-0x1C], 0;
+		__asm        je     __RETURN;
 // LINE 1117:
-	__asm        push   0x5BF468;
-	__asm        push   4;
-	__asm        mov    eax, writeBuffer;
-	__asm        push   eax;
-	__asm        call   Check_Pointer;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T189;
+		__asm        push   0x5BF468;
+		__asm        push   4;
+		__asm        mov    eax, writeBuffer;
+		__asm        push   eax;
+		__asm        call   Check_Pointer;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jne    _T189;
 
-	return;
+		return;
 // LINE 1118:
 _T189:
-	__asm        mov    eax, fourByteColor;
-	__asm        mov    ecx, writeBuffer;
-	__asm        mov    [ecx], eax;
+		__asm        mov    eax, fourByteColor;
+		__asm        mov    ecx, writeBuffer;
+		__asm        mov    [ecx], eax;
 // LINE 1119:
-	writeBuffer += 0x4;
+		writeBuffer += 0x4;
 // LINE 1120:
-	__asm        jmp    __WHILE_156;
+		__asm        jmp    __WHILE_156;
+	}
 // LINE 1123:
 __RETURN:
 }

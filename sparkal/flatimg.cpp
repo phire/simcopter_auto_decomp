@@ -400,21 +400,23 @@ _T118:
 	__asm        je     _T195;
 // LINE 175:
 	pDestBits += ((DestStride * DestTop) + DestLeft);
+	{
 // LINE 176:
 __WHILE_15a:
-	__asm        mov    eax, Height;
-	__asm        mov    [ebp-0x1C], eax;
-	__asm        dec    Height;
-	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     _T195;
+		__asm        mov    eax, Height;
+		__asm        mov    [ebp-0x1C], eax;
+		__asm        dec    Height;
+		__asm        cmp    dword ptr [ebp-0x1C], 0;
+		__asm        je     _T195;
 // LINE 179:
-	memcpy(pDestBits, pSource, Width);
+		memcpy(pDestBits, pSource, Width);
 // LINE 180:
-	pDestBits += DestStride;
+		pDestBits += DestStride;
 // LINE 181:
-	pSource += this->mStride;
+		pSource += this->mStride;
 // LINE 182:
-	__asm        jmp    __WHILE_15a;
+		__asm        jmp    __WHILE_15a;
+	}
 // LINE 185:
 _T195:
 	__asm        mov    eax, pDest;
@@ -503,19 +505,21 @@ _Ta9:
 // LINE 230:
 	__asm        cmp    Width, 0;
 	__asm        je     _T11a;
+	{
 // LINE 231:
 __WHILE_e5:
-	__asm        mov    eax, Height;
-	__asm        mov    [ebp-0x20], eax;
-	__asm        dec    Height;
-	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        je     _T11a;
+		__asm        mov    eax, Height;
+		__asm        mov    [ebp-0x20], eax;
+		__asm        dec    Height;
+		__asm        cmp    dword ptr [ebp-0x20], 0;
+		__asm        je     _T11a;
 // LINE 232:
-	memset(pBits, nPaletteIndex, Width);
+		memset(pBits, nPaletteIndex, Width);
 // LINE 233:
-	pBits += this->mStride;
+		pBits += this->mStride;
 // LINE 234:
-	__asm        jmp    __WHILE_e5;
+		__asm        jmp    __WHILE_e5;
+	}
 // LINE 236:
 _T11a:
 	__asm        mov    eax, this;
@@ -832,21 +836,23 @@ _T265:
 // Block start:
 	/*bp-0x10*/  int32_t Count;
 	Count = this-><CFlatImage+0x0c>;
+	{
 // LINE 304:
 __WHILE_28c:
-	__asm        mov    eax, Count;
-	__asm        mov    [ebp-0x14], eax;
-	__asm        dec    Count;
-	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     _T2ca;
+		__asm        mov    eax, Count;
+		__asm        mov    [ebp-0x14], eax;
+		__asm        dec    Count;
+		__asm        cmp    dword ptr [ebp-0x14], 0;
+		__asm        je     _T2ca;
 // LINE 306:
-	memcpy(pBits, pSource, this-><CFlatImage+0x08>);
+		memcpy(pBits, pSource, this-><CFlatImage+0x08>);
 // LINE 307:
-	pBits += this-><CFlatImage+0x14>;
+		pBits += this-><CFlatImage+0x14>;
 // LINE 308:
-	pSource += SrcStride;
+		pSource += SrcStride;
 // LINE 309:
-	__asm        jmp    __WHILE_28c;
+		__asm        jmp    __WHILE_28c;
+	}
 // LINE 311:
 // Block end:
 _T2ca:

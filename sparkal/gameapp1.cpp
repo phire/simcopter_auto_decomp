@@ -950,14 +950,16 @@ static void $E135() {
 
 	__asm        mov    dword ptr [ebp-4], 2;
 	__asm        mov    dword ptr [ebp-8], 0x604450;
+	{
 __WHILE_17:
-	__asm        dec    dword ptr [ebp-4];
-	__asm        js     _T31;
+		__asm        dec    dword ptr [ebp-4];
+		__asm        js     _T31;
 
-	__asm        mov    ecx, [ebp-8];
-	__asm        call   SoundQueue::SoundQueue;
-	__asm        add    dword ptr [ebp-8], 0x18;
-	__asm        jmp    __WHILE_17;
+		__asm        mov    ecx, [ebp-8];
+		__asm        call   SoundQueue::SoundQueue;
+		__asm        add    dword ptr [ebp-8], 0x18;
+		__asm        jmp    __WHILE_17;
+	}
 _T31:
 	__asm        jmp    _T36;
 _T36:
@@ -983,14 +985,16 @@ static void $E136() {
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-8], eax;
+	{
 __WHILE_23:
-	__asm        dec    dword ptr [ebp-4];
-	__asm        js     _T3d;
+		__asm        dec    dword ptr [ebp-4];
+		__asm        js     _T3d;
 
-	__asm        sub    dword ptr [ebp-8], 0x18;
-	__asm        mov    ecx, [ebp-8];
-	__asm        call   SoundQueue::~SoundQueue;
-	__asm        jmp    __WHILE_23;
+		__asm        sub    dword ptr [ebp-8], 0x18;
+		__asm        mov    ecx, [ebp-8];
+		__asm        call   SoundQueue::~SoundQueue;
+		__asm        jmp    __WHILE_23;
+	}
 _T3d:
 	__asm        jmp    _T42;
 _T42:
@@ -3427,113 +3431,117 @@ _T9c:
 _FOR_ae:
 	i = 0x0;
 	__asm        jmp    _FOR_COND_ae;
+	{
 _FOR_NEXT_ae:
-	i++;
+		i++;
 _FOR_COND_ae:
-	__asm        movsx  eax, i;
-	__asm        movsx  eax, gszCommandLine[eax];
-	__asm        test   eax, eax;
-	__asm        je     _T212;
+		__asm        movsx  eax, i;
+		__asm        movsx  eax, gszCommandLine[eax];
+		__asm        test   eax, eax;
+		__asm        je     _T212;
 // LINE 614:
-	__asm        movsx  eax, i;
-	__asm        movsx  eax, gszCommandLine[eax];
-	__asm        cmp    eax, 0x2F;
-	__asm        je     _T101;
+		__asm        movsx  eax, i;
+		__asm        movsx  eax, gszCommandLine[eax];
+		__asm        cmp    eax, 0x2F;
+		__asm        je     _T101;
 
-	__asm        movsx  eax, i;
-	__asm        movsx  eax, gszCommandLine[eax];
-	__asm        cmp    eax, 0x5C;
-	__asm        je     _T101;
+		__asm        movsx  eax, i;
+		__asm        movsx  eax, gszCommandLine[eax];
+		__asm        cmp    eax, 0x5C;
+		__asm        je     _T101;
 
-	__asm        movsx  eax, i;
-	__asm        movsx  eax, gszCommandLine[eax];
-	__asm        cmp    eax, 0x2D;
-	__asm        jne    _T20d;
+		__asm        movsx  eax, i;
+		__asm        movsx  eax, gszCommandLine[eax];
+		__asm        cmp    eax, 0x2D;
+		__asm        jne    _T20d;
 _T101:
-	__asm        movsx  eax, i;
-	__asm        movsx  eax, gszCommandLine[1][eax];
-	__asm        movsx  ecx, chLowerToCheck;
-	__asm        cmp    eax, ecx;
-	__asm        je     _T12f;
+		__asm        movsx  eax, i;
+		__asm        movsx  eax, gszCommandLine[1][eax];
+		__asm        movsx  ecx, chLowerToCheck;
+		__asm        cmp    eax, ecx;
+		__asm        je     _T12f;
 
-	__asm        movsx  eax, i;
-	__asm        movsx  eax, gszCommandLine[1][eax];
-	__asm        movsx  ecx, chUpperToCheck;
-	__asm        cmp    eax, ecx;
-	__asm        jne    _T20d;
+		__asm        movsx  eax, i;
+		__asm        movsx  eax, gszCommandLine[1][eax];
+		__asm        movsx  ecx, chUpperToCheck;
+		__asm        cmp    eax, ecx;
+		__asm        jne    _T20d;
 // LINE 616:
 _T12f:
-	__asm        cmp    szResult, 0;
-	__asm        je     _T203;
+		__asm        cmp    szResult, 0;
+		__asm        je     _T203;
 // LINE 617:
-	__asm        mov    k, 0;
-	__asm        movsx  eax, i;
-	__asm        add    eax, 2;
-	__asm        mov    j, ax;
+		__asm        mov    k, 0;
+		__asm        movsx  eax, i;
+		__asm        add    eax, 2;
+		__asm        mov    j, ax;
 // LINE 619:
 _FOR_14f:
-	__asm        jmp    _FOR_COND_14f;
+		__asm        jmp    _FOR_COND_14f;
+		{
 _FOR_NEXT_14f:
-	k++;
-	j++;
+			k++;
+			j++;
 _FOR_COND_14f:
-	__asm        movsx  eax, j;
-	__asm        movsx  eax, gszCommandLine[eax];
-	__asm        test   eax, eax;
-	__asm        je     _T1f8;
+			__asm        movsx  eax, j;
+			__asm        movsx  eax, gszCommandLine[eax];
+			__asm        test   eax, eax;
+			__asm        je     _T1f8;
 
-	__asm        movsx  eax, j;
-	__asm        cmp    eax, 0x7F;
-	__asm        jge    _T1f8;
+			__asm        movsx  eax, j;
+			__asm        cmp    eax, 0x7F;
+			__asm        jge    _T1f8;
 
-	__asm        movsx  eax, j;
-	__asm        movsx  eax, gszCommandLine[eax];
-	__asm        cmp    eax, 9;
-	__asm        je     _T1f8;
+			__asm        movsx  eax, j;
+			__asm        movsx  eax, gszCommandLine[eax];
+			__asm        cmp    eax, 9;
+			__asm        je     _T1f8;
 // LINE 621:
-	__asm        movsx  eax, j;
-	__asm        movsx  eax, gszCommandLine[eax];
-	__asm        cmp    eax, 0x20;
-	__asm        jne    _T1ae;
+			__asm        movsx  eax, j;
+			__asm        movsx  eax, gszCommandLine[eax];
+			__asm        cmp    eax, 0x20;
+			__asm        jne    _T1ae;
 // LINE 622:
-	__asm        cmp    bInQuotation, 0;
-	__asm        jne    _T1ae;
+			__asm        cmp    bInQuotation, 0;
+			__asm        jne    _T1ae;
 // LINE 623:
-	__asm        jmp    _T1f8;
+			__asm        jmp    _T1f8;
 // LINE 625:
 _T1ae:
-	__asm        movsx  eax, j;
-	__asm        movsx  eax, gszCommandLine[eax];
-	__asm        cmp    eax, 0x22;
-	__asm        jne    _T1df;
+			__asm        movsx  eax, j;
+			__asm        movsx  eax, gszCommandLine[eax];
+			__asm        cmp    eax, 0x22;
+			__asm        jne    _T1df;
 // LINE 626:
-	__asm        cmp    bInQuotation, 0;
-	__asm        jne    _T1d8;
+			__asm        cmp    bInQuotation, 0;
+			__asm        jne    _T1d8;
 
-	bInQuotation = 0x1;
-	__asm        jmp    _T1df;
+			bInQuotation = 0x1;
+			__asm        jmp    _T1df;
 _T1d8:
-	bInQuotation = 0x0;
+			bInQuotation = 0x0;
 // LINE 627:
 _T1df:
-	__asm        movsx  eax, j;
-	__asm        mov    al, gszCommandLine[eax];
-	__asm        movsx  ecx, k;
-	__asm        mov    edx, szResult;
-	__asm        mov    [ecx+edx], al;
+			__asm        movsx  eax, j;
+			__asm        mov    al, gszCommandLine[eax];
+			__asm        movsx  ecx, k;
+			__asm        mov    edx, szResult;
+			__asm        mov    [ecx+edx], al;
 // LINE 628:
-	__asm        jmp    _FOR_NEXT_14f;
+			__asm        jmp    _FOR_NEXT_14f;
+		}
 // LINE 629:
 _T1f8:
-	__asm        movsx  eax, k;
-	__asm        mov    ecx, szResult;
-	__asm        mov    byte ptr [eax+ecx], 0;
+		__asm        movsx  eax, k;
+		__asm        mov    ecx, szResult;
+		__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 631:
 _T203:
-	return 0x1;
+		return 0x1;
 // LINE 633:
 _T20d:
-	__asm        jmp    _FOR_NEXT_ae;
+		__asm        jmp    _FOR_NEXT_ae;
+	}
 // LINE 634:
 _T212:
 	return 0x0;

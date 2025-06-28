@@ -988,59 +988,61 @@ _Te2:
 // LINE 317:
 _Tf4:
 	__asm        mov    dword ptr [ebp-0x594], 0;
+	{
 __WHILE_fe:
-	__asm        cmp    dword ptr [ebp-0x594], 4;
-	__asm        jae    _T1a9;
+		__asm        cmp    dword ptr [ebp-0x594], 4;
+		__asm        jae    _T1a9;
 
-	__asm        jmp    _T110;
+		__asm        jmp    _T110;
 _T110:
-	__asm        jmp    _T115;
+		__asm        jmp    _T115;
 _T115:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T12b;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T12b;
 
-	__asm        jmp    _FOR_1ba;
+		__asm        jmp    _FOR_1ba;
 _T12b:
-	__asm        jmp    _T130;
+		__asm        jmp    _T130;
 _T130:
-	__asm        jmp    _T135;
+		__asm        jmp    _T135;
 _T135:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T174;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T174;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T152;
+		memstrm.nodeNo++;
+		__asm        jmp    _T152;
 _T152:
-	__asm        jmp    _T157;
+		__asm        jmp    _T157;
 _T157:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T16d;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T16d;
 
-	__asm        jmp    _FOR_1ba;
+		__asm        jmp    _FOR_1ba;
 _T16d:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T174:
-	__asm        jmp    _T179;
+		__asm        jmp    _T179;
 _T179:
-	__asm        jmp    _T17e;
+		__asm        jmp    _T17e;
 _T17e:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x594];
-	__asm        mov    [ebp+ecx-0x138], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x594];
-	__asm        jmp    __WHILE_fe;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x594];
+		__asm        mov    [ebp+ecx-0x138], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x594];
+		__asm        jmp    __WHILE_fe;
+	}
 _T1a9:
 	__asm        jmp    _FOR_1ba;
 // LINE 318:
@@ -1065,466 +1067,482 @@ _T1e3:
 	__asm        mov    [ebp-0x59C], eax;
 // LINE 331:
 	__asm        mov    dword ptr [ebp-0x598], 0;
+	{
 __WHILE_22e:
-	__asm        cmp    dword ptr [ebp-0x598], 0x20;
-	__asm        jae    _T2db;
+		__asm        cmp    dword ptr [ebp-0x598], 0x20;
+		__asm        jae    _T2db;
 
-	__asm        jmp    _T240;
+		__asm        jmp    _T240;
 _T240:
-	__asm        jmp    _T245;
+		__asm        jmp    _T245;
 _T245:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T25b;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T25b;
 
-	__asm        jmp    _T2e0;
+		__asm        jmp    _T2e0;
 _T25b:
-	__asm        jmp    _T260;
+		__asm        jmp    _T260;
 _T260:
-	__asm        jmp    _T265;
+		__asm        jmp    _T265;
 _T265:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T2a4;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T2a4;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T282;
+		memstrm.nodeNo++;
+		__asm        jmp    _T282;
 _T282:
-	__asm        jmp    _T287;
+		__asm        jmp    _T287;
 _T287:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T29d;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T29d;
 
-	__asm        jmp    _T2e0;
+		__asm        jmp    _T2e0;
 _T29d:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T2a4:
-	__asm        jmp    _T2a9;
+		__asm        jmp    _T2a9;
 _T2a9:
-	__asm        jmp    _T2ae;
+		__asm        jmp    _T2ae;
 _T2ae:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x598];
-	__asm        mov    edx, [ebp-0x59C];
-	__asm        mov    [ecx+edx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x598];
-	__asm        jmp    __WHILE_22e;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x598];
+		__asm        mov    edx, [ebp-0x59C];
+		__asm        mov    [ecx+edx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x598];
+		__asm        jmp    __WHILE_22e;
+	}
 _T2db:
 	__asm        jmp    _T2e0;
 // LINE 334:
 _T2e0:
 	__asm        mov    dword ptr [ebp-0x5A0], 0;
+	{
 __WHILE_2ea:
-	__asm        cmp    dword ptr [ebp-0x5A0], 4;
-	__asm        jae    _T395;
+		__asm        cmp    dword ptr [ebp-0x5A0], 4;
+		__asm        jae    _T395;
 
-	__asm        jmp    _T2fc;
+		__asm        jmp    _T2fc;
 _T2fc:
-	__asm        jmp    _T301;
+		__asm        jmp    _T301;
 _T301:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T317;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T317;
 
-	__asm        jmp    _T39a;
+		__asm        jmp    _T39a;
 _T317:
-	__asm        jmp    _T31c;
+		__asm        jmp    _T31c;
 _T31c:
-	__asm        jmp    _T321;
+		__asm        jmp    _T321;
 _T321:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T360;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T360;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T33e;
+		memstrm.nodeNo++;
+		__asm        jmp    _T33e;
 _T33e:
-	__asm        jmp    _T343;
+		__asm        jmp    _T343;
 _T343:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T359;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T359;
 
-	__asm        jmp    _T39a;
+		__asm        jmp    _T39a;
 _T359:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T360:
-	__asm        jmp    _T365;
+		__asm        jmp    _T365;
 _T365:
-	__asm        jmp    _T36a;
+		__asm        jmp    _T36a;
 _T36a:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5A0];
-	__asm        mov    [ebp+ecx-0x138], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5A0];
-	__asm        jmp    __WHILE_2ea;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5A0];
+		__asm        mov    [ebp+ecx-0x138], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5A0];
+		__asm        jmp    __WHILE_2ea;
+	}
 _T395:
 	__asm        jmp    _T39a;
 // LINE 337:
 _T39a:
 	__asm        mov    dword ptr [ebp-0x5A4], 0;
+	{
 __WHILE_3a4:
-	__asm        cmp    dword ptr [ebp-0x5A4], 0x10;
-	__asm        jae    _T44e;
+		__asm        cmp    dword ptr [ebp-0x5A4], 0x10;
+		__asm        jae    _T44e;
 
-	__asm        jmp    _T3b6;
+		__asm        jmp    _T3b6;
 _T3b6:
-	__asm        jmp    _T3bb;
+		__asm        jmp    _T3bb;
 _T3bb:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T3d1;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T3d1;
 
-	__asm        jmp    _T453;
+		__asm        jmp    _T453;
 _T3d1:
-	__asm        jmp    _T3d6;
+		__asm        jmp    _T3d6;
 _T3d6:
-	__asm        jmp    _T3db;
+		__asm        jmp    _T3db;
 _T3db:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T41a;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T41a;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T3f8;
+		memstrm.nodeNo++;
+		__asm        jmp    _T3f8;
 _T3f8:
-	__asm        jmp    _T3fd;
+		__asm        jmp    _T3fd;
 _T3fd:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T413;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T413;
 
-	__asm        jmp    _T453;
+		__asm        jmp    _T453;
 _T413:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T41a:
-	__asm        jmp    _T41f;
+		__asm        jmp    _T41f;
 _T41f:
-	__asm        jmp    _T424;
+		__asm        jmp    _T424;
 _T424:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5A4];
-	__asm        mov    reinterpret_cast<uint8_t>(Valve[0])[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5A4];
-	__asm        jmp    __WHILE_3a4;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5A4];
+		__asm        mov    reinterpret_cast<uint8_t>(Valve[0])[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5A4];
+		__asm        jmp    __WHILE_3a4;
+	}
 _T44e:
 	__asm        jmp    _T453;
 // LINE 340:
 _T453:
 	__asm        mov    dword ptr [ebp-0x5A8], 0;
+	{
 __WHILE_45d:
-	__asm        cmp    dword ptr [ebp-0x5A8], 0x22;
-	__asm        jae    _T507;
+		__asm        cmp    dword ptr [ebp-0x5A8], 0x22;
+		__asm        jae    _T507;
 
-	__asm        jmp    _T46f;
+		__asm        jmp    _T46f;
 _T46f:
-	__asm        jmp    _T474;
+		__asm        jmp    _T474;
 _T474:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T48a;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T48a;
 
-	__asm        jmp    _T50c;
+		__asm        jmp    _T50c;
 _T48a:
-	__asm        jmp    _T48f;
+		__asm        jmp    _T48f;
 _T48f:
-	__asm        jmp    _T494;
+		__asm        jmp    _T494;
 _T494:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T4d3;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T4d3;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T4b1;
+		memstrm.nodeNo++;
+		__asm        jmp    _T4b1;
 _T4b1:
-	__asm        jmp    _T4b6;
+		__asm        jmp    _T4b6;
 _T4b6:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T4cc;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T4cc;
 
-	__asm        jmp    _T50c;
+		__asm        jmp    _T50c;
 _T4cc:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T4d3:
-	__asm        jmp    _T4d8;
+		__asm        jmp    _T4d8;
 _T4d8:
-	__asm        jmp    _T4dd;
+		__asm        jmp    _T4dd;
 _T4dd:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5A8];
-	__asm        mov    reinterpret_cast<uint8_t>(Invent[0])[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5A8];
-	__asm        jmp    __WHILE_45d;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5A8];
+		__asm        mov    reinterpret_cast<uint8_t>(Invent[0])[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5A8];
+		__asm        jmp    __WHILE_45d;
+	}
 _T507:
 	__asm        jmp    _T50c;
 // LINE 343:
 _T50c:
 	__asm        mov    dword ptr [ebp-0x5AC], 0;
+	{
 __WHILE_516:
-	__asm        cmp    dword ptr [ebp-0x5AC], 4;
-	__asm        jae    _T5c0;
+		__asm        cmp    dword ptr [ebp-0x5AC], 4;
+		__asm        jae    _T5c0;
 
-	__asm        jmp    _T528;
+		__asm        jmp    _T528;
 _T528:
-	__asm        jmp    _T52d;
+		__asm        jmp    _T52d;
 _T52d:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T543;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T543;
 
-	__asm        jmp    _T5c5;
+		__asm        jmp    _T5c5;
 _T543:
-	__asm        jmp    _T548;
+		__asm        jmp    _T548;
 _T548:
-	__asm        jmp    _T54d;
+		__asm        jmp    _T54d;
 _T54d:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T58c;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T58c;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T56a;
+		memstrm.nodeNo++;
+		__asm        jmp    _T56a;
 _T56a:
-	__asm        jmp    _T56f;
+		__asm        jmp    _T56f;
 _T56f:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T585;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T585;
 
-	__asm        jmp    _T5c5;
+		__asm        jmp    _T5c5;
 _T585:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T58c:
-	__asm        jmp    _T591;
+		__asm        jmp    _T591;
 _T591:
-	__asm        jmp    _T596;
+		__asm        jmp    _T596;
 _T596:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5AC];
-	__asm        mov    reinterpret_cast<uint8_t>(TotalFunds)[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5AC];
-	__asm        jmp    __WHILE_516;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5AC];
+		__asm        mov    reinterpret_cast<uint8_t>(TotalFunds)[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5AC];
+		__asm        jmp    __WHILE_516;
+	}
 _T5c0:
 	__asm        jmp    _T5c5;
 // LINE 346:
 _T5c5:
 	__asm        mov    dword ptr [ebp-0x5B0], 0;
+	{
 __WHILE_5cf:
-	__asm        cmp    dword ptr [ebp-0x5B0], 4;
-	__asm        jae    _T679;
+		__asm        cmp    dword ptr [ebp-0x5B0], 4;
+		__asm        jae    _T679;
 
-	__asm        jmp    _T5e1;
+		__asm        jmp    _T5e1;
 _T5e1:
-	__asm        jmp    _T5e6;
+		__asm        jmp    _T5e6;
 _T5e6:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T5fc;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T5fc;
 
-	__asm        jmp    _T67e;
+		__asm        jmp    _T67e;
 _T5fc:
-	__asm        jmp    _T601;
+		__asm        jmp    _T601;
 _T601:
-	__asm        jmp    _T606;
+		__asm        jmp    _T606;
 _T606:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T645;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T645;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T623;
+		memstrm.nodeNo++;
+		__asm        jmp    _T623;
 _T623:
-	__asm        jmp    _T628;
+		__asm        jmp    _T628;
 _T628:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T63e;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T63e;
 
-	__asm        jmp    _T67e;
+		__asm        jmp    _T67e;
 _T63e:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T645:
-	__asm        jmp    _T64a;
+		__asm        jmp    _T64a;
 _T64a:
-	__asm        jmp    _T64f;
+		__asm        jmp    _T64f;
 _T64f:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5B0];
-	__asm        mov    reinterpret_cast<uint8_t>(TotalBonds)[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5B0];
-	__asm        jmp    __WHILE_5cf;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5B0];
+		__asm        mov    reinterpret_cast<uint8_t>(TotalBonds)[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5B0];
+		__asm        jmp    __WHILE_5cf;
+	}
 _T679:
 	__asm        jmp    _T67e;
 // LINE 349:
 _T67e:
 	__asm        mov    dword ptr [ebp-0x5B4], 0;
+	{
 __WHILE_688:
-	__asm        cmp    dword ptr [ebp-0x5B4], 4;
-	__asm        jae    _T732;
+		__asm        cmp    dword ptr [ebp-0x5B4], 4;
+		__asm        jae    _T732;
 
-	__asm        jmp    _T69a;
+		__asm        jmp    _T69a;
 _T69a:
-	__asm        jmp    _T69f;
+		__asm        jmp    _T69f;
 _T69f:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T6b5;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T6b5;
 
-	__asm        jmp    _T737;
+		__asm        jmp    _T737;
 _T6b5:
-	__asm        jmp    _T6ba;
+		__asm        jmp    _T6ba;
 _T6ba:
-	__asm        jmp    _T6bf;
+		__asm        jmp    _T6bf;
 _T6bf:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T6fe;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T6fe;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T6dc;
+		memstrm.nodeNo++;
+		__asm        jmp    _T6dc;
 _T6dc:
-	__asm        jmp    _T6e1;
+		__asm        jmp    _T6e1;
 _T6e1:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T6f7;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T6f7;
 
-	__asm        jmp    _T737;
+		__asm        jmp    _T737;
 _T6f7:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T6fe:
-	__asm        jmp    _T703;
+		__asm        jmp    _T703;
 _T703:
-	__asm        jmp    _T708;
+		__asm        jmp    _T708;
 _T708:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5B4];
-	__asm        mov    reinterpret_cast<uint8_t>(TotalPop)[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5B4];
-	__asm        jmp    __WHILE_688;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5B4];
+		__asm        mov    reinterpret_cast<uint8_t>(TotalPop)[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5B4];
+		__asm        jmp    __WHILE_688;
+	}
 _T732:
 	__asm        jmp    _T737;
 // LINE 354:
 _T737:
 	__asm        mov    dword ptr [ebp-0x5B8], 0;
+	{
 __WHILE_741:
-	__asm        cmp    dword ptr [ebp-0x5B8], 0xC8;
-	__asm        jae    _T7ef;
+		__asm        cmp    dword ptr [ebp-0x5B8], 0xC8;
+		__asm        jae    _T7ef;
 
-	__asm        jmp    _T756;
+		__asm        jmp    _T756;
 _T756:
-	__asm        jmp    _T75b;
+		__asm        jmp    _T75b;
 _T75b:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T771;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T771;
 
-	__asm        jmp    _FOR_800;
+		__asm        jmp    _FOR_800;
 _T771:
-	__asm        jmp    _T776;
+		__asm        jmp    _T776;
 _T776:
-	__asm        jmp    _T77b;
+		__asm        jmp    _T77b;
 _T77b:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T7ba;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T7ba;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T798;
+		memstrm.nodeNo++;
+		__asm        jmp    _T798;
 _T798:
-	__asm        jmp    _T79d;
+		__asm        jmp    _T79d;
 _T79d:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T7b3;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T7b3;
 
-	__asm        jmp    _FOR_800;
+		__asm        jmp    _FOR_800;
 _T7b3:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T7ba:
-	__asm        jmp    _T7bf;
+		__asm        jmp    _T7bf;
 _T7bf:
-	__asm        jmp    _T7c4;
+		__asm        jmp    _T7c4;
 _T7c4:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5B8];
-	__asm        mov    [ebp+ecx-0x134], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5B8];
-	__asm        jmp    __WHILE_741;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5B8];
+		__asm        mov    [ebp+ecx-0x134], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5B8];
+		__asm        jmp    __WHILE_741;
+	}
 _T7ef:
 	__asm        jmp    _FOR_800;
 // LINE 355:
@@ -1540,349 +1558,361 @@ _FOR_800:
 // LINE 359:
 _T827:
 	__asm        mov    dword ptr [ebp-0x5BC], 0;
+	{
 __WHILE_831:
-	__asm        cmp    dword ptr [ebp-0x5BC], 4;
-	__asm        jae    _T8db;
+		__asm        cmp    dword ptr [ebp-0x5BC], 4;
+		__asm        jae    _T8db;
 
-	__asm        jmp    _T843;
+		__asm        jmp    _T843;
 _T843:
-	__asm        jmp    _T848;
+		__asm        jmp    _T848;
 _T848:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T85e;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T85e;
 
-	__asm        jmp    _T8e0;
+		__asm        jmp    _T8e0;
 _T85e:
-	__asm        jmp    _T863;
+		__asm        jmp    _T863;
 _T863:
-	__asm        jmp    _T868;
+		__asm        jmp    _T868;
 _T868:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T8a7;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T8a7;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T885;
+		memstrm.nodeNo++;
+		__asm        jmp    _T885;
 _T885:
-	__asm        jmp    _T88a;
+		__asm        jmp    _T88a;
 _T88a:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T8a0;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T8a0;
 
-	__asm        jmp    _T8e0;
+		__asm        jmp    _T8e0;
 _T8a0:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T8a7:
-	__asm        jmp    _T8ac;
+		__asm        jmp    _T8ac;
 _T8ac:
-	__asm        jmp    _T8b1;
+		__asm        jmp    _T8b1;
 _T8b1:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5BC];
-	__asm        mov    reinterpret_cast<uint8_t>(TotalRate)[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5BC];
-	__asm        jmp    __WHILE_831;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5BC];
+		__asm        mov    reinterpret_cast<uint8_t>(TotalRate)[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5BC];
+		__asm        jmp    __WHILE_831;
+	}
 _T8db:
 	__asm        jmp    _T8e0;
 // LINE 362:
 _T8e0:
 	__asm        mov    dword ptr [ebp-0x5C0], 0;
+	{
 __WHILE_8ea:
-	__asm        cmp    dword ptr [ebp-0x5C0], 2;
-	__asm        jae    _T994;
+		__asm        cmp    dword ptr [ebp-0x5C0], 2;
+		__asm        jae    _T994;
 
-	__asm        jmp    _T8fc;
+		__asm        jmp    _T8fc;
 _T8fc:
-	__asm        jmp    _T901;
+		__asm        jmp    _T901;
 _T901:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T917;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T917;
 
-	__asm        jmp    _T999;
+		__asm        jmp    _T999;
 _T917:
-	__asm        jmp    _T91c;
+		__asm        jmp    _T91c;
 _T91c:
-	__asm        jmp    _T921;
+		__asm        jmp    _T921;
 _T921:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _T960;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _T960;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T93e;
+		memstrm.nodeNo++;
+		__asm        jmp    _T93e;
 _T93e:
-	__asm        jmp    _T943;
+		__asm        jmp    _T943;
 _T943:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T959;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T959;
 
-	__asm        jmp    _T999;
+		__asm        jmp    _T999;
 _T959:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _T960:
-	__asm        jmp    _T965;
+		__asm        jmp    _T965;
 _T965:
-	__asm        jmp    _T96a;
+		__asm        jmp    _T96a;
 _T96a:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5C0];
-	__asm        mov    reinterpret_cast<uint8_t>(baseYear)[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5C0];
-	__asm        jmp    __WHILE_8ea;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5C0];
+		__asm        mov    reinterpret_cast<uint8_t>(baseYear)[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5C0];
+		__asm        jmp    __WHILE_8ea;
+	}
 _T994:
 	__asm        jmp    _T999;
 // LINE 365:
 _T999:
 	__asm        mov    dword ptr [ebp-0x5C4], 0;
+	{
 __WHILE_9a3:
-	__asm        cmp    dword ptr [ebp-0x5C4], 2;
-	__asm        jae    _Ta4d;
+		__asm        cmp    dword ptr [ebp-0x5C4], 2;
+		__asm        jae    _Ta4d;
 
-	__asm        jmp    _T9b5;
+		__asm        jmp    _T9b5;
 _T9b5:
-	__asm        jmp    _T9ba;
+		__asm        jmp    _T9ba;
 _T9ba:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _T9d0;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _T9d0;
 
-	__asm        jmp    _Ta52;
+		__asm        jmp    _Ta52;
 _T9d0:
-	__asm        jmp    _T9d5;
+		__asm        jmp    _T9d5;
 _T9d5:
-	__asm        jmp    _T9da;
+		__asm        jmp    _T9da;
 _T9da:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _Ta19;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _Ta19;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _T9f7;
+		memstrm.nodeNo++;
+		__asm        jmp    _T9f7;
 _T9f7:
-	__asm        jmp    _T9fc;
+		__asm        jmp    _T9fc;
 _T9fc:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Ta12;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Ta12;
 
-	__asm        jmp    _Ta52;
+		__asm        jmp    _Ta52;
 _Ta12:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _Ta19:
-	__asm        jmp    _Ta1e;
+		__asm        jmp    _Ta1e;
 _Ta1e:
-	__asm        jmp    _Ta23;
+		__asm        jmp    _Ta23;
 _Ta23:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5C4];
-	__asm        mov    reinterpret_cast<uint8_t>(month)[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5C4];
-	__asm        jmp    __WHILE_9a3;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5C4];
+		__asm        mov    reinterpret_cast<uint8_t>(month)[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5C4];
+		__asm        jmp    __WHILE_9a3;
+	}
 _Ta4d:
 	__asm        jmp    _Ta52;
 // LINE 368:
 _Ta52:
 	__asm        mov    dword ptr [ebp-0x5C8], 0;
+	{
 __WHILE_a5c:
-	__asm        cmp    dword ptr [ebp-0x5C8], 2;
-	__asm        jae    _Tb06;
+		__asm        cmp    dword ptr [ebp-0x5C8], 2;
+		__asm        jae    _Tb06;
 
-	__asm        jmp    _Ta6e;
+		__asm        jmp    _Ta6e;
 _Ta6e:
-	__asm        jmp    _Ta73;
+		__asm        jmp    _Ta73;
 _Ta73:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Ta89;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Ta89;
 
-	__asm        jmp    _Tb0b;
+		__asm        jmp    _Tb0b;
 _Ta89:
-	__asm        jmp    _Ta8e;
+		__asm        jmp    _Ta8e;
 _Ta8e:
-	__asm        jmp    _Ta93;
+		__asm        jmp    _Ta93;
 _Ta93:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _Tad2;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _Tad2;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _Tab0;
+		memstrm.nodeNo++;
+		__asm        jmp    _Tab0;
 _Tab0:
-	__asm        jmp    _Tab5;
+		__asm        jmp    _Tab5;
 _Tab5:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Tacb;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Tacb;
 
-	__asm        jmp    _Tb0b;
+		__asm        jmp    _Tb0b;
 _Tacb:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _Tad2:
-	__asm        jmp    _Tad7;
+		__asm        jmp    _Tad7;
 _Tad7:
-	__asm        jmp    _Tadc;
+		__asm        jmp    _Tadc;
 _Tadc:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5C8];
-	__asm        mov    reinterpret_cast<uint8_t>(year)[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5C8];
-	__asm        jmp    __WHILE_a5c;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5C8];
+		__asm        mov    reinterpret_cast<uint8_t>(year)[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5C8];
+		__asm        jmp    __WHILE_a5c;
+	}
 _Tb06:
 	__asm        jmp    _Tb0b;
 // LINE 371:
 _Tb0b:
 	__asm        mov    dword ptr [ebp-0x5CC], 0;
+	{
 __WHILE_b15:
-	__asm        cmp    dword ptr [ebp-0x5CC], 2;
-	__asm        jae    _Tbbf;
+		__asm        cmp    dword ptr [ebp-0x5CC], 2;
+		__asm        jae    _Tbbf;
 
-	__asm        jmp    _Tb27;
+		__asm        jmp    _Tb27;
 _Tb27:
-	__asm        jmp    _Tb2c;
+		__asm        jmp    _Tb2c;
 _Tb2c:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Tb42;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Tb42;
 
-	__asm        jmp    _Tbc4;
+		__asm        jmp    _Tbc4;
 _Tb42:
-	__asm        jmp    _Tb47;
+		__asm        jmp    _Tb47;
 _Tb47:
-	__asm        jmp    _Tb4c;
+		__asm        jmp    _Tb4c;
 _Tb4c:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _Tb8b;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _Tb8b;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _Tb69;
+		memstrm.nodeNo++;
+		__asm        jmp    _Tb69;
 _Tb69:
-	__asm        jmp    _Tb6e;
+		__asm        jmp    _Tb6e;
 _Tb6e:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Tb84;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Tb84;
 
-	__asm        jmp    _Tbc4;
+		__asm        jmp    _Tbc4;
 _Tb84:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _Tb8b:
-	__asm        jmp    _Tb90;
+		__asm        jmp    _Tb90;
 _Tb90:
-	__asm        jmp    _Tb95;
+		__asm        jmp    _Tb95;
 _Tb95:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5CC];
-	__asm        mov    reinterpret_cast<uint8_t>(season)[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5CC];
-	__asm        jmp    __WHILE_b15;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5CC];
+		__asm        mov    reinterpret_cast<uint8_t>(season)[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5CC];
+		__asm        jmp    __WHILE_b15;
+	}
 _Tbbf:
 	__asm        jmp    _Tbc4;
 // LINE 374:
 _Tbc4:
 	__asm        mov    dword ptr [ebp-0x5D0], 0;
+	{
 __WHILE_bce:
-	__asm        cmp    dword ptr [ebp-0x5D0], 2;
-	__asm        jae    _Tc78;
+		__asm        cmp    dword ptr [ebp-0x5D0], 2;
+		__asm        jae    _Tc78;
 
-	__asm        jmp    _Tbe0;
+		__asm        jmp    _Tbe0;
 _Tbe0:
-	__asm        jmp    _Tbe5;
+		__asm        jmp    _Tbe5;
 _Tbe5:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Tbfb;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Tbfb;
 
-	__asm        jmp    _Tc7d;
+		__asm        jmp    _Tc7d;
 _Tbfb:
-	__asm        jmp    _Tc00;
+		__asm        jmp    _Tc00;
 _Tc00:
-	__asm        jmp    _Tc05;
+		__asm        jmp    _Tc05;
 _Tc05:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _Tc44;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _Tc44;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _Tc22;
+		memstrm.nodeNo++;
+		__asm        jmp    _Tc22;
 _Tc22:
-	__asm        jmp    _Tc27;
+		__asm        jmp    _Tc27;
 _Tc27:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Tc3d;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Tc3d;
 
-	__asm        jmp    _Tc7d;
+		__asm        jmp    _Tc7d;
 _Tc3d:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _Tc44:
-	__asm        jmp    _Tc49;
+		__asm        jmp    _Tc49;
 _Tc49:
-	__asm        jmp    _Tc4e;
+		__asm        jmp    _Tc4e;
 _Tc4e:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5D0];
-	__asm        mov    reinterpret_cast<uint8_t>(CityStatus)[ecx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5D0];
-	__asm        jmp    __WHILE_bce;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5D0];
+		__asm        mov    reinterpret_cast<uint8_t>(CityStatus)[ecx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5D0];
+		__asm        jmp    __WHILE_bce;
+	}
 _Tc78:
 	__asm        jmp    _Tc7d;
 _Tc7d:
@@ -1890,60 +1920,62 @@ _Tc7d:
 	__asm        mov    [ebp-0x5D8], eax;
 // LINE 377:
 	__asm        mov    dword ptr [ebp-0x5D4], 0;
+	{
 __WHILE_c92:
-	__asm        cmp    dword ptr [ebp-0x5D4], 0x1000;
-	__asm        jae    _Td42;
+		__asm        cmp    dword ptr [ebp-0x5D4], 0x1000;
+		__asm        jae    _Td42;
 
-	__asm        jmp    _Tca7;
+		__asm        jmp    _Tca7;
 _Tca7:
-	__asm        jmp    _Tcac;
+		__asm        jmp    _Tcac;
 _Tcac:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Tcc2;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Tcc2;
 
-	__asm        jmp    _Td47;
+		__asm        jmp    _Td47;
 _Tcc2:
-	__asm        jmp    _Tcc7;
+		__asm        jmp    _Tcc7;
 _Tcc7:
-	__asm        jmp    _Tccc;
+		__asm        jmp    _Tccc;
 _Tccc:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _Td0b;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _Td0b;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _Tce9;
+		memstrm.nodeNo++;
+		__asm        jmp    _Tce9;
 _Tce9:
-	__asm        jmp    _Tcee;
+		__asm        jmp    _Tcee;
 _Tcee:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Td04;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Td04;
 
-	__asm        jmp    _Td47;
+		__asm        jmp    _Td47;
 _Td04:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _Td0b:
-	__asm        jmp    _Td10;
+		__asm        jmp    _Td10;
 _Td10:
-	__asm        jmp    _Td15;
+		__asm        jmp    _Td15;
 _Td15:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5D4];
-	__asm        mov    edx, [ebp-0x5D8];
-	__asm        mov    [ecx+edx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5D4];
-	__asm        jmp    __WHILE_c92;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5D4];
+		__asm        mov    edx, [ebp-0x5D8];
+		__asm        mov    [ecx+edx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5D4];
+		__asm        jmp    __WHILE_c92;
+	}
 _Td42:
 	__asm        jmp    _Td47;
 _Td47:
@@ -1951,60 +1983,62 @@ _Td47:
 	__asm        mov    [ebp-0x5E0], eax;
 // LINE 378:
 	__asm        mov    dword ptr [ebp-0x5DC], 0;
+	{
 __WHILE_d5c:
-	__asm        cmp    dword ptr [ebp-0x5DC], 0x1000;
-	__asm        jae    _Te0c;
+		__asm        cmp    dword ptr [ebp-0x5DC], 0x1000;
+		__asm        jae    _Te0c;
 
-	__asm        jmp    _Td71;
+		__asm        jmp    _Td71;
 _Td71:
-	__asm        jmp    _Td76;
+		__asm        jmp    _Td76;
 _Td76:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Td8c;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Td8c;
 
-	__asm        jmp    _Te11;
+		__asm        jmp    _Te11;
 _Td8c:
-	__asm        jmp    _Td91;
+		__asm        jmp    _Td91;
 _Td91:
-	__asm        jmp    _Td96;
+		__asm        jmp    _Td96;
 _Td96:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _Tdd5;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _Tdd5;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _Tdb3;
+		memstrm.nodeNo++;
+		__asm        jmp    _Tdb3;
 _Tdb3:
-	__asm        jmp    _Tdb8;
+		__asm        jmp    _Tdb8;
 _Tdb8:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Tdce;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Tdce;
 
-	__asm        jmp    _Te11;
+		__asm        jmp    _Te11;
 _Tdce:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _Tdd5:
-	__asm        jmp    _Tdda;
+		__asm        jmp    _Tdda;
 _Tdda:
-	__asm        jmp    _Tddf;
+		__asm        jmp    _Tddf;
 _Tddf:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5DC];
-	__asm        mov    edx, [ebp-0x5E0];
-	__asm        mov    [ecx+edx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5DC];
-	__asm        jmp    __WHILE_d5c;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5DC];
+		__asm        mov    edx, [ebp-0x5E0];
+		__asm        mov    [ecx+edx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5DC];
+		__asm        jmp    __WHILE_d5c;
+	}
 _Te0c:
 	__asm        jmp    _Te11;
 _Te11:
@@ -2012,60 +2046,62 @@ _Te11:
 	__asm        mov    [ebp-0x5E8], eax;
 // LINE 379:
 	__asm        mov    dword ptr [ebp-0x5E4], 0;
+	{
 __WHILE_e26:
-	__asm        cmp    dword ptr [ebp-0x5E4], 0x1000;
-	__asm        jae    _Ted6;
+		__asm        cmp    dword ptr [ebp-0x5E4], 0x1000;
+		__asm        jae    _Ted6;
 
-	__asm        jmp    _Te3b;
+		__asm        jmp    _Te3b;
 _Te3b:
-	__asm        jmp    _Te40;
+		__asm        jmp    _Te40;
 _Te40:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Te56;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Te56;
 
-	__asm        jmp    _Tedb;
+		__asm        jmp    _Tedb;
 _Te56:
-	__asm        jmp    _Te5b;
+		__asm        jmp    _Te5b;
 _Te5b:
-	__asm        jmp    _Te60;
+		__asm        jmp    _Te60;
 _Te60:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _Te9f;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _Te9f;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _Te7d;
+		memstrm.nodeNo++;
+		__asm        jmp    _Te7d;
 _Te7d:
-	__asm        jmp    _Te82;
+		__asm        jmp    _Te82;
 _Te82:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Te98;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Te98;
 
-	__asm        jmp    _Tedb;
+		__asm        jmp    _Tedb;
 _Te98:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _Te9f:
-	__asm        jmp    _Tea4;
+		__asm        jmp    _Tea4;
 _Tea4:
-	__asm        jmp    _Tea9;
+		__asm        jmp    _Tea9;
 _Tea9:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5E4];
-	__asm        mov    edx, [ebp-0x5E8];
-	__asm        mov    [ecx+edx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5E4];
-	__asm        jmp    __WHILE_e26;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5E4];
+		__asm        mov    edx, [ebp-0x5E8];
+		__asm        mov    [ecx+edx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5E4];
+		__asm        jmp    __WHILE_e26;
+	}
 _Ted6:
 	__asm        jmp    _Tedb;
 _Tedb:
@@ -2073,60 +2109,62 @@ _Tedb:
 	__asm        mov    [ebp-0x5F0], eax;
 // LINE 380:
 	__asm        mov    dword ptr [ebp-0x5EC], 0;
+	{
 __WHILE_ef0:
-	__asm        cmp    dword ptr [ebp-0x5EC], 0x1000;
-	__asm        jae    _Tfa0;
+		__asm        cmp    dword ptr [ebp-0x5EC], 0x1000;
+		__asm        jae    _Tfa0;
 
-	__asm        jmp    _Tf05;
+		__asm        jmp    _Tf05;
 _Tf05:
-	__asm        jmp    _Tf0a;
+		__asm        jmp    _Tf0a;
 _Tf0a:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Tf20;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Tf20;
 
-	__asm        jmp    _Tfa5;
+		__asm        jmp    _Tfa5;
 _Tf20:
-	__asm        jmp    _Tf25;
+		__asm        jmp    _Tf25;
 _Tf25:
-	__asm        jmp    _Tf2a;
+		__asm        jmp    _Tf2a;
 _Tf2a:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    edx, memstrm.curPos;
-	__asm        cmp    [ecx+eax*8+4], edx;
-	__asm        ja     _Tf69;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    edx, memstrm.curPos;
+		__asm        cmp    [ecx+eax*8+4], edx;
+		__asm        ja     _Tf69;
 
-	memstrm.nodeNo++;
-	__asm        jmp    _Tf47;
+		memstrm.nodeNo++;
+		__asm        jmp    _Tf47;
 _Tf47:
-	__asm        jmp    _Tf4c;
+		__asm        jmp    _Tf4c;
 _Tf4c:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        cmp    dword ptr [ecx+eax*8], 0;
-	__asm        jne    _Tf62;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        cmp    dword ptr [ecx+eax*8], 0;
+		__asm        jne    _Tf62;
 
-	__asm        jmp    _Tfa5;
+		__asm        jmp    _Tfa5;
 _Tf62:
-	memstrm.curPos = 0x0;
+		memstrm.curPos = 0x0;
 _Tf69:
-	__asm        jmp    _Tf6e;
+		__asm        jmp    _Tf6e;
 _Tf6e:
-	__asm        jmp    _Tf73;
+		__asm        jmp    _Tf73;
 _Tf73:
-	__asm        movsx  eax, memstrm.nodeNo;
-	__asm        mov    ecx, memstrm.nodeList.start;
-	__asm        mov    eax, [ecx+eax*8];
-	__asm        mov    ecx, memstrm.curPos;
-	__asm        mov    al, [eax+ecx];
-	__asm        mov    ecx, [ebp-0x5EC];
-	__asm        mov    edx, [ebp-0x5F0];
-	__asm        mov    [ecx+edx], al;
-	__asm        inc    memstrm.curPos;
-	__asm        inc    dword ptr [ebp-0x5EC];
-	__asm        jmp    __WHILE_ef0;
+		__asm        movsx  eax, memstrm.nodeNo;
+		__asm        mov    ecx, memstrm.nodeList.start;
+		__asm        mov    eax, [ecx+eax*8];
+		__asm        mov    ecx, memstrm.curPos;
+		__asm        mov    al, [eax+ecx];
+		__asm        mov    ecx, [ebp-0x5EC];
+		__asm        mov    edx, [ebp-0x5F0];
+		__asm        mov    [ecx+edx], al;
+		__asm        inc    memstrm.curPos;
+		__asm        inc    dword ptr [ebp-0x5EC];
+		__asm        jmp    __WHILE_ef0;
+	}
 _Tfa0:
 	__asm        jmp    _Tfa5;
 // LINE 383:

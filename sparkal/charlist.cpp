@@ -291,21 +291,23 @@ _T21:
 // LINE 138:
 _FOR_39:
 	__asm        jmp    _FOR_COND_39;
+	{
 _FOR_NEXT_39:
-	nPresentIndex++;
-	this->presentCharData = nextCharData;
+		nPresentIndex++;
+		this->presentCharData = nextCharData;
 _FOR_COND_39:
-	__asm        mov    eax, nIndex;
-	__asm        cmp    nPresentIndex, eax;
-	__asm        jge    _T6f;
+		__asm        mov    eax, nIndex;
+		__asm        cmp    nPresentIndex, eax;
+		__asm        jge    _T6f;
 
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+0xC], 0;
-	__asm        je     _T6f;
+		__asm        mov    eax, this;
+		__asm        cmp    dword ptr [eax+0xC], 0;
+		__asm        je     _T6f;
 // LINE 141:
-	nextCharData = this->presentCharData->nextCharData;
+		nextCharData = this->presentCharData->nextCharData;
 // LINE 142:
-	__asm        jmp    _FOR_NEXT_39;
+		__asm        jmp    _FOR_NEXT_39;
+	}
 // LINE 144:
 _T6f:
 	return this->presentCharData;

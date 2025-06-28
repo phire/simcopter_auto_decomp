@@ -5730,14 +5730,16 @@ void JoystickWindow::JoystickWindow(/*packed*/ class MRect& rectNewPosition, int
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xBE;
 	__asm        mov    [ebp-0xC], eax;
+	{
 __WHILE_4c:
-	__asm        dec    dword ptr [ebp-8];
-	__asm        js     _T66;
+		__asm        dec    dword ptr [ebp-8];
+		__asm        js     _T66;
 
-	__asm        mov    ecx, [ebp-0xC];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0xC], 0x10;
-	__asm        jmp    __WHILE_4c;
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0xC], 0x10;
+		__asm        jmp    __WHILE_4c;
+	}
 _T66:
 	__asm        jmp    _T6b;
 _T6b:
@@ -5745,14 +5747,16 @@ _T6b:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x13E;
 	__asm        mov    [ebp-0x14], eax;
+	{
 __WHILE_7d:
-	__asm        dec    dword ptr [ebp-0x10];
-	__asm        js     _T97;
+		__asm        dec    dword ptr [ebp-0x10];
+		__asm        js     _T97;
 
-	__asm        mov    ecx, [ebp-0x14];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x14], 0x10;
-	__asm        jmp    __WHILE_7d;
+		__asm        mov    ecx, [ebp-0x14];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x14], 0x10;
+		__asm        jmp    __WHILE_7d;
+	}
 _T97:
 	__asm        jmp    _T9c;
 _T9c:
@@ -5764,14 +5768,16 @@ _Ta6:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x18E;
 	__asm        mov    [ebp-0x1C], eax;
+	{
 __WHILE_b8:
-	__asm        dec    dword ptr [ebp-0x18];
-	__asm        js     _Td2;
+		__asm        dec    dword ptr [ebp-0x18];
+		__asm        js     _Td2;
 
-	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x1C], 0x10;
-	__asm        jmp    __WHILE_b8;
+		__asm        mov    ecx, [ebp-0x1C];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x1C], 0x10;
+		__asm        jmp    __WHILE_b8;
+	}
 _Td2:
 	__asm        jmp    _Td7;
 _Td7:
@@ -6894,15 +6900,17 @@ void JoystickWindow::DrawHandle() {
 	__asm        mov    dword ptr [ebp-0x58], 4;
 	__asm        lea    eax, rectHandleBaseSources[0].left;
 	__asm        mov    [ebp-0x5C], eax;
+	{
 // LINE 838:
 __WHILE_19:
-	__asm        dec    dword ptr [ebp-0x58];
-	__asm        js     _T33;
+		__asm        dec    dword ptr [ebp-0x58];
+		__asm        js     _T33;
 
-	__asm        mov    ecx, [ebp-0x5C];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x5C], 0x10;
-	__asm        jmp    __WHILE_19;
+		__asm        mov    ecx, [ebp-0x5C];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x5C], 0x10;
+		__asm        jmp    __WHILE_19;
+	}
 _T33:
 	__asm        jmp    _T38;
 // LINE 842:
@@ -11566,115 +11574,117 @@ _T296:
 	GetReservedKeyArray(lReservedKeys[0]);
 // LINE 1617:
 	i = 0x0;
+	{
 // LINE 1618:
 __WHILE_2a9:
-	__asm        mov    eax, i;
-	__asm        cmp    dword ptr [ebp+eax*4-0x60], 0;
-	__asm        je     _T45c;
+		__asm        mov    eax, i;
+		__asm        cmp    dword ptr [ebp+eax*4-0x60], 0;
+		__asm        je     _T45c;
 // LINE 1619:
-	__asm        mov    eax, i;
-	__asm        mov    eax, [ebp+eax*4-0x60];
-	__asm        mov    tempKeyColors.lKey, eax;
+		__asm        mov    eax, i;
+		__asm        mov    eax, [ebp+eax*4-0x60];
+		__asm        mov    tempKeyColors.lKey, eax;
 // LINE 1620:
-	__asm        mov    tempKeyColors.lColorIndex, 0x36;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        add    eax, 0x90;
-	__asm        mov    [ebp-0xF8], eax;
+		__asm        mov    tempKeyColors.lColorIndex, 0x36;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x78];
+		__asm        add    eax, 0x90;
+		__asm        mov    [ebp-0xF8], eax;
 // LINE 1621:
-	__asm        mov    eax, [ebp-0xF8];
-	__asm        mov    eax, [eax];
-	__asm        mov    [ebp-0xD8], eax;
-	__asm        mov    eax, [ebp-0xD8];
-	__asm        mov    [ebp-0xD0], eax;
-	__asm        jmp    _T2fb;
+		__asm        mov    eax, [ebp-0xF8];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0xD8], eax;
+		__asm        mov    eax, [ebp-0xD8];
+		__asm        mov    [ebp-0xD0], eax;
+		__asm        jmp    _T2fb;
 _T2fb:
-	__asm        jmp    _T300;
+		__asm        jmp    _T300;
 _T300:
-	__asm        mov    eax, [ebp-0xD0];
-	__asm        mov    [ebp-0xF4], eax;
-	__asm        mov    eax, list<KeyColors>::free_list;
-	__asm        mov    [ebp-0xE4], eax;
-	__asm        cmp    list<KeyColors>::free_list, 0;
-	__asm        je     _T341;
+		__asm        mov    eax, [ebp-0xD0];
+		__asm        mov    [ebp-0xF4], eax;
+		__asm        mov    eax, list<KeyColors>::free_list;
+		__asm        mov    [ebp-0xE4], eax;
+		__asm        cmp    list<KeyColors>::free_list, 0;
+		__asm        je     _T341;
 
-	__asm        mov    eax, list<KeyColors>::free_list;
-	__asm        mov    eax, [eax];
-	__asm        mov    list<KeyColors>::free_list, eax;
-	__asm        mov    eax, [ebp-0xE4];
-	__asm        mov    [ebp-0xF0], eax;
-	__asm        jmp    _T39e;
+		__asm        mov    eax, list<KeyColors>::free_list;
+		__asm        mov    eax, [eax];
+		__asm        mov    list<KeyColors>::free_list, eax;
+		__asm        mov    eax, [ebp-0xE4];
+		__asm        mov    [ebp-0xF0], eax;
+		__asm        jmp    _T39e;
 _T341:
-	__asm        mov    eax, list<KeyColors>::next_avail;
-	__asm        cmp    list<KeyColors>::last, eax;
-	__asm        jne    _T380;
+		__asm        mov    eax, list<KeyColors>::next_avail;
+		__asm        cmp    list<KeyColors>::last, eax;
+		__asm        jne    _T380;
 
-	__asm        mov    ecx, [ebp-0xF8];
-	__asm        call   list<KeyColors>::add_new_buffer;
-	__asm        mov    eax, list<KeyColors>::next_avail;
-	__asm        mov    [ebp-0xE8], eax;
-	__asm        add    list<KeyColors>::next_avail, 0x10;
-	__asm        mov    eax, [ebp-0xE8];
-	__asm        mov    [ebp-0xF0], eax;
-	__asm        jmp    _T39e;
+		__asm        mov    ecx, [ebp-0xF8];
+		__asm        call   list<KeyColors>::add_new_buffer;
+		__asm        mov    eax, list<KeyColors>::next_avail;
+		__asm        mov    [ebp-0xE8], eax;
+		__asm        add    list<KeyColors>::next_avail, 0x10;
+		__asm        mov    eax, [ebp-0xE8];
+		__asm        mov    [ebp-0xF0], eax;
+		__asm        jmp    _T39e;
 _T380:
-	__asm        mov    eax, list<KeyColors>::next_avail;
-	__asm        mov    [ebp-0xEC], eax;
-	__asm        add    list<KeyColors>::next_avail, 0x10;
-	__asm        mov    eax, [ebp-0xEC];
-	__asm        mov    [ebp-0xF0], eax;
+		__asm        mov    eax, list<KeyColors>::next_avail;
+		__asm        mov    [ebp-0xEC], eax;
+		__asm        add    list<KeyColors>::next_avail, 0x10;
+		__asm        mov    eax, [ebp-0xEC];
+		__asm        mov    [ebp-0xF0], eax;
 _T39e:
-	__asm        jmp    _T3a3;
+		__asm        jmp    _T3a3;
 _T3a3:
-	__asm        mov    eax, [ebp-0xF0];
-	__asm        mov    [ebp-0xDC], eax;
-	__asm        jmp    _T3b4;
+		__asm        mov    eax, [ebp-0xF0];
+		__asm        mov    [ebp-0xDC], eax;
+		__asm        jmp    _T3b4;
 _T3b4:
-	__asm        mov    eax, [ebp-0xDC];
-	__asm        add    eax, 8;
-	__asm        mov    [ebp-0xE0], eax;
-	__asm        jmp    _T3c8;
+		__asm        mov    eax, [ebp-0xDC];
+		__asm        add    eax, 8;
+		__asm        mov    [ebp-0xE0], eax;
+		__asm        jmp    _T3c8;
 _T3c8:
-	__asm        cmp    dword ptr [ebp-0xE0], 0;
-	__asm        je     _T3eb;
+		__asm        cmp    dword ptr [ebp-0xE0], 0;
+		__asm        je     _T3eb;
 
-	__asm        mov    eax, tempKeyColors.lKey;
-	__asm        mov    ecx, tempKeyColors.lColorIndex;
-	__asm        mov    edx, [ebp-0xE0];
-	__asm        mov    [edx], eax;
-	__asm        mov    [edx+4], ecx;
-	__asm        jmp    _T3eb;
+		__asm        mov    eax, tempKeyColors.lKey;
+		__asm        mov    ecx, tempKeyColors.lColorIndex;
+		__asm        mov    edx, [ebp-0xE0];
+		__asm        mov    [edx], eax;
+		__asm        mov    [edx+4], ecx;
+		__asm        jmp    _T3eb;
 _T3eb:
-	__asm        jmp    _T3f0;
+		__asm        jmp    _T3f0;
 _T3f0:
-	__asm        mov    eax, [ebp-0xF4];
-	__asm        mov    ecx, [ebp-0xDC];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, [ebp-0xF4];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, [ebp-0xDC];
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, [ebp-0xDC];
-	__asm        mov    ecx, [ebp-0xF4];
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, [ebp-0xDC];
-	__asm        mov    ecx, [ebp-0xF4];
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, [ebp-0xF8];
-	__asm        inc    dword ptr [eax+4];
-	__asm        mov    eax, [ebp-0xDC];
-	__asm        mov    [ebp-0xD4], eax;
-	__asm        jmp    _T44a;
+		__asm        mov    eax, [ebp-0xF4];
+		__asm        mov    ecx, [ebp-0xDC];
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-0xF4];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0xDC];
+		__asm        mov    [ecx+4], eax;
+		__asm        mov    eax, [ebp-0xDC];
+		__asm        mov    ecx, [ebp-0xF4];
+		__asm        mov    ecx, [ecx+4];
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-0xDC];
+		__asm        mov    ecx, [ebp-0xF4];
+		__asm        mov    [ecx+4], eax;
+		__asm        mov    eax, [ebp-0xF8];
+		__asm        inc    dword ptr [eax+4];
+		__asm        mov    eax, [ebp-0xDC];
+		__asm        mov    [ebp-0xD4], eax;
+		__asm        jmp    _T44a;
 _T44a:
-	__asm        jmp    _T44f;
+		__asm        jmp    _T44f;
 _T44f:
-	__asm        jmp    _T454;
+		__asm        jmp    _T454;
 // LINE 1622:
 _T454:
-	i++;
+		i++;
 // LINE 1623:
-	__asm        jmp    __WHILE_2a9;
+		__asm        jmp    __WHILE_2a9;
+	}
 // LINE 1626:
 _T45c:
 	__asm        mov    eax, this;

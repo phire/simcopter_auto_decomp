@@ -1482,65 +1482,67 @@ void Station::StationHeapInsert(const /*packed*/ struct _StationHeapStruct *pIns
 	__asm        lea    edx, [edx+ebx*8];
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
+	{
 // LINE 261:
 __WHILE_34:
-	__asm        mov    eax, index;
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        mov    ebx, index;
-	__asm        mov    edx, [edx+ebx*8];
-	__asm        cmp    [ecx+eax*8], edx;
-	__asm        jle    _Tc5;
+		__asm        mov    eax, index;
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+8];
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+8];
+		__asm        mov    ebx, index;
+		__asm        mov    edx, [edx+ebx*8];
+		__asm        cmp    [ecx+eax*8], edx;
+		__asm        jle    _Tc5;
 // LINE 263:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, index;
-	__asm        lea    eax, [eax+ecx*8];
-	__asm        mov    ecx, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    tempStruct.cost, ecx;
-	__asm        mov    tempStruct.stationID, eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, index;
+		__asm        lea    eax, [eax+ecx*8];
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    tempStruct.cost, ecx;
+		__asm        mov    tempStruct.stationID, eax;
 // LINE 264:
-	__asm        mov    eax, index;
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        shl    eax, 3;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+8];
-	__asm        mov    ecx, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        mov    ebx, index;
-	__asm        lea    edx, [edx+ebx*8];
-	__asm        mov    [edx], ecx;
-	__asm        mov    [edx+4], eax;
+		__asm        mov    eax, index;
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        shl    eax, 3;
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+8];
+		__asm        mov    ebx, index;
+		__asm        lea    edx, [edx+ebx*8];
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
 // LINE 265:
-	__asm        mov    ecx, tempStruct.cost;
-	__asm        mov    ebx, tempStruct.stationID;
-	__asm        mov    eax, index;
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        shl    eax, 3;
-	__asm        mov    edx, this;
-	__asm        add    eax, [edx+8];
-	__asm        mov    [eax], ecx;
-	__asm        mov    [eax+4], ebx;
+		__asm        mov    ecx, tempStruct.cost;
+		__asm        mov    ebx, tempStruct.stationID;
+		__asm        mov    eax, index;
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        shl    eax, 3;
+		__asm        mov    edx, this;
+		__asm        add    eax, [edx+8];
+		__asm        mov    [eax], ecx;
+		__asm        mov    [eax+4], ebx;
 // LINE 266:
-	__asm        mov    eax, index;
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        mov    index, eax;
+		__asm        mov    eax, index;
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        mov    index, eax;
 // LINE 267:
-	__asm        jmp    __WHILE_34;
+		__asm        jmp    __WHILE_34;
+	}
 // LINE 268:
 _Tc5:
 	return;
@@ -1588,83 +1590,85 @@ void Station::StationHeapRemove(/*packed*/ struct _StationHeapStruct *pRemovedSt
 	__asm        mov    tempStruct.stationID, eax;
 // LINE 284:
 	parent = 0x1;
+	{
 // LINE 287:
 __WHILE_71:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        cmp    eax, parent;
-	__asm        jl     _T13e;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0xC];
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        cmp    eax, parent;
+		__asm        jl     _T13e;
 // LINE 290:
-	child = (parent + parent);
+		child = (parent + parent);
 // LINE 293:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, child;
-	__asm        cmp    [eax+0xC], ecx;
-	__asm        jle    _Tc0;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, child;
+		__asm        cmp    [eax+0xC], ecx;
+		__asm        jle    _Tc0;
 
-	__asm        mov    eax, child;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        mov    ebx, child;
-	__asm        mov    edx, [edx+ebx*8];
-	__asm        cmp    [ecx+eax*8+8], edx;
-	__asm        jge    _Tc0;
+		__asm        mov    eax, child;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+8];
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+8];
+		__asm        mov    ebx, child;
+		__asm        mov    edx, [edx+ebx*8];
+		__asm        cmp    [ecx+eax*8+8], edx;
+		__asm        jge    _Tc0;
 // LINE 294:
-	child++;
+		child++;
 // LINE 297:
 _Tc0:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, parent;
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        mov    ebx, child;
-	__asm        mov    edx, [edx+ebx*8];
-	__asm        cmp    [eax+ecx*8], edx;
-	__asm        jg     _Te3;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, parent;
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+8];
+		__asm        mov    ebx, child;
+		__asm        mov    edx, [edx+ebx*8];
+		__asm        cmp    [eax+ecx*8], edx;
+		__asm        jg     _Te3;
 // LINE 298:
-	__asm        jmp    _T13e;
+		__asm        jmp    _T13e;
 // LINE 301:
 _Te3:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, parent;
-	__asm        lea    eax, [eax+ecx*8];
-	__asm        mov    ecx, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    tempStruct.cost, ecx;
-	__asm        mov    tempStruct.stationID, eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, parent;
+		__asm        lea    eax, [eax+ecx*8];
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    tempStruct.cost, ecx;
+		__asm        mov    tempStruct.stationID, eax;
 // LINE 302:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, child;
-	__asm        lea    eax, [eax+ecx*8];
-	__asm        mov    ecx, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        mov    ebx, parent;
-	__asm        lea    edx, [edx+ebx*8];
-	__asm        mov    [edx], ecx;
-	__asm        mov    [edx+4], eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, child;
+		__asm        lea    eax, [eax+ecx*8];
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+8];
+		__asm        mov    ebx, parent;
+		__asm        lea    edx, [edx+ebx*8];
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
 // LINE 303:
-	__asm        mov    eax, tempStruct.cost;
-	__asm        mov    ecx, tempStruct.stationID;
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+8];
-	__asm        mov    ebx, child;
-	__asm        lea    edx, [edx+ebx*8];
-	__asm        mov    [edx], eax;
-	__asm        mov    [edx+4], ecx;
+		__asm        mov    eax, tempStruct.cost;
+		__asm        mov    ecx, tempStruct.stationID;
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+8];
+		__asm        mov    ebx, child;
+		__asm        lea    edx, [edx+ebx*8];
+		__asm        mov    [edx], eax;
+		__asm        mov    [edx+4], ecx;
 // LINE 306:
-	parent = child;
+		parent = child;
 // LINE 307:
-	__asm        jmp    __WHILE_71;
+		__asm        jmp    __WHILE_71;
+	}
 // LINE 310:
 _T13e:
 	__asm        mov    eax, tempStruct.cost;
@@ -1700,79 +1704,81 @@ void Station::VehicleHeapInsert(const /*packed*/ struct _VehicleHeapStruct *pIns
 	__asm        mov    [ecx+4], edx;
 	__asm        mov    ax, [eax+8];
 	__asm        mov    [ecx+8], ax;
+	{
 // LINE 327:
 __WHILE_3f:
-	__asm        mov    eax, index;
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+0x10];
-	__asm        mov    ebx, index;
-	__asm        lea    ebx, [ebx+ebx*4];
-	__asm        mov    edx, [edx+ebx*2];
-	__asm        cmp    [ecx+eax*2], edx;
-	__asm        jle    _Tfc;
+		__asm        mov    eax, index;
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+0x10];
+		__asm        mov    ebx, index;
+		__asm        lea    ebx, [ebx+ebx*4];
+		__asm        mov    edx, [edx+ebx*2];
+		__asm        cmp    [ecx+eax*2], edx;
+		__asm        jle    _Tfc;
 // LINE 329:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, index;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    eax, [eax+ecx*2];
-	__asm        lea    ecx, tempStruct.cost;
-	__asm        mov    edx, [eax];
-	__asm        mov    [ecx], edx;
-	__asm        mov    edx, [eax+4];
-	__asm        mov    [ecx+4], edx;
-	__asm        mov    ax, [eax+8];
-	__asm        mov    [ecx+8], ax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x10];
+		__asm        mov    ecx, index;
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        lea    eax, [eax+ecx*2];
+		__asm        lea    ecx, tempStruct.cost;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    ax, [eax+8];
+		__asm        mov    [ecx+8], ax;
 // LINE 330:
-	__asm        mov    eax, index;
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        mov    edx, index;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    ecx, [ecx+edx*2];
-	__asm        mov    edx, [eax];
-	__asm        mov    [ecx], edx;
-	__asm        mov    edx, [eax+4];
-	__asm        mov    [ecx+4], edx;
-	__asm        mov    ax, [eax+8];
-	__asm        mov    [ecx+8], ax;
+		__asm        mov    eax, index;
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        add    eax, eax;
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+0x10];
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, index;
+		__asm        lea    edx, [edx+edx*4];
+		__asm        lea    ecx, [ecx+edx*2];
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    ax, [eax+8];
+		__asm        mov    [ecx+8], ax;
 // LINE 331:
-	__asm        lea    ecx, tempStruct.cost;
-	__asm        mov    eax, index;
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        mov    edx, this;
-	__asm        add    eax, [edx+0x10];
-	__asm        mov    edx, [ecx];
-	__asm        mov    [eax], edx;
-	__asm        mov    edx, [ecx+4];
-	__asm        mov    [eax+4], edx;
-	__asm        mov    cx, [ecx+8];
-	__asm        mov    [eax+8], cx;
+		__asm        lea    ecx, tempStruct.cost;
+		__asm        mov    eax, index;
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        add    eax, eax;
+		__asm        mov    edx, this;
+		__asm        add    eax, [edx+0x10];
+		__asm        mov    edx, [ecx];
+		__asm        mov    [eax], edx;
+		__asm        mov    edx, [ecx+4];
+		__asm        mov    [eax+4], edx;
+		__asm        mov    cx, [ecx+8];
+		__asm        mov    [eax+8], cx;
 // LINE 332:
-	__asm        mov    eax, index;
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        mov    index, eax;
+		__asm        mov    eax, index;
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        mov    index, eax;
 // LINE 333:
-	__asm        jmp    __WHILE_3f;
+		__asm        jmp    __WHILE_3f;
+	}
 // LINE 334:
 _Tfc:
 	return;
@@ -1828,99 +1834,101 @@ void Station::VehicleHeapRemove(/*packed*/ struct _VehicleHeapStruct *pRemovedSt
 	__asm        mov    [ecx+8], ax;
 // LINE 350:
 	parent = 0x1;
+	{
 // LINE 353:
 __WHILE_8e:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        cdq;
-	__asm        sub    eax, edx;
-	__asm        sar    eax, 1;
-	__asm        cmp    eax, parent;
-	__asm        jl     _T18f;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x14];
+		__asm        cdq;
+		__asm        sub    eax, edx;
+		__asm        sar    eax, 1;
+		__asm        cmp    eax, parent;
+		__asm        jl     _T18f;
 // LINE 356:
-	child = (parent + parent);
+		child = (parent + parent);
 // LINE 359:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, child;
-	__asm        cmp    [eax+0x14], ecx;
-	__asm        jle    _Te3;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, child;
+		__asm        cmp    [eax+0x14], ecx;
+		__asm        jle    _Te3;
 
-	__asm        mov    eax, child;
-	__asm        lea    eax, [eax+eax*4+5];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+0x10];
-	__asm        mov    ebx, child;
-	__asm        lea    ebx, [ebx+ebx*4];
-	__asm        mov    edx, [edx+ebx*2];
-	__asm        cmp    [ecx+eax*2], edx;
-	__asm        jge    _Te3;
+		__asm        mov    eax, child;
+		__asm        lea    eax, [eax+eax*4+5];
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+0x10];
+		__asm        mov    ebx, child;
+		__asm        lea    ebx, [ebx+ebx*4];
+		__asm        mov    edx, [edx+ebx*2];
+		__asm        cmp    [ecx+eax*2], edx;
+		__asm        jge    _Te3;
 // LINE 360:
-	child++;
+		child++;
 // LINE 363:
 _Te3:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, child;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+0x10];
-	__asm        mov    ebx, parent;
-	__asm        lea    ebx, [ebx+ebx*4];
-	__asm        mov    edx, [edx+ebx*2];
-	__asm        cmp    [eax+ecx*2], edx;
-	__asm        jl     _T10c;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x10];
+		__asm        mov    ecx, child;
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+0x10];
+		__asm        mov    ebx, parent;
+		__asm        lea    ebx, [ebx+ebx*4];
+		__asm        mov    edx, [edx+ebx*2];
+		__asm        cmp    [eax+ecx*2], edx;
+		__asm        jl     _T10c;
 // LINE 364:
-	__asm        jmp    _T18f;
+		__asm        jmp    _T18f;
 // LINE 367:
 _T10c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, parent;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    eax, [eax+ecx*2];
-	__asm        lea    ecx, tempStruct.cost;
-	__asm        mov    edx, [eax];
-	__asm        mov    [ecx], edx;
-	__asm        mov    edx, [eax+4];
-	__asm        mov    [ecx+4], edx;
-	__asm        mov    ax, [eax+8];
-	__asm        mov    [ecx+8], ax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x10];
+		__asm        mov    ecx, parent;
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        lea    eax, [eax+ecx*2];
+		__asm        lea    ecx, tempStruct.cost;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    ax, [eax+8];
+		__asm        mov    [ecx+8], ax;
 // LINE 368:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, child;
-	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        lea    eax, [eax+ecx*2];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        mov    edx, parent;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    ecx, [ecx+edx*2];
-	__asm        mov    edx, [eax];
-	__asm        mov    [ecx], edx;
-	__asm        mov    edx, [eax+4];
-	__asm        mov    [ecx+4], edx;
-	__asm        mov    ax, [eax+8];
-	__asm        mov    [ecx+8], ax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x10];
+		__asm        mov    ecx, child;
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        lea    eax, [eax+ecx*2];
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, parent;
+		__asm        lea    edx, [edx+edx*4];
+		__asm        lea    ecx, [ecx+edx*2];
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    ax, [eax+8];
+		__asm        mov    [ecx+8], ax;
 // LINE 369:
-	__asm        lea    eax, tempStruct.cost;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        mov    edx, child;
-	__asm        lea    edx, [edx+edx*4];
-	__asm        lea    ecx, [ecx+edx*2];
-	__asm        mov    edx, [eax];
-	__asm        mov    [ecx], edx;
-	__asm        mov    edx, [eax+4];
-	__asm        mov    [ecx+4], edx;
-	__asm        mov    ax, [eax+8];
-	__asm        mov    [ecx+8], ax;
+		__asm        lea    eax, tempStruct.cost;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, child;
+		__asm        lea    edx, [edx+edx*4];
+		__asm        lea    ecx, [ecx+edx*2];
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    ax, [eax+8];
+		__asm        mov    [ecx+8], ax;
 // LINE 372:
-	parent = child;
+		parent = child;
 // LINE 373:
-	__asm        jmp    __WHILE_8e;
+		__asm        jmp    __WHILE_8e;
+	}
 // LINE 376:
 _T18f:
 	__asm        lea    eax, tempStruct.cost;

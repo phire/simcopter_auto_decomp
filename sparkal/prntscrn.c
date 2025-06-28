@@ -225,42 +225,44 @@ __DO_1b:
 // LINE 140:
 __DO_1b:
 		i = 0x0;
+		{
 // LINE 141:
 __WHILE_21:
-		__asm        mov    eax, reinterpret_cast<uint32_t>(t);
-		__asm        and    eax, 0xFFFF;
-		__asm        mov    ecx, reinterpret_cast<uint32_t>(i);
-		__asm        and    ecx, 0xFFFF;
-		__asm        add    eax, ecx;
-		__asm        mov    ecx, p;
-		__asm        movsx  eax, byte ptr [eax+ecx+1];
-		__asm        mov    ecx, reinterpret_cast<uint32_t>(t);
-		__asm        and    ecx, 0xFFFF;
-		__asm        mov    edx, reinterpret_cast<uint32_t>(i);
-		__asm        and    edx, 0xFFFF;
-		__asm        add    ecx, edx;
-		__asm        mov    edx, p;
-		__asm        movsx  ecx, byte ptr [ecx+edx];
-		__asm        cmp    eax, ecx;
-		__asm        jne    _T9d;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(t);
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    ecx, reinterpret_cast<uint32_t>(i);
+			__asm        and    ecx, 0xFFFF;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, p;
+			__asm        movsx  eax, byte ptr [eax+ecx+1];
+			__asm        mov    ecx, reinterpret_cast<uint32_t>(t);
+			__asm        and    ecx, 0xFFFF;
+			__asm        mov    edx, reinterpret_cast<uint32_t>(i);
+			__asm        and    edx, 0xFFFF;
+			__asm        add    ecx, edx;
+			__asm        mov    edx, p;
+			__asm        movsx  ecx, byte ptr [ecx+edx];
+			__asm        cmp    eax, ecx;
+			__asm        jne    _T9d;
 
-		__asm        mov    eax, reinterpret_cast<uint32_t>(t);
-		__asm        and    eax, 0xFFFF;
-		__asm        mov    ecx, reinterpret_cast<uint32_t>(i);
-		__asm        and    ecx, 0xFFFF;
-		__asm        add    eax, ecx;
-		__asm        mov    ecx, reinterpret_cast<uint32_t>(n);
-		__asm        and    ecx, 0xFFFF;
-		__asm        cmp    eax, ecx;
-		__asm        jge    _T9d;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(t);
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    ecx, reinterpret_cast<uint32_t>(i);
+			__asm        and    ecx, 0xFFFF;
+			__asm        add    eax, ecx;
+			__asm        mov    ecx, reinterpret_cast<uint32_t>(n);
+			__asm        and    ecx, 0xFFFF;
+			__asm        cmp    eax, ecx;
+			__asm        jge    _T9d;
 
-		__asm        mov    eax, reinterpret_cast<uint32_t>(i);
-		__asm        and    eax, 0xFFFF;
-		__asm        cmp    eax, 0x3F;
-		__asm        jge    _T9d;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(i);
+			__asm        and    eax, 0xFFFF;
+			__asm        cmp    eax, 0x3F;
+			__asm        jge    _T9d;
 
-		i++;
-		__asm        jmp    __WHILE_21;
+			i++;
+			__asm        jmp    __WHILE_21;
+		}
 // LINE 142:
 _T9d:
 		__asm        test   reinterpret_cast<uint32_t>(i), 0xFFFF;

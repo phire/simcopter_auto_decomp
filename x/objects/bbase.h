@@ -174,49 +174,51 @@ _Te9:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x24], eax;
+	{
 __WHILE_100:
-	__asm        mov    eax, [ebp-0x24];
-	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     _T18d;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        je     _T18d;
 
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T17d;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T17d;
 
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    eax, [eax];
-	__asm        mov    [ebp-0x20], eax;
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, [ebp-0x24];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    [ebp-0x28], eax;
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    [ebp-0x2C], eax;
-	__asm        mov    eax, [ebp-0x2C];
-	__asm        push   eax;
-	__asm        call   operator delete;
-	__asm        add    esp, 4;
-	__asm        mov    eax, [ebp-0x30];
-	__asm        dec    word ptr [eax+4];
-	__asm        mov    eax, [ebp-0x30];
-	__asm        movsx  eax, word ptr [eax+4];
-	__asm        test   eax, eax;
-	__asm        jge    _T178;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x20], eax;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        mov    eax, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x24];
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-0x20];
+		__asm        mov    [ebp-0x28], eax;
+		__asm        mov    eax, [ebp-0x28];
+		__asm        mov    [ebp-0x2C], eax;
+		__asm        mov    eax, [ebp-0x2C];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        mov    eax, [ebp-0x30];
+		__asm        dec    word ptr [eax+4];
+		__asm        mov    eax, [ebp-0x30];
+		__asm        movsx  eax, word ptr [eax+4];
+		__asm        test   eax, eax;
+		__asm        jge    _T178;
 
-	doAssert(0x59a254, 0x32, 0x59a24c, 0x8c085);
+		doAssert(0x59a254, 0x32, 0x59a24c, 0x8c085);
 _T178:
-	__asm        jmp    _T192;
+		__asm        jmp    _T192;
 _T17d:
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 4;
-	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    __WHILE_100;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        mov    eax, [eax];
+		__asm        add    eax, 4;
+		__asm        mov    [ebp-0x24], eax;
+		__asm        jmp    __WHILE_100;
+	}
 _T18d:
 	__asm        jmp    _T192;
 _T192:

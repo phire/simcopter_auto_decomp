@@ -190,29 +190,31 @@ _T32:
 _FOR_5e:
 	test = 0x1;
 	__asm        jmp    _FOR_COND_5e;
+	{
 _FOR_NEXT_5e:
-	test++;
+		test++;
 _FOR_COND_5e:
-	__asm        mov    eax, name;
-	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax];
-	__asm        cmp    ecx, test;
-	__asm        jl     _Tad;
+		__asm        mov    eax, name;
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, [eax];
+		__asm        cmp    ecx, test;
+		__asm        jl     _Tad;
 // LINE 74:
-	__asm        cmp    test, 2;
-	__asm        je     _Ta8;
+		__asm        cmp    test, 2;
+		__asm        je     _Ta8;
 
-	__asm        mov    eax, test;
-	__asm        mov    ecx, name;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        cmp    edx, 0x3A;
-	__asm        jne    _Ta8;
+		__asm        mov    eax, test;
+		__asm        mov    ecx, name;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [eax+ecx];
+		__asm        cmp    edx, 0x3A;
+		__asm        jne    _Ta8;
 // LINE 75:
-	doAssert(0x5bddec, 0x4b, 0x5bdde0, 0x8c085);
+		doAssert(0x5bddec, 0x4b, 0x5bdde0, 0x8c085);
 // LINE 77:
 _Ta8:
-	__asm        jmp    _FOR_NEXT_5e;
+		__asm        jmp    _FOR_NEXT_5e;
+	}
 // LINE 80:
 _Tad:
 Memory::BlockMove(name, cstrbuff[0], 0x100);

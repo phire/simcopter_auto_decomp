@@ -302,39 +302,41 @@ void Behavior::StdTreeSwizzle(/*unpacked*/ struct Behavior::Tree *tree, long siz
 _FOR_20:
 	count = 0x0;
 	__asm        jmp    _FOR_COND_20;
+	{
 _FOR_NEXT_20:
-	count++;
+		count++;
 _FOR_COND_20:
-	__asm        mov    eax, tree;
-	__asm        movsx  eax, word ptr [eax];
-	__asm        movsx  ecx, count;
-	__asm        cmp    eax, ecx;
-	__asm        jle    _T7b;
+		__asm        mov    eax, tree;
+		__asm        movsx  eax, word ptr [eax];
+		__asm        movsx  ecx, count;
+		__asm        cmp    eax, ecx;
+		__asm        jle    _T7b;
 // LINE 51:
-	__asm        movsx  eax, count;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        shl    eax, 2;
-	__asm        add    eax, tree;
-	__asm        add    eax, 2;
-	__asm        push   eax;
-	__asm        call   Swizzle2;
-	__asm        add    esp, 4;
+		__asm        movsx  eax, count;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        add    eax, tree;
+		__asm        add    eax, 2;
+		__asm        push   eax;
+		__asm        call   Swizzle2;
+		__asm        add    esp, 4;
 // LINE 52:
-	__asm        movsx  eax, count;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        shl    eax, 2;
-	__asm        add    eax, tree;
-	__asm        add    eax, 6;
-	__asm        push   eax;
-	__asm        movsx  eax, count;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    ecx, tree;
-	__asm        mov    ax, [ecx+eax*4+2];
-	__asm        push   eax;
-	__asm        call   paramswizzler;
-	__asm        add    esp, 8;
+		__asm        movsx  eax, count;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        add    eax, tree;
+		__asm        add    eax, 6;
+		__asm        push   eax;
+		__asm        movsx  eax, count;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        mov    ecx, tree;
+		__asm        mov    ax, [ecx+eax*4+2];
+		__asm        push   eax;
+		__asm        call   paramswizzler;
+		__asm        add    esp, 8;
 // LINE 53:
-	__asm        jmp    _FOR_NEXT_20;
+		__asm        jmp    _FOR_NEXT_20;
+	}
 // LINE 54:
 _T7b:
 	return;
@@ -359,23 +361,25 @@ _FOR_37:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _FOR_COND_37;
+	{
 _FOR_NEXT_37:
-	__asm        dec    dword ptr [ebp-0xC];
-	__asm        add    dword ptr [ebp-0x10], 0xC;
+		__asm        dec    dword ptr [ebp-0xC];
+		__asm        add    dword ptr [ebp-0x10], 0xC;
 _FOR_COND_37:
-	__asm        cmp    dword ptr [ebp-0xC], 0;
-	__asm        jle    _T67;
+		__asm        cmp    dword ptr [ebp-0xC], 0;
+		__asm        jle    _T67;
 
-	__asm        mov    eax, [ebp-0x10];
-	__asm        movsx  ecx, treeID;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T62;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        movsx  ecx, treeID;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T62;
 
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    [ebp-8], eax;
-	__asm        jmp    _T79;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    [ebp-8], eax;
+		__asm        jmp    _T79;
 _T62:
-	__asm        jmp    _FOR_NEXT_37;
+		__asm        jmp    _FOR_NEXT_37;
+	}
 _T67:
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    _T79;
@@ -412,23 +416,25 @@ _FOR_c9:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _FOR_COND_c9;
+	{
 _FOR_NEXT_c9:
-	__asm        dec    dword ptr [ebp-0x20];
-	__asm        add    dword ptr [ebp-0x24], 0xC;
+		__asm        dec    dword ptr [ebp-0x20];
+		__asm        add    dword ptr [ebp-0x24], 0xC;
 _FOR_COND_c9:
-	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jle    _Tf9;
+		__asm        cmp    dword ptr [ebp-0x20], 0;
+		__asm        jle    _Tf9;
 
-	__asm        mov    eax, [ebp-0x24];
-	__asm        movsx  ecx, treeID;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _Tf4;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        movsx  ecx, treeID;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _Tf4;
 
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    _T10b;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        mov    [ebp-0x1C], eax;
+		__asm        jmp    _T10b;
 _Tf4:
-	__asm        jmp    _FOR_NEXT_c9;
+		__asm        jmp    _FOR_NEXT_c9;
+	}
 _Tf9:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    _T10b;

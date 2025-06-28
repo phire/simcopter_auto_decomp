@@ -49,16 +49,18 @@ _FOR_46:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _FOR_COND_46;
+	{
 _FOR_NEXT_46:
-	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ebp-0x14], eax;
+		__asm        mov    eax, [ebp-0x14];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x14], eax;
 _FOR_COND_46:
-	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     _T61;
+		__asm        cmp    dword ptr [ebp-0x14], 0;
+		__asm        je     _T61;
 
-	__asm        inc    dword ptr [ebp-0x18];
-	__asm        jmp    _FOR_NEXT_46;
+		__asm        inc    dword ptr [ebp-0x18];
+		__asm        jmp    _FOR_NEXT_46;
+	}
 _T61:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
@@ -241,22 +243,24 @@ _FOR_1b3:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _FOR_COND_1b3;
+	{
 _FOR_NEXT_1b3:
-	__asm        mov    eax, [ebp-8];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ebp-8], eax;
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-8], eax;
 _FOR_COND_1b3:
-	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     _T1de;
+		__asm        cmp    dword ptr [ebp-8], 0;
+		__asm        je     _T1de;
 
-	__asm        mov    eax, [ebp-8];
-	__asm        mov    ecx, thing;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T1d9;
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    ecx, thing;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T1d9;
 
-	__asm        jmp    _T1f5;
+		__asm        jmp    _T1f5;
 _T1d9:
-	__asm        jmp    _FOR_NEXT_1b3;
+		__asm        jmp    _FOR_NEXT_1b3;
+	}
 _T1de:
 	__asm        jmp    _T1fa;
 
@@ -616,16 +620,18 @@ _FOR_46:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _FOR_COND_46;
+	{
 _FOR_NEXT_46:
-	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ebp-0x14], eax;
+		__asm        mov    eax, [ebp-0x14];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x14], eax;
 _FOR_COND_46:
-	__asm        cmp    dword ptr [ebp-0x14], 0;
-	__asm        je     _T61;
+		__asm        cmp    dword ptr [ebp-0x14], 0;
+		__asm        je     _T61;
 
-	__asm        inc    dword ptr [ebp-0x18];
-	__asm        jmp    _FOR_NEXT_46;
+		__asm        inc    dword ptr [ebp-0x18];
+		__asm        jmp    _FOR_NEXT_46;
+	}
 _T61:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
@@ -808,22 +814,24 @@ _FOR_1b3:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _FOR_COND_1b3;
+	{
 _FOR_NEXT_1b3:
-	__asm        mov    eax, [ebp-8];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ebp-8], eax;
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-8], eax;
 _FOR_COND_1b3:
-	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     _T1de;
+		__asm        cmp    dword ptr [ebp-8], 0;
+		__asm        je     _T1de;
 
-	__asm        mov    eax, [ebp-8];
-	__asm        mov    ecx, thing;
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T1d9;
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    ecx, thing;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T1d9;
 
-	__asm        jmp    _T1f5;
+		__asm        jmp    _T1f5;
 _T1d9:
-	__asm        jmp    _FOR_NEXT_1b3;
+		__asm        jmp    _FOR_NEXT_1b3;
+	}
 _T1de:
 	__asm        jmp    _T1fa;
 

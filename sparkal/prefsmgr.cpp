@@ -1298,76 +1298,78 @@ _Tb2:
 // LINE 288:
 _FOR_cb:
 	__asm        jmp    _FOR_COND_cb;
+	{
 _FOR_NEXT_cb:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x10];
-	__asm        call   dword ptr [edx+0x48];
-	__asm        mov    bStillMoreRecords, eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x10];
+		__asm        call   dword ptr [edx+0x48];
+		__asm        mov    bStillMoreRecords, eax;
 _FOR_COND_cb:
-	__asm        cmp    bStillMoreRecords, 0;
-	__asm        je     _T18d;
+		__asm        cmp    bStillMoreRecords, 0;
+		__asm        je     _T18d;
 // LINE 290:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        cmp    dword ptr [eax+0x114], 0xFFFFFF;
-	__asm        jne    _T104;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x10];
+		__asm        cmp    dword ptr [eax+0x114], 0xFFFFFF;
+		__asm        jne    _T104;
 // LINE 291:
-	__asm        jmp    _FOR_NEXT_cb;
+		__asm        jmp    _FOR_NEXT_cb;
 // LINE 292:
 _T104:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x10];
-	__asm        call   dword ptr [edx+0x1C];
-	__asm        mov    lRecordDataSize, eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x10];
+		__asm        call   dword ptr [edx+0x1C];
+		__asm        mov    lRecordDataSize, eax;
 // LINE 293:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x10];
-	__asm        call   dword ptr [edx+0x14];
-	__asm        mov    tempPrefItem.lPreferenceType, eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x10];
+		__asm        call   dword ptr [edx+0x14];
+		__asm        mov    tempPrefItem.lPreferenceType, eax;
 // LINE 294:
-	tempPrefItem.lPreferenceDataLength = lRecordDataSize;
+		tempPrefItem.lPreferenceDataLength = lRecordDataSize;
 // LINE 295:
-	tempPrefItem.chPreferenceData = operator new(lRecordDataSize);
+		tempPrefItem.chPreferenceData = operator new(lRecordDataSize);
 // LINE 296:
-	__asm        mov    eax, lRecordDataSize;
-	__asm        push   eax;
-	__asm        mov    eax, tempPrefItem.chPreferenceData;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x10];
-	__asm        call   dword ptr [edx+0x40];
+		__asm        mov    eax, lRecordDataSize;
+		__asm        push   eax;
+		__asm        mov    eax, tempPrefItem.chPreferenceData;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x10];
+		__asm        call   dword ptr [edx+0x40];
 // LINE 297:
-	__asm        lea    eax, tempPrefItem.lPreferenceType;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        call   dword ptr [eax+0x28];
+		__asm        lea    eax, tempPrefItem.lPreferenceType;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x28];
 // LINE 298:
-	__asm        mov    eax, tempPrefItem.chPreferenceData;
-	__asm        mov    [ebp-0x28], eax;
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    [ebp-0x30], eax;
-	__asm        mov    eax, [ebp-0x30];
-	__asm        push   eax;
-	__asm        call   operator delete;
-	__asm        add    esp, 4;
+		__asm        mov    eax, tempPrefItem.chPreferenceData;
+		__asm        mov    [ebp-0x28], eax;
+		__asm        mov    eax, [ebp-0x28];
+		__asm        mov    [ebp-0x30], eax;
+		__asm        mov    eax, [ebp-0x30];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
 // LINE 299:
-	tempPrefItem.chPreferenceData = 0x0;
+		tempPrefItem.chPreferenceData = 0x0;
 // LINE 300:
-	__asm        jmp    _FOR_NEXT_cb;
+		__asm        jmp    _FOR_NEXT_cb;
+	}
 // LINE 301:
 _T18d:
 	__asm        mov    eax, this;

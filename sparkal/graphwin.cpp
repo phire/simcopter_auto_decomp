@@ -3202,130 +3202,132 @@ _T11:
 	__asm        jmp    _T32;
 _T32:
 	__asm        jmp    __DO_37;
+	{
 // LINE 365:
 __DO_37:
-	__asm        mov    eax, iterator.node;
-	__asm        mov    [ebp-0x28], eax;
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    iterator.node, eax;
-	__asm        jmp    _T4b;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    [ebp-0x28], eax;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    iterator.node, eax;
+		__asm        jmp    _T4b;
 _T4b:
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    [ebp-8], eax;
-	__asm        jmp    _T56;
+		__asm        mov    eax, [ebp-0x28];
+		__asm        mov    [ebp-8], eax;
+		__asm        jmp    _T56;
 // LINE 367:
 _T56:
-	__asm        jmp    _T5b;
+		__asm        jmp    _T5b;
 _T5b:
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+8];
-	__asm        cmp    dword ptr [eax+0x54], 0;
-	__asm        je     _T13d;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    eax, [eax+8];
+		__asm        cmp    dword ptr [eax+0x54], 0;
+		__asm        je     _T13d;
 
-	__asm        jmp    _T70;
+		__asm        jmp    _T70;
 _T70:
-	__asm        jmp    _T75;
+		__asm        jmp    _T75;
 _T75:
-	__asm        mov    eax, nCursorX;
-	__asm        mov    [ebp-0x10], eax;
-	__asm        mov    eax, nCursorY;
-	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    _T86;
+		__asm        mov    eax, nCursorX;
+		__asm        mov    [ebp-0x10], eax;
+		__asm        mov    eax, nCursorY;
+		__asm        mov    [ebp-0xC], eax;
+		__asm        jmp    _T86;
 _T86:
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, [ebp-0x10];
-	__asm        cmp    [eax+0x10], ecx;
-	__asm        jg     _Td3;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, [ebp-0x10];
+		__asm        cmp    [eax+0x10], ecx;
+		__asm        jg     _Td3;
 
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, [ebp-0xC];
-	__asm        cmp    [eax+0x14], ecx;
-	__asm        jg     _Td3;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        cmp    [eax+0x14], ecx;
+		__asm        jg     _Td3;
 
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, [ebp-0x10];
-	__asm        cmp    [eax+0x18], ecx;
-	__asm        jle    _Td3;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, [ebp-0x10];
+		__asm        cmp    [eax+0x18], ecx;
+		__asm        jle    _Td3;
 
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, [ebp-0xC];
-	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jle    _Td3;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        cmp    [eax+0x1C], ecx;
+		__asm        jle    _Td3;
 
-	__asm        jmp    _Td8;
+		__asm        jmp    _Td8;
 _Td3:
-	__asm        jmp    _T13d;
+		__asm        jmp    _T13d;
 _Td8:
-	__asm        jmp    _Te7;
+		__asm        jmp    _Te7;
 
-	__asm        cmp    dword ptr [ebp-0x2C], 0;
-	__asm        je     _T13d;
+		__asm        cmp    dword ptr [ebp-0x2C], 0;
+		__asm        je     _T13d;
 // LINE 369:
 _Te7:
-	__asm        jmp    _Tec;
+		__asm        jmp    _Tec;
 _Tec:
-	nCursorX -= iterator.node->data-><GraphicWindow+0x10:4>;
+		nCursorX -= iterator.node->data-><GraphicWindow+0x10:4>;
 // LINE 370:
-	__asm        jmp    _T101;
+		__asm        jmp    _T101;
 _T101:
-	nCursorY -= iterator.node->data-><GraphicWindow+0x14:4>;
+		nCursorY -= iterator.node->data-><GraphicWindow+0x14:4>;
 // LINE 373:
-	__asm        jmp    _T116;
+		__asm        jmp    _T116;
 _T116:
-	__asm        mov    eax, nButton;
-	__asm        push   eax;
-	__asm        mov    eax, nCursorY;
-	__asm        push   eax;
-	__asm        mov    eax, nCursorX;
-	__asm        push   eax;
-	__asm        mov    eax, nMessage;
-	__asm        push   eax;
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        call   dword ptr [eax+0x20];
-	__asm        jmp    __RETURN;
+		__asm        mov    eax, nButton;
+		__asm        push   eax;
+		__asm        mov    eax, nCursorY;
+		__asm        push   eax;
+		__asm        mov    eax, nCursorX;
+		__asm        push   eax;
+		__asm        mov    eax, nMessage;
+		__asm        push   eax;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x20];
+		__asm        jmp    __RETURN;
 // LINE 375:
 _T13d:
-	__asm        mov    eax, childWindow;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    eax, [eax];
-	__asm        mov    [ebp-0x18], eax;
-	__asm        mov    eax, [ebp-0x18];
-	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    _T153;
+		__asm        mov    eax, childWindow;
+		__asm        mov    eax, [eax+0x30];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x18], eax;
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    [ebp-0x14], eax;
+		__asm        jmp    _T153;
 _T153:
-	__asm        jmp    _T158;
+		__asm        jmp    _T158;
 _T158:
-	__asm        mov    eax, iterator.node;
-	__asm        cmp    [ebp-0x14], eax;
-	__asm        jne    _T16e;
+		__asm        mov    eax, iterator.node;
+		__asm        cmp    [ebp-0x14], eax;
+		__asm        jne    _T16e;
 
-	__asm        jmp    _T187;
+		__asm        jmp    _T187;
 
-	__asm        jmp    _T16e;
+		__asm        jmp    _T16e;
 _T16e:
-	__asm        jmp    _T17d;
+		__asm        jmp    _T17d;
 
-	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        jne    _T187;
+		__asm        cmp    dword ptr [ebp-0x1C], 0;
+		__asm        jne    _T187;
 _T17d:
-	__asm        jmp    __DO_37;
+		__asm        jmp    __DO_37;
 
-	__asm        jmp    _T187;
+		__asm        jmp    _T187;
 _T187:
-	__asm        jmp    _T196;
+		__asm        jmp    _T196;
 __DO_WHILE_37:
-	__asm        cmp    dword ptr [ebp-0x20], 0;
-	__asm        jne    __DO_37;
+		__asm        cmp    dword ptr [ebp-0x20], 0;
+		__asm        jne    __DO_37;
+	}
 // LINE 377:
 // Block end:
 _T196:

@@ -1928,14 +1928,16 @@ void DialWindow::DialWindow(/*packed*/ class MRect& rectNewWindow, long lNewID, 
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA4;
 	__asm        mov    [ebp-8], eax;
+	{
 __WHILE_d7:
-	__asm        dec    dword ptr [ebp-4];
-	__asm        js     _Tf1;
+		__asm        dec    dword ptr [ebp-4];
+		__asm        js     _Tf1;
 
-	__asm        mov    ecx, [ebp-8];
-	__asm        call   DialHand::DialHand;
-	__asm        add    dword ptr [ebp-8], 0x34;
-	__asm        jmp    __WHILE_d7;
+		__asm        mov    ecx, [ebp-8];
+		__asm        call   DialHand::DialHand;
+		__asm        add    dword ptr [ebp-8], 0x34;
+		__asm        jmp    __WHILE_d7;
+	}
 _Tf1:
 	__asm        jmp    _Tf6;
 _Tf6:
@@ -1943,14 +1945,16 @@ _Tf6:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x140;
 	__asm        mov    [ebp-0x10], eax;
+	{
 __WHILE_108:
-	__asm        dec    dword ptr [ebp-0xC];
-	__asm        js     _T122;
+		__asm        dec    dword ptr [ebp-0xC];
+		__asm        js     _T122;
 
-	__asm        mov    ecx, [ebp-0x10];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x10], 0x10;
-	__asm        jmp    __WHILE_108;
+		__asm        mov    ecx, [ebp-0x10];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x10], 0x10;
+		__asm        jmp    __WHILE_108;
+	}
 _T122:
 	__asm        jmp    _T127;
 _T127:
@@ -1978,14 +1982,16 @@ _T1ad:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x1A4;
 	__asm        mov    [ebp-0x18], eax;
+	{
 __WHILE_1bf:
-	__asm        dec    dword ptr [ebp-0x14];
-	__asm        js     _T1d9;
+		__asm        dec    dword ptr [ebp-0x14];
+		__asm        js     _T1d9;
 
-	__asm        mov    ecx, [ebp-0x18];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x18], 0x10;
-	__asm        jmp    __WHILE_1bf;
+		__asm        mov    ecx, [ebp-0x18];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x18], 0x10;
+		__asm        jmp    __WHILE_1bf;
+	}
 _T1d9:
 	__asm        jmp    _T1de;
 _T1de:
@@ -4382,31 +4388,33 @@ _Td49:
 _FOR_d72:
 	i = 0x0;
 	__asm        jmp    _FOR_COND_d72;
+	{
 _FOR_NEXT_d72:
-	i++;
-	nXPosition += 0x5;
+		i++;
+		nXPosition += 0x5;
 _FOR_COND_d72:
-	__asm        mov    eax, i;
-	__asm        cmp    iLitEnd, eax;
-	__asm        jle    _Tdbf;
+		__asm        mov    eax, i;
+		__asm        cmp    iLitEnd, eax;
+		__asm        jle    _Tdbf;
 // LINE 768:
-	__asm        push   0xD;
-	__asm        push   5;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0x25;
-	__asm        mov    eax, nXPosition;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x88];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x88];
-	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _FOR_NEXT_d72;
+		__asm        push   0xD;
+		__asm        push   5;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        push   0x25;
+		__asm        mov    eax, nXPosition;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x7C];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x88];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x88];
+		__asm        call   dword ptr [edx+0xC];
+		__asm        jmp    _FOR_NEXT_d72;
+	}
 // LINE 769:
 _Tdbf:
 	__asm        cmp    i, 0xF;
@@ -4435,30 +4443,32 @@ _Tdbf:
 // LINE 776:
 _FOR_e0a:
 	__asm        jmp    _FOR_COND_e0a;
+	{
 _FOR_NEXT_e0a:
-	i++;
-	nXPosition += 0x5;
+		i++;
+		nXPosition += 0x5;
 _FOR_COND_e0a:
-	__asm        cmp    i, 0xF;
-	__asm        jge    _Te55;
+		__asm        cmp    i, 0xF;
+		__asm        jge    _Te55;
 // LINE 777:
-	__asm        push   0xD;
-	__asm        push   0xF;
-	__asm        push   0;
-	__asm        push   0xA;
-	__asm        push   0x25;
-	__asm        mov    eax, nXPosition;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x88];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0x88];
-	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _FOR_NEXT_e0a;
+		__asm        push   0xD;
+		__asm        push   0xF;
+		__asm        push   0;
+		__asm        push   0xA;
+		__asm        push   0x25;
+		__asm        mov    eax, nXPosition;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x7C];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x88];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x88];
+		__asm        call   dword ptr [edx+0xC];
+		__asm        jmp    _FOR_NEXT_e0a;
+	}
 // LINE 784:
 // Block end:
 _Te55:
@@ -6500,14 +6510,16 @@ void MapWindow::MapWindow(/*packed*/ class MRect& rectNewPosition, long lNewID, 
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA8;
 	__asm        mov    [ebp-8], eax;
+	{
 __WHILE_88:
-	__asm        dec    dword ptr [ebp-4];
-	__asm        js     _Ta2;
+		__asm        dec    dword ptr [ebp-4];
+		__asm        js     _Ta2;
 
-	__asm        mov    ecx, [ebp-8];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-8], 0x10;
-	__asm        jmp    __WHILE_88;
+		__asm        mov    ecx, [ebp-8];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-8], 0x10;
+		__asm        jmp    __WHILE_88;
+	}
 _Ta2:
 	__asm        jmp    _Ta7;
 _Ta7:
@@ -7742,14 +7754,16 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, /*packed
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x74;
 	__asm        mov    [ebp-8], eax;
+	{
 __WHILE_3c:
-	__asm        dec    dword ptr [ebp-4];
-	__asm        js     _T56;
+		__asm        dec    dword ptr [ebp-4];
+		__asm        js     _T56;
 
-	__asm        mov    ecx, [ebp-8];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-8], 0x10;
-	__asm        jmp    __WHILE_3c;
+		__asm        mov    ecx, [ebp-8];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-8], 0x10;
+		__asm        jmp    __WHILE_3c;
+	}
 _T56:
 	__asm        jmp    _T5b;
 _T5b:
@@ -8431,31 +8445,33 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 _FOR_67:
 	i = 0x0;
 	__asm        jmp    _FOR_COND_67;
+	{
 _FOR_NEXT_67:
-	i++;
-	nXPosition += 0x5;
+		i++;
+		nXPosition += 0x5;
 _FOR_COND_67:
-	__asm        mov    eax, i;
-	__asm        cmp    iLitEnd, eax;
-	__asm        jle    _Tab;
+		__asm        mov    eax, i;
+		__asm        cmp    iLitEnd, eax;
+		__asm        jle    _Tab;
 // LINE 1876:
-	__asm        push   0xA;
-	__asm        push   5;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0x2B;
-	__asm        mov    eax, nXPosition;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xBC];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0xBC];
-	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _FOR_NEXT_67;
+		__asm        push   0xA;
+		__asm        push   5;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        push   0x2B;
+		__asm        mov    eax, nXPosition;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x40];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0xBC];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0xBC];
+		__asm        call   dword ptr [edx+0xC];
+		__asm        jmp    _FOR_NEXT_67;
+	}
 // LINE 1877:
 _Tab:
 	__asm        cmp    i, 0xB;
@@ -8484,30 +8500,32 @@ _Tab:
 // LINE 1884:
 _FOR_ed:
 	__asm        jmp    _FOR_COND_ed;
+	{
 _FOR_NEXT_ed:
-	i++;
-	nXPosition += 0x5;
+		i++;
+		nXPosition += 0x5;
 _FOR_COND_ed:
-	__asm        cmp    i, 0xB;
-	__asm        jge    _T12f;
+		__asm        cmp    i, 0xB;
+		__asm        jge    _T12f;
 // LINE 1885:
-	__asm        push   0xA;
-	__asm        push   0xF;
-	__asm        push   0;
-	__asm        push   0xA;
-	__asm        push   0x2B;
-	__asm        mov    eax, nXPosition;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xBC];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0xBC];
-	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _FOR_NEXT_ed;
+		__asm        push   0xA;
+		__asm        push   0xF;
+		__asm        push   0;
+		__asm        push   0xA;
+		__asm        push   0x2B;
+		__asm        mov    eax, nXPosition;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x40];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0xBC];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0xBC];
+		__asm        call   dword ptr [edx+0xC];
+		__asm        jmp    _FOR_NEXT_ed;
+	}
 // LINE 1887:
 _T12f:
 	return;

@@ -486,86 +486,88 @@ _T150:
 	__asm        mov    eax, [eax+0x4174];
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x44];
+	{
 // LINE 146:
 __DO_181:
-	__asm        mov    ecx, this;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4174];
-	__asm        add    ecx, 0x4174;
-	__asm        call   dword ptr [eax+0x14];
-	__asm        mov    lPresentRecordType, eax;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x4174];
+		__asm        add    ecx, 0x4174;
+		__asm        call   dword ptr [eax+0x14];
+		__asm        mov    lPresentRecordType, eax;
 // LINE 147:
-	__asm        cmp    lPresentRecordType, 0x4346494C;
-	__asm        jne    _T1e2;
+		__asm        cmp    lPresentRecordType, 0x4346494C;
+		__asm        jne    _T1e2;
 // LINE 148:
-	__asm        push   0x104;
-	__asm        lea    eax, szCityFile[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4174];
-	__asm        add    ecx, 0x4174;
-	__asm        call   dword ptr [eax+0x40];
+		__asm        push   0x104;
+		__asm        lea    eax, szCityFile[0];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x4174];
+		__asm        add    ecx, 0x4174;
+		__asm        call   dword ptr [eax+0x40];
 // LINE 149:
-	bPathInfoFound = 0x1;
+		bPathInfoFound = 0x1;
 // LINE 151:
-	__asm        jmp    _T280;
+		__asm        jmp    _T280;
 // LINE 152:
 _T1e2:
-	__asm        cmp    lPresentRecordType, 0x55494E46;
-	__asm        jne    _T235;
+		__asm        cmp    lPresentRecordType, 0x55494E46;
+		__asm        jne    _T235;
 
-	__asm        cmp    lFileType, 0x55534552;
-	__asm        jne    _T235;
+		__asm        cmp    lFileType, 0x55534552;
+		__asm        jne    _T235;
 // LINE 154:
-	__asm        push   0x80;
-	__asm        lea    eax, tempUserCityInfo.citySettings.lDifficulty;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4174];
-	__asm        add    ecx, 0x4174;
-	__asm        call   dword ptr [eax+0x40];
+		__asm        push   0x80;
+		__asm        lea    eax, tempUserCityInfo.citySettings.lDifficulty;
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x4174];
+		__asm        add    ecx, 0x4174;
+		__asm        call   dword ptr [eax+0x40];
 // LINE 155:
-	bSaveGameInfoFound = 0x1;
+		bSaveGameInfoFound = 0x1;
 // LINE 157:
-	__asm        jmp    _T280;
+		__asm        jmp    _T280;
 // LINE 158:
 _T235:
-	__asm        cmp    lPresentRecordType, 0x43494E46;
-	__asm        jne    _T280;
+		__asm        cmp    lPresentRecordType, 0x43494E46;
+		__asm        jne    _T280;
 
-	__asm        cmp    lFileType, 0x43524552;
-	__asm        jne    _T280;
+		__asm        cmp    lFileType, 0x43524552;
+		__asm        jne    _T280;
 // LINE 160:
-	__asm        push   0x6C;
-	__asm        lea    eax, tempCurrentCareerCityInfo.lCurrentCities[0];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4174];
-	__asm        add    ecx, 0x4174;
-	__asm        call   dword ptr [eax+0x40];
+		__asm        push   0x6C;
+		__asm        lea    eax, tempCurrentCareerCityInfo.lCurrentCities[0];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x4174];
+		__asm        add    ecx, 0x4174;
+		__asm        call   dword ptr [eax+0x40];
 // LINE 161:
-	bSaveGameInfoFound = 0x1;
+		bSaveGameInfoFound = 0x1;
 // LINE 163:
 _T280:
-	__asm        cmp    bPathInfoFound, 0;
-	__asm        je     __DO_WHILE_181;
+		__asm        cmp    bPathInfoFound, 0;
+		__asm        je     __DO_WHILE_181;
 
-	__asm        cmp    bSaveGameInfoFound, 0;
-	__asm        je     __DO_WHILE_181;
+		__asm        cmp    bSaveGameInfoFound, 0;
+		__asm        je     __DO_WHILE_181;
 // LINE 164:
-	__asm        jmp    _T2c2;
+		__asm        jmp    _T2c2;
 // LINE 165:
 __DO_WHILE_181:
-	__asm        mov    ecx, this;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4174];
-	__asm        add    ecx, 0x4174;
-	__asm        call   dword ptr [eax+0x48];
-	__asm        test   eax, eax;
-	__asm        jne    __DO_181;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x4174];
+		__asm        add    ecx, 0x4174;
+		__asm        call   dword ptr [eax+0x48];
+		__asm        test   eax, eax;
+		__asm        jne    __DO_181;
+	}
 // LINE 167:
 _T2c2:
 	__asm        cmp    bPathInfoFound, 0;

@@ -3052,27 +3052,29 @@ __WHILE_b2:
 		__asm        jne    _T154;
 // LINE 1221:
 		ix = 0x2;
+		{
 // LINE 1222:
 __WHILE_ea:
-		__asm        mov    eax, ix;
-		__asm        add    eax, dp;
-		__asm        mov    ecx, data;
-		__asm        movsx  eax, byte ptr [eax+ecx];
-		__asm        xor    ecx, ecx;
-		__asm        mov    cl, b;
-		__asm        cmp    eax, ecx;
-		__asm        jne    _T128;
+			__asm        mov    eax, ix;
+			__asm        add    eax, dp;
+			__asm        mov    ecx, data;
+			__asm        movsx  eax, byte ptr [eax+ecx];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, b;
+			__asm        cmp    eax, ecx;
+			__asm        jne    _T128;
 
-		__asm        cmp    ix, 0x80;
-		__asm        jge    _T128;
+			__asm        cmp    ix, 0x80;
+			__asm        jge    _T128;
 
-		__asm        mov    eax, ix;
-		__asm        add    eax, dp;
-		__asm        cmp    eax, count;
-		__asm        jge    _T128;
+			__asm        mov    eax, ix;
+			__asm        add    eax, dp;
+			__asm        cmp    eax, count;
+			__asm        jge    _T128;
 // LINE 1223:
-		ix++;
-		__asm        jmp    __WHILE_ea;
+			ix++;
+			__asm        jmp    __WHILE_ea;
+		}
 // LINE 1224:
 _T128:
 		__asm        mov    eax, ix;
@@ -3100,39 +3102,41 @@ _T154:
 		__asm        mov    ecx, tp;
 		__asm        mov    edx, temp;
 		__asm        mov    [ecx+edx+1], al;
+		{
 // LINE 1232:
 __WHILE_168:
-		__asm        mov    eax, ix;
-		__asm        add    eax, dp;
-		__asm        mov    ecx, data;
-		__asm        movsx  eax, byte ptr [eax+ecx];
-		__asm        xor    ecx, ecx;
-		__asm        mov    cl, b;
-		__asm        cmp    eax, ecx;
-		__asm        je     _T1c4;
+			__asm        mov    eax, ix;
+			__asm        add    eax, dp;
+			__asm        mov    ecx, data;
+			__asm        movsx  eax, byte ptr [eax+ecx];
+			__asm        xor    ecx, ecx;
+			__asm        mov    cl, b;
+			__asm        cmp    eax, ecx;
+			__asm        je     _T1c4;
 
-		__asm        cmp    ix, 0x80;
-		__asm        jge    _T1c4;
+			__asm        cmp    ix, 0x80;
+			__asm        jge    _T1c4;
 
-		__asm        mov    eax, ix;
-		__asm        add    eax, dp;
-		__asm        cmp    eax, count;
-		__asm        jge    _T1c4;
+			__asm        mov    eax, ix;
+			__asm        add    eax, dp;
+			__asm        cmp    eax, count;
+			__asm        jge    _T1c4;
 // LINE 1233:
-		__asm        mov    eax, ix;
-		__asm        add    eax, dp;
-		__asm        mov    ecx, data;
-		__asm        mov    al, [eax+ecx];
-		__asm        mov    b, al;
-		__asm        inc    ix;
+			__asm        mov    eax, ix;
+			__asm        add    eax, dp;
+			__asm        mov    ecx, data;
+			__asm        mov    al, [eax+ecx];
+			__asm        mov    b, al;
+			__asm        inc    ix;
 // LINE 1234:
-		__asm        mov    al, b;
-		__asm        mov    ecx, ix;
-		__asm        add    ecx, tp;
-		__asm        mov    edx, temp;
-		__asm        mov    [ecx+edx], al;
+			__asm        mov    al, b;
+			__asm        mov    ecx, ix;
+			__asm        add    ecx, tp;
+			__asm        mov    edx, temp;
+			__asm        mov    [ecx+edx], al;
 // LINE 1235:
-		__asm        jmp    __WHILE_168;
+			__asm        jmp    __WHILE_168;
+		}
 // LINE 1237:
 _T1c4:
 		__asm        mov    eax, ix;
@@ -5589,15 +5593,17 @@ _Tc6:
 	__asm        add    ecx, eax;
 	__asm        dec    ecx;
 	__asm        mov    s, ecx;
+	{
 // LINE 2293:
 __WHILE_db:
-	__asm        mov    eax, s;
-	__asm        movsx  eax, byte ptr [eax];
-	__asm        cmp    eax, 0x2E;
-	__asm        je     _Tf2;
+		__asm        mov    eax, s;
+		__asm        movsx  eax, byte ptr [eax];
+		__asm        cmp    eax, 0x2E;
+		__asm        je     _Tf2;
 // LINE 2294:
-	s--;
-	__asm        jmp    __WHILE_db;
+		s--;
+		__asm        jmp    __WHILE_db;
+	}
 // LINE 2295:
 _Tf2:
 	s[1] = 0x0;

@@ -211,14 +211,16 @@ void PaletteBuffer::PaletteBuffer() {
 	__asm        mov    dword ptr [ebp-0x50], 0x100;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x54], eax;
+	{
 __WHILE_50:
-	__asm        dec    dword ptr [ebp-0x50];
-	__asm        js     _T6a;
+		__asm        dec    dword ptr [ebp-0x50];
+		__asm        js     _T6a;
 
-	__asm        mov    ecx, [ebp-0x54];
-	__asm        call   SparkalColor::SparkalColor;
-	__asm        add    dword ptr [ebp-0x54], 4;
-	__asm        jmp    __WHILE_50;
+		__asm        mov    ecx, [ebp-0x54];
+		__asm        call   SparkalColor::SparkalColor;
+		__asm        add    dword ptr [ebp-0x54], 4;
+		__asm        jmp    __WHILE_50;
+	}
 _T6a:
 	__asm        jmp    _T6f;
 _T6f:
@@ -284,14 +286,16 @@ void PaletteBuffer::PaletteBuffer(/*packed*/ struct SparkalColor *newSparkalColo
 	__asm        mov    dword ptr [ebp-0x50], 0x100;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x54], eax;
+	{
 __WHILE_50:
-	__asm        dec    dword ptr [ebp-0x50];
-	__asm        js     _T6a;
+		__asm        dec    dword ptr [ebp-0x50];
+		__asm        js     _T6a;
 
-	__asm        mov    ecx, [ebp-0x54];
-	__asm        call   SparkalColor::SparkalColor;
-	__asm        add    dword ptr [ebp-0x54], 4;
-	__asm        jmp    __WHILE_50;
+		__asm        mov    ecx, [ebp-0x54];
+		__asm        call   SparkalColor::SparkalColor;
+		__asm        add    dword ptr [ebp-0x54], 4;
+		__asm        jmp    __WHILE_50;
+	}
 _T6a:
 	__asm        jmp    _T6f;
 _T6f:

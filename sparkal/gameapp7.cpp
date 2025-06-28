@@ -2826,88 +2826,92 @@ _T373:
 	__asm        jmp    _T4dc;
 _T382:
 	__asm        jmp    __WHILE_387;
+	{
 __WHILE_387:
-	__asm        mov    eax, sCheatCodeString;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, [ebp-0x158];
-	__asm        cmp    eax, [ebp-0x16C];
-	__asm        jb     _T4cd;
+		__asm        mov    eax, sCheatCodeString;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax+4];
+		__asm        sub    eax, [ebp-0x158];
+		__asm        cmp    eax, [ebp-0x16C];
+		__asm        jb     _T4cd;
 _FOR_3b1:
-	__asm        mov    dword ptr [ebp-0x15C], 0;
-	__asm        jmp    _FOR_COND_3b1;
+		__asm        mov    dword ptr [ebp-0x15C], 0;
+		__asm        jmp    _FOR_COND_3b1;
+		{
 _FOR_NEXT_3b1:
-	__asm        inc    dword ptr [ebp-0x15C];
+			__asm        inc    dword ptr [ebp-0x15C];
 _FOR_COND_3b1:
-	__asm        mov    eax, [ebp-0x16C];
-	__asm        cmp    [ebp-0x15C], eax;
-	__asm        jae    _T438;
+			__asm        mov    eax, [ebp-0x16C];
+			__asm        cmp    [ebp-0x15C], eax;
+			__asm        jae    _T438;
 
-	__asm        mov    ecx, sCheatCodeString;
-	__asm        call   basic_string<char>::data;
-	__asm        mov    ecx, [ebp-0x16C];
-	__asm        dec    ecx;
-	__asm        sub    ecx, [ebp-0x15C];
-	__asm        add    eax, ecx;
-	__asm        add    eax, [ebp-0x158];
-	__asm        mov    [ebp-0x160], eax;
-	__asm        mov    eax, [ebp-0x16C];
-	__asm        add    eax, 0x5988DC;
-	__asm        dec    eax;
-	__asm        sub    eax, [ebp-0x15C];
-	__asm        movsx  eax, byte ptr [eax];
-	__asm        mov    ecx, [ebp-0x160];
-	__asm        movsx  ecx, byte ptr [ecx];
-	__asm        cmp    eax, ecx;
-	__asm        je     _T417;
+			__asm        mov    ecx, sCheatCodeString;
+			__asm        call   basic_string<char>::data;
+			__asm        mov    ecx, [ebp-0x16C];
+			__asm        dec    ecx;
+			__asm        sub    ecx, [ebp-0x15C];
+			__asm        add    eax, ecx;
+			__asm        add    eax, [ebp-0x158];
+			__asm        mov    [ebp-0x160], eax;
+			__asm        mov    eax, [ebp-0x16C];
+			__asm        add    eax, 0x5988DC;
+			__asm        dec    eax;
+			__asm        sub    eax, [ebp-0x15C];
+			__asm        movsx  eax, byte ptr [eax];
+			__asm        mov    ecx, [ebp-0x160];
+			__asm        movsx  ecx, byte ptr [ecx];
+			__asm        cmp    eax, ecx;
+			__asm        je     _T417;
 
-	__asm        jmp    _T41c;
+			__asm        jmp    _T41c;
 _T417:
-	__asm        jmp    _T433;
+			__asm        jmp    _T433;
 _T41c:
-	__asm        jmp    _T42e;
+			__asm        jmp    _T42e;
 
-	__asm        cmp    dword ptr [ebp-0x164], 0;
-	__asm        je     _T433;
+			__asm        cmp    dword ptr [ebp-0x164], 0;
+			__asm        je     _T433;
 _T42e:
-	__asm        jmp    _T438;
+			__asm        jmp    _T438;
 _T433:
-	__asm        jmp    _FOR_NEXT_3b1;
+			__asm        jmp    _FOR_NEXT_3b1;
+		}
 _T438:
-	__asm        mov    eax, [ebp-0x16C];
-	__asm        cmp    [ebp-0x15C], eax;
-	__asm        jne    _T45b;
+		__asm        mov    eax, [ebp-0x16C];
+		__asm        cmp    [ebp-0x15C], eax;
+		__asm        jne    _T45b;
 
-	__asm        mov    eax, [ebp-0x158];
-	__asm        mov    [ebp-0x168], eax;
-	__asm        jmp    _T4dc;
+		__asm        mov    eax, [ebp-0x158];
+		__asm        mov    [ebp-0x168], eax;
+		__asm        jmp    _T4dc;
 _T45b:
-	__asm        mov    eax, [ebp-0x16C];
-	__asm        sub    eax, [ebp-0x15C];
-	__asm        add    eax, [ebp-0x158];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x16C];
-	__asm        add    eax, 0x5988DC;
-	__asm        dec    eax;
-	__asm        sub    eax, [ebp-0x15C];
-	__asm        mov    al, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, sCheatCodeString;
-	__asm        call   basic_string<char>::find;
-	__asm        mov    [ebp-0x154], eax;
-	__asm        cmp    dword ptr [ebp-0x154], 0xFFFFFFFF;
-	__asm        jne    _T4ad;
+		__asm        mov    eax, [ebp-0x16C];
+		__asm        sub    eax, [ebp-0x15C];
+		__asm        add    eax, [ebp-0x158];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x16C];
+		__asm        add    eax, 0x5988DC;
+		__asm        dec    eax;
+		__asm        sub    eax, [ebp-0x15C];
+		__asm        mov    al, [eax];
+		__asm        push   eax;
+		__asm        mov    ecx, sCheatCodeString;
+		__asm        call   basic_string<char>::find;
+		__asm        mov    [ebp-0x154], eax;
+		__asm        cmp    dword ptr [ebp-0x154], 0xFFFFFFFF;
+		__asm        jne    _T4ad;
 
-	__asm        mov    dword ptr [ebp-0x168], 0xFFFFFFFF;
-	__asm        jmp    _T4dc;
+		__asm        mov    dword ptr [ebp-0x168], 0xFFFFFFFF;
+		__asm        jmp    _T4dc;
 _T4ad:
-	__asm        mov    eax, [ebp-0x154];
-	__asm        mov    ecx, [ebp-0x16C];
-	__asm        sub    ecx, [ebp-0x15C];
-	__asm        dec    ecx;
-	__asm        sub    eax, ecx;
-	__asm        mov    [ebp-0x158], eax;
-	__asm        jmp    __WHILE_387;
+		__asm        mov    eax, [ebp-0x154];
+		__asm        mov    ecx, [ebp-0x16C];
+		__asm        sub    ecx, [ebp-0x15C];
+		__asm        dec    ecx;
+		__asm        sub    eax, ecx;
+		__asm        mov    [ebp-0x158], eax;
+		__asm        jmp    __WHILE_387;
+	}
 _T4cd:
 	__asm        mov    dword ptr [ebp-0x168], 0xFFFFFFFF;
 	__asm        jmp    _T4dc;
@@ -2948,88 +2952,92 @@ _T559:
 	__asm        jmp    _T6c2;
 _T568:
 	__asm        jmp    __WHILE_56d;
+	{
 __WHILE_56d:
-	__asm        mov    eax, sCheatCodeString;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, [ebp-0x174];
-	__asm        cmp    eax, [ebp-0x188];
-	__asm        jb     _T6b3;
+		__asm        mov    eax, sCheatCodeString;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax+4];
+		__asm        sub    eax, [ebp-0x174];
+		__asm        cmp    eax, [ebp-0x188];
+		__asm        jb     _T6b3;
 _FOR_597:
-	__asm        mov    dword ptr [ebp-0x178], 0;
-	__asm        jmp    _FOR_COND_597;
+		__asm        mov    dword ptr [ebp-0x178], 0;
+		__asm        jmp    _FOR_COND_597;
+		{
 _FOR_NEXT_597:
-	__asm        inc    dword ptr [ebp-0x178];
+			__asm        inc    dword ptr [ebp-0x178];
 _FOR_COND_597:
-	__asm        mov    eax, [ebp-0x178];
-	__asm        cmp    [ebp-0x188], eax;
-	__asm        jbe    _T61e;
+			__asm        mov    eax, [ebp-0x178];
+			__asm        cmp    [ebp-0x188], eax;
+			__asm        jbe    _T61e;
 
-	__asm        mov    ecx, sCheatCodeString;
-	__asm        call   basic_string<char>::data;
-	__asm        mov    ecx, [ebp-0x188];
-	__asm        dec    ecx;
-	__asm        sub    ecx, [ebp-0x178];
-	__asm        add    eax, ecx;
-	__asm        add    eax, [ebp-0x174];
-	__asm        mov    [ebp-0x17C], eax;
-	__asm        mov    eax, [ebp-0x188];
-	__asm        add    eax, 0x5988F4;
-	__asm        dec    eax;
-	__asm        sub    eax, [ebp-0x178];
-	__asm        movsx  eax, byte ptr [eax];
-	__asm        mov    ecx, [ebp-0x17C];
-	__asm        movsx  ecx, byte ptr [ecx];
-	__asm        cmp    eax, ecx;
-	__asm        je     _T5fd;
+			__asm        mov    ecx, sCheatCodeString;
+			__asm        call   basic_string<char>::data;
+			__asm        mov    ecx, [ebp-0x188];
+			__asm        dec    ecx;
+			__asm        sub    ecx, [ebp-0x178];
+			__asm        add    eax, ecx;
+			__asm        add    eax, [ebp-0x174];
+			__asm        mov    [ebp-0x17C], eax;
+			__asm        mov    eax, [ebp-0x188];
+			__asm        add    eax, 0x5988F4;
+			__asm        dec    eax;
+			__asm        sub    eax, [ebp-0x178];
+			__asm        movsx  eax, byte ptr [eax];
+			__asm        mov    ecx, [ebp-0x17C];
+			__asm        movsx  ecx, byte ptr [ecx];
+			__asm        cmp    eax, ecx;
+			__asm        je     _T5fd;
 
-	__asm        jmp    _T602;
+			__asm        jmp    _T602;
 _T5fd:
-	__asm        jmp    _T619;
+			__asm        jmp    _T619;
 _T602:
-	__asm        jmp    _T614;
+			__asm        jmp    _T614;
 
-	__asm        cmp    dword ptr [ebp-0x180], 0;
-	__asm        je     _T619;
+			__asm        cmp    dword ptr [ebp-0x180], 0;
+			__asm        je     _T619;
 _T614:
-	__asm        jmp    _T61e;
+			__asm        jmp    _T61e;
 _T619:
-	__asm        jmp    _FOR_NEXT_597;
+			__asm        jmp    _FOR_NEXT_597;
+		}
 _T61e:
-	__asm        mov    eax, [ebp-0x178];
-	__asm        cmp    [ebp-0x188], eax;
-	__asm        jne    _T641;
+		__asm        mov    eax, [ebp-0x178];
+		__asm        cmp    [ebp-0x188], eax;
+		__asm        jne    _T641;
 
-	__asm        mov    eax, [ebp-0x174];
-	__asm        mov    [ebp-0x184], eax;
-	__asm        jmp    _T6c2;
+		__asm        mov    eax, [ebp-0x174];
+		__asm        mov    [ebp-0x184], eax;
+		__asm        jmp    _T6c2;
 _T641:
-	__asm        mov    eax, [ebp-0x188];
-	__asm        sub    eax, [ebp-0x178];
-	__asm        add    eax, [ebp-0x174];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x188];
-	__asm        add    eax, 0x5988F4;
-	__asm        dec    eax;
-	__asm        sub    eax, [ebp-0x178];
-	__asm        mov    al, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, sCheatCodeString;
-	__asm        call   basic_string<char>::find;
-	__asm        mov    [ebp-0x170], eax;
-	__asm        cmp    dword ptr [ebp-0x170], 0xFFFFFFFF;
-	__asm        jne    _T693;
+		__asm        mov    eax, [ebp-0x188];
+		__asm        sub    eax, [ebp-0x178];
+		__asm        add    eax, [ebp-0x174];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x188];
+		__asm        add    eax, 0x5988F4;
+		__asm        dec    eax;
+		__asm        sub    eax, [ebp-0x178];
+		__asm        mov    al, [eax];
+		__asm        push   eax;
+		__asm        mov    ecx, sCheatCodeString;
+		__asm        call   basic_string<char>::find;
+		__asm        mov    [ebp-0x170], eax;
+		__asm        cmp    dword ptr [ebp-0x170], 0xFFFFFFFF;
+		__asm        jne    _T693;
 
-	__asm        mov    dword ptr [ebp-0x184], 0xFFFFFFFF;
-	__asm        jmp    _T6c2;
+		__asm        mov    dword ptr [ebp-0x184], 0xFFFFFFFF;
+		__asm        jmp    _T6c2;
 _T693:
-	__asm        mov    eax, [ebp-0x170];
-	__asm        mov    ecx, [ebp-0x188];
-	__asm        sub    ecx, [ebp-0x178];
-	__asm        dec    ecx;
-	__asm        sub    eax, ecx;
-	__asm        mov    [ebp-0x174], eax;
-	__asm        jmp    __WHILE_56d;
+		__asm        mov    eax, [ebp-0x170];
+		__asm        mov    ecx, [ebp-0x188];
+		__asm        sub    ecx, [ebp-0x178];
+		__asm        dec    ecx;
+		__asm        sub    eax, ecx;
+		__asm        mov    [ebp-0x174], eax;
+		__asm        jmp    __WHILE_56d;
+	}
 _T6b3:
 	__asm        mov    dword ptr [ebp-0x184], 0xFFFFFFFF;
 	__asm        jmp    _T6c2;
@@ -3083,88 +3091,92 @@ _T763:
 	__asm        jmp    _T8cc;
 _T772:
 	__asm        jmp    __WHILE_777;
+	{
 __WHILE_777:
-	__asm        mov    eax, sCheatCodeString;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, [ebp-0x190];
-	__asm        cmp    eax, [ebp-0x1A4];
-	__asm        jb     _T8bd;
+		__asm        mov    eax, sCheatCodeString;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax+4];
+		__asm        sub    eax, [ebp-0x190];
+		__asm        cmp    eax, [ebp-0x1A4];
+		__asm        jb     _T8bd;
 _FOR_7a1:
-	__asm        mov    dword ptr [ebp-0x194], 0;
-	__asm        jmp    _FOR_COND_7a1;
+		__asm        mov    dword ptr [ebp-0x194], 0;
+		__asm        jmp    _FOR_COND_7a1;
+		{
 _FOR_NEXT_7a1:
-	__asm        inc    dword ptr [ebp-0x194];
+			__asm        inc    dword ptr [ebp-0x194];
 _FOR_COND_7a1:
-	__asm        mov    eax, [ebp-0x1A4];
-	__asm        cmp    [ebp-0x194], eax;
-	__asm        jae    _T828;
+			__asm        mov    eax, [ebp-0x1A4];
+			__asm        cmp    [ebp-0x194], eax;
+			__asm        jae    _T828;
 
-	__asm        mov    ecx, sCheatCodeString;
-	__asm        call   basic_string<char>::data;
-	__asm        mov    ecx, [ebp-0x1A4];
-	__asm        dec    ecx;
-	__asm        sub    ecx, [ebp-0x194];
-	__asm        add    eax, ecx;
-	__asm        add    eax, [ebp-0x190];
-	__asm        mov    [ebp-0x198], eax;
-	__asm        mov    eax, [ebp-0x1A4];
-	__asm        add    eax, 0x598904;
-	__asm        dec    eax;
-	__asm        sub    eax, [ebp-0x194];
-	__asm        movsx  eax, byte ptr [eax];
-	__asm        mov    ecx, [ebp-0x198];
-	__asm        movsx  ecx, byte ptr [ecx];
-	__asm        cmp    eax, ecx;
-	__asm        je     _T807;
+			__asm        mov    ecx, sCheatCodeString;
+			__asm        call   basic_string<char>::data;
+			__asm        mov    ecx, [ebp-0x1A4];
+			__asm        dec    ecx;
+			__asm        sub    ecx, [ebp-0x194];
+			__asm        add    eax, ecx;
+			__asm        add    eax, [ebp-0x190];
+			__asm        mov    [ebp-0x198], eax;
+			__asm        mov    eax, [ebp-0x1A4];
+			__asm        add    eax, 0x598904;
+			__asm        dec    eax;
+			__asm        sub    eax, [ebp-0x194];
+			__asm        movsx  eax, byte ptr [eax];
+			__asm        mov    ecx, [ebp-0x198];
+			__asm        movsx  ecx, byte ptr [ecx];
+			__asm        cmp    eax, ecx;
+			__asm        je     _T807;
 
-	__asm        jmp    _T80c;
+			__asm        jmp    _T80c;
 _T807:
-	__asm        jmp    _T823;
+			__asm        jmp    _T823;
 _T80c:
-	__asm        jmp    _T81e;
+			__asm        jmp    _T81e;
 
-	__asm        cmp    dword ptr [ebp-0x19C], 0;
-	__asm        je     _T823;
+			__asm        cmp    dword ptr [ebp-0x19C], 0;
+			__asm        je     _T823;
 _T81e:
-	__asm        jmp    _T828;
+			__asm        jmp    _T828;
 _T823:
-	__asm        jmp    _FOR_NEXT_7a1;
+			__asm        jmp    _FOR_NEXT_7a1;
+		}
 _T828:
-	__asm        mov    eax, [ebp-0x1A4];
-	__asm        cmp    [ebp-0x194], eax;
-	__asm        jne    _T84b;
+		__asm        mov    eax, [ebp-0x1A4];
+		__asm        cmp    [ebp-0x194], eax;
+		__asm        jne    _T84b;
 
-	__asm        mov    eax, [ebp-0x190];
-	__asm        mov    [ebp-0x1A0], eax;
-	__asm        jmp    _T8cc;
+		__asm        mov    eax, [ebp-0x190];
+		__asm        mov    [ebp-0x1A0], eax;
+		__asm        jmp    _T8cc;
 _T84b:
-	__asm        mov    eax, [ebp-0x1A4];
-	__asm        sub    eax, [ebp-0x194];
-	__asm        add    eax, [ebp-0x190];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x1A4];
-	__asm        add    eax, 0x598904;
-	__asm        dec    eax;
-	__asm        sub    eax, [ebp-0x194];
-	__asm        mov    al, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, sCheatCodeString;
-	__asm        call   basic_string<char>::find;
-	__asm        mov    [ebp-0x18C], eax;
-	__asm        cmp    dword ptr [ebp-0x18C], 0xFFFFFFFF;
-	__asm        jne    _T89d;
+		__asm        mov    eax, [ebp-0x1A4];
+		__asm        sub    eax, [ebp-0x194];
+		__asm        add    eax, [ebp-0x190];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x1A4];
+		__asm        add    eax, 0x598904;
+		__asm        dec    eax;
+		__asm        sub    eax, [ebp-0x194];
+		__asm        mov    al, [eax];
+		__asm        push   eax;
+		__asm        mov    ecx, sCheatCodeString;
+		__asm        call   basic_string<char>::find;
+		__asm        mov    [ebp-0x18C], eax;
+		__asm        cmp    dword ptr [ebp-0x18C], 0xFFFFFFFF;
+		__asm        jne    _T89d;
 
-	__asm        mov    dword ptr [ebp-0x1A0], 0xFFFFFFFF;
-	__asm        jmp    _T8cc;
+		__asm        mov    dword ptr [ebp-0x1A0], 0xFFFFFFFF;
+		__asm        jmp    _T8cc;
 _T89d:
-	__asm        mov    eax, [ebp-0x18C];
-	__asm        mov    ecx, [ebp-0x1A4];
-	__asm        sub    ecx, [ebp-0x194];
-	__asm        dec    ecx;
-	__asm        sub    eax, ecx;
-	__asm        mov    [ebp-0x190], eax;
-	__asm        jmp    __WHILE_777;
+		__asm        mov    eax, [ebp-0x18C];
+		__asm        mov    ecx, [ebp-0x1A4];
+		__asm        sub    ecx, [ebp-0x194];
+		__asm        dec    ecx;
+		__asm        sub    eax, ecx;
+		__asm        mov    [ebp-0x190], eax;
+		__asm        jmp    __WHILE_777;
+	}
 _T8bd:
 	__asm        mov    dword ptr [ebp-0x1A0], 0xFFFFFFFF;
 	__asm        jmp    _T8cc;
@@ -3275,88 +3287,92 @@ _Ta13:
 	__asm        jmp    _Tb7c;
 _Ta22:
 	__asm        jmp    __WHILE_a27;
+	{
 __WHILE_a27:
-	__asm        mov    eax, sCheatCodeString;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, [ebp-0x1AC];
-	__asm        cmp    eax, [ebp-0x1C0];
-	__asm        jb     _Tb6d;
+		__asm        mov    eax, sCheatCodeString;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax+4];
+		__asm        sub    eax, [ebp-0x1AC];
+		__asm        cmp    eax, [ebp-0x1C0];
+		__asm        jb     _Tb6d;
 _FOR_a51:
-	__asm        mov    dword ptr [ebp-0x1B0], 0;
-	__asm        jmp    _FOR_COND_a51;
+		__asm        mov    dword ptr [ebp-0x1B0], 0;
+		__asm        jmp    _FOR_COND_a51;
+		{
 _FOR_NEXT_a51:
-	__asm        inc    dword ptr [ebp-0x1B0];
+			__asm        inc    dword ptr [ebp-0x1B0];
 _FOR_COND_a51:
-	__asm        mov    eax, [ebp-0x1C0];
-	__asm        cmp    [ebp-0x1B0], eax;
-	__asm        jae    _Tad8;
+			__asm        mov    eax, [ebp-0x1C0];
+			__asm        cmp    [ebp-0x1B0], eax;
+			__asm        jae    _Tad8;
 
-	__asm        mov    ecx, sCheatCodeString;
-	__asm        call   basic_string<char>::data;
-	__asm        mov    ecx, [ebp-0x1C0];
-	__asm        dec    ecx;
-	__asm        sub    ecx, [ebp-0x1B0];
-	__asm        add    eax, ecx;
-	__asm        add    eax, [ebp-0x1AC];
-	__asm        mov    [ebp-0x1B4], eax;
-	__asm        mov    eax, [ebp-0x1C0];
-	__asm        add    eax, 0x59892C;
-	__asm        dec    eax;
-	__asm        sub    eax, [ebp-0x1B0];
-	__asm        movsx  eax, byte ptr [eax];
-	__asm        mov    ecx, [ebp-0x1B4];
-	__asm        movsx  ecx, byte ptr [ecx];
-	__asm        cmp    eax, ecx;
-	__asm        je     _Tab7;
+			__asm        mov    ecx, sCheatCodeString;
+			__asm        call   basic_string<char>::data;
+			__asm        mov    ecx, [ebp-0x1C0];
+			__asm        dec    ecx;
+			__asm        sub    ecx, [ebp-0x1B0];
+			__asm        add    eax, ecx;
+			__asm        add    eax, [ebp-0x1AC];
+			__asm        mov    [ebp-0x1B4], eax;
+			__asm        mov    eax, [ebp-0x1C0];
+			__asm        add    eax, 0x59892C;
+			__asm        dec    eax;
+			__asm        sub    eax, [ebp-0x1B0];
+			__asm        movsx  eax, byte ptr [eax];
+			__asm        mov    ecx, [ebp-0x1B4];
+			__asm        movsx  ecx, byte ptr [ecx];
+			__asm        cmp    eax, ecx;
+			__asm        je     _Tab7;
 
-	__asm        jmp    _Tabc;
+			__asm        jmp    _Tabc;
 _Tab7:
-	__asm        jmp    _Tad3;
+			__asm        jmp    _Tad3;
 _Tabc:
-	__asm        jmp    _Tace;
+			__asm        jmp    _Tace;
 
-	__asm        cmp    dword ptr [ebp-0x1B8], 0;
-	__asm        je     _Tad3;
+			__asm        cmp    dword ptr [ebp-0x1B8], 0;
+			__asm        je     _Tad3;
 _Tace:
-	__asm        jmp    _Tad8;
+			__asm        jmp    _Tad8;
 _Tad3:
-	__asm        jmp    _FOR_NEXT_a51;
+			__asm        jmp    _FOR_NEXT_a51;
+		}
 _Tad8:
-	__asm        mov    eax, [ebp-0x1C0];
-	__asm        cmp    [ebp-0x1B0], eax;
-	__asm        jne    _Tafb;
+		__asm        mov    eax, [ebp-0x1C0];
+		__asm        cmp    [ebp-0x1B0], eax;
+		__asm        jne    _Tafb;
 
-	__asm        mov    eax, [ebp-0x1AC];
-	__asm        mov    [ebp-0x1BC], eax;
-	__asm        jmp    _Tb7c;
+		__asm        mov    eax, [ebp-0x1AC];
+		__asm        mov    [ebp-0x1BC], eax;
+		__asm        jmp    _Tb7c;
 _Tafb:
-	__asm        mov    eax, [ebp-0x1C0];
-	__asm        sub    eax, [ebp-0x1B0];
-	__asm        add    eax, [ebp-0x1AC];
-	__asm        push   eax;
-	__asm        mov    eax, [ebp-0x1C0];
-	__asm        add    eax, 0x59892C;
-	__asm        dec    eax;
-	__asm        sub    eax, [ebp-0x1B0];
-	__asm        mov    al, [eax];
-	__asm        push   eax;
-	__asm        mov    ecx, sCheatCodeString;
-	__asm        call   basic_string<char>::find;
-	__asm        mov    [ebp-0x1A8], eax;
-	__asm        cmp    dword ptr [ebp-0x1A8], 0xFFFFFFFF;
-	__asm        jne    _Tb4d;
+		__asm        mov    eax, [ebp-0x1C0];
+		__asm        sub    eax, [ebp-0x1B0];
+		__asm        add    eax, [ebp-0x1AC];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x1C0];
+		__asm        add    eax, 0x59892C;
+		__asm        dec    eax;
+		__asm        sub    eax, [ebp-0x1B0];
+		__asm        mov    al, [eax];
+		__asm        push   eax;
+		__asm        mov    ecx, sCheatCodeString;
+		__asm        call   basic_string<char>::find;
+		__asm        mov    [ebp-0x1A8], eax;
+		__asm        cmp    dword ptr [ebp-0x1A8], 0xFFFFFFFF;
+		__asm        jne    _Tb4d;
 
-	__asm        mov    dword ptr [ebp-0x1BC], 0xFFFFFFFF;
-	__asm        jmp    _Tb7c;
+		__asm        mov    dword ptr [ebp-0x1BC], 0xFFFFFFFF;
+		__asm        jmp    _Tb7c;
 _Tb4d:
-	__asm        mov    eax, [ebp-0x1A8];
-	__asm        mov    ecx, [ebp-0x1C0];
-	__asm        sub    ecx, [ebp-0x1B0];
-	__asm        dec    ecx;
-	__asm        sub    eax, ecx;
-	__asm        mov    [ebp-0x1AC], eax;
-	__asm        jmp    __WHILE_a27;
+		__asm        mov    eax, [ebp-0x1A8];
+		__asm        mov    ecx, [ebp-0x1C0];
+		__asm        sub    ecx, [ebp-0x1B0];
+		__asm        dec    ecx;
+		__asm        sub    eax, ecx;
+		__asm        mov    [ebp-0x1AC], eax;
+		__asm        jmp    __WHILE_a27;
+	}
 _Tb6d:
 	__asm        mov    dword ptr [ebp-0x1BC], 0xFFFFFFFF;
 	__asm        jmp    _Tb7c;

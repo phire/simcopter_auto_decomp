@@ -3747,24 +3747,26 @@ __RETURN:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x10], eax;
+	{
 __WHILE_4d:
-	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     _T82;
+		__asm        cmp    dword ptr [ebp-0x10], 0;
+		__asm        je     _T82;
 
-	__asm        mov    eax, [ebp-0x10];
-	__asm        movsx  eax, word ptr [eax+0xC];
-	__asm        movsx  ecx, objtypeflag;
-	__asm        test   ecx, eax;
-	__asm        je     _T75;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        movsx  ecx, objtypeflag;
+		__asm        test   ecx, eax;
+		__asm        je     _T75;
 
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    dyobj, eax;
-	__asm        jmp    _T94;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    dyobj, eax;
+		__asm        jmp    _T94;
 _T75:
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    eax, [eax];
-	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    __WHILE_4d;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x10], eax;
+		__asm        jmp    __WHILE_4d;
+	}
 _T82:
 	dyobj = 0x0;
 	__asm        jmp    _T94;
@@ -5340,24 +5342,26 @@ _T46:
 _FOR_9f:
 	__asm        mov    word ptr [ebp-0x14], 0;
 	__asm        jmp    _FOR_COND_9f;
+	{
 _FOR_NEXT_9f:
-	__asm        inc    word ptr [ebp-0x14];
+		__asm        inc    word ptr [ebp-0x14];
 _FOR_COND_9f:
-	__asm        movsx  eax, word ptr [ebp-0x14];
-	__asm        cmp    eax, 3;
-	__asm        jge    _Td9;
+		__asm        movsx  eax, word ptr [ebp-0x14];
+		__asm        cmp    eax, 3;
+		__asm        jge    _Td9;
 
-	__asm        movsx  eax, word ptr [ebp-0x14];
-	__asm        movsx  eax, cYObject::sSoundChannels[12][eax*2];
-	__asm        test   eax, eax;
-	__asm        jne    _Td4;
+		__asm        movsx  eax, word ptr [ebp-0x14];
+		__asm        movsx  eax, cYObject::sSoundChannels[12][eax*2];
+		__asm        test   eax, eax;
+		__asm        jne    _Td4;
 
-	__asm        movsx  eax, word ptr [ebp-0x14];
-	__asm        add    eax, 0xC;
-	__asm        mov    [ebp-0x18], ax;
-	__asm        jmp    _Te4;
+		__asm        movsx  eax, word ptr [ebp-0x14];
+		__asm        add    eax, 0xC;
+		__asm        mov    [ebp-0x18], ax;
+		__asm        jmp    _Te4;
 _Td4:
-	__asm        jmp    _FOR_NEXT_9f;
+		__asm        jmp    _FOR_NEXT_9f;
+	}
 _Td9:
 	__asm        mov    word ptr [ebp-0x18], 0xC;
 	__asm        jmp    _Te4;
@@ -11242,23 +11246,25 @@ _T268:
 _FOR_278:
 	__asm        mov    word ptr [ebp-0x24], 0;
 	__asm        jmp    _FOR_COND_278;
+	{
 _FOR_NEXT_278:
-	__asm        inc    word ptr [ebp-0x24];
+		__asm        inc    word ptr [ebp-0x24];
 _FOR_COND_278:
-	__asm        movsx  eax, word ptr [ebp-0x24];
-	__asm        cmp    eax, 0xC;
-	__asm        jge    _T2af;
+		__asm        movsx  eax, word ptr [ebp-0x24];
+		__asm        cmp    eax, 0xC;
+		__asm        jge    _T2af;
 
-	__asm        movsx  eax, word ptr [ebp-0x24];
-	__asm        movsx  eax, cYObject::sSoundChannels[eax*2];
-	__asm        test   eax, eax;
-	__asm        jne    _T2aa;
+		__asm        movsx  eax, word ptr [ebp-0x24];
+		__asm        movsx  eax, cYObject::sSoundChannels[eax*2];
+		__asm        test   eax, eax;
+		__asm        jne    _T2aa;
 
-	__asm        mov    ax, [ebp-0x24];
-	__asm        mov    [ebp-0x28], ax;
-	__asm        jmp    _T2ba;
+		__asm        mov    ax, [ebp-0x24];
+		__asm        mov    [ebp-0x28], ax;
+		__asm        jmp    _T2ba;
 _T2aa:
-	__asm        jmp    _FOR_NEXT_278;
+		__asm        jmp    _FOR_NEXT_278;
+	}
 _T2af:
 	__asm        mov    word ptr [ebp-0x28], 0xFFFF;
 	__asm        jmp    _T2ba;
@@ -11383,23 +11389,25 @@ _T145:
 _FOR_172:
 		__asm        mov    word ptr [ebp-0x1C], 0;
 		__asm        jmp    _FOR_COND_172;
+		{
 _FOR_NEXT_172:
-		__asm        inc    word ptr [ebp-0x1C];
+			__asm        inc    word ptr [ebp-0x1C];
 _FOR_COND_172:
-		__asm        movsx  eax, word ptr [ebp-0x1C];
-		__asm        cmp    eax, 0xC;
-		__asm        jge    _T1a9;
+			__asm        movsx  eax, word ptr [ebp-0x1C];
+			__asm        cmp    eax, 0xC;
+			__asm        jge    _T1a9;
 
-		__asm        movsx  eax, word ptr [ebp-0x1C];
-		__asm        movsx  eax, cYObject::sSoundChannels[eax*2];
-		__asm        test   eax, eax;
-		__asm        jne    _T1a4;
+			__asm        movsx  eax, word ptr [ebp-0x1C];
+			__asm        movsx  eax, cYObject::sSoundChannels[eax*2];
+			__asm        test   eax, eax;
+			__asm        jne    _T1a4;
 
-		__asm        mov    ax, [ebp-0x1C];
-		__asm        mov    soundchannel, ax;
-		__asm        jmp    _T1b4;
+			__asm        mov    ax, [ebp-0x1C];
+			__asm        mov    soundchannel, ax;
+			__asm        jmp    _T1b4;
 _T1a4:
-		__asm        jmp    _FOR_NEXT_172;
+			__asm        jmp    _FOR_NEXT_172;
+		}
 _T1a9:
 		soundchannel = 0xffff;
 		__asm        jmp    _T1b4;
@@ -11572,25 +11580,27 @@ _T132:
 _FOR_173:
 	__asm        mov    word ptr [ebp-0x2C], 0;
 	__asm        jmp    _FOR_COND_173;
+	{
 _FOR_NEXT_173:
-	__asm        inc    word ptr [ebp-0x2C];
+		__asm        inc    word ptr [ebp-0x2C];
 _FOR_COND_173:
-	__asm        movsx  eax, word ptr [ebp-0x2C];
-	__asm        cmp    eax, 3;
-	__asm        jge    _T1b3;
+		__asm        movsx  eax, word ptr [ebp-0x2C];
+		__asm        cmp    eax, 3;
+		__asm        jge    _T1b3;
 
-	__asm        movsx  eax, word ptr [ebp-0x2C];
-	__asm        movsx  eax, cYObject::sSoundChannels[12][eax*2];
-	__asm        test   eax, eax;
-	__asm        jne    _T1ae;
+		__asm        movsx  eax, word ptr [ebp-0x2C];
+		__asm        movsx  eax, cYObject::sSoundChannels[12][eax*2];
+		__asm        test   eax, eax;
+		__asm        jne    _T1ae;
 
-	__asm        movsx  eax, word ptr [ebp-0x2C];
-	__asm        add    eax, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x102], ax;
-	__asm        jmp    _T1c4;
+		__asm        movsx  eax, word ptr [ebp-0x2C];
+		__asm        add    eax, 0xC;
+		__asm        mov    ecx, this;
+		__asm        mov    [ecx+0x102], ax;
+		__asm        jmp    _T1c4;
 _T1ae:
-	__asm        jmp    _FOR_NEXT_173;
+		__asm        jmp    _FOR_NEXT_173;
+	}
 _T1b3:
 	this->fData[25] = 0xc;
 	__asm        jmp    _T1c4;
@@ -12955,26 +12965,28 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 _FOR_86:
 	__asm        mov    word ptr [ebp-0x68], 0;
 	__asm        jmp    _FOR_COND_86;
+	{
 _FOR_NEXT_86:
-	__asm        inc    word ptr [ebp-0x68];
+		__asm        inc    word ptr [ebp-0x68];
 _FOR_COND_86:
-	__asm        movsx  eax, word ptr [ebp-0x68];
-	__asm        cmp    eax, 0xA;
-	__asm        jge    _Tce;
+		__asm        movsx  eax, word ptr [ebp-0x68];
+		__asm        cmp    eax, 0xA;
+		__asm        jge    _Tce;
 
-	__asm        mov    eax, this;
-	__asm        movsx  eax, word ptr [eax+0xD6];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        movsx  ecx, word ptr [ebp-0x68];
-	__asm        shl    ecx, 2;
-	__asm        mov    edx, loctype;
-	__asm        cmp    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], edx;
-	__asm        jne    _Tc9;
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+0xD6];
+		__asm        lea    eax, [eax+eax*4];
+		__asm        movsx  ecx, word ptr [ebp-0x68];
+		__asm        shl    ecx, 2;
+		__asm        mov    edx, loctype;
+		__asm        cmp    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], edx;
+		__asm        jne    _Tc9;
 
-	__asm        mov    word ptr [ebp-0x64], 1;
-	__asm        jmp    _Td9;
+		__asm        mov    word ptr [ebp-0x64], 1;
+		__asm        jmp    _Td9;
 _Tc9:
-	__asm        jmp    _FOR_NEXT_86;
+		__asm        jmp    _FOR_NEXT_86;
+	}
 _Tce:
 	__asm        mov    word ptr [ebp-0x64], 0;
 	__asm        jmp    _Td9;
@@ -12983,21 +12995,23 @@ _Td9:
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    word ptr [ebp-0x70], 0;
+	{
 __WHILE_e8:
-	__asm        cmp    dword ptr [ebp-0x6C], 0;
-	__asm        je     _T112;
+		__asm        cmp    dword ptr [ebp-0x6C], 0;
+		__asm        je     _T112;
 
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        movsx  eax, word ptr [eax+0xC];
-	__asm        test   al, 8;
-	__asm        je     _T105;
+		__asm        mov    eax, [ebp-0x6C];
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 8;
+		__asm        je     _T105;
 
-	__asm        inc    word ptr [ebp-0x70];
+		__asm        inc    word ptr [ebp-0x70];
 _T105:
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    eax, [eax];
-	__asm        mov    [ebp-0x6C], eax;
-	__asm        jmp    __WHILE_e8;
+		__asm        mov    eax, [ebp-0x6C];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x6C], eax;
+		__asm        jmp    __WHILE_e8;
+	}
 _T112:
 	__asm        jmp    _T117;
 _T117:
@@ -13641,59 +13655,61 @@ _T2e7:
 _FOR_314:
 	__asm        mov    word ptr [ebp-0x30], 0;
 	__asm        jmp    _FOR_COND_314;
+	{
 _FOR_NEXT_314:
-	__asm        inc    word ptr [ebp-0x30];
+		__asm        inc    word ptr [ebp-0x30];
 _FOR_COND_314:
-	__asm        movsx  eax, word ptr [ebp-0x30];
-	__asm        cmp    eax, 0x64;
-	__asm        jge    _T3c2;
+		__asm        movsx  eax, word ptr [ebp-0x30];
+		__asm        cmp    eax, 0x64;
+		__asm        jge    _T3c2;
 
-	__asm        mov    eax, [ebp-0x30];
-	__asm        push   eax;
-	__asm        call   cYObject::GetObjectA;
-	__asm        add    esp, 4;
-	__asm        mov    [ebp-0x34], eax;
-	__asm        mov    eax, [ebp-0x34];
-	__asm        movsx  eax, word ptr [eax+0xD2];
-	__asm        test   eax, eax;
-	__asm        je     _T3bd;
+		__asm        mov    eax, [ebp-0x30];
+		__asm        push   eax;
+		__asm        call   cYObject::GetObjectA;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x34], eax;
+		__asm        mov    eax, [ebp-0x34];
+		__asm        movsx  eax, word ptr [eax+0xD2];
+		__asm        test   eax, eax;
+		__asm        je     _T3bd;
 
-	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    word ptr [eax+0x104], 0xFFFF;
-	__asm        mov    eax, [ebp-0x34];
-	__asm        movsx  eax, word ptr [eax+0x102];
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        je     _T3b8;
+		__asm        mov    eax, [ebp-0x34];
+		__asm        mov    word ptr [eax+0x104], 0xFFFF;
+		__asm        mov    eax, [ebp-0x34];
+		__asm        movsx  eax, word ptr [eax+0x102];
+		__asm        cmp    eax, 0xFFFFFFFF;
+		__asm        je     _T3b8;
 
-	__asm        mov    eax, [ebp-0x34];
-	__asm        movsx  eax, word ptr [eax+0x102];
-	__asm        cmp    eax, 0xFFFFFFFF;
-	__asm        je     _T393;
+		__asm        mov    eax, [ebp-0x34];
+		__asm        movsx  eax, word ptr [eax+0x102];
+		__asm        cmp    eax, 0xFFFFFFFF;
+		__asm        je     _T393;
 
-	__asm        mov    eax, [ebp-0x34];
-	__asm        movsx  eax, word ptr [eax+0x102];
-	__asm        add    eax, 0x62;
-	__asm        mov    [ebp-0x38], ax;
-	__asm        jmp    _T3a6;
+		__asm        mov    eax, [ebp-0x34];
+		__asm        movsx  eax, word ptr [eax+0x102];
+		__asm        add    eax, 0x62;
+		__asm        mov    [ebp-0x38], ax;
+		__asm        jmp    _T3a6;
 
-	__asm        jmp    _T39e;
+		__asm        jmp    _T39e;
 _T393:
-	__asm        mov    word ptr [ebp-0x38], 0xFFFF;
-	__asm        jmp    _T3a6;
+		__asm        mov    word ptr [ebp-0x38], 0xFFFF;
+		__asm        jmp    _T3a6;
 _T39e:
-	__asm        mov    ax, [ebp-0x3C];
-	__asm        mov    [ebp-0x38], ax;
+		__asm        mov    ax, [ebp-0x3C];
+		__asm        mov    [ebp-0x38], ax;
 _T3a6:
-	__asm        jmp    _T3ab;
+		__asm        jmp    _T3ab;
 _T3ab:
-	__asm        movsx  eax, word ptr [ebp-0x38];
-	__asm        push   eax;
-	__asm        call   S3DSStopPlay;
-	__asm        add    esp, 4;
+		__asm        movsx  eax, word ptr [ebp-0x38];
+		__asm        push   eax;
+		__asm        call   S3DSStopPlay;
+		__asm        add    esp, 4;
 _T3b8:
-	__asm        jmp    _T3bd;
+		__asm        jmp    _T3bd;
 _T3bd:
-	__asm        jmp    _FOR_NEXT_314;
+		__asm        jmp    _FOR_NEXT_314;
+	}
 _T3c2:
 	__asm        jmp    _T3c7;
 // LINE 2350:

@@ -411,31 +411,33 @@ static int32_t FindMatch(char * str, char * *candidates, int32_t icand) {
 	__asm        call   strlen;
 	__asm        add    esp, 4;
 	__asm        mov    len, eax;
+	{
 // LINE 58:
 __WHILE_18:
-	__asm        mov    eax, icand;
-	__asm        mov    [ebp-8], eax;
-	__asm        dec    icand;
-	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     _T57;
+		__asm        mov    eax, icand;
+		__asm        mov    [ebp-8], eax;
+		__asm        dec    icand;
+		__asm        cmp    dword ptr [ebp-8], 0;
+		__asm        je     _T57;
 // LINE 59:
-	__asm        mov    eax, len;
-	__asm        push   eax;
-	__asm        mov    eax, icand;
-	__asm        mov    ecx, candidates;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        push   eax;
-	__asm        mov    eax, str;
-	__asm        push   eax;
-	__asm        call   _strnicmp;
-	__asm        add    esp, 0xC;
-	__asm        test   eax, eax;
-	__asm        jne    _T52;
+		__asm        mov    eax, len;
+		__asm        push   eax;
+		__asm        mov    eax, icand;
+		__asm        mov    ecx, candidates;
+		__asm        mov    eax, [ecx+eax*4];
+		__asm        push   eax;
+		__asm        mov    eax, str;
+		__asm        push   eax;
+		__asm        call   _strnicmp;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jne    _T52;
 // LINE 60:
-	__asm        jmp    _T57;
+		__asm        jmp    _T57;
 // LINE 61:
 _T52:
-	__asm        jmp    __WHILE_18;
+		__asm        jmp    __WHILE_18;
+	}
 // LINE 62:
 _T57:
 	return icand;
@@ -1373,46 +1375,48 @@ _T29:
 // LINE 528:
 _T38:
 	return;
+	{
 // LINE 531:
 __DO_3d:
-	strm->istream::operator>>(c);
+		strm->istream::operator>>(c);
 // LINE 532:
-	__asm        mov    eax, strm;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, strm;
-	__asm        cmp    dword ptr [eax+ecx+8], 0;
-	__asm        jne    _T64;
+		__asm        mov    eax, strm;
+		__asm        mov    eax, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, strm;
+		__asm        cmp    dword ptr [eax+ecx+8], 0;
+		__asm        jne    _T64;
 
-	__asm        jmp    _T69;
+		__asm        jmp    _T69;
 _T64:
-	__asm        jmp    _Tc2;
+		__asm        jmp    _Tc2;
 _T69:
-	__asm        jmp    _T78;
+		__asm        jmp    _T78;
 
-	__asm        cmp    dword ptr [ebp-0x10], 0;
-	__asm        je     _Tc2;
+		__asm        cmp    dword ptr [ebp-0x10], 0;
+		__asm        je     _Tc2;
 _T78:
-	__asm        cmp    __mb_cur_max, 1;
-	__asm        jle    _T9f;
+		__asm        cmp    __mb_cur_max, 1;
+		__asm        jle    _T9f;
 
-	__asm        push   0x107;
-	__asm        movsx  eax, c;
-	__asm        push   eax;
-	__asm        call   _isctype;
-	__asm        add    esp, 8;
-	__asm        mov    [ebp-8], eax;
-	__asm        jmp    __DO_WHILE_3d;
+		__asm        push   0x107;
+		__asm        movsx  eax, c;
+		__asm        push   eax;
+		__asm        call   _isctype;
+		__asm        add    esp, 8;
+		__asm        mov    [ebp-8], eax;
+		__asm        jmp    __DO_WHILE_3d;
 _T9f:
-	__asm        movsx  eax, c;
-	__asm        mov    ecx, _pctype;
-	__asm        xor    edx, edx;
-	__asm        mov    dx, [ecx+eax*2];
-	__asm        and    edx, 0x107;
-	__asm        mov    [ebp-8], edx;
+		__asm        movsx  eax, c;
+		__asm        mov    ecx, _pctype;
+		__asm        xor    edx, edx;
+		__asm        mov    dx, [ecx+eax*2];
+		__asm        and    edx, 0x107;
+		__asm        mov    [ebp-8], edx;
 __DO_WHILE_3d:
-	__asm        cmp    dword ptr [ebp-8], 0;
-	__asm        je     __DO_3d;
+		__asm        cmp    dword ptr [ebp-8], 0;
+		__asm        je     __DO_3d;
+	}
 // LINE 534:
 _Tc2:
 	__asm        mov    eax, strm;

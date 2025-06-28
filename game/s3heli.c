@@ -5885,21 +5885,23 @@ _FOR_b4:
 	c = 0x0;
 	vert = hd->rinfo.verts;
 	__asm        jmp    _FOR_COND_b4;
+	{
 _FOR_NEXT_b4:
-	c++;
-	vert += 0xc;
+		c++;
+		vert += 0xc;
 _FOR_COND_b4:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x1AC];
-	__asm        inc    eax;
-	__asm        cmp    eax, c;
-	__asm        jle    _Tf4;
+		__asm        mov    eax, hd;
+		__asm        mov    eax, [eax+0x1AC];
+		__asm        inc    eax;
+		__asm        cmp    eax, c;
+		__asm        jle    _Tf4;
 // LINE 2926:
-	vert->z = 0x0;
-	vert->y = vert->z;
-	vert->x = vert->y;
+		vert->z = 0x0;
+		vert->y = vert->z;
+		vert->x = vert->y;
 // LINE 2927:
-	__asm        jmp    _FOR_NEXT_b4;
+		__asm        jmp    _FOR_NEXT_b4;
+	}
 // LINE 2930:
 _Tf4:
 	__asm        mov    eax, hd;
@@ -5921,246 +5923,248 @@ _Tf4:
 _FOR_13d:
 	c = (hd->rinfo.bucketdown + 1);
 	__asm        jmp    _FOR_COND_13d;
+	{
 _FOR_NEXT_13d:
-	c++;
-	vert += 0xc;
-	pvert += 0xc;
+		c++;
+		vert += 0xc;
+		pvert += 0xc;
 _FOR_COND_13d:
-	__asm        cmp    c, 0x14;
-	__asm        jge    __RETURN;
+		__asm        cmp    c, 0x14;
+		__asm        jge    __RETURN;
 // LINE 2934:
-	distx = ((vert->x - pvert->x) + hd->movex);
+		distx = ((vert->x - pvert->x) + hd->movex);
 // LINE 2935:
-	distz = ((vert->z - pvert->z) + hd->movez);
+		distz = ((vert->z - pvert->z) + hd->movez);
 // LINE 2943:
-	__asm        mov    eax, S_htwk_rope_tension;
-	__asm        push   eax;
-	__asm        mov    eax, distz;
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        mov    vectorz, eax;
+		__asm        mov    eax, S_htwk_rope_tension;
+		__asm        push   eax;
+		__asm        mov    eax, distz;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    vectorz, eax;
 // LINE 2944:
-	__asm        mov    eax, S_htwk_rope_tension;
-	__asm        push   eax;
-	__asm        mov    eax, distx;
-	__asm        push   eax;
-	__asm        call   _FixedMul;
-	__asm        add    esp, 8;
-	__asm        mov    vectorx, eax;
+		__asm        mov    eax, S_htwk_rope_tension;
+		__asm        push   eax;
+		__asm        mov    eax, distx;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    vectorx, eax;
 // LINE 2946:
-	__asm        cmp    distx, 0;
-	__asm        jl     _T1c3;
+		__asm        cmp    distx, 0;
+		__asm        jl     _T1c3;
 // LINE 2947:
-	__asm        mov    eax, distx;
-	__asm        cdq;
-	__asm        idiv   ropeload;
-	__asm        mov    absvectorx, eax;
+		__asm        mov    eax, distx;
+		__asm        cdq;
+		__asm        idiv   ropeload;
+		__asm        mov    absvectorx, eax;
 // LINE 2948:
-	__asm        jmp    _T1cf;
+		__asm        jmp    _T1cf;
 // LINE 2949:
 _T1c3:
-	__asm        mov    eax, distx;
-	__asm        cdq;
-	__asm        idiv   ropeload;
-	__asm        neg    eax;
-	__asm        mov    absvectorx, eax;
+		__asm        mov    eax, distx;
+		__asm        cdq;
+		__asm        idiv   ropeload;
+		__asm        neg    eax;
+		__asm        mov    absvectorx, eax;
 // LINE 2951:
 _T1cf:
-	__asm        cmp    distz, 0;
-	__asm        jl     _T1e8;
+		__asm        cmp    distz, 0;
+		__asm        jl     _T1e8;
 // LINE 2952:
-	__asm        mov    eax, distz;
-	__asm        cdq;
-	__asm        idiv   ropeload;
-	__asm        mov    absvectorz, eax;
+		__asm        mov    eax, distz;
+		__asm        cdq;
+		__asm        idiv   ropeload;
+		__asm        mov    absvectorz, eax;
 // LINE 2953:
-	__asm        jmp    _T1f4;
+		__asm        jmp    _T1f4;
 // LINE 2954:
 _T1e8:
-	__asm        mov    eax, distz;
-	__asm        cdq;
-	__asm        idiv   ropeload;
-	__asm        neg    eax;
-	__asm        mov    absvectorz, eax;
+		__asm        mov    eax, distz;
+		__asm        cdq;
+		__asm        idiv   ropeload;
+		__asm        neg    eax;
+		__asm        mov    absvectorz, eax;
 // LINE 2957:
 _T1f4:
-	absvectorxz = (absvectorx + absvectorz);
+		absvectorxz = (absvectorx + absvectorz);
 // LINE 2958:
-	__asm        mov    eax, absvectorxz;
-	__asm        cmp    RopeSeg, eax;
-	__asm        jge    _T214;
+		__asm        mov    eax, absvectorxz;
+		__asm        cmp    RopeSeg, eax;
+		__asm        jge    _T214;
 // LINE 2959:
-	absvectorxz = RopeSeg;
+		absvectorxz = RopeSeg;
 // LINE 2961:
 _T214:
-	vert->y = ((pvert->y - RopeSeg) + absvectorxz);
+		vert->y = ((pvert->y - RopeSeg) + absvectorxz);
 // LINE 2969:
-	ploc.x = (hd->dyrope->loc.x + vert->x);
+		ploc.x = (hd->dyrope->loc.x + vert->x);
 // LINE 2970:
-	ploc.z = (hd->dyrope->loc.z + vert->z);
+		ploc.z = (hd->dyrope->loc.z + vert->z);
 // LINE 2971:
-	ploc.y = (hd->dyrope->loc.y + vert->y);
+		ploc.y = (hd->dyrope->loc.y + vert->y);
 // LINE 2974:
-	__asm        mov    eax, ploc.x;
-	__asm        mov    ecx, cptr;
-	__asm        movsx  ecx, word ptr [ecx+2];
-	__asm        shl    ecx, 0x10;
-	__asm        sub    eax, ecx;
-	__asm        mov    normx, eax;
+		__asm        mov    eax, ploc.x;
+		__asm        mov    ecx, cptr;
+		__asm        movsx  ecx, word ptr [ecx+2];
+		__asm        shl    ecx, 0x10;
+		__asm        sub    eax, ecx;
+		__asm        mov    normx, eax;
 // LINE 2975:
-	__asm        mov    eax, ploc.z;
-	__asm        mov    ecx, cptr;
-	__asm        movsx  ecx, word ptr [ecx+6];
-	__asm        shl    ecx, 0x10;
-	__asm        sub    eax, ecx;
-	__asm        mov    normz, eax;
+		__asm        mov    eax, ploc.z;
+		__asm        mov    ecx, cptr;
+		__asm        movsx  ecx, word ptr [ecx+6];
+		__asm        shl    ecx, 0x10;
+		__asm        sub    eax, ecx;
+		__asm        mov    normz, eax;
 // LINE 2976:
-	__asm        mov    eax, ploc.y;
-	__asm        mov    ecx, cptr;
-	__asm        movsx  ecx, word ptr [ecx+4];
-	__asm        shl    ecx, 0x10;
-	__asm        sub    eax, ecx;
-	__asm        mov    normy, eax;
+		__asm        mov    eax, ploc.y;
+		__asm        mov    ecx, cptr;
+		__asm        movsx  ecx, word ptr [ecx+4];
+		__asm        shl    ecx, 0x10;
+		__asm        sub    eax, ecx;
+		__asm        mov    normy, eax;
 // LINE 2979:
-	stobj = cptr->stptr;
+		stobj = cptr->stptr;
 // LINE 2980:
-	objy = 0x0;
+		objy = 0x0;
 // LINE 2981:
-	maxobjy = 0x0;
+		maxobjy = 0x0;
 // LINE 2982:
 __WHILE_2b4:
-	while ((stobj != 0x0)) {
+		while ((stobj != 0x0)) {
 // LINE 2984:
-		flags = stobj->user1;
+			flags = stobj->user1;
 // LINE 2985:
-		objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, RopeDim, RopeDim, 0x0, 0x0);
+			objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, RopeDim, RopeDim, 0x0, 0x0);
 // LINE 2986:
-		__asm        mov    eax, objy;
-		__asm        cmp    maxobjy, eax;
-		__asm        jge    _T30b;
+			__asm        mov    eax, objy;
+			__asm        cmp    maxobjy, eax;
+			__asm        jge    _T30b;
 // LINE 2987:
-		maxobjy = objy;
+			maxobjy = objy;
 // LINE 2988:
 _T30b:
-		stobj = stobj->next;
-	}
+			stobj = stobj->next;
+		}
 // LINE 2992:
 _T318:
-	alt = ((gralt + maxobjy) - hd->dyrope->loc.y);
+		alt = ((gralt + maxobjy) - hd->dyrope->loc.y);
 // LINE 2994:
-	dyobj = cptr->dyptr;
+		dyobj = cptr->dyptr;
 // LINE 2995:
-	objy = 0x0;
+		objy = 0x0;
 // LINE 2996:
-	maxobjy = 0x0;
+		maxobjy = 0x0;
 // LINE 2997:
 __WHILE_344:
-	while ((dyobj != 0x0)) {
+		while ((dyobj != 0x0)) {
 // LINE 3000:
-		__asm        mov    eax, G_uheli;
-		__asm        mov    ecx, dyobj;
-		__asm        cmp    [eax+0xA4], ecx;
-		__asm        jne    _T367;
+			__asm        mov    eax, G_uheli;
+			__asm        mov    ecx, dyobj;
+			__asm        cmp    [eax+0xA4], ecx;
+			__asm        jne    _T367;
 // LINE 3002:
-		__asm        jmp    next_dyobj;
+			__asm        jmp    next_dyobj;
 // LINE 3005:
 _T367:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        test   al, 8;
-		__asm        je     _T37b;
+			__asm        mov    eax, dyobj;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 8;
+			__asm        je     _T37b;
 // LINE 3007:
-		__asm        jmp    next_dyobj;
+			__asm        jmp    next_dyobj;
 // LINE 3009:
 _T37b:
-		oloc.x = (ploc.x - dyobj->loc.x);
+			oloc.x = (ploc.x - dyobj->loc.x);
 // LINE 3010:
-		oloc.y = (ploc.y - dyobj->loc.y);
+			oloc.y = (ploc.y - dyobj->loc.y);
 // LINE 3011:
-		oloc.z = (ploc.z - dyobj->loc.z);
+			oloc.z = (ploc.z - dyobj->loc.z);
 // LINE 3016:
-		objy = VRGetDyObjAlt(dyobj->mesh, (dyobj + 0x24), oloc.x, RopeDim);
+			objy = VRGetDyObjAlt(dyobj->mesh, (dyobj + 0x24), oloc.x, RopeDim);
 // LINE 3017:
-		__asm        mov    eax, objy;
-		__asm        cmp    maxobjy, eax;
-		__asm        jge    next_dyobj;
+			__asm        mov    eax, objy;
+			__asm        cmp    maxobjy, eax;
+			__asm        jge    next_dyobj;
 // LINE 3018:
-		maxobjy = objy;
+			maxobjy = objy;
 // LINE 3022:
 next_dyobj:
-		__asm        mov    eax, dyobj;
-		__asm        movsx  eax, word ptr [eax+0xC];
-		__asm        test   al, 4;
-		__asm        je     _T402;
+			__asm        mov    eax, dyobj;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 4;
+			__asm        je     _T402;
 // LINE 3024:
-		dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
+			dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
 // LINE 3026:
-		__asm        jmp    _T40a;
+			__asm        jmp    _T40a;
 // LINE 3027:
 _T402:
-		dyobj = dyobj->next;
+			dyobj = dyobj->next;
 // LINE 3028:
 _T40a:
-	}
+		}
 // LINE 3030:
 _T40f:
-	alt += maxobjy;
+		alt += maxobjy;
 // LINE 3032:
-	__asm        mov    eax, vert;
-	__asm        mov    ecx, alt;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jge    _T492;
+		__asm        mov    eax, vert;
+		__asm        mov    ecx, alt;
+		__asm        cmp    [eax+4], ecx;
+		__asm        jge    _T492;
 // LINE 3034:
-	vert->y = alt;
+		vert->y = alt;
 // LINE 3035:
-	__asm        mov    eax, absdx;
-	__asm        cmp    absvectorx, eax;
-	__asm        jle    _T44a;
+		__asm        mov    eax, absdx;
+		__asm        cmp    absvectorx, eax;
+		__asm        jle    _T44a;
 // LINE 3036:
-	vert->x -= vectorx;
+		vert->x -= vectorx;
 // LINE 3037:
-	__asm        jmp    _T45c;
+		__asm        jmp    _T45c;
 // LINE 3038:
 _T44a:
-	vert->x -= hd->movex;
+		vert->x -= hd->movex;
 // LINE 3040:
 _T45c:
-	__asm        mov    eax, absvectorz;
-	__asm        cmp    absdz, eax;
-	__asm        jge    _T47a;
+		__asm        mov    eax, absvectorz;
+		__asm        cmp    absdz, eax;
+		__asm        jge    _T47a;
 // LINE 3041:
-	vert->z -= vectorz;
+		vert->z -= vectorz;
 // LINE 3042:
-	__asm        jmp    _T48d;
+		__asm        jmp    _T48d;
 // LINE 3043:
 _T47a:
-	vert->z -= hd->movez;
+		vert->z -= hd->movez;
 // LINE 3045:
 _T48d:
-	__asm        jmp    _T4ab;
+		__asm        jmp    _T4ab;
 // LINE 3047:
 _T492:
-	vert->x -= vectorx;
+		vert->x -= vectorx;
 // LINE 3048:
-	vert->z -= vectorz;
+		vert->z -= vectorz;
 // LINE 3053:
 _T4ab:
-	vec.x = (vert->x - pvert->x);
+		vec.x = (vert->x - pvert->x);
 // LINE 3054:
-	vec.y = (vert->y - pvert->y);
+		vec.y = (vert->y - pvert->y);
 // LINE 3055:
-	vec.z = (vert->z - pvert->z);
+		vec.z = (vert->z - pvert->z);
 // LINE 3056:
-	MTNormalize(vec.x);
+		MTNormalize(vec.x);
 // LINE 3057:
-	vert->x = ((vec.x << 0x2) + pvert->x);
+		vert->x = ((vec.x << 0x2) + pvert->x);
 // LINE 3058:
-	vert->y = ((vec.y << 0x2) + pvert->y);
+		vert->y = ((vec.y << 0x2) + pvert->y);
 // LINE 3059:
-	vert->z = ((vec.z << 0x2) + pvert->z);
+		vert->z = ((vec.z << 0x2) + pvert->z);
 // LINE 3061:
-	__asm        jmp    _FOR_NEXT_13d;
+		__asm        jmp    _FOR_NEXT_13d;
+	}
 // LINE 3063:
 __RETURN:
 }
@@ -6715,46 +6719,48 @@ int32_t S3HeliGetDeflection(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct 
 _FOR_5d:
 	i = 0x0;
 	__asm        jmp    _FOR_COND_5d;
+	{
 _FOR_NEXT_5d:
-	i++;
-	fx += deltax;
-	fz += deltaz;
+		i++;
+		fx += deltax;
+		fz += deltaz;
 _FOR_COND_5d:
-	__asm        cmp    i, 0x50;
-	__asm        jge    _Tf2;
+		__asm        cmp    i, 0x50;
+		__asm        jge    _Tf2;
 // LINE 3683:
-	x = ((fx + 0x20000000) >> 0x16);
+		x = ((fx + 0x20000000) >> 0x16);
 // LINE 3684:
-	y = ((0x20000000 - fz) >> 0x16);
+		y = ((0x20000000 - fz) >> 0x16);
 // LINE 3685:
-	__asm        mov    eax, y;
-	__asm        and    eax, 0xFF;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, 0xFF;
-	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-	__asm        mov    cptr, eax;
+		__asm        mov    eax, y;
+		__asm        and    eax, 0xFF;
+		__asm        mov    ecx, x;
+		__asm        and    ecx, 0xFF;
+		__asm        shl    ecx, 0xA;
+		__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+		__asm        mov    cptr, eax;
 // LINE 3686:
-	__asm        mov    eax, cptr;
-	__asm        cmp    lcptr, eax;
-	__asm        jne    _Tc1;
+		__asm        mov    eax, cptr;
+		__asm        cmp    lcptr, eax;
+		__asm        jne    _Tc1;
 // LINE 3687:
-	__asm        jmp    _FOR_NEXT_5d;
+		__asm        jmp    _FOR_NEXT_5d;
 // LINE 3688:
 _Tc1:
-	lcptr = cptr;
+		lcptr = cptr;
 // LINE 3693:
-	maxradius = S3HeliHighestBuildAlt(cptr);
+		maxradius = S3HeliHighestBuildAlt(cptr);
 // LINE 3694:
-	__asm        mov    eax, hd;
-	__asm        mov    ecx, maxradius;
-	__asm        cmp    [eax+0x138], ecx;
-	__asm        jge    _Ted;
+		__asm        mov    eax, hd;
+		__asm        mov    ecx, maxradius;
+		__asm        cmp    [eax+0x138], ecx;
+		__asm        jge    _Ted;
 // LINE 3695:
-	__asm        jmp    _Tf2;
+		__asm        jmp    _Tf2;
 // LINE 3696:
 _Ted:
-	__asm        jmp    _FOR_NEXT_5d;
+		__asm        jmp    _FOR_NEXT_5d;
+	}
 // LINE 3698:
 _Tf2:
 	alt[0] = maxradius;

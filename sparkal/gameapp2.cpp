@@ -1950,17 +1950,19 @@ _T55:
 _FOR_6e:
 	i = 0x0;
 	__asm        jmp    _FOR_COND_6e;
+	{
 _FOR_NEXT_6e:
-	i++;
+		i++;
 _FOR_COND_6e:
-	__asm        jmp    _T76;
+		__asm        jmp    _T76;
 _T76:
-	__asm        mov    eax, i;
-	__asm        cmp    gJoystickManager.nJoystickCount, eax;
-	__asm        jle    _T98;
+		__asm        mov    eax, i;
+		__asm        cmp    gJoystickManager.nJoystickCount, eax;
+		__asm        jle    _T98;
 // LINE 492:
-	0x604c78->JoystickManager::GetCompleteState(i);
-	__asm        jmp    _FOR_NEXT_6e;
+		0x604c78->JoystickManager::GetCompleteState(i);
+		__asm        jmp    _FOR_NEXT_6e;
+	}
 // LINE 494:
 _T98:
 	return;

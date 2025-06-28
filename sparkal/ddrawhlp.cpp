@@ -138,17 +138,19 @@ _T39:
 // LINE 40:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T99;
+	{
 // LINE 41:
 __WHILE_67:
-	__asm        mov    eax, lpDD;
-	__asm        push   eax;
-	__asm        mov    eax, lpDD;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+8];
-	__asm        cmp    eax, 0x8876021C;
-	__asm        jne    _T87;
+		__asm        mov    eax, lpDD;
+		__asm        push   eax;
+		__asm        mov    eax, lpDD;
+		__asm        mov    eax, [eax];
+		__asm        call   dword ptr [eax+8];
+		__asm        cmp    eax, 0x8876021C;
+		__asm        jne    _T87;
 
-	__asm        jmp    __WHILE_67;
+		__asm        jmp    __WHILE_67;
+	}
 // LINE 42:
 _T87:
 	lpDD = 0x0;
@@ -167,17 +169,19 @@ void DDDisable() {
 	__asm        jne    __WHILE_18;
 // LINE 61:
 	return;
+	{
 // LINE 65:
 __WHILE_18:
-	__asm        mov    eax, lpDD;
-	__asm        push   eax;
-	__asm        mov    eax, lpDD;
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+8];
-	__asm        cmp    eax, 0x8876021C;
-	__asm        jne    _T38;
+		__asm        mov    eax, lpDD;
+		__asm        push   eax;
+		__asm        mov    eax, lpDD;
+		__asm        mov    eax, [eax];
+		__asm        call   dword ptr [eax+8];
+		__asm        cmp    eax, 0x8876021C;
+		__asm        jne    _T38;
 
-	__asm        jmp    __WHILE_18;
+		__asm        jmp    __WHILE_18;
+	}
 // LINE 66:
 _T38:
 	lpDD = 0x0;

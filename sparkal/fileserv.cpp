@@ -576,14 +576,16 @@ _Tdf:
 	__asm        mov    eax, 0x604C00;
 	__asm        add    eax, 0x14;
 	__asm        mov    [ebp-0x1C], eax;
+	{
 __WHILE_f1:
-	__asm        dec    dword ptr [ebp-0x18];
-	__asm        js     _T10b;
+		__asm        dec    dword ptr [ebp-0x18];
+		__asm        js     _T10b;
 
-	__asm        mov    ecx, [ebp-0x1C];
-	__asm        call   basic_string<char>::basic_string<char>;
-	__asm        add    dword ptr [ebp-0x1C], 8;
-	__asm        jmp    __WHILE_f1;
+		__asm        mov    ecx, [ebp-0x1C];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        add    dword ptr [ebp-0x1C], 8;
+		__asm        jmp    __WHILE_f1;
+	}
 _T10b:
 	__asm        jmp    _T110;
 _T110:
@@ -799,14 +801,16 @@ _T0e:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x38], eax;
+	{
 __WHILE_29:
-	__asm        dec    dword ptr [ebp-0x34];
-	__asm        js     _T43;
+		__asm        dec    dword ptr [ebp-0x34];
+		__asm        js     _T43;
 
-	__asm        sub    dword ptr [ebp-0x38], 8;
-	__asm        mov    ecx, [ebp-0x38];
-	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    __WHILE_29;
+		__asm        sub    dword ptr [ebp-0x38], 8;
+		__asm        mov    ecx, [ebp-0x38];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    __WHILE_29;
+	}
 _T43:
 	__asm        jmp    _T48;
 _T48:

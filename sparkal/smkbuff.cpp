@@ -741,57 +741,59 @@ _T1df:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3850];
 	__asm        mov    dc, eax;
+	{
 // LINE 360:
 __WHILE_1fe:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   _SmackToBufferRect;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        je     _T289;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x34];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x38];
+		__asm        push   eax;
+		__asm        call   _SmackToBufferRect;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        je     _T289;
 // LINE 362:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x380];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x37C];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x378];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x374];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        push   eax;
-	__asm        mov    eax, dc;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        call   _SmackBufferBlit;
-	__asm        add    esp, 0x20;
-	__asm        movzx  eax, ax;
-	__asm        test   eax, eax;
-	__asm        je     _T284;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x38];
+		__asm        mov    eax, [eax+0x380];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x38];
+		__asm        mov    eax, [eax+0x37C];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x38];
+		__asm        mov    eax, [eax+0x378];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x38];
+		__asm        mov    eax, [eax+0x374];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x28];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x24];
+		__asm        push   eax;
+		__asm        mov    eax, dc;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x34];
+		__asm        push   eax;
+		__asm        call   _SmackBufferBlit;
+		__asm        add    esp, 0x20;
+		__asm        movzx  eax, ax;
+		__asm        test   eax, eax;
+		__asm        je     _T284;
 // LINE 364:
-	__asm        jmp    _T289;
+		__asm        jmp    _T289;
 // LINE 366:
 _T284:
-	__asm        jmp    __WHILE_1fe;
+		__asm        jmp    __WHILE_1fe;
+	}
 // LINE 367:
 _T289:
 	__asm        mov    eax, dc;
@@ -2276,114 +2278,116 @@ _T82:
 	__asm        jne    __WHILE_98;
 // LINE 1246:
 	SrcBottom = this-><SmackerBackBuffer+0x14c>;
+	{
 // LINE 1248:
 __WHILE_98:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        push   eax;
-	__asm        call   _SmackToBufferRect;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        je     _T210;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x34];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x38];
+		__asm        push   eax;
+		__asm        call   _SmackToBufferRect;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        je     _T210;
 // LINE 1250:
-	nLastRectx = (this->smk->LastRectx + DestLeft);
+		nLastRectx = (this->smk->LastRectx + DestLeft);
 // LINE 1251:
-	nLastRecty = (this->smk->LastRecty + DestTop);
+		nLastRecty = (this->smk->LastRecty + DestTop);
 // LINE 1252:
-	nLastRectw = this->smk->LastRectw;
+		nLastRectw = this->smk->LastRectw;
 // LINE 1253:
-	nLastRecth = this->smk->LastRecth;
+		nLastRecth = this->smk->LastRecth;
 // LINE 1254:
-	nLastRectx2 = (nLastRectw + nLastRectx);
+		nLastRectx2 = (nLastRectw + nLastRectx);
 // LINE 1255:
-	nLastRecty2 = (nLastRecth + nLastRecty);
+		nLastRecty2 = (nLastRecth + nLastRecty);
 // LINE 1259:
-	__asm        mov    eax, nLastRectx;
-	__asm        cmp    SrcLeft, eax;
-	__asm        jbe    _T135;
+		__asm        mov    eax, nLastRectx;
+		__asm        cmp    SrcLeft, eax;
+		__asm        jbe    _T135;
 // LINE 1260:
-	__asm        mov    eax, nLastRectx2;
-	__asm        cmp    SrcLeft, eax;
-	__asm        jbe    _T12f;
+		__asm        mov    eax, nLastRectx2;
+		__asm        cmp    SrcLeft, eax;
+		__asm        jbe    _T12f;
 // LINE 1261:
-	__asm        jmp    __WHILE_98;
+		__asm        jmp    __WHILE_98;
 // LINE 1262:
-	__asm        jmp    _T135;
+		__asm        jmp    _T135;
 // LINE 1263:
 _T12f:
-	nLastRectx = SrcLeft;
+		nLastRectx = SrcLeft;
 // LINE 1265:
 _T135:
-	__asm        mov    eax, nLastRectx2;
-	__asm        cmp    SrcRight, eax;
-	__asm        jae    _T160;
+		__asm        mov    eax, nLastRectx2;
+		__asm        cmp    SrcRight, eax;
+		__asm        jae    _T160;
 // LINE 1266:
-	__asm        mov    eax, nLastRectx;
-	__asm        cmp    SrcRight, eax;
-	__asm        jae    _T157;
+		__asm        mov    eax, nLastRectx;
+		__asm        cmp    SrcRight, eax;
+		__asm        jae    _T157;
 // LINE 1267:
-	__asm        jmp    __WHILE_98;
+		__asm        jmp    __WHILE_98;
 // LINE 1268:
-	__asm        jmp    _T160;
+		__asm        jmp    _T160;
 // LINE 1269:
 _T157:
-	nLastRectw = (SrcRight - nLastRectx);
+		nLastRectw = (SrcRight - nLastRectx);
 // LINE 1271:
 _T160:
-	__asm        mov    eax, nLastRecty;
-	__asm        cmp    SrcTop, eax;
-	__asm        jbe    _T188;
+		__asm        mov    eax, nLastRecty;
+		__asm        cmp    SrcTop, eax;
+		__asm        jbe    _T188;
 // LINE 1272:
-	__asm        mov    eax, nLastRecty2;
-	__asm        cmp    SrcTop, eax;
-	__asm        jbe    _T182;
+		__asm        mov    eax, nLastRecty2;
+		__asm        cmp    SrcTop, eax;
+		__asm        jbe    _T182;
 // LINE 1273:
-	__asm        jmp    __WHILE_98;
+		__asm        jmp    __WHILE_98;
 // LINE 1274:
-	__asm        jmp    _T188;
+		__asm        jmp    _T188;
 // LINE 1275:
 _T182:
-	nLastRecty = SrcTop;
+		nLastRecty = SrcTop;
 // LINE 1277:
 _T188:
-	__asm        mov    eax, nLastRecty2;
-	__asm        cmp    SrcBottom, eax;
-	__asm        jae    _T1b3;
+		__asm        mov    eax, nLastRecty2;
+		__asm        cmp    SrcBottom, eax;
+		__asm        jae    _T1b3;
 // LINE 1278:
-	__asm        mov    eax, nLastRecty;
-	__asm        cmp    SrcBottom, eax;
-	__asm        jae    _T1aa;
+		__asm        mov    eax, nLastRecty;
+		__asm        cmp    SrcBottom, eax;
+		__asm        jae    _T1aa;
 // LINE 1279:
-	__asm        jmp    __WHILE_98;
+		__asm        jmp    __WHILE_98;
 // LINE 1280:
-	__asm        jmp    _T1b3;
+		__asm        jmp    _T1b3;
 // LINE 1281:
 _T1aa:
-	nLastRecth = (SrcBottom - nLastRecty);
+		nLastRecth = (SrcBottom - nLastRecty);
 // LINE 1286:
 _T1b3:
-	pDestImageBits = (((nLastRecty * nDestImageStride) + nLastRectx) + pOriginalDestImageBits);
+		pDestImageBits = (((nLastRecty * nDestImageStride) + nLastRectx) + pOriginalDestImageBits);
 // LINE 1288:
-	pSourceImageBits = (((nLastRecty * nSourceImageStride) + nLastRectx) + pOriginalSourceImageBits);
+		pSourceImageBits = (((nLastRecty * nSourceImageStride) + nLastRectx) + pOriginalSourceImageBits);
 // LINE 1290:
-	i = 0x0;
+		i = 0x0;
 // LINE 1291:
 __WHILE_1da:
-	while ((i < nLastRecth)) {
+		while ((i < nLastRecth)) {
 // LINE 1293:
-		memcpy(pDestImageBits, pSourceImageBits, nLastRectw);
+			memcpy(pDestImageBits, pSourceImageBits, nLastRectw);
 // LINE 1294:
-		pDestImageBits += nDestImageStride;
+			pDestImageBits += nDestImageStride;
 // LINE 1295:
-		pSourceImageBits += nSourceImageStride;
-	}
+			pSourceImageBits += nSourceImageStride;
+		}
 // LINE 1297:
 _T20b:
-	__asm        jmp    __WHILE_98;
+		__asm        jmp    __WHILE_98;
+	}
 // LINE 1298:
 _T210:
 	__asm        mov    eax, pDestImage;

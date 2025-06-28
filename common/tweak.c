@@ -380,24 +380,26 @@ void TWKGetToEOLN(char * pDest, char * pSource) {
 
 // LINE 362:
 	nCt = 0x0;
+	{
 // LINE 363:
 __WHILE_10:
-	__asm        mov    eax, pSource;
-	__asm        movsx  eax, byte ptr [eax];
-	__asm        cmp    eax, 0xD;
-	__asm        je     _T38;
+		__asm        mov    eax, pSource;
+		__asm        movsx  eax, byte ptr [eax];
+		__asm        cmp    eax, 0xD;
+		__asm        je     _T38;
 // LINE 364:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, nCt;
-	__asm        mov    edx, pDest;
-	__asm        mov    [ecx+edx], al;
+		__asm        mov    eax, pSource;
+		__asm        mov    al, [eax];
+		__asm        mov    ecx, nCt;
+		__asm        mov    edx, pDest;
+		__asm        mov    [ecx+edx], al;
 // LINE 365:
-	pSource++;
+		pSource++;
 // LINE 366:
-	nCt++;
+		nCt++;
 // LINE 367:
-	__asm        jmp    __WHILE_10;
+		__asm        jmp    __WHILE_10;
+	}
 // LINE 368:
 _T38:
 	__asm        mov    eax, nCt;

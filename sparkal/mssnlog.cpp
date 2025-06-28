@@ -2361,14 +2361,16 @@ void MessageDisplayManager::~MessageDisplayManager() {
 	__asm        mov    eax, [ebp-0x24];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x28], eax;
+	{
 __WHILE_53:
-	__asm        dec    dword ptr [ebp-0x24];
-	__asm        js     _T6d;
+		__asm        dec    dword ptr [ebp-0x24];
+		__asm        js     _T6d;
 
-	__asm        sub    dword ptr [ebp-0x28], 8;
-	__asm        mov    ecx, [ebp-0x28];
-	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    __WHILE_53;
+		__asm        sub    dword ptr [ebp-0x28], 8;
+		__asm        mov    ecx, [ebp-0x28];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    __WHILE_53;
+	}
 _T6d:
 	__asm        jmp    _T72;
 _T72:
@@ -2492,14 +2494,16 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        mov    eax, [ebp-0x34];
 	__asm        shl    eax, 3;
 	__asm        add    [ebp-0x38], eax;
+	{
 __WHILE_57:
-	__asm        dec    dword ptr [ebp-0x34];
-	__asm        js     _T71;
+		__asm        dec    dword ptr [ebp-0x34];
+		__asm        js     _T71;
 
-	__asm        sub    dword ptr [ebp-0x38], 8;
-	__asm        mov    ecx, [ebp-0x38];
-	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        jmp    __WHILE_57;
+		__asm        sub    dword ptr [ebp-0x38], 8;
+		__asm        mov    ecx, [ebp-0x38];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    __WHILE_57;
+	}
 _T71:
 	__asm        jmp    _T76;
 _T76:
@@ -2606,14 +2610,16 @@ _T15c:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        add    eax, 4;
 	__asm        mov    [ebp-0x18], eax;
+	{
 __WHILE_19d:
-	__asm        dec    dword ptr [ebp-0x14];
-	__asm        js     _T1b7;
+		__asm        dec    dword ptr [ebp-0x14];
+		__asm        js     _T1b7;
 
-	__asm        mov    ecx, [ebp-0x18];
-	__asm        call   basic_string<char>::basic_string<char>;
-	__asm        add    dword ptr [ebp-0x18], 8;
-	__asm        jmp    __WHILE_19d;
+		__asm        mov    ecx, [ebp-0x18];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        add    dword ptr [ebp-0x18], 8;
+		__asm        jmp    __WHILE_19d;
+	}
 _T1b7:
 	__asm        jmp    _T1bc;
 _T1bc:

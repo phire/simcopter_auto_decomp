@@ -1076,16 +1076,18 @@ _Taa:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC8];
 	__asm        mov    [ebp-0x30], eax;
+	{
 __WHILE_c4:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [ebp-0x30];
-	__asm        cmp    [eax+0xCC], ecx;
-	__asm        je     _Te4;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, [ebp-0x30];
+		__asm        cmp    [eax+0xCC], ecx;
+		__asm        je     _Te4;
 
-	__asm        jmp    _Tdb;
+		__asm        jmp    _Tdb;
 _Tdb:
-	__asm        add    dword ptr [ebp-0x30], 4;
-	__asm        jmp    __WHILE_c4;
+		__asm        add    dword ptr [ebp-0x30], 4;
+		__asm        jmp    __WHILE_c4;
+	}
 _Te4:
 	__asm        jmp    _Te9;
 _Te9:
@@ -1566,18 +1568,20 @@ _T6e2:
 		__asm        mov    eax, [eax+0xCC];
 		__asm        sub    eax, 4;
 		__asm        mov    [ebp-0x184], eax;
+		{
 __WHILE_709:
-		__asm        mov    eax, [ebp-0x184];
-		__asm        cmp    [ebp-0x1C8], eax;
-		__asm        je     _T73e;
+			__asm        mov    eax, [ebp-0x184];
+			__asm        cmp    [ebp-0x1C8], eax;
+			__asm        je     _T73e;
 
-		__asm        sub    dword ptr [ebp-0x180], 4;
-		__asm        sub    dword ptr [ebp-0x184], 4;
-		__asm        mov    eax, [ebp-0x184];
-		__asm        mov    eax, [eax];
-		__asm        mov    ecx, [ebp-0x180];
-		__asm        mov    [ecx], eax;
-		__asm        jmp    __WHILE_709;
+			__asm        sub    dword ptr [ebp-0x180], 4;
+			__asm        sub    dword ptr [ebp-0x184], 4;
+			__asm        mov    eax, [ebp-0x184];
+			__asm        mov    eax, [eax];
+			__asm        mov    ecx, [ebp-0x180];
+			__asm        mov    [ecx], eax;
+			__asm        jmp    __WHILE_709;
+		}
 _T73e:
 		__asm        jmp    _T743;
 _T743:
@@ -1658,33 +1662,35 @@ _T864:
 		__asm        mov    eax, this;
 		__asm        mov    eax, [eax+0xC8];
 		__asm        mov    [ebp-0x1AC], eax;
+		{
 __WHILE_882:
-		__asm        mov    eax, [ebp-0x1AC];
-		__asm        cmp    [ebp-0x1C8], eax;
-		__asm        je     _T8f7;
+			__asm        mov    eax, [ebp-0x1AC];
+			__asm        cmp    [ebp-0x1C8], eax;
+			__asm        je     _T8f7;
 
-		__asm        mov    eax, [ebp-0x1AC];
-		__asm        mov    [ebp-0x19C], eax;
-		__asm        add    dword ptr [ebp-0x1AC], 4;
-		__asm        mov    eax, [ebp-0x1A8];
-		__asm        mov    [ebp-0x1A0], eax;
-		__asm        add    dword ptr [ebp-0x1A8], 4;
-		__asm        mov    eax, [ebp-0x1A0];
-		__asm        mov    [ebp-0x1A4], eax;
-		__asm        jmp    _T8cb;
+			__asm        mov    eax, [ebp-0x1AC];
+			__asm        mov    [ebp-0x19C], eax;
+			__asm        add    dword ptr [ebp-0x1AC], 4;
+			__asm        mov    eax, [ebp-0x1A8];
+			__asm        mov    [ebp-0x1A0], eax;
+			__asm        add    dword ptr [ebp-0x1A8], 4;
+			__asm        mov    eax, [ebp-0x1A0];
+			__asm        mov    [ebp-0x1A4], eax;
+			__asm        jmp    _T8cb;
 _T8cb:
-		__asm        cmp    dword ptr [ebp-0x1A4], 0;
-		__asm        je     _T8ed;
+			__asm        cmp    dword ptr [ebp-0x1A4], 0;
+			__asm        je     _T8ed;
 
-		__asm        mov    eax, [ebp-0x19C];
-		__asm        mov    eax, [eax];
-		__asm        mov    ecx, [ebp-0x1A4];
-		__asm        mov    [ecx], eax;
-		__asm        jmp    _T8ed;
+			__asm        mov    eax, [ebp-0x19C];
+			__asm        mov    eax, [eax];
+			__asm        mov    ecx, [ebp-0x1A4];
+			__asm        mov    [ecx], eax;
+			__asm        jmp    _T8ed;
 _T8ed:
-		__asm        jmp    _T8f2;
+			__asm        jmp    _T8f2;
 _T8f2:
-		__asm        jmp    __WHILE_882;
+			__asm        jmp    __WHILE_882;
+		}
 _T8f7:
 		__asm        jmp    _T8fc;
 _T8fc:
@@ -1734,33 +1740,35 @@ _T96b:
 		__asm        mov    [ebp-0x1C0], eax;
 		__asm        mov    eax, [ebp-0x1C8];
 		__asm        mov    [ebp-0x1C4], eax;
+		{
 __WHILE_9b6:
-		__asm        mov    eax, [ebp-0x1C0];
-		__asm        cmp    [ebp-0x1C4], eax;
-		__asm        je     _Ta2b;
+			__asm        mov    eax, [ebp-0x1C0];
+			__asm        cmp    [ebp-0x1C4], eax;
+			__asm        je     _Ta2b;
 
-		__asm        mov    eax, [ebp-0x1C4];
-		__asm        mov    [ebp-0x1B0], eax;
-		__asm        add    dword ptr [ebp-0x1C4], 4;
-		__asm        mov    eax, [ebp-0x1BC];
-		__asm        mov    [ebp-0x1B4], eax;
-		__asm        add    dword ptr [ebp-0x1BC], 4;
-		__asm        mov    eax, [ebp-0x1B4];
-		__asm        mov    [ebp-0x1B8], eax;
-		__asm        jmp    _T9ff;
+			__asm        mov    eax, [ebp-0x1C4];
+			__asm        mov    [ebp-0x1B0], eax;
+			__asm        add    dword ptr [ebp-0x1C4], 4;
+			__asm        mov    eax, [ebp-0x1BC];
+			__asm        mov    [ebp-0x1B4], eax;
+			__asm        add    dword ptr [ebp-0x1BC], 4;
+			__asm        mov    eax, [ebp-0x1B4];
+			__asm        mov    [ebp-0x1B8], eax;
+			__asm        jmp    _T9ff;
 _T9ff:
-		__asm        cmp    dword ptr [ebp-0x1B8], 0;
-		__asm        je     _Ta21;
+			__asm        cmp    dword ptr [ebp-0x1B8], 0;
+			__asm        je     _Ta21;
 
-		__asm        mov    eax, [ebp-0x1B0];
-		__asm        mov    eax, [eax];
-		__asm        mov    ecx, [ebp-0x1B8];
-		__asm        mov    [ecx], eax;
-		__asm        jmp    _Ta21;
+			__asm        mov    eax, [ebp-0x1B0];
+			__asm        mov    eax, [eax];
+			__asm        mov    ecx, [ebp-0x1B8];
+			__asm        mov    [ecx], eax;
+			__asm        jmp    _Ta21;
 _Ta21:
-		__asm        jmp    _Ta26;
+			__asm        jmp    _Ta26;
 _Ta26:
-		__asm        jmp    __WHILE_9b6;
+			__asm        jmp    __WHILE_9b6;
+		}
 _Ta2b:
 		__asm        jmp    _Ta30;
 _Ta30:
@@ -1771,16 +1779,18 @@ _Ta3a:
 		__asm        mov    eax, this;
 		__asm        mov    eax, [eax+0xC8];
 		__asm        mov    [ebp-0x168], eax;
+		{
 __WHILE_a4c:
-		__asm        mov    eax, this;
-		__asm        mov    ecx, [ebp-0x168];
-		__asm        cmp    [eax+0xCC], ecx;
-		__asm        je     _Ta75;
+			__asm        mov    eax, this;
+			__asm        mov    ecx, [ebp-0x168];
+			__asm        cmp    [eax+0xCC], ecx;
+			__asm        je     _Ta75;
 
-		__asm        jmp    _Ta69;
+			__asm        jmp    _Ta69;
 _Ta69:
-		__asm        add    dword ptr [ebp-0x168], 4;
-		__asm        jmp    __WHILE_a4c;
+			__asm        add    dword ptr [ebp-0x168], 4;
+			__asm        jmp    __WHILE_a4c;
+		}
 _Ta75:
 		__asm        jmp    _Ta7a;
 _Ta7a:
@@ -3208,60 +3218,68 @@ void CopterMainMenu::DrawRatchetAndLights() {
 	__asm        mov    dword ptr [ebp-0xF8], 5;
 	__asm        lea    eax, ptLightsDestination[0].x;
 	__asm        mov    [ebp-0xFC], eax;
+	{
 // LINE 473:
 __WHILE_28:
-	__asm        dec    dword ptr [ebp-0xF8];
-	__asm        js     _T4b;
+		__asm        dec    dword ptr [ebp-0xF8];
+		__asm        js     _T4b;
 
-	__asm        mov    ecx, [ebp-0xFC];
-	__asm        call   MPoint::MPoint;
-	__asm        add    dword ptr [ebp-0xFC], 8;
-	__asm        jmp    __WHILE_28;
+		__asm        mov    ecx, [ebp-0xFC];
+		__asm        call   MPoint::MPoint;
+		__asm        add    dword ptr [ebp-0xFC], 8;
+		__asm        jmp    __WHILE_28;
+	}
 _T4b:
 	__asm        jmp    _T50;
 _T50:
 	__asm        mov    dword ptr [ebp-0x100], 5;
 	__asm        lea    eax, rectLightsSource[0].left;
 	__asm        mov    [ebp-0x104], eax;
+	{
 // LINE 474:
 __WHILE_66:
-	__asm        dec    dword ptr [ebp-0x100];
-	__asm        js     _T89;
+		__asm        dec    dword ptr [ebp-0x100];
+		__asm        js     _T89;
 
-	__asm        mov    ecx, [ebp-0x104];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x104], 0x10;
-	__asm        jmp    __WHILE_66;
+		__asm        mov    ecx, [ebp-0x104];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x104], 0x10;
+		__asm        jmp    __WHILE_66;
+	}
 _T89:
 	__asm        jmp    _T8e;
 _T8e:
 	__asm        mov    dword ptr [ebp-0x108], 5;
 	__asm        lea    eax, ptRatchetsDestination[0].x;
 	__asm        mov    [ebp-0x10C], eax;
+	{
 // LINE 475:
 __WHILE_a1:
-	__asm        dec    dword ptr [ebp-0x108];
-	__asm        js     _Tc4;
+		__asm        dec    dword ptr [ebp-0x108];
+		__asm        js     _Tc4;
 
-	__asm        mov    ecx, [ebp-0x10C];
-	__asm        call   MPoint::MPoint;
-	__asm        add    dword ptr [ebp-0x10C], 8;
-	__asm        jmp    __WHILE_a1;
+		__asm        mov    ecx, [ebp-0x10C];
+		__asm        call   MPoint::MPoint;
+		__asm        add    dword ptr [ebp-0x10C], 8;
+		__asm        jmp    __WHILE_a1;
+	}
 _Tc4:
 	__asm        jmp    _Tc9;
 _Tc9:
 	__asm        mov    dword ptr [ebp-0x110], 5;
 	__asm        lea    eax, rectRatchetsSource[0].left;
 	__asm        mov    [ebp-0x114], eax;
+	{
 // LINE 476:
 __WHILE_dc:
-	__asm        dec    dword ptr [ebp-0x110];
-	__asm        js     _Tff;
+		__asm        dec    dword ptr [ebp-0x110];
+		__asm        js     _Tff;
 
-	__asm        mov    ecx, [ebp-0x114];
-	__asm        call   MRect::MRect;
-	__asm        add    dword ptr [ebp-0x114], 0x10;
-	__asm        jmp    __WHILE_dc;
+		__asm        mov    ecx, [ebp-0x114];
+		__asm        call   MRect::MRect;
+		__asm        add    dword ptr [ebp-0x114], 0x10;
+		__asm        jmp    __WHILE_dc;
+	}
 _Tff:
 	__asm        jmp    _T104;
 // LINE 479:

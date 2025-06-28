@@ -453,28 +453,30 @@ _T262:
 // LINE 570:
 _T28f:
 		state->textsize += i;
+		{
 // LINE 571:
 __WHILE_298:
-		__asm        mov    eax, i;
-		__asm        mov    [ebp-0x24], eax;
-		__asm        inc    i;
-		__asm        mov    eax, [ebp-0x24];
-		__asm        cmp    last_match_length, eax;
-		__asm        jle    __DO_WHILE_10d;
+			__asm        mov    eax, i;
+			__asm        mov    [ebp-0x24], eax;
+			__asm        inc    i;
+			__asm        mov    eax, [ebp-0x24];
+			__asm        cmp    last_match_length, eax;
+			__asm        jle    __DO_WHILE_10d;
 // LINE 572:
-		DeleteNode(s, forest);
+			DeleteNode(s, forest);
 // LINE 573:
-		s = ((s + 1) & 0xfff);
+			s = ((s + 1) & 0xfff);
 // LINE 574:
-		r = ((r + 1) & 0xfff);
+			r = ((r + 1) & 0xfff);
 // LINE 575:
-		__asm        dec    len;
-		__asm        je     _T2ee;
+			__asm        dec    len;
+			__asm        je     _T2ee;
 
-		InsertNode(r, forest);
+			InsertNode(r, forest);
 // LINE 576:
 _T2ee:
-		__asm        jmp    __WHILE_298;
+			__asm        jmp    __WHILE_298;
+		}
 	} while ((len > 0x0));
 // LINE 582:
 	EncodeEnd(model, state);
@@ -780,18 +782,20 @@ _T7d:
 	__asm        mov    ecx, forest;
 	__asm        cmp    dword ptr [ecx+eax*4+0x5047], 0x1000;
 	__asm        je     _T147;
+	{
 // LINE 276:
 __DO_a4:
-	__asm        mov    eax, q;
-	__asm        mov    ecx, forest;
-	__asm        mov    eax, [ecx+eax*4+0x5047];
-	__asm        mov    q, eax;
+		__asm        mov    eax, q;
+		__asm        mov    ecx, forest;
+		__asm        mov    eax, [ecx+eax*4+0x5047];
+		__asm        mov    q, eax;
 // LINE 277:
 __DO_WHILE_a4:
-	__asm        mov    eax, q;
-	__asm        mov    ecx, forest;
-	__asm        cmp    dword ptr [ecx+eax*4+0x5047], 0x1000;
-	__asm        jne    __DO_a4;
+		__asm        mov    eax, q;
+		__asm        mov    ecx, forest;
+		__asm        cmp    dword ptr [ecx+eax*4+0x5047], 0x1000;
+		__asm        jne    __DO_a4;
+	}
 // LINE 278:
 	__asm        mov    eax, q;
 	__asm        mov    ecx, forest;
@@ -1104,18 +1108,20 @@ _T82:
 _FOR_99:
 	i = sym;
 	__asm        jmp    _FOR_COND_99;
+	{
 _FOR_NEXT_99:
-	i--;
+		i--;
 _FOR_COND_99:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, model;
-	__asm        mov    edx, i;
-	__asm        mov    ebx, model;
-	__asm        mov    edx, [ebx+edx*4+0x9E4];
-	__asm        cmp    [ecx+eax*4+0x9E0], edx;
-	__asm        jne    _Tc1;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, model;
+		__asm        mov    edx, i;
+		__asm        mov    ebx, model;
+		__asm        mov    edx, [ebx+edx*4+0x9E4];
+		__asm        cmp    [ecx+eax*4+0x9E0], edx;
+		__asm        jne    _Tc1;
 
-	__asm        jmp    _FOR_NEXT_99;
+		__asm        jmp    _FOR_NEXT_99;
+	}
 // LINE 332:
 _Tc1:
 	__asm        mov    eax, i;
@@ -1156,15 +1162,17 @@ _T127:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, model;
 	__asm        inc    dword ptr [ecx+eax*4+0x9E4];
+	{
 // LINE 341:
 __WHILE_134:
-	__asm        dec    i;
-	__asm        js     _T14f;
+		__asm        dec    i;
+		__asm        js     _T14f;
 
-	__asm        mov    eax, i;
-	__asm        mov    ecx, model;
-	__asm        inc    dword ptr [ecx+eax*4+0xED0];
-	__asm        jmp    __WHILE_134;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, model;
+		__asm        inc    dword ptr [ecx+eax*4+0xED0];
+		__asm        jmp    __WHILE_134;
+	}
 // LINE 342:
 _T14f:
 	return;

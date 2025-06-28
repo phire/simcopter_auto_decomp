@@ -2709,31 +2709,33 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 	__asm        je     __WHILE_34;
 // LINE 948:
 Sound::lTotalMemoryUsage -= this->cbSize;
+	{
 // LINE 953:
 __WHILE_34:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
-	__asm        je     _T7c;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
+		__asm        je     _T7c;
 
-	__asm        cmp    i, 8;
-	__asm        jge    _T7c;
+		__asm        cmp    i, 8;
+		__asm        jge    _T7c;
 // LINE 954:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4+0x52];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4+0x52];
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+8];
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, [ecx+eax*4+0x52];
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, [ecx+eax*4+0x52];
+		__asm        mov    eax, [eax];
+		__asm        call   dword ptr [eax+8];
 // LINE 955:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    dword ptr [ecx+eax*4+0x52], 0;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    dword ptr [ecx+eax*4+0x52], 0;
 // LINE 956:
-	__asm        jmp    __WHILE_34;
+		__asm        jmp    __WHILE_34;
+	}
 // LINE 957:
 _T7c:
 	return 0x1;
@@ -3509,28 +3511,30 @@ long DigitalSound::Stop() {
 _FOR_43:
 	i = 0x0;
 	__asm        jmp    _FOR_COND_43;
+	{
 _FOR_NEXT_43:
-	i++;
+		i++;
 _FOR_COND_43:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
-	__asm        je     _T80;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
+		__asm        je     _T80;
 
-	__asm        cmp    i, 8;
-	__asm        jge    _T80;
+		__asm        cmp    i, 8;
+		__asm        jge    _T80;
 // LINE 1424:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4+0x52];
-	__asm        push   eax;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4+0x52];
-	__asm        mov    eax, [eax];
-	__asm        call   dword ptr [eax+0x48];
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, [ecx+eax*4+0x52];
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, [ecx+eax*4+0x52];
+		__asm        mov    eax, [eax];
+		__asm        call   dword ptr [eax+0x48];
 // LINE 1425:
-	__asm        jmp    _FOR_NEXT_43;
+		__asm        jmp    _FOR_NEXT_43;
+	}
 // LINE 1426:
 _T80:
 	__asm        mov    eax, this;

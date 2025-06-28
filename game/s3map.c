@@ -291,276 +291,280 @@ _FOR_de:
 	y = S_ulc.y;
 	county = 0x0;
 	__asm        jmp    _FOR_COND_de;
+	{
 _FOR_NEXT_de:
-	county++;
-	y++;
+		county++;
+		y++;
 _FOR_COND_de:
-	__asm        mov    eax, county;
-	__asm        cmp    S_mapdimy, eax;
-	__asm        jle    _T417;
+		__asm        mov    eax, county;
+		__asm        cmp    S_mapdimy, eax;
+		__asm        jle    _T417;
 // LINE 330:
-	__asm        and    y, 0xFF;
+		__asm        and    y, 0xFF;
 // LINE 332:
 _FOR_10e:
-	x = S_ulc.x;
-	countx = 0x0;
-	__asm        jmp    _FOR_COND_10e;
+		x = S_ulc.x;
+		countx = 0x0;
+		__asm        jmp    _FOR_COND_10e;
+		{
 _FOR_NEXT_10e:
-	countx++;
-	x++;
+			countx++;
+			x++;
 _FOR_COND_10e:
-	__asm        mov    eax, countx;
-	__asm        cmp    S_mapdimx, eax;
-	__asm        jle    _T40e;
+			__asm        mov    eax, countx;
+			__asm        cmp    S_mapdimx, eax;
+			__asm        jle    _T40e;
 // LINE 335:
-	__asm        and    x, 0xFF;
+			__asm        and    x, 0xFF;
 // LINE 338:
-	__asm        cmp    x, 0x7F;
-	__asm        jg     _T13e;
+			__asm        cmp    x, 0x7F;
+			__asm        jg     _T13e;
 
-	__asm        cmp    y, 0x7F;
-	__asm        jle    _T14a;
+			__asm        cmp    y, 0x7F;
+			__asm        jle    _T14a;
 // LINE 340:
 _T13e:
-	tile = 0x0;
+			tile = 0x0;
 // LINE 342:
-	__asm        jmp    _T15f;
+			__asm        jmp    _T15f;
 // LINE 345:
 _T14a:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BuildMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        mov    tile, edx;
+			__asm        mov    eax, x;
+			__asm        mov    eax, BuildMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        mov    tile, edx;
 // LINE 351:
 _T15f:
-	__asm        mov    eax, x;
-	__asm        and    eax, 0xFF;
-	__asm        shl    eax, 0xA;
-	__asm        mov    ecx, y;
-	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
-	__asm        mov    cptr, eax;
+			__asm        mov    eax, x;
+			__asm        and    eax, 0xFF;
+			__asm        shl    eax, 0xA;
+			__asm        mov    ecx, y;
+			__asm        and    ecx, 0xFF;
+			__asm        mov    eax, G_omap[0][0][eax+ecx*4];
+			__asm        mov    cptr, eax;
 // LINE 352:
-	__asm        mov    eax, cptr;
-	__asm        movsx  eax, word ptr [eax];
-	__asm        test   al, 0x20;
-	__asm        je     _T1a2;
+			__asm        mov    eax, cptr;
+			__asm        movsx  eax, word ptr [eax];
+			__asm        test   al, 0x20;
+			__asm        je     _T1a2;
 // LINE 354:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 355:
-	__asm        jmp    _FOR_NEXT_10e;
+			__asm        jmp    _FOR_NEXT_10e;
 // LINE 358:
 _T1a2:
-	__asm        cmp    tile, 0xD1;
-	__asm        jne    _T1bd;
+			__asm        cmp    tile, 0xD1;
+			__asm        jne    _T1bd;
 // LINE 360:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 361:
-	__asm        jmp    _FOR_NEXT_10e;
+			__asm        jmp    _FOR_NEXT_10e;
 // LINE 363:
 _T1bd:
-	__asm        cmp    tile, 0xD2;
-	__asm        jne    _T1d8;
+			__asm        cmp    tile, 0xD2;
+			__asm        jne    _T1d8;
 // LINE 365:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 366:
-	__asm        jmp    _FOR_NEXT_10e;
+			__asm        jmp    _FOR_NEXT_10e;
 // LINE 368:
 _T1d8:
-	__asm        cmp    tile, 0xD3;
-	__asm        jne    _T1f3;
+			__asm        cmp    tile, 0xD3;
+			__asm        jne    _T1f3;
 // LINE 370:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 371:
-	__asm        jmp    _FOR_NEXT_10e;
+			__asm        jmp    _FOR_NEXT_10e;
 // LINE 374:
 _T1f3:
-	__asm        mov    eax, x;
-	__asm        cmp    G_helibase.pad1.x, eax;
-	__asm        jg     _T241;
+			__asm        mov    eax, x;
+			__asm        cmp    G_helibase.pad1.x, eax;
+			__asm        jg     _T241;
 
-	__asm        mov    eax, G_helibase.pad1.x;
-	__asm        add    eax, 4;
-	__asm        cmp    eax, x;
-	__asm        jle    _T241;
+			__asm        mov    eax, G_helibase.pad1.x;
+			__asm        add    eax, 4;
+			__asm        cmp    eax, x;
+			__asm        jle    _T241;
 
-	__asm        mov    eax, y;
-	__asm        cmp    G_helibase.pad1.y, eax;
-	__asm        jg     _T241;
+			__asm        mov    eax, y;
+			__asm        cmp    G_helibase.pad1.y, eax;
+			__asm        jg     _T241;
 
-	__asm        mov    eax, G_helibase.pad1.y;
-	__asm        add    eax, 4;
-	__asm        cmp    eax, y;
-	__asm        jle    _T241;
+			__asm        mov    eax, G_helibase.pad1.y;
+			__asm        add    eax, 4;
+			__asm        cmp    eax, y;
+			__asm        jle    _T241;
 // LINE 376:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 377:
-	__asm        jmp    _FOR_NEXT_10e;
+			__asm        jmp    _FOR_NEXT_10e;
 // LINE 381:
 _T241:
-	__asm        cmp    tile, 0xD;
-	__asm        je     _T258;
+			__asm        cmp    tile, 0xD;
+			__asm        je     _T258;
 
-	__asm        cmp    tile, 0xD5;
-	__asm        jne    _T266;
+			__asm        cmp    tile, 0xD5;
+			__asm        jne    _T266;
 // LINE 383:
 _T258:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 384:
-	__asm        jmp    _FOR_NEXT_10e;
+			__asm        jmp    _FOR_NEXT_10e;
 // LINE 388:
 _T266:
-	__asm        cmp    tile, 0x1D;
-	__asm        jl     _T288;
+			__asm        cmp    tile, 0x1D;
+			__asm        jl     _T288;
 
-	__asm        cmp    tile, 0x70;
-	__asm        jge    _T288;
+			__asm        cmp    tile, 0x70;
+			__asm        jge    _T288;
 // LINE 390:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 391:
-	__asm        jmp    _FOR_NEXT_10e;
+			__asm        jmp    _FOR_NEXT_10e;
 // LINE 395:
 _T288:
-	__asm        cmp    tile, 0x70;
-	__asm        jl     _T2a0;
+			__asm        cmp    tile, 0x70;
+			__asm        jl     _T2a0;
 // LINE 397:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 398:
-	__asm        jmp    _FOR_NEXT_10e;
+			__asm        jmp    _FOR_NEXT_10e;
 // LINE 402:
 _T2a0:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, x;
-	__asm        shl    ecx, 8;
-	__asm        mov    al, G_texmap[0][eax+ecx];
-	__asm        mov    texid, al;
+			__asm        mov    eax, y;
+			__asm        mov    ecx, x;
+			__asm        shl    ecx, 8;
+			__asm        mov    al, G_texmap[0][eax+ecx];
+			__asm        mov    texid, al;
 // LINE 403:
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x30;
-	__asm        jl     _T323;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x30;
+			__asm        jl     _T323;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x40;
-	__asm        jge    _T323;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x40;
+			__asm        jge    _T323;
 // LINE 405:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 406:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 407:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 409:
-	__asm        jmp    _T409;
+			__asm        jmp    _T409;
 _T323:
-	__asm        movsx  eax, texid;
-	__asm        test   eax, eax;
-	__asm        jl     _T34a;
+			__asm        movsx  eax, texid;
+			__asm        test   eax, eax;
+			__asm        jl     _T34a;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0xA;
-	__asm        jge    _T34a;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0xA;
+			__asm        jge    _T34a;
 // LINE 411:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 413:
-	__asm        jmp    _T409;
+			__asm        jmp    _T409;
 _T34a:
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x20;
-	__asm        jl     _T3b8;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x20;
+			__asm        jl     _T3b8;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x30;
-	__asm        jge    _T3b8;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x30;
+			__asm        jge    _T3b8;
 // LINE 415:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 416:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 417:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 419:
-	__asm        jmp    _T409;
+			__asm        jmp    _T409;
 // LINE 421:
 _T3b8:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 422:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 423:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 425:
 _T409:
-	__asm        jmp    _FOR_NEXT_10e;
+			__asm        jmp    _FOR_NEXT_10e;
+		}
 // LINE 426:
 _T40e:
-	ptr += 0x14;
+		ptr += 0x14;
 // LINE 427:
-	__asm        jmp    _FOR_NEXT_de;
+		__asm        jmp    _FOR_NEXT_de;
+	}
 // LINE 428:
 _T417:
 	__asm        jmp    _T178e;
@@ -578,343 +582,347 @@ _FOR_482:
 	y = S_ulc.y;
 	county = 0x0;
 	__asm        jmp    _FOR_COND_482;
+	{
 _FOR_NEXT_482:
-	county++;
-	y++;
+		county++;
+		y++;
 _FOR_COND_482:
-	__asm        mov    eax, S_mapdimy;
-	__asm        sar    eax, 1;
-	__asm        cmp    eax, county;
-	__asm        jle    _T87d;
+		__asm        mov    eax, S_mapdimy;
+		__asm        sar    eax, 1;
+		__asm        cmp    eax, county;
+		__asm        jle    _T87d;
 // LINE 439:
-	__asm        and    y, 0xFF;
+		__asm        and    y, 0xFF;
 // LINE 441:
-	lineptr = ptr;
+		lineptr = ptr;
 // LINE 443:
 _FOR_4ba:
-	x = S_ulc.x;
-	countx = 0x0;
-	__asm        jmp    _FOR_COND_4ba;
+		x = S_ulc.x;
+		countx = 0x0;
+		__asm        jmp    _FOR_COND_4ba;
+		{
 _FOR_NEXT_4ba:
-	countx++;
-	x++;
+			countx++;
+			x++;
 _FOR_COND_4ba:
-	__asm        mov    eax, S_mapdimx;
-	__asm        sar    eax, 1;
-	__asm        cmp    eax, countx;
-	__asm        jle    _T853;
+			__asm        mov    eax, S_mapdimx;
+			__asm        sar    eax, 1;
+			__asm        cmp    eax, countx;
+			__asm        jle    _T853;
 // LINE 445:
-	__asm        and    x, 0xFF;
+			__asm        and    x, 0xFF;
 // LINE 448:
-	__asm        cmp    x, 0x7F;
-	__asm        jg     _T4ec;
+			__asm        cmp    x, 0x7F;
+			__asm        jg     _T4ec;
 
-	__asm        cmp    y, 0x7F;
-	__asm        jle    _T4f8;
+			__asm        cmp    y, 0x7F;
+			__asm        jle    _T4f8;
 // LINE 450:
 _T4ec:
-	tile = 0x0;
+			tile = 0x0;
 // LINE 452:
-	__asm        jmp    _T50d;
+			__asm        jmp    _T50d;
 // LINE 455:
 _T4f8:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BuildMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        mov    tile, edx;
+			__asm        mov    eax, x;
+			__asm        mov    eax, BuildMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        mov    tile, edx;
 // LINE 461:
 _T50d:
-	__asm        mov    eax, x;
-	__asm        and    eax, 0xFF;
-	__asm        shl    eax, 0xA;
-	__asm        mov    ecx, y;
-	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
-	__asm        mov    cptr, eax;
+			__asm        mov    eax, x;
+			__asm        and    eax, 0xFF;
+			__asm        shl    eax, 0xA;
+			__asm        mov    ecx, y;
+			__asm        and    ecx, 0xFF;
+			__asm        mov    eax, G_omap[0][0][eax+ecx*4];
+			__asm        mov    cptr, eax;
 // LINE 462:
-	__asm        mov    eax, cptr;
-	__asm        movsx  eax, word ptr [eax];
-	__asm        test   al, 0x20;
-	__asm        je     _T562;
+			__asm        mov    eax, cptr;
+			__asm        movsx  eax, word ptr [eax];
+			__asm        test   al, 0x20;
+			__asm        je     _T562;
 // LINE 464:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 465:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 466:
-	__asm        jmp    _FOR_NEXT_4ba;
+			__asm        jmp    _FOR_NEXT_4ba;
 // LINE 469:
 _T562:
-	__asm        cmp    tile, 0xD1;
-	__asm        jne    _T586;
+			__asm        cmp    tile, 0xD1;
+			__asm        jne    _T586;
 // LINE 471:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 472:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 473:
-	__asm        jmp    _FOR_NEXT_4ba;
+			__asm        jmp    _FOR_NEXT_4ba;
 // LINE 475:
 _T586:
-	__asm        cmp    tile, 0xD2;
-	__asm        jne    _T5aa;
+			__asm        cmp    tile, 0xD2;
+			__asm        jne    _T5aa;
 // LINE 477:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 478:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 479:
-	__asm        jmp    _FOR_NEXT_4ba;
+			__asm        jmp    _FOR_NEXT_4ba;
 // LINE 481:
 _T5aa:
-	__asm        cmp    tile, 0xD3;
-	__asm        jne    _T5ce;
+			__asm        cmp    tile, 0xD3;
+			__asm        jne    _T5ce;
 // LINE 483:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 484:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 485:
-	__asm        jmp    _FOR_NEXT_4ba;
+			__asm        jmp    _FOR_NEXT_4ba;
 // LINE 488:
 _T5ce:
-	__asm        mov    eax, x;
-	__asm        cmp    G_helibase.pad1.x, eax;
-	__asm        jg     _T625;
+			__asm        mov    eax, x;
+			__asm        cmp    G_helibase.pad1.x, eax;
+			__asm        jg     _T625;
 
-	__asm        mov    eax, G_helibase.pad1.x;
-	__asm        add    eax, 4;
-	__asm        cmp    eax, x;
-	__asm        jle    _T625;
+			__asm        mov    eax, G_helibase.pad1.x;
+			__asm        add    eax, 4;
+			__asm        cmp    eax, x;
+			__asm        jle    _T625;
 
-	__asm        mov    eax, y;
-	__asm        cmp    G_helibase.pad1.y, eax;
-	__asm        jg     _T625;
+			__asm        mov    eax, y;
+			__asm        cmp    G_helibase.pad1.y, eax;
+			__asm        jg     _T625;
 
-	__asm        mov    eax, G_helibase.pad1.y;
-	__asm        add    eax, 4;
-	__asm        cmp    eax, y;
-	__asm        jle    _T625;
+			__asm        mov    eax, G_helibase.pad1.y;
+			__asm        add    eax, 4;
+			__asm        cmp    eax, y;
+			__asm        jle    _T625;
 // LINE 490:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 491:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 492:
-	__asm        jmp    _FOR_NEXT_4ba;
+			__asm        jmp    _FOR_NEXT_4ba;
 // LINE 495:
 _T625:
-	__asm        cmp    tile, 0xD;
-	__asm        je     _T63c;
+			__asm        cmp    tile, 0xD;
+			__asm        je     _T63c;
 
-	__asm        cmp    tile, 0xD5;
-	__asm        jne    _T653;
+			__asm        cmp    tile, 0xD5;
+			__asm        jne    _T653;
 // LINE 497:
 _T63c:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 498:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 499:
-	__asm        jmp    _FOR_NEXT_4ba;
+			__asm        jmp    _FOR_NEXT_4ba;
 // LINE 503:
 _T653:
-	__asm        cmp    tile, 0x1D;
-	__asm        jl     _T67e;
+			__asm        cmp    tile, 0x1D;
+			__asm        jl     _T67e;
 
-	__asm        cmp    tile, 0x70;
-	__asm        jge    _T67e;
+			__asm        cmp    tile, 0x70;
+			__asm        jge    _T67e;
 // LINE 505:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 506:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 507:
-	__asm        jmp    _FOR_NEXT_4ba;
+			__asm        jmp    _FOR_NEXT_4ba;
 // LINE 511:
 _T67e:
-	__asm        cmp    tile, 0x70;
-	__asm        jl     _T69f;
+			__asm        cmp    tile, 0x70;
+			__asm        jl     _T69f;
 // LINE 513:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 514:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 515:
-	__asm        jmp    _FOR_NEXT_4ba;
+			__asm        jmp    _FOR_NEXT_4ba;
 // LINE 519:
 _T69f:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, x;
-	__asm        shl    ecx, 8;
-	__asm        mov    al, G_texmap[0][eax+ecx];
-	__asm        mov    texid, al;
+			__asm        mov    eax, y;
+			__asm        mov    ecx, x;
+			__asm        shl    ecx, 8;
+			__asm        mov    al, G_texmap[0][eax+ecx];
+			__asm        mov    texid, al;
 // LINE 520:
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x30;
-	__asm        jl     _T737;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x30;
+			__asm        jl     _T737;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x40;
-	__asm        jge    _T737;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x40;
+			__asm        jge    _T737;
 // LINE 522:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 523:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 524:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 525:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 527:
-	__asm        jmp    _T84e;
+			__asm        jmp    _T84e;
 _T737:
-	__asm        movsx  eax, texid;
-	__asm        test   eax, eax;
-	__asm        jl     _T767;
+			__asm        movsx  eax, texid;
+			__asm        test   eax, eax;
+			__asm        jl     _T767;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0xA;
-	__asm        jge    _T767;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0xA;
+			__asm        jge    _T767;
 // LINE 529:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 530:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 532:
-	__asm        jmp    _T84e;
+			__asm        jmp    _T84e;
 _T767:
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x20;
-	__asm        jl     _T7e8;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x20;
+			__asm        jl     _T7e8;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x30;
-	__asm        jge    _T7e8;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x30;
+			__asm        jge    _T7e8;
 // LINE 534:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 535:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 536:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 537:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 539:
-	__asm        jmp    _T84e;
+			__asm        jmp    _T84e;
 // LINE 541:
 _T7e8:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 542:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 543:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 544:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 546:
 _T84e:
-	__asm        jmp    _FOR_NEXT_4ba;
+			__asm        jmp    _FOR_NEXT_4ba;
+		}
 // LINE 547:
 _T853:
-	ptr += 0x14;
+		ptr += 0x14;
 // LINE 548:
-	__asm        mov    eax, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    esi, lineptr;
-	__asm        mov    ecx, eax;
-	__asm        shr    ecx, 2;
-	__asm        rep movsd;
-	__asm        mov    ecx, eax;
-	__asm        and    ecx, 3;
-	__asm        rep movsb;
+		__asm        mov    eax, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    esi, lineptr;
+		__asm        mov    ecx, eax;
+		__asm        shr    ecx, 2;
+		__asm        rep movsd;
+		__asm        mov    ecx, eax;
+		__asm        and    ecx, 3;
+		__asm        rep movsb;
 // LINE 549:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 550:
-	__asm        jmp    _FOR_NEXT_482;
+		__asm        jmp    _FOR_NEXT_482;
+	}
 // LINE 551:
 _T87d:
 	__asm        jmp    _T178e;
@@ -932,477 +940,481 @@ _FOR_8e6:
 	y = S_ulc.y;
 	county = 0x0;
 	__asm        jmp    _FOR_COND_8e6;
+	{
 _FOR_NEXT_8e6:
-	county++;
-	y++;
+		county++;
+		y++;
 _FOR_COND_8e6:
-	__asm        mov    eax, S_mapdimy;
-	__asm        sar    eax, 2;
-	__asm        cmp    eax, county;
-	__asm        jle    _Te6a;
+		__asm        mov    eax, S_mapdimy;
+		__asm        sar    eax, 2;
+		__asm        cmp    eax, county;
+		__asm        jle    _Te6a;
 // LINE 562:
-	__asm        and    y, 0xFF;
+		__asm        and    y, 0xFF;
 // LINE 564:
-	lineptr = ptr;
+		lineptr = ptr;
 // LINE 566:
 _FOR_91e:
-	x = S_ulc.x;
-	countx = 0x0;
-	__asm        jmp    _FOR_COND_91e;
+		x = S_ulc.x;
+		countx = 0x0;
+		__asm        jmp    _FOR_COND_91e;
+		{
 _FOR_NEXT_91e:
-	countx++;
-	x++;
+			countx++;
+			x++;
 _FOR_COND_91e:
-	__asm        mov    eax, S_mapdimx;
-	__asm        sar    eax, 2;
-	__asm        cmp    eax, countx;
-	__asm        jle    _Tdfb;
+			__asm        mov    eax, S_mapdimx;
+			__asm        sar    eax, 2;
+			__asm        cmp    eax, countx;
+			__asm        jle    _Tdfb;
 // LINE 568:
-	__asm        and    x, 0xFF;
+			__asm        and    x, 0xFF;
 // LINE 570:
-	__asm        mov    eax, posx;
-	__asm        cmp    x, eax;
-	__asm        jne    _T97d;
+			__asm        mov    eax, posx;
+			__asm        cmp    x, eax;
+			__asm        jne    _T97d;
 
-	__asm        mov    eax, posy;
-	__asm        cmp    y, eax;
-	__asm        jne    _T97d;
+			__asm        mov    eax, posy;
+			__asm        cmp    y, eax;
+			__asm        jne    _T97d;
 // LINE 572:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 573:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 574:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 575:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 576:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
 // LINE 580:
 _T97d:
-	__asm        cmp    x, 0x7F;
-	__asm        jg     _T991;
+			__asm        cmp    x, 0x7F;
+			__asm        jg     _T991;
 
-	__asm        cmp    y, 0x7F;
-	__asm        jle    _T99d;
+			__asm        cmp    y, 0x7F;
+			__asm        jle    _T99d;
 // LINE 582:
 _T991:
-	tile = 0x0;
+			tile = 0x0;
 // LINE 584:
-	__asm        jmp    _T9b2;
+			__asm        jmp    _T9b2;
 // LINE 587:
 _T99d:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BuildMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        mov    tile, edx;
+			__asm        mov    eax, x;
+			__asm        mov    eax, BuildMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        mov    tile, edx;
 // LINE 593:
 _T9b2:
-	__asm        mov    eax, x;
-	__asm        and    eax, 0xFF;
-	__asm        shl    eax, 0xA;
-	__asm        mov    ecx, y;
-	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
-	__asm        mov    cptr, eax;
+			__asm        mov    eax, x;
+			__asm        and    eax, 0xFF;
+			__asm        shl    eax, 0xA;
+			__asm        mov    ecx, y;
+			__asm        and    ecx, 0xFF;
+			__asm        mov    eax, G_omap[0][0][eax+ecx*4];
+			__asm        mov    cptr, eax;
 // LINE 594:
-	__asm        mov    eax, cptr;
-	__asm        movsx  eax, word ptr [eax];
-	__asm        test   al, 0x20;
-	__asm        je     _Ta22;
+			__asm        mov    eax, cptr;
+			__asm        movsx  eax, word ptr [eax];
+			__asm        test   al, 0x20;
+			__asm        je     _Ta22;
 // LINE 596:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 597:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 598:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 599:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 600:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
 // LINE 603:
 _Ta22:
-	__asm        cmp    tile, 0xD1;
-	__asm        jne    _Ta58;
+			__asm        cmp    tile, 0xD1;
+			__asm        jne    _Ta58;
 // LINE 605:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 606:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 607:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 608:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 609:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
 // LINE 611:
 _Ta58:
-	__asm        cmp    tile, 0xD2;
-	__asm        jne    _Ta8e;
+			__asm        cmp    tile, 0xD2;
+			__asm        jne    _Ta8e;
 // LINE 613:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 614:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 615:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 616:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 617:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
 // LINE 619:
 _Ta8e:
-	__asm        cmp    tile, 0xD3;
-	__asm        jne    _Tac4;
+			__asm        cmp    tile, 0xD3;
+			__asm        jne    _Tac4;
 // LINE 621:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 622:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 623:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 624:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 625:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
 // LINE 628:
 _Tac4:
-	__asm        mov    eax, x;
-	__asm        cmp    G_helibase.pad1.x, eax;
-	__asm        jg     _Tb2d;
+			__asm        mov    eax, x;
+			__asm        cmp    G_helibase.pad1.x, eax;
+			__asm        jg     _Tb2d;
 
-	__asm        mov    eax, G_helibase.pad1.x;
-	__asm        add    eax, 4;
-	__asm        cmp    eax, x;
-	__asm        jle    _Tb2d;
+			__asm        mov    eax, G_helibase.pad1.x;
+			__asm        add    eax, 4;
+			__asm        cmp    eax, x;
+			__asm        jle    _Tb2d;
 
-	__asm        mov    eax, y;
-	__asm        cmp    G_helibase.pad1.y, eax;
-	__asm        jg     _Tb2d;
+			__asm        mov    eax, y;
+			__asm        cmp    G_helibase.pad1.y, eax;
+			__asm        jg     _Tb2d;
 
-	__asm        mov    eax, G_helibase.pad1.y;
-	__asm        add    eax, 4;
-	__asm        cmp    eax, y;
-	__asm        jle    _Tb2d;
+			__asm        mov    eax, G_helibase.pad1.y;
+			__asm        add    eax, 4;
+			__asm        cmp    eax, y;
+			__asm        jle    _Tb2d;
 // LINE 630:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 631:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 632:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 633:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 634:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
 // LINE 637:
 _Tb2d:
-	__asm        cmp    tile, 0xD;
-	__asm        je     _Tb44;
+			__asm        cmp    tile, 0xD;
+			__asm        je     _Tb44;
 
-	__asm        cmp    tile, 0xD5;
-	__asm        jne    _Tb6d;
+			__asm        cmp    tile, 0xD5;
+			__asm        jne    _Tb6d;
 // LINE 639:
 _Tb44:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 640:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 641:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 642:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 643:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
 // LINE 647:
 _Tb6d:
-	__asm        cmp    tile, 0x1D;
-	__asm        jl     _Tbaa;
+			__asm        cmp    tile, 0x1D;
+			__asm        jl     _Tbaa;
 
-	__asm        cmp    tile, 0x70;
-	__asm        jge    _Tbaa;
+			__asm        cmp    tile, 0x70;
+			__asm        jge    _Tbaa;
 // LINE 649:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 650:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 651:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 652:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 653:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
 // LINE 657:
 _Tbaa:
-	__asm        cmp    tile, 0x70;
-	__asm        jl     _Tbdd;
+			__asm        cmp    tile, 0x70;
+			__asm        jl     _Tbdd;
 // LINE 659:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 660:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 661:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 662:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 663:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
 // LINE 667:
 _Tbdd:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, x;
-	__asm        shl    ecx, 8;
-	__asm        mov    al, G_texmap[0][eax+ecx];
-	__asm        mov    texid, al;
+			__asm        mov    eax, y;
+			__asm        mov    ecx, x;
+			__asm        shl    ecx, 8;
+			__asm        mov    al, G_texmap[0][eax+ecx];
+			__asm        mov    texid, al;
 // LINE 668:
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x30;
-	__asm        jl     _Tc93;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x30;
+			__asm        jl     _Tc93;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x40;
-	__asm        jge    _Tc93;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x40;
+			__asm        jge    _Tc93;
 // LINE 670:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 671:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 672:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 673:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 674:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 675:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 677:
-	__asm        jmp    _Tdf6;
+			__asm        jmp    _Tdf6;
 _Tc93:
-	__asm        movsx  eax, texid;
-	__asm        test   eax, eax;
-	__asm        jl     _Tcd5;
+			__asm        movsx  eax, texid;
+			__asm        test   eax, eax;
+			__asm        jl     _Tcd5;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0xA;
-	__asm        jge    _Tcd5;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0xA;
+			__asm        jge    _Tcd5;
 // LINE 679:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 680:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 681:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 682:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 684:
-	__asm        jmp    _Tdf6;
+			__asm        jmp    _Tdf6;
 _Tcd5:
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x20;
-	__asm        jl     _Td72;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x20;
+			__asm        jl     _Td72;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x30;
-	__asm        jge    _Td72;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x30;
+			__asm        jge    _Td72;
 // LINE 686:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 687:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 688:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 689:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 690:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 691:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 693:
-	__asm        jmp    _Tdf6;
+			__asm        jmp    _Tdf6;
 // LINE 695:
 _Td72:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 696:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 697:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 698:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 699:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 700:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 702:
 _Tdf6:
-	__asm        jmp    _FOR_NEXT_91e;
+			__asm        jmp    _FOR_NEXT_91e;
+		}
 // LINE 703:
 _Tdfb:
-	ptr += 0x14;
+		ptr += 0x14;
 // LINE 704:
-	__asm        mov    edx, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    eax, 0xE8E8E8E8;
-	__asm        mov    ecx, edx;
-	__asm        shr    ecx, 2;
-	__asm        rep stosd;
-	__asm        mov    ecx, edx;
-	__asm        and    ecx, 3;
-	__asm        rep stosb;
+		__asm        mov    edx, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    eax, 0xE8E8E8E8;
+		__asm        mov    ecx, edx;
+		__asm        shr    ecx, 2;
+		__asm        rep stosd;
+		__asm        mov    ecx, edx;
+		__asm        and    ecx, 3;
+		__asm        rep stosb;
 // LINE 705:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 706:
-	__asm        mov    eax, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    esi, lineptr;
-	__asm        mov    ecx, eax;
-	__asm        shr    ecx, 2;
-	__asm        rep movsd;
-	__asm        mov    ecx, eax;
-	__asm        and    ecx, 3;
-	__asm        rep movsb;
+		__asm        mov    eax, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    esi, lineptr;
+		__asm        mov    ecx, eax;
+		__asm        shr    ecx, 2;
+		__asm        rep movsd;
+		__asm        mov    ecx, eax;
+		__asm        and    ecx, 3;
+		__asm        rep movsb;
 // LINE 707:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 708:
-	__asm        mov    eax, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    esi, lineptr;
-	__asm        mov    ecx, eax;
-	__asm        shr    ecx, 2;
-	__asm        rep movsd;
-	__asm        mov    ecx, eax;
-	__asm        and    ecx, 3;
-	__asm        rep movsb;
+		__asm        mov    eax, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    esi, lineptr;
+		__asm        mov    ecx, eax;
+		__asm        shr    ecx, 2;
+		__asm        rep movsd;
+		__asm        mov    ecx, eax;
+		__asm        and    ecx, 3;
+		__asm        rep movsb;
 // LINE 709:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 710:
-	__asm        jmp    _FOR_NEXT_8e6;
+		__asm        jmp    _FOR_NEXT_8e6;
+	}
 // LINE 711:
 _Te6a:
 	__asm        jmp    _T178e;
@@ -1420,741 +1432,745 @@ _FOR_ed3:
 	y = S_ulc.y;
 	county = 0x0;
 	__asm        jmp    _FOR_COND_ed3;
+	{
 _FOR_NEXT_ed3:
-	county++;
-	y++;
+		county++;
+		y++;
 _FOR_COND_ed3:
-	__asm        mov    eax, S_mapdimy;
-	__asm        sar    eax, 3;
-	__asm        cmp    eax, county;
-	__asm        jle    _T175b;
+		__asm        mov    eax, S_mapdimy;
+		__asm        sar    eax, 3;
+		__asm        cmp    eax, county;
+		__asm        jle    _T175b;
 // LINE 722:
-	__asm        and    y, 0xFF;
+		__asm        and    y, 0xFF;
 // LINE 724:
-	lineptr = ptr;
+		lineptr = ptr;
 // LINE 726:
 _FOR_f0b:
-	x = S_ulc.x;
-	countx = 0x0;
-	__asm        jmp    _FOR_COND_f0b;
+		x = S_ulc.x;
+		countx = 0x0;
+		__asm        jmp    _FOR_COND_f0b;
+		{
 _FOR_NEXT_f0b:
-	countx++;
-	x++;
+			countx++;
+			x++;
 _FOR_COND_f0b:
-	__asm        mov    eax, S_mapdimx;
-	__asm        sar    eax, 3;
-	__asm        cmp    eax, countx;
-	__asm        jle    _T1668;
+			__asm        mov    eax, S_mapdimx;
+			__asm        sar    eax, 3;
+			__asm        cmp    eax, countx;
+			__asm        jle    _T1668;
 // LINE 728:
-	__asm        and    x, 0xFF;
+			__asm        and    x, 0xFF;
 // LINE 730:
-	__asm        mov    eax, posx;
-	__asm        cmp    x, eax;
-	__asm        jne    _Tf8e;
+			__asm        mov    eax, posx;
+			__asm        cmp    x, eax;
+			__asm        jne    _Tf8e;
 
-	__asm        mov    eax, posy;
-	__asm        cmp    y, eax;
-	__asm        jne    _Tf8e;
+			__asm        mov    eax, posy;
+			__asm        cmp    y, eax;
+			__asm        jne    _Tf8e;
 // LINE 732:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 733:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 734:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 735:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 736:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 737:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 738:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 739:
-	ptr[0] = 0x70;
-	ptr++;
+			ptr[0] = 0x70;
+			ptr++;
 // LINE 740:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
 // LINE 745:
 _Tf8e:
-	__asm        cmp    x, 0x7F;
-	__asm        jg     _Tfa2;
+			__asm        cmp    x, 0x7F;
+			__asm        jg     _Tfa2;
 
-	__asm        cmp    y, 0x7F;
-	__asm        jle    _Tfae;
+			__asm        cmp    y, 0x7F;
+			__asm        jle    _Tfae;
 // LINE 747:
 _Tfa2:
-	tile = 0x0;
+			tile = 0x0;
 // LINE 749:
-	__asm        jmp    _Tfc3;
+			__asm        jmp    _Tfc3;
 // LINE 752:
 _Tfae:
-	__asm        mov    eax, x;
-	__asm        mov    eax, BuildMap[eax*4];
-	__asm        mov    ecx, y;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx];
-	__asm        mov    tile, edx;
+			__asm        mov    eax, x;
+			__asm        mov    eax, BuildMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        mov    tile, edx;
 // LINE 758:
 _Tfc3:
-	__asm        mov    eax, x;
-	__asm        and    eax, 0xFF;
-	__asm        shl    eax, 0xA;
-	__asm        mov    ecx, y;
-	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
-	__asm        mov    cptr, eax;
+			__asm        mov    eax, x;
+			__asm        and    eax, 0xFF;
+			__asm        shl    eax, 0xA;
+			__asm        mov    ecx, y;
+			__asm        and    ecx, 0xFF;
+			__asm        mov    eax, G_omap[0][0][eax+ecx*4];
+			__asm        mov    cptr, eax;
 // LINE 759:
-	__asm        mov    eax, cptr;
-	__asm        movsx  eax, word ptr [eax];
-	__asm        test   al, 0x20;
-	__asm        je     _T107b;
+			__asm        mov    eax, cptr;
+			__asm        movsx  eax, word ptr [eax];
+			__asm        test   al, 0x20;
+			__asm        je     _T107b;
 // LINE 761:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 762:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 763:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 764:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 765:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 766:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 767:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 768:
-	__asm        movsx  eax, S_fire_cycle;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        movsx  eax, S_fire_cycle;
+			__asm        add    eax, 0x10;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 769:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
 // LINE 772:
 _T107b:
-	__asm        cmp    tile, 0xD1;
-	__asm        jne    _T10d5;
+			__asm        cmp    tile, 0xD1;
+			__asm        jne    _T10d5;
 // LINE 774:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 775:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 776:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 777:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 778:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 779:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 780:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 781:
-	ptr[0] = 0xea;
-	ptr++;
+			ptr[0] = 0xea;
+			ptr++;
 // LINE 782:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
 // LINE 784:
 _T10d5:
-	__asm        cmp    tile, 0xD2;
-	__asm        jne    _T112f;
+			__asm        cmp    tile, 0xD2;
+			__asm        jne    _T112f;
 // LINE 786:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 787:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 788:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 789:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 790:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 791:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 792:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 793:
-	ptr[0] = 0x9a;
-	ptr++;
+			ptr[0] = 0x9a;
+			ptr++;
 // LINE 794:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
 // LINE 796:
 _T112f:
-	__asm        cmp    tile, 0xD3;
-	__asm        jne    _T1189;
+			__asm        cmp    tile, 0xD3;
+			__asm        jne    _T1189;
 // LINE 798:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 799:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 800:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 801:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 802:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 803:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 804:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 805:
-	ptr[0] = 0x1a;
-	ptr++;
+			ptr[0] = 0x1a;
+			ptr++;
 // LINE 806:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
 // LINE 809:
 _T1189:
-	__asm        mov    eax, x;
-	__asm        cmp    G_helibase.pad1.x, eax;
-	__asm        jg     _T1216;
+			__asm        mov    eax, x;
+			__asm        cmp    G_helibase.pad1.x, eax;
+			__asm        jg     _T1216;
 
-	__asm        mov    eax, G_helibase.pad1.x;
-	__asm        add    eax, 4;
-	__asm        cmp    eax, x;
-	__asm        jle    _T1216;
+			__asm        mov    eax, G_helibase.pad1.x;
+			__asm        add    eax, 4;
+			__asm        cmp    eax, x;
+			__asm        jle    _T1216;
 
-	__asm        mov    eax, y;
-	__asm        cmp    G_helibase.pad1.y, eax;
-	__asm        jg     _T1216;
+			__asm        mov    eax, y;
+			__asm        cmp    G_helibase.pad1.y, eax;
+			__asm        jg     _T1216;
 
-	__asm        mov    eax, G_helibase.pad1.y;
-	__asm        add    eax, 4;
-	__asm        cmp    eax, y;
-	__asm        jle    _T1216;
+			__asm        mov    eax, G_helibase.pad1.y;
+			__asm        add    eax, 4;
+			__asm        cmp    eax, y;
+			__asm        jle    _T1216;
 // LINE 811:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 812:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 813:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 814:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 815:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 816:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 817:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 818:
-	ptr[0] = 0xca;
-	ptr++;
+			ptr[0] = 0xca;
+			ptr++;
 // LINE 819:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
 // LINE 823:
 _T1216:
-	__asm        cmp    tile, 0xD;
-	__asm        je     _T122d;
+			__asm        cmp    tile, 0xD;
+			__asm        je     _T122d;
 
-	__asm        cmp    tile, 0xD5;
-	__asm        jne    _T127a;
+			__asm        cmp    tile, 0xD5;
+			__asm        jne    _T127a;
 // LINE 825:
 _T122d:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 826:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 827:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 828:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 829:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 830:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 831:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 832:
-	ptr[0] = 0x5a;
-	ptr++;
+			ptr[0] = 0x5a;
+			ptr++;
 // LINE 833:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
 // LINE 837:
 _T127a:
-	__asm        cmp    tile, 0x1D;
-	__asm        jl     _T12db;
+			__asm        cmp    tile, 0x1D;
+			__asm        jl     _T12db;
 
-	__asm        cmp    tile, 0x70;
-	__asm        jge    _T12db;
+			__asm        cmp    tile, 0x70;
+			__asm        jge    _T12db;
 // LINE 839:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 840:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 841:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 842:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 843:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 844:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 845:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 846:
-	ptr[0] = 0x33;
-	ptr++;
+			ptr[0] = 0x33;
+			ptr++;
 // LINE 847:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
 // LINE 851:
 _T12db:
-	__asm        cmp    tile, 0x70;
-	__asm        jl     _T1332;
+			__asm        cmp    tile, 0x70;
+			__asm        jl     _T1332;
 // LINE 853:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 854:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 855:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 856:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 857:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 858:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 859:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 860:
-	ptr[0] = 0x3a;
-	ptr++;
+			ptr[0] = 0x3a;
+			ptr++;
 // LINE 861:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
 // LINE 865:
 _T1332:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, x;
-	__asm        shl    ecx, 8;
-	__asm        mov    al, G_texmap[0][eax+ecx];
-	__asm        mov    texid, al;
+			__asm        mov    eax, y;
+			__asm        mov    ecx, x;
+			__asm        shl    ecx, 8;
+			__asm        mov    al, G_texmap[0][eax+ecx];
+			__asm        mov    texid, al;
 // LINE 866:
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x30;
-	__asm        jl     _T143c;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x30;
+			__asm        jl     _T143c;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x40;
-	__asm        jge    _T143c;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x40;
+			__asm        jge    _T143c;
 // LINE 868:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 869:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 870:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 871:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 872:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 873:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 874:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 875:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 876:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 877:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 879:
-	__asm        jmp    _T1663;
+			__asm        jmp    _T1663;
 _T143c:
-	__asm        movsx  eax, texid;
-	__asm        test   eax, eax;
-	__asm        jl     _T14a2;
+			__asm        movsx  eax, texid;
+			__asm        test   eax, eax;
+			__asm        jl     _T14a2;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0xA;
-	__asm        jge    _T14a2;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0xA;
+			__asm        jge    _T14a2;
 // LINE 881:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 882:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 883:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 884:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 885:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 886:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 887:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 888:
-	ptr[0] = 0x90;
-	ptr++;
+			ptr[0] = 0x90;
+			ptr++;
 // LINE 890:
-	__asm        jmp    _T1663;
+			__asm        jmp    _T1663;
 _T14a2:
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x20;
-	__asm        jl     _T158b;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x20;
+			__asm        jl     _T158b;
 
-	__asm        movsx  eax, texid;
-	__asm        cmp    eax, 0x30;
-	__asm        jge    _T158b;
+			__asm        movsx  eax, texid;
+			__asm        cmp    eax, 0x30;
+			__asm        jge    _T158b;
 // LINE 892:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 893:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 894:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 895:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 896:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 897:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 898:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 899:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 900:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 901:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, 0x50;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        add    eax, 0x50;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 903:
-	__asm        jmp    _T1663;
+			__asm        jmp    _T1663;
 // LINE 905:
 _T158b:
-	__asm        mov    eax, y;
-	__asm        and    eax, G_tmask;
-	__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-	__asm        shl    eax, cl;
-	__asm        mov    ecx, x;
-	__asm        and    ecx, G_tmask;
-	__asm        add    ecx, ecx;
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    ecx, G_tmap;
-	__asm        mov    ax, [eax+ecx];
-	__asm        mov    alt, ax;
+			__asm        mov    eax, y;
+			__asm        and    eax, G_tmask;
+			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+			__asm        shl    eax, cl;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, G_tmask;
+			__asm        add    ecx, ecx;
+			__asm        lea    eax, [ecx+eax*2];
+			__asm        mov    ecx, G_tmap;
+			__asm        mov    ax, [eax+ecx];
+			__asm        mov    alt, ax;
 // LINE 906:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        shr    eax, 6;
-	__asm        mov    alt, ax;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        shr    eax, 6;
+			__asm        mov    alt, ax;
 // LINE 907:
-	ptr[0] = 0xe8;
-	ptr++;
+			ptr[0] = 0xe8;
+			ptr++;
 // LINE 908:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 909:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 910:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 911:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 912:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 913:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 914:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
-	__asm        and    eax, 0xFFFF;
-	__asm        sub    eax, 0x80;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
-	__asm        inc    ptr;
+			__asm        mov    eax, reinterpret_cast<uint32_t>(alt);
+			__asm        and    eax, 0xFFFF;
+			__asm        sub    eax, 0x80;
+			__asm        mov    ecx, ptr;
+			__asm        mov    [ecx], al;
+			__asm        inc    ptr;
 // LINE 916:
 _T1663:
-	__asm        jmp    _FOR_NEXT_f0b;
+			__asm        jmp    _FOR_NEXT_f0b;
+		}
 // LINE 924:
 _T1668:
-	ptr += 0x14;
+		ptr += 0x14;
 // LINE 926:
-	__asm        mov    eax, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    esi, lineptr;
-	__asm        mov    ecx, eax;
-	__asm        shr    ecx, 2;
-	__asm        rep movsd;
-	__asm        mov    ecx, eax;
-	__asm        and    ecx, 3;
-	__asm        rep movsb;
+		__asm        mov    eax, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    esi, lineptr;
+		__asm        mov    ecx, eax;
+		__asm        shr    ecx, 2;
+		__asm        rep movsd;
+		__asm        mov    ecx, eax;
+		__asm        and    ecx, 3;
+		__asm        rep movsb;
 // LINE 927:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 928:
-	__asm        mov    eax, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    esi, lineptr;
-	__asm        mov    ecx, eax;
-	__asm        shr    ecx, 2;
-	__asm        rep movsd;
-	__asm        mov    ecx, eax;
-	__asm        and    ecx, 3;
-	__asm        rep movsb;
+		__asm        mov    eax, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    esi, lineptr;
+		__asm        mov    ecx, eax;
+		__asm        shr    ecx, 2;
+		__asm        rep movsd;
+		__asm        mov    ecx, eax;
+		__asm        and    ecx, 3;
+		__asm        rep movsb;
 // LINE 929:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 930:
-	__asm        mov    eax, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    esi, lineptr;
-	__asm        mov    ecx, eax;
-	__asm        shr    ecx, 2;
-	__asm        rep movsd;
-	__asm        mov    ecx, eax;
-	__asm        and    ecx, 3;
-	__asm        rep movsb;
+		__asm        mov    eax, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    esi, lineptr;
+		__asm        mov    ecx, eax;
+		__asm        shr    ecx, 2;
+		__asm        rep movsd;
+		__asm        mov    ecx, eax;
+		__asm        and    ecx, 3;
+		__asm        rep movsb;
 // LINE 931:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 932:
-	__asm        mov    eax, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    esi, lineptr;
-	__asm        mov    ecx, eax;
-	__asm        shr    ecx, 2;
-	__asm        rep movsd;
-	__asm        mov    ecx, eax;
-	__asm        and    ecx, 3;
-	__asm        rep movsb;
+		__asm        mov    eax, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    esi, lineptr;
+		__asm        mov    ecx, eax;
+		__asm        shr    ecx, 2;
+		__asm        rep movsd;
+		__asm        mov    ecx, eax;
+		__asm        and    ecx, 3;
+		__asm        rep movsb;
 // LINE 933:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 934:
-	__asm        mov    eax, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    esi, lineptr;
-	__asm        mov    ecx, eax;
-	__asm        shr    ecx, 2;
-	__asm        rep movsd;
-	__asm        mov    ecx, eax;
-	__asm        and    ecx, 3;
-	__asm        rep movsb;
+		__asm        mov    eax, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    esi, lineptr;
+		__asm        mov    ecx, eax;
+		__asm        shr    ecx, 2;
+		__asm        rep movsd;
+		__asm        mov    ecx, eax;
+		__asm        and    ecx, 3;
+		__asm        rep movsb;
 // LINE 935:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 936:
-	__asm        mov    eax, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    esi, lineptr;
-	__asm        mov    ecx, eax;
-	__asm        shr    ecx, 2;
-	__asm        rep movsd;
-	__asm        mov    ecx, eax;
-	__asm        and    ecx, 3;
-	__asm        rep movsb;
+		__asm        mov    eax, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    esi, lineptr;
+		__asm        mov    ecx, eax;
+		__asm        shr    ecx, 2;
+		__asm        rep movsd;
+		__asm        mov    ecx, eax;
+		__asm        and    ecx, 3;
+		__asm        rep movsb;
 // LINE 937:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 938:
-	__asm        mov    edx, S_mapdimx;
-	__asm        mov    edi, ptr;
-	__asm        mov    eax, 0xE8E8E8E8;
-	__asm        mov    ecx, edx;
-	__asm        shr    ecx, 2;
-	__asm        rep stosd;
-	__asm        mov    ecx, edx;
-	__asm        and    ecx, 3;
-	__asm        rep stosb;
+		__asm        mov    edx, S_mapdimx;
+		__asm        mov    edi, ptr;
+		__asm        mov    eax, 0xE8E8E8E8;
+		__asm        mov    ecx, edx;
+		__asm        shr    ecx, 2;
+		__asm        rep stosd;
+		__asm        mov    ecx, edx;
+		__asm        and    ecx, 3;
+		__asm        rep stosb;
 // LINE 939:
-	ptr += S_borderdimx;
+		ptr += S_borderdimx;
 // LINE 940:
-	__asm        jmp    _FOR_NEXT_ed3;
+		__asm        jmp    _FOR_NEXT_ed3;
+	}
 // LINE 941:
 _T175b:
 	__asm        jmp    _T178e;
