@@ -6892,6 +6892,7 @@ _FOR_a7:
 					__asm        jne    _T18c;
 				// LINE 3264:
 					x_last++;
+					__asm        jmp    __WHILE_160;
 				// LINE 3265:
 				_T18c:
 					x_last--;
@@ -7004,6 +7005,7 @@ _FOR_a7:
 					__asm        jne    _T322;
 				// LINE 3307:
 					x_last--;
+					__asm        jmp    __WHILE_2f6;
 				// LINE 3308:
 				_T322:
 					x_last++;
@@ -7228,6 +7230,7 @@ _FOR_a5:
 					__asm        jne    _T18c;
 
 					y_last++;
+					__asm        jmp    __WHILE_160;
 				// LINE 3415:
 				_T18c:
 					y_last--;
@@ -7340,6 +7343,7 @@ _FOR_a5:
 					__asm        jne    _T324;
 
 					y_last--;
+					__asm        jmp    __WHILE_2f8;
 				// LINE 3455:
 				_T324:
 					y_last++;
@@ -7571,6 +7575,7 @@ _FOR_aa:
 			__asm        jne    _T1b8;
 
 			x++;
+			__asm        jmp    __WHILE_18c;
 		// LINE 3566:
 		_T1b8:
 			x--;
@@ -7674,6 +7679,7 @@ _FOR_22e:
 			__asm        jne    _T33c;
 
 			x--;
+			__asm        jmp    __WHILE_310;
 		// LINE 3601:
 		_T33c:
 			x++;
@@ -7755,6 +7761,7 @@ __WHILE_433:
 	__asm        jne    _T46a;
 
 	edge->x += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir));
+	__asm        jmp    __WHILE_433;
 // LINE 3630:
 _T46a:
 	how_deep--;
@@ -7870,6 +7877,7 @@ _FOR_89:
 			__asm        jne    _T197;
 
 			y++;
+			__asm        jmp    __WHILE_16b;
 		// LINE 3673:
 		_T197:
 			y--;
@@ -7973,6 +7981,7 @@ _FOR_210:
 			__asm        jne    _T31e;
 
 			y--;
+			__asm        jmp    __WHILE_2f2;
 		// LINE 3708:
 		_T31e:
 			y++;
@@ -8054,6 +8063,7 @@ __WHILE_416:
 	__asm        jne    __RETURN;
 
 	edge->y += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir));
+	__asm        jmp    __WHILE_416;
 // LINE 3738:
 __RETURN:
 }

@@ -1737,6 +1737,7 @@ _FOR_NEXT_8ca:
 			__asm        je     __WHILE_9eb;
 		// LINE 113:
 			chCurrentRectangle++;
+			__asm        jmp    __WHILE_9ce;
 		// LINE 114:
 		__WHILE_9eb:
 			__asm        mov    eax, chCurrentRectangle;
@@ -1745,6 +1746,7 @@ _FOR_NEXT_8ca:
 			__asm        jne    _Ta08;
 		// LINE 115:
 			chCurrentRectangle++;
+			__asm        jmp    __WHILE_9eb;
 		// LINE 117:
 		_Ta08:
 	}
@@ -2295,6 +2297,7 @@ _FOR_NEXT_127:
 		_T5ce:
 			__asm        jmp    _T5d3;
 		_T5d3:
+			__asm        jmp    __WHILE_551;
 		_T5d8:
 			__asm        jmp    _T5dd;
 		_T5dd:
@@ -2383,6 +2386,7 @@ _FOR_NEXT_127:
 		_T716:
 			__asm        jmp    _T71b;
 		_T71b:
+			__asm        jmp    __WHILE_699;
 		_T720:
 			__asm        jmp    _T725;
 		_T725:
@@ -3124,6 +3128,7 @@ __WHILE_12d:
 	__asm        jne    __WHILE_164;
 // LINE 370:
 	nCurrentChars++;
+	__asm        jmp    __WHILE_12d;
 // LINE 375:
 __WHILE_164:
 	__asm        mov    eax, nCurrentChars;

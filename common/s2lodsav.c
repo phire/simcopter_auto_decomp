@@ -5597,6 +5597,7 @@ __WHILE_db:
 	__asm        je     _Tf2;
 // LINE 2294:
 	s--;
+	__asm        jmp    __WHILE_db;
 // LINE 2295:
 _Tf2:
 	s[1] = 0x0;

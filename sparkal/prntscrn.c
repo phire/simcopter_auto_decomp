@@ -260,6 +260,7 @@ __DO_1b:
 			__asm        jge    _T9d;
 
 			i++;
+			__asm        jmp    __WHILE_21;
 		// LINE 142:
 		_T9d:
 			__asm        test   reinterpret_cast<uint32_t>(i), 0xFFFF;

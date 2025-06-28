@@ -4162,6 +4162,7 @@ _T214:
 _T22d:
 	__asm        jmp    _T232;
 _T232:
+	__asm        jmp    __WHILE_1e9;
 _T237:
 	__asm        jmp    _T23c;
 _T23c:
@@ -4237,6 +4238,7 @@ _T2e5:
 _T2fe:
 	__asm        jmp    _T303;
 _T303:
+	__asm        jmp    __WHILE_2ba;
 _T308:
 	__asm        jmp    _T30d;
 _T30d:
