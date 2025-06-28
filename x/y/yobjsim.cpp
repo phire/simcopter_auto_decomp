@@ -2797,11 +2797,6 @@ _T797:
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    __WHILE_771;
-_T797:
-	__asm        mov    eax, [ebp-0x98];
-	__asm        mov    eax, [eax];
-	__asm        mov    [ebp-0x98], eax;
-	__asm        jmp    __WHILE_771;
 _T7aa:
 	__asm        jmp    _T7af;
 _T7af:

@@ -786,12 +786,6 @@ __DO_a4:
 	__asm        mov    ecx, forest;
 	__asm        mov    eax, [ecx+eax*4+0x5047];
 	__asm        mov    q, eax;
-// LINE 276:
-__DO_a4:
-	__asm        mov    eax, q;
-	__asm        mov    ecx, forest;
-	__asm        mov    eax, [ecx+eax*4+0x5047];
-	__asm        mov    q, eax;
 // LINE 277:
 __DO_WHILE_a4:
 	__asm        mov    eax, q;

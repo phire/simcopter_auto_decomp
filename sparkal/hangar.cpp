@@ -932,13 +932,6 @@ _LOOP_68:
 			__asm        add    esp, 4;
 			__asm        add    dword ptr [ebp-0x30], 8;
 			__asm        jmp    __WHILE_101;
-
-			__asm        mov    eax, [ebp-0x30];
-			__asm        push   eax;
-			__asm        call   destroy;
-			__asm        add    esp, 4;
-			__asm        add    dword ptr [ebp-0x30], 8;
-			__asm        jmp    __WHILE_101;
 		_T122:
 			__asm        jmp    _T127;
 		_T127:

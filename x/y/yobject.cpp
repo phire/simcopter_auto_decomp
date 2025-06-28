@@ -3765,11 +3765,6 @@ _T75:
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    __WHILE_4d;
-_T75:
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    eax, [eax];
-	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    __WHILE_4d;
 _T82:
 	dyobj = 0x0;
 	__asm        jmp    _T94;
@@ -4046,22 +4041,21 @@ _FOR_7a:
 			__asm        add    esp, 0x1C;
 			__asm        test   eax, eax;
 			__asm        je     _T367;
+		// LINE 292:
+			__asm        jmp    _FOR_NEXT_7a;
+		// LINE 294:
+		_T367:
+			__asm        lea    eax, newloc.x;
+			__asm        mov    ecx, loc;
+			__asm        mov    edx, [eax];
+			__asm        mov    [ecx], edx;
+			__asm        mov    edx, [eax+4];
+			__asm        mov    [ecx+4], edx;
+			__asm        mov    eax, [eax+8];
+			__asm        mov    [ecx+8], eax;
+		// LINE 295:
+			return 0x1;
 	}
-// LINE 294:
-_T367:
-	__asm        lea    eax, newloc.x;
-	__asm        mov    ecx, loc;
-	__asm        mov    edx, [eax];
-	__asm        mov    [ecx], edx;
-	__asm        mov    edx, [eax+4];
-	__asm        mov    [ecx+4], edx;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ecx+8], eax;
-// LINE 295:
-	return 0x1;
-// LINE 296:
-// Block end:
-	__asm        jmp    _FOR_NEXT_7a;
 // LINE 297:
 _T38b:
 	return 0x0;
@@ -4454,14 +4448,13 @@ _FOR_e6:
 			__asm        je     _T444;
 		// LINE 338:
 		_T43f:
+			__asm        jmp    _FOR_NEXT_e6;
+		// LINE 342:
+		_T444:
+			ret = 0x1;
+		// LINE 343:
+			__asm        jmp    _T454;
 	}
-// LINE 342:
-_T444:
-	ret = 0x1;
-// LINE 343:
-	__asm        jmp    _T454;
-// LINE 344:
-	__asm        jmp    _FOR_NEXT_e6;
 // LINE 345:
 _T454:
 	__asm        jmp    _T974;
@@ -4647,14 +4640,13 @@ _FOR_464:
 			__asm        jne    _T6dc;
 		// LINE 355:
 		_T6d7:
+			__asm        jmp    _FOR_NEXT_464;
+		// LINE 356:
+		_T6dc:
+			ret = 0x1;
+		// LINE 357:
+			__asm        jmp    _T6ec;
 	}
-// LINE 356:
-_T6dc:
-	ret = 0x1;
-// LINE 357:
-	__asm        jmp    _T6ec;
-// LINE 358:
-	__asm        jmp    _FOR_NEXT_464;
 // LINE 359:
 _T6ec:
 	__asm        jmp    _T974;
@@ -4811,14 +4803,14 @@ _FOR_6fc:
 			__asm        movzx  eax, ax;
 			__asm        test   eax, eax;
 			__asm        jne    _T914;
+		// LINE 369:
+			__asm        jmp    _FOR_NEXT_6fc;
+		// LINE 370:
+		_T914:
+			ret = 0x1;
+		// LINE 371:
+			__asm        jmp    _T924;
 	}
-// LINE 370:
-_T914:
-	ret = 0x1;
-// LINE 371:
-	__asm        jmp    _T924;
-// LINE 372:
-	__asm        jmp    _FOR_NEXT_6fc;
 // LINE 373:
 _T924:
 	__asm        jmp    _T974;
@@ -13006,11 +12998,6 @@ _T105:
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    __WHILE_e8;
-_T105:
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    eax, [eax];
-	__asm        mov    [ebp-0x6C], eax;
-	__asm        jmp    __WHILE_e8;
 _T112:
 	__asm        jmp    _T117;
 _T117:
@@ -15512,12 +15499,12 @@ _LOOP_1c:
 			__asm        movsx  eax, word ptr [ebp-0x18];
 			__asm        cmp    eax, 5;
 			__asm        jge    _T91;
+		// LINE 2622:
+			__asm        jmp    _LOOP_1c;
+		// LINE 2623:
+		_T91:
+			__asm        jmp    _T9b;
 	}
-// LINE 2623:
-_T91:
-	__asm        jmp    _T9b;
-// LINE 2624:
-	__asm        jmp    _LOOP_1c;
 // LINE 2626:
 _T9b:
 	__asm        mov    eax, type;
@@ -16275,14 +16262,15 @@ _FOR_55:
 			__asm        movsx  eax, id;
 			__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 			__asm        je     _T82;
+
+			__asm        jmp    _FOR_NEXT_55;
+		// LINE 2830:
+			__asm        jmp    _T87;
+		_T82:
+			__asm        jmp    _T8c;
+		// LINE 2831:
+		_T87:
 	}
-// LINE 2830:
-	__asm        jmp    _T87;
-_T82:
-	__asm        jmp    _T8c;
-// LINE 2831:
-_T87:
-	__asm        jmp    _FOR_NEXT_55;
 // LINE 2833:
 _T8c:
 	__asm        movsx  eax, id;

@@ -6892,8 +6892,6 @@ _FOR_a7:
 					__asm        jne    _T18c;
 				// LINE 3264:
 					x_last++;
-				// LINE 3264:
-					x_last++;
 				// LINE 3265:
 				_T18c:
 					x_last--;
@@ -7004,8 +7002,6 @@ _FOR_a7:
 					__asm        mov    edx, cptr;
 					__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 					__asm        jne    _T322;
-				// LINE 3307:
-					x_last--;
 				// LINE 3307:
 					x_last--;
 				// LINE 3308:
@@ -7232,8 +7228,6 @@ _FOR_a5:
 					__asm        jne    _T18c;
 
 					y_last++;
-
-					y_last++;
 				// LINE 3415:
 				_T18c:
 					y_last--;
@@ -7344,8 +7338,6 @@ _FOR_a5:
 					__asm        mov    edx, cptr;
 					__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 					__asm        jne    _T324;
-
-					y_last--;
 
 					y_last--;
 				// LINE 3455:
@@ -7579,8 +7571,6 @@ _FOR_aa:
 			__asm        jne    _T1b8;
 
 			x++;
-
-			x++;
 		// LINE 3566:
 		_T1b8:
 			x--;
@@ -7684,8 +7674,6 @@ _FOR_22e:
 			__asm        jne    _T33c;
 
 			x--;
-
-			x--;
 		// LINE 3601:
 		_T33c:
 			x++;
@@ -7765,8 +7753,6 @@ __WHILE_433:
 	__asm        mov    edx, cptr;
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T46a;
-
-	edge->x += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir));
 
 	edge->x += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir));
 // LINE 3630:
@@ -7884,8 +7870,6 @@ _FOR_89:
 			__asm        jne    _T197;
 
 			y++;
-
-			y++;
 		// LINE 3673:
 		_T197:
 			y--;
@@ -7989,8 +7973,6 @@ _FOR_210:
 			__asm        jne    _T31e;
 
 			y--;
-
-			y--;
 		// LINE 3708:
 		_T31e:
 			y++;
@@ -8070,8 +8052,6 @@ __WHILE_416:
 	__asm        mov    edx, cptr;
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    __RETURN;
-
-	edge->y += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir));
 
 	edge->y += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir));
 // LINE 3738:

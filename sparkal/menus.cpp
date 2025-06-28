@@ -1086,9 +1086,6 @@ __WHILE_c4:
 _Tdb:
 	__asm        add    dword ptr [ebp-0x30], 4;
 	__asm        jmp    __WHILE_c4;
-_Tdb:
-	__asm        add    dword ptr [ebp-0x30], 4;
-	__asm        jmp    __WHILE_c4;
 _Te4:
 	__asm        jmp    _Te9;
 _Te9:
@@ -1581,14 +1578,6 @@ _FOR_423:
 			__asm        mov    ecx, [ebp-0x180];
 			__asm        mov    [ecx], eax;
 			__asm        jmp    __WHILE_709;
-
-			__asm        sub    dword ptr [ebp-0x180], 4;
-			__asm        sub    dword ptr [ebp-0x184], 4;
-			__asm        mov    eax, [ebp-0x184];
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, [ebp-0x180];
-			__asm        mov    [ecx], eax;
-			__asm        jmp    __WHILE_709;
 		_T73e:
 			__asm        jmp    _T743;
 		_T743:
@@ -1695,7 +1684,6 @@ _FOR_423:
 		_T8ed:
 			__asm        jmp    _T8f2;
 		_T8f2:
-		_T8f2:
 		_T8f7:
 			__asm        jmp    _T8fc;
 		_T8fc:
@@ -1771,7 +1759,6 @@ _FOR_423:
 		_Ta21:
 			__asm        jmp    _Ta26;
 		_Ta26:
-		_Ta26:
 		_Ta2b:
 			__asm        jmp    _Ta30;
 		_Ta30:
@@ -1789,9 +1776,6 @@ _FOR_423:
 			__asm        je     _Ta75;
 
 			__asm        jmp    _Ta69;
-		_Ta69:
-			__asm        add    dword ptr [ebp-0x168], 4;
-			__asm        jmp    __WHILE_a4c;
 		_Ta69:
 			__asm        add    dword ptr [ebp-0x168], 4;
 			__asm        jmp    __WHILE_a4c;

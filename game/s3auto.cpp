@@ -5916,12 +5916,8 @@ _T3dd:
 // LINE 2683:
 	currentObject = cptr->dyptr;
 // LINE 2685:
-_LOOP_3ec:
-	for (;;) {
-		// LINE 2685:
-		_LOOP_3ec:
-			__asm        cmp    currentObject, 0;
-			__asm        je     _T52c;
+__WHILE_3ec:
+	while ((currentObject != 0x0)) {
 		// LINE 2688:
 			__asm        mov    eax, this;
 			__asm        add    eax, 0xC;
@@ -5930,7 +5926,7 @@ _LOOP_3ec:
 		// LINE 2690:
 			currentObject = currentObject->next;
 		// LINE 2691:
-			__asm        jmp    _LOOP_3ec;
+			__asm        jmp    __WHILE_3ec;
 		// LINE 2695:
 		_T412:
 			__asm        mov    eax, currentObject;
@@ -5940,7 +5936,7 @@ _LOOP_3ec:
 		// LINE 2697:
 			currentObject = currentObject->next;
 		// LINE 2698:
-			__asm        jmp    _LOOP_3ec;
+			__asm        jmp    __WHILE_3ec;
 		// LINE 2701:
 		_T42e:
 			dyblock-> = currentObject;
@@ -5967,58 +5963,58 @@ _LOOP_3ec:
 			__asm        or     dword ptr [eax+8], 0x400;
 		// LINE 2716:
 			currentObject = currentObject->next;
-	}
-// LINE 2723:
-_T487:
-	__asm        mov    eax, carblock;
-	__asm        test   byte ptr [eax+8], 0x10;
-	__asm        jne    _T4ab;
+		// LINE 2717:
+			__asm        jmp    __WHILE_3ec;
+		// LINE 2723:
+		_T487:
+			__asm        mov    eax, carblock;
+			__asm        test   byte ptr [eax+8], 0x10;
+			__asm        jne    _T4ab;
 
-	__asm        mov    eax, carblock;
-	__asm        test   byte ptr [eax+8], 0x20;
-	__asm        jne    _T4ab;
-// LINE 2725:
-	return 0x1;
-// LINE 2728:
-_T4ab:
-	return 0x4;
-// LINE 2730:
-	__asm        jmp    _T51f;
-_T4ba:
-	__asm        mov    eax, currentObject;
-	__asm        movsx  eax, word ptr [eax+0xC];
-	__asm        test   al, 8;
-	__asm        je     _T4d8;
-// LINE 2732:
-	return 0x3;
-// LINE 2734:
-	__asm        jmp    _T51f;
-_T4d8:
-	__asm        mov    eax, currentObject;
-	__asm        movsx  eax, word ptr [eax+0xC];
-	__asm        test   al, 4;
-	__asm        je     _T4f6;
-// LINE 2736:
-	return 0x7;
-// LINE 2738:
-	__asm        jmp    _T51f;
-_T4f6:
-	__asm        mov    eax, currentObject;
-	__asm        movsx  eax, word ptr [eax+0xC];
-	__asm        test   ah, 4;
-	__asm        je     _T515;
-// LINE 2740:
-	return 0x5;
-// LINE 2742:
-	__asm        jmp    _T51f;
-// LINE 2744:
-_T515:
-	return 0x6;
-// LINE 2748:
-_T51f:
-	currentObject = currentObject->next;
-// LINE 2749:
-	__asm        jmp    _LOOP_3ec;
+			__asm        mov    eax, carblock;
+			__asm        test   byte ptr [eax+8], 0x20;
+			__asm        jne    _T4ab;
+		// LINE 2725:
+			return 0x1;
+		// LINE 2728:
+		_T4ab:
+			return 0x4;
+		// LINE 2730:
+			__asm        jmp    _T51f;
+		_T4ba:
+			__asm        mov    eax, currentObject;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 8;
+			__asm        je     _T4d8;
+		// LINE 2732:
+			return 0x3;
+		// LINE 2734:
+			__asm        jmp    _T51f;
+		_T4d8:
+			__asm        mov    eax, currentObject;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 4;
+			__asm        je     _T4f6;
+		// LINE 2736:
+			return 0x7;
+		// LINE 2738:
+			__asm        jmp    _T51f;
+		_T4f6:
+			__asm        mov    eax, currentObject;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   ah, 4;
+			__asm        je     _T515;
+		// LINE 2740:
+			return 0x5;
+		// LINE 2742:
+			__asm        jmp    _T51f;
+		// LINE 2744:
+		_T515:
+			return 0x6;
+		// LINE 2748:
+		_T51f:
+			currentObject = currentObject->next;
+	}
 // LINE 2755:
 // Block end:
 _T52c:

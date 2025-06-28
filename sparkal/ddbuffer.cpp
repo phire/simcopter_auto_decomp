@@ -3586,10 +3586,6 @@ __DO_11a:
 	__asm        mov    eax, [ebp-0x90];
 	__asm        or     eax, [ebp-0x88];
 	__asm        jne    _T13f;
-__DO_11a:
-	__asm        mov    eax, [ebp-0x90];
-	__asm        or     eax, [ebp-0x88];
-	__asm        jne    _T13f;
 
 	__asm        mov    dword ptr [ebp-0x7C], 1;
 	__asm        mov    dword ptr [ebp-0x80], 1;

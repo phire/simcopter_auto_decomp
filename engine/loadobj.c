@@ -1290,89 +1290,89 @@ _FOR_a3:
 		// LINE 994:
 		next_face:
 			faceptr = faceptr->NextFace;
+		// LINE 995:
+			__asm        jmp    _FOR_NEXT_a3;
+		// LINE 1003:
+		do_2d_face:
+			vertno = faceptr->PlyVerts;
+		// LINE 1005:
+			__asm        mov    eax, vertno;
+			__asm        mov    eax, [eax];
+			__asm        shr    eax, 4;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        shl    eax, 2;
+			__asm        mov    ecx, oh;
+			__asm        add    eax, [ecx+8];
+			__asm        mov    vert, eax;
+		// LINE 1010:
+			vertno += 0x4;
+		// LINE 1012:
+			__asm        mov    eax, vertno;
+			__asm        mov    eax, [eax];
+			__asm        shr    eax, 4;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        shl    eax, 2;
+			__asm        mov    ecx, oh;
+			__asm        add    eax, [ecx+8];
+			__asm        mov    vert2, eax;
+		// LINE 1021:
+			__asm        mov    eax, vert;
+			__asm        mov    eax, [eax];
+			__asm        sub    eax, 0x40000;
+			__asm        mov    ecx, dim;
+			__asm        add    ecx, x;
+			__asm        cmp    eax, ecx;
+			__asm        jg     _T649;
+
+			__asm        mov    eax, vert;
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x40000;
+			__asm        mov    ecx, x;
+			__asm        sub    ecx, dim;
+			__asm        cmp    eax, ecx;
+			__asm        jl     _T649;
+
+			__asm        mov    eax, vert;
+			__asm        mov    eax, [eax+8];
+			__asm        sub    eax, 0x40000;
+			__asm        mov    ecx, dim;
+			__asm        add    ecx, z;
+			__asm        cmp    eax, ecx;
+			__asm        jg     _T649;
+
+			__asm        mov    eax, vert;
+			__asm        mov    eax, [eax+8];
+			__asm        add    eax, 0x40000;
+			__asm        mov    ecx, z;
+			__asm        sub    ecx, dim;
+			__asm        cmp    eax, ecx;
+			__asm        jl     _T649;
+		// LINE 1023:
+			__asm        mov    eax, vert2;
+			__asm        mov    ecx, altyupbelow;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jle    _T649;
+		// LINE 1025:
+			altyupbelow = vert2->y;
+		// LINE 1027:
+			__asm        cmp    landable, 0;
+			__asm        je     _T619;
+		// LINE 1029:
+			landable[0] = 0x0;
+		// LINE 1032:
+		_T619:
+			__asm        cmp    collisvec, 0;
+			__asm        je     _T649;
+		// LINE 1034:
+			collisvec->x = (vert->x - x);
+		// LINE 1035:
+			collisvec->z = (vert->z - z);
+		// LINE 1036:
+			collisvec->y = 0x0;
+		// LINE 1042:
+		_T649:
+			faceptr = faceptr->NextFace;
 	}
-// LINE 1003:
-do_2d_face:
-	vertno = faceptr->PlyVerts;
-// LINE 1005:
-	__asm        mov    eax, vertno;
-	__asm        mov    eax, [eax];
-	__asm        shr    eax, 4;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        shl    eax, 2;
-	__asm        mov    ecx, oh;
-	__asm        add    eax, [ecx+8];
-	__asm        mov    vert, eax;
-// LINE 1010:
-	vertno += 0x4;
-// LINE 1012:
-	__asm        mov    eax, vertno;
-	__asm        mov    eax, [eax];
-	__asm        shr    eax, 4;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        shl    eax, 2;
-	__asm        mov    ecx, oh;
-	__asm        add    eax, [ecx+8];
-	__asm        mov    vert2, eax;
-// LINE 1021:
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, 0x40000;
-	__asm        mov    ecx, dim;
-	__asm        add    ecx, x;
-	__asm        cmp    eax, ecx;
-	__asm        jg     _T649;
-
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 0x40000;
-	__asm        mov    ecx, x;
-	__asm        sub    ecx, dim;
-	__asm        cmp    eax, ecx;
-	__asm        jl     _T649;
-
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, 0x40000;
-	__asm        mov    ecx, dim;
-	__asm        add    ecx, z;
-	__asm        cmp    eax, ecx;
-	__asm        jg     _T649;
-
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+8];
-	__asm        add    eax, 0x40000;
-	__asm        mov    ecx, z;
-	__asm        sub    ecx, dim;
-	__asm        cmp    eax, ecx;
-	__asm        jl     _T649;
-// LINE 1023:
-	__asm        mov    eax, vert2;
-	__asm        mov    ecx, altyupbelow;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jle    _T649;
-// LINE 1025:
-	altyupbelow = vert2->y;
-// LINE 1027:
-	__asm        cmp    landable, 0;
-	__asm        je     _T619;
-// LINE 1029:
-	landable[0] = 0x0;
-// LINE 1032:
-_T619:
-	__asm        cmp    collisvec, 0;
-	__asm        je     _T649;
-// LINE 1034:
-	collisvec->x = (vert->x - x);
-// LINE 1035:
-	collisvec->z = (vert->z - z);
-// LINE 1036:
-	collisvec->y = 0x0;
-// LINE 1042:
-_T649:
-	faceptr = faceptr->NextFace;
-// LINE 1044:
-	__asm        jmp    _FOR_NEXT_a3;
 // LINE 1046:
 _T656:
 	__asm        cmp    check_for_overhang, 0;
@@ -1902,89 +1902,89 @@ _FOR_a3:
 		// LINE 1336:
 		next_face:
 			faceptr = faceptr->NextFace;
+		// LINE 1337:
+			__asm        jmp    _FOR_NEXT_a3;
+		// LINE 1345:
+		do_2d_face:
+			vertno = faceptr->PlyVerts;
+		// LINE 1347:
+			__asm        mov    eax, vertno;
+			__asm        mov    eax, [eax];
+			__asm        shr    eax, 4;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        shl    eax, 2;
+			__asm        mov    ecx, oh;
+			__asm        add    eax, [ecx+8];
+			__asm        mov    vert, eax;
+		// LINE 1352:
+			vertno += 0x4;
+		// LINE 1354:
+			__asm        mov    eax, vertno;
+			__asm        mov    eax, [eax];
+			__asm        shr    eax, 4;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        shl    eax, 2;
+			__asm        mov    ecx, oh;
+			__asm        add    eax, [ecx+8];
+			__asm        mov    vert2, eax;
+		// LINE 1363:
+			__asm        mov    eax, vert;
+			__asm        mov    eax, [eax];
+			__asm        sub    eax, 0x40000;
+			__asm        mov    ecx, dim;
+			__asm        add    ecx, x;
+			__asm        cmp    eax, ecx;
+			__asm        jg     _T6d2;
+
+			__asm        mov    eax, vert;
+			__asm        mov    eax, [eax];
+			__asm        add    eax, 0x40000;
+			__asm        mov    ecx, x;
+			__asm        sub    ecx, dim;
+			__asm        cmp    eax, ecx;
+			__asm        jl     _T6d2;
+
+			__asm        mov    eax, vert;
+			__asm        mov    eax, [eax+8];
+			__asm        sub    eax, 0x40000;
+			__asm        mov    ecx, dim;
+			__asm        add    ecx, z;
+			__asm        cmp    eax, ecx;
+			__asm        jg     _T6d2;
+
+			__asm        mov    eax, vert;
+			__asm        mov    eax, [eax+8];
+			__asm        add    eax, 0x40000;
+			__asm        mov    ecx, z;
+			__asm        sub    ecx, dim;
+			__asm        cmp    eax, ecx;
+			__asm        jl     _T6d2;
+		// LINE 1365:
+			__asm        mov    eax, vert2;
+			__asm        mov    ecx, altyupbelow;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jle    _T6d2;
+		// LINE 1367:
+			altyupbelow = vert2->y;
+		// LINE 1369:
+			__asm        cmp    landable, 0;
+			__asm        je     _T6a2;
+		// LINE 1371:
+			landable[0] = 0x0;
+		// LINE 1374:
+		_T6a2:
+			__asm        cmp    collisvec, 0;
+			__asm        je     _T6d2;
+		// LINE 1376:
+			collisvec->x = (vert->x - x);
+		// LINE 1377:
+			collisvec->z = (vert->z - z);
+		// LINE 1378:
+			collisvec->y = 0x0;
+		// LINE 1384:
+		_T6d2:
+			faceptr = faceptr->NextFace;
 	}
-// LINE 1345:
-do_2d_face:
-	vertno = faceptr->PlyVerts;
-// LINE 1347:
-	__asm        mov    eax, vertno;
-	__asm        mov    eax, [eax];
-	__asm        shr    eax, 4;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        shl    eax, 2;
-	__asm        mov    ecx, oh;
-	__asm        add    eax, [ecx+8];
-	__asm        mov    vert, eax;
-// LINE 1352:
-	vertno += 0x4;
-// LINE 1354:
-	__asm        mov    eax, vertno;
-	__asm        mov    eax, [eax];
-	__asm        shr    eax, 4;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        shl    eax, 2;
-	__asm        mov    ecx, oh;
-	__asm        add    eax, [ecx+8];
-	__asm        mov    vert2, eax;
-// LINE 1363:
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, 0x40000;
-	__asm        mov    ecx, dim;
-	__asm        add    ecx, x;
-	__asm        cmp    eax, ecx;
-	__asm        jg     _T6d2;
-
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 0x40000;
-	__asm        mov    ecx, x;
-	__asm        sub    ecx, dim;
-	__asm        cmp    eax, ecx;
-	__asm        jl     _T6d2;
-
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, 0x40000;
-	__asm        mov    ecx, dim;
-	__asm        add    ecx, z;
-	__asm        cmp    eax, ecx;
-	__asm        jg     _T6d2;
-
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+8];
-	__asm        add    eax, 0x40000;
-	__asm        mov    ecx, z;
-	__asm        sub    ecx, dim;
-	__asm        cmp    eax, ecx;
-	__asm        jl     _T6d2;
-// LINE 1365:
-	__asm        mov    eax, vert2;
-	__asm        mov    ecx, altyupbelow;
-	__asm        cmp    [eax+4], ecx;
-	__asm        jle    _T6d2;
-// LINE 1367:
-	altyupbelow = vert2->y;
-// LINE 1369:
-	__asm        cmp    landable, 0;
-	__asm        je     _T6a2;
-// LINE 1371:
-	landable[0] = 0x0;
-// LINE 1374:
-_T6a2:
-	__asm        cmp    collisvec, 0;
-	__asm        je     _T6d2;
-// LINE 1376:
-	collisvec->x = (vert->x - x);
-// LINE 1377:
-	collisvec->z = (vert->z - z);
-// LINE 1378:
-	collisvec->y = 0x0;
-// LINE 1384:
-_T6d2:
-	faceptr = faceptr->NextFace;
-// LINE 1386:
-	__asm        jmp    _FOR_NEXT_a3;
 // LINE 1388:
 _T6df:
 	__asm        cmp    check_for_overhang, 0;

@@ -5195,9 +5195,6 @@ _T3ff:
 _T404:
 	__asm        add    dword ptr [ebp-0x7C], 8;
 	__asm        jmp    __WHILE_3aa;
-_T404:
-	__asm        add    dword ptr [ebp-0x7C], 8;
-	__asm        jmp    __WHILE_3aa;
 _T40d:
 	__asm        jmp    _T412;
 _T412:
@@ -6540,9 +6537,6 @@ __WHILE_46:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   dword ptr [eax];
 	__asm        jmp    _T63;
-_T63:
-	__asm        add    dword ptr [ebp-0xC], 0x98;
-	__asm        jmp    __WHILE_46;
 _T63:
 	__asm        add    dword ptr [ebp-0xC], 0x98;
 	__asm        jmp    __WHILE_46;

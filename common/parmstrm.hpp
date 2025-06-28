@@ -169,16 +169,6 @@ __WHILE_281:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        jmp    __WHILE_281;
-
-	__asm        sub    dword ptr [ebp-0x68], 8;
-	__asm        sub    dword ptr [ebp-0x6C], 8;
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    ecx, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, [ebp-0x68];
-	__asm        mov    [edx], ecx;
-	__asm        mov    [edx+4], eax;
-	__asm        jmp    __WHILE_281;
 _T2ad:
 	__asm        jmp    _T2b2;
 _T2b2:
@@ -289,7 +279,6 @@ _T3f5:
 _T41d:
 	__asm        jmp    _T422;
 _T422:
-_T422:
 _T427:
 	__asm        jmp    _T42c;
 _T42c:
@@ -357,9 +346,6 @@ __WHILE_4da:
 	__asm        je     _T4fa;
 
 	__asm        jmp    _T4f1;
-_T4f1:
-	__asm        add    dword ptr [ebp-0x50], 8;
-	__asm        jmp    __WHILE_4da;
 _T4f1:
 	__asm        add    dword ptr [ebp-0x50], 8;
 	__asm        jmp    __WHILE_4da;
@@ -487,16 +473,6 @@ __WHILE_6b2:
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        cmp    [ebp-0xE4], eax;
 	__asm        je     _T6ed;
-
-	__asm        sub    dword ptr [ebp-0xC8], 8;
-	__asm        sub    dword ptr [ebp-0xCC], 8;
-	__asm        mov    eax, [ebp-0xCC];
-	__asm        mov    ecx, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, [ebp-0xC8];
-	__asm        mov    [edx], ecx;
-	__asm        mov    [edx+4], eax;
-	__asm        jmp    __WHILE_6b2;
 
 	__asm        sub    dword ptr [ebp-0xC8], 8;
 	__asm        sub    dword ptr [ebp-0xCC], 8;
@@ -657,9 +633,6 @@ __WHILE_8ed:
 	__asm        je     _T913;
 
 	__asm        jmp    _T907;
-_T907:
-	__asm        add    dword ptr [ebp-0xB0], 8;
-	__asm        jmp    __WHILE_8ed;
 _T907:
 	__asm        add    dword ptr [ebp-0xB0], 8;
 	__asm        jmp    __WHILE_8ed;
@@ -1101,16 +1074,6 @@ __WHILE_19:
 			__asm        mov    [edx], ecx;
 			__asm        mov    [edx+4], eax;
 			__asm        jmp    __WHILE_22c;
-
-			__asm        sub    dword ptr [ebp-0x60], 8;
-			__asm        sub    dword ptr [ebp-0x64], 8;
-			__asm        mov    eax, [ebp-0x64];
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, [ebp-0x60];
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-			__asm        jmp    __WHILE_22c;
 		_T258:
 			__asm        jmp    _T25d;
 		_T25d:
@@ -1221,7 +1184,6 @@ __WHILE_19:
 		_T3bc:
 			__asm        jmp    _T3c1;
 		_T3c1:
-		_T3c1:
 		_T3c6:
 			__asm        jmp    _T3cb;
 		_T3cb:
@@ -1301,7 +1263,6 @@ __WHILE_19:
 		_T4db:
 			__asm        jmp    _T4e0;
 		_T4e0:
-		_T4e0:
 		_T4e5:
 			__asm        jmp    _T4ea;
 		_T4ea:
@@ -1319,9 +1280,6 @@ __WHILE_19:
 			__asm        je     _T520;
 
 			__asm        jmp    _T517;
-		_T517:
-			__asm        add    dword ptr [ebp-0x48], 8;
-			__asm        jmp    __WHILE_500;
 		_T517:
 			__asm        add    dword ptr [ebp-0x48], 8;
 			__asm        jmp    __WHILE_500;
@@ -1567,16 +1525,6 @@ __WHILE_19:
 			__asm        mov    [edx], ecx;
 			__asm        mov    [edx+4], eax;
 			__asm        jmp    __WHILE_851;
-
-			__asm        sub    dword ptr [ebp-0xD8], 8;
-			__asm        sub    dword ptr [ebp-0xDC], 8;
-			__asm        mov    eax, [ebp-0xDC];
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, [ebp-0xD8];
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-			__asm        jmp    __WHILE_851;
 		_T88c:
 			__asm        jmp    _T891;
 		_T891:
@@ -1687,7 +1635,6 @@ __WHILE_19:
 		_Ta32:
 			__asm        jmp    _Ta37;
 		_Ta37:
-		_Ta37:
 		_Ta3c:
 			__asm        jmp    _Ta41;
 		_Ta41:
@@ -1767,7 +1714,6 @@ __WHILE_19:
 		_Tb66:
 			__asm        jmp    _Tb6b;
 		_Tb6b:
-		_Tb6b:
 		_Tb70:
 			__asm        jmp    _Tb75;
 		_Tb75:
@@ -1785,9 +1731,6 @@ __WHILE_19:
 			__asm        je     _Tbb4;
 
 			__asm        jmp    _Tba8;
-		_Tba8:
-			__asm        add    dword ptr [ebp-0xC0], 8;
-			__asm        jmp    __WHILE_b8e;
 		_Tba8:
 			__asm        add    dword ptr [ebp-0xC0], 8;
 			__asm        jmp    __WHILE_b8e;

@@ -1376,9 +1376,6 @@ _T38:
 // LINE 531:
 __DO_3d:
 	strm->istream::operator>>(c);
-// LINE 531:
-__DO_3d:
-	strm->istream::operator>>(c);
 // LINE 532:
 	__asm        mov    eax, strm;
 	__asm        mov    eax, [eax];

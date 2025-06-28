@@ -1988,12 +1988,6 @@ _LOOP_175:
 			__asm        add    eax, 4;
 			__asm        mov    [ebp-0x3C], eax;
 			__asm        jmp    __WHILE_235;
-		_T2b2:
-			__asm        mov    eax, [ebp-0x3C];
-			__asm        mov    eax, [eax];
-			__asm        add    eax, 4;
-			__asm        mov    [ebp-0x3C], eax;
-			__asm        jmp    __WHILE_235;
 		_T2c2:
 			__asm        jmp    _T2c7;
 		_T2c7:

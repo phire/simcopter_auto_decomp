@@ -726,16 +726,6 @@ __WHILE_0f:
 	__asm        mov    [edx+ecx], al;
 	__asm        inc    cstr;
 	__asm        jmp    __WHILE_0f;
-
-	__asm        mov    eax, cstr;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pstr;
-	__asm        xor    edx, edx;
-	__asm        mov    dl, [ecx];
-	__asm        mov    ecx, pstr;
-	__asm        mov    [edx+ecx], al;
-	__asm        inc    cstr;
-	__asm        jmp    __WHILE_0f;
 // LINE 368:
 _T54:
 	return;

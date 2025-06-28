@@ -5597,8 +5597,6 @@ __WHILE_db:
 	__asm        je     _Tf2;
 // LINE 2294:
 	s--;
-// LINE 2294:
-	s--;
 // LINE 2295:
 _Tf2:
 	s[1] = 0x0;

@@ -1221,9 +1221,6 @@ _T62e:
 _T633:
 	__asm        add    dword ptr [ebp-0x48], 8;
 	__asm        jmp    __WHILE_59b;
-_T633:
-	__asm        add    dword ptr [ebp-0x48], 8;
-	__asm        jmp    __WHILE_59b;
 _T63c:
 	__asm        jmp    _T641;
 _T641:
@@ -1752,9 +1749,6 @@ __WHILE_3e:
 	__asm        je     _T5b;
 
 	__asm        jmp    _T52;
-_T52:
-	__asm        add    dword ptr [ebp-0x6C], 4;
-	__asm        jmp    __WHILE_3e;
 _T52:
 	__asm        add    dword ptr [ebp-0x6C], 4;
 	__asm        jmp    __WHILE_3e;
@@ -3690,9 +3684,6 @@ _T48c:
 _T491:
 	__asm        add    dword ptr [ebp-0x258], 8;
 	__asm        jmp    __WHILE_3af;
-_T491:
-	__asm        add    dword ptr [ebp-0x258], 8;
-	__asm        jmp    __WHILE_3af;
 _T49d:
 	__asm        jmp    _T4a2;
 _T4a2:
@@ -4065,14 +4056,6 @@ __WHILE_e8:
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        jmp    __WHILE_e8;
-
-	__asm        sub    dword ptr [ebp-0x30], 4;
-	__asm        sub    dword ptr [ebp-0x34], 4;
-	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, [ebp-0x30];
-	__asm        mov    [ecx], eax;
-	__asm        jmp    __WHILE_e8;
 _T10b:
 	__asm        jmp    _T110;
 _T110:
@@ -4179,7 +4162,6 @@ _T214:
 _T22d:
 	__asm        jmp    _T232;
 _T232:
-_T232:
 _T237:
 	__asm        jmp    _T23c;
 _T23c:
@@ -4255,7 +4237,6 @@ _T2e5:
 _T2fe:
 	__asm        jmp    _T303;
 _T303:
-_T303:
 _T308:
 	__asm        jmp    _T30d;
 _T30d:
@@ -4273,9 +4254,6 @@ __WHILE_320:
 	__asm        je     _T33d;
 
 	__asm        jmp    _T334;
-_T334:
-	__asm        add    dword ptr [ebp-0x18], 4;
-	__asm        jmp    __WHILE_320;
 _T334:
 	__asm        add    dword ptr [ebp-0x18], 4;
 	__asm        jmp    __WHILE_320;
@@ -4364,9 +4342,6 @@ __WHILE_46:
 
 	__asm        add    dword ptr [ebp-8], 4;
 	__asm        jmp    __WHILE_46;
-
-	__asm        add    dword ptr [ebp-8], 4;
-	__asm        jmp    __WHILE_46;
 _T69:
 	__asm        jmp    _T6e;
 _T6e:
@@ -4400,9 +4375,6 @@ __WHILE_9b:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    [ecx], eax;
 	__asm        add    dword ptr [ebp-0xC], 4;
-_Tc3:
-	__asm        add    dword ptr [ebp-0x10], 4;
-	__asm        jmp    __WHILE_9b;
 _Tc3:
 	__asm        add    dword ptr [ebp-0x10], 4;
 	__asm        jmp    __WHILE_9b;

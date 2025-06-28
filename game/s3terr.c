@@ -1732,107 +1732,106 @@ _FOR_1606:
 					__asm        jmp    _T16be;
 				// LINE 558:
 				_T1666:
+					__asm        jmp    _FOR_NEXT_1622;
+				// LINE 559:
+					__asm        jmp    _T16be;
+				_T1670:
+					__asm        sub    dword ptr [ebp-0x34], 0x1D;
+					__asm        cmp    dword ptr [ebp-0x34], 0x1D;
+					__asm        ja     _FOR_NEXT_1622;
+
+					__asm        mov    eax, [ebp-0x34];
+					__asm        xor    ecx, ecx;
+					__asm        mov    cl, _SwitchTable_16a0[0][eax];
+					__asm        jmp    _Switch_1690[0][ecx*4];
+				// Switch pointers:
+				//   _T1661
+				//   _T1661
+				//   _T1661
+				//   _T1666
+				// Switch table
+				//  [0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+				// LINE 562:
+				_T16be:
+					alt = GetAltitude(x, y);
+				// LINE 563:
+					__asm        mov    eax, x;
+					__asm        mov    eax, TerrainMap[eax*4];
+					__asm        mov    ecx, y;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [eax+ecx];
+					__asm        cmp    edx, 0xD;
+					__asm        je     _T1708;
+
+					__asm        mov    eax, x;
+					__asm        mov    eax, TerrainMap[eax*4];
+					__asm        mov    ecx, y;
+					__asm        xor    edx, edx;
+					__asm        mov    dl, [eax+ecx];
+					__asm        cmp    edx, 0xE;
+					__asm        jne    _T170c;
+				// LINE 564:
+				_T1708:
+					alt++;
+				// LINE 565:
+				_T170c:
+					__asm        movsx  eax, alt;
+					__asm        shl    eax, 5;
+					__asm        add    eax, 0x20;
+					__asm        mov    alt, ax;
+				// LINE 566:
+					__asm        mov    ax, alt;
+					__asm        mov    edx, y;
+					__asm        and    edx, G_tmask;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    edx, cl;
+					__asm        mov    ecx, G_tmask;
+					__asm        and    ecx, x;
+					__asm        add    ecx, ecx;
+					__asm        lea    edx, [ecx+edx*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        mov    [edx+ecx], ax;
+				// LINE 567:
+					__asm        mov    ax, alt;
+					__asm        mov    edx, y;
+					__asm        and    edx, G_tmask;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    edx, cl;
+					__asm        mov    ecx, x;
+					__asm        inc    ecx;
+					__asm        and    ecx, G_tmask;
+					__asm        add    ecx, ecx;
+					__asm        lea    edx, [ecx+edx*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        mov    [edx+ecx], ax;
+				// LINE 568:
+					__asm        mov    ax, alt;
+					__asm        mov    edx, y;
+					__asm        inc    edx;
+					__asm        and    edx, G_tmask;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    edx, cl;
+					__asm        mov    ecx, G_tmask;
+					__asm        and    ecx, x;
+					__asm        add    ecx, ecx;
+					__asm        lea    edx, [ecx+edx*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        mov    [edx+ecx], ax;
+				// LINE 569:
+					__asm        mov    ax, alt;
+					__asm        mov    edx, y;
+					__asm        inc    edx;
+					__asm        and    edx, G_tmask;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    edx, cl;
+					__asm        mov    ecx, x;
+					__asm        inc    ecx;
+					__asm        and    ecx, G_tmask;
+					__asm        add    ecx, ecx;
+					__asm        lea    edx, [ecx+edx*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        mov    [edx+ecx], ax;
 			}
-		// LINE 559:
-			__asm        jmp    _T16be;
-		_T1670:
-			__asm        sub    dword ptr [ebp-0x34], 0x1D;
-			__asm        cmp    dword ptr [ebp-0x34], 0x1D;
-			__asm        ja     _FOR_NEXT_1622;
-
-			__asm        mov    eax, [ebp-0x34];
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, _SwitchTable_16a0[0][eax];
-			__asm        jmp    _Switch_1690[0][ecx*4];
-		// Switch pointers:
-		//   _T1661
-		//   _T1661
-		//   _T1661
-		//   _T1666
-		// Switch table
-		//  [0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-		// LINE 562:
-		_T16be:
-			alt = GetAltitude(x, y);
-		// LINE 563:
-			__asm        mov    eax, x;
-			__asm        mov    eax, TerrainMap[eax*4];
-			__asm        mov    ecx, y;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [eax+ecx];
-			__asm        cmp    edx, 0xD;
-			__asm        je     _T1708;
-
-			__asm        mov    eax, x;
-			__asm        mov    eax, TerrainMap[eax*4];
-			__asm        mov    ecx, y;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [eax+ecx];
-			__asm        cmp    edx, 0xE;
-			__asm        jne    _T170c;
-		// LINE 564:
-		_T1708:
-			alt++;
-		// LINE 565:
-		_T170c:
-			__asm        movsx  eax, alt;
-			__asm        shl    eax, 5;
-			__asm        add    eax, 0x20;
-			__asm        mov    alt, ax;
-		// LINE 566:
-			__asm        mov    ax, alt;
-			__asm        mov    edx, y;
-			__asm        and    edx, G_tmask;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    edx, cl;
-			__asm        mov    ecx, G_tmask;
-			__asm        and    ecx, x;
-			__asm        add    ecx, ecx;
-			__asm        lea    edx, [ecx+edx*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        mov    [edx+ecx], ax;
-		// LINE 567:
-			__asm        mov    ax, alt;
-			__asm        mov    edx, y;
-			__asm        and    edx, G_tmask;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    edx, cl;
-			__asm        mov    ecx, x;
-			__asm        inc    ecx;
-			__asm        and    ecx, G_tmask;
-			__asm        add    ecx, ecx;
-			__asm        lea    edx, [ecx+edx*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        mov    [edx+ecx], ax;
-		// LINE 568:
-			__asm        mov    ax, alt;
-			__asm        mov    edx, y;
-			__asm        inc    edx;
-			__asm        and    edx, G_tmask;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    edx, cl;
-			__asm        mov    ecx, G_tmask;
-			__asm        and    ecx, x;
-			__asm        add    ecx, ecx;
-			__asm        lea    edx, [ecx+edx*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        mov    [edx+ecx], ax;
-		// LINE 569:
-			__asm        mov    ax, alt;
-			__asm        mov    edx, y;
-			__asm        inc    edx;
-			__asm        and    edx, G_tmask;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    edx, cl;
-			__asm        mov    ecx, x;
-			__asm        inc    ecx;
-			__asm        and    ecx, G_tmask;
-			__asm        add    ecx, ecx;
-			__asm        lea    edx, [ecx+edx*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        mov    [edx+ecx], ax;
-		// LINE 570:
-			__asm        jmp    _FOR_NEXT_1622;
 		// LINE 572:
 		_T17d7:
 	}
