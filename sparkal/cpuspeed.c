@@ -443,7 +443,7 @@ _T409:
 // LINE 404:
 	cpu_speed.raw_freq = freq;
 // LINE 405:
-	cpu_speed.norm_freq = NormFreq(reinterpret_cast<uint32_t>(processor), freq);
+	cpu_speed.norm_freq = NormFreq(processor, freq);
 // LINE 407:
 	__asm        lea    eax, cpu_speed.in_cycles;
 	__asm        mov    ecx, [ebp+8];

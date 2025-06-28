@@ -941,7 +941,7 @@ _T1b5:
 // LINE 2142:
 // Block end:
 _T205:
-	MyPixel(sPt.x, sPt.y, reinterpret_cast<uint32_t>(color));
+	MyPixel(sPt.x, sPt.y, color);
 // LINE 2143:
 	__asm        jmp    _T384;
 // LINE 2149:
@@ -1430,7 +1430,7 @@ _FOR_4d3:
 			__asm        test   ecx, eax;
 			__asm        je     _T552;
 		// LINE 2280:
-			this->cCopterBody::DrawSwitch(xOff, yOff, part, reinterpret_cast<uint32_t>(screenx), reinterpret_cast<uint32_t>(screeny), scale, reinterpret_cast<uint32_t>(colorIndexShift));
+			this->cCopterBody::DrawSwitch(xOff, yOff, part, screenx, screeny, scale, colorIndexShift);
 		// LINE 2281:
 		_T552:
 	}

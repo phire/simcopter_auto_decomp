@@ -799,7 +799,7 @@ _Ta2:
 // FUNCTION: COPTER_D 0x00539d67
 short S3GetNearestStation(/*packed*/ class Station *station, /*packed*/ struct _GridCoordinates gc, /*packed*/ struct _GridCoordinates *result) {
 // LINE 49:
-	return station->Station::GetNearestStation(reinterpret_cast<uint32_t>(gc.x), result);
+	return station->Station::GetNearestStation(gc.x, result);
 // LINE 50:
 }
 
@@ -1942,7 +1942,7 @@ _T18f:
 // FUNCTION: COPTER_D 0x0053aa5f
 short Station::GetNearestStation(/*packed*/ struct _GridCoordinates gc, /*packed*/ struct _GridCoordinates *result) {
 // LINE 385:
-	this->Station::SortStationsByDistanceFromDestination(reinterpret_cast<uint32_t>(gc.x));
+	this->Station::SortStationsByDistanceFromDestination(gc.x);
 // LINE 386:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -2463,7 +2463,7 @@ _T68c:
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T861;
 // LINE 483:
-	this->Station::SortVehiclesByDistanceFromDestination(reinterpret_cast<uint32_t>(destLoc.x), vehicleList, vehicleListLength);
+	this->Station::SortVehiclesByDistanceFromDestination(destLoc.x, vehicleList, vehicleListLength);
 // LINE 487:
 __WHILE_6b3:
 	while ((this->vehicleHeapSize != 0x0)) {
@@ -2537,7 +2537,7 @@ __WHILE_6b3:
 			__asm        call   RoadGraph::FindYIndexToVertex;
 			__asm        mov    destVert.yindex, al;
 		// LINE 507:
-			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVert.x));
+			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(startVertex.x, destVert.x);
 		// LINE 509:
 			__asm        jmp    _T7d0;
 		// LINE 511:
@@ -2596,7 +2596,7 @@ _T85c:
 	__asm        jmp    _Ta84;
 // LINE 528:
 _T861:
-	this->Station::SortStationsByDistanceFromDestination(reinterpret_cast<uint32_t>(destLoc.x));
+	this->Station::SortStationsByDistanceFromDestination(destLoc.x);
 // LINE 530:
 __WHILE_873:
 	while ((this->stationHeapSize != 0x0)) {
@@ -2686,7 +2686,7 @@ __WHILE_873:
 			__asm        call   RoadGraph::FindYIndexToVertex;
 			__asm        mov    destVert.yindex, al;
 		// LINE 552:
-			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVert.x));
+			pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(startVertex.x, destVert.x);
 		// LINE 554:
 		// Block end:
 			__asm        jmp    _T9b3;

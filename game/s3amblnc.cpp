@@ -709,7 +709,7 @@ int32_t AmbulanceClass::IsThisAHospital(unsigned short tileType) {
 // LINE 258:
 _T23:
 _T25:
-	return ((reinterpret_cast<uint32_t>(tileType) & 0xffff) != 0xd1);
+	return (tileType != 0xd1);
 // LINE 259:
 }
 

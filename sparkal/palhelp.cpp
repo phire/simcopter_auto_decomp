@@ -1235,7 +1235,7 @@ _T487:
 // FUNCTION: COPTER_D 0x004972e7
 void SparkalPalette::FadeToPalette(/*packed*/ struct SparkalColor colorStart, long lFadeTime, long lSteps) {
 // LINE 361:
-	SparkalPalette::FadeToPalette(reinterpret_cast<uint32_t>(colorStart.Blue), this->pColors, lFadeTime, lSteps);
+	SparkalPalette::FadeToPalette(colorStart.Blue, this->pColors, lFadeTime, lSteps);
 // LINE 362:
 	return;
 }

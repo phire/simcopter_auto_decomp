@@ -849,7 +849,7 @@ _FOR_33:
 			__asm        mov    ax, [eax+0x7C];
 			__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 		// LINE 159:
-			dist = Distance(reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(there.x));
+			dist = Distance(here.x, there.x);
 		// LINE 160:
 			__asm        mov    eax, minDist;
 			__asm        cmp    dist, eax;
@@ -894,7 +894,7 @@ _FOR_e1:
 			__asm        mov    ax, [eax+0x7C];
 			__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 		// LINE 180:
-			dist = Distance(reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(there.x));
+			dist = Distance(here.x, there.x);
 		// LINE 181:
 			__asm        mov    eax, minDist;
 			__asm        cmp    dist, eax;
@@ -939,7 +939,7 @@ _FOR_18f:
 			__asm        mov    ax, [eax+0x7C];
 			__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 		// LINE 201:
-			dist = Distance(reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(there.x));
+			dist = Distance(here.x, there.x);
 		// LINE 202:
 			__asm        mov    eax, minDist;
 			__asm        cmp    dist, eax;
@@ -984,7 +984,7 @@ _FOR_23d:
 			__asm        mov    ax, [eax+0x7C];
 			__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 		// LINE 222:
-			dist = Distance(reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(there.x));
+			dist = Distance(here.x, there.x);
 		// LINE 223:
 			__asm        mov    eax, minDist;
 			__asm        cmp    dist, eax;

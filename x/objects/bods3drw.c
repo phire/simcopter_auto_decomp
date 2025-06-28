@@ -629,18 +629,18 @@ _FOR_69b:
 		// LINE 317:
 			lineY = (((radius - i) + centerPt.y) - 1);
 		// LINE 318:
-			DrawHorzLine(startX, endX, lineY, reinterpret_cast<uint32_t>(color));
+			DrawHorzLine(startX, endX, lineY, color);
 		// LINE 320:
 			lineY = (centerPt.y - (radius - i));
 		// LINE 321:
-			DrawHorzLine(startX, endX, lineY, reinterpret_cast<uint32_t>(color));
+			DrawHorzLine(startX, endX, lineY, color);
 	}
 // LINE 324:
 _T76c:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
 	__asm        je     __RETURN;
 // LINE 325:
-	DrawHorzLine((centerPt.x - radius), (centerPt.x + radius), centerPt.y, reinterpret_cast<uint32_t>(color));
+	DrawHorzLine((centerPt.x - radius), (centerPt.x + radius), centerPt.y, color);
 // LINE 328:
 __RETURN:
 }

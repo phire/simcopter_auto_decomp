@@ -129,7 +129,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID) {
 // LINE 13:
 	this->fResFile = file;
 // LINE 15:
-	this->StringSet::LoadStrings(reinterpret_cast<uint32_t>(resID));
+	this->StringSet::LoadStrings(resID);
 // LINE 16:
 	return;
 
@@ -141,7 +141,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID, short n
 // LINE 21:
 	this->fResFile = file;
 // LINE 23:
-	this->StringSet::LoadStrings(reinterpret_cast<uint32_t>(resID));
+	this->StringSet::LoadStrings(resID);
 // LINE 25:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -171,7 +171,7 @@ void StringSet::LoadStrings(short resID) {
 	doAssert(0x5bf4cc, 0x21, 0x5bf4bc, 0x8c085);
 // LINE 34:
 _T3a:
-	this->fStringHandle = this->fResFile->FlatResFile::GetByID(0x53545223, reinterpret_cast<uint32_t>(resID), 0x565ba0);
+	this->fStringHandle = this->fResFile->FlatResFile::GetByID(0x53545223, resID, 0x565ba0);
 // LINE 36:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;

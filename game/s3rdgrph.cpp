@@ -2106,7 +2106,7 @@ _LOOP_83:
 	for (;;) {
 		// LINE 655:
 		_LOOP_83:
-			result = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(here.x), reinterpret_cast<uint32_t>(here.y));
+			result = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, here.x, here.y);
 		// LINE 658:
 			__asm        mov    eax, returnDir;
 			__asm        mov    [ebp-0x20], eax;
@@ -2199,7 +2199,7 @@ _LOOP_83:
 		// LINE 686:
 			goal.elementIndex = 0x0;
 		// LINE 688:
-			this->RoadGraph::FindPlaceOnRoad(goal, reinterpret_cast<uint32_t>(startLoc.x));
+			this->RoadGraph::FindPlaceOnRoad(goal, startLoc.x);
 		// LINE 689:
 			__asm        jmp    _T1d1;
 		// LINE 694:
@@ -2688,7 +2688,7 @@ _LOOP_3c:
 	for (;;) {
 		// LINE 776:
 		_LOOP_3c:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, x, y);
 		// LINE 778:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _T6b;
@@ -3561,7 +3561,7 @@ _LOOP_76:
 	for (;;) {
 		// LINE 900:
 		_LOOP_76:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, x, y);
 		// LINE 901:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _Ta0;
@@ -3919,7 +3919,7 @@ _LOOP_218:
 			__asm        jmp    _T4b8;
 		// LINE 972:
 		_T4b8:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, x, y);
 		// LINE 973:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _T4e2;
@@ -6624,7 +6624,7 @@ _LOOP_357:
 	for (;;) {
 		// LINE 1300:
 		_LOOP_357:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, x, y);
 		// LINE 1301:
 			__asm        cmp    returnStatus, 0xFFFFFFFF;
 			__asm        jne    _T381;
@@ -6918,7 +6918,7 @@ _LOOP_6bf:
 	for (;;) {
 		// LINE 1339:
 		_LOOP_6bf:
-			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
+			returnStatus = this->RoadGraph::WhatDirAmIConnectedTo(currentDir, returnDir, x, y);
 		// LINE 1341:
 			__asm        cmp    deadEnd, 0;
 			__asm        je     _T799;

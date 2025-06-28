@@ -1685,7 +1685,7 @@ _T261:
 
 	doAssert(0x5bba14, 0xce, 0x5bbd3c, 0x8c085);
 _T294:
-	person->TreeSim::Gosub(0x0, 0x0, reinterpret_cast<uint32_t>(tree));
+	person->TreeSim::Gosub(0x0, 0x0, tree);
 	__asm        jmp    _T2b3;
 
 	__asm        jmp    _T2b3;
@@ -2146,7 +2146,7 @@ _LOOP_12:
 			__asm        add    esp, 8;
 			__asm        mov    dz, eax;
 		// LINE 360:
-			movecode = this->cYObject::TryMove(reinterpret_cast<uint32_t>(moveOnlyNeutrally), moveinfo, dx, dz, 0x0, 0x0);
+			movecode = this->cYObject::TryMove(moveOnlyNeutrally, moveinfo, dx, dz, 0x0, 0x0);
 		// LINE 362:
 			__asm        mov    eax, this;
 			__asm        movsx  eax, word ptr [eax+0xFA];
@@ -4525,7 +4525,7 @@ _T117:
 	result = 0x0;
 // LINE 961:
 _T11e:
-	this->cYObject::DynEffects(reinterpret_cast<uint32_t>(movespeed), movecode, moveinfo.locType);
+	this->cYObject::DynEffects(movespeed, movecode, moveinfo.locType);
 // LINE 962:
 	return result;
 // LINE 963:
@@ -4867,7 +4867,7 @@ _T146:
 	__asm        mov    ax, [eax+0xF4];
 	__asm        mov    speed, ax;
 // LINE 1006:
-	movecode = this->cYObject::TryTableMove(reinterpret_cast<uint32_t>(speed), 0x0, moveinfo.locType);
+	movecode = this->cYObject::TryTableMove(speed, 0x0, moveinfo.locType);
 // LINE 1007:
 	__asm        cmp    movecode, 0xA;
 	__asm        jne    _T2e0;
@@ -4975,7 +4975,7 @@ _T2f6:
 // LINE 1027:
 // Block end:
 _T2fd:
-	this->cYObject::DynEffects(reinterpret_cast<uint32_t>(speed), movecode, moveinfo.locType);
+	this->cYObject::DynEffects(speed, movecode, moveinfo.locType);
 // LINE 1029:
 	return result;
 // LINE 1030:
@@ -6121,7 +6121,7 @@ _T93:
 	__asm        mov    ax, [eax+ecx*2+8];
 	__asm        mov    todist, ax;
 // LINE 1344:
-	this->cYObject::GetSurroundingRiotInfo(reinterpret_cast<uint32_t>(todist), actualriotval, numcounted, dirtoconc);
+	this->cYObject::GetSurroundingRiotInfo(todist, actualriotval, numcounted, dirtoconc);
 // LINE 1345:
 	__asm        movsx  eax, param.dirToConcTemp;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -7194,7 +7194,7 @@ _T1a3:
 	__asm        mov    ax, [eax+0xF4];
 	__asm        mov    speed, ax;
 // LINE 1501:
-	movecode = this->cYObject::TryTableMove(reinterpret_cast<uint32_t>(speed), 0x0, moveinfo.locType);
+	movecode = this->cYObject::TryTableMove(speed, 0x0, moveinfo.locType);
 // LINE 1518:
 	__asm        cmp    movecode, 0;
 	__asm        jne    _T1f2;
@@ -7207,7 +7207,7 @@ _T1f2:
 	result = 0x0;
 // LINE 1522:
 _T1f9:
-	this->cYObject::DynEffects(reinterpret_cast<uint32_t>(speed), movecode, moveinfo.locType);
+	this->cYObject::DynEffects(speed, movecode, moveinfo.locType);
 // LINE 1526:
 // Block end:
 _T20d:
@@ -7470,7 +7470,7 @@ _T99:
 
 	doAssert(0x5bba14, 0xce, 0x5bbd3c, 0x8c085);
 _Tcc:
-	obj->TreeSim::Gosub(0x0, 0x0, reinterpret_cast<uint32_t>(treenum));
+	obj->TreeSim::Gosub(0x0, 0x0, treenum);
 	__asm        jmp    _Teb;
 
 	__asm        jmp    _Teb;

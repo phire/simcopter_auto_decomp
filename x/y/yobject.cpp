@@ -6315,7 +6315,7 @@ _T79:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 712:
-	return this->cYObject::StartScurkAmbientMission(reinterpret_cast<uint32_t>(scurkID), reinterpret_cast<uint32_t>(treeID), persontype, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), onTopOf, loc.x);
+	return this->cYObject::StartScurkAmbientMission(scurkID, treeID, persontype, cellx, celly, onTopOf, loc.x);
 // LINE 713:
 }
 
@@ -6324,7 +6324,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 	/*bp-0x4*/   unsigned short ret;
 
 // LINE 719:
-	ret = this->cYObject::StartMission(persontype, 0x0, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), -0x1, onTopOf, loc);
+	ret = this->cYObject::StartMission(persontype, 0x0, cellx, celly, -0x1, onTopOf, loc);
 // LINE 720:
 	__asm        test   reinterpret_cast<uint32_t>(ret), 0xFFFF;
 	__asm        jne    _T59;
@@ -6457,7 +6457,7 @@ _Tfe:
 	__asm        add    ecx, eax;
 	__asm        mov    offsetz, ecx;
 // LINE 740:
-	cYObject::StartForScurkID(persontype, missiontype, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(missionid), onTopOf, offsetx, offsetz);
+	cYObject::StartForScurkID(persontype, missiontype, cellx, celly, missionid, onTopOf, offsetx, offsetz);
 // LINE 741:
 	return;
 }
@@ -6564,7 +6564,7 @@ _T135:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 763:
-	ret = StartPerson(persontype, missiontype, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), reinterpret_cast<int16_t>(missionid), onTopOf, loc.x);
+	ret = StartPerson(persontype, missiontype, cellx, celly, reinterpret_cast<int16_t>(missionid), onTopOf, loc.x);
 // LINE 764:
 	__asm        movsx  eax, ret;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -6694,7 +6694,7 @@ _Tcb:
 	__asm        jle    _T112;
 // LINE 788:
 _Tfa:
-	cYObject::StartForScurkID(0xc, 0x5, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), -0x1, 0x0);
+	cYObject::StartForScurkID(0xc, 0x5, cellx, celly, -0x1, 0x0);
 // LINE 789:
 _T112:
 	__asm        jmp    _T4ed;
@@ -6713,7 +6713,7 @@ _T117:
 	return;
 // LINE 794:
 _T134:
-	cYObject::StartForScurkID(0xe, 0x7, reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), -0x1, 0x0);
+	cYObject::StartForScurkID(0xe, 0x7, cellx, celly, -0x1, 0x0);
 // LINE 795:
 	__asm        jmp    _T4ed;
 // LINE 798:
@@ -7087,13 +7087,13 @@ _T71:
 _FOR_f1:
 	for (count = 0x0; (reinterpret_cast<int16_t>(count) < reinterpret_cast<int16_t>(rectdiam)); count++) {
 		// LINE 861:
-			cYObject::StartScurkPeople(reinterpret_cast<uint32_t>(r.left), (reinterpret_cast<int16_t>(r.top) + reinterpret_cast<int16_t>(count)));
+			cYObject::StartScurkPeople(r.left, (reinterpret_cast<int16_t>(r.top) + reinterpret_cast<int16_t>(count)));
 		// LINE 862:
-			cYObject::StartScurkPeople(reinterpret_cast<uint32_t>(r.right), (reinterpret_cast<int16_t>(r.bottom) - reinterpret_cast<int16_t>(count)));
+			cYObject::StartScurkPeople(r.right, (reinterpret_cast<int16_t>(r.bottom) - reinterpret_cast<int16_t>(count)));
 		// LINE 863:
-			cYObject::StartScurkPeople((reinterpret_cast<int16_t>(r.right) - reinterpret_cast<int16_t>(count)), reinterpret_cast<uint32_t>(r.top));
+			cYObject::StartScurkPeople((reinterpret_cast<int16_t>(r.right) - reinterpret_cast<int16_t>(count)), r.top);
 		// LINE 864:
-			cYObject::StartScurkPeople((reinterpret_cast<int16_t>(r.left) + reinterpret_cast<int16_t>(count)), reinterpret_cast<uint32_t>(r.bottom));
+			cYObject::StartScurkPeople((reinterpret_cast<int16_t>(r.left) + reinterpret_cast<int16_t>(count)), r.bottom);
 		// LINE 865:
 			__asm        movsx  eax, cYObject::sAmbientAbsoluteMax;
 			__asm        movsx  ecx, cYObject::sNumAmbientAwake;
@@ -9740,7 +9740,7 @@ _Tf0:
 	/*bp-0x10*/  enum cYObject::LocationType loctype;
 	/*bp-0x14*/  short count;
 _Tfb:
-	loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly));
+	loctype = cYObject::GetLocType(cellx, celly);
 // LINE 1551:
 _FOR_119:
 	for (count = 0x0; (reinterpret_cast<int16_t>(count) < 0xa); count++) {
@@ -9896,7 +9896,7 @@ _FOR_266:
 		// LINE 1589:
 		// Block start:
 			/*bp-0x18*/  enum cYObject::LocationType loctype;
-			loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly));
+			loctype = cYObject::GetLocType(cellx, celly);
 		// LINE 1591:
 			__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 			__asm        push   eax;
@@ -9944,7 +9944,7 @@ _T300:
 // LINE 1597:
 // Block start:
 	/*bp-0x1c*/  long testID;
-	this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), offsetx, offsetz);
+	this->cYObject::SetCellAndLoc(cellx, celly, offsetx, offsetz);
 // LINE 1598:
 	this->cYObject::SetPersonType(persontype);
 // LINE 1599:
@@ -10148,7 +10148,7 @@ _FOR_66f:
 		// LINE 1650:
 		// Block start:
 			/*bp-0x2c*/  enum cYObject::LocationType loctype;
-			loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly));
+			loctype = cYObject::GetLocType(cellx, celly);
 		// LINE 1653:
 			__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 			__asm        push   eax;
@@ -10217,7 +10217,7 @@ _FOR_66f:
 				// LINE 1663:
 				// Block start:
 					/*bp-0x58*/  enum cYObject::LocationType loctype2;
-					loctype2 = cYObject::GetLocType(reinterpret_cast<uint32_t>(destcellx), reinterpret_cast<uint32_t>(destcelly));
+					loctype2 = cYObject::GetLocType(destcellx, destcelly);
 				// LINE 1665:
 					__asm        jmp    _T76e;
 				_T76e:
@@ -10307,7 +10307,7 @@ _FOR_66f:
 			__asm        jmp    _T925;
 		// LINE 1700:
 		_T839:
-			this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), offsetx, offsetz);
+			this->cYObject::SetCellAndLoc(cellx, celly, offsetx, offsetz);
 		// LINE 1701:
 			this->cYObject::SetPersonData(persontype, mission, missionid);
 		// LINE 1704:
@@ -10431,7 +10431,7 @@ _T9c0:
 	__asm        test   eax, eax;
 	__asm        je     _Ta36;
 // LINE 1743:
-	this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), offsetx, offsetz);
+	this->cYObject::SetCellAndLoc(cellx, celly, offsetx, offsetz);
 // LINE 1744:
 	this->cYObject::SetPersonData(persontype, mission, missionid);
 // LINE 1745:
@@ -10629,7 +10629,7 @@ _Td0a:
 	__asm        jmp    _Td1e;
 // LINE 1785:
 _Td1e:
-	this->cYObject::SetCellAndLoc(reinterpret_cast<uint32_t>(cellx), reinterpret_cast<uint32_t>(celly), offsetx, offsetz);
+	this->cYObject::SetCellAndLoc(cellx, celly, offsetx, offsetz);
 // LINE 1786:
 	this->cYObject::SetPersonData(persontype, mission, missionid);
 // LINE 1787:
@@ -11282,7 +11282,7 @@ _T2ba:
 	__asm        add    esp, 8;
 	__asm        mov    nextsoundchannel, ax;
 // LINE 1860:
-	cYObject::DistributeSoundChannels(0x2, reinterpret_cast<uint32_t>(nextsoundchannel));
+	cYObject::DistributeSoundChannels(0x2, nextsoundchannel);
 // LINE 1861:
 	return;
 }
@@ -11390,7 +11390,7 @@ __WHILE_17:
 			__asm        cmp    eax, ecx;
 			__asm        jge    _T1b4;
 		// LINE 1877:
-			obj->cYObject::SetSoundChannel(reinterpret_cast<uint32_t>(soundchannel));
+			obj->cYObject::SetSoundChannel(soundchannel);
 		// LINE 1878:
 		_FOR_172:
 			__asm        mov    word ptr [ebp-0x1C], 0;
@@ -15254,7 +15254,7 @@ void cYObject::SetCellAndLoc(/*unpacked*/ struct Point3d loc, unsigned char x, u
 	__asm        sar    eax, 0x16;
 	__asm        mov    loccelly, ax;
 // LINE 2549:
-	this->fCurLocType = cYObject::GetLocType(reinterpret_cast<uint32_t>(loccellx), reinterpret_cast<uint32_t>(loccelly));
+	this->fCurLocType = cYObject::GetLocType(loccellx, loccelly);
 // LINE 2551:
 	_VRIdentity4x4((this + 0x48));
 // LINE 2552:
@@ -15373,7 +15373,7 @@ _Ta1:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2563:
-	this->cYObject::SetCellAndLoc(loc.x, loc.y, loc.z, reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y));
+	this->cYObject::SetCellAndLoc(loc.x, loc.y, loc.z, x, y);
 // LINE 2567:
 	return;
 }
@@ -16576,7 +16576,7 @@ _T120:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xBC], ax;
 // LINE 2911:
-	this->cYObject::InitForEngine(reinterpret_cast<uint32_t>(id));
+	this->cYObject::InitForEngine(id);
 // LINE 2912:
 	__asm        jmp    _T18c;
 _T18c:

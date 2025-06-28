@@ -211,7 +211,7 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+0x10], 1;
 // LINE 72:
-	this->CharList::AddItem(reinterpret_cast<uint32_t>(chKey));
+	this->CharList::AddItem(chKey);
 // LINE 74:
 _T3a:
 	return;
@@ -232,7 +232,7 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+0x10], 0;
 // LINE 85:
-	this->CharList::DeleteItem(reinterpret_cast<uint32_t>(chKey));
+	this->CharList::DeleteItem(chKey);
 // LINE 87:
 _T3a:
 	return;

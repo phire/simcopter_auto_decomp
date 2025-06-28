@@ -647,7 +647,7 @@ _T3b:
 	return 0x0;
 // LINE 314:
 _T52:
-	type = this->fMap->ResMap::GetIndType(reinterpret_cast<uint32_t>(index));
+	type = this->fMap->ResMap::GetIndType(index);
 // LINE 316:
 	__asm        cmp    type, 0;
 	__asm        jne    _T7e;
@@ -703,7 +703,7 @@ _T3b:
 	return 0x0;
 // LINE 339:
 _T52:
-	entry = this->fMap->ResMap::FindEntry(type, reinterpret_cast<uint32_t>(id));
+	entry = this->fMap->ResMap::FindEntry(type, id);
 // LINE 341:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T89;
@@ -875,7 +875,7 @@ _T3b:
 	return 0x0;
 // LINE 395:
 _T52:
-	entry = this->fMap->ResMap::FindIndEntry(type, reinterpret_cast<uint32_t>(index));
+	entry = this->fMap->ResMap::FindIndEntry(type, index);
 // LINE 397:
 	__asm        cmp    entry, 0;
 	__asm        jne    _T89;
@@ -1243,7 +1243,7 @@ _T50:
 // LINE 601:
 // Block start:
 	/*bp-0x20*/  unsigned char * foundStr;
-	foundStr = tempStrs.fResFile->StringSet::GetString(reinterpret_cast<uint32_t>(index));
+	foundStr = tempStrs.fResFile->StringSet::GetString(index);
 // LINE 602:
 	__asm        cmp    foundStr, 0;
 	__asm        je     _T92;

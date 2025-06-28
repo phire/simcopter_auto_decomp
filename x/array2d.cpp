@@ -1383,7 +1383,7 @@ _T6c:
 	doAssert(0x5bffb4, 0x1d8, 0x5bff7c, 0x8c085);
 // LINE 474:
 _Tc0:
-	this->_cArray::ClearBytes(reinterpret_cast<uint32_t>(zeropad));
+	this->_cArray::ClearBytes(zeropad);
 // LINE 477:
 _FOR_d8:
 	for (xcnt = 0x0; (this->fxSize > xcnt); xcnt++) {
@@ -1976,7 +1976,7 @@ _FOR_ca:
 			/*bp-0x30*/  /*unpacked*/ class _cArray *tmp;
 			/*bp-0x34*/  void * __ptr32 hArray;
 			/*bp-0x38*/  unsigned char * dataPtr;
-			hArray = pFile->FlatResFile::GetByIndex(rType, reinterpret_cast<uint32_t>(count), 0x0);
+			hArray = pFile->FlatResFile::GetByIndex(rType, count, 0x0);
 		// LINE 725:
 			__asm        cmp    hArray, 0;
 			__asm        jne    _T119;

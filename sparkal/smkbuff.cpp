@@ -1979,7 +1979,7 @@ _T2e7:
 _T2ec:
 	__asm        jmp    _T2f1;
 _T2f1:
-	_SmackToBuffer(this-><SmackerBackBuffer+0x-108>, 0x0, 0x0, reinterpret_cast<uint32_t>(this->colorWindowFill.Blue), this->bBlankAtEndOfVideo, this->nBlankColorIndex, 0x0);
+	_SmackToBuffer(this-><SmackerBackBuffer+0x-108>, 0x0, 0x0, this->colorWindowFill.Blue, this->bBlankAtEndOfVideo, this->nBlankColorIndex, 0x0);
 // LINE 1074:
 	_SmackDoFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1075:
@@ -2187,7 +2187,7 @@ _T2c6:
 _T2d5:
 	__asm        jmp    _T2da;
 _T2da:
-	_SmackToBuffer(this-><SmackerBackBuffer+0x-108>, 0x0, 0x0, reinterpret_cast<uint32_t>(this->colorWindowFill.Blue), this->bBlankAtEndOfVideo, this->nBlankColorIndex, 0x0);
+	_SmackToBuffer(this-><SmackerBackBuffer+0x-108>, 0x0, 0x0, this->colorWindowFill.Blue, this->bBlankAtEndOfVideo, this->nBlankColorIndex, 0x0);
 // LINE 1165:
 	_SmackDoFrame(this-><SmackerBackBuffer+0x-108>);
 // LINE 1166:

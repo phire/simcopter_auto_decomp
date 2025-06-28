@@ -230,7 +230,7 @@ _T93:
 	__asm        cmp    bCreateIfNotFound, 0;
 	__asm        je     _Td1;
 // LINE 55:
-	this->PFile::FileCreate((this + 0x4), (reinterpret_cast<uint32_t>(access) & 0xffff));
+	this->PFile::FileCreate((this + 0x4), access);
 // LINE 56:
 	__asm        jmp    _Td8;
 // LINE 57:

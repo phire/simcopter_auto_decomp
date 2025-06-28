@@ -1435,7 +1435,7 @@ _Te2:
 	__asm        je     _Tfd;
 // LINE 535:
 _Tf1:
-	strm->istream::putback(reinterpret_cast<uint32_t>(c));
+	strm->istream::putback(c);
 // LINE 536:
 _Tfd:
 	return;
@@ -1528,7 +1528,7 @@ _Tee:
 	__asm        je     _T109;
 // LINE 558:
 _Tfd:
-	s->istream::putback(reinterpret_cast<uint32_t>(c));
+	s->istream::putback(c);
 // LINE 559:
 _T109:
 	p[0] = 0x0;

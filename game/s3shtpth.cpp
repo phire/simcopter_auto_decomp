@@ -543,7 +543,7 @@ _T129:
 // LINE 184:
 	scratch.xPrev = 0xff;
 // LINE 185:
-	scratch.cost = this->ShortestPath::FindDistanceFromDestination(reinterpret_cast<uint32_t>(currLoc.x), reinterpret_cast<uint32_t>(destLoc.x));
+	scratch.cost = this->ShortestPath::FindDistanceFromDestination(currLoc.x, destLoc.x);
 // LINE 186:
 	this->ShortestPath::PriorityHeapInsert(scratch.xCurr);
 // LINE 191:
@@ -664,7 +664,7 @@ __WHILE_192:
 					__asm        mov    al, [eax];
 					__asm        mov    scratch.yindexCurr, al;
 				// LINE 235:
-					scratch.cost = this->ShortestPath::FindDistanceFromDestination(reinterpret_cast<uint32_t>(currLoc.x), reinterpret_cast<uint32_t>(destLoc.x));
+					scratch.cost = this->ShortestPath::FindDistanceFromDestination(currLoc.x, destLoc.x);
 				// LINE 236:
 					__asm        mov    al, reinterpret_cast<uint8_t>(i);
 					__asm        mov    scratch.edgeIndexPrev, al;

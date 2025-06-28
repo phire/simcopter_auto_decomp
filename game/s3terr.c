@@ -4763,13 +4763,13 @@ _Ta75:
 	__asm        mov    [edx+ecx], ax;
 // LINE 1095:
 _Tb01:
-	do_map_square(reinterpret_cast<uint32_t>(x), reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(midp));
+	do_map_square(x, y, midp);
 // LINE 1096:
-	do_map_square(reinterpret_cast<uint32_t>(x), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), reinterpret_cast<uint32_t>(midp));
+	do_map_square(x, ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), midp);
 // LINE 1097:
-	do_map_square(((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)), reinterpret_cast<uint32_t>(y), reinterpret_cast<uint32_t>(midp));
+	do_map_square(((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)), y, midp);
 // LINE 1098:
-	do_map_square(((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), reinterpret_cast<uint32_t>(midp));
+	do_map_square(((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(x)), ((reinterpret_cast<int16_t>(midp) + reinterpret_cast<int16_t>(is_odd)) + reinterpret_cast<int16_t>(y)), midp);
 // LINE 1100:
 }
 
@@ -4807,7 +4807,7 @@ _T5a:
 	delta = -delta;
 // LINE 1117:
 _T62:
-	new_height = ((reinterpret_cast<uint32_t>(hght) & 0xffff) + delta);
+	new_height = (hght + delta);
 // LINE 1119:
 	__asm        mov    eax, G_terr_minalt;
 	__asm        cmp    new_height, eax;

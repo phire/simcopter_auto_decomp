@@ -709,7 +709,7 @@ int32_t FireEngineClass::IsThisAFireStation(unsigned short tileType) {
 // LINE 218:
 _T23:
 _T25:
-	return ((reinterpret_cast<uint32_t>(tileType) & 0xffff) != 0xd3);
+	return (tileType != 0xd3);
 // LINE 219:
 }
 

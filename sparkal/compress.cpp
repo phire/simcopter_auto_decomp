@@ -917,12 +917,12 @@ _T1ec:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T22f;
 // LINE 213:
-	RLEDecompressUnclippedX(pBits, DestStride, pCompressedBits, reinterpret_cast<uint32_t>(Height), reinterpret_cast<uint32_t>(TransparentColor));
+	RLEDecompressUnclippedX(pBits, DestStride, pCompressedBits, Height, TransparentColor);
 // LINE 214:
 	__asm        jmp    _T253;
 // LINE 217:
 _T22f:
-	RLEDecompressClippedX(pBits, DestStride, pCompressedBits, reinterpret_cast<uint32_t>(LeftClipAmount), reinterpret_cast<uint32_t>(Width), reinterpret_cast<uint32_t>(Height), reinterpret_cast<uint32_t>(TransparentColor));
+	RLEDecompressClippedX(pBits, DestStride, pCompressedBits, LeftClipAmount, Width, Height, TransparentColor);
 // LINE 223:
 // Block end:
 // Block end:

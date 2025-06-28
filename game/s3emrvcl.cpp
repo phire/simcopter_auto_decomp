@@ -682,7 +682,7 @@ _T28:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destIndex.yindex, al;
 // LINE 275:
-	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(startIndex.x), reinterpret_cast<uint32_t>(destIndex.x));
+	this->EmergencyVehicleClass::BuildPath(startIndex.x, destIndex.x);
 // LINE 282:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -962,7 +962,7 @@ _T34:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destIndex.yindex, al;
 // LINE 383:
-	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(stationIndex.x), reinterpret_cast<uint32_t>(destIndex.x));
+	this->EmergencyVehicleClass::BuildPath(stationIndex.x, destIndex.x);
 // LINE 388:
 _Ta8:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(destLoc.x);
@@ -1472,7 +1472,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    destVertex.yindex, al;
 // LINE 549:
-	pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVertex.x));
+	pathFound = 0x5c37f8->ShortestPath::BreadthFirstSearch(startVertex.x, destVertex.x);
 // LINE 550:
 	__asm        cmp    pathFound, 0;
 	__asm        jne    _T133;

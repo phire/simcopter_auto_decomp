@@ -286,9 +286,9 @@ unsigned short SGIRand(unsigned short limit) {
 	/*bp-0x8*/   unsigned short z;
 
 // LINE 135:
-	z = SRand(reinterpret_cast<uint32_t>(limit));
+	z = SRand(limit);
 // LINE 136:
-	x = SRand(reinterpret_cast<uint32_t>(limit));
+	x = SRand(limit);
 // LINE 137:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(z);
 	__asm        and    eax, 0xFFFF;
@@ -313,9 +313,9 @@ unsigned short SGRand(unsigned short limit) {
 	/*bp-0x8*/   unsigned short z;
 
 // LINE 150:
-	z = SRand(reinterpret_cast<uint32_t>(limit));
+	z = SRand(limit);
 // LINE 151:
-	x = SRand(reinterpret_cast<uint32_t>(limit));
+	x = SRand(limit);
 // LINE 152:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(z);
 	__asm        and    eax, 0xFFFF;
@@ -340,9 +340,9 @@ short SGSRand(unsigned short limit) {
 	/*bp-0x8*/   short z;
 
 // LINE 165:
-	z = SRand(reinterpret_cast<uint32_t>(limit));
+	z = SRand(limit);
 // LINE 166:
-	x = SRand(reinterpret_cast<uint32_t>(limit));
+	x = SRand(limit);
 // LINE 167:
 	__asm        movsx  eax, z;
 	__asm        movsx  ecx, x;

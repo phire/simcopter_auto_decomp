@@ -786,9 +786,9 @@ void DrawDirectionDisk(/*unpacked*/ struct Rect *rect, short latint, short lngin
 	/*bp-0xc*/   float junk;
 
 // LINE 226:
-	PolarIncs2Double(reinterpret_cast<uint32_t>(latint), reinterpret_cast<uint32_t>(lngint), 0x0, reinterpret_cast<uint32_t>(latincs), reinterpret_cast<uint32_t>(lngincs), 0xa, phi, psi, junk);
+	PolarIncs2Double(latint, lngint, 0x0, latincs, lngincs, 0xa, phi, psi, junk);
 // LINE 227:
-	DrawDirectionDisk(rect, phi, psi, reinterpret_cast<uint32_t>(polarAngles), ctr, reinterpret_cast<uint32_t>(length));
+	DrawDirectionDisk(rect, phi, psi, polarAngles, ctr, length);
 // LINE 228:
 	return;
 }
@@ -1427,7 +1427,7 @@ void FillLatLngTrq(/*unpacked*/ struct Polar *polar, short latincs, short lngInc
 	__asm        test   eax, eax;
 	__asm        jne    _T61;
 // LINE 625:
-	PolarDouble2Incs(polar->phi, polar->psi, polar->tau, reinterpret_cast<uint32_t>(latincs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(trqincs), (polar + 0x12), (polar + 0x10), (polar + 0x14));
+	PolarDouble2Incs(polar->phi, polar->psi, polar->tau, latincs, lngIncs, trqincs, (polar + 0x12), (polar + 0x10), (polar + 0x14));
 // LINE 627:
 _T61:
 	Keep0to2pi(polar);
@@ -1498,13 +1498,13 @@ void SnapToIncs(/*unpacked*/ struct Polar *polar, short latIncs, short lngIncs, 
 	__asm        mov    ecx, polar;
 	__asm        mov    [ecx+0x12], ax;
 // LINE 641:
-	FillLatLngTrq(polar, reinterpret_cast<uint32_t>(latIncs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(trqIncs));
+	FillLatLngTrq(polar, latIncs, lngIncs, trqIncs);
 // LINE 642:
 	polar->tau = 0x0;
 	polar->psi = polar->tau;
 	polar->phi = polar->psi;
 // LINE 643:
-	FillPhiPsiTau(polar, reinterpret_cast<uint32_t>(latIncs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(trqIncs));
+	FillPhiPsiTau(polar, latIncs, lngIncs, trqIncs);
 // LINE 644:
 	return;
 }

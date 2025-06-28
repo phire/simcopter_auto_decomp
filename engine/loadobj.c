@@ -2624,7 +2624,7 @@ _T2a:
 	__asm        mov    edx, Tree;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 1815:
-	ReadResource(((((((reinterpret_cast<uint32_t>(ThisIndex) & 0xffff) << 0x3) - (reinterpret_cast<uint32_t>(ThisIndex) & 0xffff)) << 0x2) + Tree) + 0x4), 0x10);
+	ReadResource((((((ThisIndex << 0x3) - ThisIndex) << 0x2) + Tree) + 0x4), 0x10);
 // LINE 1827:
 	__asm        call   ReadTree;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(ThisIndex);
@@ -2644,7 +2644,7 @@ _T2a:
 	__asm        mov    edx, Tree;
 	__asm        mov    [edx+ecx*4+0x18], eax;
 // LINE 1829:
-	return (((((reinterpret_cast<uint32_t>(ThisIndex) & 0xffff) << 0x3) - (reinterpret_cast<uint32_t>(ThisIndex) & 0xffff)) << 0x2) + Tree);
+	return ((((ThisIndex << 0x3) - ThisIndex) << 0x2) + Tree);
 // LINE 1831:
 	__asm        jmp    __RETURN;
 _Teb:

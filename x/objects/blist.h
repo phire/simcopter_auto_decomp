@@ -346,7 +346,7 @@ _Tf8:
 _FOR_11f:
 	for (count = 0x1; (reinterpret_cast<int16_t>(count) <= reinterpret_cast<int16_t>(numThings)); count++) {
 		// LINE 192:
-			h = this-><cBList<cCopterAnim>+0x0c:4>->FlatResFile::GetByIndex(this-><cBList<cCopterAnim>+0x10:4>, reinterpret_cast<uint32_t>(count), 0x55e6f0);
+			h = this-><cBList<cCopterAnim>+0x0c:4>->FlatResFile::GetByIndex(this-><cBList<cCopterAnim>+0x10:4>, count, 0x55e6f0);
 		// LINE 193:
 			__asm        cmp    h, 0;
 			__asm        jne    _T17d;

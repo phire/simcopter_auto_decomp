@@ -225,7 +225,7 @@ void CharList::DeleteItem(unsigned char chValue) {
 	/*bp-0x4*/   /*packed*/ class CharData *charDataToDelete;
 
 // LINE 103:
-	charDataToDelete = this->CharList::FindCharDataByValue(reinterpret_cast<uint32_t>(chValue));
+	charDataToDelete = this->CharList::FindCharDataByValue(chValue);
 // LINE 104:
 	__asm        cmp    charDataToDelete, 0;
 	__asm        jne    _T2a;

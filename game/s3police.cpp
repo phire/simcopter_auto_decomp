@@ -1647,9 +1647,9 @@ _T2ce:
 	__asm        jmp    _T36f;
 // LINE 608:
 _T34d:
-	0x5c37f8->ShortestPath::DepthFirstSearch(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVertex.x));
+	0x5c37f8->ShortestPath::DepthFirstSearch(startVertex.x, destVertex.x);
 // LINE 609:
-	this->EmergencyVehicleClass::BuildPath(reinterpret_cast<uint32_t>(startVertex.x), reinterpret_cast<uint32_t>(destVertex.x));
+	this->EmergencyVehicleClass::BuildPath(startVertex.x, destVertex.x);
 // LINE 613:
 _T36f:
 	this->dispatchPathIndex = 0x0;

@@ -352,9 +352,9 @@ __DO_1b:
 		// LINE 154:
 		_T1ad:
 			j++;
-	} while (((reinterpret_cast<uint32_t>(t) & 0xffff) < (reinterpret_cast<uint32_t>(n) & 0xffff)));
+	} while ((t < n));
 // LINE 157:
-	return (reinterpret_cast<uint32_t>(n) & 0xffff);
+	return n;
 // LINE 158:
 }
 

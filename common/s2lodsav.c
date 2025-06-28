@@ -4061,7 +4061,7 @@ _FOR_27:
 			__asm        mov    ax, [ecx+eax*2];
 			__asm        mov    sval, ax;
 		// LINE 1564:
-			sptr[i] = swizzle_short(reinterpret_cast<uint32_t>(sval));
+			sptr[i] = swizzle_short(sval);
 	}
 // LINE 1567:
 __RETURN:

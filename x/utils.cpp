@@ -816,7 +816,7 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 // LINE 457:
 	CtoPstr(buff[0]);
 // LINE 459:
-	ConcatPStr(buff[0], dest, reinterpret_cast<uint32_t>(destSize));
+	ConcatPStr(buff[0], dest, destSize);
 // LINE 460:
 	return;
 }
@@ -828,7 +828,7 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 // LINE 467:
 	Num2Str(number, numStr[0]);
 // LINE 468:
-	ConcatPStr(numStr[0], str, reinterpret_cast<uint32_t>(destSize));
+	ConcatPStr(numStr[0], str, destSize);
 // LINE 469:
 	return;
 }

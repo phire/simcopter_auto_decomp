@@ -440,7 +440,7 @@ _T26:
 // FUNCTION: COPTER_D 0x005349f0
 int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 // LINE 88:
-	return CriminalEvaderCarClass::StartCriminalMission(reinterpret_cast<uint32_t>(mID), reinterpret_cast<uint32_t>(mType), x, y);
+	return CriminalEvaderCarClass::StartCriminalMission(mID, mType, x, y);
 // LINE 89:
 }
 
@@ -977,7 +977,7 @@ _T50:
 	__asm        jne    _T79;
 // LINE 398:
 _T6d:
-	this->AutomobileClass::PullOver(reinterpret_cast<uint32_t>(carModel));
+	this->AutomobileClass::PullOver(carModel);
 // LINE 399:
 _T79:
 	return;

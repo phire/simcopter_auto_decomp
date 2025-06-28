@@ -289,7 +289,7 @@ _T51:
 // LINE 15:
 	this->fStackSize = 0x0;
 // LINE 16:
-	this->TreeSim::Reset(startBehavior, reinterpret_cast<uint32_t>(startTreeID));
+	this->TreeSim::Reset(startBehavior, startTreeID);
 // LINE 17:
 	return;
 
@@ -1051,7 +1051,7 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	__asm        mov    ecx, [ecx+0x14];
 	__asm        mov    [ecx+0xA], ax;
 // LINE 280:
-	ret = this->TreeSim::Simulate(ticks, reinterpret_cast<uint32_t>(bOnceOnly));
+	ret = this->TreeSim::Simulate(ticks, bOnceOnly);
 // LINE 282:
 	this->fExt->fStack = savestack;
 // LINE 283:

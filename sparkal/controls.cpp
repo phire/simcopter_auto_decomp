@@ -15273,7 +15273,7 @@ _Ta0:
 	return 0x1;
 // LINE 3092:
 _Tb5:
-	return this->ListBoxWindow::DoKeyDown(lKey, reinterpret_cast<uint32_t>(chModifiers));
+	return this->ListBoxWindow::DoKeyDown(lKey, chModifiers);
 // LINE 3093:
 }
 

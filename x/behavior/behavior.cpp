@@ -561,7 +561,7 @@ _T65:
 	pFile = this->fPrivFile;
 // LINE 163:
 _T71:
-	tree = pFile->FlatResFile::GetByID(0x42484156, reinterpret_cast<uint32_t>(treeID), this->fSwizzler);
+	tree = pFile->FlatResFile::GetByID(0x42484156, treeID, this->fSwizzler);
 // LINE 164:
 	__asm        cmp    tree, 0;
 	__asm        jne    _Tb5;
