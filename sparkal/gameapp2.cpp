@@ -4953,9 +4953,7 @@ int32_t CGameApp::CheckForWarpToCareerLevel() {
 	__asm        cmp    G_CheatCodes[3], 0;
 	__asm        je     _T43;
 // LINE 1148:
-	__asm        mov    eax, G_CheatCodes[3];
-	__asm        dec    eax;
-	__asm        mov    nNewLevel, eax;
+	nNewLevel = (G_CheatCodes[3] - 1);
 // LINE 1149:
 	G_CheatCodes[3] = 0x0;
 // LINE 1150:

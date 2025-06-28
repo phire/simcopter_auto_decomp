@@ -1204,16 +1204,9 @@ __WHILE_31:
 			__asm        jmp    __WHILE_fc;
 		// LINE 461:
 		_Tde:
-			__asm        movsx  eax, PixelCount;
-			__asm        neg    eax;
-			__asm        add    pSource, eax;
+			pSource += -reinterpret_cast<int16_t>(PixelCount);
 		// LINE 462:
-			__asm        xor    eax, eax;
-			__asm        movsx  ecx, PixelCount;
-			__asm        neg    ecx;
-			__asm        sub    eax, ecx;
-			__asm        neg    eax;
-			__asm        sub    counter, eax;
+			counter -= -reinterpret_cast<int16_t>(PixelCount);
 		// LINE 463:
 			PixelCount = 0x0;
 		// LINE 470:
@@ -1269,12 +1262,7 @@ __WHILE_31:
 			__asm        jmp    __WHILE_192;
 		// LINE 494:
 		_T17d:
-			__asm        xor    eax, eax;
-			__asm        movsx  ecx, PixelCount;
-			__asm        neg    ecx;
-			__asm        sub    eax, ecx;
-			__asm        neg    eax;
-			__asm        sub    counter, eax;
+			counter -= -reinterpret_cast<int16_t>(PixelCount);
 		// LINE 495:
 			PixelCount = 0x0;
 		// LINE 501:
@@ -1323,12 +1311,7 @@ __WHILE_31:
 			__asm        jmp    _T218;
 		// LINE 523:
 		_T203:
-			__asm        xor    eax, eax;
-			__asm        movsx  ecx, PixelCount;
-			__asm        neg    ecx;
-			__asm        sub    eax, ecx;
-			__asm        neg    eax;
-			__asm        sub    counter, eax;
+			counter -= -reinterpret_cast<int16_t>(PixelCount);
 		// LINE 524:
 			PixelCount = 0x0;
 		// LINE 528:
@@ -1367,16 +1350,9 @@ __WHILE_31:
 			__asm        jmp    __WHILE_28d;
 		// LINE 549:
 		_T26f:
-			__asm        movsx  eax, PixelCount;
-			__asm        neg    eax;
-			__asm        add    pSource, eax;
+			pSource += -reinterpret_cast<int16_t>(PixelCount);
 		// LINE 550:
-			__asm        xor    eax, eax;
-			__asm        movsx  ecx, PixelCount;
-			__asm        neg    ecx;
-			__asm        sub    eax, ecx;
-			__asm        neg    eax;
-			__asm        sub    counter, eax;
+			counter -= -reinterpret_cast<int16_t>(PixelCount);
 		// LINE 551:
 			PixelCount = 0x0;
 		// LINE 558:

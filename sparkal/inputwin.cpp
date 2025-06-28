@@ -2964,13 +2964,7 @@ _T1f6:
 _T23e:
 	__asm        jmp    _T243;
 _T243:
-	__asm        mov    eax, sKeyLightPath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sKeyLightPath.c_str_ptr, eax;
+	sKeyLightPath.c_str_ptr = operator new((sKeyLightPath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T25b;
 _T25b:
 	__asm        mov    eax, sKeyLightPath.reference;
@@ -4945,13 +4939,7 @@ _LOOP_170:
 		_T294:
 			__asm        jmp    _T299;
 		_T299:
-			__asm        mov    eax, sKey.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        inc    eax;
-			__asm        push   eax;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    sKey.c_str_ptr, eax;
+			sKey.c_str_ptr = operator new((sKey.reference-><basic_string_ref<char>+0x04:4> + 1));
 			__asm        jmp    _T2b1;
 		_T2b1:
 			__asm        mov    eax, sKey.reference;
@@ -5188,13 +5176,7 @@ _LOOP_482:
 		_T5bd:
 			__asm        jmp    _T5c2;
 		_T5c2:
-			__asm        mov    eax, sKey.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        inc    eax;
-			__asm        push   eax;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    sKey.c_str_ptr, eax;
+			sKey.c_str_ptr = operator new((sKey.reference-><basic_string_ref<char>+0x04:4> + 1));
 			__asm        jmp    _T5da;
 		_T5da:
 			__asm        mov    eax, sKey.reference;
@@ -6089,13 +6071,7 @@ _T189:
 _T1d1:
 	__asm        jmp    _T1d6;
 _T1d6:
-	__asm        mov    eax, sPath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sPath.c_str_ptr, eax;
+	sPath.c_str_ptr = operator new((sPath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T1ee;
 _T1ee:
 	__asm        mov    eax, sPath.reference;
@@ -6252,13 +6228,7 @@ _T3ad:
 _T3f5:
 	__asm        jmp    _T3fa;
 _T3fa:
-	__asm        mov    eax, sPath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sPath.c_str_ptr, eax;
+	sPath.c_str_ptr = operator new((sPath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T412;
 _T412:
 	__asm        mov    eax, sPath.reference;
@@ -9738,11 +9708,7 @@ _T2c:
 	__asm        mov    eax, [eax];
 	__asm        mov    lControl, eax;
 // LINE 1262:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x74];
-	__asm        mov    eax, [eax+0x74];
-	__asm        inc    eax;
-	__asm        mov    lDevice, eax;
+	lDevice = (this->myJoystickWindow->nCurrentJoystick + 1);
 // LINE 1263:
 	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1264:

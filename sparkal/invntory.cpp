@@ -2559,27 +2559,11 @@ _FOR_NEXT_59:
 		// LINE 217:
 			rectDestination.left = ((this-><InventoryWindow+0x20> + this->InventoryWindow::GetColumnStartPixel(0x0)) + 0x3);
 		// LINE 218:
-			__asm        push   1;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetColumnStartPixel;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x20];
-			__asm        add    ecx, eax;
-			__asm        dec    ecx;
-			__asm        mov    rectDestination.right, ecx;
+			rectDestination.right = ((this-><InventoryWindow+0x20> + this->InventoryWindow::GetColumnStartPixel(0x1)) - 1);
 		// LINE 219:
 			rectDestination.top = ((this-><InventoryWindow+0x24> + this->InventoryWindow::GetRowStartPixel(lCurrentRow)) + 0x2);
 		// LINE 220:
-			__asm        mov    eax, lCurrentRow;
-			__asm        inc    eax;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   InventoryWindow::GetRowStartPixel;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x24];
-			__asm        add    ecx, eax;
-			__asm        sub    ecx, 2;
-			__asm        mov    rectDestination.bottom, ecx;
+			rectDestination.bottom = ((this-><InventoryWindow+0x24> + this->InventoryWindow::GetRowStartPixel((lCurrentRow + 1))) - 0x2);
 		// LINE 222:
 			__asm        jmp    _Te4;
 		_Te4:

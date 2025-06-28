@@ -1849,13 +1849,7 @@ _T132:
 _T16e:
 	__asm        jmp    _T173;
 _T173:
-	__asm        mov    eax, sImagePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sImagePath.c_str_ptr, eax;
+	sImagePath.c_str_ptr = operator new((sImagePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T18b;
 _T18b:
 	__asm        mov    eax, sImagePath.reference;

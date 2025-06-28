@@ -788,18 +788,7 @@ void MTime::MTime() {
 // LINE 166:
 	t = localtime(ltime);
 // LINE 172:
-	__asm        mov    eax, t;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        mov    eax, t;
-	__asm        mov    eax, [eax+0x10];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    eax, t;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        lea    ecx, today<vftable>;
-	__asm        call   MDate::MDate;
+	today<vftable>->MDate::MDate(t->tm_mday, (t->tm_mon + 1), t->tm_year);
 // LINE 177:
 	__asm        mov    eax, t;
 	__asm        mov    eax, [eax];

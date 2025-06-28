@@ -283,15 +283,9 @@ _T82:
 // LINE 323:
 	S_ulc.y = (posy - (S_mapdimy >> 0x1));
 // LINE 324:
-	__asm        mov    eax, S_ulc.x;
-	__asm        add    eax, S_mapdimx;
-	__asm        dec    eax;
-	__asm        mov    S_lrc.x, eax;
+	S_lrc.x = ((S_ulc.x + S_mapdimx) - 1);
 // LINE 325:
-	__asm        mov    eax, S_ulc.y;
-	__asm        add    eax, S_mapdimy;
-	__asm        dec    eax;
-	__asm        mov    S_lrc.y, eax;
+	S_lrc.y = ((S_ulc.y + S_mapdimy) - 1);
 // LINE 327:
 _FOR_de:
 	y = S_ulc.y;
@@ -576,19 +570,9 @@ _T41c:
 // LINE 433:
 	S_ulc.y = (posy - (S_mapdimy >> 0x2));
 // LINE 434:
-	__asm        mov    eax, S_ulc.x;
-	__asm        mov    ecx, S_mapdimx;
-	__asm        sar    ecx, 1;
-	__asm        add    eax, ecx;
-	__asm        dec    eax;
-	__asm        mov    S_lrc.x, eax;
+	S_lrc.x = ((S_ulc.x + (S_mapdimx >> 0x1)) - 1);
 // LINE 435:
-	__asm        mov    eax, S_ulc.y;
-	__asm        mov    ecx, S_mapdimy;
-	__asm        sar    ecx, 1;
-	__asm        add    eax, ecx;
-	__asm        dec    eax;
-	__asm        mov    S_lrc.y, eax;
+	S_lrc.y = ((S_ulc.y + (S_mapdimy >> 0x1)) - 1);
 // LINE 437:
 _FOR_482:
 	y = S_ulc.y;
@@ -940,18 +924,9 @@ _T882:
 // LINE 556:
 	S_ulc.y = (posy - (S_mapdimy >> 0x3));
 // LINE 557:
-	__asm        mov    eax, S_mapdimx;
-	__asm        sar    eax, 2;
-	__asm        add    eax, S_ulc.x;
-	__asm        dec    eax;
-	__asm        mov    S_lrc.x, eax;
+	S_lrc.x = (((S_mapdimx >> 0x2) + S_ulc.x) - 1);
 // LINE 558:
-	__asm        mov    eax, S_ulc.y;
-	__asm        mov    ecx, S_mapdimy;
-	__asm        sar    ecx, 2;
-	__asm        add    eax, ecx;
-	__asm        dec    eax;
-	__asm        mov    S_lrc.y, eax;
+	S_lrc.y = ((S_ulc.y + (S_mapdimy >> 0x2)) - 1);
 // LINE 560:
 _FOR_8e6:
 	y = S_ulc.y;
@@ -1437,18 +1412,9 @@ _Te6f:
 // LINE 716:
 	S_ulc.y = (posy - (S_mapdimy >> 0x4));
 // LINE 717:
-	__asm        mov    eax, S_mapdimx;
-	__asm        sar    eax, 3;
-	__asm        add    eax, S_ulc.x;
-	__asm        dec    eax;
-	__asm        mov    S_lrc.x, eax;
+	S_lrc.x = (((S_mapdimx >> 0x3) + S_ulc.x) - 1);
 // LINE 718:
-	__asm        mov    eax, S_ulc.y;
-	__asm        mov    ecx, S_mapdimy;
-	__asm        sar    ecx, 3;
-	__asm        add    eax, ecx;
-	__asm        dec    eax;
-	__asm        mov    S_lrc.y, eax;
+	S_lrc.y = ((S_ulc.y + (S_mapdimy >> 0x3)) - 1);
 // LINE 720:
 _FOR_ed3:
 	y = S_ulc.y;
@@ -2388,10 +2354,7 @@ _T24e:
 // LINE 1039:
 	fx = G_uheli->vector.x;
 // LINE 1040:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0x108];
-	__asm        neg    eax;
-	__asm        mov    fy, eax;
+	fy = -G_uheli->vector.z;
 // LINE 1042:
 	__asm        jmp    _T295;
 // LINE 1044:
@@ -2458,9 +2421,7 @@ void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
 _T44:
 	Xinc = 0xffffffff;
 // LINE 1093:
-	__asm        mov    eax, dx;
-	__asm        neg    eax;
-	__asm        mov    dx, eax;
+	dx = -dx;
 // LINE 1096:
 _T53:
 	__asm        cmp    dy, 0;
@@ -2473,13 +2434,9 @@ _T53:
 	__asm        jmp    _T8a;
 // LINE 1103:
 _T71:
-	__asm        mov    eax, S_borderdimx;
-	__asm        neg    eax;
-	__asm        mov    Yinc, eax;
+	Yinc = -S_borderdimx;
 // LINE 1104:
-	__asm        mov    eax, dy;
-	__asm        neg    eax;
-	__asm        mov    dy, eax;
+	dy = -dy;
 // LINE 1105:
 	Yunit = 0xffffffff;
 // LINE 1108:
@@ -3554,9 +3511,7 @@ void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, c
 _T3b:
 	Xinc = 0xffffffff;
 // LINE 1758:
-	__asm        mov    eax, dx;
-	__asm        neg    eax;
-	__asm        mov    dx, eax;
+	dx = -dx;
 // LINE 1761:
 _T4a:
 	__asm        cmp    dy, 0;
@@ -3569,13 +3524,9 @@ _T4a:
 	__asm        jmp    _T81;
 // LINE 1768:
 _T68:
-	__asm        mov    eax, S_borderdimx;
-	__asm        neg    eax;
-	__asm        mov    Yinc, eax;
+	Yinc = -S_borderdimx;
 // LINE 1769:
-	__asm        mov    eax, dy;
-	__asm        neg    eax;
-	__asm        mov    dy, eax;
+	dy = -dy;
 // LINE 1770:
 	Yunit = 0xffffffff;
 // LINE 1773:

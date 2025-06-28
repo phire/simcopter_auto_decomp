@@ -354,10 +354,7 @@ void S3MissionGenerator() {
 // LINE 256:
 	S_mission_timer -= G_AvLoopTime;
 // LINE 260:
-	__asm        mov    eax, S_max_missions;
-	__asm        sub    eax, S_mstatics.num_active_missions;
-	__asm        dec    eax;
-	__asm        mov    adjustor, eax;
+	adjustor = ((S_max_missions - S_mstatics.num_active_missions) - 1);
 // LINE 262:
 	S_mission_timer -= (S_mission_interval_adj * adjustor);
 // LINE 266:
@@ -3834,19 +3831,9 @@ _T9c:
 	__asm        jmp    _T53f;
 // LINE 2045:
 _Ta9:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_flame;
-	__asm        neg    eax;
-	__asm        mov    points, eax;
+	points = -(mp->i2num * S_pts_flame);
 // LINE 2046:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_flame;
-	__asm        neg    eax;
-	__asm        push   eax;
-	__asm        call   ChangeUserPoints;
-	__asm        add    esp, 4;
+	ChangeUserPoints(-(mp->i2num * S_pts_flame));
 // LINE 2047:
 	reason = 0x5b50a8;
 // LINE 2048:
@@ -3867,19 +3854,9 @@ _T126:
 	__asm        jmp    _T5f2;
 // LINE 2060:
 _T12b:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_destroyed_building;
-	__asm        neg    eax;
-	__asm        mov    points, eax;
+	points = -(mp->i2num * S_pts_destroyed_building);
 // LINE 2061:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_destroyed_building;
-	__asm        neg    eax;
-	__asm        push   eax;
-	__asm        call   ChangeUserPoints;
-	__asm        add    esp, 4;
+	ChangeUserPoints(-(mp->i2num * S_pts_destroyed_building));
 // LINE 2062:
 	reason = 0x5b50c0;
 // LINE 2063:
@@ -3900,19 +3877,9 @@ _T166:
 	__asm        jmp    _T5f2;
 // LINE 2075:
 _T1ad:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_new_debris;
-	__asm        neg    eax;
-	__asm        mov    points, eax;
+	points = -(mp->i2num * S_pts_new_debris);
 // LINE 2076:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_new_debris;
-	__asm        neg    eax;
-	__asm        push   eax;
-	__asm        call   ChangeUserPoints;
-	__asm        add    esp, 4;
+	ChangeUserPoints(-(mp->i2num * S_pts_new_debris));
 // LINE 2077:
 	reason = 0x5b50e4;
 // LINE 2078:
@@ -4032,19 +3999,9 @@ _T3c9:
 	__asm        jmp    _T5f2;
 // LINE 2160:
 _T410:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_vehicle_burned;
-	__asm        neg    eax;
-	__asm        mov    points, eax;
+	points = -(mp->i2num * S_pts_vehicle_burned);
 // LINE 2161:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        imul   eax, S_pts_vehicle_burned;
-	__asm        neg    eax;
-	__asm        push   eax;
-	__asm        call   ChangeUserPoints;
-	__asm        add    esp, 4;
+	ChangeUserPoints(-(mp->i2num * S_pts_vehicle_burned));
 // LINE 2162:
 	reason = 0x5b5160;
 // LINE 2163:
@@ -4189,25 +4146,11 @@ _T70:
 // LINE 2253:
 	total_pts -= (md->mdata.destroyed_cels * S_pts_mission_fire_penalty);
 // LINE 2254:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x5C];
-	__asm        dec    ecx;
-	__asm        imul   ecx, S_pts_mission_fire_penalty;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_pts, eax;
+	total_pts -= ((md->mdata.total_cels - 1) * S_pts_mission_fire_penalty);
 // LINE 2255:
 	total_money -= (md->mdata.destroyed_cels * S_money_mission_fire_penalty);
 // LINE 2256:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x5C];
-	__asm        dec    ecx;
-	__asm        imul   ecx, S_money_mission_fire_penalty;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_money, eax;
+	total_money -= ((md->mdata.total_cels - 1) * S_money_mission_fire_penalty);
 // LINE 2259:
 _Tfd:
 	__asm        mov    eax, md;

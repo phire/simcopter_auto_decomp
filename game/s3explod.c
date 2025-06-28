@@ -376,17 +376,11 @@ _T236:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 179:
-	__asm        mov    eax, X_axis.x;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[3].x, eax;
+	S_spark_vectors[3].x = -X_axis.x;
 // LINE 180:
-	__asm        mov    eax, Y_axis.y;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[4].y, eax;
+	S_spark_vectors[4].y = -Y_axis.y;
 // LINE 181:
-	__asm        mov    eax, Z_axis.z;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[5].z, eax;
+	S_spark_vectors[5].z = -Z_axis.z;
 // LINE 183:
 	_VRIdentity4x4(mat[0][0]);
 // LINE 184:
@@ -406,17 +400,11 @@ _T236:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 188:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[7].x, eax;
+	S_spark_vectors[7].x = -vec.x;
 // LINE 189:
-	__asm        mov    eax, vec.y;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[7].y, eax;
+	S_spark_vectors[7].y = -vec.y;
 // LINE 190:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[7].z, eax;
+	S_spark_vectors[7].z = -vec.z;
 // LINE 192:
 	_VRIdentity4x4(mat[0][0]);
 // LINE 193:
@@ -436,17 +424,11 @@ _T236:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 197:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[9].x, eax;
+	S_spark_vectors[9].x = -vec.x;
 // LINE 198:
-	__asm        mov    eax, vec.y;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[9].y, eax;
+	S_spark_vectors[9].y = -vec.y;
 // LINE 199:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[9].z, eax;
+	S_spark_vectors[9].z = -vec.z;
 // LINE 201:
 	_VRIdentity4x4(mat[0][0]);
 // LINE 202:
@@ -466,17 +448,11 @@ _T236:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 206:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[11].x, eax;
+	S_spark_vectors[11].x = -vec.x;
 // LINE 207:
-	__asm        mov    eax, vec.y;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[11].y, eax;
+	S_spark_vectors[11].y = -vec.y;
 // LINE 208:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[11].z, eax;
+	S_spark_vectors[11].z = -vec.z;
 // LINE 210:
 	_VRIdentity4x4(mat[0][0]);
 // LINE 211:
@@ -496,17 +472,11 @@ _T236:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 215:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[13].x, eax;
+	S_spark_vectors[13].x = -vec.x;
 // LINE 216:
-	__asm        mov    eax, vec.y;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[13].y, eax;
+	S_spark_vectors[13].y = -vec.y;
 // LINE 217:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    S_spark_vectors[13].z, eax;
+	S_spark_vectors[13].z = -vec.z;
 // LINE 220:
 }
 

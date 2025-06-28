@@ -444,15 +444,9 @@ __DO_10d:
 					__asm        mov    [ecx+edx+0x1000], al;
 				// LINE 566:
 				_T262:
-					__asm        mov    eax, s;
-					__asm        inc    eax;
-					__asm        and    eax, 0xFFF;
-					__asm        mov    s, eax;
+					s = ((s + 1) & 0xfff);
 				// LINE 567:
-					__asm        mov    eax, r;
-					__asm        inc    eax;
-					__asm        and    eax, 0xFFF;
-					__asm        mov    r, eax;
+					r = ((r + 1) & 0xfff);
 				// LINE 568:
 					InsertNode(r, forest);
 			}
@@ -470,15 +464,9 @@ __DO_10d:
 		// LINE 572:
 			DeleteNode(s, forest);
 		// LINE 573:
-			__asm        mov    eax, s;
-			__asm        inc    eax;
-			__asm        and    eax, 0xFFF;
-			__asm        mov    s, eax;
+			s = ((s + 1) & 0xfff);
 		// LINE 574:
-			__asm        mov    eax, r;
-			__asm        inc    eax;
-			__asm        and    eax, 0xFFF;
-			__asm        mov    r, eax;
+			r = ((r + 1) & 0xfff);
 		// LINE 575:
 			__asm        dec    len;
 			__asm        je     _T2ee;
@@ -910,9 +898,7 @@ static void StartModel(/*packed*/ struct tACompModel *model) {
 _FOR_22:
 	for (sym = 0x13a; (sym >= 0x1); sym--) {
 		// LINE 305:
-			__asm        mov    eax, sym;
-			__asm        dec    eax;
-			__asm        mov    ch, eax;
+			ch = (sym - 1);
 		// LINE 306:
 			__asm        mov    eax, sym;
 			__asm        mov    ecx, ch;
@@ -1936,9 +1922,7 @@ __WHILE_17:
 			__asm        cmp    [ecx+eax*4+0xED0], edx;
 			__asm        jbe    _T54;
 
-			__asm        mov    eax, k;
-			__asm        inc    eax;
-			__asm        mov    i, eax;
+			i = (k + 1);
 		// LINE 433:
 			__asm        jmp    _T5a;
 		_T54:
@@ -2085,9 +2069,7 @@ __WHILE_17:
 			__asm        cmp    [ecx+eax*4+0x13BC], edx;
 			__asm        jbe    _T54;
 
-			__asm        mov    eax, k;
-			__asm        inc    eax;
-			__asm        mov    i, eax;
+			i = (k + 1);
 		// LINE 449:
 			__asm        jmp    _T5a;
 		_T54:
@@ -2097,10 +2079,7 @@ __WHILE_17:
 	}
 // LINE 451:
 _T5f:
-	__asm        mov    eax, i;
-	__asm        dec    eax;
-	__asm        jmp    __RETURN;
+	return (i - 1);
 // LINE 452:
-__RETURN:
 }
 

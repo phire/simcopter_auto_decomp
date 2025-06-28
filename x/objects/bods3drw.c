@@ -149,9 +149,7 @@ _Tb3:
 	__asm        mov    ecx, ptr;
 	__asm        mov    [ecx], al;
 // LINE 160:
-	__asm        mov    eax, Pbufwidth;
-	__asm        dec    eax;
-	__asm        add    ptr, eax;
+	ptr += (Pbufwidth - 1);
 // LINE 161:
 	__asm        push   0x5BEF58;
 	__asm        push   1;
@@ -410,11 +408,7 @@ _FOR_30b:
 		// LINE 241:
 			endX = (centerPt.x + xOffset);
 		// LINE 242:
-			__asm        mov    eax, radius;
-			__asm        sub    eax, i;
-			__asm        add    eax, centerPt.y;
-			__asm        dec    eax;
-			__asm        mov    lineY, eax;
+			lineY = (((radius - i) + centerPt.y) - 1);
 		// LINE 243:
 			__asm        mov    eax, i;
 			__asm        mov    eax, [ebp+eax-0xF8];
@@ -633,11 +627,7 @@ _FOR_69b:
 		// LINE 316:
 			endX = (centerPt.x + xOffset);
 		// LINE 317:
-			__asm        mov    eax, radius;
-			__asm        sub    eax, i;
-			__asm        add    eax, centerPt.y;
-			__asm        dec    eax;
-			__asm        mov    lineY, eax;
+			lineY = (((radius - i) + centerPt.y) - 1);
 		// LINE 318:
 			DrawHorzLine(startX, endX, lineY, reinterpret_cast<uint32_t>(color));
 		// LINE 320:
@@ -1176,9 +1166,7 @@ _T16b:
 _T193:
 	xInc = 0xffffffff;
 // LINE 704:
-	__asm        mov    eax, dx;
-	__asm        neg    eax;
-	__asm        mov    dx, eax;
+	dx = -dx;
 // LINE 707:
 _T1a2:
 	__asm        cmp    dy, 0;
@@ -1189,13 +1177,9 @@ _T1a2:
 	__asm        jmp    _T1cb;
 // LINE 711:
 _T1b9:
-	__asm        mov    eax, Pbufwidth;
-	__asm        neg    eax;
-	__asm        mov    yInc, eax;
+	yInc = -Pbufwidth;
 // LINE 712:
-	__asm        mov    eax, dy;
-	__asm        neg    eax;
-	__asm        mov    dy, eax;
+	dy = -dy;
 // LINE 717:
 _T1cb:
 	__asm        mov    eax, dx;
@@ -1572,9 +1556,7 @@ _T142:
 _T16a:
 	xInc = 0xffffffff;
 // LINE 880:
-	__asm        mov    eax, dx;
-	__asm        neg    eax;
-	__asm        mov    dx, eax;
+	dx = -dx;
 // LINE 883:
 _T179:
 	__asm        cmp    dy, 0;
@@ -1585,13 +1567,9 @@ _T179:
 	__asm        jmp    _T1a2;
 // LINE 887:
 _T190:
-	__asm        mov    eax, Pbufwidth;
-	__asm        neg    eax;
-	__asm        mov    yInc, eax;
+	yInc = -Pbufwidth;
 // LINE 888:
-	__asm        mov    eax, dy;
-	__asm        neg    eax;
-	__asm        mov    dy, eax;
+	dy = -dy;
 // LINE 892:
 _T1a2:
 	__asm        mov    eax, dx;
@@ -1854,10 +1832,7 @@ _T92:
 _Ta6:
 	writeBuffer = (((yPos * Pbufwidth) + startX) + buffer1);
 // LINE 1008:
-	__asm        mov    eax, endX;
-	__asm        sub    eax, startX;
-	__asm        inc    eax;
-	__asm        mov    dx, eax;
+	dx = ((endX - startX) + 1);
 // LINE 1015:
 	oneByteWrites = (dx & 0x3);
 // LINE 1016:
@@ -2038,10 +2013,7 @@ _T52:
 _T65:
 	writeBuffer = (((yPos * Pbufwidth) + startX) + buffer1);
 // LINE 1086:
-	__asm        mov    eax, endX;
-	__asm        sub    eax, startX;
-	__asm        inc    eax;
-	__asm        mov    dx, eax;
+	dx = ((endX - startX) + 1);
 // LINE 1088:
 	__asm        xor    eax, eax;
 	__asm        mov    al, color;

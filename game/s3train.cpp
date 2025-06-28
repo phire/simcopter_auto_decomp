@@ -2532,17 +2532,13 @@ _T86:
 	__asm        cmp    deltaX, 0;
 	__asm        jge    _T98;
 // LINE 1687:
-	__asm        mov    eax, deltaX;
-	__asm        neg    eax;
-	__asm        mov    deltaX, eax;
+	deltaX = -deltaX;
 // LINE 1689:
 _T98:
 	__asm        cmp    deltaY, 0;
 	__asm        jge    _Taa;
 // LINE 1691:
-	__asm        mov    eax, deltaY;
-	__asm        neg    eax;
-	__asm        mov    deltaY, eax;
+	deltaY = -deltaY;
 // LINE 1695:
 _Taa:
 	__asm        mov    eax, G_ViewSize;
@@ -4660,33 +4656,17 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const /*packed*
 // LINE 2905:
 	this->northCell.x = point.x;
 // LINE 2906:
-	__asm        mov    eax, point;
-	__asm        mov    eax, [eax+4];
-	__asm        dec    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x79], eax;
+	this->northCell.y = (point.y - 1);
 // LINE 2907:
 	this->southCell.x = point.x;
 // LINE 2908:
-	__asm        mov    eax, point;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x81], eax;
+	this->southCell.y = (point.y + 1);
 // LINE 2909:
-	__asm        mov    eax, point;
-	__asm        mov    eax, [eax];
-	__asm        inc    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x85], eax;
+	this->eastCell.x = (point.x + 1);
 // LINE 2910:
 	this->eastCell.y = point.y;
 // LINE 2911:
-	__asm        mov    eax, point;
-	__asm        mov    eax, [eax];
-	__asm        dec    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8D], eax;
+	this->westCell.x = (point.x - 1);
 // LINE 2912:
 	this->westCell.y = point.y;
 // LINE 2915:
@@ -7265,9 +7245,7 @@ void TrainClass::BeamToWithinCameraRange() {
 _T66:
 	vec.y = vec.z;
 // LINE 3833:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.x;
 // LINE 3834:
 	vec.x = vec.y;
 // LINE 3836:
@@ -7278,9 +7256,7 @@ _T66:
 	__asm        jmp    _T166;
 // LINE 3841:
 _Ta3:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.y, eax;
+	vec.y = -vec.z;
 // LINE 3842:
 	vec.z = vec.x;
 // LINE 3843:
@@ -7293,13 +7269,9 @@ _Ta3:
 	__asm        jmp    _T166;
 // LINE 3850:
 _Te0:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.x, eax;
+	vec.x = -vec.x;
 // LINE 3851:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.z;
 // LINE 3853:
 	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 3854:
@@ -7308,17 +7280,9 @@ _Te0:
 	__asm        jmp    _T166;
 // LINE 3859:
 _T119:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.x;
-	__asm        mov    vec.x, eax;
+	vec.x = (((G_ViewSize >> 0x1) + 1) * vec.x);
 // LINE 3860:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.z;
-	__asm        mov    vec.z, eax;
+	vec.z = (((G_ViewSize >> 0x1) + 1) * vec.z);
 // LINE 3861:
 	__asm        jmp    _T166;
 // LINE 3862:

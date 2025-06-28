@@ -285,21 +285,7 @@ void MDate::MDate() {
 // LINE 77:
 	now = localtime(clk);
 // LINE 78:
-	__asm        mov    eax, now;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    eax, 0x76C;
-	__asm        push   eax;
-	__asm        mov    eax, now;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        mov    eax, now;
-	__asm        mov    eax, [eax+0x10];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   MDate::Jday;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->Julnum = MDate::Jday((now->tm_mon + 1), now->tm_mday, (now->tm_year + 0x76c));
 // LINE 79:
 	return;
 
@@ -315,17 +301,7 @@ void MDate::MDate(uint32_t day, uint32_t year) {
 	__asm        cmp    year, 0;
 	__asm        je     _T4a;
 // LINE 96:
-	__asm        mov    eax, year;
-	__asm        dec    eax;
-	__asm        push   eax;
-	__asm        push   0x1F;
-	__asm        push   0xC;
-	__asm        call   MDate::Jday;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, day;
-	__asm        add    ecx, eax;
-	__asm        mov    eax, this;
-	__asm        mov    [eax+4], ecx;
+	this->Julnum = (day + MDate::Jday(0xc, 0x1f, (year - 1)));
 // LINE 97:
 	__asm        jmp    _T58;
 // LINE 98:
@@ -421,16 +397,8 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004bc64f
 uint32_t MDate::DayOfWeek(char * nameOfDay) {
 // LINE 168:
-	__asm        push   7;
-	__asm        push   0x59AD18;
-	__asm        mov    eax, nameOfDay;
-	__asm        push   eax;
-	__asm        call   FindMatch;
-	__asm        add    esp, 0xC;
-	__asm        inc    eax;
-	__asm        jmp    __RETURN;
+	return (FindMatch(nameOfDay, 0x59ad18, 0x7) + 1);
 // LINE 169:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc673
@@ -537,16 +505,8 @@ _T29:
 // FUNCTION: COPTER_D 0x004bc7a2
 uint32_t MDate::IndexOfMonth(char * nameOfMonth) {
 // LINE 216:
-	__asm        push   0xC;
-	__asm        push   0x59ACC8;
-	__asm        mov    eax, nameOfMonth;
-	__asm        push   eax;
-	__asm        call   FindMatch;
-	__asm        add    esp, 0xC;
-	__asm        inc    eax;
-	__asm        jmp    __RETURN;
+	return (FindMatch(nameOfMonth, 0x59acc8, 0xc) + 1);
 // LINE 217:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc7c6
@@ -1032,10 +992,7 @@ __RETURN:
 // LINE 451:
 	desiredDayOfWeek--;
 // LINE 452:
-	__asm        mov    ecx, this;
-	__asm        call   MDate::WeekDay;
-	__asm        dec    eax;
-	__asm        mov    thisDayOfWeek, eax;
+	thisDayOfWeek = (this->MDate::WeekDay() - 1);
 // LINE 453:
 	j = this->Julnum;
 // LINE 458:

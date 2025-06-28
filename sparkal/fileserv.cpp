@@ -1411,10 +1411,8 @@ int32_t FileServices::FindRemotePath() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C35E8];
 // LINE 101:
-	__asm        mov    i, 0;
-	__asm        mov    eax, lDriveStringLength;
-	__asm        dec    eax;
-	__asm        mov    iEnd, eax;
+	i = 0x0;
+	iEnd = (lDriveStringLength - 1);
 __WHILE_72:
 	while ((iEnd > i)) {
 		// LINE 102:
@@ -2025,13 +2023,7 @@ _T167:
 _T195:
 	__asm        jmp    _T19a;
 _T19a:
-	__asm        mov    eax, sTempValidationFilePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sTempValidationFilePath.c_str_ptr, eax;
+	sTempValidationFilePath.c_str_ptr = operator new((sTempValidationFilePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T1b2;
 _T1b2:
 	__asm        mov    eax, sTempValidationFilePath.reference;
@@ -5022,15 +5014,7 @@ int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, /*p
 _T44:
 	__asm        jmp    _T49;
 _T49:
-	__asm        mov    eax, sFile;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, sFile;
-	__asm        mov    [ecx], eax;
+	sFile.c_str_ptr = operator new((sFile.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T66;
 _T66:
 	__asm        mov    eax, sFile;

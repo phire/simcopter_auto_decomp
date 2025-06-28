@@ -750,15 +750,7 @@ _T84:
 _Tac:
 	__asm        jmp    _Tb1;
 _Tb1:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->sName.c_str_ptr = operator new((this->sName.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _Tcf;
 _Tcf:
 	__asm        mov    eax, this;

@@ -4804,9 +4804,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 
 	__asm        jmp    _T62;
 _T5a:
-	__asm        mov    eax, delta;
-	__asm        neg    eax;
-	__asm        mov    delta, eax;
+	delta = -delta;
 // LINE 1117:
 _T62:
 	new_height = ((reinterpret_cast<uint32_t>(hght) & 0xffff) + delta);
@@ -5425,128 +5423,119 @@ _FOR_2d:
 			z = (citysize + i);
 		// LINE 1553:
 		_FOR_53:
-			__asm        jmp    _FOR_COND_53;
-		_FOR_NEXT_53:
-			z--;
-		_FOR_COND_53:
-			__asm        mov    eax, i;
-			__asm        neg    eax;
-			__asm        dec    eax;
-			__asm        cmp    eax, z;
-			__asm        jg     _T1e1;
-		// LINE 1555:
-			__asm        mov    eax, G_tmask;
-			__asm        and    eax, z;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    eax, cl;
-			__asm        mov    ecx, G_tmask;
-			__asm        and    ecx, x;
-			__asm        add    ecx, ecx;
-			__asm        lea    eax, [ecx+eax*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        xor    edx, edx;
-			__asm        mov    dx, [eax+ecx];
-			__asm        mov    alt, edx;
-		// LINE 1556:
-			__asm        mov    eax, z;
-			__asm        inc    eax;
-			__asm        and    eax, G_tmask;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    eax, cl;
-			__asm        mov    ecx, x;
-			__asm        dec    ecx;
-			__asm        and    ecx, G_tmask;
-			__asm        add    ecx, ecx;
-			__asm        lea    eax, [ecx+eax*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        xor    edx, edx;
-			__asm        mov    dx, [eax+ecx];
-			__asm        mov    alt1, edx;
-		// LINE 1557:
-			__asm        mov    eax, G_tmask;
-			__asm        and    eax, z;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    eax, cl;
-			__asm        mov    ecx, x;
-			__asm        dec    ecx;
-			__asm        and    ecx, G_tmask;
-			__asm        add    ecx, ecx;
-			__asm        lea    eax, [ecx+eax*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        xor    edx, edx;
-			__asm        mov    dx, [eax+ecx];
-			__asm        mov    alt2, edx;
-		// LINE 1558:
-			__asm        mov    eax, z;
-			__asm        dec    eax;
-			__asm        and    eax, G_tmask;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    eax, cl;
-			__asm        mov    ecx, x;
-			__asm        dec    ecx;
-			__asm        and    ecx, G_tmask;
-			__asm        add    ecx, ecx;
-			__asm        lea    eax, [ecx+eax*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        xor    edx, edx;
-			__asm        mov    dx, [eax+ecx];
-			__asm        mov    alt3, edx;
-		// LINE 1559:
-			__asm        mov    eax, alt1;
-			__asm        add    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jge    _T138;
+			for (; ((-i - 1) <= z); z--) {
+				// LINE 1555:
+					__asm        mov    eax, G_tmask;
+					__asm        and    eax, z;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    eax, cl;
+					__asm        mov    ecx, G_tmask;
+					__asm        and    ecx, x;
+					__asm        add    ecx, ecx;
+					__asm        lea    eax, [ecx+eax*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        xor    edx, edx;
+					__asm        mov    dx, [eax+ecx];
+					__asm        mov    alt, edx;
+				// LINE 1556:
+					__asm        mov    eax, z;
+					__asm        inc    eax;
+					__asm        and    eax, G_tmask;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    eax, cl;
+					__asm        mov    ecx, x;
+					__asm        dec    ecx;
+					__asm        and    ecx, G_tmask;
+					__asm        add    ecx, ecx;
+					__asm        lea    eax, [ecx+eax*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        xor    edx, edx;
+					__asm        mov    dx, [eax+ecx];
+					__asm        mov    alt1, edx;
+				// LINE 1557:
+					__asm        mov    eax, G_tmask;
+					__asm        and    eax, z;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    eax, cl;
+					__asm        mov    ecx, x;
+					__asm        dec    ecx;
+					__asm        and    ecx, G_tmask;
+					__asm        add    ecx, ecx;
+					__asm        lea    eax, [ecx+eax*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        xor    edx, edx;
+					__asm        mov    dx, [eax+ecx];
+					__asm        mov    alt2, edx;
+				// LINE 1558:
+					__asm        mov    eax, z;
+					__asm        dec    eax;
+					__asm        and    eax, G_tmask;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    eax, cl;
+					__asm        mov    ecx, x;
+					__asm        dec    ecx;
+					__asm        and    ecx, G_tmask;
+					__asm        add    ecx, ecx;
+					__asm        lea    eax, [ecx+eax*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        xor    edx, edx;
+					__asm        mov    dx, [eax+ecx];
+					__asm        mov    alt3, edx;
+				// LINE 1559:
+					__asm        mov    eax, alt1;
+					__asm        add    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jge    _T138;
 
-			alt = (alt1 + 0x20);
-		_T138:
-			__asm        mov    eax, alt1;
-			__asm        sub    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jle    _T150;
+					alt = (alt1 + 0x20);
+				_T138:
+					__asm        mov    eax, alt1;
+					__asm        sub    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jle    _T150;
 
-			alt = (alt1 - 0x20);
-		_T150:
-			__asm        mov    eax, alt3;
-			__asm        add    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jge    _T168;
+					alt = (alt1 - 0x20);
+				_T150:
+					__asm        mov    eax, alt3;
+					__asm        add    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jge    _T168;
 
-			alt = (alt3 + 0x20);
-		_T168:
-			__asm        mov    eax, alt3;
-			__asm        sub    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jle    _T180;
+					alt = (alt3 + 0x20);
+				_T168:
+					__asm        mov    eax, alt3;
+					__asm        sub    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jle    _T180;
 
-			alt = (alt3 - 0x20);
-		_T180:
-			__asm        mov    eax, alt2;
-			__asm        add    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jge    _T198;
+					alt = (alt3 - 0x20);
+				_T180:
+					__asm        mov    eax, alt2;
+					__asm        add    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jge    _T198;
 
-			alt = (alt2 + 0x20);
-		_T198:
-			__asm        mov    eax, alt2;
-			__asm        sub    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jle    _T1b0;
+					alt = (alt2 + 0x20);
+				_T198:
+					__asm        mov    eax, alt2;
+					__asm        sub    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jle    _T1b0;
 
-			alt = (alt2 - 0x20);
-		_T1b0:
-			__asm        mov    eax, alt;
-			__asm        mov    edx, G_tmask;
-			__asm        and    edx, z;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    edx, cl;
-			__asm        mov    ecx, G_tmask;
-			__asm        and    ecx, x;
-			__asm        add    ecx, ecx;
-			__asm        lea    edx, [ecx+edx*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        mov    [edx+ecx], ax;
-		// LINE 1560:
-			__asm        jmp    _FOR_NEXT_53;
+					alt = (alt2 - 0x20);
+				_T1b0:
+					__asm        mov    eax, alt;
+					__asm        mov    edx, G_tmask;
+					__asm        and    edx, z;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    edx, cl;
+					__asm        mov    ecx, G_tmask;
+					__asm        and    ecx, x;
+					__asm        add    ecx, ecx;
+					__asm        lea    edx, [ecx+edx*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        mov    [edx+ecx], ax;
+			}
 		// LINE 1563:
 		_T1e1:
 			x = (citysize + i);
@@ -5554,128 +5543,119 @@ _FOR_2d:
 			z = (citysize + i);
 		// LINE 1566:
 		_FOR_1f8:
-			__asm        jmp    _FOR_COND_1f8;
-		_FOR_NEXT_1f8:
-			x--;
-		_FOR_COND_1f8:
-			__asm        mov    eax, i;
-			__asm        neg    eax;
-			__asm        dec    eax;
-			__asm        cmp    eax, x;
-			__asm        jg     _T387;
-		// LINE 1568:
-			__asm        mov    eax, G_tmask;
-			__asm        and    eax, z;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    eax, cl;
-			__asm        mov    ecx, G_tmask;
-			__asm        and    ecx, x;
-			__asm        add    ecx, ecx;
-			__asm        lea    eax, [ecx+eax*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        xor    edx, edx;
-			__asm        mov    dx, [eax+ecx];
-			__asm        mov    alt, edx;
-		// LINE 1569:
-			__asm        mov    eax, z;
-			__asm        dec    eax;
-			__asm        and    eax, G_tmask;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    eax, cl;
-			__asm        mov    ecx, x;
-			__asm        dec    ecx;
-			__asm        and    ecx, G_tmask;
-			__asm        add    ecx, ecx;
-			__asm        lea    eax, [ecx+eax*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        xor    edx, edx;
-			__asm        mov    dx, [eax+ecx];
-			__asm        mov    alt1, edx;
-		// LINE 1570:
-			__asm        mov    eax, z;
-			__asm        dec    eax;
-			__asm        and    eax, G_tmask;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    eax, cl;
-			__asm        mov    ecx, G_tmask;
-			__asm        and    ecx, x;
-			__asm        add    ecx, ecx;
-			__asm        lea    eax, [ecx+eax*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        xor    edx, edx;
-			__asm        mov    dx, [eax+ecx];
-			__asm        mov    alt2, edx;
-		// LINE 1571:
-			__asm        mov    eax, z;
-			__asm        dec    eax;
-			__asm        and    eax, G_tmask;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    eax, cl;
-			__asm        mov    ecx, x;
-			__asm        inc    ecx;
-			__asm        and    ecx, G_tmask;
-			__asm        add    ecx, ecx;
-			__asm        lea    eax, [ecx+eax*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        xor    edx, edx;
-			__asm        mov    dx, [eax+ecx];
-			__asm        mov    alt3, edx;
-		// LINE 1572:
-			__asm        mov    eax, alt1;
-			__asm        add    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jge    _T2de;
+			for (; ((-i - 1) <= x); x--) {
+				// LINE 1568:
+					__asm        mov    eax, G_tmask;
+					__asm        and    eax, z;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    eax, cl;
+					__asm        mov    ecx, G_tmask;
+					__asm        and    ecx, x;
+					__asm        add    ecx, ecx;
+					__asm        lea    eax, [ecx+eax*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        xor    edx, edx;
+					__asm        mov    dx, [eax+ecx];
+					__asm        mov    alt, edx;
+				// LINE 1569:
+					__asm        mov    eax, z;
+					__asm        dec    eax;
+					__asm        and    eax, G_tmask;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    eax, cl;
+					__asm        mov    ecx, x;
+					__asm        dec    ecx;
+					__asm        and    ecx, G_tmask;
+					__asm        add    ecx, ecx;
+					__asm        lea    eax, [ecx+eax*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        xor    edx, edx;
+					__asm        mov    dx, [eax+ecx];
+					__asm        mov    alt1, edx;
+				// LINE 1570:
+					__asm        mov    eax, z;
+					__asm        dec    eax;
+					__asm        and    eax, G_tmask;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    eax, cl;
+					__asm        mov    ecx, G_tmask;
+					__asm        and    ecx, x;
+					__asm        add    ecx, ecx;
+					__asm        lea    eax, [ecx+eax*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        xor    edx, edx;
+					__asm        mov    dx, [eax+ecx];
+					__asm        mov    alt2, edx;
+				// LINE 1571:
+					__asm        mov    eax, z;
+					__asm        dec    eax;
+					__asm        and    eax, G_tmask;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    eax, cl;
+					__asm        mov    ecx, x;
+					__asm        inc    ecx;
+					__asm        and    ecx, G_tmask;
+					__asm        add    ecx, ecx;
+					__asm        lea    eax, [ecx+eax*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        xor    edx, edx;
+					__asm        mov    dx, [eax+ecx];
+					__asm        mov    alt3, edx;
+				// LINE 1572:
+					__asm        mov    eax, alt1;
+					__asm        add    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jge    _T2de;
 
-			alt = (alt1 + 0x20);
-		_T2de:
-			__asm        mov    eax, alt1;
-			__asm        sub    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jle    _T2f6;
+					alt = (alt1 + 0x20);
+				_T2de:
+					__asm        mov    eax, alt1;
+					__asm        sub    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jle    _T2f6;
 
-			alt = (alt1 - 0x20);
-		_T2f6:
-			__asm        mov    eax, alt3;
-			__asm        add    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jge    _T30e;
+					alt = (alt1 - 0x20);
+				_T2f6:
+					__asm        mov    eax, alt3;
+					__asm        add    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jge    _T30e;
 
-			alt = (alt3 + 0x20);
-		_T30e:
-			__asm        mov    eax, alt3;
-			__asm        sub    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jle    _T326;
+					alt = (alt3 + 0x20);
+				_T30e:
+					__asm        mov    eax, alt3;
+					__asm        sub    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jle    _T326;
 
-			alt = (alt3 - 0x20);
-		_T326:
-			__asm        mov    eax, alt2;
-			__asm        add    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jge    _T33e;
+					alt = (alt3 - 0x20);
+				_T326:
+					__asm        mov    eax, alt2;
+					__asm        add    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jge    _T33e;
 
-			alt = (alt2 + 0x20);
-		_T33e:
-			__asm        mov    eax, alt2;
-			__asm        sub    eax, 0x20;
-			__asm        cmp    eax, alt;
-			__asm        jle    _T356;
+					alt = (alt2 + 0x20);
+				_T33e:
+					__asm        mov    eax, alt2;
+					__asm        sub    eax, 0x20;
+					__asm        cmp    eax, alt;
+					__asm        jle    _T356;
 
-			alt = (alt2 - 0x20);
-		_T356:
-			__asm        mov    eax, alt;
-			__asm        mov    edx, G_tmask;
-			__asm        and    edx, z;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
-			__asm        shl    edx, cl;
-			__asm        mov    ecx, G_tmask;
-			__asm        and    ecx, x;
-			__asm        add    ecx, ecx;
-			__asm        lea    edx, [ecx+edx*2];
-			__asm        mov    ecx, G_tmap;
-			__asm        mov    [edx+ecx], ax;
-		// LINE 1573:
-			__asm        jmp    _FOR_NEXT_1f8;
+					alt = (alt2 - 0x20);
+				_T356:
+					__asm        mov    eax, alt;
+					__asm        mov    edx, G_tmask;
+					__asm        and    edx, z;
+					__asm        mov    cl, reinterpret_cast<uint8_t>(G_tshift);
+					__asm        shl    edx, cl;
+					__asm        mov    ecx, G_tmask;
+					__asm        and    ecx, x;
+					__asm        add    ecx, ecx;
+					__asm        lea    edx, [ecx+edx*2];
+					__asm        mov    ecx, G_tmap;
+					__asm        mov    [edx+ecx], ax;
+			}
 		// LINE 1575:
 		_T387:
 	}

@@ -1042,13 +1042,7 @@ _Tab:
 _Te7:
 	__asm        jmp    _Tec;
 _Tec:
-	__asm        mov    eax, sCompassPath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sCompassPath.c_str_ptr, eax;
+	sCompassPath.c_str_ptr = operator new((sCompassPath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T104;
 _T104:
 	__asm        mov    eax, sCompassPath.reference;
@@ -5175,13 +5169,7 @@ _Td2:
 _T10e:
 	__asm        jmp    _T113;
 _T113:
-	__asm        mov    eax, sPassengerPath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sPassengerPath.c_str_ptr, eax;
+	sPassengerPath.c_str_ptr = operator new((sPassengerPath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T12b;
 _T12b:
 	__asm        mov    eax, sPassengerPath.reference;

@@ -939,16 +939,7 @@ short _cArray::InsertRow(short afterwhich) {
 // LINE 361:
 	oldysize = this->fySize;
 // LINE 363:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::Resize;
+	this->_cArray::Resize((this->fxSize + 1), this->fySize, 0x0);
 // LINE 365:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, oldxsize;
@@ -1030,16 +1021,7 @@ short _cArray::InsertColumn(short afterwhich) {
 // LINE 389:
 	oldysize = this->fySize;
 // LINE 391:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   _cArray::Resize;
+	this->_cArray::Resize(this->fxSize, (this->fySize + 1), 0x0);
 // LINE 392:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, oldxsize;
@@ -1091,15 +1073,7 @@ _FOR_96:
 				_Tf6:
 					__asm        jmp    _Tfb;
 				_Tfb:
-					__asm        movsx  eax, ycount;
-					__asm        dec    eax;
-					__asm        mov    ecx, this;
-					__asm        imul   eax, [ecx+0x18];
-					__asm        movsx  ecx, xcount;
-					__asm        mov    edx, this;
-					__asm        mov    edx, [edx+4];
-					__asm        add    eax, [edx+ecx*4];
-					__asm        mov    movefrom, eax;
+					movefrom = (((reinterpret_cast<int16_t>(ycount) - 1) * this->fEntrySize) + this->fData->);
 				// LINE 401:
 					__asm        jmp    _T11c;
 				_T11c:
@@ -1159,30 +1133,22 @@ _FOR_96:
 	__asm        mov    count, ax;
 	__asm        jmp    _FOR_COND_96;
 _FOR_NEXT_96:
-	count++;
-_FOR_COND_96:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        dec    eax;
-	__asm        movsx  ecx, count;
-	__asm        cmp    eax, ecx;
-	__asm        jle    _Tfb;
-// LINE 420:
-	__asm        jmp    _Tb2;
-_Tb2:
-	__asm        movsx  eax, count;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    eax, [ecx+eax*4+4];
-	__asm        mov    movefrom, eax;
-// LINE 421:
-	__asm        jmp    _Tc8;
-_Tc8:
-	moveto = this->fData->;
-// LINE 422:
-	Memory::BlockMove(movefrom, moveto, (this->fEntrySize * this->fySize));
-// LINE 423:
-	__asm        jmp    _FOR_NEXT_96;
+	for (; ((this->fxSize - 1) > reinterpret_cast<int16_t>(count)); count++) {
+		// LINE 420:
+			__asm        jmp    _Tb2;
+		_Tb2:
+			__asm        movsx  eax, count;
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx+4];
+			__asm        mov    eax, [ecx+eax*4+4];
+			__asm        mov    movefrom, eax;
+		// LINE 421:
+			__asm        jmp    _Tc8;
+		_Tc8:
+			moveto = this->fData->;
+		// LINE 422:
+			Memory::BlockMove(movefrom, moveto, (this->fEntrySize * this->fySize));
+	}
 // LINE 426:
 // Block end:
 _Tfb:
@@ -1278,15 +1244,7 @@ _FOR_87:
 				// LINE 445:
 					__asm        jmp    _Tf6;
 				_Tf6:
-					__asm        movsx  eax, ycount;
-					__asm        inc    eax;
-					__asm        mov    ecx, this;
-					__asm        imul   eax, [ecx+0x18];
-					__asm        movsx  ecx, xcount;
-					__asm        mov    edx, this;
-					__asm        mov    edx, [edx+4];
-					__asm        add    eax, [edx+ecx*4];
-					__asm        mov    nextone, eax;
+					nextone = (((reinterpret_cast<int16_t>(ycount) + 1) * this->fEntrySize) + this->fData->);
 				// LINE 446:
 					Memory::BlockMove(nextone, thisone, this->fEntrySize);
 				// LINE 448:
@@ -1306,16 +1264,7 @@ _FOR_87:
 			/*bp-0x20*/  unsigned char * lastPart;
 			__asm        jmp    _T146;
 		_T146:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x10];
-			__asm        dec    eax;
-			__asm        mov    ecx, this;
-			__asm        imul   eax, [ecx+0x18];
-			__asm        movsx  ecx, xcount;
-			__asm        mov    edx, this;
-			__asm        mov    edx, [edx+4];
-			__asm        add    eax, [edx+ecx*4];
-			__asm        mov    lastPart, eax;
+			lastPart = (((this->fySize - 1) * this->fEntrySize) + this->fData->);
 		// LINE 452:
 			__asm        jmp    _T169;
 		_T169:

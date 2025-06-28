@@ -644,9 +644,7 @@ int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax
 	nv = Vmax;
 	__asm        jmp    _T66;
 _T5e:
-	__asm        mov    eax, Vmax;
-	__asm        neg    eax;
-	__asm        mov    nv, eax;
+	nv = -Vmax;
 // LINE 337:
 _T66:
 	return nv;
@@ -1395,10 +1393,7 @@ void MTCreateDOF4x4(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 // LINE 580:
 	xv.y = 0x0;
 // LINE 581:
-	__asm        mov    eax, dv;
-	__asm        mov    eax, [eax];
-	__asm        neg    eax;
-	__asm        mov    xv.z, eax;
+	xv.z = -dv->x;
 // LINE 582:
 	MTNormalize(xv.x);
 // LINE 589:
@@ -1443,10 +1438,7 @@ void MTCreateDOF4x4Y(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 // LINE 639:
 	xv.x = dv->y;
 // LINE 640:
-	__asm        mov    eax, dv;
-	__asm        mov    eax, [eax];
-	__asm        neg    eax;
-	__asm        mov    xv.y, eax;
+	xv.y = -dv->x;
 // LINE 641:
 	xv.z = 0x0;
 // LINE 642:

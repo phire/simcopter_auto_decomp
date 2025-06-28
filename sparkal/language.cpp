@@ -478,13 +478,7 @@ _T14d:
 _T1b5:
 	__asm        jmp    _T1ba;
 _T1ba:
-	__asm        mov    eax, sLocale.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sLocale.c_str_ptr, eax;
+	sLocale.c_str_ptr = operator new((sLocale.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T1d2;
 _T1d2:
 	__asm        mov    eax, sLocale.reference;
@@ -866,13 +860,7 @@ _T227:
 _T25f:
 	__asm        jmp    _T264;
 _T264:
-	__asm        mov    eax, stringLanguage.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    stringLanguage.c_str_ptr, eax;
+	stringLanguage.c_str_ptr = operator new((stringLanguage.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T27c;
 _T27c:
 	__asm        mov    eax, stringLanguage.reference;

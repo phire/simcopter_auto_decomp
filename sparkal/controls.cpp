@@ -4391,22 +4391,12 @@ _T62:
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        je     _T88;
 // LINE 585:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x74];
-	__asm        dec    eax;
-	__asm        imul   eax, nWindowWidth;
-	__asm        add    eax, nWindowWidth;
-	__asm        add    eax, nWindowWidth;
-	__asm        mov    nStartXPosition, eax;
+	nStartXPosition = ((((this->nButtonState - 1) * nWindowWidth) + nWindowWidth) + nWindowWidth);
 // LINE 586:
 	__asm        jmp    _T96;
 // LINE 587:
 _T88:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x74];
-	__asm        dec    eax;
-	__asm        imul   eax, nWindowWidth;
-	__asm        mov    nStartXPosition, eax;
+	nStartXPosition = ((this->nButtonState - 1) * nWindowWidth);
 // LINE 590:
 _T96:
 	__asm        jmp    _T9b;
@@ -5016,22 +5006,12 @@ _T62:
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        je     _T88;
 // LINE 734:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x74];
-	__asm        dec    eax;
-	__asm        imul   eax, nWindowWidth;
-	__asm        add    eax, nWindowWidth;
-	__asm        add    eax, nWindowWidth;
-	__asm        mov    nStartXPosition, eax;
+	nStartXPosition = ((((this->nButtonState - 1) * nWindowWidth) + nWindowWidth) + nWindowWidth);
 // LINE 735:
 	__asm        jmp    _T96;
 // LINE 736:
 _T88:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x74];
-	__asm        dec    eax;
-	__asm        imul   eax, nWindowWidth;
-	__asm        mov    nStartXPosition, eax;
+	nStartXPosition = ((this->nButtonState - 1) * nWindowWidth);
 // LINE 739:
 _T96:
 	__asm        jmp    _T9b;
@@ -7531,13 +7511,7 @@ _Teb:
 _T127:
 	__asm        jmp    _T12c;
 _T12c:
-	__asm        mov    eax, sBackgroundPath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sBackgroundPath.c_str_ptr, eax;
+	sBackgroundPath.c_str_ptr = operator new((sBackgroundPath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T144;
 _T144:
 	__asm        mov    eax, sBackgroundPath.reference;
@@ -11816,10 +11790,7 @@ _T31:
 	__asm        cmp    eax, lIndex;
 	__asm        jne    _T81;
 // LINE 2367:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xAC];
-	__asm        dec    eax;
-	__asm        mov    lNewSelection, eax;
+	lNewSelection = (this->lCurrentSelection - 1);
 // LINE 2368:
 	__asm        mov    eax, lNewSelection;
 	__asm        push   eax;
@@ -11836,10 +11807,7 @@ _T86:
 	__asm        cmp    [eax+0xAC], ecx;
 	__asm        jle    _Tb7;
 // LINE 2372:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xAC];
-	__asm        dec    eax;
-	__asm        mov    lNewSelection, eax;
+	lNewSelection = (this->lCurrentSelection - 1);
 // LINE 2373:
 	__asm        mov    eax, lNewSelection;
 	__asm        push   eax;
@@ -12081,10 +12049,7 @@ _T81:
 	__asm        cmp    [eax+0xAC], ecx;
 	__asm        jl     _Tb2;
 // LINE 2413:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xAC];
-	__asm        inc    eax;
-	__asm        mov    lNewSelection, eax;
+	lNewSelection = (this->lCurrentSelection + 1);
 // LINE 2414:
 	__asm        mov    eax, lNewSelection;
 	__asm        push   eax;
@@ -14349,13 +14314,7 @@ int32_t ListBoxWindow::ScrollPageUp() {
 	__asm        cmp    lCurrentLineCount, 0;
 	__asm        jle    _T65;
 // LINE 2865:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xB0];
-	__asm        dec    ecx;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    lNewFirstVisibleLine, eax;
+	lNewFirstVisibleLine -= (this->lVisibleLines - 1);
 // LINE 2866:
 	__asm        jns    _T53;
 // LINE 2867:
@@ -14398,10 +14357,7 @@ int32_t ListBoxWindow::ScrollPageDown() {
 	__asm        cmp    eax, [ecx+0xB4];
 	__asm        jle    _T97;
 // LINE 2886:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB0];
-	__asm        dec    eax;
-	__asm        add    lNewFirstVisibleLine, eax;
+	lNewFirstVisibleLine += (this->lVisibleLines - 1);
 // LINE 2888:
 	__asm        mov    eax, lCurrentLineCount;
 	__asm        mov    ecx, this;

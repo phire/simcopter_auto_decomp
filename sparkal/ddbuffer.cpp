@@ -610,13 +610,7 @@ _T74:
 	__asm        add    esp, 4;
 	__asm        mov    nFileNameLength, eax;
 // LINE 72:
-	__asm        mov    eax, nFileNameLength;
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
+	this->szFilePath = operator new((nFileNameLength + 1));
 // LINE 73:
 	strcpy(this->szFilePath, imageFileName);
 // LINE 77:
@@ -1178,11 +1172,7 @@ _T239:
 // LINE 347:
 	biHeader.biWidth = ((biHeader.biWidth + 0x3) & -0x4);
 // LINE 348:
-	__asm        mov    eax, biHeader.biHeight;
-	__asm        dec    eax;
-	__asm        mov    ecx, this;
-	__asm        imul   eax, [ecx+0x14];
-	__asm        add    biData, eax;
+	biData += ((biHeader.biHeight - 1) * this->mStride);
 // LINE 350:
 	nFileLength = fileImage->PFile::Length();
 // LINE 351:
@@ -1191,41 +1181,32 @@ _T2ab:
 	nPosition = _tell(fileImage->Handle);
 // LINE 352:
 _FOR_2cc:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_2cc;
-_FOR_NEXT_2cc:
-	i++;
-_FOR_COND_2cc:
-	__asm        mov    eax, biHeader.biHeight;
-	__asm        dec    eax;
-	__asm        cmp    eax, i;
-	__asm        jle    _T34a;
+	for (i = 0x0; ((biHeader.biHeight - 1) > i); i++) {
 
-	__asm        mov    eax, biHeader.biWidth;
-	__asm        mov    [ebp-0x470], eax;
-// LINE 353:
-	__asm        mov    eax, [ebp-0x470];
-	__asm        push   eax;
-	__asm        mov    eax, biData;
-	__asm        push   eax;
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
-	__asm        mov    nBytesRead, eax;
-	__asm        jmp    _T310;
-// LINE 354:
-_T310:
-	nFileLength = fileImage->PFile::Length();
-// LINE 355:
-	__asm        jmp    _T320;
-_T320:
-	nPosition = _tell(fileImage->Handle);
-// LINE 356:
-	biData -= this->mStride;
-// LINE 357:
-	__asm        jmp    _FOR_NEXT_2cc;
+			__asm        mov    eax, biHeader.biWidth;
+			__asm        mov    [ebp-0x470], eax;
+		// LINE 353:
+			__asm        mov    eax, [ebp-0x470];
+			__asm        push   eax;
+			__asm        mov    eax, biData;
+			__asm        push   eax;
+			__asm        mov    eax, fileImage;
+			__asm        mov    eax, [eax+0x108];
+			__asm        push   eax;
+			__asm        call   _read;
+			__asm        add    esp, 0xC;
+			__asm        mov    nBytesRead, eax;
+			__asm        jmp    _T310;
+		// LINE 354:
+		_T310:
+			nFileLength = fileImage->PFile::Length();
+		// LINE 355:
+			__asm        jmp    _T320;
+		_T320:
+			nPosition = _tell(fileImage->Handle);
+		// LINE 356:
+			biData -= this->mStride;
+	}
 _T34a:
 	__asm        mov    eax, biHeader.biWidth;
 	__asm        mov    [ebp-0x474], eax;
@@ -3290,10 +3271,7 @@ _T29:
 	nEndX = temp;
 // LINE 1474:
 _T5c:
-	__asm        mov    eax, nEndX;
-	__asm        sub    eax, nStartX;
-	__asm        inc    eax;
-	__asm        mov    length, eax;
+	length = ((nEndX - nStartX) + 1);
 // LINE 1476:
 	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1477:
@@ -3330,10 +3308,7 @@ _Tbf:
 _Te9:
 	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1493:
-	__asm        mov    eax, nEndY;
-	__asm        sub    eax, nStartY;
-	__asm        inc    eax;
-	__asm        mov    i, eax;
+	i = ((nEndY - nStartY) + 1);
 // LINE 1494:
 __WHILE_109:
 	__asm        mov    eax, i;
@@ -3373,9 +3348,7 @@ _T146:
 	__asm        cmp    deltay, eax;
 	__asm        jg     _T1ae;
 // LINE 1513:
-	__asm        mov    eax, deltax;
-	__asm        inc    eax;
-	__asm        mov    numpixels, eax;
+	numpixels = (deltax + 1);
 // LINE 1514:
 	d = ((deltay + deltay) - deltax);
 // LINE 1515:
@@ -3390,9 +3363,7 @@ _T146:
 	__asm        jmp    _T1e1;
 // LINE 1522:
 _T1ae:
-	__asm        mov    eax, deltay;
-	__asm        inc    eax;
-	__asm        mov    numpixels, eax;
+	numpixels = (deltay + 1);
 // LINE 1523:
 	d = ((deltax + deltax) - deltay);
 // LINE 1524:
@@ -3409,9 +3380,7 @@ _T1e1:
 	__asm        cmp    nEndX, eax;
 	__asm        jge    _T201;
 // LINE 1533:
-	__asm        mov    eax, xinc1;
-	__asm        neg    eax;
-	__asm        mov    xinc1, eax;
+	xinc1 = -xinc1;
 // LINE 1534:
 	xinc2 = 0xffffffff;
 // LINE 1536:
@@ -3425,9 +3394,7 @@ _T208:
 	__asm        cmp    nEndY, eax;
 	__asm        jge    _T228;
 // LINE 1541:
-	__asm        mov    eax, yinc1;
-	__asm        neg    eax;
-	__asm        mov    yinc1, eax;
+	yinc1 = -yinc1;
 // LINE 1542:
 	yinc2 = 0xffffffff;
 // LINE 1544:
@@ -3487,15 +3454,7 @@ _FOR_2c5:
 			__asm        cmp    xinc2, 0xFFFFFFFF;
 			__asm        jne    _T2fd;
 		// LINE 1582:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x14];
-			__asm        imul   eax, y;
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+0x10];
-			__asm        add    eax, x;
-			__asm        sub    eax, nThickness;
-			__asm        inc    eax;
-			__asm        mov    address, eax;
+			address = (((((this->mStride * y) + this->mpBits) + x) - nThickness) + 1);
 		// LINE 1583:
 			__asm        jmp    _T313;
 		// LINE 1584:
@@ -3843,10 +3802,7 @@ _T37b:
 	nEndX = temp;
 // LINE 1647:
 _T3af:
-	__asm        mov    eax, nEndX;
-	__asm        sub    eax, nStartX;
-	__asm        inc    eax;
-	__asm        mov    length, eax;
+	length = ((nEndX - nStartX) + 1);
 // LINE 1649:
 	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1650:
@@ -3883,10 +3839,7 @@ _T41e:
 _T448:
 	address = (((this->mStride * nStartY) + nStartX) + this->mpBits);
 // LINE 1666:
-	__asm        mov    eax, nEndY;
-	__asm        sub    eax, nStartY;
-	__asm        inc    eax;
-	__asm        mov    i, eax;
+	i = ((nEndY - nStartY) + 1);
 // LINE 1667:
 __WHILE_46e:
 	__asm        mov    eax, i;
@@ -3926,9 +3879,7 @@ _T4b1:
 	__asm        cmp    deltay, eax;
 	__asm        jg     _T519;
 // LINE 1686:
-	__asm        mov    eax, deltax;
-	__asm        inc    eax;
-	__asm        mov    numpixels, eax;
+	numpixels = (deltax + 1);
 // LINE 1687:
 	d = ((deltay + deltay) - deltax);
 // LINE 1688:
@@ -3943,9 +3894,7 @@ _T4b1:
 	__asm        jmp    _T54c;
 // LINE 1695:
 _T519:
-	__asm        mov    eax, deltay;
-	__asm        inc    eax;
-	__asm        mov    numpixels, eax;
+	numpixels = (deltay + 1);
 // LINE 1696:
 	d = ((deltax + deltax) - deltay);
 // LINE 1697:
@@ -3962,9 +3911,7 @@ _T54c:
 	__asm        cmp    nEndX, eax;
 	__asm        jge    _T56c;
 // LINE 1706:
-	__asm        mov    eax, xinc1;
-	__asm        neg    eax;
-	__asm        mov    xinc1, eax;
+	xinc1 = -xinc1;
 // LINE 1707:
 	xinc2 = 0xffffffff;
 // LINE 1709:
@@ -3978,9 +3925,7 @@ _T573:
 	__asm        cmp    nEndY, eax;
 	__asm        jge    _T593;
 // LINE 1714:
-	__asm        mov    eax, yinc1;
-	__asm        neg    eax;
-	__asm        mov    yinc1, eax;
+	yinc1 = -yinc1;
 // LINE 1715:
 	yinc2 = 0xffffffff;
 // LINE 1717:
@@ -4040,13 +3985,9 @@ _T628:
 	/*bp-0x58*/  int32_t maxSafeX;
 	/*bp-0x5c*/  int32_t minSafeY;
 _T62d:
-	__asm        mov    eax, nThickness;
-	__asm        dec    eax;
-	__asm        mov    minSafeX, eax;
+	minSafeX = (nThickness - 1);
 // LINE 1762:
-	__asm        mov    eax, nThickness;
-	__asm        dec    eax;
-	__asm        mov    minSafeY, eax;
+	minSafeY = (nThickness - 1);
 // LINE 1763:
 	maxSafeX = (bufferWidth - nThickness);
 // LINE 1764:
@@ -4074,15 +4015,7 @@ __WHILE_64d:
 			__asm        cmp    xinc2, 0xFFFFFFFF;
 			__asm        jne    _T6b6;
 		// LINE 1772:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x14];
-			__asm        imul   eax, y;
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+0x10];
-			__asm        add    eax, x;
-			__asm        sub    eax, nThickness;
-			__asm        inc    eax;
-			__asm        mov    address, eax;
+			address = (((((this->mStride * y) + this->mpBits) + x) - nThickness) + 1);
 		// LINE 1773:
 			__asm        jmp    _T6d2;
 		// LINE 1774:
@@ -4214,9 +4147,7 @@ __WHILE_770:
 			nPixels = nThickness;
 			__asm        jmp    _T85a;
 		_T853:
-			__asm        mov    eax, x;
-			__asm        inc    eax;
-			__asm        mov    nPixels, eax;
+			nPixels = (x + 1);
 		// LINE 1828:
 		_T85a:
 			memset(address, this->nColorIndexCurrent, nPixels);

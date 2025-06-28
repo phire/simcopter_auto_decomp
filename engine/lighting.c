@@ -607,12 +607,7 @@ _FOR_34:
 			__asm        cmp    intensity, 0x10000;
 			__asm        jl     _T1a4;
 		// LINE 437:
-			__asm        mov    eax, cptr;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, cptr;
-			__asm        add    eax, [ecx];
-			__asm        dec    eax;
-			__asm        mov    color, eax;
+			color = ((cptr->count + cptr->base) - 1);
 		// LINE 439:
 			__asm        jmp    _T1cc;
 		// LINE 441:
@@ -769,12 +764,7 @@ _FOR_4b:
 			__asm        cmp    intensity, 0x10000;
 			__asm        jl     _T143;
 		// LINE 523:
-			__asm        mov    eax, cptr;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, cptr;
-			__asm        add    eax, [ecx];
-			__asm        dec    eax;
-			__asm        mov    color, eax;
+			color = ((cptr->count + cptr->base) - 1);
 		// LINE 525:
 			__asm        jmp    _T16b;
 		// LINE 527:
@@ -1077,12 +1067,7 @@ _FOR_1e:
 					__asm        cmp    intensity, 0x10000;
 					__asm        jl     _T1a4;
 				// LINE 667:
-					__asm        mov    eax, cptr;
-					__asm        mov    eax, [eax+4];
-					__asm        mov    ecx, cptr;
-					__asm        add    eax, [ecx];
-					__asm        dec    eax;
-					__asm        mov    color, eax;
+					color = ((cptr->count + cptr->base) - 1);
 				// LINE 669:
 					__asm        jmp    _T1cc;
 				// LINE 671:

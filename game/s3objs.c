@@ -871,26 +871,18 @@ _Teb:
 // LINE 896:
 	bufwidth = swindow.RenderWide;
 // LINE 897:
-	__asm        mov    eax, swindow.WindowWide;
-	__asm        dec    eax;
-	__asm        mov    winwidth, eax;
+	winwidth = (swindow.WindowWide - 1);
 // LINE 898:
-	__asm        mov    eax, swindow.WindowHigh;
-	__asm        dec    eax;
-	__asm        mov    winheight, eax;
+	winheight = (swindow.WindowHigh - 1);
 // LINE 900:
 	__asm        jmp    _T131;
 // LINE 903:
 _T117:
 	bufwidth = qwindow.RenderWide;
 // LINE 904:
-	__asm        mov    eax, qwindow.WindowWide;
-	__asm        dec    eax;
-	__asm        mov    winwidth, eax;
+	winwidth = (qwindow.WindowWide - 1);
 // LINE 905:
-	__asm        mov    eax, qwindow.WindowHigh;
-	__asm        dec    eax;
-	__asm        mov    winheight, eax;
+	winheight = (qwindow.WindowHigh - 1);
 // LINE 913:
 _T131:
 	x = (blit->verts->x >> 0xc);
@@ -994,26 +986,18 @@ void S3DrawWaterPoint(/*packed*/ struct VRBlit *blit) {
 // LINE 979:
 	bufwidth = swindow.RenderWide;
 // LINE 980:
-	__asm        mov    eax, swindow.WindowWide;
-	__asm        dec    eax;
-	__asm        mov    winwidth, eax;
+	winwidth = (swindow.WindowWide - 1);
 // LINE 981:
-	__asm        mov    eax, swindow.WindowHigh;
-	__asm        dec    eax;
-	__asm        mov    winheight, eax;
+	winheight = (swindow.WindowHigh - 1);
 // LINE 983:
 	__asm        jmp    _T64;
 // LINE 986:
 _T4a:
 	bufwidth = qwindow.RenderWide;
 // LINE 987:
-	__asm        mov    eax, qwindow.WindowWide;
-	__asm        dec    eax;
-	__asm        mov    winwidth, eax;
+	winwidth = (qwindow.WindowWide - 1);
 // LINE 988:
-	__asm        mov    eax, qwindow.WindowHigh;
-	__asm        dec    eax;
-	__asm        mov    winheight, eax;
+	winheight = (qwindow.WindowHigh - 1);
 // LINE 996:
 _T64:
 	x = (blit->verts->x >> 0xc);
@@ -1207,10 +1191,7 @@ _T258:
 //   _T120
 // LINE 1060:
 _T29c:
-	__asm        mov    eax, maxval;
-	__asm        sub    eax, minval;
-	__asm        inc    eax;
-	__asm        mov    numvals, eax;
+	numvals = ((maxval - minval) + 1);
 // LINE 1061:
 	num2 = (num + num);
 // LINE 1181:
@@ -1425,9 +1406,7 @@ _FOR_42d:
 			__asm        mov    ecx, ptr;
 			__asm        mov    [ecx], al;
 		// LINE 1263:
-			__asm        mov    eax, bufwidth;
-			__asm        dec    eax;
-			__asm        add    ptr, eax;
+			ptr += (bufwidth - 1);
 		// LINE 1264:
 			__asm        mov    al, color;
 			__asm        mov    ecx, ptr;

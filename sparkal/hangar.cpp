@@ -3279,13 +3279,7 @@ _T309:
 _T366:
 	__asm        jmp    _T36b;
 _T36b:
-	__asm        mov    eax, sHelp.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sHelp.c_str_ptr, eax;
+	sHelp.c_str_ptr = operator new((sHelp.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T383;
 _T383:
 	__asm        mov    eax, sHelp.reference;

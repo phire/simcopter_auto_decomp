@@ -630,17 +630,11 @@ void S3ViewerSetView() {
 	/*bp-0x4c*/  int32_t matrix[4][4]; // 0x40 bytes
 
 // LINE 427:
-	__asm        mov    eax, Viewer.pos.x;
-	__asm        neg    eax;
-	__asm        mov    p.x, eax;
+	p.x = -Viewer.pos.x;
 // LINE 428:
-	__asm        mov    eax, Viewer.pos.y;
-	__asm        neg    eax;
-	__asm        mov    p.y, eax;
+	p.y = -Viewer.pos.y;
 // LINE 429:
-	__asm        mov    eax, Viewer.pos.z;
-	__asm        neg    eax;
-	__asm        mov    p.z, eax;
+	p.z = -Viewer.pos.z;
 // LINE 430:
 	_VRPreTrans((0x6c12a0 + 0x38), matrix[0][0], p.x);
 // LINE 431:

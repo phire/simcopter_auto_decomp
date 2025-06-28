@@ -1984,15 +1984,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1056:
-					__asm        mov    eax, y;
-					__asm        inc    eax;
-					__asm        push   eax;
-					__asm        mov    eax, x;
-					__asm        inc    eax;
-					__asm        push   eax;
-					__asm        call   GetAltitude;
-					__asm        add    esp, 8;
-					__asm        mov    alt, ax;
+					alt = GetAltitude((x + 1), (y + 1));
 				// LINE 1058:
 					__asm        mov    eax, x;
 					__asm        mov    eax, TerrainMap[1][eax*4];
@@ -2029,15 +2021,7 @@ _FOR_23:
 					__asm        add    esp, 4;
 					__asm        mov    obj, eax;
 				// LINE 1066:
-					__asm        mov    eax, y;
-					__asm        inc    eax;
-					__asm        push   eax;
-					__asm        mov    eax, x;
-					__asm        inc    eax;
-					__asm        push   eax;
-					__asm        call   GetAltitude;
-					__asm        add    esp, 8;
-					__asm        mov    alt, ax;
+					alt = GetAltitude((x + 1), (y + 1));
 				// LINE 1068:
 					__asm        mov    eax, x;
 					__asm        mov    eax, TerrainMap[1][eax*4];
@@ -5788,9 +5772,7 @@ _Tb2:
 // LINE 2485:
 	S_local_lstart.x -= (tmpfix << 0x6);
 // LINE 2570:
-	__asm        mov    eax, S_local_lstart.x;
-	__asm        neg    eax;
-	__asm        mov    S_local_rstart.x, eax;
+	S_local_rstart.x = -S_local_lstart.x;
 // LINE 2573:
 	_VRRotateP3d(0x609098, 0x609bf0, 0x6c1370);
 // LINE 2574:
@@ -6247,11 +6229,7 @@ void S3CityGetCells(/*packed*/ struct Point3d *vec, /*packed*/ struct Point2d *c
 // LINE 2953:
 	x_delta = 0x400000;
 // LINE 2954:
-	__asm        mov    eax, x_pos;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        inc    eax;
-	__asm        mov    x_bound, eax;
+	x_bound = (((x_pos + 0x20000000) >> 0x16) + 1);
 // LINE 2955:
 	x_bound = (((x_bound << 0x6) - 0x2000) << 0x10);
 // LINE 2956:
@@ -6344,11 +6322,7 @@ _T151:
 // LINE 3001:
 	y_delta = 0x400000;
 // LINE 3002:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, y_pos;
-	__asm        sar    eax, 0x16;
-	__asm        inc    eax;
-	__asm        mov    y_bound, eax;
+	y_bound = (((0x20000000 - y_pos) >> 0x16) + 1);
 // LINE 3003:
 	y_bound = ((0x2000 - (y_bound << 0x6)) << 0x10);
 // LINE 3004:
@@ -6449,11 +6423,7 @@ _T28a:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jge    _T2fc;
 // LINE 3062:
-	__asm        mov    eax, 0x20000000;
-	__asm        sub    eax, y_pos;
-	__asm        sar    eax, 0x16;
-	__asm        inc    eax;
-	__asm        mov    y_bound, eax;
+	y_bound = (((0x20000000 - y_pos) >> 0x16) + 1);
 // LINE 3063:
 	y_bound = ((0x2000 - (y_bound << 0x6)) << 0x10);
 // LINE 3064:
@@ -6499,11 +6469,7 @@ _T32b:
 	__asm        jmp    _T3b2;
 // LINE 3102:
 _T384:
-	__asm        mov    eax, x_pos;
-	__asm        add    eax, 0x20000000;
-	__asm        sar    eax, 0x16;
-	__asm        inc    eax;
-	__asm        mov    x_bound, eax;
+	x_bound = (((x_pos + 0x20000000) >> 0x16) + 1);
 // LINE 3103:
 	x_bound = (((x_bound << 0x6) - 0x2000) << 0x10);
 // LINE 3104:
@@ -10870,9 +10836,7 @@ _FOR_NEXT_546:
 _T65e:
 	px = x;
 // LINE 5217:
-	__asm        mov    eax, y;
-	__asm        inc    eax;
-	__asm        mov    py, eax;
+	py = (y + 1);
 // LINE 5218:
 	cptr = S2Alloc(G_citymempool, 0x18);
 // LINE 5219:
@@ -11014,9 +10978,7 @@ _T76c:
 _T87c:
 	px = (x + 0x3);
 // LINE 5273:
-	__asm        mov    eax, y;
-	__asm        inc    eax;
-	__asm        mov    py, eax;
+	py = (y + 1);
 // LINE 5274:
 	cptr = S2Alloc(G_citymempool, 0x18);
 // LINE 5275:
@@ -11372,13 +11334,9 @@ _FOR_abf:
 	}
 // LINE 5374:
 _Tdc6:
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(x);
-	__asm        inc    eax;
-	__asm        mov    G_helibase.hangar.x, eax;
+	G_helibase.hangar.x = (reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x)) + 1);
 // LINE 5375:
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(y);
-	__asm        inc    eax;
-	__asm        mov    G_helibase.hangar.y, eax;
+	G_helibase.hangar.y = (reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y)) + 1);
 // LINE 5378:
 	G_helibase.pad1.x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x));
 // LINE 5379:

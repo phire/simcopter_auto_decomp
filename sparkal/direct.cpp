@@ -5098,15 +5098,7 @@ int32_t Directory::DoesAnyEntryExistThatMatchesPattern(const /*packed*/ class ba
 _T49:
 	__asm        jmp    _T4e;
 _T4e:
-	__asm        mov    eax, sPathPattern;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, sPathPattern;
-	__asm        mov    [ecx], eax;
+	sPathPattern.c_str_ptr = operator new((sPathPattern.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T6b;
 _T6b:
 	__asm        mov    eax, sPathPattern;
@@ -6889,14 +6881,7 @@ _T4c4:
 	__asm        jmp    _T4c9;
 // LINE 564:
 _T4c9:
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, nPosition;
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    eax, sPath;
-	__asm        push   eax;
-	__asm        mov    ecx, sLastPart;
-	__asm        call   basic_string<char>::assign;
+	sLastPart->basic_string<char>::assign(sPath, (nPosition + 1), -0x1);
 // LINE 565:
 	return;
 // LINE 570:

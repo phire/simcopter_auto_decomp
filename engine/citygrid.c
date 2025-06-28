@@ -95,9 +95,7 @@ _T51:
 	return 0x0;
 // LINE 158:
 _T6a:
-	__asm        mov    eax, ViewSize;
-	__asm        inc    eax;
-	__asm        mov    G_VertDim, eax;
+	G_VertDim = (ViewSize + 1);
 // LINE 159:
 	G_FaceDim = (ViewSize + ViewSize);
 // LINE 160:
@@ -207,18 +205,13 @@ _T35d:
 // LINE 243:
 	CVerts[1][0] = G_VertDim;
 // LINE 244:
-	__asm        mov    eax, G_VertDim;
-	__asm        inc    eax;
-	__asm        mov    CVerts[1][1], eax;
+	CVerts[1][1] = (G_VertDim + 1);
 // LINE 245:
 	CVerts[1][2] = (G_VertDim + 0x2);
 // LINE 246:
 	CVerts[2][0] = (G_VertDim + G_VertDim);
 // LINE 247:
-	__asm        mov    eax, G_VertDim;
-	__asm        add    eax, eax;
-	__asm        inc    eax;
-	__asm        mov    CVerts[2][1], eax;
+	CVerts[2][1] = ((G_VertDim + G_VertDim) + 1);
 // LINE 248:
 	CVerts[2][2] = ((G_VertDim + G_VertDim) + 0x2);
 // LINE 255:
@@ -408,9 +401,7 @@ void InitGridPool() {
 // LINE 376:
 	G_ViewSize = 0x3d;
 // LINE 377:
-	__asm        mov    eax, G_ViewSize;
-	__asm        inc    eax;
-	__asm        mov    G_VertDim, eax;
+	G_VertDim = (G_ViewSize + 1);
 // LINE 378:
 	G_FaceDim = (G_ViewSize + G_ViewSize);
 // LINE 383:

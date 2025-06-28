@@ -612,9 +612,7 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 	nv = Vmax;
 	__asm        jmp    _T62;
 _T5a:
-	__asm        mov    eax, Vmax;
-	__asm        neg    eax;
-	__asm        mov    nv, eax;
+	nv = -Vmax;
 // LINE 313:
 _T62:
 	return nv;

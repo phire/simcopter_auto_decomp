@@ -951,9 +951,7 @@ _Tc5:
 	__asm        cmp    TextRect.right, eax;
 	__asm        jl     _T10f;
 // LINE 409:
-	__asm        mov    eax, ClientWidth;
-	__asm        dec    eax;
-	__asm        mov    TextRect.right, eax;
+	TextRect.right = (ClientWidth - 1);
 // LINE 410:
 	TextRect.left = ((TextRect.right - TextSize.cx) - 0x4);
 // LINE 412:
@@ -978,9 +976,7 @@ _T143:
 	__asm        cmp    TextRect.bottom, eax;
 	__asm        jl     _T162;
 // LINE 424:
-	__asm        mov    eax, ClientHeight;
-	__asm        dec    eax;
-	__asm        mov    TextRect.bottom, eax;
+	TextRect.bottom = (ClientHeight - 1);
 // LINE 425:
 	TextRect.top = ((TextRect.bottom - TextSize.cy) - 0x4);
 // LINE 430:

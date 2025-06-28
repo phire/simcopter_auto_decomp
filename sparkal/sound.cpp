@@ -2293,15 +2293,7 @@ int32_t DigitalSound::LoadFromFile() {
 _T49:
 	__asm        jmp    _T4e;
 _T4e:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->sSoundFile.c_str_ptr = operator new((this->sSoundFile.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T6c;
 _T6c:
 	__asm        mov    eax, this;
@@ -3594,15 +3586,7 @@ long DigitalSound::ShouldWeStream() {
 _T4c:
 	__asm        jmp    _T51;
 _T51:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->sSoundFile.c_str_ptr = operator new((this->sSoundFile.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T75;
 _T75:
 	__asm        mov    eax, this;
@@ -3794,15 +3778,7 @@ _T85:
 _T155:
 	__asm        jmp    _T15a;
 _T15a:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->sSoundFile.c_str_ptr = operator new((this->sSoundFile.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T178;
 _T178:
 	__asm        mov    eax, this;
@@ -4039,15 +4015,7 @@ _T45:
 _T6d:
 	__asm        jmp    _T72;
 _T72:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->sSoundFile.c_str_ptr = operator new((this->sSoundFile.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T90;
 _T90:
 	__asm        mov    eax, this;

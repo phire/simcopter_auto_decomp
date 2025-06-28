@@ -1021,12 +1021,7 @@ void S3FireDouse(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct Point3d *
 	/*bp-0x5c*/  /*packed*/ struct _STOBJ_INST **stptrptr;
 
 // LINE 651:
-	__asm        mov    eax, S_ftwk_fire_radius;
-	__asm        mov    ecx, G_diff_level;
-	__asm        dec    ecx;
-	__asm        shl    ecx, 0x13;
-	__asm        sub    eax, ecx;
-	__asm        mov    radius, eax;
+	radius = (S_ftwk_fire_radius - ((G_diff_level - 1) << 0x13));
 // LINE 654:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
@@ -2470,12 +2465,7 @@ int32_t S3FireGetAltitude(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct 
 	return 0x0;
 // LINE 976:
 _T1e:
-	__asm        mov    eax, S_ftwk_fire_radius;
-	__asm        mov    ecx, G_diff_level;
-	__asm        dec    ecx;
-	__asm        shl    ecx, 0x13;
-	__asm        sub    eax, ecx;
-	__asm        mov    radius, eax;
+	radius = (S_ftwk_fire_radius - ((G_diff_level - 1) << 0x13));
 // LINE 980:
 	stobj = cptr->stptr;
 // LINE 981:

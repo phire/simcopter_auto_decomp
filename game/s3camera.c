@@ -378,9 +378,7 @@ _T6c:
 	__asm        cmp    Acceleration, 0;
 	__asm        jge    _Tbe;
 // LINE 341:
-	__asm        mov    eax, AccelAdjust;
-	__asm        neg    eax;
-	__asm        mov    AccelAdjust, eax;
+	AccelAdjust = -AccelAdjust;
 // LINE 342:
 	InClose = 0x1;
 // LINE 347:
@@ -410,9 +408,7 @@ _Td7:
 	__asm        cmp    eax, cameraDistance;
 	__asm        jge    _T118;
 // LINE 355:
-	__asm        mov    eax, S_ctwk_min_dist;
-	__asm        neg    eax;
-	__asm        mov    cameraDistance, eax;
+	cameraDistance = -S_ctwk_min_dist;
 // LINE 358:
 _T118:
 	__asm        mov    eax, cameraDistance;
@@ -751,9 +747,7 @@ _T116:
 	__asm        add    esp, 8;
 	__asm        mov    Viewer.matrix[2][0], eax;
 // LINE 504:
-	__asm        mov    eax, sinePitch;
-	__asm        neg    eax;
-	__asm        mov    Viewer.matrix[2][1], eax;
+	Viewer.matrix[2][1] = -sinePitch;
 // LINE 505:
 	__asm        mov    eax, cosinePitch;
 	__asm        push   eax;
@@ -920,10 +914,7 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        mov    ecx, matrix;
 	__asm        mov    [ecx+0x20], eax;
 // LINE 552:
-	__asm        mov    eax, sinePitch;
-	__asm        neg    eax;
-	__asm        mov    ecx, matrix;
-	__asm        mov    [ecx+0x24], eax;
+	matrix[9] = -sinePitch;
 // LINE 553:
 	__asm        mov    eax, cosinePitch;
 	__asm        push   eax;

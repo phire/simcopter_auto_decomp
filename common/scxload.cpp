@@ -820,14 +820,7 @@ _FOR_168:
 			__asm        test   eax, eax;
 			__asm        jne    _T1d8;
 		// LINE 246:
-			__asm        push   0x59C168;
-			__asm        mov    eax, loop;
-			__asm        shl    eax, 5;
-			__asm        add    eax, 0x639250;
-			__asm        inc    eax;
-			__asm        push   eax;
-			__asm        call   strcpy;
-			__asm        add    esp, 8;
+			strcpy((((loop << 0x5) + 0x639250) + 1), 0x59c168);
 		// LINE 247:
 			__asm        mov    eax, loop;
 			__asm        shl    eax, 5;

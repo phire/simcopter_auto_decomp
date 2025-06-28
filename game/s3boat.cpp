@@ -989,20 +989,11 @@ _T159:
 // LINE 735:
 // Block start:
 	/*bp-0x10*/  /*packed*/ struct Point3d sprayvect; // 0xc bytes
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x13];
-	__asm        neg    eax;
-	__asm        mov    sprayvect.x, eax;
+	sprayvect.x = -this->directionVector.x;
 // LINE 736:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x17];
-	__asm        neg    eax;
-	__asm        mov    sprayvect.y, eax;
+	sprayvect.y = -this->directionVector.y;
 // LINE 737:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1B];
-	__asm        neg    eax;
-	__asm        mov    sprayvect.z, eax;
+	sprayvect.z = -this->directionVector.z;
 // LINE 748:
 	S3MissileStart(0x7, (this + 0x33), (this + 0x97), sprayvect.x, 0x1, (this + 0x7f), 0x140000, -0x1);
 // LINE 750:
@@ -1456,17 +1447,13 @@ _T86:
 	__asm        cmp    deltaX, 0;
 	__asm        jge    _T98;
 // LINE 1104:
-	__asm        mov    eax, deltaX;
-	__asm        neg    eax;
-	__asm        mov    deltaX, eax;
+	deltaX = -deltaX;
 // LINE 1106:
 _T98:
 	__asm        cmp    deltaY, 0;
 	__asm        jge    _Taa;
 // LINE 1108:
-	__asm        mov    eax, deltaY;
-	__asm        neg    eax;
-	__asm        mov    deltaY, eax;
+	deltaY = -deltaY;
 // LINE 1112:
 _Taa:
 	__asm        mov    eax, G_ViewSize;
@@ -2070,33 +2057,17 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const /*packed*/ 
 // LINE 1465:
 	this->northCell.x = point.x;
 // LINE 1466:
-	__asm        mov    eax, point;
-	__asm        mov    eax, [eax+4];
-	__asm        dec    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x5F], eax;
+	this->northCell.y = (point.y - 1);
 // LINE 1467:
 	this->southCell.x = point.x;
 // LINE 1468:
-	__asm        mov    eax, point;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x67], eax;
+	this->southCell.y = (point.y + 1);
 // LINE 1469:
-	__asm        mov    eax, point;
-	__asm        mov    eax, [eax];
-	__asm        inc    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x6B], eax;
+	this->eastCell.x = (point.x + 1);
 // LINE 1470:
 	this->eastCell.y = point.y;
 // LINE 1471:
-	__asm        mov    eax, point;
-	__asm        mov    eax, [eax];
-	__asm        dec    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x73], eax;
+	this->westCell.x = (point.x - 1);
 // LINE 1472:
 	this->westCell.y = point.y;
 // LINE 1474:
@@ -3571,9 +3542,7 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 _T70:
 	vec.y = vec.z;
 // LINE 2211:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.x;
 // LINE 2212:
 	vec.x = vec.y;
 // LINE 2214:
@@ -3584,9 +3553,7 @@ _T70:
 	__asm        jmp    _T170;
 // LINE 2219:
 _Tad:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.y, eax;
+	vec.y = -vec.z;
 // LINE 2220:
 	vec.z = vec.x;
 // LINE 2221:
@@ -3599,13 +3566,9 @@ _Tad:
 	__asm        jmp    _T170;
 // LINE 2228:
 _Tea:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.x, eax;
+	vec.x = -vec.x;
 // LINE 2229:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.z;
 // LINE 2231:
 	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 2232:
@@ -3614,17 +3577,9 @@ _Tea:
 	__asm        jmp    _T170;
 // LINE 2237:
 _T123:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.x;
-	__asm        mov    vec.x, eax;
+	vec.x = (((G_ViewSize >> 0x1) + 1) * vec.x);
 // LINE 2238:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.z;
-	__asm        mov    vec.z, eax;
+	vec.z = (((G_ViewSize >> 0x1) + 1) * vec.z);
 // LINE 2239:
 	__asm        jmp    _T170;
 // LINE 2240:

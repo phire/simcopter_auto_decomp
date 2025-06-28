@@ -2911,13 +2911,7 @@ _T614:
 _T648:
 	__asm        jmp    _T64d;
 _T64d:
-	__asm        mov    eax, sTempMainGraphicFilePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sTempMainGraphicFilePath.c_str_ptr, eax;
+	sTempMainGraphicFilePath.c_str_ptr = operator new((sTempMainGraphicFilePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T66b;
 _T66b:
 	__asm        mov    eax, sTempMainGraphicFilePath.reference;
@@ -2994,13 +2988,7 @@ _T74a:
 _T790:
 	__asm        jmp    _T795;
 _T795:
-	__asm        mov    eax, sTempTabFilePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sTempTabFilePath.c_str_ptr, eax;
+	sTempTabFilePath.c_str_ptr = operator new((sTempTabFilePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T7b3;
 _T7b3:
 	__asm        mov    eax, sTempTabFilePath.reference;
@@ -5617,9 +5605,7 @@ _T1c:
 	__asm        jne    _T7e;
 // LINE 406:
 _T72:
-	__asm        mov    eax, nColorDirection;
-	__asm        neg    eax;
-	__asm        mov    nColorDirection, eax;
+	nColorDirection = -nColorDirection;
 // LINE 407:
 _T7e:
 	__asm        mov    eax, nColorArrayCurrentIndex;
@@ -7299,11 +7285,7 @@ _T90:
 	__asm        or     [ecx+0x44], eax;
 // LINE 824:
 _Td0:
-	__asm        mov    eax, lCurrentValue;
-	__asm        neg    eax;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney(-lCurrentValue);
 // LINE 825:
 	this->CatalogWindow::SwitchGraphicsForTab(this->lCurrentTab);
 // LINE 826:

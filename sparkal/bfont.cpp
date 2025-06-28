@@ -1368,15 +1368,7 @@ _T1e3:
 _T21d:
 	__asm        jmp    _T222;
 _T222:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->sFontInfoFilePath.c_str_ptr = operator new((this->sFontInfoFilePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T246;
 _T246:
 	__asm        mov    eax, this;
@@ -1462,15 +1454,7 @@ _T33a:
 _T39d:
 	__asm        jmp    _T3a2;
 _T3a2:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->sFontInfoFilePath.c_str_ptr = operator new((this->sFontInfoFilePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T3c6;
 _T3c6:
 	__asm        mov    eax, this;
@@ -1556,15 +1540,7 @@ _T4ba:
 _T51d:
 	__asm        jmp    _T522;
 _T522:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->sFontInfoFilePath.c_str_ptr = operator new((this->sFontInfoFilePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T546;
 _T546:
 	__asm        mov    eax, this;
@@ -1650,15 +1626,7 @@ _T63a:
 _T69d:
 	__asm        jmp    _T6a2;
 _T6a2:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->sFontInfoFilePath.c_str_ptr = operator new((this->sFontInfoFilePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T6c6;
 _T6c6:
 	__asm        mov    eax, this;
@@ -2591,15 +2559,7 @@ int32_t BitmappedFont::CreateImage() {
 _T5c:
 	__asm        jmp    _T61;
 _T61:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->sFontBitmapFile.c_str_ptr = operator new((this->sFontBitmapFile.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T85;
 _T85:
 	__asm        mov    eax, this;
@@ -2683,15 +2643,7 @@ _T179:
 _T1b3:
 	__asm        jmp    _T1b8;
 _T1b8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->sFontInfoFilePath.c_str_ptr = operator new((this->sFontInfoFilePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T1dc;
 _T1dc:
 	__asm        mov    eax, this;
@@ -2933,10 +2885,7 @@ long BitmappedFont::GetStringVisibleWidth(char * chText, const unsigned long nSt
 // LINE 252:
 	lWidth = this->BitmappedFont::GetStringWidth(chText, nStringLength);
 // LINE 253:
-	__asm        mov    eax, nStringLength;
-	__asm        dec    eax;
-	__asm        add    eax, chText;
-	__asm        mov    chTextEnd, eax;
+	chTextEnd = ((nStringLength - 1) + chText);
 // LINE 255:
 	__asm        cmp    nStringLength, 0;
 	__asm        ja     _T3a;
@@ -3149,9 +3098,7 @@ __WHILE_27:
 			__asm        test   eax, eax;
 			__asm        je     _T6e;
 		// LINE 351:
-			__asm        mov    eax, nPotentialCurrentChars;
-			__asm        inc    eax;
-			__asm        mov    nCurrentChars, eax;
+			nCurrentChars = (nPotentialCurrentChars + 1);
 		// LINE 352:
 			__asm        jmp    _T123;
 		// LINE 355:

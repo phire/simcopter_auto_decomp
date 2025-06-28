@@ -197,15 +197,7 @@ void PtoCstr(unsigned char * pstr) {
 	__asm        movzx  ax, byte ptr [eax];
 	__asm        mov    len, ax;
 // LINE 46:
-	__asm        movsx  eax, len;
-	__asm        push   eax;
-	__asm        mov    eax, pstr;
-	__asm        push   eax;
-	__asm        mov    eax, pstr;
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   Memory::BlockMove;
-	__asm        add    esp, 0xC;
+	Memory::BlockMove((pstr + 1), pstr, reinterpret_cast<int16_t>(len));
 // LINE 47:
 	__asm        movsx  eax, len;
 	__asm        mov    ecx, pstr;
@@ -232,15 +224,7 @@ void CtoPstr(char * cstr) {
 	len = 0xff;
 // LINE 55:
 _T2e:
-	__asm        movsx  eax, len;
-	__asm        push   eax;
-	__asm        mov    eax, cstr;
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    eax, cstr;
-	__asm        push   eax;
-	__asm        call   Memory::BlockMove;
-	__asm        add    esp, 0xC;
+	Memory::BlockMove(cstr, (cstr + 1), reinterpret_cast<int16_t>(len));
 // LINE 56:
 	__asm        mov    al, reinterpret_cast<uint8_t>(len);
 	__asm        mov    ecx, cstr;

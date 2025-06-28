@@ -2576,9 +2576,7 @@ void AutomobileClass::BeamToWithinCameraRange() {
 _T50:
 	vec.y = vec.z;
 // LINE 1219:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.x;
 // LINE 1220:
 	vec.x = vec.y;
 // LINE 1222:
@@ -2589,9 +2587,7 @@ _T50:
 	__asm        jmp    _T150;
 // LINE 1227:
 _T8d:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.y, eax;
+	vec.y = -vec.z;
 // LINE 1228:
 	vec.z = vec.x;
 // LINE 1229:
@@ -2604,13 +2600,9 @@ _T8d:
 	__asm        jmp    _T150;
 // LINE 1236:
 _Tca:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.x, eax;
+	vec.x = -vec.x;
 // LINE 1237:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.z;
 // LINE 1239:
 	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 1240:
@@ -2619,17 +2611,9 @@ _Tca:
 	__asm        jmp    _T150;
 // LINE 1245:
 _T103:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.x;
-	__asm        mov    vec.x, eax;
+	vec.x = (((G_ViewSize >> 0x1) + 1) * vec.x);
 // LINE 1246:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.z;
-	__asm        mov    vec.z, eax;
+	vec.z = (((G_ViewSize >> 0x1) + 1) * vec.z);
 // LINE 1247:
 	__asm        jmp    _T150;
 // LINE 1248:
@@ -3192,10 +3176,7 @@ _T74a:
 _FOR_773:
 	for (i = 0x0; (i < 0x4); i++) {
 		// LINE 1527:
-			__asm        mov    eax, dirIndex;
-			__asm        inc    eax;
-			__asm        and    eax, 3;
-			__asm        mov    dirIndex, eax;
+			dirIndex = ((dirIndex + 1) & 0x3);
 		// LINE 1528:
 			__asm        mov    eax, dirIndex;
 			__asm        mov    [ebp-0x114], eax;
@@ -3400,10 +3381,7 @@ _T9c5:
 _FOR_a20:
 	for (i = 0x0; (i < 0x4); i++) {
 		// LINE 1577:
-			__asm        mov    eax, dirIndex;
-			__asm        inc    eax;
-			__asm        and    eax, 3;
-			__asm        mov    dirIndex, eax;
+			dirIndex = ((dirIndex + 1) & 0x3);
 		// LINE 1578:
 			__asm        mov    eax, this;
 			__asm        mov    edx, 1;
@@ -5480,12 +5458,7 @@ _T53:
 	this->turnIndex = 0x2;
 // LINE 2531:
 _T70:
-	__asm        mov    eax, 0xA;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xEE];
-	__asm        dec    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xEE], eax;
+	this->legOfTurn = ((0xa - this->legOfTurn) - 1);
 // LINE 2535:
 _T88:
 	0x5c3828->RoadGraph::SamePlaceOtherDirection((this + 0x70));

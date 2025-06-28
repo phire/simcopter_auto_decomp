@@ -711,15 +711,7 @@ void UserMenuWindow::UserMenuWindow(/*packed*/ struct UserMenuWindowDescription&
 _T57:
 	__asm        jmp    _T5c;
 _T5c:
-	__asm        mov    eax, newUserMenuWindowDescription;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, newUserMenuWindowDescription;
-	__asm        mov    [ecx], eax;
+	newUserMenuWindowDescription.sImageFileName.c_str_ptr = operator new((newUserMenuWindowDescription.sImageFileName.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T79;
 _T79:
 	__asm        mov    eax, newUserMenuWindowDescription;
@@ -2845,13 +2837,7 @@ _T13e:
 _T17a:
 	__asm        jmp    _T17f;
 _T17f:
-	__asm        mov    eax, sImagePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sImagePath.c_str_ptr, eax;
+	sImagePath.c_str_ptr = operator new((sImagePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T197;
 _T197:
 	__asm        mov    eax, sImagePath.reference;
@@ -2969,13 +2955,7 @@ _T2c0:
 _T302:
 	__asm        jmp    _T307;
 _T307:
-	__asm        mov    eax, sImagePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sImagePath.c_str_ptr, eax;
+	sImagePath.c_str_ptr = operator new((sImagePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T31f;
 _T31f:
 	__asm        mov    eax, sImagePath.reference;
@@ -3691,13 +3671,7 @@ _T13e:
 _T17a:
 	__asm        jmp    _T17f;
 _T17f:
-	__asm        mov    eax, sImagePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sImagePath.c_str_ptr, eax;
+	sImagePath.c_str_ptr = operator new((sImagePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T197;
 _T197:
 	__asm        mov    eax, sImagePath.reference;
@@ -3826,13 +3800,7 @@ _T2e5:
 _T327:
 	__asm        jmp    _T32c;
 _T32c:
-	__asm        mov    eax, sImagePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sImagePath.c_str_ptr, eax;
+	sImagePath.c_str_ptr = operator new((sImagePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T344;
 _T344:
 	__asm        mov    eax, sImagePath.reference;

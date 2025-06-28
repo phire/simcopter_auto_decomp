@@ -5904,10 +5904,7 @@ _T2c8:
 	__asm        cmp    [eax+0x174], ecx;
 	__asm        jge    _T2ea;
 // LINE 599:
-	__asm        mov    eax, fwdrate;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x174], eax;
+	this->fUserControl.fwdSpeed = -fwdrate;
 // LINE 601:
 _T2ea:
 	AdjustPersonBeamingSlices(this->fUserControl.fwdSpeed);
@@ -5990,10 +5987,7 @@ _T3dd:
 	__asm        cmp    [eax+0x178], ecx;
 	__asm        jge    _T3ff;
 // LINE 618:
-	__asm        mov    eax, rotateRate;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x178], eax;
+	this->fUserControl.rotateRate = -rotateRate;
 // LINE 619:
 _T3ff:
 	return;
@@ -8956,9 +8950,7 @@ unsigned short cYObject::BeamIntoCameraRange() {
 _T62:
 	vec.y = vec.z;
 // LINE 1300:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.x;
 // LINE 1301:
 	vec.x = vec.y;
 // LINE 1303:
@@ -8969,9 +8961,7 @@ _T62:
 	__asm        jmp    _T156;
 // LINE 1308:
 _T9c:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.y, eax;
+	vec.y = -vec.z;
 // LINE 1309:
 	vec.z = vec.x;
 // LINE 1310:
@@ -8984,13 +8974,9 @@ _T9c:
 	__asm        jmp    _T156;
 // LINE 1317:
 _Td6:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.x, eax;
+	vec.x = -vec.x;
 // LINE 1318:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.z;
 // LINE 1320:
 	vec.x = ((G_ViewSize >> 0x2) * vec.x);
 // LINE 1321:
@@ -8999,17 +8985,9 @@ _Td6:
 	__asm        jmp    _T156;
 // LINE 1326:
 _T109:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.x;
-	__asm        mov    vec.x, eax;
+	vec.x = (((G_ViewSize >> 0x1) + 1) * vec.x);
 // LINE 1327:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.z;
-	__asm        mov    vec.z, eax;
+	vec.z = (((G_ViewSize >> 0x1) + 1) * vec.z);
 // LINE 1328:
 	__asm        jmp    _T156;
 // LINE 1329:
@@ -17357,9 +17335,7 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 	__asm        cmp    deltax, 0;
 	__asm        jge    _T32;
 
-	__asm        mov    eax, deltax;
-	__asm        neg    eax;
-	__asm        mov    absx, eax;
+	absx = -deltax;
 // LINE 3123:
 	__asm        jmp    _T38;
 _T32:
@@ -17369,9 +17345,7 @@ _T38:
 	__asm        cmp    deltay, 0;
 	__asm        jge    _T4f;
 
-	__asm        mov    eax, deltay;
-	__asm        neg    eax;
-	__asm        mov    absy, eax;
+	absy = -deltay;
 // LINE 3125:
 	__asm        jmp    _T55;
 _T4f:
@@ -17545,26 +17519,18 @@ void FrameInit() {
 // LINE 3207:
 	Pbufwidth = swindow.RenderWide;
 // LINE 3208:
-	__asm        mov    eax, swindow.WindowWide;
-	__asm        dec    eax;
-	__asm        mov    Pwinwidth, eax;
+	Pwinwidth = (swindow.WindowWide - 1);
 // LINE 3209:
-	__asm        mov    eax, swindow.WindowHigh;
-	__asm        dec    eax;
-	__asm        mov    Pwinheight, eax;
+	Pwinheight = (swindow.WindowHigh - 1);
 // LINE 3211:
 	__asm        jmp    _T58;
 // LINE 3213:
 _T38:
 	Pbufwidth = qwindow.RenderWide;
 // LINE 3214:
-	__asm        mov    eax, qwindow.WindowWide;
-	__asm        dec    eax;
-	__asm        mov    Pwinwidth, eax;
+	Pwinwidth = (qwindow.WindowWide - 1);
 // LINE 3215:
-	__asm        mov    eax, qwindow.WindowHigh;
-	__asm        dec    eax;
-	__asm        mov    Pwinheight, eax;
+	Pwinheight = (qwindow.WindowHigh - 1);
 // LINE 3218:
 _T58:
 	return;

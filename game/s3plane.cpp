@@ -1440,17 +1440,13 @@ _T86:
 	__asm        cmp    deltaX, 0;
 	__asm        jge    _T98;
 // LINE 1307:
-	__asm        mov    eax, deltaX;
-	__asm        neg    eax;
-	__asm        mov    deltaX, eax;
+	deltaX = -deltaX;
 // LINE 1309:
 _T98:
 	__asm        cmp    deltaY, 0;
 	__asm        jge    _Taa;
 // LINE 1311:
-	__asm        mov    eax, deltaY;
-	__asm        neg    eax;
-	__asm        mov    deltaY, eax;
+	deltaY = -deltaY;
 // LINE 1315:
 _Taa:
 	__asm        mov    eax, G_ViewSize;
@@ -2646,9 +2642,7 @@ void PlaneClass::BeamToWithinCameraRange() {
 _T70:
 	vec.y = vec.z;
 // LINE 2080:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.x;
 // LINE 2081:
 	vec.x = vec.y;
 // LINE 2083:
@@ -2659,9 +2653,7 @@ _T70:
 	__asm        jmp    _T170;
 // LINE 2088:
 _Tad:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.y, eax;
+	vec.y = -vec.z;
 // LINE 2089:
 	vec.z = vec.x;
 // LINE 2090:
@@ -2674,13 +2666,9 @@ _Tad:
 	__asm        jmp    _T170;
 // LINE 2097:
 _Tea:
-	__asm        mov    eax, vec.x;
-	__asm        neg    eax;
-	__asm        mov    vec.x, eax;
+	vec.x = -vec.x;
 // LINE 2098:
-	__asm        mov    eax, vec.z;
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -vec.z;
 // LINE 2100:
 	vec.x = (vec.x * (G_ViewSize >> 0x1));
 // LINE 2101:
@@ -2689,17 +2677,9 @@ _Tea:
 	__asm        jmp    _T170;
 // LINE 2106:
 _T123:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.x;
-	__asm        mov    vec.x, eax;
+	vec.x = (((G_ViewSize >> 0x1) + 1) * vec.x);
 // LINE 2107:
-	__asm        mov    eax, G_ViewSize;
-	__asm        sar    eax, 1;
-	__asm        inc    eax;
-	__asm        imul   eax, vec.z;
-	__asm        mov    vec.z, eax;
+	vec.z = (((G_ViewSize >> 0x1) + 1) * vec.z);
 // LINE 2108:
 	__asm        jmp    _T170;
 // LINE 2109:

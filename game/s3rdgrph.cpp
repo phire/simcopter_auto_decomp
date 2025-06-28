@@ -4777,14 +4777,7 @@ _T2bd:
 	__asm        test   eax, eax;
 	__asm        je     _T55b;
 // LINE 1116:
-	__asm        mov    eax, y;
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    yindex, al;
+	yindex = this->RoadGraph::FindYIndexToVertex(x, (y + 1));
 // LINE 1117:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -4986,14 +4979,7 @@ _T560:
 	__asm        test   eax, eax;
 	__asm        je     _T7fe;
 // LINE 1127:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        dec    eax;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    yindex, al;
+	yindex = this->RoadGraph::FindYIndexToVertex((x - 1), y);
 // LINE 1128:
 	__asm        mov    eax, y;
 	__asm        sub    eax, 2;
@@ -5395,14 +5381,7 @@ _Taa6:
 	__asm        test   eax, eax;
 	__asm        je     _Td3e;
 // LINE 1149:
-	__asm        mov    eax, y;
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    yindex, al;
+	yindex = this->RoadGraph::FindYIndexToVertex(x, (y + 1));
 // LINE 1150:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -5604,14 +5583,7 @@ _Td43:
 	__asm        test   eax, eax;
 	__asm        je     _Tfdb;
 // LINE 1160:
-	__asm        mov    eax, y;
-	__asm        dec    eax;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    yindex, al;
+	yindex = this->RoadGraph::FindYIndexToVertex(x, (y - 1));
 // LINE 1161:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -5813,14 +5785,7 @@ _Tfe0:
 	__asm        test   eax, eax;
 	__asm        je     _T127a;
 // LINE 1171:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    yindex, al;
+	yindex = this->RoadGraph::FindYIndexToVertex((x + 1), y);
 // LINE 1172:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
@@ -6021,14 +5986,7 @@ _T127f:
 	__asm        test   eax, eax;
 	__asm        je     _T1519;
 // LINE 1182:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::FindYIndexToVertex;
-	__asm        mov    yindex, al;
+	yindex = this->RoadGraph::FindYIndexToVertex((x + 1), y);
 // LINE 1183:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
@@ -6312,16 +6270,7 @@ _Taf:
 	__asm        test   cl, 1;
 	__asm        je     _Te7;
 // LINE 1216:
-	__asm        push   0;
-	__asm        mov    eax, y;
-	__asm        dec    eax;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    eax, pRGV;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::MakeRoad;
+	this->RoadGraph::MakeRoad(pRGV, x, (y - 1), 0x0);
 // LINE 1219:
 _Te7:
 	__asm        mov    eax, 0x7F;
@@ -6368,16 +6317,7 @@ _T165:
 	__asm        test   cl, 8;
 	__asm        je     _T19d;
 // LINE 1234:
-	__asm        push   3;
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        dec    eax;
-	__asm        push   eax;
-	__asm        mov    eax, pRGV;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   RoadGraph::MakeRoad;
+	this->RoadGraph::MakeRoad(pRGV, (x - 1), y, 0x3);
 // LINE 1236:
 _T19d:
 	return;

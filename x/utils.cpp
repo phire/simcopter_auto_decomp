@@ -241,11 +241,7 @@ _T1a3:
 	__asm        test   reinterpret_cast<uint32_t>(neg), 0xFFFF;
 	__asm        je     _T1bc;
 
-	__asm        mov    eax, num;
-	__asm        mov    eax, [eax];
-	__asm        neg    eax;
-	__asm        mov    ecx, num;
-	__asm        mov    [ecx], eax;
+	num[0] = -num[0];
 // LINE 95:
 _T1bc:
 	return 0x1;
@@ -268,9 +264,7 @@ void Num2Str(long num, unsigned char * str) {
 // LINE 106:
 	neg = 0x1;
 // LINE 107:
-	__asm        mov    eax, num;
-	__asm        neg    eax;
-	__asm        mov    num, eax;
+	num = -num;
 // LINE 109:
 	__asm        jmp    _T3a;
 // LINE 110:

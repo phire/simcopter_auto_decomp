@@ -845,13 +845,7 @@ _T18d:
 _T1bb:
 	__asm        jmp    _T1c0;
 _T1c0:
-	__asm        mov    eax, sMessage.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sMessage.c_str_ptr, eax;
+	sMessage.c_str_ptr = operator new((sMessage.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T1d8;
 _T1d8:
 	__asm        mov    eax, sMessage.reference;
@@ -5080,27 +5074,15 @@ void CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDest
 // LINE 875:
 	windowToDestroy->CheckupWindow::GetCurrentSettings(lSettings[0]);
 // LINE 878:
-	__asm        mov    eax, lSettings[0];
-	__asm        neg    eax;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney(-lSettings[0]);
 // LINE 879:
 	S3HeliPurchaseRepairs(G_uheli, lSettings[0]);
 // LINE 881:
-	__asm        mov    eax, lSettings[1];
-	__asm        neg    eax;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney(-lSettings[1]);
 // LINE 882:
 	S3HeliPurchaseFuel(G_uheli, lSettings[1]);
 // LINE 884:
-	__asm        mov    eax, lSettings[2];
-	__asm        neg    eax;
-	__asm        push   eax;
-	__asm        call   ChangeUserMoney;
-	__asm        add    esp, 4;
+	ChangeUserMoney(-lSettings[2]);
 // LINE 885:
 	S3HeliPurchaseTeargasCanisters(lSettings[2]);
 // LINE 888:

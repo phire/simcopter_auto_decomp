@@ -439,10 +439,7 @@ _T4e:
 _T6e:
 	ObjectPtr->Attrib = fileobjhdr.Attrib;
 // LINE 376:
-	__asm        movsx  eax, fileobjhdr.NVerts;
-	__asm        dec    eax;
-	__asm        mov    ecx, ObjectPtr;
-	__asm        mov    [ecx+4], eax;
+	ObjectPtr->NVerts = (reinterpret_cast<int16_t>(fileobjhdr.NVerts) - 1);
 // LINE 377:
 	ObjectPtr->NFaces = reinterpret_cast<int16_t>(fileobjhdr.NFaces);
 // LINE 378:
@@ -3375,10 +3372,7 @@ _T84:
 // LINE 2262:
 	oh->NVerts = nverts;
 // LINE 2263:
-	__asm        mov    eax, nverts;
-	__asm        dec    eax;
-	__asm        mov    ecx, oh;
-	__asm        mov    [ecx+0x10], eax;
+	oh->NFaces = (nverts - 1);
 // LINE 2264:
 	oh->ID = 0x0;
 // LINE 2265:
@@ -3401,11 +3395,7 @@ _FOR_112:
 			vert->z = 0x0;
 			vert->x = vert->z;
 		// LINE 2275:
-			__asm        mov    eax, seglen;
-			__asm        imul   eax, i;
-			__asm        neg    eax;
-			__asm        mov    ecx, vert;
-			__asm        mov    [ecx+4], eax;
+			vert->y = -(seglen * i);
 		// LINE 2276:
 			vert += 0xc;
 	}
@@ -3422,50 +3412,37 @@ _T14e:
 	ptr += 0x30;
 // LINE 2288:
 _FOR_177:
-	i = 0x0;
-	__asm        jmp    _FOR_COND_177;
-_FOR_NEXT_177:
-	i++;
-_FOR_COND_177:
-	__asm        mov    eax, nverts;
-	__asm        dec    eax;
-	__asm        cmp    eax, i;
-	__asm        jle    _T205;
-// LINE 2291:
-	iptr = ptr;
-// LINE 2292:
-	ptr += 0x8;
-// LINE 2295:
-	fh->Nverts = 0x2;
-// LINE 2296:
-	fh->Attrib1 = 0x8002;
-// LINE 2297:
-	fh->Attrib2 = color;
-// LINE 2298:
-	fh->Plotter = 0x14;
-// LINE 2299:
-	fh->Bitmap = color;
-// LINE 2300:
-	fh->MapVerts = mvert;
-// LINE 2301:
-	fh->NextFace = ptr;
-// LINE 2302:
-	fh->PlyVerts = iptr;
-// LINE 2305:
-	iptr[0] = (i << 0x4);
-	iptr += 0x4;
-// LINE 2306:
-	__asm        mov    eax, i;
-	__asm        inc    eax;
-	__asm        shl    eax, 4;
-	__asm        mov    ecx, iptr;
-	__asm        mov    [ecx], eax;
-// LINE 2309:
-	fh = ptr;
-// LINE 2310:
-	ptr += 0x30;
-// LINE 2311:
-	__asm        jmp    _FOR_NEXT_177;
+	for (i = 0x0; ((nverts - 1) > i); i++) {
+		// LINE 2291:
+			iptr = ptr;
+		// LINE 2292:
+			ptr += 0x8;
+		// LINE 2295:
+			fh->Nverts = 0x2;
+		// LINE 2296:
+			fh->Attrib1 = 0x8002;
+		// LINE 2297:
+			fh->Attrib2 = color;
+		// LINE 2298:
+			fh->Plotter = 0x14;
+		// LINE 2299:
+			fh->Bitmap = color;
+		// LINE 2300:
+			fh->MapVerts = mvert;
+		// LINE 2301:
+			fh->NextFace = ptr;
+		// LINE 2302:
+			fh->PlyVerts = iptr;
+		// LINE 2305:
+			iptr[0] = (i << 0x4);
+			iptr += 0x4;
+		// LINE 2306:
+			iptr[0] = ((i + 1) << 0x4);
+		// LINE 2309:
+			fh = ptr;
+		// LINE 2310:
+			ptr += 0x30;
+	}
 // LINE 2313:
 _T205:
 	return dataptr;

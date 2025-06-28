@@ -2128,15 +2128,7 @@ _T1fb:
 _T251:
 	__asm        jmp    _T256;
 _T256:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x84];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	this->sButtonImageFileName.c_str_ptr = operator new((this->sButtonImageFileName.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T280;
 _T280:
 	__asm        mov    eax, this;
@@ -2429,15 +2421,7 @@ _T64e:
 _T6a4:
 	__asm        jmp    _T6a9;
 _T6a9:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x84];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	this->sButtonImageFileName.c_str_ptr = operator new((this->sButtonImageFileName.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T6d3;
 _T6d3:
 	__asm        mov    eax, this;
@@ -3242,15 +3226,7 @@ _T4f7:
 _T531:
 	__asm        jmp    _T536;
 _T536:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
+	this->sMessage.c_str_ptr = operator new((this->sMessage.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T55a;
 _T55a:
 	__asm        mov    eax, this;
@@ -3625,11 +3601,7 @@ _Tcc:
 	this->lCurrentFrame = 0x0;
 	__asm        jmp    _T111;
 _Tfe:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        dec    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x90], eax;
+	this->lCurrentFrame = (this->lFrameCount - 1);
 _T111:
 	__asm        jmp    _T116;
 // LINE 398:
@@ -3718,11 +3690,7 @@ _T3d:
 	this->lCurrentFrame = 0x0;
 	__asm        jmp    _T72;
 _T5f:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        dec    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x90], eax;
+	this->lCurrentFrame = (this->lFrameCount - 1);
 _T72:
 	__asm        jmp    _T77;
 // LINE 437:
@@ -6366,13 +6334,7 @@ _T3e5:
 _T439:
 	__asm        jmp    _T43e;
 _T43e:
-	__asm        mov    eax, sSkyPreviewFilePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sSkyPreviewFilePath.c_str_ptr, eax;
+	sSkyPreviewFilePath.c_str_ptr = operator new((sSkyPreviewFilePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _T45c;
 _T45c:
 	__asm        mov    eax, sSkyPreviewFilePath.reference;
@@ -8936,12 +8898,7 @@ int32_t SoundSettingsWindow::SetCurrentRadioSettings(/*packed*/ struct RadioPref
 	this->myRadioVolumeSliderWindow->SliderWindow::SetValue(0x0);
 // LINE 1156:
 _T40:
-	__asm        mov    eax, lCurrentStations;
-	__asm        dec    eax;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::SetMaximumValue;
+	this->myRadioStationSliderWindow->SliderWindow::SetMaximumValue((lCurrentStations - 1));
 // LINE 1157:
 	this->myRadioStationSliderWindow->SliderWindow::SetValue(newRadioPreferences.lCurrentStation);
 // LINE 1160:
@@ -11998,53 +11955,79 @@ _T14b:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1617:
 _FOR_1ac:
-	i = 0x1;
-	__asm        jmp    _FOR_COND_1ac;
-_FOR_NEXT_1ac:
-	i++;
-_FOR_COND_1ac:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB0];
-	__asm        dec    eax;
-	__asm        cmp    eax, i;
-	__asm        jle    _T359;
-// LINE 1618:
-	lCurrentXPosition = this-><PopupMenuExtra+0x20>;
-// LINE 1620:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xB8];
-	__asm        push   eax;
-	__asm        mov    eax, lSourceWidth;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        imul   eax, i;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        push   eax;
-	__asm        mov    eax, lCurrentXPosition;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xCC];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0xCC];
-	__asm        call   dword ptr [edx+0xC];
-// LINE 1621:
-	lCurrentXPosition += lSourceWidth;
-// LINE 1622:
-__WHILE_248:
-	while (((lEndXPosition - lSourceWidth) > lCurrentXPosition)) {
-		// LINE 1624:
+	for (i = 0x1; ((this->lVisibleLines - 1) > i); i++) {
+		// LINE 1618:
+			lCurrentXPosition = this-><PopupMenuExtra+0x20>;
+		// LINE 1620:
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0xB8];
+			__asm        mov    ecx, this;
+			__asm        add    eax, [ecx+0xB8];
+			__asm        push   eax;
+			__asm        mov    eax, lSourceWidth;
+			__asm        push   eax;
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0xB8];
+			__asm        push   eax;
+			__asm        push   0;
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0xB8];
+			__asm        imul   eax, i;
+			__asm        mov    ecx, this;
+			__asm        add    eax, [ecx+0x24];
+			__asm        push   eax;
+			__asm        mov    eax, lCurrentXPosition;
+			__asm        push   eax;
+			__asm        mov    eax, this;
+			__asm        mov    eax, [eax+0x44];
+			__asm        push   eax;
+			__asm        mov    eax, this;
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx+0xCC];
+			__asm        mov    edx, [ecx];
+			__asm        mov    ecx, [eax+0xCC];
+			__asm        call   dword ptr [edx+0xC];
+		// LINE 1621:
+			lCurrentXPosition += lSourceWidth;
+		// LINE 1622:
+		__WHILE_248:
+			while (((lEndXPosition - lSourceWidth) > lCurrentXPosition)) {
+				// LINE 1624:
+					__asm        mov    eax, this;
+					__asm        mov    eax, [eax+0xB8];
+					__asm        mov    ecx, this;
+					__asm        add    eax, [ecx+0xB8];
+					__asm        push   eax;
+					__asm        mov    eax, lSourceWidth;
+					__asm        add    eax, lSourceWidth;
+					__asm        push   eax;
+					__asm        mov    eax, this;
+					__asm        mov    eax, [eax+0xB8];
+					__asm        push   eax;
+					__asm        mov    eax, lSourceWidth;
+					__asm        push   eax;
+					__asm        mov    eax, this;
+					__asm        mov    eax, [eax+0xB8];
+					__asm        imul   eax, i;
+					__asm        mov    ecx, this;
+					__asm        add    eax, [ecx+0x24];
+					__asm        push   eax;
+					__asm        mov    eax, lCurrentXPosition;
+					__asm        push   eax;
+					__asm        mov    eax, this;
+					__asm        mov    eax, [eax+0x44];
+					__asm        push   eax;
+					__asm        mov    eax, this;
+					__asm        mov    ecx, this;
+					__asm        mov    ecx, [ecx+0xCC];
+					__asm        mov    edx, [ecx];
+					__asm        mov    ecx, [eax+0xCC];
+					__asm        call   dword ptr [edx+0xC];
+				// LINE 1625:
+					lCurrentXPosition += lSourceWidth;
+			}
+		// LINE 1628:
+		_T2d8:
 			__asm        mov    eax, this;
 			__asm        mov    eax, [eax+0xB8];
 			__asm        mov    ecx, this;
@@ -12052,11 +12035,13 @@ __WHILE_248:
 			__asm        push   eax;
 			__asm        mov    eax, lSourceWidth;
 			__asm        add    eax, lSourceWidth;
+			__asm        add    eax, lSourceWidth;
 			__asm        push   eax;
 			__asm        mov    eax, this;
 			__asm        mov    eax, [eax+0xB8];
 			__asm        push   eax;
 			__asm        mov    eax, lSourceWidth;
+			__asm        add    eax, lSourceWidth;
 			__asm        push   eax;
 			__asm        mov    eax, this;
 			__asm        mov    eax, [eax+0xB8];
@@ -12075,45 +12060,7 @@ __WHILE_248:
 			__asm        mov    edx, [ecx];
 			__asm        mov    ecx, [eax+0xCC];
 			__asm        call   dword ptr [edx+0xC];
-		// LINE 1625:
-			lCurrentXPosition += lSourceWidth;
 	}
-// LINE 1628:
-_T2d8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xB8];
-	__asm        push   eax;
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    eax, lSourceWidth;
-	__asm        add    eax, lSourceWidth;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        push   eax;
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    eax, lSourceWidth;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        imul   eax, i;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        push   eax;
-	__asm        mov    eax, lCurrentXPosition;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xCC];
-	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax+0xCC];
-	__asm        call   dword ptr [edx+0xC];
-// LINE 1629:
-	__asm        jmp    _FOR_NEXT_1ac;
 // LINE 1630:
 _T359:
 	lCurrentXPosition = this-><PopupMenuExtra+0x20>;
@@ -12724,13 +12671,7 @@ _T9f:
 _Tdb:
 	__asm        jmp    _Te0;
 _Te0:
-	__asm        mov    eax, sImagePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sImagePath.c_str_ptr, eax;
+	sImagePath.c_str_ptr = operator new((sImagePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _Tf8;
 _Tf8:
 	__asm        mov    eax, sImagePath.reference;
@@ -13016,9 +12957,7 @@ _T55:
 _T71:
 	lCurrentWidth = (this-><PopupMenuExtra+0x18> - this-><PopupMenuExtra+0x10>);
 // LINE 1752:
-	__asm        mov    eax, lTileWidth;
-	__asm        dec    eax;
-	__asm        add    lCurrentWidth, eax;
+	lCurrentWidth += (lTileWidth - 1);
 // LINE 1753:
 	__asm        mov    eax, lCurrentWidth;
 	__asm        cdq;
@@ -14114,13 +14053,7 @@ _T9f:
 _Tdb:
 	__asm        jmp    _Te0;
 _Te0:
-	__asm        mov    eax, sImagePath.reference;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    eax;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    sImagePath.c_str_ptr, eax;
+	sImagePath.c_str_ptr = operator new((sImagePath.reference-><basic_string_ref<char>+0x04:4> + 1));
 	__asm        jmp    _Tf8;
 _Tf8:
 	__asm        mov    eax, sImagePath.reference;

@@ -48,9 +48,7 @@ void VRFrustSetNormals() {
 // LINE 86:
 	MTNormalize(vect.x);
 // LINE 89:
-	__asm        mov    eax, vect.z;
-	__asm        neg    eax;
-	__asm        mov    VRFrusRiteNorm.x, eax;
+	VRFrusRiteNorm.x = -vect.z;
 // LINE 90:
 	VRFrusRiteNorm.z = vect.x;
 // LINE 91:
@@ -65,9 +63,7 @@ void VRFrustSetNormals() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 95:
-	__asm        mov    eax, VRFrusLeftNorm.x;
-	__asm        neg    eax;
-	__asm        mov    VRFrusLeftNorm.x, eax;
+	VRFrusLeftNorm.x = -VRFrusLeftNorm.x;
 // LINE 99:
 	__asm        mov    eax, disty;
 	__asm        add    eax, eax;
@@ -84,9 +80,7 @@ void VRFrustSetNormals() {
 // LINE 104:
 	MTNormalize(vect.x);
 // LINE 107:
-	__asm        mov    eax, vect.z;
-	__asm        neg    eax;
-	__asm        mov    VRFrusTopNorm.y, eax;
+	VRFrusTopNorm.y = -vect.z;
 // LINE 108:
 	VRFrusTopNorm.z = vect.y;
 // LINE 109:
@@ -101,9 +95,7 @@ void VRFrustSetNormals() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 113:
-	__asm        mov    eax, VRFrusTopNorm.y;
-	__asm        neg    eax;
-	__asm        mov    VRFrusBotNorm.y, eax;
+	VRFrusBotNorm.y = -VRFrusTopNorm.y;
 // LINE 114:
 }
 

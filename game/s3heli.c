@@ -3825,11 +3825,7 @@ _T263:
 	__asm        cmp    eax, [ecx+0x11C];
 	__asm        jle    _T28b;
 // LINE 1994:
-	__asm        mov    eax, max_pitch;
-	__asm        neg    eax;
-	__asm        sub    eax, tempfix2;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x11C], eax;
+	hd->pitch = (-max_pitch - tempfix2);
 // LINE 1996:
 _T28b:
 	__asm        jmp    _T2fc;
@@ -3857,14 +3853,7 @@ _T2c4:
 	__asm        cmp    eax, [ecx+0x11C];
 	__asm        jle    _T2fc;
 // LINE 2001:
-	__asm        mov    eax, max_pitch;
-	__asm        sar    eax, 1;
-	__asm        neg    eax;
-	__asm        mov    ecx, tempfix2;
-	__asm        sar    ecx, 1;
-	__asm        sub    eax, ecx;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x11C], eax;
+	hd->pitch = (-(max_pitch >> 0x1) - (tempfix2 >> 0x1));
 // LINE 2020:
 _T2fc:
 	__asm        mov    eax, hd;
@@ -3883,11 +3872,7 @@ _T320:
 	__asm        cmp    eax, [ecx+0x114];
 	__asm        jle    _T348;
 // LINE 2023:
-	__asm        mov    eax, htd;
-	__asm        mov    eax, [eax+0xC];
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x114], eax;
+	hd->roll = -htd->max_bank;
 // LINE 2024:
 _T348:
 	tempfix = hd->pitch;
@@ -3895,9 +3880,7 @@ _T348:
 	__asm        cmp    tempfix, 0;
 	__asm        jge    _T366;
 // LINE 2026:
-	__asm        mov    eax, tempfix;
-	__asm        neg    eax;
-	__asm        mov    tempfix, eax;
+	tempfix = -tempfix;
 // LINE 2027:
 _T366:
 	tempfix += 0x12c0000;
@@ -3926,10 +3909,7 @@ _T3a0:
 	__asm        cmp    [eax+0x114], ecx;
 	__asm        jge    _T3d2;
 // LINE 2036:
-	__asm        mov    eax, tempfix;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x114], eax;
+	hd->roll = -tempfix;
 // LINE 2040:
 _T3d2:
 	__asm        mov    eax, hd;
@@ -3955,11 +3935,7 @@ _T411:
 	__asm        cmp    eax, [ecx+0x118];
 	__asm        jle    _T439;
 // LINE 2047:
-	__asm        mov    eax, htd;
-	__asm        mov    eax, [eax+0x10];
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x118], eax;
+	hd->slide = -htd->max_slide;
 // LINE 2051:
 _T439:
 	__asm        mov    eax, hd;
@@ -3985,11 +3961,7 @@ _T478:
 	__asm        cmp    eax, [ecx+0x120];
 	__asm        jle    _T4a0;
 // LINE 2058:
-	__asm        mov    eax, htd;
-	__asm        mov    eax, [eax+0x18];
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x120], eax;
+	hd->yawrate = -htd->max_yawrate;
 // LINE 2060:
 _T4a0:
 	__asm        push   0xF0000;
@@ -4026,9 +3998,7 @@ _T511:
 	__asm        cmp    tempfix, 0;
 	__asm        jge    _T52f;
 // LINE 2070:
-	__asm        mov    eax, tempfix;
-	__asm        neg    eax;
-	__asm        mov    tempfix, eax;
+	tempfix = -tempfix;
 // LINE 2071:
 _T52f:
 	tempfix2 = hd->slide;
@@ -4036,9 +4006,7 @@ _T52f:
 	__asm        cmp    tempfix2, 0;
 	__asm        jge    _T54d;
 // LINE 2073:
-	__asm        mov    eax, tempfix2;
-	__asm        neg    eax;
-	__asm        mov    tempfix2, eax;
+	tempfix2 = -tempfix2;
 // LINE 2074:
 _T54d:
 	__asm        mov    eax, tempfix;
@@ -4504,11 +4472,7 @@ _T28c:
 	__asm        cmp    eax, [ecx+0x124];
 	__asm        jle    _T2ea;
 // LINE 2265:
-	__asm        mov    eax, S_htwk_max_descent_rate;
-	__asm        shl    eax, 2;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x124], eax;
+	hd->yspeed = -(S_htwk_max_descent_rate << 0x2);
 // LINE 2272:
 _T2ea:
 	__asm        mov    eax, hd;
@@ -5539,20 +5503,11 @@ _T5e:
 // LINE 2717:
 	dz = (hd->rinfo.lastbuckloc.z - hd->dybucket->loc.z);
 // LINE 2720:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x184];
-	__asm        neg    eax;
-	__asm        mov    vec.x, eax;
+	vec.x = -hd->rinfo.buckdir.x;
 // LINE 2721:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x188];
-	__asm        neg    eax;
-	__asm        mov    vec.y, eax;
+	vec.y = -hd->rinfo.buckdir.y;
 // LINE 2722:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x18C];
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -hd->rinfo.buckdir.z;
 // LINE 2723:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xBC];
@@ -5668,20 +5623,11 @@ _T8a:
 // LINE 2773:
 	_VRIdentity4x4(mat[0][0]);
 // LINE 2774:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x100];
-	__asm        neg    eax;
-	__asm        mov    vec.x, eax;
+	vec.x = -hd->vector.x;
 // LINE 2775:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x104];
-	__asm        neg    eax;
-	__asm        mov    vec.y, eax;
+	vec.y = -hd->vector.y;
 // LINE 2776:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x108];
-	__asm        neg    eax;
-	__asm        mov    vec.z, eax;
+	vec.z = -hd->vector.z;
 // LINE 2777:
 	__asm        lea    eax, mat[0][0];
 	__asm        push   eax;
@@ -5927,17 +5873,13 @@ _T60:
 	__asm        cmp    absdx, 0;
 	__asm        jge    _T8a;
 
-	__asm        mov    eax, absdx;
-	__asm        neg    eax;
-	__asm        mov    absdx, eax;
+	absdx = -absdx;
 // LINE 2921:
 _T8a:
 	__asm        cmp    absdz, 0;
 	__asm        jge    _FOR_b4;
 
-	__asm        mov    eax, absdz;
-	__asm        neg    eax;
-	__asm        mov    absdz, eax;
+	absdz = -absdz;
 // LINE 2924:
 _FOR_b4:
 	c = 0x0;
@@ -5977,10 +5919,7 @@ _Tf4:
 	__asm        mov    vert, eax;
 // LINE 2932:
 _FOR_13d:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x1AC];
-	__asm        inc    eax;
-	__asm        mov    c, eax;
+	c = (hd->rinfo.bucketdown + 1);
 	__asm        jmp    _FOR_COND_13d;
 _FOR_NEXT_13d:
 	c++;
@@ -6826,11 +6765,7 @@ _Tf2:
 	return 0x0;
 // LINE 3706:
 _T10b:
-	__asm        mov    eax, i;
-	__asm        inc    eax;
-	__asm        shl    eax, 0x12;
-	__asm        mov    ecx, dist;
-	__asm        mov    [ecx], eax;
+	dist[0] = ((i + 1) << 0x12);
 // LINE 3707:
 	__asm        mov    eax, dist;
 	__asm        cmp    dword ptr [eax], 0x1400000;
@@ -7771,9 +7706,7 @@ calc_turbulence:
 	__asm        sub    eax, edx;
 	__asm        je     _T2ad;
 // LINE 4371:
-	__asm        mov    eax, slide;
-	__asm        neg    eax;
-	__asm        mov    slide, eax;
+	slide = -slide;
 // LINE 4372:
 _T2ad:
 	__asm        call   rand;
@@ -7792,9 +7725,7 @@ _T2ad:
 	__asm        sub    eax, edx;
 	__asm        je     _T2de;
 // LINE 4374:
-	__asm        mov    eax, pitch;
-	__asm        neg    eax;
-	__asm        mov    pitch, eax;
+	pitch = -pitch;
 // LINE 4375:
 _T2de:
 	__asm        call   rand;
@@ -7813,9 +7744,7 @@ _T2de:
 	__asm        sub    eax, edx;
 	__asm        je     _T30f;
 // LINE 4377:
-	__asm        mov    eax, yaw;
-	__asm        neg    eax;
-	__asm        mov    yaw, eax;
+	yaw = -yaw;
 // LINE 4380:
 _T30f:
 	S_turbslide[9] = (slide << 0x10);

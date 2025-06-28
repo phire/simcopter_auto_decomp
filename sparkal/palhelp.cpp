@@ -449,9 +449,7 @@ _FOR_151:
 		// LINE 129:
 			__asm        sar    nDivisor, 1;
 		// LINE 130:
-			__asm        mov    eax, nDivisor;
-			__asm        dec    eax;
-			__asm        mov    nMultiplier, eax;
+			nMultiplier = (nDivisor - 1);
 		// LINE 132:
 		_FOR_23d:
 			for (j = 0xa; (j < 0xf6); j++) {
@@ -757,9 +755,7 @@ _FOR_151:
 		// LINE 218:
 			__asm        sar    nDivisor, 1;
 		// LINE 219:
-			__asm        mov    eax, nDivisor;
-			__asm        dec    eax;
-			__asm        mov    nMultiplier, eax;
+			nMultiplier = (nDivisor - 1);
 		// LINE 221:
 		_FOR_23d:
 			for (j = 0xa; (j < 0xf6); j++) {
@@ -1057,9 +1053,7 @@ _FOR_151:
 		// LINE 307:
 			__asm        sar    nDivisor, 1;
 		// LINE 308:
-			__asm        mov    eax, nDivisor;
-			__asm        dec    eax;
-			__asm        mov    nMultiplier, eax;
+			nMultiplier = (nDivisor - 1);
 		// LINE 310:
 		_FOR_23d:
 			for (j = 0xa; (j < 0xf6); j++) {
@@ -1293,9 +1287,7 @@ _T59:
 _T6d:
 	paletteArray = operator new((lSteps << 0xa));
 // LINE 392:
-	__asm        mov    eax, lSteps;
-	__asm        dec    eax;
-	__asm        mov    nLastStepIndex, eax;
+	nLastStepIndex = (lSteps - 1);
 // LINE 396:
 	__asm        call   dword ptr ds:[0x6C35F4];
 	__asm        push   eax;
@@ -1445,9 +1437,7 @@ _FOR_1c7:
 		// LINE 422:
 			__asm        sar    nDivisor, 1;
 		// LINE 423:
-			__asm        mov    eax, nDivisor;
-			__asm        dec    eax;
-			__asm        mov    nMultiplier, eax;
+			nMultiplier = (nDivisor - 1);
 		// LINE 425:
 		_FOR_290:
 			for (j = 0xa; (j < 0xf6); j++) {

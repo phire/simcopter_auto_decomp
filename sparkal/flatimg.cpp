@@ -176,9 +176,7 @@ _Tdb:
 // LINE 58:
 	pDestLeft = (((DestStride * DestTop) + DestLeft) + pDestBits);
 // LINE 61:
-	__asm        mov    eax, DestHeight;
-	__asm        neg    eax;
-	__asm        mov    YError, eax;
+	YError = -DestHeight;
 // LINE 62:
 	YCount = 0x0;
 // LINE 63:
@@ -192,9 +190,7 @@ __WHILE_10a:
 		// LINE 67:
 			pDestBits = pDestLeft;
 		// LINE 69:
-			__asm        mov    eax, DestWidth;
-			__asm        neg    eax;
-			__asm        mov    XError, eax;
+			XError = -DestWidth;
 		// LINE 70:
 			XCount = 0x0;
 		// LINE 71:
@@ -371,10 +367,7 @@ _Tca:
 	__asm        cmp    eax, ClipRight;
 	__asm        jl     _Te3;
 // LINE 165:
-	__asm        mov    eax, ClipRight;
-	__asm        sub    eax, DestLeft;
-	__asm        dec    eax;
-	__asm        mov    Width, eax;
+	Width = ((ClipRight - DestLeft) - 1);
 // LINE 167:
 _Te3:
 	__asm        mov    eax, Height;
@@ -382,10 +375,7 @@ _Te3:
 	__asm        cmp    eax, ClipBottom;
 	__asm        jl     _Tfc;
 // LINE 168:
-	__asm        mov    eax, ClipBottom;
-	__asm        sub    eax, DestTop;
-	__asm        dec    eax;
-	__asm        mov    Height, eax;
+	Height = ((ClipBottom - DestTop) - 1);
 // LINE 170:
 _Tfc:
 	__asm        jmp    _T101;

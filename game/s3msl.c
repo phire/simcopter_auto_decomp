@@ -5069,26 +5069,18 @@ void S3DrawPoint(/*packed*/ struct VRBlit *blit) {
 // LINE 2627:
 	bufwidth = swindow.RenderWide;
 // LINE 2628:
-	__asm        mov    eax, swindow.WindowWide;
-	__asm        dec    eax;
-	__asm        mov    winwidth, eax;
+	winwidth = (swindow.WindowWide - 1);
 // LINE 2629:
-	__asm        mov    eax, swindow.WindowHigh;
-	__asm        dec    eax;
-	__asm        mov    winheight, eax;
+	winheight = (swindow.WindowHigh - 1);
 // LINE 2631:
 	__asm        jmp    _T64;
 // LINE 2634:
 _T4a:
 	bufwidth = qwindow.RenderWide;
 // LINE 2635:
-	__asm        mov    eax, qwindow.WindowWide;
-	__asm        dec    eax;
-	__asm        mov    winwidth, eax;
+	winwidth = (qwindow.WindowWide - 1);
 // LINE 2636:
-	__asm        mov    eax, qwindow.WindowHigh;
-	__asm        dec    eax;
-	__asm        mov    winheight, eax;
+	winheight = (qwindow.WindowHigh - 1);
 // LINE 2644:
 _T64:
 	x = (blit->verts->x >> 0xc);

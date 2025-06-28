@@ -2903,11 +2903,9 @@ _T1b:
 	nVertices = ((this->pointArray.finish - this->pointArray.start) >> 0x3);
 // LINE 186:
 _FOR_47:
-	__asm        mov    i, 0;
-	__asm        mov    c, 0;
-	__asm        mov    eax, nVertices;
-	__asm        dec    eax;
-	__asm        mov    j, eax;
+	i = 0x0;
+	c = 0x0;
+	j = (nVertices - 1);
 	__asm        jmp    _FOR_COND_47;
 _FOR_NEXT_47:
 	j = i;
