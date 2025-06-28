@@ -1095,16 +1095,16 @@ _T78:
 // LINE 561:
 _FOR_14d:
 	for (i = 0x0; (this->nBufferHeight > i); i++) {
-		// LINE 562:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x1C];
-			__asm        imul   eax, i;
-			__asm        add    eax, 0xC;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x158];
-			__asm        mov    edx, i;
-			__asm        mov    [ecx+edx*4+0xC], eax;
-			__asm        jmp    _FOR_NEXT_14d;
+// LINE 562:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x1C];
+		__asm        imul   eax, i;
+		__asm        add    eax, 0xC;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x158];
+		__asm        mov    edx, i;
+		__asm        mov    [ecx+edx*4+0xC], eax;
+		__asm        jmp    _FOR_NEXT_14d;
 	}
 // LINE 563:
 _T181:
@@ -1117,15 +1117,15 @@ _T181:
 // LINE 566:
 _FOR_19d:
 	for (i = 0x0; (this->nBufferHeight > i); i++) {
-		// LINE 567:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x1C];
-			__asm        imul   eax, i;
-			__asm        add    eax, 0xC;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x158];
-			__asm        mov    edx, i;
-			__asm        mov    [ecx+edx*4+0xC], eax;
+// LINE 567:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x1C];
+		__asm        imul   eax, i;
+		__asm        add    eax, 0xC;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x158];
+		__asm        mov    edx, i;
+		__asm        mov    [ecx+edx*4+0xC], eax;
 	}
 // LINE 571:
 _T1d1:
@@ -1205,31 +1205,31 @@ void VRBmpSmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
 // LINE 623:
 _FOR_18:
 	for (i = 0x0; (this->nBufferHeight > i); i++) {
-		// LINE 624:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x1C];
-			__asm        imul   eax, i;
-			__asm        add    eax, 0xC;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x158];
-			__asm        mov    edx, i;
-			__asm        mov    [ecx+edx*4+0xC], eax;
-		// LINE 625:
-			__asm        mov    eax, nPaletteIndex;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x1C];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x158];
-			__asm        mov    ecx, i;
-			__asm        mov    eax, [eax+ecx*4+0xC];
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+0x158];
-			__asm        push   eax;
-			__asm        call   memset;
-			__asm        add    esp, 0xC;
+// LINE 624:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x1C];
+		__asm        imul   eax, i;
+		__asm        add    eax, 0xC;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x158];
+		__asm        mov    edx, i;
+		__asm        mov    [ecx+edx*4+0xC], eax;
+// LINE 625:
+		__asm        mov    eax, nPaletteIndex;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x1C];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x158];
+		__asm        mov    ecx, i;
+		__asm        mov    eax, [eax+ecx*4+0xC];
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+0x158];
+		__asm        push   eax;
+		__asm        call   memset;
+		__asm        add    esp, 0xC;
 	}
 // LINE 627:
 _T7c:
@@ -1446,48 +1446,48 @@ _Tf4:
 // LINE 757:
 _FOR_109:
 	for (i = 0x0; (nHeightToCopy > i); i++) {
-		// LINE 759:
-			__asm        mov    eax, nWidthToCopy;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x158];
-			__asm        mov    ecx, i;
-			__asm        mov    eax, [eax+ecx*4+0xC];
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+0x14C];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x158];
-			__asm        mov    ecx, i;
-			__asm        mov    eax, [eax+ecx*4+0xC];
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+0x158];
-			__asm        push   eax;
-			__asm        call   memcpy;
-			__asm        add    esp, 0xC;
-		// LINE 762:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, nWidthToCopy;
-			__asm        cmp    [eax+0x1C], ecx;
-			__asm        jle    _T198;
-		// LINE 764:
-			__asm        push   0;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x1C];
-			__asm        sub    eax, nWidthToCopy;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x158];
-			__asm        mov    ecx, i;
-			__asm        mov    eax, [eax+ecx*4+0xC];
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+0x158];
-			__asm        add    eax, nWidthToCopy;
-			__asm        push   eax;
-			__asm        call   memset;
-			__asm        add    esp, 0xC;
-		// LINE 765:
-		_T198:
+// LINE 759:
+		__asm        mov    eax, nWidthToCopy;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x158];
+		__asm        mov    ecx, i;
+		__asm        mov    eax, [eax+ecx*4+0xC];
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+0x14C];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x158];
+		__asm        mov    ecx, i;
+		__asm        mov    eax, [eax+ecx*4+0xC];
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+0x158];
+		__asm        push   eax;
+		__asm        call   memcpy;
+		__asm        add    esp, 0xC;
+// LINE 762:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, nWidthToCopy;
+		__asm        cmp    [eax+0x1C], ecx;
+		__asm        jle    _T198;
+// LINE 764:
+		__asm        push   0;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x1C];
+		__asm        sub    eax, nWidthToCopy;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x158];
+		__asm        mov    ecx, i;
+		__asm        mov    eax, [eax+ecx*4+0xC];
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+0x158];
+		__asm        add    eax, nWidthToCopy;
+		__asm        push   eax;
+		__asm        call   memset;
+		__asm        add    esp, 0xC;
+// LINE 765:
+_T198:
 	}
 // LINE 766:
 _T19d:
@@ -1497,20 +1497,20 @@ _T19d:
 // LINE 767:
 _FOR_1ae:
 	for (; (nBmpHeight > i); i++) {
-		// LINE 768:
-			__asm        push   0;
-			__asm        mov    eax, nBmpWidth;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x158];
-			__asm        mov    ecx, i;
-			__asm        mov    eax, [eax+ecx*4+0xC];
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+0x158];
-			__asm        push   eax;
-			__asm        call   memset;
-			__asm        add    esp, 0xC;
-			__asm        jmp    _FOR_NEXT_1ae;
+// LINE 768:
+		__asm        push   0;
+		__asm        mov    eax, nBmpWidth;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x158];
+		__asm        mov    ecx, i;
+		__asm        mov    eax, [eax+ecx*4+0xC];
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+0x158];
+		__asm        push   eax;
+		__asm        call   memset;
+		__asm        add    esp, 0xC;
+		__asm        jmp    _FOR_NEXT_1ae;
 	}
 // LINE 774:
 _T1ea:
@@ -1783,7 +1783,7 @@ _T127:
 	return 0x0;
 // LINE 977:
 _T13b:
-	IFlatImage::lTotalMemoryUsage += (this-><SmackerBackBuffer+0x148> * this-><SmackerBackBuffer+0x14c>);
+IFlatImage::lTotalMemoryUsage += (this-><SmackerBackBuffer+0x148> * this-><SmackerBackBuffer+0x14c>);
 // LINE 981:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -2374,12 +2374,12 @@ _T1b3:
 // LINE 1291:
 __WHILE_1da:
 	while ((i < nLastRecth)) {
-		// LINE 1293:
-			memcpy(pDestImageBits, pSourceImageBits, nLastRectw);
-		// LINE 1294:
-			pDestImageBits += nDestImageStride;
-		// LINE 1295:
-			pSourceImageBits += nSourceImageStride;
+// LINE 1293:
+		memcpy(pDestImageBits, pSourceImageBits, nLastRectw);
+// LINE 1294:
+		pDestImageBits += nDestImageStride;
+// LINE 1295:
+		pSourceImageBits += nSourceImageStride;
 	}
 // LINE 1297:
 _T20b:
@@ -2439,12 +2439,12 @@ _T42:
 // LINE 1354:
 __WHILE_8b:
 	while ((i < nSourceImageHeight)) {
-		// LINE 1356:
-			memcpy(pDestImageBits, pSourceImageBits, nSourceImageWidth);
-		// LINE 1357:
-			pDestImageBits += nDestImageStride;
-		// LINE 1358:
-			pSourceImageBits += nSourceImageStride;
+// LINE 1356:
+		memcpy(pDestImageBits, pSourceImageBits, nSourceImageWidth);
+// LINE 1357:
+		pDestImageBits += nDestImageStride;
+// LINE 1358:
+		pSourceImageBits += nSourceImageStride;
 	}
 // LINE 1361:
 _Tbc:

@@ -848,44 +848,44 @@ _T63:
 	__asm        jmp    _LOOP_68;
 _LOOP_68:
 	for (;;) {
-		_LOOP_68:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+8];
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        je     _T8d;
+_LOOP_68:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+8];
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        je     _T8d;
 
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x14], eax;
-			__asm        jmp    _T99;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x14], eax;
+		__asm        jmp    _T99;
 
-			__asm        jmp    _T99;
-		_T8d:
-			__asm        mov    dword ptr [ebp-0x14], 0;
-			__asm        jmp    _T99;
-		_T99:
-			__asm        mov    eax, [ebp-8];
-			__asm        mov    ecx, [ebp-0x14];
-			__asm        movsx  eax, byte ptr [eax+ecx-1];
-			__asm        movsx  ecx, byte ptr [ebp-0x1C];
-			__asm        cmp    eax, ecx;
-			__asm        je     _Tb5;
+		__asm        jmp    _T99;
+_T8d:
+		__asm        mov    dword ptr [ebp-0x14], 0;
+		__asm        jmp    _T99;
+_T99:
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    ecx, [ebp-0x14];
+		__asm        movsx  eax, byte ptr [eax+ecx-1];
+		__asm        movsx  ecx, byte ptr [ebp-0x1C];
+		__asm        cmp    eax, ecx;
+		__asm        je     _Tb5;
 
-			__asm        jmp    _Tba;
-		_Tb5:
-			__asm        jmp    _Tdb;
-		_Tba:
-			__asm        jmp    _Tc9;
+		__asm        jmp    _Tba;
+_Tb5:
+		__asm        jmp    _Tdb;
+_Tba:
+		__asm        jmp    _Tc9;
 
-			__asm        cmp    dword ptr [ebp-0x18], 0;
-			__asm        je     _Tdb;
-		_Tc9:
-			__asm        cmp    dword ptr [ebp-8], 1;
-			__asm        jbe    _Tdb;
+		__asm        cmp    dword ptr [ebp-0x18], 0;
+		__asm        je     _Tdb;
+_Tc9:
+		__asm        cmp    dword ptr [ebp-8], 1;
+		__asm        jbe    _Tdb;
 
-			__asm        dec    dword ptr [ebp-8];
-			__asm        jmp    _LOOP_68;
+		__asm        dec    dword ptr [ebp-8];
+		__asm        jmp    _LOOP_68;
 	}
 _Tdb:
 	__asm        cmp    dword ptr [ebp-8], 1;
@@ -1356,44 +1356,44 @@ _T63:
 	__asm        jmp    _LOOP_68;
 _LOOP_68:
 	for (;;) {
-		_LOOP_68:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+8];
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        je     _T8d;
+_LOOP_68:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+8];
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        je     _T8d;
 
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x38], eax;
-			__asm        jmp    _T99;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x38], eax;
+		__asm        jmp    _T99;
 
-			__asm        jmp    _T99;
-		_T8d:
-			__asm        mov    dword ptr [ebp-0x38], 0;
-			__asm        jmp    _T99;
-		_T99:
-			__asm        mov    eax, [ebp-0x2C];
-			__asm        mov    ecx, [ebp-0x38];
-			__asm        movsx  eax, byte ptr [eax+ecx-1];
-			__asm        movsx  ecx, byte ptr [ebp-0x40];
-			__asm        cmp    eax, ecx;
-			__asm        je     _Tb5;
+		__asm        jmp    _T99;
+_T8d:
+		__asm        mov    dword ptr [ebp-0x38], 0;
+		__asm        jmp    _T99;
+_T99:
+		__asm        mov    eax, [ebp-0x2C];
+		__asm        mov    ecx, [ebp-0x38];
+		__asm        movsx  eax, byte ptr [eax+ecx-1];
+		__asm        movsx  ecx, byte ptr [ebp-0x40];
+		__asm        cmp    eax, ecx;
+		__asm        je     _Tb5;
 
-			__asm        jmp    _Tba;
-		_Tb5:
-			__asm        jmp    _Tdb;
-		_Tba:
-			__asm        jmp    _Tc9;
+		__asm        jmp    _Tba;
+_Tb5:
+		__asm        jmp    _Tdb;
+_Tba:
+		__asm        jmp    _Tc9;
 
-			__asm        cmp    dword ptr [ebp-0x3C], 0;
-			__asm        je     _Tdb;
-		_Tc9:
-			__asm        cmp    dword ptr [ebp-0x2C], 1;
-			__asm        jbe    _Tdb;
+		__asm        cmp    dword ptr [ebp-0x3C], 0;
+		__asm        je     _Tdb;
+_Tc9:
+		__asm        cmp    dword ptr [ebp-0x2C], 1;
+		__asm        jbe    _Tdb;
 
-			__asm        dec    dword ptr [ebp-0x2C];
-			__asm        jmp    _LOOP_68;
+		__asm        dec    dword ptr [ebp-0x2C];
+		__asm        jmp    _LOOP_68;
 	}
 _Tdb:
 	__asm        cmp    dword ptr [ebp-0x2C], 1;
@@ -3081,39 +3081,39 @@ _Tf2:
 	__asm        mov    [ebp-0x340], eax;
 _LOOP_10a:
 	for (;;) {
-		_LOOP_10a:
-			__asm        mov    eax, [ebp-0x33C];
-			__asm        cmp    [ebp-0x340], eax;
-			__asm        jne    _T126;
+_LOOP_10a:
+		__asm        mov    eax, [ebp-0x33C];
+		__asm        cmp    [ebp-0x340], eax;
+		__asm        jne    _T126;
 
-			__asm        jmp    _T13d;
+		__asm        jmp    _T13d;
 
-			__asm        jmp    _T126;
-		_T126:
-			__asm        jmp    _T138;
+		__asm        jmp    _T126;
+_T126:
+		__asm        jmp    _T138;
 
-			__asm        cmp    dword ptr [ebp-0x334], 0;
-			__asm        jne    _T13d;
-		_T138:
-			__asm        jmp    _T142;
-		_T13d:
-			__asm        jmp    _T17b;
-		_T142:
-			__asm        jmp    _T154;
+		__asm        cmp    dword ptr [ebp-0x334], 0;
+		__asm        jne    _T13d;
+_T138:
+		__asm        jmp    _T142;
+_T13d:
+		__asm        jmp    _T17b;
+_T142:
+		__asm        jmp    _T154;
 
-			__asm        cmp    dword ptr [ebp-0x338], 0;
-			__asm        je     _T17b;
-		_T154:
-			__asm        push   0;
-			__asm        lea    eax, [ebp-0x330];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x340];
-			__asm        call   list<DirectoryEntry>::iterator::operator++;
-			__asm        mov    eax, [eax];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   list<DirectoryEntry>::erase;
-			__asm        jmp    _LOOP_10a;
+		__asm        cmp    dword ptr [ebp-0x338], 0;
+		__asm        je     _T17b;
+_T154:
+		__asm        push   0;
+		__asm        lea    eax, [ebp-0x330];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x340];
+		__asm        call   list<DirectoryEntry>::iterator::operator++;
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   list<DirectoryEntry>::erase;
+		__asm        jmp    _LOOP_10a;
 	}
 _T17b:
 	__asm        jmp    _T180;
@@ -3399,457 +3399,457 @@ _T5b4:
 // LINE 262:
 _LOOP_5d9:
 	for (;;) {
-		// LINE 262:
-		_LOOP_5d9:
-			__asm        lea    eax, findData.dwFileAttributes;
-			__asm        push   eax;
-			__asm        mov    eax, hFind;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C3600];
-			__asm        mov    bNextFileFound, eax;
-		// LINE 263:
-			__asm        cmp    bNextFileFound, 0;
-			__asm        jne    _T612;
-		// LINE 264:
-			__asm        mov    eax, hFind;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C3604];
-		// LINE 265:
-			__asm        jmp    _Tcd2;
-		// LINE 267:
-		_T612:
-			__asm        jmp    _T617;
-		_T617:
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        call   strlen;
-			__asm        add    esp, 4;
-			__asm        push   eax;
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
-			__asm        call   basic_string<char>::assign_str;
-			__asm        jmp    _T63e;
-		// LINE 268:
-		_T63e:
-			__asm        test   reinterpret_cast<uint8_t>(findData.dwFileAttributes), 0x10;
-			__asm        je     _T977;
-		// LINE 269:
-			directoryEntryCurrent.lType = 0x4;
-		// LINE 270:
-			__asm        cmp    bCurrentDirectoryEnumerated, 0;
-			__asm        jne    _T7bf;
+// LINE 262:
+_LOOP_5d9:
+		__asm        lea    eax, findData.dwFileAttributes;
+		__asm        push   eax;
+		__asm        mov    eax, hFind;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C3600];
+		__asm        mov    bNextFileFound, eax;
+// LINE 263:
+		__asm        cmp    bNextFileFound, 0;
+		__asm        jne    _T612;
+// LINE 264:
+		__asm        mov    eax, hFind;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C3604];
+// LINE 265:
+		__asm        jmp    _Tcd2;
+// LINE 267:
+_T612:
+		__asm        jmp    _T617;
+_T617:
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        call   strlen;
+		__asm        add    esp, 4;
+		__asm        push   eax;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
+		__asm        call   basic_string<char>::assign_str;
+		__asm        jmp    _T63e;
+// LINE 268:
+_T63e:
+		__asm        test   reinterpret_cast<uint8_t>(findData.dwFileAttributes), 0x10;
+		__asm        je     _T977;
+// LINE 269:
+		directoryEntryCurrent.lType = 0x4;
+// LINE 270:
+		__asm        cmp    bCurrentDirectoryEnumerated, 0;
+		__asm        jne    _T7bf;
 
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x2D0], eax;
-			__asm        cmp    dword ptr [ebp-0x2D0], 0;
-			__asm        je     _T69c;
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x2D0], eax;
+		__asm        cmp    dword ptr [ebp-0x2D0], 0;
+		__asm        je     _T69c;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x2D0];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1AC], eax;
-			__asm        jmp    _T6a6;
-		_T69c:
-			__asm        mov    dword ptr [ebp-0x1AC], 0;
-		_T6a6:
-			__asm        mov    dword ptr [ebp-0x1B0], 0;
-			__asm        jmp    _T6b5;
-		_T6b5:
-			__asm        mov    eax, SZ_CURRENT_DIR_NAME;
-			__asm        mov    [ebp-0x2D4], eax;
-			__asm        push   0;
-			__asm        mov    eax, [ebp-0x2D4];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x1B0];
-			__asm        call   basic_string<char>::compare;
-			__asm        test   eax, eax;
-			__asm        jne    _T6eb;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x2D0];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1AC], eax;
+		__asm        jmp    _T6a6;
+_T69c:
+		__asm        mov    dword ptr [ebp-0x1AC], 0;
+_T6a6:
+		__asm        mov    dword ptr [ebp-0x1B0], 0;
+		__asm        jmp    _T6b5;
+_T6b5:
+		__asm        mov    eax, SZ_CURRENT_DIR_NAME;
+		__asm        mov    [ebp-0x2D4], eax;
+		__asm        push   0;
+		__asm        mov    eax, [ebp-0x2D4];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x1B0];
+		__asm        call   basic_string<char>::compare;
+		__asm        test   eax, eax;
+		__asm        jne    _T6eb;
 
-			__asm        mov    dword ptr [ebp-0x1A8], 1;
-			__asm        jmp    _T6f5;
-		_T6eb:
-			__asm        mov    dword ptr [ebp-0x1A8], 0;
-		_T6f5:
-			__asm        jmp    _T6fa;
-		_T6fa:
-			__asm        lea    ecx, [ebp-0x1B0];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1B0], 0;
-			__asm        je     _T739;
+		__asm        mov    dword ptr [ebp-0x1A8], 1;
+		__asm        jmp    _T6f5;
+_T6eb:
+		__asm        mov    dword ptr [ebp-0x1A8], 0;
+_T6f5:
+		__asm        jmp    _T6fa;
+_T6fa:
+		__asm        lea    ecx, [ebp-0x1B0];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1B0], 0;
+		__asm        je     _T739;
 
-			__asm        mov    eax, [ebp-0x1B0];
-			__asm        mov    [ebp-0x2C8], eax;
-			__asm        mov    eax, [ebp-0x2C8];
-			__asm        mov    [ebp-0x2CC], eax;
-			__asm        mov    eax, [ebp-0x2CC];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T739:
-			__asm        jmp    _T73e;
-		_T73e:
-			__asm        mov    eax, [ebp-0x1A8];
-			__asm        mov    [ebp-0x1F0], eax;
-			__asm        cmp    dword ptr [ebp-0x1F0], 0;
-			__asm        je     _T7bf;
-		// LINE 271:
-			bCurrentDirectoryEnumerated = 0x1;
-		// LINE 272:
-			__asm        mov    eax, this;
-			__asm        cmp    dword ptr [eax+0x1C], 0;
-			__asm        je     _T7ba;
-		// LINE 273:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x2C4], eax;
-			__asm        mov    eax, [ebp-0x2C4];
-			__asm        mov    [ebp-0x2BC], eax;
-			__asm        jmp    _T790;
-		_T790:
-			__asm        jmp    _T795;
-		_T795:
-			__asm        lea    eax, directoryEntryCurrent.directoryParent;
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x2BC];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x2C0];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   list<DirectoryEntry>::insert;
-			__asm        jmp    _T7ba;
-		// LINE 275:
-		_T7ba:
-			__asm        jmp    _T972;
-		_T7bf:
-			__asm        cmp    bParentDirectoryEnumerated, 0;
-			__asm        jne    _T929;
+		__asm        mov    eax, [ebp-0x1B0];
+		__asm        mov    [ebp-0x2C8], eax;
+		__asm        mov    eax, [ebp-0x2C8];
+		__asm        mov    [ebp-0x2CC], eax;
+		__asm        mov    eax, [ebp-0x2CC];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T739:
+		__asm        jmp    _T73e;
+_T73e:
+		__asm        mov    eax, [ebp-0x1A8];
+		__asm        mov    [ebp-0x1F0], eax;
+		__asm        cmp    dword ptr [ebp-0x1F0], 0;
+		__asm        je     _T7bf;
+// LINE 271:
+		bCurrentDirectoryEnumerated = 0x1;
+// LINE 272:
+		__asm        mov    eax, this;
+		__asm        cmp    dword ptr [eax+0x1C], 0;
+		__asm        je     _T7ba;
+// LINE 273:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x2C4], eax;
+		__asm        mov    eax, [ebp-0x2C4];
+		__asm        mov    [ebp-0x2BC], eax;
+		__asm        jmp    _T790;
+_T790:
+		__asm        jmp    _T795;
+_T795:
+		__asm        lea    eax, directoryEntryCurrent.directoryParent;
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x2BC];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x2C0];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   list<DirectoryEntry>::insert;
+		__asm        jmp    _T7ba;
+// LINE 275:
+_T7ba:
+		__asm        jmp    _T972;
+_T7bf:
+		__asm        cmp    bParentDirectoryEnumerated, 0;
+		__asm        jne    _T929;
 
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x2B4], eax;
-			__asm        cmp    dword ptr [ebp-0x2B4], 0;
-			__asm        je     _T806;
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x2B4], eax;
+		__asm        cmp    dword ptr [ebp-0x2B4], 0;
+		__asm        je     _T806;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x2B4];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1B8], eax;
-			__asm        jmp    _T810;
-		_T806:
-			__asm        mov    dword ptr [ebp-0x1B8], 0;
-		_T810:
-			__asm        mov    dword ptr [ebp-0x1BC], 0;
-			__asm        jmp    _T81f;
-		_T81f:
-			__asm        mov    eax, SZ_PARENT_DIR_NAME;
-			__asm        mov    [ebp-0x2B8], eax;
-			__asm        push   0;
-			__asm        mov    eax, [ebp-0x2B8];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x1BC];
-			__asm        call   basic_string<char>::compare;
-			__asm        test   eax, eax;
-			__asm        jne    _T855;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x2B4];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1B8], eax;
+		__asm        jmp    _T810;
+_T806:
+		__asm        mov    dword ptr [ebp-0x1B8], 0;
+_T810:
+		__asm        mov    dword ptr [ebp-0x1BC], 0;
+		__asm        jmp    _T81f;
+_T81f:
+		__asm        mov    eax, SZ_PARENT_DIR_NAME;
+		__asm        mov    [ebp-0x2B8], eax;
+		__asm        push   0;
+		__asm        mov    eax, [ebp-0x2B8];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x1BC];
+		__asm        call   basic_string<char>::compare;
+		__asm        test   eax, eax;
+		__asm        jne    _T855;
 
-			__asm        mov    dword ptr [ebp-0x1B4], 1;
-			__asm        jmp    _T85f;
-		_T855:
-			__asm        mov    dword ptr [ebp-0x1B4], 0;
-		_T85f:
-			__asm        jmp    _T864;
-		_T864:
-			__asm        lea    ecx, [ebp-0x1BC];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1BC], 0;
-			__asm        je     _T8a3;
+		__asm        mov    dword ptr [ebp-0x1B4], 1;
+		__asm        jmp    _T85f;
+_T855:
+		__asm        mov    dword ptr [ebp-0x1B4], 0;
+_T85f:
+		__asm        jmp    _T864;
+_T864:
+		__asm        lea    ecx, [ebp-0x1BC];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1BC], 0;
+		__asm        je     _T8a3;
 
-			__asm        mov    eax, [ebp-0x1BC];
-			__asm        mov    [ebp-0x2AC], eax;
-			__asm        mov    eax, [ebp-0x2AC];
-			__asm        mov    [ebp-0x2B0], eax;
-			__asm        mov    eax, [ebp-0x2B0];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T8a3:
-			__asm        jmp    _T8a8;
-		_T8a8:
-			__asm        mov    eax, [ebp-0x1B4];
-			__asm        mov    [ebp-0x1F4], eax;
-			__asm        cmp    dword ptr [ebp-0x1F4], 0;
-			__asm        je     _T929;
-		// LINE 276:
-			bParentDirectoryEnumerated = 0x1;
-		// LINE 277:
-			__asm        mov    eax, this;
-			__asm        cmp    dword ptr [eax+0x18], 0;
-			__asm        je     _T924;
-		// LINE 278:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x290], eax;
-			__asm        mov    eax, [ebp-0x290];
-			__asm        mov    [ebp-0x288], eax;
-			__asm        jmp    _T8fa;
-		_T8fa:
-			__asm        jmp    _T8ff;
-		_T8ff:
-			__asm        lea    eax, directoryEntryCurrent.directoryParent;
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x288];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x28C];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   list<DirectoryEntry>::insert;
-			__asm        jmp    _T924;
-		// LINE 280:
-		_T924:
-			__asm        jmp    _T972;
-		// LINE 281:
-		_T929:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x29C], eax;
-			__asm        mov    eax, [ebp-0x29C];
-			__asm        mov    [ebp-0x294], eax;
-			__asm        jmp    _T948;
-		_T948:
-			__asm        jmp    _T94d;
-		_T94d:
-			__asm        lea    eax, directoryEntryCurrent.directoryParent;
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x294];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x298];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   list<DirectoryEntry>::insert;
-			__asm        jmp    _T972;
-		// LINE 283:
-		_T972:
-			__asm        jmp    _T9ca;
-		// LINE 284:
-		_T977:
-			directoryEntryCurrent.lType = 0x8;
-		// LINE 285:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x2A8], eax;
-			__asm        mov    eax, [ebp-0x2A8];
-			__asm        mov    [ebp-0x2A0], eax;
-			__asm        jmp    _T9a0;
-		_T9a0:
-			__asm        jmp    _T9a5;
-		_T9a5:
-			__asm        lea    eax, directoryEntryCurrent.directoryParent;
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x2A0];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x2A4];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   list<DirectoryEntry>::insert;
-			__asm        jmp    _T9ca;
-		// LINE 287:
-		_T9ca:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x280], eax;
-			__asm        cmp    dword ptr [ebp-0x280], 0;
-			__asm        je     _Ta04;
+		__asm        mov    eax, [ebp-0x1BC];
+		__asm        mov    [ebp-0x2AC], eax;
+		__asm        mov    eax, [ebp-0x2AC];
+		__asm        mov    [ebp-0x2B0], eax;
+		__asm        mov    eax, [ebp-0x2B0];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T8a3:
+		__asm        jmp    _T8a8;
+_T8a8:
+		__asm        mov    eax, [ebp-0x1B4];
+		__asm        mov    [ebp-0x1F4], eax;
+		__asm        cmp    dword ptr [ebp-0x1F4], 0;
+		__asm        je     _T929;
+// LINE 276:
+		bParentDirectoryEnumerated = 0x1;
+// LINE 277:
+		__asm        mov    eax, this;
+		__asm        cmp    dword ptr [eax+0x18], 0;
+		__asm        je     _T924;
+// LINE 278:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x290], eax;
+		__asm        mov    eax, [ebp-0x290];
+		__asm        mov    [ebp-0x288], eax;
+		__asm        jmp    _T8fa;
+_T8fa:
+		__asm        jmp    _T8ff;
+_T8ff:
+		__asm        lea    eax, directoryEntryCurrent.directoryParent;
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x288];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x28C];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   list<DirectoryEntry>::insert;
+		__asm        jmp    _T924;
+// LINE 280:
+_T924:
+		__asm        jmp    _T972;
+// LINE 281:
+_T929:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x29C], eax;
+		__asm        mov    eax, [ebp-0x29C];
+		__asm        mov    [ebp-0x294], eax;
+		__asm        jmp    _T948;
+_T948:
+		__asm        jmp    _T94d;
+_T94d:
+		__asm        lea    eax, directoryEntryCurrent.directoryParent;
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x294];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x298];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   list<DirectoryEntry>::insert;
+		__asm        jmp    _T972;
+// LINE 283:
+_T972:
+		__asm        jmp    _T9ca;
+// LINE 284:
+_T977:
+		directoryEntryCurrent.lType = 0x8;
+// LINE 285:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x2A8], eax;
+		__asm        mov    eax, [ebp-0x2A8];
+		__asm        mov    [ebp-0x2A0], eax;
+		__asm        jmp    _T9a0;
+_T9a0:
+		__asm        jmp    _T9a5;
+_T9a5:
+		__asm        lea    eax, directoryEntryCurrent.directoryParent;
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x2A0];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x2A4];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   list<DirectoryEntry>::insert;
+		__asm        jmp    _T9ca;
+// LINE 287:
+_T9ca:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x280], eax;
+		__asm        cmp    dword ptr [ebp-0x280], 0;
+		__asm        je     _Ta04;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x280];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1C4], eax;
-			__asm        jmp    _Ta0e;
-		_Ta04:
-			__asm        mov    dword ptr [ebp-0x1C4], 0;
-		_Ta0e:
-			__asm        mov    dword ptr [ebp-0x1C8], 0;
-			__asm        jmp    _Ta1d;
-		_Ta1d:
-			__asm        mov    eax, SZ_CURRENT_DIR_NAME;
-			__asm        mov    [ebp-0x284], eax;
-			__asm        push   0;
-			__asm        mov    eax, [ebp-0x284];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x1C8];
-			__asm        call   basic_string<char>::compare;
-			__asm        test   eax, eax;
-			__asm        jne    _Ta53;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x280];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1C4], eax;
+		__asm        jmp    _Ta0e;
+_Ta04:
+		__asm        mov    dword ptr [ebp-0x1C4], 0;
+_Ta0e:
+		__asm        mov    dword ptr [ebp-0x1C8], 0;
+		__asm        jmp    _Ta1d;
+_Ta1d:
+		__asm        mov    eax, SZ_CURRENT_DIR_NAME;
+		__asm        mov    [ebp-0x284], eax;
+		__asm        push   0;
+		__asm        mov    eax, [ebp-0x284];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x1C8];
+		__asm        call   basic_string<char>::compare;
+		__asm        test   eax, eax;
+		__asm        jne    _Ta53;
 
-			__asm        mov    dword ptr [ebp-0x1C0], 1;
-			__asm        jmp    _Ta5d;
-		_Ta53:
-			__asm        mov    dword ptr [ebp-0x1C0], 0;
-		_Ta5d:
-			__asm        jmp    _Ta62;
-		_Ta62:
-			__asm        lea    ecx, [ebp-0x1C8];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1C8], 0;
-			__asm        je     _Taa1;
+		__asm        mov    dword ptr [ebp-0x1C0], 1;
+		__asm        jmp    _Ta5d;
+_Ta53:
+		__asm        mov    dword ptr [ebp-0x1C0], 0;
+_Ta5d:
+		__asm        jmp    _Ta62;
+_Ta62:
+		__asm        lea    ecx, [ebp-0x1C8];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1C8], 0;
+		__asm        je     _Taa1;
 
-			__asm        mov    eax, [ebp-0x1C8];
-			__asm        mov    [ebp-0x278], eax;
-			__asm        mov    eax, [ebp-0x278];
-			__asm        mov    [ebp-0x27C], eax;
-			__asm        mov    eax, [ebp-0x27C];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_Taa1:
-			__asm        jmp    _Taa6;
-		_Taa6:
-			__asm        mov    eax, [ebp-0x1C0];
-			__asm        mov    [ebp-0x1F8], eax;
-			__asm        cmp    dword ptr [ebp-0x1F8], 0;
-			__asm        je     _Tb27;
-		// LINE 288:
-			bCurrentDirectoryEnumerated = 0x1;
-		// LINE 289:
-			__asm        mov    eax, this;
-			__asm        cmp    dword ptr [eax+0x1C], 0;
-			__asm        je     _Tb22;
-		// LINE 290:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x274], eax;
-			__asm        mov    eax, [ebp-0x274];
-			__asm        mov    [ebp-0x26C], eax;
-			__asm        jmp    _Taf8;
-		_Taf8:
-			__asm        jmp    _Tafd;
-		_Tafd:
-			__asm        lea    eax, directoryEntryCurrent.directoryParent;
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x26C];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x270];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   list<DirectoryEntry>::insert;
-			__asm        jmp    _Tb22;
-		// LINE 292:
-		_Tb22:
-			__asm        jmp    _Tccd;
-		_Tb27:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x264], eax;
-			__asm        cmp    dword ptr [ebp-0x264], 0;
-			__asm        je     _Tb61;
+		__asm        mov    eax, [ebp-0x1C8];
+		__asm        mov    [ebp-0x278], eax;
+		__asm        mov    eax, [ebp-0x278];
+		__asm        mov    [ebp-0x27C], eax;
+		__asm        mov    eax, [ebp-0x27C];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_Taa1:
+		__asm        jmp    _Taa6;
+_Taa6:
+		__asm        mov    eax, [ebp-0x1C0];
+		__asm        mov    [ebp-0x1F8], eax;
+		__asm        cmp    dword ptr [ebp-0x1F8], 0;
+		__asm        je     _Tb27;
+// LINE 288:
+		bCurrentDirectoryEnumerated = 0x1;
+// LINE 289:
+		__asm        mov    eax, this;
+		__asm        cmp    dword ptr [eax+0x1C], 0;
+		__asm        je     _Tb22;
+// LINE 290:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x274], eax;
+		__asm        mov    eax, [ebp-0x274];
+		__asm        mov    [ebp-0x26C], eax;
+		__asm        jmp    _Taf8;
+_Taf8:
+		__asm        jmp    _Tafd;
+_Tafd:
+		__asm        lea    eax, directoryEntryCurrent.directoryParent;
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x26C];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x270];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   list<DirectoryEntry>::insert;
+		__asm        jmp    _Tb22;
+// LINE 292:
+_Tb22:
+		__asm        jmp    _Tccd;
+_Tb27:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x264], eax;
+		__asm        cmp    dword ptr [ebp-0x264], 0;
+		__asm        je     _Tb61;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x264];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1D0], eax;
-			__asm        jmp    _Tb6b;
-		_Tb61:
-			__asm        mov    dword ptr [ebp-0x1D0], 0;
-		_Tb6b:
-			__asm        mov    dword ptr [ebp-0x1D4], 0;
-			__asm        jmp    _Tb7a;
-		_Tb7a:
-			__asm        mov    eax, SZ_PARENT_DIR_NAME;
-			__asm        mov    [ebp-0x268], eax;
-			__asm        push   0;
-			__asm        mov    eax, [ebp-0x268];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x1D4];
-			__asm        call   basic_string<char>::compare;
-			__asm        test   eax, eax;
-			__asm        jne    _Tbb0;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x264];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1D0], eax;
+		__asm        jmp    _Tb6b;
+_Tb61:
+		__asm        mov    dword ptr [ebp-0x1D0], 0;
+_Tb6b:
+		__asm        mov    dword ptr [ebp-0x1D4], 0;
+		__asm        jmp    _Tb7a;
+_Tb7a:
+		__asm        mov    eax, SZ_PARENT_DIR_NAME;
+		__asm        mov    [ebp-0x268], eax;
+		__asm        push   0;
+		__asm        mov    eax, [ebp-0x268];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x1D4];
+		__asm        call   basic_string<char>::compare;
+		__asm        test   eax, eax;
+		__asm        jne    _Tbb0;
 
-			__asm        mov    dword ptr [ebp-0x1CC], 1;
-			__asm        jmp    _Tbba;
-		_Tbb0:
-			__asm        mov    dword ptr [ebp-0x1CC], 0;
-		_Tbba:
-			__asm        jmp    _Tbbf;
-		_Tbbf:
-			__asm        lea    ecx, [ebp-0x1D4];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1D4], 0;
-			__asm        je     _Tbfe;
+		__asm        mov    dword ptr [ebp-0x1CC], 1;
+		__asm        jmp    _Tbba;
+_Tbb0:
+		__asm        mov    dword ptr [ebp-0x1CC], 0;
+_Tbba:
+		__asm        jmp    _Tbbf;
+_Tbbf:
+		__asm        lea    ecx, [ebp-0x1D4];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1D4], 0;
+		__asm        je     _Tbfe;
 
-			__asm        mov    eax, [ebp-0x1D4];
-			__asm        mov    [ebp-0x23C], eax;
-			__asm        mov    eax, [ebp-0x23C];
-			__asm        mov    [ebp-0x240], eax;
-			__asm        mov    eax, [ebp-0x240];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_Tbfe:
-			__asm        jmp    _Tc03;
-		_Tc03:
-			__asm        mov    eax, [ebp-0x1CC];
-			__asm        mov    [ebp-0x1FC], eax;
-			__asm        cmp    dword ptr [ebp-0x1FC], 0;
-			__asm        je     _Tc84;
-		// LINE 293:
-			bParentDirectoryEnumerated = 0x1;
-		// LINE 294:
-			__asm        mov    eax, this;
-			__asm        cmp    dword ptr [eax+0x18], 0;
-			__asm        je     _Tc7f;
-		// LINE 295:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x21C], eax;
-			__asm        mov    eax, [ebp-0x21C];
-			__asm        mov    [ebp-0x214], eax;
-			__asm        jmp    _Tc55;
-		_Tc55:
-			__asm        jmp    _Tc5a;
-		_Tc5a:
-			__asm        lea    eax, directoryEntryCurrent.directoryParent;
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x214];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x218];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   list<DirectoryEntry>::insert;
-			__asm        jmp    _Tc7f;
-		// LINE 297:
-		_Tc7f:
-			__asm        jmp    _Tccd;
-		// LINE 298:
-		_Tc84:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x228], eax;
-			__asm        mov    eax, [ebp-0x228];
-			__asm        mov    [ebp-0x220], eax;
-			__asm        jmp    _Tca3;
-		_Tca3:
-			__asm        jmp    _Tca8;
-		_Tca8:
-			__asm        lea    eax, directoryEntryCurrent.directoryParent;
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x220];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x224];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   list<DirectoryEntry>::insert;
-			__asm        jmp    _Tccd;
-		// LINE 299:
-		_Tccd:
+		__asm        mov    eax, [ebp-0x1D4];
+		__asm        mov    [ebp-0x23C], eax;
+		__asm        mov    eax, [ebp-0x23C];
+		__asm        mov    [ebp-0x240], eax;
+		__asm        mov    eax, [ebp-0x240];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_Tbfe:
+		__asm        jmp    _Tc03;
+_Tc03:
+		__asm        mov    eax, [ebp-0x1CC];
+		__asm        mov    [ebp-0x1FC], eax;
+		__asm        cmp    dword ptr [ebp-0x1FC], 0;
+		__asm        je     _Tc84;
+// LINE 293:
+		bParentDirectoryEnumerated = 0x1;
+// LINE 294:
+		__asm        mov    eax, this;
+		__asm        cmp    dword ptr [eax+0x18], 0;
+		__asm        je     _Tc7f;
+// LINE 295:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x21C], eax;
+		__asm        mov    eax, [ebp-0x21C];
+		__asm        mov    [ebp-0x214], eax;
+		__asm        jmp    _Tc55;
+_Tc55:
+		__asm        jmp    _Tc5a;
+_Tc5a:
+		__asm        lea    eax, directoryEntryCurrent.directoryParent;
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x214];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x218];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   list<DirectoryEntry>::insert;
+		__asm        jmp    _Tc7f;
+// LINE 297:
+_Tc7f:
+		__asm        jmp    _Tccd;
+// LINE 298:
+_Tc84:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x228], eax;
+		__asm        mov    eax, [ebp-0x228];
+		__asm        mov    [ebp-0x220], eax;
+		__asm        jmp    _Tca3;
+_Tca3:
+		__asm        jmp    _Tca8;
+_Tca8:
+		__asm        lea    eax, directoryEntryCurrent.directoryParent;
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x220];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x224];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   list<DirectoryEntry>::insert;
+		__asm        jmp    _Tccd;
+// LINE 299:
+_Tccd:
 	}
 // LINE 305:
 _Tcd2:
@@ -4502,392 +4502,392 @@ _T52e:
 // LINE 383:
 _LOOP_533:
 	for (;;) {
-		// LINE 383:
-		_LOOP_533:
-			__asm        lea    eax, findData.dwFileAttributes;
-			__asm        push   eax;
-			__asm        mov    eax, hFind;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C3600];
-			__asm        mov    bNextFileFound, eax;
-		// LINE 384:
-			__asm        cmp    bNextFileFound, 0;
-			__asm        jne    _T56c;
-		// LINE 385:
-			__asm        mov    eax, hFind;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C3604];
-		// LINE 386:
-			__asm        jmp    _Tb35;
-		// LINE 388:
-		_T56c:
-			__asm        test   reinterpret_cast<uint8_t>(findData.dwFileAttributes), 0x10;
-			__asm        je     _Ta4c;
-		// LINE 389:
-			__asm        test   reinterpret_cast<uint8_t>(lFilter), 4;
-			__asm        je     _Ta47;
-		// LINE 390:
-			__asm        cmp    bCurrentDirectoryEnumerated, 0;
-			__asm        jne    _T778;
+// LINE 383:
+_LOOP_533:
+		__asm        lea    eax, findData.dwFileAttributes;
+		__asm        push   eax;
+		__asm        mov    eax, hFind;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C3600];
+		__asm        mov    bNextFileFound, eax;
+// LINE 384:
+		__asm        cmp    bNextFileFound, 0;
+		__asm        jne    _T56c;
+// LINE 385:
+		__asm        mov    eax, hFind;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C3604];
+// LINE 386:
+		__asm        jmp    _Tb35;
+// LINE 388:
+_T56c:
+		__asm        test   reinterpret_cast<uint8_t>(findData.dwFileAttributes), 0x10;
+		__asm        je     _Ta4c;
+// LINE 389:
+		__asm        test   reinterpret_cast<uint8_t>(lFilter), 4;
+		__asm        je     _Ta47;
+// LINE 390:
+		__asm        cmp    bCurrentDirectoryEnumerated, 0;
+		__asm        jne    _T778;
 
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x2C8], eax;
-			__asm        cmp    dword ptr [ebp-0x2C8], 0;
-			__asm        je     _T5ca;
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x2C8], eax;
+		__asm        cmp    dword ptr [ebp-0x2C8], 0;
+		__asm        je     _T5ca;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x2C8];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1B4], eax;
-			__asm        jmp    _T5d4;
-		_T5ca:
-			__asm        mov    dword ptr [ebp-0x1B4], 0;
-		_T5d4:
-			__asm        mov    dword ptr [ebp-0x1B8], 0;
-			__asm        jmp    _T5e3;
-		_T5e3:
-			__asm        mov    eax, SZ_CURRENT_DIR_NAME;
-			__asm        mov    [ebp-0x2CC], eax;
-			__asm        push   0;
-			__asm        mov    eax, [ebp-0x2CC];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x1B8];
-			__asm        call   basic_string<char>::compare;
-			__asm        test   eax, eax;
-			__asm        jne    _T619;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x2C8];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1B4], eax;
+		__asm        jmp    _T5d4;
+_T5ca:
+		__asm        mov    dword ptr [ebp-0x1B4], 0;
+_T5d4:
+		__asm        mov    dword ptr [ebp-0x1B8], 0;
+		__asm        jmp    _T5e3;
+_T5e3:
+		__asm        mov    eax, SZ_CURRENT_DIR_NAME;
+		__asm        mov    [ebp-0x2CC], eax;
+		__asm        push   0;
+		__asm        mov    eax, [ebp-0x2CC];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x1B8];
+		__asm        call   basic_string<char>::compare;
+		__asm        test   eax, eax;
+		__asm        jne    _T619;
 
-			__asm        mov    dword ptr [ebp-0x1B0], 1;
-			__asm        jmp    _T623;
-		_T619:
-			__asm        mov    dword ptr [ebp-0x1B0], 0;
-		_T623:
-			__asm        jmp    _T628;
-		_T628:
-			__asm        lea    ecx, [ebp-0x1B8];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1B8], 0;
-			__asm        je     _T667;
+		__asm        mov    dword ptr [ebp-0x1B0], 1;
+		__asm        jmp    _T623;
+_T619:
+		__asm        mov    dword ptr [ebp-0x1B0], 0;
+_T623:
+		__asm        jmp    _T628;
+_T628:
+		__asm        lea    ecx, [ebp-0x1B8];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1B8], 0;
+		__asm        je     _T667;
 
-			__asm        mov    eax, [ebp-0x1B8];
-			__asm        mov    [ebp-0x2C0], eax;
-			__asm        mov    eax, [ebp-0x2C0];
-			__asm        mov    [ebp-0x2C4], eax;
-			__asm        mov    eax, [ebp-0x2C4];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T667:
-			__asm        jmp    _T66c;
-		_T66c:
-			__asm        mov    eax, [ebp-0x1B0];
-			__asm        mov    [ebp-0x200], eax;
-			__asm        cmp    dword ptr [ebp-0x200], 0;
-			__asm        je     _T778;
-		// LINE 391:
-			bCurrentDirectoryEnumerated = 0x1;
-		// LINE 392:
-			__asm        test   reinterpret_cast<uint8_t>(lFilter), 1;
-			__asm        je     _T773;
-		// LINE 393:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x2B0], eax;
-			__asm        cmp    dword ptr [ebp-0x2B0], 0;
-			__asm        je     _T6d3;
+		__asm        mov    eax, [ebp-0x1B8];
+		__asm        mov    [ebp-0x2C0], eax;
+		__asm        mov    eax, [ebp-0x2C0];
+		__asm        mov    [ebp-0x2C4], eax;
+		__asm        mov    eax, [ebp-0x2C4];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T667:
+		__asm        jmp    _T66c;
+_T66c:
+		__asm        mov    eax, [ebp-0x1B0];
+		__asm        mov    [ebp-0x200], eax;
+		__asm        cmp    dword ptr [ebp-0x200], 0;
+		__asm        je     _T778;
+// LINE 391:
+		bCurrentDirectoryEnumerated = 0x1;
+// LINE 392:
+		__asm        test   reinterpret_cast<uint8_t>(lFilter), 1;
+		__asm        je     _T773;
+// LINE 393:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x2B0], eax;
+		__asm        cmp    dword ptr [ebp-0x2B0], 0;
+		__asm        je     _T6d3;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x2B0];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1BC], eax;
-			__asm        jmp    _T6dd;
-		_T6d3:
-			__asm        mov    dword ptr [ebp-0x1BC], 0;
-		_T6dd:
-			__asm        mov    dword ptr [ebp-0x1C0], 0;
-			__asm        jmp    _T6ec;
-		_T6ec:
-			__asm        mov    eax, sDirectoryEntries;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x2BC], eax;
-			__asm        mov    eax, [ebp-0x2BC];
-			__asm        mov    [ebp-0x2B4], eax;
-			__asm        jmp    _T708;
-		_T708:
-			__asm        jmp    _T70d;
-		_T70d:
-			__asm        lea    eax, [ebp-0x1C0];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x2B4];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x2B8];
-			__asm        push   eax;
-			__asm        mov    ecx, sDirectoryEntries;
-			__asm        call   list<basic_string<char>>::insert;
-			__asm        jmp    _T72f;
-		_T72f:
-			__asm        lea    ecx, [ebp-0x1C0];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1C0], 0;
-			__asm        je     _T76e;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x2B0];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1BC], eax;
+		__asm        jmp    _T6dd;
+_T6d3:
+		__asm        mov    dword ptr [ebp-0x1BC], 0;
+_T6dd:
+		__asm        mov    dword ptr [ebp-0x1C0], 0;
+		__asm        jmp    _T6ec;
+_T6ec:
+		__asm        mov    eax, sDirectoryEntries;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x2BC], eax;
+		__asm        mov    eax, [ebp-0x2BC];
+		__asm        mov    [ebp-0x2B4], eax;
+		__asm        jmp    _T708;
+_T708:
+		__asm        jmp    _T70d;
+_T70d:
+		__asm        lea    eax, [ebp-0x1C0];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x2B4];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x2B8];
+		__asm        push   eax;
+		__asm        mov    ecx, sDirectoryEntries;
+		__asm        call   list<basic_string<char>>::insert;
+		__asm        jmp    _T72f;
+_T72f:
+		__asm        lea    ecx, [ebp-0x1C0];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1C0], 0;
+		__asm        je     _T76e;
 
-			__asm        mov    eax, [ebp-0x1C0];
-			__asm        mov    [ebp-0x2A8], eax;
-			__asm        mov    eax, [ebp-0x2A8];
-			__asm        mov    [ebp-0x2AC], eax;
-			__asm        mov    eax, [ebp-0x2AC];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T76e:
-			__asm        jmp    _T773;
-		// LINE 395:
-		_T773:
-			__asm        jmp    _Ta47;
-		_T778:
-			__asm        cmp    bParentDirectoryEnumerated, 0;
-			__asm        jne    _T96d;
+		__asm        mov    eax, [ebp-0x1C0];
+		__asm        mov    [ebp-0x2A8], eax;
+		__asm        mov    eax, [ebp-0x2A8];
+		__asm        mov    [ebp-0x2AC], eax;
+		__asm        mov    eax, [ebp-0x2AC];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T76e:
+		__asm        jmp    _T773;
+// LINE 395:
+_T773:
+		__asm        jmp    _Ta47;
+_T778:
+		__asm        cmp    bParentDirectoryEnumerated, 0;
+		__asm        jne    _T96d;
 
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x2A0], eax;
-			__asm        cmp    dword ptr [ebp-0x2A0], 0;
-			__asm        je     _T7bf;
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x2A0], eax;
+		__asm        cmp    dword ptr [ebp-0x2A0], 0;
+		__asm        je     _T7bf;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x2A0];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1C8], eax;
-			__asm        jmp    _T7c9;
-		_T7bf:
-			__asm        mov    dword ptr [ebp-0x1C8], 0;
-		_T7c9:
-			__asm        mov    dword ptr [ebp-0x1CC], 0;
-			__asm        jmp    _T7d8;
-		_T7d8:
-			__asm        mov    eax, SZ_PARENT_DIR_NAME;
-			__asm        mov    [ebp-0x2A4], eax;
-			__asm        push   0;
-			__asm        mov    eax, [ebp-0x2A4];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x1CC];
-			__asm        call   basic_string<char>::compare;
-			__asm        test   eax, eax;
-			__asm        jne    _T80e;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x2A0];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1C8], eax;
+		__asm        jmp    _T7c9;
+_T7bf:
+		__asm        mov    dword ptr [ebp-0x1C8], 0;
+_T7c9:
+		__asm        mov    dword ptr [ebp-0x1CC], 0;
+		__asm        jmp    _T7d8;
+_T7d8:
+		__asm        mov    eax, SZ_PARENT_DIR_NAME;
+		__asm        mov    [ebp-0x2A4], eax;
+		__asm        push   0;
+		__asm        mov    eax, [ebp-0x2A4];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x1CC];
+		__asm        call   basic_string<char>::compare;
+		__asm        test   eax, eax;
+		__asm        jne    _T80e;
 
-			__asm        mov    dword ptr [ebp-0x1C4], 1;
-			__asm        jmp    _T818;
-		_T80e:
-			__asm        mov    dword ptr [ebp-0x1C4], 0;
-		_T818:
-			__asm        jmp    _T81d;
-		_T81d:
-			__asm        lea    ecx, [ebp-0x1CC];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1CC], 0;
-			__asm        je     _T85c;
+		__asm        mov    dword ptr [ebp-0x1C4], 1;
+		__asm        jmp    _T818;
+_T80e:
+		__asm        mov    dword ptr [ebp-0x1C4], 0;
+_T818:
+		__asm        jmp    _T81d;
+_T81d:
+		__asm        lea    ecx, [ebp-0x1CC];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1CC], 0;
+		__asm        je     _T85c;
 
-			__asm        mov    eax, [ebp-0x1CC];
-			__asm        mov    [ebp-0x298], eax;
-			__asm        mov    eax, [ebp-0x298];
-			__asm        mov    [ebp-0x29C], eax;
-			__asm        mov    eax, [ebp-0x29C];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T85c:
-			__asm        jmp    _T861;
-		_T861:
-			__asm        mov    eax, [ebp-0x1C4];
-			__asm        mov    [ebp-0x204], eax;
-			__asm        cmp    dword ptr [ebp-0x204], 0;
-			__asm        je     _T96d;
-		// LINE 396:
-			bParentDirectoryEnumerated = 0x1;
-		// LINE 397:
-			__asm        test   reinterpret_cast<uint8_t>(lFilter), 2;
-			__asm        je     _T968;
-		// LINE 398:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x288], eax;
-			__asm        cmp    dword ptr [ebp-0x288], 0;
-			__asm        je     _T8c8;
+		__asm        mov    eax, [ebp-0x1CC];
+		__asm        mov    [ebp-0x298], eax;
+		__asm        mov    eax, [ebp-0x298];
+		__asm        mov    [ebp-0x29C], eax;
+		__asm        mov    eax, [ebp-0x29C];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T85c:
+		__asm        jmp    _T861;
+_T861:
+		__asm        mov    eax, [ebp-0x1C4];
+		__asm        mov    [ebp-0x204], eax;
+		__asm        cmp    dword ptr [ebp-0x204], 0;
+		__asm        je     _T96d;
+// LINE 396:
+		bParentDirectoryEnumerated = 0x1;
+// LINE 397:
+		__asm        test   reinterpret_cast<uint8_t>(lFilter), 2;
+		__asm        je     _T968;
+// LINE 398:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x288], eax;
+		__asm        cmp    dword ptr [ebp-0x288], 0;
+		__asm        je     _T8c8;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x288];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1D0], eax;
-			__asm        jmp    _T8d2;
-		_T8c8:
-			__asm        mov    dword ptr [ebp-0x1D0], 0;
-		_T8d2:
-			__asm        mov    dword ptr [ebp-0x1D4], 0;
-			__asm        jmp    _T8e1;
-		_T8e1:
-			__asm        mov    eax, sDirectoryEntries;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x294], eax;
-			__asm        mov    eax, [ebp-0x294];
-			__asm        mov    [ebp-0x28C], eax;
-			__asm        jmp    _T8fd;
-		_T8fd:
-			__asm        jmp    _T902;
-		_T902:
-			__asm        lea    eax, [ebp-0x1D4];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x28C];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x290];
-			__asm        push   eax;
-			__asm        mov    ecx, sDirectoryEntries;
-			__asm        call   list<basic_string<char>>::insert;
-			__asm        jmp    _T924;
-		_T924:
-			__asm        lea    ecx, [ebp-0x1D4];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1D4], 0;
-			__asm        je     _T963;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x288];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1D0], eax;
+		__asm        jmp    _T8d2;
+_T8c8:
+		__asm        mov    dword ptr [ebp-0x1D0], 0;
+_T8d2:
+		__asm        mov    dword ptr [ebp-0x1D4], 0;
+		__asm        jmp    _T8e1;
+_T8e1:
+		__asm        mov    eax, sDirectoryEntries;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x294], eax;
+		__asm        mov    eax, [ebp-0x294];
+		__asm        mov    [ebp-0x28C], eax;
+		__asm        jmp    _T8fd;
+_T8fd:
+		__asm        jmp    _T902;
+_T902:
+		__asm        lea    eax, [ebp-0x1D4];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x28C];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x290];
+		__asm        push   eax;
+		__asm        mov    ecx, sDirectoryEntries;
+		__asm        call   list<basic_string<char>>::insert;
+		__asm        jmp    _T924;
+_T924:
+		__asm        lea    ecx, [ebp-0x1D4];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1D4], 0;
+		__asm        je     _T963;
 
-			__asm        mov    eax, [ebp-0x1D4];
-			__asm        mov    [ebp-0x280], eax;
-			__asm        mov    eax, [ebp-0x280];
-			__asm        mov    [ebp-0x284], eax;
-			__asm        mov    eax, [ebp-0x284];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T963:
-			__asm        jmp    _T968;
-		// LINE 400:
-		_T968:
-			__asm        jmp    _Ta47;
-		// LINE 401:
-		_T96d:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x270], eax;
-			__asm        cmp    dword ptr [ebp-0x270], 0;
-			__asm        je     _T9a7;
+		__asm        mov    eax, [ebp-0x1D4];
+		__asm        mov    [ebp-0x280], eax;
+		__asm        mov    eax, [ebp-0x280];
+		__asm        mov    [ebp-0x284], eax;
+		__asm        mov    eax, [ebp-0x284];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T963:
+		__asm        jmp    _T968;
+// LINE 400:
+_T968:
+		__asm        jmp    _Ta47;
+// LINE 401:
+_T96d:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x270], eax;
+		__asm        cmp    dword ptr [ebp-0x270], 0;
+		__asm        je     _T9a7;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x270];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1D8], eax;
-			__asm        jmp    _T9b1;
-		_T9a7:
-			__asm        mov    dword ptr [ebp-0x1D8], 0;
-		_T9b1:
-			__asm        mov    dword ptr [ebp-0x1DC], 0;
-			__asm        jmp    _T9c0;
-		_T9c0:
-			__asm        mov    eax, sDirectoryEntries;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x27C], eax;
-			__asm        mov    eax, [ebp-0x27C];
-			__asm        mov    [ebp-0x274], eax;
-			__asm        jmp    _T9dc;
-		_T9dc:
-			__asm        jmp    _T9e1;
-		_T9e1:
-			__asm        lea    eax, [ebp-0x1DC];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x274];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x278];
-			__asm        push   eax;
-			__asm        mov    ecx, sDirectoryEntries;
-			__asm        call   list<basic_string<char>>::insert;
-			__asm        jmp    _Ta03;
-		_Ta03:
-			__asm        lea    ecx, [ebp-0x1DC];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1DC], 0;
-			__asm        je     _Ta42;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x270];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1D8], eax;
+		__asm        jmp    _T9b1;
+_T9a7:
+		__asm        mov    dword ptr [ebp-0x1D8], 0;
+_T9b1:
+		__asm        mov    dword ptr [ebp-0x1DC], 0;
+		__asm        jmp    _T9c0;
+_T9c0:
+		__asm        mov    eax, sDirectoryEntries;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x27C], eax;
+		__asm        mov    eax, [ebp-0x27C];
+		__asm        mov    [ebp-0x274], eax;
+		__asm        jmp    _T9dc;
+_T9dc:
+		__asm        jmp    _T9e1;
+_T9e1:
+		__asm        lea    eax, [ebp-0x1DC];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x274];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x278];
+		__asm        push   eax;
+		__asm        mov    ecx, sDirectoryEntries;
+		__asm        call   list<basic_string<char>>::insert;
+		__asm        jmp    _Ta03;
+_Ta03:
+		__asm        lea    ecx, [ebp-0x1DC];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1DC], 0;
+		__asm        je     _Ta42;
 
-			__asm        mov    eax, [ebp-0x1DC];
-			__asm        mov    [ebp-0x268], eax;
-			__asm        mov    eax, [ebp-0x268];
-			__asm        mov    [ebp-0x26C], eax;
-			__asm        mov    eax, [ebp-0x26C];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_Ta42:
-			__asm        jmp    _Ta47;
-		// LINE 404:
-		_Ta47:
-			__asm        jmp    _Tb30;
-		// LINE 405:
-		_Ta4c:
-			__asm        test   reinterpret_cast<uint8_t>(lFilter), 8;
-			__asm        je     _Tb30;
-		// LINE 406:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x258], eax;
-			__asm        cmp    dword ptr [ebp-0x258], 0;
-			__asm        je     _Ta90;
+		__asm        mov    eax, [ebp-0x1DC];
+		__asm        mov    [ebp-0x268], eax;
+		__asm        mov    eax, [ebp-0x268];
+		__asm        mov    [ebp-0x26C], eax;
+		__asm        mov    eax, [ebp-0x26C];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_Ta42:
+		__asm        jmp    _Ta47;
+// LINE 404:
+_Ta47:
+		__asm        jmp    _Tb30;
+// LINE 405:
+_Ta4c:
+		__asm        test   reinterpret_cast<uint8_t>(lFilter), 8;
+		__asm        je     _Tb30;
+// LINE 406:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x258], eax;
+		__asm        cmp    dword ptr [ebp-0x258], 0;
+		__asm        je     _Ta90;
 
-			__asm        lea    eax, findData.cFileName[0];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x258];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1E0], eax;
-			__asm        jmp    _Ta9a;
-		_Ta90:
-			__asm        mov    dword ptr [ebp-0x1E0], 0;
-		_Ta9a:
-			__asm        mov    dword ptr [ebp-0x1E4], 0;
-			__asm        jmp    _Taa9;
-		_Taa9:
-			__asm        mov    eax, sDirectoryEntries;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x264], eax;
-			__asm        mov    eax, [ebp-0x264];
-			__asm        mov    [ebp-0x25C], eax;
-			__asm        jmp    _Tac5;
-		_Tac5:
-			__asm        jmp    _Taca;
-		_Taca:
-			__asm        lea    eax, [ebp-0x1E4];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x25C];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x260];
-			__asm        push   eax;
-			__asm        mov    ecx, sDirectoryEntries;
-			__asm        call   list<basic_string<char>>::insert;
-			__asm        jmp    _Taec;
-		_Taec:
-			__asm        lea    ecx, [ebp-0x1E4];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x1E4], 0;
-			__asm        je     _Tb2b;
+		__asm        lea    eax, findData.cFileName[0];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x258];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1E0], eax;
+		__asm        jmp    _Ta9a;
+_Ta90:
+		__asm        mov    dword ptr [ebp-0x1E0], 0;
+_Ta9a:
+		__asm        mov    dword ptr [ebp-0x1E4], 0;
+		__asm        jmp    _Taa9;
+_Taa9:
+		__asm        mov    eax, sDirectoryEntries;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x264], eax;
+		__asm        mov    eax, [ebp-0x264];
+		__asm        mov    [ebp-0x25C], eax;
+		__asm        jmp    _Tac5;
+_Tac5:
+		__asm        jmp    _Taca;
+_Taca:
+		__asm        lea    eax, [ebp-0x1E4];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x25C];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x260];
+		__asm        push   eax;
+		__asm        mov    ecx, sDirectoryEntries;
+		__asm        call   list<basic_string<char>>::insert;
+		__asm        jmp    _Taec;
+_Taec:
+		__asm        lea    ecx, [ebp-0x1E4];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x1E4], 0;
+		__asm        je     _Tb2b;
 
-			__asm        mov    eax, [ebp-0x1E4];
-			__asm        mov    [ebp-0x250], eax;
-			__asm        mov    eax, [ebp-0x250];
-			__asm        mov    [ebp-0x254], eax;
-			__asm        mov    eax, [ebp-0x254];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_Tb2b:
-			__asm        jmp    _Tb30;
-		// LINE 408:
-		_Tb30:
+		__asm        mov    eax, [ebp-0x1E4];
+		__asm        mov    [ebp-0x250], eax;
+		__asm        mov    eax, [ebp-0x250];
+		__asm        mov    [ebp-0x254], eax;
+		__asm        mov    eax, [ebp-0x254];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_Tb2b:
+		__asm        jmp    _Tb30;
+// LINE 408:
+_Tb30:
 	}
 // LINE 412:
 _Tb35:
@@ -5266,123 +5266,123 @@ _T21:
 // LINE 450:
 _LOOP_26:
 	for (;;) {
-		// LINE 450:
-		_LOOP_26:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x20], eax;
-			__asm        mov    eax, [ebp-0x20];
-			__asm        mov    [ebp-8], eax;
-			__asm        jmp    _T39;
-		_T39:
-			__asm        jmp    _T3e;
-		_T3e:
-			__asm        mov    eax, [ebp-8];
-			__asm        cmp    tempDirectoryEntryListIterator.node, eax;
-			__asm        jne    _T54;
+// LINE 450:
+_LOOP_26:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x20], eax;
+		__asm        mov    eax, [ebp-0x20];
+		__asm        mov    [ebp-8], eax;
+		__asm        jmp    _T39;
+_T39:
+		__asm        jmp    _T3e;
+_T3e:
+		__asm        mov    eax, [ebp-8];
+		__asm        cmp    tempDirectoryEntryListIterator.node, eax;
+		__asm        jne    _T54;
 
-			__asm        jmp    _T68;
+		__asm        jmp    _T68;
 
-			__asm        jmp    _T54;
-		_T54:
-			__asm        jmp    _T63;
+		__asm        jmp    _T54;
+_T54:
+		__asm        jmp    _T63;
 
-			__asm        cmp    dword ptr [ebp-0x24], 0;
-			__asm        jne    _T68;
-		_T63:
-			__asm        jmp    _T6d;
-		_T68:
-			__asm        jmp    _T166;
-		_T6d:
-			__asm        jmp    _T7c;
+		__asm        cmp    dword ptr [ebp-0x24], 0;
+		__asm        jne    _T68;
+_T63:
+		__asm        jmp    _T6d;
+_T68:
+		__asm        jmp    _T166;
+_T6d:
+		__asm        jmp    _T7c;
 
-			__asm        cmp    dword ptr [ebp-0x28], 0;
-			__asm        je     _T166;
-		// LINE 451:
-		_T7c:
-			__asm        jmp    _T81;
-		_T81:
-			__asm        mov    eax, tempDirectoryEntryListIterator.node;
-			__asm        add    eax, 0xC;
-			__asm        mov    [ebp-0x18], eax;
-			__asm        jmp    _T8f;
-		_T8f:
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    eax, [eax+4];
-			__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
-			__asm        jae    _Tb5;
+		__asm        cmp    dword ptr [ebp-0x28], 0;
+		__asm        je     _T166;
+// LINE 451:
+_T7c:
+		__asm        jmp    _T81;
+_T81:
+		__asm        mov    eax, tempDirectoryEntryListIterator.node;
+		__asm        add    eax, 0xC;
+		__asm        mov    [ebp-0x18], eax;
+		__asm        jmp    _T8f;
+_T8f:
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    eax, [eax+4];
+		__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
+		__asm        jae    _Tb5;
 
-			__asm        jmp    _Ta4;
-		_Ta4:
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x10], eax;
-			__asm        jmp    _Tbc;
-		_Tb5:
-			__asm        mov    dword ptr [ebp-0x10], 0xFFFFFFFF;
-		_Tbc:
-			__asm        jmp    _Tc1;
-		_Tc1:
-			__asm        jmp    _Tc6;
-		_Tc6:
-			__asm        mov    eax, sEntry;
-			__asm        mov    eax, [eax+4];
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        je     _Teb;
+		__asm        jmp    _Ta4;
+_Ta4:
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x10], eax;
+		__asm        jmp    _Tbc;
+_Tb5:
+		__asm        mov    dword ptr [ebp-0x10], 0xFFFFFFFF;
+_Tbc:
+		__asm        jmp    _Tc1;
+_Tc1:
+		__asm        jmp    _Tc6;
+_Tc6:
+		__asm        mov    eax, sEntry;
+		__asm        mov    eax, [eax+4];
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        je     _Teb;
 
-			__asm        mov    eax, sEntry;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x14], eax;
-			__asm        jmp    _Tf7;
+		__asm        mov    eax, sEntry;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x14], eax;
+		__asm        jmp    _Tf7;
 
-			__asm        jmp    _Tf7;
-		_Teb:
-			__asm        mov    dword ptr [ebp-0x14], 0;
-			__asm        jmp    _Tf7;
-		_Tf7:
-			__asm        jmp    _Tfc;
-		_Tfc:
-			__asm        mov    eax, sEntry;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x10];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x14];
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        mov    ecx, [ebp-0x18];
-			__asm        call   basic_string<char>::compare_str;
-			__asm        test   eax, eax;
-			__asm        jne    _T125;
+		__asm        jmp    _Tf7;
+_Teb:
+		__asm        mov    dword ptr [ebp-0x14], 0;
+		__asm        jmp    _Tf7;
+_Tf7:
+		__asm        jmp    _Tfc;
+_Tfc:
+		__asm        mov    eax, sEntry;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x14];
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        mov    ecx, [ebp-0x18];
+		__asm        call   basic_string<char>::compare_str;
+		__asm        test   eax, eax;
+		__asm        jne    _T125;
 
-			__asm        jmp    _T12a;
-		_T125:
-			__asm        jmp    _T143;
-		_T12a:
-			__asm        jmp    _T139;
+		__asm        jmp    _T12a;
+_T125:
+		__asm        jmp    _T143;
+_T12a:
+		__asm        jmp    _T139;
 
-			__asm        cmp    dword ptr [ebp-0x1C], 0;
-			__asm        je     _T143;
-		// LINE 452:
-		_T139:
-			return 0x1;
-		// LINE 453:
-		_T143:
-			__asm        mov    eax, tempDirectoryEntryListIterator.node;
-			__asm        mov    [ebp-0x30], eax;
-			__asm        mov    eax, tempDirectoryEntryListIterator.node;
-			__asm        mov    eax, [eax];
-			__asm        mov    tempDirectoryEntryListIterator.node, eax;
-			__asm        jmp    _T156;
-		_T156:
-			__asm        mov    eax, [ebp-0x30];
-			__asm        mov    [ebp-0xC], eax;
-			__asm        jmp    _T161;
-		// LINE 454:
-		_T161:
+		__asm        cmp    dword ptr [ebp-0x1C], 0;
+		__asm        je     _T143;
+// LINE 452:
+_T139:
+		return 0x1;
+// LINE 453:
+_T143:
+		__asm        mov    eax, tempDirectoryEntryListIterator.node;
+		__asm        mov    [ebp-0x30], eax;
+		__asm        mov    eax, tempDirectoryEntryListIterator.node;
+		__asm        mov    eax, [eax];
+		__asm        mov    tempDirectoryEntryListIterator.node, eax;
+		__asm        jmp    _T156;
+_T156:
+		__asm        mov    eax, [ebp-0x30];
+		__asm        mov    [ebp-0xC], eax;
+		__asm        jmp    _T161;
+// LINE 454:
+_T161:
 	}
 // LINE 455:
 _T166:
@@ -5660,32 +5660,32 @@ _T32:
 	__asm        jmp    _T61;
 _LOOP_40:
 	for (;;) {
-		_LOOP_40:
-			__asm        inc    i;
-			__asm        mov    eax, iterator.node;
-			__asm        mov    [ebp-0x18], eax;
-			__asm        mov    eax, iterator.node;
-			__asm        mov    eax, [eax];
-			__asm        mov    iterator.node, eax;
-			__asm        jmp    _T56;
-		_T56:
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    [ebp-0x10], eax;
-			__asm        jmp    _T61;
-		_T61:
-			__asm        mov    eax, i;
-			__asm        cmp    iEnd, eax;
-			__asm        jle    _T8e;
-		// LINE 501:
-			__asm        mov    eax, nIndex;
-			__asm        cmp    i, eax;
-			__asm        jne    _T89;
-		// LINE 502:
-			__asm        jmp    _T7e;
-		_T7e:
-			return (iterator.node + 0x8);
-		// LINE 503:
-		_T89:
+_LOOP_40:
+		__asm        inc    i;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    [ebp-0x18], eax;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    eax, [eax];
+		__asm        mov    iterator.node, eax;
+		__asm        jmp    _T56;
+_T56:
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    [ebp-0x10], eax;
+		__asm        jmp    _T61;
+_T61:
+		__asm        mov    eax, i;
+		__asm        cmp    iEnd, eax;
+		__asm        jle    _T8e;
+// LINE 501:
+		__asm        mov    eax, nIndex;
+		__asm        cmp    i, eax;
+		__asm        jne    _T89;
+// LINE 502:
+		__asm        jmp    _T7e;
+_T7e:
+		return (iterator.node + 0x8);
+// LINE 503:
+_T89:
 	}
 // LINE 504:
 _T8e:

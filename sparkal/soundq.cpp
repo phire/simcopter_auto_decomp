@@ -1326,66 +1326,66 @@ _T58:
 	__asm        mov    [ebp-0x30], eax;
 _LOOP_64:
 	for (;;) {
-		_LOOP_64:
-			__asm        mov    eax, [ebp-0x2C];
-			__asm        cmp    [ebp-0x30], eax;
-			__asm        jne    _T7a;
+_LOOP_64:
+		__asm        mov    eax, [ebp-0x2C];
+		__asm        cmp    [ebp-0x30], eax;
+		__asm        jne    _T7a;
 
-			__asm        jmp    _T8e;
+		__asm        jmp    _T8e;
 
-			__asm        jmp    _T7a;
-		_T7a:
-			__asm        jmp    _T89;
+		__asm        jmp    _T7a;
+_T7a:
+		__asm        jmp    _T89;
 
-			__asm        cmp    dword ptr [ebp-0x20], 0;
-			__asm        jne    _T8e;
-		_T89:
-			__asm        jmp    _T93;
-		_T8e:
-			__asm        jmp    _T112;
-		_T93:
-			__asm        jmp    _Ta2;
+		__asm        cmp    dword ptr [ebp-0x20], 0;
+		__asm        jne    _T8e;
+_T89:
+		__asm        jmp    _T93;
+_T8e:
+		__asm        jmp    _T112;
+_T93:
+		__asm        jmp    _Ta2;
 
-			__asm        cmp    dword ptr [ebp-0x24], 0;
-			__asm        je     _T112;
-		_Ta2:
-			__asm        mov    eax, [ebp-0x30];
-			__asm        mov    [ebp-0x1C], eax;
-			__asm        mov    eax, [ebp-0x30];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x30], eax;
-			__asm        jmp    _Tb5;
-		_Tb5:
-			__asm        mov    eax, [ebp-0x1C];
-			__asm        mov    [ebp-0x18], eax;
-			__asm        jmp    _Tc0;
-		_Tc0:
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    [ebp-0x28], eax;
-			__asm        mov    eax, [ebp-0x28];
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, [ebp-0x28];
-			__asm        mov    ecx, [ecx+4];
-			__asm        mov    [ecx], eax;
-			__asm        mov    eax, [ebp-0x28];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, [ebp-0x28];
-			__asm        mov    ecx, [ecx];
-			__asm        mov    [ecx+4], eax;
-			__asm        jmp    _Te6;
-		_Te6:
-			__asm        jmp    _Teb;
-		_Teb:
-			__asm        mov    eax, list<SoundQueueItem *>::free_list;
-			__asm        mov    ecx, [ebp-0x28];
-			__asm        mov    [ecx], eax;
-			__asm        mov    eax, [ebp-0x28];
-			__asm        mov    list<SoundQueueItem *>::free_list, eax;
-			__asm        jmp    _T102;
-		_T102:
-			this->mySoundQueueItemList.length--;
-			__asm        jmp    _T10d;
-		_T10d:
+		__asm        cmp    dword ptr [ebp-0x24], 0;
+		__asm        je     _T112;
+_Ta2:
+		__asm        mov    eax, [ebp-0x30];
+		__asm        mov    [ebp-0x1C], eax;
+		__asm        mov    eax, [ebp-0x30];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x30], eax;
+		__asm        jmp    _Tb5;
+_Tb5:
+		__asm        mov    eax, [ebp-0x1C];
+		__asm        mov    [ebp-0x18], eax;
+		__asm        jmp    _Tc0;
+_Tc0:
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    [ebp-0x28], eax;
+		__asm        mov    eax, [ebp-0x28];
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, [ebp-0x28];
+		__asm        mov    ecx, [ecx+4];
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-0x28];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x28];
+		__asm        mov    ecx, [ecx];
+		__asm        mov    [ecx+4], eax;
+		__asm        jmp    _Te6;
+_Te6:
+		__asm        jmp    _Teb;
+_Teb:
+		__asm        mov    eax, list<SoundQueueItem *>::free_list;
+		__asm        mov    ecx, [ebp-0x28];
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-0x28];
+		__asm        mov    list<SoundQueueItem *>::free_list, eax;
+		__asm        jmp    _T102;
+_T102:
+		this->mySoundQueueItemList.length--;
+		__asm        jmp    _T10d;
+_T10d:
 	}
 _T112:
 	__asm        jmp    _T117;
@@ -1405,30 +1405,30 @@ _T137:
 __WHILE_143:
 	while ((list<SoundQueueItem *>::buffer_list != 0x0)) {
 
-			__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
-			__asm        mov    [ebp-0x34], eax;
-			__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
-			__asm        mov    eax, [eax];
-			__asm        mov    list<SoundQueueItem *>::buffer_list, eax;
-			__asm        mov    eax, [ebp-0x34];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x38], eax;
-			__asm        mov    eax, [ebp-0x38];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-			__asm        jmp    _T17e;
-		_T17e:
-			__asm        jmp    _T183;
-		_T183:
-			__asm        mov    eax, [ebp-0x34];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-			__asm        jmp    _T194;
-		_T194:
-			__asm        jmp    _T199;
-		_T199:
+		__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
+		__asm        mov    [ebp-0x34], eax;
+		__asm        mov    eax, list<SoundQueueItem *>::buffer_list;
+		__asm        mov    eax, [eax];
+		__asm        mov    list<SoundQueueItem *>::buffer_list, eax;
+		__asm        mov    eax, [ebp-0x34];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x38], eax;
+		__asm        mov    eax, [ebp-0x38];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        jmp    _T17e;
+_T17e:
+		__asm        jmp    _T183;
+_T183:
+		__asm        mov    eax, [ebp-0x34];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        jmp    _T194;
+_T194:
+		__asm        jmp    _T199;
+_T199:
 	}
 _T19e:
 	list<SoundQueueItem *>::free_list = 0x0;
@@ -1561,184 +1561,184 @@ _Ta5:
 // LINE 209:
 _LOOP_aa:
 	for (;;) {
-		// LINE 209:
-		_LOOP_aa:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x28], eax;
-			__asm        mov    eax, [ebp-0x28];
-			__asm        mov    [ebp-0xC], eax;
-			__asm        jmp    _Tbe;
-		_Tbe:
-			__asm        jmp    _Tc3;
-		_Tc3:
-			__asm        mov    eax, [ebp-0xC];
-			__asm        cmp    iterator.node, eax;
-			__asm        jne    _Td9;
+// LINE 209:
+_LOOP_aa:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x28], eax;
+		__asm        mov    eax, [ebp-0x28];
+		__asm        mov    [ebp-0xC], eax;
+		__asm        jmp    _Tbe;
+_Tbe:
+		__asm        jmp    _Tc3;
+_Tc3:
+		__asm        mov    eax, [ebp-0xC];
+		__asm        cmp    iterator.node, eax;
+		__asm        jne    _Td9;
 
-			__asm        jmp    _Ted;
+		__asm        jmp    _Ted;
 
-			__asm        jmp    _Td9;
-		_Td9:
-			__asm        jmp    _Te8;
+		__asm        jmp    _Td9;
+_Td9:
+		__asm        jmp    _Te8;
 
-			__asm        cmp    dword ptr [ebp-0x2C], 0;
-			__asm        jne    _Ted;
-		_Te8:
-			__asm        jmp    _Tf2;
-		_Ted:
-			__asm        jmp    _T2a5;
-		_Tf2:
-			__asm        jmp    _T101;
+		__asm        cmp    dword ptr [ebp-0x2C], 0;
+		__asm        jne    _Ted;
+_Te8:
+		__asm        jmp    _Tf2;
+_Ted:
+		__asm        jmp    _T2a5;
+_Tf2:
+		__asm        jmp    _T101;
 
-			__asm        cmp    dword ptr [ebp-0x30], 0;
-			__asm        je     _T2a5;
-		// LINE 210:
-		_T101:
-			__asm        jmp    _T106;
-		_T106:
-			currentSoundQueueItem = iterator.node->data;
-		// LINE 211:
-			__asm        mov    eax, currentSoundQueueItem;
-			__asm        cmp    dword ptr [eax+0x14], 0;
-			__asm        je     _T145;
-		// LINE 212:
-			__asm        mov    eax, currentSoundQueueItem;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x14], eax;
-			__asm        mov    eax, [ebp-0x14];
-			__asm        mov    [ebp-0x10], eax;
-			__asm        cmp    dword ptr [ebp-0x10], 0;
-			__asm        je     _T145;
+		__asm        cmp    dword ptr [ebp-0x30], 0;
+		__asm        je     _T2a5;
+// LINE 210:
+_T101:
+		__asm        jmp    _T106;
+_T106:
+		currentSoundQueueItem = iterator.node->data;
+// LINE 211:
+		__asm        mov    eax, currentSoundQueueItem;
+		__asm        cmp    dword ptr [eax+0x14], 0;
+		__asm        je     _T145;
+// LINE 212:
+		__asm        mov    eax, currentSoundQueueItem;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x14], eax;
+		__asm        mov    eax, [ebp-0x14];
+		__asm        mov    [ebp-0x10], eax;
+		__asm        cmp    dword ptr [ebp-0x10], 0;
+		__asm        je     _T145;
 
-			__asm        push   1;
-			__asm        mov    eax, [ebp-0x10];
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, [ebp-0x10];
-			__asm        call   dword ptr [eax];
-			__asm        jmp    _T145;
-		// LINE 213:
-		_T145:
-			__asm        mov    eax, currentSoundQueueItem;
-			__asm        mov    [ebp-0x1C], eax;
-			__asm        mov    eax, [ebp-0x1C];
-			__asm        mov    [ebp-0x18], eax;
-			__asm        cmp    dword ptr [ebp-0x18], 0;
-			__asm        je     _T234;
+		__asm        push   1;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, [ebp-0x10];
+		__asm        call   dword ptr [eax];
+		__asm        jmp    _T145;
+// LINE 213:
+_T145:
+		__asm        mov    eax, currentSoundQueueItem;
+		__asm        mov    [ebp-0x1C], eax;
+		__asm        mov    eax, [ebp-0x1C];
+		__asm        mov    [ebp-0x18], eax;
+		__asm        cmp    dword ptr [ebp-0x18], 0;
+		__asm        je     _T234;
 
-			__asm        jmp    _T160;
-		_T160:
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    eax, [eax+0xC];
-			__asm        dec    dword ptr [eax+0xC];
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    eax, [eax+0xC];
-			__asm        cmp    dword ptr [eax+0xC], 0;
-			__asm        jne    _T1ec;
+		__asm        jmp    _T160;
+_T160:
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    eax, [eax+0xC];
+		__asm        dec    dword ptr [eax+0xC];
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    eax, [eax+0xC];
+		__asm        cmp    dword ptr [eax+0xC], 0;
+		__asm        jne    _T1ec;
 
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    eax, [eax+0xC];
-			__asm        mov    [ebp-0x4C], eax;
-			__asm        mov    eax, [ebp-0x4C];
-			__asm        mov    [ebp-0x48], eax;
-			__asm        cmp    dword ptr [ebp-0x48], 0;
-			__asm        je     _T1ec;
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    eax, [eax+0xC];
+		__asm        mov    [ebp-0x4C], eax;
+		__asm        mov    eax, [ebp-0x4C];
+		__asm        mov    [ebp-0x48], eax;
+		__asm        cmp    dword ptr [ebp-0x48], 0;
+		__asm        je     _T1ec;
 
-			__asm        mov    eax, [ebp-0x48];
-			__asm        cmp    dword ptr [eax+8], 0;
-			__asm        je     _T1cc;
+		__asm        mov    eax, [ebp-0x48];
+		__asm        cmp    dword ptr [eax+8], 0;
+		__asm        je     _T1cc;
 
-			__asm        mov    eax, [ebp-0x48];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x50], eax;
-			__asm        mov    eax, [ebp-0x50];
-			__asm        mov    [ebp-0x54], eax;
-			__asm        mov    eax, [ebp-0x54];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-			__asm        mov    eax, [ebp-0x48];
-			__asm        mov    dword ptr [eax+8], 0;
-			__asm        mov    eax, [ebp-0x48];
-			__asm        mov    dword ptr [eax], 0;
-		_T1cc:
-			__asm        jmp    _T1d1;
-		_T1d1:
-			__asm        jmp    _T1d6;
-		_T1d6:
-			__asm        mov    eax, [ebp-0x48];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-			__asm        jmp    _T1e7;
-		_T1e7:
-			__asm        jmp    _T1ec;
-		_T1ec:
-			__asm        jmp    _T1f1;
-		_T1f1:
-			__asm        mov    eax, [ebp-0x18];
-			__asm        cmp    dword ptr [eax+8], 0;
-			__asm        je     _T219;
+		__asm        mov    eax, [ebp-0x48];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x50], eax;
+		__asm        mov    eax, [ebp-0x50];
+		__asm        mov    [ebp-0x54], eax;
+		__asm        mov    eax, [ebp-0x54];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        mov    eax, [ebp-0x48];
+		__asm        mov    dword ptr [eax+8], 0;
+		__asm        mov    eax, [ebp-0x48];
+		__asm        mov    dword ptr [eax], 0;
+_T1cc:
+		__asm        jmp    _T1d1;
+_T1d1:
+		__asm        jmp    _T1d6;
+_T1d6:
+		__asm        mov    eax, [ebp-0x48];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        jmp    _T1e7;
+_T1e7:
+		__asm        jmp    _T1ec;
+_T1ec:
+		__asm        jmp    _T1f1;
+_T1f1:
+		__asm        mov    eax, [ebp-0x18];
+		__asm        cmp    dword ptr [eax+8], 0;
+		__asm        je     _T219;
 
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ebp-0x40], eax;
-			__asm        mov    eax, [ebp-0x40];
-			__asm        mov    [ebp-0x44], eax;
-			__asm        mov    eax, [ebp-0x44];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T219:
-			__asm        jmp    _T21e;
-		_T21e:
-			__asm        mov    eax, [ebp-0x18];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-			__asm        jmp    _T22f;
-		_T22f:
-			__asm        jmp    _T234;
-		// LINE 214:
-		_T234:
-			__asm        mov    eax, iterator.node;
-			__asm        mov    [ebp-0x24], eax;
-			__asm        mov    eax, iterator.node;
-			__asm        mov    eax, [eax];
-			__asm        mov    iterator.node, eax;
-			__asm        jmp    _T247;
-		_T247:
-			__asm        mov    eax, [ebp-0x24];
-			__asm        mov    [ebp-0x20], eax;
-			__asm        jmp    _T252;
-		_T252:
-			__asm        mov    eax, [ebp-0x20];
-			__asm        mov    [ebp-0x58], eax;
-			__asm        mov    eax, [ebp-0x58];
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, [ebp-0x58];
-			__asm        mov    ecx, [ecx+4];
-			__asm        mov    [ecx], eax;
-			__asm        mov    eax, [ebp-0x58];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, [ebp-0x58];
-			__asm        mov    ecx, [ecx];
-			__asm        mov    [ecx+4], eax;
-			__asm        jmp    _T278;
-		_T278:
-			__asm        jmp    _T27d;
-		_T27d:
-			__asm        mov    eax, list<SoundQueueItem *>::free_list;
-			__asm        mov    ecx, [ebp-0x58];
-			__asm        mov    [ecx], eax;
-			__asm        mov    eax, [ebp-0x58];
-			__asm        mov    list<SoundQueueItem *>::free_list, eax;
-			__asm        jmp    _T294;
-		_T294:
-			this->mySoundQueueItemList.length += -0x1;
-			__asm        jmp    _T2a0;
-		// LINE 215:
-		_T2a0:
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ebp-0x40], eax;
+		__asm        mov    eax, [ebp-0x40];
+		__asm        mov    [ebp-0x44], eax;
+		__asm        mov    eax, [ebp-0x44];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T219:
+		__asm        jmp    _T21e;
+_T21e:
+		__asm        mov    eax, [ebp-0x18];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        jmp    _T22f;
+_T22f:
+		__asm        jmp    _T234;
+// LINE 214:
+_T234:
+		__asm        mov    eax, iterator.node;
+		__asm        mov    [ebp-0x24], eax;
+		__asm        mov    eax, iterator.node;
+		__asm        mov    eax, [eax];
+		__asm        mov    iterator.node, eax;
+		__asm        jmp    _T247;
+_T247:
+		__asm        mov    eax, [ebp-0x24];
+		__asm        mov    [ebp-0x20], eax;
+		__asm        jmp    _T252;
+_T252:
+		__asm        mov    eax, [ebp-0x20];
+		__asm        mov    [ebp-0x58], eax;
+		__asm        mov    eax, [ebp-0x58];
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, [ebp-0x58];
+		__asm        mov    ecx, [ecx+4];
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-0x58];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x58];
+		__asm        mov    ecx, [ecx];
+		__asm        mov    [ecx+4], eax;
+		__asm        jmp    _T278;
+_T278:
+		__asm        jmp    _T27d;
+_T27d:
+		__asm        mov    eax, list<SoundQueueItem *>::free_list;
+		__asm        mov    ecx, [ebp-0x58];
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-0x58];
+		__asm        mov    list<SoundQueueItem *>::free_list, eax;
+		__asm        jmp    _T294;
+_T294:
+		this->mySoundQueueItemList.length += -0x1;
+		__asm        jmp    _T2a0;
+// LINE 215:
+_T2a0:
 	}
 // LINE 217:
 // Block end:
@@ -2386,7 +2386,7 @@ _T1d7:
 // FUNCTION: COPTER_D 0x00421f05
 void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
 // LINE 356:
-	SoundQueue::StaticSoundQueueCompletionCallback(dwUser);
+SoundQueue::StaticSoundQueueCompletionCallback(dwUser);
 // LINE 357:
 	return;
 }
@@ -2394,7 +2394,7 @@ void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, ui
 // FUNCTION: COPTER_D 0x00421f23
 void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
 // LINE 368:
-	SoundQueue::StaticSoundQueueWaitTimeCallback(dwUser);
+SoundQueue::StaticSoundQueueWaitTimeCallback(dwUser);
 // LINE 369:
 	return;
 }

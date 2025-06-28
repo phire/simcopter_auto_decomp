@@ -9,40 +9,40 @@ void PtrList<cBBase>::Remove(/*unpacked*/ class cBBase *data) {
 // LINE 44:
 __WHILE_12:
 	while ((srch-> != 0x0)) {
-		// LINE 45:
-			__asm        mov    eax, srch;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, data;
-			__asm        cmp    [eax], ecx;
-			__asm        jne    _T8f;
-		// LINE 46:
-			del = srch->;
-		// LINE 47:
-			srch-> = srch->->next;
-		// LINE 48:
-			__asm        mov    eax, del;
-			__asm        mov    [ebp-0xC], eax;
-			__asm        mov    eax, [ebp-0xC];
-			__asm        mov    [ebp-0x10], eax;
-			__asm        mov    eax, [ebp-0x10];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		// LINE 49:
-			this->fCount--;
-		// LINE 50:
-			__asm        mov    eax, this;
-			__asm        movsx  eax, word ptr [eax+4];
-			__asm        test   eax, eax;
-			__asm        jge    _T8a;
+// LINE 45:
+		__asm        mov    eax, srch;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, data;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T8f;
+// LINE 46:
+		del = srch->;
+// LINE 47:
+		srch-> = srch->->next;
+// LINE 48:
+		__asm        mov    eax, del;
+		__asm        mov    [ebp-0xC], eax;
+		__asm        mov    eax, [ebp-0xC];
+		__asm        mov    [ebp-0x10], eax;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+// LINE 49:
+		this->fCount--;
+// LINE 50:
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+4];
+		__asm        test   eax, eax;
+		__asm        jge    _T8a;
 
-			doAssert(0x59a254, 0x32, 0x59a24c, 0x8c085);
-		// LINE 51:
-		_T8a:
-			return;
-		// LINE 53:
-		_T8f:
-			srch = (srch-> + 0x4);
+		doAssert(0x59a254, 0x32, 0x59a24c, 0x8c085);
+// LINE 51:
+_T8a:
+		return;
+// LINE 53:
+_T8f:
+		srch = (srch-> + 0x4);
 	}
 // LINE 55:
 _T9f:
@@ -72,31 +72,31 @@ void PtrList<cCopterAnim>::~PtrList<cCopterAnim>() {
 __WHILE_0c:
 	while ((this->fFirst != 0x0)) {
 
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-4], eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, this;
-			__asm        mov    [ecx], eax;
-			__asm        mov    eax, [ebp-4];
-			__asm        mov    [ebp-8], eax;
-			__asm        mov    eax, [ebp-8];
-			__asm        mov    [ebp-0xC], eax;
-			__asm        mov    eax, [ebp-0xC];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-			__asm        mov    eax, this;
-			__asm        dec    word ptr [eax+4];
-			__asm        mov    eax, this;
-			__asm        movsx  eax, word ptr [eax+4];
-			__asm        test   eax, eax;
-			__asm        jge    _T74;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-4], eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, this;
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-4];
+		__asm        mov    [ebp-8], eax;
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    [ebp-0xC], eax;
+		__asm        mov    eax, [ebp-0xC];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        mov    eax, this;
+		__asm        dec    word ptr [eax+4];
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+4];
+		__asm        test   eax, eax;
+		__asm        jge    _T74;
 
-			doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
-		_T74:
+		doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
+_T74:
 	}
 _T79:
 	__asm        mov    eax, this;
@@ -127,31 +127,31 @@ void PtrList<cCopterBody>::~PtrList<cCopterBody>() {
 __WHILE_0c:
 	while ((this->fFirst != 0x0)) {
 
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-4], eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, this;
-			__asm        mov    [ecx], eax;
-			__asm        mov    eax, [ebp-4];
-			__asm        mov    [ebp-8], eax;
-			__asm        mov    eax, [ebp-8];
-			__asm        mov    [ebp-0xC], eax;
-			__asm        mov    eax, [ebp-0xC];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-			__asm        mov    eax, this;
-			__asm        dec    word ptr [eax+4];
-			__asm        mov    eax, this;
-			__asm        movsx  eax, word ptr [eax+4];
-			__asm        test   eax, eax;
-			__asm        jge    _T74;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-4], eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, this;
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-4];
+		__asm        mov    [ebp-8], eax;
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    [ebp-0xC], eax;
+		__asm        mov    eax, [ebp-0xC];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        mov    eax, this;
+		__asm        dec    word ptr [eax+4];
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+4];
+		__asm        test   eax, eax;
+		__asm        jge    _T74;
 
-			doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
-		_T74:
+		doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
+_T74:
 	}
 _T79:
 	__asm        mov    eax, this;
@@ -198,31 +198,31 @@ void PtrList<StdResLoader>::~PtrList<StdResLoader>() {
 __WHILE_0c:
 	while ((this->fFirst != 0x0)) {
 
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-4], eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, this;
-			__asm        mov    [ecx], eax;
-			__asm        mov    eax, [ebp-4];
-			__asm        mov    [ebp-8], eax;
-			__asm        mov    eax, [ebp-8];
-			__asm        mov    [ebp-0xC], eax;
-			__asm        mov    eax, [ebp-0xC];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-			__asm        mov    eax, this;
-			__asm        dec    word ptr [eax+4];
-			__asm        mov    eax, this;
-			__asm        movsx  eax, word ptr [eax+4];
-			__asm        test   eax, eax;
-			__asm        jge    _T74;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-4], eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, this;
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-4];
+		__asm        mov    [ebp-8], eax;
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    [ebp-0xC], eax;
+		__asm        mov    eax, [ebp-0xC];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        mov    eax, this;
+		__asm        dec    word ptr [eax+4];
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+4];
+		__asm        test   eax, eax;
+		__asm        jge    _T74;
 
-			doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
-		_T74:
+		doAssert(0x59a254, 0x26, 0x59a24c, 0x8c085);
+_T74:
 	}
 _T79:
 	__asm        mov    eax, this;

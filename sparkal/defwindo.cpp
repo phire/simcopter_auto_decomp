@@ -233,33 +233,33 @@ _Tab:
 // LINE 102:
 __DO_b0:
 	do {
-		// LINE 102:
-		__DO_b0:
-			__asm        mov    eax, DestTop;
-			__asm        push   eax;
-			__asm        mov    eax, Left;
-			__asm        push   eax;
-			__asm        mov    eax, ChunkHeight;
-			__asm        add    eax, Top;
-			__asm        push   eax;
-			__asm        mov    eax, Right;
-			__asm        push   eax;
-			__asm        mov    eax, Top;
-			__asm        push   eax;
-			__asm        mov    eax, Left;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x14];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0x14];
-			__asm        call   dword ptr [edx+0x20];
-		// LINE 103:
-			ChunkHeight += Step;
-		// LINE 104:
-			DestTop -= Step;
+// LINE 102:
+__DO_b0:
+		__asm        mov    eax, DestTop;
+		__asm        push   eax;
+		__asm        mov    eax, Left;
+		__asm        push   eax;
+		__asm        mov    eax, ChunkHeight;
+		__asm        add    eax, Top;
+		__asm        push   eax;
+		__asm        mov    eax, Right;
+		__asm        push   eax;
+		__asm        mov    eax, Top;
+		__asm        push   eax;
+		__asm        mov    eax, Left;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x14];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x14];
+		__asm        call   dword ptr [edx+0x20];
+// LINE 103:
+		ChunkHeight += Step;
+// LINE 104:
+		DestTop -= Step;
 	} while ((DestTop > Top));
 // LINE 106:
 	__asm        mov    eax, Top;

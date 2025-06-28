@@ -152,13 +152,13 @@ void S3MissionReset() {
 // LINE 141:
 _FOR_1f:
 	for (i = 0x0; (i < 0x1e); i++) {
-		// LINE 143:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        mov    S_mstatics.missions[0].flags[eax*4], 0;
+// LINE 143:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        mov    S_mstatics.missions[0].flags[eax*4], 0;
 	}
 // LINE 146:
 _T4a:
@@ -670,394 +670,394 @@ void S3MissionDriver() {
 // LINE 437:
 _FOR_15:
 	for (i = 0x0; (i < 0x1e); i++) {
-		// LINE 440:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-			__asm        add    eax, 0x38;
-			__asm        mov    md, eax;
-		// LINE 442:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x4C], 1;
-			__asm        jne    _T4f;
-		// LINE 443:
-			__asm        jmp    _FOR_NEXT_15;
-		// LINE 446:
-		_T4f:
-			md->timer += G_AvLoopTime;
-		// LINE 449:
-			__asm        mov    eax, md;
-			__asm        cmp    dword ptr [eax+0x54], 2;
-			__asm        jne    _T95;
-		// LINE 453:
-			__asm        mov    eax, md;
-			__asm        cmp    dword ptr [eax+0x40], 0x3C0000;
-			__asm        jle    _T90;
+// LINE 440:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
+// LINE 442:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x4C], 1;
+		__asm        jne    _T4f;
+// LINE 443:
+		__asm        jmp    _FOR_NEXT_15;
+// LINE 446:
+_T4f:
+		md->timer += G_AvLoopTime;
+// LINE 449:
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x54], 2;
+		__asm        jne    _T95;
+// LINE 453:
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x40], 0x3C0000;
+		__asm        jle    _T90;
 
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x51], 8;
-			__asm        je     _T90;
-		// LINE 455:
-			S3MissionCancel(i);
-		// LINE 457:
-		_T90:
-			__asm        jmp    _FOR_NEXT_15;
-		// LINE 461:
-		_T95:
-			__asm        mov    eax, md;
-			__asm        cmp    dword ptr [eax+0x54], 4;
-			__asm        jne    _Tb3;
-		// LINE 463:
-			S3MissionCancel(i);
-		// LINE 464:
-			__asm        jmp    _FOR_NEXT_15;
-		// LINE 468:
-		_Tb3:
-			__asm        mov    eax, md;
-			__asm        cmp    dword ptr [eax+0x54], 8;
-			__asm        jne    _Td1;
-		// LINE 470:
-			S3MissionEnd(i);
-		// LINE 471:
-			__asm        jmp    _FOR_NEXT_15;
-		// LINE 480:
-		_Td1:
-			__asm        cmp    S_mstatics.curr_mission, 0;
-			__asm        jne    _Te6;
-		// LINE 481:
-			S_mstatics.curr_mission = md;
-		// LINE 486:
-		_Te6:
-			fires_done = 0x1;
-		// LINE 487:
-			debris_done = 0x1;
-		// LINE 488:
-			personriot_done = 0x1;
-		// LINE 489:
-			personmed_done = 0x1;
-		// LINE 490:
-			persontrans_done = 0x1;
-		// LINE 491:
-			personresc_done = 0x1;
-		// LINE 492:
-			personfire_done = 0x1;
-		// LINE 493:
-			vehiclefire_done = 0x1;
-		// LINE 494:
-			vehiclejam_done = 0x1;
-		// LINE 495:
-			criminal_done = 0x1;
-		// LINE 496:
-			speeder_done = 0x1;
-		// LINE 498:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x52], 5;
-			__asm        je     _T147;
-		// LINE 500:
-			criminal_done = 0x0;
-		// LINE 503:
-		_T147:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x50], 2;
-			__asm        je     _T15b;
-		// LINE 505:
-			speeder_done = 0x0;
-		// LINE 508:
-		_T15b:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x50], 8;
-			__asm        je     _T18d;
-		// LINE 511:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x7C];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0x74];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0x78];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0x70];
-			__asm        jge    _T18d;
-		// LINE 512:
-			debris_done = 0x0;
-		// LINE 515:
-		_T18d:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x50], 1;
-			__asm        je     _T1b9;
-		// LINE 517:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x60];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0x64];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0x58];
-			__asm        jge    _T1b9;
-		// LINE 518:
-			fires_done = 0x0;
-		// LINE 521:
-		_T1b9:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x50], 0x20;
-			__asm        je     _T229;
-		// LINE 523:
-			__asm        mov    eax, md;
-			__asm        mov    ecx, md;
-			__asm        mov    ecx, [ecx+0x84];
-			__asm        cmp    [eax+0xA4], ecx;
-			__asm        jne    _T1f2;
-		// LINE 524:
-			md->pickuploc.x = 0xffffffff;
-		// LINE 525:
-			md->pickuploc.y = 0xffffffff;
-		// LINE 529:
-		_T1f2:
-			__asm        mov    eax, md;
-			__asm        mov    ecx, md;
-			__asm        mov    ecx, [ecx+0x84];
-			__asm        cmp    [eax+0xA0], ecx;
-			__asm        jne    _T222;
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x51], 8;
+		__asm        je     _T90;
+// LINE 455:
+		S3MissionCancel(i);
+// LINE 457:
+_T90:
+		__asm        jmp    _FOR_NEXT_15;
+// LINE 461:
+_T95:
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x54], 4;
+		__asm        jne    _Tb3;
+// LINE 463:
+		S3MissionCancel(i);
+// LINE 464:
+		__asm        jmp    _FOR_NEXT_15;
+// LINE 468:
+_Tb3:
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x54], 8;
+		__asm        jne    _Td1;
+// LINE 470:
+		S3MissionEnd(i);
+// LINE 471:
+		__asm        jmp    _FOR_NEXT_15;
+// LINE 480:
+_Td1:
+		__asm        cmp    S_mstatics.curr_mission, 0;
+		__asm        jne    _Te6;
+// LINE 481:
+		S_mstatics.curr_mission = md;
+// LINE 486:
+_Te6:
+		fires_done = 0x1;
+// LINE 487:
+		debris_done = 0x1;
+// LINE 488:
+		personriot_done = 0x1;
+// LINE 489:
+		personmed_done = 0x1;
+// LINE 490:
+		persontrans_done = 0x1;
+// LINE 491:
+		personresc_done = 0x1;
+// LINE 492:
+		personfire_done = 0x1;
+// LINE 493:
+		vehiclefire_done = 0x1;
+// LINE 494:
+		vehiclejam_done = 0x1;
+// LINE 495:
+		criminal_done = 0x1;
+// LINE 496:
+		speeder_done = 0x1;
+// LINE 498:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x52], 5;
+		__asm        je     _T147;
+// LINE 500:
+		criminal_done = 0x0;
+// LINE 503:
+_T147:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x50], 2;
+		__asm        je     _T15b;
+// LINE 505:
+		speeder_done = 0x0;
+// LINE 508:
+_T15b:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x50], 8;
+		__asm        je     _T18d;
+// LINE 511:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x7C];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0x74];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0x78];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0x70];
+		__asm        jge    _T18d;
+// LINE 512:
+		debris_done = 0x0;
+// LINE 515:
+_T18d:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x50], 1;
+		__asm        je     _T1b9;
+// LINE 517:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x60];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0x64];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0x58];
+		__asm        jge    _T1b9;
+// LINE 518:
+		fires_done = 0x0;
+// LINE 521:
+_T1b9:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x50], 0x20;
+		__asm        je     _T229;
+// LINE 523:
+		__asm        mov    eax, md;
+		__asm        mov    ecx, md;
+		__asm        mov    ecx, [ecx+0x84];
+		__asm        cmp    [eax+0xA4], ecx;
+		__asm        jne    _T1f2;
+// LINE 524:
+		md->pickuploc.x = 0xffffffff;
+// LINE 525:
+		md->pickuploc.y = 0xffffffff;
+// LINE 529:
+_T1f2:
+		__asm        mov    eax, md;
+		__asm        mov    ecx, md;
+		__asm        mov    ecx, [ecx+0x84];
+		__asm        cmp    [eax+0xA0], ecx;
+		__asm        jne    _T222;
 
-			__asm        mov    eax, md;
-			__asm        mov    ecx, md;
-			__asm        mov    ecx, [ecx+0x84];
-			__asm        cmp    [eax+0xA4], ecx;
-			__asm        je     _T229;
-		// LINE 532:
-		_T222:
-			personmed_done = 0x0;
-		// LINE 535:
-		_T229:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x50], 0x10;
-			__asm        je     _T2ab;
-		// LINE 537:
-			__asm        mov    eax, md;
-			__asm        mov    ecx, md;
-			__asm        mov    ecx, [ecx+0xA4];
-			__asm        cmp    [eax+0x8C], ecx;
-			__asm        jne    _T262;
-		// LINE 538:
-			md->pickuploc.x = 0xffffffff;
-		// LINE 539:
-			md->pickuploc.y = 0xffffffff;
-		// LINE 545:
-		_T262:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0xB4];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0x98];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0x8C];
-			__asm        jne    _T2a4;
+		__asm        mov    eax, md;
+		__asm        mov    ecx, md;
+		__asm        mov    ecx, [ecx+0x84];
+		__asm        cmp    [eax+0xA4], ecx;
+		__asm        je     _T229;
+// LINE 532:
+_T222:
+		personmed_done = 0x0;
+// LINE 535:
+_T229:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x50], 0x10;
+		__asm        je     _T2ab;
+// LINE 537:
+		__asm        mov    eax, md;
+		__asm        mov    ecx, md;
+		__asm        mov    ecx, [ecx+0xA4];
+		__asm        cmp    [eax+0x8C], ecx;
+		__asm        jne    _T262;
+// LINE 538:
+		md->pickuploc.x = 0xffffffff;
+// LINE 539:
+		md->pickuploc.y = 0xffffffff;
+// LINE 545:
+_T262:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0xB4];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0x98];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0x8C];
+		__asm        jne    _T2a4;
 
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0xB4];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0xA4];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0x8C];
-			__asm        je     _T2ab;
-		// LINE 546:
-		_T2a4:
-			personresc_done = 0x0;
-		// LINE 549:
-		_T2ab:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x51], 2;
-			__asm        je     _T2e0;
-		// LINE 554:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0xB4];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0xB8];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0x94];
-			__asm        jge    _T2e0;
-		// LINE 555:
-			criminal_done = 0x0;
-		// LINE 558:
-		_T2e0:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x51], 0x20;
-			__asm        je     _T315;
-		// LINE 563:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0xB4];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0xB8];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0x94];
-			__asm        jge    _T315;
-		// LINE 564:
-			criminal_done = 0x0;
-		// LINE 567:
-		_T315:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x52], 2;
-			__asm        je     _T34a;
-		// LINE 572:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0xB4];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0xB8];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0x94];
-			__asm        jge    _T34a;
-		// LINE 573:
-			criminal_done = 0x0;
-		// LINE 576:
-		_T34a:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x51], 0x40;
-			__asm        je     _T37f;
-		// LINE 581:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0xB4];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0xB8];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0x94];
-			__asm        jge    _T37f;
-		// LINE 582:
-			criminal_done = 0x0;
-		// LINE 585:
-		_T37f:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x50], 0x40;
-			__asm        je     _T3ef;
-		// LINE 587:
-			__asm        mov    eax, md;
-			__asm        mov    ecx, md;
-			__asm        mov    ecx, [ecx+0x88];
-			__asm        cmp    [eax+0xA4], ecx;
-			__asm        jne    _T3b8;
-		// LINE 588:
-			md->pickuploc.x = 0xffffffff;
-		// LINE 589:
-			md->pickuploc.y = 0xffffffff;
-		// LINE 593:
-		_T3b8:
-			__asm        mov    eax, md;
-			__asm        mov    ecx, md;
-			__asm        mov    ecx, [ecx+0x88];
-			__asm        cmp    [eax+0x9C], ecx;
-			__asm        jne    _T3e8;
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0xB4];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0xA4];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0x8C];
+		__asm        je     _T2ab;
+// LINE 546:
+_T2a4:
+		personresc_done = 0x0;
+// LINE 549:
+_T2ab:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x51], 2;
+		__asm        je     _T2e0;
+// LINE 554:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0xB4];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0xB8];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0x94];
+		__asm        jge    _T2e0;
+// LINE 555:
+		criminal_done = 0x0;
+// LINE 558:
+_T2e0:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x51], 0x20;
+		__asm        je     _T315;
+// LINE 563:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0xB4];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0xB8];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0x94];
+		__asm        jge    _T315;
+// LINE 564:
+		criminal_done = 0x0;
+// LINE 567:
+_T315:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x52], 2;
+		__asm        je     _T34a;
+// LINE 572:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0xB4];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0xB8];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0x94];
+		__asm        jge    _T34a;
+// LINE 573:
+		criminal_done = 0x0;
+// LINE 576:
+_T34a:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x51], 0x40;
+		__asm        je     _T37f;
+// LINE 581:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0xB4];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0xB8];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0x94];
+		__asm        jge    _T37f;
+// LINE 582:
+		criminal_done = 0x0;
+// LINE 585:
+_T37f:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x50], 0x40;
+		__asm        je     _T3ef;
+// LINE 587:
+		__asm        mov    eax, md;
+		__asm        mov    ecx, md;
+		__asm        mov    ecx, [ecx+0x88];
+		__asm        cmp    [eax+0xA4], ecx;
+		__asm        jne    _T3b8;
+// LINE 588:
+		md->pickuploc.x = 0xffffffff;
+// LINE 589:
+		md->pickuploc.y = 0xffffffff;
+// LINE 593:
+_T3b8:
+		__asm        mov    eax, md;
+		__asm        mov    ecx, md;
+		__asm        mov    ecx, [ecx+0x88];
+		__asm        cmp    [eax+0x9C], ecx;
+		__asm        jne    _T3e8;
 
-			__asm        mov    eax, md;
-			__asm        mov    ecx, md;
-			__asm        mov    ecx, [ecx+0x88];
-			__asm        cmp    [eax+0xA4], ecx;
-			__asm        je     _T3ef;
-		// LINE 594:
-		_T3e8:
-			persontrans_done = 0x0;
-		// LINE 597:
-		_T3ef:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x51], 0x10;
-			__asm        je     _T462;
-		// LINE 601:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0xAC];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0xA8];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0x80];
-			__asm        jge    _T424;
-		// LINE 602:
-			personriot_done = 0x0;
-		// LINE 604:
-		_T424:
-			__asm        cmp    S_riotcheckctr, 0xC;
-			__asm        jle    _T45c;
-		// LINE 605:
-			S_riotcheckctr = 0x0;
-		// LINE 606:
-			__asm        cmp    personriot_done, 0;
-			__asm        jne    _T45c;
-		// LINE 607:
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        call   GetRiotCenter;
-			__asm        add    esp, 4;
-			__asm        mov    ecx, md;
-			__asm        add    ecx, 0x28;
-			__asm        mov    [ecx], eax;
-			__asm        mov    [ecx+4], edx;
-		// LINE 609:
-		_T45c:
-			S_riotcheckctr++;
-		// LINE 612:
-		_T462:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x51], 4;
-			__asm        je     _T497;
-		// LINE 615:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0xC8];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0xCC];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0xC0];
-			__asm        jge    _T497;
-		// LINE 616:
-			vehiclefire_done = 0x0;
-		// LINE 619:
-		_T497:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x51], 8;
-			__asm        je     _T4cc;
-		// LINE 622:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0xD0];
-			__asm        mov    ecx, md;
-			__asm        add    eax, [ecx+0xCC];
-			__asm        mov    ecx, md;
-			__asm        cmp    eax, [ecx+0xC4];
-			__asm        jge    _T4cc;
-		// LINE 623:
-			vehiclejam_done = 0x0;
-		// LINE 636:
-		_T4cc:
-			__asm        cmp    fires_done, 1;
-			__asm        jne    _T546;
+		__asm        mov    eax, md;
+		__asm        mov    ecx, md;
+		__asm        mov    ecx, [ecx+0x88];
+		__asm        cmp    [eax+0xA4], ecx;
+		__asm        je     _T3ef;
+// LINE 594:
+_T3e8:
+		persontrans_done = 0x0;
+// LINE 597:
+_T3ef:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x51], 0x10;
+		__asm        je     _T462;
+// LINE 601:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0xAC];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0xA8];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0x80];
+		__asm        jge    _T424;
+// LINE 602:
+		personriot_done = 0x0;
+// LINE 604:
+_T424:
+		__asm        cmp    S_riotcheckctr, 0xC;
+		__asm        jle    _T45c;
+// LINE 605:
+		S_riotcheckctr = 0x0;
+// LINE 606:
+		__asm        cmp    personriot_done, 0;
+		__asm        jne    _T45c;
+// LINE 607:
+		__asm        mov    eax, i;
+		__asm        push   eax;
+		__asm        call   GetRiotCenter;
+		__asm        add    esp, 4;
+		__asm        mov    ecx, md;
+		__asm        add    ecx, 0x28;
+		__asm        mov    [ecx], eax;
+		__asm        mov    [ecx+4], edx;
+// LINE 609:
+_T45c:
+		S_riotcheckctr++;
+// LINE 612:
+_T462:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x51], 4;
+		__asm        je     _T497;
+// LINE 615:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0xC8];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0xCC];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0xC0];
+		__asm        jge    _T497;
+// LINE 616:
+		vehiclefire_done = 0x0;
+// LINE 619:
+_T497:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x51], 8;
+		__asm        je     _T4cc;
+// LINE 622:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0xD0];
+		__asm        mov    ecx, md;
+		__asm        add    eax, [ecx+0xCC];
+		__asm        mov    ecx, md;
+		__asm        cmp    eax, [ecx+0xC4];
+		__asm        jge    _T4cc;
+// LINE 623:
+		vehiclejam_done = 0x0;
+// LINE 636:
+_T4cc:
+		__asm        cmp    fires_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    debris_done, 1;
-			__asm        jne    _T546;
+		__asm        cmp    debris_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    personriot_done, 1;
-			__asm        jne    _T546;
+		__asm        cmp    personriot_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    personmed_done, 1;
-			__asm        jne    _T546;
+		__asm        cmp    personmed_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    persontrans_done, 1;
-			__asm        jne    _T546;
+		__asm        cmp    persontrans_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    personresc_done, 1;
-			__asm        jne    _T546;
+		__asm        cmp    personresc_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    personfire_done, 1;
-			__asm        jne    _T546;
+		__asm        cmp    personfire_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    vehiclefire_done, 1;
-			__asm        jne    _T546;
+		__asm        cmp    vehiclefire_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    vehiclejam_done, 1;
-			__asm        jne    _T546;
+		__asm        cmp    vehiclejam_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    criminal_done, 1;
-			__asm        jne    _T546;
+		__asm        cmp    criminal_done, 1;
+		__asm        jne    _T546;
 
-			__asm        cmp    speeder_done, 1;
-			__asm        jne    _T546;
-		// LINE 638:
-			S3MissionEnd(i);
-		// LINE 640:
-		_T546:
+		__asm        cmp    speeder_done, 1;
+		__asm        jne    _T546;
+// LINE 638:
+		S3MissionEnd(i);
+// LINE 640:
+_T546:
 	}
 // LINE 641:
 __RETURN:
@@ -1077,27 +1077,27 @@ long S3MissionStart(long x, long y, long type) {
 // LINE 663:
 _FOR_1c:
 	for (i = 0x0; (i < 0x1e); i++) {
-		// LINE 665:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        test   reinterpret_cast<uint8_t>(S_mstatics.missions[0].flags)[eax*4], 1;
-			__asm        jne    _T65;
-		// LINE 667:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-			__asm        add    eax, 0x38;
-			__asm        mov    md, eax;
-		// LINE 668:
-			__asm        jmp    _T6a;
-		// LINE 670:
-		_T65:
+// LINE 665:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        test   reinterpret_cast<uint8_t>(S_mstatics.missions[0].flags)[eax*4], 1;
+		__asm        jne    _T65;
+// LINE 667:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
+// LINE 668:
+		__asm        jmp    _T6a;
+// LINE 670:
+_T65:
 	}
 // LINE 673:
 _T6a:
@@ -1166,43 +1166,43 @@ _T13c:
 // LINE 697:
 _FOR_156:
 	for (count = 0x0; (count < numtostart); count++) {
-		// LINE 703:
-			__asm        push   0;
-			__asm        push   0;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x24];
-			__asm        push   eax;
-			__asm        movzx  ax, reinterpret_cast<uint8_t>(y);
-			__asm        push   eax;
-			__asm        movzx  ax, reinterpret_cast<uint8_t>(x);
-			__asm        push   eax;
-			__asm        push   3;
-			__asm        push   0xFFFFFFFF;
-			__asm        call   StartPerson;
-			__asm        add    esp, 0x1C;
-			__asm        movsx  eax, ax;
-			__asm        cmp    eax, 0xFFFFFFFF;
-			__asm        jle    _T197;
-		// LINE 704:
-			numstarted++;
-		// LINE 706:
-		_T197:
-			__asm        cmp    count, 4;
-			__asm        jle    _T1ca;
+// LINE 703:
+		__asm        push   0;
+		__asm        push   0;
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x24];
+		__asm        push   eax;
+		__asm        movzx  ax, reinterpret_cast<uint8_t>(y);
+		__asm        push   eax;
+		__asm        movzx  ax, reinterpret_cast<uint8_t>(x);
+		__asm        push   eax;
+		__asm        push   3;
+		__asm        push   0xFFFFFFFF;
+		__asm        call   StartPerson;
+		__asm        add    esp, 0x1C;
+		__asm        movsx  eax, ax;
+		__asm        cmp    eax, 0xFFFFFFFF;
+		__asm        jle    _T197;
+// LINE 704:
+		numstarted++;
+// LINE 706:
+_T197:
+		__asm        cmp    count, 4;
+		__asm        jle    _T1ca;
 
-			__asm        cmp    numstarted, 0;
-			__asm        jne    _T1ca;
-		// LINE 707:
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x4C];
-			__asm        and    eax, 0xFFFFFFFE;
-			__asm        mov    ecx, md;
-			__asm        mov    [ecx+0x4C], eax;
-			__asm        dec    S_mstatics.key_ctr;
-			__asm        mov    eax, 0xFFFFFFFF;
-			__asm        jmp    __RETURN;
-		// LINE 709:
-		_T1ca:
+		__asm        cmp    numstarted, 0;
+		__asm        jne    _T1ca;
+// LINE 707:
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x4C];
+		__asm        and    eax, 0xFFFFFFFE;
+		__asm        mov    ecx, md;
+		__asm        mov    [ecx+0x4C], eax;
+		__asm        dec    S_mstatics.key_ctr;
+		__asm        mov    eax, 0xFFFFFFFF;
+		__asm        jmp    __RETURN;
+// LINE 709:
+_T1ca:
 	}
 // LINE 710:
 _T1cf:
@@ -1277,31 +1277,31 @@ _T2a3:
 // LINE 748:
 _FOR_30c:
 	for (count = 0x0; (numtostart > count); count++) {
-		// LINE 754:
-			__asm        push   0;
-			__asm        push   0;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x24];
-			__asm        push   eax;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        push   eax;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x28];
-			__asm        push   eax;
-			__asm        push   2;
-			__asm        push   0xFFFFFFFF;
-			__asm        call   StartPerson;
-			__asm        add    esp, 0x1C;
-			__asm        movsx  eax, ax;
-			__asm        cmp    eax, 0xFFFFFFFF;
-			__asm        jle    _T35c;
-		// LINE 756:
-			md->mdata.total_person_rescue++;
-		// LINE 757:
-			startthismission = 0x1;
-		// LINE 759:
-		_T35c:
+// LINE 754:
+		__asm        push   0;
+		__asm        push   0;
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x24];
+		__asm        push   eax;
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        push   eax;
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x28];
+		__asm        push   eax;
+		__asm        push   2;
+		__asm        push   0xFFFFFFFF;
+		__asm        call   StartPerson;
+		__asm        add    esp, 0x1C;
+		__asm        movsx  eax, ax;
+		__asm        cmp    eax, 0xFFFFFFFF;
+		__asm        jle    _T35c;
+// LINE 756:
+		md->mdata.total_person_rescue++;
+// LINE 757:
+		startthismission = 0x1;
+// LINE 759:
+_T35c:
 	}
 // LINE 761:
 _T361:
@@ -1485,31 +1485,31 @@ _T62d:
 // LINE 859:
 _FOR_668:
 	for (count = 0x0; (numtostart > count); count++) {
-		// LINE 865:
-			__asm        push   0;
-			__asm        push   0;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x24];
-			__asm        push   eax;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x3C];
-			__asm        push   eax;
-			__asm        mov    eax, md;
-			__asm        mov    eax, [eax+0x38];
-			__asm        push   eax;
-			__asm        push   4;
-			__asm        push   8;
-			__asm        call   StartPerson;
-			__asm        add    esp, 0x1C;
-			__asm        movsx  eax, ax;
-			__asm        cmp    eax, 0xFFFFFFFF;
-			__asm        jle    _T6b8;
-		// LINE 867:
-			md->mdata.total_person_transport++;
-		// LINE 868:
-			startthismission = 0x1;
-		// LINE 870:
-		_T6b8:
+// LINE 865:
+		__asm        push   0;
+		__asm        push   0;
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x24];
+		__asm        push   eax;
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x3C];
+		__asm        push   eax;
+		__asm        mov    eax, md;
+		__asm        mov    eax, [eax+0x38];
+		__asm        push   eax;
+		__asm        push   4;
+		__asm        push   8;
+		__asm        call   StartPerson;
+		__asm        add    esp, 0x1C;
+		__asm        movsx  eax, ax;
+		__asm        cmp    eax, 0xFFFFFFFF;
+		__asm        jle    _T6b8;
+// LINE 867:
+		md->mdata.total_person_transport++;
+// LINE 868:
+		startthismission = 0x1;
+// LINE 870:
+_T6b8:
 	}
 // LINE 872:
 _T6bd:
@@ -2523,45 +2523,45 @@ _T41d:
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    _Switch_431[0][eax*4];
-// Switch pointers:
-//   _T62
-//   _Tb3
-//   _Te6
-//   _Tf7
-//   _T108
-//   _T119
-//   _T12a
-//   _T13b
-//   _T171
-//   _T160
-//   _T98
-//   _T182
-//   _T1aa
-//   _T1e6
-//   _T1d2
-//   _T20e
-//   _T222
-//   _T24a
-//   _T25e
-//   _T272
-//   _T286
-//   _T29a
-//   _T2ae
-//   _T2d6
-//   _T2ea
-//   _T2fe
-//   _T362
-//   _T376
-//   _T38a
-//   _T3af
-//   _T7d
-//   _T236
-//   _T39e
-//   _T413
-//   _Tc4
-//   _Td5
-//   _T196
-//   _T2c2
+	// Switch pointers:
+	//   _T62
+	//   _Tb3
+	//   _Te6
+	//   _Tf7
+	//   _T108
+	//   _T119
+	//   _T12a
+	//   _T13b
+	//   _T171
+	//   _T160
+	//   _T98
+	//   _T182
+	//   _T1aa
+	//   _T1e6
+	//   _T1d2
+	//   _T20e
+	//   _T222
+	//   _T24a
+	//   _T25e
+	//   _T272
+	//   _T286
+	//   _T29a
+	//   _T2ae
+	//   _T2d6
+	//   _T2ea
+	//   _T2fe
+	//   _T362
+	//   _T376
+	//   _T38a
+	//   _T3af
+	//   _T7d
+	//   _T236
+	//   _T39e
+	//   _T413
+	//   _Tc4
+	//   _Td5
+	//   _T196
+	//   _T2c2
 // LINE 1387:
 __RETURN:
 }
@@ -2595,29 +2595,29 @@ void S3MissionEnd(long mission_id) {
 // LINE 1413:
 _FOR_6a:
 	for (i = 0x0; (i < 0x1e); i++) {
-		// LINE 1415:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-			__asm        add    eax, 0x38;
-			__asm        mov    md, eax;
-		// LINE 1416:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x4C], 1;
-			__asm        je     _Tb9;
+// LINE 1415:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
+// LINE 1416:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x4C], 1;
+		__asm        je     _Tb9;
 
-			__asm        mov    eax, md;
-			__asm        cmp    dword ptr [eax+0x54], 2;
-			__asm        je     _Tb9;
-		// LINE 1418:
-			S_mstatics.curr_mission = md;
-		// LINE 1419:
-			return;
-		// LINE 1421:
-		_Tb9:
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x54], 2;
+		__asm        je     _Tb9;
+// LINE 1418:
+		S_mstatics.curr_mission = md;
+// LINE 1419:
+		return;
+// LINE 1421:
+_Tb9:
 	}
 // LINE 1424:
 __RETURN:
@@ -2654,30 +2654,30 @@ long S3MissionGetByType(long mission_type) {
 // LINE 1448:
 _FOR_15:
 	for (count = 0x0; (count < 0x1e); count++) {
-		// LINE 1452:
-			__asm        mov    eax, mission_type;
-			__asm        push   eax;
-			__asm        mov    eax, count;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        mov    eax, S_mstatics.missions[0].key[eax*4];
-			__asm        push   eax;
-			__asm        call   S3MissionIsType;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        je     _T66;
-		// LINE 1453:
-			__asm        mov    eax, count;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        mov    eax, S_mstatics.missions[0].key[eax*4];
-			__asm        jmp    __RETURN;
-		// LINE 1454:
-		_T66:
+// LINE 1452:
+		__asm        mov    eax, mission_type;
+		__asm        push   eax;
+		__asm        mov    eax, count;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        mov    eax, S_mstatics.missions[0].key[eax*4];
+		__asm        push   eax;
+		__asm        call   S3MissionIsType;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        je     _T66;
+// LINE 1453:
+		__asm        mov    eax, count;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        mov    eax, S_mstatics.missions[0].key[eax*4];
+		__asm        jmp    __RETURN;
+// LINE 1454:
+_T66:
 	}
 // LINE 1455:
 _T6b:
@@ -2708,42 +2708,42 @@ void S3MissionGenerate(long type) {
 // LINE 1487:
 _FOR_20:
 	for (i = 0x0; (i < 0x14); i++) {
-		// LINE 1489:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    x, eax;
-		// LINE 1490:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    y, eax;
-		// LINE 1491:
-			__asm        mov    eax, y;
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, x;
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-			__asm        mov    cptr, eax;
-		// LINE 1492:
-			__asm        mov    eax, cptr;
-			__asm        cmp    dword ptr [eax+0xC], 0;
-			__asm        je     _T8b;
-		// LINE 1493:
-			__asm        jmp    _T90;
-		// LINE 1494:
-		_T8b:
+// LINE 1489:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    x, eax;
+// LINE 1490:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    y, eax;
+// LINE 1491:
+		__asm        mov    eax, y;
+		__asm        and    eax, 0xFF;
+		__asm        mov    ecx, x;
+		__asm        and    ecx, 0xFF;
+		__asm        shl    ecx, 0xA;
+		__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+		__asm        mov    cptr, eax;
+// LINE 1492:
+		__asm        mov    eax, cptr;
+		__asm        cmp    dword ptr [eax+0xC], 0;
+		__asm        je     _T8b;
+// LINE 1493:
+		__asm        jmp    _T90;
+// LINE 1494:
+_T8b:
 	}
 // LINE 1496:
 _T90:
@@ -2759,58 +2759,58 @@ _T9f:
 // LINE 1509:
 _FOR_c4:
 	for (i = 0x0; (i < 0x14); i++) {
-		// LINE 1511:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    x, eax;
-		// LINE 1512:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    y, eax;
-		// LINE 1515:
-			__asm        mov    eax, x;
-			__asm        mov    eax, BuildMap[eax*4];
-			__asm        mov    ecx, y;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [eax+ecx];
-			__asm        mov    tile, edx;
-		// LINE 1517:
-			__asm        cmp    tile, 0x70;
-			__asm        jl     _T12b;
+// LINE 1511:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    x, eax;
+// LINE 1512:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    y, eax;
+// LINE 1515:
+		__asm        mov    eax, x;
+		__asm        mov    eax, BuildMap[eax*4];
+		__asm        mov    ecx, y;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [eax+ecx];
+		__asm        mov    tile, edx;
+// LINE 1517:
+		__asm        cmp    tile, 0x70;
+		__asm        jl     _T12b;
 
-			__asm        cmp    tile, 0xDB;
-			__asm        jle    _T130;
-		// LINE 1518:
-		_T12b:
-			__asm        jmp    _FOR_NEXT_c4;
-		// LINE 1520:
-		_T130:
-			__asm        mov    eax, type;
-			__asm        push   eax;
-			__asm        mov    eax, y;
-			__asm        push   eax;
-			__asm        mov    eax, x;
-			__asm        push   eax;
-			__asm        call   S3MissionStart;
-			__asm        add    esp, 0xC;
-			__asm        test   eax, eax;
-			__asm        jl     _T151;
-		// LINE 1521:
-			__asm        jmp    _T156;
-		// LINE 1522:
-		_T151:
+		__asm        cmp    tile, 0xDB;
+		__asm        jle    _T130;
+// LINE 1518:
+_T12b:
+		__asm        jmp    _FOR_NEXT_c4;
+// LINE 1520:
+_T130:
+		__asm        mov    eax, type;
+		__asm        push   eax;
+		__asm        mov    eax, y;
+		__asm        push   eax;
+		__asm        mov    eax, x;
+		__asm        push   eax;
+		__asm        call   S3MissionStart;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jl     _T151;
+// LINE 1521:
+		__asm        jmp    _T156;
+// LINE 1522:
+_T151:
 	}
 // LINE 1523:
 _T156:
@@ -2828,41 +2828,41 @@ _T170:
 // LINE 1535:
 _FOR_191:
 	for (i = 0x0; (i < 0x14); i++) {
-		// LINE 1537:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    x, eax;
-		// LINE 1538:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    y, eax;
-		// LINE 1539:
-			__asm        mov    eax, type;
-			__asm        push   eax;
-			__asm        mov    eax, y;
-			__asm        push   eax;
-			__asm        mov    eax, x;
-			__asm        push   eax;
-			__asm        call   S3MissionStart;
-			__asm        add    esp, 0xC;
-			__asm        test   eax, eax;
-			__asm        jl     _T1ed;
-		// LINE 1540:
-			__asm        jmp    _T1f2;
-		// LINE 1541:
-		_T1ed:
+// LINE 1537:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    x, eax;
+// LINE 1538:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    y, eax;
+// LINE 1539:
+		__asm        mov    eax, type;
+		__asm        push   eax;
+		__asm        mov    eax, y;
+		__asm        push   eax;
+		__asm        mov    eax, x;
+		__asm        push   eax;
+		__asm        call   S3MissionStart;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jl     _T1ed;
+// LINE 1540:
+		__asm        jmp    _T1f2;
+// LINE 1541:
+_T1ed:
 	}
 // LINE 1542:
 _T1f2:
@@ -2870,41 +2870,41 @@ _T1f2:
 // LINE 1547:
 _FOR_203:
 	for (i = 0x0; (i < 0x14); i++) {
-		// LINE 1549:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    x, eax;
-		// LINE 1550:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    y, eax;
-		// LINE 1551:
-			__asm        mov    eax, type;
-			__asm        push   eax;
-			__asm        mov    eax, y;
-			__asm        push   eax;
-			__asm        mov    eax, x;
-			__asm        push   eax;
-			__asm        call   S3MissionStart;
-			__asm        add    esp, 0xC;
-			__asm        test   eax, eax;
-			__asm        jl     _T25f;
-		// LINE 1552:
-			__asm        jmp    _T264;
-		// LINE 1553:
-		_T25f:
+// LINE 1549:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    x, eax;
+// LINE 1550:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    y, eax;
+// LINE 1551:
+		__asm        mov    eax, type;
+		__asm        push   eax;
+		__asm        mov    eax, y;
+		__asm        push   eax;
+		__asm        mov    eax, x;
+		__asm        push   eax;
+		__asm        call   S3MissionStart;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jl     _T25f;
+// LINE 1552:
+		__asm        jmp    _T264;
+// LINE 1553:
+_T25f:
 	}
 // LINE 1554:
 _T264:
@@ -2912,41 +2912,41 @@ _T264:
 // LINE 1557:
 _FOR_275:
 	for (i = 0x0; (i < 0x14); i++) {
-		// LINE 1559:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    x, eax;
-		// LINE 1560:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    y, eax;
-		// LINE 1561:
-			__asm        mov    eax, type;
-			__asm        push   eax;
-			__asm        mov    eax, y;
-			__asm        push   eax;
-			__asm        mov    eax, x;
-			__asm        push   eax;
-			__asm        call   S3MissionStart;
-			__asm        add    esp, 0xC;
-			__asm        test   eax, eax;
-			__asm        jl     _T2d1;
-		// LINE 1562:
-			__asm        jmp    _T2d6;
-		// LINE 1563:
-		_T2d1:
+// LINE 1559:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    x, eax;
+// LINE 1560:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    y, eax;
+// LINE 1561:
+		__asm        mov    eax, type;
+		__asm        push   eax;
+		__asm        mov    eax, y;
+		__asm        push   eax;
+		__asm        mov    eax, x;
+		__asm        push   eax;
+		__asm        call   S3MissionStart;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jl     _T2d1;
+// LINE 1562:
+		__asm        jmp    _T2d6;
+// LINE 1563:
+_T2d1:
 	}
 // LINE 1564:
 _T2d6:
@@ -2954,41 +2954,41 @@ _T2d6:
 // LINE 1567:
 _FOR_2e7:
 	for (i = 0x0; (i < 0x14); i++) {
-		// LINE 1569:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    x, eax;
-		// LINE 1570:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    y, eax;
-		// LINE 1571:
-			__asm        mov    eax, type;
-			__asm        push   eax;
-			__asm        mov    eax, y;
-			__asm        push   eax;
-			__asm        mov    eax, x;
-			__asm        push   eax;
-			__asm        call   S3MissionStart;
-			__asm        add    esp, 0xC;
-			__asm        test   eax, eax;
-			__asm        jl     _T343;
-		// LINE 1572:
-			__asm        jmp    _T348;
-		// LINE 1573:
-		_T343:
+// LINE 1569:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    x, eax;
+// LINE 1570:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    y, eax;
+// LINE 1571:
+		__asm        mov    eax, type;
+		__asm        push   eax;
+		__asm        mov    eax, y;
+		__asm        push   eax;
+		__asm        mov    eax, x;
+		__asm        push   eax;
+		__asm        call   S3MissionStart;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jl     _T343;
+// LINE 1572:
+		__asm        jmp    _T348;
+// LINE 1573:
+_T343:
 	}
 // LINE 1574:
 _T348:
@@ -2996,41 +2996,41 @@ _T348:
 // LINE 1577:
 _FOR_359:
 	for (i = 0x0; (i < 0x14); i++) {
-		// LINE 1579:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    x, eax;
-		// LINE 1580:
-			__asm        call   rand;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        and    eax, 0x7F;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    y, eax;
-		// LINE 1581:
-			__asm        mov    eax, type;
-			__asm        push   eax;
-			__asm        mov    eax, y;
-			__asm        push   eax;
-			__asm        mov    eax, x;
-			__asm        push   eax;
-			__asm        call   S3MissionStart;
-			__asm        add    esp, 0xC;
-			__asm        test   eax, eax;
-			__asm        jl     _T3b5;
-		// LINE 1582:
-			__asm        jmp    _T3ba;
-		// LINE 1583:
-		_T3b5:
+// LINE 1579:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    x, eax;
+// LINE 1580:
+		__asm        call   rand;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        and    eax, 0x7F;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    y, eax;
+// LINE 1581:
+		__asm        mov    eax, type;
+		__asm        push   eax;
+		__asm        mov    eax, y;
+		__asm        push   eax;
+		__asm        mov    eax, x;
+		__asm        push   eax;
+		__asm        call   S3MissionStart;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        jl     _T3b5;
+// LINE 1582:
+		__asm        jmp    _T3ba;
+// LINE 1583:
+_T3b5:
 	}
 // LINE 1584:
 _T3ba:
@@ -3147,29 +3147,29 @@ _FOR_42:
 	__asm        jmp    _FOR_COND_42;
 _FOR_NEXT_42:
 	for (; (i < 0x1e); i++) {
-		// LINE 1608:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-			__asm        add    eax, 0x38;
-			__asm        mov    md, eax;
-		// LINE 1609:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x4C], 1;
-			__asm        je     _T91;
+// LINE 1608:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
+// LINE 1609:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x4C], 1;
+		__asm        je     _T91;
 
-			__asm        mov    eax, md;
-			__asm        cmp    dword ptr [eax+0x54], 2;
-			__asm        je     _T91;
-		// LINE 1611:
-			S_mstatics.curr_mission = md;
-		// LINE 1612:
-			return;
-		// LINE 1614:
-		_T91:
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x54], 2;
+		__asm        je     _T91;
+// LINE 1611:
+		S_mstatics.curr_mission = md;
+// LINE 1612:
+		return;
+// LINE 1614:
+_T91:
 	}
 // LINE 1616:
 _FOR_a2:
@@ -3241,29 +3241,29 @@ _FOR_42:
 	__asm        jmp    _FOR_COND_42;
 _FOR_NEXT_42:
 	for (; (i >= 0x0); i--) {
-		// LINE 1643:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-			__asm        add    eax, 0x38;
-			__asm        mov    md, eax;
-		// LINE 1644:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x4C], 1;
-			__asm        je     _T91;
+// LINE 1643:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
+// LINE 1644:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x4C], 1;
+		__asm        je     _T91;
 
-			__asm        mov    eax, md;
-			__asm        cmp    dword ptr [eax+0x54], 2;
-			__asm        je     _T91;
-		// LINE 1646:
-			S_mstatics.curr_mission = md;
-		// LINE 1647:
-			return;
-		// LINE 1649:
-		_T91:
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x54], 2;
+		__asm        je     _T91;
+// LINE 1646:
+		S_mstatics.curr_mission = md;
+// LINE 1647:
+		return;
+// LINE 1649:
+_T91:
 	}
 // LINE 1651:
 _FOR_a2:
@@ -3464,27 +3464,27 @@ long S3MissionStartDirect(long type) {
 // LINE 1898:
 _FOR_15:
 	for (i = 0x0; (i < 0x1e); i++) {
-		// LINE 1900:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        test   reinterpret_cast<uint8_t>(S_mstatics.missions[0].flags)[eax*4], 1;
-			__asm        jne    _T5e;
-		// LINE 1902:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-			__asm        add    eax, 0x38;
-			__asm        mov    md, eax;
-		// LINE 1903:
-			__asm        jmp    _T63;
-		// LINE 1905:
-		_T5e:
+// LINE 1900:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        test   reinterpret_cast<uint8_t>(S_mstatics.missions[0].flags)[eax*4], 1;
+		__asm        jne    _T5e;
+// LINE 1902:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
+// LINE 1903:
+		__asm        jmp    _T63;
+// LINE 1905:
+_T5e:
 	}
 // LINE 1908:
 _T63:
@@ -4050,46 +4050,46 @@ _T53f:
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    _Switch_556[0][eax*4];
-// Switch pointers:
-//   _Ta9
-//   _Tdf
-//   _T126
-//   _T12b
-//   _T161
-//   _T166
-//   _T1ad
-//   _T22a
-//   _T1e3
-//   _T535
-//   _T22f
-//   _T234
-//   _T23e
-//   _T239
-//   _T243
-//   _T248
-//   _T28f
-//   _T2d6
-//   _T31d
-//   _T364
-//   _T369
-//   _T36e
-//   _T373
-//   _T378
-//   _T37d
-//   _T382
-//   _T3c9
-//   _T410
-//   _T535
-//   _T535
-//   _T535
-//   _T535
-//   _T535
-//   _T535
-//   _T535
-//   _T535
-//   _T535
-//   _T446
-//   _T4b3
+	// Switch pointers:
+	//   _Ta9
+	//   _Tdf
+	//   _T126
+	//   _T12b
+	//   _T161
+	//   _T166
+	//   _T1ad
+	//   _T22a
+	//   _T1e3
+	//   _T535
+	//   _T22f
+	//   _T234
+	//   _T23e
+	//   _T239
+	//   _T243
+	//   _T248
+	//   _T28f
+	//   _T2d6
+	//   _T31d
+	//   _T364
+	//   _T369
+	//   _T36e
+	//   _T373
+	//   _T378
+	//   _T37d
+	//   _T382
+	//   _T3c9
+	//   _T410
+	//   _T535
+	//   _T535
+	//   _T535
+	//   _T535
+	//   _T535
+	//   _T535
+	//   _T535
+	//   _T535
+	//   _T535
+	//   _T446
+	//   _T4b3
 // LINE 2191:
 _T5f2:
 	S_log.nMissionID = key;
@@ -4341,31 +4341,31 @@ long S3MissionGetIDByKey(long key) {
 // LINE 2444:
 _FOR_29:
 	for (i = 0x0; (i < 0x1e); i++) {
-		// LINE 2446:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-			__asm        add    eax, 0x38;
-			__asm        mov    md, eax;
-		// LINE 2448:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x4C], 1;
-			__asm        jne    _T63;
-		// LINE 2449:
-			__asm        jmp    _FOR_NEXT_29;
-		// LINE 2451:
-		_T63:
-			__asm        mov    eax, md;
-			__asm        mov    ecx, key;
-			__asm        cmp    [eax+0x24], ecx;
-			__asm        jne    _T7a;
-		// LINE 2452:
-			return i;
-		// LINE 2453:
-		_T7a:
+// LINE 2446:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
+// LINE 2448:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x4C], 1;
+		__asm        jne    _T63;
+// LINE 2449:
+		__asm        jmp    _FOR_NEXT_29;
+// LINE 2451:
+_T63:
+		__asm        mov    eax, md;
+		__asm        mov    ecx, key;
+		__asm        cmp    [eax+0x24], ecx;
+		__asm        jne    _T7a;
+// LINE 2452:
+		return i;
+// LINE 2453:
+_T7a:
 	}
 // LINE 2456:
 _T7f:
@@ -4416,29 +4416,29 @@ _T39:
 // LINE 2501:
 _FOR_4f:
 	for (i = 0x0; (i < 0x1e); i++) {
-		// LINE 2503:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-			__asm        add    eax, 0x38;
-			__asm        mov    md, eax;
-		// LINE 2504:
-			__asm        mov    eax, md;
-			__asm        test   byte ptr [eax+0x4C], 1;
-			__asm        je     _T9e;
+// LINE 2503:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
+		__asm        add    eax, 0x38;
+		__asm        mov    md, eax;
+// LINE 2504:
+		__asm        mov    eax, md;
+		__asm        test   byte ptr [eax+0x4C], 1;
+		__asm        je     _T9e;
 
-			__asm        mov    eax, md;
-			__asm        cmp    dword ptr [eax+0x54], 2;
-			__asm        je     _T9e;
-		// LINE 2506:
-			S_mstatics.curr_mission = md;
-		// LINE 2507:
-			__asm        jmp    _Ta3;
-		// LINE 2510:
-		_T9e:
+		__asm        mov    eax, md;
+		__asm        cmp    dword ptr [eax+0x54], 2;
+		__asm        je     _T9e;
+// LINE 2506:
+		S_mstatics.curr_mission = md;
+// LINE 2507:
+		__asm        jmp    _Ta3;
+// LINE 2510:
+_T9e:
 	}
 // LINE 2512:
 _Ta3:

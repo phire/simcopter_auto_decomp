@@ -564,25 +564,25 @@ _T211:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_27a[0][eax];
 	__asm        jmp    _Switch_23a[0][ecx*4];
-// Switch pointers:
-//   _T1a5
-//   _T1c9
-//   _T1a5
-//   _T1c9
-//   _T1a5
-//   _T1c9
-//   _T1a5
-//   _T1a5
-//   _T1a5
-//   _T1c9
-//   _T1a5
-//   _T1c9
-//   _T1a5
-//   _T1c9
-//   _T1a5
-//   _T1ed
-// Switch table
-//  [0, 0, 0, 1, 2, 2, 3, 4, 4, 5, 15, 15, 6, 6, 6, 15, 7, 15, 8, 9, 9, 10, 15, 15, 15, 15, 15, 15, 15, 15, 11, 15, 12, 13, 13, 14, 14]
+	// Switch pointers:
+	//   _T1a5
+	//   _T1c9
+	//   _T1a5
+	//   _T1c9
+	//   _T1a5
+	//   _T1c9
+	//   _T1a5
+	//   _T1a5
+	//   _T1a5
+	//   _T1c9
+	//   _T1a5
+	//   _T1c9
+	//   _T1a5
+	//   _T1c9
+	//   _T1a5
+	//   _T1ed
+	// Switch table
+	//  [0, 0, 0, 1, 2, 2, 3, 4, 4, 5, 15, 15, 6, 6, 6, 15, 7, 15, 8, 9, 9, 10, 15, 15, 15, 15, 15, 15, 15, 15, 11, 15, 12, 13, 13, 14, 14]
 // LINE 104:
 _T29f:
 	s->ostream::operator<<(buf[0])->ostream::operator<<(buf1[0]);
@@ -837,26 +837,26 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 // LINE 246:
 _FOR_1c:
 	for (i = 0x1; (i <= 0x7); i++) {
-		// LINE 247:
-			__asm        mov    eax, dayName;
-			__asm        push   eax;
-			__asm        mov    eax, nLanguageToUse;
-			__asm        push   eax;
-			__asm        lea    eax, szCurrentDay[0];
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        call   MDateLocalized::DayNameLocalized;
-			__asm        add    esp, 0xC;
-			__asm        push   eax;
-			__asm        call   strcmp;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        jne    _T5d;
-		// LINE 248:
-			return i;
-		// LINE 249:
-		_T5d:
+// LINE 247:
+		__asm        mov    eax, dayName;
+		__asm        push   eax;
+		__asm        mov    eax, nLanguageToUse;
+		__asm        push   eax;
+		__asm        lea    eax, szCurrentDay[0];
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        push   eax;
+		__asm        call   MDateLocalized::DayNameLocalized;
+		__asm        add    esp, 0xC;
+		__asm        push   eax;
+		__asm        call   strcmp;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        jne    _T5d;
+// LINE 248:
+		return i;
+// LINE 249:
+_T5d:
 	}
 // LINE 250:
 _T62:
@@ -872,26 +872,26 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 // LINE 267:
 _FOR_1c:
 	for (i = 0x1; (i <= 0x1f); i++) {
-		// LINE 268:
-			__asm        mov    eax, monthName;
-			__asm        push   eax;
-			__asm        mov    eax, nLanguageToUse;
-			__asm        push   eax;
-			__asm        lea    eax, szCurrentMonth[0];
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        call   MDateLocalized::MonthNameLocalized;
-			__asm        add    esp, 0xC;
-			__asm        push   eax;
-			__asm        call   strcmp;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        jne    _T5d;
-		// LINE 269:
-			return i;
-		// LINE 270:
-		_T5d:
+// LINE 268:
+		__asm        mov    eax, monthName;
+		__asm        push   eax;
+		__asm        mov    eax, nLanguageToUse;
+		__asm        push   eax;
+		__asm        lea    eax, szCurrentMonth[0];
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        push   eax;
+		__asm        call   MDateLocalized::MonthNameLocalized;
+		__asm        add    esp, 0xC;
+		__asm        push   eax;
+		__asm        call   strcmp;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        jne    _T5d;
+// LINE 269:
+		return i;
+// LINE 270:
+_T5d:
 	}
 // LINE 271:
 _T62:
@@ -1049,26 +1049,26 @@ _T155:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_1b8[0][eax];
 	__asm        jmp    _Switch_174[0][ecx*4];
-// Switch pointers:
-//   _T2f
-//   _T60
-//   _Tc2
-//   _T60
-//   _T91
-//   _Tf3
-//   _T91
-//   _Tf3
-//   _T60
-//   _Tc2
-//   _Tc2
-//   _Tf3
-//   _Tc2
-//   _T60
-//   _Tc2
-//   _T60
-//   _T124
-// Switch table
-//  [0, 0, 0, 1, 2, 2, 3, 3, 4, 4, 5, 6, 7, 16, 16, 8, 8, 8, 16, 9, 16, 10, 10, 11, 11, 16, 16, 16, 16, 16, 16, 16, 16, 12, 12, 13, 14, 14, 15, 15]
+	// Switch pointers:
+	//   _T2f
+	//   _T60
+	//   _Tc2
+	//   _T60
+	//   _T91
+	//   _Tf3
+	//   _T91
+	//   _Tf3
+	//   _T60
+	//   _Tc2
+	//   _Tc2
+	//   _Tf3
+	//   _Tc2
+	//   _T60
+	//   _Tc2
+	//   _T60
+	//   _T124
+	// Switch table
+	//  [0, 0, 0, 1, 2, 2, 3, 3, 4, 4, 5, 6, 7, 16, 16, 8, 8, 8, 16, 9, 16, 10, 10, 11, 11, 16, 16, 16, 16, 16, 16, 16, 16, 12, 12, 13, 14, 14, 15, 15]
 // LINE 403:
 _T1e0:
 	s->ostream::operator<<(buf[0]);

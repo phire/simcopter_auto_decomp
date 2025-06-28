@@ -152,38 +152,38 @@ _Tf8:
 // LINE 188:
 _FOR_14a:
 	for (i = 0x0; (bmp.BmpCount > i); i++) {
-		// LINE 189:
-			bhdr = byteptr;
-		// LINE 198:
-			__asm        mov    eax, bhdr;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, i;
-			__asm        lea    ecx, [ecx+ecx*2];
-			__asm        mov    edx, res;
-			__asm        mov    [edx+ecx*4+0x18], eax;
-		// LINE 199:
-			__asm        mov    eax, bhdr;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, i;
-			__asm        lea    ecx, [ecx+ecx*2];
-			__asm        mov    edx, res;
-			__asm        mov    [edx+ecx*4+0x1C], eax;
-		// LINE 200:
-			__asm        mov    eax, bhdr;
-			__asm        mov    ecx, i;
-			__asm        lea    ecx, [ecx+ecx*2];
-			__asm        mov    edx, res;
-			__asm        mov    [edx+ecx*4+0x20], eax;
-		// LINE 201:
-			__asm        mov    eax, bhdr;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, bhdr;
-			__asm        imul   eax, [ecx];
-			__asm        mov    ecx, bhdr;
-			__asm        mov    ecx, [ecx+4];
-			__asm        lea    eax, [eax+ecx*4];
-			__asm        add    eax, 0xC;
-			__asm        add    byteptr, eax;
+// LINE 189:
+		bhdr = byteptr;
+// LINE 198:
+		__asm        mov    eax, bhdr;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, i;
+		__asm        lea    ecx, [ecx+ecx*2];
+		__asm        mov    edx, res;
+		__asm        mov    [edx+ecx*4+0x18], eax;
+// LINE 199:
+		__asm        mov    eax, bhdr;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, i;
+		__asm        lea    ecx, [ecx+ecx*2];
+		__asm        mov    edx, res;
+		__asm        mov    [edx+ecx*4+0x1C], eax;
+// LINE 200:
+		__asm        mov    eax, bhdr;
+		__asm        mov    ecx, i;
+		__asm        lea    ecx, [ecx+ecx*2];
+		__asm        mov    edx, res;
+		__asm        mov    [edx+ecx*4+0x20], eax;
+// LINE 201:
+		__asm        mov    eax, bhdr;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, bhdr;
+		__asm        imul   eax, [ecx];
+		__asm        mov    ecx, bhdr;
+		__asm        mov    ecx, [ecx+4];
+		__asm        lea    eax, [eax+ecx*4];
+		__asm        add    eax, 0xC;
+		__asm        add    byteptr, eax;
 	}
 // LINE 206:
 _T1b4:
@@ -346,22 +346,22 @@ _T11c:
 // LINE 346:
 _FOR_12e:
 	for (i = 0x0; (i < notiles); i++) {
-		// LINE 348:
-			__asm        mov    eax, mask;
-			__asm        mov    ecx, i;
-			__asm        mov    edx, bhdr;
-			__asm        mov    [edx+ecx*8+0xC], eax;
-		// LINE 349:
-			col = (colmask & i);
-		// LINE 350:
-			row = (i >> reinterpret_cast<uint8_t>(rowshift));
-		// LINE 353:
-			tptr = ((((bhdr->info.width * row) << 0x8) + (bhdr->info.width * col)) + baseptr);
-		// LINE 354:
-			__asm        mov    eax, tptr;
-			__asm        mov    ecx, i;
-			__asm        mov    edx, bhdr;
-			__asm        mov    [edx+ecx*8+0x10], eax;
+// LINE 348:
+		__asm        mov    eax, mask;
+		__asm        mov    ecx, i;
+		__asm        mov    edx, bhdr;
+		__asm        mov    [edx+ecx*8+0xC], eax;
+// LINE 349:
+		col = (colmask & i);
+// LINE 350:
+		row = (i >> reinterpret_cast<uint8_t>(rowshift));
+// LINE 353:
+		tptr = ((((bhdr->info.width * row) << 0x8) + (bhdr->info.width * col)) + baseptr);
+// LINE 354:
+		__asm        mov    eax, tptr;
+		__asm        mov    ecx, i;
+		__asm        mov    edx, bhdr;
+		__asm        mov    [edx+ecx*8+0x10], eax;
 	}
 // LINE 357:
 _T18d:

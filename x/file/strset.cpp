@@ -218,7 +218,7 @@ void StringSet::~StringSet() {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _T39;
 // LINE 59:
-	Memory::HUnlock(this->fStringHandle);
+Memory::HUnlock(this->fStringHandle);
 // LINE 60:
 	this->fResFile->FlatResFile::Release(this->fStringHandle);
 // LINE 62:
@@ -256,13 +256,13 @@ _FOR_62:
 	__asm        jmp    _FOR_COND_62;
 _FOR_NEXT_62:
 	for (; (reinterpret_cast<int16_t>(cnt) > 0x1); cnt--) {
-		// LINE 75:
-			__asm        mov    eax, str;
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, [eax];
-			__asm        inc    ecx;
-			__asm        add    str, ecx;
-			__asm        jmp    _FOR_NEXT_62;
+// LINE 75:
+		__asm        mov    eax, str;
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, [eax];
+		__asm        inc    ecx;
+		__asm        add    str, ecx;
+		__asm        jmp    _FOR_NEXT_62;
 	}
 // LINE 76:
 _T83:

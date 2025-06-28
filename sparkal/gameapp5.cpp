@@ -511,12 +511,12 @@ _T43:
 // LINE 244:
 _FOR_81:
 	for (i = 0x0; (i < 0x1c); i++) {
-		// LINE 245:
-			pBufferCurrentPosition[0] = 0x0;
-		// LINE 246:
-			pBufferCurrentPosition[1] = 0x0;
-		// LINE 247:
-			pBufferCurrentPosition += nSurfaceStride;
+// LINE 245:
+		pBufferCurrentPosition[0] = 0x0;
+// LINE 246:
+		pBufferCurrentPosition[1] = 0x0;
+// LINE 247:
+		pBufferCurrentPosition += nSurfaceStride;
 	}
 // LINE 249:
 _Ta6:
@@ -524,14 +524,14 @@ _Ta6:
 // LINE 250:
 _FOR_c5:
 	for (i = 0x0; (i < 0x1c); i++) {
-		// LINE 251:
-			pBufferCurrentPosition[0] = 0x0;
-		// LINE 252:
-			__asm        mov    eax, nSurfaceStride;
-			__asm        mov    ecx, pBufferCurrentPosition;
-			__asm        mov    byte ptr [eax+ecx], 0;
-		// LINE 253:
-			pBufferCurrentPosition++;
+// LINE 251:
+		pBufferCurrentPosition[0] = 0x0;
+// LINE 252:
+		__asm        mov    eax, nSurfaceStride;
+		__asm        mov    ecx, pBufferCurrentPosition;
+		__asm        mov    byte ptr [eax+ecx], 0;
+// LINE 253:
+		pBufferCurrentPosition++;
 	}
 // LINE 255:
 _Tea:

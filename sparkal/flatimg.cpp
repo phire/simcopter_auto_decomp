@@ -182,52 +182,52 @@ _Tdb:
 // LINE 63:
 __WHILE_10a:
 	while ((YCount < SourceHeight)) {
-		// LINE 66:
-		// Block start:
-			/*bp-0x28*/  long XCount;
-			/*bp-0x2c*/  long XError;
-			pSourceBits = pSourceLeft;
-		// LINE 67:
-			pDestBits = pDestLeft;
-		// LINE 69:
-			XError = -DestWidth;
-		// LINE 70:
-			XCount = 0x0;
-		// LINE 71:
-		__WHILE_131:
-			while ((XCount < SourceWidth)) {
-				// LINE 74:
-					pDestBits[0] = pSourceBits[0];
-					pDestBits++;
-				// LINE 77:
-					XError += SourceWidth;
-				// LINE 78:
-					__asm        js     _T166;
-				// LINE 80:
-					XError -= DestWidth;
-				// LINE 81:
-					pSourceBits++;
-				// LINE 82:
-					XCount++;
-				// LINE 84:
-				_T166:
-			}
-		// LINE 87:
-		_T16b:
-			pDestLeft += DestStride;
-		// LINE 90:
-			YError += SourceHeight;
-		// LINE 91:
-			__asm        js     _T190;
-		// LINE 93:
-			YError -= DestHeight;
-		// LINE 94:
-			pSourceLeft += SourceStride;
-		// LINE 95:
-			YCount++;
-		// LINE 97:
-		// Block end:
-		_T190:
+// LINE 66:
+	// Block start:
+		/*bp-0x28*/  long XCount;
+		/*bp-0x2c*/  long XError;
+		pSourceBits = pSourceLeft;
+// LINE 67:
+		pDestBits = pDestLeft;
+// LINE 69:
+		XError = -DestWidth;
+// LINE 70:
+		XCount = 0x0;
+// LINE 71:
+__WHILE_131:
+		while ((XCount < SourceWidth)) {
+// LINE 74:
+			pDestBits[0] = pSourceBits[0];
+			pDestBits++;
+// LINE 77:
+			XError += SourceWidth;
+// LINE 78:
+			__asm        js     _T166;
+// LINE 80:
+			XError -= DestWidth;
+// LINE 81:
+			pSourceBits++;
+// LINE 82:
+			XCount++;
+// LINE 84:
+_T166:
+		}
+// LINE 87:
+_T16b:
+		pDestLeft += DestStride;
+// LINE 90:
+		YError += SourceHeight;
+// LINE 91:
+		__asm        js     _T190;
+// LINE 93:
+		YError -= DestHeight;
+// LINE 94:
+		pSourceLeft += SourceStride;
+// LINE 95:
+		YCount++;
+// LINE 97:
+	// Block end:
+_T190:
 	}
 // LINE 99:
 _T195:
@@ -1002,7 +1002,7 @@ _T99:
 // LINE 355:
 	this-><CFlatImage+0x04>++;
 // LINE 357:
-	IFlatImage::lTotalLockCount++;
+IFlatImage::lTotalLockCount++;
 // LINE 360:
 _Tb2:
 	return this-><CFlatImage+0x04>;
@@ -1038,7 +1038,7 @@ _T68:
 // LINE 368:
 	this-><CFlatImage+0x04>--;
 // LINE 370:
-	IFlatImage::lTotalLockCount--;
+IFlatImage::lTotalLockCount--;
 // LINE 373:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;

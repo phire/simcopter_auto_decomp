@@ -176,24 +176,24 @@ _T6a:
 // LINE 226:
 _FOR_2fc:
 	for (y = 0x0; (G_ViewSize > y); y++) {
-		// LINE 228:
-		_FOR_31a:
-			for (x = 0x0; (G_ViewSize > x); x++) {
-				// LINE 230:
-					__asm        mov    eax, goff;
-					__asm        mov    ecx, y;
-					__asm        mov    edx, ecx;
-					__asm        lea    ecx, [ecx+ecx*2];
-					__asm        lea    ecx, [ecx+ecx*8];
-					__asm        lea    ecx, [ecx+ecx*8];
-					__asm        add    ecx, edx;
-					__asm        mov    edx, x;
-					__asm        mov    GridCellOffsets[0][ecx+edx*4], eax;
-				// LINE 231:
-					goff += (GridFaceSize + GridFaceSize);
-			}
-		// LINE 233:
-		_T358:
+// LINE 228:
+_FOR_31a:
+		for (x = 0x0; (G_ViewSize > x); x++) {
+// LINE 230:
+			__asm        mov    eax, goff;
+			__asm        mov    ecx, y;
+			__asm        mov    edx, ecx;
+			__asm        lea    ecx, [ecx+ecx*2];
+			__asm        lea    ecx, [ecx+ecx*8];
+			__asm        lea    ecx, [ecx+ecx*8];
+			__asm        add    ecx, edx;
+			__asm        mov    edx, x;
+			__asm        mov    GridCellOffsets[0][ecx+edx*4], eax;
+// LINE 231:
+			goff += (GridFaceSize + GridFaceSize);
+		}
+// LINE 233:
+_T358:
 	}
 // LINE 240:
 _T35d:
@@ -242,23 +242,23 @@ _T35d:
 // LINE 258:
 _FOR_418:
 	for (i = 0x0; (reinterpret_cast<int16_t>(i) < G_VertDim); i++) {
-		// LINE 260:
-			x_val = x_start;
-		// LINE 261:
-		_FOR_43d:
-			for (j = 0x0; (reinterpret_cast<int16_t>(j) < G_VertDim); j++) {
-				// LINE 263:
-					v->x = x_val;
-				// LINE 264:
-					v->z = z_val;
-				// LINE 265:
-					x_val += vert_inc;
-				// LINE 266:
-					v += 0xc;
-			}
-		// LINE 268:
-		_T471:
-			z_val -= vert_inc;
+// LINE 260:
+		x_val = x_start;
+// LINE 261:
+_FOR_43d:
+		for (j = 0x0; (reinterpret_cast<int16_t>(j) < G_VertDim); j++) {
+// LINE 263:
+			v->x = x_val;
+// LINE 264:
+			v->z = z_val;
+// LINE 265:
+			x_val += vert_inc;
+// LINE 266:
+			v += 0xc;
+		}
+// LINE 268:
+_T471:
+		z_val -= vert_inc;
 	}
 // LINE 275:
 _T480:
@@ -266,102 +266,102 @@ _T480:
 // LINE 276:
 _FOR_494:
 	for (y = 0x0; (G_ViewSize > y); y++) {
-		// LINE 278:
-		_FOR_4b2:
-			for (x = 0x0; (G_ViewSize > x); x++) {
-				// LINE 281:
-					ul = ((G_VertDim * y) + x);
-				// LINE 303:
-				_FOR_4de:
-					for (i = 0x0; (reinterpret_cast<int16_t>(i) < 0x2); i++) {
-						// LINE 305:
-							gf = dataptr;
-						// LINE 306:
-							iptr = (dataptr + 0x18);
-						// LINE 308:
-							mapv = (dataptr + 0x24);
-						// LINE 309:
-							dataptr += GridFaceSize;
-						// LINE 311:
-							gf->PlotterId = plotter;
-						// LINE 312:
-							gf->TextureId = 0x0;
-						// LINE 314:
-							__asm        movsx  eax, i;
-							__asm        mov    [ebp-0x44], eax;
-							__asm        jmp    _T61c;
-						// LINE 317:
-						_T52d:
-							iptr[0] = (CVerts[0][0] + ul);
-							iptr += 0x4;
-						// LINE 318:
-							iptr[0] = (CVerts[0][1] + ul);
-							iptr += 0x4;
-						// LINE 319:
-							iptr[0] = (CVerts[1][0] + ul);
-						// LINE 320:
-							mapv->x = 0x8000;
-						// LINE 321:
-							mapv->y = 0x8000;
-						// LINE 322:
-							mapv += 0x8;
-						// LINE 323:
-							mapv->x = 0x1f8000;
-						// LINE 324:
-							mapv->y = 0x8000;
-						// LINE 325:
-							mapv += 0x8;
-						// LINE 326:
-							mapv->x = 0x8000;
-						// LINE 327:
-							mapv->y = 0x1f8000;
-						// LINE 328:
-							__asm        jmp    _T635;
-						// LINE 330:
-						_T5a2:
-							iptr[0] = (CVerts[0][1] + ul);
-							iptr += 0x4;
-						// LINE 331:
-							iptr[0] = (CVerts[1][1] + ul);
-							iptr += 0x4;
-						// LINE 332:
-							iptr[0] = (CVerts[1][0] + ul);
-						// LINE 333:
-							mapv->x = 0x1f8000;
-						// LINE 334:
-							mapv->y = 0x8000;
-						// LINE 335:
-							mapv += 0x8;
-						// LINE 336:
-							mapv->x = 0x1f8000;
-						// LINE 337:
-							mapv->y = 0x1f8000;
-						// LINE 338:
-							mapv += 0x8;
-						// LINE 339:
-							mapv->x = 0x8000;
-						// LINE 340:
-							mapv->y = 0x1f8000;
-						// LINE 341:
-							__asm        jmp    _T635;
-						// LINE 342:
-							__asm        jmp    _T635;
-						_T61c:
-							__asm        cmp    dword ptr [ebp-0x44], 0;
-							__asm        je     _T52d;
+// LINE 278:
+_FOR_4b2:
+		for (x = 0x0; (G_ViewSize > x); x++) {
+// LINE 281:
+			ul = ((G_VertDim * y) + x);
+// LINE 303:
+_FOR_4de:
+			for (i = 0x0; (reinterpret_cast<int16_t>(i) < 0x2); i++) {
+// LINE 305:
+				gf = dataptr;
+// LINE 306:
+				iptr = (dataptr + 0x18);
+// LINE 308:
+				mapv = (dataptr + 0x24);
+// LINE 309:
+				dataptr += GridFaceSize;
+// LINE 311:
+				gf->PlotterId = plotter;
+// LINE 312:
+				gf->TextureId = 0x0;
+// LINE 314:
+				__asm        movsx  eax, i;
+				__asm        mov    [ebp-0x44], eax;
+				__asm        jmp    _T61c;
+// LINE 317:
+_T52d:
+				iptr[0] = (CVerts[0][0] + ul);
+				iptr += 0x4;
+// LINE 318:
+				iptr[0] = (CVerts[0][1] + ul);
+				iptr += 0x4;
+// LINE 319:
+				iptr[0] = (CVerts[1][0] + ul);
+// LINE 320:
+				mapv->x = 0x8000;
+// LINE 321:
+				mapv->y = 0x8000;
+// LINE 322:
+				mapv += 0x8;
+// LINE 323:
+				mapv->x = 0x1f8000;
+// LINE 324:
+				mapv->y = 0x8000;
+// LINE 325:
+				mapv += 0x8;
+// LINE 326:
+				mapv->x = 0x8000;
+// LINE 327:
+				mapv->y = 0x1f8000;
+// LINE 328:
+				__asm        jmp    _T635;
+// LINE 330:
+_T5a2:
+				iptr[0] = (CVerts[0][1] + ul);
+				iptr += 0x4;
+// LINE 331:
+				iptr[0] = (CVerts[1][1] + ul);
+				iptr += 0x4;
+// LINE 332:
+				iptr[0] = (CVerts[1][0] + ul);
+// LINE 333:
+				mapv->x = 0x1f8000;
+// LINE 334:
+				mapv->y = 0x8000;
+// LINE 335:
+				mapv += 0x8;
+// LINE 336:
+				mapv->x = 0x1f8000;
+// LINE 337:
+				mapv->y = 0x1f8000;
+// LINE 338:
+				mapv += 0x8;
+// LINE 339:
+				mapv->x = 0x8000;
+// LINE 340:
+				mapv->y = 0x1f8000;
+// LINE 341:
+				__asm        jmp    _T635;
+// LINE 342:
+				__asm        jmp    _T635;
+_T61c:
+				__asm        cmp    dword ptr [ebp-0x44], 0;
+				__asm        je     _T52d;
 
-							__asm        cmp    dword ptr [ebp-0x44], 1;
-							__asm        je     _T5a2;
+				__asm        cmp    dword ptr [ebp-0x44], 1;
+				__asm        je     _T5a2;
 
-							__asm        jmp    _T635;
-						// LINE 343:
-						_T635:
-					}
-				// LINE 344:
-				_T63a:
+				__asm        jmp    _T635;
+// LINE 343:
+_T635:
 			}
-		// LINE 345:
-		_T63f:
+// LINE 344:
+_T63a:
+		}
+// LINE 345:
+_T63f:
 	}
 // LINE 350:
 _T644:

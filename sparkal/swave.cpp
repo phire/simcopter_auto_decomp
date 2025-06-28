@@ -346,48 +346,48 @@ _T48:
 // LINE 208:
 _FOR_61:
 	for (cT = 0x0; (cT < cbRead); cT++) {
-		// LINE 210:
-			__asm        mov    eax, mmioinfoIn.pchEndRead;
-			__asm        cmp    mmioinfoIn.pchNext, eax;
-			__asm        jne    _Tc0;
-		// LINE 211:
-			__asm        push   0;
-			__asm        lea    eax, mmioinfoIn.dwFlags;
-			__asm        push   eax;
-			__asm        mov    eax, hmmioIn;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C38EC];
-			__asm        mov    nError, eax;
-			__asm        cmp    nError, 0;
-			__asm        je     _Ta3;
-		// LINE 212:
-			__asm        jmp    _T13b;
+// LINE 210:
+		__asm        mov    eax, mmioinfoIn.pchEndRead;
+		__asm        cmp    mmioinfoIn.pchNext, eax;
+		__asm        jne    _Tc0;
+// LINE 211:
+		__asm        push   0;
+		__asm        lea    eax, mmioinfoIn.dwFlags;
+		__asm        push   eax;
+		__asm        mov    eax, hmmioIn;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C38EC];
+		__asm        mov    nError, eax;
+		__asm        cmp    nError, 0;
+		__asm        je     _Ta3;
+// LINE 212:
+		__asm        jmp    _T13b;
 
-			__asm        jmp    ERROR_CANNOT_READ;
-		// LINE 214:
-		_Ta3:
-			__asm        mov    eax, mmioinfoIn.pchEndRead;
-			__asm        cmp    mmioinfoIn.pchNext, eax;
-			__asm        jne    _Tc0;
-		// LINE 215:
-			nError = 0xe103;
-		// LINE 216:
-			__asm        jmp    _T136;
+		__asm        jmp    ERROR_CANNOT_READ;
+// LINE 214:
+_Ta3:
+		__asm        mov    eax, mmioinfoIn.pchEndRead;
+		__asm        cmp    mmioinfoIn.pchNext, eax;
+		__asm        jne    _Tc0;
+// LINE 215:
+		nError = 0xe103;
+// LINE 216:
+		__asm        jmp    _T136;
 
-			__asm        jmp    ERROR_CANNOT_READ;
-		// LINE 222:
-		_Tc0:
-			__asm        mov    eax, mmioinfoIn.pchNext;
-			__asm        mov    al, [eax];
-			__asm        mov    ecx, cT;
-			__asm        mov    edx, pbDest;
-			__asm        mov    [ecx+edx], al;
-		// LINE 223:
-			tempBYTEPointerToFoolCrappyMicrosoftCompiler = mmioinfoIn.pchNext;
-		// LINE 224:
-			tempBYTEPointerToFoolCrappyMicrosoftCompiler++;
-		// LINE 225:
-			mmioinfoIn.pchNext = tempBYTEPointerToFoolCrappyMicrosoftCompiler;
+		__asm        jmp    ERROR_CANNOT_READ;
+// LINE 222:
+_Tc0:
+		__asm        mov    eax, mmioinfoIn.pchNext;
+		__asm        mov    al, [eax];
+		__asm        mov    ecx, cT;
+		__asm        mov    edx, pbDest;
+		__asm        mov    [ecx+edx], al;
+// LINE 223:
+		tempBYTEPointerToFoolCrappyMicrosoftCompiler = mmioinfoIn.pchNext;
+// LINE 224:
+		tempBYTEPointerToFoolCrappyMicrosoftCompiler++;
+// LINE 225:
+		mmioinfoIn.pchNext = tempBYTEPointerToFoolCrappyMicrosoftCompiler;
 	}
 // LINE 228:
 _Te2:

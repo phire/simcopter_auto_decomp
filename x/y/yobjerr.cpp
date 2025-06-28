@@ -1080,14 +1080,14 @@ _Tb3:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_e6[0][eax];
 	__asm        jmp    _Switch_d2[0][ecx*4];
-// Switch pointers:
-//   _T18
-//   _T36
-//   _T54
-//   _T72
-//   _T90
-// Switch table
-//  [0, 4, 1, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
+	// Switch pointers:
+	//   _T18
+	//   _T36
+	//   _T54
+	//   _T72
+	//   _T90
+	// Switch table
+	//  [0, 4, 1, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
 // LINE 69:
 _Tff:
 	return;

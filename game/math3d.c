@@ -679,13 +679,13 @@ int32_t AngleBounds(int32_t a) {
 __WHILE_06:
 	while ((a < 0x0)) {
 
-			a += 0xe100000;
+		a += 0xe100000;
 	}
 // LINE 360:
 __WHILE_1c:
 	while ((a > 0xe100000)) {
 
-			a -= 0xe100000;
+		a -= 0xe100000;
 	}
 // LINE 361:
 _T35:

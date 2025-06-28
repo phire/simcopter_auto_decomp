@@ -713,10 +713,10 @@ _Tb1:
 // LINE 234:
 _FOR_f4:
 	for (Counter = 0x0; (Start > Counter); Counter++) {
-		// LINE 235:
-			__asm        mov    eax, Counter;
-			__asm        mov    byte ptr [ebp+eax*4-0x415], 0;
-			__asm        jmp    _FOR_NEXT_f4;
+// LINE 235:
+		__asm        mov    eax, Counter;
+		__asm        mov    byte ptr [ebp+eax*4-0x415], 0;
+		__asm        jmp    _FOR_NEXT_f4;
 	}
 // LINE 238:
 _T113:
@@ -725,27 +725,27 @@ _T113:
 // LINE 239:
 _FOR_122:
 	for (; (Counter < End); Counter++) {
-		// LINE 240:
-			__asm        mov    eax, Counter;
-			__asm        mov    ecx, pColors;
-			__asm        mov    al, [ecx+eax*4];
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x416], al;
-		// LINE 241:
-			__asm        mov    eax, Counter;
-			__asm        mov    ecx, pColors;
-			__asm        mov    al, [ecx+eax*4+1];
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x417], al;
-		// LINE 242:
-			__asm        mov    eax, Counter;
-			__asm        mov    ecx, pColors;
-			__asm        mov    al, [ecx+eax*4+2];
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x418], al;
-		// LINE 243:
-			__asm        mov    eax, Counter;
-			__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
+// LINE 240:
+		__asm        mov    eax, Counter;
+		__asm        mov    ecx, pColors;
+		__asm        mov    al, [ecx+eax*4];
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x416], al;
+// LINE 241:
+		__asm        mov    eax, Counter;
+		__asm        mov    ecx, pColors;
+		__asm        mov    al, [ecx+eax*4+1];
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x417], al;
+// LINE 242:
+		__asm        mov    eax, Counter;
+		__asm        mov    ecx, pColors;
+		__asm        mov    al, [ecx+eax*4+2];
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x418], al;
+// LINE 243:
+		__asm        mov    eax, Counter;
+		__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
 	}
 // LINE 246:
 _T17c:
@@ -753,29 +753,29 @@ _T17c:
 // LINE 247:
 _FOR_186:
 	for (; (Counter < End); Counter++) {
-		// LINE 248:
-			__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x416], al;
-		// LINE 249:
-			__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x417], al;
-		// LINE 250:
-			__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x418], al;
-		// LINE 251:
-			__asm        mov    eax, Counter;
-			__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
+// LINE 248:
+		__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x416], al;
+// LINE 249:
+		__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x417], al;
+// LINE 250:
+		__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x418], al;
+// LINE 251:
+		__asm        mov    eax, Counter;
+		__asm        mov    byte ptr [ebp+eax*4-0x415], 5;
 	}
 // LINE 256:
 _FOR_1d1:
 	for (; (Counter < 0x100); Counter++) {
-		// LINE 257:
-			__asm        mov    eax, Counter;
-			__asm        mov    byte ptr [ebp+eax*4-0x415], 0;
-			__asm        jmp    _FOR_NEXT_1d1;
+// LINE 257:
+		__asm        mov    eax, Counter;
+		__asm        mov    byte ptr [ebp+eax*4-0x415], 0;
+		__asm        jmp    _FOR_NEXT_1d1;
 	}
 // LINE 260:
 _T1f1:
@@ -1555,13 +1555,13 @@ _T345:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_36d[0][eax*4];
-// Switch pointers:
-//   _T54
-//   _T63
-//   _T459
-//   _T63
-//   _T459
-//   _Tfd
+	// Switch pointers:
+	//   _T54
+	//   _T63
+	//   _T459
+	//   _T63
+	//   _T459
+	//   _Tfd
 _T385:
 	__asm        cmp    dword ptr [ebp-8], 0x20;
 	__asm        ja     _T3a4;
@@ -1594,12 +1594,12 @@ _T3c6:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_3f4[0][eax*4];
-// Switch pointers:
-//   _T15f
-//   _T127
-//   _T459
-//   _T17b
-//   _T1b7
+	// Switch pointers:
+	//   _T15f
+	//   _T127
+	//   _T459
+	//   _T17b
+	//   _T1b7
 _T408:
 	__asm        cmp    dword ptr [ebp-8], 0x30F;
 	__asm        ja     _T447;

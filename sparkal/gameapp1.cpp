@@ -2867,14 +2867,14 @@ unsigned long CGameApp::Initialize() {
 // LINE 389:
 	G_mapmode = 0x0;
 // LINE 390:
-	GraphicWindow::colorConstants.nPaletteIndexTransparent = 0xfe;
+GraphicWindow::colorConstants.nPaletteIndexTransparent = 0xfe;
 // LINE 392:
 _FOR_32:
 	for (i = 0x0; (i < 0x6); i++) {
-		// LINE 393:
-			__asm        mov    eax, i;
-			__asm        mov    G_CheatCodes[eax*4], 0;
-			__asm        jmp    _FOR_NEXT_32;
+// LINE 393:
+		__asm        mov    eax, i;
+		__asm        mov    G_CheatCodes[eax*4], 0;
+		__asm        jmp    _FOR_NEXT_32;
 	}
 // LINE 396:
 _T52:
@@ -2895,15 +2895,15 @@ _T52:
 _FOR_8d:
 	for (; (i >= 0x0); i--) {
 
-			__asm        mov    eax, i;
-			__asm        mov    ecx, gszAppDirectory;
-			__asm        movsx  eax, byte ptr [eax+ecx];
-			__asm        cmp    eax, 0x5C;
-			__asm        je     _Tc2;
-		// LINE 401:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, gszAppDirectory;
-			__asm        mov    byte ptr [eax+ecx], 0;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, gszAppDirectory;
+		__asm        movsx  eax, byte ptr [eax+ecx];
+		__asm        cmp    eax, 0x5C;
+		__asm        je     _Tc2;
+// LINE 401:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, gszAppDirectory;
+		__asm        mov    byte ptr [eax+ecx], 0;
 	}
 // LINE 407:
 _Tc2:
@@ -3297,7 +3297,7 @@ _T1c1:
 	__asm        test   eax, eax;
 	__asm        je     _T228;
 // LINE 546:
-	LanguageManager::ConvertNameToID(szCommandValue[0], nLanguage);
+LanguageManager::ConvertNameToID(szCommandValue[0], nLanguage);
 // LINE 547:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
@@ -3543,7 +3543,7 @@ _T212:
 // FUNCTION: COPTER_D 0x0048a15d
 int32_t CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 // LINE 651:
-	LanguageManager::SetDefaultLanguage(nLanguageID);
+LanguageManager::SetDefaultLanguage(nLanguageID);
 // LINE 653:
 	return 0x1;
 // LINE 654:
@@ -3722,46 +3722,46 @@ _T52:
 	__asm        mov    [ebp-0xB0], eax;
 _LOOP_64:
 	for (;;) {
-		_LOOP_64:
-			__asm        mov    eax, [ebp-0xAC];
-			__asm        cmp    [ebp-0xB0], eax;
-			__asm        jne    _T80;
+_LOOP_64:
+		__asm        mov    eax, [ebp-0xAC];
+		__asm        cmp    [ebp-0xB0], eax;
+		__asm        jne    _T80;
 
-			__asm        jmp    _T97;
+		__asm        jmp    _T97;
 
-			__asm        jmp    _T80;
-		_T80:
-			__asm        jmp    _T92;
+		__asm        jmp    _T80;
+_T80:
+		__asm        jmp    _T92;
 
-			__asm        cmp    dword ptr [ebp-0xA4], 0;
-			__asm        jne    _T97;
-		_T92:
-			__asm        jmp    _T9c;
-		_T97:
-			__asm        jmp    _Tfb;
-		_T9c:
-			__asm        jmp    _Tae;
+		__asm        cmp    dword ptr [ebp-0xA4], 0;
+		__asm        jne    _T97;
+_T92:
+		__asm        jmp    _T9c;
+_T97:
+		__asm        jmp    _Tfb;
+_T9c:
+		__asm        jmp    _Tae;
 
-			__asm        cmp    dword ptr [ebp-0xA8], 0;
-			__asm        je     _Tfb;
-		_Tae:
-			__asm        mov    eax, [ebp-0xB0];
-			__asm        mov    [ebp-0xA0], eax;
-			__asm        mov    eax, [ebp-0xB0];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0xB0], eax;
-			__asm        jmp    _Tcd;
-		_Tcd:
-			__asm        mov    eax, [ebp-0xA0];
-			__asm        mov    [ebp-0x9C], eax;
-			__asm        jmp    _Tde;
-		_Tde:
-			__asm        mov    eax, [ebp-0x9C];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        add    ecx, 0x3794;
-			__asm        call   list<Shortcut>::erase;
-			__asm        jmp    _LOOP_64;
+		__asm        cmp    dword ptr [ebp-0xA8], 0;
+		__asm        je     _Tfb;
+_Tae:
+		__asm        mov    eax, [ebp-0xB0];
+		__asm        mov    [ebp-0xA0], eax;
+		__asm        mov    eax, [ebp-0xB0];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0xB0], eax;
+		__asm        jmp    _Tcd;
+_Tcd:
+		__asm        mov    eax, [ebp-0xA0];
+		__asm        mov    [ebp-0x9C], eax;
+		__asm        jmp    _Tde;
+_Tde:
+		__asm        mov    eax, [ebp-0x9C];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        add    ecx, 0x3794;
+		__asm        call   list<Shortcut>::erase;
+		__asm        jmp    _LOOP_64;
 	}
 _Tfb:
 	__asm        jmp    _T100;
@@ -4153,38 +4153,38 @@ _T8b:
 // LINE 829:
 _FOR_9a:
 	for (i = 0x0; (iEnd > i); i++) {
-		// LINE 830:
-			__asm        mov    eax, i;
-			__asm        add    eax, 0xEEEEEE;
-			__asm        push   eax;
-			__asm        mov    eax, gPreferenceManager;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, gPreferenceManager;
-			__asm        call   dword ptr [eax+0x1C];
-			__asm        mov    chLastJoystickName, eax;
-		// LINE 831:
-			__asm        cmp    chLastJoystickName, 0;
-			__asm        jne    _Td4;
-		// LINE 832:
-			__asm        jmp    _FOR_NEXT_9a;
-		// LINE 833:
-		_Td4:
-			chCurrentJoystickName[0] = 0x0;
-		// LINE 834:
-			0x604c78->JoystickManager::GetJoystickName(i, chCurrentJoystickName[0]);
-		// LINE 835:
-			__asm        mov    eax, chLastJoystickName;
-			__asm        push   eax;
-			__asm        lea    eax, chCurrentJoystickName[0];
-			__asm        push   eax;
-			__asm        call   strcmp;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        je     _T10c;
-		// LINE 836:
-			return 0x1;
-		// LINE 837:
-		_T10c:
+// LINE 830:
+		__asm        mov    eax, i;
+		__asm        add    eax, 0xEEEEEE;
+		__asm        push   eax;
+		__asm        mov    eax, gPreferenceManager;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, gPreferenceManager;
+		__asm        call   dword ptr [eax+0x1C];
+		__asm        mov    chLastJoystickName, eax;
+// LINE 831:
+		__asm        cmp    chLastJoystickName, 0;
+		__asm        jne    _Td4;
+// LINE 832:
+		__asm        jmp    _FOR_NEXT_9a;
+// LINE 833:
+_Td4:
+		chCurrentJoystickName[0] = 0x0;
+// LINE 834:
+		0x604c78->JoystickManager::GetJoystickName(i, chCurrentJoystickName[0]);
+// LINE 835:
+		__asm        mov    eax, chLastJoystickName;
+		__asm        push   eax;
+		__asm        lea    eax, chCurrentJoystickName[0];
+		__asm        push   eax;
+		__asm        call   strcmp;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        je     _T10c;
+// LINE 836:
+		return 0x1;
+// LINE 837:
+_T10c:
 	}
 // LINE 838:
 _T111:

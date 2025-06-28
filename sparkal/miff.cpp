@@ -983,23 +983,23 @@ _T8b:
 // LINE 365:
 _LOOP_96:
 	for (;;) {
-		// LINE 365:
-		_LOOP_96:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x48];
-			__asm        test   eax, eax;
-			__asm        jne    _Tb3;
-		// LINE 366:
-			__asm        jmp    _Tbb;
-		// LINE 367:
-			__asm        jmp    _Tb6;
-		// LINE 368:
-		_Tb3:
-			lCount++;
-		// LINE 369:
-		_Tb6:
+// LINE 365:
+_LOOP_96:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x48];
+		__asm        test   eax, eax;
+		__asm        jne    _Tb3;
+// LINE 366:
+		__asm        jmp    _Tbb;
+// LINE 367:
+		__asm        jmp    _Tb6;
+// LINE 368:
+_Tb3:
+		lCount++;
+// LINE 369:
+_Tb6:
 	}
 // LINE 370:
 _Tbb:
@@ -1293,12 +1293,12 @@ long MIFF::GoToNthRecord(long lRecordToGoTo) {
 // LINE 541:
 _FOR_23:
 	for (lTempPresentRecord = 0x0; (lTempPresentRecord < lRecordToGoTo); lTempPresentRecord++) {
-		// LINE 542:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x48];
-			__asm        jmp    _FOR_NEXT_23;
+// LINE 542:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x48];
+		__asm        jmp    _FOR_NEXT_23;
 	}
 // LINE 543:
 _T42:

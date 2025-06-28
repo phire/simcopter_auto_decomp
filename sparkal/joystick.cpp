@@ -174,14 +174,14 @@ void JoystickManager::JoystickManager() {
 // LINE 33:
 _FOR_40:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 34:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, this;
-			__asm        mov    byte ptr [eax+ecx+4], 0;
-		// LINE 35:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, this;
-			__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
+// LINE 34:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    byte ptr [eax+ecx+4], 0;
+// LINE 35:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
 	}
 // LINE 38:
 _T6b:
@@ -204,14 +204,14 @@ int32_t JoystickManager::Initialize() {
 // LINE 61:
 _FOR_2a:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 62:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, this;
-			__asm        mov    byte ptr [eax+ecx+4], 0;
-		// LINE 63:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, this;
-			__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
+// LINE 62:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    byte ptr [eax+ecx+4], 0;
+// LINE 63:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
 	}
 // LINE 66:
 _T55:
@@ -225,46 +225,46 @@ _T55:
 // LINE 70:
 _FOR_7b:
 	for (i = 0x0; (nMaxJoysticks > i); i++) {
-		// LINE 71:
-			__asm        lea    eax, joyInfo.wXpos;
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C38E0];
-			__asm        mov    mmResult, eax;
-		// LINE 72:
-			__asm        cmp    mmResult, 0;
-			__asm        jne    _Tee;
-		// LINE 73:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx];
-			__asm        mov    edx, this;
-			__asm        mov    [edx+ecx*4+0x14], eax;
-		// LINE 74:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        mov    byte ptr [eax+ecx+4], 1;
-		// LINE 75:
-			__asm        push   0x194;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        sub    eax, ecx;
-			__asm        add    eax, this;
-			__asm        add    eax, 0x64;
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C38E4];
-		// LINE 76:
-			this->nJoystickCount++;
-		// LINE 78:
-		_Tee:
+// LINE 71:
+		__asm        lea    eax, joyInfo.wXpos;
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C38E0];
+		__asm        mov    mmResult, eax;
+// LINE 72:
+		__asm        cmp    mmResult, 0;
+		__asm        jne    _Tee;
+// LINE 73:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx];
+		__asm        mov    edx, this;
+		__asm        mov    [edx+ecx*4+0x14], eax;
+// LINE 74:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        mov    byte ptr [eax+ecx+4], 1;
+// LINE 75:
+		__asm        push   0x194;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        sub    eax, ecx;
+		__asm        add    eax, this;
+		__asm        add    eax, 0x64;
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C38E4];
+// LINE 76:
+		this->nJoystickCount++;
+// LINE 78:
+_Tee:
 	}
 // LINE 82:
 _Tf3:
@@ -279,26 +279,26 @@ int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
 // LINE 93:
 _FOR_18:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 95:
-			__asm        mov    eax, szJoystickName;
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        sub    eax, ecx;
-			__asm        add    eax, this;
-			__asm        add    eax, 0x68;
-			__asm        push   eax;
-			__asm        call   strcmp;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        jne    _T5a;
-		// LINE 96:
-			return 0x1;
-		// LINE 98:
-		_T5a:
+// LINE 95:
+		__asm        mov    eax, szJoystickName;
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        sub    eax, ecx;
+		__asm        add    eax, this;
+		__asm        add    eax, 0x68;
+		__asm        push   eax;
+		__asm        call   strcmp;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        jne    _T5a;
+// LINE 96:
+		return 0x1;
+// LINE 98:
+_T5a:
 	}
 // LINE 99:
 _T5f:
@@ -349,28 +349,28 @@ int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoys
 // LINE 127:
 _FOR_18:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 129:
-			__asm        mov    eax, szJoystickName;
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        sub    eax, ecx;
-			__asm        add    eax, this;
-			__asm        add    eax, 0x68;
-			__asm        push   eax;
-			__asm        call   strcmp;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        jne    _T62;
-		// LINE 130:
-			nJoystick[0] = i;
-		// LINE 131:
-			return 0x1;
-		// LINE 134:
-		_T62:
+// LINE 129:
+		__asm        mov    eax, szJoystickName;
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        sub    eax, ecx;
+		__asm        add    eax, this;
+		__asm        add    eax, 0x68;
+		__asm        push   eax;
+		__asm        call   strcmp;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        jne    _T62;
+// LINE 130:
+		nJoystick[0] = i;
+// LINE 131:
+		return 0x1;
+// LINE 134:
+_T62:
 	}
 // LINE 135:
 _T67:
@@ -521,13 +521,13 @@ _Te0:
 
 	__asm        mov    eax, [ebp-0x50];
 	__asm        jmp    _Switch_f4[0][eax*4];
-// Switch pointers:
-//   _T56
-//   _T6b
-//   _T80
-//   _T95
-//   _Taa
-//   _Tbf
+	// Switch pointers:
+	//   _T56
+	//   _T6b
+	//   _T80
+	//   _T95
+	//   _Taa
+	//   _Tbf
 // LINE 263:
 _T10c:
 	__asm        cmp    bUseCache, 0;

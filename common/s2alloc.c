@@ -143,14 +143,14 @@ int32_t S2AllocPool(unsigned long poolsize) {
 // LINE 299:
 _FOR_2c:
 	for (index = 0x0; (index < 0x20); index++) {
-		// LINE 301:
-			__asm        mov    eax, index;
-			__asm        cmp    root[0][eax*4], 0;
-			__asm        jne    _T4f;
-		// LINE 302:
-			__asm        jmp    _T54;
-		// LINE 303:
-		_T4f:
+// LINE 301:
+		__asm        mov    eax, index;
+		__asm        cmp    root[0][eax*4], 0;
+		__asm        jne    _T4f;
+// LINE 302:
+		__asm        jmp    _T54;
+// LINE 303:
+_T4f:
 	}
 // LINE 305:
 _T54:
@@ -305,10 +305,10 @@ _T1f:
 // LINE 463:
 __WHILE_2e:
 	while ((hdr != 0x0)) {
-		// LINE 465:
-			G_alloc_used -= (hdr->free - hdr->block);
-		// LINE 466:
-			hdr = hdr->next;
+// LINE 465:
+		G_alloc_used -= (hdr->free - hdr->block);
+// LINE 466:
+		hdr = hdr->next;
 	}
 // LINE 469:
 _T5d:
@@ -350,22 +350,22 @@ _T1f:
 // LINE 498:
 __WHILE_2e:
 	while ((hdr != 0x0)) {
-		// LINE 500:
-			next_hdr = hdr->next;
-		// LINE 501:
-			G_alloc_curr -= (hdr->end - hdr->block);
-		// LINE 502:
-			G_alloc_free += (hdr->end - hdr->block);
-		// LINE 503:
-			G_alloc_curr -= 0x10;
-		// LINE 504:
-			G_alloc_free += 0x10;
-		// LINE 505:
-			free(hdr->block);
-		// LINE 506:
-			free(hdr);
-		// LINE 507:
-			hdr = next_hdr;
+// LINE 500:
+		next_hdr = hdr->next;
+// LINE 501:
+		G_alloc_curr -= (hdr->end - hdr->block);
+// LINE 502:
+		G_alloc_free += (hdr->end - hdr->block);
+// LINE 503:
+		G_alloc_curr -= 0x10;
+// LINE 504:
+		G_alloc_free += 0x10;
+// LINE 505:
+		free(hdr->block);
+// LINE 506:
+		free(hdr);
+// LINE 507:
+		hdr = next_hdr;
 	}
 // LINE 509:
 _T9e:

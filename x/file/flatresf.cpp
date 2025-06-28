@@ -420,7 +420,7 @@ _T288:
 	__asm        jmp    error;
 // LINE 141:
 _T2af:
-	Memory::HUnlock(newMap->);
+Memory::HUnlock(newMap->);
 // LINE 143:
 // Block end:
 	this->fError = 0x0;
@@ -432,7 +432,7 @@ error:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T2f2;
 // LINE 149:
-	Memory::HFree(newMap->);
+Memory::HFree(newMap->);
 // LINE 150:
 	newMap-> = 0x0;
 // LINE 152:
@@ -1322,7 +1322,7 @@ _FOR_COND_67:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _Ta5;
 // LINE 693:
-	ResMap::SwapTypeHead(typeList);
+ResMap::SwapTypeHead(typeList);
 // LINE 694:
 	__asm        mov    eax, typeList;
 	__asm        movsx  eax, word ptr [eax+4];
@@ -1350,7 +1350,7 @@ _FOR_COND_cb:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _Tfe;
 // LINE 703:
-	ResMap::SwapResEntry(resList);
+ResMap::SwapResEntry(resList);
 // LINE 704:
 	__asm        mov    eax, resList;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -1378,47 +1378,47 @@ void ResMap::~ResMap() {
 // LINE 732:
 __WHILE_2a:
 	while ((last > srch)) {
-		// LINE 734:
-			__asm        mov    eax, srch;
-			__asm        cmp    dword ptr [eax+8], 0;
-			__asm        je     _T8a;
-		// LINE 736:
-			__asm        mov    eax, srch;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   Memory::HGetState;
-			__asm        add    esp, 4;
-			__asm        mov    hState, al;
-		// LINE 737:
-			__asm        xor    eax, eax;
-			__asm        mov    al, hState;
-			__asm        test   al, 0x80;
-			__asm        je     _T71;
-		// LINE 738:
-			__asm        mov    eax, srch;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   Memory::HUnlock;
-			__asm        add    esp, 4;
-		// LINE 739:
-		_T71:
-			__asm        mov    eax, srch;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   Memory::HFree;
-			__asm        add    esp, 4;
-		// LINE 740:
-			__asm        mov    eax, srch;
-			__asm        mov    dword ptr [eax+8], 0;
-		// LINE 742:
-		_T8a:
-			srch += 0xc;
+// LINE 734:
+		__asm        mov    eax, srch;
+		__asm        cmp    dword ptr [eax+8], 0;
+		__asm        je     _T8a;
+// LINE 736:
+		__asm        mov    eax, srch;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        call   Memory::HGetState;
+		__asm        add    esp, 4;
+		__asm        mov    hState, al;
+// LINE 737:
+		__asm        xor    eax, eax;
+		__asm        mov    al, hState;
+		__asm        test   al, 0x80;
+		__asm        je     _T71;
+// LINE 738:
+		__asm        mov    eax, srch;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        call   Memory::HUnlock;
+		__asm        add    esp, 4;
+// LINE 739:
+_T71:
+		__asm        mov    eax, srch;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        call   Memory::HFree;
+		__asm        add    esp, 4;
+// LINE 740:
+		__asm        mov    eax, srch;
+		__asm        mov    dword ptr [eax+8], 0;
+// LINE 742:
+_T8a:
+		srch += 0xc;
 	}
 // LINE 745:
 _T93:
-	Memory::HUnlock(this-><ResMap+0x08:4>);
+Memory::HUnlock(this-><ResMap+0x08:4>);
 // LINE 746:
-	Memory::HFree(this-><ResMap+0x08:4>);
+Memory::HFree(this-><ResMap+0x08:4>);
 // LINE 747:
 	return;
 }
@@ -1435,22 +1435,22 @@ long ResMap::Get(/*unpacked*/ class FlatResFile *fromFile) {
 // LINE 755:
 _FOR_2b:
 	for (srch = ResMap::sMaps; (srch != 0x0); srch = srch-><ResMap+0x00:4>) {
-		// LINE 756:
-			__asm        jmp    _T42;
-		_T42:
-			__asm        mov    eax, srch;
-			__asm        movsx  eax, word ptr [eax+4];
-			__asm        mov    ecx, fromFile;
-			__asm        cmp    eax, [ecx+0x108];
-			__asm        jne    _T71;
-		// LINE 758:
-			srch-><ResMap+0x1c:4>++;
-		// LINE 759:
-			fromFile->fMap = srch;
-		// LINE 760:
-			return 0x0;
-		// LINE 763:
-		_T71:
+// LINE 756:
+		__asm        jmp    _T42;
+_T42:
+		__asm        mov    eax, srch;
+		__asm        movsx  eax, word ptr [eax+4];
+		__asm        mov    ecx, fromFile;
+		__asm        cmp    eax, [ecx+0x108];
+		__asm        jne    _T71;
+// LINE 758:
+		srch-><ResMap+0x1c:4>++;
+// LINE 759:
+		fromFile->fMap = srch;
+// LINE 760:
+		return 0x0;
+// LINE 763:
+_T71:
 	}
 // LINE 768:
 _T76:
@@ -1506,7 +1506,7 @@ _T119:
 // LINE 776:
 	srch-><ResMap+0x00:4> = ResMap::sMaps;
 // LINE 777:
-	ResMap::sMaps = srch;
+ResMap::sMaps = srch;
 // LINE 778:
 	return 0x0;
 // LINE 779:
@@ -1541,20 +1541,20 @@ _T35:
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jne    _Tc0;
 // LINE 791:
-// Block start:
-	/*bp-0x4*/   /*unpacked*/ class ResMap **rmv;
+	// Block start:
+		/*bp-0x4*/   /*unpacked*/ class ResMap **rmv;
 _FOR_54:
 	for (rmv = 0x5bbedc; (rmv-> != 0x0); rmv = rmv->) {
-		// LINE 792:
-			__asm        mov    eax, rmv;
-			__asm        mov    ecx, this;
-			__asm        cmp    [eax], ecx;
-			__asm        jne    _T87;
+// LINE 792:
+		__asm        mov    eax, rmv;
+		__asm        mov    ecx, this;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T87;
 
-			rmv-> = rmv->-><ResMap+0x00:4>;
-			__asm        jmp    _T8c;
-		// LINE 794:
-		_T87:
+		rmv-> = rmv->-><ResMap+0x00:4>;
+		__asm        jmp    _T8c;
+// LINE 794:
+_T87:
 	}
 _T8c:
 	__asm        mov    eax, this;
@@ -1589,8 +1589,8 @@ short ResMap::CheckForLeaks() {
 // LINE 804:
 _FOR_1c:
 	for (srch = ResMap::sMaps; (srch != 0x0); srch = srch-><ResMap+0x00:4>) {
-		// LINE 805:
-			total++;
+// LINE 805:
+		total++;
 	}
 // LINE 806:
 _T37:
@@ -1996,17 +1996,17 @@ struct ResMap::Entry * ResMap::FindEntry(void * __ptr32 res) {
 // LINE 938:
 __WHILE_31:
 	while ((last > srch)) {
-		// LINE 940:
-			__asm        mov    eax, srch;
-			__asm        mov    ecx, res;
-			__asm        cmp    [eax+8], ecx;
-			__asm        jne    _T57;
+// LINE 940:
+		__asm        mov    eax, srch;
+		__asm        mov    ecx, res;
+		__asm        cmp    [eax+8], ecx;
+		__asm        jne    _T57;
 
-			found = srch;
-			__asm        jmp    _T60;
-		// LINE 941:
-		_T57:
-			srch += 0xc;
+		found = srch;
+		__asm        jmp    _T60;
+// LINE 941:
+_T57:
+		srch += 0xc;
 	}
 // LINE 943:
 _T60:

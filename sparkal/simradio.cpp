@@ -3513,46 +3513,46 @@ _T19a:
 	__asm        mov    [ebp-0x8C], eax;
 _LOOP_1ac:
 	for (;;) {
-		_LOOP_1ac:
-			__asm        mov    eax, [ebp-0x88];
-			__asm        cmp    [ebp-0x8C], eax;
-			__asm        jne    _T1c8;
+_LOOP_1ac:
+		__asm        mov    eax, [ebp-0x88];
+		__asm        cmp    [ebp-0x8C], eax;
+		__asm        jne    _T1c8;
 
-			__asm        jmp    _T1dc;
+		__asm        jmp    _T1dc;
 
-			__asm        jmp    _T1c8;
-		_T1c8:
-			__asm        jmp    _T1d7;
+		__asm        jmp    _T1c8;
+_T1c8:
+		__asm        jmp    _T1d7;
 
-			__asm        cmp    dword ptr [ebp-0x80], 0;
-			__asm        jne    _T1dc;
-		_T1d7:
-			__asm        jmp    _T1e1;
-		_T1dc:
-			__asm        jmp    _T231;
-		_T1e1:
-			__asm        jmp    _T1f3;
+		__asm        cmp    dword ptr [ebp-0x80], 0;
+		__asm        jne    _T1dc;
+_T1d7:
+		__asm        jmp    _T1e1;
+_T1dc:
+		__asm        jmp    _T231;
+_T1e1:
+		__asm        jmp    _T1f3;
 
-			__asm        cmp    dword ptr [ebp-0x84], 0;
-			__asm        je     _T231;
-		_T1f3:
-			__asm        mov    eax, [ebp-0x8C];
-			__asm        mov    [ebp-0x7C], eax;
-			__asm        mov    eax, [ebp-0x8C];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x8C], eax;
-			__asm        jmp    _T20f;
-		_T20f:
-			__asm        mov    eax, [ebp-0x7C];
-			__asm        mov    [ebp-0x78], eax;
-			__asm        jmp    _T21a;
-		_T21a:
-			__asm        mov    eax, [ebp-0x78];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        add    ecx, 0x50;
-			__asm        call   list<basic_string<char>>::erase;
-			__asm        jmp    _LOOP_1ac;
+		__asm        cmp    dword ptr [ebp-0x84], 0;
+		__asm        je     _T231;
+_T1f3:
+		__asm        mov    eax, [ebp-0x8C];
+		__asm        mov    [ebp-0x7C], eax;
+		__asm        mov    eax, [ebp-0x8C];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x8C], eax;
+		__asm        jmp    _T20f;
+_T20f:
+		__asm        mov    eax, [ebp-0x7C];
+		__asm        mov    [ebp-0x78], eax;
+		__asm        jmp    _T21a;
+_T21a:
+		__asm        mov    eax, [ebp-0x78];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        add    ecx, 0x50;
+		__asm        call   list<basic_string<char>>::erase;
+		__asm        jmp    _LOOP_1ac;
 	}
 _T231:
 	__asm        jmp    _T236;
@@ -3589,46 +3589,46 @@ _T29d:
 	__asm        mov    [ebp-0xA4], eax;
 _LOOP_2af:
 	for (;;) {
-		_LOOP_2af:
-			__asm        mov    eax, [ebp-0xA0];
-			__asm        cmp    [ebp-0xA4], eax;
-			__asm        jne    _T2cb;
+_LOOP_2af:
+		__asm        mov    eax, [ebp-0xA0];
+		__asm        cmp    [ebp-0xA4], eax;
+		__asm        jne    _T2cb;
 
-			__asm        jmp    _T2e2;
+		__asm        jmp    _T2e2;
 
-			__asm        jmp    _T2cb;
-		_T2cb:
-			__asm        jmp    _T2dd;
+		__asm        jmp    _T2cb;
+_T2cb:
+		__asm        jmp    _T2dd;
 
-			__asm        cmp    dword ptr [ebp-0x98], 0;
-			__asm        jne    _T2e2;
-		_T2dd:
-			__asm        jmp    _T2e7;
-		_T2e2:
-			__asm        jmp    _T343;
-		_T2e7:
-			__asm        jmp    _T2f9;
+		__asm        cmp    dword ptr [ebp-0x98], 0;
+		__asm        jne    _T2e2;
+_T2dd:
+		__asm        jmp    _T2e7;
+_T2e2:
+		__asm        jmp    _T343;
+_T2e7:
+		__asm        jmp    _T2f9;
 
-			__asm        cmp    dword ptr [ebp-0x9C], 0;
-			__asm        je     _T343;
-		_T2f9:
-			__asm        mov    eax, [ebp-0xA4];
-			__asm        mov    [ebp-0x94], eax;
-			__asm        mov    eax, [ebp-0xA4];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0xA4], eax;
-			__asm        jmp    _T318;
-		_T318:
-			__asm        mov    eax, [ebp-0x94];
-			__asm        mov    [ebp-0x90], eax;
-			__asm        jmp    _T329;
-		_T329:
-			__asm        mov    eax, [ebp-0x90];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        add    ecx, 0x64;
-			__asm        call   list<basic_string<char>>::erase;
-			__asm        jmp    _LOOP_2af;
+		__asm        cmp    dword ptr [ebp-0x9C], 0;
+		__asm        je     _T343;
+_T2f9:
+		__asm        mov    eax, [ebp-0xA4];
+		__asm        mov    [ebp-0x94], eax;
+		__asm        mov    eax, [ebp-0xA4];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0xA4], eax;
+		__asm        jmp    _T318;
+_T318:
+		__asm        mov    eax, [ebp-0x94];
+		__asm        mov    [ebp-0x90], eax;
+		__asm        jmp    _T329;
+_T329:
+		__asm        mov    eax, [ebp-0x90];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        add    ecx, 0x64;
+		__asm        call   list<basic_string<char>>::erase;
+		__asm        jmp    _LOOP_2af;
 	}
 _T343:
 	__asm        jmp    _T348;
@@ -3665,46 +3665,46 @@ _T3af:
 	__asm        mov    [ebp-0xBC], eax;
 _LOOP_3c1:
 	for (;;) {
-		_LOOP_3c1:
-			__asm        mov    eax, [ebp-0xB8];
-			__asm        cmp    [ebp-0xBC], eax;
-			__asm        jne    _T3dd;
+_LOOP_3c1:
+		__asm        mov    eax, [ebp-0xB8];
+		__asm        cmp    [ebp-0xBC], eax;
+		__asm        jne    _T3dd;
 
-			__asm        jmp    _T3f4;
+		__asm        jmp    _T3f4;
 
-			__asm        jmp    _T3dd;
-		_T3dd:
-			__asm        jmp    _T3ef;
+		__asm        jmp    _T3dd;
+_T3dd:
+		__asm        jmp    _T3ef;
 
-			__asm        cmp    dword ptr [ebp-0xB0], 0;
-			__asm        jne    _T3f4;
-		_T3ef:
-			__asm        jmp    _T3f9;
-		_T3f4:
-			__asm        jmp    _T455;
-		_T3f9:
-			__asm        jmp    _T40b;
+		__asm        cmp    dword ptr [ebp-0xB0], 0;
+		__asm        jne    _T3f4;
+_T3ef:
+		__asm        jmp    _T3f9;
+_T3f4:
+		__asm        jmp    _T455;
+_T3f9:
+		__asm        jmp    _T40b;
 
-			__asm        cmp    dword ptr [ebp-0xB4], 0;
-			__asm        je     _T455;
-		_T40b:
-			__asm        mov    eax, [ebp-0xBC];
-			__asm        mov    [ebp-0xAC], eax;
-			__asm        mov    eax, [ebp-0xBC];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0xBC], eax;
-			__asm        jmp    _T42a;
-		_T42a:
-			__asm        mov    eax, [ebp-0xAC];
-			__asm        mov    [ebp-0xA8], eax;
-			__asm        jmp    _T43b;
-		_T43b:
-			__asm        mov    eax, [ebp-0xA8];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        add    ecx, 0x78;
-			__asm        call   list<basic_string<char>>::erase;
-			__asm        jmp    _LOOP_3c1;
+		__asm        cmp    dword ptr [ebp-0xB4], 0;
+		__asm        je     _T455;
+_T40b:
+		__asm        mov    eax, [ebp-0xBC];
+		__asm        mov    [ebp-0xAC], eax;
+		__asm        mov    eax, [ebp-0xBC];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0xBC], eax;
+		__asm        jmp    _T42a;
+_T42a:
+		__asm        mov    eax, [ebp-0xAC];
+		__asm        mov    [ebp-0xA8], eax;
+		__asm        jmp    _T43b;
+_T43b:
+		__asm        mov    eax, [ebp-0xA8];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        add    ecx, 0x78;
+		__asm        call   list<basic_string<char>>::erase;
+		__asm        jmp    _LOOP_3c1;
 	}
 _T455:
 	__asm        jmp    _T45a;
@@ -3741,46 +3741,46 @@ _T4c7:
 	__asm        mov    [ebp-0xD4], eax;
 _LOOP_4d9:
 	for (;;) {
-		_LOOP_4d9:
-			__asm        mov    eax, [ebp-0xD0];
-			__asm        cmp    [ebp-0xD4], eax;
-			__asm        jne    _T4f5;
+_LOOP_4d9:
+		__asm        mov    eax, [ebp-0xD0];
+		__asm        cmp    [ebp-0xD4], eax;
+		__asm        jne    _T4f5;
 
-			__asm        jmp    _T50c;
+		__asm        jmp    _T50c;
 
-			__asm        jmp    _T4f5;
-		_T4f5:
-			__asm        jmp    _T507;
+		__asm        jmp    _T4f5;
+_T4f5:
+		__asm        jmp    _T507;
 
-			__asm        cmp    dword ptr [ebp-0xC8], 0;
-			__asm        jne    _T50c;
-		_T507:
-			__asm        jmp    _T511;
-		_T50c:
-			__asm        jmp    _T570;
-		_T511:
-			__asm        jmp    _T523;
+		__asm        cmp    dword ptr [ebp-0xC8], 0;
+		__asm        jne    _T50c;
+_T507:
+		__asm        jmp    _T511;
+_T50c:
+		__asm        jmp    _T570;
+_T511:
+		__asm        jmp    _T523;
 
-			__asm        cmp    dword ptr [ebp-0xCC], 0;
-			__asm        je     _T570;
-		_T523:
-			__asm        mov    eax, [ebp-0xD4];
-			__asm        mov    [ebp-0xC4], eax;
-			__asm        mov    eax, [ebp-0xD4];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0xD4], eax;
-			__asm        jmp    _T542;
-		_T542:
-			__asm        mov    eax, [ebp-0xC4];
-			__asm        mov    [ebp-0xC0], eax;
-			__asm        jmp    _T553;
-		_T553:
-			__asm        mov    eax, [ebp-0xC0];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        add    ecx, 0x8C;
-			__asm        call   list<basic_string<char>>::erase;
-			__asm        jmp    _LOOP_4d9;
+		__asm        cmp    dword ptr [ebp-0xCC], 0;
+		__asm        je     _T570;
+_T523:
+		__asm        mov    eax, [ebp-0xD4];
+		__asm        mov    [ebp-0xC4], eax;
+		__asm        mov    eax, [ebp-0xD4];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0xD4], eax;
+		__asm        jmp    _T542;
+_T542:
+		__asm        mov    eax, [ebp-0xC4];
+		__asm        mov    [ebp-0xC0], eax;
+		__asm        jmp    _T553;
+_T553:
+		__asm        mov    eax, [ebp-0xC0];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        add    ecx, 0x8C;
+		__asm        call   list<basic_string<char>>::erase;
+		__asm        jmp    _LOOP_4d9;
 	}
 _T570:
 	__asm        jmp    _T575;
@@ -4871,95 +4871,95 @@ _T43:
 // LINE 419:
 _LOOP_5d:
 	for (;;) {
-		// LINE 419:
-		_LOOP_5d:
-			__asm        mov    eax, stringList;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x44], eax;
-			__asm        mov    eax, [ebp-0x44];
-			__asm        mov    [ebp-0x1C], eax;
-			__asm        jmp    _T70;
-		_T70:
-			__asm        jmp    _T75;
-		_T75:
-			__asm        mov    eax, stringListIterator.node;
-			__asm        cmp    [ebp-0x1C], eax;
-			__asm        jne    _T8b;
+// LINE 419:
+_LOOP_5d:
+		__asm        mov    eax, stringList;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x44], eax;
+		__asm        mov    eax, [ebp-0x44];
+		__asm        mov    [ebp-0x1C], eax;
+		__asm        jmp    _T70;
+_T70:
+		__asm        jmp    _T75;
+_T75:
+		__asm        mov    eax, stringListIterator.node;
+		__asm        cmp    [ebp-0x1C], eax;
+		__asm        jne    _T8b;
 
-			__asm        jmp    _T9f;
+		__asm        jmp    _T9f;
 
-			__asm        jmp    _T8b;
-		_T8b:
-			__asm        jmp    _T9a;
+		__asm        jmp    _T8b;
+_T8b:
+		__asm        jmp    _T9a;
 
-			__asm        cmp    dword ptr [ebp-0x48], 0;
-			__asm        jne    _T9f;
-		_T9a:
-			__asm        jmp    _Ta4;
-		_T9f:
-			__asm        jmp    _T166;
-		_Ta4:
-			__asm        jmp    _Tb3;
+		__asm        cmp    dword ptr [ebp-0x48], 0;
+		__asm        jne    _T9f;
+_T9a:
+		__asm        jmp    _Ta4;
+_T9f:
+		__asm        jmp    _T166;
+_Ta4:
+		__asm        jmp    _Tb3;
 
-			__asm        cmp    dword ptr [ebp-0x4C], 0;
-			__asm        je     _T166;
-		// LINE 420:
-		_Tb3:
-			__asm        jmp    _Tb8;
-		_Tb8:
-			__asm        mov    eax, stringListIterator.node;
-			__asm        add    eax, 8;
-			__asm        mov    [ebp-0xA4], eax;
-			__asm        mov    eax, stringArray.end_of_storage;
-			__asm        cmp    stringArray.finish, eax;
-			__asm        je     _T120;
+		__asm        cmp    dword ptr [ebp-0x4C], 0;
+		__asm        je     _T166;
+// LINE 420:
+_Tb3:
+		__asm        jmp    _Tb8;
+_Tb8:
+		__asm        mov    eax, stringListIterator.node;
+		__asm        add    eax, 8;
+		__asm        mov    [ebp-0xA4], eax;
+		__asm        mov    eax, stringArray.end_of_storage;
+		__asm        cmp    stringArray.finish, eax;
+		__asm        je     _T120;
 
-			__asm        mov    eax, stringArray.finish;
-			__asm        mov    [ebp-0xA0], eax;
-			__asm        mov    eax, [ebp-0xA0];
-			__asm        mov    [ebp-0x9C], eax;
-			__asm        jmp    _Tea;
-		_Tea:
-			__asm        cmp    dword ptr [ebp-0x9C], 0;
-			__asm        je     _T112;
+		__asm        mov    eax, stringArray.finish;
+		__asm        mov    [ebp-0xA0], eax;
+		__asm        mov    eax, [ebp-0xA0];
+		__asm        mov    [ebp-0x9C], eax;
+		__asm        jmp    _Tea;
+_Tea:
+		__asm        cmp    dword ptr [ebp-0x9C], 0;
+		__asm        je     _T112;
 
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        mov    eax, [ebp-0xA4];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x9C];
-			__asm        call   basic_string<char>::basic_string<char>;
-			__asm        jmp    _T112;
-		_T112:
-			__asm        jmp    _T117;
-		_T117:
-			stringArray.finish += 0x8;
-			__asm        jmp    _T138;
-		_T120:
-			__asm        jmp    _T125;
-		_T125:
-			__asm        mov    eax, [ebp-0xA4];
-			__asm        push   eax;
-			__asm        mov    eax, stringArray.finish;
-			__asm        push   eax;
-			__asm        lea    ecx, stringArray.start;
-			__asm        call   vector<basic_string<char>>::insert_aux;
-		_T138:
-			__asm        jmp    _T13d;
-		// LINE 421:
-		_T13d:
-			__asm        mov    eax, stringListIterator.node;
-			__asm        mov    [ebp-0x98], eax;
-			__asm        mov    eax, stringListIterator.node;
-			__asm        mov    eax, [eax];
-			__asm        mov    stringListIterator.node, eax;
-			__asm        jmp    _T153;
-		_T153:
-			__asm        mov    eax, [ebp-0x98];
-			__asm        mov    [ebp-0x20], eax;
-			__asm        jmp    _T161;
-		// LINE 422:
-		_T161:
+		__asm        push   0xFFFFFFFF;
+		__asm        push   0;
+		__asm        mov    eax, [ebp-0xA4];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x9C];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        jmp    _T112;
+_T112:
+		__asm        jmp    _T117;
+_T117:
+		stringArray.finish += 0x8;
+		__asm        jmp    _T138;
+_T120:
+		__asm        jmp    _T125;
+_T125:
+		__asm        mov    eax, [ebp-0xA4];
+		__asm        push   eax;
+		__asm        mov    eax, stringArray.finish;
+		__asm        push   eax;
+		__asm        lea    ecx, stringArray.start;
+		__asm        call   vector<basic_string<char>>::insert_aux;
+_T138:
+		__asm        jmp    _T13d;
+// LINE 421:
+_T13d:
+		__asm        mov    eax, stringListIterator.node;
+		__asm        mov    [ebp-0x98], eax;
+		__asm        mov    eax, stringListIterator.node;
+		__asm        mov    eax, [eax];
+		__asm        mov    stringListIterator.node, eax;
+		__asm        jmp    _T153;
+_T153:
+		__asm        mov    eax, [ebp-0x98];
+		__asm        mov    [ebp-0x20], eax;
+		__asm        jmp    _T161;
+// LINE 422:
+_T161:
 	}
 // LINE 425:
 _T166:
@@ -5043,45 +5043,45 @@ _T229:
 	__asm        mov    [ebp-0x94], eax;
 _LOOP_23b:
 	for (;;) {
-		_LOOP_23b:
-			__asm        mov    eax, [ebp-0x90];
-			__asm        cmp    [ebp-0x94], eax;
-			__asm        jne    _T257;
+_LOOP_23b:
+		__asm        mov    eax, [ebp-0x90];
+		__asm        cmp    [ebp-0x94], eax;
+		__asm        jne    _T257;
 
-			__asm        jmp    _T26e;
+		__asm        jmp    _T26e;
 
-			__asm        jmp    _T257;
-		_T257:
-			__asm        jmp    _T269;
+		__asm        jmp    _T257;
+_T257:
+		__asm        jmp    _T269;
 
-			__asm        cmp    dword ptr [ebp-0x88], 0;
-			__asm        jne    _T26e;
-		_T269:
-			__asm        jmp    _T273;
-		_T26e:
-			__asm        jmp    _T2c3;
-		_T273:
-			__asm        jmp    _T285;
+		__asm        cmp    dword ptr [ebp-0x88], 0;
+		__asm        jne    _T26e;
+_T269:
+		__asm        jmp    _T273;
+_T26e:
+		__asm        jmp    _T2c3;
+_T273:
+		__asm        jmp    _T285;
 
-			__asm        cmp    dword ptr [ebp-0x8C], 0;
-			__asm        je     _T2c3;
-		_T285:
-			__asm        mov    eax, [ebp-0x94];
-			__asm        mov    [ebp-0x84], eax;
-			__asm        mov    eax, [ebp-0x94];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x94], eax;
-			__asm        jmp    _T2a4;
-		_T2a4:
-			__asm        mov    eax, [ebp-0x84];
-			__asm        mov    [ebp-0x80], eax;
-			__asm        jmp    _T2b2;
-		_T2b2:
-			__asm        mov    eax, [ebp-0x80];
-			__asm        push   eax;
-			__asm        mov    ecx, stringList;
-			__asm        call   list<basic_string<char>>::erase;
-			__asm        jmp    _LOOP_23b;
+		__asm        cmp    dword ptr [ebp-0x8C], 0;
+		__asm        je     _T2c3;
+_T285:
+		__asm        mov    eax, [ebp-0x94];
+		__asm        mov    [ebp-0x84], eax;
+		__asm        mov    eax, [ebp-0x94];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x94], eax;
+		__asm        jmp    _T2a4;
+_T2a4:
+		__asm        mov    eax, [ebp-0x84];
+		__asm        mov    [ebp-0x80], eax;
+		__asm        jmp    _T2b2;
+_T2b2:
+		__asm        mov    eax, [ebp-0x80];
+		__asm        push   eax;
+		__asm        mov    ecx, stringList;
+		__asm        call   list<basic_string<char>>::erase;
+		__asm        jmp    _LOOP_23b;
 	}
 _T2c3:
 	__asm        jmp    _T2c8;
@@ -5095,63 +5095,63 @@ _T2d9:
 	__asm        jmp    _FOR_2ef;
 _FOR_2ef:
 	for (iEnd = ((stringArray.finish - stringArray.start) >> 0x3); (i < iEnd); i++) {
-		// LINE 432:
-			__asm        jmp    _T303;
-		_T303:
-			__asm        jmp    _T308;
-		_T308:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 3;
-			__asm        add    eax, stringArray.start;
-			__asm        mov    [ebp-0x68], eax;
-			__asm        mov    eax, stringList;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x5C], eax;
-			__asm        mov    eax, [ebp-0x5C];
-			__asm        mov    [ebp-0x54], eax;
-			__asm        jmp    _T327;
-		_T327:
-			__asm        jmp    _T32c;
-		_T32c:
-			__asm        mov    eax, [ebp-0x54];
-			__asm        mov    [ebp-0x64], eax;
-			__asm        mov    ecx, stringList;
-			__asm        call   list<basic_string<char>>::get_node;
-			__asm        mov    [ebp-0x60], eax;
-			__asm        jmp    _T342;
-		_T342:
-			__asm        mov    eax, [ebp-0x68];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x60];
-			__asm        add    eax, 8;
-			__asm        push   eax;
-			__asm        call   construct;
-			__asm        add    esp, 8;
-			__asm        mov    eax, [ebp-0x64];
-			__asm        mov    ecx, [ebp-0x60];
-			__asm        mov    [ecx], eax;
-			__asm        mov    eax, [ebp-0x64];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, [ebp-0x60];
-			__asm        mov    [ecx+4], eax;
-			__asm        mov    eax, [ebp-0x60];
-			__asm        mov    ecx, [ebp-0x64];
-			__asm        mov    ecx, [ecx+4];
-			__asm        mov    [ecx], eax;
-			__asm        mov    eax, [ebp-0x60];
-			__asm        mov    ecx, [ebp-0x64];
-			__asm        mov    [ecx+4], eax;
-			__asm        mov    eax, stringList;
-			__asm        add    dword ptr [eax+4], 1;
-			__asm        mov    eax, [ebp-0x60];
-			__asm        mov    [ebp-0x58], eax;
-			__asm        jmp    _T38f;
-		_T38f:
-			__asm        jmp    _T394;
-		_T394:
-			__asm        jmp    _T399;
-		// LINE 433:
-		_T399:
+// LINE 432:
+		__asm        jmp    _T303;
+_T303:
+		__asm        jmp    _T308;
+_T308:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 3;
+		__asm        add    eax, stringArray.start;
+		__asm        mov    [ebp-0x68], eax;
+		__asm        mov    eax, stringList;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x5C], eax;
+		__asm        mov    eax, [ebp-0x5C];
+		__asm        mov    [ebp-0x54], eax;
+		__asm        jmp    _T327;
+_T327:
+		__asm        jmp    _T32c;
+_T32c:
+		__asm        mov    eax, [ebp-0x54];
+		__asm        mov    [ebp-0x64], eax;
+		__asm        mov    ecx, stringList;
+		__asm        call   list<basic_string<char>>::get_node;
+		__asm        mov    [ebp-0x60], eax;
+		__asm        jmp    _T342;
+_T342:
+		__asm        mov    eax, [ebp-0x68];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x60];
+		__asm        add    eax, 8;
+		__asm        push   eax;
+		__asm        call   construct;
+		__asm        add    esp, 8;
+		__asm        mov    eax, [ebp-0x64];
+		__asm        mov    ecx, [ebp-0x60];
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-0x64];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x60];
+		__asm        mov    [ecx+4], eax;
+		__asm        mov    eax, [ebp-0x60];
+		__asm        mov    ecx, [ebp-0x64];
+		__asm        mov    ecx, [ecx+4];
+		__asm        mov    [ecx], eax;
+		__asm        mov    eax, [ebp-0x60];
+		__asm        mov    ecx, [ebp-0x64];
+		__asm        mov    [ecx+4], eax;
+		__asm        mov    eax, stringList;
+		__asm        add    dword ptr [eax+4], 1;
+		__asm        mov    eax, [ebp-0x60];
+		__asm        mov    [ebp-0x58], eax;
+		__asm        jmp    _T38f;
+_T38f:
+		__asm        jmp    _T394;
+_T394:
+		__asm        jmp    _T399;
+// LINE 433:
+_T399:
 	}
 // LINE 434:
 _T39e:
@@ -6220,187 +6220,187 @@ _Tfc:
 	__asm        jmp    _T108;
 // LINE 569:
 _T108:
-	Directory::SplitDirectoryPath((this + 0x40), sStationDirectoryParent.c_str_ptr, sStationDirectoryName.c_str_ptr);
+Directory::SplitDirectoryPath((this + 0x40), sStationDirectoryParent.c_str_ptr, sStationDirectoryName.c_str_ptr);
 // LINE 570:
 _FOR_12e:
 	for (i = 0x0; (i < 0x9); i++) {
 
-			__asm        mov    eax, i;
-			__asm        mov    eax, StationDirectoryNameArray[eax*4];
-			__asm        mov    [ebp-0x84], eax;
-		// LINE 571:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x80], eax;
-			__asm        cmp    dword ptr [ebp-0x80], 0;
-			__asm        je     _T179;
+		__asm        mov    eax, i;
+		__asm        mov    eax, StationDirectoryNameArray[eax*4];
+		__asm        mov    [ebp-0x84], eax;
+// LINE 571:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x80], eax;
+		__asm        cmp    dword ptr [ebp-0x80], 0;
+		__asm        je     _T179;
 
-			__asm        mov    eax, [ebp-0x84];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x80];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1C], eax;
-			__asm        jmp    _T180;
-		_T179:
-			__asm        mov    dword ptr [ebp-0x1C], 0;
-		_T180:
-			__asm        mov    dword ptr [ebp-0x20], 0;
-			__asm        jmp    _T18c;
-		_T18c:
-			__asm        jmp    _T191;
-		_T191:
-			__asm        mov    eax, sStationDirectoryName.reference;
-			__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
-			__asm        jae    _T1b4;
+		__asm        mov    eax, [ebp-0x84];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x80];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1C], eax;
+		__asm        jmp    _T180;
+_T179:
+		__asm        mov    dword ptr [ebp-0x1C], 0;
+_T180:
+		__asm        mov    dword ptr [ebp-0x20], 0;
+		__asm        jmp    _T18c;
+_T18c:
+		__asm        jmp    _T191;
+_T191:
+		__asm        mov    eax, sStationDirectoryName.reference;
+		__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
+		__asm        jae    _T1b4;
 
-			__asm        jmp    _T1a3;
-		_T1a3:
-			__asm        mov    eax, sStationDirectoryName.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x88], eax;
-			__asm        jmp    _T1be;
-		_T1b4:
-			__asm        mov    dword ptr [ebp-0x88], 0xFFFFFFFF;
-		_T1be:
-			__asm        jmp    _T1c3;
-		_T1c3:
-			__asm        jmp    _T1c8;
-		_T1c8:
-			__asm        mov    eax, [ebp-0x1C];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x88];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x20];
-			__asm        call   basic_string<char>::data;
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        lea    ecx, sStationDirectoryName.c_str_ptr;
-			__asm        call   basic_string<char>::compare_str;
-			__asm        test   eax, eax;
-			__asm        jne    _T1fd;
+		__asm        jmp    _T1a3;
+_T1a3:
+		__asm        mov    eax, sStationDirectoryName.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x88], eax;
+		__asm        jmp    _T1be;
+_T1b4:
+		__asm        mov    dword ptr [ebp-0x88], 0xFFFFFFFF;
+_T1be:
+		__asm        jmp    _T1c3;
+_T1c3:
+		__asm        jmp    _T1c8;
+_T1c8:
+		__asm        mov    eax, [ebp-0x1C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x88];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x20];
+		__asm        call   basic_string<char>::data;
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        lea    ecx, sStationDirectoryName.c_str_ptr;
+		__asm        call   basic_string<char>::compare_str;
+		__asm        test   eax, eax;
+		__asm        jne    _T1fd;
 
-			__asm        mov    dword ptr [ebp-0x18], 1;
-			__asm        jmp    _T204;
-		_T1fd:
-			__asm        mov    dword ptr [ebp-0x18], 0;
-		_T204:
-			__asm        jmp    _T209;
-		_T209:
-			__asm        mov    eax, [ebp-0x1C];
-			__asm        dec    dword ptr [eax+0xC];
-			__asm        mov    eax, [ebp-0x1C];
-			__asm        cmp    dword ptr [eax+0xC], 0;
-			__asm        jne    _T241;
+		__asm        mov    dword ptr [ebp-0x18], 1;
+		__asm        jmp    _T204;
+_T1fd:
+		__asm        mov    dword ptr [ebp-0x18], 0;
+_T204:
+		__asm        jmp    _T209;
+_T209:
+		__asm        mov    eax, [ebp-0x1C];
+		__asm        dec    dword ptr [eax+0xC];
+		__asm        mov    eax, [ebp-0x1C];
+		__asm        cmp    dword ptr [eax+0xC], 0;
+		__asm        jne    _T241;
 
-			__asm        mov    eax, [ebp-0x1C];
-			__asm        mov    [ebp-0x3C], eax;
-			__asm        mov    eax, [ebp-0x3C];
-			__asm        mov    [ebp-0x38], eax;
-			__asm        cmp    dword ptr [ebp-0x38], 0;
-			__asm        je     _T241;
+		__asm        mov    eax, [ebp-0x1C];
+		__asm        mov    [ebp-0x3C], eax;
+		__asm        mov    eax, [ebp-0x3C];
+		__asm        mov    [ebp-0x38], eax;
+		__asm        cmp    dword ptr [ebp-0x38], 0;
+		__asm        je     _T241;
 
-			__asm        push   1;
-			__asm        mov    ecx, [ebp-0x38];
-			__asm        call   basic_string_ref<char>::`scalar deleting destructor';
-			__asm        jmp    _T241;
-		_T241:
-			__asm        jmp    _T246;
-		_T246:
-			__asm        cmp    dword ptr [ebp-0x20], 0;
-			__asm        je     _T268;
+		__asm        push   1;
+		__asm        mov    ecx, [ebp-0x38];
+		__asm        call   basic_string_ref<char>::`scalar deleting destructor';
+		__asm        jmp    _T241;
+_T241:
+		__asm        jmp    _T246;
+_T246:
+		__asm        cmp    dword ptr [ebp-0x20], 0;
+		__asm        je     _T268;
 
-			__asm        mov    eax, [ebp-0x20];
-			__asm        mov    [ebp-0x30], eax;
-			__asm        mov    eax, [ebp-0x30];
-			__asm        mov    [ebp-0x34], eax;
-			__asm        mov    eax, [ebp-0x34];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T268:
-			__asm        jmp    _T26d;
-		_T26d:
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    [ebp-0x2C], eax;
-			__asm        cmp    dword ptr [ebp-0x2C], 0;
-			__asm        je     _T353;
-		// LINE 575:
-			__asm        mov    eax, i;
-			__asm        mov    [ebp-0x24], eax;
-			__asm        mov    eax, sStationDirectoryName.reference;
-			__asm        dec    dword ptr [eax+0xC];
-			__asm        mov    eax, sStationDirectoryName.reference;
-			__asm        cmp    dword ptr [eax+0xC], 0;
-			__asm        jne    _T2bb;
+		__asm        mov    eax, [ebp-0x20];
+		__asm        mov    [ebp-0x30], eax;
+		__asm        mov    eax, [ebp-0x30];
+		__asm        mov    [ebp-0x34], eax;
+		__asm        mov    eax, [ebp-0x34];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T268:
+		__asm        jmp    _T26d;
+_T26d:
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    [ebp-0x2C], eax;
+		__asm        cmp    dword ptr [ebp-0x2C], 0;
+		__asm        je     _T353;
+// LINE 575:
+		__asm        mov    eax, i;
+		__asm        mov    [ebp-0x24], eax;
+		__asm        mov    eax, sStationDirectoryName.reference;
+		__asm        dec    dword ptr [eax+0xC];
+		__asm        mov    eax, sStationDirectoryName.reference;
+		__asm        cmp    dword ptr [eax+0xC], 0;
+		__asm        jne    _T2bb;
 
-			__asm        mov    eax, sStationDirectoryName.reference;
-			__asm        mov    [ebp-0x4C], eax;
-			__asm        mov    eax, [ebp-0x4C];
-			__asm        mov    [ebp-0x48], eax;
-			__asm        cmp    dword ptr [ebp-0x48], 0;
-			__asm        je     _T2bb;
+		__asm        mov    eax, sStationDirectoryName.reference;
+		__asm        mov    [ebp-0x4C], eax;
+		__asm        mov    eax, [ebp-0x4C];
+		__asm        mov    [ebp-0x48], eax;
+		__asm        cmp    dword ptr [ebp-0x48], 0;
+		__asm        je     _T2bb;
 
-			__asm        push   1;
-			__asm        mov    ecx, [ebp-0x48];
-			__asm        call   basic_string_ref<char>::`scalar deleting destructor';
-			__asm        jmp    _T2bb;
-		_T2bb:
-			__asm        jmp    _T2c0;
-		_T2c0:
-			__asm        cmp    sStationDirectoryName.c_str_ptr, 0;
-			__asm        je     _T2e2;
+		__asm        push   1;
+		__asm        mov    ecx, [ebp-0x48];
+		__asm        call   basic_string_ref<char>::`scalar deleting destructor';
+		__asm        jmp    _T2bb;
+_T2bb:
+		__asm        jmp    _T2c0;
+_T2c0:
+		__asm        cmp    sStationDirectoryName.c_str_ptr, 0;
+		__asm        je     _T2e2;
 
-			__asm        mov    eax, sStationDirectoryName.c_str_ptr;
-			__asm        mov    [ebp-0x40], eax;
-			__asm        mov    eax, [ebp-0x40];
-			__asm        mov    [ebp-0x44], eax;
-			__asm        mov    eax, [ebp-0x44];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T2e2:
-			__asm        jmp    _T2e7;
-		_T2e7:
-			__asm        mov    eax, sStationDirectoryParent.reference;
-			__asm        dec    dword ptr [eax+0xC];
-			__asm        mov    eax, sStationDirectoryParent.reference;
-			__asm        cmp    dword ptr [eax+0xC], 0;
-			__asm        jne    _T31f;
+		__asm        mov    eax, sStationDirectoryName.c_str_ptr;
+		__asm        mov    [ebp-0x40], eax;
+		__asm        mov    eax, [ebp-0x40];
+		__asm        mov    [ebp-0x44], eax;
+		__asm        mov    eax, [ebp-0x44];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T2e2:
+		__asm        jmp    _T2e7;
+_T2e7:
+		__asm        mov    eax, sStationDirectoryParent.reference;
+		__asm        dec    dword ptr [eax+0xC];
+		__asm        mov    eax, sStationDirectoryParent.reference;
+		__asm        cmp    dword ptr [eax+0xC], 0;
+		__asm        jne    _T31f;
 
-			__asm        mov    eax, sStationDirectoryParent.reference;
-			__asm        mov    [ebp-0x5C], eax;
-			__asm        mov    eax, [ebp-0x5C];
-			__asm        mov    [ebp-0x58], eax;
-			__asm        cmp    dword ptr [ebp-0x58], 0;
-			__asm        je     _T31f;
+		__asm        mov    eax, sStationDirectoryParent.reference;
+		__asm        mov    [ebp-0x5C], eax;
+		__asm        mov    eax, [ebp-0x5C];
+		__asm        mov    [ebp-0x58], eax;
+		__asm        cmp    dword ptr [ebp-0x58], 0;
+		__asm        je     _T31f;
 
-			__asm        push   1;
-			__asm        mov    ecx, [ebp-0x58];
-			__asm        call   basic_string_ref<char>::`scalar deleting destructor';
-			__asm        jmp    _T31f;
-		_T31f:
-			__asm        jmp    _T324;
-		_T324:
-			__asm        cmp    sStationDirectoryParent.c_str_ptr, 0;
-			__asm        je     _T346;
+		__asm        push   1;
+		__asm        mov    ecx, [ebp-0x58];
+		__asm        call   basic_string_ref<char>::`scalar deleting destructor';
+		__asm        jmp    _T31f;
+_T31f:
+		__asm        jmp    _T324;
+_T324:
+		__asm        cmp    sStationDirectoryParent.c_str_ptr, 0;
+		__asm        je     _T346;
 
-			__asm        mov    eax, sStationDirectoryParent.c_str_ptr;
-			__asm        mov    [ebp-0x50], eax;
-			__asm        mov    eax, [ebp-0x50];
-			__asm        mov    [ebp-0x54], eax;
-			__asm        mov    eax, [ebp-0x54];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T346:
-			__asm        jmp    _T34b;
-		_T34b:
-			__asm        mov    eax, [ebp-0x24];
-			__asm        jmp    __RETURN;
-		// LINE 577:
-		_T353:
+		__asm        mov    eax, sStationDirectoryParent.c_str_ptr;
+		__asm        mov    [ebp-0x50], eax;
+		__asm        mov    eax, [ebp-0x50];
+		__asm        mov    [ebp-0x54], eax;
+		__asm        mov    eax, [ebp-0x54];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T346:
+		__asm        jmp    _T34b;
+_T34b:
+		__asm        mov    eax, [ebp-0x24];
+		__asm        jmp    __RETURN;
+// LINE 577:
+_T353:
 	}
 // LINE 578:
 _T358:
@@ -7099,37 +7099,37 @@ _FOR_3e:
 	__asm        jmp    _FOR_COND_3e;
 _FOR_NEXT_3e:
 	for (; (iEnd > i); i++) {
-		// LINE 850:
-			__asm        jmp    _T52;
-		_T52:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, i;
-			__asm        mov    edx, ecx;
-			__asm        lea    ecx, [ecx+ecx*8];
-			__asm        lea    ecx, [edx+ecx*2];
-			__asm        lea    eax, [eax+ecx*8];
-			__asm        mov    [ebp-0xC], eax;
-			__asm        jmp    _T6e;
-		_T6e:
-			__asm        mov    eax, [ebp-0xC];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x10], eax;
-			__asm        mov    eax, [ebp-0x10];
-			__asm        mov    ecx, [ebp-0xC];
-			__asm        call   dword ptr [eax+0x2C];
-			__asm        cmp    eax, radioStationType;
-			__asm        jne    _T9c;
-		// LINE 851:
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x34];
-			__asm        jmp    __RETURN;
-		// LINE 852:
-		_T9c:
+// LINE 850:
+		__asm        jmp    _T52;
+_T52:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, i;
+		__asm        mov    edx, ecx;
+		__asm        lea    ecx, [ecx+ecx*8];
+		__asm        lea    ecx, [edx+ecx*2];
+		__asm        lea    eax, [eax+ecx*8];
+		__asm        mov    [ebp-0xC], eax;
+		__asm        jmp    _T6e;
+_T6e:
+		__asm        mov    eax, [ebp-0xC];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x10], eax;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        call   dword ptr [eax+0x2C];
+		__asm        cmp    eax, radioStationType;
+		__asm        jne    _T9c;
+// LINE 851:
+		__asm        mov    eax, i;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x34];
+		__asm        jmp    __RETURN;
+// LINE 852:
+_T9c:
 	}
 // LINE 853:
 _Ta1:
@@ -7162,31 +7162,31 @@ _FOR_3e:
 	__asm        jmp    _FOR_COND_3e;
 _FOR_NEXT_3e:
 	for (; (iEnd > i); i++) {
-		// LINE 864:
-			__asm        jmp    _T52;
-		_T52:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, i;
-			__asm        mov    edx, ecx;
-			__asm        lea    ecx, [ecx+ecx*8];
-			__asm        lea    ecx, [edx+ecx*2];
-			__asm        lea    eax, [eax+ecx*8];
-			__asm        mov    [ebp-0xC], eax;
-			__asm        jmp    _T6e;
-		_T6e:
-			__asm        mov    eax, [ebp-0xC];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x10], eax;
-			__asm        mov    eax, [ebp-0x10];
-			__asm        mov    ecx, [ebp-0xC];
-			__asm        call   dword ptr [eax+0x2C];
-			__asm        cmp    eax, radioStationType;
-			__asm        jne    _T92;
-		// LINE 865:
-			return 0x1;
-		// LINE 866:
-		_T92:
+// LINE 864:
+		__asm        jmp    _T52;
+_T52:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, i;
+		__asm        mov    edx, ecx;
+		__asm        lea    ecx, [ecx+ecx*8];
+		__asm        lea    ecx, [edx+ecx*2];
+		__asm        lea    eax, [eax+ecx*8];
+		__asm        mov    [ebp-0xC], eax;
+		__asm        jmp    _T6e;
+_T6e:
+		__asm        mov    eax, [ebp-0xC];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x10], eax;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        call   dword ptr [eax+0x2C];
+		__asm        cmp    eax, radioStationType;
+		__asm        jne    _T92;
+// LINE 865:
+		return 0x1;
+// LINE 866:
+_T92:
 	}
 // LINE 867:
 _T97:
@@ -7257,144 +7257,144 @@ int32_t Radio::StationDirectoryNameIsValid(/*packed*/ class basic_string<char>& 
 _FOR_18:
 	for (i = 0x0; (i < 0x9); i++) {
 
-			__asm        mov    eax, i;
-			__asm        mov    eax, StationDirectoryNameArray[eax*4];
-			__asm        mov    [ebp-0x24], eax;
-		// LINE 899:
-			__asm        jmp    _T37;
-		_T37:
-			__asm        jmp    _T3c;
-		_T3c:
-			__asm        mov    eax, [ebp-0x24];
-			__asm        push   eax;
-			__asm        call   strlen;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x1C], eax;
-			__asm        mov    eax, sStationDirectory;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x20], eax;
-			__asm        jmp    _T5c;
-		_T5c:
-			__asm        mov    eax, sStationDirectory;
-			__asm        mov    eax, [eax+4];
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        jae    _T9e;
+		__asm        mov    eax, i;
+		__asm        mov    eax, StationDirectoryNameArray[eax*4];
+		__asm        mov    [ebp-0x24], eax;
+// LINE 899:
+		__asm        jmp    _T37;
+_T37:
+		__asm        jmp    _T3c;
+_T3c:
+		__asm        mov    eax, [ebp-0x24];
+		__asm        push   eax;
+		__asm        call   strlen;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x1C], eax;
+		__asm        mov    eax, sStationDirectory;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x20], eax;
+		__asm        jmp    _T5c;
+_T5c:
+		__asm        mov    eax, sStationDirectory;
+		__asm        mov    eax, [eax+4];
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        jae    _T9e;
 
-			__asm        push   0x59722C;
-			__asm        mov    ecx, 0x638C00;
-			__asm        call   ostream::operator<<;
-			__asm        mov    [ebp-0x14], eax;
-			__asm        mov    eax, [ebp-0x14];
-			__asm        push   eax;
-			__asm        call   endl;
-			__asm        add    esp, 4;
-			__asm        jmp    _T8f;
-		_T8f:
-			exit(0x1);
-			__asm        jmp    _T9e;
-		_T9e:
-			__asm        mov    eax, [ebp-0x20];
-			__asm        mov    ecx, [ebp-0x1C];
-			__asm        cmp    eax, ecx;
-			__asm        jb     _Tae;
+		__asm        push   0x59722C;
+		__asm        mov    ecx, 0x638C00;
+		__asm        call   ostream::operator<<;
+		__asm        mov    [ebp-0x14], eax;
+		__asm        mov    eax, [ebp-0x14];
+		__asm        push   eax;
+		__asm        call   endl;
+		__asm        add    esp, 4;
+		__asm        jmp    _T8f;
+_T8f:
+		exit(0x1);
+		__asm        jmp    _T9e;
+_T9e:
+		__asm        mov    eax, [ebp-0x20];
+		__asm        mov    ecx, [ebp-0x1C];
+		__asm        cmp    eax, ecx;
+		__asm        jb     _Tae;
 
-			__asm        mov    eax, ecx;
-		_Tae:
-			__asm        mov    [ebp-0xC], eax;
-			__asm        jmp    _Tb6;
-		_Tb6:
-			__asm        mov    eax, sStationDirectory;
-			__asm        mov    eax, [eax+4];
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        jne    _T102;
+		__asm        mov    eax, ecx;
+_Tae:
+		__asm        mov    [ebp-0xC], eax;
+		__asm        jmp    _Tb6;
+_Tb6:
+		__asm        mov    eax, sStationDirectory;
+		__asm        mov    eax, [eax+4];
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        jne    _T102;
 
-			__asm        cmp    dword ptr [ebp-0x24], 0;
-			__asm        je     _Tec;
+		__asm        cmp    dword ptr [ebp-0x24], 0;
+		__asm        je     _Tec;
 
-			__asm        jmp    _Td5;
-		_Td5:
-			__asm        jmp    _Tda;
-		_Tda:
-			__asm        xor    eax, eax;
-			__asm        mov    ecx, [ebp-0x24];
-			__asm        movsx  ecx, byte ptr [ecx];
-			__asm        sub    eax, ecx;
-			__asm        mov    [ebp-0x18], eax;
-			__asm        jmp    _Tfd;
-		_Tec:
-			__asm        jmp    _Tf1;
-		_Tf1:
-			__asm        jmp    _Tf6;
-		_Tf6:
-			__asm        mov    dword ptr [ebp-0x18], 0;
-		_Tfd:
-			__asm        jmp    _T182;
-		_T102:
-			__asm        jmp    _T107;
-		_T107:
-			__asm        mov    eax, sStationDirectory;
-			__asm        mov    eax, [eax+4];
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        je     _T12c;
+		__asm        jmp    _Td5;
+_Td5:
+		__asm        jmp    _Tda;
+_Tda:
+		__asm        xor    eax, eax;
+		__asm        mov    ecx, [ebp-0x24];
+		__asm        movsx  ecx, byte ptr [ecx];
+		__asm        sub    eax, ecx;
+		__asm        mov    [ebp-0x18], eax;
+		__asm        jmp    _Tfd;
+_Tec:
+		__asm        jmp    _Tf1;
+_Tf1:
+		__asm        jmp    _Tf6;
+_Tf6:
+		__asm        mov    dword ptr [ebp-0x18], 0;
+_Tfd:
+		__asm        jmp    _T182;
+_T102:
+		__asm        jmp    _T107;
+_T107:
+		__asm        mov    eax, sStationDirectory;
+		__asm        mov    eax, [eax+4];
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        je     _T12c;
 
-			__asm        mov    eax, sStationDirectory;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x10], eax;
-			__asm        jmp    _T138;
+		__asm        mov    eax, sStationDirectory;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x10], eax;
+		__asm        jmp    _T138;
 
-			__asm        jmp    _T138;
-		_T12c:
-			__asm        mov    dword ptr [ebp-0x10], 0;
-			__asm        jmp    _T138;
-		_T138:
-			__asm        mov    eax, [ebp-0xC];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x24];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x10];
-			__asm        push   eax;
-			__asm        call   memcmp;
-			__asm        add    esp, 0xC;
-			__asm        mov    [ebp-8], eax;
-			__asm        jmp    _T154;
-		_T154:
-			__asm        cmp    dword ptr [ebp-8], 0;
-			__asm        je     _T169;
+		__asm        jmp    _T138;
+_T12c:
+		__asm        mov    dword ptr [ebp-0x10], 0;
+		__asm        jmp    _T138;
+_T138:
+		__asm        mov    eax, [ebp-0xC];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x24];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        push   eax;
+		__asm        call   memcmp;
+		__asm        add    esp, 0xC;
+		__asm        mov    [ebp-8], eax;
+		__asm        jmp    _T154;
+_T154:
+		__asm        cmp    dword ptr [ebp-8], 0;
+		__asm        je     _T169;
 
-			__asm        mov    eax, [ebp-8];
-			__asm        mov    [ebp-0x18], eax;
-			__asm        jmp    _T17d;
-		_T169:
-			__asm        jmp    _T16e;
-		_T16e:
-			__asm        mov    eax, sStationDirectory;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    eax, [eax+4];
-			__asm        sub    eax, [ebp-0x1C];
-			__asm        mov    [ebp-0x18], eax;
-		_T17d:
-			__asm        jmp    _T182;
-		_T182:
-			__asm        jmp    _T187;
-		_T187:
-			__asm        cmp    dword ptr [ebp-0x18], 0;
-			__asm        jne    _T196;
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    [ebp-0x18], eax;
+		__asm        jmp    _T17d;
+_T169:
+		__asm        jmp    _T16e;
+_T16e:
+		__asm        mov    eax, sStationDirectory;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    eax, [eax+4];
+		__asm        sub    eax, [ebp-0x1C];
+		__asm        mov    [ebp-0x18], eax;
+_T17d:
+		__asm        jmp    _T182;
+_T182:
+		__asm        jmp    _T187;
+_T187:
+		__asm        cmp    dword ptr [ebp-0x18], 0;
+		__asm        jne    _T196;
 
-			__asm        jmp    _T19b;
-		_T196:
-			__asm        jmp    _T1b4;
-		_T19b:
-			__asm        jmp    _T1aa;
+		__asm        jmp    _T19b;
+_T196:
+		__asm        jmp    _T1b4;
+_T19b:
+		__asm        jmp    _T1aa;
 
-			__asm        cmp    dword ptr [ebp-0x28], 0;
-			__asm        je     _T1b4;
-		// LINE 900:
-		_T1aa:
-			return 0x1;
-		// LINE 901:
-		_T1b4:
+		__asm        cmp    dword ptr [ebp-0x28], 0;
+		__asm        je     _T1b4;
+// LINE 900:
+_T1aa:
+		return 0x1;
+// LINE 901:
+_T1b4:
 	}
 // LINE 902:
 _T1b9:
@@ -7512,786 +7512,786 @@ _T15a:
 // LINE 940:
 _LOOP_1a6:
 	for (;;) {
-		// LINE 940:
-		_LOOP_1a6:
-			__asm        mov    eax, radioStationStringList.node;
-			__asm        mov    [ebp-0x164], eax;
-			__asm        mov    eax, [ebp-0x164];
-			__asm        mov    [ebp-0x118], eax;
-			__asm        jmp    _T1c3;
-		_T1c3:
-			__asm        jmp    _T1c8;
-		_T1c8:
-			__asm        mov    eax, [ebp-0x118];
-			__asm        cmp    radioStationStringListIterator.node, eax;
-			__asm        jne    _T1e1;
+// LINE 940:
+_LOOP_1a6:
+		__asm        mov    eax, radioStationStringList.node;
+		__asm        mov    [ebp-0x164], eax;
+		__asm        mov    eax, [ebp-0x164];
+		__asm        mov    [ebp-0x118], eax;
+		__asm        jmp    _T1c3;
+_T1c3:
+		__asm        jmp    _T1c8;
+_T1c8:
+		__asm        mov    eax, [ebp-0x118];
+		__asm        cmp    radioStationStringListIterator.node, eax;
+		__asm        jne    _T1e1;
 
-			__asm        jmp    _T1f8;
+		__asm        jmp    _T1f8;
 
-			__asm        jmp    _T1e1;
-		_T1e1:
-			__asm        jmp    _T1f3;
+		__asm        jmp    _T1e1;
+_T1e1:
+		__asm        jmp    _T1f3;
 
-			__asm        cmp    dword ptr [ebp-0x24C], 0;
-			__asm        jne    _T1f8;
-		_T1f3:
-			__asm        jmp    _T1fd;
-		_T1f8:
-			__asm        jmp    _Td7b;
-		_T1fd:
-			__asm        jmp    _T20f;
+		__asm        cmp    dword ptr [ebp-0x24C], 0;
+		__asm        jne    _T1f8;
+_T1f3:
+		__asm        jmp    _T1fd;
+_T1f8:
+		__asm        jmp    _Td7b;
+_T1fd:
+		__asm        jmp    _T20f;
 
-			__asm        cmp    dword ptr [ebp-0x250], 0;
-			__asm        je     _Td7b;
-		// LINE 943:
-		_T20f:
-			__asm        jmp    _T214;
-		_T214:
-			(radioStationStringListIterator.node + 0x8)->basic_string<char>::operator+=(0x5c);
-		// LINE 946:
-			__asm        jmp    _T226;
-		_T226:
-			__asm        mov    eax, radioStationStringListIterator.node;
-			__asm        add    eax, 8;
-			__asm        push   eax;
-			__asm        lea    eax, sStationDirectory.c_str_ptr;
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x120];
-			__asm        push   eax;
-			__asm        call   operator+;
-			__asm        add    esp, 0xC;
-			__asm        push   eax;
-			__asm        lea    ecx, tempRadioStation.sStationBaseDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::operator=;
-			__asm        lea    ecx, [ebp-0x120];
-			__asm        call   basic_string<char>::~basic_string<char>;
-		// LINE 947:
-			__asm        lea    ecx, tempRadioStation<vftable>;
-			__asm        call   RadioStation::ReadCallSignFromDisk;
-			__asm        test   eax, eax;
-			__asm        je     _Td4f;
-		// LINE 948:
-			tempRadioStation<vftable>->RadioStation::DetectRadioStationType();
-		// LINE 952:
-			__asm        mov    eax, SZ_RADIO_STATIONS_MUSIC_DIRECTORY_NAME;
-			__asm        push   eax;
-			__asm        lea    eax, tempRadioStation.sStationBaseDirectory.c_str_ptr;
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x128];
-			__asm        push   eax;
-			__asm        call   operator+;
-			__asm        add    esp, 0xC;
-			__asm        push   eax;
-			__asm        lea    ecx, tempRadioStation.sMusicDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::operator=;
-			__asm        lea    ecx, [ebp-0x128];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x128], 0;
-			__asm        je     _T2d6;
+		__asm        cmp    dword ptr [ebp-0x250], 0;
+		__asm        je     _Td7b;
+// LINE 943:
+_T20f:
+		__asm        jmp    _T214;
+_T214:
+		(radioStationStringListIterator.node + 0x8)->basic_string<char>::operator+=(0x5c);
+// LINE 946:
+		__asm        jmp    _T226;
+_T226:
+		__asm        mov    eax, radioStationStringListIterator.node;
+		__asm        add    eax, 8;
+		__asm        push   eax;
+		__asm        lea    eax, sStationDirectory.c_str_ptr;
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x120];
+		__asm        push   eax;
+		__asm        call   operator+;
+		__asm        add    esp, 0xC;
+		__asm        push   eax;
+		__asm        lea    ecx, tempRadioStation.sStationBaseDirectory.c_str_ptr;
+		__asm        call   basic_string<char>::operator=;
+		__asm        lea    ecx, [ebp-0x120];
+		__asm        call   basic_string<char>::~basic_string<char>;
+// LINE 947:
+		__asm        lea    ecx, tempRadioStation<vftable>;
+		__asm        call   RadioStation::ReadCallSignFromDisk;
+		__asm        test   eax, eax;
+		__asm        je     _Td4f;
+// LINE 948:
+		tempRadioStation<vftable>->RadioStation::DetectRadioStationType();
+// LINE 952:
+		__asm        mov    eax, SZ_RADIO_STATIONS_MUSIC_DIRECTORY_NAME;
+		__asm        push   eax;
+		__asm        lea    eax, tempRadioStation.sStationBaseDirectory.c_str_ptr;
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x128];
+		__asm        push   eax;
+		__asm        call   operator+;
+		__asm        add    esp, 0xC;
+		__asm        push   eax;
+		__asm        lea    ecx, tempRadioStation.sMusicDirectory.c_str_ptr;
+		__asm        call   basic_string<char>::operator=;
+		__asm        lea    ecx, [ebp-0x128];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x128], 0;
+		__asm        je     _T2d6;
 
-			__asm        mov    eax, [ebp-0x128];
-			__asm        mov    [ebp-0x244], eax;
-			__asm        mov    eax, [ebp-0x244];
-			__asm        mov    [ebp-0x248], eax;
-			__asm        mov    eax, [ebp-0x248];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T2d6:
-			__asm        jmp    _T2db;
-		// LINE 956:
-		_T2db:
-			__asm        mov    eax, SZ_RADIO_STATIONS_DJ_DIRECTORY_NAME;
-			__asm        push   eax;
-			__asm        lea    eax, tempRadioStation.sStationBaseDirectory.c_str_ptr;
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x130];
-			__asm        push   eax;
-			__asm        call   operator+;
-			__asm        add    esp, 0xC;
-			__asm        push   eax;
-			__asm        lea    ecx, tempRadioStation.sDJDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::operator=;
-			__asm        lea    ecx, [ebp-0x130];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x130], 0;
-			__asm        je     _T33c;
+		__asm        mov    eax, [ebp-0x128];
+		__asm        mov    [ebp-0x244], eax;
+		__asm        mov    eax, [ebp-0x244];
+		__asm        mov    [ebp-0x248], eax;
+		__asm        mov    eax, [ebp-0x248];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T2d6:
+		__asm        jmp    _T2db;
+// LINE 956:
+_T2db:
+		__asm        mov    eax, SZ_RADIO_STATIONS_DJ_DIRECTORY_NAME;
+		__asm        push   eax;
+		__asm        lea    eax, tempRadioStation.sStationBaseDirectory.c_str_ptr;
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x130];
+		__asm        push   eax;
+		__asm        call   operator+;
+		__asm        add    esp, 0xC;
+		__asm        push   eax;
+		__asm        lea    ecx, tempRadioStation.sDJDirectory.c_str_ptr;
+		__asm        call   basic_string<char>::operator=;
+		__asm        lea    ecx, [ebp-0x130];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x130], 0;
+		__asm        je     _T33c;
 
-			__asm        mov    eax, [ebp-0x130];
-			__asm        mov    [ebp-0x23C], eax;
-			__asm        mov    eax, [ebp-0x23C];
-			__asm        mov    [ebp-0x240], eax;
-			__asm        mov    eax, [ebp-0x240];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T33c:
-			__asm        jmp    _T341;
-		// LINE 957:
-		_T341:
-			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x0);
-		// LINE 958:
-			__asm        lea    eax, sCurrentLanguage.c_str_ptr;
-			__asm        push   eax;
-			__asm        lea    eax, tempRadioStation.sDJDirectory.c_str_ptr;
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x138];
-			__asm        push   eax;
-			__asm        call   operator+;
-			__asm        add    esp, 0xC;
-			__asm        push   eax;
-			__asm        lea    ecx, sScratch.c_str_ptr;
-			__asm        call   basic_string<char>::operator=;
-			__asm        lea    ecx, [ebp-0x138];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x138], 0;
-			__asm        je     _T3b7;
+		__asm        mov    eax, [ebp-0x130];
+		__asm        mov    [ebp-0x23C], eax;
+		__asm        mov    eax, [ebp-0x23C];
+		__asm        mov    [ebp-0x240], eax;
+		__asm        mov    eax, [ebp-0x240];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T33c:
+		__asm        jmp    _T341;
+// LINE 957:
+_T341:
+LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x0);
+// LINE 958:
+		__asm        lea    eax, sCurrentLanguage.c_str_ptr;
+		__asm        push   eax;
+		__asm        lea    eax, tempRadioStation.sDJDirectory.c_str_ptr;
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x138];
+		__asm        push   eax;
+		__asm        call   operator+;
+		__asm        add    esp, 0xC;
+		__asm        push   eax;
+		__asm        lea    ecx, sScratch.c_str_ptr;
+		__asm        call   basic_string<char>::operator=;
+		__asm        lea    ecx, [ebp-0x138];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x138], 0;
+		__asm        je     _T3b7;
 
-			__asm        mov    eax, [ebp-0x138];
-			__asm        mov    [ebp-0x230], eax;
-			__asm        mov    eax, [ebp-0x230];
-			__asm        mov    [ebp-0x234], eax;
-			__asm        mov    eax, [ebp-0x234];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T3b7:
-			__asm        jmp    _T3bc;
-		// LINE 959:
-		_T3bc:
-			__asm        cmp    gDefaultLanguage, 1;
-			__asm        je     _T429;
+		__asm        mov    eax, [ebp-0x138];
+		__asm        mov    [ebp-0x230], eax;
+		__asm        mov    eax, [ebp-0x230];
+		__asm        mov    [ebp-0x234], eax;
+		__asm        mov    eax, [ebp-0x234];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T3b7:
+		__asm        jmp    _T3bc;
+// LINE 959:
+_T3bc:
+		__asm        cmp    gDefaultLanguage, 1;
+		__asm        je     _T429;
 
-			__asm        lea    eax, sScratch.c_str_ptr;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x4C];
-			__asm        test   eax, eax;
-			__asm        jne    _T429;
-		// LINE 960:
-			__asm        push   2;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x28];
-			__asm        test   eax, eax;
-			__asm        je     _T41a;
-		// LINE 961:
-			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x1);
-		// LINE 962:
-			__asm        jmp    _T429;
-		// LINE 963:
-		_T41a:
-			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
-		// LINE 965:
-		_T429:
-			__asm        jmp    _T42e;
-		_T42e:
-			tempRadioStation.sDJDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>), sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>);
-			__asm        jmp    _T451;
-		_T451:
-			__asm        mov    eax, SZ_RADIO_COMMERCIAL_DIRECTORY_NAME;
-			__asm        mov    [ebp-0x22C], eax;
-		// LINE 969:
-			__asm        mov    eax, [ebp-0x22C];
-			__asm        push   eax;
-			__asm        call   strlen;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x220], eax;
-			__asm        jmp    _T476;
-		_T476:
-			__asm        jmp    _T47b;
-		_T47b:
-			__asm        mov    eax, [ebp-0x220];
-			__asm        push   eax;
-			__asm        mov    eax, sRadioDirectory.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        lea    ecx, sRadioDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::data;
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x21C];
-			__asm        call   basic_string<char>::basic_string<char>;
-			__asm        cmp    dword ptr [ebp-0x220], 0;
-			__asm        je     _T4ea;
+		__asm        lea    eax, sScratch.c_str_ptr;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x4C];
+		__asm        test   eax, eax;
+		__asm        jne    _T429;
+// LINE 960:
+		__asm        push   2;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x28];
+		__asm        test   eax, eax;
+		__asm        je     _T41a;
+// LINE 961:
+LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x1);
+// LINE 962:
+		__asm        jmp    _T429;
+// LINE 963:
+_T41a:
+		sCurrentLanguage.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
+// LINE 965:
+_T429:
+		__asm        jmp    _T42e;
+_T42e:
+		tempRadioStation.sDJDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>), sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>);
+		__asm        jmp    _T451;
+_T451:
+		__asm        mov    eax, SZ_RADIO_COMMERCIAL_DIRECTORY_NAME;
+		__asm        mov    [ebp-0x22C], eax;
+// LINE 969:
+		__asm        mov    eax, [ebp-0x22C];
+		__asm        push   eax;
+		__asm        call   strlen;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x220], eax;
+		__asm        jmp    _T476;
+_T476:
+		__asm        jmp    _T47b;
+_T47b:
+		__asm        mov    eax, [ebp-0x220];
+		__asm        push   eax;
+		__asm        mov    eax, sRadioDirectory.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        lea    ecx, sRadioDirectory.c_str_ptr;
+		__asm        call   basic_string<char>::data;
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x21C];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        cmp    dword ptr [ebp-0x220], 0;
+		__asm        je     _T4ea;
 
-			__asm        jmp    _T4af;
-		_T4af:
-			__asm        jmp    _T4b4;
-		_T4b4:
-			__asm        mov    eax, [ebp-0x218];
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, sRadioDirectory.reference;
-			__asm        add    eax, [ecx+4];
-			__asm        mov    [ebp-0x228], eax;
-			__asm        mov    eax, [ebp-0x220];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x22C];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x228];
-			__asm        push   eax;
-			__asm        call   memcpy;
-			__asm        add    esp, 0xC;
-			__asm        jmp    _T4ea;
-		_T4ea:
-			__asm        mov    eax, [ebp-0x218];
-			__asm        add    eax, 4;
-			__asm        mov    [ebp-0x224], eax;
-			__asm        jmp    _T4fe;
-		_T4fe:
-			__asm        mov    eax, [ebp-0x220];
-			__asm        mov    ecx, [ebp-0x224];
-			__asm        add    [ecx], eax;
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        lea    eax, [ebp-0x21C];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x140];
-			__asm        call   basic_string<char>::basic_string<char>;
-			__asm        lea    ecx, [ebp-0x21C];
-			__asm        call   basic_string<char>::~basic_string<char>;
-			__asm        jmp    _T532;
-		_T532:
-			__asm        lea    eax, tempRadioStation.sCommercialDirectory.c_str_ptr;
-			__asm        lea    ecx, [ebp-0x140];
-			__asm        cmp    eax, ecx;
-			__asm        je     _T5c3;
+		__asm        jmp    _T4af;
+_T4af:
+		__asm        jmp    _T4b4;
+_T4b4:
+		__asm        mov    eax, [ebp-0x218];
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, sRadioDirectory.reference;
+		__asm        add    eax, [ecx+4];
+		__asm        mov    [ebp-0x228], eax;
+		__asm        mov    eax, [ebp-0x220];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x22C];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x228];
+		__asm        push   eax;
+		__asm        call   memcpy;
+		__asm        add    esp, 0xC;
+		__asm        jmp    _T4ea;
+_T4ea:
+		__asm        mov    eax, [ebp-0x218];
+		__asm        add    eax, 4;
+		__asm        mov    [ebp-0x224], eax;
+		__asm        jmp    _T4fe;
+_T4fe:
+		__asm        mov    eax, [ebp-0x220];
+		__asm        mov    ecx, [ebp-0x224];
+		__asm        add    [ecx], eax;
+		__asm        push   0xFFFFFFFF;
+		__asm        push   0;
+		__asm        lea    eax, [ebp-0x21C];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x140];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        lea    ecx, [ebp-0x21C];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    _T532;
+_T532:
+		__asm        lea    eax, tempRadioStation.sCommercialDirectory.c_str_ptr;
+		__asm        lea    ecx, [ebp-0x140];
+		__asm        cmp    eax, ecx;
+		__asm        je     _T5c3;
 
-			tempRadioStation.sCommercialDirectory.c_str_ptr->basic_string<char>::delete_ref();
-			__asm        jmp    _T550;
-		_T550:
-			__asm        mov    eax, [ebp-0x13C];
-			__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
-			__asm        je     _T574;
+		tempRadioStation.sCommercialDirectory.c_str_ptr->basic_string<char>::delete_ref();
+		__asm        jmp    _T550;
+_T550:
+		__asm        mov    eax, [ebp-0x13C];
+		__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
+		__asm        je     _T574;
 
-			__asm        mov    eax, [ebp-0x13C];
-			__asm        mov    tempRadioStation.sCommercialDirectory.reference, eax;
-			__asm        mov    eax, tempRadioStation.sCommercialDirectory.reference;
-			__asm        inc    dword ptr [eax+0xC];
-			__asm        jmp    _T5c3;
-		_T574:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x238], eax;
-			__asm        cmp    dword ptr [ebp-0x238], 0;
-			__asm        je     _T5bc;
+		__asm        mov    eax, [ebp-0x13C];
+		__asm        mov    tempRadioStation.sCommercialDirectory.reference, eax;
+		__asm        mov    eax, tempRadioStation.sCommercialDirectory.reference;
+		__asm        inc    dword ptr [eax+0xC];
+		__asm        jmp    _T5c3;
+_T574:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x238], eax;
+		__asm        cmp    dword ptr [ebp-0x238], 0;
+		__asm        je     _T5bc;
 
-			__asm        jmp    _T596;
-		_T596:
-			__asm        mov    eax, [ebp-0x13C];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        lea    eax, [ebp-0x140];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x238];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    tempRadioStation.sCommercialDirectory.reference, eax;
-			__asm        jmp    _T5c3;
-		_T5bc:
-			tempRadioStation.sCommercialDirectory.reference = 0x0;
-		_T5c3:
-			__asm        jmp    _T5c8;
-		_T5c8:
-			__asm        lea    ecx, [ebp-0x140];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x140], 0;
-			__asm        je     _T607;
+		__asm        jmp    _T596;
+_T596:
+		__asm        mov    eax, [ebp-0x13C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        lea    eax, [ebp-0x140];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x238];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    tempRadioStation.sCommercialDirectory.reference, eax;
+		__asm        jmp    _T5c3;
+_T5bc:
+		tempRadioStation.sCommercialDirectory.reference = 0x0;
+_T5c3:
+		__asm        jmp    _T5c8;
+_T5c8:
+		__asm        lea    ecx, [ebp-0x140];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x140], 0;
+		__asm        je     _T607;
 
-			__asm        mov    eax, [ebp-0x140];
-			__asm        mov    [ebp-0x20C], eax;
-			__asm        mov    eax, [ebp-0x20C];
-			__asm        mov    [ebp-0x210], eax;
-			__asm        mov    eax, [ebp-0x210];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T607:
-			__asm        jmp    _T60c;
-		// LINE 970:
-		_T60c:
-			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x0);
-		// LINE 971:
-			__asm        jmp    _T622;
-		_T622:
-			__asm        jmp    _T627;
-		_T627:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, tempRadioStation.sCommercialDirectory.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        lea    ecx, tempRadioStation.sCommercialDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::data;
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x1F8];
-			__asm        call   basic_string<char>::basic_string<char>;
-			__asm        jmp    _T651;
-		_T651:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        je     _T6c6;
+		__asm        mov    eax, [ebp-0x140];
+		__asm        mov    [ebp-0x20C], eax;
+		__asm        mov    eax, [ebp-0x20C];
+		__asm        mov    [ebp-0x210], eax;
+		__asm        mov    eax, [ebp-0x210];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T607:
+		__asm        jmp    _T60c;
+// LINE 970:
+_T60c:
+LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x0);
+// LINE 971:
+		__asm        jmp    _T622;
+_T622:
+		__asm        jmp    _T627;
+_T627:
+		__asm        mov    eax, sCurrentLanguage.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, tempRadioStation.sCommercialDirectory.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        lea    ecx, tempRadioStation.sCommercialDirectory.c_str_ptr;
+		__asm        call   basic_string<char>::data;
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x1F8];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        jmp    _T651;
+_T651:
+		__asm        mov    eax, sCurrentLanguage.reference;
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        je     _T6c6;
 
-			__asm        jmp    _T666;
-		_T666:
-			__asm        jmp    _T66b;
-		_T66b:
-			__asm        jmp    _T670;
-		_T670:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x200], eax;
-			__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
-			__asm        call   basic_string<char>::data;
-			__asm        mov    [ebp-0x204], eax;
-			__asm        mov    eax, tempRadioStation.sCommercialDirectory.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, [ebp-0x1F4];
-			__asm        add    eax, [ecx];
-			__asm        mov    [ebp-0x208], eax;
-			__asm        mov    eax, [ebp-0x200];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x204];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x208];
-			__asm        push   eax;
-			__asm        call   memcpy;
-			__asm        add    esp, 0xC;
-			__asm        jmp    _T6c6;
-		_T6c6:
-			__asm        mov    eax, [ebp-0x1F4];
-			__asm        add    eax, 4;
-			__asm        mov    [ebp-0x1FC], eax;
-			__asm        jmp    _T6da;
-		_T6da:
-			__asm        jmp    _T6df;
-		_T6df:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, [ebp-0x1FC];
-			__asm        add    [ecx], eax;
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        lea    eax, [ebp-0x1F8];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x148];
-			__asm        call   basic_string<char>::basic_string<char>;
-			__asm        lea    ecx, [ebp-0x1F8];
-			__asm        call   basic_string<char>::~basic_string<char>;
-			__asm        jmp    _T716;
-		_T716:
-			__asm        lea    eax, sScratch.c_str_ptr;
-			__asm        lea    ecx, [ebp-0x148];
-			__asm        cmp    eax, ecx;
-			__asm        je     _T7b9;
+		__asm        jmp    _T666;
+_T666:
+		__asm        jmp    _T66b;
+_T66b:
+		__asm        jmp    _T670;
+_T670:
+		__asm        mov    eax, sCurrentLanguage.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x200], eax;
+		__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
+		__asm        call   basic_string<char>::data;
+		__asm        mov    [ebp-0x204], eax;
+		__asm        mov    eax, tempRadioStation.sCommercialDirectory.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x1F4];
+		__asm        add    eax, [ecx];
+		__asm        mov    [ebp-0x208], eax;
+		__asm        mov    eax, [ebp-0x200];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x204];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x208];
+		__asm        push   eax;
+		__asm        call   memcpy;
+		__asm        add    esp, 0xC;
+		__asm        jmp    _T6c6;
+_T6c6:
+		__asm        mov    eax, [ebp-0x1F4];
+		__asm        add    eax, 4;
+		__asm        mov    [ebp-0x1FC], eax;
+		__asm        jmp    _T6da;
+_T6da:
+		__asm        jmp    _T6df;
+_T6df:
+		__asm        mov    eax, sCurrentLanguage.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x1FC];
+		__asm        add    [ecx], eax;
+		__asm        push   0xFFFFFFFF;
+		__asm        push   0;
+		__asm        lea    eax, [ebp-0x1F8];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x148];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        lea    ecx, [ebp-0x1F8];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    _T716;
+_T716:
+		__asm        lea    eax, sScratch.c_str_ptr;
+		__asm        lea    ecx, [ebp-0x148];
+		__asm        cmp    eax, ecx;
+		__asm        je     _T7b9;
 
-			sScratch.c_str_ptr->basic_string<char>::delete_ref();
-			__asm        jmp    _T73a;
-		_T73a:
-			__asm        mov    eax, [ebp-0x144];
-			__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
-			__asm        je     _T764;
+		sScratch.c_str_ptr->basic_string<char>::delete_ref();
+		__asm        jmp    _T73a;
+_T73a:
+		__asm        mov    eax, [ebp-0x144];
+		__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
+		__asm        je     _T764;
 
-			__asm        mov    eax, [ebp-0x144];
-			__asm        mov    sScratch.reference, eax;
-			__asm        mov    eax, sScratch.reference;
-			__asm        inc    dword ptr [eax+0xC];
-			__asm        jmp    _T7b9;
-		_T764:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x214], eax;
-			__asm        cmp    dword ptr [ebp-0x214], 0;
-			__asm        je     _T7af;
+		__asm        mov    eax, [ebp-0x144];
+		__asm        mov    sScratch.reference, eax;
+		__asm        mov    eax, sScratch.reference;
+		__asm        inc    dword ptr [eax+0xC];
+		__asm        jmp    _T7b9;
+_T764:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x214], eax;
+		__asm        cmp    dword ptr [ebp-0x214], 0;
+		__asm        je     _T7af;
 
-			__asm        jmp    _T786;
-		_T786:
-			__asm        mov    eax, [ebp-0x144];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        lea    eax, [ebp-0x148];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x214];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    sScratch.reference, eax;
-			__asm        jmp    _T7b9;
-		_T7af:
-			sScratch.reference = 0x0;
-		_T7b9:
-			__asm        jmp    _T7be;
-		_T7be:
-			__asm        lea    ecx, [ebp-0x148];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x148], 0;
-			__asm        je     _T7fd;
+		__asm        jmp    _T786;
+_T786:
+		__asm        mov    eax, [ebp-0x144];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        lea    eax, [ebp-0x148];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x214];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    sScratch.reference, eax;
+		__asm        jmp    _T7b9;
+_T7af:
+		sScratch.reference = 0x0;
+_T7b9:
+		__asm        jmp    _T7be;
+_T7be:
+		__asm        lea    ecx, [ebp-0x148];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x148], 0;
+		__asm        je     _T7fd;
 
-			__asm        mov    eax, [ebp-0x148];
-			__asm        mov    [ebp-0x1E8], eax;
-			__asm        mov    eax, [ebp-0x1E8];
-			__asm        mov    [ebp-0x1EC], eax;
-			__asm        mov    eax, [ebp-0x1EC];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_T7fd:
-			__asm        jmp    _T802;
-		// LINE 972:
-		_T802:
-			__asm        cmp    gDefaultLanguage, 1;
-			__asm        je     _T86f;
+		__asm        mov    eax, [ebp-0x148];
+		__asm        mov    [ebp-0x1E8], eax;
+		__asm        mov    eax, [ebp-0x1E8];
+		__asm        mov    [ebp-0x1EC], eax;
+		__asm        mov    eax, [ebp-0x1EC];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_T7fd:
+		__asm        jmp    _T802;
+// LINE 972:
+_T802:
+		__asm        cmp    gDefaultLanguage, 1;
+		__asm        je     _T86f;
 
-			__asm        lea    eax, sScratch.c_str_ptr;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x4C];
-			__asm        test   eax, eax;
-			__asm        jne    _T86f;
-		// LINE 973:
-			__asm        push   2;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x28];
-			__asm        test   eax, eax;
-			__asm        je     _T860;
-		// LINE 974:
-			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x1);
-		// LINE 975:
-			__asm        jmp    _T86f;
-		// LINE 976:
-		_T860:
-			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
-		// LINE 978:
-		_T86f:
-			__asm        jmp    _T874;
-		_T874:
-			tempRadioStation.sCommercialDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>), sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>);
-			__asm        jmp    _T897;
-		_T897:
-			__asm        mov    eax, SZ_RADIO_STATIONS_JINGLE_DIRECTORY_NAME;
-			__asm        mov    [ebp-0x1E4], eax;
-		// LINE 982:
-			__asm        mov    eax, [ebp-0x1E4];
-			__asm        push   eax;
-			__asm        call   strlen;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x1D8], eax;
-			__asm        jmp    _T8bc;
-		_T8bc:
-			__asm        jmp    _T8c1;
-		_T8c1:
-			__asm        mov    eax, [ebp-0x1D8];
-			__asm        push   eax;
-			__asm        mov    eax, tempRadioStation.sStationBaseDirectory.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        lea    ecx, tempRadioStation.sStationBaseDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::data;
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x1D4];
-			__asm        call   basic_string<char>::basic_string<char>;
-			__asm        cmp    dword ptr [ebp-0x1D8], 0;
-			__asm        je     _T930;
+		__asm        lea    eax, sScratch.c_str_ptr;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x4C];
+		__asm        test   eax, eax;
+		__asm        jne    _T86f;
+// LINE 973:
+		__asm        push   2;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x28];
+		__asm        test   eax, eax;
+		__asm        je     _T860;
+// LINE 974:
+LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x1);
+// LINE 975:
+		__asm        jmp    _T86f;
+// LINE 976:
+_T860:
+		sCurrentLanguage.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
+// LINE 978:
+_T86f:
+		__asm        jmp    _T874;
+_T874:
+		tempRadioStation.sCommercialDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>), sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>);
+		__asm        jmp    _T897;
+_T897:
+		__asm        mov    eax, SZ_RADIO_STATIONS_JINGLE_DIRECTORY_NAME;
+		__asm        mov    [ebp-0x1E4], eax;
+// LINE 982:
+		__asm        mov    eax, [ebp-0x1E4];
+		__asm        push   eax;
+		__asm        call   strlen;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x1D8], eax;
+		__asm        jmp    _T8bc;
+_T8bc:
+		__asm        jmp    _T8c1;
+_T8c1:
+		__asm        mov    eax, [ebp-0x1D8];
+		__asm        push   eax;
+		__asm        mov    eax, tempRadioStation.sStationBaseDirectory.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        lea    ecx, tempRadioStation.sStationBaseDirectory.c_str_ptr;
+		__asm        call   basic_string<char>::data;
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x1D4];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        cmp    dword ptr [ebp-0x1D8], 0;
+		__asm        je     _T930;
 
-			__asm        jmp    _T8f5;
-		_T8f5:
-			__asm        jmp    _T8fa;
-		_T8fa:
-			__asm        mov    eax, tempRadioStation.sStationBaseDirectory.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, [ebp-0x1D0];
-			__asm        add    eax, [ecx];
-			__asm        mov    [ebp-0x1E0], eax;
-			__asm        mov    eax, [ebp-0x1D8];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x1E4];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x1E0];
-			__asm        push   eax;
-			__asm        call   memcpy;
-			__asm        add    esp, 0xC;
-			__asm        jmp    _T930;
-		_T930:
-			__asm        mov    eax, [ebp-0x1D0];
-			__asm        add    eax, 4;
-			__asm        mov    [ebp-0x1DC], eax;
-			__asm        jmp    _T944;
-		_T944:
-			__asm        mov    eax, [ebp-0x1D8];
-			__asm        mov    ecx, [ebp-0x1DC];
-			__asm        add    [ecx], eax;
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        lea    eax, [ebp-0x1D4];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x150];
-			__asm        call   basic_string<char>::basic_string<char>;
-			__asm        lea    ecx, [ebp-0x1D4];
-			__asm        call   basic_string<char>::~basic_string<char>;
-			__asm        jmp    _T978;
-		_T978:
-			__asm        lea    eax, tempRadioStation.sJingleDirectory.c_str_ptr;
-			__asm        lea    ecx, [ebp-0x150];
-			__asm        cmp    eax, ecx;
-			__asm        je     _Ta09;
+		__asm        jmp    _T8f5;
+_T8f5:
+		__asm        jmp    _T8fa;
+_T8fa:
+		__asm        mov    eax, tempRadioStation.sStationBaseDirectory.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x1D0];
+		__asm        add    eax, [ecx];
+		__asm        mov    [ebp-0x1E0], eax;
+		__asm        mov    eax, [ebp-0x1D8];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x1E4];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x1E0];
+		__asm        push   eax;
+		__asm        call   memcpy;
+		__asm        add    esp, 0xC;
+		__asm        jmp    _T930;
+_T930:
+		__asm        mov    eax, [ebp-0x1D0];
+		__asm        add    eax, 4;
+		__asm        mov    [ebp-0x1DC], eax;
+		__asm        jmp    _T944;
+_T944:
+		__asm        mov    eax, [ebp-0x1D8];
+		__asm        mov    ecx, [ebp-0x1DC];
+		__asm        add    [ecx], eax;
+		__asm        push   0xFFFFFFFF;
+		__asm        push   0;
+		__asm        lea    eax, [ebp-0x1D4];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x150];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        lea    ecx, [ebp-0x1D4];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    _T978;
+_T978:
+		__asm        lea    eax, tempRadioStation.sJingleDirectory.c_str_ptr;
+		__asm        lea    ecx, [ebp-0x150];
+		__asm        cmp    eax, ecx;
+		__asm        je     _Ta09;
 
-			tempRadioStation.sJingleDirectory.c_str_ptr->basic_string<char>::delete_ref();
-			__asm        jmp    _T996;
-		_T996:
-			__asm        mov    eax, [ebp-0x14C];
-			__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
-			__asm        je     _T9ba;
+		tempRadioStation.sJingleDirectory.c_str_ptr->basic_string<char>::delete_ref();
+		__asm        jmp    _T996;
+_T996:
+		__asm        mov    eax, [ebp-0x14C];
+		__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
+		__asm        je     _T9ba;
 
-			__asm        mov    eax, [ebp-0x14C];
-			__asm        mov    tempRadioStation.sJingleDirectory.reference, eax;
-			__asm        mov    eax, tempRadioStation.sJingleDirectory.reference;
-			__asm        inc    dword ptr [eax+0xC];
-			__asm        jmp    _Ta09;
-		_T9ba:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x1F0], eax;
-			__asm        cmp    dword ptr [ebp-0x1F0], 0;
-			__asm        je     _Ta02;
+		__asm        mov    eax, [ebp-0x14C];
+		__asm        mov    tempRadioStation.sJingleDirectory.reference, eax;
+		__asm        mov    eax, tempRadioStation.sJingleDirectory.reference;
+		__asm        inc    dword ptr [eax+0xC];
+		__asm        jmp    _Ta09;
+_T9ba:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x1F0], eax;
+		__asm        cmp    dword ptr [ebp-0x1F0], 0;
+		__asm        je     _Ta02;
 
-			__asm        jmp    _T9dc;
-		_T9dc:
-			__asm        mov    eax, [ebp-0x14C];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        lea    eax, [ebp-0x150];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x1F0];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    tempRadioStation.sJingleDirectory.reference, eax;
-			__asm        jmp    _Ta09;
-		_Ta02:
-			tempRadioStation.sJingleDirectory.reference = 0x0;
-		_Ta09:
-			__asm        jmp    _Ta0e;
-		_Ta0e:
-			__asm        lea    ecx, [ebp-0x150];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x150], 0;
-			__asm        je     _Ta4d;
+		__asm        jmp    _T9dc;
+_T9dc:
+		__asm        mov    eax, [ebp-0x14C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        lea    eax, [ebp-0x150];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x1F0];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    tempRadioStation.sJingleDirectory.reference, eax;
+		__asm        jmp    _Ta09;
+_Ta02:
+		tempRadioStation.sJingleDirectory.reference = 0x0;
+_Ta09:
+		__asm        jmp    _Ta0e;
+_Ta0e:
+		__asm        lea    ecx, [ebp-0x150];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x150], 0;
+		__asm        je     _Ta4d;
 
-			__asm        mov    eax, [ebp-0x150];
-			__asm        mov    [ebp-0x1C4], eax;
-			__asm        mov    eax, [ebp-0x1C4];
-			__asm        mov    [ebp-0x1C8], eax;
-			__asm        mov    eax, [ebp-0x1C8];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_Ta4d:
-			__asm        jmp    _Ta52;
-		// LINE 983:
-		_Ta52:
-			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x0);
-		// LINE 984:
-			__asm        jmp    _Ta68;
-		_Ta68:
-			__asm        jmp    _Ta6d;
-		_Ta6d:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, tempRadioStation.sJingleDirectory.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        lea    ecx, tempRadioStation.sJingleDirectory.c_str_ptr;
-			__asm        call   basic_string<char>::data;
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x1B0];
-			__asm        call   basic_string<char>::basic_string<char>;
-			__asm        jmp    _Ta97;
-		_Ta97:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        je     _Tb0c;
+		__asm        mov    eax, [ebp-0x150];
+		__asm        mov    [ebp-0x1C4], eax;
+		__asm        mov    eax, [ebp-0x1C4];
+		__asm        mov    [ebp-0x1C8], eax;
+		__asm        mov    eax, [ebp-0x1C8];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_Ta4d:
+		__asm        jmp    _Ta52;
+// LINE 983:
+_Ta52:
+LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x0);
+// LINE 984:
+		__asm        jmp    _Ta68;
+_Ta68:
+		__asm        jmp    _Ta6d;
+_Ta6d:
+		__asm        mov    eax, sCurrentLanguage.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, tempRadioStation.sJingleDirectory.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        lea    ecx, tempRadioStation.sJingleDirectory.c_str_ptr;
+		__asm        call   basic_string<char>::data;
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x1B0];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        jmp    _Ta97;
+_Ta97:
+		__asm        mov    eax, sCurrentLanguage.reference;
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        je     _Tb0c;
 
-			__asm        jmp    _Taac;
-		_Taac:
-			__asm        jmp    _Tab1;
-		_Tab1:
-			__asm        jmp    _Tab6;
-		_Tab6:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x1B8], eax;
-			__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
-			__asm        call   basic_string<char>::data;
-			__asm        mov    [ebp-0x1BC], eax;
-			__asm        mov    eax, tempRadioStation.sJingleDirectory.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, [ebp-0x1AC];
-			__asm        add    eax, [ecx];
-			__asm        mov    [ebp-0x1C0], eax;
-			__asm        mov    eax, [ebp-0x1B8];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x1BC];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x1C0];
-			__asm        push   eax;
-			__asm        call   memcpy;
-			__asm        add    esp, 0xC;
-			__asm        jmp    _Tb0c;
-		_Tb0c:
-			__asm        mov    eax, [ebp-0x1AC];
-			__asm        add    eax, 4;
-			__asm        mov    [ebp-0x1B4], eax;
-			__asm        jmp    _Tb20;
-		_Tb20:
-			__asm        jmp    _Tb25;
-		_Tb25:
-			__asm        mov    eax, sCurrentLanguage.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, [ebp-0x1B4];
-			__asm        add    [ecx], eax;
-			__asm        push   0xFFFFFFFF;
-			__asm        push   0;
-			__asm        lea    eax, [ebp-0x1B0];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x158];
-			__asm        call   basic_string<char>::basic_string<char>;
-			__asm        lea    ecx, [ebp-0x1B0];
-			__asm        call   basic_string<char>::~basic_string<char>;
-			__asm        jmp    _Tb5c;
-		_Tb5c:
-			__asm        lea    eax, sScratch.c_str_ptr;
-			__asm        lea    ecx, [ebp-0x158];
-			__asm        cmp    eax, ecx;
-			__asm        je     _Tbff;
+		__asm        jmp    _Taac;
+_Taac:
+		__asm        jmp    _Tab1;
+_Tab1:
+		__asm        jmp    _Tab6;
+_Tab6:
+		__asm        mov    eax, sCurrentLanguage.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x1B8], eax;
+		__asm        lea    ecx, sCurrentLanguage.c_str_ptr;
+		__asm        call   basic_string<char>::data;
+		__asm        mov    [ebp-0x1BC], eax;
+		__asm        mov    eax, tempRadioStation.sJingleDirectory.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x1AC];
+		__asm        add    eax, [ecx];
+		__asm        mov    [ebp-0x1C0], eax;
+		__asm        mov    eax, [ebp-0x1B8];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x1BC];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x1C0];
+		__asm        push   eax;
+		__asm        call   memcpy;
+		__asm        add    esp, 0xC;
+		__asm        jmp    _Tb0c;
+_Tb0c:
+		__asm        mov    eax, [ebp-0x1AC];
+		__asm        add    eax, 4;
+		__asm        mov    [ebp-0x1B4], eax;
+		__asm        jmp    _Tb20;
+_Tb20:
+		__asm        jmp    _Tb25;
+_Tb25:
+		__asm        mov    eax, sCurrentLanguage.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, [ebp-0x1B4];
+		__asm        add    [ecx], eax;
+		__asm        push   0xFFFFFFFF;
+		__asm        push   0;
+		__asm        lea    eax, [ebp-0x1B0];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x158];
+		__asm        call   basic_string<char>::basic_string<char>;
+		__asm        lea    ecx, [ebp-0x1B0];
+		__asm        call   basic_string<char>::~basic_string<char>;
+		__asm        jmp    _Tb5c;
+_Tb5c:
+		__asm        lea    eax, sScratch.c_str_ptr;
+		__asm        lea    ecx, [ebp-0x158];
+		__asm        cmp    eax, ecx;
+		__asm        je     _Tbff;
 
-			sScratch.c_str_ptr->basic_string<char>::delete_ref();
-			__asm        jmp    _Tb80;
-		_Tb80:
-			__asm        mov    eax, [ebp-0x154];
-			__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
-			__asm        je     _Tbaa;
+		sScratch.c_str_ptr->basic_string<char>::delete_ref();
+		__asm        jmp    _Tb80;
+_Tb80:
+		__asm        mov    eax, [ebp-0x154];
+		__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
+		__asm        je     _Tbaa;
 
-			__asm        mov    eax, [ebp-0x154];
-			__asm        mov    sScratch.reference, eax;
-			__asm        mov    eax, sScratch.reference;
-			__asm        inc    dword ptr [eax+0xC];
-			__asm        jmp    _Tbff;
-		_Tbaa:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x1CC], eax;
-			__asm        cmp    dword ptr [ebp-0x1CC], 0;
-			__asm        je     _Tbf5;
+		__asm        mov    eax, [ebp-0x154];
+		__asm        mov    sScratch.reference, eax;
+		__asm        mov    eax, sScratch.reference;
+		__asm        inc    dword ptr [eax+0xC];
+		__asm        jmp    _Tbff;
+_Tbaa:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x1CC], eax;
+		__asm        cmp    dword ptr [ebp-0x1CC], 0;
+		__asm        je     _Tbf5;
 
-			__asm        jmp    _Tbcc;
-		_Tbcc:
-			__asm        mov    eax, [ebp-0x154];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        lea    eax, [ebp-0x158];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x1CC];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    sScratch.reference, eax;
-			__asm        jmp    _Tbff;
-		_Tbf5:
-			sScratch.reference = 0x0;
-		_Tbff:
-			__asm        jmp    _Tc04;
-		_Tc04:
-			__asm        lea    ecx, [ebp-0x158];
-			__asm        call   basic_string<char>::delete_ref;
-			__asm        cmp    dword ptr [ebp-0x158], 0;
-			__asm        je     _Tc43;
+		__asm        jmp    _Tbcc;
+_Tbcc:
+		__asm        mov    eax, [ebp-0x154];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        lea    eax, [ebp-0x158];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x1CC];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    sScratch.reference, eax;
+		__asm        jmp    _Tbff;
+_Tbf5:
+		sScratch.reference = 0x0;
+_Tbff:
+		__asm        jmp    _Tc04;
+_Tc04:
+		__asm        lea    ecx, [ebp-0x158];
+		__asm        call   basic_string<char>::delete_ref;
+		__asm        cmp    dword ptr [ebp-0x158], 0;
+		__asm        je     _Tc43;
 
-			__asm        mov    eax, [ebp-0x158];
-			__asm        mov    [ebp-0x168], eax;
-			__asm        mov    eax, [ebp-0x168];
-			__asm        mov    [ebp-0x16C], eax;
-			__asm        mov    eax, [ebp-0x16C];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-		_Tc43:
-			__asm        jmp    _Tc48;
-		// LINE 985:
-		_Tc48:
-			__asm        cmp    gDefaultLanguage, 1;
-			__asm        je     _Tcb5;
+		__asm        mov    eax, [ebp-0x158];
+		__asm        mov    [ebp-0x168], eax;
+		__asm        mov    eax, [ebp-0x168];
+		__asm        mov    [ebp-0x16C], eax;
+		__asm        mov    eax, [ebp-0x16C];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+_Tc43:
+		__asm        jmp    _Tc48;
+// LINE 985:
+_Tc48:
+		__asm        cmp    gDefaultLanguage, 1;
+		__asm        je     _Tcb5;
 
-			__asm        lea    eax, sScratch.c_str_ptr;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x4C];
-			__asm        test   eax, eax;
-			__asm        jne    _Tcb5;
-		// LINE 986:
-			__asm        push   2;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x28];
-			__asm        test   eax, eax;
-			__asm        je     _Tca6;
-		// LINE 987:
-			LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x1);
-		// LINE 988:
-			__asm        jmp    _Tcb5;
-		// LINE 989:
-		_Tca6:
-			sCurrentLanguage.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
-		// LINE 991:
-		_Tcb5:
-			__asm        jmp    _Tcba;
-		_Tcba:
-			tempRadioStation.sJingleDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>), sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>);
-			__asm        jmp    _Tcdd;
-		// LINE 994:
-		_Tcdd:
-			nStationCount++;
-		// LINE 995:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+8];
-			__asm        cmp    [eax+0xC], ecx;
-			__asm        je     _Td26;
+		__asm        lea    eax, sScratch.c_str_ptr;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x4C];
+		__asm        test   eax, eax;
+		__asm        jne    _Tcb5;
+// LINE 986:
+		__asm        push   2;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x28];
+		__asm        test   eax, eax;
+		__asm        je     _Tca6;
+// LINE 987:
+LanguageManager::GetLanguageDirectoryName(sCurrentLanguage.c_str_ptr, 0x1);
+// LINE 988:
+		__asm        jmp    _Tcb5;
+// LINE 989:
+_Tca6:
+		sCurrentLanguage.c_str_ptr->basic_string<char>::remove(0x0, -0x1);
+// LINE 991:
+_Tcb5:
+		__asm        jmp    _Tcba;
+_Tcba:
+		tempRadioStation.sJingleDirectory.c_str_ptr->basic_string<char>::append_str(sCurrentLanguage.c_str_ptr->basic_string<char>::data(sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>), sCurrentLanguage.reference-><basic_string_ref<char>+0x04:4>);
+		__asm        jmp    _Tcdd;
+// LINE 994:
+_Tcdd:
+		nStationCount++;
+// LINE 995:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+8];
+		__asm        cmp    [eax+0xC], ecx;
+		__asm        je     _Td26;
 
-			construct(this-><Radio+0x08:4>, tempRadioStation<vftable>);
-			this-><Radio+0x08:4> += 0x98;
-			__asm        jmp    _Td4a;
-		_Td26:
-			__asm        jmp    _Td2b;
-		_Td2b:
-			(this + 0x4)->vector<RadioStation>::insert_aux(this-><Radio+0x08:4>, tempRadioStation<vftable>);
-		_Td4a:
-			__asm        jmp    _Td4f;
-		// LINE 998:
-		_Td4f:
-			__asm        mov    eax, radioStationStringListIterator.node;
-			__asm        mov    [ebp-0x198], eax;
-			__asm        mov    eax, radioStationStringListIterator.node;
-			__asm        mov    eax, [eax];
-			__asm        mov    radioStationStringListIterator.node, eax;
-			__asm        jmp    _Td65;
-		_Td65:
-			__asm        mov    eax, [ebp-0x198];
-			__asm        mov    [ebp-0x15C], eax;
-			__asm        jmp    _Td76;
-		// LINE 999:
-		_Td76:
+		construct(this-><Radio+0x08:4>, tempRadioStation<vftable>);
+		this-><Radio+0x08:4> += 0x98;
+		__asm        jmp    _Td4a;
+_Td26:
+		__asm        jmp    _Td2b;
+_Td2b:
+		(this + 0x4)->vector<RadioStation>::insert_aux(this-><Radio+0x08:4>, tempRadioStation<vftable>);
+_Td4a:
+		__asm        jmp    _Td4f;
+// LINE 998:
+_Td4f:
+		__asm        mov    eax, radioStationStringListIterator.node;
+		__asm        mov    [ebp-0x198], eax;
+		__asm        mov    eax, radioStationStringListIterator.node;
+		__asm        mov    eax, [eax];
+		__asm        mov    radioStationStringListIterator.node, eax;
+		__asm        jmp    _Td65;
+_Td65:
+		__asm        mov    eax, [ebp-0x198];
+		__asm        mov    [ebp-0x15C], eax;
+		__asm        jmp    _Td76;
+// LINE 999:
+_Td76:
 	}
 // LINE 1002:
 _Td7b:

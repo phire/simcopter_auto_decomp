@@ -64,28 +64,28 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 // LINE 62:
 _FOR_15:
 	for (i = 0x0; (gNumModes > i); i++) {
-		// LINE 65:
-			__asm        mov    eax, i;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        mov    ecx, lWidth;
-			__asm        cmp    gModeList[0].lWidth[eax*4], ecx;
-			__asm        jne    _T73;
+// LINE 65:
+		__asm        mov    eax, i;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        mov    ecx, lWidth;
+		__asm        cmp    gModeList[0].lWidth[eax*4], ecx;
+		__asm        jne    _T73;
 
-			__asm        mov    eax, i;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        mov    ecx, lHeight;
-			__asm        cmp    gModeList[0].lHeight[eax*4], ecx;
-			__asm        jne    _T73;
+		__asm        mov    eax, i;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        mov    ecx, lHeight;
+		__asm        cmp    gModeList[0].lHeight[eax*4], ecx;
+		__asm        jne    _T73;
 
-			__asm        mov    eax, i;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        mov    ecx, lBPP;
-			__asm        cmp    gModeList[0].lBPP[eax*4], ecx;
-			__asm        jne    _T73;
-		// LINE 66:
-			return 0x1;
-		// LINE 67:
-		_T73:
+		__asm        mov    eax, i;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        mov    ecx, lBPP;
+		__asm        cmp    gModeList[0].lBPP[eax*4], ecx;
+		__asm        jne    _T73;
+// LINE 66:
+		return 0x1;
+// LINE 67:
+_T73:
 	}
 // LINE 68:
 _T78:

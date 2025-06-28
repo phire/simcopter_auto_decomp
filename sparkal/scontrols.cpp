@@ -674,7 +674,7 @@ void SoundButtonWindow::SoundButtonWindow() {
 	0x6042c8->DigitalSound::Load();
 // LINE 32:
 _T34:
-	SoundButtonWindow::lButtonSoundReferenceCount++;
+SoundButtonWindow::lButtonSoundReferenceCount++;
 // LINE 33:
 	return;
 
@@ -693,7 +693,7 @@ void SoundButtonWindow::SoundButtonWindow(/*packed*/ class MRect& rectNewWindow,
 	0x6042c8->DigitalSound::Load();
 // LINE 47:
 _T4c:
-	SoundButtonWindow::lButtonSoundReferenceCount++;
+SoundButtonWindow::lButtonSoundReferenceCount++;
 // LINE 48:
 	return;
 
@@ -705,7 +705,7 @@ void SoundButtonWindow::~SoundButtonWindow() {
 
 	this-><SoundButtonWindow+0x00> = 0x590870;
 // LINE 56:
-	SoundButtonWindow::lButtonSoundReferenceCount--;
+SoundButtonWindow::lButtonSoundReferenceCount--;
 // LINE 57:
 	__asm        jne    _T2b;
 // LINE 58:
@@ -752,7 +752,7 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(/*unpacked*/ class ButtonGro
 	0x6043c8->DigitalSound::Load();
 // LINE 85:
 _T50:
-	SoundRadioButtonWindow::lRadioSoundReferenceCount++;
+SoundRadioButtonWindow::lRadioSoundReferenceCount++;
 // LINE 86:
 	return;
 
@@ -764,7 +764,7 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 
 	this-><SoundRadioButtonWindow+0x00> = 0x590950;
 // LINE 92:
-	SoundRadioButtonWindow::lRadioSoundReferenceCount--;
+SoundRadioButtonWindow::lRadioSoundReferenceCount--;
 // LINE 93:
 	__asm        jne    _T2b;
 // LINE 94:
@@ -810,7 +810,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 	0x604348->DigitalSound::Load();
 // LINE 115:
 _T34:
-	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
+SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
 // LINE 116:
 	return;
 
@@ -829,7 +829,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(/*packed*/ class MRect& rectNewWin
 	0x604348->DigitalSound::Load();
 // LINE 129:
 _T4c:
-	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
+SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
 // LINE 130:
 	return;
 
@@ -841,7 +841,7 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 
 	this-><SoundCheckBoxWindow+0x00> = 0x590a38;
 // LINE 136:
-	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount--;
+SoundCheckBoxWindow::lCheckBoxSoundReferenceCount--;
 // LINE 137:
 	__asm        jne    _T2b;
 // LINE 138:
@@ -887,7 +887,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 	0x604248->DigitalSound::Load();
 // LINE 159:
 _T34:
-	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
+SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
 // LINE 160:
 	return;
 
@@ -906,7 +906,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow(/*packed*/ class MRect& rectNewW
 	0x604248->DigitalSound::Load();
 // LINE 173:
 _T50:
-	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
+SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
 // LINE 174:
 	return;
 
@@ -918,7 +918,7 @@ void SoundScrollBarWindow::~SoundScrollBarWindow() {
 
 	this-><SoundScrollBarWindow+0x00> = 0x590b18;
 // LINE 180:
-	SoundScrollBarWindow::lScrollBarSoundReferenceCount--;
+SoundScrollBarWindow::lScrollBarSoundReferenceCount--;
 // LINE 181:
 	__asm        jne    _T2b;
 // LINE 182:

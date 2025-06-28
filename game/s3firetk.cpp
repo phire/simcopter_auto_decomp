@@ -909,7 +909,7 @@ _T1b2:
 	__asm        cmp    dist, eax;
 	__asm        jge    _T209;
 // LINE 318:
-	AutomobileClass::fireSirenDist = dist;
+AutomobileClass::fireSirenDist = dist;
 // LINE 320:
 _T209:
 	this->AutomobileClass::PullOverCiviliansInWay();
@@ -1068,7 +1068,7 @@ _Tf7:
 	__asm        cmp    dist, eax;
 	__asm        jge    _T146;
 // LINE 397:
-	AutomobileClass::fireHoseDist = dist;
+AutomobileClass::fireHoseDist = dist;
 // LINE 399:
 _T146:
 	return 0x1;
@@ -1098,117 +1098,117 @@ int32_t FireEngineClass::ScanForFire(/*packed*/ struct _GridCoordinates fireloc)
 // LINE 431:
 __WHILE_3f:
 	while ((spiral.currDist->SpiralScan::Next(fireloc.x) != 0x0)) {
-		// LINE 432:
-			__asm        xor    eax, eax;
-			__asm        mov    al, fireloc.y;
-			__asm        mov    [ebp-0x3C], eax;
-			__asm        xor    eax, eax;
-			__asm        mov    al, fireloc.x;
-			__asm        mov    [ebp-0x40], eax;
-		// LINE 434:
-			__asm        mov    eax, [ebp-0x3C];
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, [ebp-0x40];
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-			__asm        mov    [ebp-0x38], eax;
-			__asm        cmp    dword ptr [ebp-0x38], 0;
-			__asm        jne    _Ta7;
+// LINE 432:
+		__asm        xor    eax, eax;
+		__asm        mov    al, fireloc.y;
+		__asm        mov    [ebp-0x3C], eax;
+		__asm        xor    eax, eax;
+		__asm        mov    al, fireloc.x;
+		__asm        mov    [ebp-0x40], eax;
+// LINE 434:
+		__asm        mov    eax, [ebp-0x3C];
+		__asm        and    eax, 0xFF;
+		__asm        mov    ecx, [ebp-0x40];
+		__asm        and    ecx, 0xFF;
+		__asm        shl    ecx, 0xA;
+		__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+		__asm        mov    [ebp-0x38], eax;
+		__asm        cmp    dword ptr [ebp-0x38], 0;
+		__asm        jne    _Ta7;
 
-			_assert(0x5b57b8, 0x5b57c4, 0xa0);
-			__asm        jmp    _Tac;
-		_Ta7:
-			__asm        jmp    _Tac;
-		_Tac:
-			__asm        jmp    _Tb1;
-		_Tb1:
-			__asm        mov    eax, [ebp-0x38];
-			__asm        mov    cptr, eax;
-		// LINE 435:
-			__asm        mov    eax, cptr;
-			__asm        movsx  eax, word ptr [eax];
-			__asm        test   al, 0x20;
-			__asm        je     _T153;
-		// LINE 441:
-			fires_found = 0x0;
-		// LINE 442:
-			stobj = cptr->stptr;
-		// LINE 443:
-		__WHILE_d5:
-			while ((stobj != 0x0)) {
-				// LINE 445:
-					__asm        mov    eax, stobj;
-					__asm        test   byte ptr [eax+8], 1;
-					__asm        jne    _Tf9;
-				// LINE 448:
-					stobj = stobj->next;
-				// LINE 449:
-					__asm        jmp    __WHILE_d5;
-				// LINE 452:
-				_Tf9:
-					fires_found++;
-				// LINE 458:
-					this->currentFire = stobj->user2;
-				// LINE 461:
-					__asm        call   rand;
-					__asm        mov    ecx, this;
-					__asm        mov    ecx, [ecx+0x2A4];
-					__asm        mov    ecx, [ecx+0x98];
-					__asm        movsx  eax, ax;
-					__asm        cdq;
-					__asm        idiv   dword ptr [ecx+4];
-					__asm        mov    eax, edx;
-					__asm        sub    eax, fires_found;
-					__asm        inc    eax;
-					__asm        jne    _T146;
-				// LINE 464:
-					__asm        mov    dword ptr [ebp-0x28], 1;
-					__asm        jmp    _T13e;
-				_T13e:
-					__asm        mov    eax, [ebp-0x28];
-					__asm        jmp    __RETURN;
-				// LINE 468:
-				_T146:
-					stobj = stobj->next;
-			}
-		// LINE 472:
-		_T153:
-			dyobj = cptr->dyptr;
-		// LINE 473:
-		__WHILE_15c:
-			while ((dyobj != 0x0)) {
-				// LINE 476:
-					__asm        mov    eax, dyobj;
-					__asm        movsx  eax, word ptr [eax+0xC];
-					__asm        test   ah, 0x10;
-					__asm        je     _T196;
-				// LINE 478:
-					this->currentDyObjFire = dyobj;
-				// LINE 479:
-					__asm        mov    dword ptr [ebp-0x2C], 1;
-					__asm        jmp    _T18e;
-				_T18e:
-					__asm        mov    eax, [ebp-0x2C];
-					__asm        jmp    __RETURN;
-				// LINE 483:
-				_T196:
-					__asm        mov    eax, dyobj;
-					__asm        movsx  eax, word ptr [eax+0xC];
-					__asm        test   al, 4;
-					__asm        je     _T1c4;
-				// LINE 485:
-					dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
-				// LINE 487:
-					__asm        jmp    _T1cc;
-				// LINE 488:
-				_T1c4:
-					dyobj = dyobj->next;
-				// LINE 489:
-				_T1cc:
-			}
-		// LINE 490:
-		_T1d1:
+		_assert(0x5b57b8, 0x5b57c4, 0xa0);
+		__asm        jmp    _Tac;
+_Ta7:
+		__asm        jmp    _Tac;
+_Tac:
+		__asm        jmp    _Tb1;
+_Tb1:
+		__asm        mov    eax, [ebp-0x38];
+		__asm        mov    cptr, eax;
+// LINE 435:
+		__asm        mov    eax, cptr;
+		__asm        movsx  eax, word ptr [eax];
+		__asm        test   al, 0x20;
+		__asm        je     _T153;
+// LINE 441:
+		fires_found = 0x0;
+// LINE 442:
+		stobj = cptr->stptr;
+// LINE 443:
+__WHILE_d5:
+		while ((stobj != 0x0)) {
+// LINE 445:
+			__asm        mov    eax, stobj;
+			__asm        test   byte ptr [eax+8], 1;
+			__asm        jne    _Tf9;
+// LINE 448:
+			stobj = stobj->next;
+// LINE 449:
+			__asm        jmp    __WHILE_d5;
+// LINE 452:
+_Tf9:
+			fires_found++;
+// LINE 458:
+			this->currentFire = stobj->user2;
+// LINE 461:
+			__asm        call   rand;
+			__asm        mov    ecx, this;
+			__asm        mov    ecx, [ecx+0x2A4];
+			__asm        mov    ecx, [ecx+0x98];
+			__asm        movsx  eax, ax;
+			__asm        cdq;
+			__asm        idiv   dword ptr [ecx+4];
+			__asm        mov    eax, edx;
+			__asm        sub    eax, fires_found;
+			__asm        inc    eax;
+			__asm        jne    _T146;
+// LINE 464:
+			__asm        mov    dword ptr [ebp-0x28], 1;
+			__asm        jmp    _T13e;
+_T13e:
+			__asm        mov    eax, [ebp-0x28];
+			__asm        jmp    __RETURN;
+// LINE 468:
+_T146:
+			stobj = stobj->next;
+		}
+// LINE 472:
+_T153:
+		dyobj = cptr->dyptr;
+// LINE 473:
+__WHILE_15c:
+		while ((dyobj != 0x0)) {
+// LINE 476:
+			__asm        mov    eax, dyobj;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   ah, 0x10;
+			__asm        je     _T196;
+// LINE 478:
+			this->currentDyObjFire = dyobj;
+// LINE 479:
+			__asm        mov    dword ptr [ebp-0x2C], 1;
+			__asm        jmp    _T18e;
+_T18e:
+			__asm        mov    eax, [ebp-0x2C];
+			__asm        jmp    __RETURN;
+// LINE 483:
+_T196:
+			__asm        mov    eax, dyobj;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 4;
+			__asm        je     _T1c4;
+// LINE 485:
+			dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
+// LINE 487:
+			__asm        jmp    _T1cc;
+// LINE 488:
+_T1c4:
+			dyobj = dyobj->next;
+// LINE 489:
+_T1cc:
+		}
+// LINE 490:
+_T1d1:
 	}
 // LINE 494:
 _T1d6:

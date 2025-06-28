@@ -104,7 +104,7 @@ _T47:
 	doAssert(0x5bf728, 0x27, 0x5bf704, 0x8c085);
 // LINE 43:
 _T6d:
-	Memory::BlockMove((this + 0xc), tmp[0], 0x10);
+Memory::BlockMove((this + 0xc), tmp[0], 0x10);
 // LINE 44:
 	__asm        mov    tmp[4], 0x69;
 	__asm        mov    ax, expectondisk;
@@ -193,7 +193,7 @@ _T1a9:
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        je     _T206;
 
-	_cArray::MakeTable();
+_cArray::MakeTable();
 _T206:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;

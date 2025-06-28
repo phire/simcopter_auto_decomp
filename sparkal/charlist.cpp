@@ -88,18 +88,18 @@ void CharList::~CharList() {
 // LINE 38:
 _FOR_29:
 	for (; (this->presentCharData != 0x0); this->presentCharData = nextCharData) {
-		// LINE 40:
-			nextCharData = this->presentCharData->nextCharData;
-		// LINE 41:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0xC];
-			__asm        mov    [ebp-8], eax;
-			__asm        mov    eax, [ebp-8];
-			__asm        mov    [ebp-0xC], eax;
-			__asm        mov    eax, [ebp-0xC];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
+// LINE 40:
+		nextCharData = this->presentCharData->nextCharData;
+// LINE 41:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0xC];
+		__asm        mov    [ebp-8], eax;
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    [ebp-0xC], eax;
+		__asm        mov    eax, [ebp-0xC];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
 	}
 // LINE 44:
 _T6b:
@@ -264,8 +264,8 @@ void CharList::DeleteAllItems() {
 // LINE 123:
 _FOR_20:
 	for (i = 0x0; (iEnd > i); i++) {
-		// LINE 124:
-			this->CharList::DeleteItem(i);
+// LINE 124:
+		this->CharList::DeleteItem(i);
 	}
 // LINE 125:
 _T40:
@@ -321,21 +321,21 @@ _T6f:
 // LINE 154:
 _FOR_1d:
 	for (; (this->presentCharData != 0x0); this->presentCharData = nextCharData) {
-		// LINE 156:
-			nextCharData = this->presentCharData->nextCharData;
-		// LINE 157:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0xC];
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, [eax];
-			__asm        xor    eax, eax;
-			__asm        mov    al, chValue;
-			__asm        cmp    ecx, eax;
-			__asm        jne    _T61;
-		// LINE 158:
-			return this->presentCharData;
-		// LINE 159:
-		_T61:
+// LINE 156:
+		nextCharData = this->presentCharData->nextCharData;
+// LINE 157:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0xC];
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, [eax];
+		__asm        xor    eax, eax;
+		__asm        mov    al, chValue;
+		__asm        cmp    ecx, eax;
+		__asm        jne    _T61;
+// LINE 158:
+		return this->presentCharData;
+// LINE 159:
+_T61:
 	}
 // LINE 160:
 _T66:

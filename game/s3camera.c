@@ -1116,13 +1116,13 @@ _T107:
 
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    _Switch_11f[0][eax*4];
-// Switch pointers:
-//   _T14
-//   _T5c
-//   _T74
-//   _T8c
-//   _Te5
-//   _Tcd
+	// Switch pointers:
+	//   _T14
+	//   _T5c
+	//   _T74
+	//   _T8c
+	//   _Te5
+	//   _Tcd
 // LINE 772:
 __RETURN:
 }
@@ -1215,19 +1215,19 @@ int32_t S3CameraGetBldAlt(/*packed*/ struct Point3d *loc) {
 // LINE 837:
 __WHILE_9d:
 	while ((stobj != 0x0)) {
-		// LINE 839:
-			flags = stobj->user1;
-		// LINE 845:
-			objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, 0x10000, 0x10000, 0x0, 0x0);
-		// LINE 846:
-			__asm        mov    eax, objy;
-			__asm        cmp    maxobjy, eax;
-			__asm        jge    _Tf2;
-		// LINE 848:
-			maxobjy = objy;
-		// LINE 850:
-		_Tf2:
-			stobj = stobj->next;
+// LINE 839:
+		flags = stobj->user1;
+// LINE 845:
+		objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, 0x10000, 0x10000, 0x0, 0x0);
+// LINE 846:
+		__asm        mov    eax, objy;
+		__asm        cmp    maxobjy, eax;
+		__asm        jge    _Tf2;
+// LINE 848:
+		maxobjy = objy;
+// LINE 850:
+_Tf2:
+		stobj = stobj->next;
 	}
 // LINE 853:
 _Tff:

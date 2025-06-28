@@ -381,14 +381,14 @@ _Td2:
 // LINE 119:
 _FOR_f0:
 	for (i = 0x0; (this->nBitmapHeight > i); i++) {
-		// LINE 120:
-			memcpy(pDestinationImage, pSourceImage, this->nBitmapWidth);
-		// LINE 121:
-			__asm        jmp    _T133;
-		_T133:
-			pDestinationImage += this->mStride;
-		// LINE 122:
-			pSourceImage += this->nBitmapWidth;
+// LINE 120:
+		memcpy(pDestinationImage, pSourceImage, this->nBitmapWidth);
+// LINE 121:
+		__asm        jmp    _T133;
+_T133:
+		pDestinationImage += this->mStride;
+// LINE 122:
+		pSourceImage += this->nBitmapWidth;
 	}
 // LINE 124:
 _T156:

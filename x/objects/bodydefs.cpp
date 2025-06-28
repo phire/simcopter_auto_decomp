@@ -982,7 +982,7 @@ _L39453:
 // LINE 206:
 // No fallthrough
 _T6f1:
-	cCopterAnim::fsList->cBList<cCopterAnim>::LoadAll();
+cCopterAnim::fsList->cBList<cCopterAnim>::LoadAll();
 // LINE 209:
 	PersonFaceNums[0] = 0x4;
 // LINE 210:
@@ -1028,79 +1028,79 @@ void DeleteBodiesAndAnimations() {
 // LINE 233:
 _LOOP_11:
 	for (;;) {
-		// LINE 233:
-		_LOOP_11:
-			__asm        cmp    dword ptr [ebp-0x38], 0;
-			__asm        je     _T29;
+// LINE 233:
+_LOOP_11:
+		__asm        cmp    dword ptr [ebp-0x38], 0;
+		__asm        je     _T29;
 
-			__asm        mov    eax, [ebp-0x38];
-			__asm        add    eax, 4;
-			__asm        mov    [ebp-0xC], eax;
-			__asm        jmp    _T30;
-		_T29:
-			__asm        mov    dword ptr [ebp-0xC], 0;
-		_T30:
-			__asm        mov    eax, [ebp-0xC];
-			__asm        mov    [ebp-8], eax;
-			__asm        lea    ecx, [ebp-8];
-			__asm        call   PtrList<cCopterAnim>::Iter::Reset;
-			__asm        jmp    _T43;
-		_T43:
-			__asm        cmp    dword ptr [ebp-4], 0;
-			__asm        je     _T63;
+		__asm        mov    eax, [ebp-0x38];
+		__asm        add    eax, 4;
+		__asm        mov    [ebp-0xC], eax;
+		__asm        jmp    _T30;
+_T29:
+		__asm        mov    dword ptr [ebp-0xC], 0;
+_T30:
+		__asm        mov    eax, [ebp-0xC];
+		__asm        mov    [ebp-8], eax;
+		__asm        lea    ecx, [ebp-8];
+		__asm        call   PtrList<cCopterAnim>::Iter::Reset;
+		__asm        jmp    _T43;
+_T43:
+		__asm        cmp    dword ptr [ebp-4], 0;
+		__asm        je     _T63;
 
-			__asm        mov    eax, [ebp-4];
-			__asm        cmp    dword ptr [eax], 0;
-			__asm        jne    _T77;
+		__asm        mov    eax, [ebp-4];
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        jne    _T77;
 
-			__asm        jmp    _T72;
+		__asm        jmp    _T72;
 
-			__asm        jmp    _T68;
-		_T63:
-			__asm        jmp    _T72;
-		_T68:
-			__asm        cmp    dword ptr [ebp-0x14], 0;
-			__asm        jne    _T77;
-		_T72:
-			__asm        jmp    _Te8;
-		_T77:
-			__asm        cmp    dword ptr [ebp-4], 0;
-			__asm        je     _T93;
+		__asm        jmp    _T68;
+_T63:
+		__asm        jmp    _T72;
+_T68:
+		__asm        cmp    dword ptr [ebp-0x14], 0;
+		__asm        jne    _T77;
+_T72:
+		__asm        jmp    _Te8;
+_T77:
+		__asm        cmp    dword ptr [ebp-4], 0;
+		__asm        je     _T93;
 
-			__asm        mov    eax, [ebp-4];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x10], eax;
-			__asm        jmp    _T9f;
+		__asm        mov    eax, [ebp-4];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x10], eax;
+		__asm        jmp    _T9f;
 
-			__asm        jmp    _T9f;
-		_T93:
-			__asm        mov    dword ptr [ebp-0x10], 0;
-			__asm        jmp    _T9f;
-		_T9f:
-			__asm        mov    eax, [ebp-0x10];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x10];
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, [ebp-0x10];
-			__asm        call   dword ptr [eax+4];
-			__asm        lea    ecx, [eax+4];
-			__asm        call   PtrList<cBBase>::Remove;
-			__asm        mov    eax, [ebp-0x10];
-			__asm        mov    [ebp-0x1C], eax;
-			__asm        mov    eax, [ebp-0x1C];
-			__asm        mov    [ebp-0x18], eax;
-			__asm        cmp    dword ptr [ebp-0x18], 0;
-			__asm        je     _Tde;
+		__asm        jmp    _T9f;
+_T93:
+		__asm        mov    dword ptr [ebp-0x10], 0;
+		__asm        jmp    _T9f;
+_T9f:
+		__asm        mov    eax, [ebp-0x10];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, [ebp-0x10];
+		__asm        call   dword ptr [eax+4];
+		__asm        lea    ecx, [eax+4];
+		__asm        call   PtrList<cBBase>::Remove;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    [ebp-0x1C], eax;
+		__asm        mov    eax, [ebp-0x1C];
+		__asm        mov    [ebp-0x18], eax;
+		__asm        cmp    dword ptr [ebp-0x18], 0;
+		__asm        je     _Tde;
 
-			__asm        push   1;
-			__asm        mov    eax, [ebp-0x18];
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, [ebp-0x18];
-			__asm        call   dword ptr [eax+0x10];
-			__asm        jmp    _Tde;
-		_Tde:
-			__asm        jmp    _Te3;
-		_Te3:
+		__asm        push   1;
+		__asm        mov    eax, [ebp-0x18];
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, [ebp-0x18];
+		__asm        call   dword ptr [eax+0x10];
+		__asm        jmp    _Tde;
+_Tde:
+		__asm        jmp    _Te3;
+_Te3:
 	}
 _Te8:
 	__asm        jmp    _FOR_102;
@@ -1178,79 +1178,79 @@ _T1db:
 // LINE 234:
 _LOOP_1e3:
 	for (;;) {
-		// LINE 234:
-		_LOOP_1e3:
-			__asm        cmp    dword ptr [ebp-0x70], 0;
-			__asm        je     _T1fb;
+// LINE 234:
+_LOOP_1e3:
+		__asm        cmp    dword ptr [ebp-0x70], 0;
+		__asm        je     _T1fb;
 
-			__asm        mov    eax, [ebp-0x70];
-			__asm        add    eax, 4;
-			__asm        mov    [ebp-0x44], eax;
-			__asm        jmp    _T202;
-		_T1fb:
-			__asm        mov    dword ptr [ebp-0x44], 0;
-		_T202:
-			__asm        mov    eax, [ebp-0x44];
-			__asm        mov    [ebp-0x40], eax;
-			__asm        lea    ecx, [ebp-0x40];
-			__asm        call   PtrList<cCopterBody>::Iter::Reset;
-			__asm        jmp    _T215;
-		_T215:
-			__asm        cmp    dword ptr [ebp-0x3C], 0;
-			__asm        je     _T235;
+		__asm        mov    eax, [ebp-0x70];
+		__asm        add    eax, 4;
+		__asm        mov    [ebp-0x44], eax;
+		__asm        jmp    _T202;
+_T1fb:
+		__asm        mov    dword ptr [ebp-0x44], 0;
+_T202:
+		__asm        mov    eax, [ebp-0x44];
+		__asm        mov    [ebp-0x40], eax;
+		__asm        lea    ecx, [ebp-0x40];
+		__asm        call   PtrList<cCopterBody>::Iter::Reset;
+		__asm        jmp    _T215;
+_T215:
+		__asm        cmp    dword ptr [ebp-0x3C], 0;
+		__asm        je     _T235;
 
-			__asm        mov    eax, [ebp-0x3C];
-			__asm        cmp    dword ptr [eax], 0;
-			__asm        jne    _T249;
+		__asm        mov    eax, [ebp-0x3C];
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        jne    _T249;
 
-			__asm        jmp    _T244;
+		__asm        jmp    _T244;
 
-			__asm        jmp    _T23a;
-		_T235:
-			__asm        jmp    _T244;
-		_T23a:
-			__asm        cmp    dword ptr [ebp-0x4C], 0;
-			__asm        jne    _T249;
-		_T244:
-			__asm        jmp    _T2ba;
-		_T249:
-			__asm        cmp    dword ptr [ebp-0x3C], 0;
-			__asm        je     _T265;
+		__asm        jmp    _T23a;
+_T235:
+		__asm        jmp    _T244;
+_T23a:
+		__asm        cmp    dword ptr [ebp-0x4C], 0;
+		__asm        jne    _T249;
+_T244:
+		__asm        jmp    _T2ba;
+_T249:
+		__asm        cmp    dword ptr [ebp-0x3C], 0;
+		__asm        je     _T265;
 
-			__asm        mov    eax, [ebp-0x3C];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x48], eax;
-			__asm        jmp    _T271;
+		__asm        mov    eax, [ebp-0x3C];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x48], eax;
+		__asm        jmp    _T271;
 
-			__asm        jmp    _T271;
-		_T265:
-			__asm        mov    dword ptr [ebp-0x48], 0;
-			__asm        jmp    _T271;
-		_T271:
-			__asm        mov    eax, [ebp-0x48];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x48];
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, [ebp-0x48];
-			__asm        call   dword ptr [eax+4];
-			__asm        lea    ecx, [eax+4];
-			__asm        call   PtrList<cBBase>::Remove;
-			__asm        mov    eax, [ebp-0x48];
-			__asm        mov    [ebp-0x54], eax;
-			__asm        mov    eax, [ebp-0x54];
-			__asm        mov    [ebp-0x50], eax;
-			__asm        cmp    dword ptr [ebp-0x50], 0;
-			__asm        je     _T2b0;
+		__asm        jmp    _T271;
+_T265:
+		__asm        mov    dword ptr [ebp-0x48], 0;
+		__asm        jmp    _T271;
+_T271:
+		__asm        mov    eax, [ebp-0x48];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x48];
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, [ebp-0x48];
+		__asm        call   dword ptr [eax+4];
+		__asm        lea    ecx, [eax+4];
+		__asm        call   PtrList<cBBase>::Remove;
+		__asm        mov    eax, [ebp-0x48];
+		__asm        mov    [ebp-0x54], eax;
+		__asm        mov    eax, [ebp-0x54];
+		__asm        mov    [ebp-0x50], eax;
+		__asm        cmp    dword ptr [ebp-0x50], 0;
+		__asm        je     _T2b0;
 
-			__asm        push   1;
-			__asm        mov    eax, [ebp-0x50];
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, [ebp-0x50];
-			__asm        call   dword ptr [eax+0x10];
-			__asm        jmp    _T2b0;
-		_T2b0:
-			__asm        jmp    _T2b5;
-		_T2b5:
+		__asm        push   1;
+		__asm        mov    eax, [ebp-0x50];
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, [ebp-0x50];
+		__asm        call   dword ptr [eax+0x10];
+		__asm        jmp    _T2b0;
+_T2b0:
+		__asm        jmp    _T2b5;
+_T2b5:
 	}
 _T2ba:
 	__asm        jmp    _FOR_2d4;

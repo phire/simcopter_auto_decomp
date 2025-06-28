@@ -120,11 +120,11 @@ _Tb1:
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    _Switch_c5[0][eax*4];
-// Switch pointers:
-//   _T82
-//   _T8d
-//   _T97
-//   _Ta2
+	// Switch pointers:
+	//   _T82
+	//   _T8d
+	//   _T97
+	//   _Ta2
 // LINE 44:
 _Td5:
 	this->currDist++;

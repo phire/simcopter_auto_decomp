@@ -83,53 +83,53 @@ void Random::seed(unsigned long j) {
 // LINE 37:
 _FOR_2b:
 	for (i = 0x0; (i < 0x36); i++) {
-		// LINE 38:
-		// Block start:
-			/*bp-0x10*/  uint32_t ii;
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [ecx+eax*4];
-			__asm        mov    ecx, 0x37;
-			__asm        sub    edx, edx;
-			__asm        div    ecx;
-			__asm        mov    ii, edx;
-		// LINE 39:
-			__asm        mov    eax, k;
-			__asm        mov    ecx, ii;
-			__asm        mov    edx, this;
-			__asm        mov    [edx+ecx*4], eax;
-		// LINE 40:
-			k = (j - k);
-		// LINE 41:
-			__asm        mov    eax, ii;
-			__asm        mov    ecx, this;
-			__asm        mov    eax, [ecx+eax*4];
-			__asm        mov    j, eax;
+// LINE 38:
+	// Block start:
+		/*bp-0x10*/  uint32_t ii;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [ecx+eax*4];
+		__asm        mov    ecx, 0x37;
+		__asm        sub    edx, edx;
+		__asm        div    ecx;
+		__asm        mov    ii, edx;
+// LINE 39:
+		__asm        mov    eax, k;
+		__asm        mov    ecx, ii;
+		__asm        mov    edx, this;
+		__asm        mov    [edx+ecx*4], eax;
+// LINE 40:
+		k = (j - k);
+// LINE 41:
+		__asm        mov    eax, ii;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, [ecx+eax*4];
+		__asm        mov    j, eax;
 	}
 // LINE 43:
 _FOR_81:
 	for (loop = 0x0; (loop < 0x4); loop++) {
-		// LINE 44:
-		_FOR_9a:
-			for (i = 0x0; (i < 0x37); i++) {
-				// LINE 45:
-					__asm        xor    ecx, ecx;
-					__asm        mov    eax, i;
-					__asm        mov    ebx, 0x37;
-					__asm        add    eax, 0x1F;
-					__asm        sub    edx, edx;
-					__asm        div    ebx;
-					__asm        mov    eax, this;
-					__asm        sub    ecx, [eax+edx*4];
-					__asm        neg    ecx;
-					__asm        mov    eax, i;
-					__asm        mov    edx, this;
-					__asm        sub    [edx+eax*4], ecx;
-					__asm        jmp    _FOR_NEXT_9a;
-			}
-		// LINE 46:
-		_Tce:
+// LINE 44:
+_FOR_9a:
+		for (i = 0x0; (i < 0x37); i++) {
+// LINE 45:
+			__asm        xor    ecx, ecx;
+			__asm        mov    eax, i;
+			__asm        mov    ebx, 0x37;
+			__asm        add    eax, 0x1F;
+			__asm        sub    edx, edx;
+			__asm        div    ebx;
+			__asm        mov    eax, this;
+			__asm        sub    ecx, [eax+edx*4];
+			__asm        neg    ecx;
+			__asm        mov    eax, i;
+			__asm        mov    edx, this;
+			__asm        sub    [edx+eax*4], ecx;
+			__asm        jmp    _FOR_NEXT_9a;
+		}
+// LINE 46:
+_Tce:
 	}
 // LINE 47:
 _Td3:

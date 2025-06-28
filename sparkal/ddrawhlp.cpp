@@ -357,44 +357,44 @@ _Tbb:
 // LINE 166:
 _FOR_d4:
 	for (i = 0x0; (i < 0x100); i++) {
-		// LINE 168:
-			__asm        mov    eax, i;
-			__asm        shr    eax, 5;
-			__asm        and    eax, 7;
-			__asm        mov    ecx, eax;
-			__asm        shl    eax, 8;
-			__asm        sub    eax, ecx;
-			__asm        mov    ecx, 7;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx*4-0x410], al;
-		// LINE 169:
-			__asm        mov    eax, i;
-			__asm        shr    eax, 2;
-			__asm        and    eax, 7;
-			__asm        mov    ecx, eax;
-			__asm        shl    eax, 8;
-			__asm        sub    eax, ecx;
-			__asm        mov    ecx, 7;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx*4-0x40F], al;
-		// LINE 170:
-			__asm        mov    eax, i;
-			__asm        and    eax, 3;
-			__asm        mov    ecx, eax;
-			__asm        shl    eax, 8;
-			__asm        sub    eax, ecx;
-			__asm        mov    ecx, 3;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx*4-0x40E], al;
-		// LINE 171:
-			__asm        mov    eax, i;
-			__asm        mov    byte ptr [ebp+eax*4-0x40D], 0;
+// LINE 168:
+		__asm        mov    eax, i;
+		__asm        shr    eax, 5;
+		__asm        and    eax, 7;
+		__asm        mov    ecx, eax;
+		__asm        shl    eax, 8;
+		__asm        sub    eax, ecx;
+		__asm        mov    ecx, 7;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx*4-0x410], al;
+// LINE 169:
+		__asm        mov    eax, i;
+		__asm        shr    eax, 2;
+		__asm        and    eax, 7;
+		__asm        mov    ecx, eax;
+		__asm        shl    eax, 8;
+		__asm        sub    eax, ecx;
+		__asm        mov    ecx, 7;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx*4-0x40F], al;
+// LINE 170:
+		__asm        mov    eax, i;
+		__asm        and    eax, 3;
+		__asm        mov    ecx, eax;
+		__asm        shl    eax, 8;
+		__asm        sub    eax, ecx;
+		__asm        mov    ecx, 3;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx*4-0x40E], al;
+// LINE 171:
+		__asm        mov    eax, i;
+		__asm        mov    byte ptr [ebp+eax*4-0x40D], 0;
 	}
 // LINE 179:
 _T157:

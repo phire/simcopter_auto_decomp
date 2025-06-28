@@ -214,81 +214,81 @@ _Tc1:
 // LINE 105:
 _LOOP_c6:
 	for (;;) {
-		// LINE 105:
-		_LOOP_c6:
-			__asm        mov    eax, tempTimer.lTotalElapsedTime;
-			__asm        mov    [ebp-0x30], eax;
-			__asm        jmp    _Td1;
-		_Td1:
-			__asm        cmp    tempTimer.lStartTime, 0;
-			__asm        je     _T148;
+// LINE 105:
+_LOOP_c6:
+		__asm        mov    eax, tempTimer.lTotalElapsedTime;
+		__asm        mov    [ebp-0x30], eax;
+		__asm        jmp    _Td1;
+_Td1:
+		__asm        cmp    tempTimer.lStartTime, 0;
+		__asm        je     _T148;
 
-			__asm        cmp    tempTimer.nTimerResolution, 1;
-			__asm        jne    _Tf8;
+		__asm        cmp    tempTimer.nTimerResolution, 1;
+		__asm        jne    _Tf8;
 
-			__asm        call   dword ptr ds:[0x6C3908];
-			__asm        mov    [ebp-0x40], eax;
-			__asm        jmp    _T139;
+		__asm        call   dword ptr ds:[0x6C3908];
+		__asm        mov    [ebp-0x40], eax;
+		__asm        jmp    _T139;
 
-			__asm        jmp    _T139;
-		_Tf8:
-			__asm        cmp    tempTimer.nTimerResolution, 0;
-			__asm        jne    _T122;
+		__asm        jmp    _T139;
+_Tf8:
+		__asm        cmp    tempTimer.nTimerResolution, 0;
+		__asm        jne    _T122;
 
-			__asm        lea    eax, [ebp-0x3C];
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C365C];
-			__asm        mov    eax, [ebp-0x3C];
-			__asm        mov    [ebp-0x34], eax;
-			__asm        mov    eax, [ebp-0x34];
-			__asm        mov    [ebp-0x40], eax;
-			__asm        jmp    _T139;
+		__asm        lea    eax, [ebp-0x3C];
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C365C];
+		__asm        mov    eax, [ebp-0x3C];
+		__asm        mov    [ebp-0x34], eax;
+		__asm        mov    eax, [ebp-0x34];
+		__asm        mov    [ebp-0x40], eax;
+		__asm        jmp    _T139;
 
-			__asm        jmp    _T139;
-		_T122:
-			__asm        call   dword ptr ds:[0x6C3908];
-			__asm        mov    ecx, 0x3E8;
-			__asm        sub    edx, edx;
-			__asm        div    ecx;
-			__asm        mov    [ebp-0x40], eax;
-			__asm        jmp    _T139;
-		_T139:
-			__asm        mov    eax, [ebp-0x40];
-			__asm        sub    eax, tempTimer.lStartTime;
-			__asm        mov    [ebp-0x2C], eax;
-			__asm        mov    eax, [ebp-0x2C];
-			__asm        add    [ebp-0x30], eax;
-		_T148:
-			__asm        cmp    tempTimer.nTimerResolution, 0;
-			__asm        jne    _T183;
+		__asm        jmp    _T139;
+_T122:
+		__asm        call   dword ptr ds:[0x6C3908];
+		__asm        mov    ecx, 0x3E8;
+		__asm        sub    edx, edx;
+		__asm        div    ecx;
+		__asm        mov    [ebp-0x40], eax;
+		__asm        jmp    _T139;
+_T139:
+		__asm        mov    eax, [ebp-0x40];
+		__asm        sub    eax, tempTimer.lStartTime;
+		__asm        mov    [ebp-0x2C], eax;
+		__asm        mov    eax, [ebp-0x2C];
+		__asm        add    [ebp-0x30], eax;
+_T148:
+		__asm        cmp    tempTimer.nTimerResolution, 0;
+		__asm        jne    _T183;
 
-			__asm        cmp    tempTimer.lFrequency, 0;
-			__asm        je     _T183;
+		__asm        cmp    tempTimer.lFrequency, 0;
+		__asm        je     _T183;
 
-			__asm        mov    eax, tempTimer.lFrequency;
-			__asm        push   eax;
-			__asm        push   0xF4240;
-			__asm        mov    eax, [ebp-0x30];
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C372C];
-			__asm        mov    [ebp-0x30], eax;
-			__asm        mov    eax, lMilliseconds;
-			__asm        cmp    [ebp-0x30], eax;
-			__asm        jae    _T1a5;
+		__asm        mov    eax, tempTimer.lFrequency;
+		__asm        push   eax;
+		__asm        push   0xF4240;
+		__asm        mov    eax, [ebp-0x30];
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C372C];
+		__asm        mov    [ebp-0x30], eax;
+		__asm        mov    eax, lMilliseconds;
+		__asm        cmp    [ebp-0x30], eax;
+		__asm        jae    _T1a5;
 
-			__asm        jmp    _T1a0;
-		_T183:
-			__asm        mov    eax, lMilliseconds;
-			__asm        cmp    [ebp-0x30], eax;
-			__asm        jae    _T1a5;
+		__asm        jmp    _T1a0;
+_T183:
+		__asm        mov    eax, lMilliseconds;
+		__asm        cmp    [ebp-0x30], eax;
+		__asm        jae    _T1a5;
 
-			__asm        jmp    _T1a0;
+		__asm        jmp    _T1a0;
 
-			__asm        mov    eax, lMilliseconds;
-			__asm        cmp    [ebp-0x44], eax;
-			__asm        jae    _T1a5;
-		// LINE 106:
-		_T1a0:
+		__asm        mov    eax, lMilliseconds;
+		__asm        cmp    [ebp-0x44], eax;
+		__asm        jae    _T1a5;
+// LINE 106:
+_T1a0:
 	}
 // LINE 107:
 _T1a5:

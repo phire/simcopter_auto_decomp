@@ -3368,53 +3368,53 @@ void DialWindow::DrawCurrentDamage() {
 // LINE 619:
 _FOR_3f:
 	for (i = 0x0; (i < 0x6); i++) {
-		// LINE 620:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, nDamageInRangeOf0to15;
-			__asm        cmp    nDamageArray[0][eax*8], ecx;
-			__asm        jg     _T6b;
-		// LINE 621:
-			nSourceImageX = 0x0;
-		// LINE 622:
-			__asm        jmp    _T91;
-		_T6b:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, nDamageInRangeOf0to15;
-			__asm        cmp    nDamageArray[0][1][eax*8], ecx;
-			__asm        jg     _T8a;
-		// LINE 623:
-			nSourceImageX = 0xf;
-		// LINE 624:
-			__asm        jmp    _T91;
-		// LINE 625:
-		_T8a:
-			nSourceImageX = 0x1e;
-		// LINE 629:
-		_T91:
-			__asm        push   0xE;
-			__asm        mov    eax, nSourceImageX;
-			__asm        add    eax, 0xF;
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        mov    eax, nSourceImageX;
-			__asm        push   eax;
-			__asm        push   0x3F;
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        shl    eax, 3;
-			__asm        sub    eax, ecx;
-			__asm        add    eax, eax;
-			__asm        add    eax, 0xB;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x7C];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x80];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0x80];
-			__asm        call   dword ptr [edx+0xC];
+// LINE 620:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, nDamageInRangeOf0to15;
+		__asm        cmp    nDamageArray[0][eax*8], ecx;
+		__asm        jg     _T6b;
+// LINE 621:
+		nSourceImageX = 0x0;
+// LINE 622:
+		__asm        jmp    _T91;
+_T6b:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, nDamageInRangeOf0to15;
+		__asm        cmp    nDamageArray[0][1][eax*8], ecx;
+		__asm        jg     _T8a;
+// LINE 623:
+		nSourceImageX = 0xf;
+// LINE 624:
+		__asm        jmp    _T91;
+// LINE 625:
+_T8a:
+		nSourceImageX = 0x1e;
+// LINE 629:
+_T91:
+		__asm        push   0xE;
+		__asm        mov    eax, nSourceImageX;
+		__asm        add    eax, 0xF;
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        mov    eax, nSourceImageX;
+		__asm        push   eax;
+		__asm        push   0x3F;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        shl    eax, 3;
+		__asm        sub    eax, ecx;
+		__asm        add    eax, eax;
+		__asm        add    eax, 0xB;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x7C];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x80];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x80];
+		__asm        call   dword ptr [edx+0xC];
 	}
 // LINE 631:
 _Td5:
@@ -3443,51 +3443,51 @@ long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButto
 // LINE 643:
 _FOR_54:
 	for (i = 0x0; (i < 0x4); i++) {
-		// LINE 644:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorX;
-			__asm        cmp    [eax+ecx+0x1A4], edx;
-			__asm        jg     _Tca;
+// LINE 644:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorX;
+		__asm        cmp    [eax+ecx+0x1A4], edx;
+		__asm        jg     _Tca;
 
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorY;
-			__asm        cmp    [eax+ecx+0x1A8], edx;
-			__asm        jg     _Tca;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorY;
+		__asm        cmp    [eax+ecx+0x1A8], edx;
+		__asm        jg     _Tca;
 
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorX;
-			__asm        cmp    [eax+ecx+0x1AC], edx;
-			__asm        jle    _Tca;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorX;
+		__asm        cmp    [eax+ecx+0x1AC], edx;
+		__asm        jle    _Tca;
 
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorY;
-			__asm        cmp    [eax+ecx+0x1B0], edx;
-			__asm        jle    _Tca;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorY;
+		__asm        cmp    [eax+ecx+0x1B0], edx;
+		__asm        jle    _Tca;
 
-			__asm        jmp    _Tcf;
-		_Tca:
-			__asm        jmp    _T101;
-		_Tcf:
-			__asm        jmp    _Tde;
+		__asm        jmp    _Tcf;
+_Tca:
+		__asm        jmp    _T101;
+_Tcf:
+		__asm        jmp    _Tde;
 
-			__asm        cmp    dword ptr [ebp-8], 0;
-			__asm        je     _T101;
-		// LINE 645:
-		_Tde:
-			this->lSpotlightControlCurrent = i;
-			this->DialWindow::TurnOnSpotlightCommand(this->lSpotlightControlCurrent);
-		// LINE 646:
-			__asm        jmp    _T106;
-		// LINE 648:
-		_T101:
+		__asm        cmp    dword ptr [ebp-8], 0;
+		__asm        je     _T101;
+// LINE 645:
+_Tde:
+		this->lSpotlightControlCurrent = i;
+		this->DialWindow::TurnOnSpotlightCommand(this->lSpotlightControlCurrent);
+// LINE 646:
+		__asm        jmp    _T106;
+// LINE 648:
+_T101:
 	}
 // LINE 650:
 _T106:
@@ -3549,50 +3549,50 @@ _FOR_2f:
 	__asm        jmp    _FOR_COND_2f;
 _FOR_NEXT_2f:
 	for (; (i < 0x4); i++) {
-		// LINE 678:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorX;
-			__asm        cmp    [eax+ecx+0x1A4], edx;
-			__asm        jg     _Ta5;
+// LINE 678:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorX;
+		__asm        cmp    [eax+ecx+0x1A4], edx;
+		__asm        jg     _Ta5;
 
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorY;
-			__asm        cmp    [eax+ecx+0x1A8], edx;
-			__asm        jg     _Ta5;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorY;
+		__asm        cmp    [eax+ecx+0x1A8], edx;
+		__asm        jg     _Ta5;
 
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorX;
-			__asm        cmp    [eax+ecx+0x1AC], edx;
-			__asm        jle    _Ta5;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorX;
+		__asm        cmp    [eax+ecx+0x1AC], edx;
+		__asm        jle    _Ta5;
 
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorY;
-			__asm        cmp    [eax+ecx+0x1B0], edx;
-			__asm        jle    _Ta5;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorY;
+		__asm        cmp    [eax+ecx+0x1B0], edx;
+		__asm        jle    _Ta5;
 
-			__asm        jmp    _Taa;
-		_Ta5:
-			__asm        jmp    _Tc4;
-		_Taa:
-			__asm        jmp    _Tb9;
+		__asm        jmp    _Taa;
+_Ta5:
+		__asm        jmp    _Tc4;
+_Taa:
+		__asm        jmp    _Tb9;
 
-			__asm        cmp    dword ptr [ebp-0xC], 0;
-			__asm        je     _Tc4;
-		// LINE 679:
-		_Tb9:
-			lNewSpotlightCommand = i;
-		// LINE 680:
-			__asm        jmp    _Tc9;
-		// LINE 682:
-		_Tc4:
+		__asm        cmp    dword ptr [ebp-0xC], 0;
+		__asm        je     _Tc4;
+// LINE 679:
+_Tb9:
+		lNewSpotlightCommand = i;
+// LINE 680:
+		__asm        jmp    _Tc9;
+// LINE 682:
+_Tc4:
 	}
 // LINE 683:
 _Tc9:
@@ -5761,126 +5761,126 @@ _T28:
 // LINE 1071:
 _FOR_39:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 1072:
-			__asm        mov    eax, i;
-			__asm        mov    dword ptr [ebp+eax*4-0x40], 0;
-			__asm        jmp    _FOR_NEXT_39;
+// LINE 1072:
+		__asm        mov    eax, i;
+		__asm        mov    dword ptr [ebp+eax*4-0x40], 0;
+		__asm        jmp    _FOR_NEXT_39;
 	}
 // LINE 1074:
 _FOR_62:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 1075:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 2;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
-			__asm        jne    _T8b;
-		// LINE 1076:
-			__asm        jmp    _FOR_NEXT_62;
-		// LINE 1077:
-		_T8b:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 2;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, [eax+ecx+0x2C];
-			__asm        mov    nCurrentSeat, eax;
-		// LINE 1079:
-			__asm        lea    eax, rectSource.left;
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        shl    eax, 2;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, [eax+ecx+0x20];
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        shl    eax, 2;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, [eax+ecx+0x1C];
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   PassengerWindow::GetRectOfPassengerGraphic;
-		// LINE 1080:
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, nCurrentSeat;
-			__asm        cdq;
-			__asm        idiv   dword ptr [ecx+0x14];
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 5;
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+0x20];
-			__asm        add    eax, 0xE;
-			__asm        mov    rectDestination.left, eax;
-		// LINE 1081:
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, nCurrentSeat;
-			__asm        cdq;
-			__asm        idiv   dword ptr [ecx+0x14];
-			__asm        lea    ecx, [eax*8];
-			__asm        sub    ecx, eax;
-			__asm        lea    ecx, [ecx+ecx*4];
-			__asm        mov    eax, this;
-			__asm        add    ecx, [eax+0x24];
-			__asm        add    ecx, 6;
-			__asm        mov    rectDestination.top, ecx;
-		// LINE 1083:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, rectDestination.top;
-			__asm        cmp    [eax+0x2C], ecx;
-			__asm        jle    _T1a6;
-		// LINE 1084:
-			__asm        jmp    _T11d;
-		_T11d:
-			__asm        mov    eax, rectSource.bottom;
-			__asm        sub    eax, rectSource.top;
-			__asm        add    eax, rectDestination.top;
-			__asm        mov    ecx, this;
-			__asm        cmp    eax, [ecx+0x2C];
-			__asm        jle    _T141;
-		// LINE 1085:
-			rectSource.bottom = ((this-><PassengerWindow+0x1c> - rectDestination.top) + rectSource.top);
-		// LINE 1086:
-		_T141:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 2;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    edx, this;
-			__asm        mov    edx, [edx+0x94];
-			__asm        cmp    [eax+ecx+0x28], edx;
-			__asm        jne    _T170;
-		// LINE 1087:
-			this->PassengerWindow::GetRectOfPassengerGraphic(-0x1, 0x0, rectSource.left);
-		// LINE 1089:
-		_T170:
-			__asm        mov    eax, rectSource.bottom;
-			__asm        push   eax;
-			__asm        mov    eax, rectSource.right;
-			__asm        push   eax;
-			__asm        mov    eax, rectSource.top;
-			__asm        push   eax;
-			__asm        mov    eax, rectSource.left;
-			__asm        push   eax;
-			__asm        mov    eax, rectDestination.top;
-			__asm        push   eax;
-			__asm        mov    eax, rectDestination.left;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x44];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0xA0];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0xA0];
-			__asm        call   dword ptr [edx+0xC];
-		// LINE 1092:
-		_T1a6:
-			__asm        mov    eax, nCurrentSeat;
-			__asm        mov    dword ptr [ebp+eax*4-0x40], 1;
+// LINE 1075:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
+		__asm        jne    _T8b;
+// LINE 1076:
+		__asm        jmp    _FOR_NEXT_62;
+// LINE 1077:
+_T8b:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, [eax+ecx+0x2C];
+		__asm        mov    nCurrentSeat, eax;
+// LINE 1079:
+		__asm        lea    eax, rectSource.left;
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, [eax+ecx+0x20];
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, [eax+ecx+0x1C];
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   PassengerWindow::GetRectOfPassengerGraphic;
+// LINE 1080:
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, nCurrentSeat;
+		__asm        cdq;
+		__asm        idiv   dword ptr [ecx+0x14];
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 5;
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+0x20];
+		__asm        add    eax, 0xE;
+		__asm        mov    rectDestination.left, eax;
+// LINE 1081:
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, nCurrentSeat;
+		__asm        cdq;
+		__asm        idiv   dword ptr [ecx+0x14];
+		__asm        lea    ecx, [eax*8];
+		__asm        sub    ecx, eax;
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        mov    eax, this;
+		__asm        add    ecx, [eax+0x24];
+		__asm        add    ecx, 6;
+		__asm        mov    rectDestination.top, ecx;
+// LINE 1083:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, rectDestination.top;
+		__asm        cmp    [eax+0x2C], ecx;
+		__asm        jle    _T1a6;
+// LINE 1084:
+		__asm        jmp    _T11d;
+_T11d:
+		__asm        mov    eax, rectSource.bottom;
+		__asm        sub    eax, rectSource.top;
+		__asm        add    eax, rectDestination.top;
+		__asm        mov    ecx, this;
+		__asm        cmp    eax, [ecx+0x2C];
+		__asm        jle    _T141;
+// LINE 1085:
+		rectSource.bottom = ((this-><PassengerWindow+0x1c> - rectDestination.top) + rectSource.top);
+// LINE 1086:
+_T141:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+0x94];
+		__asm        cmp    [eax+ecx+0x28], edx;
+		__asm        jne    _T170;
+// LINE 1087:
+		this->PassengerWindow::GetRectOfPassengerGraphic(-0x1, 0x0, rectSource.left);
+// LINE 1089:
+_T170:
+		__asm        mov    eax, rectSource.bottom;
+		__asm        push   eax;
+		__asm        mov    eax, rectSource.right;
+		__asm        push   eax;
+		__asm        mov    eax, rectSource.top;
+		__asm        push   eax;
+		__asm        mov    eax, rectSource.left;
+		__asm        push   eax;
+		__asm        mov    eax, rectDestination.top;
+		__asm        push   eax;
+		__asm        mov    eax, rectDestination.left;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x44];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0xA0];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0xA0];
+		__asm        call   dword ptr [edx+0xC];
+// LINE 1092:
+_T1a6:
+		__asm        mov    eax, nCurrentSeat;
+		__asm        mov    dword ptr [ebp+eax*4-0x40], 1;
 	}
 // LINE 1096:
 _T1b6:
@@ -5888,74 +5888,74 @@ _T1b6:
 // LINE 1097:
 _FOR_1d2:
 	for (nCurrentSeat = 0x0; (tempHeliPassengerData->lSeatsTotal > nCurrentSeat); nCurrentSeat++) {
-		// LINE 1098:
-			__asm        mov    eax, nCurrentSeat;
-			__asm        cmp    dword ptr [ebp+eax*4-0x40], 0;
-			__asm        jne    _T29d;
-		// LINE 1099:
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, nCurrentSeat;
-			__asm        cdq;
-			__asm        idiv   dword ptr [ecx+0x14];
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 5;
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+0x20];
-			__asm        add    eax, 0xE;
-			__asm        mov    rectDestination.left, eax;
-		// LINE 1100:
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, nCurrentSeat;
-			__asm        cdq;
-			__asm        idiv   dword ptr [ecx+0x14];
-			__asm        lea    ecx, [eax*8];
-			__asm        sub    ecx, eax;
-			__asm        lea    ecx, [ecx+ecx*4];
-			__asm        mov    eax, this;
-			__asm        add    ecx, [eax+0x24];
-			__asm        add    ecx, 6;
-			__asm        mov    rectDestination.top, ecx;
-		// LINE 1101:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, rectDestination.top;
-			__asm        cmp    [eax+0x2C], ecx;
-			__asm        jle    _T29d;
-		// LINE 1102:
-			__asm        jmp    _T243;
-		_T243:
-			__asm        mov    eax, rectSource.bottom;
-			__asm        sub    eax, rectSource.top;
-			__asm        add    eax, rectDestination.top;
-			__asm        mov    ecx, this;
-			__asm        cmp    eax, [ecx+0x2C];
-			__asm        jle    _T267;
-		// LINE 1103:
-			rectSource.bottom = ((this-><PassengerWindow+0x1c> - rectDestination.top) + rectSource.top);
-		// LINE 1105:
-		_T267:
-			__asm        mov    eax, rectSource.bottom;
-			__asm        push   eax;
-			__asm        mov    eax, rectSource.right;
-			__asm        push   eax;
-			__asm        mov    eax, rectSource.top;
-			__asm        push   eax;
-			__asm        mov    eax, rectSource.left;
-			__asm        push   eax;
-			__asm        mov    eax, rectDestination.top;
-			__asm        push   eax;
-			__asm        mov    eax, rectDestination.left;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x44];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0xA0];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0xA0];
-			__asm        call   dword ptr [edx+0xC];
-		// LINE 1108:
-		_T29d:
+// LINE 1098:
+		__asm        mov    eax, nCurrentSeat;
+		__asm        cmp    dword ptr [ebp+eax*4-0x40], 0;
+		__asm        jne    _T29d;
+// LINE 1099:
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, nCurrentSeat;
+		__asm        cdq;
+		__asm        idiv   dword ptr [ecx+0x14];
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 5;
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+0x20];
+		__asm        add    eax, 0xE;
+		__asm        mov    rectDestination.left, eax;
+// LINE 1100:
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, nCurrentSeat;
+		__asm        cdq;
+		__asm        idiv   dword ptr [ecx+0x14];
+		__asm        lea    ecx, [eax*8];
+		__asm        sub    ecx, eax;
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        mov    eax, this;
+		__asm        add    ecx, [eax+0x24];
+		__asm        add    ecx, 6;
+		__asm        mov    rectDestination.top, ecx;
+// LINE 1101:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, rectDestination.top;
+		__asm        cmp    [eax+0x2C], ecx;
+		__asm        jle    _T29d;
+// LINE 1102:
+		__asm        jmp    _T243;
+_T243:
+		__asm        mov    eax, rectSource.bottom;
+		__asm        sub    eax, rectSource.top;
+		__asm        add    eax, rectDestination.top;
+		__asm        mov    ecx, this;
+		__asm        cmp    eax, [ecx+0x2C];
+		__asm        jle    _T267;
+// LINE 1103:
+		rectSource.bottom = ((this-><PassengerWindow+0x1c> - rectDestination.top) + rectSource.top);
+// LINE 1105:
+_T267:
+		__asm        mov    eax, rectSource.bottom;
+		__asm        push   eax;
+		__asm        mov    eax, rectSource.right;
+		__asm        push   eax;
+		__asm        mov    eax, rectSource.top;
+		__asm        push   eax;
+		__asm        mov    eax, rectSource.left;
+		__asm        push   eax;
+		__asm        mov    eax, rectDestination.top;
+		__asm        push   eax;
+		__asm        mov    eax, rectDestination.left;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x44];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0xA0];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0xA0];
+		__asm        call   dword ptr [edx+0xC];
+// LINE 1108:
+_T29d:
 	}
 // LINE 1109:
 _T2a2:
@@ -6380,84 +6380,84 @@ _T16:
 // LINE 1255:
 _FOR_2f:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 1256:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 2;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
-			__asm        jne    _T58;
-		// LINE 1257:
-			__asm        jmp    _FOR_NEXT_2f;
-		// LINE 1258:
-		_T58:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 2;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, [eax+ecx+0x2C];
-			__asm        mov    nCurrentSeat, eax;
-		// LINE 1259:
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, nCurrentSeat;
-			__asm        cdq;
-			__asm        idiv   dword ptr [ecx+0x14];
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 5;
-			__asm        add    eax, 0xE;
-			__asm        mov    rectCurrent.left, eax;
-		// LINE 1260:
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, nCurrentSeat;
-			__asm        cdq;
-			__asm        idiv   dword ptr [ecx+0x14];
-			__asm        lea    ecx, [eax*8];
-			__asm        sub    ecx, eax;
-			__asm        lea    ecx, [ecx+ecx*4];
-			__asm        add    ecx, 6;
-			__asm        mov    rectCurrent.top, ecx;
-		// LINE 1261:
-			rectCurrent.right = (rectCurrent.left + 0x1b);
-		// LINE 1262:
-			rectCurrent.bottom = (rectCurrent.top + 0x21);
-		// LINE 1263:
-			__asm        mov    eax, nCursorX;
-			__asm        cmp    rectCurrent.left, eax;
-			__asm        jg     _Te3;
+// LINE 1256:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
+		__asm        jne    _T58;
+// LINE 1257:
+		__asm        jmp    _FOR_NEXT_2f;
+// LINE 1258:
+_T58:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, [eax+ecx+0x2C];
+		__asm        mov    nCurrentSeat, eax;
+// LINE 1259:
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, nCurrentSeat;
+		__asm        cdq;
+		__asm        idiv   dword ptr [ecx+0x14];
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 5;
+		__asm        add    eax, 0xE;
+		__asm        mov    rectCurrent.left, eax;
+// LINE 1260:
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, nCurrentSeat;
+		__asm        cdq;
+		__asm        idiv   dword ptr [ecx+0x14];
+		__asm        lea    ecx, [eax*8];
+		__asm        sub    ecx, eax;
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        add    ecx, 6;
+		__asm        mov    rectCurrent.top, ecx;
+// LINE 1261:
+		rectCurrent.right = (rectCurrent.left + 0x1b);
+// LINE 1262:
+		rectCurrent.bottom = (rectCurrent.top + 0x21);
+// LINE 1263:
+		__asm        mov    eax, nCursorX;
+		__asm        cmp    rectCurrent.left, eax;
+		__asm        jg     _Te3;
 
-			__asm        mov    eax, nCursorY;
-			__asm        cmp    rectCurrent.top, eax;
-			__asm        jg     _Te3;
+		__asm        mov    eax, nCursorY;
+		__asm        cmp    rectCurrent.top, eax;
+		__asm        jg     _Te3;
 
-			__asm        mov    eax, nCursorX;
-			__asm        cmp    rectCurrent.right, eax;
-			__asm        jle    _Te3;
+		__asm        mov    eax, nCursorX;
+		__asm        cmp    rectCurrent.right, eax;
+		__asm        jle    _Te3;
 
-			__asm        mov    eax, nCursorY;
-			__asm        cmp    rectCurrent.bottom, eax;
-			__asm        jle    _Te3;
+		__asm        mov    eax, nCursorY;
+		__asm        cmp    rectCurrent.bottom, eax;
+		__asm        jle    _Te3;
 
-			__asm        jmp    _Te8;
-		_Te3:
-			__asm        jmp    _T116;
-		_Te8:
-			__asm        jmp    _Tf7;
+		__asm        jmp    _Te8;
+_Te3:
+		__asm        jmp    _T116;
+_Te8:
+		__asm        jmp    _Tf7;
 
-			__asm        cmp    dword ptr [ebp-0x20], 0;
-			__asm        je     _T116;
-		// LINE 1264:
-		_Tf7:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 2;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, tempHeliPassengerData;
-			__asm        mov    eax, [eax+ecx+0x28];
-			__asm        mov    ecx, lPassengerID;
-			__asm        mov    [ecx], eax;
-		// LINE 1265:
-			return 0x1;
-		// LINE 1267:
-		_T116:
+		__asm        cmp    dword ptr [ebp-0x20], 0;
+		__asm        je     _T116;
+// LINE 1264:
+_Tf7:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, tempHeliPassengerData;
+		__asm        mov    eax, [eax+ecx+0x28];
+		__asm        mov    ecx, lPassengerID;
+		__asm        mov    [ecx], eax;
+// LINE 1265:
+		return 0x1;
+// LINE 1267:
+_T116:
 	}
 // LINE 1268:
 _T11b:
@@ -7243,65 +7243,65 @@ _T1ef:
 // LINE 1507:
 _FOR_226:
 	for (i = 0x0; (i < 0x4); i++) {
-		// LINE 1508:
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorX;
-			__asm        cmp    [eax+ecx+0xA8], edx;
-			__asm        jg     _T29c;
+// LINE 1508:
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorX;
+		__asm        cmp    [eax+ecx+0xA8], edx;
+		__asm        jg     _T29c;
 
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorY;
-			__asm        cmp    [eax+ecx+0xAC], edx;
-			__asm        jg     _T29c;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorY;
+		__asm        cmp    [eax+ecx+0xAC], edx;
+		__asm        jg     _T29c;
 
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorX;
-			__asm        cmp    [eax+ecx+0xB0], edx;
-			__asm        jle    _T29c;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorX;
+		__asm        cmp    [eax+ecx+0xB0], edx;
+		__asm        jle    _T29c;
 
-			__asm        mov    eax, i;
-			__asm        shl    eax, 4;
-			__asm        mov    ecx, this;
-			__asm        mov    edx, nCursorY;
-			__asm        cmp    [eax+ecx+0xB4], edx;
-			__asm        jle    _T29c;
+		__asm        mov    eax, i;
+		__asm        shl    eax, 4;
+		__asm        mov    ecx, this;
+		__asm        mov    edx, nCursorY;
+		__asm        cmp    [eax+ecx+0xB4], edx;
+		__asm        jle    _T29c;
 
-			__asm        jmp    _T2a1;
-		_T29c:
-			__asm        jmp    _T2ec;
-		_T2a1:
-			__asm        jmp    _T2b0;
+		__asm        jmp    _T2a1;
+_T29c:
+		__asm        jmp    _T2ec;
+_T2a1:
+		__asm        jmp    _T2b0;
 
-			__asm        cmp    dword ptr [ebp-0x18], 0;
-			__asm        je     _T2ec;
-		// LINE 1509:
-		_T2b0:
-			__asm        mov    eax, this;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x98];
-		// LINE 1510:
-			__asm        push   1;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0xC8];
-		// LINE 1511:
-			this->nTrackingButton = i;
-		// LINE 1512:
-			return 0x1;
-		// LINE 1514:
-		_T2ec:
+		__asm        cmp    dword ptr [ebp-0x18], 0;
+		__asm        je     _T2ec;
+// LINE 1509:
+_T2b0:
+		__asm        mov    eax, this;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x98];
+// LINE 1510:
+		__asm        push   1;
+		__asm        mov    eax, i;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0xC8];
+// LINE 1511:
+		this->nTrackingButton = i;
+// LINE 1512:
+		return 0x1;
+// LINE 1514:
+_T2ec:
 	}
 // LINE 1516:
 _T2f1:
@@ -7528,7 +7528,7 @@ int32_t MapWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lW
 	__asm        cmp    lMessageData, 1;
 	__asm        jne    _T49;
 // LINE 1563:
-	AutomobileClass::S3AutoMessage(this->nCurrentAutoID, 0x1);
+AutomobileClass::S3AutoMessage(this->nCurrentAutoID, 0x1);
 // LINE 1565:
 _T49:
 	return 0x1;
@@ -8563,74 +8563,74 @@ _T83:
 // LINE 1906:
 _FOR_a0:
 	for (i = 0x0; (i < lTeargasUsed); i++) {
-		// LINE 1907:
-			__asm        mov    ecx, 5;
-			__asm        mov    eax, i;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+edx*2];
-			__asm        shl    eax, 2;
-			__asm        add    eax, 0x12;
-			__asm        mov    ptDestination.x, eax;
-		// LINE 1908:
-			__asm        mov    ecx, 5;
-			__asm        mov    eax, i;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    ecx, [eax+eax*2];
-			__asm        lea    ecx, [eax+ecx*4];
-			__asm        add    ecx, 0xC;
-			__asm        mov    ptDestination.y, ecx;
-		// LINE 1909:
-			__asm        lea    eax, rectSourceDisabled.left;
-			__asm        push   eax;
-			__asm        lea    eax, ptDestination.x;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x40];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0xC0];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0xC0];
-			__asm        call   dword ptr [edx+0x2C];
+// LINE 1907:
+		__asm        mov    ecx, 5;
+		__asm        mov    eax, i;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+edx*2];
+		__asm        shl    eax, 2;
+		__asm        add    eax, 0x12;
+		__asm        mov    ptDestination.x, eax;
+// LINE 1908:
+		__asm        mov    ecx, 5;
+		__asm        mov    eax, i;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    ecx, [eax+eax*2];
+		__asm        lea    ecx, [eax+ecx*4];
+		__asm        add    ecx, 0xC;
+		__asm        mov    ptDestination.y, ecx;
+// LINE 1909:
+		__asm        lea    eax, rectSourceDisabled.left;
+		__asm        push   eax;
+		__asm        lea    eax, ptDestination.x;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x40];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0xC0];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0xC0];
+		__asm        call   dword ptr [edx+0x2C];
 	}
 // LINE 1911:
 _FOR_10d:
 	for (; (i < 0xa); i++) {
-		// LINE 1912:
-			__asm        mov    ecx, 5;
-			__asm        mov    eax, i;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+edx*2];
-			__asm        shl    eax, 2;
-			__asm        add    eax, 0x12;
-			__asm        mov    ptDestination.x, eax;
-		// LINE 1913:
-			__asm        mov    ecx, 5;
-			__asm        mov    eax, i;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    ecx, [eax+eax*2];
-			__asm        lea    ecx, [eax+ecx*4];
-			__asm        add    ecx, 0xC;
-			__asm        mov    ptDestination.y, ecx;
-		// LINE 1914:
-			__asm        lea    eax, rectSourceEnabled.left;
-			__asm        push   eax;
-			__asm        lea    eax, ptDestination.x;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x40];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0xC0];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0xC0];
-			__asm        call   dword ptr [edx+0x2C];
+// LINE 1912:
+		__asm        mov    ecx, 5;
+		__asm        mov    eax, i;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+edx*2];
+		__asm        shl    eax, 2;
+		__asm        add    eax, 0x12;
+		__asm        mov    ptDestination.x, eax;
+// LINE 1913:
+		__asm        mov    ecx, 5;
+		__asm        mov    eax, i;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    ecx, [eax+eax*2];
+		__asm        lea    ecx, [eax+ecx*4];
+		__asm        add    ecx, 0xC;
+		__asm        mov    ptDestination.y, ecx;
+// LINE 1914:
+		__asm        lea    eax, rectSourceEnabled.left;
+		__asm        push   eax;
+		__asm        lea    eax, ptDestination.x;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x40];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0xC0];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0xC0];
+		__asm        call   dword ptr [edx+0x2C];
 	}
 // LINE 1916:
 _T173:
@@ -9472,16 +9472,16 @@ _Tb5:
 // LINE 2073:
 _FOR_e0:
 	for (i = 0x22; (i <= 0x25); i++) {
-		// LINE 2074:
-			__asm        push   0xFFFFFFFF;
-			__asm        mov    eax, i;
-			__asm        add    eax, 0x96;
-			__asm        push   eax;
-			__asm        mov    eax, tempPopupMenuWindow;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, tempPopupMenuWindow;
-			__asm        call   dword ptr [eax+0xD0];
-			__asm        jmp    _FOR_NEXT_e0;
+// LINE 2074:
+		__asm        push   0xFFFFFFFF;
+		__asm        mov    eax, i;
+		__asm        add    eax, 0x96;
+		__asm        push   eax;
+		__asm        mov    eax, tempPopupMenuWindow;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, tempPopupMenuWindow;
+		__asm        call   dword ptr [eax+0xD0];
+		__asm        jmp    _FOR_NEXT_e0;
 	}
 // LINE 2076:
 _T10b:

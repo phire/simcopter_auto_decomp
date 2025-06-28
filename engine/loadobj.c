@@ -287,31 +287,31 @@ _T113:
 // LINE 185:
 _FOR_131:
 	for (i = 0x0; (i < objs); i++) {
-		// LINE 186:
-			__asm        mov    eax, ObjData;
-			__asm        mov    ecx, i;
-			__asm        mov    edx, res;
-			__asm        mov    [edx+ecx*4+0x18], eax;
-		// LINE 187:
-			__asm        mov    eax, res;
-			__asm        mov    eax, [eax+0x14];
-			__asm        push   eax;
-			__asm        call   LoadObjtType;
-			__asm        add    esp, 4;
-			__asm        test   eax, eax;
-			__asm        jne    _T196;
-		// LINE 189:
-			__asm        cmp    FaceArray, 0;
-			__asm        je     _T181;
-		// LINE 190:
-			free(FaceArray);
-		// LINE 191:
-		_T181:
-			S2AllocReset(G_currmempool);
-		// LINE 192:
-			return 0x0;
-		// LINE 194:
-		_T196:
+// LINE 186:
+		__asm        mov    eax, ObjData;
+		__asm        mov    ecx, i;
+		__asm        mov    edx, res;
+		__asm        mov    [edx+ecx*4+0x18], eax;
+// LINE 187:
+		__asm        mov    eax, res;
+		__asm        mov    eax, [eax+0x14];
+		__asm        push   eax;
+		__asm        call   LoadObjtType;
+		__asm        add    esp, 4;
+		__asm        test   eax, eax;
+		__asm        jne    _T196;
+// LINE 189:
+		__asm        cmp    FaceArray, 0;
+		__asm        je     _T181;
+// LINE 190:
+		free(FaceArray);
+// LINE 191:
+_T181:
+		S2AllocReset(G_currmempool);
+// LINE 192:
+		return 0x0;
+// LINE 194:
+_T196:
 	}
 // LINE 196:
 _T19b:
@@ -347,15 +347,15 @@ void VRAssignMemPoolToRes(/*packed*/ struct VRResource *res, /*packed*/ struct V
 // LINE 230:
 _FOR_1b:
 	for (i = 0x0; (geo->count > i); i++) {
-		// LINE 231:
-			__asm        mov    eax, mem;
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        mov    ecx, geo;
-			__asm        mov    eax, [ecx+eax*4+0x18];
-			__asm        push   eax;
-			__asm        call   _VRAddObjToMemPool;
-			__asm        add    esp, 8;
+// LINE 231:
+		__asm        mov    eax, mem;
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, geo;
+		__asm        mov    eax, [ecx+eax*4+0x18];
+		__asm        push   eax;
+		__asm        call   _VRAddObjToMemPool;
+		__asm        add    esp, 8;
 	}
 // LINE 233:
 __RETURN:
@@ -511,262 +511,262 @@ _FOR_18d:
 	__asm        jmp    _FOR_COND_18d;
 _FOR_NEXT_18d:
 	for (; (reinterpret_cast<int16_t>(fileobjhdr.NFaces) > x); x++) {
-		// LINE 461:
-			faceptr = dataptr;
-		// LINE 464:
-			__asm        push   0x15;
-			__asm        lea    eax, filefacehdr.Id[0];
-			__asm        push   eax;
-			__asm        call   ReadResource;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        jne    _T1da;
-		// LINE 466:
-			S2AllocReset(ScratchPoolIndex);
-		// LINE 467:
-			return 0x0;
-		// LINE 505:
-		_T1da:
-			__asm        push   4;
-			__asm        push   0x59C218;
-			__asm        lea    eax, filefacehdr.Id[0];
-			__asm        push   eax;
-			__asm        call   strncmp;
-			__asm        add    esp, 0xC;
-			__asm        test   eax, eax;
-			__asm        je     _T214;
-		// LINE 506:
-			GlobalError = 0x6;
-		// LINE 507:
-			S2AllocReset(ScratchPoolIndex);
-		// LINE 508:
-			return 0x0;
-		// LINE 512:
-		_T214:
-			VertCount += reinterpret_cast<int16_t>(filefacehdr.NVerts);
-		// LINE 513:
-			faceptr->Nverts = reinterpret_cast<int16_t>(filefacehdr.NVerts);
-		// LINE 514:
-			faceptr->Attrib1 = filefacehdr.Attrib;
-		// LINE 515:
-			faceptr->Attrib2 = filefacehdr.AuxAttrib;
-		// LINE 516:
-			__asm        xor    eax, eax;
-			__asm        mov    al, filefacehdr.Color;
-			__asm        mov    ecx, faceptr;
-			__asm        mov    [ecx+0x10], eax;
-		// LINE 517:
-			hibyte = (reinterpret_cast<int16_t>(filefacehdr.TextureId) & 0xff00);
-		// LINE 518:
-			lobyte = (reinterpret_cast<int16_t>(filefacehdr.TextureId) & 0xff);
-		// LINE 519:
-			faceptr->Bitmap = ((hibyte << 0x8) | lobyte);
-		// LINE 520:
-			dataptr += 0x30;
-		// LINE 528:
-			__asm        mov    eax, faceptr;
-			__asm        test   byte ptr [eax+9], 0x40;
-			__asm        je     _T28d;
-		// LINE 529:
-			uses_gouraud = 0x1;
-		// LINE 532:
-		_T28d:
-			__asm        mov    eax, faceptr;
-			__asm        test   byte ptr [eax+8], 4;
-			__asm        je     _T2a4;
-		// LINE 533:
-			y = 0x0;
-		// LINE 539:
-		_T2a4:
-			faceptr->PlyVerts = dataptr;
-		// LINE 540:
-			FaceVertPtr = dataptr;
-		// LINE 544:
-			__asm        movsx  eax, filefacehdr.NVerts;
-			__asm        add    eax, eax;
-			__asm        push   eax;
-			__asm        lea    eax, w[0];
-			__asm        push   eax;
-			__asm        call   ReadResource;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        jne    _FOR_2f0;
-		// LINE 545:
-			return 0x0;
-		// LINE 566:
-		_FOR_2f0:
-			for (y = 0x0; (reinterpret_cast<int16_t>(filefacehdr.NVerts) > y); y++) {
-				// LINE 568:
-					__asm        mov    eax, y;
-					__asm        dec    word ptr [ebp+eax*2-0x138];
-				// LINE 569:
-					__asm        mov    eax, y;
-					__asm        movsx  eax, word ptr [ebp+eax*2-0x138];
-					__asm        shl    eax, 4;
-					__asm        mov    ecx, FaceVertPtr;
-					__asm        mov    [ecx], eax;
-					__asm        add    FaceVertPtr, 4;
-			}
-		// LINE 571:
-		_T339:
-			dataptr = FaceVertPtr;
-		// LINE 577:
-			faceptr->MapVerts = dataptr;
-		// LINE 581:
-			__asm        movsx  eax, filefacehdr.NVerts;
-			__asm        shl    eax, 3;
-			__asm        push   eax;
-			__asm        mov    eax, dataptr;
-			__asm        push   eax;
-			__asm        call   ReadResource;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        jne    _T385;
-		// LINE 583:
-			S2AllocReset(ScratchPoolIndex);
-		// LINE 584:
-			return 0x0;
-		// LINE 586:
-		_T385:
-			dataptr += (reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3);
-		// LINE 608:
-			faceptr->Barrys = S2Alloc(barrymempool, (reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3));
-		// LINE 609:
-			memcpy(faceptr->Barrys, faceptr->MapVerts, (reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3));
-		// LINE 617:
-			faceptr->Normal = dataptr;
-		// LINE 618:
-			dataptr += 0x10;
-		// LINE 619:
-			__asm        movsx  eax, w[0];
-			__asm        lea    eax, [eax+eax*2];
-			__asm        shl    eax, 2;
-			__asm        mov    ecx, ObjectPtr;
-			__asm        add    eax, [ecx+8];
-			__asm        mov    v0, eax;
-		// LINE 620:
-			__asm        movsx  eax, w[1];
-			__asm        lea    eax, [eax+eax*2];
-			__asm        shl    eax, 2;
-			__asm        mov    ecx, ObjectPtr;
-			__asm        add    eax, [ecx+8];
-			__asm        mov    v1, eax;
-		// LINE 621:
-			__asm        movsx  eax, filefacehdr.NVerts;
-			__asm        movsx  eax, word ptr [ebp+eax*2-0x13A];
-			__asm        lea    eax, [eax+eax*2];
-			__asm        shl    eax, 2;
-			__asm        mov    ecx, ObjectPtr;
-			__asm        add    eax, [ecx+8];
-			__asm        mov    vlst, eax;
-		// LINE 622:
-			FaceCalcNormal(v0, v1, vlst, faceptr->Normal);
-		// LINE 627:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax], 0;
-			__asm        jne    _T4af;
+// LINE 461:
+		faceptr = dataptr;
+// LINE 464:
+		__asm        push   0x15;
+		__asm        lea    eax, filefacehdr.Id[0];
+		__asm        push   eax;
+		__asm        call   ReadResource;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        jne    _T1da;
+// LINE 466:
+		S2AllocReset(ScratchPoolIndex);
+// LINE 467:
+		return 0x0;
+// LINE 505:
+_T1da:
+		__asm        push   4;
+		__asm        push   0x59C218;
+		__asm        lea    eax, filefacehdr.Id[0];
+		__asm        push   eax;
+		__asm        call   strncmp;
+		__asm        add    esp, 0xC;
+		__asm        test   eax, eax;
+		__asm        je     _T214;
+// LINE 506:
+		GlobalError = 0x6;
+// LINE 507:
+		S2AllocReset(ScratchPoolIndex);
+// LINE 508:
+		return 0x0;
+// LINE 512:
+_T214:
+		VertCount += reinterpret_cast<int16_t>(filefacehdr.NVerts);
+// LINE 513:
+		faceptr->Nverts = reinterpret_cast<int16_t>(filefacehdr.NVerts);
+// LINE 514:
+		faceptr->Attrib1 = filefacehdr.Attrib;
+// LINE 515:
+		faceptr->Attrib2 = filefacehdr.AuxAttrib;
+// LINE 516:
+		__asm        xor    eax, eax;
+		__asm        mov    al, filefacehdr.Color;
+		__asm        mov    ecx, faceptr;
+		__asm        mov    [ecx+0x10], eax;
+// LINE 517:
+		hibyte = (reinterpret_cast<int16_t>(filefacehdr.TextureId) & 0xff00);
+// LINE 518:
+		lobyte = (reinterpret_cast<int16_t>(filefacehdr.TextureId) & 0xff);
+// LINE 519:
+		faceptr->Bitmap = ((hibyte << 0x8) | lobyte);
+// LINE 520:
+		dataptr += 0x30;
+// LINE 528:
+		__asm        mov    eax, faceptr;
+		__asm        test   byte ptr [eax+9], 0x40;
+		__asm        je     _T28d;
+// LINE 529:
+		uses_gouraud = 0x1;
+// LINE 532:
+_T28d:
+		__asm        mov    eax, faceptr;
+		__asm        test   byte ptr [eax+8], 4;
+		__asm        je     _T2a4;
+// LINE 533:
+		y = 0x0;
+// LINE 539:
+_T2a4:
+		faceptr->PlyVerts = dataptr;
+// LINE 540:
+		FaceVertPtr = dataptr;
+// LINE 544:
+		__asm        movsx  eax, filefacehdr.NVerts;
+		__asm        add    eax, eax;
+		__asm        push   eax;
+		__asm        lea    eax, w[0];
+		__asm        push   eax;
+		__asm        call   ReadResource;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        jne    _FOR_2f0;
+// LINE 545:
+		return 0x0;
+// LINE 566:
+_FOR_2f0:
+		for (y = 0x0; (reinterpret_cast<int16_t>(filefacehdr.NVerts) > y); y++) {
+// LINE 568:
+			__asm        mov    eax, y;
+			__asm        dec    word ptr [ebp+eax*2-0x138];
+// LINE 569:
+			__asm        mov    eax, y;
+			__asm        movsx  eax, word ptr [ebp+eax*2-0x138];
+			__asm        shl    eax, 4;
+			__asm        mov    ecx, FaceVertPtr;
+			__asm        mov    [ecx], eax;
+			__asm        add    FaceVertPtr, 4;
+		}
+// LINE 571:
+_T339:
+		dataptr = FaceVertPtr;
+// LINE 577:
+		faceptr->MapVerts = dataptr;
+// LINE 581:
+		__asm        movsx  eax, filefacehdr.NVerts;
+		__asm        shl    eax, 3;
+		__asm        push   eax;
+		__asm        mov    eax, dataptr;
+		__asm        push   eax;
+		__asm        call   ReadResource;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        jne    _T385;
+// LINE 583:
+		S2AllocReset(ScratchPoolIndex);
+// LINE 584:
+		return 0x0;
+// LINE 586:
+_T385:
+		dataptr += (reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3);
+// LINE 608:
+		faceptr->Barrys = S2Alloc(barrymempool, (reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3));
+// LINE 609:
+		memcpy(faceptr->Barrys, faceptr->MapVerts, (reinterpret_cast<int16_t>(filefacehdr.NVerts) << 0x3));
+// LINE 617:
+		faceptr->Normal = dataptr;
+// LINE 618:
+		dataptr += 0x10;
+// LINE 619:
+		__asm        movsx  eax, w[0];
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, ObjectPtr;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    v0, eax;
+// LINE 620:
+		__asm        movsx  eax, w[1];
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, ObjectPtr;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    v1, eax;
+// LINE 621:
+		__asm        movsx  eax, filefacehdr.NVerts;
+		__asm        movsx  eax, word ptr [ebp+eax*2-0x13A];
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, ObjectPtr;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    vlst, eax;
+// LINE 622:
+		FaceCalcNormal(v0, v1, vlst, faceptr->Normal);
+// LINE 627:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        jne    _T4af;
 
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        jne    _T4af;
-		// LINE 629:
-			__asm        mov    eax, faceptr;
-			__asm        or     dword ptr [eax+8], 0x10000000;
-		// LINE 630:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ebp-0x1D8], eax;
-			__asm        fild   dword ptr [ebp-0x1D8];
-			__asm        fdiv   qword ptr ds:[0x592460];
-			__asm        fcomp  qword ptr ds:[0x592468];
-			__asm        fnstsw ax;
-			__asm        test   ah, 0x41;
-			__asm        jne    _T4aa;
-		// LINE 631:
-			__asm        mov    eax, faceptr;
-			__asm        or     dword ptr [eax+8], 0x20000000;
-		// LINE 633:
-		_T4aa:
-			__asm        jmp    _T581;
-		_T4af:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax], 0;
-			__asm        jne    _T513;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        jne    _T4af;
+// LINE 629:
+		__asm        mov    eax, faceptr;
+		__asm        or     dword ptr [eax+8], 0x10000000;
+// LINE 630:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ebp-0x1D8], eax;
+		__asm        fild   dword ptr [ebp-0x1D8];
+		__asm        fdiv   qword ptr ds:[0x592460];
+		__asm        fcomp  qword ptr ds:[0x592468];
+		__asm        fnstsw ax;
+		__asm        test   ah, 0x41;
+		__asm        jne    _T4aa;
+// LINE 631:
+		__asm        mov    eax, faceptr;
+		__asm        or     dword ptr [eax+8], 0x20000000;
+// LINE 633:
+_T4aa:
+		__asm        jmp    _T581;
+_T4af:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        jne    _T513;
 
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+8], 0;
-			__asm        jne    _T513;
-		// LINE 635:
-			__asm        mov    eax, faceptr;
-			__asm        or     dword ptr [eax+8], 0x8000000;
-		// LINE 636:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x1DC], eax;
-			__asm        fild   dword ptr [ebp-0x1DC];
-			__asm        fdiv   qword ptr ds:[0x592460];
-			__asm        fcomp  qword ptr ds:[0x592468];
-			__asm        fnstsw ax;
-			__asm        test   ah, 0x41;
-			__asm        jne    _T50e;
-		// LINE 637:
-			__asm        mov    eax, faceptr;
-			__asm        or     dword ptr [eax+8], 0x20000000;
-		// LINE 639:
-		_T50e:
-			__asm        jmp    _T581;
-		_T513:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        jne    _T577;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+8], 0;
+		__asm        jne    _T513;
+// LINE 635:
+		__asm        mov    eax, faceptr;
+		__asm        or     dword ptr [eax+8], 0x8000000;
+// LINE 636:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x1DC], eax;
+		__asm        fild   dword ptr [ebp-0x1DC];
+		__asm        fdiv   qword ptr ds:[0x592460];
+		__asm        fcomp  qword ptr ds:[0x592468];
+		__asm        fnstsw ax;
+		__asm        test   ah, 0x41;
+		__asm        jne    _T50e;
+// LINE 637:
+		__asm        mov    eax, faceptr;
+		__asm        or     dword ptr [eax+8], 0x20000000;
+// LINE 639:
+_T50e:
+		__asm        jmp    _T581;
+_T513:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        jne    _T577;
 
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+8], 0;
-			__asm        jne    _T577;
-		// LINE 641:
-			__asm        mov    eax, faceptr;
-			__asm        or     dword ptr [eax+8], 0x4000000;
-		// LINE 642:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x1E0], eax;
-			__asm        fild   dword ptr [ebp-0x1E0];
-			__asm        fdiv   qword ptr ds:[0x592460];
-			__asm        fcomp  qword ptr ds:[0x592468];
-			__asm        fnstsw ax;
-			__asm        test   ah, 0x41;
-			__asm        jne    _T572;
-		// LINE 643:
-			__asm        mov    eax, faceptr;
-			__asm        or     dword ptr [eax+8], 0x20000000;
-		// LINE 645:
-		_T572:
-			__asm        jmp    _T581;
-		// LINE 646:
-		_T577:
-			__asm        mov    eax, faceptr;
-			__asm        or     dword ptr [eax+8], 0x40000000;
-		// LINE 648:
-		_T581:
-			faceptr->Normal->p = v0;
-		// LINE 650:
-			faceptr->NextFace = dataptr;
-		// LINE 651:
-			__asm        test   reinterpret_cast<uint8_t>(fileobjhdr.Attrib), 1;
-			__asm        je     _T5ba;
-		// LINE 652:
-			FaceArray-> = faceptr;
-		// LINE 653:
-		_T5ba:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+8], 0;
+		__asm        jne    _T577;
+// LINE 641:
+		__asm        mov    eax, faceptr;
+		__asm        or     dword ptr [eax+8], 0x4000000;
+// LINE 642:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x1E0], eax;
+		__asm        fild   dword ptr [ebp-0x1E0];
+		__asm        fdiv   qword ptr ds:[0x592460];
+		__asm        fcomp  qword ptr ds:[0x592468];
+		__asm        fnstsw ax;
+		__asm        test   ah, 0x41;
+		__asm        jne    _T572;
+// LINE 643:
+		__asm        mov    eax, faceptr;
+		__asm        or     dword ptr [eax+8], 0x20000000;
+// LINE 645:
+_T572:
+		__asm        jmp    _T581;
+// LINE 646:
+_T577:
+		__asm        mov    eax, faceptr;
+		__asm        or     dword ptr [eax+8], 0x40000000;
+// LINE 648:
+_T581:
+		faceptr->Normal->p = v0;
+// LINE 650:
+		faceptr->NextFace = dataptr;
+// LINE 651:
+		__asm        test   reinterpret_cast<uint8_t>(fileobjhdr.Attrib), 1;
+		__asm        je     _T5ba;
+// LINE 652:
+		FaceArray-> = faceptr;
+// LINE 653:
+_T5ba:
 	}
 // LINE 658:
 _T5bf:
@@ -915,387 +915,69 @@ _T79:
 // LINE 813:
 _FOR_a3:
 	for (i = 0x0; (oh->NFaces > i); i++) {
-		// LINE 816:
-			__asm        mov    eax, faceptr;
-			__asm        test   byte ptr [eax+8], 4;
-			__asm        je     _Tc7;
-		// LINE 817:
-			__asm        jmp    do_2d_face;
-		// LINE 819:
-		_Tc7:
-			__asm        mov    eax, faceptr;
-			__asm        test   dword ptr [eax+8], 0x18000;
-			__asm        je     _Tdc;
-		// LINE 820:
-			__asm        jmp    next_face;
-		// LINE 823:
-		_Tdc:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0xFFFFFF9C;
-			__asm        jge    _Tf8;
-		// LINE 824:
-			normaldir = 0x1;
-		// LINE 825:
-			__asm        jmp    _T12d;
-		_Tf8:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0x64;
-			__asm        jle    _T128;
-		// LINE 826:
-			__asm        cmp    check_for_overhang, 0;
-			__asm        jne    _T11c;
-		// LINE 827:
-			__asm        jmp    next_face;
-		// LINE 828:
-			__asm        jmp    _T123;
-		// LINE 829:
-		_T11c:
-			normaldir = 0xffffffff;
-		// LINE 830:
-		_T123:
-			__asm        jmp    _T12d;
-		// LINE 831:
-		_T128:
-			__asm        jmp    next_face;
-		// LINE 834:
-		_T12d:
-			dataptr = faceptr;
-		// LINE 835:
-			dataptr += 0x30;
-		// LINE 836:
-			vertno = faceptr->PlyVerts;
-		// LINE 839:
-			minz = 0x75300000;
-			miny = minz;
-			minx = miny;
-		// LINE 840:
-			maxz = 0x8ad00000;
-			maxy = maxz;
-			maxx = maxy;
-		// LINE 845:
-		_FOR_172:
-			for (j = 0x0; (faceptr->Nverts > j); j++) {
-				// LINE 851:
-					__asm        mov    eax, vertno;
-					__asm        mov    eax, [eax];
-					__asm        shr    eax, 4;
-					__asm        lea    eax, [eax+eax*2];
-					__asm        shl    eax, 2;
-					__asm        mov    ecx, oh;
-					__asm        add    eax, [ecx+8];
-					__asm        mov    vert, eax;
-				// LINE 855:
-					vertno += 0x4;
-				// LINE 858:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, minx;
-					__asm        cmp    [eax], ecx;
-					__asm        jge    _T1b5;
-
-					minx = vert->x;
-				// LINE 859:
-				_T1b5:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, miny;
-					__asm        cmp    [eax+4], ecx;
-					__asm        jge    _T1cd;
-
-					miny = vert->y;
-				// LINE 860:
-				_T1cd:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, minz;
-					__asm        cmp    [eax+8], ecx;
-					__asm        jge    _T1e5;
-
-					minz = vert->z;
-				// LINE 861:
-				_T1e5:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxx;
-					__asm        cmp    [eax], ecx;
-					__asm        jle    _T1fb;
-
-					maxx = vert->x;
-				// LINE 862:
-				_T1fb:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxy;
-					__asm        cmp    [eax+4], ecx;
-					__asm        jle    _T213;
-
-					maxy = vert->y;
-				// LINE 863:
-				_T213:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxz;
-					__asm        cmp    [eax+8], ecx;
-					__asm        jle    _T22b;
-
-					maxz = vert->z;
-				// LINE 864:
-				_T22b:
-			}
-		// LINE 868:
-		_T230:
-			__asm        mov    eax, dim;
-			__asm        add    eax, x;
-			__asm        cmp    eax, minx;
-			__asm        jl     next_face;
-
-			__asm        mov    eax, x;
-			__asm        sub    eax, dim;
-			__asm        cmp    eax, maxx;
-			__asm        jg     next_face;
-
-			__asm        mov    eax, dim;
-			__asm        add    eax, z;
-			__asm        cmp    eax, minz;
-			__asm        jl     next_face;
-
-			__asm        mov    eax, z;
-			__asm        sub    eax, dim;
-			__asm        cmp    eax, maxz;
-			__asm        jg     next_face;
-		// LINE 877:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        mov    ebx, eax;
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        add    ebx, eax;
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax];
-			__asm        push   eax;
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax];
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        add    ebx, eax;
-			__asm        mov    planed, ebx;
-		// LINE 883:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        mov    eax, z;
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        mov    ebx, eax;
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax];
-			__asm        push   eax;
-			__asm        mov    eax, x;
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        add    ebx, eax;
-			__asm        mov    scalar, ebx;
-		// LINE 888:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, planed;
-			__asm        sub    eax, scalar;
-			__asm        push   eax;
-			__asm        call   _FixedDiv;
-			__asm        add    esp, 8;
-			__asm        mov    facealt, eax;
-		// LINE 890:
-			__asm        mov    eax, maxy;
-			__asm        cmp    facealt, eax;
-			__asm        jg     _T324;
-
-			__asm        mov    eax, miny;
-			__asm        cmp    facealt, eax;
-			__asm        jge    _T330;
-		// LINE 891:
-		_T324:
-			facealt = ((maxy + miny) >> 0x1);
-		// LINE 893:
-		_T330:
-			__asm        cmp    check_for_overhang, 0;
-			__asm        jne    _T40b;
-		// LINE 895:
-			__asm        mov    eax, facealt;
-			__asm        cmp    altyupbelow, eax;
-			__asm        jge    _T406;
-		// LINE 897:
-			altyupbelow = facealt;
-		// LINE 898:
-			flags[0] = faceptr->Attrib2;
-		// LINE 902:
-			__asm        cmp    collisvec, 0;
-			__asm        je     _T38e;
-		// LINE 904:
-			collisvec->x = (((minx + maxx) >> 0x1) - x);
-		// LINE 905:
-			collisvec->z = (((maxz + minz) >> 0x1) - z);
-		// LINE 906:
-			collisvec->y = 0x0;
-		// LINE 912:
-		_T38e:
-			__asm        cmp    landable, 0;
-			__asm        je     _T406;
-
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
-			__asm        jge    _T406;
-		// LINE 915:
-			__asm        mov    eax, x;
-			__asm        sub    eax, 0x20000;
-			__asm        cmp    eax, minx;
-			__asm        jl     _T3fd;
-
-			__asm        mov    eax, x;
-			__asm        add    eax, 0x20000;
-			__asm        cmp    eax, maxx;
-			__asm        jg     _T3fd;
-
-			__asm        mov    eax, z;
-			__asm        sub    eax, 0x20000;
-			__asm        cmp    eax, minz;
-			__asm        jl     _T3fd;
-
-			__asm        mov    eax, z;
-			__asm        add    eax, 0x20000;
-			__asm        cmp    eax, maxz;
-			__asm        jg     _T3fd;
-		// LINE 917:
-			landable[0] = 0x1;
-		// LINE 919:
-			__asm        jmp    _T406;
-		// LINE 921:
-		_T3fd:
-			landable[0] = 0x0;
-		// LINE 925:
-		_T406:
-			__asm        jmp    next_face;
-		// LINE 929:
-		_T40b:
-			__asm        cmp    normaldir, 0;
-			__asm        jle    _T515;
-		// LINE 932:
-			__asm        mov    eax, y;
-			__asm        cmp    facealt, eax;
-			__asm        jge    _T4f2;
-
-			__asm        mov    eax, facealt;
-			__asm        cmp    altyupbelow, eax;
-			__asm        jge    _T4f2;
-		// LINE 934:
-			altyupbelow = facealt;
-		// LINE 937:
-			flags[0] = faceptr->Attrib2;
-		// LINE 941:
-			__asm        cmp    collisvec, 0;
-			__asm        je     _T475;
-		// LINE 943:
-			collisvec->x = (((minx + maxx) >> 0x1) - x);
-		// LINE 944:
-			collisvec->z = (((maxz + minz) >> 0x1) - z);
-		// LINE 945:
-			collisvec->y = 0x0;
-		// LINE 950:
-		_T475:
-			__asm        cmp    landable, 0;
-			__asm        je     _T4ed;
-
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
-			__asm        jge    _T4ed;
-		// LINE 953:
-			__asm        mov    eax, x;
-			__asm        sub    eax, 0x10000;
-			__asm        cmp    eax, minx;
-			__asm        jl     _T4e4;
-
-			__asm        mov    eax, x;
-			__asm        add    eax, 0x10000;
-			__asm        cmp    eax, maxx;
-			__asm        jg     _T4e4;
-
-			__asm        mov    eax, z;
-			__asm        sub    eax, 0x10000;
-			__asm        cmp    eax, minz;
-			__asm        jl     _T4e4;
-
-			__asm        mov    eax, z;
-			__asm        add    eax, 0x10000;
-			__asm        cmp    eax, maxz;
-			__asm        jg     _T4e4;
-		// LINE 955:
-			landable[0] = 0x1;
-		// LINE 957:
-			__asm        jmp    _T4ed;
-		// LINE 959:
-		_T4e4:
-			landable[0] = 0x0;
-		// LINE 964:
-		_T4ed:
-			__asm        jmp    _T510;
-		_T4f2:
-			__asm        mov    eax, y;
-			__asm        cmp    facealt, eax;
-			__asm        jl     _T510;
-
-			__asm        mov    eax, altyupabove;
-			__asm        cmp    facealt, eax;
-			__asm        jge    _T510;
-		// LINE 966:
-			altyupabove = facealt;
-		// LINE 971:
-		_T510:
-			__asm        jmp    next_face;
-		// LINE 978:
-		_T515:
-			__asm        mov    eax, y;
-			__asm        add    eax, 0xA0000;
-			__asm        cmp    eax, facealt;
-			__asm        jle    _T52b;
-		// LINE 979:
-			__asm        jmp    next_face;
-		// LINE 981:
-		_T52b:
-			overhang = 0x1;
-		// LINE 984:
-			__asm        mov    eax, facealt;
-			__asm        cmp    altydown, eax;
-			__asm        jle    next_face;
-		// LINE 986:
-			altydown = facealt;
-		// LINE 994:
-		next_face:
-			faceptr = faceptr->NextFace;
-		// LINE 995:
-			__asm        jmp    _FOR_NEXT_a3;
-		// LINE 1003:
-		do_2d_face:
-			vertno = faceptr->PlyVerts;
-		// LINE 1005:
+// LINE 816:
+		__asm        mov    eax, faceptr;
+		__asm        test   byte ptr [eax+8], 4;
+		__asm        je     _Tc7;
+// LINE 817:
+		__asm        jmp    do_2d_face;
+// LINE 819:
+_Tc7:
+		__asm        mov    eax, faceptr;
+		__asm        test   dword ptr [eax+8], 0x18000;
+		__asm        je     _Tdc;
+// LINE 820:
+		__asm        jmp    next_face;
+// LINE 823:
+_Tdc:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0xFFFFFF9C;
+		__asm        jge    _Tf8;
+// LINE 824:
+		normaldir = 0x1;
+// LINE 825:
+		__asm        jmp    _T12d;
+_Tf8:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0x64;
+		__asm        jle    _T128;
+// LINE 826:
+		__asm        cmp    check_for_overhang, 0;
+		__asm        jne    _T11c;
+// LINE 827:
+		__asm        jmp    next_face;
+// LINE 828:
+		__asm        jmp    _T123;
+// LINE 829:
+_T11c:
+		normaldir = 0xffffffff;
+// LINE 830:
+_T123:
+		__asm        jmp    _T12d;
+// LINE 831:
+_T128:
+		__asm        jmp    next_face;
+// LINE 834:
+_T12d:
+		dataptr = faceptr;
+// LINE 835:
+		dataptr += 0x30;
+// LINE 836:
+		vertno = faceptr->PlyVerts;
+// LINE 839:
+		minz = 0x75300000;
+		miny = minz;
+		minx = miny;
+// LINE 840:
+		maxz = 0x8ad00000;
+		maxy = maxz;
+		maxx = maxy;
+// LINE 845:
+_FOR_172:
+		for (j = 0x0; (faceptr->Nverts > j); j++) {
+// LINE 851:
 			__asm        mov    eax, vertno;
 			__asm        mov    eax, [eax];
 			__asm        shr    eax, 4;
@@ -1304,74 +986,392 @@ _FOR_a3:
 			__asm        mov    ecx, oh;
 			__asm        add    eax, [ecx+8];
 			__asm        mov    vert, eax;
-		// LINE 1010:
+// LINE 855:
 			vertno += 0x4;
-		// LINE 1012:
-			__asm        mov    eax, vertno;
-			__asm        mov    eax, [eax];
-			__asm        shr    eax, 4;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        shl    eax, 2;
-			__asm        mov    ecx, oh;
-			__asm        add    eax, [ecx+8];
-			__asm        mov    vert2, eax;
-		// LINE 1021:
+// LINE 858:
 			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax];
-			__asm        sub    eax, 0x40000;
-			__asm        mov    ecx, dim;
-			__asm        add    ecx, x;
-			__asm        cmp    eax, ecx;
-			__asm        jg     _T649;
+			__asm        mov    ecx, minx;
+			__asm        cmp    [eax], ecx;
+			__asm        jge    _T1b5;
 
+			minx = vert->x;
+// LINE 859:
+_T1b5:
 			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax];
-			__asm        add    eax, 0x40000;
-			__asm        mov    ecx, x;
-			__asm        sub    ecx, dim;
-			__asm        cmp    eax, ecx;
-			__asm        jl     _T649;
-
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax+8];
-			__asm        sub    eax, 0x40000;
-			__asm        mov    ecx, dim;
-			__asm        add    ecx, z;
-			__asm        cmp    eax, ecx;
-			__asm        jg     _T649;
-
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax+8];
-			__asm        add    eax, 0x40000;
-			__asm        mov    ecx, z;
-			__asm        sub    ecx, dim;
-			__asm        cmp    eax, ecx;
-			__asm        jl     _T649;
-		// LINE 1023:
-			__asm        mov    eax, vert2;
-			__asm        mov    ecx, altyupbelow;
+			__asm        mov    ecx, miny;
 			__asm        cmp    [eax+4], ecx;
-			__asm        jle    _T649;
-		// LINE 1025:
-			altyupbelow = vert2->y;
-		// LINE 1027:
-			__asm        cmp    landable, 0;
-			__asm        je     _T619;
-		// LINE 1029:
-			landable[0] = 0x0;
-		// LINE 1032:
-		_T619:
-			__asm        cmp    collisvec, 0;
-			__asm        je     _T649;
-		// LINE 1034:
-			collisvec->x = (vert->x - x);
-		// LINE 1035:
-			collisvec->z = (vert->z - z);
-		// LINE 1036:
-			collisvec->y = 0x0;
-		// LINE 1042:
-		_T649:
-			faceptr = faceptr->NextFace;
+			__asm        jge    _T1cd;
+
+			miny = vert->y;
+// LINE 860:
+_T1cd:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, minz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jge    _T1e5;
+
+			minz = vert->z;
+// LINE 861:
+_T1e5:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxx;
+			__asm        cmp    [eax], ecx;
+			__asm        jle    _T1fb;
+
+			maxx = vert->x;
+// LINE 862:
+_T1fb:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxy;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jle    _T213;
+
+			maxy = vert->y;
+// LINE 863:
+_T213:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jle    _T22b;
+
+			maxz = vert->z;
+// LINE 864:
+_T22b:
+		}
+// LINE 868:
+_T230:
+		__asm        mov    eax, dim;
+		__asm        add    eax, x;
+		__asm        cmp    eax, minx;
+		__asm        jl     next_face;
+
+		__asm        mov    eax, x;
+		__asm        sub    eax, dim;
+		__asm        cmp    eax, maxx;
+		__asm        jg     next_face;
+
+		__asm        mov    eax, dim;
+		__asm        add    eax, z;
+		__asm        cmp    eax, minz;
+		__asm        jl     next_face;
+
+		__asm        mov    eax, z;
+		__asm        sub    eax, dim;
+		__asm        cmp    eax, maxz;
+		__asm        jg     next_face;
+// LINE 877:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ebx, eax;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    planed, ebx;
+// LINE 883:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        mov    eax, z;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ebx, eax;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, x;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    scalar, ebx;
+// LINE 888:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, planed;
+		__asm        sub    eax, scalar;
+		__asm        push   eax;
+		__asm        call   _FixedDiv;
+		__asm        add    esp, 8;
+		__asm        mov    facealt, eax;
+// LINE 890:
+		__asm        mov    eax, maxy;
+		__asm        cmp    facealt, eax;
+		__asm        jg     _T324;
+
+		__asm        mov    eax, miny;
+		__asm        cmp    facealt, eax;
+		__asm        jge    _T330;
+// LINE 891:
+_T324:
+		facealt = ((maxy + miny) >> 0x1);
+// LINE 893:
+_T330:
+		__asm        cmp    check_for_overhang, 0;
+		__asm        jne    _T40b;
+// LINE 895:
+		__asm        mov    eax, facealt;
+		__asm        cmp    altyupbelow, eax;
+		__asm        jge    _T406;
+// LINE 897:
+		altyupbelow = facealt;
+// LINE 898:
+		flags[0] = faceptr->Attrib2;
+// LINE 902:
+		__asm        cmp    collisvec, 0;
+		__asm        je     _T38e;
+// LINE 904:
+		collisvec->x = (((minx + maxx) >> 0x1) - x);
+// LINE 905:
+		collisvec->z = (((maxz + minz) >> 0x1) - z);
+// LINE 906:
+		collisvec->y = 0x0;
+// LINE 912:
+_T38e:
+		__asm        cmp    landable, 0;
+		__asm        je     _T406;
+
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
+		__asm        jge    _T406;
+// LINE 915:
+		__asm        mov    eax, x;
+		__asm        sub    eax, 0x20000;
+		__asm        cmp    eax, minx;
+		__asm        jl     _T3fd;
+
+		__asm        mov    eax, x;
+		__asm        add    eax, 0x20000;
+		__asm        cmp    eax, maxx;
+		__asm        jg     _T3fd;
+
+		__asm        mov    eax, z;
+		__asm        sub    eax, 0x20000;
+		__asm        cmp    eax, minz;
+		__asm        jl     _T3fd;
+
+		__asm        mov    eax, z;
+		__asm        add    eax, 0x20000;
+		__asm        cmp    eax, maxz;
+		__asm        jg     _T3fd;
+// LINE 917:
+		landable[0] = 0x1;
+// LINE 919:
+		__asm        jmp    _T406;
+// LINE 921:
+_T3fd:
+		landable[0] = 0x0;
+// LINE 925:
+_T406:
+		__asm        jmp    next_face;
+// LINE 929:
+_T40b:
+		__asm        cmp    normaldir, 0;
+		__asm        jle    _T515;
+// LINE 932:
+		__asm        mov    eax, y;
+		__asm        cmp    facealt, eax;
+		__asm        jge    _T4f2;
+
+		__asm        mov    eax, facealt;
+		__asm        cmp    altyupbelow, eax;
+		__asm        jge    _T4f2;
+// LINE 934:
+		altyupbelow = facealt;
+// LINE 937:
+		flags[0] = faceptr->Attrib2;
+// LINE 941:
+		__asm        cmp    collisvec, 0;
+		__asm        je     _T475;
+// LINE 943:
+		collisvec->x = (((minx + maxx) >> 0x1) - x);
+// LINE 944:
+		collisvec->z = (((maxz + minz) >> 0x1) - z);
+// LINE 945:
+		collisvec->y = 0x0;
+// LINE 950:
+_T475:
+		__asm        cmp    landable, 0;
+		__asm        je     _T4ed;
+
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
+		__asm        jge    _T4ed;
+// LINE 953:
+		__asm        mov    eax, x;
+		__asm        sub    eax, 0x10000;
+		__asm        cmp    eax, minx;
+		__asm        jl     _T4e4;
+
+		__asm        mov    eax, x;
+		__asm        add    eax, 0x10000;
+		__asm        cmp    eax, maxx;
+		__asm        jg     _T4e4;
+
+		__asm        mov    eax, z;
+		__asm        sub    eax, 0x10000;
+		__asm        cmp    eax, minz;
+		__asm        jl     _T4e4;
+
+		__asm        mov    eax, z;
+		__asm        add    eax, 0x10000;
+		__asm        cmp    eax, maxz;
+		__asm        jg     _T4e4;
+// LINE 955:
+		landable[0] = 0x1;
+// LINE 957:
+		__asm        jmp    _T4ed;
+// LINE 959:
+_T4e4:
+		landable[0] = 0x0;
+// LINE 964:
+_T4ed:
+		__asm        jmp    _T510;
+_T4f2:
+		__asm        mov    eax, y;
+		__asm        cmp    facealt, eax;
+		__asm        jl     _T510;
+
+		__asm        mov    eax, altyupabove;
+		__asm        cmp    facealt, eax;
+		__asm        jge    _T510;
+// LINE 966:
+		altyupabove = facealt;
+// LINE 971:
+_T510:
+		__asm        jmp    next_face;
+// LINE 978:
+_T515:
+		__asm        mov    eax, y;
+		__asm        add    eax, 0xA0000;
+		__asm        cmp    eax, facealt;
+		__asm        jle    _T52b;
+// LINE 979:
+		__asm        jmp    next_face;
+// LINE 981:
+_T52b:
+		overhang = 0x1;
+// LINE 984:
+		__asm        mov    eax, facealt;
+		__asm        cmp    altydown, eax;
+		__asm        jle    next_face;
+// LINE 986:
+		altydown = facealt;
+// LINE 994:
+next_face:
+		faceptr = faceptr->NextFace;
+// LINE 995:
+		__asm        jmp    _FOR_NEXT_a3;
+// LINE 1003:
+do_2d_face:
+		vertno = faceptr->PlyVerts;
+// LINE 1005:
+		__asm        mov    eax, vertno;
+		__asm        mov    eax, [eax];
+		__asm        shr    eax, 4;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, oh;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    vert, eax;
+// LINE 1010:
+		vertno += 0x4;
+// LINE 1012:
+		__asm        mov    eax, vertno;
+		__asm        mov    eax, [eax];
+		__asm        shr    eax, 4;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, oh;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    vert2, eax;
+// LINE 1021:
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax];
+		__asm        sub    eax, 0x40000;
+		__asm        mov    ecx, dim;
+		__asm        add    ecx, x;
+		__asm        cmp    eax, ecx;
+		__asm        jg     _T649;
+
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax];
+		__asm        add    eax, 0x40000;
+		__asm        mov    ecx, x;
+		__asm        sub    ecx, dim;
+		__asm        cmp    eax, ecx;
+		__asm        jl     _T649;
+
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax+8];
+		__asm        sub    eax, 0x40000;
+		__asm        mov    ecx, dim;
+		__asm        add    ecx, z;
+		__asm        cmp    eax, ecx;
+		__asm        jg     _T649;
+
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax+8];
+		__asm        add    eax, 0x40000;
+		__asm        mov    ecx, z;
+		__asm        sub    ecx, dim;
+		__asm        cmp    eax, ecx;
+		__asm        jl     _T649;
+// LINE 1023:
+		__asm        mov    eax, vert2;
+		__asm        mov    ecx, altyupbelow;
+		__asm        cmp    [eax+4], ecx;
+		__asm        jle    _T649;
+// LINE 1025:
+		altyupbelow = vert2->y;
+// LINE 1027:
+		__asm        cmp    landable, 0;
+		__asm        je     _T619;
+// LINE 1029:
+		landable[0] = 0x0;
+// LINE 1032:
+_T619:
+		__asm        cmp    collisvec, 0;
+		__asm        je     _T649;
+// LINE 1034:
+		collisvec->x = (vert->x - x);
+// LINE 1035:
+		collisvec->z = (vert->z - z);
+// LINE 1036:
+		collisvec->y = 0x0;
+// LINE 1042:
+_T649:
+		faceptr = faceptr->NextFace;
 	}
 // LINE 1046:
 _T656:
@@ -1484,430 +1484,77 @@ _T79:
 // LINE 1125:
 _FOR_a3:
 	for (i = 0x0; (oh->NFaces > i); i++) {
-		// LINE 1128:
-			__asm        mov    eax, faceptr;
-			__asm        test   byte ptr [eax+8], 4;
-			__asm        je     _Tc7;
-		// LINE 1129:
-			__asm        jmp    do_2d_face;
-		// LINE 1131:
-		_Tc7:
-			__asm        mov    eax, faceptr;
-			__asm        test   dword ptr [eax+8], 0x18004;
-			__asm        je     _Tdc;
-		// LINE 1132:
-			__asm        jmp    next_face;
-		// LINE 1135:
-		_Tdc:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0xFFFFFF9C;
-			__asm        jge    _Tf8;
-		// LINE 1137:
-			normaldir = 0x1;
-		// LINE 1139:
-			__asm        jmp    _T143;
-		_Tf8:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0x64;
-			__asm        jle    _T128;
-		// LINE 1141:
-			__asm        cmp    check_for_overhang, 0;
-			__asm        jne    _T11c;
-		// LINE 1142:
-			__asm        jmp    next_face;
-		// LINE 1143:
-			__asm        jmp    _T123;
-		// LINE 1144:
-		_T11c:
-			normaldir = 0xffffffff;
-		// LINE 1146:
-		_T123:
-			__asm        jmp    _T143;
-		// LINE 1149:
-		_T128:
-			__asm        cmp    check_for_overhang, 1;
-			__asm        jne    _T13e;
-		// LINE 1150:
-			normaldir = 0x0;
-		// LINE 1151:
-			__asm        jmp    _T143;
-		// LINE 1152:
-		_T13e:
-			__asm        jmp    next_face;
-		// LINE 1156:
-		_T143:
-			dataptr = faceptr;
-		// LINE 1157:
-			dataptr += 0x30;
-		// LINE 1158:
-			vertno = faceptr->PlyVerts;
-		// LINE 1161:
-			minz = 0x75300000;
-			miny = minz;
-			minx = miny;
-		// LINE 1162:
-			maxz = 0x8ad00000;
-			maxy = maxz;
-			maxx = maxy;
-		// LINE 1167:
-		_FOR_188:
-			for (j = 0x0; (faceptr->Nverts > j); j++) {
-				// LINE 1173:
-					__asm        mov    eax, vertno;
-					__asm        mov    eax, [eax];
-					__asm        shr    eax, 4;
-					__asm        lea    eax, [eax+eax*2];
-					__asm        shl    eax, 2;
-					__asm        mov    ecx, oh;
-					__asm        add    eax, [ecx+8];
-					__asm        mov    vert, eax;
-				// LINE 1177:
-					vertno += 0x4;
-				// LINE 1180:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, minx;
-					__asm        cmp    [eax], ecx;
-					__asm        jge    _T1cb;
-
-					minx = vert->x;
-				// LINE 1181:
-				_T1cb:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, miny;
-					__asm        cmp    [eax+4], ecx;
-					__asm        jge    _T1e3;
-
-					miny = vert->y;
-				// LINE 1182:
-				_T1e3:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, minz;
-					__asm        cmp    [eax+8], ecx;
-					__asm        jge    _T1fb;
-
-					minz = vert->z;
-				// LINE 1183:
-				_T1fb:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxx;
-					__asm        cmp    [eax], ecx;
-					__asm        jle    _T211;
-
-					maxx = vert->x;
-				// LINE 1184:
-				_T211:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxy;
-					__asm        cmp    [eax+4], ecx;
-					__asm        jle    _T229;
-
-					maxy = vert->y;
-				// LINE 1185:
-				_T229:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxz;
-					__asm        cmp    [eax+8], ecx;
-					__asm        jle    _T241;
-
-					maxz = vert->z;
-				// LINE 1186:
-				_T241:
-			}
-		// LINE 1190:
-		_T246:
-			__asm        mov    eax, dim;
-			__asm        add    eax, x;
-			__asm        cmp    eax, minx;
-			__asm        jl     next_face;
-
-			__asm        mov    eax, x;
-			__asm        sub    eax, dim;
-			__asm        cmp    eax, maxx;
-			__asm        jg     next_face;
-
-			__asm        mov    eax, dim;
-			__asm        add    eax, z;
-			__asm        cmp    eax, minz;
-			__asm        jl     next_face;
-
-			__asm        mov    eax, z;
-			__asm        sub    eax, dim;
-			__asm        cmp    eax, maxz;
-			__asm        jg     next_face;
-		// LINE 1195:
-			__asm        cmp    normaldir, 0;
-			__asm        je     _T355;
-		// LINE 1201:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        mov    ebx, eax;
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        add    ebx, eax;
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax];
-			__asm        push   eax;
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax];
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        add    ebx, eax;
-			__asm        mov    planed, ebx;
-		// LINE 1207:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        mov    eax, z;
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        mov    ebx, eax;
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax];
-			__asm        push   eax;
-			__asm        mov    eax, x;
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        add    ebx, eax;
-			__asm        mov    scalar, ebx;
-		// LINE 1212:
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, planed;
-			__asm        sub    eax, scalar;
-			__asm        push   eax;
-			__asm        call   _FixedDiv;
-			__asm        add    esp, 8;
-			__asm        mov    facealt, eax;
-		// LINE 1214:
-			__asm        mov    eax, maxy;
-			__asm        cmp    facealt, eax;
-			__asm        jg     _T344;
-
-			__asm        mov    eax, miny;
-			__asm        cmp    facealt, eax;
-			__asm        jge    _T350;
-		// LINE 1215:
-		_T344:
-			facealt = ((maxy + miny) >> 0x1);
-		// LINE 1217:
-		_T350:
-			__asm        jmp    _T386;
-		// LINE 1220:
-		_T355:
-			__asm        mov    eax, ydim;
-			__asm        add    eax, y;
-			__asm        cmp    eax, miny;
-			__asm        jle    _T381;
-
-			__asm        mov    eax, y;
-			__asm        cmp    maxy, eax;
-			__asm        jle    _T381;
-		// LINE 1221:
-			facealt = ((maxy + y) >> 0x1);
-		// LINE 1222:
-			__asm        jmp    _T386;
-		// LINE 1223:
-		_T381:
-			__asm        jmp    next_face;
-		// LINE 1226:
-		_T386:
-			__asm        cmp    check_for_overhang, 0;
-			__asm        jne    _T461;
-		// LINE 1228:
-			__asm        mov    eax, facealt;
-			__asm        cmp    altyupbelow, eax;
-			__asm        jge    _T45c;
-		// LINE 1230:
-			altyupbelow = facealt;
-		// LINE 1231:
-			flags[0] = faceptr->Attrib2;
-		// LINE 1235:
-			__asm        cmp    collisvec, 0;
-			__asm        je     _T3e4;
-		// LINE 1237:
-			collisvec->x = (((maxx + minx) >> 0x1) - x);
-		// LINE 1238:
-			collisvec->z = (((maxz + minz) >> 0x1) - z);
-		// LINE 1239:
-			collisvec->y = 0x0;
-		// LINE 1245:
-		_T3e4:
-			__asm        cmp    landable, 0;
-			__asm        je     _T45c;
-
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
-			__asm        jge    _T45c;
-		// LINE 1248:
-			__asm        mov    eax, x;
-			__asm        sub    eax, 0x20000;
-			__asm        cmp    eax, minx;
-			__asm        jl     _T453;
-
-			__asm        mov    eax, x;
-			__asm        add    eax, 0x20000;
-			__asm        cmp    eax, maxx;
-			__asm        jg     _T453;
-
-			__asm        mov    eax, z;
-			__asm        sub    eax, 0x20000;
-			__asm        cmp    eax, minz;
-			__asm        jl     _T453;
-
-			__asm        mov    eax, z;
-			__asm        add    eax, 0x20000;
-			__asm        cmp    eax, maxz;
-			__asm        jg     _T453;
-		// LINE 1250:
-			landable[0] = 0x1;
-		// LINE 1252:
-			__asm        jmp    _T45c;
-		// LINE 1254:
-		_T453:
-			landable[0] = 0x0;
-		// LINE 1258:
-		_T45c:
-			__asm        jmp    next_face;
-		// LINE 1262:
-		_T461:
-			__asm        cmp    normaldir, 0;
-			__asm        jl     _T5a0;
-		// LINE 1265:
-			__asm        mov    eax, y;
-			__asm        cmp    facealt, eax;
-			__asm        jge    _T57d;
-
-			__asm        mov    eax, facealt;
-			__asm        cmp    altyupbelow, eax;
-			__asm        jge    _T57d;
-		// LINE 1267:
-			altyupbelow = facealt;
-		// LINE 1270:
-			flags[0] = faceptr->Attrib2;
-		// LINE 1274:
-			__asm        cmp    collisvec, 0;
-			__asm        je     _T500;
-		// LINE 1276:
-			__asm        cmp    normaldir, 0;
-			__asm        jle    _T4da;
-		// LINE 1278:
-			collisvec->x = (((maxx + minx) >> 0x1) - x);
-		// LINE 1279:
-			collisvec->z = (((maxz + minz) >> 0x1) - z);
-		// LINE 1280:
-			collisvec->y = 0x0;
-		// LINE 1282:
-			__asm        jmp    _T500;
-		// LINE 1284:
-		_T4da:
-			collisvec->x = faceptr->Normal->x;
-		// LINE 1285:
-			collisvec->z = faceptr->Normal->z;
-		// LINE 1286:
-			collisvec->y = 0x0;
-		// LINE 1292:
-		_T500:
-			__asm        cmp    landable, 0;
-			__asm        je     _T578;
-
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
-			__asm        jge    _T578;
-		// LINE 1295:
-			__asm        mov    eax, x;
-			__asm        sub    eax, 0x10000;
-			__asm        cmp    eax, minx;
-			__asm        jl     _T56f;
-
-			__asm        mov    eax, x;
-			__asm        add    eax, 0x10000;
-			__asm        cmp    eax, maxx;
-			__asm        jg     _T56f;
-
-			__asm        mov    eax, z;
-			__asm        sub    eax, 0x10000;
-			__asm        cmp    eax, minz;
-			__asm        jl     _T56f;
-
-			__asm        mov    eax, z;
-			__asm        add    eax, 0x10000;
-			__asm        cmp    eax, maxz;
-			__asm        jg     _T56f;
-		// LINE 1297:
-			landable[0] = 0x1;
-		// LINE 1299:
-			__asm        jmp    _T578;
-		// LINE 1301:
-		_T56f:
-			landable[0] = 0x0;
-		// LINE 1306:
-		_T578:
-			__asm        jmp    _T59b;
-		_T57d:
-			__asm        mov    eax, y;
-			__asm        cmp    facealt, eax;
-			__asm        jl     _T59b;
-
-			__asm        mov    eax, altyupabove;
-			__asm        cmp    facealt, eax;
-			__asm        jge    _T59b;
-		// LINE 1308:
-			altyupabove = facealt;
-		// LINE 1313:
-		_T59b:
-			__asm        jmp    next_face;
-		// LINE 1320:
-		_T5a0:
-			__asm        mov    eax, ydim;
-			__asm        add    eax, y;
-			__asm        cmp    eax, facealt;
-			__asm        jle    _T5b4;
-		// LINE 1321:
-			__asm        jmp    next_face;
-		// LINE 1323:
-		_T5b4:
-			overhang = 0x1;
-		// LINE 1326:
-			__asm        mov    eax, facealt;
-			__asm        cmp    altydown, eax;
-			__asm        jle    next_face;
-		// LINE 1328:
-			altydown = facealt;
-		// LINE 1336:
-		next_face:
-			faceptr = faceptr->NextFace;
-		// LINE 1337:
-			__asm        jmp    _FOR_NEXT_a3;
-		// LINE 1345:
-		do_2d_face:
-			vertno = faceptr->PlyVerts;
-		// LINE 1347:
+// LINE 1128:
+		__asm        mov    eax, faceptr;
+		__asm        test   byte ptr [eax+8], 4;
+		__asm        je     _Tc7;
+// LINE 1129:
+		__asm        jmp    do_2d_face;
+// LINE 1131:
+_Tc7:
+		__asm        mov    eax, faceptr;
+		__asm        test   dword ptr [eax+8], 0x18004;
+		__asm        je     _Tdc;
+// LINE 1132:
+		__asm        jmp    next_face;
+// LINE 1135:
+_Tdc:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0xFFFFFF9C;
+		__asm        jge    _Tf8;
+// LINE 1137:
+		normaldir = 0x1;
+// LINE 1139:
+		__asm        jmp    _T143;
+_Tf8:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0x64;
+		__asm        jle    _T128;
+// LINE 1141:
+		__asm        cmp    check_for_overhang, 0;
+		__asm        jne    _T11c;
+// LINE 1142:
+		__asm        jmp    next_face;
+// LINE 1143:
+		__asm        jmp    _T123;
+// LINE 1144:
+_T11c:
+		normaldir = 0xffffffff;
+// LINE 1146:
+_T123:
+		__asm        jmp    _T143;
+// LINE 1149:
+_T128:
+		__asm        cmp    check_for_overhang, 1;
+		__asm        jne    _T13e;
+// LINE 1150:
+		normaldir = 0x0;
+// LINE 1151:
+		__asm        jmp    _T143;
+// LINE 1152:
+_T13e:
+		__asm        jmp    next_face;
+// LINE 1156:
+_T143:
+		dataptr = faceptr;
+// LINE 1157:
+		dataptr += 0x30;
+// LINE 1158:
+		vertno = faceptr->PlyVerts;
+// LINE 1161:
+		minz = 0x75300000;
+		miny = minz;
+		minx = miny;
+// LINE 1162:
+		maxz = 0x8ad00000;
+		maxy = maxz;
+		maxx = maxy;
+// LINE 1167:
+_FOR_188:
+		for (j = 0x0; (faceptr->Nverts > j); j++) {
+// LINE 1173:
 			__asm        mov    eax, vertno;
 			__asm        mov    eax, [eax];
 			__asm        shr    eax, 4;
@@ -1916,74 +1563,427 @@ _FOR_a3:
 			__asm        mov    ecx, oh;
 			__asm        add    eax, [ecx+8];
 			__asm        mov    vert, eax;
-		// LINE 1352:
+// LINE 1177:
 			vertno += 0x4;
-		// LINE 1354:
-			__asm        mov    eax, vertno;
-			__asm        mov    eax, [eax];
-			__asm        shr    eax, 4;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        shl    eax, 2;
-			__asm        mov    ecx, oh;
-			__asm        add    eax, [ecx+8];
-			__asm        mov    vert2, eax;
-		// LINE 1363:
+// LINE 1180:
 			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax];
-			__asm        sub    eax, 0x40000;
-			__asm        mov    ecx, dim;
-			__asm        add    ecx, x;
-			__asm        cmp    eax, ecx;
-			__asm        jg     _T6d2;
+			__asm        mov    ecx, minx;
+			__asm        cmp    [eax], ecx;
+			__asm        jge    _T1cb;
 
+			minx = vert->x;
+// LINE 1181:
+_T1cb:
 			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax];
-			__asm        add    eax, 0x40000;
-			__asm        mov    ecx, x;
-			__asm        sub    ecx, dim;
-			__asm        cmp    eax, ecx;
-			__asm        jl     _T6d2;
-
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax+8];
-			__asm        sub    eax, 0x40000;
-			__asm        mov    ecx, dim;
-			__asm        add    ecx, z;
-			__asm        cmp    eax, ecx;
-			__asm        jg     _T6d2;
-
-			__asm        mov    eax, vert;
-			__asm        mov    eax, [eax+8];
-			__asm        add    eax, 0x40000;
-			__asm        mov    ecx, z;
-			__asm        sub    ecx, dim;
-			__asm        cmp    eax, ecx;
-			__asm        jl     _T6d2;
-		// LINE 1365:
-			__asm        mov    eax, vert2;
-			__asm        mov    ecx, altyupbelow;
+			__asm        mov    ecx, miny;
 			__asm        cmp    [eax+4], ecx;
-			__asm        jle    _T6d2;
-		// LINE 1367:
-			altyupbelow = vert2->y;
-		// LINE 1369:
-			__asm        cmp    landable, 0;
-			__asm        je     _T6a2;
-		// LINE 1371:
-			landable[0] = 0x0;
-		// LINE 1374:
-		_T6a2:
-			__asm        cmp    collisvec, 0;
-			__asm        je     _T6d2;
-		// LINE 1376:
-			collisvec->x = (vert->x - x);
-		// LINE 1377:
-			collisvec->z = (vert->z - z);
-		// LINE 1378:
-			collisvec->y = 0x0;
-		// LINE 1384:
-		_T6d2:
-			faceptr = faceptr->NextFace;
+			__asm        jge    _T1e3;
+
+			miny = vert->y;
+// LINE 1182:
+_T1e3:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, minz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jge    _T1fb;
+
+			minz = vert->z;
+// LINE 1183:
+_T1fb:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxx;
+			__asm        cmp    [eax], ecx;
+			__asm        jle    _T211;
+
+			maxx = vert->x;
+// LINE 1184:
+_T211:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxy;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jle    _T229;
+
+			maxy = vert->y;
+// LINE 1185:
+_T229:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jle    _T241;
+
+			maxz = vert->z;
+// LINE 1186:
+_T241:
+		}
+// LINE 1190:
+_T246:
+		__asm        mov    eax, dim;
+		__asm        add    eax, x;
+		__asm        cmp    eax, minx;
+		__asm        jl     next_face;
+
+		__asm        mov    eax, x;
+		__asm        sub    eax, dim;
+		__asm        cmp    eax, maxx;
+		__asm        jg     next_face;
+
+		__asm        mov    eax, dim;
+		__asm        add    eax, z;
+		__asm        cmp    eax, minz;
+		__asm        jl     next_face;
+
+		__asm        mov    eax, z;
+		__asm        sub    eax, dim;
+		__asm        cmp    eax, maxz;
+		__asm        jg     next_face;
+// LINE 1195:
+		__asm        cmp    normaldir, 0;
+		__asm        je     _T355;
+// LINE 1201:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ebx, eax;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    planed, ebx;
+// LINE 1207:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        mov    eax, z;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ebx, eax;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, x;
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        add    ebx, eax;
+		__asm        mov    scalar, ebx;
+// LINE 1212:
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, planed;
+		__asm        sub    eax, scalar;
+		__asm        push   eax;
+		__asm        call   _FixedDiv;
+		__asm        add    esp, 8;
+		__asm        mov    facealt, eax;
+// LINE 1214:
+		__asm        mov    eax, maxy;
+		__asm        cmp    facealt, eax;
+		__asm        jg     _T344;
+
+		__asm        mov    eax, miny;
+		__asm        cmp    facealt, eax;
+		__asm        jge    _T350;
+// LINE 1215:
+_T344:
+		facealt = ((maxy + miny) >> 0x1);
+// LINE 1217:
+_T350:
+		__asm        jmp    _T386;
+// LINE 1220:
+_T355:
+		__asm        mov    eax, ydim;
+		__asm        add    eax, y;
+		__asm        cmp    eax, miny;
+		__asm        jle    _T381;
+
+		__asm        mov    eax, y;
+		__asm        cmp    maxy, eax;
+		__asm        jle    _T381;
+// LINE 1221:
+		facealt = ((maxy + y) >> 0x1);
+// LINE 1222:
+		__asm        jmp    _T386;
+// LINE 1223:
+_T381:
+		__asm        jmp    next_face;
+// LINE 1226:
+_T386:
+		__asm        cmp    check_for_overhang, 0;
+		__asm        jne    _T461;
+// LINE 1228:
+		__asm        mov    eax, facealt;
+		__asm        cmp    altyupbelow, eax;
+		__asm        jge    _T45c;
+// LINE 1230:
+		altyupbelow = facealt;
+// LINE 1231:
+		flags[0] = faceptr->Attrib2;
+// LINE 1235:
+		__asm        cmp    collisvec, 0;
+		__asm        je     _T3e4;
+// LINE 1237:
+		collisvec->x = (((maxx + minx) >> 0x1) - x);
+// LINE 1238:
+		collisvec->z = (((maxz + minz) >> 0x1) - z);
+// LINE 1239:
+		collisvec->y = 0x0;
+// LINE 1245:
+_T3e4:
+		__asm        cmp    landable, 0;
+		__asm        je     _T45c;
+
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
+		__asm        jge    _T45c;
+// LINE 1248:
+		__asm        mov    eax, x;
+		__asm        sub    eax, 0x20000;
+		__asm        cmp    eax, minx;
+		__asm        jl     _T453;
+
+		__asm        mov    eax, x;
+		__asm        add    eax, 0x20000;
+		__asm        cmp    eax, maxx;
+		__asm        jg     _T453;
+
+		__asm        mov    eax, z;
+		__asm        sub    eax, 0x20000;
+		__asm        cmp    eax, minz;
+		__asm        jl     _T453;
+
+		__asm        mov    eax, z;
+		__asm        add    eax, 0x20000;
+		__asm        cmp    eax, maxz;
+		__asm        jg     _T453;
+// LINE 1250:
+		landable[0] = 0x1;
+// LINE 1252:
+		__asm        jmp    _T45c;
+// LINE 1254:
+_T453:
+		landable[0] = 0x0;
+// LINE 1258:
+_T45c:
+		__asm        jmp    next_face;
+// LINE 1262:
+_T461:
+		__asm        cmp    normaldir, 0;
+		__asm        jl     _T5a0;
+// LINE 1265:
+		__asm        mov    eax, y;
+		__asm        cmp    facealt, eax;
+		__asm        jge    _T57d;
+
+		__asm        mov    eax, facealt;
+		__asm        cmp    altyupbelow, eax;
+		__asm        jge    _T57d;
+// LINE 1267:
+		altyupbelow = facealt;
+// LINE 1270:
+		flags[0] = faceptr->Attrib2;
+// LINE 1274:
+		__asm        cmp    collisvec, 0;
+		__asm        je     _T500;
+// LINE 1276:
+		__asm        cmp    normaldir, 0;
+		__asm        jle    _T4da;
+// LINE 1278:
+		collisvec->x = (((maxx + minx) >> 0x1) - x);
+// LINE 1279:
+		collisvec->z = (((maxz + minz) >> 0x1) - z);
+// LINE 1280:
+		collisvec->y = 0x0;
+// LINE 1282:
+		__asm        jmp    _T500;
+// LINE 1284:
+_T4da:
+		collisvec->x = faceptr->Normal->x;
+// LINE 1285:
+		collisvec->z = faceptr->Normal->z;
+// LINE 1286:
+		collisvec->y = 0x0;
+// LINE 1292:
+_T500:
+		__asm        cmp    landable, 0;
+		__asm        je     _T578;
+
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+4], 0xFFFF15A0;
+		__asm        jge    _T578;
+// LINE 1295:
+		__asm        mov    eax, x;
+		__asm        sub    eax, 0x10000;
+		__asm        cmp    eax, minx;
+		__asm        jl     _T56f;
+
+		__asm        mov    eax, x;
+		__asm        add    eax, 0x10000;
+		__asm        cmp    eax, maxx;
+		__asm        jg     _T56f;
+
+		__asm        mov    eax, z;
+		__asm        sub    eax, 0x10000;
+		__asm        cmp    eax, minz;
+		__asm        jl     _T56f;
+
+		__asm        mov    eax, z;
+		__asm        add    eax, 0x10000;
+		__asm        cmp    eax, maxz;
+		__asm        jg     _T56f;
+// LINE 1297:
+		landable[0] = 0x1;
+// LINE 1299:
+		__asm        jmp    _T578;
+// LINE 1301:
+_T56f:
+		landable[0] = 0x0;
+// LINE 1306:
+_T578:
+		__asm        jmp    _T59b;
+_T57d:
+		__asm        mov    eax, y;
+		__asm        cmp    facealt, eax;
+		__asm        jl     _T59b;
+
+		__asm        mov    eax, altyupabove;
+		__asm        cmp    facealt, eax;
+		__asm        jge    _T59b;
+// LINE 1308:
+		altyupabove = facealt;
+// LINE 1313:
+_T59b:
+		__asm        jmp    next_face;
+// LINE 1320:
+_T5a0:
+		__asm        mov    eax, ydim;
+		__asm        add    eax, y;
+		__asm        cmp    eax, facealt;
+		__asm        jle    _T5b4;
+// LINE 1321:
+		__asm        jmp    next_face;
+// LINE 1323:
+_T5b4:
+		overhang = 0x1;
+// LINE 1326:
+		__asm        mov    eax, facealt;
+		__asm        cmp    altydown, eax;
+		__asm        jle    next_face;
+// LINE 1328:
+		altydown = facealt;
+// LINE 1336:
+next_face:
+		faceptr = faceptr->NextFace;
+// LINE 1337:
+		__asm        jmp    _FOR_NEXT_a3;
+// LINE 1345:
+do_2d_face:
+		vertno = faceptr->PlyVerts;
+// LINE 1347:
+		__asm        mov    eax, vertno;
+		__asm        mov    eax, [eax];
+		__asm        shr    eax, 4;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, oh;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    vert, eax;
+// LINE 1352:
+		vertno += 0x4;
+// LINE 1354:
+		__asm        mov    eax, vertno;
+		__asm        mov    eax, [eax];
+		__asm        shr    eax, 4;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, oh;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    vert2, eax;
+// LINE 1363:
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax];
+		__asm        sub    eax, 0x40000;
+		__asm        mov    ecx, dim;
+		__asm        add    ecx, x;
+		__asm        cmp    eax, ecx;
+		__asm        jg     _T6d2;
+
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax];
+		__asm        add    eax, 0x40000;
+		__asm        mov    ecx, x;
+		__asm        sub    ecx, dim;
+		__asm        cmp    eax, ecx;
+		__asm        jl     _T6d2;
+
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax+8];
+		__asm        sub    eax, 0x40000;
+		__asm        mov    ecx, dim;
+		__asm        add    ecx, z;
+		__asm        cmp    eax, ecx;
+		__asm        jg     _T6d2;
+
+		__asm        mov    eax, vert;
+		__asm        mov    eax, [eax+8];
+		__asm        add    eax, 0x40000;
+		__asm        mov    ecx, z;
+		__asm        sub    ecx, dim;
+		__asm        cmp    eax, ecx;
+		__asm        jl     _T6d2;
+// LINE 1365:
+		__asm        mov    eax, vert2;
+		__asm        mov    ecx, altyupbelow;
+		__asm        cmp    [eax+4], ecx;
+		__asm        jle    _T6d2;
+// LINE 1367:
+		altyupbelow = vert2->y;
+// LINE 1369:
+		__asm        cmp    landable, 0;
+		__asm        je     _T6a2;
+// LINE 1371:
+		landable[0] = 0x0;
+// LINE 1374:
+_T6a2:
+		__asm        cmp    collisvec, 0;
+		__asm        je     _T6d2;
+// LINE 1376:
+		collisvec->x = (vert->x - x);
+// LINE 1377:
+		collisvec->z = (vert->z - z);
+// LINE 1378:
+		collisvec->y = 0x0;
+// LINE 1384:
+_T6d2:
+		faceptr = faceptr->NextFace;
 	}
 // LINE 1388:
 _T6df:
@@ -2057,143 +2057,143 @@ _T20:
 // LINE 1443:
 _FOR_3c:
 	for (i = 0x0; (oh->NFaces > i); i++) {
-		// LINE 1446:
-			__asm        mov    eax, faceptr;
-			__asm        test   byte ptr [eax+8], 4;
-			__asm        je     _T60;
+// LINE 1446:
+		__asm        mov    eax, faceptr;
+		__asm        test   byte ptr [eax+8], 4;
+		__asm        je     _T60;
 
-			__asm        jmp    next_face;
-		// LINE 1449:
-		_T60:
-			__asm        cmp    dir, 0;
-			__asm        jge    _T82;
+		__asm        jmp    next_face;
+// LINE 1449:
+_T60:
+		__asm        cmp    dir, 0;
+		__asm        jge    _T82;
 
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+8], 0xFFFFD8F0;
-			__asm        jle    _T82;
-		// LINE 1450:
-			__asm        jmp    next_face;
-		// LINE 1451:
-		_T82:
-			__asm        cmp    dir, 0;
-			__asm        jle    _Ta4;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+8], 0xFFFFD8F0;
+		__asm        jle    _T82;
+// LINE 1450:
+		__asm        jmp    next_face;
+// LINE 1451:
+_T82:
+		__asm        cmp    dir, 0;
+		__asm        jle    _Ta4;
 
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax+8], 0x2710;
-			__asm        jge    _Ta4;
-		// LINE 1452:
-			__asm        jmp    next_face;
-		// LINE 1455:
-		_Ta4:
-			dataptr = faceptr;
-		// LINE 1456:
-			dataptr += 0x30;
-		// LINE 1457:
-			vertno = dataptr;
-		// LINE 1460:
-			minz = 0x75300000;
-			miny = minz;
-			minx = miny;
-		// LINE 1461:
-			maxz = 0x8ad00000;
-			maxy = maxz;
-			maxx = maxy;
-		// LINE 1466:
-		_FOR_e6:
-			for (j = 0x0; (faceptr->Nverts > j); j++) {
-				// LINE 1472:
-					__asm        mov    eax, vertno;
-					__asm        mov    eax, [eax];
-					__asm        shr    eax, 4;
-					__asm        lea    eax, [eax+eax*2];
-					__asm        shl    eax, 2;
-					__asm        mov    ecx, oh;
-					__asm        add    eax, [ecx+8];
-					__asm        mov    vert, eax;
-				// LINE 1476:
-					vertno += 0x4;
-				// LINE 1479:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, minx;
-					__asm        cmp    [eax], ecx;
-					__asm        jge    _T129;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax+8], 0x2710;
+		__asm        jge    _Ta4;
+// LINE 1452:
+		__asm        jmp    next_face;
+// LINE 1455:
+_Ta4:
+		dataptr = faceptr;
+// LINE 1456:
+		dataptr += 0x30;
+// LINE 1457:
+		vertno = dataptr;
+// LINE 1460:
+		minz = 0x75300000;
+		miny = minz;
+		minx = miny;
+// LINE 1461:
+		maxz = 0x8ad00000;
+		maxy = maxz;
+		maxx = maxy;
+// LINE 1466:
+_FOR_e6:
+		for (j = 0x0; (faceptr->Nverts > j); j++) {
+// LINE 1472:
+			__asm        mov    eax, vertno;
+			__asm        mov    eax, [eax];
+			__asm        shr    eax, 4;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        shl    eax, 2;
+			__asm        mov    ecx, oh;
+			__asm        add    eax, [ecx+8];
+			__asm        mov    vert, eax;
+// LINE 1476:
+			vertno += 0x4;
+// LINE 1479:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, minx;
+			__asm        cmp    [eax], ecx;
+			__asm        jge    _T129;
 
-					minx = vert->x;
-				// LINE 1480:
-				_T129:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, miny;
-					__asm        cmp    [eax+4], ecx;
-					__asm        jge    _T141;
+			minx = vert->x;
+// LINE 1480:
+_T129:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, miny;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jge    _T141;
 
-					miny = vert->y;
-				// LINE 1481:
-				_T141:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, minz;
-					__asm        cmp    [eax+8], ecx;
-					__asm        jge    _T159;
+			miny = vert->y;
+// LINE 1481:
+_T141:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, minz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jge    _T159;
 
-					minz = vert->z;
-				// LINE 1482:
-				_T159:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxx;
-					__asm        cmp    [eax], ecx;
-					__asm        jle    _T16f;
+			minz = vert->z;
+// LINE 1482:
+_T159:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxx;
+			__asm        cmp    [eax], ecx;
+			__asm        jle    _T16f;
 
-					maxx = vert->x;
-				// LINE 1483:
-				_T16f:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxy;
-					__asm        cmp    [eax+4], ecx;
-					__asm        jle    _T187;
+			maxx = vert->x;
+// LINE 1483:
+_T16f:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxy;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jle    _T187;
 
-					maxy = vert->y;
-				// LINE 1484:
-				_T187:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxz;
-					__asm        cmp    [eax+8], ecx;
-					__asm        jle    _T19f;
+			maxy = vert->y;
+// LINE 1484:
+_T187:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jle    _T19f;
 
-					maxz = vert->z;
-				// LINE 1485:
-				_T19f:
-			}
-		// LINE 1489:
-		_T1a4:
-			__asm        mov    eax, dim;
-			__asm        add    eax, y;
-			__asm        cmp    eax, miny;
-			__asm        jl     next_face;
+			maxz = vert->z;
+// LINE 1485:
+_T19f:
+		}
+// LINE 1489:
+_T1a4:
+		__asm        mov    eax, dim;
+		__asm        add    eax, y;
+		__asm        cmp    eax, miny;
+		__asm        jl     next_face;
 
-			__asm        mov    eax, y;
-			__asm        sub    eax, dim;
-			__asm        cmp    eax, maxy;
-			__asm        jg     next_face;
+		__asm        mov    eax, y;
+		__asm        sub    eax, dim;
+		__asm        cmp    eax, maxy;
+		__asm        jg     next_face;
 
-			__asm        mov    eax, x;
-			__asm        add    eax, dim;
-			__asm        cmp    eax, minx;
-			__asm        jl     next_face;
+		__asm        mov    eax, x;
+		__asm        add    eax, dim;
+		__asm        cmp    eax, minx;
+		__asm        jl     next_face;
 
-			__asm        mov    eax, x;
-			__asm        sub    eax, dim;
-			__asm        cmp    eax, maxx;
-			__asm        jg     next_face;
-		// LINE 1492:
-			facez = ((maxz + minz) >> 0x1);
-		// LINE 1493:
-			distz = facez;
-		// LINE 1494:
-			return distz;
-		// LINE 1506:
-		next_face:
-			faceptr = faceptr->NextFace;
+		__asm        mov    eax, x;
+		__asm        sub    eax, dim;
+		__asm        cmp    eax, maxx;
+		__asm        jg     next_face;
+// LINE 1492:
+		facez = ((maxz + minz) >> 0x1);
+// LINE 1493:
+		distz = facez;
+// LINE 1494:
+		return distz;
+// LINE 1506:
+next_face:
+		faceptr = faceptr->NextFace;
 	}
 // LINE 1509:
 _T207:
@@ -2234,143 +2234,143 @@ _T20:
 // LINE 1545:
 _FOR_3c:
 	for (i = 0x0; (oh->NFaces > i); i++) {
-		// LINE 1548:
-			__asm        mov    eax, faceptr;
-			__asm        test   byte ptr [eax+8], 4;
-			__asm        je     _T60;
+// LINE 1548:
+		__asm        mov    eax, faceptr;
+		__asm        test   byte ptr [eax+8], 4;
+		__asm        je     _T60;
 
-			__asm        jmp    next_face;
-		// LINE 1551:
-		_T60:
-			__asm        cmp    dir, 0;
-			__asm        jge    _T81;
+		__asm        jmp    next_face;
+// LINE 1551:
+_T60:
+		__asm        cmp    dir, 0;
+		__asm        jge    _T81;
 
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax], 0xFFFFD8F0;
-			__asm        jle    _T81;
-		// LINE 1552:
-			__asm        jmp    next_face;
-		// LINE 1553:
-		_T81:
-			__asm        cmp    dir, 0;
-			__asm        jle    _Ta2;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax], 0xFFFFD8F0;
+		__asm        jle    _T81;
+// LINE 1552:
+		__asm        jmp    next_face;
+// LINE 1553:
+_T81:
+		__asm        cmp    dir, 0;
+		__asm        jle    _Ta2;
 
-			__asm        mov    eax, faceptr;
-			__asm        mov    eax, [eax+0x2C];
-			__asm        cmp    dword ptr [eax], 0x2710;
-			__asm        jge    _Ta2;
-		// LINE 1554:
-			__asm        jmp    next_face;
-		// LINE 1557:
-		_Ta2:
-			dataptr = faceptr;
-		// LINE 1558:
-			dataptr += 0x30;
-		// LINE 1559:
-			vertno = dataptr;
-		// LINE 1562:
-			minz = 0x75300000;
-			miny = minz;
-			minx = miny;
-		// LINE 1563:
-			maxz = 0x8ad00000;
-			maxy = maxz;
-			maxx = maxy;
-		// LINE 1568:
-		_FOR_e4:
-			for (j = 0x0; (faceptr->Nverts > j); j++) {
-				// LINE 1574:
-					__asm        mov    eax, vertno;
-					__asm        mov    eax, [eax];
-					__asm        shr    eax, 4;
-					__asm        lea    eax, [eax+eax*2];
-					__asm        shl    eax, 2;
-					__asm        mov    ecx, oh;
-					__asm        add    eax, [ecx+8];
-					__asm        mov    vert, eax;
-				// LINE 1578:
-					vertno += 0x4;
-				// LINE 1581:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, minx;
-					__asm        cmp    [eax], ecx;
-					__asm        jge    _T127;
+		__asm        mov    eax, faceptr;
+		__asm        mov    eax, [eax+0x2C];
+		__asm        cmp    dword ptr [eax], 0x2710;
+		__asm        jge    _Ta2;
+// LINE 1554:
+		__asm        jmp    next_face;
+// LINE 1557:
+_Ta2:
+		dataptr = faceptr;
+// LINE 1558:
+		dataptr += 0x30;
+// LINE 1559:
+		vertno = dataptr;
+// LINE 1562:
+		minz = 0x75300000;
+		miny = minz;
+		minx = miny;
+// LINE 1563:
+		maxz = 0x8ad00000;
+		maxy = maxz;
+		maxx = maxy;
+// LINE 1568:
+_FOR_e4:
+		for (j = 0x0; (faceptr->Nverts > j); j++) {
+// LINE 1574:
+			__asm        mov    eax, vertno;
+			__asm        mov    eax, [eax];
+			__asm        shr    eax, 4;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        shl    eax, 2;
+			__asm        mov    ecx, oh;
+			__asm        add    eax, [ecx+8];
+			__asm        mov    vert, eax;
+// LINE 1578:
+			vertno += 0x4;
+// LINE 1581:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, minx;
+			__asm        cmp    [eax], ecx;
+			__asm        jge    _T127;
 
-					minx = vert->x;
-				// LINE 1582:
-				_T127:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, miny;
-					__asm        cmp    [eax+4], ecx;
-					__asm        jge    _T13f;
+			minx = vert->x;
+// LINE 1582:
+_T127:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, miny;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jge    _T13f;
 
-					miny = vert->y;
-				// LINE 1583:
-				_T13f:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, minz;
-					__asm        cmp    [eax+8], ecx;
-					__asm        jge    _T157;
+			miny = vert->y;
+// LINE 1583:
+_T13f:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, minz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jge    _T157;
 
-					minz = vert->z;
-				// LINE 1584:
-				_T157:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxx;
-					__asm        cmp    [eax], ecx;
-					__asm        jle    _T16d;
+			minz = vert->z;
+// LINE 1584:
+_T157:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxx;
+			__asm        cmp    [eax], ecx;
+			__asm        jle    _T16d;
 
-					maxx = vert->x;
-				// LINE 1585:
-				_T16d:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxy;
-					__asm        cmp    [eax+4], ecx;
-					__asm        jle    _T185;
+			maxx = vert->x;
+// LINE 1585:
+_T16d:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxy;
+			__asm        cmp    [eax+4], ecx;
+			__asm        jle    _T185;
 
-					maxy = vert->y;
-				// LINE 1586:
-				_T185:
-					__asm        mov    eax, vert;
-					__asm        mov    ecx, maxz;
-					__asm        cmp    [eax+8], ecx;
-					__asm        jle    _T19d;
+			maxy = vert->y;
+// LINE 1586:
+_T185:
+			__asm        mov    eax, vert;
+			__asm        mov    ecx, maxz;
+			__asm        cmp    [eax+8], ecx;
+			__asm        jle    _T19d;
 
-					maxz = vert->z;
-				// LINE 1587:
-				_T19d:
-			}
-		// LINE 1591:
-		_T1a2:
-			__asm        mov    eax, dim;
-			__asm        add    eax, y;
-			__asm        cmp    eax, miny;
-			__asm        jl     next_face;
+			maxz = vert->z;
+// LINE 1587:
+_T19d:
+		}
+// LINE 1591:
+_T1a2:
+		__asm        mov    eax, dim;
+		__asm        add    eax, y;
+		__asm        cmp    eax, miny;
+		__asm        jl     next_face;
 
-			__asm        mov    eax, y;
-			__asm        sub    eax, dim;
-			__asm        cmp    eax, maxy;
-			__asm        jg     next_face;
+		__asm        mov    eax, y;
+		__asm        sub    eax, dim;
+		__asm        cmp    eax, maxy;
+		__asm        jg     next_face;
 
-			__asm        mov    eax, dim;
-			__asm        add    eax, z;
-			__asm        cmp    eax, minz;
-			__asm        jl     next_face;
+		__asm        mov    eax, dim;
+		__asm        add    eax, z;
+		__asm        cmp    eax, minz;
+		__asm        jl     next_face;
 
-			__asm        mov    eax, z;
-			__asm        sub    eax, dim;
-			__asm        cmp    eax, maxz;
-			__asm        jg     next_face;
-		// LINE 1594:
-			facex = ((minx + maxx) >> 0x1);
-		// LINE 1595:
-			distx = facex;
-		// LINE 1596:
-			return distx;
-		// LINE 1608:
-		next_face:
-			faceptr = faceptr->NextFace;
+		__asm        mov    eax, z;
+		__asm        sub    eax, dim;
+		__asm        cmp    eax, maxz;
+		__asm        jg     next_face;
+// LINE 1594:
+		facex = ((minx + maxx) >> 0x1);
+// LINE 1595:
+		distx = facex;
+// LINE 1596:
+		return distx;
+// LINE 1608:
+next_face:
+		faceptr = faceptr->NextFace;
 	}
 // LINE 1611:
 _T205:
@@ -2397,46 +2397,46 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 // LINE 1640:
 _FOR_2d:
 	for (i = 0x0; (oh->NFaces > i); i++) {
-		// LINE 1642:
-			__asm        mov    eax, faceptr;
-			__asm        test   byte ptr [eax+8], 4;
-			__asm        jne    _T51;
-		// LINE 1643:
-			__asm        jmp    next_face;
-		// LINE 1646:
-		_T51:
-			dataptr = faceptr;
-		// LINE 1647:
-			dataptr += 0x30;
-		// LINE 1650:
-			vertno = dataptr;
-		// LINE 1652:
-			__asm        mov    eax, vertno;
-			__asm        mov    eax, [eax];
-			__asm        shr    eax, 4;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        shl    eax, 2;
-			__asm        mov    ecx, oh;
-			__asm        add    eax, [ecx+8];
-			__asm        mov    vert1, eax;
-		// LINE 1657:
-			vertno += 0x4;
-		// LINE 1659:
-			__asm        mov    eax, vertno;
-			__asm        mov    eax, [eax];
-			__asm        shr    eax, 4;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        shl    eax, 2;
-			__asm        mov    ecx, oh;
-			__asm        add    eax, [ecx+8];
-			__asm        mov    vert2, eax;
-		// LINE 1665:
-			vert2->x = (((width << 0x10) >> 0x1) + vert1->x);
-		// LINE 1666:
-			vert2->y = (vert1->y + ((height << 0x10) >> 0x1));
-		// LINE 1670:
-		next_face:
-			faceptr = faceptr->NextFace;
+// LINE 1642:
+		__asm        mov    eax, faceptr;
+		__asm        test   byte ptr [eax+8], 4;
+		__asm        jne    _T51;
+// LINE 1643:
+		__asm        jmp    next_face;
+// LINE 1646:
+_T51:
+		dataptr = faceptr;
+// LINE 1647:
+		dataptr += 0x30;
+// LINE 1650:
+		vertno = dataptr;
+// LINE 1652:
+		__asm        mov    eax, vertno;
+		__asm        mov    eax, [eax];
+		__asm        shr    eax, 4;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, oh;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    vert1, eax;
+// LINE 1657:
+		vertno += 0x4;
+// LINE 1659:
+		__asm        mov    eax, vertno;
+		__asm        mov    eax, [eax];
+		__asm        shr    eax, 4;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, oh;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    vert2, eax;
+// LINE 1665:
+		vert2->x = (((width << 0x10) >> 0x1) + vert1->x);
+// LINE 1666:
+		vert2->y = (vert1->y + ((height << 0x10) >> 0x1));
+// LINE 1670:
+next_face:
+		faceptr = faceptr->NextFace;
 	}
 // LINE 1673:
 __RETURN:
@@ -2677,16 +2677,16 @@ void NormalizeObj(/*packed*/ struct ObjectHdr *obj) {
 // LINE 1851:
 _FOR_40:
 	for (i = 0x0; (obj->NVerts > i); i++) {
-		// LINE 1852:
-			d->x = (s->x - c.x);
-		// LINE 1853:
-			d->y = (s->y - c.y);
-		// LINE 1854:
-			d->z = (s->z - c.z);
-		// LINE 1855:
-			d += 0xc;
-		// LINE 1856:
-			s += 0xc;
+// LINE 1852:
+		d->x = (s->x - c.x);
+// LINE 1853:
+		d->y = (s->y - c.y);
+// LINE 1854:
+		d->z = (s->z - c.z);
+// LINE 1855:
+		d += 0xc;
+// LINE 1856:
+		s += 0xc;
 	}
 // LINE 1858:
 _T8a:
@@ -2717,120 +2717,120 @@ int32_t VRAssignTextureResToGroup(/*packed*/ struct VRResource *g, /*packed*/ st
 // LINE 1882:
 _FOR_21:
 	for (i = 0x0; (geo->count > i); i++) {
-		// LINE 1883:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, geo;
-			__asm        mov    eax, [ecx+eax*4+0x18];
-			__asm        mov    obj, eax;
-		// LINE 1884:
-			_VRGetObjInfo(obj, oinfo.Faces);
-		// LINE 1885:
-			__asm        mov    eax, obj;
+// LINE 1883:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, geo;
+		__asm        mov    eax, [ecx+eax*4+0x18];
+		__asm        mov    obj, eax;
+// LINE 1884:
+		_VRGetObjInfo(obj, oinfo.Faces);
+// LINE 1885:
+		__asm        mov    eax, obj;
+		__asm        push   eax;
+		__asm        call   _VRGetFirstFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
+// LINE 1886:
+_FOR_6b:
+		for (j = 0x0; (oinfo.Faces > j); j++) {
+// LINE 1887:
+			fh = face;
+// LINE 1893:
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+8], 1;
+			__asm        je     _T9a;
+
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+8], 4;
+			__asm        je     _Tce;
+_T9a:
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+9], 8;
+			__asm        jne    _Tce;
+
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+9], 0x80;
+			__asm        jne    _Tce;
+
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+0xA], 1;
+			__asm        jne    _Tce;
+
+			__asm        mov    eax, fh;
+			__asm        test   byte ptr [eax+9], 0x40;
+			__asm        je     _Td3;
+// LINE 1894:
+_Tce:
+			__asm        jmp    next_face;
+// LINE 1895:
+_Td3:
+			__asm        mov    eax, face;
 			__asm        push   eax;
-			__asm        call   _VRGetFirstFace;
+			__asm        call   _VRGetFaceTexture;
+			__asm        add    esp, 4;
+			__asm        mov    k, eax;
+// LINE 1896:
+			hiword = (k >> 0x10);
+// LINE 1897:
+			loword = (k & 0xffff);
+// LINE 1901:
+			__asm        cmp    hiword, 0;
+			__asm        je     _T143;
+// LINE 1903:
+			__asm        mov    eax, bmp;
+			__asm        mov    ecx, hiword;
+			__asm        cmp    [eax+0x10], ecx;
+			__asm        jge    _T120;
+// LINE 1905:
+			GlobalError = 0xd;
+// LINE 1906:
+			return 0x0;
+// LINE 1909:
+_T120:
+			__asm        mov    eax, loword;
+			__asm        push   eax;
+			__asm        mov    eax, hiword;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, bmp;
+			__asm        mov    eax, [ecx+eax*4+0x20];
+			__asm        push   eax;
+			__asm        mov    eax, fh;
+			__asm        push   eax;
+			__asm        call   VRBCApplyTiledMap;
+			__asm        add    esp, 0xC;
+// LINE 1911:
+			__asm        jmp    next_face;
+// LINE 1913:
+_T143:
+			__asm        mov    eax, bmp;
+			__asm        mov    ecx, k;
+			__asm        cmp    [eax+0x10], ecx;
+			__asm        jge    _T163;
+// LINE 1914:
+			GlobalError = 0xd;
+// LINE 1915:
+			return 0x0;
+// LINE 1917:
+_T163:
+			__asm        mov    eax, k;
+			__asm        lea    eax, [eax+eax*2];
+			__asm        mov    ecx, bmp;
+			__asm        mov    eax, [ecx+eax*4+0x20];
+			__asm        push   eax;
+			__asm        mov    eax, face;
+			__asm        push   eax;
+			__asm        call   _VRBCApplyMap;
+			__asm        add    esp, 8;
+// LINE 1919:
+next_face:
+			__asm        mov    eax, face;
+			__asm        push   eax;
+			__asm        call   _VRGetNextFace;
 			__asm        add    esp, 4;
 			__asm        mov    face, eax;
-		// LINE 1886:
-		_FOR_6b:
-			for (j = 0x0; (oinfo.Faces > j); j++) {
-				// LINE 1887:
-					fh = face;
-				// LINE 1893:
-					__asm        mov    eax, fh;
-					__asm        test   byte ptr [eax+8], 1;
-					__asm        je     _T9a;
-
-					__asm        mov    eax, fh;
-					__asm        test   byte ptr [eax+8], 4;
-					__asm        je     _Tce;
-				_T9a:
-					__asm        mov    eax, fh;
-					__asm        test   byte ptr [eax+9], 8;
-					__asm        jne    _Tce;
-
-					__asm        mov    eax, fh;
-					__asm        test   byte ptr [eax+9], 0x80;
-					__asm        jne    _Tce;
-
-					__asm        mov    eax, fh;
-					__asm        test   byte ptr [eax+0xA], 1;
-					__asm        jne    _Tce;
-
-					__asm        mov    eax, fh;
-					__asm        test   byte ptr [eax+9], 0x40;
-					__asm        je     _Td3;
-				// LINE 1894:
-				_Tce:
-					__asm        jmp    next_face;
-				// LINE 1895:
-				_Td3:
-					__asm        mov    eax, face;
-					__asm        push   eax;
-					__asm        call   _VRGetFaceTexture;
-					__asm        add    esp, 4;
-					__asm        mov    k, eax;
-				// LINE 1896:
-					hiword = (k >> 0x10);
-				// LINE 1897:
-					loword = (k & 0xffff);
-				// LINE 1901:
-					__asm        cmp    hiword, 0;
-					__asm        je     _T143;
-				// LINE 1903:
-					__asm        mov    eax, bmp;
-					__asm        mov    ecx, hiword;
-					__asm        cmp    [eax+0x10], ecx;
-					__asm        jge    _T120;
-				// LINE 1905:
-					GlobalError = 0xd;
-				// LINE 1906:
-					return 0x0;
-				// LINE 1909:
-				_T120:
-					__asm        mov    eax, loword;
-					__asm        push   eax;
-					__asm        mov    eax, hiword;
-					__asm        lea    eax, [eax+eax*2];
-					__asm        mov    ecx, bmp;
-					__asm        mov    eax, [ecx+eax*4+0x20];
-					__asm        push   eax;
-					__asm        mov    eax, fh;
-					__asm        push   eax;
-					__asm        call   VRBCApplyTiledMap;
-					__asm        add    esp, 0xC;
-				// LINE 1911:
-					__asm        jmp    next_face;
-				// LINE 1913:
-				_T143:
-					__asm        mov    eax, bmp;
-					__asm        mov    ecx, k;
-					__asm        cmp    [eax+0x10], ecx;
-					__asm        jge    _T163;
-				// LINE 1914:
-					GlobalError = 0xd;
-				// LINE 1915:
-					return 0x0;
-				// LINE 1917:
-				_T163:
-					__asm        mov    eax, k;
-					__asm        lea    eax, [eax+eax*2];
-					__asm        mov    ecx, bmp;
-					__asm        mov    eax, [ecx+eax*4+0x20];
-					__asm        push   eax;
-					__asm        mov    eax, face;
-					__asm        push   eax;
-					__asm        call   _VRBCApplyMap;
-					__asm        add    esp, 8;
-				// LINE 1919:
-				next_face:
-					__asm        mov    eax, face;
-					__asm        push   eax;
-					__asm        call   _VRGetNextFace;
-					__asm        add    esp, 4;
-					__asm        mov    face, eax;
-			}
-		// LINE 1921:
-		_T191:
+		}
+// LINE 1921:
+_T191:
 	}
 // LINE 1922:
 _T196:
@@ -2857,14 +2857,14 @@ void VRBCApplyTiledMap(/*packed*/ struct _FaceHdr *fh, /*packed*/ struct VRBmpHd
 // LINE 1946:
 _FOR_38:
 	for (i = 0x0; (fh->Nverts > i); i++) {
-		// LINE 1948:
-			mv->x = (barry->x * w);
-		// LINE 1949:
-			mv->y = (barry->y * h);
-		// LINE 1950:
-			mv += 0x8;
-		// LINE 1951:
-			barry += 0x8;
+// LINE 1948:
+		mv->x = (barry->x * w);
+// LINE 1949:
+		mv->y = (barry->y * h);
+// LINE 1950:
+		mv += 0x8;
+// LINE 1951:
+		barry += 0x8;
 	}
 // LINE 1958:
 _T75:
@@ -3145,130 +3145,130 @@ _T5d:
 // LINE 2116:
 _FOR_7b:
 	for (i = 0x0; (obj->NVerts > i); i++) {
-		// LINE 2118:
+// LINE 2118:
+	// Block start:
+		/*bp-0x40*/  int32_t no_vert_faces;
+		/*bp-0x44*/  /*packed*/ struct Point3d *vn;
+		no_vert_faces = 0x0;
+// LINE 2119:
+		__asm        mov    eax, i;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        add    eax, vnorms;
+		__asm        mov    vn, eax;
+// LINE 2121:
+		vn->z = 0x0;
+		vn->y = vn->z;
+		vn->x = vn->y;
+// LINE 2129:
+		vertid = (i << 0x4);
+// LINE 2136:
+		fp = obj->FacePtr;
+// LINE 2137:
+_FOR_e2:
+		for (j = 0x0; (obj->NFaces > j); j++) {
+// LINE 2139:
 		// Block start:
-			/*bp-0x40*/  int32_t no_vert_faces;
-			/*bp-0x44*/  /*packed*/ struct Point3d *vn;
-			no_vert_faces = 0x0;
-		// LINE 2119:
-			__asm        mov    eax, i;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        shl    eax, 2;
-			__asm        add    eax, vnorms;
-			__asm        mov    vn, eax;
-		// LINE 2121:
-			vn->z = 0x0;
-			vn->y = vn->z;
-			vn->x = vn->y;
-		// LINE 2129:
-			vertid = (i << 0x4);
-		// LINE 2136:
-			fp = obj->FacePtr;
-		// LINE 2137:
-		_FOR_e2:
-			for (j = 0x0; (obj->NFaces > j); j++) {
-				// LINE 2139:
-				// Block start:
-					/*bp-0x48*/  /*packed*/ struct Project3d *fn;
-					fn = fp->Normal;
-				// LINE 2141:
-					faceverts = fp->PlyVerts;
-				// LINE 2147:
-				_FOR_112:
-					for (k = 0x0; (fp->Nverts > k); k++) {
-						// LINE 2149:
-							__asm        mov    eax, k;
-							__asm        mov    ecx, faceverts;
-							__asm        mov    edx, vertid;
-							__asm        cmp    [ecx+eax*4], edx;
-							__asm        jne    _T160;
-						// LINE 2151:
-							no_vert_faces++;
-						// LINE 2152:
-							vn->x += fn->x;
-						// LINE 2153:
-							vn->y += fn->y;
-						// LINE 2154:
-							vn->z += fn->z;
-						// LINE 2155:
-							__asm        jmp    _T165;
-						// LINE 2157:
-						_T160:
-					}
-				// LINE 2160:
-				_T165:
-					fp = fp->NextFace;
+			/*bp-0x48*/  /*packed*/ struct Project3d *fn;
+			fn = fp->Normal;
+// LINE 2141:
+			faceverts = fp->PlyVerts;
+// LINE 2147:
+_FOR_112:
+			for (k = 0x0; (fp->Nverts > k); k++) {
+// LINE 2149:
+				__asm        mov    eax, k;
+				__asm        mov    ecx, faceverts;
+				__asm        mov    edx, vertid;
+				__asm        cmp    [ecx+eax*4], edx;
+				__asm        jne    _T160;
+// LINE 2151:
+				no_vert_faces++;
+// LINE 2152:
+				vn->x += fn->x;
+// LINE 2153:
+				vn->y += fn->y;
+// LINE 2154:
+				vn->z += fn->z;
+// LINE 2155:
+				__asm        jmp    _T165;
+// LINE 2157:
+_T160:
 			}
-		// LINE 2168:
-		_T172:
-			__asm        cmp    no_vert_faces, 0;
-			__asm        jle    _T23a;
-		// LINE 2171:
-			__asm        mov    eax, vn;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x4C], eax;
-			__asm        fild   dword ptr [ebp-0x4C];
-			__asm        fdiv   qword ptr ds:[0x592460];
-			__asm        mov    eax, no_vert_faces;
-			__asm        mov    [ebp-0x50], eax;
-			__asm        fidiv  dword ptr [ebp-0x50];
-			__asm        fstp   tmpX;
-		// LINE 2172:
-			__asm        mov    eax, vn;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-0x54], eax;
-			__asm        fild   dword ptr [ebp-0x54];
-			__asm        fdiv   qword ptr ds:[0x592460];
-			__asm        mov    eax, no_vert_faces;
-			__asm        mov    [ebp-0x58], eax;
-			__asm        fidiv  dword ptr [ebp-0x58];
-			__asm        fstp   tmpY;
-		// LINE 2173:
-			__asm        mov    eax, vn;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ebp-0x5C], eax;
-			__asm        fild   dword ptr [ebp-0x5C];
-			__asm        fdiv   qword ptr ds:[0x592460];
-			__asm        mov    eax, no_vert_faces;
-			__asm        mov    [ebp-0x60], eax;
-			__asm        fidiv  dword ptr [ebp-0x60];
-			__asm        fst    tmpZ;
-		// LINE 2175:
-			__asm        fmul   tmpZ;
-			__asm        fld    tmpY;
-			__asm        fmul   tmpY;
-			__asm        faddp;
-			__asm        fld    tmpX;
-			__asm        fmul   tmpX;
-			__asm        faddp;
-			__asm        sub    esp, 8;
-			__asm        fstp   qword ptr [esp];
-			__asm        call   _sqrt;
-			__asm        add    esp, 8;
-			__asm        fst    length;
-		// LINE 2176:
-			__asm        fdivr  tmpX;
-			__asm        fmul   qword ptr ds:[0x592460];
-			__asm        call   __ftol;
-			__asm        mov    ecx, vn;
-			__asm        mov    [ecx], eax;
-		// LINE 2177:
-			__asm        fld    tmpY;
-			__asm        fdiv   length;
-			__asm        fmul   qword ptr ds:[0x592460];
-			__asm        call   __ftol;
-			__asm        mov    ecx, vn;
-			__asm        mov    [ecx+4], eax;
-		// LINE 2178:
-			__asm        fld    tmpZ;
-			__asm        fdiv   length;
-			__asm        fmul   qword ptr ds:[0x592460];
-			__asm        call   __ftol;
-			__asm        mov    ecx, vn;
-			__asm        mov    [ecx+8], eax;
-		// LINE 2182:
-		// Block end:
-		_T23a:
+// LINE 2160:
+_T165:
+			fp = fp->NextFace;
+		}
+// LINE 2168:
+_T172:
+		__asm        cmp    no_vert_faces, 0;
+		__asm        jle    _T23a;
+// LINE 2171:
+		__asm        mov    eax, vn;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x4C], eax;
+		__asm        fild   dword ptr [ebp-0x4C];
+		__asm        fdiv   qword ptr ds:[0x592460];
+		__asm        mov    eax, no_vert_faces;
+		__asm        mov    [ebp-0x50], eax;
+		__asm        fidiv  dword ptr [ebp-0x50];
+		__asm        fstp   tmpX;
+// LINE 2172:
+		__asm        mov    eax, vn;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-0x54], eax;
+		__asm        fild   dword ptr [ebp-0x54];
+		__asm        fdiv   qword ptr ds:[0x592460];
+		__asm        mov    eax, no_vert_faces;
+		__asm        mov    [ebp-0x58], eax;
+		__asm        fidiv  dword ptr [ebp-0x58];
+		__asm        fstp   tmpY;
+// LINE 2173:
+		__asm        mov    eax, vn;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ebp-0x5C], eax;
+		__asm        fild   dword ptr [ebp-0x5C];
+		__asm        fdiv   qword ptr ds:[0x592460];
+		__asm        mov    eax, no_vert_faces;
+		__asm        mov    [ebp-0x60], eax;
+		__asm        fidiv  dword ptr [ebp-0x60];
+		__asm        fst    tmpZ;
+// LINE 2175:
+		__asm        fmul   tmpZ;
+		__asm        fld    tmpY;
+		__asm        fmul   tmpY;
+		__asm        faddp;
+		__asm        fld    tmpX;
+		__asm        fmul   tmpX;
+		__asm        faddp;
+		__asm        sub    esp, 8;
+		__asm        fstp   qword ptr [esp];
+		__asm        call   _sqrt;
+		__asm        add    esp, 8;
+		__asm        fst    length;
+// LINE 2176:
+		__asm        fdivr  tmpX;
+		__asm        fmul   qword ptr ds:[0x592460];
+		__asm        call   __ftol;
+		__asm        mov    ecx, vn;
+		__asm        mov    [ecx], eax;
+// LINE 2177:
+		__asm        fld    tmpY;
+		__asm        fdiv   length;
+		__asm        fmul   qword ptr ds:[0x592460];
+		__asm        call   __ftol;
+		__asm        mov    ecx, vn;
+		__asm        mov    [ecx+4], eax;
+// LINE 2178:
+		__asm        fld    tmpZ;
+		__asm        fdiv   length;
+		__asm        fmul   qword ptr ds:[0x592460];
+		__asm        call   __ftol;
+		__asm        mov    ecx, vn;
+		__asm        mov    [ecx+8], eax;
+// LINE 2182:
+	// Block end:
+_T23a:
 	}
 // LINE 2185:
 _T23f:
@@ -3391,13 +3391,13 @@ _T84:
 // LINE 2272:
 _FOR_112:
 	for (i = 0x0; (nverts > i); i++) {
-		// LINE 2274:
-			vert->z = 0x0;
-			vert->x = vert->z;
-		// LINE 2275:
-			vert->y = -(seglen * i);
-		// LINE 2276:
-			vert += 0xc;
+// LINE 2274:
+		vert->z = 0x0;
+		vert->x = vert->z;
+// LINE 2275:
+		vert->y = -(seglen * i);
+// LINE 2276:
+		vert += 0xc;
 	}
 // LINE 2281:
 _T14e:
@@ -3413,35 +3413,35 @@ _T14e:
 // LINE 2288:
 _FOR_177:
 	for (i = 0x0; ((nverts - 1) > i); i++) {
-		// LINE 2291:
-			iptr = ptr;
-		// LINE 2292:
-			ptr += 0x8;
-		// LINE 2295:
-			fh->Nverts = 0x2;
-		// LINE 2296:
-			fh->Attrib1 = 0x8002;
-		// LINE 2297:
-			fh->Attrib2 = color;
-		// LINE 2298:
-			fh->Plotter = 0x14;
-		// LINE 2299:
-			fh->Bitmap = color;
-		// LINE 2300:
-			fh->MapVerts = mvert;
-		// LINE 2301:
-			fh->NextFace = ptr;
-		// LINE 2302:
-			fh->PlyVerts = iptr;
-		// LINE 2305:
-			iptr[0] = (i << 0x4);
-			iptr += 0x4;
-		// LINE 2306:
-			iptr[0] = ((i + 1) << 0x4);
-		// LINE 2309:
-			fh = ptr;
-		// LINE 2310:
-			ptr += 0x30;
+// LINE 2291:
+		iptr = ptr;
+// LINE 2292:
+		ptr += 0x8;
+// LINE 2295:
+		fh->Nverts = 0x2;
+// LINE 2296:
+		fh->Attrib1 = 0x8002;
+// LINE 2297:
+		fh->Attrib2 = color;
+// LINE 2298:
+		fh->Plotter = 0x14;
+// LINE 2299:
+		fh->Bitmap = color;
+// LINE 2300:
+		fh->MapVerts = mvert;
+// LINE 2301:
+		fh->NextFace = ptr;
+// LINE 2302:
+		fh->PlyVerts = iptr;
+// LINE 2305:
+		iptr[0] = (i << 0x4);
+		iptr += 0x4;
+// LINE 2306:
+		iptr[0] = ((i + 1) << 0x4);
+// LINE 2309:
+		fh = ptr;
+// LINE 2310:
+		ptr += 0x30;
 	}
 // LINE 2313:
 _T205:
@@ -3530,12 +3530,12 @@ _T82:
 // LINE 2377:
 _FOR_109:
 	for (i = 0x0; (nverts > i); i++) {
-		// LINE 2379:
-			vert->z = 0x0;
-			vert->x = vert->z;
-			vert->y = vert->x;
-		// LINE 2380:
-			vert += 0xc;
+// LINE 2379:
+		vert->z = 0x0;
+		vert->x = vert->z;
+		vert->y = vert->x;
+// LINE 2380:
+		vert += 0xc;
 	}
 // LINE 2385:
 _T141:
@@ -3551,32 +3551,32 @@ _T141:
 // LINE 2392:
 _FOR_16a:
 	for (i = 0x0; (nverts > i); i++) {
-		// LINE 2395:
-			iptr = ptr;
-		// LINE 2396:
-			ptr += 0x4;
-		// LINE 2399:
-			fh->Nverts = 0x1;
-		// LINE 2400:
-			fh->Attrib1 = 0x10002;
-		// LINE 2401:
-			fh->Attrib2 = i;
-		// LINE 2402:
-			fh->Plotter = plotter;
-		// LINE 2403:
-			fh->Bitmap = i;
-		// LINE 2404:
-			fh->MapVerts = mvert;
-		// LINE 2405:
-			fh->NextFace = ptr;
-		// LINE 2406:
-			fh->PlyVerts = iptr;
-		// LINE 2409:
-			iptr[0] = (i << 0x4);
-		// LINE 2412:
-			fh = ptr;
-		// LINE 2413:
-			ptr += 0x30;
+// LINE 2395:
+		iptr = ptr;
+// LINE 2396:
+		ptr += 0x4;
+// LINE 2399:
+		fh->Nverts = 0x1;
+// LINE 2400:
+		fh->Attrib1 = 0x10002;
+// LINE 2401:
+		fh->Attrib2 = i;
+// LINE 2402:
+		fh->Plotter = plotter;
+// LINE 2403:
+		fh->Bitmap = i;
+// LINE 2404:
+		fh->MapVerts = mvert;
+// LINE 2405:
+		fh->NextFace = ptr;
+// LINE 2406:
+		fh->PlyVerts = iptr;
+// LINE 2409:
+		iptr[0] = (i << 0x4);
+// LINE 2412:
+		fh = ptr;
+// LINE 2413:
+		ptr += 0x30;
 	}
 // LINE 2416:
 _T1e6:
@@ -3671,28 +3671,28 @@ _T40:
 // LINE 2482:
 _FOR_b2:
 	for (i = 0x0; (oh->NFaces > i); i++) {
-		// LINE 2485:
-			memcpy(to, fh, 0x30);
-		// LINE 2486:
-			fh2 = to;
-		// LINE 2487:
-			to += 0x30;
-		// LINE 2490:
-			memcpy(to, fh->PlyVerts, (fh->Nverts << 0x2));
-		// LINE 2491:
-			fh2->PlyVerts = to;
-		// LINE 2492:
-			to += (fh->Nverts << 0x2);
-		// LINE 2495:
-			memcpy(to, fh->MapVerts, (fh->Nverts << 0x3));
-		// LINE 2496:
-			fh2->MapVerts = to;
-		// LINE 2497:
-			to += (fh->Nverts << 0x3);
-		// LINE 2500:
-			fh2->NextFace = to;
-		// LINE 2503:
-			fh = fh->NextFace;
+// LINE 2485:
+		memcpy(to, fh, 0x30);
+// LINE 2486:
+		fh2 = to;
+// LINE 2487:
+		to += 0x30;
+// LINE 2490:
+		memcpy(to, fh->PlyVerts, (fh->Nverts << 0x2));
+// LINE 2491:
+		fh2->PlyVerts = to;
+// LINE 2492:
+		to += (fh->Nverts << 0x2);
+// LINE 2495:
+		memcpy(to, fh->MapVerts, (fh->Nverts << 0x3));
+// LINE 2496:
+		fh2->MapVerts = to;
+// LINE 2497:
+		to += (fh->Nverts << 0x3);
+// LINE 2500:
+		fh2->NextFace = to;
+// LINE 2503:
+		fh = fh->NextFace;
 	}
 // LINE 2506:
 _T159:
@@ -3910,66 +3910,66 @@ _T1a7:
 // LINE 2594:
 _FOR_232:
 	for (j = 0x0; (fh->Nverts > j); j++) {
-		// LINE 2600:
-			__asm        mov    eax, vertno;
-			__asm        mov    eax, [eax];
-			__asm        shr    eax, 4;
-			__asm        lea    eax, [eax+eax*2];
-			__asm        shl    eax, 2;
-			__asm        mov    ecx, oh;
-			__asm        add    eax, [ecx+8];
-			__asm        mov    v0, eax;
-		// LINE 2604:
-			vertno += 0x4;
-		// LINE 2607:
-			__asm        mov    eax, v0;
-			__asm        mov    ecx, minx;
-			__asm        cmp    [eax], ecx;
-			__asm        jge    _T275;
+// LINE 2600:
+		__asm        mov    eax, vertno;
+		__asm        mov    eax, [eax];
+		__asm        shr    eax, 4;
+		__asm        lea    eax, [eax+eax*2];
+		__asm        shl    eax, 2;
+		__asm        mov    ecx, oh;
+		__asm        add    eax, [ecx+8];
+		__asm        mov    v0, eax;
+// LINE 2604:
+		vertno += 0x4;
+// LINE 2607:
+		__asm        mov    eax, v0;
+		__asm        mov    ecx, minx;
+		__asm        cmp    [eax], ecx;
+		__asm        jge    _T275;
 
-			minx = v0->x;
-		// LINE 2608:
-		_T275:
-			__asm        mov    eax, v0;
-			__asm        mov    ecx, miny;
-			__asm        cmp    [eax+4], ecx;
-			__asm        jge    _T28d;
+		minx = v0->x;
+// LINE 2608:
+_T275:
+		__asm        mov    eax, v0;
+		__asm        mov    ecx, miny;
+		__asm        cmp    [eax+4], ecx;
+		__asm        jge    _T28d;
 
-			miny = v0->y;
-		// LINE 2609:
-		_T28d:
-			__asm        mov    eax, v0;
-			__asm        mov    ecx, minz;
-			__asm        cmp    [eax+8], ecx;
-			__asm        jge    _T2a5;
+		miny = v0->y;
+// LINE 2609:
+_T28d:
+		__asm        mov    eax, v0;
+		__asm        mov    ecx, minz;
+		__asm        cmp    [eax+8], ecx;
+		__asm        jge    _T2a5;
 
-			minz = v0->z;
-		// LINE 2610:
-		_T2a5:
-			__asm        mov    eax, v0;
-			__asm        mov    ecx, maxx;
-			__asm        cmp    [eax], ecx;
-			__asm        jle    _T2bb;
+		minz = v0->z;
+// LINE 2610:
+_T2a5:
+		__asm        mov    eax, v0;
+		__asm        mov    ecx, maxx;
+		__asm        cmp    [eax], ecx;
+		__asm        jle    _T2bb;
 
-			maxx = v0->x;
-		// LINE 2611:
-		_T2bb:
-			__asm        mov    eax, v0;
-			__asm        mov    ecx, maxy;
-			__asm        cmp    [eax+4], ecx;
-			__asm        jle    _T2d3;
+		maxx = v0->x;
+// LINE 2611:
+_T2bb:
+		__asm        mov    eax, v0;
+		__asm        mov    ecx, maxy;
+		__asm        cmp    [eax+4], ecx;
+		__asm        jle    _T2d3;
 
-			maxy = v0->y;
-		// LINE 2612:
-		_T2d3:
-			__asm        mov    eax, v0;
-			__asm        mov    ecx, maxz;
-			__asm        cmp    [eax+8], ecx;
-			__asm        jle    _T2eb;
+		maxy = v0->y;
+// LINE 2612:
+_T2d3:
+		__asm        mov    eax, v0;
+		__asm        mov    ecx, maxz;
+		__asm        cmp    [eax+8], ecx;
+		__asm        jle    _T2eb;
 
-			maxz = v0->z;
-		// LINE 2613:
-		_T2eb:
+		maxz = v0->z;
+// LINE 2613:
+_T2eb:
 	}
 // LINE 2617:
 _T2f0:

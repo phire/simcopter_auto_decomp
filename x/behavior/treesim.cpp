@@ -612,202 +612,202 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 127:
 __DO_23:
 	do {
-		// LINE 127:
-		__DO_23:
-			__asm        mov    eax, this;
-			__asm        movsx  eax, word ptr [eax+8];
-			__asm        lea    eax, [eax*4-4];
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+4];
-			__asm        mov    elem, eax;
-		// LINE 128:
-			__asm        mov    eax, elem;
-			__asm        mov    ax, [eax+2];
-			__asm        push   eax;
-			__asm        mov    eax, elem;
-			__asm        mov    ax, [eax];
-			__asm        push   eax;
-			__asm        mov    eax, elem;
-			__asm        mov    ecx, elem;
-			__asm        mov    ecx, [ecx+0x10];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0x10];
-			__asm        call   dword ptr [edx];
-			__asm        mov    node, eax;
-		// LINE 129:
-			__asm        mov    eax, node;
-			__asm        movsx  eax, word ptr [eax];
-			__asm        cmp    eax, 0x100;
-			__asm        jl     _T118;
-		// LINE 130:
-		// Block start:
-			/*bp-0x14*/  short * stackPass;
-			/*bp-0x18*/  short treeID;
-			__asm        mov    eax, this;
-			__asm        movsx  eax, word ptr [eax+8];
-			__asm        mov    ecx, this;
-			__asm        movsx  ecx, word ptr [ecx+0xA];
-			__asm        cmp    eax, ecx;
-			__asm        jl     _Ta0;
+// LINE 127:
+__DO_23:
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+8];
+		__asm        lea    eax, [eax*4-4];
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+4];
+		__asm        mov    elem, eax;
+// LINE 128:
+		__asm        mov    eax, elem;
+		__asm        mov    ax, [eax+2];
+		__asm        push   eax;
+		__asm        mov    eax, elem;
+		__asm        mov    ax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, elem;
+		__asm        mov    ecx, elem;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x10];
+		__asm        call   dword ptr [edx];
+		__asm        mov    node, eax;
+// LINE 129:
+		__asm        mov    eax, node;
+		__asm        movsx  eax, word ptr [eax];
+		__asm        cmp    eax, 0x100;
+		__asm        jl     _T118;
+// LINE 130:
+	// Block start:
+		/*bp-0x14*/  short * stackPass;
+		/*bp-0x18*/  short treeID;
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+8];
+		__asm        mov    ecx, this;
+		__asm        movsx  ecx, word ptr [ecx+0xA];
+		__asm        cmp    eax, ecx;
+		__asm        jl     _Ta0;
 
-			__asm        push   0x3E8;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+4];
-			__asm        jmp    _T280;
+		__asm        push   0x3E8;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+4];
+		__asm        jmp    _T280;
 
-			__asm        jmp    tree_error;
-		// LINE 133:
-		_Ta0:
-			stackPass = 0x0;
-		// LINE 134:
-			__asm        mov    eax, node;
-			__asm        mov    ax, [eax];
-			__asm        mov    treeID, ax;
-		// LINE 135:
-			__asm        mov    eax, node;
-			__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
-			__asm        jne    _Td5;
+		__asm        jmp    tree_error;
+// LINE 133:
+_Ta0:
+		stackPass = 0x0;
+// LINE 134:
+		__asm        mov    eax, node;
+		__asm        mov    ax, [eax];
+		__asm        mov    treeID, ax;
+// LINE 135:
+		__asm        mov    eax, node;
+		__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
+		__asm        jne    _Td5;
 
-			__asm        mov    eax, node;
-			__asm        cmp    dword ptr [eax+8], 0xFFFFFFFF;
-			__asm        jne    _Td5;
+		__asm        mov    eax, node;
+		__asm        cmp    dword ptr [eax+8], 0xFFFFFFFF;
+		__asm        jne    _Td5;
 
-			__asm        jmp    _Tf0;
+		__asm        jmp    _Tf0;
 
-			__asm        jmp    _Td5;
-		_Td5:
-			__asm        jmp    _Te7;
+		__asm        jmp    _Td5;
+_Td5:
+		__asm        jmp    _Te7;
 
-			__asm        test   dword ptr [ebp-0x1C], 0xFFFF;
-			__asm        jne    _Tf0;
-		// LINE 136:
-		_Te7:
-			stackPass = (node + 0x4);
-		// LINE 138:
-		_Tf0:
-			__asm        mov    eax, reinterpret_cast<uint32_t>(treeID);
-			__asm        push   eax;
-			__asm        mov    eax, stackPass;
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        mov    ecx, this;
-			__asm        call   TreeSim::Gosub;
-			__asm        movzx  eax, ax;
-			__asm        test   eax, eax;
-			__asm        jne    _T113;
-		// LINE 140:
-			done = 0x1;
-		// LINE 142:
-		// Block end:
-		_T113:
-			__asm        jmp    _T214;
-		// LINE 144:
-		_T118:
-			__asm        mov    eax, node;
-			__asm        push   eax;
-			__asm        mov    eax, elem;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax];
-			__asm        mov    result, eax;
-			__asm        mov    eax, result;
-			__asm        mov    [ebp-0x24], eax;
-			__asm        jmp    _T1e9;
-		// LINE 146:
-		_T138:
-			__asm        push   1;
-			__asm        mov    ecx, this;
-			__asm        call   TreeSim::NodeComplete;
-			__asm        movsx  eax, al;
-			__asm        cmp    eax, 0xFFFFFFFD;
-			__asm        jne    _T168;
-		// LINE 148:
-			__asm        push   0x3E9;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+4];
-			__asm        jmp    _T27b;
+		__asm        test   dword ptr [ebp-0x1C], 0xFFFF;
+		__asm        jne    _Tf0;
+// LINE 136:
+_Te7:
+		stackPass = (node + 0x4);
+// LINE 138:
+_Tf0:
+		__asm        mov    eax, reinterpret_cast<uint32_t>(treeID);
+		__asm        push   eax;
+		__asm        mov    eax, stackPass;
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        mov    ecx, this;
+		__asm        call   TreeSim::Gosub;
+		__asm        movzx  eax, ax;
+		__asm        test   eax, eax;
+		__asm        jne    _T113;
+// LINE 140:
+		done = 0x1;
+// LINE 142:
+	// Block end:
+_T113:
+		__asm        jmp    _T214;
+// LINE 144:
+_T118:
+		__asm        mov    eax, node;
+		__asm        push   eax;
+		__asm        mov    eax, elem;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax];
+		__asm        mov    result, eax;
+		__asm        mov    eax, result;
+		__asm        mov    [ebp-0x24], eax;
+		__asm        jmp    _T1e9;
+// LINE 146:
+_T138:
+		__asm        push   1;
+		__asm        mov    ecx, this;
+		__asm        call   TreeSim::NodeComplete;
+		__asm        movsx  eax, al;
+		__asm        cmp    eax, 0xFFFFFFFD;
+		__asm        jne    _T168;
+// LINE 148:
+		__asm        push   0x3E9;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+4];
+		__asm        jmp    _T27b;
 
-			__asm        jmp    tree_error;
-		// LINE 150:
-		_T168:
-			__asm        jmp    _T214;
-		// LINE 152:
-		_T16d:
-			__asm        push   0;
-			__asm        mov    ecx, this;
-			__asm        call   TreeSim::NodeComplete;
-			__asm        movsx  eax, al;
-			__asm        cmp    eax, 0xFFFFFFFD;
-			__asm        jne    _T19d;
-		// LINE 154:
-			__asm        push   0x3E9;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+4];
-			__asm        jmp    _T276;
+		__asm        jmp    tree_error;
+// LINE 150:
+_T168:
+		__asm        jmp    _T214;
+// LINE 152:
+_T16d:
+		__asm        push   0;
+		__asm        mov    ecx, this;
+		__asm        call   TreeSim::NodeComplete;
+		__asm        movsx  eax, al;
+		__asm        cmp    eax, 0xFFFFFFFD;
+		__asm        jne    _T19d;
+// LINE 154:
+		__asm        push   0x3E9;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+4];
+		__asm        jmp    _T276;
 
-			__asm        jmp    tree_error;
-		// LINE 156:
-		_T19d:
-			__asm        jmp    _T214;
-		// LINE 159:
-		_T1a2:
-			__asm        jmp    _T214;
-		// LINE 161:
-		_T1a7:
-			done = 0x1;
-		// LINE 162:
-			__asm        jmp    _T214;
-		// LINE 164:
-		_T1b2:
-			done = 0x1;
-		// LINE 165:
-			__asm        jmp    _T214;
-		// LINE 167:
-		_T1bd:
-			done = 0x1;
-		// LINE 168:
-			doAssert(0x5bdf48, 0xa8, 0x5bdf38, 0x8c085);
-		// LINE 169:
-			__asm        jmp    _T214;
-		// LINE 170:
-			__asm        jmp    _T214;
-		_T1e9:
-			__asm        inc    dword ptr [ebp-0x24];
-			__asm        cmp    dword ptr [ebp-0x24], 4;
-			__asm        ja     _T1bd;
+		__asm        jmp    tree_error;
+// LINE 156:
+_T19d:
+		__asm        jmp    _T214;
+// LINE 159:
+_T1a2:
+		__asm        jmp    _T214;
+// LINE 161:
+_T1a7:
+		done = 0x1;
+// LINE 162:
+		__asm        jmp    _T214;
+// LINE 164:
+_T1b2:
+		done = 0x1;
+// LINE 165:
+		__asm        jmp    _T214;
+// LINE 167:
+_T1bd:
+		done = 0x1;
+// LINE 168:
+		doAssert(0x5bdf48, 0xa8, 0x5bdf38, 0x8c085);
+// LINE 169:
+		__asm        jmp    _T214;
+// LINE 170:
+		__asm        jmp    _T214;
+_T1e9:
+		__asm        inc    dword ptr [ebp-0x24];
+		__asm        cmp    dword ptr [ebp-0x24], 4;
+		__asm        ja     _T1bd;
 
-			__asm        mov    eax, [ebp-0x24];
-			__asm        jmp    _Switch_200[0][eax*4];
+		__asm        mov    eax, [ebp-0x24];
+		__asm        jmp    _Switch_200[0][eax*4];
 		// Switch pointers:
 		//   _T1b2
 		//   _T16d
 		//   _T138
 		//   _T1a7
 		//   _T1a2
-		// LINE 173:
-		_T214:
-			__asm        mov    eax, this;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        cmp    eax, 0x80;
-			__asm        jle    __DO_WHILE_23;
-		// LINE 175:
-			__asm        push   0x3EA;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+4];
-			__asm        jmp    _T271;
+// LINE 173:
+_T214:
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        cmp    eax, 0x80;
+		__asm        jle    __DO_WHILE_23;
+// LINE 175:
+		__asm        push   0x3EA;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+4];
+		__asm        jmp    _T271;
 
-			__asm        jmp    tree_error;
+		__asm        jmp    tree_error;
 	} while (((reinterpret_cast<uint32_t>(done) & 0xffff) == 0x0));
 // LINE 179:
 _T260:
@@ -839,91 +839,91 @@ signed char TreeSim::NodeComplete(unsigned short success) {
 // LINE 204:
 __WHILE_12:
 	while (((reinterpret_cast<uint32_t>(done) & 0xffff) == 0x0)) {
-		// LINE 205:
-			__asm        mov    eax, this;
-			__asm        movsx  eax, word ptr [eax+8];
-			__asm        cmp    eax, 1;
-			__asm        jge    _T49;
-		// LINE 207:
-			__asm        push   0x3EB;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+4];
-			__asm        jmp    _T12e;
+// LINE 205:
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+8];
+		__asm        cmp    eax, 1;
+		__asm        jge    _T49;
+// LINE 207:
+		__asm        push   0x3EB;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+4];
+		__asm        jmp    _T12e;
 
-			__asm        jmp    tree_error;
-		// LINE 209:
-		_T49:
-			__asm        mov    eax, this;
-			__asm        movsx  eax, word ptr [eax+8];
-			__asm        lea    eax, [eax*4-4];
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    ecx, this;
-			__asm        add    eax, [ecx+4];
-			__asm        mov    elem, eax;
-		// LINE 210:
-			__asm        mov    eax, elem;
-			__asm        mov    ax, [eax+2];
-			__asm        push   eax;
-			__asm        mov    eax, elem;
-			__asm        mov    ax, [eax];
-			__asm        push   eax;
-			__asm        mov    eax, elem;
-			__asm        mov    ecx, elem;
-			__asm        mov    ecx, [ecx+0x10];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0x10];
-			__asm        call   dword ptr [edx];
-			__asm        mov    node, eax;
-		// LINE 211:
-			__asm        test   reinterpret_cast<uint32_t>(success), 0xFFFF;
-			__asm        je     _Ta0;
+		__asm        jmp    tree_error;
+// LINE 209:
+_T49:
+		__asm        mov    eax, this;
+		__asm        movsx  eax, word ptr [eax+8];
+		__asm        lea    eax, [eax*4-4];
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    ecx, this;
+		__asm        add    eax, [ecx+4];
+		__asm        mov    elem, eax;
+// LINE 210:
+		__asm        mov    eax, elem;
+		__asm        mov    ax, [eax+2];
+		__asm        push   eax;
+		__asm        mov    eax, elem;
+		__asm        mov    ax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, elem;
+		__asm        mov    ecx, elem;
+		__asm        mov    ecx, [ecx+0x10];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x10];
+		__asm        call   dword ptr [edx];
+		__asm        mov    node, eax;
+// LINE 211:
+		__asm        test   reinterpret_cast<uint32_t>(success), 0xFFFF;
+		__asm        je     _Ta0;
 
-			trans = node->trueTrans;
-		// LINE 212:
-			__asm        jmp    _Ta9;
-		_Ta0:
-			trans = node->falseTrans;
-		// LINE 214:
-		_Ta9:
-			__asm        movsx  eax, trans;
-			__asm        cmp    eax, 0xFFFFFFFE;
-			__asm        jne    _Tce;
-		// LINE 215:
-			done = 0x0;
-		// LINE 216:
-			this->fStackSize--;
-		// LINE 217:
-			success = 0x1;
-		// LINE 218:
-			__asm        jmp    _T11a;
-		_Tce:
-			__asm        movsx  eax, trans;
-			__asm        cmp    eax, 0xFFFFFFFF;
-			__asm        jne    _Tf3;
-		// LINE 219:
-			done = 0x0;
-		// LINE 220:
-			this->fStackSize--;
-		// LINE 221:
-			success = 0x0;
-		// LINE 222:
-			__asm        jmp    _T11a;
-		// LINE 223:
-		_Tf3:
-			done = 0x1;
-		// LINE 224:
-			__asm        movsx  ax, trans;
-			__asm        mov    ecx, this;
-			__asm        movsx  ecx, word ptr [ecx+8];
-			__asm        lea    ecx, [ecx*4-4];
-			__asm        lea    ecx, [ecx+ecx*4];
-			__asm        mov    edx, this;
-			__asm        mov    edx, [edx+4];
-			__asm        mov    [ecx+edx+2], ax;
-		// LINE 226:
-		_T11a:
+		trans = node->trueTrans;
+// LINE 212:
+		__asm        jmp    _Ta9;
+_Ta0:
+		trans = node->falseTrans;
+// LINE 214:
+_Ta9:
+		__asm        movsx  eax, trans;
+		__asm        cmp    eax, 0xFFFFFFFE;
+		__asm        jne    _Tce;
+// LINE 215:
+		done = 0x0;
+// LINE 216:
+		this->fStackSize--;
+// LINE 217:
+		success = 0x1;
+// LINE 218:
+		__asm        jmp    _T11a;
+_Tce:
+		__asm        movsx  eax, trans;
+		__asm        cmp    eax, 0xFFFFFFFF;
+		__asm        jne    _Tf3;
+// LINE 219:
+		done = 0x0;
+// LINE 220:
+		this->fStackSize--;
+// LINE 221:
+		success = 0x0;
+// LINE 222:
+		__asm        jmp    _T11a;
+// LINE 223:
+_Tf3:
+		done = 0x1;
+// LINE 224:
+		__asm        movsx  ax, trans;
+		__asm        mov    ecx, this;
+		__asm        movsx  ecx, word ptr [ecx+8];
+		__asm        lea    ecx, [ecx*4-4];
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+4];
+		__asm        mov    [ecx+edx+2], ax;
+// LINE 226:
+_T11a:
 	}
 // LINE 227:
 _T11f:

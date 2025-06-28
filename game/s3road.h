@@ -123,13 +123,13 @@ _T17a:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_1ad[0][eax];
 	__asm        jmp    _Switch_19d[0][ecx*4];
-// Switch pointers:
-//   _T4b
-//   _T55
-//   _T73
-//   _T7d
-// Switch table
-//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
+	// Switch pointers:
+	//   _T4b
+	//   _T55
+	//   _T73
+	//   _T7d
+	// Switch table
+	//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 // LINE 876:
 __RETURN:
 }

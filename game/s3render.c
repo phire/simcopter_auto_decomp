@@ -215,35 +215,35 @@ _T29c:
 // LINE 340:
 _FOR_2d5:
 	for (j = 0x0; (j < i); j++) {
-		// LINE 342:
-			obj = VRGetResObject(G_resgeo1, j);
-		// LINE 343:
-			__asm        mov    eax, obj;
-			__asm        push   eax;
-			__asm        call   _VRGetObjXformMemPoolReq;
-			__asm        add    esp, 4;
-			__asm        mov    maxval, eax;
-		// LINE 344:
-			__asm        mov    eax, maxval;
-			__asm        cmp    memxf, eax;
-			__asm        jge    _T33b;
+// LINE 342:
+		obj = VRGetResObject(G_resgeo1, j);
+// LINE 343:
+		__asm        mov    eax, obj;
+		__asm        push   eax;
+		__asm        call   _VRGetObjXformMemPoolReq;
+		__asm        add    esp, 4;
+		__asm        mov    maxval, eax;
+// LINE 344:
+		__asm        mov    eax, maxval;
+		__asm        cmp    memxf, eax;
+		__asm        jge    _T33b;
 
-			memxf = maxval;
-		// LINE 345:
-		_T33b:
-			__asm        mov    eax, obj;
-			__asm        push   eax;
-			__asm        call   _VRGetObj2dMemPoolReq;
-			__asm        add    esp, 4;
-			__asm        mov    maxval, eax;
-		// LINE 346:
-			__asm        mov    eax, maxval;
-			__asm        cmp    mem2d, eax;
-			__asm        jge    _T36e;
+		memxf = maxval;
+// LINE 345:
+_T33b:
+		__asm        mov    eax, obj;
+		__asm        push   eax;
+		__asm        call   _VRGetObj2dMemPoolReq;
+		__asm        add    esp, 4;
+		__asm        mov    maxval, eax;
+// LINE 346:
+		__asm        mov    eax, maxval;
+		__asm        cmp    mem2d, eax;
+		__asm        jge    _T36e;
 
-			mem2d = maxval;
-		// LINE 347:
-		_T36e:
+		mem2d = maxval;
+// LINE 347:
+_T36e:
 	}
 // LINE 349:
 _T373:
@@ -251,35 +251,35 @@ _T373:
 // LINE 350:
 _FOR_396:
 	for (j = 0x0; (j < i); j++) {
-		// LINE 352:
-			obj = VRGetResObject(G_resgeo2, j);
-		// LINE 353:
-			__asm        mov    eax, obj;
-			__asm        push   eax;
-			__asm        call   _VRGetObjXformMemPoolReq;
-			__asm        add    esp, 4;
-			__asm        mov    maxval, eax;
-		// LINE 354:
-			__asm        mov    eax, maxval;
-			__asm        cmp    memxf, eax;
-			__asm        jge    _T3fc;
+// LINE 352:
+		obj = VRGetResObject(G_resgeo2, j);
+// LINE 353:
+		__asm        mov    eax, obj;
+		__asm        push   eax;
+		__asm        call   _VRGetObjXformMemPoolReq;
+		__asm        add    esp, 4;
+		__asm        mov    maxval, eax;
+// LINE 354:
+		__asm        mov    eax, maxval;
+		__asm        cmp    memxf, eax;
+		__asm        jge    _T3fc;
 
-			memxf = maxval;
-		// LINE 355:
-		_T3fc:
-			__asm        mov    eax, obj;
-			__asm        push   eax;
-			__asm        call   _VRGetObj2dMemPoolReq;
-			__asm        add    esp, 4;
-			__asm        mov    maxval, eax;
-		// LINE 356:
-			__asm        mov    eax, maxval;
-			__asm        cmp    mem2d, eax;
-			__asm        jge    _T42f;
+		memxf = maxval;
+// LINE 355:
+_T3fc:
+		__asm        mov    eax, obj;
+		__asm        push   eax;
+		__asm        call   _VRGetObj2dMemPoolReq;
+		__asm        add    esp, 4;
+		__asm        mov    maxval, eax;
+// LINE 356:
+		__asm        mov    eax, maxval;
+		__asm        cmp    mem2d, eax;
+		__asm        jge    _T42f;
 
-			mem2d = maxval;
-		// LINE 357:
-		_T42f:
+		mem2d = maxval;
+// LINE 357:
+_T42f:
 	}
 // LINE 360:
 _T434:
@@ -287,35 +287,35 @@ _T434:
 // LINE 361:
 _FOR_457:
 	for (j = 0x0; (j < i); j++) {
-		// LINE 363:
-			obj = VRGetResObject(G_resgeo3, j);
-		// LINE 364:
-			__asm        mov    eax, obj;
-			__asm        push   eax;
-			__asm        call   _VRGetObjXformMemPoolReq;
-			__asm        add    esp, 4;
-			__asm        mov    maxval, eax;
-		// LINE 365:
-			__asm        mov    eax, maxval;
-			__asm        cmp    memxf, eax;
-			__asm        jge    _T4bd;
+// LINE 363:
+		obj = VRGetResObject(G_resgeo3, j);
+// LINE 364:
+		__asm        mov    eax, obj;
+		__asm        push   eax;
+		__asm        call   _VRGetObjXformMemPoolReq;
+		__asm        add    esp, 4;
+		__asm        mov    maxval, eax;
+// LINE 365:
+		__asm        mov    eax, maxval;
+		__asm        cmp    memxf, eax;
+		__asm        jge    _T4bd;
 
-			memxf = maxval;
-		// LINE 366:
-		_T4bd:
-			__asm        mov    eax, obj;
-			__asm        push   eax;
-			__asm        call   _VRGetObj2dMemPoolReq;
-			__asm        add    esp, 4;
-			__asm        mov    maxval, eax;
-		// LINE 367:
-			__asm        mov    eax, maxval;
-			__asm        cmp    mem2d, eax;
-			__asm        jge    _T4f0;
+		memxf = maxval;
+// LINE 366:
+_T4bd:
+		__asm        mov    eax, obj;
+		__asm        push   eax;
+		__asm        call   _VRGetObj2dMemPoolReq;
+		__asm        add    esp, 4;
+		__asm        mov    maxval, eax;
+// LINE 367:
+		__asm        mov    eax, maxval;
+		__asm        cmp    mem2d, eax;
+		__asm        jge    _T4f0;
 
-			mem2d = maxval;
-		// LINE 368:
-		_T4f0:
+		mem2d = maxval;
+// LINE 368:
+_T4f0:
 	}
 // LINE 372:
 _T4f5:
@@ -405,17 +405,17 @@ _T531:
 // LINE 439:
 _FOR_730:
 	for (instanceID = 0x0; (instanceID < 0x32); instanceID++) {
-		// LINE 441:
-			__asm        mov    eax, instanceID;
-			__asm        push   eax;
-			__asm        call   CreateAutomobileInstance;
-			__asm        add    esp, 4;
-			__asm        test   eax, eax;
-			__asm        jne    _T75f;
-		// LINE 442:
-			__asm        jmp    _T764;
-		// LINE 443:
-		_T75f:
+// LINE 441:
+		__asm        mov    eax, instanceID;
+		__asm        push   eax;
+		__asm        call   CreateAutomobileInstance;
+		__asm        add    esp, 4;
+		__asm        test   eax, eax;
+		__asm        jne    _T75f;
+// LINE 442:
+		__asm        jmp    _T764;
+// LINE 443:
+_T75f:
 	}
 // LINE 445:
 _T764:
@@ -423,17 +423,17 @@ _T764:
 // LINE 446:
 _FOR_778:
 	for (; (totalVehicles > instanceID); instanceID++) {
-		// LINE 448:
-			__asm        mov    eax, instanceID;
-			__asm        push   eax;
-			__asm        call   CreatePoliceCarInstance;
-			__asm        add    esp, 4;
-			__asm        test   eax, eax;
-			__asm        jne    _T7ac;
-		// LINE 449:
-			__asm        jmp    _T7b1;
-		// LINE 450:
-		_T7ac:
+// LINE 448:
+		__asm        mov    eax, instanceID;
+		__asm        push   eax;
+		__asm        call   CreatePoliceCarInstance;
+		__asm        add    esp, 4;
+		__asm        test   eax, eax;
+		__asm        jne    _T7ac;
+// LINE 449:
+		__asm        jmp    _T7b1;
+// LINE 450:
+_T7ac:
 	}
 // LINE 452:
 _T7b1:
@@ -441,17 +441,17 @@ _T7b1:
 // LINE 453:
 _FOR_7c5:
 	for (; (totalVehicles > instanceID); instanceID++) {
-		// LINE 455:
-			__asm        mov    eax, instanceID;
-			__asm        push   eax;
-			__asm        call   CreateFireTruckInstance;
-			__asm        add    esp, 4;
-			__asm        test   eax, eax;
-			__asm        jne    _T7f9;
-		// LINE 456:
-			__asm        jmp    _T7fe;
-		// LINE 457:
-		_T7f9:
+// LINE 455:
+		__asm        mov    eax, instanceID;
+		__asm        push   eax;
+		__asm        call   CreateFireTruckInstance;
+		__asm        add    esp, 4;
+		__asm        test   eax, eax;
+		__asm        jne    _T7f9;
+// LINE 456:
+		__asm        jmp    _T7fe;
+// LINE 457:
+_T7f9:
 	}
 // LINE 459:
 _T7fe:
@@ -459,17 +459,17 @@ _T7fe:
 // LINE 460:
 _FOR_812:
 	for (; (totalVehicles > instanceID); instanceID++) {
-		// LINE 462:
-			__asm        mov    eax, instanceID;
-			__asm        push   eax;
-			__asm        call   CreateAmbulanceInstance;
-			__asm        add    esp, 4;
-			__asm        test   eax, eax;
-			__asm        jne    _T846;
-		// LINE 463:
-			__asm        jmp    _T84b;
-		// LINE 464:
-		_T846:
+// LINE 462:
+		__asm        mov    eax, instanceID;
+		__asm        push   eax;
+		__asm        call   CreateAmbulanceInstance;
+		__asm        add    esp, 4;
+		__asm        test   eax, eax;
+		__asm        jne    _T846;
+// LINE 463:
+		__asm        jmp    _T84b;
+// LINE 464:
+_T846:
 	}
 // LINE 467:
 _T84b:
@@ -479,35 +479,35 @@ _T84b:
 // LINE 469:
 _FOR_869:
 	for (; (totalVehicles > instanceID); instanceID++) {
-		// LINE 471:
-			__asm        mov    eax, instanceID;
-			__asm        push   eax;
-			__asm        call   CreateCriminalCarInstance;
-			__asm        add    esp, 4;
-			__asm        test   eax, eax;
-			__asm        jne    _T89d;
-		// LINE 472:
-			__asm        jmp    _FOR_8b1;
-		// LINE 473:
-		_T89d:
+// LINE 471:
+		__asm        mov    eax, instanceID;
+		__asm        push   eax;
+		__asm        call   CreateCriminalCarInstance;
+		__asm        add    esp, 4;
+		__asm        test   eax, eax;
+		__asm        jne    _T89d;
+// LINE 472:
+		__asm        jmp    _FOR_8b1;
+// LINE 473:
+_T89d:
 	}
 // LINE 476:
 _FOR_8b1:
 	for (i = 0x0; (i < 0x1); i++) {
-		// LINE 483:
-			CreateTrainInstance(i);
+// LINE 483:
+		CreateTrainInstance(i);
 	}
 // LINE 488:
 _FOR_8e7:
 	for (i = 0x0; (i < 0x2); i++) {
-		// LINE 495:
-			CreatePlaneInstance(i);
+// LINE 495:
+		CreatePlaneInstance(i);
 	}
 // LINE 499:
 _FOR_91d:
 	for (i = 0x0; (i < 0x3); i++) {
-		// LINE 506:
-			CreateBoatInstance(i);
+// LINE 506:
+		CreateBoatInstance(i);
 	}
 // LINE 510:
 _T944:
@@ -645,80 +645,80 @@ _T1a0:
 // LINE 648:
 _FOR_1b4:
 	for (i = 0x0; (i < 0x9); i++) {
-		// LINE 651:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        lea    eax, G_helidata[0].type[eax*2];
-			__asm        cmp    eax, G_uheli;
-			__asm        je     _T1ff;
-		// LINE 653:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        mov    G_helidata[0].flags[eax*2], 0;
-		// LINE 658:
-		_T1ff:
-			__asm        cmp    i, 2;
-			__asm        jne    _T24e;
-		// LINE 660:
-			__asm        cmp    G_apachebase_found, 1;
-			__asm        jne    _T24e;
-		// LINE 664:
-			__asm        mov    eax, G_helibase.apache_pad.y;
-			__asm        push   eax;
-			__asm        mov    eax, G_helibase.apache_pad.x;
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        lea    eax, G_helidata[0].type[eax*2];
-			__asm        push   eax;
-			__asm        call   S3HeliGenInit;
-			__asm        add    esp, 0xC;
-		// LINE 665:
-			__asm        mov    eax, up;
-			__asm        or     dword ptr [eax+0x44], 4;
-		// LINE 666:
-			__asm        jmp    _FOR_NEXT_1b4;
-		// LINE 670:
-		_T24e:
-			__asm        mov    eax, up;
-			__asm        mov    edx, 1;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(i);
-			__asm        shl    edx, cl;
-			__asm        test   [eax+0x44], edx;
-			__asm        je     _T299;
-		// LINE 672:
-			pad = S3HeliGetFreePad();
-		// LINE 673:
-			__asm        mov    eax, pad;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, pad;
-			__asm        mov    eax, [eax];
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        lea    eax, G_helidata[0].type[eax*2];
-			__asm        push   eax;
-			__asm        call   S3HeliGenInit;
-			__asm        add    esp, 0xC;
-		// LINE 675:
-		_T299:
+// LINE 651:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        lea    eax, G_helidata[0].type[eax*2];
+		__asm        cmp    eax, G_uheli;
+		__asm        je     _T1ff;
+// LINE 653:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        mov    G_helidata[0].flags[eax*2], 0;
+// LINE 658:
+_T1ff:
+		__asm        cmp    i, 2;
+		__asm        jne    _T24e;
+// LINE 660:
+		__asm        cmp    G_apachebase_found, 1;
+		__asm        jne    _T24e;
+// LINE 664:
+		__asm        mov    eax, G_helibase.apache_pad.y;
+		__asm        push   eax;
+		__asm        mov    eax, G_helibase.apache_pad.x;
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        lea    eax, G_helidata[0].type[eax*2];
+		__asm        push   eax;
+		__asm        call   S3HeliGenInit;
+		__asm        add    esp, 0xC;
+// LINE 665:
+		__asm        mov    eax, up;
+		__asm        or     dword ptr [eax+0x44], 4;
+// LINE 666:
+		__asm        jmp    _FOR_NEXT_1b4;
+// LINE 670:
+_T24e:
+		__asm        mov    eax, up;
+		__asm        mov    edx, 1;
+		__asm        mov    cl, reinterpret_cast<uint8_t>(i);
+		__asm        shl    edx, cl;
+		__asm        test   [eax+0x44], edx;
+		__asm        je     _T299;
+// LINE 672:
+		pad = S3HeliGetFreePad();
+// LINE 673:
+		__asm        mov    eax, pad;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, pad;
+		__asm        mov    eax, [eax];
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        lea    eax, G_helidata[0].type[eax*2];
+		__asm        push   eax;
+		__asm        call   S3HeliGenInit;
+		__asm        add    esp, 0xC;
+// LINE 675:
+_T299:
 	}
 // LINE 692:
 _T29e:

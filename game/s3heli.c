@@ -611,16 +611,16 @@ _T2ee:
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    _Switch_302[0][eax*4];
-// Switch pointers:
-//   _T40
-//   _T82
-//   _Tc4
-//   _T109
-//   _T14e
-//   _T193
-//   _T1d8
-//   _T21d
-//   _T262
+	// Switch pointers:
+	//   _T40
+	//   _T82
+	//   _Tc4
+	//   _T109
+	//   _T14e
+	//   _T193
+	//   _T1d8
+	//   _T21d
+	//   _T262
 // LINE 560:
 _T326:
 	hd->flags = 0x0;
@@ -1119,18 +1119,18 @@ void S3HeliGenInit(/*packed*/ struct _HELI_DATA *hd, long mapx, long mapy) {
 // LINE 832:
 _FOR_2c:
 	for (heliidx = 0x0; (heliidx < 0xa); heliidx++) {
-		// LINE 834:
-			__asm        mov    eax, heliidx;
-			__asm        cmp    G_helis[0][eax*4], 0;
-			__asm        jne    _T5c;
-		// LINE 836:
-			__asm        mov    eax, hd;
-			__asm        mov    ecx, heliidx;
-			__asm        mov    G_helis[0][ecx*4], eax;
-		// LINE 837:
-			__asm        jmp    _T61;
-		// LINE 839:
-		_T5c:
+// LINE 834:
+		__asm        mov    eax, heliidx;
+		__asm        cmp    G_helis[0][eax*4], 0;
+		__asm        jne    _T5c;
+// LINE 836:
+		__asm        mov    eax, hd;
+		__asm        mov    ecx, heliidx;
+		__asm        mov    G_helis[0][ecx*4], eax;
+// LINE 837:
+		__asm        jmp    _T61;
+// LINE 839:
+_T5c:
 	}
 // LINE 842:
 _T61:
@@ -5024,22 +5024,22 @@ _T294:
 // LINE 2470:
 _FOR_2f4:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
-		// LINE 2472:
-			_VRGetFaceInfo(face, finfo.Face);
-		// LINE 2473:
-			__asm        cmp    finfo.Plotter, 0xB;
-			__asm        jne    _T338;
-		// LINE 2475:
-			finfo.Attribute = (finfo.Attribute | 0x80000000);
-		// LINE 2476:
-			_VRSetFaceInfo(face, finfo.Face);
-		// LINE 2478:
-		_T338:
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   _VRGetNextFace;
-			__asm        add    esp, 4;
-			__asm        mov    face, eax;
+// LINE 2472:
+		_VRGetFaceInfo(face, finfo.Face);
+// LINE 2473:
+		__asm        cmp    finfo.Plotter, 0xB;
+		__asm        jne    _T338;
+// LINE 2475:
+		finfo.Attribute = (finfo.Attribute | 0x80000000);
+// LINE 2476:
+		_VRSetFaceInfo(face, finfo.Face);
+// LINE 2478:
+_T338:
+		__asm        mov    eax, face;
+		__asm        push   eax;
+		__asm        call   _VRGetNextFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
 	}
 // LINE 2481:
 _T34c:
@@ -5055,22 +5055,22 @@ _T34c:
 // LINE 2483:
 _FOR_389:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
-		// LINE 2485:
-			_VRGetFaceInfo(face, finfo.Face);
-		// LINE 2486:
-			__asm        cmp    finfo.Plotter, 0xB;
-			__asm        jne    _T3cd;
-		// LINE 2488:
-			finfo.Attribute = (finfo.Attribute | 0x80000000);
-		// LINE 2489:
-			_VRSetFaceInfo(face, finfo.Face);
-		// LINE 2491:
-		_T3cd:
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   _VRGetNextFace;
-			__asm        add    esp, 4;
-			__asm        mov    face, eax;
+// LINE 2485:
+		_VRGetFaceInfo(face, finfo.Face);
+// LINE 2486:
+		__asm        cmp    finfo.Plotter, 0xB;
+		__asm        jne    _T3cd;
+// LINE 2488:
+		finfo.Attribute = (finfo.Attribute | 0x80000000);
+// LINE 2489:
+		_VRSetFaceInfo(face, finfo.Face);
+// LINE 2491:
+_T3cd:
+		__asm        mov    eax, face;
+		__asm        push   eax;
+		__asm        call   _VRGetNextFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
 	}
 // LINE 2493:
 _T3e1:
@@ -5097,22 +5097,22 @@ _T3ee:
 // LINE 2500:
 _FOR_44e:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
-		// LINE 2502:
-			_VRGetFaceInfo(face, finfo.Face);
-		// LINE 2503:
-			__asm        cmp    finfo.Plotter, 0xB;
-			__asm        jne    _T48e;
-		// LINE 2505:
-			__asm        and    finfo.Attribute, 0x7FFFFFFF;
-		// LINE 2506:
-			_VRSetFaceInfo(face, finfo.Face);
-		// LINE 2509:
-		_T48e:
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   _VRGetNextFace;
-			__asm        add    esp, 4;
-			__asm        mov    face, eax;
+// LINE 2502:
+		_VRGetFaceInfo(face, finfo.Face);
+// LINE 2503:
+		__asm        cmp    finfo.Plotter, 0xB;
+		__asm        jne    _T48e;
+// LINE 2505:
+		__asm        and    finfo.Attribute, 0x7FFFFFFF;
+// LINE 2506:
+		_VRSetFaceInfo(face, finfo.Face);
+// LINE 2509:
+_T48e:
+		__asm        mov    eax, face;
+		__asm        push   eax;
+		__asm        call   _VRGetNextFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
 	}
 // LINE 2512:
 _T4a2:
@@ -5128,22 +5128,22 @@ _T4a2:
 // LINE 2514:
 _FOR_4df:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
-		// LINE 2516:
-			_VRGetFaceInfo(face, finfo.Face);
-		// LINE 2517:
-			__asm        cmp    finfo.Plotter, 0xB;
-			__asm        jne    _T51f;
-		// LINE 2519:
-			__asm        and    finfo.Attribute, 0x7FFFFFFF;
-		// LINE 2520:
-			_VRSetFaceInfo(face, finfo.Face);
-		// LINE 2522:
-		_T51f:
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   _VRGetNextFace;
-			__asm        add    esp, 4;
-			__asm        mov    face, eax;
+// LINE 2516:
+		_VRGetFaceInfo(face, finfo.Face);
+// LINE 2517:
+		__asm        cmp    finfo.Plotter, 0xB;
+		__asm        jne    _T51f;
+// LINE 2519:
+		__asm        and    finfo.Attribute, 0x7FFFFFFF;
+// LINE 2520:
+		_VRSetFaceInfo(face, finfo.Face);
+// LINE 2522:
+_T51f:
+		__asm        mov    eax, face;
+		__asm        push   eax;
+		__asm        call   _VRGetNextFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
 	}
 // LINE 2524:
 _T533:
@@ -5724,88 +5724,88 @@ void NormalizeXZVector(/*packed*/ struct Point3d *vector) {
 // LINE 2847:
 __DO_42:
 	do {
-		// LINE 2847:
-		__DO_42:
-			length = MTMagnitude(vector);
-		// LINE 2848:
-			__asm        cmp    length, 0x10000;
-			__asm        jge    __DO_WHILE_42;
-		// LINE 2850:
-			__asm        mov    eax, vector;
-			__asm        cmp    dword ptr [eax], 0;
-			__asm        jne    _T95;
-		// LINE 2852:
-			__asm        mov    eax, vector;
-			__asm        cmp    dword ptr [eax+8], 0;
-			__asm        jle    _T86;
-		// LINE 2853:
-			vector->z = 0x10000;
-		// LINE 2854:
-			__asm        jmp    _T90;
-		// LINE 2855:
-		_T86:
-			vector->z = 0xffff0000;
-		// LINE 2857:
-		_T90:
-			__asm        jmp    __DO_WHILE_42;
-		_T95:
-			__asm        mov    eax, vector;
-			__asm        cmp    dword ptr [eax+8], 0;
-			__asm        jne    _Tcb;
-		// LINE 2859:
-			__asm        mov    eax, vector;
-			__asm        cmp    dword ptr [eax+8], 0;
-			__asm        jle    _Tbd;
-		// LINE 2860:
-			vector->x = 0x10000;
-		// LINE 2861:
-			__asm        jmp    _Tc6;
-		// LINE 2862:
-		_Tbd:
-			vector->x = 0xffff0000;
-		// LINE 2864:
-		_Tc6:
-			__asm        jmp    __DO_WHILE_42;
-		_Tcb:
-			__asm        mov    eax, vector;
-			__asm        mov    eax, [eax];
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    ecx, eax;
-			__asm        mov    eax, vector;
-			__asm        mov    eax, [eax+8];
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        cmp    ecx, eax;
-			__asm        jge    _T10a;
-		// LINE 2866:
-			__asm        mov    eax, vector;
-			__asm        cmp    dword ptr [eax], 0;
-			__asm        jle    _T100;
-		// LINE 2867:
-			vector->x++;
-		// LINE 2868:
-			__asm        jmp    _T105;
-		// LINE 2869:
-		_T100:
-			vector->x--;
-		// LINE 2871:
-		_T105:
-			__asm        jmp    __DO_WHILE_42;
-		// LINE 2873:
-		_T10a:
-			__asm        mov    eax, vector;
-			__asm        cmp    dword ptr [eax+8], 0;
-			__asm        jle    _T122;
-		// LINE 2874:
-			vector->z++;
-		// LINE 2875:
-			__asm        jmp    __DO_WHILE_42;
-		// LINE 2876:
-		_T122:
-			vector->z--;
+// LINE 2847:
+__DO_42:
+		length = MTMagnitude(vector);
+// LINE 2848:
+		__asm        cmp    length, 0x10000;
+		__asm        jge    __DO_WHILE_42;
+// LINE 2850:
+		__asm        mov    eax, vector;
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        jne    _T95;
+// LINE 2852:
+		__asm        mov    eax, vector;
+		__asm        cmp    dword ptr [eax+8], 0;
+		__asm        jle    _T86;
+// LINE 2853:
+		vector->z = 0x10000;
+// LINE 2854:
+		__asm        jmp    _T90;
+// LINE 2855:
+_T86:
+		vector->z = 0xffff0000;
+// LINE 2857:
+_T90:
+		__asm        jmp    __DO_WHILE_42;
+_T95:
+		__asm        mov    eax, vector;
+		__asm        cmp    dword ptr [eax+8], 0;
+		__asm        jne    _Tcb;
+// LINE 2859:
+		__asm        mov    eax, vector;
+		__asm        cmp    dword ptr [eax+8], 0;
+		__asm        jle    _Tbd;
+// LINE 2860:
+		vector->x = 0x10000;
+// LINE 2861:
+		__asm        jmp    _Tc6;
+// LINE 2862:
+_Tbd:
+		vector->x = 0xffff0000;
+// LINE 2864:
+_Tc6:
+		__asm        jmp    __DO_WHILE_42;
+_Tcb:
+		__asm        mov    eax, vector;
+		__asm        mov    eax, [eax];
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    ecx, eax;
+		__asm        mov    eax, vector;
+		__asm        mov    eax, [eax+8];
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        cmp    ecx, eax;
+		__asm        jge    _T10a;
+// LINE 2866:
+		__asm        mov    eax, vector;
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        jle    _T100;
+// LINE 2867:
+		vector->x++;
+// LINE 2868:
+		__asm        jmp    _T105;
+// LINE 2869:
+_T100:
+		vector->x--;
+// LINE 2871:
+_T105:
+		__asm        jmp    __DO_WHILE_42;
+// LINE 2873:
+_T10a:
+		__asm        mov    eax, vector;
+		__asm        cmp    dword ptr [eax+8], 0;
+		__asm        jle    _T122;
+// LINE 2874:
+		vector->z++;
+// LINE 2875:
+		__asm        jmp    __DO_WHILE_42;
+// LINE 2876:
+_T122:
+		vector->z--;
 	} while ((length < 0x10000));
 // LINE 2881:
 }
@@ -6031,19 +6031,19 @@ _T214:
 // LINE 2982:
 __WHILE_2b4:
 	while ((stobj != 0x0)) {
-		// LINE 2984:
-			flags = stobj->user1;
-		// LINE 2985:
-			objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, RopeDim, RopeDim, 0x0, 0x0);
-		// LINE 2986:
-			__asm        mov    eax, objy;
-			__asm        cmp    maxobjy, eax;
-			__asm        jge    _T30b;
-		// LINE 2987:
-			maxobjy = objy;
-		// LINE 2988:
-		_T30b:
-			stobj = stobj->next;
+// LINE 2984:
+		flags = stobj->user1;
+// LINE 2985:
+		objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, RopeDim, RopeDim, 0x0, 0x0);
+// LINE 2986:
+		__asm        mov    eax, objy;
+		__asm        cmp    maxobjy, eax;
+		__asm        jge    _T30b;
+// LINE 2987:
+		maxobjy = objy;
+// LINE 2988:
+_T30b:
+		stobj = stobj->next;
 	}
 // LINE 2992:
 _T318:
@@ -6057,51 +6057,51 @@ _T318:
 // LINE 2997:
 __WHILE_344:
 	while ((dyobj != 0x0)) {
-		// LINE 3000:
-			__asm        mov    eax, G_uheli;
-			__asm        mov    ecx, dyobj;
-			__asm        cmp    [eax+0xA4], ecx;
-			__asm        jne    _T367;
-		// LINE 3002:
-			__asm        jmp    next_dyobj;
-		// LINE 3005:
-		_T367:
-			__asm        mov    eax, dyobj;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 8;
-			__asm        je     _T37b;
-		// LINE 3007:
-			__asm        jmp    next_dyobj;
-		// LINE 3009:
-		_T37b:
-			oloc.x = (ploc.x - dyobj->loc.x);
-		// LINE 3010:
-			oloc.y = (ploc.y - dyobj->loc.y);
-		// LINE 3011:
-			oloc.z = (ploc.z - dyobj->loc.z);
-		// LINE 3016:
-			objy = VRGetDyObjAlt(dyobj->mesh, (dyobj + 0x24), oloc.x, RopeDim);
-		// LINE 3017:
-			__asm        mov    eax, objy;
-			__asm        cmp    maxobjy, eax;
-			__asm        jge    next_dyobj;
-		// LINE 3018:
-			maxobjy = objy;
-		// LINE 3022:
-		next_dyobj:
-			__asm        mov    eax, dyobj;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 4;
-			__asm        je     _T402;
-		// LINE 3024:
-			dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
-		// LINE 3026:
-			__asm        jmp    _T40a;
-		// LINE 3027:
-		_T402:
-			dyobj = dyobj->next;
-		// LINE 3028:
-		_T40a:
+// LINE 3000:
+		__asm        mov    eax, G_uheli;
+		__asm        mov    ecx, dyobj;
+		__asm        cmp    [eax+0xA4], ecx;
+		__asm        jne    _T367;
+// LINE 3002:
+		__asm        jmp    next_dyobj;
+// LINE 3005:
+_T367:
+		__asm        mov    eax, dyobj;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 8;
+		__asm        je     _T37b;
+// LINE 3007:
+		__asm        jmp    next_dyobj;
+// LINE 3009:
+_T37b:
+		oloc.x = (ploc.x - dyobj->loc.x);
+// LINE 3010:
+		oloc.y = (ploc.y - dyobj->loc.y);
+// LINE 3011:
+		oloc.z = (ploc.z - dyobj->loc.z);
+// LINE 3016:
+		objy = VRGetDyObjAlt(dyobj->mesh, (dyobj + 0x24), oloc.x, RopeDim);
+// LINE 3017:
+		__asm        mov    eax, objy;
+		__asm        cmp    maxobjy, eax;
+		__asm        jge    next_dyobj;
+// LINE 3018:
+		maxobjy = objy;
+// LINE 3022:
+next_dyobj:
+		__asm        mov    eax, dyobj;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 4;
+		__asm        je     _T402;
+// LINE 3024:
+		dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
+// LINE 3026:
+		__asm        jmp    _T40a;
+// LINE 3027:
+_T402:
+		dyobj = dyobj->next;
+// LINE 3028:
+_T40a:
 	}
 // LINE 3030:
 _T40f:
@@ -6243,33 +6243,33 @@ int32_t GetCopterBldAlt(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 3355:
 __WHILE_9c:
 	while ((stobj != 0x0)) {
-		// LINE 3357:
-			flags = stobj->user1;
-		// LINE 3363:
-			objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, hd->dyheli->radius, hd->dyheli->height, vec.x, landable);
-		// LINE 3364:
-			__asm        mov    eax, objy;
-			__asm        cmp    maxobjy, eax;
-			__asm        jge    _T139;
-		// LINE 3366:
-			hd->shad_color = flags;
-		// LINE 3367:
-			maxobjy = objy;
-		// LINE 3368:
-			__asm        lea    eax, vec.x;
-			__asm        mov    ecx, hd;
-			__asm        add    ecx, 0x158;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 3369:
-			hd->can_land = landable;
-		// LINE 3371:
-		_T139:
-			stobj = stobj->next;
+// LINE 3357:
+		flags = stobj->user1;
+// LINE 3363:
+		objy = VRGetObjAlt2(stobj->mesh, normx, normy, normz, flags, hd->dyheli->radius, hd->dyheli->height, vec.x, landable);
+// LINE 3364:
+		__asm        mov    eax, objy;
+		__asm        cmp    maxobjy, eax;
+		__asm        jge    _T139;
+// LINE 3366:
+		hd->shad_color = flags;
+// LINE 3367:
+		maxobjy = objy;
+// LINE 3368:
+		__asm        lea    eax, vec.x;
+		__asm        mov    ecx, hd;
+		__asm        add    ecx, 0x158;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 3369:
+		hd->can_land = landable;
+// LINE 3371:
+_T139:
+		stobj = stobj->next;
 	}
 // LINE 3377:
 _T146:
@@ -6808,21 +6808,21 @@ int32_t S3HeliHighestBuildAlt(/*packed*/ struct _CELL_INFO *cptr) {
 // LINE 3735:
 __WHILE_19:
 	while ((stobj != 0x0)) {
-		// LINE 3737:
-			__asm        mov    eax, stobj;
-			__asm        test   dword ptr [eax+8], 0x1A4;
-			__asm        je     _T58;
-		// LINE 3739:
-			_VRGetObjInfo(stobj->mesh, oinfo.Faces);
-		// LINE 3740:
-			__asm        mov    eax, maxradius;
-			__asm        cmp    oinfo.Radius, eax;
-			__asm        jle    _T58;
-		// LINE 3741:
-			maxradius = oinfo.Radius;
-		// LINE 3744:
-		_T58:
-			stobj = stobj->next;
+// LINE 3737:
+		__asm        mov    eax, stobj;
+		__asm        test   dword ptr [eax+8], 0x1A4;
+		__asm        je     _T58;
+// LINE 3739:
+		_VRGetObjInfo(stobj->mesh, oinfo.Faces);
+// LINE 3740:
+		__asm        mov    eax, maxradius;
+		__asm        cmp    oinfo.Radius, eax;
+		__asm        jle    _T58;
+// LINE 3741:
+		maxradius = oinfo.Radius;
+// LINE 3744:
+_T58:
+		stobj = stobj->next;
 	}
 // LINE 3747:
 _T65:
@@ -6844,22 +6844,22 @@ void S3HeliSwitchType(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 3775:
 _FOR_15:
 	for (heliidx = 0x0; (heliidx < 0xa); heliidx++) {
-		// LINE 3777:
-			__asm        mov    eax, heliidx;
-			__asm        cmp    G_helis[0][eax*4], 0;
-			__asm        je     _T5b;
-		// LINE 3779:
-			__asm        mov    eax, heliidx;
-			__asm        mov    eax, G_helis[0][eax*4];
-			__asm        mov    ecx, dyheli;
-			__asm        cmp    [eax+0xA4], ecx;
-			__asm        jne    _T5b;
-		// LINE 3780:
-			__asm        mov    eax, heliidx;
-			__asm        mov    eax, G_helis[0][eax*4];
-			__asm        jmp    __RETURN;
-		// LINE 3782:
-		_T5b:
+// LINE 3777:
+		__asm        mov    eax, heliidx;
+		__asm        cmp    G_helis[0][eax*4], 0;
+		__asm        je     _T5b;
+// LINE 3779:
+		__asm        mov    eax, heliidx;
+		__asm        mov    eax, G_helis[0][eax*4];
+		__asm        mov    ecx, dyheli;
+		__asm        cmp    [eax+0xA4], ecx;
+		__asm        jne    _T5b;
+// LINE 3780:
+		__asm        mov    eax, heliidx;
+		__asm        mov    eax, G_helis[0][eax*4];
+		__asm        jmp    __RETURN;
+// LINE 3782:
+_T5b:
 	}
 // LINE 3784:
 _T60:
@@ -6875,26 +6875,26 @@ void S3HeliNextFrameDriver() {
 // LINE 3800:
 _FOR_15:
 	for (heliidx = 0x0; (heliidx < 0xa); heliidx++) {
-		// LINE 3802:
-			__asm        mov    eax, heliidx;
-			__asm        cmp    G_helis[0][eax*4], 0;
-			__asm        je     _T5f;
-		// LINE 3804:
-			__asm        mov    eax, heliidx;
-			__asm        mov    eax, G_helis[0][eax*4];
-			__asm        test   byte ptr [eax+8], 1;
-			__asm        je     _T4c;
-		// LINE 3805:
-			__asm        jmp    _FOR_NEXT_15;
-		// LINE 3810:
-		_T4c:
-			__asm        mov    eax, heliidx;
-			__asm        mov    eax, G_helis[0][eax*4];
-			__asm        push   eax;
-			__asm        call   S3HeliNextFrame;
-			__asm        add    esp, 4;
-		// LINE 3812:
-		_T5f:
+// LINE 3802:
+		__asm        mov    eax, heliidx;
+		__asm        cmp    G_helis[0][eax*4], 0;
+		__asm        je     _T5f;
+// LINE 3804:
+		__asm        mov    eax, heliidx;
+		__asm        mov    eax, G_helis[0][eax*4];
+		__asm        test   byte ptr [eax+8], 1;
+		__asm        je     _T4c;
+// LINE 3805:
+		__asm        jmp    _FOR_NEXT_15;
+// LINE 3810:
+_T4c:
+		__asm        mov    eax, heliidx;
+		__asm        mov    eax, G_helis[0][eax*4];
+		__asm        push   eax;
+		__asm        call   S3HeliNextFrame;
+		__asm        add    esp, 4;
+// LINE 3812:
+_T5f:
 	}
 // LINE 3815:
 _T64:
@@ -6941,36 +6941,36 @@ _T4f:
 // LINE 3862:
 _FOR_69:
 	for (heliidx = 0x0; (heliidx < 0xa); heliidx++) {
-		// LINE 3864:
-			__asm        mov    eax, heliidx;
-			__asm        cmp    G_helis[0][eax*4], 0;
-			__asm        je     _T10a;
-		// LINE 3866:
-			__asm        mov    eax, heliidx;
-			__asm        mov    eax, G_helis[0][eax*4];
-			__asm        mov    hd, eax;
-		// LINE 3867:
-			__asm        mov    eax, hd;
-			__asm        cmp    dword ptr [eax+0x148], 0;
-			__asm        je     _T10a;
-		// LINE 3869:
-			viewvect.x = (hd->dyheli->loc.x - ViewState.world_pos.x);
-		// LINE 3870:
-			viewvect.y = (hd->dyheli->loc.y - ViewState.world_pos.y);
-		// LINE 3871:
-			viewvect.z = (hd->dyheli->loc.z - ViewState.world_pos.z);
-		// LINE 3872:
-			dist = MTMagnitude(viewvect.x);
-		// LINE 3873:
-			__asm        mov    eax, dist;
-			__asm        cmp    closest, eax;
-			__asm        jle    _T10a;
-		// LINE 3875:
-			closest = dist;
-		// LINE 3876:
-			closehd = hd;
-		// LINE 3880:
-		_T10a:
+// LINE 3864:
+		__asm        mov    eax, heliidx;
+		__asm        cmp    G_helis[0][eax*4], 0;
+		__asm        je     _T10a;
+// LINE 3866:
+		__asm        mov    eax, heliidx;
+		__asm        mov    eax, G_helis[0][eax*4];
+		__asm        mov    hd, eax;
+// LINE 3867:
+		__asm        mov    eax, hd;
+		__asm        cmp    dword ptr [eax+0x148], 0;
+		__asm        je     _T10a;
+// LINE 3869:
+		viewvect.x = (hd->dyheli->loc.x - ViewState.world_pos.x);
+// LINE 3870:
+		viewvect.y = (hd->dyheli->loc.y - ViewState.world_pos.y);
+// LINE 3871:
+		viewvect.z = (hd->dyheli->loc.z - ViewState.world_pos.z);
+// LINE 3872:
+		dist = MTMagnitude(viewvect.x);
+// LINE 3873:
+		__asm        mov    eax, dist;
+		__asm        cmp    closest, eax;
+		__asm        jle    _T10a;
+// LINE 3875:
+		closest = dist;
+// LINE 3876:
+		closehd = hd;
+// LINE 3880:
+_T10a:
 	}
 // LINE 3882:
 _T10f:
@@ -7149,65 +7149,65 @@ _T1e:
 // LINE 4002:
 _FOR_d1:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 4004:
-			__asm        mov    eax, 0x20000000;
-			__asm        sub    eax, loc.z;
-			__asm        shr    eax, 0x16;
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, loc.x;
-			__asm        add    ecx, 0x20000000;
-			__asm        shr    ecx, 0x16;
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-			__asm        mov    cptr, eax;
-		// LINE 4005:
-			__asm        mov    eax, 0x20000000;
-			__asm        sub    eax, loc.z;
-			__asm        add    eax, vstep.z;
-			__asm        shr    eax, 0x16;
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, loc.x;
-			__asm        add    ecx, vstep.x;
-			__asm        add    ecx, 0x20000000;
-			__asm        shr    ecx, 0x16;
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-			__asm        mov    ncptr, eax;
-		// LINE 4008:
-			dist = S3HeliSpotDistance(loc.x, svec.x, 0x200000, cptr);
-		// LINE 4010:
-			__asm        cmp    dist, 0;
-			__asm        jle    _T173;
-		// LINE 4012:
-			totdist += dist;
-		// LINE 4014:
-			__asm        jmp    _T1ce;
-		// LINE 4017:
-		_T173:
-			__asm        mov    eax, cptr;
-			__asm        cmp    ncptr, eax;
-			__asm        je     _T19b;
-		// LINE 4018:
-			dist = S3HeliSpotDistance(loc.x, svec.x, 0x200000, ncptr);
-		// LINE 4019:
-		_T19b:
-			__asm        cmp    dist, 0;
-			__asm        jle    _T1b0;
-		// LINE 4021:
-			totdist += dist;
-		// LINE 4023:
-			__asm        jmp    _T1ce;
-		// LINE 4027:
-		_T1b0:
-			loc.x += vstep.x;
-		// LINE 4028:
-			loc.y += vstep.y;
-		// LINE 4029:
-			loc.z += vstep.z;
-		// LINE 4030:
-			totdist += 0x200000;
+// LINE 4004:
+		__asm        mov    eax, 0x20000000;
+		__asm        sub    eax, loc.z;
+		__asm        shr    eax, 0x16;
+		__asm        and    eax, 0xFF;
+		__asm        mov    ecx, loc.x;
+		__asm        add    ecx, 0x20000000;
+		__asm        shr    ecx, 0x16;
+		__asm        and    ecx, 0xFF;
+		__asm        shl    ecx, 0xA;
+		__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+		__asm        mov    cptr, eax;
+// LINE 4005:
+		__asm        mov    eax, 0x20000000;
+		__asm        sub    eax, loc.z;
+		__asm        add    eax, vstep.z;
+		__asm        shr    eax, 0x16;
+		__asm        and    eax, 0xFF;
+		__asm        mov    ecx, loc.x;
+		__asm        add    ecx, vstep.x;
+		__asm        add    ecx, 0x20000000;
+		__asm        shr    ecx, 0x16;
+		__asm        and    ecx, 0xFF;
+		__asm        shl    ecx, 0xA;
+		__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+		__asm        mov    ncptr, eax;
+// LINE 4008:
+		dist = S3HeliSpotDistance(loc.x, svec.x, 0x200000, cptr);
+// LINE 4010:
+		__asm        cmp    dist, 0;
+		__asm        jle    _T173;
+// LINE 4012:
+		totdist += dist;
+// LINE 4014:
+		__asm        jmp    _T1ce;
+// LINE 4017:
+_T173:
+		__asm        mov    eax, cptr;
+		__asm        cmp    ncptr, eax;
+		__asm        je     _T19b;
+// LINE 4018:
+		dist = S3HeliSpotDistance(loc.x, svec.x, 0x200000, ncptr);
+// LINE 4019:
+_T19b:
+		__asm        cmp    dist, 0;
+		__asm        jle    _T1b0;
+// LINE 4021:
+		totdist += dist;
+// LINE 4023:
+		__asm        jmp    _T1ce;
+// LINE 4027:
+_T1b0:
+		loc.x += vstep.x;
+// LINE 4028:
+		loc.y += vstep.y;
+// LINE 4029:
+		loc.z += vstep.z;
+// LINE 4030:
+		totdist += 0x200000;
 	}
 // LINE 4036:
 _T1ce:
@@ -7265,20 +7265,20 @@ _T254:
 // LINE 4073:
 _FOR_2a9:
 	for (i = 0x0; (oinfo.Faces > i); i++) {
-		// LINE 4075:
-			_VRGetFaceInfo(face, finfo.Face);
-		// LINE 4076:
-			__asm        mov    eax, spotlevel;
-			__asm        mov    eax, S_spotlevels[0][eax*4];
-			__asm        mov    finfo.Bitmap, eax;
-		// LINE 4077:
-			_VRSetFaceInfo(face, finfo.Face);
-		// LINE 4078:
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   _VRGetNextFace;
-			__asm        add    esp, 4;
-			__asm        mov    face, eax;
+// LINE 4075:
+		_VRGetFaceInfo(face, finfo.Face);
+// LINE 4076:
+		__asm        mov    eax, spotlevel;
+		__asm        mov    eax, S_spotlevels[0][eax*4];
+		__asm        mov    finfo.Bitmap, eax;
+// LINE 4077:
+		_VRSetFaceInfo(face, finfo.Face);
+// LINE 4078:
+		__asm        mov    eax, face;
+		__asm        push   eax;
+		__asm        call   _VRGetNextFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
 	}
 // LINE 4081:
 _T311:
@@ -7418,41 +7418,41 @@ int32_t S3HeliSpotDistance(/*packed*/ struct Point3d *spotloc, /*packed*/ struct
 // LINE 4158:
 __WHILE_39:
 	while ((stobj != 0x0)) {
-		// LINE 4161:
-			_VRGetObjInfo(stobj->mesh, oinfo.Faces);
-		// LINE 4162:
-			_VRGetObjCenter(stobj->mesh, center.x);
-		// LINE 4165:
-			__asm        lea    eax, cloc.x;
-			__asm        lea    ecx, oloc.x;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 4166:
-			oloc.x += center.x;
-		// LINE 4167:
-			oloc.y += center.y;
-		// LINE 4168:
-			oloc.z += center.z;
-		// LINE 4174:
-			newdist = S3MissileSphereHit(spotloc, spotvec, dist, oloc.x, oinfo.Radius);
-		// LINE 4178:
-			__asm        cmp    newdist, 0;
-			__asm        jle    _Tde;
-		// LINE 4185:
-			newdist = VRStObjPolyHit(spotloc, spotvec, dist, cloc.x, stobj->mesh, 0x0);
-		// LINE 4188:
-		_Tde:
-			__asm        cmp    newdist, 0;
-			__asm        jle    _Tf0;
-		// LINE 4191:
-			return newdist;
-		// LINE 4196:
-		_Tf0:
-			stobj = stobj->next;
+// LINE 4161:
+		_VRGetObjInfo(stobj->mesh, oinfo.Faces);
+// LINE 4162:
+		_VRGetObjCenter(stobj->mesh, center.x);
+// LINE 4165:
+		__asm        lea    eax, cloc.x;
+		__asm        lea    ecx, oloc.x;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 4166:
+		oloc.x += center.x;
+// LINE 4167:
+		oloc.y += center.y;
+// LINE 4168:
+		oloc.z += center.z;
+// LINE 4174:
+		newdist = S3MissileSphereHit(spotloc, spotvec, dist, oloc.x, oinfo.Radius);
+// LINE 4178:
+		__asm        cmp    newdist, 0;
+		__asm        jle    _Tde;
+// LINE 4185:
+		newdist = VRStObjPolyHit(spotloc, spotvec, dist, cloc.x, stobj->mesh, 0x0);
+// LINE 4188:
+_Tde:
+		__asm        cmp    newdist, 0;
+		__asm        jle    _Tf0;
+// LINE 4191:
+		return newdist;
+// LINE 4196:
+_Tf0:
+		stobj = stobj->next;
 	}
 // LINE 4203:
 _Tfd:
@@ -7759,18 +7759,18 @@ _T30f:
 // LINE 4386:
 _FOR_34f:
 	for (i = 0x1; (i < 0xa); i++) {
-		// LINE 4388:
-			__asm        mov    eax, i;
-			__asm        mov    eax, S_turbslide[eax*4];
-			__asm        add    slide, eax;
-		// LINE 4389:
-			__asm        mov    eax, i;
-			__asm        mov    eax, S_turbyaw[eax*4];
-			__asm        add    yaw, eax;
-		// LINE 4390:
-			__asm        mov    eax, i;
-			__asm        mov    eax, S_turbpitch[eax*4];
-			__asm        add    pitch, eax;
+// LINE 4388:
+		__asm        mov    eax, i;
+		__asm        mov    eax, S_turbslide[eax*4];
+		__asm        add    slide, eax;
+// LINE 4389:
+		__asm        mov    eax, i;
+		__asm        mov    eax, S_turbyaw[eax*4];
+		__asm        add    yaw, eax;
+// LINE 4390:
+		__asm        mov    eax, i;
+		__asm        mov    eax, S_turbpitch[eax*4];
+		__asm        add    pitch, eax;
 	}
 // LINE 4394:
 _T388:
@@ -8811,48 +8811,48 @@ _Tce:
 // LINE 4991:
 _FOR_f5:
 	for (i = 0x0; (i < 0x5); i++) {
-		// LINE 4993:
-			__asm        call   rand;
-			__asm        mov    ecx, 0x64;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        add    eax, 0x320000;
-			__asm        mov    speed, eax;
-		// LINE 4994:
-			_VRIdentity4x4(mat[0][0]);
-		// LINE 4995:
-			__asm        lea    eax, mat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0xE10;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostYRot;
-			__asm        add    esp, 8;
-		// LINE 4996:
-			__asm        lea    eax, mat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0xC8;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+0x28A];
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostXRot;
-			__asm        add    esp, 8;
-		// LINE 4997:
-			_VRRotateP3d(0x59b518, vec.x, mat[0][0]);
-		// LINE 5008:
-			S3MissileStart(0x4, (hd + 0x18), loc.x, vec.x, 0x3, hd->dyheli, speed, -0x1);
+// LINE 4993:
+		__asm        call   rand;
+		__asm        mov    ecx, 0x64;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        add    eax, 0x320000;
+		__asm        mov    speed, eax;
+// LINE 4994:
+		_VRIdentity4x4(mat[0][0]);
+// LINE 4995:
+		__asm        lea    eax, mat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0xE10;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostYRot;
+		__asm        add    esp, 8;
+// LINE 4996:
+		__asm        lea    eax, mat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0xC8;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+0x28A];
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostXRot;
+		__asm        add    esp, 8;
+// LINE 4997:
+		_VRRotateP3d(0x59b518, vec.x, mat[0][0]);
+// LINE 5008:
+		S3MissileStart(0x4, (hd + 0x18), loc.x, vec.x, 0x3, hd->dyheli, speed, -0x1);
 	}
 // LINE 5015:
 _T1b8:
@@ -8987,18 +8987,18 @@ _T3a8:
 // LINE 5080:
 _FOR_3b9:
 	for (i = 0x0; (i < 0xa); i++) {
-		// LINE 5082:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, hd;
-			__asm        cmp    G_helis[0][eax*4], ecx;
-			__asm        jne    _T3ec;
-		// LINE 5084:
-			__asm        mov    eax, i;
-			__asm        mov    G_helis[0][eax*4], 0;
-		// LINE 5085:
-			__asm        jmp    _T3f1;
-		// LINE 5087:
-		_T3ec:
+// LINE 5082:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, hd;
+		__asm        cmp    G_helis[0][eax*4], ecx;
+		__asm        jne    _T3ec;
+// LINE 5084:
+		__asm        mov    eax, i;
+		__asm        mov    G_helis[0][eax*4], 0;
+// LINE 5085:
+		__asm        jmp    _T3f1;
+// LINE 5087:
+_T3ec:
 	}
 // LINE 5089:
 _T3f1:
@@ -9071,12 +9071,12 @@ _T4b8:
 
 	__asm        mov    eax, [ebp-0x70];
 	__asm        jmp    _Switch_4cc[0][eax*4];
-// Switch pointers:
-//   _Tb0
-//   _Tce
-//   _T299
-//   _T341
-//   _FOR_3b9
+	// Switch pointers:
+	//   _Tb0
+	//   _Tce
+	//   _T299
+	//   _T341
+	//   _FOR_3b9
 // LINE 5115:
 _T4e0:
 	return 0x0;
@@ -9107,105 +9107,105 @@ int32_t S3HeliDyObjCollisionCheck(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 5138:
 __WHILE_3d:
 	while ((dyobj != 0x0)) {
-		// LINE 5141:
-			__asm        mov    eax, hd;
-			__asm        mov    ecx, dyobj;
-			__asm        cmp    [eax+0xA4], ecx;
-			__asm        jne    _T5e;
-		// LINE 5143:
-			__asm        jmp    next_dyobj;
-		// LINE 5148:
-		_T5e:
-			__asm        mov    eax, dyobj;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 0x20;
-			__asm        je     _T72;
-		// LINE 5150:
-			__asm        jmp    next_dyobj;
-		// LINE 5154:
-		_T72:
-			__asm        mov    eax, dyobj;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 0x40;
-			__asm        je     _T86;
-		// LINE 5156:
-			__asm        jmp    next_dyobj;
-		// LINE 5159:
-		_T86:
-			__asm        mov    eax, hd;
-			__asm        mov    eax, [eax+0xA4];
-			__asm        add    eax, 0x18;
-			__asm        lea    ecx, loc.x;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 5167:
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax+0x18];
-			__asm        mov    ecx, dyobj;
-			__asm        add    eax, [ecx+0x10];
-			__asm        cmp    eax, loc.x;
-			__asm        jle    next_dyobj;
+// LINE 5141:
+		__asm        mov    eax, hd;
+		__asm        mov    ecx, dyobj;
+		__asm        cmp    [eax+0xA4], ecx;
+		__asm        jne    _T5e;
+// LINE 5143:
+		__asm        jmp    next_dyobj;
+// LINE 5148:
+_T5e:
+		__asm        mov    eax, dyobj;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 0x20;
+		__asm        je     _T72;
+// LINE 5150:
+		__asm        jmp    next_dyobj;
+// LINE 5154:
+_T72:
+		__asm        mov    eax, dyobj;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 0x40;
+		__asm        je     _T86;
+// LINE 5156:
+		__asm        jmp    next_dyobj;
+// LINE 5159:
+_T86:
+		__asm        mov    eax, hd;
+		__asm        mov    eax, [eax+0xA4];
+		__asm        add    eax, 0x18;
+		__asm        lea    ecx, loc.x;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 5167:
+		__asm        mov    eax, dyobj;
+		__asm        mov    eax, [eax+0x18];
+		__asm        mov    ecx, dyobj;
+		__asm        add    eax, [ecx+0x10];
+		__asm        cmp    eax, loc.x;
+		__asm        jle    next_dyobj;
 
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax+0x18];
-			__asm        mov    ecx, dyobj;
-			__asm        sub    eax, [ecx+0x10];
-			__asm        cmp    eax, loc.x;
-			__asm        jge    next_dyobj;
+		__asm        mov    eax, dyobj;
+		__asm        mov    eax, [eax+0x18];
+		__asm        mov    ecx, dyobj;
+		__asm        sub    eax, [ecx+0x10];
+		__asm        cmp    eax, loc.x;
+		__asm        jge    next_dyobj;
 
-			__asm        mov    eax, dyobj;
-			__asm        mov    ecx, loc.y;
-			__asm        cmp    [eax+0x1C], ecx;
-			__asm        jge    next_dyobj;
+		__asm        mov    eax, dyobj;
+		__asm        mov    ecx, loc.y;
+		__asm        cmp    [eax+0x1C], ecx;
+		__asm        jge    next_dyobj;
 
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax+0x14];
-			__asm        mov    ecx, dyobj;
-			__asm        add    eax, [ecx+0x1C];
-			__asm        cmp    eax, loc.y;
-			__asm        jle    next_dyobj;
+		__asm        mov    eax, dyobj;
+		__asm        mov    eax, [eax+0x14];
+		__asm        mov    ecx, dyobj;
+		__asm        add    eax, [ecx+0x1C];
+		__asm        cmp    eax, loc.y;
+		__asm        jle    next_dyobj;
 
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax+0x20];
-			__asm        mov    ecx, dyobj;
-			__asm        add    eax, [ecx+0x10];
-			__asm        cmp    eax, loc.z;
-			__asm        jle    next_dyobj;
+		__asm        mov    eax, dyobj;
+		__asm        mov    eax, [eax+0x20];
+		__asm        mov    ecx, dyobj;
+		__asm        add    eax, [ecx+0x10];
+		__asm        cmp    eax, loc.z;
+		__asm        jle    next_dyobj;
 
-			__asm        mov    eax, dyobj;
-			__asm        mov    eax, [eax+0x20];
-			__asm        mov    ecx, dyobj;
-			__asm        sub    eax, [ecx+0x10];
-			__asm        cmp    eax, loc.z;
-			__asm        jge    next_dyobj;
-		// LINE 5170:
-			S3ObjHitDispatch(0xc, hd->dyheli, dyobj, -0x1, 0x0);
-		// LINE 5177:
-			__asm        mov    eax, dyobj;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 8;
-			__asm        jne    next_dyobj;
-		// LINE 5178:
-			ret_code = 0x1;
-		// LINE 5190:
-		next_dyobj:
-			__asm        mov    eax, dyobj;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 4;
-			__asm        je     _T17d;
-		// LINE 5192:
-			dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
-		// LINE 5194:
-			__asm        jmp    _T185;
-		// LINE 5195:
-		_T17d:
-			dyobj = dyobj->next;
-		// LINE 5196:
-		_T185:
+		__asm        mov    eax, dyobj;
+		__asm        mov    eax, [eax+0x20];
+		__asm        mov    ecx, dyobj;
+		__asm        sub    eax, [ecx+0x10];
+		__asm        cmp    eax, loc.z;
+		__asm        jge    next_dyobj;
+// LINE 5170:
+		S3ObjHitDispatch(0xc, hd->dyheli, dyobj, -0x1, 0x0);
+// LINE 5177:
+		__asm        mov    eax, dyobj;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 8;
+		__asm        jne    next_dyobj;
+// LINE 5178:
+		ret_code = 0x1;
+// LINE 5190:
+next_dyobj:
+		__asm        mov    eax, dyobj;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 4;
+		__asm        je     _T17d;
+// LINE 5192:
+		dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
+// LINE 5194:
+		__asm        jmp    _T185;
+// LINE 5195:
+_T17d:
+		dyobj = dyobj->next;
+// LINE 5196:
+_T185:
 	}
 // LINE 5198:
 _T18a:
@@ -9269,149 +9269,149 @@ _T69:
 // LINE 5247:
 _LOOP_7a:
 	for (;;) {
-		// LINE 5247:
-		_LOOP_7a:
-			curr_dir++;
-		// LINE 5248:
-			__asm        mov    eax, curr_dir;
-			__asm        mov    [ebp-0x34], eax;
-			__asm        jmp    _Te6;
-		// LINE 5252:
-		_T88:
-			curr_dir = 0x0;
-		// LINE 5253:
-			curr_dist++;
-		// LINE 5254:
-			xdir = 0x0;
-		// LINE 5255:
-			ydir = 0xffffffff;
-		// LINE 5256:
-			__asm        jmp    _T10e;
-		// LINE 5258:
-		_Ta5:
-			xdir = 0x1;
-		// LINE 5259:
-			ydir = 0x0;
-		// LINE 5260:
-			__asm        jmp    _T10e;
-		// LINE 5262:
-		_Tb8:
-			curr_dist++;
-		// LINE 5263:
-			xdir = 0x0;
-		// LINE 5264:
-			ydir = 0x1;
-		// LINE 5265:
-			__asm        jmp    _T10e;
-		// LINE 5267:
-		_Tce:
-			xdir = 0xffffffff;
-		// LINE 5268:
-			ydir = 0x0;
-		// LINE 5269:
-			__asm        jmp    _T10e;
-		// LINE 5270:
-			__asm        jmp    _T10e;
-		_Te6:
-			__asm        cmp    dword ptr [ebp-0x34], 4;
-			__asm        ja     _T10e;
+// LINE 5247:
+_LOOP_7a:
+		curr_dir++;
+// LINE 5248:
+		__asm        mov    eax, curr_dir;
+		__asm        mov    [ebp-0x34], eax;
+		__asm        jmp    _Te6;
+// LINE 5252:
+_T88:
+		curr_dir = 0x0;
+// LINE 5253:
+		curr_dist++;
+// LINE 5254:
+		xdir = 0x0;
+// LINE 5255:
+		ydir = 0xffffffff;
+// LINE 5256:
+		__asm        jmp    _T10e;
+// LINE 5258:
+_Ta5:
+		xdir = 0x1;
+// LINE 5259:
+		ydir = 0x0;
+// LINE 5260:
+		__asm        jmp    _T10e;
+// LINE 5262:
+_Tb8:
+		curr_dist++;
+// LINE 5263:
+		xdir = 0x0;
+// LINE 5264:
+		ydir = 0x1;
+// LINE 5265:
+		__asm        jmp    _T10e;
+// LINE 5267:
+_Tce:
+		xdir = 0xffffffff;
+// LINE 5268:
+		ydir = 0x0;
+// LINE 5269:
+		__asm        jmp    _T10e;
+// LINE 5270:
+		__asm        jmp    _T10e;
+_Te6:
+		__asm        cmp    dword ptr [ebp-0x34], 4;
+		__asm        ja     _T10e;
 
-			__asm        mov    eax, [ebp-0x34];
-			__asm        jmp    _Switch_fa[0][eax*4];
+		__asm        mov    eax, [ebp-0x34];
+		__asm        jmp    _Switch_fa[0][eax*4];
 		// Switch pointers:
 		//   _T88
 		//   _Ta5
 		//   _Tb8
 		//   _Tce
 		//   _T88
-		// LINE 5274:
-		_T10e:
-			__asm        mov    eax, curr_dist;
-			__asm        cmp    spiral_dist, eax;
-			__asm        jne    _FOR_130;
-		// LINE 5276:
-			curr_dist--;
-		// LINE 5277:
-			stop_now = 0x1;
-		// LINE 5281:
-		_FOR_130:
-			for (i = 0x0; (curr_dist > i); i++) {
-				// LINE 5284:
-					__asm        mov    eax, y;
-					__asm        and    eax, 0xFF;
-					__asm        mov    ecx, x;
-					__asm        and    ecx, 0xFF;
-					__asm        shl    ecx, 0xA;
-					__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-					__asm        mov    cptr, eax;
-				// LINE 5287:
-					dyobj = cptr->dyptr;
-				// LINE 5288:
-				__WHILE_166:
-					while ((dyobj != 0x0)) {
-						// LINE 5291:
-							__asm        mov    eax, dyobj;
-							__asm        movsx  eax, word ptr [eax+0xC];
-							__asm        test   al, 4;
-							__asm        je     _T184;
-						// LINE 5293:
-							__asm        jmp    next_dyobj;
-						// LINE 5297:
-						_T184:
-							__asm        mov    eax, dyhitter;
-							__asm        cmp    dyobj, eax;
-							__asm        jne    _T195;
-						// LINE 5299:
-							__asm        jmp    next_dyobj;
-						// LINE 5303:
-						_T195:
-							__asm        mov    eax, dyobj;
-							__asm        movsx  eax, word ptr [eax+0xC];
-							__asm        test   al, 0x20;
-							__asm        je     _T1a9;
-						// LINE 5305:
-							__asm        jmp    next_dyobj;
-						// LINE 5309:
-						_T1a9:
-							__asm        mov    eax, dyobj;
-							__asm        movsx  eax, word ptr [eax+0xC];
-							__asm        test   al, 0x40;
-							__asm        je     _T1bd;
-						// LINE 5311:
-							__asm        jmp    next_dyobj;
-						// LINE 5315:
-						_T1bd:
-							S3ObjHitDispatch(hit_type, dyhitter, dyobj, mission_id, xtra_msg);
-						// LINE 5319:
-						next_dyobj:
-							__asm        mov    eax, dyobj;
-							__asm        movsx  eax, word ptr [eax+0xC];
-							__asm        test   al, 4;
-							__asm        je     _T207;
-						// LINE 5321:
-							dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
-						// LINE 5323:
-							__asm        jmp    _T20f;
-						// LINE 5324:
-						_T207:
-							dyobj = dyobj->next;
-						// LINE 5325:
-						_T20f:
-					}
-				// LINE 5328:
-				_T214:
-					x += xdir;
-				// LINE 5329:
-					y += ydir;
+// LINE 5274:
+_T10e:
+		__asm        mov    eax, curr_dist;
+		__asm        cmp    spiral_dist, eax;
+		__asm        jne    _FOR_130;
+// LINE 5276:
+		curr_dist--;
+// LINE 5277:
+		stop_now = 0x1;
+// LINE 5281:
+_FOR_130:
+		for (i = 0x0; (curr_dist > i); i++) {
+// LINE 5284:
+			__asm        mov    eax, y;
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, x;
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+			__asm        mov    cptr, eax;
+// LINE 5287:
+			dyobj = cptr->dyptr;
+// LINE 5288:
+__WHILE_166:
+			while ((dyobj != 0x0)) {
+// LINE 5291:
+				__asm        mov    eax, dyobj;
+				__asm        movsx  eax, word ptr [eax+0xC];
+				__asm        test   al, 4;
+				__asm        je     _T184;
+// LINE 5293:
+				__asm        jmp    next_dyobj;
+// LINE 5297:
+_T184:
+				__asm        mov    eax, dyhitter;
+				__asm        cmp    dyobj, eax;
+				__asm        jne    _T195;
+// LINE 5299:
+				__asm        jmp    next_dyobj;
+// LINE 5303:
+_T195:
+				__asm        mov    eax, dyobj;
+				__asm        movsx  eax, word ptr [eax+0xC];
+				__asm        test   al, 0x20;
+				__asm        je     _T1a9;
+// LINE 5305:
+				__asm        jmp    next_dyobj;
+// LINE 5309:
+_T1a9:
+				__asm        mov    eax, dyobj;
+				__asm        movsx  eax, word ptr [eax+0xC];
+				__asm        test   al, 0x40;
+				__asm        je     _T1bd;
+// LINE 5311:
+				__asm        jmp    next_dyobj;
+// LINE 5315:
+_T1bd:
+				S3ObjHitDispatch(hit_type, dyhitter, dyobj, mission_id, xtra_msg);
+// LINE 5319:
+next_dyobj:
+				__asm        mov    eax, dyobj;
+				__asm        movsx  eax, word ptr [eax+0xC];
+				__asm        test   al, 4;
+				__asm        je     _T207;
+// LINE 5321:
+				dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
+// LINE 5323:
+				__asm        jmp    _T20f;
+// LINE 5324:
+_T207:
+				dyobj = dyobj->next;
+// LINE 5325:
+_T20f:
 			}
-		// LINE 5332:
-		_T225:
-			__asm        cmp    stop_now, 1;
-			__asm        jne    _T234;
-		// LINE 5333:
-			return;
-		// LINE 5334:
-		_T234:
+// LINE 5328:
+_T214:
+			x += xdir;
+// LINE 5329:
+			y += ydir;
+		}
+// LINE 5332:
+_T225:
+		__asm        cmp    stop_now, 1;
+		__asm        jne    _T234;
+// LINE 5333:
+		return;
+// LINE 5334:
+_T234:
 	}
 // LINE 5335:
 }
@@ -9430,44 +9430,44 @@ _LOOP_7a:
 // LINE 5361:
 _FOR_1c:
 	for (; ((0x6c1190 + 0x60) != pad); pad += 0x8) {
-		// LINE 5364:
-			__asm        mov    eax, pad;
-			__asm        mov    eax, [eax+4];
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, pad;
-			__asm        mov    ecx, [ecx];
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-			__asm        mov    cptr, eax;
-		// LINE 5367:
-			__asm        mov    eax, cptr;
-			__asm        cmp    dword ptr [eax+0x10], 0;
-			__asm        jne    _T69;
-		// LINE 5368:
-			return pad;
-		// LINE 5371:
-		_T69:
-			dyobj = cptr->dyptr;
-		// LINE 5372:
-		__WHILE_72:
-			while ((dyobj != 0x0)) {
-				// LINE 5374:
-					__asm        mov    eax, dyobj;
-					__asm        movsx  eax, word ptr [eax+0xC];
-					__asm        test   al, 4;
-					__asm        je     _T90;
-				// LINE 5375:
-					__asm        jmp    contains_a_heli;
-				// LINE 5378:
-				_T90:
-					dyobj = dyobj->next;
-			}
-		// LINE 5382:
-		_T9d:
-			noheliloc = pad;
-		// LINE 5386:
-		contains_a_heli:
+// LINE 5364:
+		__asm        mov    eax, pad;
+		__asm        mov    eax, [eax+4];
+		__asm        and    eax, 0xFF;
+		__asm        mov    ecx, pad;
+		__asm        mov    ecx, [ecx];
+		__asm        and    ecx, 0xFF;
+		__asm        shl    ecx, 0xA;
+		__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+		__asm        mov    cptr, eax;
+// LINE 5367:
+		__asm        mov    eax, cptr;
+		__asm        cmp    dword ptr [eax+0x10], 0;
+		__asm        jne    _T69;
+// LINE 5368:
+		return pad;
+// LINE 5371:
+_T69:
+		dyobj = cptr->dyptr;
+// LINE 5372:
+__WHILE_72:
+		while ((dyobj != 0x0)) {
+// LINE 5374:
+			__asm        mov    eax, dyobj;
+			__asm        movsx  eax, word ptr [eax+0xC];
+			__asm        test   al, 4;
+			__asm        je     _T90;
+// LINE 5375:
+			__asm        jmp    contains_a_heli;
+// LINE 5378:
+_T90:
+			dyobj = dyobj->next;
+		}
+// LINE 5382:
+_T9d:
+		noheliloc = pad;
+// LINE 5386:
+contains_a_heli:
 	}
 // LINE 5390:
 _Ta8:
@@ -9482,27 +9482,27 @@ _Ta8:
 // LINE 5405:
 _FOR_15:
 	for (i = 0x0; (i < 0xa); i++) {
-		// LINE 5406:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        mov    ecx, lHeliType;
-			__asm        cmp    G_helidata[0].type[eax*2], ecx;
-			__asm        jne    _T5e;
-		// LINE 5407:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        lea    eax, G_helidata[0].type[eax*2];
-			__asm        jmp    __RETURN;
-		// LINE 5408:
-		_T5e:
+// LINE 5406:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        mov    ecx, lHeliType;
+		__asm        cmp    G_helidata[0].type[eax*2], ecx;
+		__asm        jne    _T5e;
+// LINE 5407:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        lea    eax, G_helidata[0].type[eax*2];
+		__asm        jmp    __RETURN;
+// LINE 5408:
+_T5e:
 	}
 // LINE 5409:
 _T63:
@@ -9728,37 +9728,37 @@ _T27:
 // LINE 5569:
 _FOR_3b:
 	for (i = 0x0; (i < 0xa); i++) {
-		// LINE 5571:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, hd;
-			__asm        cmp    G_helis[0][eax*4], ecx;
-			__asm        jne    _Tb4;
-		// LINE 5573:
-			__asm        mov    eax, hd;
-			__asm        mov    eax, [eax+0x1C];
-			__asm        and    eax, 0xFF;
-			__asm        mov    ecx, hd;
-			__asm        mov    ecx, [ecx+0x18];
-			__asm        and    ecx, 0xFF;
-			__asm        shl    ecx, 0xA;
-			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-			__asm        mov    cptr, eax;
-		// LINE 5574:
-			S3HeliUnlink(hd, cptr);
-		// LINE 5575:
-			__asm        mov    eax, i;
-			__asm        mov    G_helis[0][eax*4], 0;
-		// LINE 5576:
-			__asm        mov    eax, 1;
-			__asm        mov    cl, reinterpret_cast<uint8_t>(lHeliType);
-			__asm        shl    eax, cl;
-			__asm        not    eax;
-			__asm        mov    ecx, up;
-			__asm        and    [ecx+0x44], eax;
-		// LINE 5577:
-			return;
-		// LINE 5579:
-		_Tb4:
+// LINE 5571:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, hd;
+		__asm        cmp    G_helis[0][eax*4], ecx;
+		__asm        jne    _Tb4;
+// LINE 5573:
+		__asm        mov    eax, hd;
+		__asm        mov    eax, [eax+0x1C];
+		__asm        and    eax, 0xFF;
+		__asm        mov    ecx, hd;
+		__asm        mov    ecx, [ecx+0x18];
+		__asm        and    ecx, 0xFF;
+		__asm        shl    ecx, 0xA;
+		__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+		__asm        mov    cptr, eax;
+// LINE 5574:
+		S3HeliUnlink(hd, cptr);
+// LINE 5575:
+		__asm        mov    eax, i;
+		__asm        mov    G_helis[0][eax*4], 0;
+// LINE 5576:
+		__asm        mov    eax, 1;
+		__asm        mov    cl, reinterpret_cast<uint8_t>(lHeliType);
+		__asm        shl    eax, cl;
+		__asm        not    eax;
+		__asm        mov    ecx, up;
+		__asm        and    [ecx+0x44], eax;
+// LINE 5577:
+		return;
+// LINE 5579:
+_Tb4:
 	}
 // LINE 5581:
 __RETURN:
@@ -9773,19 +9773,19 @@ void S3HeliUnlink(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct _CELL_INFO
 // LINE 5595:
 __WHILE_12:
 	while ((dyptrptr-> != 0x0)) {
-		// LINE 5597:
-			__asm        mov    eax, hd;
-			__asm        mov    ecx, dyptrptr;
-			__asm        mov    ecx, [ecx];
-			__asm        cmp    [eax+0xA4], ecx;
-			__asm        jne    _T59;
-		// LINE 5599:
-			dyptrptr-> = hd->dyheli->next->next->next->next->next->next->next->next->next->next;
-		// LINE 5600:
-			return;
-		// LINE 5602:
-		_T59:
-			dyptrptr = dyptrptr->;
+// LINE 5597:
+		__asm        mov    eax, hd;
+		__asm        mov    ecx, dyptrptr;
+		__asm        mov    ecx, [ecx];
+		__asm        cmp    [eax+0xA4], ecx;
+		__asm        jne    _T59;
+// LINE 5599:
+		dyptrptr-> = hd->dyheli->next->next->next->next->next->next->next->next->next->next;
+// LINE 5600:
+		return;
+// LINE 5602:
+_T59:
+		dyptrptr = dyptrptr->;
 	}
 // LINE 5604:
 __RETURN:
@@ -9914,24 +9914,24 @@ _T197:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_1ab[0][eax*4];
-// Switch pointers:
-//   _T32
-//   _T5c
-//   _T61
-//   _T66
-//   _T90
-//   _T95
-//   _T9a
-//   _Tc4
-//   _Te9
-//   _Tee
-//   _T118
-//   _T11d
-//   _T122
-//   _T147
-//   _T14c
-//   _T163
-//   _T151
+	// Switch pointers:
+	//   _T32
+	//   _T5c
+	//   _T61
+	//   _T66
+	//   _T90
+	//   _T95
+	//   _T9a
+	//   _Tc4
+	//   _Te9
+	//   _Tee
+	//   _T118
+	//   _T11d
+	//   _T122
+	//   _T147
+	//   _T14c
+	//   _T163
+	//   _T151
 // LINE 5676:
 __RETURN:
 }
@@ -9952,41 +9952,41 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 // LINE 5707:
 _FOR_45:
 	for (i = 0x0; (i < 0xa); i++) {
-		// LINE 5709:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        lea    eax, G_helidata[0].type[eax*2];
-			__asm        mov    hd, eax;
-		// LINE 5712:
-			hd->damage = lsheli.damage;
-		// LINE 5713:
-			hd->winfo.load = lsheli.winfo.load;
-		// LINE 5714:
-			hd->fuel = lsheli.fuel;
-		// LINE 5715:
-			hd->flight_time = lsheli.flight_time;
-		// LINE 5716:
-			__asm        mov    edi, hd;
-			__asm        add    edi, 0x1C4;
-			__asm        lea    esi, lsheli.passengerData.lPassengerDataChanged;
-			__asm        mov    ecx, 0x57;
-			__asm        rep movsd;
-		// LINE 5723:
-			ret = ReadNextMIFFChunk(miffReader, HeliMIFFID, 0x606eb0, 0x32c);
-		// LINE 5724:
-			__asm        cmp    ret, 0;
-			__asm        jne    _Tf4;
+// LINE 5709:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        lea    eax, G_helidata[0].type[eax*2];
+		__asm        mov    hd, eax;
+// LINE 5712:
+		hd->damage = lsheli.damage;
+// LINE 5713:
+		hd->winfo.load = lsheli.winfo.load;
+// LINE 5714:
+		hd->fuel = lsheli.fuel;
+// LINE 5715:
+		hd->flight_time = lsheli.flight_time;
+// LINE 5716:
+		__asm        mov    edi, hd;
+		__asm        add    edi, 0x1C4;
+		__asm        lea    esi, lsheli.passengerData.lPassengerDataChanged;
+		__asm        mov    ecx, 0x57;
+		__asm        rep movsd;
+// LINE 5723:
+		ret = ReadNextMIFFChunk(miffReader, HeliMIFFID, 0x606eb0, 0x32c);
+// LINE 5724:
+		__asm        cmp    ret, 0;
+		__asm        jne    _Tf4;
 
-			__asm        cmp    i, 9;
-			__asm        je     _Tf4;
-		// LINE 5725:
-			return 0x0;
-		// LINE 5726:
-		_Tf4:
+		__asm        cmp    i, 9;
+		__asm        je     _Tf4;
+// LINE 5725:
+		return 0x0;
+// LINE 5726:
+_Tf4:
 	}
 // LINE 5728:
 _Tf9:
@@ -10002,30 +10002,30 @@ int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
 // LINE 5737:
 _FOR_15:
 	for (i = 0x0; (i < 0xa); i++) {
-		// LINE 5742:
-			__asm        push   0x32C;
-			__asm        mov    eax, i;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        lea    eax, G_helidata[0].type[eax*2];
-			__asm        push   eax;
-			__asm        mov    eax, HeliMIFFID;
-			__asm        push   eax;
-			__asm        mov    eax, miffWriter;
-			__asm        push   eax;
-			__asm        call   WriteMIFFChunk;
-			__asm        add    esp, 0x10;
-			__asm        mov    ret, eax;
-		// LINE 5743:
-			__asm        cmp    ret, 0;
-			__asm        jne    _T65;
-		// LINE 5744:
-			return 0x0;
-		// LINE 5745:
-		_T65:
+// LINE 5742:
+		__asm        push   0x32C;
+		__asm        mov    eax, i;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        lea    eax, G_helidata[0].type[eax*2];
+		__asm        push   eax;
+		__asm        mov    eax, HeliMIFFID;
+		__asm        push   eax;
+		__asm        mov    eax, miffWriter;
+		__asm        push   eax;
+		__asm        call   WriteMIFFChunk;
+		__asm        add    esp, 0x10;
+		__asm        mov    ret, eax;
+// LINE 5743:
+		__asm        cmp    ret, 0;
+		__asm        jne    _T65;
+// LINE 5744:
+		return 0x0;
+// LINE 5745:
+_T65:
 	}
 // LINE 5747:
 _T6a:
@@ -10059,54 +10059,54 @@ void S3HeliUserExit() {
 // LINE 5768:
 _FOR_3d:
 	for (radius = 0x80000; (radius < maxRadius); radius += 0x80000) {
-		// LINE 5770:
-		_FOR_5c:
-			for (angle = 0x0; (angle < 0xe100000); angle += 0x640000) {
-				// LINE 5772:
-					_VRSinCos(angle, rsin, rcos);
-				// LINE 5773:
-					__asm        mov    eax, rcos;
-					__asm        push   eax;
-					__asm        mov    eax, radius;
-					__asm        push   eax;
-					__asm        call   _FixedMul;
-					__asm        add    esp, 8;
-					__asm        mov    ecx, vehicleLoc.x;
-					__asm        add    ecx, eax;
-					__asm        mov    personLoc.x, ecx;
-				// LINE 5774:
-					__asm        mov    eax, rsin;
-					__asm        push   eax;
-					__asm        mov    eax, radius;
-					__asm        push   eax;
-					__asm        call   _FixedMul;
-					__asm        add    esp, 8;
-					__asm        mov    ecx, vehicleLoc.z;
-					__asm        add    ecx, eax;
-					__asm        mov    personLoc.z, ecx;
-				// LINE 5775:
-					personLoc.y = S3ObjectPrecisionAlt(personLoc.x, personLoc.z);
-				// LINE 5781:
-					__asm        mov    eax, G_uheli;
-					__asm        mov    eax, [eax+0x154];
-					__asm        sub    eax, 0x50000;
-					__asm        cmp    eax, personLoc.y;
-					__asm        jg     _T115;
+// LINE 5770:
+_FOR_5c:
+		for (angle = 0x0; (angle < 0xe100000); angle += 0x640000) {
+// LINE 5772:
+			_VRSinCos(angle, rsin, rcos);
+// LINE 5773:
+			__asm        mov    eax, rcos;
+			__asm        push   eax;
+			__asm        mov    eax, radius;
+			__asm        push   eax;
+			__asm        call   _FixedMul;
+			__asm        add    esp, 8;
+			__asm        mov    ecx, vehicleLoc.x;
+			__asm        add    ecx, eax;
+			__asm        mov    personLoc.x, ecx;
+// LINE 5774:
+			__asm        mov    eax, rsin;
+			__asm        push   eax;
+			__asm        mov    eax, radius;
+			__asm        push   eax;
+			__asm        call   _FixedMul;
+			__asm        add    esp, 8;
+			__asm        mov    ecx, vehicleLoc.z;
+			__asm        add    ecx, eax;
+			__asm        mov    personLoc.z, ecx;
+// LINE 5775:
+			personLoc.y = S3ObjectPrecisionAlt(personLoc.x, personLoc.z);
+// LINE 5781:
+			__asm        mov    eax, G_uheli;
+			__asm        mov    eax, [eax+0x154];
+			__asm        sub    eax, 0x50000;
+			__asm        cmp    eax, personLoc.y;
+			__asm        jg     _T115;
 
-					__asm        mov    eax, G_uheli;
-					__asm        mov    eax, [eax+0x154];
-					__asm        add    eax, 0x50000;
-					__asm        cmp    eax, personLoc.y;
-					__asm        jl     _T115;
-				// LINE 5784:
-					S3PersonUserAppearNew(personLoc.x, (G_uheli + 0x100));
-				// LINE 5785:
-					return;
-				// LINE 5788:
-				_T115:
-			}
-		// LINE 5789:
-		_T11a:
+			__asm        mov    eax, G_uheli;
+			__asm        mov    eax, [eax+0x154];
+			__asm        add    eax, 0x50000;
+			__asm        cmp    eax, personLoc.y;
+			__asm        jl     _T115;
+// LINE 5784:
+			S3PersonUserAppearNew(personLoc.x, (G_uheli + 0x100));
+// LINE 5785:
+			return;
+// LINE 5788:
+_T115:
+		}
+// LINE 5789:
+_T11a:
 	}
 // LINE 5790:
 __RETURN:

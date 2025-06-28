@@ -74,9 +74,9 @@ void cBBase::~cBBase() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T40;
 // LINE 46:
-	Memory::HUnlock(this->fDataHandle);
+Memory::HUnlock(this->fDataHandle);
 // LINE 47:
-	Memory::HFree(this->fDataHandle);
+Memory::HFree(this->fDataHandle);
 // LINE 53:
 _T40:
 	return;

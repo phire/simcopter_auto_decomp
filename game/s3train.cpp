@@ -566,7 +566,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0052ddba
 static void $E3() {
 
-	TrainClass::lsTrain<vftable> = 0x593238;
+TrainClass::lsTrain<vftable> = 0x593238;
 	__asm        jmp    _T15;
 _T15:
 	return;
@@ -610,10 +610,10 @@ void TrainClass::TrainClass(long mapx, long mapy) {
 // LINE 183:
 _FOR_21:
 	for (currentFlag = 0x0; (currentFlag < 0x9); currentFlag++) {
-		// LINE 185:
-			__asm        mov    eax, currentFlag;
-			__asm        mov    ecx, this;
-			__asm        mov    byte ptr [eax+ecx+4], 0;
+// LINE 185:
+		__asm        mov    eax, currentFlag;
+		__asm        mov    ecx, this;
+		__asm        mov    byte ptr [eax+ecx+4], 0;
 	}
 // LINE 188:
 _T3e:
@@ -871,10 +871,10 @@ void TrainClass::ResetAll() {
 // LINE 592:
 _FOR_15:
 	for (currentTrainIndex = 0x0; (currentTrainIndex < 0x1); currentTrainIndex++) {
-		// LINE 594:
-			__asm        mov    eax, currentTrainIndex;
-			__asm        mov    ecx, trains[0][eax*4];
-			__asm        call   TrainClass::Reset;
+// LINE 594:
+		__asm        mov    eax, currentTrainIndex;
+		__asm        mov    ecx, trains[0][eax*4];
+		__asm        call   TrainClass::Reset;
 	}
 // LINE 597:
 _T36:
@@ -888,10 +888,10 @@ void TrainClass::ItterateAll() {
 // LINE 641:
 _FOR_15:
 	for (currentTrainIndex = 0x0; (currentTrainIndex < 0x1); currentTrainIndex++) {
-		// LINE 643:
-			__asm        mov    eax, currentTrainIndex;
-			__asm        mov    ecx, trains[0][eax*4];
-			__asm        call   TrainClass::Itterate;
+// LINE 643:
+		__asm        mov    eax, currentTrainIndex;
+		__asm        mov    ecx, trains[0][eax*4];
+		__asm        call   TrainClass::Itterate;
 	}
 // LINE 646:
 _T36:
@@ -905,38 +905,38 @@ int32_t TrainClass::FindTrainToCrash(long mission_id) {
 // LINE 672:
 _FOR_15:
 	for (currentTrainIndex = 0x0; (currentTrainIndex < 0x1); currentTrainIndex++) {
-		// LINE 675:
-			__asm        jmp    _T27;
-		_T27:
-			__asm        mov    eax, currentTrainIndex;
-			__asm        mov    eax, trains[0][eax*4];
-			__asm        movsx  eax, byte ptr [eax+0xA];
-			__asm        test   eax, eax;
-			__asm        jne    _T84;
+// LINE 675:
+		__asm        jmp    _T27;
+_T27:
+		__asm        mov    eax, currentTrainIndex;
+		__asm        mov    eax, trains[0][eax*4];
+		__asm        movsx  eax, byte ptr [eax+0xA];
+		__asm        test   eax, eax;
+		__asm        jne    _T84;
 
-			__asm        jmp    _T42;
-		_T42:
-			__asm        mov    eax, currentTrainIndex;
-			__asm        mov    eax, trains[0][eax*4];
-			__asm        movsx  eax, byte ptr [eax+0xB];
-			__asm        test   eax, eax;
-			__asm        jne    _T84;
-		// LINE 676:
-			__asm        mov    eax, currentTrainIndex;
-			__asm        mov    eax, trains[0][eax*4];
-			__asm        mov    [ebp-8], eax;
-		// LINE 677:
-			__asm        mov    eax, [ebp-8];
-			__asm        mov    byte ptr [eax+0xA], 1;
-			__asm        mov    eax, mission_id;
-			__asm        mov    ecx, [ebp-8];
-			__asm        mov    [ecx+0x69], eax;
-			__asm        jmp    _T7a;
-		// LINE 678:
-		_T7a:
-			return 0x1;
-		// LINE 680:
-		_T84:
+		__asm        jmp    _T42;
+_T42:
+		__asm        mov    eax, currentTrainIndex;
+		__asm        mov    eax, trains[0][eax*4];
+		__asm        movsx  eax, byte ptr [eax+0xB];
+		__asm        test   eax, eax;
+		__asm        jne    _T84;
+// LINE 676:
+		__asm        mov    eax, currentTrainIndex;
+		__asm        mov    eax, trains[0][eax*4];
+		__asm        mov    [ebp-8], eax;
+// LINE 677:
+		__asm        mov    eax, [ebp-8];
+		__asm        mov    byte ptr [eax+0xA], 1;
+		__asm        mov    eax, mission_id;
+		__asm        mov    ecx, [ebp-8];
+		__asm        mov    [ecx+0x69], eax;
+		__asm        jmp    _T7a;
+// LINE 678:
+_T7a:
+		return 0x1;
+// LINE 680:
+_T84:
 	}
 // LINE 682:
 _T89:
@@ -1617,48 +1617,48 @@ _T2c4:
 // LINE 1193:
 _FOR_374:
 	for (j = 0x0; (num_debris > j); j++) {
-		// LINE 1195:
-			__asm        call   rand;
-			__asm        mov    ecx, 0x1E;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        add    eax, 0x190000;
-			__asm        mov    speed, eax;
-		// LINE 1196:
-			_VRIdentity4x4(refmat[0][0]);
-		// LINE 1197:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0xE10;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostYRot;
-			__asm        add    esp, 8;
-		// LINE 1198:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0x78;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+0x2EE];
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostXRot;
-			__asm        add    esp, 8;
-		// LINE 1199:
-			_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
-		// LINE 1210:
-			S3MissileStart(0x4, (this + 0x35), (this->leadcar + 0x18), vec.x, 0x2, this->leadcar, speed, this->missionId);
+// LINE 1195:
+		__asm        call   rand;
+		__asm        mov    ecx, 0x1E;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        add    eax, 0x190000;
+		__asm        mov    speed, eax;
+// LINE 1196:
+		_VRIdentity4x4(refmat[0][0]);
+// LINE 1197:
+		__asm        lea    eax, refmat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0xE10;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostYRot;
+		__asm        add    esp, 8;
+// LINE 1198:
+		__asm        lea    eax, refmat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0x78;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+0x2EE];
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostXRot;
+		__asm        add    esp, 8;
+// LINE 1199:
+		_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
+// LINE 1210:
+		S3MissileStart(0x4, (this + 0x35), (this->leadcar + 0x18), vec.x, 0x2, this->leadcar, speed, this->missionId);
 	}
 // LINE 1214:
 _T456:
@@ -1695,48 +1695,48 @@ _T456:
 // LINE 1227:
 _FOR_4ea:
 	for (j = 0x0; (num_debris > j); j++) {
-		// LINE 1229:
-			__asm        call   rand;
-			__asm        mov    ecx, 0x1E;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        add    eax, 0x190000;
-			__asm        mov    speed, eax;
-		// LINE 1230:
-			_VRIdentity4x4(refmat[0][0]);
-		// LINE 1231:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0xE10;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostYRot;
-			__asm        add    esp, 8;
-		// LINE 1232:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0x78;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+0x2EE];
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostXRot;
-			__asm        add    esp, 8;
-		// LINE 1233:
-			_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
-		// LINE 1244:
-			S3MissileStart(0x4, (this + 0x35), (this->midcar + 0x18), vec.x, 0x2, this->midcar, speed, this->missionId);
+// LINE 1229:
+		__asm        call   rand;
+		__asm        mov    ecx, 0x1E;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        add    eax, 0x190000;
+		__asm        mov    speed, eax;
+// LINE 1230:
+		_VRIdentity4x4(refmat[0][0]);
+// LINE 1231:
+		__asm        lea    eax, refmat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0xE10;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostYRot;
+		__asm        add    esp, 8;
+// LINE 1232:
+		__asm        lea    eax, refmat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0x78;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+0x2EE];
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostXRot;
+		__asm        add    esp, 8;
+// LINE 1233:
+		_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
+// LINE 1244:
+		S3MissileStart(0x4, (this + 0x35), (this->midcar + 0x18), vec.x, 0x2, this->midcar, speed, this->missionId);
 	}
 // LINE 1248:
 _T5cc:
@@ -1773,48 +1773,48 @@ _T5cc:
 // LINE 1261:
 _FOR_660:
 	for (j = 0x0; (num_debris > j); j++) {
-		// LINE 1263:
-			__asm        call   rand;
-			__asm        mov    ecx, 0x1E;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        add    eax, 0x190000;
-			__asm        mov    speed, eax;
-		// LINE 1264:
-			_VRIdentity4x4(refmat[0][0]);
-		// LINE 1265:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0xE10;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostYRot;
-			__asm        add    esp, 8;
-		// LINE 1266:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0x78;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+0x2EE];
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostXRot;
-			__asm        add    esp, 8;
-		// LINE 1267:
-			_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
-		// LINE 1278:
-			S3MissileStart(0x4, (this + 0x35), (this->endcar + 0x18), vec.x, 0x2, this->endcar, speed, this->missionId);
+// LINE 1263:
+		__asm        call   rand;
+		__asm        mov    ecx, 0x1E;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        add    eax, 0x190000;
+		__asm        mov    speed, eax;
+// LINE 1264:
+		_VRIdentity4x4(refmat[0][0]);
+// LINE 1265:
+		__asm        lea    eax, refmat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0xE10;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostYRot;
+		__asm        add    esp, 8;
+// LINE 1266:
+		__asm        lea    eax, refmat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0x78;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+0x2EE];
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostXRot;
+		__asm        add    esp, 8;
+// LINE 1267:
+		_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
+// LINE 1278:
+		S3MissileStart(0x4, (this + 0x35), (this->endcar + 0x18), vec.x, 0x2, this->endcar, speed, this->missionId);
 	}
 // LINE 1281:
 _T742:
@@ -2233,108 +2233,108 @@ _T144:
 // LINE 1500:
 __WHILE_14d:
 	while ((currentObject != 0x0)) {
-		// LINE 1503:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, currentObject;
-			__asm        cmp    [eax+0x1CD], ecx;
-			__asm        jne    _T17b;
-		// LINE 1505:
-			currentObject = currentObject->next;
-		// LINE 1506:
-			__asm        jmp    __WHILE_14d;
-		// LINE 1508:
-			__asm        jmp    _T1be;
-		_T17b:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, currentObject;
-			__asm        cmp    [eax+0x1D1], ecx;
-			__asm        jne    _T19f;
-		// LINE 1510:
-			currentObject = currentObject->next;
-		// LINE 1511:
-			__asm        jmp    __WHILE_14d;
-		// LINE 1513:
-			__asm        jmp    _T1be;
-		_T19f:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, currentObject;
-			__asm        cmp    [eax+0x1D5], ecx;
-			__asm        jne    _T1be;
-		// LINE 1515:
-			currentObject = currentObject->next;
-		// LINE 1516:
-			__asm        jmp    __WHILE_14d;
-		// LINE 1520:
-		_T1be:
-			__asm        mov    eax, currentObject;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 0x20;
-			__asm        je     _T1da;
-		// LINE 1522:
-			currentObject = currentObject->next;
-		// LINE 1523:
-			__asm        jmp    __WHILE_14d;
-		// LINE 1528:
-		_T1da:
-			__asm        mov    eax, collisionPoint;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, currentObject;
-			__asm        sub    eax, [ecx+0x18];
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    xdiff, eax;
-		// LINE 1529:
-			__asm        mov    eax, collisionPoint;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, currentObject;
-			__asm        sub    eax, [ecx+0x1C];
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    ydiff, eax;
-		// LINE 1530:
-			__asm        mov    eax, collisionPoint;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    ecx, currentObject;
-			__asm        sub    eax, [ecx+0x20];
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    zdiff, eax;
-		// LINE 1532:
-			combinedradius = currentObject->radius;
-		// LINE 1533:
-			combinedradius += 0x50000;
-		// LINE 1536:
-			__asm        mov    eax, combinedradius;
-			__asm        cmp    xdiff, eax;
-			__asm        jg     _T276;
+// LINE 1503:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, currentObject;
+		__asm        cmp    [eax+0x1CD], ecx;
+		__asm        jne    _T17b;
+// LINE 1505:
+		currentObject = currentObject->next;
+// LINE 1506:
+		__asm        jmp    __WHILE_14d;
+// LINE 1508:
+		__asm        jmp    _T1be;
+_T17b:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, currentObject;
+		__asm        cmp    [eax+0x1D1], ecx;
+		__asm        jne    _T19f;
+// LINE 1510:
+		currentObject = currentObject->next;
+// LINE 1511:
+		__asm        jmp    __WHILE_14d;
+// LINE 1513:
+		__asm        jmp    _T1be;
+_T19f:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, currentObject;
+		__asm        cmp    [eax+0x1D5], ecx;
+		__asm        jne    _T1be;
+// LINE 1515:
+		currentObject = currentObject->next;
+// LINE 1516:
+		__asm        jmp    __WHILE_14d;
+// LINE 1520:
+_T1be:
+		__asm        mov    eax, currentObject;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 0x20;
+		__asm        je     _T1da;
+// LINE 1522:
+		currentObject = currentObject->next;
+// LINE 1523:
+		__asm        jmp    __WHILE_14d;
+// LINE 1528:
+_T1da:
+		__asm        mov    eax, collisionPoint;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, currentObject;
+		__asm        sub    eax, [ecx+0x18];
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    xdiff, eax;
+// LINE 1529:
+		__asm        mov    eax, collisionPoint;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, currentObject;
+		__asm        sub    eax, [ecx+0x1C];
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    ydiff, eax;
+// LINE 1530:
+		__asm        mov    eax, collisionPoint;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, currentObject;
+		__asm        sub    eax, [ecx+0x20];
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    zdiff, eax;
+// LINE 1532:
+		combinedradius = currentObject->radius;
+// LINE 1533:
+		combinedradius += 0x50000;
+// LINE 1536:
+		__asm        mov    eax, combinedradius;
+		__asm        cmp    xdiff, eax;
+		__asm        jg     _T276;
 
-			__asm        mov    eax, combinedradius;
-			__asm        cmp    ydiff, eax;
-			__asm        jg     _T276;
+		__asm        mov    eax, combinedradius;
+		__asm        cmp    ydiff, eax;
+		__asm        jg     _T276;
 
-			__asm        mov    eax, zdiff;
-			__asm        cmp    combinedradius, eax;
-			__asm        jl     _T276;
-		// LINE 1540:
-			__asm        jmp    _T24e;
-		_T24e:
-			__asm        mov    eax, currentObject;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 8;
-			__asm        je     _T26c;
-		// LINE 1545:
-			return 0x3;
-		// LINE 1547:
-			__asm        jmp    _T276;
-		// LINE 1551:
-		_T26c:
-			return 0x1;
-		// LINE 1556:
-		_T276:
-			currentObject = currentObject->next;
+		__asm        mov    eax, zdiff;
+		__asm        cmp    combinedradius, eax;
+		__asm        jl     _T276;
+// LINE 1540:
+		__asm        jmp    _T24e;
+_T24e:
+		__asm        mov    eax, currentObject;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 8;
+		__asm        je     _T26c;
+// LINE 1545:
+		return 0x3;
+// LINE 1547:
+		__asm        jmp    _T276;
+// LINE 1551:
+_T26c:
+		return 0x1;
+// LINE 1556:
+_T276:
+		currentObject = currentObject->next;
 	}
 // LINE 1560:
 _T283:
@@ -2385,108 +2385,108 @@ _T31c:
 // LINE 1577:
 __WHILE_325:
 	while ((currentObject != 0x0)) {
-		// LINE 1580:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, currentObject;
-			__asm        cmp    [eax+0x1CD], ecx;
-			__asm        jne    _T353;
-		// LINE 1582:
-			currentObject = currentObject->next;
-		// LINE 1583:
-			__asm        jmp    __WHILE_325;
-		// LINE 1585:
-			__asm        jmp    _T396;
-		_T353:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, currentObject;
-			__asm        cmp    [eax+0x1D1], ecx;
-			__asm        jne    _T377;
-		// LINE 1587:
-			currentObject = currentObject->next;
-		// LINE 1588:
-			__asm        jmp    __WHILE_325;
-		// LINE 1590:
-			__asm        jmp    _T396;
-		_T377:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, currentObject;
-			__asm        cmp    [eax+0x1D5], ecx;
-			__asm        jne    _T396;
-		// LINE 1592:
-			currentObject = currentObject->next;
-		// LINE 1593:
-			__asm        jmp    __WHILE_325;
-		// LINE 1597:
-		_T396:
-			__asm        mov    eax, currentObject;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 0x20;
-			__asm        je     _T3b2;
-		// LINE 1599:
-			currentObject = currentObject->next;
-		// LINE 1600:
-			__asm        jmp    __WHILE_325;
-		// LINE 1604:
-		_T3b2:
-			__asm        mov    eax, collisionPoint;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, currentObject;
-			__asm        sub    eax, [ecx+0x18];
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    xdiff, eax;
-		// LINE 1605:
-			__asm        mov    eax, collisionPoint;
-			__asm        mov    eax, [eax+4];
-			__asm        mov    ecx, currentObject;
-			__asm        sub    eax, [ecx+0x1C];
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    ydiff, eax;
-		// LINE 1606:
-			__asm        mov    eax, collisionPoint;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    ecx, currentObject;
-			__asm        sub    eax, [ecx+0x20];
-			__asm        cdq;
-			__asm        xor    eax, edx;
-			__asm        sub    eax, edx;
-			__asm        mov    zdiff, eax;
-		// LINE 1609:
-			combinedradius = currentObject->radius;
-		// LINE 1610:
-			combinedradius += 0x50000;
-		// LINE 1613:
-			__asm        mov    eax, combinedradius;
-			__asm        cmp    xdiff, eax;
-			__asm        jg     _T44e;
+// LINE 1580:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, currentObject;
+		__asm        cmp    [eax+0x1CD], ecx;
+		__asm        jne    _T353;
+// LINE 1582:
+		currentObject = currentObject->next;
+// LINE 1583:
+		__asm        jmp    __WHILE_325;
+// LINE 1585:
+		__asm        jmp    _T396;
+_T353:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, currentObject;
+		__asm        cmp    [eax+0x1D1], ecx;
+		__asm        jne    _T377;
+// LINE 1587:
+		currentObject = currentObject->next;
+// LINE 1588:
+		__asm        jmp    __WHILE_325;
+// LINE 1590:
+		__asm        jmp    _T396;
+_T377:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, currentObject;
+		__asm        cmp    [eax+0x1D5], ecx;
+		__asm        jne    _T396;
+// LINE 1592:
+		currentObject = currentObject->next;
+// LINE 1593:
+		__asm        jmp    __WHILE_325;
+// LINE 1597:
+_T396:
+		__asm        mov    eax, currentObject;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 0x20;
+		__asm        je     _T3b2;
+// LINE 1599:
+		currentObject = currentObject->next;
+// LINE 1600:
+		__asm        jmp    __WHILE_325;
+// LINE 1604:
+_T3b2:
+		__asm        mov    eax, collisionPoint;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, currentObject;
+		__asm        sub    eax, [ecx+0x18];
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    xdiff, eax;
+// LINE 1605:
+		__asm        mov    eax, collisionPoint;
+		__asm        mov    eax, [eax+4];
+		__asm        mov    ecx, currentObject;
+		__asm        sub    eax, [ecx+0x1C];
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    ydiff, eax;
+// LINE 1606:
+		__asm        mov    eax, collisionPoint;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    ecx, currentObject;
+		__asm        sub    eax, [ecx+0x20];
+		__asm        cdq;
+		__asm        xor    eax, edx;
+		__asm        sub    eax, edx;
+		__asm        mov    zdiff, eax;
+// LINE 1609:
+		combinedradius = currentObject->radius;
+// LINE 1610:
+		combinedradius += 0x50000;
+// LINE 1613:
+		__asm        mov    eax, combinedradius;
+		__asm        cmp    xdiff, eax;
+		__asm        jg     _T44e;
 
-			__asm        mov    eax, combinedradius;
-			__asm        cmp    ydiff, eax;
-			__asm        jg     _T44e;
+		__asm        mov    eax, combinedradius;
+		__asm        cmp    ydiff, eax;
+		__asm        jg     _T44e;
 
-			__asm        mov    eax, zdiff;
-			__asm        cmp    combinedradius, eax;
-			__asm        jl     _T44e;
-		// LINE 1616:
-			__asm        jmp    _T426;
-		_T426:
-			__asm        mov    eax, currentObject;
-			__asm        movsx  eax, word ptr [eax+0xC];
-			__asm        test   al, 8;
-			__asm        je     _T444;
-		// LINE 1621:
-			return 0x3;
-		// LINE 1623:
-			__asm        jmp    _T44e;
-		// LINE 1627:
-		_T444:
-			return 0x1;
-		// LINE 1632:
-		_T44e:
-			currentObject = currentObject->next;
+		__asm        mov    eax, zdiff;
+		__asm        cmp    combinedradius, eax;
+		__asm        jl     _T44e;
+// LINE 1616:
+		__asm        jmp    _T426;
+_T426:
+		__asm        mov    eax, currentObject;
+		__asm        movsx  eax, word ptr [eax+0xC];
+		__asm        test   al, 8;
+		__asm        je     _T444;
+// LINE 1621:
+		return 0x3;
+// LINE 1623:
+		__asm        jmp    _T44e;
+// LINE 1627:
+_T444:
+		return 0x1;
+// LINE 1632:
+_T44e:
+		currentObject = currentObject->next;
 	}
 // LINE 1637:
 _T45b:
@@ -2506,26 +2506,26 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 // LINE 1667:
 __WHILE_28:
 	while ((deltaX > 0x80)) {
-		// LINE 1669:
-			deltaX -= 0x100;
+// LINE 1669:
+		deltaX -= 0x100;
 	}
 // LINE 1671:
 __WHILE_41:
 	while ((deltaX < -0x80)) {
-		// LINE 1673:
-			deltaX += 0x100;
+// LINE 1673:
+		deltaX += 0x100;
 	}
 // LINE 1676:
 __WHILE_57:
 	while ((deltaY > 0x80)) {
-		// LINE 1678:
-			deltaY -= 0x100;
+// LINE 1678:
+		deltaY -= 0x100;
 	}
 // LINE 1680:
 __WHILE_70:
 	while ((deltaY < -0x80)) {
-		// LINE 1682:
-			deltaY += 0x100;
+// LINE 1682:
+		deltaY += 0x100;
 	}
 // LINE 1685:
 _T86:
@@ -3089,11 +3089,11 @@ _T5e4:
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    _Switch_5f8[0][eax*4];
-// Switch pointers:
-//   _T58b
-//   _T5a0
-//   _T5b5
-//   _T5ca
+	// Switch pointers:
+	//   _T58b
+	//   _T5a0
+	//   _T5b5
+	//   _T5ca
 // LINE 2021:
 _T608:
 	__asm        jmp    _T93e;
@@ -3310,37 +3310,37 @@ _T859:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_8fc[0][eax];
 	__asm        jmp    _Switch_88c[0][ecx*4];
-// Switch pointers:
-//   _T124
-//   _T15e
-//   _T20c
-//   _T1d2
-//   _T246
-//   _T198
-//   _T3c
-//   _T76
-//   _Tb0
-//   _Tea
-//   _T368
-//   _T3ec
-//   _T470
-//   _T4f4
-//   _T578
-//   _T2f4
-//   _T2ba
-//   _T32e
-//   _T280
-//   _T6b2
-//   _T67b
-//   _T6e9
-//   _T720
-//   _T644
-//   _T60d
-//   _T757
-//   _T7c5
-//   _T833
-// Switch table
-//  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 27, 27, 27, 27, 27, 27, 19, 20, 21, 22, 27, 27, 27, 27, 23, 24, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 25, 26]
+	// Switch pointers:
+	//   _T124
+	//   _T15e
+	//   _T20c
+	//   _T1d2
+	//   _T246
+	//   _T198
+	//   _T3c
+	//   _T76
+	//   _Tb0
+	//   _Tea
+	//   _T368
+	//   _T3ec
+	//   _T470
+	//   _T4f4
+	//   _T578
+	//   _T2f4
+	//   _T2ba
+	//   _T32e
+	//   _T280
+	//   _T6b2
+	//   _T67b
+	//   _T6e9
+	//   _T720
+	//   _T644
+	//   _T60d
+	//   _T757
+	//   _T7c5
+	//   _T833
+	// Switch table
+	//  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 27, 27, 27, 27, 27, 27, 19, 20, 21, 22, 27, 27, 27, 27, 23, 24, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 25, 26]
 _T92c:
 	__asm        cmp    dword ptr [ebp-0x10], 0x805B;
 	__asm        je     _T7fc;
@@ -3950,11 +3950,11 @@ _T1017:
 
 	__asm        mov    eax, [ebp-0x40];
 	__asm        jmp    _Switch_102b[0][eax*4];
-// Switch pointers:
-//   _Tfbe
-//   _Tfd3
-//   _Tfe8
-//   _Tffd
+	// Switch pointers:
+	//   _Tfbe
+	//   _Tfd3
+	//   _Tfe8
+	//   _Tffd
 // LINE 2479:
 _T103b:
 	__asm        jmp    _T1371;
@@ -4171,37 +4171,37 @@ _T128c:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_132f[0][eax];
 	__asm        jmp    _Switch_12bf[0][ecx*4];
-// Switch pointers:
-//   _Tb75
-//   _Tbac
-//   _Tc51
-//   _Tc1a
-//   _Tc88
-//   _Tbe3
-//   _Ta99
-//   _Tad0
-//   _Tb07
-//   _Tb3e
-//   _Td9b
-//   _Te1f
-//   _Tea3
-//   _Tf27
-//   _Tfab
-//   _Td2d
-//   _Tcf6
-//   _Td64
-//   _Tcbf
-//   _T1153
-//   _T111c
-//   _T11f8
-//   _T122f
-//   _T11c1
-//   _T118a
-//   _T1040
-//   _T10ae
-//   _T1266
-// Switch table
-//  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 27, 27, 27, 27, 27, 27, 19, 20, 21, 22, 27, 27, 27, 27, 23, 24, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 25, 26]
+	// Switch pointers:
+	//   _Tb75
+	//   _Tbac
+	//   _Tc51
+	//   _Tc1a
+	//   _Tc88
+	//   _Tbe3
+	//   _Ta99
+	//   _Tad0
+	//   _Tb07
+	//   _Tb3e
+	//   _Td9b
+	//   _Te1f
+	//   _Tea3
+	//   _Tf27
+	//   _Tfab
+	//   _Td2d
+	//   _Tcf6
+	//   _Td64
+	//   _Tcbf
+	//   _T1153
+	//   _T111c
+	//   _T11f8
+	//   _T122f
+	//   _T11c1
+	//   _T118a
+	//   _T1040
+	//   _T10ae
+	//   _T1266
+	// Switch table
+	//  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 27, 27, 27, 27, 27, 27, 19, 20, 21, 22, 27, 27, 27, 27, 23, 24, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 25, 26]
 _T135f:
 	__asm        cmp    dword ptr [ebp-0x2C], 0x805B;
 	__asm        je     _T10e5;
@@ -4570,18 +4570,18 @@ _T90:
 // LINE 2825:
 __WHILE_a3:
 	while ((dyptrptr-> != 0x0)) {
-		// LINE 2829:
-			__asm        mov    eax, dyptrptr;
-			__asm        mov    ecx, dyobj;
-			__asm        cmp    [eax], ecx;
-			__asm        jne    _Tcc;
-		// LINE 2833:
-			dyptrptr-> = dyobj->next;
-		// LINE 2835:
-			return;
-		// LINE 2838:
-		_Tcc:
-			dyptrptr = dyptrptr->;
+// LINE 2829:
+		__asm        mov    eax, dyptrptr;
+		__asm        mov    ecx, dyobj;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _Tcc;
+// LINE 2833:
+		dyptrptr-> = dyobj->next;
+// LINE 2835:
+		return;
+// LINE 2838:
+_Tcc:
+		dyptrptr = dyptrptr->;
 	}
 // LINE 2841:
 _Td9:
@@ -5507,63 +5507,63 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short t
 	__asm        mov    dword ptr [ebp-0xC], 0x5B7BB8;
 _LOOP_13:
 	for (;;) {
-		_LOOP_13:
-			__asm        mov    eax, [ebp-0xC];
-			__asm        mov    ecx, reinterpret_cast<uint32_t>(fromTile);
-			__asm        and    ecx, 0xFFFF;
-			__asm        cmp    [eax], ecx;
-			__asm        jne    _T35;
+_LOOP_13:
+		__asm        mov    eax, [ebp-0xC];
+		__asm        mov    ecx, reinterpret_cast<uint32_t>(fromTile);
+		__asm        and    ecx, 0xFFFF;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T35;
 
-			__asm        mov    eax, [ebp-0xC];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-8], eax;
-			__asm        jmp    _T69;
-		_T35:
-			__asm        mov    eax, [ebp-0xC];
-			__asm        cmp    dword ptr [eax], 0;
-			__asm        je     _T54;
+		__asm        mov    eax, [ebp-0xC];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-8], eax;
+		__asm        jmp    _T69;
+_T35:
+		__asm        mov    eax, [ebp-0xC];
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        je     _T54;
 
-			__asm        mov    eax, 0x5B7BB8;
-			__asm        add    eax, 0x780;
-			__asm        cmp    eax, [ebp-0xC];
-			__asm        jae    _T60;
-		_T54:
-			__asm        mov    dword ptr [ebp-8], 0;
-			__asm        jmp    _T69;
-		_T60:
-			__asm        add    dword ptr [ebp-0xC], 8;
-			__asm        jmp    _LOOP_13;
+		__asm        mov    eax, 0x5B7BB8;
+		__asm        add    eax, 0x780;
+		__asm        cmp    eax, [ebp-0xC];
+		__asm        jae    _T60;
+_T54:
+		__asm        mov    dword ptr [ebp-8], 0;
+		__asm        jmp    _T69;
+_T60:
+		__asm        add    dword ptr [ebp-0xC], 8;
+		__asm        jmp    _LOOP_13;
 	}
 _T69:
 	__asm        mov    dword ptr [ebp-0x10], 0x5B7BB8;
 _LOOP_70:
 	for (;;) {
-		_LOOP_70:
-			__asm        mov    eax, [ebp-0x10];
-			__asm        mov    ecx, reinterpret_cast<uint32_t>(toTile);
-			__asm        and    ecx, 0xFFFF;
-			__asm        cmp    [eax], ecx;
-			__asm        jne    _T92;
+_LOOP_70:
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    ecx, reinterpret_cast<uint32_t>(toTile);
+		__asm        and    ecx, 0xFFFF;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T92;
 
-			__asm        mov    eax, [ebp-0x10];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    [ebp-4], eax;
-			__asm        jmp    _Tc6;
-		_T92:
-			__asm        mov    eax, [ebp-0x10];
-			__asm        cmp    dword ptr [eax], 0;
-			__asm        je     _Tb1;
+		__asm        mov    eax, [ebp-0x10];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    [ebp-4], eax;
+		__asm        jmp    _Tc6;
+_T92:
+		__asm        mov    eax, [ebp-0x10];
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        je     _Tb1;
 
-			__asm        mov    eax, 0x5B7BB8;
-			__asm        add    eax, 0x780;
-			__asm        cmp    eax, [ebp-0x10];
-			__asm        jae    _Tbd;
-		_Tb1:
-			__asm        mov    dword ptr [ebp-4], 0;
-			__asm        jmp    _Tc6;
-		_Tbd:
-			__asm        add    dword ptr [ebp-0x10], 8;
-			__asm        jmp    _LOOP_70;
+		__asm        mov    eax, 0x5B7BB8;
+		__asm        add    eax, 0x780;
+		__asm        cmp    eax, [ebp-0x10];
+		__asm        jae    _Tbd;
+_Tb1:
+		__asm        mov    dword ptr [ebp-4], 0;
+		__asm        jmp    _Tc6;
+_Tbd:
+		__asm        add    dword ptr [ebp-0x10], 8;
+		__asm        jmp    _LOOP_70;
 	}
 _Tc6:
 	__asm        test   reinterpret_cast<uint8_t>(direction), 1;
@@ -5757,15 +5757,15 @@ _T181:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_195[0][eax*4];
-// Switch pointers:
-//   _T17
-//   _T24
-//   _T31
-//   _T4b
-//   _T3e
-//   _T9f
-//   _T75
-//   _Tc9
+	// Switch pointers:
+	//   _T17
+	//   _T24
+	//   _T31
+	//   _T4b
+	//   _T3e
+	//   _T9f
+	//   _T75
+	//   _Tc9
 // LINE 3229:
 _T1b5:
 	return;
@@ -6751,32 +6751,32 @@ _T41e:
 	__asm        mov    dword ptr [ebp-0x2C], 0x5B7BB8;
 _LOOP_425:
 	for (;;) {
-		_LOOP_425:
-			__asm        mov    eax, [ebp-0x2C];
-			__asm        mov    ecx, reinterpret_cast<uint32_t>(ntile);
-			__asm        and    ecx, 0xFFFF;
-			__asm        cmp    [eax], ecx;
-			__asm        jne    _T447;
+_LOOP_425:
+		__asm        mov    eax, [ebp-0x2C];
+		__asm        mov    ecx, reinterpret_cast<uint32_t>(ntile);
+		__asm        and    ecx, 0xFFFF;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T447;
 
-			__asm        mov    eax, [ebp-0x2C];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    connectionType, eax;
-			__asm        jmp    _T47b;
-		_T447:
-			__asm        mov    eax, [ebp-0x2C];
-			__asm        cmp    dword ptr [eax], 0;
-			__asm        je     _T466;
+		__asm        mov    eax, [ebp-0x2C];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    connectionType, eax;
+		__asm        jmp    _T47b;
+_T447:
+		__asm        mov    eax, [ebp-0x2C];
+		__asm        cmp    dword ptr [eax], 0;
+		__asm        je     _T466;
 
-			__asm        mov    eax, 0x5B7BB8;
-			__asm        add    eax, 0x780;
-			__asm        cmp    eax, [ebp-0x2C];
-			__asm        jae    _T472;
-		_T466:
-			connectionType = 0x0;
-			__asm        jmp    _T47b;
-		_T472:
-			__asm        add    dword ptr [ebp-0x2C], 8;
-			__asm        jmp    _LOOP_425;
+		__asm        mov    eax, 0x5B7BB8;
+		__asm        add    eax, 0x780;
+		__asm        cmp    eax, [ebp-0x2C];
+		__asm        jae    _T472;
+_T466:
+		connectionType = 0x0;
+		__asm        jmp    _T47b;
+_T472:
+		__asm        add    dword ptr [ebp-0x2C], 8;
+		__asm        jmp    _LOOP_425;
 	}
 // LINE 3581:
 _T47b:
@@ -6849,11 +6849,11 @@ _T50f:
 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        jmp    _Switch_53b[0][eax*4];
-// Switch pointers:
-//   _T4c7
-//   _T4ae
-//   _T4e0
-//   _T495
+	// Switch pointers:
+	//   _T4c7
+	//   _T4ae
+	//   _T4e0
+	//   _T495
 _T54b:
 	__asm        cmp    dword ptr [ebp-0x44], 0x805A;
 	__asm        jl     _T56a;
@@ -7310,221 +7310,221 @@ _T166:
 // LINE 3875:
 _LOOP_197:
 	for (;;) {
-		// LINE 3875:
-		_LOOP_197:
-			curr_dir++;
-		// LINE 3876:
-			__asm        mov    eax, curr_dir;
-			__asm        mov    [ebp-0x5C], eax;
-			__asm        jmp    _T203;
-		// LINE 3880:
-		_T1a5:
-			curr_dir = 0x0;
-		// LINE 3881:
-			curr_dist++;
-		// LINE 3882:
-			xdir = 0x0;
-		// LINE 3883:
-			ydir = 0xffffffff;
-		// LINE 3884:
-			__asm        jmp    _T22b;
-		// LINE 3886:
-		_T1c2:
-			xdir = 0x1;
-		// LINE 3887:
-			ydir = 0x0;
-		// LINE 3888:
-			__asm        jmp    _T22b;
-		// LINE 3890:
-		_T1d5:
-			curr_dist++;
-		// LINE 3891:
-			xdir = 0x0;
-		// LINE 3892:
-			ydir = 0x1;
-		// LINE 3893:
-			__asm        jmp    _T22b;
-		// LINE 3895:
-		_T1eb:
-			xdir = 0xffffffff;
-		// LINE 3896:
-			ydir = 0x0;
-		// LINE 3897:
-			__asm        jmp    _T22b;
-		// LINE 3898:
-			__asm        jmp    _T22b;
-		_T203:
-			__asm        cmp    dword ptr [ebp-0x5C], 4;
-			__asm        ja     _T22b;
+// LINE 3875:
+_LOOP_197:
+		curr_dir++;
+// LINE 3876:
+		__asm        mov    eax, curr_dir;
+		__asm        mov    [ebp-0x5C], eax;
+		__asm        jmp    _T203;
+// LINE 3880:
+_T1a5:
+		curr_dir = 0x0;
+// LINE 3881:
+		curr_dist++;
+// LINE 3882:
+		xdir = 0x0;
+// LINE 3883:
+		ydir = 0xffffffff;
+// LINE 3884:
+		__asm        jmp    _T22b;
+// LINE 3886:
+_T1c2:
+		xdir = 0x1;
+// LINE 3887:
+		ydir = 0x0;
+// LINE 3888:
+		__asm        jmp    _T22b;
+// LINE 3890:
+_T1d5:
+		curr_dist++;
+// LINE 3891:
+		xdir = 0x0;
+// LINE 3892:
+		ydir = 0x1;
+// LINE 3893:
+		__asm        jmp    _T22b;
+// LINE 3895:
+_T1eb:
+		xdir = 0xffffffff;
+// LINE 3896:
+		ydir = 0x0;
+// LINE 3897:
+		__asm        jmp    _T22b;
+// LINE 3898:
+		__asm        jmp    _T22b;
+_T203:
+		__asm        cmp    dword ptr [ebp-0x5C], 4;
+		__asm        ja     _T22b;
 
-			__asm        mov    eax, [ebp-0x5C];
-			__asm        jmp    _Switch_217[0][eax*4];
+		__asm        mov    eax, [ebp-0x5C];
+		__asm        jmp    _Switch_217[0][eax*4];
 		// Switch pointers:
 		//   _T1a5
 		//   _T1c2
 		//   _T1d5
 		//   _T1eb
 		//   _T1a5
-		// LINE 3902:
-		_T22b:
-			__asm        mov    eax, curr_dist;
-			__asm        cmp    spiral_dist, eax;
-			__asm        jne    _FOR_24d;
-		// LINE 3904:
-			curr_dist--;
-		// LINE 3905:
-			stop_now = 0x1;
-		// LINE 3909:
-		_FOR_24d:
-			for (i = 0x0; (curr_dist > i); i++) {
-				// LINE 3911:
-				// Block start:
-					/*bp-0x44*/  unsigned short tile;
-					__asm        cmp    x, 0;
-					__asm        jl     _T28a;
+// LINE 3902:
+_T22b:
+		__asm        mov    eax, curr_dist;
+		__asm        cmp    spiral_dist, eax;
+		__asm        jne    _FOR_24d;
+// LINE 3904:
+		curr_dist--;
+// LINE 3905:
+		stop_now = 0x1;
+// LINE 3909:
+_FOR_24d:
+		for (i = 0x0; (curr_dist > i); i++) {
+// LINE 3911:
+		// Block start:
+			/*bp-0x44*/  unsigned short tile;
+			__asm        cmp    x, 0;
+			__asm        jl     _T28a;
 
-					__asm        cmp    y, 0;
-					__asm        jl     _T28a;
+			__asm        cmp    y, 0;
+			__asm        jl     _T28a;
 
-					__asm        cmp    x, 0x80;
-					__asm        jge    _T28a;
+			__asm        cmp    x, 0x80;
+			__asm        jge    _T28a;
 
-					__asm        cmp    y, 0x80;
-					__asm        jl     _T295;
-				_T28a:
-					tile = 0x0;
-					__asm        jmp    _T2cd;
-				_T295:
-					__asm        mov    eax, x;
-					__asm        mov    eax, BitsMap[eax*4];
-					__asm        mov    ecx, y;
-					__asm        xor    edx, edx;
-					__asm        mov    dl, [eax+ecx];
-					__asm        and    edx, 2;
-					__asm        movsx  eax, dx;
-					__asm        shl    eax, 0xE;
-					__asm        mov    ecx, x;
-					__asm        mov    ecx, BuildMap[ecx*4];
-					__asm        mov    edx, y;
-					__asm        xor    ebx, ebx;
-					__asm        mov    bl, [ecx+edx];
-					__asm        or     eax, ebx;
-					__asm        mov    tile, ax;
-					__asm        jmp    _T2cd;
-				// LINE 3913:
-				_T2cd:
-					__asm        mov    eax, reinterpret_cast<uint32_t>(tile);
-					__asm        and    eax, 0xFFFF;
-					__asm        mov    [ebp-0x60], eax;
-					__asm        jmp    _T2f1;
+			__asm        cmp    y, 0x80;
+			__asm        jl     _T295;
+_T28a:
+			tile = 0x0;
+			__asm        jmp    _T2cd;
+_T295:
+			__asm        mov    eax, x;
+			__asm        mov    eax, BitsMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        and    edx, 2;
+			__asm        movsx  eax, dx;
+			__asm        shl    eax, 0xE;
+			__asm        mov    ecx, x;
+			__asm        mov    ecx, BuildMap[ecx*4];
+			__asm        mov    edx, y;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx];
+			__asm        or     eax, ebx;
+			__asm        mov    tile, ax;
+			__asm        jmp    _T2cd;
+// LINE 3913:
+_T2cd:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(tile);
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    [ebp-0x60], eax;
+			__asm        jmp    _T2f1;
 
-					__asm        jmp    _T38d;
+			__asm        jmp    _T38d;
 
-					__asm        jmp    _T401;
+			__asm        jmp    _T401;
 
-					__asm        jmp    _T38d;
+			__asm        jmp    _T38d;
 
-					__asm        jmp    _T383;
-				_T2f1:
-					__asm        cmp    dword ptr [ebp-0x60], 0x3A;
-					__asm        jg     _T31e;
+			__asm        jmp    _T383;
+_T2f1:
+			__asm        cmp    dword ptr [ebp-0x60], 0x3A;
+			__asm        jg     _T31e;
 
-					__asm        cmp    dword ptr [ebp-0x60], 0x32;
-					__asm        jge    _T38d;
+			__asm        cmp    dword ptr [ebp-0x60], 0x32;
+			__asm        jge    _T38d;
 
-					__asm        cmp    dword ptr [ebp-0x60], 0x2C;
-					__asm        jl     _T401;
+			__asm        cmp    dword ptr [ebp-0x60], 0x2C;
+			__asm        jl     _T401;
 
-					__asm        cmp    dword ptr [ebp-0x60], 0x2D;
-					__asm        jle    _T38d;
+			__asm        cmp    dword ptr [ebp-0x60], 0x2D;
+			__asm        jle    _T38d;
 
-					__asm        jmp    _T401;
-				_T31e:
-					__asm        cmp    dword ptr [ebp-0x60], 0x4E;
-					__asm        jg     _T34b;
+			__asm        jmp    _T401;
+_T31e:
+			__asm        cmp    dword ptr [ebp-0x60], 0x4E;
+			__asm        jg     _T34b;
 
-					__asm        cmp    dword ptr [ebp-0x60], 0x4D;
-					__asm        jge    _T38d;
+			__asm        cmp    dword ptr [ebp-0x60], 0x4D;
+			__asm        jge    _T38d;
 
-					__asm        cmp    dword ptr [ebp-0x60], 0x45;
-					__asm        jl     _T401;
+			__asm        cmp    dword ptr [ebp-0x60], 0x45;
+			__asm        jl     _T401;
 
-					__asm        cmp    dword ptr [ebp-0x60], 0x48;
-					__asm        jle    _T38d;
+			__asm        cmp    dword ptr [ebp-0x60], 0x48;
+			__asm        jle    _T38d;
 
-					__asm        jmp    _T401;
-				_T34b:
-					__asm        cmp    dword ptr [ebp-0x60], 0x805B;
-					__asm        jg     _T401;
+			__asm        jmp    _T401;
+_T34b:
+			__asm        cmp    dword ptr [ebp-0x60], 0x805B;
+			__asm        jg     _T401;
 
-					__asm        cmp    dword ptr [ebp-0x60], 0x805A;
-					__asm        jge    _T38d;
+			__asm        cmp    dword ptr [ebp-0x60], 0x805A;
+			__asm        jge    _T38d;
 
-					__asm        cmp    dword ptr [ebp-0x60], 0x5A;
-					__asm        jl     _T401;
+			__asm        cmp    dword ptr [ebp-0x60], 0x5A;
+			__asm        jl     _T401;
 
-					__asm        cmp    dword ptr [ebp-0x60], 0x5B;
-					__asm        jle    _T38d;
+			__asm        cmp    dword ptr [ebp-0x60], 0x5B;
+			__asm        jle    _T38d;
 
-					__asm        jmp    _T401;
+			__asm        jmp    _T401;
 
-					__asm        jmp    _T401;
-				_T383:
-					__asm        cmp    dword ptr [ebp-0x4C], 0;
-					__asm        je     _T401;
-				// LINE 3915:
-				_T38d:
-					beampoint.x = x;
-				// LINE 3916:
-					beampoint.y = y;
-				// LINE 3917:
-					__asm        mov    eax, beampoint.y;
-					__asm        and    eax, 0xFF;
-					__asm        mov    ecx, beampoint.x;
-					__asm        and    ecx, 0xFF;
-					__asm        shl    ecx, 0xA;
-					__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-					__asm        mov    [ebp-0x48], eax;
-					__asm        cmp    dword ptr [ebp-0x48], 0;
-					__asm        jne    _T3dd;
+			__asm        jmp    _T401;
+_T383:
+			__asm        cmp    dword ptr [ebp-0x4C], 0;
+			__asm        je     _T401;
+// LINE 3915:
+_T38d:
+			beampoint.x = x;
+// LINE 3916:
+			beampoint.y = y;
+// LINE 3917:
+			__asm        mov    eax, beampoint.y;
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, beampoint.x;
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+			__asm        mov    [ebp-0x48], eax;
+			__asm        cmp    dword ptr [ebp-0x48], 0;
+			__asm        jne    _T3dd;
 
-					_assert(0x5b57b8, 0x5b780c, 0xd0);
-					__asm        jmp    _T3e2;
-				_T3dd:
-					__asm        jmp    _T3e2;
-				_T3e2:
-					__asm        jmp    _T3e7;
-				_T3e7:
-					__asm        mov    eax, [ebp-0x48];
-					__asm        mov    cptr, eax;
-				// LINE 3918:
-					__asm        mov    eax, cptr;
-					__asm        cmp    dword ptr [eax+0x10], 0;
-					__asm        jne    _T401;
-				// LINE 3920:
-					foundcell = 0x1;
-				// LINE 3923:
-				_T401:
-					__asm        cmp    foundcell, 0;
-					__asm        je     _T415;
+			_assert(0x5b57b8, 0x5b780c, 0xd0);
+			__asm        jmp    _T3e2;
+_T3dd:
+			__asm        jmp    _T3e2;
+_T3e2:
+			__asm        jmp    _T3e7;
+_T3e7:
+			__asm        mov    eax, [ebp-0x48];
+			__asm        mov    cptr, eax;
+// LINE 3918:
+			__asm        mov    eax, cptr;
+			__asm        cmp    dword ptr [eax+0x10], 0;
+			__asm        jne    _T401;
+// LINE 3920:
+			foundcell = 0x1;
+// LINE 3923:
+_T401:
+			__asm        cmp    foundcell, 0;
+			__asm        je     _T415;
 
-					__asm        jmp    _T584;
+			__asm        jmp    _T584;
 
-					__asm        jmp    foundCell;
-				// LINE 3924:
-				_T415:
-					x += xdir;
-				// LINE 3925:
-					y += ydir;
-			}
-		// LINE 3928:
-		_T426:
-			__asm        cmp    stop_now, 1;
-			__asm        jne    _T435;
-		// LINE 3930:
-			__asm        jmp    _T43a;
-		// LINE 3932:
-		_T435:
+			__asm        jmp    foundCell;
+// LINE 3924:
+_T415:
+			x += xdir;
+// LINE 3925:
+			y += ydir;
+		}
+// LINE 3928:
+_T426:
+		__asm        cmp    stop_now, 1;
+		__asm        jne    _T435;
+// LINE 3930:
+		__asm        jmp    _T43a;
+// LINE 3932:
+_T435:
 	}
 // LINE 3935:
 _T43a:
@@ -7680,221 +7680,221 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 // LINE 4039:
 _LOOP_3b:
 	for (;;) {
-		// LINE 4039:
-		_LOOP_3b:
-			curr_dir++;
-		// LINE 4040:
-			__asm        mov    eax, curr_dir;
-			__asm        mov    [ebp-0x4C], eax;
-			__asm        jmp    _Ta7;
-		// LINE 4044:
-		_T49:
-			curr_dir = 0x0;
-		// LINE 4045:
-			curr_dist++;
-		// LINE 4046:
-			xdir = 0x0;
-		// LINE 4047:
-			ydir = 0xffffffff;
-		// LINE 4048:
-			__asm        jmp    _Tcf;
-		// LINE 4050:
-		_T66:
-			xdir = 0x1;
-		// LINE 4051:
-			ydir = 0x0;
-		// LINE 4052:
-			__asm        jmp    _Tcf;
-		// LINE 4054:
-		_T79:
-			curr_dist++;
-		// LINE 4055:
-			xdir = 0x0;
-		// LINE 4056:
-			ydir = 0x1;
-		// LINE 4057:
-			__asm        jmp    _Tcf;
-		// LINE 4059:
-		_T8f:
-			xdir = 0xffffffff;
-		// LINE 4060:
-			ydir = 0x0;
-		// LINE 4061:
-			__asm        jmp    _Tcf;
-		// LINE 4062:
-			__asm        jmp    _Tcf;
-		_Ta7:
-			__asm        cmp    dword ptr [ebp-0x4C], 4;
-			__asm        ja     _Tcf;
+// LINE 4039:
+_LOOP_3b:
+		curr_dir++;
+// LINE 4040:
+		__asm        mov    eax, curr_dir;
+		__asm        mov    [ebp-0x4C], eax;
+		__asm        jmp    _Ta7;
+// LINE 4044:
+_T49:
+		curr_dir = 0x0;
+// LINE 4045:
+		curr_dist++;
+// LINE 4046:
+		xdir = 0x0;
+// LINE 4047:
+		ydir = 0xffffffff;
+// LINE 4048:
+		__asm        jmp    _Tcf;
+// LINE 4050:
+_T66:
+		xdir = 0x1;
+// LINE 4051:
+		ydir = 0x0;
+// LINE 4052:
+		__asm        jmp    _Tcf;
+// LINE 4054:
+_T79:
+		curr_dist++;
+// LINE 4055:
+		xdir = 0x0;
+// LINE 4056:
+		ydir = 0x1;
+// LINE 4057:
+		__asm        jmp    _Tcf;
+// LINE 4059:
+_T8f:
+		xdir = 0xffffffff;
+// LINE 4060:
+		ydir = 0x0;
+// LINE 4061:
+		__asm        jmp    _Tcf;
+// LINE 4062:
+		__asm        jmp    _Tcf;
+_Ta7:
+		__asm        cmp    dword ptr [ebp-0x4C], 4;
+		__asm        ja     _Tcf;
 
-			__asm        mov    eax, [ebp-0x4C];
-			__asm        jmp    _Switch_bb[0][eax*4];
+		__asm        mov    eax, [ebp-0x4C];
+		__asm        jmp    _Switch_bb[0][eax*4];
 		// Switch pointers:
 		//   _T49
 		//   _T66
 		//   _T79
 		//   _T8f
 		//   _T49
-		// LINE 4066:
-		_Tcf:
-			__asm        mov    eax, spiral_dist;
-			__asm        cmp    curr_dist, eax;
-			__asm        jne    _FOR_f1;
-		// LINE 4068:
-			curr_dist--;
-		// LINE 4069:
-			stop_now = 0x1;
-		// LINE 4073:
-		_FOR_f1:
-			for (i = 0x0; (curr_dist > i); i++) {
-				// LINE 4075:
-				// Block start:
-					/*bp-0x38*/  unsigned short tile;
-					__asm        cmp    x, 0;
-					__asm        jl     _T12e;
+// LINE 4066:
+_Tcf:
+		__asm        mov    eax, spiral_dist;
+		__asm        cmp    curr_dist, eax;
+		__asm        jne    _FOR_f1;
+// LINE 4068:
+		curr_dist--;
+// LINE 4069:
+		stop_now = 0x1;
+// LINE 4073:
+_FOR_f1:
+		for (i = 0x0; (curr_dist > i); i++) {
+// LINE 4075:
+		// Block start:
+			/*bp-0x38*/  unsigned short tile;
+			__asm        cmp    x, 0;
+			__asm        jl     _T12e;
 
-					__asm        cmp    y, 0;
-					__asm        jl     _T12e;
+			__asm        cmp    y, 0;
+			__asm        jl     _T12e;
 
-					__asm        cmp    x, 0x80;
-					__asm        jge    _T12e;
+			__asm        cmp    x, 0x80;
+			__asm        jge    _T12e;
 
-					__asm        cmp    y, 0x80;
-					__asm        jl     _T139;
-				_T12e:
-					tile = 0x0;
-					__asm        jmp    _T171;
-				_T139:
-					__asm        mov    eax, x;
-					__asm        mov    eax, BitsMap[eax*4];
-					__asm        mov    ecx, y;
-					__asm        xor    edx, edx;
-					__asm        mov    dl, [eax+ecx];
-					__asm        and    edx, 2;
-					__asm        movsx  eax, dx;
-					__asm        shl    eax, 0xE;
-					__asm        mov    ecx, x;
-					__asm        mov    ecx, BuildMap[ecx*4];
-					__asm        mov    edx, y;
-					__asm        xor    ebx, ebx;
-					__asm        mov    bl, [ecx+edx];
-					__asm        or     eax, ebx;
-					__asm        mov    tile, ax;
-					__asm        jmp    _T171;
-				// LINE 4077:
-				_T171:
-					__asm        mov    eax, reinterpret_cast<uint32_t>(tile);
-					__asm        and    eax, 0xFFFF;
-					__asm        mov    [ebp-0x50], eax;
-					__asm        jmp    _T195;
+			__asm        cmp    y, 0x80;
+			__asm        jl     _T139;
+_T12e:
+			tile = 0x0;
+			__asm        jmp    _T171;
+_T139:
+			__asm        mov    eax, x;
+			__asm        mov    eax, BitsMap[eax*4];
+			__asm        mov    ecx, y;
+			__asm        xor    edx, edx;
+			__asm        mov    dl, [eax+ecx];
+			__asm        and    edx, 2;
+			__asm        movsx  eax, dx;
+			__asm        shl    eax, 0xE;
+			__asm        mov    ecx, x;
+			__asm        mov    ecx, BuildMap[ecx*4];
+			__asm        mov    edx, y;
+			__asm        xor    ebx, ebx;
+			__asm        mov    bl, [ecx+edx];
+			__asm        or     eax, ebx;
+			__asm        mov    tile, ax;
+			__asm        jmp    _T171;
+// LINE 4077:
+_T171:
+			__asm        mov    eax, reinterpret_cast<uint32_t>(tile);
+			__asm        and    eax, 0xFFFF;
+			__asm        mov    [ebp-0x50], eax;
+			__asm        jmp    _T195;
 
-					__asm        jmp    _T231;
+			__asm        jmp    _T231;
 
-					__asm        jmp    _T2a5;
+			__asm        jmp    _T2a5;
 
-					__asm        jmp    _T231;
+			__asm        jmp    _T231;
 
-					__asm        jmp    _T227;
-				_T195:
-					__asm        cmp    dword ptr [ebp-0x50], 0x3A;
-					__asm        jg     _T1c2;
+			__asm        jmp    _T227;
+_T195:
+			__asm        cmp    dword ptr [ebp-0x50], 0x3A;
+			__asm        jg     _T1c2;
 
-					__asm        cmp    dword ptr [ebp-0x50], 0x32;
-					__asm        jge    _T231;
+			__asm        cmp    dword ptr [ebp-0x50], 0x32;
+			__asm        jge    _T231;
 
-					__asm        cmp    dword ptr [ebp-0x50], 0x2C;
-					__asm        jl     _T2a5;
+			__asm        cmp    dword ptr [ebp-0x50], 0x2C;
+			__asm        jl     _T2a5;
 
-					__asm        cmp    dword ptr [ebp-0x50], 0x2D;
-					__asm        jle    _T231;
+			__asm        cmp    dword ptr [ebp-0x50], 0x2D;
+			__asm        jle    _T231;
 
-					__asm        jmp    _T2a5;
-				_T1c2:
-					__asm        cmp    dword ptr [ebp-0x50], 0x4E;
-					__asm        jg     _T1ef;
+			__asm        jmp    _T2a5;
+_T1c2:
+			__asm        cmp    dword ptr [ebp-0x50], 0x4E;
+			__asm        jg     _T1ef;
 
-					__asm        cmp    dword ptr [ebp-0x50], 0x4D;
-					__asm        jge    _T231;
+			__asm        cmp    dword ptr [ebp-0x50], 0x4D;
+			__asm        jge    _T231;
 
-					__asm        cmp    dword ptr [ebp-0x50], 0x45;
-					__asm        jl     _T2a5;
+			__asm        cmp    dword ptr [ebp-0x50], 0x45;
+			__asm        jl     _T2a5;
 
-					__asm        cmp    dword ptr [ebp-0x50], 0x48;
-					__asm        jle    _T231;
+			__asm        cmp    dword ptr [ebp-0x50], 0x48;
+			__asm        jle    _T231;
 
-					__asm        jmp    _T2a5;
-				_T1ef:
-					__asm        cmp    dword ptr [ebp-0x50], 0x805B;
-					__asm        jg     _T2a5;
+			__asm        jmp    _T2a5;
+_T1ef:
+			__asm        cmp    dword ptr [ebp-0x50], 0x805B;
+			__asm        jg     _T2a5;
 
-					__asm        cmp    dword ptr [ebp-0x50], 0x805A;
-					__asm        jge    _T231;
+			__asm        cmp    dword ptr [ebp-0x50], 0x805A;
+			__asm        jge    _T231;
 
-					__asm        cmp    dword ptr [ebp-0x50], 0x5A;
-					__asm        jl     _T2a5;
+			__asm        cmp    dword ptr [ebp-0x50], 0x5A;
+			__asm        jl     _T2a5;
 
-					__asm        cmp    dword ptr [ebp-0x50], 0x5B;
-					__asm        jle    _T231;
+			__asm        cmp    dword ptr [ebp-0x50], 0x5B;
+			__asm        jle    _T231;
 
-					__asm        jmp    _T2a5;
+			__asm        jmp    _T2a5;
 
-					__asm        jmp    _T2a5;
-				_T227:
-					__asm        cmp    dword ptr [ebp-0x40], 0;
-					__asm        je     _T2a5;
-				// LINE 4079:
-				_T231:
-					beampoint.x = x;
-				// LINE 4080:
-					beampoint.y = y;
-				// LINE 4081:
-					__asm        mov    eax, beampoint.y;
-					__asm        and    eax, 0xFF;
-					__asm        mov    ecx, beampoint.x;
-					__asm        and    ecx, 0xFF;
-					__asm        shl    ecx, 0xA;
-					__asm        mov    eax, G_omap[0][0][ecx+eax*4];
-					__asm        mov    [ebp-0x3C], eax;
-					__asm        cmp    dword ptr [ebp-0x3C], 0;
-					__asm        jne    _T281;
+			__asm        jmp    _T2a5;
+_T227:
+			__asm        cmp    dword ptr [ebp-0x40], 0;
+			__asm        je     _T2a5;
+// LINE 4079:
+_T231:
+			beampoint.x = x;
+// LINE 4080:
+			beampoint.y = y;
+// LINE 4081:
+			__asm        mov    eax, beampoint.y;
+			__asm        and    eax, 0xFF;
+			__asm        mov    ecx, beampoint.x;
+			__asm        and    ecx, 0xFF;
+			__asm        shl    ecx, 0xA;
+			__asm        mov    eax, G_omap[0][0][ecx+eax*4];
+			__asm        mov    [ebp-0x3C], eax;
+			__asm        cmp    dword ptr [ebp-0x3C], 0;
+			__asm        jne    _T281;
 
-					_assert(0x5b57b8, 0x5b780c, 0xd0);
-					__asm        jmp    _T286;
-				_T281:
-					__asm        jmp    _T286;
-				_T286:
-					__asm        jmp    _T28b;
-				_T28b:
-					__asm        mov    eax, [ebp-0x3C];
-					__asm        mov    cptr, eax;
-				// LINE 4082:
-					__asm        mov    eax, cptr;
-					__asm        cmp    dword ptr [eax+0x10], 0;
-					__asm        jne    _T2a5;
-				// LINE 4084:
-					foundcell = 0x1;
-				// LINE 4087:
-				_T2a5:
-					__asm        cmp    foundcell, 0;
-					__asm        je     _T2b9;
+			_assert(0x5b57b8, 0x5b780c, 0xd0);
+			__asm        jmp    _T286;
+_T281:
+			__asm        jmp    _T286;
+_T286:
+			__asm        jmp    _T28b;
+_T28b:
+			__asm        mov    eax, [ebp-0x3C];
+			__asm        mov    cptr, eax;
+// LINE 4082:
+			__asm        mov    eax, cptr;
+			__asm        cmp    dword ptr [eax+0x10], 0;
+			__asm        jne    _T2a5;
+// LINE 4084:
+			foundcell = 0x1;
+// LINE 4087:
+_T2a5:
+			__asm        cmp    foundcell, 0;
+			__asm        je     _T2b9;
 
-					__asm        jmp    _T42f;
+			__asm        jmp    _T42f;
 
-					__asm        jmp    foundCell;
-				// LINE 4088:
-				_T2b9:
-					x += xdir;
-				// LINE 4089:
-					y += ydir;
-			}
-		// LINE 4092:
-		_T2ca:
-			__asm        cmp    stop_now, 1;
-			__asm        jne    _T2d9;
-		// LINE 4094:
-			__asm        jmp    _T2de;
-		// LINE 4096:
-		_T2d9:
+			__asm        jmp    foundCell;
+// LINE 4088:
+_T2b9:
+			x += xdir;
+// LINE 4089:
+			y += ydir;
+		}
+// LINE 4092:
+_T2ca:
+		__asm        cmp    stop_now, 1;
+		__asm        jne    _T2d9;
+// LINE 4094:
+		__asm        jmp    _T2de;
+// LINE 4096:
+_T2d9:
 	}
 // LINE 4099:
 _T2de:
@@ -8275,7 +8275,7 @@ _T26:
 // FUNCTION: COPTER_D 0x0053431f
 void ResetAllTrains() {
 // LINE 4645:
-	TrainClass::ResetAll();
+TrainClass::ResetAll();
 // LINE 4646:
 	return;
 }
@@ -8283,7 +8283,7 @@ void ResetAllTrains() {
 // FUNCTION: COPTER_D 0x00534334
 void ItterateAllTrains() {
 // LINE 4668:
-	TrainClass::ItterateAll();
+TrainClass::ItterateAll();
 // LINE 4669:
 	return;
 }
@@ -8408,30 +8408,30 @@ _Td6:
 // LINE 4774:
 _FOR_111:
 	for (count = 0x0; (count < numtostart); count++) {
-		// LINE 4781:
-			__asm        push   0;
-			__asm        mov    eax, t;
-			__asm        add    eax, 0xA1;
-			__asm        push   eax;
-			__asm        mov    eax, mission_id;
-			__asm        push   eax;
-			__asm        mov    eax, t;
-			__asm        movzx  ax, byte ptr [eax+0x39];
-			__asm        push   eax;
-			__asm        mov    eax, t;
-			__asm        movzx  ax, byte ptr [eax+0x35];
-			__asm        push   eax;
-			__asm        push   1;
-			__asm        push   0xFFFFFFFF;
-			__asm        call   StartPerson;
-			__asm        add    esp, 0x1C;
-			__asm        movsx  eax, ax;
-			__asm        cmp    eax, 0xFFFFFFFF;
-			__asm        jle    _T15c;
-		// LINE 4783:
-			totalpersons++;
-		// LINE 4785:
-		_T15c:
+// LINE 4781:
+		__asm        push   0;
+		__asm        mov    eax, t;
+		__asm        add    eax, 0xA1;
+		__asm        push   eax;
+		__asm        mov    eax, mission_id;
+		__asm        push   eax;
+		__asm        mov    eax, t;
+		__asm        movzx  ax, byte ptr [eax+0x39];
+		__asm        push   eax;
+		__asm        mov    eax, t;
+		__asm        movzx  ax, byte ptr [eax+0x35];
+		__asm        push   eax;
+		__asm        push   1;
+		__asm        push   0xFFFFFFFF;
+		__asm        call   StartPerson;
+		__asm        add    esp, 0x1C;
+		__asm        movsx  eax, ax;
+		__asm        cmp    eax, 0xFFFFFFFF;
+		__asm        jle    _T15c;
+// LINE 4783:
+		totalpersons++;
+// LINE 4785:
+_T15c:
 	}
 // LINE 4788:
 _T161:
@@ -8502,216 +8502,216 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 4862:
 _FOR_44:
 	for (i = 0x0; (i < 0x1); i++) {
-		// LINE 4865:
-			__asm        mov    eax, i;
-			__asm        mov    eax, trains[0][eax*4];
-			__asm        mov    t, eax;
-		// LINE 4866:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 4;
-			__asm        mov    ecx, t;
-			__asm        add    ecx, 4;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    al, [eax+8];
-			__asm        mov    [ecx+8], al;
-		// LINE 4867:
-			t->stalledTimer = TrainClass::lsTrain.stalledTimer;
-		// LINE 4868:
-			t->direction = TrainClass::lsTrain.direction;
-		// LINE 4869:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x15;
-			__asm        mov    ecx, t;
-			__asm        add    ecx, 0x15;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 4870:
-			t->remainingDist = TrainClass::lsTrain.remainingDist;
-		// LINE 4871:
-			t->remainingTime = TrainClass::lsTrain.remainingTime;
-		// LINE 4872:
-			t->utdirection = TrainClass::lsTrain.utdirection;
-		// LINE 4873:
-			t->speed = TrainClass::lsTrain.speed;
-		// LINE 4874:
-			t->desiredSpeed = TrainClass::lsTrain.desiredSpeed;
-		// LINE 4875:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x35;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, t;
-			__asm        add    edx, 0x35;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 4876:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x3D;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, t;
-			__asm        add    edx, 0x3D;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 4877:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x45;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, t;
-			__asm        add    edx, 0x45;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 4878:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x4D;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, t;
-			__asm        add    edx, 0x4D;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 4879:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x55;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, t;
-			__asm        add    edx, 0x55;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 4880:
-			t->beamDelay = TrainClass::lsTrain.beamDelay;
-		// LINE 4881:
-			t->beamTimer = TrainClass::lsTrain.beamTimer;
-		// LINE 4882:
-			t->utRotation = TrainClass::lsTrain.utRotation;
-		// LINE 4883:
-			t->missionId = TrainClass::lsTrain.missionId;
-		// LINE 4884:
-			t->smokeTime = TrainClass::lsTrain.smokeTime;
-		// LINE 4885:
-			t->timeToLive = TrainClass::lsTrain.timeToLive;
-		// LINE 4886:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x75;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, t;
-			__asm        add    edx, 0x75;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 4887:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x85;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, t;
-			__asm        add    edx, 0x85;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 4888:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x8D;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, t;
-			__asm        add    edx, 0x8D;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 4889:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x7D;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, t;
-			__asm        add    edx, 0x7D;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 4891:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0xB9;
-			__asm        mov    ecx, t;
-			__asm        add    ecx, 0xB9;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 4892:
-			__asm        mov    edi, t;
-			__asm        add    edi, 0xC5;
-			__asm        lea    esi, TrainClass::lsTrain.dyObj1.matrix[0][0];
-			__asm        mov    ecx, 0x10;
-			__asm        rep movsd;
-		// LINE 4893:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x11D;
-			__asm        mov    ecx, t;
-			__asm        add    ecx, 0x11D;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 4894:
-			__asm        mov    edi, t;
-			__asm        add    edi, 0x129;
-			__asm        lea    esi, TrainClass::lsTrain.dyObj2.matrix[0][0];
-			__asm        mov    ecx, 0x10;
-			__asm        rep movsd;
-		// LINE 4895:
-			__asm        mov    eax, 0x62B7B8;
-			__asm        add    eax, 0x181;
-			__asm        mov    ecx, t;
-			__asm        add    ecx, 0x181;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 4896:
-			__asm        mov    edi, t;
-			__asm        add    edi, 0x18D;
-			__asm        lea    esi, TrainClass::lsTrain.dyObj3.matrix[0][0];
-			__asm        mov    ecx, 0x10;
-			__asm        rep movsd;
-		// LINE 4898:
-			__asm        jmp    _T2bb;
-		_T2bb:
-			__asm        mov    eax, t;
-			__asm        movsx  eax, byte ptr [eax+5];
-			__asm        test   eax, eax;
-			__asm        je     _T315;
-		// LINE 4900:
-			t->TrainClass::LinkToCell((t + 0x35), t->leadcar);
-		// LINE 4901:
-			t->TrainClass::LinkToCell((t + 0x3d), t->midcar);
-		// LINE 4902:
-			t->TrainClass::LinkToCell((t + 0x45), t->endcar);
-		// LINE 4909:
-		_T315:
-			ret = ReadNextMIFFChunk(miffReader, 0x5452414e, 0x62b7b8, 0x1d9);
-		// LINE 4911:
-			__asm        cmp    ret, 0;
-			__asm        jne    _T34e;
+// LINE 4865:
+		__asm        mov    eax, i;
+		__asm        mov    eax, trains[0][eax*4];
+		__asm        mov    t, eax;
+// LINE 4866:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 4;
+		__asm        mov    ecx, t;
+		__asm        add    ecx, 4;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    al, [eax+8];
+		__asm        mov    [ecx+8], al;
+// LINE 4867:
+		t->stalledTimer = TrainClass::lsTrain.stalledTimer;
+// LINE 4868:
+		t->direction = TrainClass::lsTrain.direction;
+// LINE 4869:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x15;
+		__asm        mov    ecx, t;
+		__asm        add    ecx, 0x15;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 4870:
+		t->remainingDist = TrainClass::lsTrain.remainingDist;
+// LINE 4871:
+		t->remainingTime = TrainClass::lsTrain.remainingTime;
+// LINE 4872:
+		t->utdirection = TrainClass::lsTrain.utdirection;
+// LINE 4873:
+		t->speed = TrainClass::lsTrain.speed;
+// LINE 4874:
+		t->desiredSpeed = TrainClass::lsTrain.desiredSpeed;
+// LINE 4875:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x35;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, t;
+		__asm        add    edx, 0x35;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 4876:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x3D;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, t;
+		__asm        add    edx, 0x3D;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 4877:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x45;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, t;
+		__asm        add    edx, 0x45;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 4878:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x4D;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, t;
+		__asm        add    edx, 0x4D;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 4879:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x55;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, t;
+		__asm        add    edx, 0x55;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 4880:
+		t->beamDelay = TrainClass::lsTrain.beamDelay;
+// LINE 4881:
+		t->beamTimer = TrainClass::lsTrain.beamTimer;
+// LINE 4882:
+		t->utRotation = TrainClass::lsTrain.utRotation;
+// LINE 4883:
+		t->missionId = TrainClass::lsTrain.missionId;
+// LINE 4884:
+		t->smokeTime = TrainClass::lsTrain.smokeTime;
+// LINE 4885:
+		t->timeToLive = TrainClass::lsTrain.timeToLive;
+// LINE 4886:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x75;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, t;
+		__asm        add    edx, 0x75;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 4887:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x85;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, t;
+		__asm        add    edx, 0x85;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 4888:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x8D;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, t;
+		__asm        add    edx, 0x8D;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 4889:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x7D;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, t;
+		__asm        add    edx, 0x7D;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 4891:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0xB9;
+		__asm        mov    ecx, t;
+		__asm        add    ecx, 0xB9;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 4892:
+		__asm        mov    edi, t;
+		__asm        add    edi, 0xC5;
+		__asm        lea    esi, TrainClass::lsTrain.dyObj1.matrix[0][0];
+		__asm        mov    ecx, 0x10;
+		__asm        rep movsd;
+// LINE 4893:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x11D;
+		__asm        mov    ecx, t;
+		__asm        add    ecx, 0x11D;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 4894:
+		__asm        mov    edi, t;
+		__asm        add    edi, 0x129;
+		__asm        lea    esi, TrainClass::lsTrain.dyObj2.matrix[0][0];
+		__asm        mov    ecx, 0x10;
+		__asm        rep movsd;
+// LINE 4895:
+		__asm        mov    eax, 0x62B7B8;
+		__asm        add    eax, 0x181;
+		__asm        mov    ecx, t;
+		__asm        add    ecx, 0x181;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 4896:
+		__asm        mov    edi, t;
+		__asm        add    edi, 0x18D;
+		__asm        lea    esi, TrainClass::lsTrain.dyObj3.matrix[0][0];
+		__asm        mov    ecx, 0x10;
+		__asm        rep movsd;
+// LINE 4898:
+		__asm        jmp    _T2bb;
+_T2bb:
+		__asm        mov    eax, t;
+		__asm        movsx  eax, byte ptr [eax+5];
+		__asm        test   eax, eax;
+		__asm        je     _T315;
+// LINE 4900:
+		t->TrainClass::LinkToCell((t + 0x35), t->leadcar);
+// LINE 4901:
+		t->TrainClass::LinkToCell((t + 0x3d), t->midcar);
+// LINE 4902:
+		t->TrainClass::LinkToCell((t + 0x45), t->endcar);
+// LINE 4909:
+_T315:
+		ret = ReadNextMIFFChunk(miffReader, 0x5452414e, 0x62b7b8, 0x1d9);
+// LINE 4911:
+		__asm        cmp    ret, 0;
+		__asm        jne    _T34e;
 
-			__asm        cmp    i, 0;
-			__asm        je     _T34e;
-		// LINE 4912:
-			return 0x0;
-		// LINE 4913:
-		_T34e:
+		__asm        cmp    i, 0;
+		__asm        je     _T34e;
+// LINE 4912:
+		return 0x0;
+// LINE 4913:
+_T34e:
 	}
 // LINE 4914:
 _T353:
@@ -8727,24 +8727,24 @@ int32_t TrainClass::MIFFSave(void * __ptr32 miffWriter) {
 // LINE 4928:
 _FOR_15:
 	for (i = 0x0; (i < 0x1); i++) {
-		// LINE 4933:
-			__asm        push   0x1D9;
-			__asm        mov    eax, i;
-			__asm        mov    eax, trains[0][eax*4];
-			__asm        push   eax;
-			__asm        push   0x5452414E;
-			__asm        mov    eax, miffWriter;
-			__asm        push   eax;
-			__asm        call   WriteMIFFChunk;
-			__asm        add    esp, 0x10;
-			__asm        mov    ret, eax;
-		// LINE 4934:
-			__asm        cmp    ret, 0;
-			__asm        jne    _T57;
-		// LINE 4935:
-			return 0x0;
-		// LINE 4936:
-		_T57:
+// LINE 4933:
+		__asm        push   0x1D9;
+		__asm        mov    eax, i;
+		__asm        mov    eax, trains[0][eax*4];
+		__asm        push   eax;
+		__asm        push   0x5452414E;
+		__asm        mov    eax, miffWriter;
+		__asm        push   eax;
+		__asm        call   WriteMIFFChunk;
+		__asm        add    esp, 0x10;
+		__asm        mov    ret, eax;
+// LINE 4934:
+		__asm        cmp    ret, 0;
+		__asm        jne    _T57;
+// LINE 4935:
+		return 0x0;
+// LINE 4936:
+_T57:
 	}
 // LINE 4937:
 _T5c:

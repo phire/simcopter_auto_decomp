@@ -157,7 +157,7 @@ _T29:
 	__asm        test   reinterpret_cast<uint8_t>(state), 0x80;
 	__asm        je     _T5a;
 
-	Memory::HLock(mem);
+Memory::HLock(mem);
 // LINE 168:
 _T5a:
 	__asm        cmp    mem, 0;
@@ -176,9 +176,9 @@ _T80:
 	__asm        cmp    p, 0;
 	__asm        je     _Tc6;
 // LINE 175:
-	Memory::BlockFill(p, 0x0, size);
+Memory::BlockFill(p, 0x0, size);
 // LINE 176:
-	Memory::HUnlock(mem);
+Memory::HUnlock(mem);
 // LINE 178:
 	__asm        jmp    _Te2;
 // LINE 180:
@@ -244,9 +244,9 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        cmp    p, 0;
 	__asm        je     _T59;
 // LINE 228:
-	Memory::BlockFill(p, 0xa3, Memory::HGetSize(mem));
+Memory::BlockFill(p, 0xa3, Memory::HGetSize(mem));
 // LINE 229:
-	Memory::HUnlock(mem);
+Memory::HUnlock(mem);
 // LINE 231:
 	__asm        jmp    _T75;
 // LINE 233:
@@ -274,7 +274,7 @@ void Memory::PFree(unsigned char * mem) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
 // LINE 251:
-	Memory::BlockFill(mem, 0xa3, Memory::PGetSize(mem));
+Memory::BlockFill(mem, 0xa3, Memory::PGetSize(mem));
 // LINE 257:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -376,9 +376,9 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
 // LINE 353:
-	Memory::HUnlock(h);
+Memory::HUnlock(h);
 // LINE 354:
-	Memory::HMoveHi(h);
+Memory::HMoveHi(h);
 // LINE 360:
 	__asm        mov    eax, h;
 	__asm        push   eax;
@@ -601,11 +601,11 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 	__asm        test   reinterpret_cast<uint8_t>(newState), 0x80;
 	__asm        je     _T21;
 
-	Memory::HLock(h);
+Memory::HLock(h);
 // LINE 487:
 	__asm        jmp    _T2d;
 _T21:
-	Memory::HUnlock(h);
+Memory::HUnlock(h);
 // LINE 489:
 _T2d:
 	return;

@@ -232,7 +232,7 @@ _T80:
 _T8d:
 	this->PaletteBuffer::SetPalette();
 // LINE 39:
-	LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeFaceName[0]);
+LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeFaceName[0]);
 // LINE 40:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -310,7 +310,7 @@ _T8d:
 	this->PaletteBuffer::SetPalette(newSparkalColors);
 // LINE 58:
 _Ta9:
-	LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeFaceName[0]);
+LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeFaceName[0]);
 // LINE 59:
 	__asm        push   0x1C;
 	__asm        call   operator new;
@@ -376,14 +376,14 @@ int32_t PaletteBuffer::SetPalette(const /*packed*/ struct SparkalColor *pColors)
 // LINE 81:
 _FOR_18:
 	for (i = 0x0; (i < 0x100); i++) {
-		// LINE 82:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, pColors;
-			__asm        mov    eax, [ecx+eax*4];
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x134];
-			__asm        mov    edx, i;
-			__asm        mov    [ecx+edx*4], eax;
+// LINE 82:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, pColors;
+		__asm        mov    eax, [ecx+eax*4];
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x134];
+		__asm        mov    edx, i;
+		__asm        mov    [ecx+edx*4], eax;
 	}
 // LINE 84:
 _T45:
@@ -420,30 +420,30 @@ _T2d:
 // LINE 104:
 _FOR_59:
 	for (i = 0x0; (i < 0x100); i++) {
-		// LINE 105:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, paletteEntries;
-			__asm        mov    al, [ecx+eax*4];
-			__asm        mov    ecx, i;
-			__asm        mov    edx, this;
-			__asm        mov    edx, [edx+0x134];
-			__asm        mov    [edx+ecx*4+2], al;
-		// LINE 106:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, paletteEntries;
-			__asm        mov    al, [ecx+eax*4+1];
-			__asm        mov    ecx, i;
-			__asm        mov    edx, this;
-			__asm        mov    edx, [edx+0x134];
-			__asm        mov    [edx+ecx*4+1], al;
-		// LINE 107:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, paletteEntries;
-			__asm        mov    al, [ecx+eax*4+2];
-			__asm        mov    ecx, i;
-			__asm        mov    edx, this;
-			__asm        mov    edx, [edx+0x134];
-			__asm        mov    [edx+ecx*4], al;
+// LINE 105:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, paletteEntries;
+		__asm        mov    al, [ecx+eax*4];
+		__asm        mov    ecx, i;
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+0x134];
+		__asm        mov    [edx+ecx*4+2], al;
+// LINE 106:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, paletteEntries;
+		__asm        mov    al, [ecx+eax*4+1];
+		__asm        mov    ecx, i;
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+0x134];
+		__asm        mov    [edx+ecx*4+1], al;
+// LINE 107:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, paletteEntries;
+		__asm        mov    al, [ecx+eax*4+2];
+		__asm        mov    ecx, i;
+		__asm        mov    edx, this;
+		__asm        mov    edx, [edx+0x134];
+		__asm        mov    [edx+ecx*4], al;
 	}
 // LINE 109:
 _Tba:
@@ -488,83 +488,83 @@ _T17:
 // LINE 138:
 _FOR_63:
 	for (i = 0x0; (i < 0x100); i++) {
-		// LINE 139:
-			__asm        mov    ecx, 0x2C;
-			__asm        mov    eax, i;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        shl    eax, 2;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*4];
-			__asm        mov    rectFill.left, eax;
-		// LINE 140:
-			__asm        mov    ecx, 0x2C;
-			__asm        mov    eax, i;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+edx*4];
-			__asm        add    eax, eax;
-			__asm        mov    rectFill.top, eax;
-		// LINE 141:
-			rectFill.right = (rectFill.left + 0xa);
-		// LINE 142:
-			rectFill.bottom = (rectFill.top + 0xa);
-		// LINE 143:
-			__asm        lea    eax, rectFill.left;
-			__asm        push   eax;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x44];
-		// LINE 145:
-			rectFill.right = (rectFill.left + 0x5a);
-		// LINE 146:
-			rectFill.left += 0xb;
-		// LINE 148:
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x134];
-			__asm        mov    ecx, i;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [eax+ecx*4];
-			__asm        push   edx;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x134];
-			__asm        mov    ecx, i;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [eax+ecx*4+1];
-			__asm        push   edx;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x134];
-			__asm        mov    ecx, i;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [eax+ecx*4+2];
-			__asm        push   edx;
-			__asm        mov    eax, i;
-			__asm        push   eax;
-			__asm        push   0x598F14;
-			__asm        lea    eax, szDescriptionString[0];
-			__asm        push   eax;
-			__asm        call   sprintf;
-			__asm        add    esp, 0x18;
-		// LINE 150:
-			__asm        push   0;
-			__asm        lea    eax, rectFill.bottom;
-			__asm        push   eax;
-			__asm        lea    eax, rectFill.right;
-			__asm        push   eax;
-			__asm        lea    eax, rectFill.top;
-			__asm        push   eax;
-			__asm        lea    eax, rectFill.left;
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        lea    eax, szDescriptionString[0];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, this;
-			__asm        call   dword ptr [eax+0x4C];
+// LINE 139:
+		__asm        mov    ecx, 0x2C;
+		__asm        mov    eax, i;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        shl    eax, 2;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*4];
+		__asm        mov    rectFill.left, eax;
+// LINE 140:
+		__asm        mov    ecx, 0x2C;
+		__asm        mov    eax, i;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+edx*4];
+		__asm        add    eax, eax;
+		__asm        mov    rectFill.top, eax;
+// LINE 141:
+		rectFill.right = (rectFill.left + 0xa);
+// LINE 142:
+		rectFill.bottom = (rectFill.top + 0xa);
+// LINE 143:
+		__asm        lea    eax, rectFill.left;
+		__asm        push   eax;
+		__asm        mov    eax, i;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x44];
+// LINE 145:
+		rectFill.right = (rectFill.left + 0x5a);
+// LINE 146:
+		rectFill.left += 0xb;
+// LINE 148:
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x134];
+		__asm        mov    ecx, i;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [eax+ecx*4];
+		__asm        push   edx;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x134];
+		__asm        mov    ecx, i;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [eax+ecx*4+1];
+		__asm        push   edx;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x134];
+		__asm        mov    ecx, i;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [eax+ecx*4+2];
+		__asm        push   edx;
+		__asm        mov    eax, i;
+		__asm        push   eax;
+		__asm        push   0x598F14;
+		__asm        lea    eax, szDescriptionString[0];
+		__asm        push   eax;
+		__asm        call   sprintf;
+		__asm        add    esp, 0x18;
+// LINE 150:
+		__asm        push   0;
+		__asm        lea    eax, rectFill.bottom;
+		__asm        push   eax;
+		__asm        lea    eax, rectFill.right;
+		__asm        push   eax;
+		__asm        lea    eax, rectFill.top;
+		__asm        push   eax;
+		__asm        lea    eax, rectFill.left;
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        lea    eax, szDescriptionString[0];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, this;
+		__asm        call   dword ptr [eax+0x4C];
 	}
 // LINE 152:
 _T15f:

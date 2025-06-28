@@ -149,59 +149,59 @@ _T166:
 	__asm        jmp    __WHILE_16b;
 __WHILE_16b:
 	while (((reinterpret_cast<uint8_t>(_gSparkalApp->_mFlags) & 0x1) != 0x0)) {
-		// LINE 71:
-		__WHILE_17a:
-			__asm        push   1;
-			__asm        push   0;
-			__asm        push   0;
-			__asm        push   0;
-			__asm        lea    eax, Message.hwnd;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C3800];
-			__asm        test   eax, eax;
-			__asm        je     _T1d5;
-		// LINE 72:
-			__asm        cmp    Message.message, 0x12;
-			__asm        jne    _T1bc;
+// LINE 71:
+__WHILE_17a:
+		__asm        push   1;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        lea    eax, Message.hwnd;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C3800];
+		__asm        test   eax, eax;
+		__asm        je     _T1d5;
+// LINE 72:
+		__asm        cmp    Message.message, 0x12;
+		__asm        jne    _T1bc;
 
-			__asm        mov    eax, _gSparkalApp;
-			__asm        mov    [ebp-0x48], eax;
-		// LINE 73:
-			__asm        mov    eax, [ebp-0x48];
-			__asm        and    dword ptr [eax+0xC], 0xFFFFFFFE;
-			__asm        jmp    _T1b2;
-		// LINE 74:
-		_T1b2:
-			__asm        jmp    _T246;
+		__asm        mov    eax, _gSparkalApp;
+		__asm        mov    [ebp-0x48], eax;
+// LINE 73:
+		__asm        mov    eax, [ebp-0x48];
+		__asm        and    dword ptr [eax+0xC], 0xFFFFFFFE;
+		__asm        jmp    _T1b2;
+// LINE 74:
+_T1b2:
+		__asm        jmp    _T246;
 
-			__asm        jmp    Cleanup;
-		// LINE 76:
-		_T1bc:
-			__asm        lea    eax, Message.hwnd;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C37F8];
-		// LINE 77:
-			__asm        lea    eax, Message.hwnd;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C37EC];
-		// LINE 78:
-			__asm        jmp    __WHILE_17a;
-		// LINE 82:
-		_T1d5:
-			__asm        jmp    _T1da;
-		_T1da:
-			__asm        mov    eax, _gSparkalApp;
-			__asm        mov    eax, [eax+0xC];
-			__asm        and    al, 3;
-			__asm        cmp    al, 3;
-			__asm        jne    _T1fc;
-		// LINE 84:
-			__asm        mov    eax, _gSparkalApp;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, _gSparkalApp;
-			__asm        call   dword ptr [eax+0xC];
-		// LINE 86:
-		_T1fc:
+		__asm        jmp    Cleanup;
+// LINE 76:
+_T1bc:
+		__asm        lea    eax, Message.hwnd;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C37F8];
+// LINE 77:
+		__asm        lea    eax, Message.hwnd;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C37EC];
+// LINE 78:
+		__asm        jmp    __WHILE_17a;
+// LINE 82:
+_T1d5:
+		__asm        jmp    _T1da;
+_T1da:
+		__asm        mov    eax, _gSparkalApp;
+		__asm        mov    eax, [eax+0xC];
+		__asm        and    al, 3;
+		__asm        cmp    al, 3;
+		__asm        jne    _T1fc;
+// LINE 84:
+		__asm        mov    eax, _gSparkalApp;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, _gSparkalApp;
+		__asm        call   dword ptr [eax+0xC];
+// LINE 86:
+_T1fc:
 	}
 // LINE 89:
 Cleanup:

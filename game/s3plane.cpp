@@ -434,7 +434,7 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0052b0da
 static void $E4() {
 
-	PlaneClass::lsPlane<vftable> = 0x593220;
+PlaneClass::lsPlane<vftable> = 0x593220;
 	__asm        jmp    _T15;
 _T15:
 	return;
@@ -477,10 +477,10 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 // LINE 177:
 _FOR_21:
 	for (currentFlag = 0x0; (currentFlag < 0x4); currentFlag++) {
-		// LINE 179:
-			__asm        mov    eax, currentFlag;
-			__asm        mov    ecx, this;
-			__asm        mov    byte ptr [eax+ecx+4], 0;
+// LINE 179:
+		__asm        mov    eax, currentFlag;
+		__asm        mov    ecx, this;
+		__asm        mov    byte ptr [eax+ecx+4], 0;
 	}
 // LINE 182:
 _T3e:
@@ -505,7 +505,7 @@ _T3e:
 // LINE 198:
 	this->planeModel = 0x12e;
 // LINE 199:
-	PlaneClass::sPlaneModelSet = 0x1;
+PlaneClass::sPlaneModelSet = 0x1;
 // LINE 201:
 	__asm        jmp    _Tba;
 // LINE 203:
@@ -640,10 +640,10 @@ void PlaneClass::ResetAll() {
 // LINE 498:
 _FOR_15:
 	for (currentPlaneIndex = 0x0; (currentPlaneIndex < 0x2); currentPlaneIndex++) {
-		// LINE 500:
-			__asm        mov    eax, currentPlaneIndex;
-			__asm        mov    ecx, planes[0][eax*4];
-			__asm        call   PlaneClass::Reset;
+// LINE 500:
+		__asm        mov    eax, currentPlaneIndex;
+		__asm        mov    ecx, planes[0][eax*4];
+		__asm        call   PlaneClass::Reset;
 	}
 // LINE 503:
 _T36:
@@ -657,10 +657,10 @@ void PlaneClass::ItterateAll() {
 // LINE 548:
 _FOR_15:
 	for (currentPlaneIndex = 0x0; (currentPlaneIndex < 0x2); currentPlaneIndex++) {
-		// LINE 550:
-			__asm        mov    eax, currentPlaneIndex;
-			__asm        mov    ecx, planes[0][eax*4];
-			__asm        call   PlaneClass::Itterate;
+// LINE 550:
+		__asm        mov    eax, currentPlaneIndex;
+		__asm        mov    ecx, planes[0][eax*4];
+		__asm        call   PlaneClass::Itterate;
 	}
 // LINE 553:
 _T36:
@@ -674,53 +674,53 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 // LINE 580:
 _FOR_15:
 	for (currentPlaneIndex = 0x0; (currentPlaneIndex < 0x2); currentPlaneIndex++) {
-		// LINE 584:
-			__asm        jmp    _T27;
-		_T27:
-			__asm        mov    eax, currentPlaneIndex;
-			__asm        mov    eax, planes[0][eax*4];
-			__asm        movsx  eax, byte ptr [eax+6];
-			__asm        test   eax, eax;
-			__asm        jne    _Tb4;
+// LINE 584:
+		__asm        jmp    _T27;
+_T27:
+		__asm        mov    eax, currentPlaneIndex;
+		__asm        mov    eax, planes[0][eax*4];
+		__asm        movsx  eax, byte ptr [eax+6];
+		__asm        test   eax, eax;
+		__asm        jne    _Tb4;
 
-			__asm        jmp    _T42;
-		_T42:
-			__asm        mov    eax, currentPlaneIndex;
-			__asm        mov    eax, planes[0][eax*4];
-			__asm        movsx  eax, byte ptr [eax+7];
-			__asm        test   eax, eax;
-			__asm        jne    _Tb4;
+		__asm        jmp    _T42;
+_T42:
+		__asm        mov    eax, currentPlaneIndex;
+		__asm        mov    eax, planes[0][eax*4];
+		__asm        movsx  eax, byte ptr [eax+7];
+		__asm        test   eax, eax;
+		__asm        jne    _Tb4;
 
-			__asm        mov    eax, currentPlaneIndex;
-			__asm        mov    eax, planes[0][eax*4];
-			__asm        cmp    dword ptr [eax+0x54], 0x12E;
-			__asm        jne    _T74;
+		__asm        mov    eax, currentPlaneIndex;
+		__asm        mov    eax, planes[0][eax*4];
+		__asm        cmp    dword ptr [eax+0x54], 0x12E;
+		__asm        jne    _T74;
 
-			__asm        jmp    _T88;
-		_T74:
-			__asm        jmp    _Tb4;
+		__asm        jmp    _T88;
+_T74:
+		__asm        jmp    _Tb4;
 
-			__asm        jmp    _T88;
+		__asm        jmp    _T88;
 
-			__asm        cmp    dword ptr [ebp-8], 0;
-			__asm        jne    _Tb4;
-		// LINE 585:
-		_T88:
-			__asm        mov    eax, currentPlaneIndex;
-			__asm        mov    eax, planes[0][eax*4];
-			__asm        mov    [ebp-0xC], eax;
-		// LINE 586:
-			__asm        mov    eax, [ebp-0xC];
-			__asm        mov    byte ptr [eax+6], 1;
-			__asm        mov    eax, mission_id;
-			__asm        mov    ecx, [ebp-0xC];
-			__asm        mov    [ecx+0x3C], eax;
-			__asm        jmp    _Taa;
-		// LINE 587:
-		_Taa:
-			return 0x1;
-		// LINE 589:
-		_Tb4:
+		__asm        cmp    dword ptr [ebp-8], 0;
+		__asm        jne    _Tb4;
+// LINE 585:
+_T88:
+		__asm        mov    eax, currentPlaneIndex;
+		__asm        mov    eax, planes[0][eax*4];
+		__asm        mov    [ebp-0xC], eax;
+// LINE 586:
+		__asm        mov    eax, [ebp-0xC];
+		__asm        mov    byte ptr [eax+6], 1;
+		__asm        mov    eax, mission_id;
+		__asm        mov    ecx, [ebp-0xC];
+		__asm        mov    [ecx+0x3C], eax;
+		__asm        jmp    _Taa;
+// LINE 587:
+_Taa:
+		return 0x1;
+// LINE 589:
+_Tb4:
 	}
 // LINE 591:
 _Tb9:
@@ -1414,26 +1414,26 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 // LINE 1287:
 __WHILE_28:
 	while ((deltaX > 0x80)) {
-		// LINE 1289:
-			deltaX -= 0x100;
+// LINE 1289:
+		deltaX -= 0x100;
 	}
 // LINE 1291:
 __WHILE_41:
 	while ((deltaX < -0x80)) {
-		// LINE 1293:
-			deltaX += 0x100;
+// LINE 1293:
+		deltaX += 0x100;
 	}
 // LINE 1296:
 __WHILE_57:
 	while ((deltaY > 0x80)) {
-		// LINE 1298:
-			deltaY -= 0x100;
+// LINE 1298:
+		deltaY -= 0x100;
 	}
 // LINE 1300:
 __WHILE_70:
 	while ((deltaY < -0x80)) {
-		// LINE 1302:
-			deltaY += 0x100;
+// LINE 1302:
+		deltaY += 0x100;
 	}
 // LINE 1305:
 _T86:
@@ -1745,277 +1745,277 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, /*packed*/ struct _CELL_IN
 // LINE 1498:
 __WHILE_64:
 	while ((stobj != 0x0)) {
-		// LINE 1502:
-			_VRGetObjInfo(stobj->mesh, oinfo.Faces);
-		// LINE 1503:
-			_VRGetObjCenter(stobj->mesh, center.x);
-		// LINE 1505:
-			__asm        lea    eax, cloc.x;
-			__asm        lea    ecx, oloc.x;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 1506:
-			oloc.x += center.x;
-		// LINE 1507:
-			oloc.y += center.y;
-		// LINE 1508:
-			oloc.z += center.z;
-		// LINE 1514:
-			newdist = S3MissileSphereHit((this + 0x70), (this + 0x8), dist, oloc.x, oinfo.Radius);
-		// LINE 1518:
-			__asm        cmp    newdist, 0;
-			__asm        jle    _T147;
-		// LINE 1525:
-			newdist = VRStObjPolyHit((this + 0x70), (this + 0x8), dist, cloc.x, stobj->mesh, norm);
-		// LINE 1528:
-		_T147:
-			__asm        cmp    newdist, 0;
-			__asm        jle    _T5d6;
-		// LINE 1532:
-			__asm        mov    eax, newdist;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+8];
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x70];
-			__asm        add    ecx, eax;
-			__asm        mov    loc.x, ecx;
-		// LINE 1533:
-			__asm        mov    eax, newdist;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0xC];
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x74];
-			__asm        add    ecx, eax;
-			__asm        mov    loc.y, ecx;
-		// LINE 1534:
-			__asm        mov    eax, newdist;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x10];
-			__asm        push   eax;
-			__asm        call   _FixedMul;
-			__asm        add    esp, 8;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x78];
-			__asm        add    ecx, eax;
-			__asm        mov    loc.z, ecx;
-		// LINE 1535:
-			__asm        lea    eax, loc.x;
-			__asm        lea    ecx, sloc.x;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 1536:
-			loc.x -= cloc.x;
-		// LINE 1537:
-			loc.y -= cloc.y;
-		// LINE 1538:
-			loc.z -= cloc.z;
-		// LINE 1540:
-			S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, this->missionId);
-		// LINE 1542:
-			S3DSPlay(0x1a, sloc.x, 0x0);
-		// LINE 1545:
-			this->PlaneClass::UnPlacePlane();
-		// LINE 1546:
-			this->flags[3] = 0x0;
-		// LINE 1549:
-			new_mission_id = 0xffffffff;
-		// LINE 1551:
-			__asm        mov    eax, celloc.y;
-			__asm        push   eax;
-			__asm        mov    eax, celloc.x;
-			__asm        push   eax;
-			__asm        call   S3FireCanCellBurn;
-			__asm        add    esp, 8;
-			__asm        cmp    eax, 1;
-			__asm        jne    _T2e4;
+// LINE 1502:
+		_VRGetObjInfo(stobj->mesh, oinfo.Faces);
+// LINE 1503:
+		_VRGetObjCenter(stobj->mesh, center.x);
+// LINE 1505:
+		__asm        lea    eax, cloc.x;
+		__asm        lea    ecx, oloc.x;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 1506:
+		oloc.x += center.x;
+// LINE 1507:
+		oloc.y += center.y;
+// LINE 1508:
+		oloc.z += center.z;
+// LINE 1514:
+		newdist = S3MissileSphereHit((this + 0x70), (this + 0x8), dist, oloc.x, oinfo.Radius);
+// LINE 1518:
+		__asm        cmp    newdist, 0;
+		__asm        jle    _T147;
+// LINE 1525:
+		newdist = VRStObjPolyHit((this + 0x70), (this + 0x8), dist, cloc.x, stobj->mesh, norm);
+// LINE 1528:
+_T147:
+		__asm        cmp    newdist, 0;
+		__asm        jle    _T5d6;
+// LINE 1532:
+		__asm        mov    eax, newdist;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+8];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x70];
+		__asm        add    ecx, eax;
+		__asm        mov    loc.x, ecx;
+// LINE 1533:
+		__asm        mov    eax, newdist;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0xC];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x74];
+		__asm        add    ecx, eax;
+		__asm        mov    loc.y, ecx;
+// LINE 1534:
+		__asm        mov    eax, newdist;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x10];
+		__asm        push   eax;
+		__asm        call   _FixedMul;
+		__asm        add    esp, 8;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x78];
+		__asm        add    ecx, eax;
+		__asm        mov    loc.z, ecx;
+// LINE 1535:
+		__asm        lea    eax, loc.x;
+		__asm        lea    ecx, sloc.x;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 1536:
+		loc.x -= cloc.x;
+// LINE 1537:
+		loc.y -= cloc.y;
+// LINE 1538:
+		loc.z -= cloc.z;
+// LINE 1540:
+		S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, this->missionId);
+// LINE 1542:
+		S3DSPlay(0x1a, sloc.x, 0x0);
+// LINE 1545:
+		this->PlaneClass::UnPlacePlane();
+// LINE 1546:
+		this->flags[3] = 0x0;
+// LINE 1549:
+		new_mission_id = 0xffffffff;
+// LINE 1551:
+		__asm        mov    eax, celloc.y;
+		__asm        push   eax;
+		__asm        mov    eax, celloc.x;
+		__asm        push   eax;
+		__asm        call   S3FireCanCellBurn;
+		__asm        add    esp, 8;
+		__asm        cmp    eax, 1;
+		__asm        jne    _T2e4;
 
-			__asm        mov    eax, cptr;
-			__asm        movsx  eax, word ptr [eax];
-			__asm        test   al, 0x20;
-			__asm        jne    _T2e4;
-		// LINE 1554:
-			__asm        call   S3FireGetCount;
-			__asm        test   eax, eax;
-			__asm        jne    _T2cb;
-		// LINE 1556:
-			new_mission_id = S3MissionStart(celloc.x, celloc.y, 0x1);
-		// LINE 1558:
-			__asm        jmp    _T2e4;
-		// LINE 1560:
-		_T2cb:
-			new_mission_id = S3FireAddToNearest(cptr, celloc.x);
-		// LINE 1564:
-		_T2e4:
-			__asm        cmp    new_mission_id, 0xFFFFFFFF;
-			__asm        je     _T449;
-		// LINE 1568:
-			mp.op = 0x1d;
-		// LINE 1569:
-			mp.i2num = 0x4;
-		// LINE 1570:
-			mp.id = this->missionId;
-		// LINE 1571:
-			S3MissionUpdate(mp.op);
-		// LINE 1572:
-			this->missionId = new_mission_id;
-		// LINE 1574:
+		__asm        mov    eax, cptr;
+		__asm        movsx  eax, word ptr [eax];
+		__asm        test   al, 0x20;
+		__asm        jne    _T2e4;
+// LINE 1554:
+		__asm        call   S3FireGetCount;
+		__asm        test   eax, eax;
+		__asm        jne    _T2cb;
+// LINE 1556:
+		new_mission_id = S3MissionStart(celloc.x, celloc.y, 0x1);
+// LINE 1558:
+		__asm        jmp    _T2e4;
+// LINE 1560:
+_T2cb:
+		new_mission_id = S3FireAddToNearest(cptr, celloc.x);
+// LINE 1564:
+_T2e4:
+		__asm        cmp    new_mission_id, 0xFFFFFFFF;
+		__asm        je     _T449;
+// LINE 1568:
+		mp.op = 0x1d;
+// LINE 1569:
+		mp.i2num = 0x4;
+// LINE 1570:
+		mp.id = this->missionId;
+// LINE 1571:
+		S3MissionUpdate(mp.op);
+// LINE 1572:
+		this->missionId = new_mission_id;
+// LINE 1574:
+		__asm        call   rand;
+		__asm        mov    ecx, cptr;
+		__asm        movsx  ecx, word ptr [ecx+8];
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+3];
+		__asm        mov    num_debris, eax;
+// LINE 1575:
+_FOR_35c:
+		for (j = 0x0; (j < num_debris); j++) {
+// LINE 1577:
 			__asm        call   rand;
-			__asm        mov    ecx, cptr;
-			__asm        movsx  ecx, word ptr [ecx+8];
+			__asm        mov    ecx, 0x1E;
 			__asm        movsx  eax, ax;
 			__asm        cdq;
 			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+3];
-			__asm        mov    num_debris, eax;
-		// LINE 1575:
-		_FOR_35c:
-			for (j = 0x0; (j < num_debris); j++) {
-				// LINE 1577:
-					__asm        call   rand;
-					__asm        mov    ecx, 0x1E;
-					__asm        movsx  eax, ax;
-					__asm        cdq;
-					__asm        idiv   ecx;
-					__asm        mov    eax, edx;
-					__asm        shl    eax, 0x10;
-					__asm        add    eax, 0x190000;
-					__asm        mov    speed, eax;
-				// LINE 1578:
-					_VRIdentity4x4(refmat[0][0]);
-				// LINE 1579:
-					__asm        lea    eax, refmat[0][0];
-					__asm        push   eax;
-					__asm        call   rand;
-					__asm        mov    ecx, 0xE10;
-					__asm        movsx  eax, ax;
-					__asm        cdq;
-					__asm        idiv   ecx;
-					__asm        mov    eax, edx;
-					__asm        shl    eax, 0x10;
-					__asm        push   eax;
-					__asm        call   _VRPostYRot;
-					__asm        add    esp, 8;
-				// LINE 1580:
-					__asm        lea    eax, refmat[0][0];
-					__asm        push   eax;
-					__asm        call   rand;
-					__asm        mov    ecx, 0x78;
-					__asm        movsx  eax, ax;
-					__asm        cdq;
-					__asm        idiv   ecx;
-					__asm        lea    eax, [edx+0x2EE];
-					__asm        shl    eax, 0x10;
-					__asm        push   eax;
-					__asm        call   _VRPostXRot;
-					__asm        add    esp, 8;
-				// LINE 1581:
-					_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
-				// LINE 1592:
-					S3MissileStart(0x4, celloc.x, sloc.x, vec.x, 0x8, (this + 0x58), speed, this->missionId);
-			}
-		// LINE 1595:
-		_T444:
-			__asm        jmp    _T5cc;
-		// LINE 1598:
-		_T449:
+			__asm        mov    eax, edx;
+			__asm        shl    eax, 0x10;
+			__asm        add    eax, 0x190000;
+			__asm        mov    speed, eax;
+// LINE 1578:
+			_VRIdentity4x4(refmat[0][0]);
+// LINE 1579:
+			__asm        lea    eax, refmat[0][0];
+			__asm        push   eax;
 			__asm        call   rand;
-			__asm        mov    ecx, cptr;
-			__asm        movsx  ecx, word ptr [ecx+8];
+			__asm        mov    ecx, 0xE10;
 			__asm        movsx  eax, ax;
 			__asm        cdq;
 			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+3];
-			__asm        mov    num_debris, eax;
-		// LINE 1599:
-		_FOR_473:
-			for (j = 0x0; (j < num_debris); j++) {
-				// LINE 1601:
-					__asm        call   rand;
-					__asm        mov    ecx, 0x1E;
-					__asm        movsx  eax, ax;
-					__asm        cdq;
-					__asm        idiv   ecx;
-					__asm        mov    eax, edx;
-					__asm        shl    eax, 0x10;
-					__asm        add    eax, 0x190000;
-					__asm        mov    speed, eax;
-				// LINE 1602:
-					_VRIdentity4x4(refmat[0][0]);
-				// LINE 1603:
-					__asm        lea    eax, refmat[0][0];
-					__asm        push   eax;
-					__asm        call   rand;
-					__asm        mov    ecx, 0xE10;
-					__asm        movsx  eax, ax;
-					__asm        cdq;
-					__asm        idiv   ecx;
-					__asm        mov    eax, edx;
-					__asm        shl    eax, 0x10;
-					__asm        push   eax;
-					__asm        call   _VRPostYRot;
-					__asm        add    esp, 8;
-				// LINE 1604:
-					__asm        lea    eax, refmat[0][0];
-					__asm        push   eax;
-					__asm        call   rand;
-					__asm        mov    ecx, 0x78;
-					__asm        movsx  eax, ax;
-					__asm        cdq;
-					__asm        idiv   ecx;
-					__asm        lea    eax, [edx+0x2EE];
-					__asm        shl    eax, 0x10;
-					__asm        push   eax;
-					__asm        call   _VRPostXRot;
-					__asm        add    esp, 8;
-				// LINE 1605:
-					_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
-				// LINE 1616:
-					S3MissileStart(0x4, celloc.x, sloc.x, vec.x, 0x8, (this + 0x58), speed, this->missionId);
-			}
-		// LINE 1621:
-		_T55b:
-			mp.op = 0x1d;
-		// LINE 1622:
-			mp.i2num = 0x0;
-		// LINE 1623:
-			mp.id = this->missionId;
-		// LINE 1624:
-			S3MissionUpdate(mp.op);
-		// LINE 1626:
-			mp.op = 0x0;
-		// LINE 1627:
-			mp.id = this->missionId;
-		// LINE 1628:
-			__asm        mov    eax, celloc.x;
-			__asm        mov    ecx, celloc.y;
-			__asm        lea    edx, mp.maploc.x;
-			__asm        mov    [edx], eax;
-			__asm        mov    [edx+4], ecx;
-		// LINE 1629:
-			S3MissionUpdate(mp.op);
-		// LINE 1635:
-		_T5cc:
-			return 0x1;
-		// LINE 1640:
-		_T5d6:
-			stobj = stobj->next;
+			__asm        mov    eax, edx;
+			__asm        shl    eax, 0x10;
+			__asm        push   eax;
+			__asm        call   _VRPostYRot;
+			__asm        add    esp, 8;
+// LINE 1580:
+			__asm        lea    eax, refmat[0][0];
+			__asm        push   eax;
+			__asm        call   rand;
+			__asm        mov    ecx, 0x78;
+			__asm        movsx  eax, ax;
+			__asm        cdq;
+			__asm        idiv   ecx;
+			__asm        lea    eax, [edx+0x2EE];
+			__asm        shl    eax, 0x10;
+			__asm        push   eax;
+			__asm        call   _VRPostXRot;
+			__asm        add    esp, 8;
+// LINE 1581:
+			_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
+// LINE 1592:
+			S3MissileStart(0x4, celloc.x, sloc.x, vec.x, 0x8, (this + 0x58), speed, this->missionId);
+		}
+// LINE 1595:
+_T444:
+		__asm        jmp    _T5cc;
+// LINE 1598:
+_T449:
+		__asm        call   rand;
+		__asm        mov    ecx, cptr;
+		__asm        movsx  ecx, word ptr [ecx+8];
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+3];
+		__asm        mov    num_debris, eax;
+// LINE 1599:
+_FOR_473:
+		for (j = 0x0; (j < num_debris); j++) {
+// LINE 1601:
+			__asm        call   rand;
+			__asm        mov    ecx, 0x1E;
+			__asm        movsx  eax, ax;
+			__asm        cdq;
+			__asm        idiv   ecx;
+			__asm        mov    eax, edx;
+			__asm        shl    eax, 0x10;
+			__asm        add    eax, 0x190000;
+			__asm        mov    speed, eax;
+// LINE 1602:
+			_VRIdentity4x4(refmat[0][0]);
+// LINE 1603:
+			__asm        lea    eax, refmat[0][0];
+			__asm        push   eax;
+			__asm        call   rand;
+			__asm        mov    ecx, 0xE10;
+			__asm        movsx  eax, ax;
+			__asm        cdq;
+			__asm        idiv   ecx;
+			__asm        mov    eax, edx;
+			__asm        shl    eax, 0x10;
+			__asm        push   eax;
+			__asm        call   _VRPostYRot;
+			__asm        add    esp, 8;
+// LINE 1604:
+			__asm        lea    eax, refmat[0][0];
+			__asm        push   eax;
+			__asm        call   rand;
+			__asm        mov    ecx, 0x78;
+			__asm        movsx  eax, ax;
+			__asm        cdq;
+			__asm        idiv   ecx;
+			__asm        lea    eax, [edx+0x2EE];
+			__asm        shl    eax, 0x10;
+			__asm        push   eax;
+			__asm        call   _VRPostXRot;
+			__asm        add    esp, 8;
+// LINE 1605:
+			_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
+// LINE 1616:
+			S3MissileStart(0x4, celloc.x, sloc.x, vec.x, 0x8, (this + 0x58), speed, this->missionId);
+		}
+// LINE 1621:
+_T55b:
+		mp.op = 0x1d;
+// LINE 1622:
+		mp.i2num = 0x0;
+// LINE 1623:
+		mp.id = this->missionId;
+// LINE 1624:
+		S3MissionUpdate(mp.op);
+// LINE 1626:
+		mp.op = 0x0;
+// LINE 1627:
+		mp.id = this->missionId;
+// LINE 1628:
+		__asm        mov    eax, celloc.x;
+		__asm        mov    ecx, celloc.y;
+		__asm        lea    edx, mp.maploc.x;
+		__asm        mov    [edx], eax;
+		__asm        mov    [edx+4], ecx;
+// LINE 1629:
+		S3MissionUpdate(mp.op);
+// LINE 1635:
+_T5cc:
+		return 0x1;
+// LINE 1640:
+_T5d6:
+		stobj = stobj->next;
 	}
 // LINE 1647:
 _T5e3:
@@ -2094,48 +2094,48 @@ _T5e3:
 // LINE 1711:
 _FOR_754:
 	for (j = 0x0; (j < num_debris); j++) {
-		// LINE 1713:
-			__asm        call   rand;
-			__asm        mov    ecx, 0x1E;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        add    eax, 0x190000;
-			__asm        mov    speed, eax;
-		// LINE 1714:
-			_VRIdentity4x4(refmat[0][0]);
-		// LINE 1715:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0xE10;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        mov    eax, edx;
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostYRot;
-			__asm        add    esp, 8;
-		// LINE 1716:
-			__asm        lea    eax, refmat[0][0];
-			__asm        push   eax;
-			__asm        call   rand;
-			__asm        mov    ecx, 0x78;
-			__asm        movsx  eax, ax;
-			__asm        cdq;
-			__asm        idiv   ecx;
-			__asm        lea    eax, [edx+0x2EE];
-			__asm        shl    eax, 0x10;
-			__asm        push   eax;
-			__asm        call   _VRPostXRot;
-			__asm        add    esp, 8;
-		// LINE 1717:
-			_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
-		// LINE 1728:
-			S3MissileStart(0x4, celloc.x, sloc.x, vec.x, 0x8, (this + 0x58), speed, this->missionId);
+// LINE 1713:
+		__asm        call   rand;
+		__asm        mov    ecx, 0x1E;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        add    eax, 0x190000;
+		__asm        mov    speed, eax;
+// LINE 1714:
+		_VRIdentity4x4(refmat[0][0]);
+// LINE 1715:
+		__asm        lea    eax, refmat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0xE10;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        mov    eax, edx;
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostYRot;
+		__asm        add    esp, 8;
+// LINE 1716:
+		__asm        lea    eax, refmat[0][0];
+		__asm        push   eax;
+		__asm        call   rand;
+		__asm        mov    ecx, 0x78;
+		__asm        movsx  eax, ax;
+		__asm        cdq;
+		__asm        idiv   ecx;
+		__asm        lea    eax, [edx+0x2EE];
+		__asm        shl    eax, 0x10;
+		__asm        push   eax;
+		__asm        call   _VRPostXRot;
+		__asm        add    esp, 8;
+// LINE 1717:
+		_VRRotateP3d(0x59b518, vec.x, refmat[0][0]);
+// LINE 1728:
+		S3MissileStart(0x4, celloc.x, sloc.x, vec.x, 0x8, (this + 0x58), speed, this->missionId);
 	}
 // LINE 1733:
 _T83c:
@@ -2243,19 +2243,19 @@ _T90:
 // LINE 1838:
 __WHILE_a3:
 	while ((dyptrptr-> != 0x0)) {
-		// LINE 1842:
-			__asm        mov    eax, this;
-			__asm        add    eax, 0x58;
-			__asm        mov    ecx, dyptrptr;
-			__asm        cmp    eax, [ecx];
-			__asm        jne    _Td0;
-		// LINE 1846:
-			dyptrptr-> = this->dyObj.next;
-		// LINE 1848:
-			return;
-		// LINE 1851:
-		_Td0:
-			dyptrptr = dyptrptr->;
+// LINE 1842:
+		__asm        mov    eax, this;
+		__asm        add    eax, 0x58;
+		__asm        mov    ecx, dyptrptr;
+		__asm        cmp    eax, [ecx];
+		__asm        jne    _Td0;
+// LINE 1846:
+		dyptrptr-> = this->dyObj.next;
+// LINE 1848:
+		return;
+// LINE 1851:
+_Td0:
+		dyptrptr = dyptrptr->;
 	}
 // LINE 1854:
 _Tdd:
@@ -2722,98 +2722,98 @@ _T1c9:
 // LINE 2126:
 _LOOP_1ce:
 	for (;;) {
-		// LINE 2126:
-		_LOOP_1ce:
-			curr_dir++;
-		// LINE 2127:
-			__asm        mov    eax, curr_dir;
-			__asm        mov    [ebp-0x50], eax;
-			__asm        jmp    _T23a;
-		// LINE 2131:
-		_T1dc:
-			curr_dir = 0x0;
-		// LINE 2132:
-			curr_dist++;
-		// LINE 2133:
-			xdir = 0x0;
-		// LINE 2134:
-			ydir = 0xffffffff;
-		// LINE 2135:
-			__asm        jmp    _T262;
-		// LINE 2137:
-		_T1f9:
-			xdir = 0x1;
-		// LINE 2138:
-			ydir = 0x0;
-		// LINE 2139:
-			__asm        jmp    _T262;
-		// LINE 2141:
-		_T20c:
-			curr_dist++;
-		// LINE 2142:
-			xdir = 0x0;
-		// LINE 2143:
-			ydir = 0x1;
-		// LINE 2144:
-			__asm        jmp    _T262;
-		// LINE 2146:
-		_T222:
-			xdir = 0xffffffff;
-		// LINE 2147:
-			ydir = 0x0;
-		// LINE 2148:
-			__asm        jmp    _T262;
-		// LINE 2149:
-			__asm        jmp    _T262;
-		_T23a:
-			__asm        cmp    dword ptr [ebp-0x50], 4;
-			__asm        ja     _T262;
+// LINE 2126:
+_LOOP_1ce:
+		curr_dir++;
+// LINE 2127:
+		__asm        mov    eax, curr_dir;
+		__asm        mov    [ebp-0x50], eax;
+		__asm        jmp    _T23a;
+// LINE 2131:
+_T1dc:
+		curr_dir = 0x0;
+// LINE 2132:
+		curr_dist++;
+// LINE 2133:
+		xdir = 0x0;
+// LINE 2134:
+		ydir = 0xffffffff;
+// LINE 2135:
+		__asm        jmp    _T262;
+// LINE 2137:
+_T1f9:
+		xdir = 0x1;
+// LINE 2138:
+		ydir = 0x0;
+// LINE 2139:
+		__asm        jmp    _T262;
+// LINE 2141:
+_T20c:
+		curr_dist++;
+// LINE 2142:
+		xdir = 0x0;
+// LINE 2143:
+		ydir = 0x1;
+// LINE 2144:
+		__asm        jmp    _T262;
+// LINE 2146:
+_T222:
+		xdir = 0xffffffff;
+// LINE 2147:
+		ydir = 0x0;
+// LINE 2148:
+		__asm        jmp    _T262;
+// LINE 2149:
+		__asm        jmp    _T262;
+_T23a:
+		__asm        cmp    dword ptr [ebp-0x50], 4;
+		__asm        ja     _T262;
 
-			__asm        mov    eax, [ebp-0x50];
-			__asm        jmp    _Switch_24e[0][eax*4];
+		__asm        mov    eax, [ebp-0x50];
+		__asm        jmp    _Switch_24e[0][eax*4];
 		// Switch pointers:
 		//   _T1dc
 		//   _T1f9
 		//   _T20c
 		//   _T222
 		//   _T1dc
-		// LINE 2153:
-		_T262:
-			__asm        mov    eax, curr_dist;
-			__asm        cmp    spiral_dist, eax;
-			__asm        jne    _T278;
-		// LINE 2155:
-			curr_dist--;
-		// LINE 2156:
-			stop_now = 0x1;
-		// LINE 2160:
-		_T278:
-			i = 0x0;
-			__asm        jmp    _T287;
-		_T284:
-			i++;
-		_T287:
-			__asm        mov    eax, i;
-			__asm        cmp    curr_dist, eax;
-			__asm        jle    _T2ae;
-		// LINE 2162:
-			beampoint.x = x;
-		// LINE 2163:
-			beampoint.y = y;
-		// LINE 2164:
-			__asm        jmp    _T37c;
+// LINE 2153:
+_T262:
+		__asm        mov    eax, curr_dist;
+		__asm        cmp    spiral_dist, eax;
+		__asm        jne    _T278;
+// LINE 2155:
+		curr_dist--;
+// LINE 2156:
+		stop_now = 0x1;
+// LINE 2160:
+_T278:
+		i = 0x0;
+		__asm        jmp    _T287;
+_T284:
+		i++;
+_T287:
+		__asm        mov    eax, i;
+		__asm        cmp    curr_dist, eax;
+		__asm        jle    _T2ae;
+// LINE 2162:
+		beampoint.x = x;
+// LINE 2163:
+		beampoint.y = y;
+// LINE 2164:
+		__asm        jmp    _T37c;
 
-			__asm        jmp    _FOR_2d3;
-		// LINE 2167:
-			__asm        jmp    _T284;
-		// LINE 2169:
-		_T2ae:
-			__asm        cmp    stop_now, 1;
-			__asm        jne    _T2bd;
-		// LINE 2171:
-			__asm        jmp    _T2c2;
-		// LINE 2173:
-		_T2bd:
+		__asm        jmp    _FOR_2d3;
+// LINE 2167:
+		__asm        jmp    _T284;
+// LINE 2169:
+_T2ae:
+		__asm        cmp    stop_now, 1;
+		__asm        jne    _T2bd;
+// LINE 2171:
+		__asm        jmp    _T2c2;
+// LINE 2173:
+_T2bd:
 	}
 // LINE 2176:
 _T2c2:
@@ -2821,10 +2821,10 @@ _T2c2:
 // LINE 2182:
 _FOR_2d3:
 	for (currentFlag = 0x3; (currentFlag < 0x4); currentFlag++) {
-		// LINE 2184:
-			__asm        mov    eax, currentFlag;
-			__asm        mov    ecx, this;
-			__asm        mov    byte ptr [eax+ecx+4], 0;
+// LINE 2184:
+		__asm        mov    eax, currentFlag;
+		__asm        mov    ecx, this;
+		__asm        mov    byte ptr [eax+ecx+4], 0;
 	}
 // LINE 2187:
 _T2f0:
@@ -3051,7 +3051,7 @@ _T9b:
 // FUNCTION: COPTER_D 0x0052d6bd
 void CreatePlaneInstance(int32_t instanceID) {
 // LINE 2554:
-	PlaneClass::CreateInstance(instanceID);
+PlaneClass::CreateInstance(instanceID);
 // LINE 2555:
 	return;
 }
@@ -3066,7 +3066,7 @@ int32_t S3PlaneCrashWhenReady(long mission_id) {
 // FUNCTION: COPTER_D 0x0052d6f5
 void ResetAllPlanes() {
 // LINE 2597:
-	PlaneClass::ResetAll();
+PlaneClass::ResetAll();
 // LINE 2598:
 	return;
 }
@@ -3074,7 +3074,7 @@ void ResetAllPlanes() {
 // FUNCTION: COPTER_D 0x0052d70a
 void ItterateAllPlanes() {
 // LINE 2620:
-	PlaneClass::ItterateAll();
+PlaneClass::ItterateAll();
 // LINE 2621:
 	return;
 }
@@ -3255,23 +3255,23 @@ _T1f8:
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    _Switch_20c[0][eax*4];
-// Switch pointers:
-//   _T14
-//   _T19
-//   _T1e
-//   _T23
-//   _T115
-//   _T11a
-//   _T11f
-//   _T124
-//   _T1c6
-//   _T1cb
-//   _T1d0
-//   _T1d5
-//   _T1da
-//   _T1df
-//   _T1e4
-//   _T1e9
+	// Switch pointers:
+	//   _T14
+	//   _T19
+	//   _T1e
+	//   _T23
+	//   _T115
+	//   _T11a
+	//   _T11f
+	//   _T124
+	//   _T1c6
+	//   _T1cb
+	//   _T1d0
+	//   _T1d5
+	//   _T1da
+	//   _T1df
+	//   _T1e4
+	//   _T1e9
 // LINE 2698:
 _T24c:
 	return;
@@ -3280,7 +3280,7 @@ _T24c:
 // FUNCTION: COPTER_D 0x0052d975
 void PlaneHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, /*packed*/ struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
 // LINE 2708:
-	PlaneClass::HitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
+PlaneClass::HitDispatch(hitter_type, dyhitter, dyhittee, mission_id, xtra_msg);
 // LINE 2709:
 	return;
 }
@@ -3304,22 +3304,22 @@ void PlaneClass::TurnOnShields() {
 // LINE 2730:
 _FOR_3d:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
-		// LINE 2732:
-			_VRGetFaceInfo(face, finfo.Face);
-		// LINE 2733:
-			__asm        cmp    finfo.Plotter, 0xB;
-			__asm        jne    _T7d;
-		// LINE 2735:
-			__asm        and    finfo.Attribute, 0x7FFFFFFF;
-		// LINE 2736:
-			_VRSetFaceInfo(face, finfo.Face);
-		// LINE 2738:
-		_T7d:
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   _VRGetNextFace;
-			__asm        add    esp, 4;
-			__asm        mov    face, eax;
+// LINE 2732:
+		_VRGetFaceInfo(face, finfo.Face);
+// LINE 2733:
+		__asm        cmp    finfo.Plotter, 0xB;
+		__asm        jne    _T7d;
+// LINE 2735:
+		__asm        and    finfo.Attribute, 0x7FFFFFFF;
+// LINE 2736:
+		_VRSetFaceInfo(face, finfo.Face);
+// LINE 2738:
+_T7d:
+		__asm        mov    eax, face;
+		__asm        push   eax;
+		__asm        call   _VRGetNextFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
 	}
 // LINE 2740:
 _T91:
@@ -3345,22 +3345,22 @@ void PlaneClass::TurnOffShields() {
 // LINE 2752:
 _FOR_3d:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
-		// LINE 2754:
-			_VRGetFaceInfo(face, finfo.Face);
-		// LINE 2755:
-			__asm        cmp    finfo.Plotter, 0xB;
-			__asm        jne    _T81;
-		// LINE 2757:
-			finfo.Attribute = (finfo.Attribute | 0x80000000);
-		// LINE 2758:
-			_VRSetFaceInfo(face, finfo.Face);
-		// LINE 2760:
-		_T81:
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   _VRGetNextFace;
-			__asm        add    esp, 4;
-			__asm        mov    face, eax;
+// LINE 2754:
+		_VRGetFaceInfo(face, finfo.Face);
+// LINE 2755:
+		__asm        cmp    finfo.Plotter, 0xB;
+		__asm        jne    _T81;
+// LINE 2757:
+		finfo.Attribute = (finfo.Attribute | 0x80000000);
+// LINE 2758:
+		_VRSetFaceInfo(face, finfo.Face);
+// LINE 2760:
+_T81:
+		__asm        mov    eax, face;
+		__asm        push   eax;
+		__asm        call   _VRGetNextFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
 	}
 // LINE 2762:
 _T95:
@@ -3397,109 +3397,109 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 2809:
 _FOR_44:
 	for (i = 0x0; (i < 0x2); i++) {
-		// LINE 2812:
-			__asm        mov    eax, i;
-			__asm        mov    eax, planes[0][eax*4];
-			__asm        mov    p, eax;
-		// LINE 2813:
-			__asm        mov    eax, 0x62B6E8;
-			__asm        add    eax, 8;
-			__asm        mov    ecx, p;
-			__asm        add    ecx, 8;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 2814:
-			p->remainingDist = PlaneClass::lsPlane.remainingDist;
-		// LINE 2815:
-			p->speed = PlaneClass::lsPlane.speed;
-		// LINE 2816:
-			p->desiredSpeed = PlaneClass::lsPlane.desiredSpeed;
-		// LINE 2817:
-			__asm        mov    eax, 0x62B6E8;
-			__asm        add    eax, 0x20;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, p;
-			__asm        add    edx, 0x20;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 2818:
-			__asm        mov    eax, 0x62B6E8;
-			__asm        add    eax, 0x28;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, p;
-			__asm        add    edx, 0x28;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 2819:
-			p->beamDelay = PlaneClass::lsPlane.beamDelay;
-		// LINE 2820:
-			p->beamTimer = PlaneClass::lsPlane.beamTimer;
-		// LINE 2821:
-			p->missionId = PlaneClass::lsPlane.missionId;
-		// LINE 2822:
-			p->altAdjustment = PlaneClass::lsPlane.altAdjustment;
-		// LINE 2823:
-			__asm        mov    eax, 0x62B6E8;
-			__asm        add    eax, 0x40;
-			__asm        mov    ecx, [eax];
-			__asm        mov    eax, [eax+4];
-			__asm        mov    edx, p;
-			__asm        add    edx, 0x40;
-			__asm        mov    [edx], ecx;
-			__asm        mov    [edx+4], eax;
-		// LINE 2824:
-			p->smokeTime = PlaneClass::lsPlane.smokeTime;
-		// LINE 2825:
-			p->shieldCtr = PlaneClass::lsPlane.shieldCtr;
-		// LINE 2826:
-			p->missileHits = PlaneClass::lsPlane.missileHits;
-		// LINE 2827:
-			__asm        mov    eax, 0x62B6E8;
-			__asm        add    eax, 0x70;
-			__asm        mov    ecx, p;
-			__asm        add    ecx, 0x70;
-			__asm        mov    edx, [eax];
-			__asm        mov    [ecx], edx;
-			__asm        mov    edx, [eax+4];
-			__asm        mov    [ecx+4], edx;
-			__asm        mov    eax, [eax+8];
-			__asm        mov    [ecx+8], eax;
-		// LINE 2828:
-			__asm        mov    edi, p;
-			__asm        add    edi, 0x7C;
-			__asm        lea    esi, PlaneClass::lsPlane.dyObj.matrix[0][0];
-			__asm        mov    ecx, 0x10;
-			__asm        rep movsd;
-		// LINE 2829:
-			reinterpret_cast<uint32_t>(p->flags[0]) = reinterpret_cast<uint32_t>(PlaneClass::lsPlane.flags[0]);
-		// LINE 2831:
-			__asm        jmp    _T174;
-		_T174:
-			__asm        mov    eax, p;
-			__asm        movsx  eax, byte ptr [eax+5];
-			__asm        test   eax, eax;
-			__asm        je     _T192;
-		// LINE 2833:
-			p->PlaneClass::LinkToCell((p + 0x20));
-		// LINE 2840:
-		_T192:
-			ret = ReadNextMIFFChunk(miffReader, 0x504c414e, 0x62b6e8, 0xbc);
-		// LINE 2842:
-			__asm        cmp    ret, 0;
-			__asm        jne    _T1cb;
+// LINE 2812:
+		__asm        mov    eax, i;
+		__asm        mov    eax, planes[0][eax*4];
+		__asm        mov    p, eax;
+// LINE 2813:
+		__asm        mov    eax, 0x62B6E8;
+		__asm        add    eax, 8;
+		__asm        mov    ecx, p;
+		__asm        add    ecx, 8;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 2814:
+		p->remainingDist = PlaneClass::lsPlane.remainingDist;
+// LINE 2815:
+		p->speed = PlaneClass::lsPlane.speed;
+// LINE 2816:
+		p->desiredSpeed = PlaneClass::lsPlane.desiredSpeed;
+// LINE 2817:
+		__asm        mov    eax, 0x62B6E8;
+		__asm        add    eax, 0x20;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, p;
+		__asm        add    edx, 0x20;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 2818:
+		__asm        mov    eax, 0x62B6E8;
+		__asm        add    eax, 0x28;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, p;
+		__asm        add    edx, 0x28;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 2819:
+		p->beamDelay = PlaneClass::lsPlane.beamDelay;
+// LINE 2820:
+		p->beamTimer = PlaneClass::lsPlane.beamTimer;
+// LINE 2821:
+		p->missionId = PlaneClass::lsPlane.missionId;
+// LINE 2822:
+		p->altAdjustment = PlaneClass::lsPlane.altAdjustment;
+// LINE 2823:
+		__asm        mov    eax, 0x62B6E8;
+		__asm        add    eax, 0x40;
+		__asm        mov    ecx, [eax];
+		__asm        mov    eax, [eax+4];
+		__asm        mov    edx, p;
+		__asm        add    edx, 0x40;
+		__asm        mov    [edx], ecx;
+		__asm        mov    [edx+4], eax;
+// LINE 2824:
+		p->smokeTime = PlaneClass::lsPlane.smokeTime;
+// LINE 2825:
+		p->shieldCtr = PlaneClass::lsPlane.shieldCtr;
+// LINE 2826:
+		p->missileHits = PlaneClass::lsPlane.missileHits;
+// LINE 2827:
+		__asm        mov    eax, 0x62B6E8;
+		__asm        add    eax, 0x70;
+		__asm        mov    ecx, p;
+		__asm        add    ecx, 0x70;
+		__asm        mov    edx, [eax];
+		__asm        mov    [ecx], edx;
+		__asm        mov    edx, [eax+4];
+		__asm        mov    [ecx+4], edx;
+		__asm        mov    eax, [eax+8];
+		__asm        mov    [ecx+8], eax;
+// LINE 2828:
+		__asm        mov    edi, p;
+		__asm        add    edi, 0x7C;
+		__asm        lea    esi, PlaneClass::lsPlane.dyObj.matrix[0][0];
+		__asm        mov    ecx, 0x10;
+		__asm        rep movsd;
+// LINE 2829:
+		reinterpret_cast<uint32_t>(p->flags[0]) = reinterpret_cast<uint32_t>(PlaneClass::lsPlane.flags[0]);
+// LINE 2831:
+		__asm        jmp    _T174;
+_T174:
+		__asm        mov    eax, p;
+		__asm        movsx  eax, byte ptr [eax+5];
+		__asm        test   eax, eax;
+		__asm        je     _T192;
+// LINE 2833:
+		p->PlaneClass::LinkToCell((p + 0x20));
+// LINE 2840:
+_T192:
+		ret = ReadNextMIFFChunk(miffReader, 0x504c414e, 0x62b6e8, 0xbc);
+// LINE 2842:
+		__asm        cmp    ret, 0;
+		__asm        jne    _T1cb;
 
-			__asm        cmp    i, 1;
-			__asm        je     _T1cb;
-		// LINE 2843:
-			return 0x0;
-		// LINE 2844:
-		_T1cb:
+		__asm        cmp    i, 1;
+		__asm        je     _T1cb;
+// LINE 2843:
+		return 0x0;
+// LINE 2844:
+_T1cb:
 	}
 // LINE 2845:
 _T1d0:
@@ -3515,24 +3515,24 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 // LINE 2859:
 _FOR_15:
 	for (i = 0x0; (i < 0x2); i++) {
-		// LINE 2864:
-			__asm        push   0xBC;
-			__asm        mov    eax, i;
-			__asm        mov    eax, planes[0][eax*4];
-			__asm        push   eax;
-			__asm        push   0x504C414E;
-			__asm        mov    eax, miffWriter;
-			__asm        push   eax;
-			__asm        call   WriteMIFFChunk;
-			__asm        add    esp, 0x10;
-			__asm        mov    ret, eax;
-		// LINE 2865:
-			__asm        cmp    ret, 0;
-			__asm        jne    _T57;
-		// LINE 2866:
-			return 0x0;
-		// LINE 2867:
-		_T57:
+// LINE 2864:
+		__asm        push   0xBC;
+		__asm        mov    eax, i;
+		__asm        mov    eax, planes[0][eax*4];
+		__asm        push   eax;
+		__asm        push   0x504C414E;
+		__asm        mov    eax, miffWriter;
+		__asm        push   eax;
+		__asm        call   WriteMIFFChunk;
+		__asm        add    esp, 0x10;
+		__asm        mov    ret, eax;
+// LINE 2865:
+		__asm        cmp    ret, 0;
+		__asm        jne    _T57;
+// LINE 2866:
+		return 0x0;
+// LINE 2867:
+_T57:
 	}
 // LINE 2868:
 _T5c:

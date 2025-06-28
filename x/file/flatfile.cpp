@@ -115,26 +115,26 @@ _T2d:
 // LINE 44:
 _FOR_16:
 	for (srch = FlatFile::sList; (srch != 0x0); srch = srch->fNext) {
-		// LINE 46:
-			__asm        mov    ecx, srch;
-			__asm        call   FlatFile::ValidFile;
-			__asm        movzx  eax, ax;
-			__asm        test   eax, eax;
-			__asm        je     _T5f;
+// LINE 46:
+		__asm        mov    ecx, srch;
+		__asm        call   FlatFile::ValidFile;
+		__asm        movzx  eax, ax;
+		__asm        test   eax, eax;
+		__asm        je     _T5f;
 
-			__asm        mov    eax, srch;
-			__asm        add    eax, 8;
-			__asm        push   eax;
-			__asm        mov    eax, name;
-			__asm        push   eax;
-			__asm        call   PStrCompare;
-			__asm        add    esp, 8;
-			__asm        test   eax, eax;
-			__asm        jne    _T5f;
+		__asm        mov    eax, srch;
+		__asm        add    eax, 8;
+		__asm        push   eax;
+		__asm        mov    eax, name;
+		__asm        push   eax;
+		__asm        call   PStrCompare;
+		__asm        add    esp, 8;
+		__asm        test   eax, eax;
+		__asm        jne    _T5f;
 
-			return srch;
-		// LINE 47:
-		_T5f:
+		return srch;
+// LINE 47:
+_T5f:
 	}
 // LINE 48:
 _T64:
@@ -147,7 +147,7 @@ long FlatFile::Open(char * name) {
 	/*bp-0x100*/ unsigned char pstrbuff[256]; // 0x100 bytes
 
 // LINE 54:
-	Memory::BlockMove(name, pstrbuff[0], 0x100);
+Memory::BlockMove(name, pstrbuff[0], 0x100);
 // LINE 55:
 	CtoPstr(pstrbuff[0]);
 // LINE 56:
@@ -215,7 +215,7 @@ _Ta8:
 	__asm        jmp    _FOR_NEXT_5e;
 // LINE 80:
 _Tad:
-	Memory::BlockMove(name, cstrbuff[0], 0x100);
+Memory::BlockMove(name, cstrbuff[0], 0x100);
 // LINE 81:
 	PtoCstr(cstrbuff[0]);
 // LINE 82:
@@ -232,7 +232,7 @@ _T11a:
 	err = 0xffffffce;
 // LINE 85:
 _T121:
-	FlatFile::sLastFileID++;
+FlatFile::sLastFileID++;
 	this->fFileID = FlatFile::sLastFileID;
 	__asm        jmp    _T13d;
 // LINE 87:
@@ -256,7 +256,7 @@ _T16c:
 	__asm        jmp    _T1b0;
 // LINE 104:
 _T195:
-	Memory::BlockMove(name, (this + 0x8), 0x100);
+Memory::BlockMove(name, (this + 0x8), 0x100);
 // LINE 107:
 _T1b0:
 	return err;
@@ -539,7 +539,7 @@ void FlatFile::Link() {
 // LINE 266:
 	this->fNext = FlatFile::sList;
 // LINE 267:
-	FlatFile::sList = this;
+FlatFile::sList = this;
 // LINE 268:
 	return;
 }
@@ -553,18 +553,18 @@ void FlatFile::Unlink() {
 // LINE 273:
 __WHILE_13:
 	while ((srch-> != 0x0)) {
-		// LINE 274:
-			__asm        mov    eax, srch;
-			__asm        mov    ecx, this;
-			__asm        cmp    [eax], ecx;
-			__asm        jne    _T3f;
-		// LINE 275:
-			srch-> = srch->->fNext;
-		// LINE 276:
-			return;
-		// LINE 278:
-		_T3f:
-			srch = (srch-> + 0x4);
+// LINE 274:
+		__asm        mov    eax, srch;
+		__asm        mov    ecx, this;
+		__asm        cmp    [eax], ecx;
+		__asm        jne    _T3f;
+// LINE 275:
+		srch-> = srch->->fNext;
+// LINE 276:
+		return;
+// LINE 278:
+_T3f:
+		srch = (srch-> + 0x4);
 	}
 // LINE 280:
 _T4f:
@@ -582,23 +582,23 @@ unsigned short FlatFile::Exclusive() {
 // LINE 286:
 __WHILE_14:
 	while ((srch != 0x0)) {
-		// LINE 287:
-			__asm        mov    eax, this;
-			__asm        cmp    srch, eax;
-			__asm        je     _T49;
+// LINE 287:
+		__asm        mov    eax, this;
+		__asm        cmp    srch, eax;
+		__asm        je     _T49;
 
-			__asm        mov    eax, srch;
-			__asm        push   eax;
-			__asm        mov    ecx, this;
-			__asm        call   FlatFile::SameFile;
-			__asm        movzx  eax, ax;
-			__asm        test   eax, eax;
-			__asm        je     _T49;
-		// LINE 288:
-			return 0x0;
-		// LINE 289:
-		_T49:
-			srch = srch->fNext;
+		__asm        mov    eax, srch;
+		__asm        push   eax;
+		__asm        mov    ecx, this;
+		__asm        call   FlatFile::SameFile;
+		__asm        movzx  eax, ax;
+		__asm        test   eax, eax;
+		__asm        je     _T49;
+// LINE 288:
+		return 0x0;
+// LINE 289:
+_T49:
+		srch = srch->fNext;
 	}
 // LINE 291:
 _T57:
@@ -636,8 +636,8 @@ short FlatFile::CheckForLeaks() {
 // LINE 304:
 _FOR_1c:
 	for (list = FlatFile::sList; (list != 0x0); list = list->fNext) {
-		// LINE 306:
-			total++;
+// LINE 306:
+		total++;
 	}
 // LINE 308:
 _T38:

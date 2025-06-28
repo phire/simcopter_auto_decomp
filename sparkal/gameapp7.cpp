@@ -1769,15 +1769,15 @@ _T3b7:
 
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        jmp    _Switch_3d8[0][eax*4];
-// Switch pointers:
-//   _T2f8
-//   _T7b
-//   _T355
-//   _Tdd
-//   _T1d2
-//   _T234
-//   _T355
-//   _T296
+	// Switch pointers:
+	//   _T2f8
+	//   _T7b
+	//   _T355
+	//   _Tdd
+	//   _T1d2
+	//   _T234
+	//   _T355
+	//   _T296
 // LINE 264:
 _T3f8:
 	__asm        push   0xA4;
@@ -3653,16 +3653,16 @@ int32_t CGameApp::CheckCommandLineForCheatCodes() {
 // LINE 509:
 _FOR_3a:
 	for (i = 0x0; (i < 0x80); i++) {
-		// LINE 510:
-			__asm        mov    eax, i;
-			__asm        movsx  eax, byte ptr [ebp+eax-0x80];
-			__asm        cmp    eax, 0x5F;
-			__asm        jne    _T6f;
-		// LINE 511:
-			__asm        mov    eax, i;
-			__asm        mov    byte ptr [ebp+eax-0x80], 0x20;
-		// LINE 512:
-		_T6f:
+// LINE 510:
+		__asm        mov    eax, i;
+		__asm        movsx  eax, byte ptr [ebp+eax-0x80];
+		__asm        cmp    eax, 0x5F;
+		__asm        jne    _T6f;
+// LINE 511:
+		__asm        mov    eax, i;
+		__asm        mov    byte ptr [ebp+eax-0x80], 0x20;
+// LINE 512:
+_T6f:
 	}
 // LINE 513:
 _T74:
@@ -3864,7 +3864,7 @@ _T51:
 	__asm        jmp    _Ta4;
 // LINE 534:
 _Ta4:
-	LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeFaceName[0]);
+LanguageManager::GetTypefaceForLanguage(0x0, 0x0, szTypeFaceName[0]);
 // LINE 535:
 	__asm        push   0x1C;
 	__asm        call   operator new;

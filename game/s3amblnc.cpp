@@ -931,7 +931,7 @@ _T204:
 	__asm        cmp    dist, eax;
 	__asm        jge    _T253;
 // LINE 360:
-	AutomobileClass::ambSirenDist = dist;
+AutomobileClass::ambSirenDist = dist;
 // LINE 362:
 _T253:
 	this->AutomobileClass::PullOverCiviliansInWay();
@@ -1023,12 +1023,12 @@ _T384:
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    _Switch_39b[0][eax*4];
-// Switch pointers:
-//   _T1d
-//   _Tb2
-//   _T359
-//   _T12f
-//   _T268
+	// Switch pointers:
+	//   _T1d
+	//   _Tb2
+	//   _T359
+	//   _T12f
+	//   _T268
 // LINE 404:
 _T3af:
 	return;

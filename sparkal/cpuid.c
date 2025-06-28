@@ -174,19 +174,19 @@ unsigned short wincpuidext() {
 // LINE 183:
 _FOR_75:
 	for (i = 0x0; (i < 0xc); i++) {
-		// LINE 185:
-			__asm        mov    eax, i;
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, [ebp+eax-0x24];
-			__asm        mov    eax, i;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [ebp+eax-0x10];
-			__asm        cmp    ecx, edx;
-			__asm        je     _Ta6;
-		// LINE 186:
-			clone_flag = 0x1;
-		// LINE 187:
-		_Ta6:
+// LINE 185:
+		__asm        mov    eax, i;
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, [ebp+eax-0x24];
+		__asm        mov    eax, i;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [ebp+eax-0x10];
+		__asm        cmp    ecx, edx;
+		__asm        je     _Ta6;
+// LINE 186:
+		clone_flag = 0x1;
+// LINE 187:
+_Ta6:
 	}
 // LINE 191:
 _Tab:
@@ -267,19 +267,19 @@ unsigned long wincpufeatures() {
 // LINE 273:
 _FOR_70:
 	for (i = 0x0; (i < 0xc); i++) {
-		// LINE 275:
-			__asm        mov    eax, i;
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, [ebp+eax-0x20];
-			__asm        mov    eax, i;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [ebp+eax-0xC];
-			__asm        cmp    ecx, edx;
-			__asm        je     _Ta1;
-		// LINE 276:
-			clone_flag = 0x1;
-		// LINE 277:
-		_Ta1:
+// LINE 275:
+		__asm        mov    eax, i;
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, [ebp+eax-0x20];
+		__asm        mov    eax, i;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [ebp+eax-0xC];
+		__asm        cmp    ecx, edx;
+		__asm        je     _Ta1;
+// LINE 276:
+		clone_flag = 0x1;
+// LINE 277:
+_Ta1:
 	}
 // LINE 281:
 _Ta6:
@@ -570,19 +570,19 @@ static unsigned short check_IDProc() {
 // LINE 581:
 _FOR_67:
 	for (i = 0x0; (i < 0xc); i++) {
-		// LINE 583:
-			__asm        mov    eax, i;
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, [ebp+eax-0x28];
-			__asm        mov    eax, i;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [ebp+eax-0x14];
-			__asm        cmp    ecx, edx;
-			__asm        je     _T98;
-		// LINE 584:
-			clone_flag = 0x1;
-		// LINE 585:
-		_T98:
+// LINE 583:
+		__asm        mov    eax, i;
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, [ebp+eax-0x28];
+		__asm        mov    eax, i;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [ebp+eax-0x14];
+		__asm        cmp    ecx, edx;
+		__asm        je     _T98;
+// LINE 584:
+		clone_flag = 0x1;
+// LINE 585:
+_T98:
 	}
 // LINE 589:
 _T9d:

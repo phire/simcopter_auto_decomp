@@ -1597,12 +1597,12 @@ _T8b:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_a2[0][eax*4];
-// Switch pointers:
-//   _T25
-//   _T25
-//   _T2a
-//   _T4f
-//   _T74
+	// Switch pointers:
+	//   _T25
+	//   _T25
+	//   _T2a
+	//   _T4f
+	//   _T74
 // LINE 641:
 _Tb6:
 	return;
@@ -1748,19 +1748,19 @@ _T84:
 // LINE 952:
 __WHILE_97:
 	while ((dyptrptr-> != 0x0)) {
-		// LINE 955:
-			__asm        mov    eax, this;
-			__asm        add    eax, 0x126;
-			__asm        mov    ecx, dyptrptr;
-			__asm        cmp    eax, [ecx];
-			__asm        jne    _Tc9;
-		// LINE 958:
-			dyptrptr-> = this->dispatchIcon.next;
-		// LINE 959:
-			return;
-		// LINE 961:
-		_Tc9:
-			dyptrptr = dyptrptr->;
+// LINE 955:
+		__asm        mov    eax, this;
+		__asm        add    eax, 0x126;
+		__asm        mov    ecx, dyptrptr;
+		__asm        cmp    eax, [ecx];
+		__asm        jne    _Tc9;
+// LINE 958:
+		dyptrptr-> = this->dispatchIcon.next;
+// LINE 959:
+		return;
+// LINE 961:
+_Tc9:
+		dyptrptr = dyptrptr->;
 	}
 // LINE 963:
 _Td6:
@@ -1892,22 +1892,22 @@ _T74:
 	__asm        jmp    _T140;
 // LINE 1370:
 _T79:
-	FireEngineClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
+FireEngineClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
 // LINE 1371:
 	__asm        jmp    _T140;
 // LINE 1375:
 _T96:
-	AmbulanceClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
+AmbulanceClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
 // LINE 1376:
 	__asm        jmp    _T140;
 // LINE 1381:
 _Tb3:
-	PoliceCarClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
+PoliceCarClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
 // LINE 1382:
 	__asm        jmp    _T140;
 // LINE 1386:
 _Td0:
-	PoliceCarClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
+PoliceCarClass::Dispatch(emergencyType, emergencyLevel, mapx, mapy);
 // LINE 1387:
 	__asm        jmp    _T140;
 // LINE 1391:
@@ -1927,12 +1927,12 @@ _T118:
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    _Switch_12c[0][eax*4];
-// Switch pointers:
-//   _T53
-//   _T79
-//   _T96
-//   _Td0
-//   _Tb3
+	// Switch pointers:
+	//   _T53
+	//   _T79
+	//   _T96
+	//   _Td0
+	//   _Tb3
 // LINE 1396:
 _T140:
 	return;
@@ -1952,56 +1952,56 @@ void EmergencyVehicleClass::BuildPath(/*packed*/ struct _RGIndex startVertex, /*
 // LINE 1412:
 _LOOP_1e:
 	for (;;) {
-		// LINE 1412:
-		_LOOP_1e:
-			__asm        xor    eax, eax;
-			__asm        mov    al, index.x;
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, startVertex.x;
-			__asm        cmp    eax, ecx;
-			__asm        jne    _T42;
+// LINE 1412:
+_LOOP_1e:
+		__asm        xor    eax, eax;
+		__asm        mov    al, index.x;
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, startVertex.x;
+		__asm        cmp    eax, ecx;
+		__asm        jne    _T42;
 
-			__asm        xor    eax, eax;
-			__asm        mov    al, index.yindex;
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, startVertex.yindex;
-			__asm        cmp    eax, ecx;
-			__asm        je     _Tc4;
-		// LINE 1414:
-		_T42:
-			__asm        xor    eax, eax;
-			__asm        mov    al, index.x;
-			__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, index.yindex;
-			__asm        mov    edx, ecx;
-			__asm        lea    ecx, [ecx+ecx*4];
-			__asm        lea    ecx, [ecx+ecx*4];
-			__asm        lea    ecx, [edx+ecx*2];
-			__asm        add    eax, ecx;
-			__asm        mov    pRGV, eax;
-		// LINE 1415:
-			index.x = pRGV->xPrev;
-		// LINE 1416:
-			index.yindex = pRGV->yindexPrev;
-		// LINE 1417:
-			__asm        xor    eax, eax;
-			__asm        mov    al, index.x;
-			__asm        cmp    eax, 0xFF;
-			__asm        je     _T95;
+		__asm        xor    eax, eax;
+		__asm        mov    al, index.yindex;
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, startVertex.yindex;
+		__asm        cmp    eax, ecx;
+		__asm        je     _Tc4;
+// LINE 1414:
+_T42:
+		__asm        xor    eax, eax;
+		__asm        mov    al, index.x;
+		__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, index.yindex;
+		__asm        mov    edx, ecx;
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        lea    ecx, [edx+ecx*2];
+		__asm        add    eax, ecx;
+		__asm        mov    pRGV, eax;
+// LINE 1415:
+		index.x = pRGV->xPrev;
+// LINE 1416:
+		index.yindex = pRGV->yindexPrev;
+// LINE 1417:
+		__asm        xor    eax, eax;
+		__asm        mov    al, index.x;
+		__asm        cmp    eax, 0xFF;
+		__asm        je     _T95;
 
-			__asm        xor    eax, eax;
-			__asm        mov    al, index.yindex;
-			__asm        cmp    eax, 0xFF;
-			__asm        jne    _Tb1;
-		_T95:
-			_assert(0x5b85ec, 0x5b85c8, 0x589);
-			__asm        jmp    _Tb6;
-		_Tb1:
-			__asm        jmp    _Tb6;
-		// LINE 1418:
-		_Tb6:
-			this->dispatchPathLength++;
+		__asm        xor    eax, eax;
+		__asm        mov    al, index.yindex;
+		__asm        cmp    eax, 0xFF;
+		__asm        jne    _Tb1;
+_T95:
+		_assert(0x5b85ec, 0x5b85c8, 0x589);
+		__asm        jmp    _Tb6;
+_Tb1:
+		__asm        jmp    _Tb6;
+// LINE 1418:
+_Tb6:
+		this->dispatchPathLength++;
 	}
 // LINE 1432:
 _Tc4:
@@ -2017,28 +2017,28 @@ _FOR_e2:
 	__asm        jmp    _FOR_COND_e2;
 _FOR_NEXT_e2:
 	for (; (i >= 0x0); i--) {
-		// LINE 1436:
-			__asm        xor    eax, eax;
-			__asm        mov    al, index.x;
-			__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, index.yindex;
-			__asm        mov    edx, ecx;
-			__asm        lea    ecx, [ecx+ecx*4];
-			__asm        lea    ecx, [ecx+ecx*4];
-			__asm        lea    ecx, [edx+ecx*2];
-			__asm        add    eax, ecx;
-			__asm        mov    pRGV, eax;
-		// LINE 1437:
-			index.x = pRGV->xPrev;
-		// LINE 1438:
-			index.yindex = pRGV->yindexPrev;
-		// LINE 1439:
-			__asm        mov    eax, pRGV;
-			__asm        mov    al, [eax+0x2E];
-			__asm        mov    ecx, i;
-			__asm        mov    edx, this;
-			__asm        mov    [ecx+edx+0x192], al;
+// LINE 1436:
+		__asm        xor    eax, eax;
+		__asm        mov    al, index.x;
+		__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, index.yindex;
+		__asm        mov    edx, ecx;
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        lea    ecx, [ecx+ecx*4];
+		__asm        lea    ecx, [edx+ecx*2];
+		__asm        add    eax, ecx;
+		__asm        mov    pRGV, eax;
+// LINE 1437:
+		index.x = pRGV->xPrev;
+// LINE 1438:
+		index.yindex = pRGV->yindexPrev;
+// LINE 1439:
+		__asm        mov    eax, pRGV;
+		__asm        mov    al, [eax+0x2E];
+		__asm        mov    ecx, i;
+		__asm        mov    edx, this;
+		__asm        mov    [ecx+edx+0x192], al;
 	}
 // LINE 1441:
 _T13a:
@@ -2064,22 +2064,22 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 // LINE 1463:
 _FOR_3d:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
-		// LINE 1465:
-			_VRGetFaceInfo(face, finfo.Face);
-		// LINE 1466:
-			__asm        cmp    finfo.Plotter, 0x19;
-			__asm        jne    _T7d;
-		// LINE 1468:
-			__asm        and    finfo.Attribute, 0x7FFFFFFF;
-		// LINE 1469:
-			_VRSetFaceInfo(face, finfo.Face);
-		// LINE 1471:
-		_T7d:
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   _VRGetNextFace;
-			__asm        add    esp, 4;
-			__asm        mov    face, eax;
+// LINE 1465:
+		_VRGetFaceInfo(face, finfo.Face);
+// LINE 1466:
+		__asm        cmp    finfo.Plotter, 0x19;
+		__asm        jne    _T7d;
+// LINE 1468:
+		__asm        and    finfo.Attribute, 0x7FFFFFFF;
+// LINE 1469:
+		_VRSetFaceInfo(face, finfo.Face);
+// LINE 1471:
+_T7d:
+		__asm        mov    eax, face;
+		__asm        push   eax;
+		__asm        call   _VRGetNextFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
 	}
 // LINE 1473:
 _T91:
@@ -2105,22 +2105,22 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 // LINE 1486:
 _FOR_3d:
 	for (count = 0x0; (oinfo.Faces > count); count++) {
-		// LINE 1488:
-			_VRGetFaceInfo(face, finfo.Face);
-		// LINE 1489:
-			__asm        cmp    finfo.Plotter, 0x19;
-			__asm        jne    _T81;
-		// LINE 1491:
-			finfo.Attribute = (finfo.Attribute | 0x80000000);
-		// LINE 1492:
-			_VRSetFaceInfo(face, finfo.Face);
-		// LINE 1494:
-		_T81:
-			__asm        mov    eax, face;
-			__asm        push   eax;
-			__asm        call   _VRGetNextFace;
-			__asm        add    esp, 4;
-			__asm        mov    face, eax;
+// LINE 1488:
+		_VRGetFaceInfo(face, finfo.Face);
+// LINE 1489:
+		__asm        cmp    finfo.Plotter, 0x19;
+		__asm        jne    _T81;
+// LINE 1491:
+		finfo.Attribute = (finfo.Attribute | 0x80000000);
+// LINE 1492:
+		_VRSetFaceInfo(face, finfo.Face);
+// LINE 1494:
+_T81:
+		__asm        mov    eax, face;
+		__asm        push   eax;
+		__asm        call   _VRGetNextFace;
+		__asm        add    esp, 4;
+		__asm        mov    face, eax;
 	}
 // LINE 1496:
 _T95:

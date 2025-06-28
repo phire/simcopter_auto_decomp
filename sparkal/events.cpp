@@ -29,20 +29,20 @@ int32_t IsEventRangeSet(int32_t nEventStart, int32_t nEventEnd) {
 // LINE 33:
 __WHILE_06:
 	while ((nEventEnd >= nEventStart)) {
-		// LINE 34:
-			__asm        jmp    _T17;
-		_T17:
-			__asm        mov    eax, nEventStart;
-			__asm        mov    ecx, gGameApp;
-			__asm        xor    edx, edx;
-			__asm        mov    dl, [ecx+eax*2+0x110];
-			__asm        test   edx, edx;
-			__asm        je     _T39;
-		// LINE 35:
-			return nEventStart;
-		// LINE 36:
-		_T39:
-			nEventStart++;
+// LINE 34:
+		__asm        jmp    _T17;
+_T17:
+		__asm        mov    eax, nEventStart;
+		__asm        mov    ecx, gGameApp;
+		__asm        xor    edx, edx;
+		__asm        mov    dl, [ecx+eax*2+0x110];
+		__asm        test   edx, edx;
+		__asm        je     _T39;
+// LINE 35:
+		return nEventStart;
+// LINE 36:
+_T39:
+		nEventStart++;
 	}
 // LINE 38:
 _T41:

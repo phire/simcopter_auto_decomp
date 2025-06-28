@@ -708,184 +708,184 @@ void SCXReadNeighbors(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 // LINE 230:
 _FOR_2b:
 	for (loop = 0x0; (loop < num); loop++) {
-		// LINE 231:
-			__asm        push   0x20;
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        add    eax, pData;
-			__asm        push   eax;
-			__asm        mov    eax, AStream;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, AStream;
-			__asm        call   dword ptr [eax];
-			__asm        jmp    _FOR_NEXT_2b;
+// LINE 231:
+		__asm        push   0x20;
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        add    eax, pData;
+		__asm        push   eax;
+		__asm        mov    eax, AStream;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, AStream;
+		__asm        call   dword ptr [eax];
+		__asm        jmp    _FOR_NEXT_2b;
 	}
 // LINE 232:
 _FOR_68:
 	for (loop = 0x0; (loop < num); loop++) {
-		// LINE 233:
-			__asm        push   2;
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        add    eax, pData;
-			__asm        add    eax, 0x20;
-			__asm        push   eax;
-			__asm        mov    eax, AStream;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, AStream;
-			__asm        call   dword ptr [eax];
-			__asm        jmp    _FOR_NEXT_68;
+// LINE 233:
+		__asm        push   2;
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        add    eax, pData;
+		__asm        add    eax, 0x20;
+		__asm        push   eax;
+		__asm        mov    eax, AStream;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, AStream;
+		__asm        call   dword ptr [eax];
+		__asm        jmp    _FOR_NEXT_68;
 	}
 // LINE 234:
 _FOR_a8:
 	for (loop = 0x0; (loop < num); loop++) {
-		// LINE 235:
-			__asm        push   4;
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        add    eax, pData;
-			__asm        add    eax, 0x22;
-			__asm        push   eax;
-			__asm        mov    eax, AStream;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, AStream;
-			__asm        call   dword ptr [eax];
-			__asm        jmp    _FOR_NEXT_a8;
+// LINE 235:
+		__asm        push   4;
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        add    eax, pData;
+		__asm        add    eax, 0x22;
+		__asm        push   eax;
+		__asm        mov    eax, AStream;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, AStream;
+		__asm        call   dword ptr [eax];
+		__asm        jmp    _FOR_NEXT_a8;
 	}
 // LINE 236:
 _FOR_e8:
 	for (loop = 0x0; (loop < num); loop++) {
-		// LINE 237:
-			__asm        push   4;
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        add    eax, pData;
-			__asm        add    eax, 0x26;
-			__asm        push   eax;
-			__asm        mov    eax, AStream;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, AStream;
-			__asm        call   dword ptr [eax];
-			__asm        jmp    _FOR_NEXT_e8;
+// LINE 237:
+		__asm        push   4;
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        add    eax, pData;
+		__asm        add    eax, 0x26;
+		__asm        push   eax;
+		__asm        mov    eax, AStream;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, AStream;
+		__asm        call   dword ptr [eax];
+		__asm        jmp    _FOR_NEXT_e8;
 	}
 // LINE 238:
 _FOR_128:
 	for (loop = 0x0; (loop < num); loop++) {
-		// LINE 239:
-			__asm        push   4;
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        add    eax, pData;
-			__asm        add    eax, 0x2A;
-			__asm        push   eax;
-			__asm        mov    eax, AStream;
-			__asm        mov    eax, [eax];
-			__asm        mov    ecx, AStream;
-			__asm        call   dword ptr [eax];
-			__asm        jmp    _FOR_NEXT_128;
+// LINE 239:
+		__asm        push   4;
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        add    eax, pData;
+		__asm        add    eax, 0x2A;
+		__asm        push   eax;
+		__asm        mov    eax, AStream;
+		__asm        mov    eax, [eax];
+		__asm        mov    ecx, AStream;
+		__asm        call   dword ptr [eax];
+		__asm        jmp    _FOR_NEXT_128;
 	}
 // LINE 242:
 _FOR_168:
 	for (loop = 0x0; (loop < 0x4); loop++) {
-		// LINE 244:
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        mov    ecx, pData;
-			__asm        mov    ax, [eax+ecx+0x20];
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, NeighborName;
-			__asm        mov    [edx+ecx*2], ax;
-		// LINE 245:
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, NeighborName;
-			__asm        movsx  eax, word ptr [ecx+eax*2];
-			__asm        test   eax, eax;
-			__asm        jne    _T1d8;
-		// LINE 246:
-			strcpy((((loop << 0x5) + 0x639250) + 1), 0x59c168);
-		// LINE 247:
-			__asm        mov    eax, loop;
-			__asm        shl    eax, 5;
-			__asm        mov    Neighbor[0][eax], 5;
-		// LINE 249:
-			__asm        jmp    _T221;
-		// LINE 250:
-		_T1d8:
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, NeighborName;
-			__asm        mov    ax, [ecx+eax*2];
-			__asm        push   eax;
-			__asm        push   0x3E8;
-			__asm        mov    eax, loop;
-			__asm        shl    eax, 5;
-			__asm        add    eax, 0x639250;
-			__asm        inc    eax;
-			__asm        push   eax;
-			__asm        call   GetStringResource;
-			__asm        add    esp, 0xC;
-		// LINE 251:
-			__asm        mov    eax, loop;
-			__asm        shl    eax, 5;
-			__asm        add    eax, 0x639250;
-			__asm        inc    eax;
-			__asm        push   eax;
-			__asm        call   strlen;
-			__asm        add    esp, 4;
-			__asm        mov    ecx, loop;
-			__asm        shl    ecx, 5;
-			__asm        mov    Neighbor[0][ecx], al;
-		// LINE 254:
-		_T221:
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        mov    ecx, pData;
-			__asm        mov    eax, [eax+ecx+0x26];
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, NeighborPop;
-			__asm        mov    [edx+ecx*4], eax;
-		// LINE 255:
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        mov    ecx, pData;
-			__asm        mov    eax, [eax+ecx+0x22];
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, NeighborValue;
-			__asm        mov    [edx+ecx*4], eax;
-		// LINE 256:
-			__asm        mov    eax, loop;
-			__asm        mov    ecx, eax;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*8];
-			__asm        add    eax, ecx;
-			__asm        mov    ecx, pData;
-			__asm        mov    eax, [eax+ecx+0x2A];
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, NeighborFame;
-			__asm        mov    [edx+ecx*4], eax;
+// LINE 244:
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        mov    ecx, pData;
+		__asm        mov    ax, [eax+ecx+0x20];
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, NeighborName;
+		__asm        mov    [edx+ecx*2], ax;
+// LINE 245:
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, NeighborName;
+		__asm        movsx  eax, word ptr [ecx+eax*2];
+		__asm        test   eax, eax;
+		__asm        jne    _T1d8;
+// LINE 246:
+		strcpy((((loop << 0x5) + 0x639250) + 1), 0x59c168);
+// LINE 247:
+		__asm        mov    eax, loop;
+		__asm        shl    eax, 5;
+		__asm        mov    Neighbor[0][eax], 5;
+// LINE 249:
+		__asm        jmp    _T221;
+// LINE 250:
+_T1d8:
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, NeighborName;
+		__asm        mov    ax, [ecx+eax*2];
+		__asm        push   eax;
+		__asm        push   0x3E8;
+		__asm        mov    eax, loop;
+		__asm        shl    eax, 5;
+		__asm        add    eax, 0x639250;
+		__asm        inc    eax;
+		__asm        push   eax;
+		__asm        call   GetStringResource;
+		__asm        add    esp, 0xC;
+// LINE 251:
+		__asm        mov    eax, loop;
+		__asm        shl    eax, 5;
+		__asm        add    eax, 0x639250;
+		__asm        inc    eax;
+		__asm        push   eax;
+		__asm        call   strlen;
+		__asm        add    esp, 4;
+		__asm        mov    ecx, loop;
+		__asm        shl    ecx, 5;
+		__asm        mov    Neighbor[0][ecx], al;
+// LINE 254:
+_T221:
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        mov    ecx, pData;
+		__asm        mov    eax, [eax+ecx+0x26];
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, NeighborPop;
+		__asm        mov    [edx+ecx*4], eax;
+// LINE 255:
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        mov    ecx, pData;
+		__asm        mov    eax, [eax+ecx+0x22];
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, NeighborValue;
+		__asm        mov    [edx+ecx*4], eax;
+// LINE 256:
+		__asm        mov    eax, loop;
+		__asm        mov    ecx, eax;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*8];
+		__asm        add    eax, ecx;
+		__asm        mov    ecx, pData;
+		__asm        mov    eax, [eax+ecx+0x2A];
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, NeighborFame;
+		__asm        mov    [edx+ecx*4], eax;
 	}
 // LINE 258:
 _T286:
@@ -1046,8 +1046,8 @@ _T1a9:
 // LINE 318:
 _FOR_1ba:
 	for (loop = 0x0; (loop < tempLong); loop++) {
-		// LINE 319:
-			SCXReadPlayer(memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>, scxbuf);
+// LINE 319:
+		SCXReadPlayer(memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>, scxbuf);
 	}
 // LINE 322:
 _T1e3:
@@ -1530,12 +1530,12 @@ _T7ef:
 // LINE 355:
 _FOR_800:
 	for (loop = 0x0; (loop < 0x32); loop++) {
-		// LINE 356:
-			__asm        mov    eax, loop;
-			__asm        mov    eax, [ebp+eax*4-0x134];
-			__asm        mov    ecx, loop;
-			__asm        mov    BondRate[ecx*2], ax;
-			__asm        jmp    _FOR_NEXT_800;
+// LINE 356:
+		__asm        mov    eax, loop;
+		__asm        mov    eax, [ebp+eax*4-0x134];
+		__asm        mov    ecx, loop;
+		__asm        mov    BondRate[ecx*2], ax;
+		__asm        jmp    _FOR_NEXT_800;
 	}
 // LINE 359:
 _T827:
@@ -2167,13 +2167,13 @@ _Tfa5:
 // LINE 410:
 _FOR_10ed:
 	for (loop = 0x0; (loop < 0x100); loop++) {
-		// LINE 411:
-			__asm        mov    eax, loop;
-			__asm        mov    eax, [ebp+eax*4-0x550];
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, TileCnt;
-			__asm        mov    [edx+ecx*2], ax;
-			__asm        jmp    _FOR_NEXT_10ed;
+// LINE 411:
+		__asm        mov    eax, loop;
+		__asm        mov    eax, [ebp+eax*4-0x550];
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, TileCnt;
+		__asm        mov    [edx+ecx*2], ax;
+		__asm        jmp    _FOR_NEXT_10ed;
 	}
 // LINE 414:
 _T1119:
@@ -2204,47 +2204,47 @@ _T1119:
 // LINE 441:
 _FOR_11ca:
 	for (loop = 0x0; (loop < 0x32); loop++) {
-		// LINE 442:
-			__asm        push   0x19;
-			__asm        mov    eax, loop;
-			__asm        lea    eax, [eax+eax*4];
-			__asm        lea    eax, [eax+eax*4];
-			__asm        add    eax, LabelArray;
-			__asm        push   eax;
-			__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-			__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
-			__asm        jmp    _FOR_NEXT_11ca;
+// LINE 442:
+		__asm        push   0x19;
+		__asm        mov    eax, loop;
+		__asm        lea    eax, [eax+eax*4];
+		__asm        lea    eax, [eax+eax*4];
+		__asm        add    eax, LabelArray;
+		__asm        push   eax;
+		__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+		__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
+		__asm        jmp    _FOR_NEXT_11ca;
 	}
 // LINE 452:
 _FOR_1202:
 	for (loop = 0x0; (loop < 0x96); loop++) {
-		// LINE 454:
-			memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(SCXMicroRecord.type, 0x9);
-		// LINE 455:
-			__asm        mov    al, SCXMicroRecord.type;
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, MicroRecord;
-			__asm        mov    [edx+ecx*8], al;
-		// LINE 456:
-			__asm        mov    al, SCXMicroRecord.stat0;
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, MicroRecord;
-			__asm        mov    [edx+ecx*8+1], al;
-		// LINE 457:
-			__asm        mov    ax, SCXMicroRecord.stat1;
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, MicroRecord;
-			__asm        mov    [edx+ecx*8+2], ax;
-		// LINE 458:
-			__asm        mov    ax, SCXMicroRecord.stat2;
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, MicroRecord;
-			__asm        mov    [edx+ecx*8+4], ax;
-		// LINE 459:
-			__asm        mov    ax, SCXMicroRecord.stat3;
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, MicroRecord;
-			__asm        mov    [edx+ecx*8+6], ax;
+// LINE 454:
+		memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>->cGZXParamBitstream<t_alloc,t_free>::Read(SCXMicroRecord.type, 0x9);
+// LINE 455:
+		__asm        mov    al, SCXMicroRecord.type;
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, MicroRecord;
+		__asm        mov    [edx+ecx*8], al;
+// LINE 456:
+		__asm        mov    al, SCXMicroRecord.stat0;
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, MicroRecord;
+		__asm        mov    [edx+ecx*8+1], al;
+// LINE 457:
+		__asm        mov    ax, SCXMicroRecord.stat1;
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, MicroRecord;
+		__asm        mov    [edx+ecx*8+2], ax;
+// LINE 458:
+		__asm        mov    ax, SCXMicroRecord.stat2;
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, MicroRecord;
+		__asm        mov    [edx+ecx*8+4], ax;
+// LINE 459:
+		__asm        mov    ax, SCXMicroRecord.stat3;
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, MicroRecord;
+		__asm        mov    [edx+ecx*8+6], ax;
 	}
 // LINE 463:
 _T128c:
@@ -2311,13 +2311,13 @@ _T128c:
 // LINE 515:
 _FOR_1417:
 	for (loop = 0x0; (loop < 0xb); loop++) {
-		// LINE 516:
-			__asm        mov    eax, loop;
-			__asm        mov    eax, [ebp+eax*4-0x57C];
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, IndDemand;
-			__asm        mov    [edx+ecx*2], ax;
-			__asm        jmp    _FOR_NEXT_1417;
+// LINE 516:
+		__asm        mov    eax, loop;
+		__asm        mov    eax, [ebp+eax*4-0x57C];
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, IndDemand;
+		__asm        mov    [edx+ecx*2], ax;
+		__asm        jmp    _FOR_NEXT_1417;
 	}
 // LINE 519:
 _T1440:
@@ -2325,13 +2325,13 @@ _T1440:
 // LINE 520:
 _FOR_145d:
 	for (loop = 0x0; (loop < 0xb); loop++) {
-		// LINE 521:
-			__asm        mov    eax, loop;
-			__asm        movsx  eax, word ptr [ebp+eax*4-0x57C];
-			__asm        mov    ecx, loop;
-			__asm        mov    edx, IndRatio;
-			__asm        mov    [edx+ecx*4], eax;
-			__asm        jmp    _FOR_NEXT_145d;
+// LINE 521:
+		__asm        mov    eax, loop;
+		__asm        movsx  eax, word ptr [ebp+eax*4-0x57C];
+		__asm        mov    ecx, loop;
+		__asm        mov    edx, IndRatio;
+		__asm        mov    [edx+ecx*4], eax;
+		__asm        jmp    _FOR_NEXT_145d;
 	}
 // LINE 524:
 _T1486:
@@ -2339,14 +2339,14 @@ _T1486:
 // LINE 525:
 _FOR_14a2:
 	for (loop = 0x0; (loop < 0x10); loop++) {
-		// LINE 526:
-			__asm        push   0xD0;
-			__asm        mov    eax, loop;
-			__asm        mov    eax, GraphData[eax*4];
-			__asm        push   eax;
-			__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
-			__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
-			__asm        jmp    _FOR_NEXT_14a2;
+// LINE 526:
+		__asm        push   0xD0;
+		__asm        mov    eax, loop;
+		__asm        mov    eax, GraphData[eax*4];
+		__asm        push   eax;
+		__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+		__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
+		__asm        jmp    _FOR_NEXT_14a2;
 	}
 // LINE 528:
 _T14cc:

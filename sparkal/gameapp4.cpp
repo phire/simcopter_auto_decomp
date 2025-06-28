@@ -503,256 +503,256 @@ _T2a2:
 // LINE 128:
 __WHILE_2c5:
 	while ((tempVRAppInitThreadStruct.nReturnValue == 0x0)) {
-		// LINE 129:
-			__asm        mov    eax, nHeight;
-			__asm        push   eax;
-			__asm        mov    eax, nWidth;
-			__asm        push   eax;
-			__asm        push   0;
-			__asm        push   0;
-			__asm        mov    eax, nYPosition;
-			__asm        push   eax;
-			__asm        mov    eax, nXPosition;
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    eax, [eax+0x34];
-			__asm        push   eax;
-			__asm        lea    ecx, [ebp-0x13C];
-			__asm        call   SmackerBackBuffer::Compose;
-		// LINE 130:
-			__asm        mov    eax, G_InitializationProgress;
-			__asm        test   lCurrentInitializationFlag, eax;
-			__asm        je     _T661;
+// LINE 129:
+		__asm        mov    eax, nHeight;
+		__asm        push   eax;
+		__asm        mov    eax, nWidth;
+		__asm        push   eax;
+		__asm        push   0;
+		__asm        push   0;
+		__asm        mov    eax, nYPosition;
+		__asm        push   eax;
+		__asm        mov    eax, nXPosition;
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    eax, [eax+0x34];
+		__asm        push   eax;
+		__asm        lea    ecx, [ebp-0x13C];
+		__asm        call   SmackerBackBuffer::Compose;
+// LINE 130:
+		__asm        mov    eax, G_InitializationProgress;
+		__asm        test   lCurrentInitializationFlag, eax;
+		__asm        je     _T661;
 
-			__asm        cmp    lCurrentInitializationFlag, 0x8000;
-			__asm        jae    _T661;
-		// LINE 131:
-			lCurrentInitializationIndex++;
-		// LINE 132:
-			__asm        shl    lCurrentInitializationFlag, 1;
-		// LINE 133:
-			lFullStringIndex = LanguageManager::GetFullStringID((lCurrentInitializationIndex + 0x289), 0x0);
-		// LINE 134:
-			__asm        push   0xFFF;
-			__asm        lea    eax, [ebp-0x1510];
-			__asm        push   eax;
-			__asm        mov    eax, lFullStringIndex;
-			__asm        push   eax;
-			__asm        mov    eax, _ghWindowsInstance;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C38B4];
-			__asm        mov    [ebp-0x1514], eax;
-			__asm        cmp    dword ptr [ebp-0x1514], 0;
-			__asm        jne    _T40a;
+		__asm        cmp    lCurrentInitializationFlag, 0x8000;
+		__asm        jae    _T661;
+// LINE 131:
+		lCurrentInitializationIndex++;
+// LINE 132:
+		__asm        shl    lCurrentInitializationFlag, 1;
+// LINE 133:
+		lFullStringIndex = LanguageManager::GetFullStringID((lCurrentInitializationIndex + 0x289), 0x0);
+// LINE 134:
+		__asm        push   0xFFF;
+		__asm        lea    eax, [ebp-0x1510];
+		__asm        push   eax;
+		__asm        mov    eax, lFullStringIndex;
+		__asm        push   eax;
+		__asm        mov    eax, _ghWindowsInstance;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C38B4];
+		__asm        mov    [ebp-0x1514], eax;
+		__asm        cmp    dword ptr [ebp-0x1514], 0;
+		__asm        jne    _T40a;
 
-			__asm        push   0xFFF;
-			__asm        lea    eax, [ebp-0x1510];
-			__asm        push   eax;
-			__asm        mov    ecx, 0x3E8;
-			__asm        mov    eax, lFullStringIndex;
-			__asm        sub    edx, edx;
-			__asm        div    ecx;
-			__asm        push   edx;
-			__asm        mov    eax, _ghWindowsInstance;
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C38B4];
-			__asm        mov    [ebp-0x1514], eax;
-			__asm        jmp    _T3b6;
-		_T3b6:
-			__asm        lea    eax, [ebp-0x1510];
-			__asm        push   eax;
-			__asm        call   strlen;
-			__asm        add    esp, 4;
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x1510];
-			__asm        push   eax;
-			__asm        lea    ecx, sCurrentInitializer.c_str_ptr;
-			__asm        call   basic_string<char>::assign_str;
-			__asm        jmp    _T3dd;
-		_T3dd:
-			__asm        jmp    _T3e2;
-		_T3e2:
-			__asm        push   0x597200;
-			__asm        call   strlen;
-			__asm        add    esp, 4;
-			__asm        push   eax;
-			__asm        push   0x597200;
-			__asm        lea    ecx, sCurrentInitializer.c_str_ptr;
-			__asm        call   basic_string<char>::append_str;
-			__asm        jmp    _T405;
-		_T405:
-			__asm        jmp    _T5cd;
-		_T40a:
-			__asm        jmp    _T40f;
-		_T40f:
-			__asm        lea    eax, [ebp-0x1510];
-			__asm        push   eax;
-			__asm        call   strlen;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x1530], eax;
-			__asm        cmp    dword ptr [ebp-0x1530], 0xFFFFFFFF;
-			__asm        jne    _T469;
+		__asm        push   0xFFF;
+		__asm        lea    eax, [ebp-0x1510];
+		__asm        push   eax;
+		__asm        mov    ecx, 0x3E8;
+		__asm        mov    eax, lFullStringIndex;
+		__asm        sub    edx, edx;
+		__asm        div    ecx;
+		__asm        push   edx;
+		__asm        mov    eax, _ghWindowsInstance;
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C38B4];
+		__asm        mov    [ebp-0x1514], eax;
+		__asm        jmp    _T3b6;
+_T3b6:
+		__asm        lea    eax, [ebp-0x1510];
+		__asm        push   eax;
+		__asm        call   strlen;
+		__asm        add    esp, 4;
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x1510];
+		__asm        push   eax;
+		__asm        lea    ecx, sCurrentInitializer.c_str_ptr;
+		__asm        call   basic_string<char>::assign_str;
+		__asm        jmp    _T3dd;
+_T3dd:
+		__asm        jmp    _T3e2;
+_T3e2:
+		__asm        push   0x597200;
+		__asm        call   strlen;
+		__asm        add    esp, 4;
+		__asm        push   eax;
+		__asm        push   0x597200;
+		__asm        lea    ecx, sCurrentInitializer.c_str_ptr;
+		__asm        call   basic_string<char>::append_str;
+		__asm        jmp    _T405;
+_T405:
+		__asm        jmp    _T5cd;
+_T40a:
+		__asm        jmp    _T40f;
+_T40f:
+		__asm        lea    eax, [ebp-0x1510];
+		__asm        push   eax;
+		__asm        call   strlen;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x1530], eax;
+		__asm        cmp    dword ptr [ebp-0x1530], 0xFFFFFFFF;
+		__asm        jne    _T469;
 
-			__asm        push   0x5971E4;
-			__asm        mov    ecx, 0x638C00;
-			__asm        call   ostream::operator<<;
-			__asm        mov    [ebp-0x1524], eax;
-			__asm        mov    eax, [ebp-0x1524];
-			__asm        push   eax;
-			__asm        call   endl;
-			__asm        add    esp, 4;
-			__asm        jmp    _T45a;
-		_T45a:
-			exit(0x1);
-			__asm        jmp    _T469;
-		_T469:
-			__asm        jmp    _T46e;
-		_T46e:
-			__asm        mov    eax, sCurrentInitializer.reference;
-			__asm        cmp    dword ptr [eax+0xC], 1;
-			__asm        ja     _T4a5;
+		__asm        push   0x5971E4;
+		__asm        mov    ecx, 0x638C00;
+		__asm        call   ostream::operator<<;
+		__asm        mov    [ebp-0x1524], eax;
+		__asm        mov    eax, [ebp-0x1524];
+		__asm        push   eax;
+		__asm        call   endl;
+		__asm        add    esp, 4;
+		__asm        jmp    _T45a;
+_T45a:
+		exit(0x1);
+		__asm        jmp    _T469;
+_T469:
+		__asm        jmp    _T46e;
+_T46e:
+		__asm        mov    eax, sCurrentInitializer.reference;
+		__asm        cmp    dword ptr [eax+0xC], 1;
+		__asm        ja     _T4a5;
 
-			__asm        cmp    dword ptr [ebp-0x1530], 0;
-			__asm        je     _T56d;
+		__asm        cmp    dword ptr [ebp-0x1530], 0;
+		__asm        je     _T56d;
 
-			__asm        jmp    _T490;
-		_T490:
-			__asm        mov    eax, sCurrentInitializer.reference;
-			__asm        mov    ecx, [ebp-0x1530];
-			__asm        cmp    [eax+8], ecx;
-			__asm        jae    _T56d;
-		_T4a5:
-			__asm        push   0x10;
-			__asm        call   operator new;
-			__asm        add    esp, 4;
-			__asm        mov    [ebp-0x151C], eax;
-			__asm        cmp    dword ptr [ebp-0x151C], 0;
-			__asm        je     _T4e6;
+		__asm        jmp    _T490;
+_T490:
+		__asm        mov    eax, sCurrentInitializer.reference;
+		__asm        mov    ecx, [ebp-0x1530];
+		__asm        cmp    [eax+8], ecx;
+		__asm        jae    _T56d;
+_T4a5:
+		__asm        push   0x10;
+		__asm        call   operator new;
+		__asm        add    esp, 4;
+		__asm        mov    [ebp-0x151C], eax;
+		__asm        cmp    dword ptr [ebp-0x151C], 0;
+		__asm        je     _T4e6;
 
-			__asm        mov    eax, [ebp-0x1530];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x1510];
-			__asm        push   eax;
-			__asm        mov    ecx, [ebp-0x151C];
-			__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-			__asm        mov    [ebp-0x1518], eax;
-			__asm        jmp    _T4f0;
-		_T4e6:
-			__asm        mov    dword ptr [ebp-0x1518], 0;
-		_T4f0:
-			__asm        mov    eax, sCurrentInitializer.reference;
-			__asm        dec    dword ptr [eax+0xC];
-			__asm        mov    eax, sCurrentInitializer.reference;
-			__asm        cmp    dword ptr [eax+0xC], 0;
-			__asm        jne    _T557;
+		__asm        mov    eax, [ebp-0x1530];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x1510];
+		__asm        push   eax;
+		__asm        mov    ecx, [ebp-0x151C];
+		__asm        call   basic_string_ref<char>::basic_string_ref<char>;
+		__asm        mov    [ebp-0x1518], eax;
+		__asm        jmp    _T4f0;
+_T4e6:
+		__asm        mov    dword ptr [ebp-0x1518], 0;
+_T4f0:
+		__asm        mov    eax, sCurrentInitializer.reference;
+		__asm        dec    dword ptr [eax+0xC];
+		__asm        mov    eax, sCurrentInitializer.reference;
+		__asm        cmp    dword ptr [eax+0xC], 0;
+		__asm        jne    _T557;
 
-			__asm        mov    eax, sCurrentInitializer.reference;
-			__asm        mov    [ebp-0x152C], eax;
-			__asm        mov    eax, [ebp-0x152C];
-			__asm        mov    [ebp-0x1528], eax;
-			__asm        cmp    dword ptr [ebp-0x1528], 0;
-			__asm        je     _T557;
+		__asm        mov    eax, sCurrentInitializer.reference;
+		__asm        mov    [ebp-0x152C], eax;
+		__asm        mov    eax, [ebp-0x152C];
+		__asm        mov    [ebp-0x1528], eax;
+		__asm        cmp    dword ptr [ebp-0x1528], 0;
+		__asm        je     _T557;
 
-			__asm        mov    ecx, [ebp-0x1528];
-			__asm        call   basic_string_ref<char>::delete_ptr;
-			__asm        jmp    _T53e;
-		_T53e:
-			__asm        mov    eax, [ebp-0x1528];
-			__asm        push   eax;
-			__asm        call   operator delete;
-			__asm        add    esp, 4;
-			__asm        jmp    _T552;
-		_T552:
-			__asm        jmp    _T557;
-		_T557:
-			__asm        jmp    _T55c;
-		_T55c:
-			__asm        mov    eax, [ebp-0x1518];
-			__asm        mov    sCurrentInitializer.reference, eax;
-			__asm        jmp    _T5af;
-		_T56d:
-			__asm        cmp    dword ptr [ebp-0x1530], 0;
-			__asm        je     _T5af;
+		__asm        mov    ecx, [ebp-0x1528];
+		__asm        call   basic_string_ref<char>::delete_ptr;
+		__asm        jmp    _T53e;
+_T53e:
+		__asm        mov    eax, [ebp-0x1528];
+		__asm        push   eax;
+		__asm        call   operator delete;
+		__asm        add    esp, 4;
+		__asm        jmp    _T552;
+_T552:
+		__asm        jmp    _T557;
+_T557:
+		__asm        jmp    _T55c;
+_T55c:
+		__asm        mov    eax, [ebp-0x1518];
+		__asm        mov    sCurrentInitializer.reference, eax;
+		__asm        jmp    _T5af;
+_T56d:
+		__asm        cmp    dword ptr [ebp-0x1530], 0;
+		__asm        je     _T5af;
 
-			__asm        jmp    _T57f;
-		_T57f:
-			__asm        mov    eax, sCurrentInitializer.reference;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x1520], eax;
-			__asm        mov    eax, [ebp-0x1530];
-			__asm        push   eax;
-			__asm        lea    eax, [ebp-0x1510];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x1520];
-			__asm        push   eax;
-			__asm        call   memcpy;
-			__asm        add    esp, 0xC;
-			__asm        jmp    _T5af;
-		_T5af:
-			__asm        mov    eax, [ebp-0x1530];
-			__asm        mov    ecx, sCurrentInitializer.reference;
-			__asm        mov    [ecx+4], eax;
-			__asm        jmp    _T5c3;
-		_T5c3:
-			__asm        jmp    _T5c8;
-		_T5c8:
-			__asm        jmp    _T5cd;
-		// LINE 135:
-		_T5cd:
-			__asm        lea    eax, rectText.left;
-			__asm        push   eax;
-			__asm        push   0x2E;
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x34];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0x34];
-			__asm        call   dword ptr [edx+0x18];
-		// LINE 137:
-			__asm        jmp    _T5f2;
-		_T5f2:
-			__asm        jmp    _T5f7;
-		_T5f7:
-			__asm        mov    eax, sCurrentInitializer.reference;
-			__asm        cmp    dword ptr [eax+4], 0;
-			__asm        je     _T61f;
+		__asm        jmp    _T57f;
+_T57f:
+		__asm        mov    eax, sCurrentInitializer.reference;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x1520], eax;
+		__asm        mov    eax, [ebp-0x1530];
+		__asm        push   eax;
+		__asm        lea    eax, [ebp-0x1510];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x1520];
+		__asm        push   eax;
+		__asm        call   memcpy;
+		__asm        add    esp, 0xC;
+		__asm        jmp    _T5af;
+_T5af:
+		__asm        mov    eax, [ebp-0x1530];
+		__asm        mov    ecx, sCurrentInitializer.reference;
+		__asm        mov    [ecx+4], eax;
+		__asm        jmp    _T5c3;
+_T5c3:
+		__asm        jmp    _T5c8;
+_T5c8:
+		__asm        jmp    _T5cd;
+// LINE 135:
+_T5cd:
+		__asm        lea    eax, rectText.left;
+		__asm        push   eax;
+		__asm        push   0x2E;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x34];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x34];
+		__asm        call   dword ptr [edx+0x18];
+// LINE 137:
+		__asm        jmp    _T5f2;
+_T5f2:
+		__asm        jmp    _T5f7;
+_T5f7:
+		__asm        mov    eax, sCurrentInitializer.reference;
+		__asm        cmp    dword ptr [eax+4], 0;
+		__asm        je     _T61f;
 
-			__asm        mov    eax, sCurrentInitializer.reference;
-			__asm        mov    eax, [eax];
-			__asm        mov    [ebp-0x4C4], eax;
-			__asm        jmp    _T62e;
+		__asm        mov    eax, sCurrentInitializer.reference;
+		__asm        mov    eax, [eax];
+		__asm        mov    [ebp-0x4C4], eax;
+		__asm        jmp    _T62e;
 
-			__asm        jmp    _T62e;
-		_T61f:
-			__asm        mov    dword ptr [ebp-0x4C4], 0;
-			__asm        jmp    _T62e;
-		_T62e:
-			__asm        push   0;
-			__asm        lea    eax, rectText.left;
-			__asm        push   eax;
-			__asm        push   1;
-			__asm        mov    eax, sCurrentInitializer.reference;
-			__asm        mov    eax, [eax+4];
-			__asm        push   eax;
-			__asm        mov    eax, [ebp-0x4C4];
-			__asm        push   eax;
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x34];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0x34];
-			__asm        call   dword ptr [edx+0x48];
-		// LINE 139:
-		_T661:
-			__asm        mov    eax, this;
-			__asm        mov    ecx, this;
-			__asm        mov    ecx, [ecx+0x50];
-			__asm        mov    edx, [ecx];
-			__asm        mov    ecx, [eax+0x50];
-			__asm        call   dword ptr [edx+8];
-		// LINE 140:
-			__asm        push   0x1E;
-			__asm        call   dword ptr ds:[0x6C35D8];
+		__asm        jmp    _T62e;
+_T61f:
+		__asm        mov    dword ptr [ebp-0x4C4], 0;
+		__asm        jmp    _T62e;
+_T62e:
+		__asm        push   0;
+		__asm        lea    eax, rectText.left;
+		__asm        push   eax;
+		__asm        push   1;
+		__asm        mov    eax, sCurrentInitializer.reference;
+		__asm        mov    eax, [eax+4];
+		__asm        push   eax;
+		__asm        mov    eax, [ebp-0x4C4];
+		__asm        push   eax;
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x34];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x34];
+		__asm        call   dword ptr [edx+0x48];
+// LINE 139:
+_T661:
+		__asm        mov    eax, this;
+		__asm        mov    ecx, this;
+		__asm        mov    ecx, [ecx+0x50];
+		__asm        mov    edx, [ecx];
+		__asm        mov    ecx, [eax+0x50];
+		__asm        call   dword ptr [edx+8];
+// LINE 140:
+		__asm        push   0x1E;
+		__asm        call   dword ptr ds:[0x6C35D8];
 	}
 // LINE 142:
 _T685:

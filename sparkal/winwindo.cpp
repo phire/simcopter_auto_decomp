@@ -164,11 +164,11 @@ void CSparkalWindow::CSparkalWindow() {
 // LINE 65:
 _FOR_7b:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 66:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, this;
-			__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
-			__asm        jmp    _FOR_NEXT_7b;
+// LINE 66:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
+		__asm        jmp    _FOR_NEXT_7b;
 	}
 // LINE 67:
 _T9b:
@@ -211,11 +211,11 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 // LINE 90:
 _FOR_9c:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 91:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, this;
-			__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
-			__asm        jmp    _FOR_NEXT_9c;
+// LINE 91:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    dword ptr [ecx+eax*4+0x28], 0;
+		__asm        jmp    _FOR_NEXT_9c;
 	}
 // LINE 94:
 _Tbf:
@@ -472,10 +472,10 @@ _T373:
 // LINE 192:
 _FOR_3b6:
 	for (Counter = 0x0; (Counter < Start); Counter++) {
-		// LINE 193:
-			__asm        mov    eax, Counter;
-			__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
-			__asm        jmp    _FOR_NEXT_3b6;
+// LINE 193:
+		__asm        mov    eax, Counter;
+		__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
+		__asm        jmp    _FOR_NEXT_3b6;
 	}
 // LINE 196:
 _T3d5:
@@ -484,27 +484,27 @@ _T3d5:
 // LINE 197:
 _FOR_3e4:
 	for (; (Counter < End); Counter++) {
-		// LINE 198:
-			__asm        mov    eax, Counter;
-			__asm        mov    ecx, pColors;
-			__asm        mov    al, [ecx+eax*4];
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x466], al;
-		// LINE 199:
-			__asm        mov    eax, Counter;
-			__asm        mov    ecx, pColors;
-			__asm        mov    al, [ecx+eax*4+1];
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x467], al;
-		// LINE 200:
-			__asm        mov    eax, Counter;
-			__asm        mov    ecx, pColors;
-			__asm        mov    al, [ecx+eax*4+2];
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x468], al;
-		// LINE 201:
-			__asm        mov    eax, Counter;
-			__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
+// LINE 198:
+		__asm        mov    eax, Counter;
+		__asm        mov    ecx, pColors;
+		__asm        mov    al, [ecx+eax*4];
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x466], al;
+// LINE 199:
+		__asm        mov    eax, Counter;
+		__asm        mov    ecx, pColors;
+		__asm        mov    al, [ecx+eax*4+1];
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x467], al;
+// LINE 200:
+		__asm        mov    eax, Counter;
+		__asm        mov    ecx, pColors;
+		__asm        mov    al, [ecx+eax*4+2];
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x468], al;
+// LINE 201:
+		__asm        mov    eax, Counter;
+		__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
 	}
 // LINE 204:
 _T43e:
@@ -512,29 +512,29 @@ _T43e:
 // LINE 205:
 _FOR_448:
 	for (; (Counter < End); Counter++) {
-		// LINE 206:
-			__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x466], al;
-		// LINE 207:
-			__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x467], al;
-		// LINE 208:
-			__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
-			__asm        mov    ecx, Counter;
-			__asm        mov    [ebp+ecx*4-0x468], al;
-		// LINE 209:
-			__asm        mov    eax, Counter;
-			__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
+// LINE 206:
+		__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x466], al;
+// LINE 207:
+		__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x467], al;
+// LINE 208:
+		__asm        mov    al, reinterpret_cast<uint8_t>(Counter);
+		__asm        mov    ecx, Counter;
+		__asm        mov    [ebp+ecx*4-0x468], al;
+// LINE 209:
+		__asm        mov    eax, Counter;
+		__asm        mov    byte ptr [ebp+eax*4-0x465], 5;
 	}
 // LINE 214:
 _FOR_493:
 	for (; (Counter < 0x100); Counter++) {
-		// LINE 215:
-			__asm        mov    eax, Counter;
-			__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
-			__asm        jmp    _FOR_NEXT_493;
+// LINE 215:
+		__asm        mov    eax, Counter;
+		__asm        mov    byte ptr [ebp+eax*4-0x465], 0;
+		__asm        jmp    _FOR_NEXT_493;
 	}
 // LINE 218:
 _T4b3:
@@ -671,19 +671,19 @@ _T4b:
 // LINE 259:
 _FOR_71:
 	for (i = 0x0; (i < 0x10); i++) {
-		// LINE 260:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, this;
-			__asm        cmp    dword ptr [ecx+eax*4+0x28], 0;
-			__asm        je     _Ta0;
-		// LINE 261:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, this;
-			__asm        mov    eax, [ecx+eax*4+0x28];
-			__asm        push   eax;
-			__asm        call   dword ptr ds:[0x6C358C];
-		// LINE 262:
-		_Ta0:
+// LINE 260:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        cmp    dword ptr [ecx+eax*4+0x28], 0;
+		__asm        je     _Ta0;
+// LINE 261:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, this;
+		__asm        mov    eax, [ecx+eax*4+0x28];
+		__asm        push   eax;
+		__asm        call   dword ptr ds:[0x6C358C];
+// LINE 262:
+_Ta0:
 	}
 // LINE 267:
 _Ta5:
@@ -1111,26 +1111,26 @@ void CSparkalWindow::UpdatePalette(long start, long count, /*packed*/ struct Spa
 // LINE 487:
 _FOR_30:
 	for (i = start; ((count + start) > i); i++) {
-		// LINE 488:
-			__asm        mov    eax, pColor;
-			__asm        mov    al, [eax+2];
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx*4-0x400], al;
-		// LINE 489:
-			__asm        mov    eax, pColor;
-			__asm        mov    al, [eax+1];
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx*4-0x3FF], al;
-		// LINE 490:
-			__asm        mov    eax, pColor;
-			__asm        mov    al, [eax];
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx*4-0x3FE], al;
-		// LINE 491:
-			__asm        mov    eax, i;
-			__asm        mov    byte ptr [ebp+eax*4-0x3FD], 5;
-		// LINE 492:
-			pColor += 0x4;
+// LINE 488:
+		__asm        mov    eax, pColor;
+		__asm        mov    al, [eax+2];
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx*4-0x400], al;
+// LINE 489:
+		__asm        mov    eax, pColor;
+		__asm        mov    al, [eax+1];
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx*4-0x3FF], al;
+// LINE 490:
+		__asm        mov    eax, pColor;
+		__asm        mov    al, [eax];
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx*4-0x3FE], al;
+// LINE 491:
+		__asm        mov    eax, i;
+		__asm        mov    byte ptr [ebp+eax*4-0x3FD], 5;
+// LINE 492:
+		pColor += 0x4;
 	}
 // LINE 494:
 _T97:
@@ -1222,36 +1222,36 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, /*pack
 // LINE 537:
 _FOR_ff:
 	for (i = 0x0; (i < 0x100); i++) {
-		// LINE 538:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, pColors;
-			__asm        mov    al, [ecx+eax*4];
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx*4-0x516], al;
-		// LINE 539:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, pColors;
-			__asm        mov    al, [ecx+eax*4+1];
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx*4-0x517], al;
-		// LINE 540:
-			__asm        mov    eax, i;
-			__asm        mov    ecx, pColors;
-			__asm        mov    al, [ecx+eax*4+2];
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx*4-0x518], al;
-		// LINE 541:
-			__asm        mov    eax, i;
-			__asm        mov    byte ptr [ebp+eax*4-0x515], 0;
+// LINE 538:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, pColors;
+		__asm        mov    al, [ecx+eax*4];
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx*4-0x516], al;
+// LINE 539:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, pColors;
+		__asm        mov    al, [ecx+eax*4+1];
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx*4-0x517], al;
+// LINE 540:
+		__asm        mov    eax, i;
+		__asm        mov    ecx, pColors;
+		__asm        mov    al, [ecx+eax*4+2];
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx*4-0x518], al;
+// LINE 541:
+		__asm        mov    eax, i;
+		__asm        mov    byte ptr [ebp+eax*4-0x515], 0;
 	}
 // LINE 545:
 _FOR_184:
 	for (i = 0x0; (i < 0x100); i++) {
-		// LINE 546:
-			__asm        mov    al, reinterpret_cast<uint8_t>(i);
-			__asm        mov    ecx, i;
-			__asm        mov    [ebp+ecx-0x100], al;
-			__asm        jmp    _FOR_NEXT_184;
+// LINE 546:
+		__asm        mov    al, reinterpret_cast<uint8_t>(i);
+		__asm        mov    ecx, i;
+		__asm        mov    [ebp+ecx-0x100], al;
+		__asm        jmp    _FOR_NEXT_184;
 	}
 // LINE 549:
 _T1b2:
@@ -1288,18 +1288,18 @@ _T1b2:
 // LINE 555:
 _FOR_22f:
 	for (i = 0x0; (i < 0x100); i++) {
-		// LINE 556:
-			__asm        mov    eax, i;
-			__asm        xor    ecx, ecx;
-			__asm        mov    cl, [ebp+eax-0x100];
-			__asm        cmp    ecx, i;
-			__asm        je     _T26f;
-		// LINE 557:
-			IsID = 0x0;
-		// LINE 558:
-			__asm        jmp    _T274;
-		// LINE 560:
-		_T26f:
+// LINE 556:
+		__asm        mov    eax, i;
+		__asm        xor    ecx, ecx;
+		__asm        mov    cl, [ebp+eax-0x100];
+		__asm        cmp    ecx, i;
+		__asm        je     _T26f;
+// LINE 557:
+		IsID = 0x0;
+// LINE 558:
+		__asm        jmp    _T274;
+// LINE 560:
+_T26f:
 	}
 // LINE 563:
 _T274:
@@ -1791,12 +1791,12 @@ _T414:
 
 	__asm        mov    eax, [ebp-0x70];
 	__asm        jmp    _Switch_442[0][eax*4];
-// Switch pointers:
-//   _T1c8
-//   _T284
-//   _T468
-//   _T226
-//   _T2de
+	// Switch pointers:
+	//   _T1c8
+	//   _T284
+	//   _T468
+	//   _T226
+	//   _T2de
 _T456:
 	__asm        cmp    dword ptr [ebp-0x70], 0x311;
 	__asm        je     _T14;

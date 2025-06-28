@@ -640,11 +640,11 @@ _T4c:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_60[0][eax*4];
-// Switch pointers:
-//   _T1b
-//   _T26
-//   _T31
-//   _T3c
+	// Switch pointers:
+	//   _T1b
+	//   _T26
+	//   _T31
+	//   _T3c
 // LINE 205:
 _T70:
 	return baseID;
@@ -689,11 +689,11 @@ _T4c:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_60[0][eax*4];
-// Switch pointers:
-//   _T1b
-//   _T26
-//   _T31
-//   _T3c
+	// Switch pointers:
+	//   _T1b
+	//   _T26
+	//   _T31
+	//   _T3c
 // LINE 224:
 _T70:
 	return maxID;
@@ -792,11 +792,11 @@ _T56:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_6a[0][eax*4];
-// Switch pointers:
-//   _T15
-//   _T21
-//   _T2d
-//   _T39
+	// Switch pointers:
+	//   _T15
+	//   _T21
+	//   _T2d
+	//   _T39
 // LINE 258:
 _T7a:
 	EmptyPStr(name);
