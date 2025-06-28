@@ -342,11 +342,7 @@ _T30:
 	cbRead = pckIn->cksize;
 // LINE 206:
 _T48:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, cbRead;
-	__asm        neg    eax;
-	__asm        mov    ecx, pckIn;
-	__asm        sub    [ecx+4], eax;
+	pckIn->cksize -= cbRead;
 // LINE 208:
 _FOR_61:
 	for (cT = 0x0; (cT < cbRead); cT++) {

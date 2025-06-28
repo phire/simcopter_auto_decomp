@@ -1661,10 +1661,7 @@ void S3MissileDriver() {
 	__asm        cmp    S_msl_fire_delay, 0;
 	__asm        jle    _T29;
 // LINE 927:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        sub    S_msl_fire_delay, eax;
+	S_msl_fire_delay -= LoopTime;
 // LINE 931:
 _T29:
 	__asm        mov    eax, G_uheli;
@@ -1772,17 +1769,9 @@ _T16d:
 	__asm        cmp    dword ptr [eax+0x38], 1;
 	__asm        jne    _T44d;
 // LINE 971:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+4], eax;
+	md->timetolive -= G_AvLoopTime;
 // LINE 972:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+8], eax;
+	md->smoketime -= G_AvLoopTime;
 // LINE 973:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x30];
@@ -2118,11 +2107,7 @@ _T4c1:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1087:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+8], eax;
+	md->smoketime -= G_AvLoopTime;
 // LINE 1089:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -2370,11 +2355,7 @@ _FOR_COND_a3c:
 	__asm        jmp    _FOR_NEXT_a3c;
 // LINE 1201:
 _Ta73:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+4], eax;
+	md->timetolive -= G_AvLoopTime;
 // LINE 1202:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2556,11 +2537,7 @@ _Tb7f:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1256:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+8], eax;
+	md->smoketime -= G_AvLoopTime;
 // LINE 1259:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -2838,11 +2815,7 @@ _FOR_COND_1137:
 	__asm        jmp    _FOR_NEXT_1137;
 // LINE 1374:
 _T116e:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+4], eax;
+	md->timetolive -= G_AvLoopTime;
 // LINE 1375:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2955,11 +2928,7 @@ _T1225:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1408:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+8], eax;
+	md->smoketime -= G_AvLoopTime;
 // LINE 1411:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -3108,11 +3077,7 @@ _FOR_COND_1532:
 	__asm        jmp    _FOR_NEXT_1532;
 // LINE 1483:
 _T1569:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+4], eax;
+	md->timetolive -= G_AvLoopTime;
 // LINE 1484:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -3363,11 +3328,7 @@ _FOR_COND_18eb:
 	__asm        jmp    _FOR_NEXT_18eb;
 // LINE 1582:
 _T1922:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+4], eax;
+	md->timetolive -= G_AvLoopTime;
 // LINE 1583:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -3761,11 +3722,7 @@ _FOR_COND_1ea4:
 	__asm        jmp    _FOR_NEXT_1ea4;
 // LINE 1719:
 _T1edb:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+4], eax;
+	md->timetolive -= G_AvLoopTime;
 // LINE 1720:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -3902,11 +3859,7 @@ _T1f1d:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1748:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, md;
-	__asm        sub    [ecx+8], eax;
+	md->smoketime -= G_AvLoopTime;
 // LINE 1751:
 	md->gas_on = 0x0;
 // LINE 1754:
@@ -4238,20 +4191,11 @@ __WHILE_109:
 			__asm        mov    eax, [eax+8];
 			__asm        mov    [ecx+8], eax;
 		// LINE 1934:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, cloc.x;
-			__asm        neg    eax;
-			__asm        sub    loc.x, eax;
+			loc.x -= cloc.x;
 		// LINE 1935:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, cloc.y;
-			__asm        neg    eax;
-			__asm        sub    loc.y, eax;
+			loc.y -= cloc.y;
 		// LINE 1936:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, cloc.z;
-			__asm        neg    eax;
-			__asm        sub    loc.z, eax;
+			loc.z -= cloc.z;
 		// LINE 1939:
 			__asm        mov    eax, md;
 			__asm        test   dword ptr [eax], 0x802;
@@ -4382,20 +4326,11 @@ __WHILE_45f:
 			__asm        mov    eax, [eax+8];
 			__asm        mov    [ecx+8], eax;
 		// LINE 2033:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, cloc.x;
-			__asm        neg    eax;
-			__asm        sub    loc.x, eax;
+			loc.x -= cloc.x;
 		// LINE 2034:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, cloc.y;
-			__asm        neg    eax;
-			__asm        sub    loc.y, eax;
+			loc.y -= cloc.y;
 		// LINE 2035:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, cloc.z;
-			__asm        neg    eax;
-			__asm        sub    loc.z, eax;
+			loc.z -= cloc.z;
 		// LINE 2036:
 			__asm        mov    eax, md;
 			__asm        test   dword ptr [eax], 0x798;
@@ -4656,20 +4591,11 @@ _T990:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2166:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, cloc.x;
-	__asm        neg    eax;
-	__asm        sub    loc.x, eax;
+	loc.x -= cloc.x;
 // LINE 2167:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, cloc.y;
-	__asm        neg    eax;
-	__asm        sub    loc.y, eax;
+	loc.y -= cloc.y;
 // LINE 2168:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, cloc.z;
-	__asm        neg    eax;
-	__asm        sub    loc.z, eax;
+	loc.z -= cloc.z;
 // LINE 2171:
 	__asm        mov    eax, celloc.y;
 	__asm        and    eax, 0xFF;

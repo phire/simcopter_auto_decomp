@@ -5786,12 +5786,7 @@ _Tb2:
 // LINE 2484:
 	tmpfix = ((G_alt << 0x10) >> 0x8);
 // LINE 2485:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, tmpfix;
-	__asm        shl    ecx, 6;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    S_local_lstart.x, eax;
+	S_local_lstart.x -= (tmpfix << 0x6);
 // LINE 2570:
 	__asm        mov    eax, S_local_lstart.x;
 	__asm        neg    eax;
@@ -9526,10 +9521,7 @@ void S3CityCheckGridPos() {
 	__asm        sub    eax, ebx;
 	__asm        mov    altdiff, eax;
 // LINE 4365:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_alt;
-	__asm        neg    eax;
-	__asm        sub    altdiff, eax;
+	altdiff -= G_alt;
 // LINE 4366:
 	G_alt += altdiff;
 // LINE 4368:
@@ -9663,12 +9655,7 @@ _T1bd:
 // LINE 4427:
 	GridPos.loc.x += (xdiff << 0x16);
 // LINE 4428:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, ydiff;
-	__asm        shl    ecx, 0x16;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    GridPos.loc.z, eax;
+	GridPos.loc.z -= (ydiff << 0x16);
 // LINE 4430:
 	return;
 _T26d:
@@ -9695,12 +9682,7 @@ _T28e:
 // LINE 4437:
 	GridPos.loc.x += (xdiff << 0x16);
 // LINE 4438:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, ydiff;
-	__asm        shl    ecx, 0x16;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    GridPos.loc.z, eax;
+	GridPos.loc.z -= (ydiff << 0x16);
 // LINE 4440:
 __RETURN:
 }

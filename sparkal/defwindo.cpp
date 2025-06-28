@@ -259,10 +259,7 @@ __DO_b0:
 		// LINE 103:
 			ChunkHeight += Step;
 		// LINE 104:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, Step;
-			__asm        neg    eax;
-			__asm        sub    DestTop, eax;
+			DestTop -= Step;
 	} while ((DestTop > Top));
 // LINE 106:
 	__asm        mov    eax, Top;

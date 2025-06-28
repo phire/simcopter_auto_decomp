@@ -306,14 +306,7 @@ _T1f:
 __WHILE_2e:
 	while ((hdr != 0x0)) {
 		// LINE 465:
-			__asm        xor    eax, eax;
-			__asm        mov    ecx, hdr;
-			__asm        mov    ecx, [ecx+8];
-			__asm        mov    edx, hdr;
-			__asm        sub    ecx, [edx+4];
-			__asm        sub    eax, ecx;
-			__asm        neg    eax;
-			__asm        sub    G_alloc_used, eax;
+			G_alloc_used -= (hdr->free - hdr->block);
 		// LINE 466:
 			hdr = hdr->next;
 	}
@@ -360,14 +353,7 @@ __WHILE_2e:
 		// LINE 500:
 			next_hdr = hdr->next;
 		// LINE 501:
-			__asm        xor    eax, eax;
-			__asm        mov    ecx, hdr;
-			__asm        mov    ecx, [ecx+0xC];
-			__asm        mov    edx, hdr;
-			__asm        sub    ecx, [edx+4];
-			__asm        sub    eax, ecx;
-			__asm        neg    eax;
-			__asm        sub    G_alloc_curr, eax;
+			G_alloc_curr -= (hdr->end - hdr->block);
 		// LINE 502:
 			G_alloc_free += (hdr->end - hdr->block);
 		// LINE 503:

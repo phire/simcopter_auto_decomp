@@ -926,11 +926,7 @@ _T39:
 // LINE 700:
 	this->dyObj.loc.y = S3TerrPrecisionAlt(this->dyObj.loc.x, this->dyObj.loc.z, 0x0);
 // LINE 703:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x57], eax;
+	this->timeToLive -= LoopTime;
 // LINE 704:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x57], 0;
@@ -985,11 +981,7 @@ _T146:
 _T159:
 	this->BoatClass::MoveForward();
 // LINE 729:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0xB], eax;
+	this->sprayTimer -= LoopTime;
 // LINE 730:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB], 0;
@@ -1780,11 +1772,7 @@ void BoatClass::MoveForward() {
 	distance = this->remainingDist;
 // LINE 1263:
 _T3c:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, distance;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x1F], eax;
+	this->remainingDist -= distance;
 // LINE 1270:
 	__asm        mov    eax, distance;
 	__asm        push   eax;

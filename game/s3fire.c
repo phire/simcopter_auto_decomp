@@ -603,11 +603,7 @@ _T9b:
 	__asm        mov    [ecx+8], eax;
 // LINE 369:
 _T13c:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, fd;
-	__asm        sub    [ecx+4], eax;
+	fd->timetolive -= G_AvLoopTime;
 // LINE 370:
 	__asm        mov    eax, fd;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1154,11 +1150,7 @@ __WHILE_77:
 			S3DSPlay(0xf, dloc.x, 0x0);
 		// LINE 710:
 		_T193:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, dfactor;
-			__asm        neg    eax;
-			__asm        mov    ecx, fd;
-			__asm        sub    [ecx+8], eax;
+			fd->douse_points -= dfactor;
 		// LINE 711:
 			__asm        mov    eax, fd;
 			__asm        cmp    dword ptr [eax+8], 0;
@@ -3406,11 +3398,7 @@ void S3FireDyObjCollisionCheck(/*packed*/ struct _FIRE_DATA *fd, long hit_type) 
 	__asm        cmp    hit_type, 6;
 	__asm        jne    _T42;
 // LINE 1512:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, fd;
-	__asm        sub    [ecx+0x88], eax;
+	fd->dycheck_timer -= G_AvLoopTime;
 // LINE 1513:
 	__asm        mov    eax, fd;
 	__asm        cmp    dword ptr [eax+0x88], 0;

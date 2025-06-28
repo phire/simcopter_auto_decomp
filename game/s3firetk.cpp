@@ -1301,26 +1301,11 @@ _Td9:
 	__asm        mov    [ecx+8], eax;
 // LINE 535:
 _Tfe:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x24];
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x2B0], eax;
+	this->firevec.x -= this->autoDynomitor.loc.x;
 // LINE 536:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x28];
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x2B4], eax;
+	this->firevec.y -= this->autoDynomitor.loc.y;
 // LINE 537:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x2B8], eax;
+	this->firevec.z -= this->autoDynomitor.loc.z;
 // LINE 540:
 	this->distToFire = MTNormalize((this + 0x2b0));
 // LINE 542:

@@ -561,11 +561,7 @@ _Tb3:
 	__asm        cmp    [eax+0x134], ecx;
 	__asm        jg     _Tf3;
 // LINE 245:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x134];
-	__asm        neg    eax;
-	__asm        sub    start_col, eax;
+	start_col -= this->nBitmapWidth;
 // LINE 249:
 _Tf3:
 	__asm        mov    eax, start_col;

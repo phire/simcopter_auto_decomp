@@ -265,10 +265,7 @@ _FOR_418:
 			}
 		// LINE 268:
 		_T471:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, vert_inc;
-			__asm        neg    eax;
-			__asm        sub    z_val, eax;
+			z_val -= vert_inc;
 	}
 // LINE 275:
 _T480:

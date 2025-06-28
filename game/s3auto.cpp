@@ -1438,11 +1438,7 @@ _Tec:
 	__asm        cmp    dword ptr [eax+0xC6], 0;
 	__asm        jle    _T121;
 // LINE 627:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0xC6], eax;
+	this->timePulledOver -= LoopTime;
 // LINE 629:
 	__asm        jmp    _T200;
 _T121:
@@ -5588,11 +5584,7 @@ _Tc0:
 	__asm        test   byte ptr [eax+8], 0x40;
 	__asm        je     _T101;
 // LINE 2582:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, PulloverStepSize;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x9A], eax;
+	this->DeltaFromCenter -= PulloverStepSize;
 // LINE 2583:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x9A], 0;
@@ -6901,17 +6893,9 @@ void AutomobileClass::RunFireState() {
 	/*bp-0x6c*/  /*packed*/ struct Point2d currpos; // 0x8 bytes
 
 // LINE 3298:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x102], eax;
+	this->timeToLive -= LoopTime;
 // LINE 3299:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x106], eax;
+	this->fireTime -= LoopTime;
 // LINE 3302:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x106], 0;
@@ -7043,11 +7027,7 @@ void AutomobileClass::RunJamState() {
 // LINE 3375:
 	this->AutomobileClass::HonkHorn();
 // LINE 3378:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x102], eax;
+	this->timeToLive -= LoopTime;
 // LINE 3381:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x102], 0;
@@ -9881,11 +9861,7 @@ void AutomobileClass::MoveForwardOnHiway() {
 	distance = this->currDist;
 // LINE 4494:
 _T45:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, distance;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0xEA], eax;
+	this->currDist -= distance;
 // LINE 4501:
 	__asm        mov    eax, distance;
 	__asm        push   eax;

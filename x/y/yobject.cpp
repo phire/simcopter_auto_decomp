@@ -5860,11 +5860,7 @@ _T214:
 	__asm        add    esp, 8;
 	__asm        mov    tempfix, eax;
 // LINE 587:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x174];
-	__asm        neg    eax;
-	__asm        sub    tempfix, eax;
+	tempfix -= this->fUserControl.fwdSpeed;
 // LINE 588:
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        add    eax, eax;

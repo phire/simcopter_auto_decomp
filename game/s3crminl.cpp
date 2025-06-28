@@ -706,11 +706,7 @@ _T141:
 	__asm        jmp    _T195;
 // LINE 240:
 _T182:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x122], eax;
+	this->timeToLeaveCar -= LoopTime;
 // LINE 243:
 _T195:
 	this->AutomobileClass::ItterateFSM();
@@ -796,11 +792,7 @@ _T2a5:
 	__asm        jmp    _T4df;
 // LINE 289:
 _T2b2:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0xFE], eax;
+	this->personTimer -= LoopTime;
 // LINE 291:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xF6], 0;
@@ -919,11 +911,7 @@ _T44a:
 	__asm        jmp    _T48d;
 // LINE 360:
 _T47a:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x126], eax;
+	this->timeToBeOnTheRun -= LoopTime;
 // LINE 362:
 _T48d:
 	this->AutomobileClass::ItterateFSM();

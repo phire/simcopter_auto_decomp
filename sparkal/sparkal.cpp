@@ -132,10 +132,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0043d8dc
 long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long lMinDestination, long lMaxDestination) {
 // LINE 74:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, lMinSource;
-	__asm        neg    eax;
-	__asm        sub    lPositionSource, eax;
+	lPositionSource -= lMinSource;
 // LINE 75:
 	lPositionSource = ((lMaxDestination - lMinDestination) * lPositionSource);
 // LINE 76:
@@ -146,10 +143,7 @@ long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long l
 	__asm        idiv   ecx;
 	__asm        mov    lPositionSource, eax;
 // LINE 77:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, lMinDestination;
-	__asm        neg    eax;
-	__asm        sub    lPositionSource, eax;
+	lPositionSource -= lMinDestination;
 // LINE 78:
 	return lPositionSource;
 // LINE 79:

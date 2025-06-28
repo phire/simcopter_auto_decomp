@@ -783,11 +783,7 @@ _T1d:
 	__asm        cmp    dword ptr [eax+0xFE], 0;
 	__asm        jle    _T40;
 // LINE 297:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0xFE], eax;
+	this->personTimer -= LoopTime;
 // LINE 299:
 _T40:
 	__asm        mov    eax, this;
@@ -959,11 +955,7 @@ _T282:
 	__asm        cmp    dword ptr [eax+0xFE], 0;
 	__asm        jle    _T2a5;
 // LINE 376:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0xFE], eax;
+	this->personTimer -= LoopTime;
 // LINE 379:
 _T2a5:
 	__asm        mov    ecx, this;

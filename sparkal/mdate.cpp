@@ -1048,16 +1048,10 @@ __RETURN:
 	__asm        jmp    _T4a;
 // LINE 461:
 _T40:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, desiredDayOfWeek;
-	__asm        neg    eax;
-	__asm        sub    thisDayOfWeek, eax;
+	thisDayOfWeek -= desiredDayOfWeek;
 // LINE 462:
 _T4a:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, thisDayOfWeek;
-	__asm        neg    eax;
-	__asm        sub    j, eax;
+	j -= thisDayOfWeek;
 // LINE 463:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    dword ptr [eax], 0x58F3E8;

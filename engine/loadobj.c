@@ -808,12 +808,7 @@ _T639:
 // LINE 700:
 	ObjectPtr->PolyVerts = VertCount;
 // LINE 701:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, dataptr;
-	__asm        sub    ecx, ObjData;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    ObjDataSize, eax;
+	ObjDataSize -= (dataptr - ObjData);
 // LINE 702:
 	ObjData = dataptr;
 // LINE 703:

@@ -3637,12 +3637,7 @@ _T116:
 	__asm        jmp    _T140;
 // LINE 399:
 _T11b:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x8C];
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x90], eax;
+	this->lCurrentFrame -= this->nAnimationDirection;
 	__asm        jmp    _T136;
 // LINE 400:
 _T136:

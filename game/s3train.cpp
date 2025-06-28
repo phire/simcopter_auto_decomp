@@ -1186,11 +1186,7 @@ _T25:
 	__asm        test   eax, eax;
 	__asm        jne    _T6c;
 // LINE 845:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x71], eax;
+	this->timeToLive -= LoopTime;
 // LINE 846:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x71], 0;
@@ -1538,11 +1534,7 @@ _T90:
 // LINE 1117:
 	_VRPostYRot(0x320000, (this->endcar + 0x24));
 // LINE 1119:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x6D], eax;
+	this->smokeTime -= G_AvLoopTime;
 // LINE 1122:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x6D], 0;
@@ -4262,11 +4254,7 @@ void TrainClass::MoveForward() {
 	distance = this->remainingDist;
 // LINE 2705:
 _T3c:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, distance;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x21], eax;
+	this->remainingDist -= distance;
 // LINE 2712:
 	__asm        mov    eax, distance;
 	__asm        push   eax;

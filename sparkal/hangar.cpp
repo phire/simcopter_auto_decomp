@@ -2917,17 +2917,9 @@ int32_t HangarWindow::IsHangarRectVisibleInWindow(/*packed*/ class MRect& rectHa
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 369:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x12A];
-	__asm        neg    eax;
-	__asm        sub    rectCompare.left, eax;
+	rectCompare.left -= this->lWindowPositionInHangar;
 // LINE 370:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x12A];
-	__asm        neg    eax;
-	__asm        sub    rectCompare.right, eax;
+	rectCompare.right -= this->lWindowPositionInHangar;
 // LINE 371:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, rectWindowLocal.left;

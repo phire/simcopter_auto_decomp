@@ -3272,21 +3272,11 @@ _LOOP_37:
 		_Te7:
 			__asm        jmp    _Tec;
 		_Tec:
-			__asm        xor    eax, eax;
-			__asm        mov    ecx, iterator.node;
-			__asm        mov    ecx, [ecx+8];
-			__asm        sub    eax, [ecx+0x10];
-			__asm        neg    eax;
-			__asm        sub    nCursorX, eax;
+			nCursorX -= iterator.node->data-><GraphicWindow+0x10:4>;
 		// LINE 370:
 			__asm        jmp    _T101;
 		_T101:
-			__asm        xor    eax, eax;
-			__asm        mov    ecx, iterator.node;
-			__asm        mov    ecx, [ecx+8];
-			__asm        sub    eax, [ecx+0x14];
-			__asm        neg    eax;
-			__asm        sub    nCursorY, eax;
+			nCursorY -= iterator.node->data-><GraphicWindow+0x14:4>;
 		// LINE 373:
 			__asm        jmp    _T116;
 		_T116:
@@ -8504,17 +8494,9 @@ void GraphicWindow::ScreenToWindowCoordinates(long& nXPosition, long& nYPosition
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xA0];
 // LINE 1325:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, nXFactor;
-	__asm        neg    eax;
-	__asm        mov    ecx, nXPosition;
-	__asm        sub    [ecx], eax;
+	nXPosition. -= nXFactor;
 // LINE 1326:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, nYFactor;
-	__asm        neg    eax;
-	__asm        mov    ecx, nYPosition;
-	__asm        sub    [ecx], eax;
+	nYPosition. -= nYFactor;
 // LINE 1327:
 	return;
 }

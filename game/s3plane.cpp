@@ -1525,11 +1525,7 @@ _T29:
 	dist = this->remainingDist;
 // LINE 1398:
 _T50:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, dist;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x14], eax;
+	this->remainingDist -= dist;
 // LINE 1403:
 	__asm        mov    eax, dist;
 	__asm        push   eax;
@@ -1638,11 +1634,7 @@ _T1be:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    cptr, eax;
 // LINE 1424:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x48], eax;
+	this->smokeTime -= G_AvLoopTime;
 // LINE 1427:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
@@ -1833,20 +1825,11 @@ __WHILE_64:
 			__asm        mov    eax, [eax+8];
 			__asm        mov    [ecx+8], eax;
 		// LINE 1536:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, cloc.x;
-			__asm        neg    eax;
-			__asm        sub    loc.x, eax;
+			loc.x -= cloc.x;
 		// LINE 1537:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, cloc.y;
-			__asm        neg    eax;
-			__asm        sub    loc.y, eax;
+			loc.y -= cloc.y;
 		// LINE 1538:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, cloc.z;
-			__asm        neg    eax;
-			__asm        sub    loc.z, eax;
+			loc.z -= cloc.z;
 		// LINE 1540:
 			S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, this->missionId);
 		// LINE 1542:
@@ -2090,20 +2073,11 @@ _T5e3:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1656:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, cloc.x;
-	__asm        neg    eax;
-	__asm        sub    loc.x, eax;
+	loc.x -= cloc.x;
 // LINE 1657:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, cloc.y;
-	__asm        neg    eax;
-	__asm        sub    loc.y, eax;
+	loc.y -= cloc.y;
 // LINE 1658:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, cloc.z;
-	__asm        neg    eax;
-	__asm        sub    loc.z, eax;
+	loc.z -= cloc.z;
 // LINE 1662:
 	S3ExplosionStart(cptr, loc.x, loc.y, loc.z, 0x4, this->missionId);
 // LINE 1664:
@@ -3075,11 +3049,7 @@ void PlaneClass::HandleUFOStuff() {
 	this->PlaneClass::TurnOffShields();
 // LINE 2487:
 _T34:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, LoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        sub    [ecx+0x48], eax;
+	this->smokeTime -= LoopTime;
 // LINE 2488:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;

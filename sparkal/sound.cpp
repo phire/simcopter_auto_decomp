@@ -2716,11 +2716,7 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 	__asm        cmp    dword ptr [ecx+eax*4+0x52], 0;
 	__asm        je     __WHILE_34;
 // LINE 948:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x3C];
-	__asm        neg    eax;
-	__asm        sub    Sound::lTotalMemoryUsage, eax;
+	Sound::lTotalMemoryUsage -= this->cbSize;
 // LINE 953:
 __WHILE_34:
 	__asm        mov    eax, i;
@@ -4226,10 +4222,7 @@ __DO_2e1:
 		__DO_2e1:
 			lpTemp += nActualBytesRead;
 		// LINE 1656:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, nActualBytesRead;
-			__asm        neg    eax;
-			__asm        sub    dwLength1, eax;
+			dwLength1 -= nActualBytesRead;
 		// LINE 1659:
 			WaveStartDataRead(this->lpStreamBufferInfo, (this->lpStreamBufferInfo + 0x4), (this->lpStreamBufferInfo + 0x18));
 		// LINE 1661:
@@ -4666,14 +4659,7 @@ _T1aa:
 	__asm        cmp    [eax+0x2C], ecx;
 	__asm        ja     _T233;
 // LINE 1893:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        sub    [ecx+0x34], eax;
+	this->lpStreamBufferInfo->dwNextWriteOffset -= this->lpStreamBufferInfo->dwBufferSize;
 // LINE 1895:
 _T233:
 	__asm        jmp    _T73d;
@@ -4829,10 +4815,7 @@ __DO_3d7:
 		__DO_3d7:
 			lpTemp += nActualBytesRead;
 		// LINE 1946:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, nActualBytesRead;
-			__asm        neg    eax;
-			__asm        sub    dwLength1, eax;
+			dwLength1 -= nActualBytesRead;
 		// LINE 1949:
 			nError = WaveStartDataRead(this->lpStreamBufferInfo, (this->lpStreamBufferInfo + 0x4), (this->lpStreamBufferInfo + 0x18));
 		// LINE 1951:
@@ -4984,10 +4967,7 @@ __DO_608:
 		__DO_608:
 			lpTemp += nActualBytesRead;
 		// LINE 2005:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, nActualBytesRead;
-			__asm        neg    eax;
-			__asm        sub    dwLength2, eax;
+			dwLength2 -= nActualBytesRead;
 		// LINE 2008:
 			nError = WaveStartDataRead(this->lpStreamBufferInfo, (this->lpStreamBufferInfo + 0x4), (this->lpStreamBufferInfo + 0x18));
 		// LINE 2011:
@@ -5047,14 +5027,7 @@ _T6ba:
 	__asm        cmp    [eax+0x2C], ecx;
 	__asm        ja     END_OF_FUNCTION;
 // LINE 2026:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        neg    eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        sub    [ecx+0x34], eax;
+	this->lpStreamBufferInfo->dwNextWriteOffset -= this->lpStreamBufferInfo->dwBufferSize;
 // LINE 2030:
 END_OF_FUNCTION:
 	this->lpStreamBufferInfo->bInTimerCallback = 0x0;

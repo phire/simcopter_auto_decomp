@@ -915,11 +915,7 @@ _FOR_COND_22b:
 	__asm        jmp    _FOR_NEXT_22b;
 // LINE 478:
 _T25a:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, sd;
-	__asm        sub    [ecx+8], eax;
+	sd->timetolive -= G_AvLoopTime;
 // LINE 481:
 	__asm        mov    eax, sd;
 	__asm        cmp    dword ptr [eax+8], 0;

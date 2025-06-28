@@ -392,10 +392,7 @@ _Tbe:
 	AccelAdjust = 0x0;
 // LINE 350:
 _Td7:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, AccelAdjust;
-	__asm        neg    eax;
-	__asm        sub    cameraDistance, eax;
+	cameraDistance -= AccelAdjust;
 // LINE 351:
 	__asm        xor    ecx, ecx;
 	__asm        mov    eax, G_uheli;

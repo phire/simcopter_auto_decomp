@@ -1990,13 +1990,7 @@ _T8d0:
 	__asm        cmp    dword ptr [eax+0x320], 0;
 	__asm        jne    _T976;
 // LINE 1276:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_collide_damage_val;
-	__asm        shl    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= (S_htwk_collide_damage_val << 0x2);
 // LINE 1279:
 _T976:
 	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x9);
@@ -2062,13 +2056,7 @@ _Ta22:
 	__asm        cmp    dword ptr [eax+0x320], 0;
 	__asm        jne    _Taa1;
 // LINE 1296:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_collide_damage_val;
-	__asm        shl    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= (S_htwk_collide_damage_val << 0x2);
 // LINE 1299:
 _Taa1:
 	S3ExplosionSmokeStart(cptr, (hd->dyheli + 0x18), 0x1);
@@ -2119,23 +2107,13 @@ _Tb3b:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _Tbae;
 // LINE 1311:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, S_htwk_collide_damage_val;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= S_htwk_collide_damage_val;
 // LINE 1313:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
 	__asm        jne    _Tbae;
 // LINE 1315:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_collide_damage_val;
-	__asm        shl    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= (S_htwk_collide_damage_val << 0x2);
 // LINE 1318:
 _Tbae:
 	__asm        mov    eax, hd;
@@ -2257,13 +2235,7 @@ _Td62:
 	__asm        cmp    dword ptr [eax+0x320], 0;
 	__asm        jne    _Tdb6;
 // LINE 1366:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_collide_damage_val;
-	__asm        shl    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= (S_htwk_collide_damage_val << 0x2);
 // LINE 1369:
 _Tdb6:
 	S3ExplosionStart(cptr, normx, normy, normz, 0x1, -0x1);
@@ -2344,13 +2316,7 @@ _Tecb:
 _Teeb:
 	speed = S_htwk_watercannon_speed;
 // LINE 1396:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_bucket_dumprate;
-	__asm        sar    ecx, 1;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x1C0], eax;
+	hd->winfo.load -= (S_htwk_bucket_dumprate >> 0x1);
 // LINE 1397:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1C0], 0;
@@ -2434,14 +2400,7 @@ _T8c:
 	__asm        cmp    [eax+0x11C], ecx;
 	__asm        jge    _Tb6;
 // LINE 1458:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, fwd_speed;
-	__asm        mov    edx, hd;
-	__asm        sub    ecx, [edx+0x11C];
-	__asm        sar    ecx, 5;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    fwd_speed, eax;
+	fwd_speed -= ((fwd_speed - hd->pitch) >> 0x5);
 // LINE 1460:
 _Tb6:
 	__asm        jmp    _T113;
@@ -2462,16 +2421,7 @@ _Te3:
 	__asm        cmp    eax, fwd_speed;
 	__asm        jge    _T113;
 // LINE 1465:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, fwd_speed;
-	__asm        mov    edx, hd;
-	__asm        mov    edx, [edx+0x11C];
-	__asm        add    edx, edx;
-	__asm        sub    ecx, edx;
-	__asm        sar    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    fwd_speed, eax;
+	fwd_speed -= ((fwd_speed - (hd->pitch + hd->pitch)) >> 0x4);
 // LINE 1468:
 _T113:
 	__asm        mov    eax, hd;
@@ -2685,11 +2635,7 @@ _Tfd:
 	__asm        cmp    deflectangle, 0;
 	__asm        jle    _T188;
 // LINE 1562:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    eax, [ecx+0x138];
-	__asm        neg    eax;
-	__asm        sub    alt, eax;
+	alt -= hd->hover_ht;
 // LINE 1563:
 	tmpvect.x = dist;
 // LINE 1564:
@@ -3025,11 +2971,7 @@ _T185:
 	__asm        add    esp, 8;
 	__asm        mov    tempfix, eax;
 // LINE 1734:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    eax, [ecx+0x11C];
-	__asm        neg    eax;
-	__asm        sub    tempfix, eax;
+	tempfix -= hd->pitch;
 // LINE 1735:
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        add    eax, eax;
@@ -3138,11 +3080,7 @@ _T2d6:
 	__asm        add    esp, 8;
 	__asm        mov    tempfix, eax;
 // LINE 1754:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    eax, [ecx+0x114];
-	__asm        neg    eax;
-	__asm        sub    tempfix, eax;
+	tempfix -= hd->roll;
 // LINE 1755:
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
@@ -3319,11 +3257,7 @@ _T4e3:
 	__asm        add    esp, 8;
 	__asm        mov    tempfix, eax;
 // LINE 1787:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    eax, [ecx+0x118];
-	__asm        neg    eax;
-	__asm        sub    tempfix, eax;
+	tempfix -= hd->slide;
 // LINE 1788:
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
@@ -4174,11 +4108,7 @@ _Tc6:
 	__asm        cmp    dword ptr [eax+0x110], 0;
 	__asm        jle    _T144;
 // LINE 2118:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x110], eax;
+	hd->collide_delay -= G_AvLoopTime;
 // LINE 2119:
 	hd->fwd_speed = (hd->pitch >> 0x3);
 // LINE 2121:
@@ -4202,16 +4132,7 @@ _T187:
 	__asm        cmp    [eax+0x128], ecx;
 	__asm        jle    _T1c3;
 // LINE 2126:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, hd;
-	__asm        mov    ecx, [ecx+0x128];
-	__asm        mov    edx, hd;
-	__asm        sub    ecx, [edx+0x11C];
-	__asm        sar    ecx, 5;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x128], eax;
+	hd->fwd_speed -= ((hd->fwd_speed - hd->pitch) >> 0x5);
 // LINE 2128:
 _T1c3:
 	__asm        jmp    _T244;
@@ -4234,18 +4155,7 @@ _T202:
 	__asm        cmp    eax, [ecx+0x128];
 	__asm        jge    _T244;
 // LINE 2133:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, hd;
-	__asm        mov    ecx, [ecx+0x128];
-	__asm        mov    edx, hd;
-	__asm        mov    edx, [edx+0x11C];
-	__asm        add    edx, edx;
-	__asm        sub    ecx, edx;
-	__asm        sar    ecx, 4;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x128], eax;
+	hd->fwd_speed -= ((hd->fwd_speed - (hd->pitch + hd->pitch)) >> 0x4);
 // LINE 2136:
 _T244:
 	__asm        mov    eax, hd;
@@ -4400,13 +4310,7 @@ void S3HeliMoveY(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 2189:
 	hd->buildalt = GetCopterBldAlt(hd);
 // LINE 2193:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_turbpitch[0];
-	__asm        sar    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x124], eax;
+	hd->yspeed -= (S_turbpitch[0] >> 0x2);
 // LINE 2196:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x18];
@@ -4619,14 +4523,7 @@ _T2ea:
 	__asm        cmp    dword ptr [eax+0x12C], 0;
 	__asm        jge    _T351;
 // LINE 2274:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, hd;
-	__asm        mov    ecx, [ecx+0x12C];
-	__asm        add    ecx, ecx;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x124], eax;
+	hd->yspeed -= (hd->delta_fwd_speed + hd->delta_fwd_speed);
 // LINE 2275:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x124], 0;
@@ -5629,11 +5526,7 @@ _T1e:
 	__asm        cmp    dword ptr [eax+0x1BC], 1;
 	__asm        jne    _T17c;
 // LINE 2712:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, S_htwk_bucket_dumprate;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x1C0], eax;
+	hd->winfo.load -= S_htwk_bucket_dumprate;
 // LINE 2713:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1C0], 0;
@@ -6286,58 +6179,32 @@ _T40f:
 	__asm        cmp    absvectorx, eax;
 	__asm        jle    _T44a;
 // LINE 3036:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, vectorx;
-	__asm        neg    eax;
-	__asm        mov    ecx, vert;
-	__asm        sub    [ecx], eax;
+	vert->x -= vectorx;
 // LINE 3037:
 	__asm        jmp    _T45c;
 // LINE 3038:
 _T44a:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    eax, [ecx+0x130];
-	__asm        neg    eax;
-	__asm        mov    ecx, vert;
-	__asm        sub    [ecx], eax;
+	vert->x -= hd->movex;
 // LINE 3040:
 _T45c:
 	__asm        mov    eax, absvectorz;
 	__asm        cmp    absdz, eax;
 	__asm        jge    _T47a;
 // LINE 3041:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, vectorz;
-	__asm        neg    eax;
-	__asm        mov    ecx, vert;
-	__asm        sub    [ecx+8], eax;
+	vert->z -= vectorz;
 // LINE 3042:
 	__asm        jmp    _T48d;
 // LINE 3043:
 _T47a:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    eax, [ecx+0x134];
-	__asm        neg    eax;
-	__asm        mov    ecx, vert;
-	__asm        sub    [ecx+8], eax;
+	vert->z -= hd->movez;
 // LINE 3045:
 _T48d:
 	__asm        jmp    _T4ab;
 // LINE 3047:
 _T492:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, vectorx;
-	__asm        neg    eax;
-	__asm        mov    ecx, vert;
-	__asm        sub    [ecx], eax;
+	vert->x -= vectorx;
 // LINE 3048:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, vectorz;
-	__asm        neg    eax;
-	__asm        mov    ecx, vert;
-	__asm        sub    [ecx+8], eax;
+	vert->z -= vectorz;
 // LINE 3053:
 _T4ab:
 	vec.x = (vert->x - pvert->x);
@@ -7852,16 +7719,7 @@ _T16a:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _T216;
 // LINE 4344:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_firedmg_alt_max;
-	__asm        sar    ecx, 0x10;
-	__asm        mov    edx, firealt;
-	__asm        sar    edx, 0x10;
-	__asm        sub    ecx, edx;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= ((S_htwk_firedmg_alt_max >> 0x10) - (firealt >> 0x10));
 // LINE 4346:
 	S3DSPlay(0x10, (hd->dyheli + 0x18), 0x0);
 // LINE 4353:
@@ -8040,11 +7898,7 @@ void S3HeliSmokeTrail(/*packed*/ struct _HELI_DATA *hd) {
 	__asm        cmp    dword ptr [eax+4], 5;
 	__asm        jne    _T38a;
 // LINE 4425:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x16C], eax;
+	hd->crash_timer -= G_AvLoopTime;
 // LINE 4426:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0;
@@ -9151,11 +9005,7 @@ _T299:
 // LINE 5046:
 	S3SoundSetPosition(0x26, 0x607258);
 // LINE 5049:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x16C], eax;
+	hd->crash_timer -= G_AvLoopTime;
 // LINE 5050:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0x10000;
@@ -9193,11 +9043,7 @@ _T341:
 // LINE 5068:
 	S3SoundSetPosition(0x26, 0x607258);
 // LINE 5071:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0x16C], eax;
+	hd->crash_timer -= G_AvLoopTime;
 // LINE 5072:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x16C], 0;
@@ -10039,13 +9885,7 @@ _T32:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _T57;
 // LINE 5624:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_collide_damage_val;
-	__asm        sar    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= (S_htwk_collide_damage_val >> 0x2);
 // LINE 5625:
 _T57:
 	return;
@@ -10060,13 +9900,7 @@ _T66:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _T8b;
 // LINE 5632:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_collide_damage_val;
-	__asm        shl    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= (S_htwk_collide_damage_val << 0x2);
 // LINE 5633:
 _T8b:
 	return;
@@ -10081,13 +9915,7 @@ _T9a:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _Tbf;
 // LINE 5640:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_collide_damage_val;
-	__asm        shl    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= (S_htwk_collide_damage_val << 0x2);
 // LINE 5641:
 _Tbf:
 	return;
@@ -10096,11 +9924,7 @@ _Tc4:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _Te4;
 // LINE 5644:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, S_htwk_collide_damage_val;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= S_htwk_collide_damage_val;
 // LINE 5645:
 _Te4:
 	return;
@@ -10112,13 +9936,7 @@ _Tee:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _T113;
 // LINE 5650:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_collide_damage_val;
-	__asm        shl    ecx, 2;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= (S_htwk_collide_damage_val << 0x2);
 // LINE 5651:
 _T113:
 	return;
@@ -10133,11 +9951,7 @@ _T122:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _T142;
 // LINE 5658:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, S_htwk_collide_damage_val;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= S_htwk_collide_damage_val;
 // LINE 5659:
 _T142:
 	return;
@@ -10157,13 +9971,7 @@ _T163:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        jne    _T188;
 // LINE 5670:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_htwk_collide_damage_val;
-	__asm        sar    ecx, 3;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        mov    ecx, hd;
-	__asm        sub    [ecx+0xD0], eax;
+	hd->damage -= (S_htwk_collide_damage_val >> 0x3);
 // LINE 5671:
 _T188:
 	return;

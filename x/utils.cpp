@@ -555,12 +555,7 @@ __WHILE_8e:
 			__asm        mov    [ecx+edx], al;
 		// LINE 205:
 		_Td4:
-			__asm        xor    eax, eax;
-			__asm        mov    ecx, digit;
-			__asm        imul   ecx, sixteenPower;
-			__asm        sub    eax, ecx;
-			__asm        neg    eax;
-			__asm        sub    num, eax;
+			num -= (digit * sixteenPower);
 		// LINE 206:
 			power++;
 	}

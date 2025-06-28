@@ -1998,11 +1998,7 @@ _T90:
 // FUNCTION: COPTER_D 0x0049c55b
 int32_t UserMenuWindow::SetSelectionValue(int32_t nValue) {
 // LINE 198:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x98];
-	__asm        neg    eax;
-	__asm        sub    nValue, eax;
+	nValue -= this->myUserMenuWindowDescription.lSelectionBase;
 // LINE 199:
 	__asm        mov    eax, nValue;
 	__asm        push   eax;

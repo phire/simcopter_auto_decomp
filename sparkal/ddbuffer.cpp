@@ -993,14 +993,7 @@ _T95:
 // LINE 273:
 	this->mpFrontSurface = 0x0;
 // LINE 277:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    edx, this;
-	__asm        imul   ecx, [edx+0xC];
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    IFlatImage::lTotalMemoryUsage, eax;
+	IFlatImage::lTotalMemoryUsage -= (this->mWidth * this->mHeight);
 // LINE 281:
 _Td7:
 	__asm        mov    eax, this;
@@ -1017,14 +1010,7 @@ _Td7:
 // LINE 283:
 	this->mpBackSurface = 0x0;
 // LINE 287:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    edx, this;
-	__asm        imul   ecx, [edx+0xC];
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    IFlatImage::lTotalMemoryUsage, eax;
+	IFlatImage::lTotalMemoryUsage -= (this->mWidth * this->mHeight);
 // LINE 291:
 _T119:
 	__asm        mov    eax, this;
@@ -1237,11 +1223,7 @@ _T310:
 _T320:
 	nPosition = _tell(fileImage->Handle);
 // LINE 356:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        neg    eax;
-	__asm        sub    biData, eax;
+	biData -= this->mStride;
 // LINE 357:
 	__asm        jmp    _FOR_NEXT_2cc;
 _T34a:
@@ -2096,15 +2078,9 @@ _Tf7:
 	__asm        cmp    nOverhangDistance, 0;
 	__asm        jle    _T12d;
 // LINE 711:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, nOverhangDistance;
-	__asm        neg    eax;
-	__asm        sub    destRect.right, eax;
+	destRect.right -= nOverhangDistance;
 // LINE 712:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, nOverhangDistance;
-	__asm        neg    eax;
-	__asm        sub    srcRect.right, eax;
+	srcRect.right -= nOverhangDistance;
 // LINE 714:
 _T12d:
 	__asm        xor    eax, eax;
@@ -2127,15 +2103,9 @@ _T162:
 	__asm        cmp    nOverhangDistance, 0;
 	__asm        jle    _T198;
 // LINE 719:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, nOverhangDistance;
-	__asm        neg    eax;
-	__asm        sub    destRect.bottom, eax;
+	destRect.bottom -= nOverhangDistance;
 // LINE 720:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, nOverhangDistance;
-	__asm        neg    eax;
-	__asm        sub    srcRect.bottom, eax;
+	srcRect.bottom -= nOverhangDistance;
 // LINE 722:
 _T198:
 	__asm        xor    eax, eax;
@@ -3547,11 +3517,7 @@ _FOR_2c5:
 			__asm        cmp    yinc2, 0xFFFFFFFF;
 			__asm        jne    _T35f;
 		// LINE 1591:
-			__asm        xor    eax, eax;
-			__asm        mov    ecx, this;
-			__asm        sub    eax, [ecx+0x14];
-			__asm        neg    eax;
-			__asm        sub    address, eax;
+			address -= this->mStride;
 		// LINE 1592:
 			__asm        jmp    _T368;
 		// LINE 1593:
@@ -4138,11 +4104,7 @@ __WHILE_64d:
 			__asm        cmp    yinc2, 0xFFFFFFFF;
 			__asm        jne    _T724;
 		// LINE 1781:
-			__asm        xor    eax, eax;
-			__asm        mov    ecx, this;
-			__asm        sub    eax, [ecx+0x14];
-			__asm        neg    eax;
-			__asm        sub    address, eax;
+			address -= this->mStride;
 		// LINE 1782:
 			__asm        jmp    _T730;
 		// LINE 1783:
@@ -4280,11 +4242,7 @@ __WHILE_770:
 			__asm        cmp    yinc2, 0xFFFFFFFF;
 			__asm        jne    _T8d5;
 		// LINE 1838:
-			__asm        xor    eax, eax;
-			__asm        mov    ecx, this;
-			__asm        sub    eax, [ecx+0x14];
-			__asm        neg    eax;
-			__asm        sub    address, eax;
+			address -= this->mStride;
 		// LINE 1839:
 			__asm        jmp    _T8e1;
 		// LINE 1840:

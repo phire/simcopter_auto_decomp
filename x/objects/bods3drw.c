@@ -1270,10 +1270,7 @@ _FOR_221:
 			__asm        cmp    error, eax;
 			__asm        jle    _T2c8;
 		// LINE 748:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, dx;
-			__asm        neg    eax;
-			__asm        sub    error, eax;
+			error -= dx;
 		// LINE 749:
 			writeBuffer += yInc;
 		// LINE 751:
@@ -1429,10 +1426,7 @@ _FOR_335:
 			__asm        cmp    error, eax;
 			__asm        jle    _T488;
 		// LINE 812:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, dy;
-			__asm        neg    eax;
-			__asm        sub    error, eax;
+			error -= dy;
 		// LINE 813:
 			writeBuffer += xInc;
 		// LINE 815:
@@ -1650,10 +1644,7 @@ _FOR_1db:
 			__asm        cmp    error, eax;
 			__asm        jle    _T263;
 		// LINE 910:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, dx;
-			__asm        neg    eax;
-			__asm        sub    error, eax;
+			error -= dx;
 		// LINE 911:
 			writeBuffer += yInc;
 		// LINE 913:
@@ -1783,10 +1774,7 @@ _FOR_2a2:
 			__asm        cmp    error, eax;
 			__asm        jle    _T40c;
 		// LINE 959:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, dy;
-			__asm        neg    eax;
-			__asm        sub    error, eax;
+			error -= dy;
 		// LINE 960:
 			writeBuffer += xInc;
 		// LINE 962:

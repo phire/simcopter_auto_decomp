@@ -352,22 +352,14 @@ void S3MissionGenerator() {
 	__asm        cmp    S_mstatics.num_active_missions, eax;
 	__asm        jge    _T89;
 // LINE 256:
-	__asm        xor    eax, eax;
-	__asm        sub    eax, G_AvLoopTime;
-	__asm        neg    eax;
-	__asm        sub    S_mission_timer, eax;
+	S_mission_timer -= G_AvLoopTime;
 // LINE 260:
 	__asm        mov    eax, S_max_missions;
 	__asm        sub    eax, S_mstatics.num_active_missions;
 	__asm        dec    eax;
 	__asm        mov    adjustor, eax;
 // LINE 262:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_mission_interval_adj;
-	__asm        imul   ecx, adjustor;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    S_mission_timer, eax;
+	S_mission_timer -= (S_mission_interval_adj * adjustor);
 // LINE 266:
 _T89:
 	__asm        cmp    SpeederMissionActive, 0;
@@ -4178,23 +4170,11 @@ void S3MissionScoreEnd(/*packed*/ struct MISSION_DATA *md) {
 	__asm        test   byte ptr [eax+0x50], 8;
 	__asm        je     _T70;
 // LINE 2239:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x78];
-	__asm        imul   ecx, S_pts_mission_debris;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_pts, eax;
+	total_pts -= (md->mdata.burnout_debris * S_pts_mission_debris);
 // LINE 2240:
 	total_pts += (md->mdata.doused_debris * S_pts_mission_debris);
 // LINE 2241:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x78];
-	__asm        imul   ecx, S_money_mission_debris;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_money, eax;
+	total_money -= (md->mdata.burnout_debris * S_money_mission_debris);
 // LINE 2242:
 	total_money += (md->mdata.doused_debris * S_money_mission_debris);
 // LINE 2245:
@@ -4207,13 +4187,7 @@ _T70:
 // LINE 2252:
 	total_money += ((md->mdata.saved_cels & 0x1) * md->money_bonus);
 // LINE 2253:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x68];
-	__asm        imul   ecx, S_pts_mission_fire_penalty;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_pts, eax;
+	total_pts -= (md->mdata.destroyed_cels * S_pts_mission_fire_penalty);
 // LINE 2254:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
@@ -4224,13 +4198,7 @@ _T70:
 	__asm        neg    eax;
 	__asm        sub    total_pts, eax;
 // LINE 2255:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0x68];
-	__asm        imul   ecx, S_money_mission_fire_penalty;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_money, eax;
+	total_money -= (md->mdata.destroyed_cels * S_money_mission_fire_penalty);
 // LINE 2256:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, md;
@@ -4250,21 +4218,9 @@ _Tfd:
 // LINE 2264:
 	total_money += (md->mdata.person_medevaced * S_money_mission_medevac);
 // LINE 2265:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0xB4];
-	__asm        imul   ecx, S_pts_mission_medevac;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_pts, eax;
+	total_pts -= (md->mdata.person_died * S_pts_mission_medevac);
 // LINE 2266:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0xB4];
-	__asm        imul   ecx, S_money_mission_medevac;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_money, eax;
+	total_money -= (md->mdata.person_died * S_money_mission_medevac);
 // LINE 2267:
 	total_pts += ((md->mdata.person_pickedup >> 0x2) * S_pts_mission_medevac);
 // LINE 2268:
@@ -4279,21 +4235,9 @@ _T18e:
 // LINE 2276:
 	total_money += (md->mdata.person_rescued * S_money_mission_rescue);
 // LINE 2277:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0xB4];
-	__asm        imul   ecx, S_pts_mission_rescue;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_pts, eax;
+	total_pts -= (md->mdata.person_died * S_pts_mission_rescue);
 // LINE 2278:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0xB4];
-	__asm        imul   ecx, S_money_mission_rescue;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_money, eax;
+	total_money -= (md->mdata.person_died * S_money_mission_rescue);
 // LINE 2279:
 	total_pts += ((md->mdata.person_pickedup >> 0x2) * S_pts_mission_rescue);
 // LINE 2280:
@@ -4308,21 +4252,9 @@ _T21f:
 // LINE 2288:
 	total_money += (md->mdata.person_transported * S_money_mission_transport);
 // LINE 2289:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0xBC];
-	__asm        imul   ecx, S_pts_mission_transport;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_pts, eax;
+	total_pts -= (md->mdata.person_couldntwait * S_pts_mission_transport);
 // LINE 2290:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0xBC];
-	__asm        imul   ecx, S_money_mission_transport;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_money, eax;
+	total_money -= (md->mdata.person_couldntwait * S_money_mission_transport);
 // LINE 2291:
 	total_pts += ((md->mdata.person_pickedup >> 0x2) * S_pts_mission_transport);
 // LINE 2292:
@@ -4351,42 +4283,20 @@ _T2b0:
 	__asm        sar    eax, 0x10;
 	__asm        mov    timetmp, eax;
 // LINE 2311:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_pts_mission_riot_penalty;
-	__asm        imul   ecx, timetmp;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_pts, eax;
+	total_pts -= (S_pts_mission_riot_penalty * timetmp);
 // LINE 2312:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, S_money_mission_riot_penalty;
-	__asm        imul   ecx, timetmp;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_money, eax;
+	total_money -= (S_money_mission_riot_penalty * timetmp);
 // LINE 2319:
 _T325:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x51], 4;
 	__asm        je     _T38a;
 // LINE 2322:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0xCC];
-	__asm        imul   ecx, S_pts_mission_vehiclefire;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_pts, eax;
+	total_pts -= (md->mdata.vehicles_burned * S_pts_mission_vehiclefire);
 // LINE 2323:
 	total_pts += (md->mdata.vehicles_doused * S_pts_mission_vehiclefire);
 // LINE 2324:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, md;
-	__asm        mov    ecx, [ecx+0xCC];
-	__asm        imul   ecx, S_money_mission_vehiclefire;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    total_money, eax;
+	total_money -= (md->mdata.vehicles_burned * S_money_mission_vehiclefire);
 // LINE 2325:
 	total_money += (md->mdata.vehicles_doused * S_money_mission_vehiclefire);
 // LINE 2328:

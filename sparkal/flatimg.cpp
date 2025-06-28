@@ -211,10 +211,7 @@ __WHILE_10a:
 				// LINE 78:
 					__asm        js     _T166;
 				// LINE 80:
-					__asm        xor    eax, eax;
-					__asm        sub    eax, DestWidth;
-					__asm        neg    eax;
-					__asm        sub    XError, eax;
+					XError -= DestWidth;
 				// LINE 81:
 					pSourceBits++;
 				// LINE 82:
@@ -230,10 +227,7 @@ __WHILE_10a:
 		// LINE 91:
 			__asm        js     _T190;
 		// LINE 93:
-			__asm        xor    eax, eax;
-			__asm        sub    eax, DestHeight;
-			__asm        neg    eax;
-			__asm        sub    YError, eax;
+			YError -= DestHeight;
 		// LINE 94:
 			pSourceLeft += SourceStride;
 		// LINE 95:
@@ -356,12 +350,7 @@ _T37:
 // LINE 150:
 	pSource += (this->mStride * (ClipTop - DestTop));
 // LINE 151:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, ClipTop;
-	__asm        sub    ecx, DestTop;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    Height, eax;
+	Height -= (ClipTop - DestTop);
 // LINE 152:
 	DestTop = ClipTop;
 // LINE 155:
@@ -372,12 +361,7 @@ _Ta0:
 // LINE 157:
 	pSource += (ClipLeft - DestLeft);
 // LINE 158:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, ClipLeft;
-	__asm        sub    ecx, DestLeft;
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    Width, eax;
+	Width -= (ClipLeft - DestLeft);
 // LINE 159:
 	DestLeft = ClipLeft;
 // LINE 164:

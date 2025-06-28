@@ -590,14 +590,7 @@ int32_t ScreenBuffer::DeleteSurfaces() {
 	this-><ScreenBuffer+0x50> = 0x0;
 // LINE 248:
 _T4f:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    edx, this;
-	__asm        imul   ecx, [edx+0xC];
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    IFlatImage::lTotalMemoryUsage, eax;
+	IFlatImage::lTotalMemoryUsage -= (this-><ScreenBuffer+0x08> * this-><ScreenBuffer+0x0c>);
 // LINE 257:
 _T68:
 	__asm        mov    eax, this;
@@ -614,14 +607,7 @@ _T68:
 // LINE 259:
 	this-><ScreenBuffer+0x50> = 0x0;
 // LINE 263:
-	__asm        xor    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    edx, this;
-	__asm        imul   ecx, [edx+0xC];
-	__asm        sub    eax, ecx;
-	__asm        neg    eax;
-	__asm        sub    IFlatImage::lTotalMemoryUsage, eax;
+	IFlatImage::lTotalMemoryUsage -= (this-><ScreenBuffer+0x08> * this-><ScreenBuffer+0x0c>);
 // LINE 267:
 _Taa:
 	__asm        mov    eax, this;
